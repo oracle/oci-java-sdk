@@ -103,7 +103,9 @@ public class UploadCredentialsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .UploadCredentialsResponse.builder();
+                                                        .UploadCredentialsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.connection(response.getItem());
 

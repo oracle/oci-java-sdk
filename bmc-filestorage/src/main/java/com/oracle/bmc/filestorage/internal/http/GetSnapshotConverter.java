@@ -78,7 +78,9 @@ public class GetSnapshotConverter {
                                 com.oracle.bmc.filestorage.responses.GetSnapshotResponse.Builder
                                         builder =
                                                 com.oracle.bmc.filestorage.responses
-                                                        .GetSnapshotResponse.builder();
+                                                        .GetSnapshotResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.snapshot(response.getItem());
 

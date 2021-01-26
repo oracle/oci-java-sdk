@@ -91,7 +91,9 @@ public class StopBlockchainPlatformConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.blockchain.responses
-                                                        .StopBlockchainPlatformResponse.builder();
+                                                        .StopBlockchainPlatformResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

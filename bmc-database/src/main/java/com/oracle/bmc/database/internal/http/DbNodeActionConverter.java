@@ -89,7 +89,9 @@ public class DbNodeActionConverter {
                                 com.oracle.bmc.database.responses.DbNodeActionResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .DbNodeActionResponse.builder();
+                                                        .DbNodeActionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dbNode(response.getItem());
 

@@ -146,7 +146,9 @@ public class ListTagsConverter {
                                 com.oracle.bmc.datacatalog.responses.ListTagsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .ListTagsResponse.builder();
+                                                        .ListTagsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.termCollection(response.getItem());
 

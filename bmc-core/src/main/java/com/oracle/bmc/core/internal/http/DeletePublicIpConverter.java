@@ -76,7 +76,9 @@ public class DeletePublicIpConverter {
                                 com.oracle.bmc.core.responses.DeletePublicIpResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses.DeletePublicIpResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -147,7 +147,9 @@ public class ListJobsConverter {
                                 com.oracle.bmc.resourcemanager.responses.ListJobsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
-                                                        .ListJobsResponse.builder();
+                                                        .ListJobsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

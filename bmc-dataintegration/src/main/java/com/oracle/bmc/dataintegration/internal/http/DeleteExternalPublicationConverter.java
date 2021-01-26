@@ -97,8 +97,9 @@ public class DeleteExternalPublicationConverter {
                                                 .DeleteExternalPublicationResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .DeleteExternalPublicationResponse
-                                                        .builder();
+                                                        .DeleteExternalPublicationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

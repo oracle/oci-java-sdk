@@ -79,8 +79,8 @@ public class UpdateRuleConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.events.responses.UpdateRuleResponse.Builder builder =
-                                        com.oracle.bmc.events.responses.UpdateRuleResponse
-                                                .builder();
+                                        com.oracle.bmc.events.responses.UpdateRuleResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.rule(response.getItem());
 

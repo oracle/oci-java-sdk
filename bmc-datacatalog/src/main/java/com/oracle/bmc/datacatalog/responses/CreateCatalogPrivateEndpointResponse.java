@@ -10,6 +10,10 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class CreateCatalogPrivateEndpointResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -30,6 +34,7 @@ public class CreateCatalogPrivateEndpointResponse {
          * @return this builder instance
          */
         public Builder copy(CreateCatalogPrivateEndpointResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());
 

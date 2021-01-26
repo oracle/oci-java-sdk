@@ -142,7 +142,9 @@ public class ListTargetResponderRecipesConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ListTargetResponderRecipesResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.targetResponderRecipeCollection(response.getItem());
 

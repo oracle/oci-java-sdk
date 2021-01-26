@@ -81,7 +81,9 @@ public class DeleteModelConverter {
                                 com.oracle.bmc.datascience.responses.DeleteModelResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datascience.responses
-                                                        .DeleteModelResponse.builder();
+                                                        .DeleteModelResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

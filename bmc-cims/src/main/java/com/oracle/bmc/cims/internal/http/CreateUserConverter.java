@@ -75,7 +75,8 @@ public class CreateUserConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.cims.responses.CreateUserResponse.Builder builder =
-                                        com.oracle.bmc.cims.responses.CreateUserResponse.builder();
+                                        com.oracle.bmc.cims.responses.CreateUserResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.user(response.getItem());
 

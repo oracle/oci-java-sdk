@@ -109,7 +109,9 @@ public class ListReplicationSourcesConverter {
                                                 .ListReplicationSourcesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
-                                                        .ListReplicationSourcesResponse.builder();
+                                                        .ListReplicationSourcesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

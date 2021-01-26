@@ -126,7 +126,9 @@ public class ListLinksConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.tenantmanagercontrolplane.responses
-                                                        .ListLinksResponse.builder();
+                                                        .ListLinksResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.linkCollection(response.getItem());
 

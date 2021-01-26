@@ -129,7 +129,9 @@ public class ListProfilesConverter {
                                 com.oracle.bmc.optimizer.responses.ListProfilesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.optimizer.responses
-                                                        .ListProfilesResponse.builder();
+                                                        .ListProfilesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.profileCollection(response.getItem());
 

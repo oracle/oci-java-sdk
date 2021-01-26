@@ -94,7 +94,9 @@ public class UnsuppressWarningConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .UnsuppressWarningResponse.builder();
+                                                        .UnsuppressWarningResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

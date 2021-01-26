@@ -82,7 +82,9 @@ public class UpdateJobConverter {
                                 com.oracle.bmc.resourcemanager.responses.UpdateJobResponse.Builder
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
-                                                        .UpdateJobResponse.builder();
+                                                        .UpdateJobResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.job(response.getItem());
 

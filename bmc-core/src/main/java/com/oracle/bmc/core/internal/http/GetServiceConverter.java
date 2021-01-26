@@ -70,7 +70,8 @@ public class GetServiceConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.GetServiceResponse.Builder builder =
-                                        com.oracle.bmc.core.responses.GetServiceResponse.builder();
+                                        com.oracle.bmc.core.responses.GetServiceResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.service(response.getItem());
 

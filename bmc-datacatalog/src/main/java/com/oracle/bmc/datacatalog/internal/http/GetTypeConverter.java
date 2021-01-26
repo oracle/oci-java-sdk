@@ -90,7 +90,9 @@ public class GetTypeConverter {
                                 com.oracle.bmc.datacatalog.responses.GetTypeResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses.GetTypeResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.type(response.getItem());
 

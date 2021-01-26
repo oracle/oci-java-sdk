@@ -102,7 +102,9 @@ public class GetAttributeConverter {
                                 com.oracle.bmc.datacatalog.responses.GetAttributeResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .GetAttributeResponse.builder();
+                                                        .GetAttributeResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.attribute(response.getItem());
 

@@ -85,7 +85,9 @@ public class CreateProjectConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .CreateProjectResponse.builder();
+                                                        .CreateProjectResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.project(response.getItem());
 

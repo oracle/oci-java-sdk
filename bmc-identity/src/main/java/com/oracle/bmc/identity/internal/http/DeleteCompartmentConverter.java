@@ -77,7 +77,9 @@ public class DeleteCompartmentConverter {
                                 com.oracle.bmc.identity.responses.DeleteCompartmentResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .DeleteCompartmentResponse.builder();
+                                                        .DeleteCompartmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

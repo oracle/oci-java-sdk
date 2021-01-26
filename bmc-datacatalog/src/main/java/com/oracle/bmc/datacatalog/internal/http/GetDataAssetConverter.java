@@ -92,7 +92,9 @@ public class GetDataAssetConverter {
                                 com.oracle.bmc.datacatalog.responses.GetDataAssetResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .GetDataAssetResponse.builder();
+                                                        .GetDataAssetResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dataAsset(response.getItem());
 

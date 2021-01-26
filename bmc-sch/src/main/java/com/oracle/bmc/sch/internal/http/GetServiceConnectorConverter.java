@@ -80,7 +80,9 @@ public class GetServiceConnectorConverter {
                                 com.oracle.bmc.sch.responses.GetServiceConnectorResponse.Builder
                                         builder =
                                                 com.oracle.bmc.sch.responses
-                                                        .GetServiceConnectorResponse.builder();
+                                                        .GetServiceConnectorResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.serviceConnector(response.getItem());
 

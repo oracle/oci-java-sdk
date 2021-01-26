@@ -79,7 +79,9 @@ public class ValidateByoipRangeConverter {
                                 com.oracle.bmc.core.responses.ValidateByoipRangeResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ValidateByoipRangeResponse.builder();
+                                                        .ValidateByoipRangeResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

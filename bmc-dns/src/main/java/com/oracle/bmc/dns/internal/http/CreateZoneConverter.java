@@ -92,7 +92,8 @@ public class CreateZoneConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.dns.responses.CreateZoneResponse.Builder builder =
-                                        com.oracle.bmc.dns.responses.CreateZoneResponse.builder();
+                                        com.oracle.bmc.dns.responses.CreateZoneResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.zone(response.getItem());
 

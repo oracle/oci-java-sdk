@@ -10,6 +10,10 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class CancelWorkRequestResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
@@ -29,6 +33,7 @@ public class CancelWorkRequestResponse {
          * @return this builder instance
          */
         public Builder copy(CancelWorkRequestResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             opcClientRequestId(o.getOpcClientRequestId());
 

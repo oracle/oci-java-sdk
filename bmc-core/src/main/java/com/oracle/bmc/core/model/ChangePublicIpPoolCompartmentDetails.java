@@ -62,8 +62,7 @@ public class ChangePublicIpPoolCompartmentDetails {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment to move the
-     * Public IP Pool to.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the destination compartment for the public IP pool move.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")

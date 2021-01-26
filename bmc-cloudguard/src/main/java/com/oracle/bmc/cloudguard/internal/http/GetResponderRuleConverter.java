@@ -80,7 +80,9 @@ public class GetResponderRuleConverter {
                                 com.oracle.bmc.cloudguard.responses.GetResponderRuleResponse.Builder
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
-                                                        .GetResponderRuleResponse.builder();
+                                                        .GetResponderRuleResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.responderRule(response.getItem());
 

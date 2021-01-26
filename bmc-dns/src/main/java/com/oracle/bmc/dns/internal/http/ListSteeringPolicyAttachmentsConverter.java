@@ -201,7 +201,9 @@ public class ListSteeringPolicyAttachmentsConverter {
                                         builder =
                                                 com.oracle.bmc.dns.responses
                                                         .ListSteeringPolicyAttachmentsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

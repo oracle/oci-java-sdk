@@ -141,7 +141,9 @@ public class ListUsersConverter {
                                 com.oracle.bmc.identity.responses.ListUsersResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses.ListUsersResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

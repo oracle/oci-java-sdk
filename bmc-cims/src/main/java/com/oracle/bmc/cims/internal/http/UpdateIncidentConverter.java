@@ -93,7 +93,9 @@ public class UpdateIncidentConverter {
                                 com.oracle.bmc.cims.responses.UpdateIncidentResponse.Builder
                                         builder =
                                                 com.oracle.bmc.cims.responses.UpdateIncidentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.incident(response.getItem());
 

@@ -10,6 +10,10 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class CommitMultipartUploadResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
@@ -54,6 +58,7 @@ public class CommitMultipartUploadResponse {
          * @return this builder instance
          */
         public Builder copy(CommitMultipartUploadResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcClientRequestId(o.getOpcClientRequestId());
             opcRequestId(o.getOpcRequestId());
             opcMultipartMd5(o.getOpcMultipartMd5());

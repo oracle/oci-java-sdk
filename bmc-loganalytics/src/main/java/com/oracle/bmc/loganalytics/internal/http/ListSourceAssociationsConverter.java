@@ -156,7 +156,9 @@ public class ListSourceAssociationsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .ListSourceAssociationsResponse.builder();
+                                                        .ListSourceAssociationsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsAssociationCollection(response.getItem());
 

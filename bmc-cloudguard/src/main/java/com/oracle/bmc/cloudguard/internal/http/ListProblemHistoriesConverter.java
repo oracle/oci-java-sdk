@@ -122,7 +122,9 @@ public class ListProblemHistoriesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
-                                                        .ListProblemHistoriesResponse.builder();
+                                                        .ListProblemHistoriesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.problemHistoryCollection(response.getItem());
 

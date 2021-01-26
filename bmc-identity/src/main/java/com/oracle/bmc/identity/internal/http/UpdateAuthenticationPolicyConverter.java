@@ -88,7 +88,9 @@ public class UpdateAuthenticationPolicyConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .UpdateAuthenticationPolicyResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.authenticationPolicy(response.getItem());
 

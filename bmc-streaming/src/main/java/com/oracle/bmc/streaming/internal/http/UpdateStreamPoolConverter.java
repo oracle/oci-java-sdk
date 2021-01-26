@@ -86,7 +86,9 @@ public class UpdateStreamPoolConverter {
                                 com.oracle.bmc.streaming.responses.UpdateStreamPoolResponse.Builder
                                         builder =
                                                 com.oracle.bmc.streaming.responses
-                                                        .UpdateStreamPoolResponse.builder();
+                                                        .UpdateStreamPoolResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.streamPool(response.getItem());
 

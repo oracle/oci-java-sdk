@@ -10,6 +10,10 @@ import com.oracle.bmc.dns.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetTsigKeyResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * The current version of the resource, ending with a
@@ -46,6 +50,7 @@ public class GetTsigKeyResponse {
          * @return this builder instance
          */
         public Builder copy(GetTsigKeyResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             eTag(o.getETag());
             opcRequestId(o.getOpcRequestId());
             tsigKey(o.getTsigKey());

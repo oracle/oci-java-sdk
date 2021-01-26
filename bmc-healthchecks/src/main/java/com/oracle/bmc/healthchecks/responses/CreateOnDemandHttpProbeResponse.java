@@ -10,6 +10,10 @@ import com.oracle.bmc.healthchecks.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class CreateOnDemandHttpProbeResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to
@@ -35,6 +39,7 @@ public class CreateOnDemandHttpProbeResponse {
          * @return this builder instance
          */
         public Builder copy(CreateOnDemandHttpProbeResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             location(o.getLocation());
             httpProbe(o.getHttpProbe());

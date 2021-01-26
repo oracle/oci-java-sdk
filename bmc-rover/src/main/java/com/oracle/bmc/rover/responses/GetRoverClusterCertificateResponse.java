@@ -10,6 +10,10 @@ import com.oracle.bmc.rover.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetRoverClusterCertificateResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control. See `if-match`.
@@ -35,6 +39,7 @@ public class GetRoverClusterCertificateResponse {
          * @return this builder instance
          */
         public Builder copy(GetRoverClusterCertificateResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             roverClusterCertificate(o.getRoverClusterCertificate());

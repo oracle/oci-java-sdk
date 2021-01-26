@@ -134,7 +134,9 @@ public class ListRouteTablesConverter {
                                 com.oracle.bmc.core.responses.ListRouteTablesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ListRouteTablesResponse.builder();
+                                                        .ListRouteTablesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

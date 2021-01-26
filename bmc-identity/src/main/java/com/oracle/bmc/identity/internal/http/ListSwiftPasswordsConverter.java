@@ -80,7 +80,9 @@ public class ListSwiftPasswordsConverter {
                                 com.oracle.bmc.identity.responses.ListSwiftPasswordsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .ListSwiftPasswordsResponse.builder();
+                                                        .ListSwiftPasswordsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

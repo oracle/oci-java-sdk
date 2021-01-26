@@ -82,7 +82,9 @@ public class GetUserUIPasswordInformationConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .GetUserUIPasswordInformationResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.uIPasswordInformation(response.getItem());
 

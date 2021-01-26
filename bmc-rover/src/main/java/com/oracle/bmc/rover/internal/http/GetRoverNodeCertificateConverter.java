@@ -82,7 +82,9 @@ public class GetRoverNodeCertificateConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.rover.responses
-                                                        .GetRoverNodeCertificateResponse.builder();
+                                                        .GetRoverNodeCertificateResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.roverNodeCertificate(response.getItem());
 

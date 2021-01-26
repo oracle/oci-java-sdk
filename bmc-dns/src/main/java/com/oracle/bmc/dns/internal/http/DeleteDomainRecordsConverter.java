@@ -114,7 +114,9 @@ public class DeleteDomainRecordsConverter {
                                 com.oracle.bmc.dns.responses.DeleteDomainRecordsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dns.responses
-                                                        .DeleteDomainRecordsResponse.builder();
+                                                        .DeleteDomainRecordsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

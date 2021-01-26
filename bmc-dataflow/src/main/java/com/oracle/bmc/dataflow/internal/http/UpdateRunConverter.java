@@ -81,7 +81,9 @@ public class UpdateRunConverter {
                                 com.oracle.bmc.dataflow.responses.UpdateRunResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dataflow.responses.UpdateRunResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.run(response.getItem());
 

@@ -97,7 +97,9 @@ public class ListIdpGroupMappingsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .ListIdpGroupMappingsResponse.builder();
+                                                        .ListIdpGroupMappingsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

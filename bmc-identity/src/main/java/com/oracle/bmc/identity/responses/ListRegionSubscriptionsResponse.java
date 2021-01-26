@@ -10,6 +10,10 @@ import com.oracle.bmc.identity.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListRegionSubscriptionsResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -29,6 +33,7 @@ public class ListRegionSubscriptionsResponse {
          * @return this builder instance
          */
         public Builder copy(ListRegionSubscriptionsResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             items(o.getItems());
 

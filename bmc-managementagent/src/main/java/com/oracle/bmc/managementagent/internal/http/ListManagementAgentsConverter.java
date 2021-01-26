@@ -160,7 +160,9 @@ public class ListManagementAgentsConverter {
                                                 .ListManagementAgentsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.managementagent.responses
-                                                        .ListManagementAgentsResponse.builder();
+                                                        .ListManagementAgentsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

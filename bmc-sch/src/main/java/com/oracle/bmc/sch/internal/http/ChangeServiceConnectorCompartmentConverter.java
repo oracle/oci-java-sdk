@@ -91,7 +91,9 @@ public class ChangeServiceConnectorCompartmentConverter {
                                         builder =
                                                 com.oracle.bmc.sch.responses
                                                         .ChangeServiceConnectorCompartmentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

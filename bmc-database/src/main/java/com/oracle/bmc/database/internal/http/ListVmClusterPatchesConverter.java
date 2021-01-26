@@ -96,7 +96,9 @@ public class ListVmClusterPatchesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .ListVmClusterPatchesResponse.builder();
+                                                        .ListVmClusterPatchesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

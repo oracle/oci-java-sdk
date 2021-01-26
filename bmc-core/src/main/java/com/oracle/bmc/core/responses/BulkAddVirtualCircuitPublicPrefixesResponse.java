@@ -10,6 +10,10 @@ import com.oracle.bmc.core.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class BulkAddVirtualCircuitPublicPrefixesResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     public static class Builder {
         /**
@@ -17,6 +21,7 @@ public class BulkAddVirtualCircuitPublicPrefixesResponse {
          * @return this builder instance
          */
         public Builder copy(BulkAddVirtualCircuitPublicPrefixesResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
 
             return this;
         }

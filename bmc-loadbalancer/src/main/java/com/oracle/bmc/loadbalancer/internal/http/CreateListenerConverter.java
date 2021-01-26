@@ -83,7 +83,9 @@ public class CreateListenerConverter {
                                 com.oracle.bmc.loadbalancer.responses.CreateListenerResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .CreateListenerResponse.builder();
+                                                        .CreateListenerResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

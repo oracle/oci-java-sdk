@@ -84,7 +84,9 @@ public class UpdateVaultConverter {
                                 com.oracle.bmc.keymanagement.responses.UpdateVaultResponse.Builder
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
-                                                        .UpdateVaultResponse.builder();
+                                                        .UpdateVaultResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.vault(response.getItem());
 

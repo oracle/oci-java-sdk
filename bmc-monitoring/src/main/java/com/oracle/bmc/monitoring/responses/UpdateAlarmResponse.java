@@ -10,6 +10,10 @@ import com.oracle.bmc.monitoring.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class UpdateAlarmResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control. See `if-match`.
@@ -35,6 +39,7 @@ public class UpdateAlarmResponse {
          * @return this builder instance
          */
         public Builder copy(UpdateAlarmResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             alarm(o.getAlarm());

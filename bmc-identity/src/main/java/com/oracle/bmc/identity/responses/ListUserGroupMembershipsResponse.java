@@ -10,6 +10,10 @@ import com.oracle.bmc.identity.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListUserGroupMembershipsResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -37,6 +41,7 @@ public class ListUserGroupMembershipsResponse {
          * @return this builder instance
          */
         public Builder copy(ListUserGroupMembershipsResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             items(o.getItems());

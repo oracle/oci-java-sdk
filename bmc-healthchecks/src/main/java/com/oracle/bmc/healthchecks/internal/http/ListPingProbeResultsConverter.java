@@ -135,7 +135,9 @@ public class ListPingProbeResultsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.healthchecks.responses
-                                                        .ListPingProbeResultsResponse.builder();
+                                                        .ListPingProbeResultsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

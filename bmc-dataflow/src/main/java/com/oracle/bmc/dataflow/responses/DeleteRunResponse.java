@@ -10,6 +10,10 @@ import com.oracle.bmc.dataflow.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class DeleteRunResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle assigned identifier for the request.
@@ -24,6 +28,7 @@ public class DeleteRunResponse {
          * @return this builder instance
          */
         public Builder copy(DeleteRunResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
 
             return this;

@@ -10,6 +10,10 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class UploadPartResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
@@ -39,6 +43,7 @@ public class UploadPartResponse {
          * @return this builder instance
          */
         public Builder copy(UploadPartResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcClientRequestId(o.getOpcClientRequestId());
             opcRequestId(o.getOpcRequestId());
             opcContentMd5(o.getOpcContentMd5());

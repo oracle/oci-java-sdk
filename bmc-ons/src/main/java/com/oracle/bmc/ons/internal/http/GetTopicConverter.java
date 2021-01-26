@@ -76,7 +76,8 @@ public class GetTopicConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.ons.responses.GetTopicResponse.Builder builder =
-                                        com.oracle.bmc.ons.responses.GetTopicResponse.builder();
+                                        com.oracle.bmc.ons.responses.GetTopicResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.notificationTopic(response.getItem());
 

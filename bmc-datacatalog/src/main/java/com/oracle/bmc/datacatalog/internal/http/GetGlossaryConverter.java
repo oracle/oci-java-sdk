@@ -92,7 +92,9 @@ public class GetGlossaryConverter {
                                 com.oracle.bmc.datacatalog.responses.GetGlossaryResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .GetGlossaryResponse.builder();
+                                                        .GetGlossaryResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.glossary(response.getItem());
 

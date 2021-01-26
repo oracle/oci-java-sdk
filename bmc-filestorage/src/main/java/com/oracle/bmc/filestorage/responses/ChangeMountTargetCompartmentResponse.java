@@ -10,6 +10,10 @@ import com.oracle.bmc.filestorage.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ChangeMountTargetCompartmentResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request.
@@ -22,6 +26,7 @@ public class ChangeMountTargetCompartmentResponse {
          * @return this builder instance
          */
         public Builder copy(ChangeMountTargetCompartmentResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
 
             return this;

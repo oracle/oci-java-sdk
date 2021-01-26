@@ -113,7 +113,9 @@ public class CreateMultipartUploadConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
-                                                        .CreateMultipartUploadResponse.builder();
+                                                        .CreateMultipartUploadResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.multipartUpload(response.getItem());
 

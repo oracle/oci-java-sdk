@@ -85,7 +85,9 @@ public class LaunchInstanceConfigurationConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .LaunchInstanceConfigurationResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.instance(response.getItem());
 

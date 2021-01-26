@@ -87,7 +87,9 @@ public class AttachDevicesToTransferPackageConverter {
                                         builder =
                                                 com.oracle.bmc.dts.responses
                                                         .AttachDevicesToTransferPackageResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

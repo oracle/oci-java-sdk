@@ -84,7 +84,9 @@ public class UpdateStorageConverter {
                                 com.oracle.bmc.loganalytics.responses.UpdateStorageResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .UpdateStorageResponse.builder();
+                                                        .UpdateStorageResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.storage(response.getItem());
 

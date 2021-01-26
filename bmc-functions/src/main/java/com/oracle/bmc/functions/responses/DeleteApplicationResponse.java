@@ -10,6 +10,10 @@ import com.oracle.bmc.functions.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class DeleteApplicationResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle
@@ -24,6 +28,7 @@ public class DeleteApplicationResponse {
          * @return this builder instance
          */
         public Builder copy(DeleteApplicationResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
 
             return this;

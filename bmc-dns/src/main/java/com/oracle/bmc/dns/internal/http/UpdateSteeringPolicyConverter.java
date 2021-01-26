@@ -99,7 +99,9 @@ public class UpdateSteeringPolicyConverter {
                                 com.oracle.bmc.dns.responses.UpdateSteeringPolicyResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dns.responses
-                                                        .UpdateSteeringPolicyResponse.builder();
+                                                        .UpdateSteeringPolicyResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.steeringPolicy(response.getItem());
 

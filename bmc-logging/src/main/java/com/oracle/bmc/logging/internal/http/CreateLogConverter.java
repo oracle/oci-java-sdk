@@ -80,8 +80,8 @@ public class CreateLogConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.logging.responses.CreateLogResponse.Builder builder =
-                                        com.oracle.bmc.logging.responses.CreateLogResponse
-                                                .builder();
+                                        com.oracle.bmc.logging.responses.CreateLogResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

@@ -101,7 +101,9 @@ public class ListDbHomePatchHistoryEntriesConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ListDbHomePatchHistoryEntriesResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

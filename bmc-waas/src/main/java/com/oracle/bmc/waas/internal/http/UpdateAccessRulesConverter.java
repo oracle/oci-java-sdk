@@ -88,7 +88,9 @@ public class UpdateAccessRulesConverter {
                                 com.oracle.bmc.waas.responses.UpdateAccessRulesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .UpdateAccessRulesResponse.builder();
+                                                        .UpdateAccessRulesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

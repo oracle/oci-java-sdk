@@ -81,7 +81,9 @@ public class GetBootVolumeKmsKeyConverter {
                                 com.oracle.bmc.core.responses.GetBootVolumeKmsKeyResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .GetBootVolumeKmsKeyResponse.builder();
+                                                        .GetBootVolumeKmsKeyResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.bootVolumeKmsKey(response.getItem());
 

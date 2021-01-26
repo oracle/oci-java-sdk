@@ -105,7 +105,9 @@ public class ListLocalPeeringGatewaysConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ListLocalPeeringGatewaysResponse.builder();
+                                                        .ListLocalPeeringGatewaysResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

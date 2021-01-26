@@ -99,7 +99,9 @@ public class ChangeTsigKeyCompartmentConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.dns.responses
-                                                        .ChangeTsigKeyCompartmentResponse.builder();
+                                                        .ChangeTsigKeyCompartmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

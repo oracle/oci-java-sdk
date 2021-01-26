@@ -76,7 +76,9 @@ public class GetIPSecConnectionConverter {
                                 com.oracle.bmc.core.responses.GetIPSecConnectionResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .GetIPSecConnectionResponse.builder();
+                                                        .GetIPSecConnectionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.iPSecConnection(response.getItem());
 

@@ -92,7 +92,9 @@ public class UpdateTermConverter {
                                 com.oracle.bmc.datacatalog.responses.UpdateTermResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .UpdateTermResponse.builder();
+                                                        .UpdateTermResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.term(response.getItem());
 

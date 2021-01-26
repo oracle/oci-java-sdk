@@ -112,8 +112,9 @@ public class ListCloudVmClusterUpdatesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .ListCloudVmClusterUpdatesResponse
-                                                        .builder();
+                                                        .ListCloudVmClusterUpdatesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

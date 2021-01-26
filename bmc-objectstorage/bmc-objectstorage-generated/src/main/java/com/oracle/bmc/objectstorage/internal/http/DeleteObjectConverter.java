@@ -99,7 +99,9 @@ public class DeleteObjectConverter {
                                 com.oracle.bmc.objectstorage.responses.DeleteObjectResponse.Builder
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
-                                                        .DeleteObjectResponse.builder();
+                                                        .DeleteObjectResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcClientRequestIdHeader =

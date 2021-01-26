@@ -123,7 +123,9 @@ public class ListRecipientInvitationsConverter {
                                                 .ListRecipientInvitationsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.tenantmanagercontrolplane.responses
-                                                        .ListRecipientInvitationsResponse.builder();
+                                                        .ListRecipientInvitationsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.recipientInvitationCollection(response.getItem());
 

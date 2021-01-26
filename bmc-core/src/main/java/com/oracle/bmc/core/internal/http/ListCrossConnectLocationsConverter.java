@@ -97,8 +97,9 @@ public class ListCrossConnectLocationsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ListCrossConnectLocationsResponse
-                                                        .builder();
+                                                        .ListCrossConnectLocationsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

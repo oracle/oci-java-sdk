@@ -79,7 +79,9 @@ public class GetAddressListConverter {
                                 com.oracle.bmc.waas.responses.GetAddressListResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses.GetAddressListResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.addressList(response.getItem());
 

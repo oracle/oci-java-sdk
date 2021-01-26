@@ -96,7 +96,9 @@ public class ChangeSourceCompartmentConverter {
                                                 .ChangeSourceCompartmentResponse.Builder
                                         builder =
                                                 com.oracle.bmc.applicationmigration.responses
-                                                        .ChangeSourceCompartmentResponse.builder();
+                                                        .ChangeSourceCompartmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

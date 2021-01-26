@@ -98,7 +98,9 @@ public class ValidateSourceExtendedFieldDetailsConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ValidateSourceExtendedFieldDetailsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.extendedFieldsValidationResult(response.getItem());
 

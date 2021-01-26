@@ -92,7 +92,9 @@ public class StartIntegrationInstanceConverter {
                                                 .StartIntegrationInstanceResponse.Builder
                                         builder =
                                                 com.oracle.bmc.integration.responses
-                                                        .StartIntegrationInstanceResponse.builder();
+                                                        .StartIntegrationInstanceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

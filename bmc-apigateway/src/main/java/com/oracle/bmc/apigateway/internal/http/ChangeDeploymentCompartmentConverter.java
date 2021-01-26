@@ -95,7 +95,9 @@ public class ChangeDeploymentCompartmentConverter {
                                         builder =
                                                 com.oracle.bmc.apigateway.responses
                                                         .ChangeDeploymentCompartmentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

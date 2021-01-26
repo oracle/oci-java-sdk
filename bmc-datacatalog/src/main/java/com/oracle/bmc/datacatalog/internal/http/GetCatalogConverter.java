@@ -78,7 +78,9 @@ public class GetCatalogConverter {
                                 com.oracle.bmc.datacatalog.responses.GetCatalogResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .GetCatalogResponse.builder();
+                                                        .GetCatalogResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.catalog(response.getItem());
 

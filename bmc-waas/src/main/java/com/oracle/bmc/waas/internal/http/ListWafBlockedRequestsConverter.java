@@ -127,7 +127,9 @@ public class ListWafBlockedRequestsConverter {
                                 com.oracle.bmc.waas.responses.ListWafBlockedRequestsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .ListWafBlockedRequestsResponse.builder();
+                                                        .ListWafBlockedRequestsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

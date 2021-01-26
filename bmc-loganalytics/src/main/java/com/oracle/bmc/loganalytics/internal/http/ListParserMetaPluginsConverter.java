@@ -119,7 +119,9 @@ public class ListParserMetaPluginsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .ListParserMetaPluginsResponse.builder();
+                                                        .ListParserMetaPluginsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsParserMetaPluginCollection(response.getItem());
 

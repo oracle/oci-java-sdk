@@ -81,7 +81,9 @@ public class GetWindowsUpdateConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
-                                                        .GetWindowsUpdateResponse.builder();
+                                                        .GetWindowsUpdateResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.windowsUpdate(response.getItem());
 

@@ -521,20 +521,12 @@ public class Instance {
     @com.fasterxml.jackson.annotation.JsonProperty("launchMode")
     LaunchMode launchMode;
 
-    /**
-     * Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-     *
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("launchOptions")
     LaunchOptions launchOptions;
 
     @com.fasterxml.jackson.annotation.JsonProperty("instanceOptions")
     InstanceOptions instanceOptions;
 
-    /**
-     * Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
-     *
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityConfig")
     InstanceAvailabilityConfig availabilityConfig;
     /**
@@ -626,9 +618,6 @@ public class Instance {
     @com.fasterxml.jackson.annotation.JsonProperty("shapeConfig")
     InstanceShapeConfig shapeConfig;
 
-    /**
-     * Details for creating an instance
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
     InstanceSourceDetails sourceDetails;
 

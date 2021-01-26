@@ -82,7 +82,9 @@ public class GetTaskConverter {
                                 com.oracle.bmc.dataintegration.responses.GetTaskResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .GetTaskResponse.builder();
+                                                        .GetTaskResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.task(response.getItem());
 

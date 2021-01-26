@@ -412,11 +412,6 @@ public class Volume {
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
     Long sizeInMBs;
 
-    /**
-     * The volume source, either an existing volume in the same availability domain or a volume backup.
-     * If null, an empty volume is created.
-     *
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
     VolumeSourceDetails sourceDetails;
 

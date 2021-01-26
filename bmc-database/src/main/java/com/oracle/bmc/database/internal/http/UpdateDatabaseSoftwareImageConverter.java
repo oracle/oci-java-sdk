@@ -89,7 +89,9 @@ public class UpdateDatabaseSoftwareImageConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .UpdateDatabaseSoftwareImageResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.databaseSoftwareImage(response.getItem());
 

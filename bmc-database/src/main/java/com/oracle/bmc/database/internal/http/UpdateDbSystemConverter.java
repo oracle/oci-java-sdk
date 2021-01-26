@@ -79,7 +79,9 @@ public class UpdateDbSystemConverter {
                                 com.oracle.bmc.database.responses.UpdateDbSystemResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .UpdateDbSystemResponse.builder();
+                                                        .UpdateDbSystemResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dbSystem(response.getItem());
 

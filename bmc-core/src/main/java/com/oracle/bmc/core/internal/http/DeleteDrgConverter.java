@@ -73,7 +73,8 @@ public class DeleteDrgConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.DeleteDrgResponse.Builder builder =
-                                        com.oracle.bmc.core.responses.DeleteDrgResponse.builder();
+                                        com.oracle.bmc.core.responses.DeleteDrgResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

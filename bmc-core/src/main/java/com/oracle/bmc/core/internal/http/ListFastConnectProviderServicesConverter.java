@@ -101,7 +101,9 @@ public class ListFastConnectProviderServicesConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ListFastConnectProviderServicesResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

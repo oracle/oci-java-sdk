@@ -76,7 +76,9 @@ public class GetMaintenanceRunConverter {
                                 com.oracle.bmc.database.responses.GetMaintenanceRunResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .GetMaintenanceRunResponse.builder();
+                                                        .GetMaintenanceRunResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.maintenanceRun(response.getItem());
 

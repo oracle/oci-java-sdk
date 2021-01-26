@@ -96,7 +96,9 @@ public class ChangeDetectorRecipeCompartmentConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ChangeDetectorRecipeCompartmentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

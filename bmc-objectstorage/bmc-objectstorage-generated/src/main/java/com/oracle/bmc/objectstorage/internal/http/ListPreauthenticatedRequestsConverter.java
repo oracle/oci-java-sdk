@@ -120,7 +120,9 @@ public class ListPreauthenticatedRequestsConverter {
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
                                                         .ListPreauthenticatedRequestsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

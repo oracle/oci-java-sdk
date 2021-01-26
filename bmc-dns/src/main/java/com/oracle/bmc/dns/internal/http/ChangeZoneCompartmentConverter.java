@@ -98,7 +98,9 @@ public class ChangeZoneCompartmentConverter {
                                 com.oracle.bmc.dns.responses.ChangeZoneCompartmentResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dns.responses
-                                                        .ChangeZoneCompartmentResponse.builder();
+                                                        .ChangeZoneCompartmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

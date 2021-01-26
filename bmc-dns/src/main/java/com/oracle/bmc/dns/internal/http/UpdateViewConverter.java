@@ -90,7 +90,8 @@ public class UpdateViewConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.dns.responses.UpdateViewResponse.Builder builder =
-                                        com.oracle.bmc.dns.responses.UpdateViewResponse.builder();
+                                        com.oracle.bmc.dns.responses.UpdateViewResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.view(response.getItem());
 

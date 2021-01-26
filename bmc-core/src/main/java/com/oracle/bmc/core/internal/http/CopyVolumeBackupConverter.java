@@ -88,7 +88,9 @@ public class CopyVolumeBackupConverter {
                                 com.oracle.bmc.core.responses.CopyVolumeBackupResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .CopyVolumeBackupResponse.builder();
+                                                        .CopyVolumeBackupResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.volumeBackup(response.getItem());
 

@@ -101,7 +101,8 @@ public class ListEventsConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.audit.responses.ListEventsResponse.Builder builder =
-                                        com.oracle.bmc.audit.responses.ListEventsResponse.builder();
+                                        com.oracle.bmc.audit.responses.ListEventsResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

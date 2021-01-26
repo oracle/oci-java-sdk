@@ -90,7 +90,8 @@ public class GetTsigKeyConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.dns.responses.GetTsigKeyResponse.Builder builder =
-                                        com.oracle.bmc.dns.responses.GetTsigKeyResponse.builder();
+                                        com.oracle.bmc.dns.responses.GetTsigKeyResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 if (response.getStatusCode() != 304) {
                                     builder.tsigKey(response.getItem());

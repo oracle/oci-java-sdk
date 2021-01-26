@@ -102,7 +102,9 @@ public class GetResolverEndpointConverter {
                                 com.oracle.bmc.dns.responses.GetResolverEndpointResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dns.responses
-                                                        .GetResolverEndpointResponse.builder();
+                                                        .GetResolverEndpointResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 if (response.getStatusCode() != 304) {
                                     builder.resolverEndpoint(response.getItem());

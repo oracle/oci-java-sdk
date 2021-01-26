@@ -157,7 +157,9 @@ public class ListAnnouncementsConverter {
                                                 .ListAnnouncementsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.announcementsservice.responses
-                                                        .ListAnnouncementsResponse.builder();
+                                                        .ListAnnouncementsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.announcementsCollection(response.getItem());
 

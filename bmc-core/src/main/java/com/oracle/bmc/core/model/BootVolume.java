@@ -422,11 +422,6 @@ public class BootVolume {
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
     Long sizeInMBs;
 
-    /**
-     * The boot volume source, either an existing boot volume in the same availability domain or a boot volume backup.
-     * If null, this means that the boot volume was created from an image.
-     *
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
     BootVolumeSourceDetails sourceDetails;
 

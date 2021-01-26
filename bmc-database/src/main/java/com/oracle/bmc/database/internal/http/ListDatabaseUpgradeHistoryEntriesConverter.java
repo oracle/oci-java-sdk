@@ -139,7 +139,9 @@ public class ListDatabaseUpgradeHistoryEntriesConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ListDatabaseUpgradeHistoryEntriesResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

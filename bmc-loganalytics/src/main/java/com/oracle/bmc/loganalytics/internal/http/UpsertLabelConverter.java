@@ -94,7 +94,9 @@ public class UpsertLabelConverter {
                                 com.oracle.bmc.loganalytics.responses.UpsertLabelResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .UpsertLabelResponse.builder();
+                                                        .UpsertLabelResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsLabel(response.getItem());
 

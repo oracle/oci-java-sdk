@@ -101,7 +101,9 @@ public class ListCategoriesConverter {
                                 com.oracle.bmc.marketplace.responses.ListCategoriesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.marketplace.responses
-                                                        .ListCategoriesResponse.builder();
+                                                        .ListCategoriesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

@@ -79,8 +79,8 @@ public class GetDbSystemConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.mysql.responses.GetDbSystemResponse.Builder builder =
-                                        com.oracle.bmc.mysql.responses.GetDbSystemResponse
-                                                .builder();
+                                        com.oracle.bmc.mysql.responses.GetDbSystemResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 if (response.getStatusCode() != 304) {
                                     builder.dbSystem(response.getItem());

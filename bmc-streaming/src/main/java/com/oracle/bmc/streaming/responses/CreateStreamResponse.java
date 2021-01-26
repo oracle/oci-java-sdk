@@ -10,6 +10,10 @@ import com.oracle.bmc.streaming.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class CreateStreamResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -34,6 +38,7 @@ public class CreateStreamResponse {
          * @return this builder instance
          */
         public Builder copy(CreateStreamResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             stream(o.getStream());

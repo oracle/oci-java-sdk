@@ -94,8 +94,8 @@ public class DeleteTableConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.nosql.responses.DeleteTableResponse.Builder builder =
-                                        com.oracle.bmc.nosql.responses.DeleteTableResponse
-                                                .builder();
+                                        com.oracle.bmc.nosql.responses.DeleteTableResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

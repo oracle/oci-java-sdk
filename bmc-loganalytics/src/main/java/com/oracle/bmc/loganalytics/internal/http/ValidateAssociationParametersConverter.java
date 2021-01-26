@@ -130,7 +130,9 @@ public class ValidateAssociationParametersConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ValidateAssociationParametersResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsAssociationParameterCollection(
                                         response.getItem());

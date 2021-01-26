@@ -73,7 +73,9 @@ public class CreatePrivateIpConverter {
                                 com.oracle.bmc.core.responses.CreatePrivateIpResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .CreatePrivateIpResponse.builder();
+                                                        .CreatePrivateIpResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.privateIp(response.getItem());
 

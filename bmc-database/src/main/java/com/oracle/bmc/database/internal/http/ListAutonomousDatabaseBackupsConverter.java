@@ -147,7 +147,9 @@ public class ListAutonomousDatabaseBackupsConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ListAutonomousDatabaseBackupsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

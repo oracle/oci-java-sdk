@@ -136,7 +136,8 @@ public class ListTopicsConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.ons.responses.ListTopicsResponse.Builder builder =
-                                        com.oracle.bmc.ons.responses.ListTopicsResponse.builder();
+                                        com.oracle.bmc.ons.responses.ListTopicsResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

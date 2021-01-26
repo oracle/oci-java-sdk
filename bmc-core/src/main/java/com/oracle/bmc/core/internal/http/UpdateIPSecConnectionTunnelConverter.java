@@ -95,7 +95,9 @@ public class UpdateIPSecConnectionTunnelConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .UpdateIPSecConnectionTunnelResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.iPSecConnectionTunnel(response.getItem());
 

@@ -87,7 +87,9 @@ public class UpdateCaptchasConverter {
                                 com.oracle.bmc.waas.responses.UpdateCaptchasResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses.UpdateCaptchasResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

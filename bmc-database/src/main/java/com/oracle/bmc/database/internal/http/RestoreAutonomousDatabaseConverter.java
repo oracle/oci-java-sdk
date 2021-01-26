@@ -90,8 +90,9 @@ public class RestoreAutonomousDatabaseConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .RestoreAutonomousDatabaseResponse
-                                                        .builder();
+                                                        .RestoreAutonomousDatabaseResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.autonomousDatabase(response.getItem());
 

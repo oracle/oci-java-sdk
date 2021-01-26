@@ -89,7 +89,9 @@ public class DeleteDatabaseConverter {
                                 com.oracle.bmc.database.responses.DeleteDatabaseResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .DeleteDatabaseResponse.builder();
+                                                        .DeleteDatabaseResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

@@ -111,7 +111,9 @@ public class ListAutonomousDatabaseDataguardAssociationsConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ListAutonomousDatabaseDataguardAssociationsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

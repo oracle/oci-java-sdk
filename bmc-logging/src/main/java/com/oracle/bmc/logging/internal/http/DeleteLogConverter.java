@@ -83,8 +83,8 @@ public class DeleteLogConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.logging.responses.DeleteLogResponse.Builder builder =
-                                        com.oracle.bmc.logging.responses.DeleteLogResponse
-                                                .builder();
+                                        com.oracle.bmc.logging.responses.DeleteLogResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

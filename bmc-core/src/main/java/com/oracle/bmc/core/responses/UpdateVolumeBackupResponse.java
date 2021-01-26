@@ -10,6 +10,10 @@ import com.oracle.bmc.core.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class UpdateVolumeBackupResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control. See `if-match`.
@@ -28,6 +32,7 @@ public class UpdateVolumeBackupResponse {
          * @return this builder instance
          */
         public Builder copy(UpdateVolumeBackupResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             volumeBackup(o.getVolumeBackup());
 

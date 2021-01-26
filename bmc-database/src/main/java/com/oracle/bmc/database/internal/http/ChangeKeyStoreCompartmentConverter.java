@@ -94,8 +94,9 @@ public class ChangeKeyStoreCompartmentConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .ChangeKeyStoreCompartmentResponse
-                                                        .builder();
+                                                        .ChangeKeyStoreCompartmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

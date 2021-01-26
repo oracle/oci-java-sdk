@@ -74,7 +74,8 @@ public class DeleteImageConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.DeleteImageResponse.Builder builder =
-                                        com.oracle.bmc.core.responses.DeleteImageResponse.builder();
+                                        com.oracle.bmc.core.responses.DeleteImageResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

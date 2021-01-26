@@ -85,7 +85,9 @@ public class CreateAcceptedAgreementConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.marketplace.responses
-                                                        .CreateAcceptedAgreementResponse.builder();
+                                                        .CreateAcceptedAgreementResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.acceptedAgreement(response.getItem());
 

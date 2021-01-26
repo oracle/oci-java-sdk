@@ -79,7 +79,9 @@ public class GetSourceConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.applicationmigration.responses
-                                                        .GetSourceResponse.builder();
+                                                        .GetSourceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.source(response.getItem());
 

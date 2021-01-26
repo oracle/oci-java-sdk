@@ -81,7 +81,9 @@ public class DeployPluginsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.managementagent.responses
-                                                        .DeployPluginsResponse.builder();
+                                                        .DeployPluginsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

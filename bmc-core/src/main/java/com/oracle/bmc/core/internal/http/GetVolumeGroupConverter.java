@@ -75,7 +75,9 @@ public class GetVolumeGroupConverter {
                                 com.oracle.bmc.core.responses.GetVolumeGroupResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses.GetVolumeGroupResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.volumeGroup(response.getItem());
 

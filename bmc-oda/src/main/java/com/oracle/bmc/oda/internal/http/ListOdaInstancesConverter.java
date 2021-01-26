@@ -132,7 +132,9 @@ public class ListOdaInstancesConverter {
                                 com.oracle.bmc.oda.responses.ListOdaInstancesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.oda.responses
-                                                        .ListOdaInstancesResponse.builder();
+                                                        .ListOdaInstancesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

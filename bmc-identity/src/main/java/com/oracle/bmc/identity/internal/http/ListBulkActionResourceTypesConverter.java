@@ -102,7 +102,9 @@ public class ListBulkActionResourceTypesConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .ListBulkActionResourceTypesResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.bulkActionResourceTypeCollection(response.getItem());
 

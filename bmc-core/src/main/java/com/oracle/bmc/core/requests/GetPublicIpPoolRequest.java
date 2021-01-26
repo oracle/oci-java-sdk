@@ -14,7 +14,7 @@ import com.oracle.bmc.core.model.*;
 public class GetPublicIpPoolRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the Public Ip Pool object.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the public IP pool.
      */
     private String publicIpPoolId;
 

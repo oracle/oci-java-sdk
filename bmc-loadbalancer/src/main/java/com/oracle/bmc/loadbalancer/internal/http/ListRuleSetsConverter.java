@@ -82,7 +82,9 @@ public class ListRuleSetsConverter {
                                 com.oracle.bmc.loadbalancer.responses.ListRuleSetsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .ListRuleSetsResponse.builder();
+                                                        .ListRuleSetsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

@@ -82,7 +82,9 @@ public class ConnectLocalPeeringGatewaysConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ConnectLocalPeeringGatewaysResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

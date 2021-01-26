@@ -263,7 +263,9 @@ public class ListEntitiesConverter {
                                 com.oracle.bmc.datacatalog.responses.ListEntitiesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .ListEntitiesResponse.builder();
+                                                        .ListEntitiesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.entityCollection(response.getItem());
 

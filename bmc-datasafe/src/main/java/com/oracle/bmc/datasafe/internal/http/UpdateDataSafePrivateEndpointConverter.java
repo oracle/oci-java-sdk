@@ -91,7 +91,9 @@ public class UpdateDataSafePrivateEndpointConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .UpdateDataSafePrivateEndpointResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

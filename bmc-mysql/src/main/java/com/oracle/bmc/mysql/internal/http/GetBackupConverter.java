@@ -78,7 +78,8 @@ public class GetBackupConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.mysql.responses.GetBackupResponse.Builder builder =
-                                        com.oracle.bmc.mysql.responses.GetBackupResponse.builder();
+                                        com.oracle.bmc.mysql.responses.GetBackupResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 if (response.getStatusCode() != 304) {
                                     builder.backup(response.getItem());

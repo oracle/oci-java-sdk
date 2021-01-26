@@ -91,7 +91,9 @@ public class UpdateAutonomousDatabaseConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .UpdateAutonomousDatabaseResponse.builder();
+                                                        .UpdateAutonomousDatabaseResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.autonomousDatabase(response.getItem());
 

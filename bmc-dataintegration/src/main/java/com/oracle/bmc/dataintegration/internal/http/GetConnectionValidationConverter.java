@@ -91,7 +91,9 @@ public class GetConnectionValidationConverter {
                                                 .GetConnectionValidationResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .GetConnectionValidationResponse.builder();
+                                                        .GetConnectionValidationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.connectionValidation(response.getItem());
 

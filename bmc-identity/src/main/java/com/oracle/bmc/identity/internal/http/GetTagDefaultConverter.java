@@ -76,7 +76,9 @@ public class GetTagDefaultConverter {
                                 com.oracle.bmc.identity.responses.GetTagDefaultResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .GetTagDefaultResponse.builder();
+                                                        .GetTagDefaultResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.tagDefault(response.getItem());
 

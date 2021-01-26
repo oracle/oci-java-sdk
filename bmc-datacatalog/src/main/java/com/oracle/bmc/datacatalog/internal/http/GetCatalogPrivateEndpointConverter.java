@@ -86,8 +86,9 @@ public class GetCatalogPrivateEndpointConverter {
                                                 .GetCatalogPrivateEndpointResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .GetCatalogPrivateEndpointResponse
-                                                        .builder();
+                                                        .GetCatalogPrivateEndpointResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.catalogPrivateEndpoint(response.getItem());
 

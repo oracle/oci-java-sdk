@@ -5,7 +5,8 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A ByoipRange, is an IP address prefix that the user owns and wishes to import into OCI.
+ * Oracle offers the ability to Bring Your Own IP (BYOIP), importing public IP addresses that you currently own to Oracle Cloud Infrastructure. A `ByoipRange` resource is a record of the imported address block (a BYOIP CIDR block) and also some associated metadata.
+ * The process used to [Bring Your Own IP](https://docs.cloud.oracle.com/Content/Network/Concepts/BYOIP.htm) is explained in the documentation.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -195,13 +196,13 @@ public class ByoipRange {
     }
 
     /**
-     * The address range the user is on-boarding.
+     * The public IPv4 CIDR block being imported from on-premises to the Oracle cloud.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
     String cidrBlock;
 
     /**
-     * The OCID of the compartment containing the Byoip Range.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -236,12 +237,12 @@ public class ByoipRange {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The Oracle ID (OCID) of the Byoip Range.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
     /**
-     * The Byoip Range's current substate.
+     * The `ByoipRange` resource's current status.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleDetails {
@@ -252,6 +253,8 @@ public class ByoipRange {
         Failed("FAILED"),
         Deleting("DELETING"),
         Deleted("DELETED"),
+        Advertising("ADVERTISING"),
+        Withdrawing("WITHDRAWING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -292,12 +295,12 @@ public class ByoipRange {
         }
     };
     /**
-     * The Byoip Range's current substate.
+     * The `ByoipRange` resource's current status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     LifecycleDetails lifecycleDetails;
     /**
-     * The Byoip Range's current state.
+     * The `ByoipRange` resource's current state.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -346,13 +349,13 @@ public class ByoipRange {
         }
     };
     /**
-     * The Byoip Range's current state.
+     * The `ByoipRange` resource's current state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
 
     /**
-     * The date and time the Byoip Range was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the `ByoipRange` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *
@@ -361,7 +364,7 @@ public class ByoipRange {
     java.util.Date timeCreated;
 
     /**
-     * The date and time the Byoip Range was validated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the `ByoipRange` resource was validated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *
@@ -370,7 +373,7 @@ public class ByoipRange {
     java.util.Date timeValidated;
 
     /**
-     * The date and time the Byoip Range was advertised, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the `ByoipRange` resource was advertised to the internet by BGP, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *
@@ -379,7 +382,7 @@ public class ByoipRange {
     java.util.Date timeAdvertised;
 
     /**
-     * The date and time the Byoip Range was withdrawn, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the `ByoipRange` resource was withdrawn from advertisement by BGP to the internet, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *
@@ -388,7 +391,7 @@ public class ByoipRange {
     java.util.Date timeWithdrawn;
 
     /**
-     * This is an internally generated ASCII string that the user will then use as part of the validation process. Specifically, they will need to add the token string generated by the service to their Internet Registry record.
+     * The validation token is an internally-generated ASCII string used in the validation process. See [Importing a CIDR block](https://docs.cloud.oracle.com/Content/Network/Concepts/BYOIP.htm#import_cidr) for details.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("validationToken")
     String validationToken;

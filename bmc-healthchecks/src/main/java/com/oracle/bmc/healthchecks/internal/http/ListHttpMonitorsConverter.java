@@ -133,7 +133,9 @@ public class ListHttpMonitorsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.healthchecks.responses
-                                                        .ListHttpMonitorsResponse.builder();
+                                                        .ListHttpMonitorsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

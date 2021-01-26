@@ -10,6 +10,10 @@ import com.oracle.bmc.events.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class CreateRuleResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control. Add this value to the `if-match` parameter
@@ -37,6 +41,7 @@ public class CreateRuleResponse {
          * @return this builder instance
          */
         public Builder copy(CreateRuleResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             rule(o.getRule());

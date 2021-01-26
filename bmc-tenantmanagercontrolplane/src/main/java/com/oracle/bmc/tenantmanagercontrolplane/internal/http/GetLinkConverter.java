@@ -80,7 +80,9 @@ public class GetLinkConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.tenantmanagercontrolplane.responses
-                                                        .GetLinkResponse.builder();
+                                                        .GetLinkResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.link(response.getItem());
 

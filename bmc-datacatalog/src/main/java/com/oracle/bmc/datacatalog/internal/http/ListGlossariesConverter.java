@@ -178,7 +178,9 @@ public class ListGlossariesConverter {
                                 com.oracle.bmc.datacatalog.responses.ListGlossariesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .ListGlossariesResponse.builder();
+                                                        .ListGlossariesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.glossaryCollection(response.getItem());
 

@@ -86,7 +86,9 @@ public class GetApiValidationsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.apigateway.responses
-                                                        .GetApiValidationsResponse.builder();
+                                                        .GetApiValidationsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.apiValidations(response.getItem());
 

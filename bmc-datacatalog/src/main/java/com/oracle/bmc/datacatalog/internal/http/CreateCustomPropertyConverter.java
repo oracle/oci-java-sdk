@@ -95,7 +95,9 @@ public class CreateCustomPropertyConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .CreateCustomPropertyResponse.builder();
+                                                        .CreateCustomPropertyResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.customProperty(response.getItem());
 

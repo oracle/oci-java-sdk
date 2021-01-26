@@ -78,7 +78,9 @@ public class GetFunctionConverter {
                                 com.oracle.bmc.functions.responses.GetFunctionResponse.Builder
                                         builder =
                                                 com.oracle.bmc.functions.responses
-                                                        .GetFunctionResponse.builder();
+                                                        .GetFunctionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.function(response.getItem());
 

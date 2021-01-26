@@ -85,7 +85,9 @@ public class CreateDataFlowConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .CreateDataFlowResponse.builder();
+                                                        .CreateDataFlowResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dataFlow(response.getItem());
 

@@ -88,7 +88,9 @@ public class PrepareStatementConverter {
                                 com.oracle.bmc.nosql.responses.PrepareStatementResponse.Builder
                                         builder =
                                                 com.oracle.bmc.nosql.responses
-                                                        .PrepareStatementResponse.builder();
+                                                        .PrepareStatementResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.preparedStatement(response.getItem());
 

@@ -178,7 +178,9 @@ public class ListTypesConverter {
                                 com.oracle.bmc.datacatalog.responses.ListTypesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .ListTypesResponse.builder();
+                                                        .ListTypesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.typeCollection(response.getItem());
 

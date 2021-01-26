@@ -77,7 +77,9 @@ public class DeleteDynamicGroupConverter {
                                 com.oracle.bmc.identity.responses.DeleteDynamicGroupResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .DeleteDynamicGroupResponse.builder();
+                                                        .DeleteDynamicGroupResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -86,7 +86,9 @@ public class UpdateInstancePoolConverter {
                                 com.oracle.bmc.core.responses.UpdateInstancePoolResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .UpdateInstancePoolResponse.builder();
+                                                        .UpdateInstancePoolResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.instancePool(response.getItem());
 

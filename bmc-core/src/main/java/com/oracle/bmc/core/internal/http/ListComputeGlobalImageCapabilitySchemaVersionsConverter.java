@@ -135,7 +135,9 @@ public class ListComputeGlobalImageCapabilitySchemaVersionsConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ListComputeGlobalImageCapabilitySchemaVersionsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

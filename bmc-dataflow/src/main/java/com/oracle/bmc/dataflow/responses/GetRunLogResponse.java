@@ -10,6 +10,10 @@ import com.oracle.bmc.dataflow.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetRunLogResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle assigned identifier for the request.
@@ -60,6 +64,7 @@ public class GetRunLogResponse {
          * @return this builder instance
          */
         public Builder copy(GetRunLogResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             contentLength(o.getContentLength());

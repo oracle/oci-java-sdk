@@ -132,7 +132,9 @@ public class ListAlertRulesConverter {
                                 com.oracle.bmc.budget.responses.ListAlertRulesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.budget.responses
-                                                        .ListAlertRulesResponse.builder();
+                                                        .ListAlertRulesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

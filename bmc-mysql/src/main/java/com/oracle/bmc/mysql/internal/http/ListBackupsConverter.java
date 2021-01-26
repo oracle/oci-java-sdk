@@ -153,8 +153,8 @@ public class ListBackupsConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.mysql.responses.ListBackupsResponse.Builder builder =
-                                        com.oracle.bmc.mysql.responses.ListBackupsResponse
-                                                .builder();
+                                        com.oracle.bmc.mysql.responses.ListBackupsResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

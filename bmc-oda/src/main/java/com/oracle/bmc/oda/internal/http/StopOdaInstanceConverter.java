@@ -86,7 +86,9 @@ public class StopOdaInstanceConverter {
                                 com.oracle.bmc.oda.responses.StopOdaInstanceResponse.Builder
                                         builder =
                                                 com.oracle.bmc.oda.responses.StopOdaInstanceResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

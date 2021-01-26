@@ -84,7 +84,9 @@ public class GetHttpMonitorConverter {
                                 com.oracle.bmc.healthchecks.responses.GetHttpMonitorResponse.Builder
                                         builder =
                                                 com.oracle.bmc.healthchecks.responses
-                                                        .GetHttpMonitorResponse.builder();
+                                                        .GetHttpMonitorResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 if (response.getStatusCode() != 304) {
                                     builder.httpMonitor(response.getItem());

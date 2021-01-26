@@ -152,7 +152,9 @@ public class ListLogAnalyticsEntityTypesConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ListLogAnalyticsEntityTypesResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsEntityTypeCollection(response.getItem());
 

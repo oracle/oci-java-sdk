@@ -89,7 +89,9 @@ public class GetConfigWorkRequestConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .GetConfigWorkRequestResponse.builder();
+                                                        .GetConfigWorkRequestResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsConfigWorkRequest(response.getItem());
 

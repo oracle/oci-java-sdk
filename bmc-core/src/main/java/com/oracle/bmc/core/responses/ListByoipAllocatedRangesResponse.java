@@ -10,6 +10,10 @@ import com.oracle.bmc.core.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListByoipAllocatedRangesResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For list pagination. When this header appears in the response, additional pages
@@ -37,6 +41,7 @@ public class ListByoipAllocatedRangesResponse {
          * @return this builder instance
          */
         public Builder copy(ListByoipAllocatedRangesResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             byoipAllocatedRangeCollection(o.getByoipAllocatedRangeCollection());

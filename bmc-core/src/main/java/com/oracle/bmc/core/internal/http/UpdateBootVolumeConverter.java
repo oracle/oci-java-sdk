@@ -82,7 +82,9 @@ public class UpdateBootVolumeConverter {
                                 com.oracle.bmc.core.responses.UpdateBootVolumeResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .UpdateBootVolumeResponse.builder();
+                                                        .UpdateBootVolumeResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.bootVolume(response.getItem());
 

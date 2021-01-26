@@ -83,7 +83,9 @@ public class GetHostnameConverter {
                                 com.oracle.bmc.loadbalancer.responses.GetHostnameResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .GetHostnameResponse.builder();
+                                                        .GetHostnameResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.hostname(response.getItem());
 

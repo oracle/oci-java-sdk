@@ -105,7 +105,9 @@ public class ListBackupsConverter {
                                 com.oracle.bmc.database.responses.ListBackupsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .ListBackupsResponse.builder();
+                                                        .ListBackupsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

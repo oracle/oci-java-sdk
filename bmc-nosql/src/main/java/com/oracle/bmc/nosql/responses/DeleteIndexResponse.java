@@ -10,6 +10,10 @@ import com.oracle.bmc.nosql.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class DeleteIndexResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the asynchronous
@@ -33,6 +37,7 @@ public class DeleteIndexResponse {
          * @return this builder instance
          */
         public Builder copy(DeleteIndexResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
 

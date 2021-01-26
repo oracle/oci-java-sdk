@@ -140,7 +140,9 @@ public class ListSuppressionsConverter {
                                 com.oracle.bmc.email.responses.ListSuppressionsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.email.responses
-                                                        .ListSuppressionsResponse.builder();
+                                                        .ListSuppressionsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

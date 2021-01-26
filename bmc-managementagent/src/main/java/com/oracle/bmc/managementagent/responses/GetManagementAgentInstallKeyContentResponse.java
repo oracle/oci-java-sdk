@@ -10,6 +10,10 @@ import com.oracle.bmc.managementagent.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetManagementAgentInstallKeyContentResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -39,6 +43,7 @@ public class GetManagementAgentInstallKeyContentResponse {
          * @return this builder instance
          */
         public Builder copy(GetManagementAgentInstallKeyContentResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             contentLength(o.getContentLength());
             contentType(o.getContentType());

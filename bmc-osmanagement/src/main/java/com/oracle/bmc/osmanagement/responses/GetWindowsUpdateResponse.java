@@ -10,6 +10,10 @@ import com.oracle.bmc.osmanagement.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetWindowsUpdateResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If
@@ -30,6 +34,7 @@ public class GetWindowsUpdateResponse {
          * @return this builder instance
          */
         public Builder copy(GetWindowsUpdateResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             windowsUpdate(o.getWindowsUpdate());
 

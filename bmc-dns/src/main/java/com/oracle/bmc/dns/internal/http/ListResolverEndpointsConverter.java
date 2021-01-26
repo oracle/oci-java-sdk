@@ -140,7 +140,9 @@ public class ListResolverEndpointsConverter {
                                 com.oracle.bmc.dns.responses.ListResolverEndpointsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dns.responses
-                                                        .ListResolverEndpointsResponse.builder();
+                                                        .ListResolverEndpointsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

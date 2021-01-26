@@ -77,7 +77,9 @@ public class CreateOceInstanceConverter {
                                 com.oracle.bmc.oce.responses.CreateOceInstanceResponse.Builder
                                         builder =
                                                 com.oracle.bmc.oce.responses
-                                                        .CreateOceInstanceResponse.builder();
+                                                        .CreateOceInstanceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

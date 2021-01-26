@@ -112,7 +112,9 @@ public class ObjectStatsConverter {
                                 com.oracle.bmc.datacatalog.responses.ObjectStatsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .ObjectStatsResponse.builder();
+                                                        .ObjectStatsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.value(response.getItem());
 

@@ -88,7 +88,9 @@ public class UpdateGlossaryConverter {
                                 com.oracle.bmc.datacatalog.responses.UpdateGlossaryResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .UpdateGlossaryResponse.builder();
+                                                        .UpdateGlossaryResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.glossary(response.getItem());
 

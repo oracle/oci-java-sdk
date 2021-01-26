@@ -109,7 +109,9 @@ public class ListInstanceConsoleConnectionsConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ListInstanceConsoleConnectionsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

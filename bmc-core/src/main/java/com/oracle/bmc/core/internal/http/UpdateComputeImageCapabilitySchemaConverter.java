@@ -92,7 +92,9 @@ public class UpdateComputeImageCapabilitySchemaConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .UpdateComputeImageCapabilitySchemaResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.computeImageCapabilitySchema(response.getItem());
 

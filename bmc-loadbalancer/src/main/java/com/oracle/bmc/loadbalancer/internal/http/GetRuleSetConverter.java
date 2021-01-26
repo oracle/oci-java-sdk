@@ -83,7 +83,9 @@ public class GetRuleSetConverter {
                                 com.oracle.bmc.loadbalancer.responses.GetRuleSetResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .GetRuleSetResponse.builder();
+                                                        .GetRuleSetResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.ruleSet(response.getItem());
 

@@ -10,6 +10,10 @@ import com.oracle.bmc.logging.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class UpdateLogSavedSearchResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -35,6 +39,7 @@ public class UpdateLogSavedSearchResponse {
          * @return this builder instance
          */
         public Builder copy(UpdateLogSavedSearchResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             logSavedSearch(o.getLogSavedSearch());

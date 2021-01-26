@@ -88,7 +88,9 @@ public class GetCountStatisticConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .GetCountStatisticResponse.builder();
+                                                        .GetCountStatisticResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.countStatistic(response.getItem());
 

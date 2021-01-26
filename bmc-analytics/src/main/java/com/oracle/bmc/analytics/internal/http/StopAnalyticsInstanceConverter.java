@@ -90,7 +90,9 @@ public class StopAnalyticsInstanceConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.analytics.responses
-                                                        .StopAnalyticsInstanceResponse.builder();
+                                                        .StopAnalyticsInstanceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

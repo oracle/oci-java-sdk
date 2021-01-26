@@ -92,7 +92,9 @@ public class DeleteManagementAgentInstallKeyConverter {
                                         builder =
                                                 com.oracle.bmc.managementagent.responses
                                                         .DeleteManagementAgentInstallKeyResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

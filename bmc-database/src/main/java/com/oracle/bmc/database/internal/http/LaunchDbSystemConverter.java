@@ -73,7 +73,9 @@ public class LaunchDbSystemConverter {
                                 com.oracle.bmc.database.responses.LaunchDbSystemResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .LaunchDbSystemResponse.builder();
+                                                        .LaunchDbSystemResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dbSystem(response.getItem());
 

@@ -227,7 +227,7 @@ public class CreatePublicIpDetails {
     String privateIpId;
 
     /**
-     * OCID of the pool object created by the current tenancy
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the public IP pool.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")
     String publicIpPoolId;

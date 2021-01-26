@@ -10,6 +10,10 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class UpdateLookupDataResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
@@ -29,6 +33,7 @@ public class UpdateLookupDataResponse {
          * @return this builder instance
          */
         public Builder copy(UpdateLookupDataResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
 

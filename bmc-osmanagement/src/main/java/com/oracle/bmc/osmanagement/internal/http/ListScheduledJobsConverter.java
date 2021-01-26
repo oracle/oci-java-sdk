@@ -165,7 +165,9 @@ public class ListScheduledJobsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
-                                                        .ListScheduledJobsResponse.builder();
+                                                        .ListScheduledJobsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

@@ -124,7 +124,9 @@ public class ListSnapshotsConverter {
                                 com.oracle.bmc.filestorage.responses.ListSnapshotsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.filestorage.responses
-                                                        .ListSnapshotsResponse.builder();
+                                                        .ListSnapshotsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

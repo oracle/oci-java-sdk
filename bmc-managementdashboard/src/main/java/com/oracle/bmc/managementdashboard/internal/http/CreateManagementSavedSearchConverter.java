@@ -90,7 +90,9 @@ public class CreateManagementSavedSearchConverter {
                                         builder =
                                                 com.oracle.bmc.managementdashboard.responses
                                                         .CreateManagementSavedSearchResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.managementSavedSearch(response.getItem());
 

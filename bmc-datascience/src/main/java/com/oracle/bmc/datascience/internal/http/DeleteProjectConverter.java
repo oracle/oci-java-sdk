@@ -81,7 +81,9 @@ public class DeleteProjectConverter {
                                 com.oracle.bmc.datascience.responses.DeleteProjectResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datascience.responses
-                                                        .DeleteProjectResponse.builder();
+                                                        .DeleteProjectResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

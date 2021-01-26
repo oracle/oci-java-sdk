@@ -83,7 +83,9 @@ public class CreateOrResetUIPasswordConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .CreateOrResetUIPasswordResponse.builder();
+                                                        .CreateOrResetUIPasswordResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.uIPassword(response.getItem());
 

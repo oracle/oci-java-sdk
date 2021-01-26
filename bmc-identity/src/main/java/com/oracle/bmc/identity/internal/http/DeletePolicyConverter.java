@@ -77,7 +77,9 @@ public class DeletePolicyConverter {
                                 com.oracle.bmc.identity.responses.DeletePolicyResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .DeletePolicyResponse.builder();
+                                                        .DeletePolicyResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

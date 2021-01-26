@@ -81,7 +81,9 @@ public class DeleteRoverNodeConverter {
                                 com.oracle.bmc.rover.responses.DeleteRoverNodeResponse.Builder
                                         builder =
                                                 com.oracle.bmc.rover.responses
-                                                        .DeleteRoverNodeResponse.builder();
+                                                        .DeleteRoverNodeResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

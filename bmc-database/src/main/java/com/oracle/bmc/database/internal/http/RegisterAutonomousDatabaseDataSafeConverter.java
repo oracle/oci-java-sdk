@@ -87,7 +87,9 @@ public class RegisterAutonomousDatabaseDataSafeConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .RegisterAutonomousDatabaseDataSafeResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

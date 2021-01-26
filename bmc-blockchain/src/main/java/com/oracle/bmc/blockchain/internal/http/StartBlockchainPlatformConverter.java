@@ -92,7 +92,9 @@ public class StartBlockchainPlatformConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.blockchain.responses
-                                                        .StartBlockchainPlatformResponse.builder();
+                                                        .StartBlockchainPlatformResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

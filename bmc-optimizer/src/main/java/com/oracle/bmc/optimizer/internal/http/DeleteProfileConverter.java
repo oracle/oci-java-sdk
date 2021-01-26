@@ -81,7 +81,9 @@ public class DeleteProfileConverter {
                                 com.oracle.bmc.optimizer.responses.DeleteProfileResponse.Builder
                                         builder =
                                                 com.oracle.bmc.optimizer.responses
-                                                        .DeleteProfileResponse.builder();
+                                                        .DeleteProfileResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

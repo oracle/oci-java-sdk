@@ -115,7 +115,9 @@ public class HeadObjectConverter {
                                 com.oracle.bmc.objectstorage.responses.HeadObjectResponse.Builder
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
-                                                        .HeadObjectResponse.builder();
+                                                        .HeadObjectResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 if (response.getStatusCode() != 304) {
                                     builder.isNotModified(false);

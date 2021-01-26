@@ -83,7 +83,8 @@ public class GetStatusConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.cims.responses.GetStatusResponse.Builder builder =
-                                        com.oracle.bmc.cims.responses.GetStatusResponse.builder();
+                                        com.oracle.bmc.cims.responses.GetStatusResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.status(response.getItem());
 

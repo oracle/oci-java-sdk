@@ -93,7 +93,9 @@ public class CreateDataAssetTagConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .CreateDataAssetTagResponse.builder();
+                                                        .CreateDataAssetTagResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dataAssetTag(response.getItem());
 

@@ -10,6 +10,10 @@ import com.oracle.bmc.waas.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListEdgeSubnetsResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response, then a partial list might have been returned. Include this value as the `page` parameter for the subsequent `GET` request to get the next batch of items.
@@ -32,6 +36,7 @@ public class ListEdgeSubnetsResponse {
          * @return this builder instance
          */
         public Builder copy(ListEdgeSubnetsResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             items(o.getItems());

@@ -77,7 +77,9 @@ public class CreateClusterNetworkConverter {
                                 com.oracle.bmc.core.responses.CreateClusterNetworkResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .CreateClusterNetworkResponse.builder();
+                                                        .CreateClusterNetworkResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.clusterNetwork(response.getItem());
 

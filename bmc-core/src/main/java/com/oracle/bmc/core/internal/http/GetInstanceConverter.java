@@ -71,7 +71,8 @@ public class GetInstanceConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.GetInstanceResponse.Builder builder =
-                                        com.oracle.bmc.core.responses.GetInstanceResponse.builder();
+                                        com.oracle.bmc.core.responses.GetInstanceResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.instance(response.getItem());
 

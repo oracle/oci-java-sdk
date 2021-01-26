@@ -91,7 +91,9 @@ public class UpdateDedicatedVmHostConverter {
                                 com.oracle.bmc.core.responses.UpdateDedicatedVmHostResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .UpdateDedicatedVmHostResponse.builder();
+                                                        .UpdateDedicatedVmHostResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dedicatedVmHost(response.getItem());
 

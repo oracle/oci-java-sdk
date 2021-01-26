@@ -10,6 +10,10 @@ import com.oracle.bmc.oda.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class UpdateOdaInstanceResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For use in a PUT or DELETE `if-match` query parameter for optimistic concurrency control.
@@ -34,6 +38,7 @@ public class UpdateOdaInstanceResponse {
          * @return this builder instance
          */
         public Builder copy(UpdateOdaInstanceResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             odaInstance(o.getOdaInstance());

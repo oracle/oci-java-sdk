@@ -171,6 +171,24 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("arePrimaryWhitelistedIpsUsed")
+        private Boolean arePrimaryWhitelistedIpsUsed;
+
+        public Builder arePrimaryWhitelistedIpsUsed(Boolean arePrimaryWhitelistedIpsUsed) {
+            this.arePrimaryWhitelistedIpsUsed = arePrimaryWhitelistedIpsUsed;
+            this.__explicitlySet__.add("arePrimaryWhitelistedIpsUsed");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("standbyWhitelistedIps")
+        private java.util.List<String> standbyWhitelistedIps;
+
+        public Builder standbyWhitelistedIps(java.util.List<String> standbyWhitelistedIps) {
+            this.standbyWhitelistedIps = standbyWhitelistedIps;
+            this.__explicitlySet__.add("standbyWhitelistedIps");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isDataGuardEnabled")
         private Boolean isDataGuardEnabled;
 
@@ -283,6 +301,8 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                             autonomousContainerDatabaseId,
                             isAccessControlEnabled,
                             whitelistedIps,
+                            arePrimaryWhitelistedIpsUsed,
+                            standbyWhitelistedIps,
                             isDataGuardEnabled,
                             subnetId,
                             nsgIds,
@@ -316,6 +336,8 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                             .autonomousContainerDatabaseId(o.getAutonomousContainerDatabaseId())
                             .isAccessControlEnabled(o.getIsAccessControlEnabled())
                             .whitelistedIps(o.getWhitelistedIps())
+                            .arePrimaryWhitelistedIpsUsed(o.getArePrimaryWhitelistedIpsUsed())
+                            .standbyWhitelistedIps(o.getStandbyWhitelistedIps())
                             .isDataGuardEnabled(o.getIsDataGuardEnabled())
                             .subnetId(o.getSubnetId())
                             .nsgIds(o.getNsgIds())
@@ -356,6 +378,8 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
             String autonomousContainerDatabaseId,
             Boolean isAccessControlEnabled,
             java.util.List<String> whitelistedIps,
+            Boolean arePrimaryWhitelistedIpsUsed,
+            java.util.List<String> standbyWhitelistedIps,
             Boolean isDataGuardEnabled,
             String subnetId,
             java.util.List<String> nsgIds,
@@ -382,6 +406,8 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                 autonomousContainerDatabaseId,
                 isAccessControlEnabled,
                 whitelistedIps,
+                arePrimaryWhitelistedIpsUsed,
+                standbyWhitelistedIps,
                 isDataGuardEnabled,
                 subnetId,
                 nsgIds,

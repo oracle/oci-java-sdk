@@ -121,7 +121,9 @@ public class ListAppCatalogListingsConverter {
                                 com.oracle.bmc.core.responses.ListAppCatalogListingsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ListAppCatalogListingsResponse.builder();
+                                                        .ListAppCatalogListingsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

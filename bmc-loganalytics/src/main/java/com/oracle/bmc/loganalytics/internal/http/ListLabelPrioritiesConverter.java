@@ -99,7 +99,9 @@ public class ListLabelPrioritiesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .ListLabelPrioritiesResponse.builder();
+                                                        .ListLabelPrioritiesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.labelPriorityCollection(response.getItem());
 

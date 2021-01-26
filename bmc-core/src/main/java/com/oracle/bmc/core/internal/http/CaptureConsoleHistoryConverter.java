@@ -77,7 +77,9 @@ public class CaptureConsoleHistoryConverter {
                                 com.oracle.bmc.core.responses.CaptureConsoleHistoryResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .CaptureConsoleHistoryResponse.builder();
+                                                        .CaptureConsoleHistoryResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.consoleHistory(response.getItem());
 

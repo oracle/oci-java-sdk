@@ -84,7 +84,9 @@ public class ParseQueryConverter {
                                 com.oracle.bmc.loganalytics.responses.ParseQueryResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .ParseQueryResponse.builder();
+                                                        .ParseQueryResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.parseQueryOutput(response.getItem());
 

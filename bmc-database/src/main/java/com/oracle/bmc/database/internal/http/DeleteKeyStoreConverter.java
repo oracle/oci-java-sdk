@@ -81,7 +81,9 @@ public class DeleteKeyStoreConverter {
                                 com.oracle.bmc.database.responses.DeleteKeyStoreResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .DeleteKeyStoreResponse.builder();
+                                                        .DeleteKeyStoreResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

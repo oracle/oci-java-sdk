@@ -77,7 +77,9 @@ public class CreateRoverNodeConverter {
                                 com.oracle.bmc.rover.responses.CreateRoverNodeResponse.Builder
                                         builder =
                                                 com.oracle.bmc.rover.responses
-                                                        .CreateRoverNodeResponse.builder();
+                                                        .CreateRoverNodeResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.roverNode(response.getItem());
 

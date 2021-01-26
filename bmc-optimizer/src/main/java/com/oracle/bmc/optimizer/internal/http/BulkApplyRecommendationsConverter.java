@@ -90,7 +90,9 @@ public class BulkApplyRecommendationsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.optimizer.responses
-                                                        .BulkApplyRecommendationsResponse.builder();
+                                                        .BulkApplyRecommendationsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

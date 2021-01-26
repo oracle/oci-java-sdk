@@ -103,7 +103,9 @@ public class IngestSqlPlanLinesConverter {
                                 com.oracle.bmc.opsi.responses.IngestSqlPlanLinesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.opsi.responses
-                                                        .IngestSqlPlanLinesResponse.builder();
+                                                        .IngestSqlPlanLinesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.ingestSqlPlanLinesResponseDetails(response.getItem());
 

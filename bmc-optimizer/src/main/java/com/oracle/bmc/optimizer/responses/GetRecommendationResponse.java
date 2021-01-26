@@ -10,6 +10,10 @@ import com.oracle.bmc.optimizer.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetRecommendationResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control. See `if-match`.
@@ -35,6 +39,7 @@ public class GetRecommendationResponse {
          * @return this builder instance
          */
         public Builder copy(GetRecommendationResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             recommendation(o.getRecommendation());

@@ -10,6 +10,10 @@ import com.oracle.bmc.dts.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetTransferApplianceEntitlementResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      *
@@ -27,6 +31,7 @@ public class GetTransferApplianceEntitlementResponse {
          * @return this builder instance
          */
         public Builder copy(GetTransferApplianceEntitlementResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             transferApplianceEntitlement(o.getTransferApplianceEntitlement());
 

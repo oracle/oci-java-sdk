@@ -91,7 +91,9 @@ public class GetImageShapeCompatibilityEntryConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetImageShapeCompatibilityEntryResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.imageShapeCompatibilityEntry(response.getItem());
 

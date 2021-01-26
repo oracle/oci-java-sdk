@@ -83,7 +83,9 @@ public class GetUploadConverter {
                                 com.oracle.bmc.loganalytics.responses.GetUploadResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .GetUploadResponse.builder();
+                                                        .GetUploadResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.upload(response.getItem());
 

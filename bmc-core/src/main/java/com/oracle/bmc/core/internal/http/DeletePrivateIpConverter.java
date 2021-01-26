@@ -77,7 +77,9 @@ public class DeletePrivateIpConverter {
                                 com.oracle.bmc.core.responses.DeletePrivateIpResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .DeletePrivateIpResponse.builder();
+                                                        .DeletePrivateIpResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

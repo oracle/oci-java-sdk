@@ -93,7 +93,9 @@ public class CreateReplicationPolicyConverter {
                                                 .CreateReplicationPolicyResponse.Builder
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
-                                                        .CreateReplicationPolicyResponse.builder();
+                                                        .CreateReplicationPolicyResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.replicationPolicy(response.getItem());
 

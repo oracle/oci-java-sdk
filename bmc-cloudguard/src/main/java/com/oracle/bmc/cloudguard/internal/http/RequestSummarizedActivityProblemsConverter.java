@@ -133,7 +133,9 @@ public class RequestSummarizedActivityProblemsConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .RequestSummarizedActivityProblemsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.activityProblemAggregationCollection(response.getItem());
 

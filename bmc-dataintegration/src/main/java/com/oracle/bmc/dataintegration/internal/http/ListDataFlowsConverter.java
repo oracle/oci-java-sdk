@@ -148,7 +148,9 @@ public class ListDataFlowsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .ListDataFlowsResponse.builder();
+                                                        .ListDataFlowsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dataFlowSummaryCollection(response.getItem());
 

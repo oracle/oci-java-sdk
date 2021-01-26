@@ -84,7 +84,9 @@ public class ActivateModelConverter {
                                 com.oracle.bmc.datascience.responses.ActivateModelResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datascience.responses
-                                                        .ActivateModelResponse.builder();
+                                                        .ActivateModelResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.model(response.getItem());
 

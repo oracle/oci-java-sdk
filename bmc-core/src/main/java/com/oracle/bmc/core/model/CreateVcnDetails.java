@@ -151,8 +151,7 @@ public class CreateVcnDetails {
     }
 
     /**
-     * Deprecated. Instead use 'cidrBlocks'. It is an error to set both cidrBlock and
-     * cidrBlocks.
+     * **Deprecated.** Do *not* set this value. Use `cidrBlocks` instead.
      * Example: `10.0.0.0/16`
      *
      **/
@@ -160,13 +159,12 @@ public class CreateVcnDetails {
     String cidrBlock;
 
     /**
-     * List of IPv4 CIDR blocks associated with the VCN. The CIDRs must maintain the following
-     * rules -
+     * The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
+     * - The CIDR blocks must be valid.
+     * - They must not overlap with each other or with the on-premises network CIDR block.
+     * - The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN.
      * <p>
-     * a. The list of CIDRs provided are valid
-     * b. There is no overlap between different CIDRs
-     * c. The number of CIDRs should not exceed the max limit of CIDRs per VCN
-     * d. It is an error to set both cidrBlock and cidrBlocks.
+     **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlocks")

@@ -10,6 +10,10 @@ import com.oracle.bmc.healthchecks.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class CreateHttpMonitorResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to
@@ -40,6 +44,7 @@ public class CreateHttpMonitorResponse {
          * @return this builder instance
          */
         public Builder copy(CreateHttpMonitorResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             location(o.getLocation());
             etag(o.getEtag());

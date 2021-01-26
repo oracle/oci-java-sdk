@@ -110,7 +110,9 @@ public class ListWorkRequestsConverter {
                                                 .ListWorkRequestsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.tenantmanagercontrolplane.responses
-                                                        .ListWorkRequestsResponse.builder();
+                                                        .ListWorkRequestsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.workRequestCollection(response.getItem());
 

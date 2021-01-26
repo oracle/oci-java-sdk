@@ -88,7 +88,9 @@ public class UpdateAlertRuleConverter {
                                 com.oracle.bmc.budget.responses.UpdateAlertRuleResponse.Builder
                                         builder =
                                                 com.oracle.bmc.budget.responses
-                                                        .UpdateAlertRuleResponse.builder();
+                                                        .UpdateAlertRuleResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.alertRule(response.getItem());
 

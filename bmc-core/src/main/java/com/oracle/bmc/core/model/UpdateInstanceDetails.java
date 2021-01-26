@@ -216,10 +216,6 @@ public class UpdateInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
 
-    /**
-     * Instance agent configuration options to choose for updating the instance
-     *
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentConfig")
     UpdateInstanceAgentConfigDetails agentConfig;
 
@@ -303,17 +299,9 @@ public class UpdateInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     String faultDomain;
 
-    /**
-     * Options for tuning the compatibility and performance of VM shapes.
-     *
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("launchOptions")
     UpdateLaunchOptions launchOptions;
 
-    /**
-     * Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
-     *
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityConfig")
     UpdateInstanceAvailabilityConfigDetails availabilityConfig;
 

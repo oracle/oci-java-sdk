@@ -85,7 +85,9 @@ public class CancelWorkRequestConverter {
                                                 .CancelWorkRequestResponse.Builder
                                         builder =
                                                 com.oracle.bmc.applicationmigration.responses
-                                                        .CancelWorkRequestResponse.builder();
+                                                        .CancelWorkRequestResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -82,7 +82,8 @@ public class GetTableConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.nosql.responses.GetTableResponse.Builder builder =
-                                        com.oracle.bmc.nosql.responses.GetTableResponse.builder();
+                                        com.oracle.bmc.nosql.responses.GetTableResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.table(response.getItem());
 

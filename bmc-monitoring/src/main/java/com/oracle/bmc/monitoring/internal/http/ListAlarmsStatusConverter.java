@@ -132,7 +132,9 @@ public class ListAlarmsStatusConverter {
                                 com.oracle.bmc.monitoring.responses.ListAlarmsStatusResponse.Builder
                                         builder =
                                                 com.oracle.bmc.monitoring.responses
-                                                        .ListAlarmsStatusResponse.builder();
+                                                        .ListAlarmsStatusResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

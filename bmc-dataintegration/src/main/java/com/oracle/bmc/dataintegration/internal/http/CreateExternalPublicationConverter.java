@@ -98,8 +98,9 @@ public class CreateExternalPublicationConverter {
                                                 .CreateExternalPublicationResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .CreateExternalPublicationResponse
-                                                        .builder();
+                                                        .CreateExternalPublicationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.externalPublication(response.getItem());
 

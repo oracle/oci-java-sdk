@@ -94,7 +94,9 @@ public class UpsertParserConverter {
                                 com.oracle.bmc.loganalytics.responses.UpsertParserResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .UpsertParserResponse.builder();
+                                                        .UpsertParserResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsParser(response.getItem());
 

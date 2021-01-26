@@ -188,7 +188,9 @@ public class ListSteeringPoliciesConverter {
                                 com.oracle.bmc.dns.responses.ListSteeringPoliciesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dns.responses
-                                                        .ListSteeringPoliciesResponse.builder();
+                                                        .ListSteeringPoliciesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

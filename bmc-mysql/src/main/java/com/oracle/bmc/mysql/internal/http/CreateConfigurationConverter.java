@@ -80,7 +80,9 @@ public class CreateConfigurationConverter {
                                 com.oracle.bmc.mysql.responses.CreateConfigurationResponse.Builder
                                         builder =
                                                 com.oracle.bmc.mysql.responses
-                                                        .CreateConfigurationResponse.builder();
+                                                        .CreateConfigurationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.configuration(response.getItem());
 

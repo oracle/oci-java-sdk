@@ -81,7 +81,9 @@ public class DeleteGatewayConverter {
                                 com.oracle.bmc.apigateway.responses.DeleteGatewayResponse.Builder
                                         builder =
                                                 com.oracle.bmc.apigateway.responses
-                                                        .DeleteGatewayResponse.builder();
+                                                        .DeleteGatewayResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

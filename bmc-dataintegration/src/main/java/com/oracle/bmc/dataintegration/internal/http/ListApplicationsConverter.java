@@ -142,7 +142,9 @@ public class ListApplicationsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .ListApplicationsResponse.builder();
+                                                        .ListApplicationsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.applicationSummaryCollection(response.getItem());
 

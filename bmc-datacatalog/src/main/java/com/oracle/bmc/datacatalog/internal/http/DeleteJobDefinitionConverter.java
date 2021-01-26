@@ -88,7 +88,9 @@ public class DeleteJobDefinitionConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .DeleteJobDefinitionResponse.builder();
+                                                        .DeleteJobDefinitionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

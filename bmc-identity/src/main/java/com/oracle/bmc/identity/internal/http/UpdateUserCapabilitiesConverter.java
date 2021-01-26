@@ -83,7 +83,9 @@ public class UpdateUserCapabilitiesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .UpdateUserCapabilitiesResponse.builder();
+                                                        .UpdateUserCapabilitiesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.user(response.getItem());
 

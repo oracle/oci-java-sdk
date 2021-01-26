@@ -146,7 +146,9 @@ public class ListDataSafePrivateEndpointsConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .ListDataSafePrivateEndpointsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

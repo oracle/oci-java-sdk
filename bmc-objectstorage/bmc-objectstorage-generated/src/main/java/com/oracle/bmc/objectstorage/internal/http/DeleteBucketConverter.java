@@ -86,7 +86,9 @@ public class DeleteBucketConverter {
                                 com.oracle.bmc.objectstorage.responses.DeleteBucketResponse.Builder
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
-                                                        .DeleteBucketResponse.builder();
+                                                        .DeleteBucketResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcClientRequestIdHeader =

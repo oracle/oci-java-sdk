@@ -91,7 +91,9 @@ public class DeleteReplicationPolicyConverter {
                                                 .DeleteReplicationPolicyResponse.Builder
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
-                                                        .DeleteReplicationPolicyResponse.builder();
+                                                        .DeleteReplicationPolicyResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

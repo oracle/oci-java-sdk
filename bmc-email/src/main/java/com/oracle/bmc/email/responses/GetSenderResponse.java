@@ -10,6 +10,10 @@ import com.oracle.bmc.email.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetSenderResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need
@@ -36,6 +40,7 @@ public class GetSenderResponse {
          * @return this builder instance
          */
         public Builder copy(GetSenderResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             sender(o.getSender());

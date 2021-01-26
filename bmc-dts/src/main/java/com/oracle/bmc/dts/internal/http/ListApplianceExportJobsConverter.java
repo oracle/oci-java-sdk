@@ -116,7 +116,9 @@ public class ListApplianceExportJobsConverter {
                                 com.oracle.bmc.dts.responses.ListApplianceExportJobsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dts.responses
-                                                        .ListApplianceExportJobsResponse.builder();
+                                                        .ListApplianceExportJobsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

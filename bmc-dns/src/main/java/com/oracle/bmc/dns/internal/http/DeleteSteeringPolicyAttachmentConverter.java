@@ -100,7 +100,9 @@ public class DeleteSteeringPolicyAttachmentConverter {
                                         builder =
                                                 com.oracle.bmc.dns.responses
                                                         .DeleteSteeringPolicyAttachmentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

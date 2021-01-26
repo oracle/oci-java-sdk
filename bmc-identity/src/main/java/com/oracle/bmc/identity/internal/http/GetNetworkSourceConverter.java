@@ -76,7 +76,9 @@ public class GetNetworkSourceConverter {
                                 com.oracle.bmc.identity.responses.GetNetworkSourceResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .GetNetworkSourceResponse.builder();
+                                                        .GetNetworkSourceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.networkSources(response.getItem());
 

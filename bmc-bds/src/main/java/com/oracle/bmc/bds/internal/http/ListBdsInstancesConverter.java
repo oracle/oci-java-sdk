@@ -132,7 +132,9 @@ public class ListBdsInstancesConverter {
                                 com.oracle.bmc.bds.responses.ListBdsInstancesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.bds.responses
-                                                        .ListBdsInstancesResponse.builder();
+                                                        .ListBdsInstancesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

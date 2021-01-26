@@ -79,8 +79,8 @@ public class UpdateTableConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.nosql.responses.UpdateTableResponse.Builder builder =
-                                        com.oracle.bmc.nosql.responses.UpdateTableResponse
-                                                .builder();
+                                        com.oracle.bmc.nosql.responses.UpdateTableResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

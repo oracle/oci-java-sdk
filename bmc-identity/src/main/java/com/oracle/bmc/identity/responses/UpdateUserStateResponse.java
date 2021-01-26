@@ -10,6 +10,10 @@ import com.oracle.bmc.identity.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class UpdateUserStateResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -34,6 +38,7 @@ public class UpdateUserStateResponse {
          * @return this builder instance
          */
         public Builder copy(UpdateUserStateResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             user(o.getUser());

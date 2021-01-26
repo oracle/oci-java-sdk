@@ -82,7 +82,9 @@ public class UpdateInstanceConverter {
                                 com.oracle.bmc.core.responses.UpdateInstanceResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses.UpdateInstanceResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.instance(response.getItem());
 

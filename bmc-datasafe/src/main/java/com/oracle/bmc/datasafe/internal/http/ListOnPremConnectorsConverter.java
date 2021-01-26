@@ -141,7 +141,9 @@ public class ListOnPremConnectorsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
-                                                        .ListOnPremConnectorsResponse.builder();
+                                                        .ListOnPremConnectorsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

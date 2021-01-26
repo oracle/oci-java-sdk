@@ -96,7 +96,9 @@ public class GetAgreementConverter {
                                 com.oracle.bmc.marketplace.responses.GetAgreementResponse.Builder
                                         builder =
                                                 com.oracle.bmc.marketplace.responses
-                                                        .GetAgreementResponse.builder();
+                                                        .GetAgreementResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.agreement(response.getItem());
 

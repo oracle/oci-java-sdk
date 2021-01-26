@@ -10,6 +10,10 @@ import com.oracle.bmc.monitoring.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class PostMetricDataResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -29,6 +33,7 @@ public class PostMetricDataResponse {
          * @return this builder instance
          */
         public Builder copy(PostMetricDataResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             postMetricDataResponseDetails(o.getPostMetricDataResponseDetails());
 

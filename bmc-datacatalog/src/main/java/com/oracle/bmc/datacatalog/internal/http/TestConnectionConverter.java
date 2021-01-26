@@ -96,7 +96,9 @@ public class TestConnectionConverter {
                                 com.oracle.bmc.datacatalog.responses.TestConnectionResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .TestConnectionResponse.builder();
+                                                        .TestConnectionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.validateConnectionResult(response.getItem());
 

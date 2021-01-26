@@ -128,8 +128,9 @@ public class ListInstancePoolInstancesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ListInstancePoolInstancesResponse
-                                                        .builder();
+                                                        .ListInstancePoolInstancesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

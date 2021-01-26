@@ -84,7 +84,9 @@ public class CreateSoftwareSourceConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
-                                                        .CreateSoftwareSourceResponse.builder();
+                                                        .CreateSoftwareSourceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.softwareSource(response.getItem());
 

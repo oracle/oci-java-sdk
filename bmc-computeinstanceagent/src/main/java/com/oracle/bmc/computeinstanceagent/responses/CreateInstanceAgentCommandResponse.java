@@ -10,6 +10,10 @@ import com.oracle.bmc.computeinstanceagent.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class CreateInstanceAgentCommandResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control. See `if-match`.
@@ -35,6 +39,7 @@ public class CreateInstanceAgentCommandResponse {
          * @return this builder instance
          */
         public Builder copy(CreateInstanceAgentCommandResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             instanceAgentCommand(o.getInstanceAgentCommand());

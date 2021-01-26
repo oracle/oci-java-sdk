@@ -84,7 +84,9 @@ public class CreatePeerConverter {
                                 com.oracle.bmc.blockchain.responses.CreatePeerResponse.Builder
                                         builder =
                                                 com.oracle.bmc.blockchain.responses
-                                                        .CreatePeerResponse.builder();
+                                                        .CreatePeerResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

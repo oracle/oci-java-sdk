@@ -103,7 +103,9 @@ public class CreateAttributeTagConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .CreateAttributeTagResponse.builder();
+                                                        .CreateAttributeTagResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.attributeTag(response.getItem());
 

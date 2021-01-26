@@ -125,7 +125,9 @@ public class ListGroupsConverter {
                                 com.oracle.bmc.identity.responses.ListGroupsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses.ListGroupsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

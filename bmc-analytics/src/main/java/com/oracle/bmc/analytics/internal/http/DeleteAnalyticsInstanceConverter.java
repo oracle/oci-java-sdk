@@ -89,7 +89,9 @@ public class DeleteAnalyticsInstanceConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.analytics.responses
-                                                        .DeleteAnalyticsInstanceResponse.builder();
+                                                        .DeleteAnalyticsInstanceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

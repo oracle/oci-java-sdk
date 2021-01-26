@@ -91,7 +91,9 @@ public class UpdateManagedListConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
-                                                        .UpdateManagedListResponse.builder();
+                                                        .UpdateManagedListResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.managedList(response.getItem());
 

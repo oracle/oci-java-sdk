@@ -129,7 +129,9 @@ public class ListRoverClustersConverter {
                                 com.oracle.bmc.rover.responses.ListRoverClustersResponse.Builder
                                         builder =
                                                 com.oracle.bmc.rover.responses
-                                                        .ListRoverClustersResponse.builder();
+                                                        .ListRoverClustersResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.roverClusterCollection(response.getItem());
 

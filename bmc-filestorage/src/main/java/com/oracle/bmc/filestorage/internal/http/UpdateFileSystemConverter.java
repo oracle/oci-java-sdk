@@ -87,7 +87,9 @@ public class UpdateFileSystemConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.filestorage.responses
-                                                        .UpdateFileSystemResponse.builder();
+                                                        .UpdateFileSystemResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.fileSystem(response.getItem());
 

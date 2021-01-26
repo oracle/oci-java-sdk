@@ -82,7 +82,9 @@ public class GetTransferPackageConverter {
                                 com.oracle.bmc.dts.responses.GetTransferPackageResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dts.responses
-                                                        .GetTransferPackageResponse.builder();
+                                                        .GetTransferPackageResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.transferPackage(response.getItem());
 

@@ -87,7 +87,9 @@ public class UpdateHttpRedirectConverter {
                                 com.oracle.bmc.waas.responses.UpdateHttpRedirectResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .UpdateHttpRedirectResponse.builder();
+                                                        .UpdateHttpRedirectResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

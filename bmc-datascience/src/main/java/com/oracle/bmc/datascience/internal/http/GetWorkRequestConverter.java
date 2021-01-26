@@ -80,7 +80,9 @@ public class GetWorkRequestConverter {
                                 com.oracle.bmc.datascience.responses.GetWorkRequestResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datascience.responses
-                                                        .GetWorkRequestResponse.builder();
+                                                        .GetWorkRequestResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.workRequest(response.getItem());
 

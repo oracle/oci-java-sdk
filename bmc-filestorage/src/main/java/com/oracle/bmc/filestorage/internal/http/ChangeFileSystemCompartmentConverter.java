@@ -92,7 +92,9 @@ public class ChangeFileSystemCompartmentConverter {
                                         builder =
                                                 com.oracle.bmc.filestorage.responses
                                                         .ChangeFileSystemCompartmentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

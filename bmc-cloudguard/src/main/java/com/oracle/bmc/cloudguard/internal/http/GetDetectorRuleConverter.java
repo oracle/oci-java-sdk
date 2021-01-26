@@ -85,7 +85,9 @@ public class GetDetectorRuleConverter {
                                 com.oracle.bmc.cloudguard.responses.GetDetectorRuleResponse.Builder
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
-                                                        .GetDetectorRuleResponse.builder();
+                                                        .GetDetectorRuleResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.detectorRule(response.getItem());
 

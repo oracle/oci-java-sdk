@@ -10,6 +10,10 @@ import com.oracle.bmc.dns.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class UpdateSteeringPolicyAttachmentResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to
@@ -38,6 +42,7 @@ public class UpdateSteeringPolicyAttachmentResponse {
          * @return this builder instance
          */
         public Builder copy(UpdateSteeringPolicyAttachmentResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             eTag(o.getETag());
             steeringPolicyAttachment(o.getSteeringPolicyAttachment());

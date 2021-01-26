@@ -119,7 +119,9 @@ public class ListAutonomousDbVersionsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .ListAutonomousDbVersionsResponse.builder();
+                                                        .ListAutonomousDbVersionsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

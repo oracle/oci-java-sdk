@@ -10,6 +10,10 @@ import com.oracle.bmc.oce.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListOceInstancesResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If
@@ -38,6 +42,7 @@ public class ListOceInstancesResponse {
          * @return this builder instance
          */
         public Builder copy(ListOceInstancesResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             items(o.getItems());

@@ -76,7 +76,9 @@ public class CreateBudgetConverter {
                                 com.oracle.bmc.budget.responses.CreateBudgetResponse.Builder
                                         builder =
                                                 com.oracle.bmc.budget.responses.CreateBudgetResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.budget(response.getItem());
 

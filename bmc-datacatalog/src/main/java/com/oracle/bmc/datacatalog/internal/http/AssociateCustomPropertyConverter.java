@@ -99,7 +99,9 @@ public class AssociateCustomPropertyConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .AssociateCustomPropertyResponse.builder();
+                                                        .AssociateCustomPropertyResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.type(response.getItem());
 

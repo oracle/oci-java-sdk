@@ -10,6 +10,10 @@ import com.oracle.bmc.oce.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetOceInstanceResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control. See `if-match`.
@@ -35,6 +39,7 @@ public class GetOceInstanceResponse {
          * @return this builder instance
          */
         public Builder copy(GetOceInstanceResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             oceInstance(o.getOceInstance());

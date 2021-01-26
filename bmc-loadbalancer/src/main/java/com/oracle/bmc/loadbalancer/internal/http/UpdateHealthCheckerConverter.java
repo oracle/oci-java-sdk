@@ -90,7 +90,9 @@ public class UpdateHealthCheckerConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .UpdateHealthCheckerResponse.builder();
+                                                        .UpdateHealthCheckerResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

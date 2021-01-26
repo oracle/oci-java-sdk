@@ -107,7 +107,9 @@ public class ReinstateAutonomousContainerDatabaseDataguardAssociationConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ReinstateAutonomousContainerDatabaseDataguardAssociationResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.autonomousContainerDatabaseDataguardAssociation(
                                         response.getItem());

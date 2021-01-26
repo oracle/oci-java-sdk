@@ -81,7 +81,9 @@ public class CreateGroupCursorConverter {
                                 com.oracle.bmc.streaming.responses.CreateGroupCursorResponse.Builder
                                         builder =
                                                 com.oracle.bmc.streaming.responses
-                                                        .CreateGroupCursorResponse.builder();
+                                                        .CreateGroupCursorResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.cursor(response.getItem());
 

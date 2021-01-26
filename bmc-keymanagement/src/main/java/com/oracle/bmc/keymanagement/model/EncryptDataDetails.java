@@ -62,12 +62,36 @@ public class EncryptDataDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("keyVersionId")
+        private String keyVersionId;
+
+        public Builder keyVersionId(String keyVersionId) {
+            this.keyVersionId = keyVersionId;
+            this.__explicitlySet__.add("keyVersionId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")
+        private EncryptionAlgorithm encryptionAlgorithm;
+
+        public Builder encryptionAlgorithm(EncryptionAlgorithm encryptionAlgorithm) {
+            this.encryptionAlgorithm = encryptionAlgorithm;
+            this.__explicitlySet__.add("encryptionAlgorithm");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EncryptDataDetails build() {
             EncryptDataDetails __instance__ =
-                    new EncryptDataDetails(associatedData, keyId, loggingContext, plaintext);
+                    new EncryptDataDetails(
+                            associatedData,
+                            keyId,
+                            loggingContext,
+                            plaintext,
+                            keyVersionId,
+                            encryptionAlgorithm);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -78,7 +102,9 @@ public class EncryptDataDetails {
                     associatedData(o.getAssociatedData())
                             .keyId(o.getKeyId())
                             .loggingContext(o.getLoggingContext())
-                            .plaintext(o.getPlaintext());
+                            .plaintext(o.getPlaintext())
+                            .keyVersionId(o.getKeyVersionId())
+                            .encryptionAlgorithm(o.getEncryptionAlgorithm());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -120,6 +146,59 @@ public class EncryptDataDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("plaintext")
     String plaintext;
+
+    /**
+     * The OCID of the keyVersion used to encrypt the ciphertext.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("keyVersionId")
+    String keyVersionId;
+    /**
+     * Encryption algorithm to be used while encrypting/decrypting data using a customer key
+     * AES_256_GCM is the supported value AES keys and uses GCM mode of operation
+     * RSA_OAEP_SHA_1 and RSA_OAEP_SHA_256 are supported for RSA keys and use OAEP padding.
+     *
+     **/
+    public enum EncryptionAlgorithm {
+        Aes256Gcm("AES_256_GCM"),
+        RsaOaepSha1("RSA_OAEP_SHA_1"),
+        RsaOaepSha256("RSA_OAEP_SHA_256"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, EncryptionAlgorithm> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (EncryptionAlgorithm v : EncryptionAlgorithm.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        EncryptionAlgorithm(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static EncryptionAlgorithm create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid EncryptionAlgorithm: " + key);
+        }
+    };
+    /**
+     * Encryption algorithm to be used while encrypting/decrypting data using a customer key
+     * AES_256_GCM is the supported value AES keys and uses GCM mode of operation
+     * RSA_OAEP_SHA_1 and RSA_OAEP_SHA_256 are supported for RSA keys and use OAEP padding.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")
+    EncryptionAlgorithm encryptionAlgorithm;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

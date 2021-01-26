@@ -79,7 +79,9 @@ public class GetVmClusterPatchConverter {
                                 com.oracle.bmc.database.responses.GetVmClusterPatchResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .GetVmClusterPatchResponse.builder();
+                                                        .GetVmClusterPatchResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.patch(response.getItem());
 

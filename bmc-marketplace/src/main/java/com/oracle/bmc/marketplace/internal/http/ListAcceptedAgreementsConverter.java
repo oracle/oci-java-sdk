@@ -152,7 +152,9 @@ public class ListAcceptedAgreementsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.marketplace.responses
-                                                        .ListAcceptedAgreementsResponse.builder();
+                                                        .ListAcceptedAgreementsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

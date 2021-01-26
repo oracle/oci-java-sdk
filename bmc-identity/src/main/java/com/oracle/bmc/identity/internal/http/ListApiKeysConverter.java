@@ -78,7 +78,9 @@ public class ListApiKeysConverter {
                                 com.oracle.bmc.identity.responses.ListApiKeysResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .ListApiKeysResponse.builder();
+                                                        .ListApiKeysResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

@@ -175,7 +175,9 @@ public class ListAutonomousContainerDatabasesConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ListAutonomousContainerDatabasesResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

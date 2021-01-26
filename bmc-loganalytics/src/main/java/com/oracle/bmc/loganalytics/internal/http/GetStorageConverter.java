@@ -79,7 +79,9 @@ public class GetStorageConverter {
                                 com.oracle.bmc.loganalytics.responses.GetStorageResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .GetStorageResponse.builder();
+                                                        .GetStorageResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.storage(response.getItem());
 

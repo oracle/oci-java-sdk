@@ -90,7 +90,9 @@ public class ImportDashboardConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.managementdashboard.responses
-                                                        .ImportDashboardResponse.builder();
+                                                        .ImportDashboardResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

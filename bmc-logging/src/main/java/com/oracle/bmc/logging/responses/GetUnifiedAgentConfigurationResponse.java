@@ -10,6 +10,10 @@ import com.oracle.bmc.logging.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetUnifiedAgentConfigurationResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -35,6 +39,7 @@ public class GetUnifiedAgentConfigurationResponse {
          * @return this builder instance
          */
         public Builder copy(GetUnifiedAgentConfigurationResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             unifiedAgentConfiguration(o.getUnifiedAgentConfiguration());

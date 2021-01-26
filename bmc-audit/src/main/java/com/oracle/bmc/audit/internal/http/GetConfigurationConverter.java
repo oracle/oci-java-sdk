@@ -77,7 +77,9 @@ public class GetConfigurationConverter {
                                 com.oracle.bmc.audit.responses.GetConfigurationResponse.Builder
                                         builder =
                                                 com.oracle.bmc.audit.responses
-                                                        .GetConfigurationResponse.builder();
+                                                        .GetConfigurationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.configuration(response.getItem());
 

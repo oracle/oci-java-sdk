@@ -82,7 +82,9 @@ public class CreateMfaTotpDeviceConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .CreateMfaTotpDeviceResponse.builder();
+                                                        .CreateMfaTotpDeviceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.mfaTotpDevice(response.getItem());
 

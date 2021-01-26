@@ -97,7 +97,9 @@ public class GetLogAnalyticsEntitiesSummaryConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .GetLogAnalyticsEntitiesSummaryResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsEntitySummaryReport(response.getItem());
 

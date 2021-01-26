@@ -134,7 +134,9 @@ public class UploadPartConverter {
                                 com.oracle.bmc.objectstorage.responses.UploadPartResponse.Builder
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
-                                                        .UploadPartResponse.builder();
+                                                        .UploadPartResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcClientRequestIdHeader =

@@ -80,7 +80,9 @@ public class CreateCursorConverter {
                                 com.oracle.bmc.streaming.responses.CreateCursorResponse.Builder
                                         builder =
                                                 com.oracle.bmc.streaming.responses
-                                                        .CreateCursorResponse.builder();
+                                                        .CreateCursorResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.cursor(response.getItem());
 

@@ -168,9 +168,6 @@ public class CreateImageDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
 
-    /**
-     * Details for creating an image through import
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageSourceDetails")
     ImageSourceDetails imageSourceDetails;
 

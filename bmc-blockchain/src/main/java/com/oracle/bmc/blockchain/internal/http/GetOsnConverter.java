@@ -80,8 +80,8 @@ public class GetOsnConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.blockchain.responses.GetOsnResponse.Builder builder =
-                                        com.oracle.bmc.blockchain.responses.GetOsnResponse
-                                                .builder();
+                                        com.oracle.bmc.blockchain.responses.GetOsnResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.osn(response.getItem());
 

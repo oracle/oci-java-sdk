@@ -5,8 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Contains the original CIDR that needs to be updated and the
- * new CIDR which will replace the original CIDR.
+ * Details for updating a CIDR block.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -74,14 +73,14 @@ public class ModifyVcnCidrDetails {
     }
 
     /**
-     * The CIDR IP address that needs to be updated.
+     * The CIDR IP address to update.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("originalCidrBlock")
     String originalCidrBlock;
 
     /**
-     * The new CIDR IP address which will replace the orginal one.
+     * The new CIDR IP address.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("newCidrBlock")

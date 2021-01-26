@@ -123,7 +123,9 @@ public class ListAutonomousDbPreviewVersionsConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ListAutonomousDbPreviewVersionsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

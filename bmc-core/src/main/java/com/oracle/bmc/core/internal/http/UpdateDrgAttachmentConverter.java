@@ -82,7 +82,9 @@ public class UpdateDrgAttachmentConverter {
                                 com.oracle.bmc.core.responses.UpdateDrgAttachmentResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .UpdateDrgAttachmentResponse.builder();
+                                                        .UpdateDrgAttachmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.drgAttachment(response.getItem());
 

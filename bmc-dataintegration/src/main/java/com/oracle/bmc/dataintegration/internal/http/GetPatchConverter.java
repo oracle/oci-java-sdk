@@ -88,7 +88,9 @@ public class GetPatchConverter {
                                 com.oracle.bmc.dataintegration.responses.GetPatchResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .GetPatchResponse.builder();
+                                                        .GetPatchResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.patch(response.getItem());
 

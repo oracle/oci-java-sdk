@@ -90,7 +90,9 @@ public class GetConfigurationSourceProviderConverter {
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
                                                         .GetConfigurationSourceProviderResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.configurationSourceProvider(response.getItem());
 

@@ -79,9 +79,6 @@ public class CpeDeviceShapeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
-    /**
-     * Basic information about this particular CPE device type.
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpeDeviceInfo")
     CpeDeviceInfo cpeDeviceInfo;
 

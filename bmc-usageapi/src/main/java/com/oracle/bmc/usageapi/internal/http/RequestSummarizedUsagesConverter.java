@@ -95,7 +95,9 @@ public class RequestSummarizedUsagesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.usageapi.responses
-                                                        .RequestSummarizedUsagesResponse.builder();
+                                                        .RequestSummarizedUsagesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.usageAggregation(response.getItem());
 

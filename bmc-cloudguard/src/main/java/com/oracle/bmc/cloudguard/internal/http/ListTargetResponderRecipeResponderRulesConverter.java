@@ -155,7 +155,9 @@ public class ListTargetResponderRecipeResponderRulesConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ListTargetResponderRecipeResponderRulesResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.targetResponderRecipeResponderRuleCollection(
                                         response.getItem());

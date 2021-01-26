@@ -90,7 +90,9 @@ public class ChangeSddcCompartmentConverter {
                                 com.oracle.bmc.ocvp.responses.ChangeSddcCompartmentResponse.Builder
                                         builder =
                                                 com.oracle.bmc.ocvp.responses
-                                                        .ChangeSddcCompartmentResponse.builder();
+                                                        .ChangeSddcCompartmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

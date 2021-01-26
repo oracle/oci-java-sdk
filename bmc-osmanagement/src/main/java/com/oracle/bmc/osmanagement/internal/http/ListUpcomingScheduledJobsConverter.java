@@ -170,8 +170,9 @@ public class ListUpcomingScheduledJobsConverter {
                                                 .ListUpcomingScheduledJobsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
-                                                        .ListUpcomingScheduledJobsResponse
-                                                        .builder();
+                                                        .ListUpcomingScheduledJobsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

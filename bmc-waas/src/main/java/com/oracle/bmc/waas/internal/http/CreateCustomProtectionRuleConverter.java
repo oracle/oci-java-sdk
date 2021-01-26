@@ -84,7 +84,9 @@ public class CreateCustomProtectionRuleConverter {
                                         builder =
                                                 com.oracle.bmc.waas.responses
                                                         .CreateCustomProtectionRuleResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.customProtectionRule(response.getItem());
 

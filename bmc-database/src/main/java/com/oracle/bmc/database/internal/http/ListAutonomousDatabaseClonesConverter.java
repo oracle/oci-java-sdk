@@ -153,7 +153,9 @@ public class ListAutonomousDatabaseClonesConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ListAutonomousDatabaseClonesResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

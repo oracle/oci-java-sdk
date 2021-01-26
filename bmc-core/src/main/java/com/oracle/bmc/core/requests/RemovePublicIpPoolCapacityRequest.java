@@ -15,12 +15,12 @@ public class RemovePublicIpPoolCapacityRequest
         extends com.oracle.bmc.requests.BmcRequest<RemovePublicIpPoolCapacityDetails> {
 
     /**
-     * The OCID of the Public Ip Pool object.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the public IP pool.
      */
     private String publicIpPoolId;
 
     /**
-     * The Cidr to be removed from the Public Ip Pool
+     * The CIDR block to remove from the IP pool.
      */
     private RemovePublicIpPoolCapacityDetails removePublicIpPoolCapacityDetails;
 

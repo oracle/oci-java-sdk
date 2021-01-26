@@ -313,11 +313,6 @@ public class LaunchInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
-    /**
-     * Details for the primary VNIC, which is automatically created and attached when
-     * the instance is launched.
-     *
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("createVnicDetails")
     CreateVnicDetails createVnicDetails;
 
@@ -439,21 +434,12 @@ public class LaunchInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ipxeScript")
     String ipxeScript;
 
-    /**
-     * Options for tuning the compatibility and performance of VM shapes. The values that you specify override any
-     * default values.
-     *
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("launchOptions")
     LaunchOptions launchOptions;
 
     @com.fasterxml.jackson.annotation.JsonProperty("instanceOptions")
     InstanceOptions instanceOptions;
 
-    /**
-     * Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
-     *
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityConfig")
     LaunchInstanceAvailabilityConfigDetails availabilityConfig;
 
@@ -527,11 +513,6 @@ public class LaunchInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("shapeConfig")
     LaunchInstanceShapeConfigDetails shapeConfig;
 
-    /**
-     * Details for creating an instance.
-     * Use this parameter to specify whether a boot volume or an image should be used to launch a new instance.
-     *
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
     InstanceSourceDetails sourceDetails;
 

@@ -88,7 +88,9 @@ public class UpdateDataAssetConverter {
                                 com.oracle.bmc.datacatalog.responses.UpdateDataAssetResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .UpdateDataAssetResponse.builder();
+                                                        .UpdateDataAssetResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dataAsset(response.getItem());
 

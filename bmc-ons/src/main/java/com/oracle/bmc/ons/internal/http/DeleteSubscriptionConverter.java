@@ -81,7 +81,9 @@ public class DeleteSubscriptionConverter {
                                 com.oracle.bmc.ons.responses.DeleteSubscriptionResponse.Builder
                                         builder =
                                                 com.oracle.bmc.ons.responses
-                                                        .DeleteSubscriptionResponse.builder();
+                                                        .DeleteSubscriptionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

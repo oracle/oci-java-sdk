@@ -118,7 +118,9 @@ public class ListPrivateIpsConverter {
                                 com.oracle.bmc.core.responses.ListPrivateIpsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses.ListPrivateIpsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

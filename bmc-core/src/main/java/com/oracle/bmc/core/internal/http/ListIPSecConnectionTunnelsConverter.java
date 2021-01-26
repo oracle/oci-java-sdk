@@ -99,7 +99,9 @@ public class ListIPSecConnectionTunnelsConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ListIPSecConnectionTunnelsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

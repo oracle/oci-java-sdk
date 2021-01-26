@@ -82,7 +82,9 @@ public class DeleteRuleSetConverter {
                                 com.oracle.bmc.loadbalancer.responses.DeleteRuleSetResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .DeleteRuleSetResponse.builder();
+                                                        .DeleteRuleSetResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

@@ -128,7 +128,9 @@ public class ListClusterNetworksConverter {
                                 com.oracle.bmc.core.responses.ListClusterNetworksResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ListClusterNetworksResponse.builder();
+                                                        .ListClusterNetworksResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

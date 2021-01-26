@@ -94,7 +94,9 @@ public class CreateFolderTagConverter {
                                 com.oracle.bmc.datacatalog.responses.CreateFolderTagResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .CreateFolderTagResponse.builder();
+                                                        .CreateFolderTagResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.folderTag(response.getItem());
 

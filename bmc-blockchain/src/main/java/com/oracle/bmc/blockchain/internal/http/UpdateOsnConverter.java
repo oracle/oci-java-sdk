@@ -92,7 +92,9 @@ public class UpdateOsnConverter {
                                 com.oracle.bmc.blockchain.responses.UpdateOsnResponse.Builder
                                         builder =
                                                 com.oracle.bmc.blockchain.responses
-                                                        .UpdateOsnResponse.builder();
+                                                        .UpdateOsnResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

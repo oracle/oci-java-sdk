@@ -119,7 +119,9 @@ public class ListProtectionRulesConverter {
                                 com.oracle.bmc.waas.responses.ListProtectionRulesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .ListProtectionRulesResponse.builder();
+                                                        .ListProtectionRulesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

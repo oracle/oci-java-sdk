@@ -74,7 +74,8 @@ public class GetSenderConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.email.responses.GetSenderResponse.Builder builder =
-                                        com.oracle.bmc.email.responses.GetSenderResponse.builder();
+                                        com.oracle.bmc.email.responses.GetSenderResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.sender(response.getItem());
 

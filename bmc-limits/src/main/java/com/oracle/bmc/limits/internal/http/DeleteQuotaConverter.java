@@ -81,7 +81,9 @@ public class DeleteQuotaConverter {
                                 com.oracle.bmc.limits.responses.DeleteQuotaResponse.Builder
                                         builder =
                                                 com.oracle.bmc.limits.responses.DeleteQuotaResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -156,7 +156,9 @@ public class ListExternalPublicationValidationsConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .ListExternalPublicationValidationsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.externalPublicationValidationSummaryCollection(
                                         response.getItem());

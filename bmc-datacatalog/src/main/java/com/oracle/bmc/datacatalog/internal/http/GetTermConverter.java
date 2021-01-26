@@ -95,7 +95,9 @@ public class GetTermConverter {
                                 com.oracle.bmc.datacatalog.responses.GetTermResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses.GetTermResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.term(response.getItem());
 

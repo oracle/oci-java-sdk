@@ -76,7 +76,9 @@ public class GetAppCatalogListingConverter {
                                 com.oracle.bmc.core.responses.GetAppCatalogListingResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .GetAppCatalogListingResponse.builder();
+                                                        .GetAppCatalogListingResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.appCatalogListing(response.getItem());
 

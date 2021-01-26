@@ -93,7 +93,9 @@ public class ListCpeDeviceShapesConverter {
                                 com.oracle.bmc.core.responses.ListCpeDeviceShapesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ListCpeDeviceShapesResponse.builder();
+                                                        .ListCpeDeviceShapesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

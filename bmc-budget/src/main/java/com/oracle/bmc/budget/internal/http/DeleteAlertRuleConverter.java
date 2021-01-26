@@ -86,7 +86,9 @@ public class DeleteAlertRuleConverter {
                                 com.oracle.bmc.budget.responses.DeleteAlertRuleResponse.Builder
                                         builder =
                                                 com.oracle.bmc.budget.responses
-                                                        .DeleteAlertRuleResponse.builder();
+                                                        .DeleteAlertRuleResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

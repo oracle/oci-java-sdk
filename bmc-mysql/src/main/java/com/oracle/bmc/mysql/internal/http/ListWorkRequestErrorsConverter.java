@@ -100,7 +100,9 @@ public class ListWorkRequestErrorsConverter {
                                 com.oracle.bmc.mysql.responses.ListWorkRequestErrorsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.mysql.responses
-                                                        .ListWorkRequestErrorsResponse.builder();
+                                                        .ListWorkRequestErrorsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

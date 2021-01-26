@@ -96,7 +96,9 @@ public class GetTransferApplianceCertificateAuthorityCertificateConverter {
                                         builder =
                                                 com.oracle.bmc.dts.responses
                                                         .GetTransferApplianceCertificateAuthorityCertificateResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.transferApplianceCertificate(response.getItem());
 

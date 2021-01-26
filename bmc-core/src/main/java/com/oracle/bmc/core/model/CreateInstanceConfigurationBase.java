@@ -83,12 +83,28 @@ public class CreateInstanceConfigurationBase {
      * such as the base image, shape, and metadata. You can also specify the associated resources for the
      * instance, such as block volume attachments and network configuration.
      * <p>
+     * When you create an instance configuration using an existing instance as a template, the instance
+     * configuration does not include any information from the source instance's boot volume, such as installed
+     * applications, binaries, and files on the instance. It also does not include the contents of
+     * any block volumes that are attached to the instance.
+     * <p>
+     * To create an instance configuration that includes the custom setup from an instance's boot volume, you
+     * must first create a custom image from the instance (see {@link #createImage(CreateImageRequest) createImage}).
+     * Then, use the custom image to launch a new instance
+     * (see {@link #launchInstance(LaunchInstanceRequest) launchInstance}). Finally, create the instance
+     * configuration based on the instance that you created from the custom image.
+     * <p>
+     * To include block volume contents with an instance configuration, first create a backup of the attached block volumes
+     * (see {@link #createVolumeBackup(CreateVolumeBackupRequest) createVolumeBackup}). Then, create the instance
+     * configuration by specifying the list of settings, using
+     * {@link #instanceConfigurationVolumeSourceFromVolumeBackupDetails(InstanceConfigurationVolumeSourceFromVolumeBackupDetailsRequest) instanceConfigurationVolumeSourceFromVolumeBackupDetails}
+     * to include the block volume backups in the list of settings.
+     * <p>
      * The following values are supported:
      * <p>
      * `NONE`: Creates an instance configuration using the list of settings that you specify.
      * <p>
-     * `INSTANCE`: Creates an instance configuration using an existing instance as a template. The
-     * instance configuration uses the same settings as the instance.
+     * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
      *
      **/
     public enum Source {

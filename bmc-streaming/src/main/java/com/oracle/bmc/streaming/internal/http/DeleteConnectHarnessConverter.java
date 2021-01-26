@@ -82,7 +82,9 @@ public class DeleteConnectHarnessConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.streaming.responses
-                                                        .DeleteConnectHarnessResponse.builder();
+                                                        .DeleteConnectHarnessResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

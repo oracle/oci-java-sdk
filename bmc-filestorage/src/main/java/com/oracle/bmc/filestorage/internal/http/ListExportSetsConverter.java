@@ -147,7 +147,9 @@ public class ListExportSetsConverter {
                                 com.oracle.bmc.filestorage.responses.ListExportSetsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.filestorage.responses
-                                                        .ListExportSetsResponse.builder();
+                                                        .ListExportSetsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

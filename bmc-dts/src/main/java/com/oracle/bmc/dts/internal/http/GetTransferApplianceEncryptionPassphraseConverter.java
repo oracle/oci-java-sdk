@@ -93,7 +93,9 @@ public class GetTransferApplianceEncryptionPassphraseConverter {
                                         builder =
                                                 com.oracle.bmc.dts.responses
                                                         .GetTransferApplianceEncryptionPassphraseResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.transferApplianceEncryptionPassphrase(response.getItem());
 

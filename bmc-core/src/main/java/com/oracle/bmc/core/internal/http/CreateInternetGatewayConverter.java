@@ -77,7 +77,9 @@ public class CreateInternetGatewayConverter {
                                 com.oracle.bmc.core.responses.CreateInternetGatewayResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .CreateInternetGatewayResponse.builder();
+                                                        .CreateInternetGatewayResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.internetGateway(response.getItem());
 

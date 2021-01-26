@@ -76,7 +76,9 @@ public class CreateKeyConverter {
                                 com.oracle.bmc.keymanagement.responses.CreateKeyResponse.Builder
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
-                                                        .CreateKeyResponse.builder();
+                                                        .CreateKeyResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.key(response.getItem());
 

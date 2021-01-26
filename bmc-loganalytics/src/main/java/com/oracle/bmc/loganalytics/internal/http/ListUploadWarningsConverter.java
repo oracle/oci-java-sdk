@@ -104,7 +104,9 @@ public class ListUploadWarningsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .ListUploadWarningsResponse.builder();
+                                                        .ListUploadWarningsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.uploadWarningCollection(response.getItem());
 

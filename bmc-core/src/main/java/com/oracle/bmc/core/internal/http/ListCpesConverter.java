@@ -90,7 +90,8 @@ public class ListCpesConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.ListCpesResponse.Builder builder =
-                                        com.oracle.bmc.core.responses.ListCpesResponse.builder();
+                                        com.oracle.bmc.core.responses.ListCpesResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

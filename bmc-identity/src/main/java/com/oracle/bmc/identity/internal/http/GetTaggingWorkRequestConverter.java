@@ -77,7 +77,9 @@ public class GetTaggingWorkRequestConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .GetTaggingWorkRequestResponse.builder();
+                                                        .GetTaggingWorkRequestResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.taggingWorkRequest(response.getItem());
 

@@ -82,7 +82,9 @@ public class UpdateCompartmentConverter {
                                 com.oracle.bmc.identity.responses.UpdateCompartmentResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .UpdateCompartmentResponse.builder();
+                                                        .UpdateCompartmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.compartment(response.getItem());
 

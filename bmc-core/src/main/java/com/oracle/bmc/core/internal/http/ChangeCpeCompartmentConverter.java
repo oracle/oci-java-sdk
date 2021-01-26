@@ -86,7 +86,9 @@ public class ChangeCpeCompartmentConverter {
                                 com.oracle.bmc.core.responses.ChangeCpeCompartmentResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ChangeCpeCompartmentResponse.builder();
+                                                        .ChangeCpeCompartmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(

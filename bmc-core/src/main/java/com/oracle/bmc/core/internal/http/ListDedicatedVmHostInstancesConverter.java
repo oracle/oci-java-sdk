@@ -136,7 +136,9 @@ public class ListDedicatedVmHostInstancesConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ListDedicatedVmHostInstancesResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

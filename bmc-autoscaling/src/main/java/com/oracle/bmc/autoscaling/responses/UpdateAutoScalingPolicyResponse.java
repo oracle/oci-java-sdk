@@ -10,6 +10,10 @@ import com.oracle.bmc.autoscaling.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class UpdateAutoScalingPolicyResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control. See `if-match`.
@@ -34,6 +38,7 @@ public class UpdateAutoScalingPolicyResponse {
          * @return this builder instance
          */
         public Builder copy(UpdateAutoScalingPolicyResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             autoScalingPolicy(o.getAutoScalingPolicy());

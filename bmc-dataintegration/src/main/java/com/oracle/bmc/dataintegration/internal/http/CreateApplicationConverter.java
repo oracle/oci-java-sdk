@@ -90,7 +90,9 @@ public class CreateApplicationConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .CreateApplicationResponse.builder();
+                                                        .CreateApplicationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.application(response.getItem());
 

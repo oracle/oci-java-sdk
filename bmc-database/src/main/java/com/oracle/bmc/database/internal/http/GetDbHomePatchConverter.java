@@ -79,7 +79,9 @@ public class GetDbHomePatchConverter {
                                 com.oracle.bmc.database.responses.GetDbHomePatchResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .GetDbHomePatchResponse.builder();
+                                                        .GetDbHomePatchResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.patch(response.getItem());
 

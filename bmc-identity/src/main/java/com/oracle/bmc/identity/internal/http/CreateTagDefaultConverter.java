@@ -80,7 +80,9 @@ public class CreateTagDefaultConverter {
                                 com.oracle.bmc.identity.responses.CreateTagDefaultResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .CreateTagDefaultResponse.builder();
+                                                        .CreateTagDefaultResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.tagDefault(response.getItem());
 

@@ -105,7 +105,8 @@ public class ListShapesConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.mysql.responses.ListShapesResponse.Builder builder =
-                                        com.oracle.bmc.mysql.responses.ListShapesResponse.builder();
+                                        com.oracle.bmc.mysql.responses.ListShapesResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

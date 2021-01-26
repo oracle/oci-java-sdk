@@ -93,7 +93,9 @@ public class CreateTransferApplianceAdminCredentialsConverter {
                                         builder =
                                                 com.oracle.bmc.dts.responses
                                                         .CreateTransferApplianceAdminCredentialsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.transferApplianceCertificate(response.getItem());
 

@@ -10,6 +10,10 @@ import com.oracle.bmc.announcementsservice.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetAnnouncementUserStatusResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      *
@@ -27,6 +31,7 @@ public class GetAnnouncementUserStatusResponse {
          * @return this builder instance
          */
         public Builder copy(GetAnnouncementUserStatusResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             announcementUserStatusDetails(o.getAnnouncementUserStatusDetails());
 

@@ -345,6 +345,24 @@ public class AutonomousDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("arePrimaryWhitelistedIpsUsed")
+        private Boolean arePrimaryWhitelistedIpsUsed;
+
+        public Builder arePrimaryWhitelistedIpsUsed(Boolean arePrimaryWhitelistedIpsUsed) {
+            this.arePrimaryWhitelistedIpsUsed = arePrimaryWhitelistedIpsUsed;
+            this.__explicitlySet__.add("arePrimaryWhitelistedIpsUsed");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("standbyWhitelistedIps")
+        private java.util.List<String> standbyWhitelistedIps;
+
+        public Builder standbyWhitelistedIps(java.util.List<String> standbyWhitelistedIps) {
+            this.standbyWhitelistedIps = standbyWhitelistedIps;
+            this.__explicitlySet__.add("standbyWhitelistedIps");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("apexDetails")
         private AutonomousDatabaseApex apexDetails;
 
@@ -602,6 +620,8 @@ public class AutonomousDatabase {
                             dbWorkload,
                             isAccessControlEnabled,
                             whitelistedIps,
+                            arePrimaryWhitelistedIpsUsed,
+                            standbyWhitelistedIps,
                             apexDetails,
                             isAutoScalingEnabled,
                             dataSafeStatus,
@@ -670,6 +690,8 @@ public class AutonomousDatabase {
                             .dbWorkload(o.getDbWorkload())
                             .isAccessControlEnabled(o.getIsAccessControlEnabled())
                             .whitelistedIps(o.getWhitelistedIps())
+                            .arePrimaryWhitelistedIpsUsed(o.getArePrimaryWhitelistedIpsUsed())
+                            .standbyWhitelistedIps(o.getStandbyWhitelistedIps())
                             .apexDetails(o.getApexDetails())
                             .isAutoScalingEnabled(o.getIsAutoScalingEnabled())
                             .dataSafeStatus(o.getDataSafeStatus())
@@ -1083,7 +1105,7 @@ public class AutonomousDatabase {
      * - OLTP - indicates an Autonomous Transaction Processing database
      * - DW - indicates an Autonomous Data Warehouse database
      * - AJD - indicates an Autonomous JSON Database
-     * - APEX - indicates an Autonomous Database with the Oracle Application Express (APEX) workload type.
+     * - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -1137,7 +1159,7 @@ public class AutonomousDatabase {
      * - OLTP - indicates an Autonomous Transaction Processing database
      * - DW - indicates an Autonomous Data Warehouse database
      * - AJD - indicates an Autonomous JSON Database
-     * - APEX - indicates an Autonomous Database with the Oracle Application Express (APEX) workload type.
+     * - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
@@ -1173,7 +1195,32 @@ public class AutonomousDatabase {
     java.util.List<String> whitelistedIps;
 
     /**
-     * Information about Autonomous Application Express.
+     * This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled.
+     * It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby.
+     * It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("arePrimaryWhitelistedIpsUsed")
+    Boolean arePrimaryWhitelistedIpsUsed;
+
+    /**
+     * The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI) and on Exadata Cloud@Customer.
+     * Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+     * <p>
+     * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
+     * Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs.
+     * Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.<unique_id>\",\"ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1\",\"ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16\"]`
+     * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations.
+     * Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"1.1.2.25\"]`
+     * <p>
+     * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("standbyWhitelistedIps")
+    java.util.List<String> standbyWhitelistedIps;
+
+    /**
+     * Information about Oracle APEX Application Development.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("apexDetails")
     AutonomousDatabaseApex apexDetails;

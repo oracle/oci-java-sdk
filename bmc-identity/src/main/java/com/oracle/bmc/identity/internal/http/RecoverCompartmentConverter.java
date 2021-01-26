@@ -86,7 +86,9 @@ public class RecoverCompartmentConverter {
                                 com.oracle.bmc.identity.responses.RecoverCompartmentResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .RecoverCompartmentResponse.builder();
+                                                        .RecoverCompartmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.compartment(response.getItem());
 

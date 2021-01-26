@@ -73,7 +73,9 @@ public class GetBackupConverter {
                                 com.oracle.bmc.database.responses.GetBackupResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses.GetBackupResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.backup(response.getItem());
 

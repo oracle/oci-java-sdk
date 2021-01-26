@@ -137,7 +137,9 @@ public class ListSourceApplicationsConverter {
                                                 .ListSourceApplicationsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.applicationmigration.responses
-                                                        .ListSourceApplicationsResponse.builder();
+                                                        .ListSourceApplicationsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

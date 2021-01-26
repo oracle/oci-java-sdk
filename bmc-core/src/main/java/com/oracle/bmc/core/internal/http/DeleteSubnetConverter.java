@@ -74,8 +74,8 @@ public class DeleteSubnetConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.DeleteSubnetResponse.Builder builder =
-                                        com.oracle.bmc.core.responses.DeleteSubnetResponse
-                                                .builder();
+                                        com.oracle.bmc.core.responses.DeleteSubnetResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

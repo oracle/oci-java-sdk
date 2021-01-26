@@ -83,7 +83,9 @@ public class GetFolderConverter {
                                 com.oracle.bmc.dataintegration.responses.GetFolderResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .GetFolderResponse.builder();
+                                                        .GetFolderResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.folder(response.getItem());
 

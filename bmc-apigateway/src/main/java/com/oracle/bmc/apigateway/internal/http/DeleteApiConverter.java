@@ -81,7 +81,9 @@ public class DeleteApiConverter {
                                 com.oracle.bmc.apigateway.responses.DeleteApiResponse.Builder
                                         builder =
                                                 com.oracle.bmc.apigateway.responses
-                                                        .DeleteApiResponse.builder();
+                                                        .DeleteApiResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

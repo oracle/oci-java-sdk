@@ -99,7 +99,9 @@ public class GetConnectionConverter {
                                 com.oracle.bmc.datacatalog.responses.GetConnectionResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .GetConnectionResponse.builder();
+                                                        .GetConnectionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.connection(response.getItem());
 

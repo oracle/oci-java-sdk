@@ -77,7 +77,9 @@ public class DeleteIPSecConnectionConverter {
                                 com.oracle.bmc.core.responses.DeleteIPSecConnectionResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .DeleteIPSecConnectionResponse.builder();
+                                                        .DeleteIPSecConnectionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

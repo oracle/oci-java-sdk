@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Results of a ListByoipAllocatedRanges operation.
+ * Results of a `ListByoipAllocatedRanges` operation.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,7 +61,7 @@ public class ByoipAllocatedRangeCollection {
     }
 
     /**
-     * list of Byoip allocated ranges as part of public IP pool
+     * A list of subranges of a BYOIP CIDR block allocated to an IP pool.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<ByoipAllocatedRangeSummary> items;

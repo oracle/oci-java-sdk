@@ -132,7 +132,9 @@ public class ListLogIncludedSearchesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.logging.responses
-                                                        .ListLogIncludedSearchesResponse.builder();
+                                                        .ListLogIncludedSearchesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logIncludedSearchSummaryCollection(response.getItem());
 

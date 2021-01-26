@@ -77,7 +77,9 @@ public class DeleteNatGatewayConverter {
                                 com.oracle.bmc.core.responses.DeleteNatGatewayResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .DeleteNatGatewayResponse.builder();
+                                                        .DeleteNatGatewayResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

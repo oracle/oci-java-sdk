@@ -97,7 +97,9 @@ public class MigrateExadataDbSystemResourceModelConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .MigrateExadataDbSystemResourceModelResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.exadataDbSystemMigration(response.getItem());
 

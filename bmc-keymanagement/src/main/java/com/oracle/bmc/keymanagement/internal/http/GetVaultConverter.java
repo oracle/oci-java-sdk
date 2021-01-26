@@ -79,7 +79,9 @@ public class GetVaultConverter {
                                 com.oracle.bmc.keymanagement.responses.GetVaultResponse.Builder
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
-                                                        .GetVaultResponse.builder();
+                                                        .GetVaultResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.vault(response.getItem());
 

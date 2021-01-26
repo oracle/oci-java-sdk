@@ -92,7 +92,9 @@ public class GetSourceConverter {
                                 com.oracle.bmc.loganalytics.responses.GetSourceResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .GetSourceResponse.builder();
+                                                        .GetSourceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsSource(response.getItem());
 

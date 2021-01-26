@@ -77,7 +77,9 @@ public class DeleteSuppressionConverter {
                                 com.oracle.bmc.email.responses.DeleteSuppressionResponse.Builder
                                         builder =
                                                 com.oracle.bmc.email.responses
-                                                        .DeleteSuppressionResponse.builder();
+                                                        .DeleteSuppressionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

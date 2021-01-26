@@ -79,7 +79,9 @@ public class GetUserGroupMembershipConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .GetUserGroupMembershipResponse.builder();
+                                                        .GetUserGroupMembershipResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.userGroupMembership(response.getItem());
 

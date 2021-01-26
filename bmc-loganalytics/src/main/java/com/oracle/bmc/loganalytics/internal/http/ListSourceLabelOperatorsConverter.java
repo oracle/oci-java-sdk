@@ -118,7 +118,9 @@ public class ListSourceLabelOperatorsConverter {
                                                 .ListSourceLabelOperatorsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .ListSourceLabelOperatorsResponse.builder();
+                                                        .ListSourceLabelOperatorsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsLabelOperatorCollection(response.getItem());
 

@@ -96,7 +96,9 @@ public class CreateResolverEndpointConverter {
                                 com.oracle.bmc.dns.responses.CreateResolverEndpointResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dns.responses
-                                                        .CreateResolverEndpointResponse.builder();
+                                                        .CreateResolverEndpointResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.resolverEndpoint(response.getItem());
 

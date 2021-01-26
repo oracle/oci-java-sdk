@@ -77,7 +77,9 @@ public class CreateVmClusterConverter {
                                 com.oracle.bmc.database.responses.CreateVmClusterResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .CreateVmClusterResponse.builder();
+                                                        .CreateVmClusterResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.vmCluster(response.getItem());
 

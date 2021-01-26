@@ -82,7 +82,9 @@ public class ListCustomerSecretKeysConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .ListCustomerSecretKeysResponse.builder();
+                                                        .ListCustomerSecretKeysResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

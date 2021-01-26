@@ -83,7 +83,9 @@ public class GetRunLogConverter {
                                 com.oracle.bmc.dataflow.responses.GetRunLogResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dataflow.responses.GetRunLogResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.inputStream(response.getItem());
 

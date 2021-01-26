@@ -80,7 +80,9 @@ public class GetPublicIpPoolConverter {
                                 com.oracle.bmc.core.responses.GetPublicIpPoolResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .GetPublicIpPoolResponse.builder();
+                                                        .GetPublicIpPoolResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.publicIpPool(response.getItem());
 

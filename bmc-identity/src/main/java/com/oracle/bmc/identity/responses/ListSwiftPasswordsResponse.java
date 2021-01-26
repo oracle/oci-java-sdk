@@ -10,6 +10,10 @@ import com.oracle.bmc.identity.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListSwiftPasswordsResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -37,6 +41,7 @@ public class ListSwiftPasswordsResponse {
          * @return this builder instance
          */
         public Builder copy(ListSwiftPasswordsResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             items(o.getItems());

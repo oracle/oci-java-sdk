@@ -95,7 +95,9 @@ public class ChangeVmClusterCompartmentConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ChangeVmClusterCompartmentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

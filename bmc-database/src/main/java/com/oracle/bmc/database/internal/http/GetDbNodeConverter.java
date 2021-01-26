@@ -73,7 +73,9 @@ public class GetDbNodeConverter {
                                 com.oracle.bmc.database.responses.GetDbNodeResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses.GetDbNodeResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dbNode(response.getItem());
 

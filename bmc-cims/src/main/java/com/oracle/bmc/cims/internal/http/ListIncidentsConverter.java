@@ -141,7 +141,9 @@ public class ListIncidentsConverter {
                                 com.oracle.bmc.cims.responses.ListIncidentsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.cims.responses.ListIncidentsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

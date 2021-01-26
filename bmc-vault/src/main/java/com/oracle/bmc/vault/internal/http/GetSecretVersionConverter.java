@@ -84,7 +84,9 @@ public class GetSecretVersionConverter {
                                 com.oracle.bmc.vault.responses.GetSecretVersionResponse.Builder
                                         builder =
                                                 com.oracle.bmc.vault.responses
-                                                        .GetSecretVersionResponse.builder();
+                                                        .GetSecretVersionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.secretVersion(response.getItem());
 

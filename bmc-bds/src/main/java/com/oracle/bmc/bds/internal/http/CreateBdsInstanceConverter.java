@@ -77,7 +77,9 @@ public class CreateBdsInstanceConverter {
                                 com.oracle.bmc.bds.responses.CreateBdsInstanceResponse.Builder
                                         builder =
                                                 com.oracle.bmc.bds.responses
-                                                        .CreateBdsInstanceResponse.builder();
+                                                        .CreateBdsInstanceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

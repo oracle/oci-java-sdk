@@ -183,7 +183,9 @@ public class ListTermsConverter {
                                 com.oracle.bmc.datacatalog.responses.ListTermsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .ListTermsResponse.builder();
+                                                        .ListTermsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.termCollection(response.getItem());
 

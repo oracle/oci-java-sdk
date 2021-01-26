@@ -74,8 +74,8 @@ public class DeleteVolumeConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.DeleteVolumeResponse.Builder builder =
-                                        com.oracle.bmc.core.responses.DeleteVolumeResponse
-                                                .builder();
+                                        com.oracle.bmc.core.responses.DeleteVolumeResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -80,7 +80,9 @@ public class GetHttpRedirectConverter {
                                 com.oracle.bmc.waas.responses.GetHttpRedirectResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .GetHttpRedirectResponse.builder();
+                                                        .GetHttpRedirectResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.httpRedirect(response.getItem());
 

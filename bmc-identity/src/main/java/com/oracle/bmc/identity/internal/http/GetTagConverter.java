@@ -74,7 +74,8 @@ public class GetTagConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.identity.responses.GetTagResponse.Builder builder =
-                                        com.oracle.bmc.identity.responses.GetTagResponse.builder();
+                                        com.oracle.bmc.identity.responses.GetTagResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.tag(response.getItem());
 

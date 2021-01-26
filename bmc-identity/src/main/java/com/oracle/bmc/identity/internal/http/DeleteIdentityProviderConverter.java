@@ -79,7 +79,9 @@ public class DeleteIdentityProviderConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .DeleteIdentityProviderResponse.builder();
+                                                        .DeleteIdentityProviderResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

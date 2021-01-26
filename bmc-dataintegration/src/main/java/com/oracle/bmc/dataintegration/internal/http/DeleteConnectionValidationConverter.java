@@ -93,7 +93,9 @@ public class DeleteConnectionValidationConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .DeleteConnectionValidationResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -83,7 +83,9 @@ public class DetachServiceIdConverter {
                                 com.oracle.bmc.core.responses.DetachServiceIdResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .DetachServiceIdResponse.builder();
+                                                        .DetachServiceIdResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.serviceGateway(response.getItem());
 

@@ -77,7 +77,9 @@ public class TerminateDbSystemConverter {
                                 com.oracle.bmc.database.responses.TerminateDbSystemResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .TerminateDbSystemResponse.builder();
+                                                        .TerminateDbSystemResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

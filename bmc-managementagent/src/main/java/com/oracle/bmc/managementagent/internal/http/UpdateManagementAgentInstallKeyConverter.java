@@ -102,7 +102,9 @@ public class UpdateManagementAgentInstallKeyConverter {
                                         builder =
                                                 com.oracle.bmc.managementagent.responses
                                                         .UpdateManagementAgentInstallKeyResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.managementAgentInstallKey(response.getItem());
 

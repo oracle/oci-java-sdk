@@ -115,7 +115,9 @@ public class PatchZoneRecordsConverter {
                                 com.oracle.bmc.dns.responses.PatchZoneRecordsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dns.responses
-                                                        .PatchZoneRecordsResponse.builder();
+                                                        .PatchZoneRecordsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.recordCollection(response.getItem());
 

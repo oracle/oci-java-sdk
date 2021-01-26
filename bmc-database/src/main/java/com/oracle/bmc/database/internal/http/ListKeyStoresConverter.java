@@ -100,7 +100,9 @@ public class ListKeyStoresConverter {
                                 com.oracle.bmc.database.responses.ListKeyStoresResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .ListKeyStoresResponse.builder();
+                                                        .ListKeyStoresResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

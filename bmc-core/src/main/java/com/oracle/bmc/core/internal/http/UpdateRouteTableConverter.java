@@ -82,7 +82,9 @@ public class UpdateRouteTableConverter {
                                 com.oracle.bmc.core.responses.UpdateRouteTableResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .UpdateRouteTableResponse.builder();
+                                                        .UpdateRouteTableResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.routeTable(response.getItem());
 

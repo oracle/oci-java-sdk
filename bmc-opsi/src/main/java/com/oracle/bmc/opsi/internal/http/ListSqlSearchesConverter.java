@@ -123,7 +123,9 @@ public class ListSqlSearchesConverter {
                                 com.oracle.bmc.opsi.responses.ListSqlSearchesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.opsi.responses
-                                                        .ListSqlSearchesResponse.builder();
+                                                        .ListSqlSearchesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.sqlSearchCollection(response.getItem());
 

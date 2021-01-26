@@ -87,7 +87,9 @@ public class DeletePeerConverter {
                                 com.oracle.bmc.blockchain.responses.DeletePeerResponse.Builder
                                         builder =
                                                 com.oracle.bmc.blockchain.responses
-                                                        .DeletePeerResponse.builder();
+                                                        .DeletePeerResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

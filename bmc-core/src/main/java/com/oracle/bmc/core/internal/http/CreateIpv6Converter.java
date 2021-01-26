@@ -72,7 +72,8 @@ public class CreateIpv6Converter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.CreateIpv6Response.Builder builder =
-                                        com.oracle.bmc.core.responses.CreateIpv6Response.builder();
+                                        com.oracle.bmc.core.responses.CreateIpv6Response.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.ipv6(response.getItem());
 

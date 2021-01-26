@@ -89,8 +89,9 @@ public class RestoreKeyFromObjectStoreConverter {
                                                 .RestoreKeyFromObjectStoreResponse.Builder
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
-                                                        .RestoreKeyFromObjectStoreResponse
-                                                        .builder();
+                                                        .RestoreKeyFromObjectStoreResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.key(response.getItem());
 

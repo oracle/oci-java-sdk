@@ -88,7 +88,9 @@ public class GetSoftwarePackageConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
-                                                        .GetSoftwarePackageResponse.builder();
+                                                        .GetSoftwarePackageResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.softwarePackage(response.getItem());
 

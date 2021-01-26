@@ -92,7 +92,9 @@ public class UpdateConfigurationConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
-                                                        .UpdateConfigurationResponse.builder();
+                                                        .UpdateConfigurationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.configuration(response.getItem());
 

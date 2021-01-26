@@ -86,8 +86,9 @@ public class DeleteAutonomousVmClusterConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .DeleteAutonomousVmClusterResponse
-                                                        .builder();
+                                                        .DeleteAutonomousVmClusterResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

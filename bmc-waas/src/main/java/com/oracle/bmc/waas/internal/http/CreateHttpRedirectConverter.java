@@ -77,7 +77,9 @@ public class CreateHttpRedirectConverter {
                                 com.oracle.bmc.waas.responses.CreateHttpRedirectResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .CreateHttpRedirectResponse.builder();
+                                                        .CreateHttpRedirectResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

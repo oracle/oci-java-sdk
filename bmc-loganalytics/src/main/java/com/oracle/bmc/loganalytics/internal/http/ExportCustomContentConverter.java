@@ -90,7 +90,9 @@ public class ExportCustomContentConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .ExportCustomContentResponse.builder();
+                                                        .ExportCustomContentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.inputStream(response.getItem());
 

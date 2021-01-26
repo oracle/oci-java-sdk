@@ -84,7 +84,9 @@ public class GetNamespaceMetadataConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
-                                                        .GetNamespaceMetadataResponse.builder();
+                                                        .GetNamespaceMetadataResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.namespaceMetadata(response.getItem());
 

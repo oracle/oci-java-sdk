@@ -145,7 +145,9 @@ public class ListTargetsConverter {
                                 com.oracle.bmc.cloudguard.responses.ListTargetsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
-                                                        .ListTargetsResponse.builder();
+                                                        .ListTargetsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.targetCollection(response.getItem());
 

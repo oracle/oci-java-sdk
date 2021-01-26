@@ -96,7 +96,9 @@ public class ScheduleVaultDeletionConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
-                                                        .ScheduleVaultDeletionResponse.builder();
+                                                        .ScheduleVaultDeletionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.vault(response.getItem());
 

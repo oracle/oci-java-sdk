@@ -85,7 +85,9 @@ public class UpdateOnPremConnectorConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
-                                                        .UpdateOnPremConnectorResponse.builder();
+                                                        .UpdateOnPremConnectorResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

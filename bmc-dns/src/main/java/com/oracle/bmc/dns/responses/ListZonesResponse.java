@@ -10,6 +10,10 @@ import com.oracle.bmc.dns.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListZonesResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For list pagination. When this header appears in the response, additional pages
@@ -43,6 +47,7 @@ public class ListZonesResponse {
          * @return this builder instance
          */
         public Builder copy(ListZonesResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcNextPage(o.getOpcNextPage());
             opcTotalItems(o.getOpcTotalItems());
             opcRequestId(o.getOpcRequestId());

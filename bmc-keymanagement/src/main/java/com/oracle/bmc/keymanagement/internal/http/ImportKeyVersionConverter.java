@@ -90,7 +90,9 @@ public class ImportKeyVersionConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
-                                                        .ImportKeyVersionResponse.builder();
+                                                        .ImportKeyVersionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.keyVersion(response.getItem());
 

@@ -10,6 +10,10 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class CancelKeyVersionDeletionResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control. See `if-match`.
@@ -34,6 +38,7 @@ public class CancelKeyVersionDeletionResponse {
          * @return this builder instance
          */
         public Builder copy(CancelKeyVersionDeletionResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             keyVersion(o.getKeyVersion());

@@ -80,7 +80,9 @@ public class GetOnPremConnectorConverter {
                                 com.oracle.bmc.datasafe.responses.GetOnPremConnectorResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
-                                                        .GetOnPremConnectorResponse.builder();
+                                                        .GetOnPremConnectorResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.onPremConnector(response.getItem());
 

@@ -82,7 +82,9 @@ public class GetSourceSummaryConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .GetSourceSummaryResponse.builder();
+                                                        .GetSourceSummaryResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.sourceSummaryReport(response.getItem());
 

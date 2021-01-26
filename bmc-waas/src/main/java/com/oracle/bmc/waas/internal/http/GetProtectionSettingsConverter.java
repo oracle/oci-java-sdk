@@ -82,7 +82,9 @@ public class GetProtectionSettingsConverter {
                                 com.oracle.bmc.waas.responses.GetProtectionSettingsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .GetProtectionSettingsResponse.builder();
+                                                        .GetProtectionSettingsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.protectionSettings(response.getItem());
 

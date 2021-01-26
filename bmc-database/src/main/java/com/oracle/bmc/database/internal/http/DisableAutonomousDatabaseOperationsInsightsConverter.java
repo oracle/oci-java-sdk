@@ -92,7 +92,9 @@ public class DisableAutonomousDatabaseOperationsInsightsConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .DisableAutonomousDatabaseOperationsInsightsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

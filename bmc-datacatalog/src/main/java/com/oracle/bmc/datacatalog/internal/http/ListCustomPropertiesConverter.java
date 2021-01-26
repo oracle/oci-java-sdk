@@ -203,7 +203,9 @@ public class ListCustomPropertiesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .ListCustomPropertiesResponse.builder();
+                                                        .ListCustomPropertiesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.customPropertyCollection(response.getItem());
 

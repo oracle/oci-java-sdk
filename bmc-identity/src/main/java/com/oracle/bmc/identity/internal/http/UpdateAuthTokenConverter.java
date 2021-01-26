@@ -84,7 +84,9 @@ public class UpdateAuthTokenConverter {
                                 com.oracle.bmc.identity.responses.UpdateAuthTokenResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .UpdateAuthTokenResponse.builder();
+                                                        .UpdateAuthTokenResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.authToken(response.getItem());
 

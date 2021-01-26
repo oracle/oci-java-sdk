@@ -91,7 +91,9 @@ public class DeleteTermConverter {
                                 com.oracle.bmc.datacatalog.responses.DeleteTermResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .DeleteTermResponse.builder();
+                                                        .DeleteTermResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

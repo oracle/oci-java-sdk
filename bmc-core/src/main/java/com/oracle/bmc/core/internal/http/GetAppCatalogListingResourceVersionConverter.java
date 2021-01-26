@@ -88,7 +88,9 @@ public class GetAppCatalogListingResourceVersionConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetAppCatalogListingResourceVersionResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.appCatalogListingResourceVersion(response.getItem());
 

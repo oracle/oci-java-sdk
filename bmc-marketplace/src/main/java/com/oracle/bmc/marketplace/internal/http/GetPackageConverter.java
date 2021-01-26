@@ -93,7 +93,9 @@ public class GetPackageConverter {
                                 com.oracle.bmc.marketplace.responses.GetPackageResponse.Builder
                                         builder =
                                                 com.oracle.bmc.marketplace.responses
-                                                        .GetPackageResponse.builder();
+                                                        .GetPackageResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.listingPackage(response.getItem());
 

@@ -250,7 +250,9 @@ public class ListJobsConverter {
                                 com.oracle.bmc.datacatalog.responses.ListJobsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .ListJobsResponse.builder();
+                                                        .ListJobsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.jobCollection(response.getItem());
 

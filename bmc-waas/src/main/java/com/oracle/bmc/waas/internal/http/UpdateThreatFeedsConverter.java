@@ -84,7 +84,9 @@ public class UpdateThreatFeedsConverter {
                                 com.oracle.bmc.waas.responses.UpdateThreatFeedsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .UpdateThreatFeedsResponse.builder();
+                                                        .UpdateThreatFeedsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -97,7 +97,9 @@ public class ListWorkRequestErrorsConverter {
                                 com.oracle.bmc.sch.responses.ListWorkRequestErrorsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.sch.responses
-                                                        .ListWorkRequestErrorsResponse.builder();
+                                                        .ListWorkRequestErrorsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.workRequestErrorCollection(response.getItem());
 

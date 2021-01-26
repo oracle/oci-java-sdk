@@ -75,7 +75,9 @@ public class GetBootVolumeConverter {
                                 com.oracle.bmc.core.responses.GetBootVolumeResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses.GetBootVolumeResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.bootVolume(response.getItem());
 

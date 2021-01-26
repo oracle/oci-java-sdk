@@ -77,7 +77,9 @@ public class CreateModelConverter {
                                 com.oracle.bmc.datascience.responses.CreateModelResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datascience.responses
-                                                        .CreateModelResponse.builder();
+                                                        .CreateModelResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.model(response.getItem());
 

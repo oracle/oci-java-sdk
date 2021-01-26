@@ -125,7 +125,9 @@ public class ListOsnsConverter {
                                 com.oracle.bmc.blockchain.responses.ListOsnsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.blockchain.responses.ListOsnsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.osnCollection(response.getItem());
 

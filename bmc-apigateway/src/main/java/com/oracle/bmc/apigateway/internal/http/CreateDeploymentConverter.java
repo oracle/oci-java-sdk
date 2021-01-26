@@ -80,7 +80,9 @@ public class CreateDeploymentConverter {
                                 com.oracle.bmc.apigateway.responses.CreateDeploymentResponse.Builder
                                         builder =
                                                 com.oracle.bmc.apigateway.responses
-                                                        .CreateDeploymentResponse.builder();
+                                                        .CreateDeploymentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.deployment(response.getItem());
 

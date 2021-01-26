@@ -82,7 +82,9 @@ public class UpdateDbSystemConverter {
                                 com.oracle.bmc.mysql.responses.UpdateDbSystemResponse.Builder
                                         builder =
                                                 com.oracle.bmc.mysql.responses
-                                                        .UpdateDbSystemResponse.builder();
+                                                        .UpdateDbSystemResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

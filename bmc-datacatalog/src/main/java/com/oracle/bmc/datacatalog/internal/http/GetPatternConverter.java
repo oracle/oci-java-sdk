@@ -92,7 +92,9 @@ public class GetPatternConverter {
                                 com.oracle.bmc.datacatalog.responses.GetPatternResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .GetPatternResponse.builder();
+                                                        .GetPatternResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.pattern(response.getItem());
 

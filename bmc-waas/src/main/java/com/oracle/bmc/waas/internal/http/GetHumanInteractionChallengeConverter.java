@@ -86,7 +86,9 @@ public class GetHumanInteractionChallengeConverter {
                                         builder =
                                                 com.oracle.bmc.waas.responses
                                                         .GetHumanInteractionChallengeResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.humanInteractionChallenge(response.getItem());
 

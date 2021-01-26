@@ -75,7 +75,9 @@ public class GetWrappingKeyConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
-                                                        .GetWrappingKeyResponse.builder();
+                                                        .GetWrappingKeyResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.wrappingKey(response.getItem());
 

@@ -93,7 +93,9 @@ public class ChangeOdaInstanceCompartmentConverter {
                                         builder =
                                                 com.oracle.bmc.oda.responses
                                                         .ChangeOdaInstanceCompartmentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

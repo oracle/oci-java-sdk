@@ -86,7 +86,9 @@ public class GetSSLCipherSuiteConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .GetSSLCipherSuiteResponse.builder();
+                                                        .GetSSLCipherSuiteResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.sSLCipherSuite(response.getItem());
 

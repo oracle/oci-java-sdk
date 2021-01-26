@@ -109,7 +109,9 @@ public class ListRecommendationsConverter {
                                 com.oracle.bmc.waas.responses.ListRecommendationsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .ListRecommendationsResponse.builder();
+                                                        .ListRecommendationsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

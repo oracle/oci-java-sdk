@@ -82,7 +82,9 @@ public class UpdateDynamicGroupConverter {
                                 com.oracle.bmc.identity.responses.UpdateDynamicGroupResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .UpdateDynamicGroupResponse.builder();
+                                                        .UpdateDynamicGroupResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dynamicGroup(response.getItem());
 

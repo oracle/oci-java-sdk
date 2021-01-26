@@ -87,7 +87,9 @@ public class GetUnifiedAgentConfigurationConverter {
                                         builder =
                                                 com.oracle.bmc.logging.responses
                                                         .GetUnifiedAgentConfigurationResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.unifiedAgentConfiguration(response.getItem());
 

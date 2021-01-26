@@ -10,6 +10,10 @@ import com.oracle.bmc.containerengine.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class UpdateNodePoolResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * The OCID of the work request handling the operation.
@@ -27,6 +31,7 @@ public class UpdateNodePoolResponse {
          * @return this builder instance
          */
         public Builder copy(UpdateNodePoolResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
 

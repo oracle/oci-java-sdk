@@ -80,7 +80,9 @@ public class CreateStreamPoolConverter {
                                 com.oracle.bmc.streaming.responses.CreateStreamPoolResponse.Builder
                                         builder =
                                                 com.oracle.bmc.streaming.responses
-                                                        .CreateStreamPoolResponse.builder();
+                                                        .CreateStreamPoolResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.streamPool(response.getItem());
 

@@ -83,7 +83,9 @@ public class GetConsoleConnectionConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .GetConsoleConnectionResponse.builder();
+                                                        .GetConsoleConnectionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.consoleConnection(response.getItem());
 

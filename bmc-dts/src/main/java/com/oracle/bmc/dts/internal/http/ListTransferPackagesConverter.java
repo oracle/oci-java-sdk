@@ -93,7 +93,9 @@ public class ListTransferPackagesConverter {
                                 com.oracle.bmc.dts.responses.ListTransferPackagesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dts.responses
-                                                        .ListTransferPackagesResponse.builder();
+                                                        .ListTransferPackagesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.multipleTransferPackages(response.getItem());
 

@@ -128,7 +128,9 @@ public class ListApisConverter {
                                 com.oracle.bmc.apigateway.responses.ListApisResponse.Builder
                                         builder =
                                                 com.oracle.bmc.apigateway.responses.ListApisResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.apiCollection(response.getItem());
 

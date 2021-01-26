@@ -85,7 +85,9 @@ public class ListTransferAppliancesConverter {
                                 com.oracle.bmc.dts.responses.ListTransferAppliancesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dts.responses
-                                                        .ListTransferAppliancesResponse.builder();
+                                                        .ListTransferAppliancesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.multipleTransferAppliances(response.getItem());
 

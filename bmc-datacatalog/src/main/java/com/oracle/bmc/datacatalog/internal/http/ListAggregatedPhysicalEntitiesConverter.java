@@ -147,7 +147,9 @@ public class ListAggregatedPhysicalEntitiesConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .ListAggregatedPhysicalEntitiesResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.entityCollection(response.getItem());
 

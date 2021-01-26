@@ -78,7 +78,8 @@ public class GetLogConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.logging.responses.GetLogResponse.Builder builder =
-                                        com.oracle.bmc.logging.responses.GetLogResponse.builder();
+                                        com.oracle.bmc.logging.responses.GetLogResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.log(response.getItem());
 

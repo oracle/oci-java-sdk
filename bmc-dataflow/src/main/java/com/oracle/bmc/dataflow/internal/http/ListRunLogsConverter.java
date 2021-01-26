@@ -100,7 +100,9 @@ public class ListRunLogsConverter {
                                 com.oracle.bmc.dataflow.responses.ListRunLogsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dataflow.responses
-                                                        .ListRunLogsResponse.builder();
+                                                        .ListRunLogsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

@@ -10,6 +10,10 @@ import com.oracle.bmc.blockchain.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListPeersResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -37,6 +41,7 @@ public class ListPeersResponse {
          * @return this builder instance
          */
         public Builder copy(ListPeersResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             peerCollection(o.getPeerCollection());

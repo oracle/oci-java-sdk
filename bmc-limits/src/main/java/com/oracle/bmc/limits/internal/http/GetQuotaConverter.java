@@ -75,7 +75,8 @@ public class GetQuotaConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.limits.responses.GetQuotaResponse.Builder builder =
-                                        com.oracle.bmc.limits.responses.GetQuotaResponse.builder();
+                                        com.oracle.bmc.limits.responses.GetQuotaResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.quota(response.getItem());
 

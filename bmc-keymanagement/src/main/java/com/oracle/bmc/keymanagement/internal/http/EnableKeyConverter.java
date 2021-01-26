@@ -88,7 +88,9 @@ public class EnableKeyConverter {
                                 com.oracle.bmc.keymanagement.responses.EnableKeyResponse.Builder
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
-                                                        .EnableKeyResponse.builder();
+                                                        .EnableKeyResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.key(response.getItem());
 

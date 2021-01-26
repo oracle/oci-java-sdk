@@ -115,7 +115,9 @@ public class ListVaultsConverter {
                                 com.oracle.bmc.keymanagement.responses.ListVaultsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
-                                                        .ListVaultsResponse.builder();
+                                                        .ListVaultsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

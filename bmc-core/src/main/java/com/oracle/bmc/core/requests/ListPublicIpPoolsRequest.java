@@ -50,7 +50,7 @@ public class ListPublicIpPoolsRequest extends com.oracle.bmc.requests.BmcRequest
     private String displayName;
 
     /**
-     * A filter to return only resources that match the given Byoip Range
+     * A filter to return only resources that match the given BYOIP CIDR block.
      *
      */
     private String byoipRangeId;

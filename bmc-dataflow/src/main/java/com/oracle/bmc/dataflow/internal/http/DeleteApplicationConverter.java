@@ -81,7 +81,9 @@ public class DeleteApplicationConverter {
                                 com.oracle.bmc.dataflow.responses.DeleteApplicationResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dataflow.responses
-                                                        .DeleteApplicationResponse.builder();
+                                                        .DeleteApplicationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

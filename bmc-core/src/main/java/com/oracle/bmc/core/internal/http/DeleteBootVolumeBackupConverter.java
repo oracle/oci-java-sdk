@@ -77,7 +77,9 @@ public class DeleteBootVolumeBackupConverter {
                                 com.oracle.bmc.core.responses.DeleteBootVolumeBackupResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .DeleteBootVolumeBackupResponse.builder();
+                                                        .DeleteBootVolumeBackupResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

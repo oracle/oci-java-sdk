@@ -78,7 +78,9 @@ public class GetProblemConverter {
                                 com.oracle.bmc.cloudguard.responses.GetProblemResponse.Builder
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
-                                                        .GetProblemResponse.builder();
+                                                        .GetProblemResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.problem(response.getItem());
 

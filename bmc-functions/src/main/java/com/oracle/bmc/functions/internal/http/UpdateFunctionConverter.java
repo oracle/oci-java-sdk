@@ -83,7 +83,9 @@ public class UpdateFunctionConverter {
                                 com.oracle.bmc.functions.responses.UpdateFunctionResponse.Builder
                                         builder =
                                                 com.oracle.bmc.functions.responses
-                                                        .UpdateFunctionResponse.builder();
+                                                        .UpdateFunctionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.function(response.getItem());
 

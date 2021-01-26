@@ -116,7 +116,9 @@ public class ListWafRequestsConverter {
                                 com.oracle.bmc.waas.responses.ListWafRequestsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .ListWafRequestsResponse.builder();
+                                                        .ListWafRequestsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

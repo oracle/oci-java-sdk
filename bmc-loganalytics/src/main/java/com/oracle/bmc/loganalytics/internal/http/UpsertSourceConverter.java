@@ -118,7 +118,9 @@ public class UpsertSourceConverter {
                                 com.oracle.bmc.loganalytics.responses.UpsertSourceResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .UpsertSourceResponse.builder();
+                                                        .UpsertSourceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsSource(response.getItem());
 

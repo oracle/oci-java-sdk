@@ -148,7 +148,9 @@ public class ListManagementAgentInstallKeysConverter {
                                         builder =
                                                 com.oracle.bmc.managementagent.responses
                                                         .ListManagementAgentInstallKeysResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

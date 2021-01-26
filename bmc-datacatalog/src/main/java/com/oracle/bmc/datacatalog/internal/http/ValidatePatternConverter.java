@@ -92,7 +92,9 @@ public class ValidatePatternConverter {
                                 com.oracle.bmc.datacatalog.responses.ValidatePatternResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .ValidatePatternResponse.builder();
+                                                        .ValidatePatternResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.validatePatternResult(response.getItem());
 

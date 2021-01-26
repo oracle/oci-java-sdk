@@ -76,7 +76,9 @@ public class CreateQuotaConverter {
                                 com.oracle.bmc.limits.responses.CreateQuotaResponse.Builder
                                         builder =
                                                 com.oracle.bmc.limits.responses.CreateQuotaResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.quota(response.getItem());
 

@@ -79,7 +79,9 @@ public class DeleteTransferApplianceConverter {
                                 com.oracle.bmc.dts.responses.DeleteTransferApplianceResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dts.responses
-                                                        .DeleteTransferApplianceResponse.builder();
+                                                        .DeleteTransferApplianceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -309,11 +309,6 @@ public class VolumeGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
     Long sizeInGBs;
 
-    /**
-     * The volume group source. The source is either another a list of
-     * volume IDs in the same availability domain, another volume group, or a volume group backup.
-     *
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
     VolumeGroupSourceDetails sourceDetails;
 

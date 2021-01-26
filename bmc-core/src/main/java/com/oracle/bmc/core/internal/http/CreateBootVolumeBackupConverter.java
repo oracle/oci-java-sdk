@@ -77,7 +77,9 @@ public class CreateBootVolumeBackupConverter {
                                 com.oracle.bmc.core.responses.CreateBootVolumeBackupResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .CreateBootVolumeBackupResponse.builder();
+                                                        .CreateBootVolumeBackupResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.bootVolumeBackup(response.getItem());
 

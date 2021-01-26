@@ -143,7 +143,9 @@ public class ListAutonomousVmClustersConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .ListAutonomousVmClustersResponse.builder();
+                                                        .ListAutonomousVmClustersResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

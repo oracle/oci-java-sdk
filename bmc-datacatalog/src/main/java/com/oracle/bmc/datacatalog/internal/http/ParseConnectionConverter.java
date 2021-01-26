@@ -103,7 +103,9 @@ public class ParseConnectionConverter {
                                 com.oracle.bmc.datacatalog.responses.ParseConnectionResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .ParseConnectionResponse.builder();
+                                                        .ParseConnectionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

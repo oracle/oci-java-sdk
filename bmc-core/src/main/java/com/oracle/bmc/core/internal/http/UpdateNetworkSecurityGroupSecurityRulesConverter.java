@@ -92,7 +92,9 @@ public class UpdateNetworkSecurityGroupSecurityRulesConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .UpdateNetworkSecurityGroupSecurityRulesResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.updatedNetworkSecurityGroupSecurityRules(
                                         response.getItem());

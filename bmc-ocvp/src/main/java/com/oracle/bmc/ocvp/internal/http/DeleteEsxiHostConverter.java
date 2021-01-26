@@ -80,7 +80,9 @@ public class DeleteEsxiHostConverter {
                                 com.oracle.bmc.ocvp.responses.DeleteEsxiHostResponse.Builder
                                         builder =
                                                 com.oracle.bmc.ocvp.responses.DeleteEsxiHostResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

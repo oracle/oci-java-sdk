@@ -10,6 +10,10 @@ import com.oracle.bmc.mysql.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class CreateConfigurationResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * The URI for the entity being described in the response body.
@@ -46,6 +50,7 @@ public class CreateConfigurationResponse {
          * @return this builder instance
          */
         public Builder copy(CreateConfigurationResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             location(o.getLocation());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());

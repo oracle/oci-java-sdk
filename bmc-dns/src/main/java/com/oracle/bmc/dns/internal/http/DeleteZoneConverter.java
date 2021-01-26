@@ -105,7 +105,8 @@ public class DeleteZoneConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.dns.responses.DeleteZoneResponse.Builder builder =
-                                        com.oracle.bmc.dns.responses.DeleteZoneResponse.builder();
+                                        com.oracle.bmc.dns.responses.DeleteZoneResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

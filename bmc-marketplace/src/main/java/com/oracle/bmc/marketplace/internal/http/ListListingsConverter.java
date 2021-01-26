@@ -176,7 +176,9 @@ public class ListListingsConverter {
                                 com.oracle.bmc.marketplace.responses.ListListingsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.marketplace.responses
-                                                        .ListListingsResponse.builder();
+                                                        .ListListingsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

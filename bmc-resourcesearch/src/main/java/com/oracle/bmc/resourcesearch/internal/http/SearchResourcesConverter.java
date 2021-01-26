@@ -100,7 +100,9 @@ public class SearchResourcesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.resourcesearch.responses
-                                                        .SearchResourcesResponse.builder();
+                                                        .SearchResourcesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.resourceSummaryCollection(response.getItem());
 

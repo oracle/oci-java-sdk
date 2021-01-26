@@ -77,7 +77,8 @@ public class DeleteIpv6Converter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.DeleteIpv6Response.Builder builder =
-                                        com.oracle.bmc.core.responses.DeleteIpv6Response.builder();
+                                        com.oracle.bmc.core.responses.DeleteIpv6Response.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

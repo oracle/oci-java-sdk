@@ -143,7 +143,9 @@ public class ListVolumeBackupsConverter {
                                 com.oracle.bmc.core.responses.ListVolumeBackupsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ListVolumeBackupsResponse.builder();
+                                                        .ListVolumeBackupsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

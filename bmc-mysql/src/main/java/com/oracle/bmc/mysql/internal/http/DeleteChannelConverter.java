@@ -80,7 +80,9 @@ public class DeleteChannelConverter {
                                 com.oracle.bmc.mysql.responses.DeleteChannelResponse.Builder
                                         builder =
                                                 com.oracle.bmc.mysql.responses.DeleteChannelResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

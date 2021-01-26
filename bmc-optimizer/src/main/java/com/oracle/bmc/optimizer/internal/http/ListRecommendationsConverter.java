@@ -152,7 +152,9 @@ public class ListRecommendationsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.optimizer.responses
-                                                        .ListRecommendationsResponse.builder();
+                                                        .ListRecommendationsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.recommendationCollection(response.getItem());
 

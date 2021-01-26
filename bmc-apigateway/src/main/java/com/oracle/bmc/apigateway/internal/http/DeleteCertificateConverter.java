@@ -82,7 +82,9 @@ public class DeleteCertificateConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.apigateway.responses
-                                                        .DeleteCertificateResponse.builder();
+                                                        .DeleteCertificateResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

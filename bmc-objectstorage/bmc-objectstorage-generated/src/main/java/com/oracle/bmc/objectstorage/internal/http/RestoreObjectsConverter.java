@@ -86,7 +86,9 @@ public class RestoreObjectsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
-                                                        .RestoreObjectsResponse.builder();
+                                                        .RestoreObjectsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcClientRequestIdHeader =

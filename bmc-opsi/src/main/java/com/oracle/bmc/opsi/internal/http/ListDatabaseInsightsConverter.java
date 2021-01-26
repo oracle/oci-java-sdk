@@ -140,7 +140,9 @@ public class ListDatabaseInsightsConverter {
                                 com.oracle.bmc.opsi.responses.ListDatabaseInsightsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.opsi.responses
-                                                        .ListDatabaseInsightsResponse.builder();
+                                                        .ListDatabaseInsightsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.databaseInsightsCollection(response.getItem());
 

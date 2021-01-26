@@ -35,6 +35,15 @@ public class CreateVolumeGroupDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("backupPolicyId")
+        private String backupPolicyId;
+
+        public Builder backupPolicyId(String backupPolicyId) {
+            this.backupPolicyId = backupPolicyId;
+            this.__explicitlySet__.add("backupPolicyId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -88,6 +97,7 @@ public class CreateVolumeGroupDetails {
             CreateVolumeGroupDetails __instance__ =
                     new CreateVolumeGroupDetails(
                             availabilityDomain,
+                            backupPolicyId,
                             compartmentId,
                             definedTags,
                             displayName,
@@ -101,6 +111,7 @@ public class CreateVolumeGroupDetails {
         public Builder copy(CreateVolumeGroupDetails o) {
             Builder copiedBuilder =
                     availabilityDomain(o.getAvailabilityDomain())
+                            .backupPolicyId(o.getBackupPolicyId())
                             .compartmentId(o.getCompartmentId())
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
@@ -124,6 +135,14 @@ public class CreateVolumeGroupDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     String availabilityDomain;
+
+    /**
+     * If provided, specifies the ID of the volume backup policy to assign to the newly
+     * created volume group. If omitted, no policy will be assigned.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("backupPolicyId")
+    String backupPolicyId;
 
     /**
      * The OCID of the compartment that contains the volume group.
@@ -157,11 +176,6 @@ public class CreateVolumeGroupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
 
-    /**
-     * Specifies the volume group source details for a new volume group. The volume source is either another a list of
-     * volume ids in the same availability domain, another volume group or a volume group backup.
-     *
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
     VolumeGroupSourceDetails sourceDetails;
 

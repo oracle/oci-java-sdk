@@ -190,7 +190,9 @@ public class ListAutonomousDatabasesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .ListAutonomousDatabasesResponse.builder();
+                                                        .ListAutonomousDatabasesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

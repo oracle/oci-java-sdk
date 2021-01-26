@@ -10,6 +10,10 @@ import com.oracle.bmc.database.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ChangeExadataInfrastructureCompartmentResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier of the work request.
@@ -29,6 +33,7 @@ public class ChangeExadataInfrastructureCompartmentResponse {
          * @return this builder instance
          */
         public Builder copy(ChangeExadataInfrastructureCompartmentResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
 

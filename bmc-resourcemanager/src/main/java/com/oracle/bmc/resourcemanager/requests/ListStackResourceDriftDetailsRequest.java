@@ -27,6 +27,11 @@ public class ListStackResourceDriftDetailsRequest
     private String opcRequestId;
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+     */
+    private String workRequestId;
+
+    /**
      * A filter that returns only resources that match the given drift status. The value is case-insensitive.
      * Allowable values -
      *   - NOT_CHECKED
@@ -88,6 +93,7 @@ public class ListStackResourceDriftDetailsRequest
         public Builder copy(ListStackResourceDriftDetailsRequest o) {
             stackId(o.getStackId());
             opcRequestId(o.getOpcRequestId());
+            workRequestId(o.getWorkRequestId());
             resourceDriftStatus(o.getResourceDriftStatus());
             limit(o.getLimit());
             page(o.getPage());

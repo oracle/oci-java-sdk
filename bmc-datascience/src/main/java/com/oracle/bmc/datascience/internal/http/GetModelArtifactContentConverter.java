@@ -89,7 +89,9 @@ public class GetModelArtifactContentConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.datascience.responses
-                                                        .GetModelArtifactContentResponse.builder();
+                                                        .GetModelArtifactContentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.inputStream(response.getItem());
 

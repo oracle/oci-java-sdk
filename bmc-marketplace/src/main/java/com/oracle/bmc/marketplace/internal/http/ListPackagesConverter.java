@@ -140,7 +140,9 @@ public class ListPackagesConverter {
                                 com.oracle.bmc.marketplace.responses.ListPackagesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.marketplace.responses
-                                                        .ListPackagesResponse.builder();
+                                                        .ListPackagesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

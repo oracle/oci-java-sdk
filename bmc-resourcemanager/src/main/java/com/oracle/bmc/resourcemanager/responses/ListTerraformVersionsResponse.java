@@ -10,6 +10,10 @@ import com.oracle.bmc.resourcemanager.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListTerraformVersionsResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -29,6 +33,7 @@ public class ListTerraformVersionsResponse {
          * @return this builder instance
          */
         public Builder copy(ListTerraformVersionsResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             terraformVersionCollection(o.getTerraformVersionCollection());
 

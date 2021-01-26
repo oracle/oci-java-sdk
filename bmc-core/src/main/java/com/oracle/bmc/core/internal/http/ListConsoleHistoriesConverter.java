@@ -136,7 +136,9 @@ public class ListConsoleHistoriesConverter {
                                 com.oracle.bmc.core.responses.ListConsoleHistoriesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ListConsoleHistoriesResponse.builder();
+                                                        .ListConsoleHistoriesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

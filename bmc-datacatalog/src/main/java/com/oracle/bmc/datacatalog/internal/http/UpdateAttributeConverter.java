@@ -98,7 +98,9 @@ public class UpdateAttributeConverter {
                                 com.oracle.bmc.datacatalog.responses.UpdateAttributeResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .UpdateAttributeResponse.builder();
+                                                        .UpdateAttributeResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.attribute(response.getItem());
 

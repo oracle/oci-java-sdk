@@ -142,8 +142,9 @@ public class ListManagementAgentImagesConverter {
                                                 .ListManagementAgentImagesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.managementagent.responses
-                                                        .ListManagementAgentImagesResponse
-                                                        .builder();
+                                                        .ListManagementAgentImagesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

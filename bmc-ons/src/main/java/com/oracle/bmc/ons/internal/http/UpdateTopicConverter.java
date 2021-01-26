@@ -81,7 +81,8 @@ public class UpdateTopicConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.ons.responses.UpdateTopicResponse.Builder builder =
-                                        com.oracle.bmc.ons.responses.UpdateTopicResponse.builder();
+                                        com.oracle.bmc.ons.responses.UpdateTopicResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.notificationTopic(response.getItem());
 

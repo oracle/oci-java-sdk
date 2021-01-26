@@ -10,6 +10,10 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class DeleteLogAnalyticsObjectCollectionRuleResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
@@ -23,6 +27,7 @@ public class DeleteLogAnalyticsObjectCollectionRuleResponse {
          * @return this builder instance
          */
         public Builder copy(DeleteLogAnalyticsObjectCollectionRuleResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
 
             return this;

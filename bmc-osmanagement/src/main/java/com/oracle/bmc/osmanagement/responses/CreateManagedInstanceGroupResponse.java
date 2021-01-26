@@ -10,6 +10,10 @@ import com.oracle.bmc.osmanagement.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class CreateManagedInstanceGroupResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * A link to the created Managed Instance Group
@@ -41,6 +45,7 @@ public class CreateManagedInstanceGroupResponse {
          * @return this builder instance
          */
         public Builder copy(CreateManagedInstanceGroupResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             location(o.getLocation());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());

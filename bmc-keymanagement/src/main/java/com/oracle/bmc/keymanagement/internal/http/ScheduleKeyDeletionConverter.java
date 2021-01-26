@@ -93,7 +93,9 @@ public class ScheduleKeyDeletionConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
-                                                        .ScheduleKeyDeletionResponse.builder();
+                                                        .ScheduleKeyDeletionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.key(response.getItem());
 

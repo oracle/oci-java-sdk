@@ -96,8 +96,8 @@ public class ListGoodBotsConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.waas.responses.ListGoodBotsResponse.Builder builder =
-                                        com.oracle.bmc.waas.responses.ListGoodBotsResponse
-                                                .builder();
+                                        com.oracle.bmc.waas.responses.ListGoodBotsResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

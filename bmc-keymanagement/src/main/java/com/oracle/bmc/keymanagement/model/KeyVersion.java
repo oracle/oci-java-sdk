@@ -51,6 +51,15 @@ public class KeyVersion {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
+        private String publicKey;
+
+        public Builder publicKey(String publicKey) {
+            this.publicKey = publicKey;
+            this.__explicitlySet__.add("publicKey");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -114,6 +123,7 @@ public class KeyVersion {
                             compartmentId,
                             id,
                             keyId,
+                            publicKey,
                             lifecycleState,
                             origin,
                             timeCreated,
@@ -130,6 +140,7 @@ public class KeyVersion {
                     compartmentId(o.getCompartmentId())
                             .id(o.getId())
                             .keyId(o.getKeyId())
+                            .publicKey(o.getPublicKey())
                             .lifecycleState(o.getLifecycleState())
                             .origin(o.getOrigin())
                             .timeCreated(o.getTimeCreated())
@@ -166,6 +177,13 @@ public class KeyVersion {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     String keyId;
+
+    /**
+     * The public key in PEM format which will be populated only in case of RSA and ECDSA keys.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
+    String publicKey;
     /**
      * The key version's current lifecycle state.
      * <p>

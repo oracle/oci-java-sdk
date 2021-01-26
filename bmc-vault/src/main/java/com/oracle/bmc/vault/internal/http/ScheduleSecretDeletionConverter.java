@@ -87,7 +87,9 @@ public class ScheduleSecretDeletionConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.vault.responses
-                                                        .ScheduleSecretDeletionResponse.builder();
+                                                        .ScheduleSecretDeletionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(

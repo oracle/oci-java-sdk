@@ -88,7 +88,9 @@ public class BackupKeyConverter {
                                 com.oracle.bmc.keymanagement.responses.BackupKeyResponse.Builder
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
-                                                        .BackupKeyResponse.builder();
+                                                        .BackupKeyResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.key(response.getItem());
 

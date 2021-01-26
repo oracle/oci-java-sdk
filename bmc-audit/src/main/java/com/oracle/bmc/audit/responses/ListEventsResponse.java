@@ -10,6 +10,10 @@ import com.oracle.bmc.audit.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListEventsResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For pagination of a list of audit events. When this header appears in the response,
@@ -38,6 +42,7 @@ public class ListEventsResponse {
          * @return this builder instance
          */
         public Builder copy(ListEventsResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             items(o.getItems());

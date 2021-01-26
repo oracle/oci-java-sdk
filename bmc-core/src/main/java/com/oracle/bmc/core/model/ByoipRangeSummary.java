@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Summary information about a ByoipRange
+ * Information about a `ByoipRange` resource.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -153,13 +153,13 @@ public class ByoipRangeSummary {
     }
 
     /**
-     * The address range the user is on-boarding.
+     * The public IPv4 address range you are importing to the Oracle cloud.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
     String cidrBlock;
 
     /**
-     * The OCID of the compartment containing the Byoip Range.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the `ByoipRange` resource.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -194,13 +194,13 @@ public class ByoipRangeSummary {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The Oracle ID (OCID) of the Byoip Range.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The Byoip Range's current state.
+     * The `ByoipRange` resource's current state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     ByoipRange.LifecycleState lifecycleState;
@@ -212,7 +212,7 @@ public class ByoipRangeSummary {
     ByoipRange.LifecycleDetails lifecycleDetails;
 
     /**
-     * The date and time the Byoip Range was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the `ByoipRange` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *

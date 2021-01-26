@@ -10,6 +10,10 @@ import com.oracle.bmc.logging.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ChangeUnifiedAgentConfigurationCompartmentResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * The OCID of the work request.
@@ -30,6 +34,7 @@ public class ChangeUnifiedAgentConfigurationCompartmentResponse {
          * @return this builder instance
          */
         public Builder copy(ChangeUnifiedAgentConfigurationCompartmentResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
 

@@ -92,7 +92,9 @@ public class GetAssociationSummaryConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .GetAssociationSummaryResponse.builder();
+                                                        .GetAssociationSummaryResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.associationSummaryReport(response.getItem());
 

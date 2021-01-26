@@ -86,7 +86,9 @@ public class UpdateAnalyticsClusterConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.mysql.responses
-                                                        .UpdateAnalyticsClusterResponse.builder();
+                                                        .UpdateAnalyticsClusterResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

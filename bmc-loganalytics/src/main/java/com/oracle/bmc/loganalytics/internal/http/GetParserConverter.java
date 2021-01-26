@@ -85,7 +85,9 @@ public class GetParserConverter {
                                 com.oracle.bmc.loganalytics.responses.GetParserResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .GetParserResponse.builder();
+                                                        .GetParserResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsParser(response.getItem());
 

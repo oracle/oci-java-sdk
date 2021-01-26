@@ -178,7 +178,9 @@ public class SummarizeDatabaseInsightResourceCapacityTrendConverter {
                                         builder =
                                                 com.oracle.bmc.opsi.responses
                                                         .SummarizeDatabaseInsightResourceCapacityTrendResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder
                                         .summarizeDatabaseInsightResourceCapacityTrendAggregationCollection(

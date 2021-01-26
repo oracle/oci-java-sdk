@@ -99,8 +99,8 @@ public class DeleteIndexConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.nosql.responses.DeleteIndexResponse.Builder builder =
-                                        com.oracle.bmc.nosql.responses.DeleteIndexResponse
-                                                .builder();
+                                        com.oracle.bmc.nosql.responses.DeleteIndexResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

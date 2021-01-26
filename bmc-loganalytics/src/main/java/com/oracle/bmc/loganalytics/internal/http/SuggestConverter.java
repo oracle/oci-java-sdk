@@ -84,7 +84,9 @@ public class SuggestConverter {
                                 com.oracle.bmc.loganalytics.responses.SuggestResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .SuggestResponse.builder();
+                                                        .SuggestResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.suggestOutput(response.getItem());
 

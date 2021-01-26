@@ -90,7 +90,9 @@ public class ListTaxesConverter {
                                 com.oracle.bmc.marketplace.responses.ListTaxesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.marketplace.responses
-                                                        .ListTaxesResponse.builder();
+                                                        .ListTaxesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

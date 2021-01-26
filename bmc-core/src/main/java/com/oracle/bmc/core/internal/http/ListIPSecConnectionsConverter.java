@@ -112,7 +112,9 @@ public class ListIPSecConnectionsConverter {
                                 com.oracle.bmc.core.responses.ListIPSecConnectionsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ListIPSecConnectionsResponse.builder();
+                                                        .ListIPSecConnectionsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

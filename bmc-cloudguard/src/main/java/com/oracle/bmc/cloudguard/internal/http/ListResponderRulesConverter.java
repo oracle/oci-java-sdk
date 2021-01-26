@@ -130,7 +130,9 @@ public class ListResponderRulesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
-                                                        .ListResponderRulesResponse.builder();
+                                                        .ListResponderRulesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.responderRuleCollection(response.getItem());
 

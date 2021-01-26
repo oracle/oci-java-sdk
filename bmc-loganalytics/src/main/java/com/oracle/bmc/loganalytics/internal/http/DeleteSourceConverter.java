@@ -90,7 +90,9 @@ public class DeleteSourceConverter {
                                 com.oracle.bmc.loganalytics.responses.DeleteSourceResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .DeleteSourceResponse.builder();
+                                                        .DeleteSourceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

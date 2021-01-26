@@ -94,7 +94,9 @@ public class UpdateInstanceConsoleConnectionConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .UpdateInstanceConsoleConnectionResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.instanceConsoleConnection(response.getItem());
 

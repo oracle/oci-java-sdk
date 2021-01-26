@@ -96,7 +96,9 @@ public class DownloadExadataInfrastructureConfigFileConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .DownloadExadataInfrastructureConfigFileResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.inputStream(response.getItem());
 

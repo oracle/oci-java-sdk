@@ -10,6 +10,10 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class AttachCatalogPrivateEndpointResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * The OCID of the asynchronous request. Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest) with this OCID to track the status of the asynchronous request.
@@ -30,6 +34,7 @@ public class AttachCatalogPrivateEndpointResponse {
          * @return this builder instance
          */
         public Builder copy(AttachCatalogPrivateEndpointResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
 

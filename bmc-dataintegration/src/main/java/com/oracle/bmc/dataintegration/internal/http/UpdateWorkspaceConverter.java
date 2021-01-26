@@ -85,7 +85,9 @@ public class UpdateWorkspaceConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .UpdateWorkspaceResponse.builder();
+                                                        .UpdateWorkspaceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.workspace(response.getItem());
 

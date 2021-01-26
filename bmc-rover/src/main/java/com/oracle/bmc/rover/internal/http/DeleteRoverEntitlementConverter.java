@@ -86,7 +86,9 @@ public class DeleteRoverEntitlementConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.rover.responses
-                                                        .DeleteRoverEntitlementResponse.builder();
+                                                        .DeleteRoverEntitlementResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

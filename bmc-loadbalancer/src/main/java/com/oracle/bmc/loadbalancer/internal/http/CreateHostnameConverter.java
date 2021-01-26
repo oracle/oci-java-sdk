@@ -83,7 +83,9 @@ public class CreateHostnameConverter {
                                 com.oracle.bmc.loadbalancer.responses.CreateHostnameResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .CreateHostnameResponse.builder();
+                                                        .CreateHostnameResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

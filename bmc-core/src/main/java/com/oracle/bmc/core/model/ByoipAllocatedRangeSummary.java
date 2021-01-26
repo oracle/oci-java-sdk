@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Subrange of ByoipRange which is allocated to a PublicIpPool
+ * A summary of CIDR block subranges that are currently allocated to an IP pool.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -72,13 +72,13 @@ public class ByoipAllocatedRangeSummary {
     }
 
     /**
-     * The address range part of the ByoipRange which is used for a publicIpPool.
+     * The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of a BYOIP CIDR block.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
     String cidrBlock;
 
     /**
-     * The OCID of the PublicIpPool containing the part of the Byoip range.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IP pool containing the CIDR block.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")

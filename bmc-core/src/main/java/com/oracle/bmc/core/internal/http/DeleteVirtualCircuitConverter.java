@@ -77,7 +77,9 @@ public class DeleteVirtualCircuitConverter {
                                 com.oracle.bmc.core.responses.DeleteVirtualCircuitResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .DeleteVirtualCircuitResponse.builder();
+                                                        .DeleteVirtualCircuitResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

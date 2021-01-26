@@ -77,7 +77,9 @@ public class CreateTargetConverter {
                                 com.oracle.bmc.cloudguard.responses.CreateTargetResponse.Builder
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
-                                                        .CreateTargetResponse.builder();
+                                                        .CreateTargetResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.target(response.getItem());
 

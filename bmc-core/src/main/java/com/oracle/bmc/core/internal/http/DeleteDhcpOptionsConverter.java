@@ -77,7 +77,9 @@ public class DeleteDhcpOptionsConverter {
                                 com.oracle.bmc.core.responses.DeleteDhcpOptionsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .DeleteDhcpOptionsResponse.builder();
+                                                        .DeleteDhcpOptionsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

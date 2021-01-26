@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Contains the CIDR which will be removed from the VCN.
+ * Details for removing a CIDR block from a VCN.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,7 +61,7 @@ public class RemoveVcnCidrDetails {
     }
 
     /**
-     * The CIDR IP address that needs to be removed.
+     * The CIDR block to remove.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")

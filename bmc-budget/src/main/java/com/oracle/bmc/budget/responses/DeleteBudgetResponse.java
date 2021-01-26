@@ -10,6 +10,10 @@ import com.oracle.bmc.budget.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class DeleteBudgetResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If
@@ -25,6 +29,7 @@ public class DeleteBudgetResponse {
          * @return this builder instance
          */
         public Builder copy(DeleteBudgetResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
 
             return this;

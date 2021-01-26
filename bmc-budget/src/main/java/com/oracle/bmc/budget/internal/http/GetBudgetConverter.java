@@ -75,7 +75,8 @@ public class GetBudgetConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.budget.responses.GetBudgetResponse.Builder builder =
-                                        com.oracle.bmc.budget.responses.GetBudgetResponse.builder();
+                                        com.oracle.bmc.budget.responses.GetBudgetResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.budget(response.getItem());
 

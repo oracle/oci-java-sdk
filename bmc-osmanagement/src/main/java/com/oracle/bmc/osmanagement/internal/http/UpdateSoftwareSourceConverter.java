@@ -90,7 +90,9 @@ public class UpdateSoftwareSourceConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
-                                                        .UpdateSoftwareSourceResponse.builder();
+                                                        .UpdateSoftwareSourceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.softwareSource(response.getItem());
 

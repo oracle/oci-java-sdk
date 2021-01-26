@@ -93,7 +93,9 @@ public class DeleteObjectLifecyclePolicyConverter {
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
                                                         .DeleteObjectLifecyclePolicyResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

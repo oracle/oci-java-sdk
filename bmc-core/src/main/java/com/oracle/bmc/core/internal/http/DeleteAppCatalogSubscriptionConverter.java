@@ -92,7 +92,9 @@ public class DeleteAppCatalogSubscriptionConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .DeleteAppCatalogSubscriptionResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

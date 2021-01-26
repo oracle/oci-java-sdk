@@ -90,7 +90,9 @@ public class GetLogAnalyticsEntityConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .GetLogAnalyticsEntityResponse.builder();
+                                                        .GetLogAnalyticsEntityResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsEntity(response.getItem());
 

@@ -139,7 +139,9 @@ public class SummarizeSqlStatisticsTimeSeriesConverter {
                                         builder =
                                                 com.oracle.bmc.opsi.responses
                                                         .SummarizeSqlStatisticsTimeSeriesResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.sqlStatisticsTimeSeriesAggregationCollection(
                                         response.getItem());

@@ -80,7 +80,8 @@ public class CreateViewConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.dns.responses.CreateViewResponse.Builder builder =
-                                        com.oracle.bmc.dns.responses.CreateViewResponse.builder();
+                                        com.oracle.bmc.dns.responses.CreateViewResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.view(response.getItem());
 

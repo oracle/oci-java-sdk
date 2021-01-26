@@ -84,8 +84,8 @@ public class ListServicesConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.ListServicesResponse.Builder builder =
-                                        com.oracle.bmc.core.responses.ListServicesResponse
-                                                .builder();
+                                        com.oracle.bmc.core.responses.ListServicesResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

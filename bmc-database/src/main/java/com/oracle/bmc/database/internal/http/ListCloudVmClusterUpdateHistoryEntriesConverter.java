@@ -118,7 +118,9 @@ public class ListCloudVmClusterUpdateHistoryEntriesConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ListCloudVmClusterUpdateHistoryEntriesResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

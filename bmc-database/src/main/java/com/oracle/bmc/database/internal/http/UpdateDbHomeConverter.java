@@ -79,7 +79,9 @@ public class UpdateDbHomeConverter {
                                 com.oracle.bmc.database.responses.UpdateDbHomeResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .UpdateDbHomeResponse.builder();
+                                                        .UpdateDbHomeResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dbHome(response.getItem());
 

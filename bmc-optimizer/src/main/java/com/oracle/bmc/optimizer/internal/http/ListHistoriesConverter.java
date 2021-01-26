@@ -168,7 +168,9 @@ public class ListHistoriesConverter {
                                 com.oracle.bmc.optimizer.responses.ListHistoriesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.optimizer.responses
-                                                        .ListHistoriesResponse.builder();
+                                                        .ListHistoriesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.historyCollection(response.getItem());
 

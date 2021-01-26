@@ -95,7 +95,9 @@ public class GetLogAnalyticsLogGroupsSummaryConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .GetLogAnalyticsLogGroupsSummaryResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logGroupSummaryReport(response.getItem());
 

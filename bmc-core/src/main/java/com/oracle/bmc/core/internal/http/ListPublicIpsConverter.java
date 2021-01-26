@@ -124,7 +124,9 @@ public class ListPublicIpsConverter {
                                 com.oracle.bmc.core.responses.ListPublicIpsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses.ListPublicIpsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

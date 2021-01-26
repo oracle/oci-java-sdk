@@ -5,8 +5,8 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Optional object to specify ports for a UDP rule. If you specify UDP as the
- * protocol but omit this object, then all ports are allowed.
+ * Optional and valid only for UDP. Use to specify particular destination ports for UDP rules.
+ * If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -71,19 +71,9 @@ public class UdpOptions {
         return new Builder();
     }
 
-    /**
-     * An inclusive range of allowed destination ports. Use the same number for the min and max
-     * to indicate a single port. Defaults to all ports if not specified.
-     *
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationPortRange")
     PortRange destinationPortRange;
 
-    /**
-     * An inclusive range of allowed source ports. Use the same number for the min and max to
-     * indicate a single port. Defaults to all ports if not specified.
-     *
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourcePortRange")
     PortRange sourcePortRange;
 

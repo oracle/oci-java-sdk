@@ -94,7 +94,9 @@ public class GetDependentObjectConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .GetDependentObjectResponse.builder();
+                                                        .GetDependentObjectResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dependentObject(response.getItem());
 

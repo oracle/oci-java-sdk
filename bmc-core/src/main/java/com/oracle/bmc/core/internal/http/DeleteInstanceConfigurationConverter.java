@@ -81,7 +81,9 @@ public class DeleteInstanceConfigurationConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .DeleteInstanceConfigurationResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

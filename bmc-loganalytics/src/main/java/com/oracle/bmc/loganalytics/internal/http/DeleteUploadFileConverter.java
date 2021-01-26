@@ -88,7 +88,9 @@ public class DeleteUploadFileConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .DeleteUploadFileResponse.builder();
+                                                        .DeleteUploadFileResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

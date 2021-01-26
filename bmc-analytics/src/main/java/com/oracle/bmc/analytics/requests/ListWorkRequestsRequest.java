@@ -26,7 +26,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     private String resourceId;
 
     /**
-     * Type of the resource associated with a work request
+     * Type of the resource associated with a work request.
      *
      */
     private com.oracle.bmc.analytics.model.WorkRequestResourceType resourceType;

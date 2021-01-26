@@ -105,7 +105,9 @@ public class TestParserConverter {
                                 com.oracle.bmc.loganalytics.responses.TestParserResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .TestParserResponse.builder();
+                                                        .TestParserResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.parserTestResult(response.getItem());
 

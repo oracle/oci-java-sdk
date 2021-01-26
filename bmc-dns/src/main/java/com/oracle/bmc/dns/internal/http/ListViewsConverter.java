@@ -143,7 +143,8 @@ public class ListViewsConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.dns.responses.ListViewsResponse.Builder builder =
-                                        com.oracle.bmc.dns.responses.ListViewsResponse.builder();
+                                        com.oracle.bmc.dns.responses.ListViewsResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

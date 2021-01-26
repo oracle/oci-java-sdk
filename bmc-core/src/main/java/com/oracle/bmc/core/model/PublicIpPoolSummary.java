@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Summary information about a Public IP pool
+ * Summary information about a public IP pool.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -131,7 +131,7 @@ public class PublicIpPoolSummary {
     }
 
     /**
-     * The OCID of the compartment containing the Public IP Pool
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP pool.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -166,19 +166,19 @@ public class PublicIpPoolSummary {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The Oracle ID (OCID) of the Public Ip Pool.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the public IP pool.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The Public IP Pool's current state.
+     * The public IP pool's current state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     PublicIpPool.LifecycleState lifecycleState;
 
     /**
-     * The date and time the public IP Pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the public IP pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *

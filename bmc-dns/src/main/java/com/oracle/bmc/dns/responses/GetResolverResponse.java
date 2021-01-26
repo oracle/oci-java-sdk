@@ -10,6 +10,10 @@ import com.oracle.bmc.dns.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetResolverResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * The current version of the resource, ending with a
@@ -45,6 +49,7 @@ public class GetResolverResponse {
          * @return this builder instance
          */
         public Builder copy(GetResolverResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             resolver(o.getResolver());

@@ -76,7 +76,9 @@ public class GetPublicIpByPrivateIpIdConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .GetPublicIpByPrivateIpIdResponse.builder();
+                                                        .GetPublicIpByPrivateIpIdResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.publicIp(response.getItem());
 

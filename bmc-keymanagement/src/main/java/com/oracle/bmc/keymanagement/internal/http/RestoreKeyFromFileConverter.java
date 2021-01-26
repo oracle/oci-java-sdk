@@ -96,7 +96,9 @@ public class RestoreKeyFromFileConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
-                                                        .RestoreKeyFromFileResponse.builder();
+                                                        .RestoreKeyFromFileResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.key(response.getItem());
 

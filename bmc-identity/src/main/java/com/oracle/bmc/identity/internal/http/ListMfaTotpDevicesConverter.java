@@ -112,7 +112,9 @@ public class ListMfaTotpDevicesConverter {
                                 com.oracle.bmc.identity.responses.ListMfaTotpDevicesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .ListMfaTotpDevicesResponse.builder();
+                                                        .ListMfaTotpDevicesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

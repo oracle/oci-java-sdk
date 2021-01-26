@@ -145,7 +145,9 @@ public class ListTaskRunsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .ListTaskRunsResponse.builder();
+                                                        .ListTaskRunsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.taskRunSummaryCollection(response.getItem());
 

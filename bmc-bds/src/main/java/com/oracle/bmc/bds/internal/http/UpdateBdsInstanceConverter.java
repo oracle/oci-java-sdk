@@ -83,7 +83,9 @@ public class UpdateBdsInstanceConverter {
                                 com.oracle.bmc.bds.responses.UpdateBdsInstanceResponse.Builder
                                         builder =
                                                 com.oracle.bmc.bds.responses
-                                                        .UpdateBdsInstanceResponse.builder();
+                                                        .UpdateBdsInstanceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

@@ -76,7 +76,9 @@ public class CreateSuppressionConverter {
                                 com.oracle.bmc.email.responses.CreateSuppressionResponse.Builder
                                         builder =
                                                 com.oracle.bmc.email.responses
-                                                        .CreateSuppressionResponse.builder();
+                                                        .CreateSuppressionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.suppression(response.getItem());
 

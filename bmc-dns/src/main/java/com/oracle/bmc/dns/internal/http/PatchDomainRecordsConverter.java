@@ -119,7 +119,9 @@ public class PatchDomainRecordsConverter {
                                 com.oracle.bmc.dns.responses.PatchDomainRecordsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dns.responses
-                                                        .PatchDomainRecordsResponse.builder();
+                                                        .PatchDomainRecordsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.recordCollection(response.getItem());
 

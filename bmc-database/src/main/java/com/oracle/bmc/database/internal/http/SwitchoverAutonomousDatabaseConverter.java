@@ -96,7 +96,9 @@ public class SwitchoverAutonomousDatabaseConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .SwitchoverAutonomousDatabaseResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.autonomousDatabase(response.getItem());
 

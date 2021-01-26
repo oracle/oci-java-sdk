@@ -94,7 +94,9 @@ public class UpdateOnPremConnectorWalletConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .UpdateOnPremConnectorWalletResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

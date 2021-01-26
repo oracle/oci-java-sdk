@@ -90,7 +90,9 @@ public class ChangeVlanCompartmentConverter {
                                 com.oracle.bmc.core.responses.ChangeVlanCompartmentResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ChangeVlanCompartmentResponse.builder();
+                                                        .ChangeVlanCompartmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

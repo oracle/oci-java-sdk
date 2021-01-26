@@ -140,7 +140,9 @@ public class ListStreamPoolsConverter {
                                 com.oracle.bmc.streaming.responses.ListStreamPoolsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.streaming.responses
-                                                        .ListStreamPoolsResponse.builder();
+                                                        .ListStreamPoolsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

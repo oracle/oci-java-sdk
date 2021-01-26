@@ -80,7 +80,9 @@ public class GetRoverClusterConverter {
                                 com.oracle.bmc.rover.responses.GetRoverClusterResponse.Builder
                                         builder =
                                                 com.oracle.bmc.rover.responses
-                                                        .GetRoverClusterResponse.builder();
+                                                        .GetRoverClusterResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.roverCluster(response.getItem());
 

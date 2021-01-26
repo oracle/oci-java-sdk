@@ -79,7 +79,9 @@ public class GetOceInstanceConverter {
                                 com.oracle.bmc.oce.responses.GetOceInstanceResponse.Builder
                                         builder =
                                                 com.oracle.bmc.oce.responses.GetOceInstanceResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.oceInstance(response.getItem());
 

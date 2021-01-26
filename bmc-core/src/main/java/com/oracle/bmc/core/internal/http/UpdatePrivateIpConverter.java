@@ -79,7 +79,9 @@ public class UpdatePrivateIpConverter {
                                 com.oracle.bmc.core.responses.UpdatePrivateIpResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .UpdatePrivateIpResponse.builder();
+                                                        .UpdatePrivateIpResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.privateIp(response.getItem());
 

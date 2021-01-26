@@ -94,7 +94,9 @@ public class UpdateManagedInstanceGroupConverter {
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
                                                         .UpdateManagedInstanceGroupResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.managedInstanceGroup(response.getItem());
 

@@ -82,7 +82,9 @@ public class UpdateApiConverter {
                                 com.oracle.bmc.apigateway.responses.UpdateApiResponse.Builder
                                         builder =
                                                 com.oracle.bmc.apigateway.responses
-                                                        .UpdateApiResponse.builder();
+                                                        .UpdateApiResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

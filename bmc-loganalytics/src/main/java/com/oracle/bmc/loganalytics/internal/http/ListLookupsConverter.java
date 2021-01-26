@@ -153,7 +153,9 @@ public class ListLookupsConverter {
                                 com.oracle.bmc.loganalytics.responses.ListLookupsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .ListLookupsResponse.builder();
+                                                        .ListLookupsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsLookupCollection(response.getItem());
 

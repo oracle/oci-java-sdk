@@ -101,7 +101,9 @@ public class ListCachingRulesConverter {
                                 com.oracle.bmc.waas.responses.ListCachingRulesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .ListCachingRulesResponse.builder();
+                                                        .ListCachingRulesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

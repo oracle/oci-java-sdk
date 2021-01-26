@@ -94,7 +94,9 @@ public class ValidateConnectionConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .ValidateConnectionResponse.builder();
+                                                        .ValidateConnectionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.validateConnectionResult(response.getItem());
 

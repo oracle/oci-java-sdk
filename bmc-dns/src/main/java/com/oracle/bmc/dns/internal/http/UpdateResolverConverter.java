@@ -94,7 +94,9 @@ public class UpdateResolverConverter {
                                 com.oracle.bmc.dns.responses.UpdateResolverResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dns.responses.UpdateResolverResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.resolver(response.getItem());
 

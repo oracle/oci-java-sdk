@@ -125,6 +125,15 @@ public class BlockchainPlatform {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerShape")
+        private LoadBalancerShape loadBalancerShape;
+
+        public Builder loadBalancerShape(LoadBalancerShape loadBalancerShape) {
+            this.loadBalancerShape = loadBalancerShape;
+            this.__explicitlySet__.add("loadBalancerShape");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("serviceEndpoint")
         private String serviceEndpoint;
 
@@ -252,6 +261,7 @@ public class BlockchainPlatform {
                             platformRole,
                             computeShape,
                             platformShapeType,
+                            loadBalancerShape,
                             serviceEndpoint,
                             lifecycleState,
                             lifecycleDetails,
@@ -282,6 +292,7 @@ public class BlockchainPlatform {
                             .platformRole(o.getPlatformRole())
                             .computeShape(o.getComputeShape())
                             .platformShapeType(o.getPlatformShapeType())
+                            .loadBalancerShape(o.getLoadBalancerShape())
                             .serviceEndpoint(o.getServiceEndpoint())
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails())
@@ -511,6 +522,57 @@ public class BlockchainPlatform {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformShapeType")
     PlatformShapeType platformShapeType;
+    /**
+     * Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum LoadBalancerShape {
+        Lb100Mbps("LB_100_MBPS"),
+        Lb400Mbps("LB_400_MBPS"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, LoadBalancerShape> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LoadBalancerShape v : LoadBalancerShape.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        LoadBalancerShape(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static LoadBalancerShape create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LoadBalancerShape', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerShape")
+    LoadBalancerShape loadBalancerShape;
 
     /**
      * Service endpoint URL, valid post-provisioning

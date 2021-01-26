@@ -260,7 +260,9 @@ public class ListAttributesConverter {
                                 com.oracle.bmc.datacatalog.responses.ListAttributesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .ListAttributesResponse.builder();
+                                                        .ListAttributesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.attributeCollection(response.getItem());
 

@@ -83,7 +83,9 @@ public class UpdateModelConverter {
                                 com.oracle.bmc.datascience.responses.UpdateModelResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datascience.responses
-                                                        .UpdateModelResponse.builder();
+                                                        .UpdateModelResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.model(response.getItem());
 

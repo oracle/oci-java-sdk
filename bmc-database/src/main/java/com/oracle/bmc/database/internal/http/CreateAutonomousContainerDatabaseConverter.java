@@ -84,7 +84,9 @@ public class CreateAutonomousContainerDatabaseConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .CreateAutonomousContainerDatabaseResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.autonomousContainerDatabase(response.getItem());
 

@@ -10,6 +10,10 @@ import com.oracle.bmc.workrequests.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListWorkRequestsResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For list pagination. When this header appears in the response, additional pages of
@@ -37,6 +41,7 @@ public class ListWorkRequestsResponse {
          * @return this builder instance
          */
         public Builder copy(ListWorkRequestsResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             items(o.getItems());

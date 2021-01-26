@@ -90,7 +90,9 @@ public class DeleteParserConverter {
                                 com.oracle.bmc.loganalytics.responses.DeleteParserResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .DeleteParserResponse.builder();
+                                                        .DeleteParserResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

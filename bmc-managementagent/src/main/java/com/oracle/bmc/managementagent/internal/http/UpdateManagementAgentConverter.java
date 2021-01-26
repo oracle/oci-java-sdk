@@ -95,7 +95,9 @@ public class UpdateManagementAgentConverter {
                                                 .UpdateManagementAgentResponse.Builder
                                         builder =
                                                 com.oracle.bmc.managementagent.responses
-                                                        .UpdateManagementAgentResponse.builder();
+                                                        .UpdateManagementAgentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.managementAgent(response.getItem());
 

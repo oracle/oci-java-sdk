@@ -77,7 +77,9 @@ public class CreateStackConverter {
                                 com.oracle.bmc.resourcemanager.responses.CreateStackResponse.Builder
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
-                                                        .CreateStackResponse.builder();
+                                                        .CreateStackResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.stack(response.getItem());
 

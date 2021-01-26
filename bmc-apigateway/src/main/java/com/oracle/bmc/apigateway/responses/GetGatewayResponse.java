@@ -10,6 +10,10 @@ import com.oracle.bmc.apigateway.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetGatewayResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control. See `if-match`.
@@ -36,6 +40,7 @@ public class GetGatewayResponse {
          * @return this builder instance
          */
         public Builder copy(GetGatewayResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             gateway(o.getGateway());

@@ -76,8 +76,8 @@ public class UpdateSubnetConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.UpdateSubnetResponse.Builder builder =
-                                        com.oracle.bmc.core.responses.UpdateSubnetResponse
-                                                .builder();
+                                        com.oracle.bmc.core.responses.UpdateSubnetResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.subnet(response.getItem());
 

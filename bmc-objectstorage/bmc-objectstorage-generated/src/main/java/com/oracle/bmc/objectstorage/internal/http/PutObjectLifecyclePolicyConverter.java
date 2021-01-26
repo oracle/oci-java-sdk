@@ -101,7 +101,9 @@ public class PutObjectLifecyclePolicyConverter {
                                                 .PutObjectLifecyclePolicyResponse.Builder
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
-                                                        .PutObjectLifecyclePolicyResponse.builder();
+                                                        .PutObjectLifecyclePolicyResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.objectLifecyclePolicy(response.getItem());
 

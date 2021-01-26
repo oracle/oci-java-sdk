@@ -80,7 +80,9 @@ public class GetLogSavedSearchConverter {
                                 com.oracle.bmc.logging.responses.GetLogSavedSearchResponse.Builder
                                         builder =
                                                 com.oracle.bmc.logging.responses
-                                                        .GetLogSavedSearchResponse.builder();
+                                                        .GetLogSavedSearchResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logSavedSearch(response.getItem());
 

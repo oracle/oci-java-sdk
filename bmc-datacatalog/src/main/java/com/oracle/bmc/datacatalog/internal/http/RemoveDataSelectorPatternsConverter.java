@@ -100,7 +100,9 @@ public class RemoveDataSelectorPatternsConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .RemoveDataSelectorPatternsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dataAsset(response.getItem());
 

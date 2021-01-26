@@ -10,6 +10,10 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class PutQueryWorkRequestBackgroundResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control. See `if-match`.
@@ -42,6 +46,7 @@ public class PutQueryWorkRequestBackgroundResponse {
          * @return this builder instance
          */
         public Builder copy(PutQueryWorkRequestBackgroundResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             queryWorkRequest(o.getQueryWorkRequest());

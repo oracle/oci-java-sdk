@@ -139,7 +139,9 @@ public class ListDataAssetsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .ListDataAssetsResponse.builder();
+                                                        .ListDataAssetsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dataAssetSummaryCollection(response.getItem());
 

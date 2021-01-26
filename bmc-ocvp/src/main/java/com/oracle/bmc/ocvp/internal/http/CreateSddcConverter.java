@@ -72,7 +72,8 @@ public class CreateSddcConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.ocvp.responses.CreateSddcResponse.Builder builder =
-                                        com.oracle.bmc.ocvp.responses.CreateSddcResponse.builder();
+                                        com.oracle.bmc.ocvp.responses.CreateSddcResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

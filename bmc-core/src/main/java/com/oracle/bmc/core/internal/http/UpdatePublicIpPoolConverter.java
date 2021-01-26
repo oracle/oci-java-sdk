@@ -86,7 +86,9 @@ public class UpdatePublicIpPoolConverter {
                                 com.oracle.bmc.core.responses.UpdatePublicIpPoolResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .UpdatePublicIpPoolResponse.builder();
+                                                        .UpdatePublicIpPoolResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.publicIpPool(response.getItem());
 

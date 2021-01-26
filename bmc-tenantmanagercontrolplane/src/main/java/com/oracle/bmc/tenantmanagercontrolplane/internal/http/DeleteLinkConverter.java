@@ -85,7 +85,9 @@ public class DeleteLinkConverter {
                                                 .DeleteLinkResponse.Builder
                                         builder =
                                                 com.oracle.bmc.tenantmanagercontrolplane.responses
-                                                        .DeleteLinkResponse.builder();
+                                                        .DeleteLinkResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

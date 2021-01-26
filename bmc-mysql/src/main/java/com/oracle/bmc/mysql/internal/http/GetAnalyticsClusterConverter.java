@@ -85,7 +85,9 @@ public class GetAnalyticsClusterConverter {
                                 com.oracle.bmc.mysql.responses.GetAnalyticsClusterResponse.Builder
                                         builder =
                                                 com.oracle.bmc.mysql.responses
-                                                        .GetAnalyticsClusterResponse.builder();
+                                                        .GetAnalyticsClusterResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 if (response.getStatusCode() != 304) {
                                     builder.analyticsCluster(response.getItem());

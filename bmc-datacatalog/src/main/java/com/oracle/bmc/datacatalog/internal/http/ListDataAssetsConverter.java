@@ -194,7 +194,9 @@ public class ListDataAssetsConverter {
                                 com.oracle.bmc.datacatalog.responses.ListDataAssetsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .ListDataAssetsResponse.builder();
+                                                        .ListDataAssetsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dataAssetCollection(response.getItem());
 

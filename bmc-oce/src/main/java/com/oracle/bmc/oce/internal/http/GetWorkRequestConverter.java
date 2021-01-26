@@ -79,7 +79,9 @@ public class GetWorkRequestConverter {
                                 com.oracle.bmc.oce.responses.GetWorkRequestResponse.Builder
                                         builder =
                                                 com.oracle.bmc.oce.responses.GetWorkRequestResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.workRequest(response.getItem());
 

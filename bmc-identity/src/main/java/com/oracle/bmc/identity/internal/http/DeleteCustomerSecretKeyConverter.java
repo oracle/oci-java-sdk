@@ -85,7 +85,9 @@ public class DeleteCustomerSecretKeyConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .DeleteCustomerSecretKeyResponse.builder();
+                                                        .DeleteCustomerSecretKeyResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

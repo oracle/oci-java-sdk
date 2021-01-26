@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The data to add capacity to a public ip pool
+ * The information used to add capacity to an IP pool.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -71,13 +71,13 @@ public class AddPublicIpPoolCapacityDetails {
     }
 
     /**
-     * The OCID of the Byoip Range Id object to whch the cidr block belongs.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("byoipRangeId")
     String byoipRangeId;
 
     /**
-     * The CIDR IP address range to be added to the Public Ip Pool
+     * The CIDR block to add to the public IP pool. It could be all of the CIDR block identified in `byoipRangeId`, or a subrange.
      * Example: `10.0.1.0/24`
      *
      **/

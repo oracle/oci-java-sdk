@@ -140,7 +140,9 @@ public class SummarizeSqlStatisticsTimeSeriesByPlanConverter {
                                         builder =
                                                 com.oracle.bmc.opsi.responses
                                                         .SummarizeSqlStatisticsTimeSeriesByPlanResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.sqlStatisticsTimeSeriesByPlanAggregationCollection(
                                         response.getItem());

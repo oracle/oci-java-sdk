@@ -78,7 +78,9 @@ public class ListAuthTokensConverter {
                                 com.oracle.bmc.identity.responses.ListAuthTokensResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .ListAuthTokensResponse.builder();
+                                                        .ListAuthTokensResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

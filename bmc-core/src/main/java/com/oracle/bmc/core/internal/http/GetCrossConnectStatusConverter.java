@@ -77,7 +77,9 @@ public class GetCrossConnectStatusConverter {
                                 com.oracle.bmc.core.responses.GetCrossConnectStatusResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .GetCrossConnectStatusResponse.builder();
+                                                        .GetCrossConnectStatusResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.crossConnectStatus(response.getItem());
 

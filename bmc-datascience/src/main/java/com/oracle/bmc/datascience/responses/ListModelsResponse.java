@@ -10,6 +10,10 @@ import com.oracle.bmc.datascience.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListModelsResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -41,6 +45,7 @@ public class ListModelsResponse {
          * @return this builder instance
          */
         public Builder copy(ListModelsResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcNextPage(o.getOpcNextPage());
             opcPrevPage(o.getOpcPrevPage());
             opcRequestId(o.getOpcRequestId());

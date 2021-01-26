@@ -100,7 +100,9 @@ public class ListProtocolsConverter {
                                 com.oracle.bmc.loadbalancer.responses.ListProtocolsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .ListProtocolsResponse.builder();
+                                                        .ListProtocolsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

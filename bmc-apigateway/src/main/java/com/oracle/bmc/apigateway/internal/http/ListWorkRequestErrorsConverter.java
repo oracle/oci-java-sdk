@@ -115,7 +115,9 @@ public class ListWorkRequestErrorsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.apigateway.responses
-                                                        .ListWorkRequestErrorsResponse.builder();
+                                                        .ListWorkRequestErrorsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.workRequestErrorCollection(response.getItem());
 

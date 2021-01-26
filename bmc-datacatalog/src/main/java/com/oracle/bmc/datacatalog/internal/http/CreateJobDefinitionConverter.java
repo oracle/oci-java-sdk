@@ -89,7 +89,9 @@ public class CreateJobDefinitionConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .CreateJobDefinitionResponse.builder();
+                                                        .CreateJobDefinitionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.jobDefinition(response.getItem());
 

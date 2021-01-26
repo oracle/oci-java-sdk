@@ -98,7 +98,9 @@ public class ListWhitelistsConverter {
                                 com.oracle.bmc.waas.responses.ListWhitelistsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses.ListWhitelistsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

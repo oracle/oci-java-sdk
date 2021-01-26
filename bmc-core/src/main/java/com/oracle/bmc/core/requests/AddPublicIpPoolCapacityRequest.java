@@ -15,7 +15,7 @@ public class AddPublicIpPoolCapacityRequest
         extends com.oracle.bmc.requests.BmcRequest<AddPublicIpPoolCapacityDetails> {
 
     /**
-     * The OCID of the Public Ip Pool object.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the public IP pool.
      */
     private String publicIpPoolId;
 

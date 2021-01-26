@@ -80,7 +80,9 @@ public class BulkDeleteTagsConverter {
                                 com.oracle.bmc.identity.responses.BulkDeleteTagsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .BulkDeleteTagsResponse.builder();
+                                                        .BulkDeleteTagsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -87,7 +87,9 @@ public class GenerateTotpSeedConverter {
                                 com.oracle.bmc.identity.responses.GenerateTotpSeedResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .GenerateTotpSeedResponse.builder();
+                                                        .GenerateTotpSeedResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.mfaTotpDevice(response.getItem());
 

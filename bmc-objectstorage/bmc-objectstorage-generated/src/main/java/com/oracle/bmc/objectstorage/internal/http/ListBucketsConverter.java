@@ -116,7 +116,9 @@ public class ListBucketsConverter {
                                 com.oracle.bmc.objectstorage.responses.ListBucketsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
-                                                        .ListBucketsResponse.builder();
+                                                        .ListBucketsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

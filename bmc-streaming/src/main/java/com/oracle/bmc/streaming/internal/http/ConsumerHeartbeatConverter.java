@@ -86,7 +86,9 @@ public class ConsumerHeartbeatConverter {
                                 com.oracle.bmc.streaming.responses.ConsumerHeartbeatResponse.Builder
                                         builder =
                                                 com.oracle.bmc.streaming.responses
-                                                        .ConsumerHeartbeatResponse.builder();
+                                                        .ConsumerHeartbeatResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.cursor(response.getItem());
 

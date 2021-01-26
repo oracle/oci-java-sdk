@@ -87,7 +87,9 @@ public class StartOdaInstanceConverter {
                                 com.oracle.bmc.oda.responses.StartOdaInstanceResponse.Builder
                                         builder =
                                                 com.oracle.bmc.oda.responses
-                                                        .StartOdaInstanceResponse.builder();
+                                                        .StartOdaInstanceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

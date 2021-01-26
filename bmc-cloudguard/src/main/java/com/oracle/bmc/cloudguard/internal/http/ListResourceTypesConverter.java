@@ -122,7 +122,9 @@ public class ListResourceTypesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
-                                                        .ListResourceTypesResponse.builder();
+                                                        .ListResourceTypesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.resourceTypeCollection(response.getItem());
 

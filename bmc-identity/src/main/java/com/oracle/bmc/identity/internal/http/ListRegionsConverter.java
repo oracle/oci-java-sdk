@@ -71,7 +71,9 @@ public class ListRegionsConverter {
                                 com.oracle.bmc.identity.responses.ListRegionsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .ListRegionsResponse.builder();
+                                                        .ListRegionsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

@@ -10,6 +10,10 @@ import com.oracle.bmc.resourcemanager.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetJobLogsContentResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique identifier for the request
@@ -27,6 +31,7 @@ public class GetJobLogsContentResponse {
          * @return this builder instance
          */
         public Builder copy(GetJobLogsContentResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             value(o.getValue());
 

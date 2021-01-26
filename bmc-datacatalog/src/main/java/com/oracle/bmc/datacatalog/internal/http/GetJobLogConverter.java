@@ -102,7 +102,9 @@ public class GetJobLogConverter {
                                 com.oracle.bmc.datacatalog.responses.GetJobLogResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .GetJobLogResponse.builder();
+                                                        .GetJobLogResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.jobLog(response.getItem());
 

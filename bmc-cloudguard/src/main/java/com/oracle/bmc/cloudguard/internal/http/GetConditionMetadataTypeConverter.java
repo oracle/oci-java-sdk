@@ -102,7 +102,9 @@ public class GetConditionMetadataTypeConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
-                                                        .GetConditionMetadataTypeResponse.builder();
+                                                        .GetConditionMetadataTypeResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.conditionMetadataType(response.getItem());
 

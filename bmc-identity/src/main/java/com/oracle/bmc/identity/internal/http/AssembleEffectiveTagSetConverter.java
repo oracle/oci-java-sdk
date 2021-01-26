@@ -94,7 +94,9 @@ public class AssembleEffectiveTagSetConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .AssembleEffectiveTagSetResponse.builder();
+                                                        .AssembleEffectiveTagSetResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

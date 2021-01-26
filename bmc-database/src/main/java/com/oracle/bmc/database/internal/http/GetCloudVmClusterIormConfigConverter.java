@@ -86,7 +86,9 @@ public class GetCloudVmClusterIormConfigConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .GetCloudVmClusterIormConfigResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.exadataIormConfig(response.getItem());
 

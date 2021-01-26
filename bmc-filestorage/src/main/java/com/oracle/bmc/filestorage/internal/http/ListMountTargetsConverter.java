@@ -156,7 +156,9 @@ public class ListMountTargetsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.filestorage.responses
-                                                        .ListMountTargetsResponse.builder();
+                                                        .ListMountTargetsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

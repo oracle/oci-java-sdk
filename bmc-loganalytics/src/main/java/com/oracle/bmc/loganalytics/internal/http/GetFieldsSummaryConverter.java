@@ -90,7 +90,9 @@ public class GetFieldsSummaryConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .GetFieldsSummaryResponse.builder();
+                                                        .GetFieldsSummaryResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.fieldSummaryReport(response.getItem());
 

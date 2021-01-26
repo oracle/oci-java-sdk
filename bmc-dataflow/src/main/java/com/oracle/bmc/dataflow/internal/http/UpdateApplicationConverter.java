@@ -86,7 +86,9 @@ public class UpdateApplicationConverter {
                                 com.oracle.bmc.dataflow.responses.UpdateApplicationResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dataflow.responses
-                                                        .UpdateApplicationResponse.builder();
+                                                        .UpdateApplicationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.application(response.getItem());
 

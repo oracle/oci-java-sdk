@@ -96,7 +96,9 @@ public class DeleteEntityTagConverter {
                                 com.oracle.bmc.datacatalog.responses.DeleteEntityTagResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .DeleteEntityTagResponse.builder();
+                                                        .DeleteEntityTagResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -140,7 +140,9 @@ public class ListFunctionsConverter {
                                 com.oracle.bmc.functions.responses.ListFunctionsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.functions.responses
-                                                        .ListFunctionsResponse.builder();
+                                                        .ListFunctionsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

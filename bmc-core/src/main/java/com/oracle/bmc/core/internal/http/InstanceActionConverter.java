@@ -88,7 +88,9 @@ public class InstanceActionConverter {
                                 com.oracle.bmc.core.responses.InstanceActionResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses.InstanceActionResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.instance(response.getItem());
 

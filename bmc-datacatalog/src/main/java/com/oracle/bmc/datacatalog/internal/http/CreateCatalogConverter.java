@@ -76,7 +76,9 @@ public class CreateCatalogConverter {
                                 com.oracle.bmc.datacatalog.responses.CreateCatalogResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .CreateCatalogResponse.builder();
+                                                        .CreateCatalogResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

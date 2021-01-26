@@ -95,7 +95,9 @@ public class GetConfirmSubscriptionConverter {
                                 com.oracle.bmc.ons.responses.GetConfirmSubscriptionResponse.Builder
                                         builder =
                                                 com.oracle.bmc.ons.responses
-                                                        .GetConfirmSubscriptionResponse.builder();
+                                                        .GetConfirmSubscriptionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.confirmationResult(response.getItem());
 

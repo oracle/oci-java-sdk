@@ -87,7 +87,9 @@ public class GetDbSystemPatchHistoryEntryConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .GetDbSystemPatchHistoryEntryResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.patchHistoryEntry(response.getItem());
 

@@ -74,8 +74,8 @@ public class DetachVolumeConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.DetachVolumeResponse.Builder builder =
-                                        com.oracle.bmc.core.responses.DetachVolumeResponse
-                                                .builder();
+                                        com.oracle.bmc.core.responses.DetachVolumeResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -10,6 +10,10 @@ import com.oracle.bmc.loadbalancer.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListBackendsResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -29,6 +33,7 @@ public class ListBackendsResponse {
          * @return this builder instance
          */
         public Builder copy(ListBackendsResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             items(o.getItems());
 

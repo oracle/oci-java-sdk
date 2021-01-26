@@ -10,6 +10,10 @@ import com.oracle.bmc.waas.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetJsChallengeResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control. See `if-match`.
@@ -32,6 +36,7 @@ public class GetJsChallengeResponse {
          * @return this builder instance
          */
         public Builder copy(GetJsChallengeResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             jsChallenge(o.getJsChallenge());

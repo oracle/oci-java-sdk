@@ -81,7 +81,9 @@ public class DeleteConfigurationConverter {
                                 com.oracle.bmc.mysql.responses.DeleteConfigurationResponse.Builder
                                         builder =
                                                 com.oracle.bmc.mysql.responses
-                                                        .DeleteConfigurationResponse.builder();
+                                                        .DeleteConfigurationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

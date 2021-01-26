@@ -88,7 +88,9 @@ public class UpdateWhitelistsConverter {
                                 com.oracle.bmc.waas.responses.UpdateWhitelistsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .UpdateWhitelistsResponse.builder();
+                                                        .UpdateWhitelistsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

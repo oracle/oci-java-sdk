@@ -92,7 +92,9 @@ public class CancelVaultDeletionConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
-                                                        .CancelVaultDeletionResponse.builder();
+                                                        .CancelVaultDeletionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.vault(response.getItem());
 

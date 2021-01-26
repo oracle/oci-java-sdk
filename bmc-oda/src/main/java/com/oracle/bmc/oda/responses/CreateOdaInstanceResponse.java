@@ -10,6 +10,10 @@ import com.oracle.bmc.oda.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class CreateOdaInstanceResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Fully qualified URL for the newly created instance.
@@ -46,6 +50,7 @@ public class CreateOdaInstanceResponse {
          * @return this builder instance
          */
         public Builder copy(CreateOdaInstanceResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             location(o.getLocation());
             etag(o.getEtag());
             opcWorkRequestId(o.getOpcWorkRequestId());

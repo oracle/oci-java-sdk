@@ -85,7 +85,9 @@ public class UpdateChannelConverter {
                                 com.oracle.bmc.mysql.responses.UpdateChannelResponse.Builder
                                         builder =
                                                 com.oracle.bmc.mysql.responses.UpdateChannelResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

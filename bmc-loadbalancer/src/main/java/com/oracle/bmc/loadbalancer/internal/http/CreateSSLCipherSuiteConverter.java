@@ -88,7 +88,9 @@ public class CreateSSLCipherSuiteConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .CreateSSLCipherSuiteResponse.builder();
+                                                        .CreateSSLCipherSuiteResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

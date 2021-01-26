@@ -136,7 +136,9 @@ public class ListCategoriesConverter {
                                 com.oracle.bmc.optimizer.responses.ListCategoriesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.optimizer.responses
-                                                        .ListCategoriesResponse.builder();
+                                                        .ListCategoriesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.categoryCollection(response.getItem());
 

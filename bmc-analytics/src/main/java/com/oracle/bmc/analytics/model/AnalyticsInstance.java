@@ -117,6 +117,25 @@ public class AnalyticsInstance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("privateAccessChannels")
+        private java.util.Map<String, PrivateAccessChannel> privateAccessChannels;
+
+        public Builder privateAccessChannels(
+                java.util.Map<String, PrivateAccessChannel> privateAccessChannels) {
+            this.privateAccessChannels = privateAccessChannels;
+            this.__explicitlySet__.add("privateAccessChannels");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("vanityUrlDetails")
+        private java.util.Map<String, VanityUrlDetails> vanityUrlDetails;
+
+        public Builder vanityUrlDetails(java.util.Map<String, VanityUrlDetails> vanityUrlDetails) {
+            this.vanityUrlDetails = vanityUrlDetails;
+            this.__explicitlySet__.add("vanityUrlDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("serviceUrl")
         private String serviceUrl;
 
@@ -179,6 +198,8 @@ public class AnalyticsInstance {
                             licenseType,
                             emailNotification,
                             networkEndpointDetails,
+                            privateAccessChannels,
+                            vanityUrlDetails,
                             serviceUrl,
                             definedTags,
                             freeformTags,
@@ -201,6 +222,8 @@ public class AnalyticsInstance {
                             .licenseType(o.getLicenseType())
                             .emailNotification(o.getEmailNotification())
                             .networkEndpointDetails(o.getNetworkEndpointDetails())
+                            .privateAccessChannels(o.getPrivateAccessChannels())
+                            .vanityUrlDetails(o.getVanityUrlDetails())
                             .serviceUrl(o.getServiceUrl())
                             .definedTags(o.getDefinedTags())
                             .freeformTags(o.getFreeformTags())
@@ -280,6 +303,20 @@ public class AnalyticsInstance {
 
     @com.fasterxml.jackson.annotation.JsonProperty("networkEndpointDetails")
     NetworkEndpointDetails networkEndpointDetails;
+
+    /**
+     * Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateAccessChannels")
+    java.util.Map<String, PrivateAccessChannel> privateAccessChannels;
+
+    /**
+     * Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vanityUrlDetails")
+    java.util.Map<String, VanityUrlDetails> vanityUrlDetails;
 
     /**
      * URL of the Analytics service.

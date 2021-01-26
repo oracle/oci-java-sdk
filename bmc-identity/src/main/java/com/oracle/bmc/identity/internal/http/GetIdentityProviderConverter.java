@@ -77,7 +77,9 @@ public class GetIdentityProviderConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .GetIdentityProviderResponse.builder();
+                                                        .GetIdentityProviderResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.identityProvider(response.getItem());
 

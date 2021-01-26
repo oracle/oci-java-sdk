@@ -78,7 +78,9 @@ public class DeleteNetworkSourceConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .DeleteNetworkSourceResponse.builder();
+                                                        .DeleteNetworkSourceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

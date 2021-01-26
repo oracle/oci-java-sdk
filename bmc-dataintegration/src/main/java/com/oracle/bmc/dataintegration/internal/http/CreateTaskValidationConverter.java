@@ -92,7 +92,9 @@ public class CreateTaskValidationConverter {
                                                 .CreateTaskValidationResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .CreateTaskValidationResponse.builder();
+                                                        .CreateTaskValidationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.taskValidation(response.getItem());
 

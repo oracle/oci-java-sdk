@@ -85,7 +85,9 @@ public class DeleteHttpRedirectConverter {
                                 com.oracle.bmc.waas.responses.DeleteHttpRedirectResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .DeleteHttpRedirectResponse.builder();
+                                                        .DeleteHttpRedirectResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -92,7 +92,9 @@ public class UpdateBackendConverter {
                                 com.oracle.bmc.loadbalancer.responses.UpdateBackendResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .UpdateBackendResponse.builder();
+                                                        .UpdateBackendResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

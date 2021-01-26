@@ -10,6 +10,10 @@ import com.oracle.bmc.bds.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class RemoveAutoScalingConfigurationResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -30,6 +34,7 @@ public class RemoveAutoScalingConfigurationResponse {
          * @return this builder instance
          */
         public Builder copy(RemoveAutoScalingConfigurationResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());
 

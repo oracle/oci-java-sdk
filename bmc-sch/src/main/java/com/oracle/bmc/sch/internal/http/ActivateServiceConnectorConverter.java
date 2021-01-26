@@ -88,7 +88,9 @@ public class ActivateServiceConnectorConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.sch.responses
-                                                        .ActivateServiceConnectorResponse.builder();
+                                                        .ActivateServiceConnectorResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

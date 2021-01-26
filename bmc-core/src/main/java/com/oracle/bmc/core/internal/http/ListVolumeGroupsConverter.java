@@ -135,7 +135,9 @@ public class ListVolumeGroupsConverter {
                                 com.oracle.bmc.core.responses.ListVolumeGroupsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ListVolumeGroupsResponse.builder();
+                                                        .ListVolumeGroupsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 
