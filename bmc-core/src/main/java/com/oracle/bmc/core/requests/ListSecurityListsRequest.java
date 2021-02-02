@@ -148,7 +148,8 @@ public class ListSecurityListsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
     /**
-     * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+     * A filter to only return resources that match the given lifecycle
+     * state. The state value is case-insensitive.
      *
      */
     private SecurityList.LifecycleState lifecycleState;

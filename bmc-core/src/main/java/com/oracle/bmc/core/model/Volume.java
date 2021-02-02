@@ -318,12 +318,14 @@ public class Volume {
 
     /**
      * Specifies whether the cloned volume's data has finished copying from the source volume or backup.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHydrated")
     Boolean isHydrated;
 
     /**
      * The OCID of the Key Management key which is the master encryption key for the volume.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     String kmsKeyId;
@@ -407,7 +409,9 @@ public class Volume {
     Long sizeInGBs;
 
     /**
-     * The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead.
+     * The size of the volume in MBs. This field is deprecated. Use
+     * sizeInGBs instead.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
     Long sizeInMBs;

@@ -148,7 +148,8 @@ public class ListDhcpOptionsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
     /**
-     * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+     * A filter to only return resources that match the given lifecycle
+     * state. The state value is case-insensitive.
      *
      */
     private DhcpOptions.LifecycleState lifecycleState;

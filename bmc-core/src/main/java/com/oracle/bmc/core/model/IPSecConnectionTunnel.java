@@ -110,6 +110,15 @@ public class IPSecConnectionTunnel {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptionDomainConfig")
+        private EncryptionDomainConfig encryptionDomainConfig;
+
+        public Builder encryptionDomainConfig(EncryptionDomainConfig encryptionDomainConfig) {
+            this.encryptionDomainConfig = encryptionDomainConfig;
+            this.__explicitlySet__.add("encryptionDomainConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("routing")
         private Routing routing;
 
@@ -152,6 +161,7 @@ public class IPSecConnectionTunnel {
                             lifecycleState,
                             displayName,
                             bgpSessionInfo,
+                            encryptionDomainConfig,
                             routing,
                             timeCreated,
                             timeStatusUpdated);
@@ -171,6 +181,7 @@ public class IPSecConnectionTunnel {
                             .lifecycleState(o.getLifecycleState())
                             .displayName(o.getDisplayName())
                             .bgpSessionInfo(o.getBgpSessionInfo())
+                            .encryptionDomainConfig(o.getEncryptionDomainConfig())
                             .routing(o.getRouting())
                             .timeCreated(o.getTimeCreated())
                             .timeStatusUpdated(o.getTimeStatusUpdated());
@@ -225,6 +236,7 @@ public class IPSecConnectionTunnel {
         Up("UP"),
         Down("DOWN"),
         DownForMaintenance("DOWN_FOR_MAINTENANCE"),
+        PartialUp("PARTIAL_UP"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -386,6 +398,9 @@ public class IPSecConnectionTunnel {
 
     @com.fasterxml.jackson.annotation.JsonProperty("bgpSessionInfo")
     BgpSessionInfo bgpSessionInfo;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptionDomainConfig")
+    EncryptionDomainConfig encryptionDomainConfig;
     /**
      * The type of routing used for this tunnel (either BGP dynamic routing or static routing).
      *
@@ -394,6 +409,7 @@ public class IPSecConnectionTunnel {
     public enum Routing {
         Bgp("BGP"),
         Static("STATIC"),
+        Policy("POLICY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

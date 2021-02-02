@@ -23,12 +23,14 @@ public class ListWorkRequestErrorsResponse {
     private String opcRequestId;
 
     /**
-     * Paginating a list of work request errors.
+     * For paginating a list of work request errors.
      * In the GET request, set the limit to the number of work request errors that you want returned in the
-     * response. If the opc-next-page header appears in the response, then this is a partial list and there are
+     * response. If the `opc-next-page` header appears in the response, then this is a partial list and there are
      * additional work request errors to get. Include the header's value as the `page` parameter in the subsequent
      * GET request to get the next batch of work request errors. Repeat this process to retrieve the entire list of work
      * request errors.
+     * <p>
+     * For more details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String opcNextPage;

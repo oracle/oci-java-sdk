@@ -123,6 +123,7 @@ public class InstanceConfigurationIscsiAttachVolumeDetails
 
     /**
      * Whether to use CHAP authentication for the volume attachment. Defaults to false.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("useChap")
     Boolean useChap;

@@ -83,6 +83,15 @@ public class CreateMultipartUploadDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
+        private StorageTier storageTier;
+
+        public Builder storageTier(StorageTier storageTier) {
+            this.storageTier = storageTier;
+            this.__explicitlySet__.add("storageTier");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, String> metadata;
 
@@ -104,6 +113,7 @@ public class CreateMultipartUploadDetails {
                             contentEncoding,
                             contentDisposition,
                             cacheControl,
+                            storageTier,
                             metadata);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -118,6 +128,7 @@ public class CreateMultipartUploadDetails {
                             .contentEncoding(o.getContentEncoding())
                             .contentDisposition(o.getContentDisposition())
                             .cacheControl(o.getCacheControl())
+                            .storageTier(o.getStorageTier())
                             .metadata(o.getMetadata());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -190,6 +201,14 @@ public class CreateMultipartUploadDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cacheControl")
     String cacheControl;
+
+    /**
+     * The storage tier that the object should be stored in. If not specified, the object will be stored in
+     * the same storage tier as the bucket.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
+    StorageTier storageTier;
 
     /**
      * Arbitrary string keys and values for the user-defined metadata for the object.

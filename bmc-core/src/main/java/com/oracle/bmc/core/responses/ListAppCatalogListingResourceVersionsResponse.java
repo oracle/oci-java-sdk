@@ -16,12 +16,6 @@ public class ListAppCatalogListingResourceVersionsResponse {
     private final int __httpStatusCode__;
 
     /**
-     * For optimistic concurrency control. See `if-match`.
-     *
-     */
-    private String etag;
-
-    /**
      * For list pagination. When this header appears in the response, additional pages
      * of results remain. For important details about how pagination works, see
      * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -48,7 +42,6 @@ public class ListAppCatalogListingResourceVersionsResponse {
          */
         public Builder copy(ListAppCatalogListingResourceVersionsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
-            etag(o.getEtag());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             items(o.getItems());

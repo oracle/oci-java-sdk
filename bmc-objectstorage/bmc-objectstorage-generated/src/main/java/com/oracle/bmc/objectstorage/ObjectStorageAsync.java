@@ -494,6 +494,9 @@ public interface ObjectStorageAsync extends AutoCloseable {
      * Gets a list of all BucketSummary items in a compartment. A BucketSummary contains only summary fields for the bucket
      * and does not contain fields like the user-defined metadata.
      * <p>
+     * ListBuckets returns a BucketSummary containing at most 1000 buckets. To paginate through more buckets, use the returned
+     * `opc-next-page` value with the `page` request parameter.
+     * <p>
      * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
      * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
      * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
@@ -547,6 +550,9 @@ public interface ObjectStorageAsync extends AutoCloseable {
     /**
      * Lists the object versions in a bucket.
      * <p>
+     * ListObjectVersions returns an ObjectVersionCollection containing at most 1000 object versions. To paginate through
+     * more object versions, use the returned `opc-next-page` value with the `page` request parameter.
+     * <p>
      * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
      * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
      * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
@@ -566,7 +572,12 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the objects in a bucket.
+     * Lists the objects in a bucket. By default, ListObjects returns object names only. See the `fields`
+     * parameter for other fields that you can optionally include in ListObjects response.
+     * <p>
+     * ListObjects returns at most 1000 objects. To paginate through more objects, use the returned 'nextStartWith'
+     * value with the 'start' parameter. To filter which objects ListObjects returns, use the 'start' and 'end'
+     * parameters.
      * <p>
      * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
      * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
@@ -892,6 +903,23 @@ public interface ObjectStorageAsync extends AutoCloseable {
             UpdateNamespaceMetadataRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateNamespaceMetadataRequest, UpdateNamespaceMetadataResponse>
+                    handler);
+
+    /**
+     * Changes the storage tier of the object specified by the objectName parameter.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateObjectStorageTierResponse> updateObjectStorageTier(
+            UpdateObjectStorageTierRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateObjectStorageTierRequest, UpdateObjectStorageTierResponse>
                     handler);
 
     /**

@@ -72,6 +72,24 @@ public class ObjectSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
+        private StorageTier storageTier;
+
+        public Builder storageTier(StorageTier storageTier) {
+            this.storageTier = storageTier;
+            this.__explicitlySet__.add("storageTier");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("archivalState")
+        private ArchivalState archivalState;
+
+        public Builder archivalState(ArchivalState archivalState) {
+            this.archivalState = archivalState;
+            this.__explicitlySet__.add("archivalState");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
         private java.util.Date timeModified;
 
@@ -86,7 +104,15 @@ public class ObjectSummary {
 
         public ObjectSummary build() {
             ObjectSummary __instance__ =
-                    new ObjectSummary(name, size, md5, timeCreated, etag, timeModified);
+                    new ObjectSummary(
+                            name,
+                            size,
+                            md5,
+                            timeCreated,
+                            etag,
+                            storageTier,
+                            archivalState,
+                            timeModified);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -99,6 +125,8 @@ public class ObjectSummary {
                             .md5(o.getMd5())
                             .timeCreated(o.getTimeCreated())
                             .etag(o.getEtag())
+                            .storageTier(o.getStorageTier())
+                            .archivalState(o.getArchivalState())
                             .timeModified(o.getTimeModified());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -144,6 +172,18 @@ public class ObjectSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("etag")
     String etag;
+
+    /**
+     * The storage tier that the object is stored in.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
+    StorageTier storageTier;
+
+    /**
+     * Archival state of an object. This field is set only for objects in Archive tier.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("archivalState")
+    ArchivalState archivalState;
 
     /**
      * The date and time the object was modified, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.

@@ -34,6 +34,7 @@ public class ObjectStorageAsyncExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
         ObjectStorageAsync client = new ObjectStorageAsyncClient(provider);
+
         client.setRegion(Region.US_PHOENIX_1);
 
         ResponseHandler<GetNamespaceRequest, GetNamespaceResponse> namespaceHandler =

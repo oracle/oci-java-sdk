@@ -17,6 +17,7 @@ import com.oracle.bmc.objectstorage.model.CommitMultipartUploadDetails;
 import com.oracle.bmc.objectstorage.model.CreateMultipartUploadDetails;
 import com.oracle.bmc.objectstorage.model.MultipartUpload;
 import com.oracle.bmc.objectstorage.model.MultipartUploadPartSummary;
+import com.oracle.bmc.objectstorage.model.StorageTier;
 import com.oracle.bmc.objectstorage.requests.AbortMultipartUploadRequest;
 import com.oracle.bmc.objectstorage.requests.CommitMultipartUploadRequest;
 import com.oracle.bmc.objectstorage.requests.CreateMultipartUploadRequest;
@@ -57,6 +58,7 @@ public class MultipartObjectAssembler {
     private final String namespaceName;
     private final String bucketName;
     private final String objectName;
+    private final StorageTier storageTier;
     private final Consumer<Invocation.Builder> invocationCallback;
     private final boolean allowOverwrite;
     private final ExecutorService executorService;
@@ -98,6 +100,7 @@ public class MultipartObjectAssembler {
                 namespaceName,
                 bucketName,
                 objectName,
+                StorageTier.Standard,
                 allowOverwrite,
                 executorService,
                 null /* opcClientRequestId */,
@@ -113,6 +116,7 @@ public class MultipartObjectAssembler {
             String namespaceName,
             String bucketName,
             String objectName,
+            StorageTier storageTier,
             boolean allowOverwrite,
             ExecutorService executorService,
             String opcClientRequestId,
@@ -124,6 +128,7 @@ public class MultipartObjectAssembler {
         this.namespaceName = namespaceName;
         this.bucketName = bucketName;
         this.objectName = objectName;
+        this.storageTier = storageTier;
         this.allowOverwrite = allowOverwrite;
         this.executorService = executorService;
         this.opcClientRequestId = opcClientRequestId;
@@ -165,6 +170,7 @@ public class MultipartObjectAssembler {
                                                 .metadata(opcMeta)
                                                 .cacheControl(cacheControl)
                                                 .contentDisposition(contentDisposition)
+                                                .storageTier(storageTier)
                                                 .build())
                                 .opcClientRequestId(createClientRequestId("-create"))
                                 .build());

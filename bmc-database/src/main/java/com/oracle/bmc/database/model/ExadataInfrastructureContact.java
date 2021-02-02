@@ -62,12 +62,22 @@ public class ExadataInfrastructureContact {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isContactMosValidated")
+        private Boolean isContactMosValidated;
+
+        public Builder isContactMosValidated(Boolean isContactMosValidated) {
+            this.isContactMosValidated = isContactMosValidated;
+            this.__explicitlySet__.add("isContactMosValidated");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExadataInfrastructureContact build() {
             ExadataInfrastructureContact __instance__ =
-                    new ExadataInfrastructureContact(name, phoneNumber, email, isPrimary);
+                    new ExadataInfrastructureContact(
+                            name, phoneNumber, email, isPrimary, isContactMosValidated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -78,7 +88,8 @@ public class ExadataInfrastructureContact {
                     name(o.getName())
                             .phoneNumber(o.getPhoneNumber())
                             .email(o.getEmail())
-                            .isPrimary(o.getIsPrimary());
+                            .isPrimary(o.getIsPrimary())
+                            .isContactMosValidated(o.getIsContactMosValidated());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -111,10 +122,16 @@ public class ExadataInfrastructureContact {
     String email;
 
     /**
-     * True, if this Exadata Infrastructure contact is a primary contact. False, if this Exadata Infrastructure is a secondary contact.
+     * If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
     Boolean isPrimary;
+
+    /**
+     * If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isContactMosValidated")
+    Boolean isContactMosValidated;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

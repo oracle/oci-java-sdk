@@ -355,6 +355,9 @@ public interface ObjectStorage extends AutoCloseable {
      * Gets a list of all BucketSummary items in a compartment. A BucketSummary contains only summary fields for the bucket
      * and does not contain fields like the user-defined metadata.
      * <p>
+     * ListBuckets returns a BucketSummary containing at most 1000 buckets. To paginate through more buckets, use the returned
+     * `opc-next-page` value with the `page` request parameter.
+     * <p>
      * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
      * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
      * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
@@ -393,6 +396,9 @@ public interface ObjectStorage extends AutoCloseable {
     /**
      * Lists the object versions in a bucket.
      * <p>
+     * ListObjectVersions returns an ObjectVersionCollection containing at most 1000 object versions. To paginate through
+     * more object versions, use the returned `opc-next-page` value with the `page` request parameter.
+     * <p>
      * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
      * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
      * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
@@ -406,7 +412,12 @@ public interface ObjectStorage extends AutoCloseable {
     ListObjectVersionsResponse listObjectVersions(ListObjectVersionsRequest request);
 
     /**
-     * Lists the objects in a bucket.
+     * Lists the objects in a bucket. By default, ListObjects returns object names only. See the `fields`
+     * parameter for other fields that you can optionally include in ListObjects response.
+     * <p>
+     * ListObjects returns at most 1000 objects. To paginate through more objects, use the returned 'nextStartWith'
+     * value with the 'start' parameter. To filter which objects ListObjects returns, use the 'start' and 'end'
+     * parameters.
      * <p>
      * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
      * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
@@ -669,6 +680,17 @@ public interface ObjectStorage extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/UpdateNamespaceMetadataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNamespaceMetadata API.
      */
     UpdateNamespaceMetadataResponse updateNamespaceMetadata(UpdateNamespaceMetadataRequest request);
+
+    /**
+     * Changes the storage tier of the object specified by the objectName parameter.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/UpdateObjectStorageTierExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateObjectStorageTier API.
+     */
+    UpdateObjectStorageTierResponse updateObjectStorageTier(UpdateObjectStorageTierRequest request);
 
     /**
      * Updates the specified retention rule. Rule changes take effect typically within 30 seconds.

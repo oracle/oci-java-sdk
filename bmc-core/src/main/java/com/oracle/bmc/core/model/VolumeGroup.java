@@ -222,7 +222,9 @@ public class VolumeGroup {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A user-friendly name for the volume group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * A user-friendly name for the volume group. Does not have to be
+     * unique, and it's changeable. Avoid entering confidential information.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
@@ -325,7 +327,9 @@ public class VolumeGroup {
     java.util.List<String> volumeIds;
 
     /**
-     * Specifies whether the newly created cloned volume group's data has finished copying from the source volume group or backup.
+     * Specifies whether the newly created cloned volume group's data has finished copying
+     * from the source volume group or backup.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHydrated")
     Boolean isHydrated;

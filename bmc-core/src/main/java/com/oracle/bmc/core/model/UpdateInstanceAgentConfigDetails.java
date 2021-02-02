@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Instance agent configuration options to choose for updating the instance
+ * Configuration options for the Oracle Cloud Agent software running on the instance.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -74,14 +74,15 @@ public class UpdateInstanceAgentConfigDetails {
     }
 
     /**
-     * Whether the agent running on the instance can gather performance metrics and monitor the instance.
+     * Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the
+     * monitoring plugins.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMonitoringDisabled")
     Boolean isMonitoringDisabled;
 
     /**
-     * Whether the agent running on the instance can run all the available management plugins
+     * Whether Oracle Cloud Agent can run all the available management plugins.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isManagementDisabled")

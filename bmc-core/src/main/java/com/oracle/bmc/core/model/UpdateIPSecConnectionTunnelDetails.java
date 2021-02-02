@@ -62,13 +62,27 @@ public class UpdateIPSecConnectionTunnelDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptionDomainConfig")
+        private UpdateIPSecTunnelEncryptionDomainDetails encryptionDomainConfig;
+
+        public Builder encryptionDomainConfig(
+                UpdateIPSecTunnelEncryptionDomainDetails encryptionDomainConfig) {
+            this.encryptionDomainConfig = encryptionDomainConfig;
+            this.__explicitlySet__.add("encryptionDomainConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateIPSecConnectionTunnelDetails build() {
             UpdateIPSecConnectionTunnelDetails __instance__ =
                     new UpdateIPSecConnectionTunnelDetails(
-                            displayName, routing, ikeVersion, bgpSessionConfig);
+                            displayName,
+                            routing,
+                            ikeVersion,
+                            bgpSessionConfig,
+                            encryptionDomainConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -79,7 +93,8 @@ public class UpdateIPSecConnectionTunnelDetails {
                     displayName(o.getDisplayName())
                             .routing(o.getRouting())
                             .ikeVersion(o.getIkeVersion())
-                            .bgpSessionConfig(o.getBgpSessionConfig());
+                            .bgpSessionConfig(o.getBgpSessionConfig())
+                            .encryptionDomainConfig(o.getEncryptionDomainConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -107,6 +122,7 @@ public class UpdateIPSecConnectionTunnelDetails {
     public enum Routing {
         Bgp("BGP"),
         Static("STATIC"),
+        Policy("POLICY"),
         ;
 
         private final String value;
@@ -187,6 +203,9 @@ public class UpdateIPSecConnectionTunnelDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("bgpSessionConfig")
     UpdateIPSecTunnelBgpSessionDetails bgpSessionConfig;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptionDomainConfig")
+    UpdateIPSecTunnelEncryptionDomainDetails encryptionDomainConfig;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -121,6 +121,7 @@ public class CreateLocalPeeringGatewayDetails {
 
     /**
      * The OCID of the compartment containing the local peering gateway (LPG).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;

@@ -25,6 +25,7 @@ import com.oracle.bmc.objectstorage.internal.http.CommitMultipartUploadConverter
 import com.oracle.bmc.objectstorage.internal.http.CreateMultipartUploadConverter;
 import com.oracle.bmc.objectstorage.internal.http.UploadPartConverter;
 import com.oracle.bmc.objectstorage.model.MultipartUpload;
+import com.oracle.bmc.objectstorage.model.StorageTier;
 import com.oracle.bmc.objectstorage.requests.AbortMultipartUploadRequest;
 import com.oracle.bmc.objectstorage.requests.CommitMultipartUploadRequest;
 import com.oracle.bmc.objectstorage.requests.CreateMultipartUploadRequest;
@@ -715,6 +716,7 @@ public class UploadManagerTest {
                         .namespaceName(NAMESPACE_NAME)
                         .bucketName(BUCKET_NAME)
                         .objectName(OBJECT_NAME)
+                        .storageTier(StorageTier.InfrequentAccess)
                         .retryConfiguration(retryConfiguration)
                         .build();
         return UploadRequest.builder(body, CONTENT_LENGTH)

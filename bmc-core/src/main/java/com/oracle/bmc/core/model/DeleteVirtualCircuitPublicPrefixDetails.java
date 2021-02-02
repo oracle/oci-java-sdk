@@ -63,6 +63,7 @@ public class DeleteVirtualCircuitPublicPrefixDetails {
 
     /**
      * An individual public IP prefix (CIDR) to remove from the public virtual circuit.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
     String cidrBlock;

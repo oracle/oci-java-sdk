@@ -176,7 +176,7 @@ public class InstancePoolSummary {
     String compartmentId;
 
     /**
-     * The user-friendly name.  Does not have to be unique.
+     * The user-friendly name. Does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;

@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.31.0 - 2021-02-02
+### Added
+- Support for checking if a contact for Exadata infrastructure is valid in My Oracle Support in the Database service
+- Support for checking if Exadata infrastructure is in a degraded state in the Database service
+- Support for updating the operating system on a VM cluster in the Database service
+- Support for external databases in the Database service
+- Support for uploading objects to the infrequent access storage tier in the Object Storage service
+- Support for changing the storage tier of existing objects in the Object Storage service
+- Support for private templates in the Resource Manager service
+- Support for multiple encryption domains on IPSec tunnels in the Networking service
+
+### Breaking Changes
+ - The return type of method `getArchivalState()` in `com.oracle.bmc.objectstorage.responses.GetObjectResponse` has been changed to `com.oracle.bmc.objectstorage.model.ArchivalState` in the Object Storage service
+ - The return type of method `getArchivalState()` in `com.oracle.bmc.objectstorage.responses.HeadObjectResponse` has been changed to `com.oracle.bmc.objectstorage.model.ArchivalState ` in the Object Storage service
+ - The method `public java.lang.String getEtag()` has been removed from `com.oracle.bmc.core.responses.ListAppCatalogListingResourceVersionsResponse` in the Core service
+
 ## 1.30.1 - 2021-01-26
 ### Added
 - Support for creating, managing, and using asymmetric keys in the Key Management service

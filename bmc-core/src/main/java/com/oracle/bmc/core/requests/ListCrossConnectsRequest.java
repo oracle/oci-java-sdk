@@ -148,7 +148,8 @@ public class ListCrossConnectsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
     /**
-     * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+     * A filter to return only resources that match the specified lifecycle
+     * state. The value is case insensitive.
      *
      */
     private CrossConnect.LifecycleState lifecycleState;

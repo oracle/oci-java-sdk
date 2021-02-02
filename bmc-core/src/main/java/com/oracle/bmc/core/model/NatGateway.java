@@ -15,9 +15,6 @@ package com.oracle.bmc.core.model;
  * administrator. If you are an administrator who needs to write
  * policies to give users access, see [Getting Started with
  * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you
- * supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -222,7 +219,9 @@ public class NatGateway {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the NAT gateway.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * NAT gateway.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;

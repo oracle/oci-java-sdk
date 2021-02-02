@@ -614,6 +614,116 @@ public class ResourceManagerPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listTemplates operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListTemplatesResponse> listTemplatesResponseIterator(
+            final ListTemplatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListTemplatesRequest.Builder, ListTemplatesRequest, ListTemplatesResponse>(
+                new com.google.common.base.Supplier<ListTemplatesRequest.Builder>() {
+                    @Override
+                    public ListTemplatesRequest.Builder get() {
+                        return ListTemplatesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListTemplatesResponse, String>() {
+                    @Override
+                    public String apply(ListTemplatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTemplatesRequest.Builder>,
+                        ListTemplatesRequest>() {
+                    @Override
+                    public ListTemplatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTemplatesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListTemplatesRequest, ListTemplatesResponse>() {
+                    @Override
+                    public ListTemplatesResponse apply(ListTemplatesRequest request) {
+                        return client.listTemplates(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.resourcemanager.model.TemplateSummary} objects
+     * contained in responses from the listTemplates operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.resourcemanager.model.TemplateSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.resourcemanager.model.TemplateSummary>
+            listTemplatesRecordIterator(final ListTemplatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListTemplatesRequest.Builder, ListTemplatesRequest, ListTemplatesResponse,
+                com.oracle.bmc.resourcemanager.model.TemplateSummary>(
+                new com.google.common.base.Supplier<ListTemplatesRequest.Builder>() {
+                    @Override
+                    public ListTemplatesRequest.Builder get() {
+                        return ListTemplatesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListTemplatesResponse, String>() {
+                    @Override
+                    public String apply(ListTemplatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTemplatesRequest.Builder>,
+                        ListTemplatesRequest>() {
+                    @Override
+                    public ListTemplatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTemplatesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListTemplatesRequest, ListTemplatesResponse>() {
+                    @Override
+                    public ListTemplatesResponse apply(ListTemplatesRequest request) {
+                        return client.listTemplates(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListTemplatesResponse,
+                        java.util.List<com.oracle.bmc.resourcemanager.model.TemplateSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.resourcemanager.model.TemplateSummary>
+                            apply(ListTemplatesResponse response) {
+                        return response.getTemplateSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listWorkRequestErrors operation. This iterable
      * will fetch more data from the server as needed.
      *

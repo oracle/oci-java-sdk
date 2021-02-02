@@ -226,7 +226,7 @@ public class CreateDatabaseSoftwareImageDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("imageShapeFamily")
     ImageShapeFamily imageShapeFamily;
     /**
-     * List of the Fault Domains in which this DB system is provisioned.
+     * The type of software image. Can be grid or database.
      **/
     public enum ImageType {
         GridImage("GRID_IMAGE"),
@@ -261,7 +261,7 @@ public class CreateDatabaseSoftwareImageDetails {
         }
     };
     /**
-     * List of the Fault Domains in which this DB system is provisioned.
+     * The type of software image. Can be grid or database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageType")
     ImageType imageType;

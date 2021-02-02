@@ -207,6 +207,51 @@ public interface Database extends AutoCloseable {
             ChangeExadataInfrastructureCompartmentRequest request);
 
     /**
+     * Move the {@link #createExternalContainerDatabaseDetails(CreateExternalContainerDatabaseDetailsRequest) createExternalContainerDatabaseDetails}
+     * and its dependent resources to the specified compartment.
+     * For more information about moving external container databases, see
+     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeExternalContainerDatabaseCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeExternalContainerDatabaseCompartment API.
+     */
+    ChangeExternalContainerDatabaseCompartmentResponse changeExternalContainerDatabaseCompartment(
+            ChangeExternalContainerDatabaseCompartmentRequest request);
+
+    /**
+     * Move the external non-container database and its dependent resources to the specified compartment.
+     * For more information about moving external non-container databases, see
+     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeExternalNonContainerDatabaseCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeExternalNonContainerDatabaseCompartment API.
+     */
+    ChangeExternalNonContainerDatabaseCompartmentResponse
+            changeExternalNonContainerDatabaseCompartment(
+                    ChangeExternalNonContainerDatabaseCompartmentRequest request);
+
+    /**
+     * Move the {@link #createExternalPluggableDatabaseDetails(CreateExternalPluggableDatabaseDetailsRequest) createExternalPluggableDatabaseDetails} and
+     * its dependent resources to the specified compartment.
+     * For more information about moving external pluggable databases, see
+     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeExternalPluggableDatabaseCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeExternalPluggableDatabaseCompartment API.
+     */
+    ChangeExternalPluggableDatabaseCompartmentResponse changeExternalPluggableDatabaseCompartment(
+            ChangeExternalPluggableDatabaseCompartmentRequest request);
+
+    /**
      * Move the key store resource to the specified compartment.
      * For more information about moving key stores, see
      * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
@@ -232,6 +277,20 @@ public interface Database extends AutoCloseable {
      */
     ChangeVmClusterCompartmentResponse changeVmClusterCompartment(
             ChangeVmClusterCompartmentRequest request);
+
+    /**
+     * Check the status of the external database connection specified in this connector.
+     * This operation will refresh the connectionStatus and timeConnectionStatusLastUpdated fields.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CheckExternalDatabaseConnectorConnectionStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CheckExternalDatabaseConnectorConnectionStatus API.
+     */
+    CheckExternalDatabaseConnectorConnectionStatusResponse
+            checkExternalDatabaseConnectorConnectionStatus(
+                    CheckExternalDatabaseConnectorConnectionStatusRequest request);
 
     /**
      * Changes the status of the standalone backup resource to `ACTIVE` after the backup is created from the on-premises database and placed in Oracle Cloud Infrastructure Object Storage.
@@ -433,6 +492,53 @@ public interface Database extends AutoCloseable {
     CreateExternalBackupJobResponse createExternalBackupJob(CreateExternalBackupJobRequest request);
 
     /**
+     * Creates a new external container database resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExternalContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExternalContainerDatabase API.
+     */
+    CreateExternalContainerDatabaseResponse createExternalContainerDatabase(
+            CreateExternalContainerDatabaseRequest request);
+
+    /**
+     * Creates a new external database connector.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExternalDatabaseConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExternalDatabaseConnector API.
+     */
+    CreateExternalDatabaseConnectorResponse createExternalDatabaseConnector(
+            CreateExternalDatabaseConnectorRequest request);
+
+    /**
+     * Creates a new ExternalNonContainerDatabase resource
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExternalNonContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExternalNonContainerDatabase API.
+     */
+    CreateExternalNonContainerDatabaseResponse createExternalNonContainerDatabase(
+            CreateExternalNonContainerDatabaseRequest request);
+
+    /**
+     * Registers a new {@link #createExternalPluggableDatabaseDetails(CreateExternalPluggableDatabaseDetailsRequest) createExternalPluggableDatabaseDetails}
+     * resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExternalPluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExternalPluggableDatabase API.
+     */
+    CreateExternalPluggableDatabaseResponse createExternalPluggableDatabase(
+            CreateExternalPluggableDatabaseRequest request);
+
+    /**
      * Creates a Key Store.
      *
      * @param request The request object containing the details to send
@@ -617,6 +723,59 @@ public interface Database extends AutoCloseable {
             DeleteExadataInfrastructureRequest request);
 
     /**
+     * Deletes the {@link #createExternalContainerDatabaseDetails(CreateExternalContainerDatabaseDetailsRequest) createExternalContainerDatabaseDetails}
+     * resource. Any external pluggable databases registered under this container database must be deleted in
+     * your Oracle Cloud Infrastructure tenancy prior to this operation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExternalContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExternalContainerDatabase API.
+     */
+    DeleteExternalContainerDatabaseResponse deleteExternalContainerDatabase(
+            DeleteExternalContainerDatabaseRequest request);
+
+    /**
+     * Deletes an external database connector.
+     * Any services enabled using the external database connector must be
+     * deleted prior to this operation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExternalDatabaseConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExternalDatabaseConnector API.
+     */
+    DeleteExternalDatabaseConnectorResponse deleteExternalDatabaseConnector(
+            DeleteExternalDatabaseConnectorRequest request);
+
+    /**
+     * Deletes the Oracle Cloud Infrastructure resource representing an external non-container database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExternalNonContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExternalNonContainerDatabase API.
+     */
+    DeleteExternalNonContainerDatabaseResponse deleteExternalNonContainerDatabase(
+            DeleteExternalNonContainerDatabaseRequest request);
+
+    /**
+     * Deletes the {@link #createExternalPluggableDatabaseDetails(CreateExternalPluggableDatabaseDetailsRequest) createExternalPluggableDatabaseDetails}.
+     * resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExternalPluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExternalPluggableDatabase API.
+     */
+    DeleteExternalPluggableDatabaseResponse deleteExternalPluggableDatabase(
+            DeleteExternalPluggableDatabaseRequest request);
+
+    /**
      * Deletes a key store.
      *
      * @param request The request object containing the details to send
@@ -675,6 +834,49 @@ public interface Database extends AutoCloseable {
             DisableAutonomousDatabaseOperationsInsightsRequest request);
 
     /**
+     * Disable Database Management service for the external container database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableExternalContainerDatabaseDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalContainerDatabaseDatabaseManagement API.
+     */
+    DisableExternalContainerDatabaseDatabaseManagementResponse
+            disableExternalContainerDatabaseDatabaseManagement(
+                    DisableExternalContainerDatabaseDatabaseManagementRequest request);
+
+    /**
+     * Disable Database Management Service for the external non-container database.
+     * For more information about the Database Management Service, see
+     * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableExternalNonContainerDatabaseDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalNonContainerDatabaseDatabaseManagement API.
+     */
+    DisableExternalNonContainerDatabaseDatabaseManagementResponse
+            disableExternalNonContainerDatabaseDatabaseManagement(
+                    DisableExternalNonContainerDatabaseDatabaseManagementRequest request);
+
+    /**
+     * Disable Database Management Service for the external pluggable database.
+     * For more information about the Database Management Service, see
+     * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableExternalPluggableDatabaseDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalPluggableDatabaseDatabaseManagement API.
+     */
+    DisableExternalPluggableDatabaseDatabaseManagementResponse
+            disableExternalPluggableDatabaseDatabaseManagement(
+                    DisableExternalPluggableDatabaseDatabaseManagementRequest request);
+
+    /**
      * Downloads the configuration file for the specified Exadata Cloud@Customer infrastructure.
      *
      * @param request The request object containing the details to send
@@ -709,6 +911,51 @@ public interface Database extends AutoCloseable {
      */
     EnableAutonomousDatabaseOperationsInsightsResponse enableAutonomousDatabaseOperationsInsights(
             EnableAutonomousDatabaseOperationsInsightsRequest request);
+
+    /**
+     * Enables Database Management Service for the external container database.
+     * For more information about the Database Management Service, see
+     * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableExternalContainerDatabaseDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalContainerDatabaseDatabaseManagement API.
+     */
+    EnableExternalContainerDatabaseDatabaseManagementResponse
+            enableExternalContainerDatabaseDatabaseManagement(
+                    EnableExternalContainerDatabaseDatabaseManagementRequest request);
+
+    /**
+     * Enable Database Management Service for the external non-container database.
+     * For more information about the Database Management Service, see
+     * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableExternalNonContainerDatabaseDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalNonContainerDatabaseDatabaseManagement API.
+     */
+    EnableExternalNonContainerDatabaseDatabaseManagementResponse
+            enableExternalNonContainerDatabaseDatabaseManagement(
+                    EnableExternalNonContainerDatabaseDatabaseManagementRequest request);
+
+    /**
+     * Enable Database Management Service for the external pluggable database.
+     * For more information about the Database Management Service, see
+     * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableExternalPluggableDatabaseDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalPluggableDatabaseDatabaseManagement API.
+     */
+    EnableExternalPluggableDatabaseDatabaseManagementResponse
+            enableExternalPluggableDatabaseDatabaseManagement(
+                    EnableExternalPluggableDatabaseDatabaseManagementRequest request);
 
     /**
      * Initiates a failover the specified Autonomous Database to a standby.
@@ -1161,6 +1408,52 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExternalBackupJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalBackupJob API.
      */
     GetExternalBackupJobResponse getExternalBackupJob(GetExternalBackupJobRequest request);
+
+    /**
+     * Gets information about the specified external container database.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExternalContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalContainerDatabase API.
+     */
+    GetExternalContainerDatabaseResponse getExternalContainerDatabase(
+            GetExternalContainerDatabaseRequest request);
+
+    /**
+     * Gets information about the specified external database connector.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExternalDatabaseConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalDatabaseConnector API.
+     */
+    GetExternalDatabaseConnectorResponse getExternalDatabaseConnector(
+            GetExternalDatabaseConnectorRequest request);
+
+    /**
+     * Gets information about a specific external non-container database.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExternalNonContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalNonContainerDatabase API.
+     */
+    GetExternalNonContainerDatabaseResponse getExternalNonContainerDatabase(
+            GetExternalNonContainerDatabaseRequest request);
+
+    /**
+     * Gets information about a specific
+     * {@link #createExternalPluggableDatabaseDetails(CreateExternalPluggableDatabaseDetailsRequest) createExternalPluggableDatabaseDetails} resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExternalPluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalPluggableDatabase API.
+     */
+    GetExternalPluggableDatabaseResponse getExternalPluggableDatabase(
+            GetExternalPluggableDatabaseRequest request);
 
     /**
      * Gets information about the specified key store.
@@ -1649,6 +1942,55 @@ public interface Database extends AutoCloseable {
             ListExadataInfrastructuresRequest request);
 
     /**
+     * Gets a list of the external container databases in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExternalContainerDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalContainerDatabases API.
+     */
+    ListExternalContainerDatabasesResponse listExternalContainerDatabases(
+            ListExternalContainerDatabasesRequest request);
+
+    /**
+     * Gets a list of the external database connectors in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExternalDatabaseConnectorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalDatabaseConnectors API.
+     */
+    ListExternalDatabaseConnectorsResponse listExternalDatabaseConnectors(
+            ListExternalDatabaseConnectorsRequest request);
+
+    /**
+     * Gets a list of the ExternalNonContainerDatabases in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExternalNonContainerDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalNonContainerDatabases API.
+     */
+    ListExternalNonContainerDatabasesResponse listExternalNonContainerDatabases(
+            ListExternalNonContainerDatabasesRequest request);
+
+    /**
+     * Gets a list of the {@link #createExternalPluggableDatabaseDetails(CreateExternalPluggableDatabaseDetailsRequest) createExternalPluggableDatabaseDetails}
+     * resources in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExternalPluggableDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalPluggableDatabases API.
+     */
+    ListExternalPluggableDatabasesResponse listExternalPluggableDatabases(
+            ListExternalPluggableDatabasesRequest request);
+
+    /**
      * Gets a list of the flex components that can be used to launch a new DB system. The flex component determines resources to allocate to the DB system - Database Servers and Storage Servers.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1897,6 +2239,20 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateVaultKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateVaultKey API.
      */
     RotateVaultKeyResponse rotateVaultKey(RotateVaultKeyRequest request);
+
+    /**
+     * Scans for pluggable databases in the specified external container database.
+     * This operation will return un-registered pluggable databases in the `GetWorkRequest` operation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ScanExternalContainerDatabasePluggableDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScanExternalContainerDatabasePluggableDatabases API.
+     */
+    ScanExternalContainerDatabasePluggableDatabasesResponse
+            scanExternalContainerDatabasePluggableDatabases(
+                    ScanExternalContainerDatabasePluggableDatabasesRequest request);
 
     /**
      * Starts the specified Autonomous Database.
@@ -2194,6 +2550,56 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExadataIormConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExadataIormConfig API.
      */
     UpdateExadataIormConfigResponse updateExadataIormConfig(UpdateExadataIormConfigRequest request);
+
+    /**
+     * Updates the properties of
+     * an {@link #createExternalContainerDatabaseDetails(CreateExternalContainerDatabaseDetailsRequest) createExternalContainerDatabaseDetails} resource,
+     * such as the display name.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExternalContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExternalContainerDatabase API.
+     */
+    UpdateExternalContainerDatabaseResponse updateExternalContainerDatabase(
+            UpdateExternalContainerDatabaseRequest request);
+
+    /**
+     * Updates the properties of an external database connector, such as the display name.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExternalDatabaseConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExternalDatabaseConnector API.
+     */
+    UpdateExternalDatabaseConnectorResponse updateExternalDatabaseConnector(
+            UpdateExternalDatabaseConnectorRequest request);
+
+    /**
+     * Updates the properties of an external non-container database, such as the display name.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExternalNonContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExternalNonContainerDatabase API.
+     */
+    UpdateExternalNonContainerDatabaseResponse updateExternalNonContainerDatabase(
+            UpdateExternalNonContainerDatabaseRequest request);
+
+    /**
+     * Updates the properties of an
+     * {@link #createExternalPluggableDatabaseDetails(CreateExternalPluggableDatabaseDetailsRequest) createExternalPluggableDatabaseDetails} resource,
+     * such as the display name.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExternalPluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExternalPluggableDatabase API.
+     */
+    UpdateExternalPluggableDatabaseResponse updateExternalPluggableDatabase(
+            UpdateExternalPluggableDatabaseRequest request);
 
     /**
      * If no database is associated with the key store, edit the key store.

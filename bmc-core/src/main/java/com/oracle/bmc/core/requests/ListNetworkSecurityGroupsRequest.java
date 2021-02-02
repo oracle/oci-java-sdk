@@ -149,7 +149,8 @@ public class ListNetworkSecurityGroupsRequest
         }
     };
     /**
-     * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+     * A filter to return only resources that match the specified lifecycle
+     * state. The value is case insensitive.
      *
      */
     private NetworkSecurityGroup.LifecycleState lifecycleState;

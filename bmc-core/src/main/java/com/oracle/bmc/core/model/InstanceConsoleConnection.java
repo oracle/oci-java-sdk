@@ -8,8 +8,7 @@ package com.oracle.bmc.core.model;
  * The `InstanceConsoleConnection` API provides you with console access to Compute instances,
  * enabling you to troubleshoot malfunctioning instances remotely.
  * <p>
- * For more information about console access, see
- * [Accessing the Console](https://docs.cloud.oracle.com/Content/Compute/References/serialconsole.htm).
+ * For more information about instance console connections, see [Troubleshooting Instances Using Instance Console Connections](https://docs.cloud.oracle.com/Content/Compute/References/serialconsole.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

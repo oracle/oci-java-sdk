@@ -78,12 +78,22 @@ public class MultipartUpload {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
+        private StorageTier storageTier;
+
+        public Builder storageTier(StorageTier storageTier) {
+            this.storageTier = storageTier;
+            this.__explicitlySet__.add("storageTier");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MultipartUpload build() {
             MultipartUpload __instance__ =
-                    new MultipartUpload(namespace, bucket, object, uploadId, timeCreated);
+                    new MultipartUpload(
+                            namespace, bucket, object, uploadId, timeCreated, storageTier);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -95,7 +105,8 @@ public class MultipartUpload {
                             .bucket(o.getBucket())
                             .object(o.getObject())
                             .uploadId(o.getUploadId())
-                            .timeCreated(o.getTimeCreated());
+                            .timeCreated(o.getTimeCreated())
+                            .storageTier(o.getStorageTier());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -138,6 +149,12 @@ public class MultipartUpload {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
+
+    /**
+     * The storage tier that the object is stored in.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
+    StorageTier storageTier;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

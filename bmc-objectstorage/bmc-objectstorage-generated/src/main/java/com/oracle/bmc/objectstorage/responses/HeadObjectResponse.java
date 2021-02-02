@@ -90,47 +90,14 @@ public class HeadObjectResponse {
     private java.util.Date lastModified;
 
     /**
-     * The current state of the object.
+     * The storage tier that the object is stored in.
      */
-    private String archivalState;
+    private StorageTier storageTier;
 
     /**
-     * The current state of the object.
-     **/
-    public enum ArchivalState {
-        Available("AVAILABLE"),
-        Archived("ARCHIVED"),
-        Restoring("RESTORING"),
-        Restored("RESTORED"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, ArchivalState> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (ArchivalState v : ArchivalState.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        ArchivalState(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static ArchivalState create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new IllegalArgumentException("Invalid ArchivalState: " + key);
-        }
-    };
+     * Archival state of an object. This field is set only for objects in Archive tier.
+     */
+    private ArchivalState archivalState;
 
     /**
      * Time that the object is returned to the archived state. This field is only present for restored objects.
@@ -170,6 +137,7 @@ public class HeadObjectResponse {
             cacheControl(o.getCacheControl());
             contentDisposition(o.getContentDisposition());
             lastModified(o.getLastModified());
+            storageTier(o.getStorageTier());
             archivalState(o.getArchivalState());
             timeOfArchival(o.getTimeOfArchival());
             versionId(o.getVersionId());

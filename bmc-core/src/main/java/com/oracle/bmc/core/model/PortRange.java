@@ -77,6 +77,7 @@ public class PortRange {
 
     /**
      * The minimum port number. Must not be greater than the maximum port number.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("min")
     Integer min;

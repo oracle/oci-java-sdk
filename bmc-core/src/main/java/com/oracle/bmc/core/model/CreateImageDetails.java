@@ -6,6 +6,7 @@ package com.oracle.bmc.core.model;
 
 /**
  * Either instanceId or imageSourceDetails must be provided in addition to other required parameters.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -173,6 +174,7 @@ public class CreateImageDetails {
 
     /**
      * The OCID of the instance you want to use as the basis for the image.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     String instanceId;

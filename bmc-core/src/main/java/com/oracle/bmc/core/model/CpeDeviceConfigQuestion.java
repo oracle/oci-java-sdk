@@ -93,6 +93,7 @@ public class CpeDeviceConfigQuestion {
 
     /**
      * A descriptive label for the question (for example, to display in a form in a graphical interface).
+     * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")

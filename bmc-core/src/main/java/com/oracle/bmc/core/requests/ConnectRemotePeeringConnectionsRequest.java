@@ -21,6 +21,7 @@ public class ConnectRemotePeeringConnectionsRequest
 
     /**
      * Details to connect peering connection with peering connection from remote region
+     *
      */
     private ConnectRemotePeeringConnectionsDetails connectRemotePeeringConnectionsDetails;
 

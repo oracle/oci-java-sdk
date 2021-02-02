@@ -236,7 +236,7 @@ public class Ipv6 {
     /**
      * The IPv6 address of the `IPv6` object. The address is within the private IPv6 CIDR block
      * of the VNIC's subnet (see the `ipv6CidrBlock` attribute for the {@link Subnet}
-     * object).
+     * object.
      * <p>
      * Example: `2001:0db8:0123:1111:abcd:ef01:2345:6789`
      *

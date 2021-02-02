@@ -330,6 +330,7 @@ public class VnicAttachment {
 
     /**
      * The OCID of the VNIC. Available after the attachment process is complete.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
     String vnicId;

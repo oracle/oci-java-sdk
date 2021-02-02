@@ -410,6 +410,7 @@ public class VolumeBackup {
     Long sizeInMBs;
     /**
      * Specifies whether the backup was created manually, or via scheduled backup policy.
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum SourceType {
@@ -456,6 +457,7 @@ public class VolumeBackup {
     };
     /**
      * Specifies whether the backup was created manually, or via scheduled backup policy.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
     SourceType sourceType;

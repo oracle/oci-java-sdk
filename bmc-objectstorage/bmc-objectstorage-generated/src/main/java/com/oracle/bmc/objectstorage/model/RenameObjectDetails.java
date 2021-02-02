@@ -117,7 +117,7 @@ public class RenameObjectDetails {
     String sourceName;
 
     /**
-     * The new name of the source object.
+     * The new name of the source object. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("newName")
     String newName;

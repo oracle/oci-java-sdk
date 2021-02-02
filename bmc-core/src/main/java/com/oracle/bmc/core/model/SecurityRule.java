@@ -312,7 +312,9 @@ public class SecurityRule {
     @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
     DestinationType destinationType;
     /**
-     * Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
+     * Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets,
+     * or `INGRESS` for rules to allow inbound IP packets.
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Direction {
@@ -358,7 +360,9 @@ public class SecurityRule {
         }
     };
     /**
-     * Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
+     * Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets,
+     * or `INGRESS` for rules to allow inbound IP packets.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("direction")
     Direction direction;

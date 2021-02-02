@@ -136,7 +136,9 @@ public class CreateRouteTableDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
@@ -153,6 +155,7 @@ public class CreateRouteTableDetails {
 
     /**
      * The collection of rules used for routing destination IPs to network devices.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeRules")
     java.util.List<RouteRule> routeRules;

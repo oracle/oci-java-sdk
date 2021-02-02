@@ -326,6 +326,7 @@ public class BootVolumeBackup {
 
     /**
      * The image OCID used to create the boot volume the backup is taken from.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     String imageId;
@@ -409,6 +410,7 @@ public class BootVolumeBackup {
     String sourceBootVolumeBackupId;
     /**
      * Specifies whether the backup was created manually, or via scheduled backup policy.
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum SourceType {
@@ -455,6 +457,7 @@ public class BootVolumeBackup {
     };
     /**
      * Specifies whether the backup was created manually, or via scheduled backup policy.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
     SourceType sourceType;

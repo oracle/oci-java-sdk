@@ -142,7 +142,8 @@ public class ListServiceGatewaysRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
     /**
-     * A filter to return only resources that match the given lifecycle state.  The state value is case-insensitive.
+     * A filter to return only resources that match the given lifecycle
+     * state. The state value is case-insensitive.
      *
      */
     private ServiceGateway.LifecycleState lifecycleState;

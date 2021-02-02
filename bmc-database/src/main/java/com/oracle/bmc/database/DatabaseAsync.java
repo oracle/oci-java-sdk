@@ -287,6 +287,71 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Move the {@link #createExternalContainerDatabaseDetails(CreateExternalContainerDatabaseDetailsRequest, Consumer, Consumer) createExternalContainerDatabaseDetails}
+     * and its dependent resources to the specified compartment.
+     * For more information about moving external container databases, see
+     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeExternalContainerDatabaseCompartmentResponse>
+            changeExternalContainerDatabaseCompartment(
+                    ChangeExternalContainerDatabaseCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeExternalContainerDatabaseCompartmentRequest,
+                                    ChangeExternalContainerDatabaseCompartmentResponse>
+                            handler);
+
+    /**
+     * Move the external non-container database and its dependent resources to the specified compartment.
+     * For more information about moving external non-container databases, see
+     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeExternalNonContainerDatabaseCompartmentResponse>
+            changeExternalNonContainerDatabaseCompartment(
+                    ChangeExternalNonContainerDatabaseCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeExternalNonContainerDatabaseCompartmentRequest,
+                                    ChangeExternalNonContainerDatabaseCompartmentResponse>
+                            handler);
+
+    /**
+     * Move the {@link #createExternalPluggableDatabaseDetails(CreateExternalPluggableDatabaseDetailsRequest, Consumer, Consumer) createExternalPluggableDatabaseDetails} and
+     * its dependent resources to the specified compartment.
+     * For more information about moving external pluggable databases, see
+     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeExternalPluggableDatabaseCompartmentResponse>
+            changeExternalPluggableDatabaseCompartment(
+                    ChangeExternalPluggableDatabaseCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeExternalPluggableDatabaseCompartmentRequest,
+                                    ChangeExternalPluggableDatabaseCompartmentResponse>
+                            handler);
+
+    /**
      * Move the key store resource to the specified compartment.
      * For more information about moving key stores, see
      * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
@@ -322,6 +387,26 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ChangeVmClusterCompartmentRequest, ChangeVmClusterCompartmentResponse>
                     handler);
+
+    /**
+     * Check the status of the external database connection specified in this connector.
+     * This operation will refresh the connectionStatus and timeConnectionStatusLastUpdated fields.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CheckExternalDatabaseConnectorConnectionStatusResponse>
+            checkExternalDatabaseConnectorConnectionStatus(
+                    CheckExternalDatabaseConnectorConnectionStatusRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CheckExternalDatabaseConnectorConnectionStatusRequest,
+                                    CheckExternalDatabaseConnectorConnectionStatusResponse>
+                            handler);
 
     /**
      * Changes the status of the standalone backup resource to `ACTIVE` after the backup is created from the on-premises database and placed in Oracle Cloud Infrastructure Object Storage.
@@ -613,6 +698,81 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new external container database resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateExternalContainerDatabaseResponse>
+            createExternalContainerDatabase(
+                    CreateExternalContainerDatabaseRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateExternalContainerDatabaseRequest,
+                                    CreateExternalContainerDatabaseResponse>
+                            handler);
+
+    /**
+     * Creates a new external database connector.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateExternalDatabaseConnectorResponse>
+            createExternalDatabaseConnector(
+                    CreateExternalDatabaseConnectorRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateExternalDatabaseConnectorRequest,
+                                    CreateExternalDatabaseConnectorResponse>
+                            handler);
+
+    /**
+     * Creates a new ExternalNonContainerDatabase resource
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateExternalNonContainerDatabaseResponse>
+            createExternalNonContainerDatabase(
+                    CreateExternalNonContainerDatabaseRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateExternalNonContainerDatabaseRequest,
+                                    CreateExternalNonContainerDatabaseResponse>
+                            handler);
+
+    /**
+     * Registers a new {@link #createExternalPluggableDatabaseDetails(CreateExternalPluggableDatabaseDetailsRequest, Consumer, Consumer) createExternalPluggableDatabaseDetails}
+     * resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateExternalPluggableDatabaseResponse>
+            createExternalPluggableDatabase(
+                    CreateExternalPluggableDatabaseRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateExternalPluggableDatabaseRequest,
+                                    CreateExternalPluggableDatabaseResponse>
+                            handler);
+
+    /**
      * Creates a Key Store.
      *
      *
@@ -878,6 +1038,87 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the {@link #createExternalContainerDatabaseDetails(CreateExternalContainerDatabaseDetailsRequest, Consumer, Consumer) createExternalContainerDatabaseDetails}
+     * resource. Any external pluggable databases registered under this container database must be deleted in
+     * your Oracle Cloud Infrastructure tenancy prior to this operation.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteExternalContainerDatabaseResponse>
+            deleteExternalContainerDatabase(
+                    DeleteExternalContainerDatabaseRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteExternalContainerDatabaseRequest,
+                                    DeleteExternalContainerDatabaseResponse>
+                            handler);
+
+    /**
+     * Deletes an external database connector.
+     * Any services enabled using the external database connector must be
+     * deleted prior to this operation.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteExternalDatabaseConnectorResponse>
+            deleteExternalDatabaseConnector(
+                    DeleteExternalDatabaseConnectorRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteExternalDatabaseConnectorRequest,
+                                    DeleteExternalDatabaseConnectorResponse>
+                            handler);
+
+    /**
+     * Deletes the Oracle Cloud Infrastructure resource representing an external non-container database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteExternalNonContainerDatabaseResponse>
+            deleteExternalNonContainerDatabase(
+                    DeleteExternalNonContainerDatabaseRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteExternalNonContainerDatabaseRequest,
+                                    DeleteExternalNonContainerDatabaseResponse>
+                            handler);
+
+    /**
+     * Deletes the {@link #createExternalPluggableDatabaseDetails(CreateExternalPluggableDatabaseDetailsRequest, Consumer, Consumer) createExternalPluggableDatabaseDetails}.
+     * resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteExternalPluggableDatabaseResponse>
+            deleteExternalPluggableDatabase(
+                    DeleteExternalPluggableDatabaseRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteExternalPluggableDatabaseRequest,
+                                    DeleteExternalPluggableDatabaseResponse>
+                            handler);
+
+    /**
      * Deletes a key store.
      *
      *
@@ -966,6 +1207,67 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Disable Database Management service for the external container database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableExternalContainerDatabaseDatabaseManagementResponse>
+            disableExternalContainerDatabaseDatabaseManagement(
+                    DisableExternalContainerDatabaseDatabaseManagementRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalContainerDatabaseDatabaseManagementRequest,
+                                    DisableExternalContainerDatabaseDatabaseManagementResponse>
+                            handler);
+
+    /**
+     * Disable Database Management Service for the external non-container database.
+     * For more information about the Database Management Service, see
+     * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableExternalNonContainerDatabaseDatabaseManagementResponse>
+            disableExternalNonContainerDatabaseDatabaseManagement(
+                    DisableExternalNonContainerDatabaseDatabaseManagementRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalNonContainerDatabaseDatabaseManagementRequest,
+                                    DisableExternalNonContainerDatabaseDatabaseManagementResponse>
+                            handler);
+
+    /**
+     * Disable Database Management Service for the external pluggable database.
+     * For more information about the Database Management Service, see
+     * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableExternalPluggableDatabaseDatabaseManagementResponse>
+            disableExternalPluggableDatabaseDatabaseManagement(
+                    DisableExternalPluggableDatabaseDatabaseManagementRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalPluggableDatabaseDatabaseManagementRequest,
+                                    DisableExternalPluggableDatabaseDatabaseManagementResponse>
+                            handler);
+
+    /**
      * Downloads the configuration file for the specified Exadata Cloud@Customer infrastructure.
      *
      *
@@ -1020,6 +1322,69 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     EnableAutonomousDatabaseOperationsInsightsRequest,
                                     EnableAutonomousDatabaseOperationsInsightsResponse>
+                            handler);
+
+    /**
+     * Enables Database Management Service for the external container database.
+     * For more information about the Database Management Service, see
+     * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableExternalContainerDatabaseDatabaseManagementResponse>
+            enableExternalContainerDatabaseDatabaseManagement(
+                    EnableExternalContainerDatabaseDatabaseManagementRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalContainerDatabaseDatabaseManagementRequest,
+                                    EnableExternalContainerDatabaseDatabaseManagementResponse>
+                            handler);
+
+    /**
+     * Enable Database Management Service for the external non-container database.
+     * For more information about the Database Management Service, see
+     * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableExternalNonContainerDatabaseDatabaseManagementResponse>
+            enableExternalNonContainerDatabaseDatabaseManagement(
+                    EnableExternalNonContainerDatabaseDatabaseManagementRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalNonContainerDatabaseDatabaseManagementRequest,
+                                    EnableExternalNonContainerDatabaseDatabaseManagementResponse>
+                            handler);
+
+    /**
+     * Enable Database Management Service for the external pluggable database.
+     * For more information about the Database Management Service, see
+     * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableExternalPluggableDatabaseDatabaseManagementResponse>
+            enableExternalPluggableDatabaseDatabaseManagement(
+                    EnableExternalPluggableDatabaseDatabaseManagementRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalPluggableDatabaseDatabaseManagementRequest,
+                                    EnableExternalPluggableDatabaseDatabaseManagementResponse>
                             handler);
 
     /**
@@ -1691,6 +2056,77 @@ public interface DatabaseAsync extends AutoCloseable {
             GetExternalBackupJobRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetExternalBackupJobRequest, GetExternalBackupJobResponse>
+                    handler);
+
+    /**
+     * Gets information about the specified external container database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExternalContainerDatabaseResponse> getExternalContainerDatabase(
+            GetExternalContainerDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetExternalContainerDatabaseRequest,
+                            GetExternalContainerDatabaseResponse>
+                    handler);
+
+    /**
+     * Gets information about the specified external database connector.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExternalDatabaseConnectorResponse> getExternalDatabaseConnector(
+            GetExternalDatabaseConnectorRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetExternalDatabaseConnectorRequest,
+                            GetExternalDatabaseConnectorResponse>
+                    handler);
+
+    /**
+     * Gets information about a specific external non-container database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExternalNonContainerDatabaseResponse>
+            getExternalNonContainerDatabase(
+                    GetExternalNonContainerDatabaseRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetExternalNonContainerDatabaseRequest,
+                                    GetExternalNonContainerDatabaseResponse>
+                            handler);
+
+    /**
+     * Gets information about a specific
+     * {@link #createExternalPluggableDatabaseDetails(CreateExternalPluggableDatabaseDetailsRequest, Consumer, Consumer) createExternalPluggableDatabaseDetails} resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExternalPluggableDatabaseResponse> getExternalPluggableDatabase(
+            GetExternalPluggableDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetExternalPluggableDatabaseRequest,
+                            GetExternalPluggableDatabaseResponse>
                     handler);
 
     /**
@@ -2420,6 +2856,83 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a list of the external container databases in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExternalContainerDatabasesResponse>
+            listExternalContainerDatabases(
+                    ListExternalContainerDatabasesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListExternalContainerDatabasesRequest,
+                                    ListExternalContainerDatabasesResponse>
+                            handler);
+
+    /**
+     * Gets a list of the external database connectors in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExternalDatabaseConnectorsResponse>
+            listExternalDatabaseConnectors(
+                    ListExternalDatabaseConnectorsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListExternalDatabaseConnectorsRequest,
+                                    ListExternalDatabaseConnectorsResponse>
+                            handler);
+
+    /**
+     * Gets a list of the ExternalNonContainerDatabases in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExternalNonContainerDatabasesResponse>
+            listExternalNonContainerDatabases(
+                    ListExternalNonContainerDatabasesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListExternalNonContainerDatabasesRequest,
+                                    ListExternalNonContainerDatabasesResponse>
+                            handler);
+
+    /**
+     * Gets a list of the {@link #createExternalPluggableDatabaseDetails(CreateExternalPluggableDatabaseDetailsRequest, Consumer, Consumer) createExternalPluggableDatabaseDetails}
+     * resources in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExternalPluggableDatabasesResponse>
+            listExternalPluggableDatabases(
+                    ListExternalPluggableDatabasesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListExternalPluggableDatabasesRequest,
+                                    ListExternalPluggableDatabasesResponse>
+                            handler);
+
+    /**
      * Gets a list of the flex components that can be used to launch a new DB system. The flex component determines resources to allocate to the DB system - Database Servers and Storage Servers.
      *
      * @param request The request object containing the details to send
@@ -2796,6 +3309,26 @@ public interface DatabaseAsync extends AutoCloseable {
             RotateVaultKeyRequest request,
             com.oracle.bmc.responses.AsyncHandler<RotateVaultKeyRequest, RotateVaultKeyResponse>
                     handler);
+
+    /**
+     * Scans for pluggable databases in the specified external container database.
+     * This operation will return un-registered pluggable databases in the `GetWorkRequest` operation.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ScanExternalContainerDatabasePluggableDatabasesResponse>
+            scanExternalContainerDatabasePluggableDatabases(
+                    ScanExternalContainerDatabasePluggableDatabasesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ScanExternalContainerDatabasePluggableDatabasesRequest,
+                                    ScanExternalContainerDatabasePluggableDatabasesResponse>
+                            handler);
 
     /**
      * Starts the specified Autonomous Database.
@@ -3239,6 +3772,84 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateExadataIormConfigRequest, UpdateExadataIormConfigResponse>
                     handler);
+
+    /**
+     * Updates the properties of
+     * an {@link #createExternalContainerDatabaseDetails(CreateExternalContainerDatabaseDetailsRequest, Consumer, Consumer) createExternalContainerDatabaseDetails} resource,
+     * such as the display name.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExternalContainerDatabaseResponse>
+            updateExternalContainerDatabase(
+                    UpdateExternalContainerDatabaseRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateExternalContainerDatabaseRequest,
+                                    UpdateExternalContainerDatabaseResponse>
+                            handler);
+
+    /**
+     * Updates the properties of an external database connector, such as the display name.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExternalDatabaseConnectorResponse>
+            updateExternalDatabaseConnector(
+                    UpdateExternalDatabaseConnectorRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateExternalDatabaseConnectorRequest,
+                                    UpdateExternalDatabaseConnectorResponse>
+                            handler);
+
+    /**
+     * Updates the properties of an external non-container database, such as the display name.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExternalNonContainerDatabaseResponse>
+            updateExternalNonContainerDatabase(
+                    UpdateExternalNonContainerDatabaseRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateExternalNonContainerDatabaseRequest,
+                                    UpdateExternalNonContainerDatabaseResponse>
+                            handler);
+
+    /**
+     * Updates the properties of an
+     * {@link #createExternalPluggableDatabaseDetails(CreateExternalPluggableDatabaseDetailsRequest, Consumer, Consumer) createExternalPluggableDatabaseDetails} resource,
+     * such as the display name.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExternalPluggableDatabaseResponse>
+            updateExternalPluggableDatabase(
+                    UpdateExternalPluggableDatabaseRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateExternalPluggableDatabaseRequest,
+                                    UpdateExternalPluggableDatabaseResponse>
+                            handler);
 
     /**
      * If no database is associated with the key store, edit the key store.

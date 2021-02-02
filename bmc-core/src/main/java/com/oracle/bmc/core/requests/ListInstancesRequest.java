@@ -151,7 +151,8 @@ public class ListInstancesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
     };
     /**
-     * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+     * A filter to only return resources that match the given lifecycle state. The state
+     * value is case-insensitive.
      *
      */
     private Instance.LifecycleState lifecycleState;

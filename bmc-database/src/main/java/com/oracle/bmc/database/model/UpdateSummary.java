@@ -173,6 +173,7 @@ public class UpdateSummary {
         RollingApply("ROLLING_APPLY"),
         NonRollingApply("NON_ROLLING_APPLY"),
         Precheck("PRECHECK"),
+        Rollback("ROLLBACK"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -225,6 +226,7 @@ public class UpdateSummary {
         RollingApply("ROLLING_APPLY"),
         NonRollingApply("NON_ROLLING_APPLY"),
         Precheck("PRECHECK"),
+        Rollback("ROLLBACK"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -276,6 +278,7 @@ public class UpdateSummary {
     public enum UpdateType {
         GiUpgrade("GI_UPGRADE"),
         GiPatch("GI_PATCH"),
+        OsUpdate("OS_UPDATE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

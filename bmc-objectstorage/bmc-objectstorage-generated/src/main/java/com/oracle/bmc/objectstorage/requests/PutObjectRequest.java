@@ -43,16 +43,16 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
     private java.io.InputStream putObjectBody;
 
     /**
-     * The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
-     * For uploading a part, this is the entity tag of the target part.
+     * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+     * the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+     * the resource.
      *
      */
     private String ifMatch;
 
     /**
-     * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail if the object
-     * already exists. For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a
-     * part, this is the entity tag of the target part.
+     * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
+     * fail if the resource already exists.
      *
      */
     private String ifNoneMatch;
@@ -148,6 +148,13 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
     private String opcSseCustomerKeySha256;
 
     /**
+     * The storage tier that the object should be stored in. If not specified, the object will be stored in
+     * the same storage tier as the bucket.
+     *
+     */
+    private com.oracle.bmc.objectstorage.model.StorageTier storageTier;
+
+    /**
      * Optional user-defined metadata key and value.
      */
     private java.util.Map<String, String> opcMeta;
@@ -215,6 +222,7 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
             opcSseCustomerAlgorithm(o.getOpcSseCustomerAlgorithm());
             opcSseCustomerKey(o.getOpcSseCustomerKey());
             opcSseCustomerKeySha256(o.getOpcSseCustomerKeySha256());
+            storageTier(o.getStorageTier());
             opcMeta(o.getOpcMeta());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());

@@ -175,6 +175,7 @@ public class CreateCrossConnectDetails {
 
     /**
      * The OCID of the cross-connect group to put this cross-connect in.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("crossConnectGroupId")
     String crossConnectGroupId;
