@@ -384,7 +384,9 @@ public interface Blockstorage extends AutoCloseable {
     DeleteVolumeGroupResponse deleteVolumeGroup(DeleteVolumeGroupRequest request);
 
     /**
-     * Deletes a volume group backup. This operation deletes all the backups in the volume group. For more information, see [Volume Groups](https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm).
+     * Deletes a volume group backup. This operation deletes all the backups in
+     * the volume group. For more information, see [Volume Groups](https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm).
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

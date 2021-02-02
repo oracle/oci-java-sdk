@@ -277,7 +277,9 @@ public class VolumeGroupBackup {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A user-friendly name for the volume group backup. Does not have to be unique and it's changeable. Avoid entering confidential information.
+     * A user-friendly name for the volume group backup. Does not have
+     * to be unique and it's changeable. Avoid entering confidential information.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
@@ -379,7 +381,9 @@ public class VolumeGroupBackup {
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
     Long sizeInGBs;
     /**
-     * Specifies whether the volume group backup was created manually, or via scheduled backup policy.
+     * Specifies whether the volume group backup was created manually, or via scheduled
+     * backup policy.
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum SourceType {
@@ -425,7 +429,9 @@ public class VolumeGroupBackup {
         }
     };
     /**
-     * Specifies whether the volume group backup was created manually, or via scheduled backup policy.
+     * Specifies whether the volume group backup was created manually, or via scheduled
+     * backup policy.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
     SourceType sourceType;
@@ -497,8 +503,9 @@ public class VolumeGroupBackup {
 
     /**
      * The aggregate size used by the volume group backup, in MBs.
-     * It is typically smaller than sizeInMBs, depending on the space
-     * consumed on the volume group and whether the volume backup is full or incremental.
+     * <p>
+     * It is typically smaller than sizeInMBs, depending on the spaceconsumed
+     * on the volume group and whether the volume backup is full or incremental.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uniqueSizeInMbs")
@@ -506,8 +513,9 @@ public class VolumeGroupBackup {
 
     /**
      * The aggregate size used by the volume group backup, in GBs.
-     * It is typically smaller than sizeInGBs, depending on the space
-     * consumed on the volume group and whether the volume backup is full or incremental.
+     * <p>
+     * It is typically smaller than sizeInGBs, depending on the spaceconsumed
+     * on the volume group and whether the volume backup is full or incremental.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uniqueSizeInGbs")

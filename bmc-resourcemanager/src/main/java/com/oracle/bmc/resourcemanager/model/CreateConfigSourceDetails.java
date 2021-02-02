@@ -40,6 +40,10 @@ package com.oracle.bmc.resourcemanager.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateCompartmentConfigSourceDetails.class,
         name = "COMPARTMENT_CONFIG_SOURCE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateStackTemplateConfigSourceDetails.class,
+        name = "TEMPLATE_CONFIG_SOURCE"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)

@@ -162,7 +162,10 @@ public class InstancePoolLoadBalancerAttachment {
     Integer port;
 
     /**
-     * Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are \"PrimaryVnic\" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
+     * Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer.
+     * Possible values are \"PrimaryVnic\" or the displayName of one of the secondary VNICs on the instance configuration
+     * that is associated with the instance pool.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vnicSelection")
     String vnicSelection;

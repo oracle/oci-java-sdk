@@ -292,7 +292,7 @@ public interface ComputeManagement extends AutoCloseable {
     ListInstancePoolsResponse listInstancePools(ListInstancePoolsRequest request);
 
     /**
-     * Performs the reset (power off and power on) action on the specified instance pool,
+     * Performs the reset (immediate power off and power on) action on the specified instance pool,
      * which performs the action on all the instances in the pool.
      *
      * @param request The request object containing the details to send
@@ -306,6 +306,9 @@ public interface ComputeManagement extends AutoCloseable {
     /**
      * Performs the softreset (ACPI shutdown and power on) action on the specified instance pool,
      * which performs the action on all the instances in the pool.
+     * <p>
+     * Softreset gracefully reboots the instances by sending a shutdown command to the operating systems.
+     * After waiting 15 minutes for the OS to shut down, the instances are powered off and then powered back on.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -328,7 +331,7 @@ public interface ComputeManagement extends AutoCloseable {
     StartInstancePoolResponse startInstancePool(StartInstancePoolRequest request);
 
     /**
-     * Performs the stop (power off) action on the specified instance pool,
+     * Performs the stop (immediate power off) action on the specified instance pool,
      * which performs the action on all the instances in the pool.
      *
      * @param request The request object containing the details to send

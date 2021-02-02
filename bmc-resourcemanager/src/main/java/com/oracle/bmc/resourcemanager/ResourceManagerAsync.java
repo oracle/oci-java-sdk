@@ -104,6 +104,25 @@ public interface ResourceManagerAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves a template into a different compartment within the same tenancy.
+     * For information about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeTemplateCompartmentResponse> changeTemplateCompartment(
+            ChangeTemplateCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeTemplateCompartmentRequest, ChangeTemplateCompartmentResponse>
+                    handler);
+
+    /**
      * Creates a configuration source provider in the specified compartment.
      * For more information, see
      * [To create a configuration source provider](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#CreateConfigurationSourceProvider).
@@ -159,6 +178,22 @@ public interface ResourceManagerAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateStackRequest, CreateStackResponse> handler);
 
     /**
+     * Creates a custom template in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateTemplateResponse> createTemplate(
+            CreateTemplateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateTemplateRequest, CreateTemplateResponse>
+                    handler);
+
+    /**
      * Deletes the specified configuration source provider.
      *
      * @param request The request object containing the details to send
@@ -189,6 +224,21 @@ public interface ResourceManagerAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteStackResponse> deleteStack(
             DeleteStackRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteStackRequest, DeleteStackResponse> handler);
+
+    /**
+     * Deletes the specified template.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteTemplateResponse> deleteTemplate(
+            DeleteTemplateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteTemplateRequest, DeleteTemplateResponse>
+                    handler);
 
     /**
      * Checks drift status for the specified stack.
@@ -349,6 +399,55 @@ public interface ResourceManagerAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the specified template.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetTemplateResponse> getTemplate(
+            GetTemplateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetTemplateRequest, GetTemplateResponse> handler);
+
+    /**
+     * Returns the Terraform logo file in .logo format for the specified template.
+     * Returns an error if no logo file is found.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetTemplateLogoResponse> getTemplateLogo(
+            GetTemplateLogoRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetTemplateLogoRequest, GetTemplateLogoResponse>
+                    handler);
+
+    /**
+     * Returns the Terraform configuration file in .zip format for the specified template.
+     * Returns an error if no zip file is found.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetTemplateTfConfigResponse> getTemplateTfConfig(
+            GetTemplateTfConfigRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetTemplateTfConfigRequest, GetTemplateTfConfigResponse>
+                    handler);
+
+    /**
      * Return the given work request.
      *
      * @param request The request object containing the details to send
@@ -461,6 +560,39 @@ public interface ResourceManagerAsync extends AutoCloseable {
     java.util.concurrent.Future<ListStacksResponse> listStacks(
             ListStacksRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListStacksRequest, ListStacksResponse> handler);
+
+    /**
+     * Lists template categories.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListTemplateCategoriesResponse> listTemplateCategories(
+            ListTemplateCategoriesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListTemplateCategoriesRequest, ListTemplateCategoriesResponse>
+                    handler);
+
+    /**
+     * Lists templates according to the specified filter.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListTemplatesResponse> listTemplates(
+            ListTemplatesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListTemplatesRequest, ListTemplatesResponse>
+                    handler);
 
     /**
      * Returns a list of supported Terraform versions for use with stacks.
@@ -583,4 +715,20 @@ public interface ResourceManagerAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateStackResponse> updateStack(
             UpdateStackRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateStackRequest, UpdateStackResponse> handler);
+
+    /**
+     * Updates the specified template.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateTemplateResponse> updateTemplate(
+            UpdateTemplateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateTemplateRequest, UpdateTemplateResponse>
+                    handler);
 }

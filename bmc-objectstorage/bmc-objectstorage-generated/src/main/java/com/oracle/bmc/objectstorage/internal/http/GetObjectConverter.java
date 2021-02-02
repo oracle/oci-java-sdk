@@ -349,6 +349,18 @@ public class GetObjectConverter {
                                 }
 
                                 com.google.common.base.Optional<java.util.List<String>>
+                                        storageTierHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "storage-tier");
+                                if (storageTierHeader.isPresent()) {
+                                    builder.storageTier(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "storage-tier",
+                                                    storageTierHeader.get().get(0),
+                                                    StorageTier.class));
+                                }
+
+                                com.google.common.base.Optional<java.util.List<String>>
                                         archivalStateHeader =
                                                 com.oracle.bmc.http.internal.HeaderUtils.get(
                                                         headers, "archival-state");
@@ -357,7 +369,7 @@ public class GetObjectConverter {
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
                                                     "archival-state",
                                                     archivalStateHeader.get().get(0),
-                                                    String.class));
+                                                    ArchivalState.class));
                                 }
 
                                 com.google.common.base.Optional<java.util.List<String>>

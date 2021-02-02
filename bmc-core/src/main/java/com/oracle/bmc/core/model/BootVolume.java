@@ -333,7 +333,9 @@ public class BootVolume {
     String imageId;
 
     /**
-     * Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
+     * Specifies whether the boot volume's data has finished copying
+     * from the source boot volume or boot volume backup.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHydrated")
     Boolean isHydrated;

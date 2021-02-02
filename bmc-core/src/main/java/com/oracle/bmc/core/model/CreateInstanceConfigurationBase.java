@@ -60,7 +60,7 @@ public class CreateInstanceConfigurationBase {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A user-friendly name for the instance configuration.  Does not have to be unique,
+     * A user-friendly name for the instance configuration. Does not have to be unique,
      * and it's changeable. Avoid entering confidential information.
      *
      **/

@@ -84,7 +84,7 @@ public class CreateReplicationPolicyDetails {
     }
 
     /**
-     * The name of the policy.
+     * The name of the policy. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;

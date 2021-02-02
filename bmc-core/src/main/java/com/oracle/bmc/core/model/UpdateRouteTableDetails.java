@@ -123,6 +123,7 @@ public class UpdateRouteTableDetails {
 
     /**
      * The collection of rules used for routing destination IPs to network devices.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeRules")
     java.util.List<RouteRule> routeRules;

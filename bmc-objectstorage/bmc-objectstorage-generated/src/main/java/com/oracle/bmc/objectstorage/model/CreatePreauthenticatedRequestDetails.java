@@ -95,6 +95,8 @@ public class CreatePreauthenticatedRequestDetails {
 
     /**
      * A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests.
+     * Avoid entering confidential information.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;

@@ -38,16 +38,16 @@ public class HeadObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     private String versionId;
 
     /**
-     * The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
-     * For uploading a part, this is the entity tag of the target part.
+     * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+     * the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+     * the resource.
      *
      */
     private String ifMatch;
 
     /**
-     * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail if the object
-     * already exists. For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a
-     * part, this is the entity tag of the target part.
+     * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
+     * fail if the resource already exists.
      *
      */
     private String ifNoneMatch;

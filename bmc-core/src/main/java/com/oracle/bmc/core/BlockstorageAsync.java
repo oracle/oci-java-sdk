@@ -525,7 +525,9 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a volume group backup. This operation deletes all the backups in the volume group. For more information, see [Volume Groups](https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm).
+     * Deletes a volume group backup. This operation deletes all the backups in
+     * the volume group. For more information, see [Volume Groups](https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm).
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

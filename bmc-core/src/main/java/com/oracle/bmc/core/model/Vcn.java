@@ -11,9 +11,6 @@ package com.oracle.bmc.core.model;
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
  * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you
- * supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -337,7 +334,6 @@ public class Vcn {
      * value, Oracle provides a *different* CIDR for the `ipv6PublicCidrBlock`. Note that IPv6
      * addressing is currently supported only in certain regions. See
      * [IPv6 Addresses](https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm).
-     * <p>
      * Example: `2001:0db8:0123::/48`
      *
      **/

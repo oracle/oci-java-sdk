@@ -64,6 +64,7 @@ public class BulkDeleteVirtualCircuitPublicPrefixesDetails {
 
     /**
      * The public IP prefixes (CIDRs) to remove from the public virtual circuit.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicPrefixes")
     java.util.List<DeleteVirtualCircuitPublicPrefixDetails> publicPrefixes;

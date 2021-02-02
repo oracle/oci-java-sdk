@@ -30,6 +30,7 @@ public class ListCloudVmClusterUpdateHistoryEntriesRequest
     public enum UpdateType {
         GiUpgrade("GI_UPGRADE"),
         GiPatch("GI_PATCH"),
+        OsUpdate("OS_UPDATE"),
         ;
 
         private final String value;

@@ -26,7 +26,7 @@ public class RenameObjectRequest extends com.oracle.bmc.requests.BmcRequest<Rena
     private String bucketName;
 
     /**
-     * The sourceName and newName of rename operation.
+     * The sourceName and newName of rename operation. Avoid entering confidential information.
      */
     private RenameObjectDetails renameObjectDetails;
 

@@ -83,6 +83,24 @@ public class ObjectVersionSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
+        private StorageTier storageTier;
+
+        public Builder storageTier(StorageTier storageTier) {
+            this.storageTier = storageTier;
+            this.__explicitlySet__.add("storageTier");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("archivalState")
+        private ArchivalState archivalState;
+
+        public Builder archivalState(ArchivalState archivalState) {
+            this.archivalState = archivalState;
+            this.__explicitlySet__.add("archivalState");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("versionId")
         private String versionId;
 
@@ -113,6 +131,8 @@ public class ObjectVersionSummary {
                             timeCreated,
                             timeModified,
                             etag,
+                            storageTier,
+                            archivalState,
                             versionId,
                             isDeleteMarker);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -128,6 +148,8 @@ public class ObjectVersionSummary {
                             .timeCreated(o.getTimeCreated())
                             .timeModified(o.getTimeModified())
                             .etag(o.getEtag())
+                            .storageTier(o.getStorageTier())
+                            .archivalState(o.getArchivalState())
                             .versionId(o.getVersionId())
                             .isDeleteMarker(o.getIsDeleteMarker());
 
@@ -180,6 +202,18 @@ public class ObjectVersionSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("etag")
     String etag;
+
+    /**
+     * The storage tier that the object is stored in.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
+    StorageTier storageTier;
+
+    /**
+     * Archival state of an object. This field is set only for objects in Archive tier.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("archivalState")
+    ArchivalState archivalState;
 
     /**
      * VersionId of the object.

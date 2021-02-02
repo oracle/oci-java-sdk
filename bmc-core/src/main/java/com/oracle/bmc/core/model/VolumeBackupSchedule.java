@@ -217,7 +217,10 @@ public class VolumeBackupSchedule {
     BackupType backupType;
 
     /**
-     * The number of seconds that the volume backup start time should be shifted from the default interval boundaries specified by the period. The volume backup start time is the frequency start time plus the offset.
+     * The number of seconds that the volume backup start
+     * time should be shifted from the default interval boundaries specified by
+     * the period. The volume backup start time is the frequency start time plus the offset.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("offsetSeconds")
     Integer offsetSeconds;
@@ -276,11 +279,16 @@ public class VolumeBackupSchedule {
     @com.fasterxml.jackson.annotation.JsonProperty("period")
     Period period;
     /**
-     * Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
+     * Indicates how the offset is defined. If value is `STRUCTURED`,
+     * then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used
+     * and `offsetSeconds` will be ignored in requests and users should ignore its
+     * value from the responses.
      * <p>
-     * `hourOfDay` is applicable for periods `ONE_DAY`, `ONE_WEEK`, `ONE_MONTH` and `ONE_YEAR`.
+     * `hourOfDay` is applicable for periods `ONE_DAY`,
+     * `ONE_WEEK`, `ONE_MONTH` and `ONE_YEAR`.
      * <p>
-     * `dayOfWeek` is applicable for period `ONE_WEEK`.
+     * `dayOfWeek` is applicable for period
+     * `ONE_WEEK`.
      * <p>
      * `dayOfMonth` is applicable for periods `ONE_MONTH` and `ONE_YEAR`.
      * <p>
@@ -288,9 +296,13 @@ public class VolumeBackupSchedule {
      * <p>
      * They will be ignored in the requests for inapplicable periods.
      * <p>
-     * If value is `NUMERIC_SECONDS`, then `offsetSeconds` will be used for both requests and responses and the structured fields will be ignored in the requests and users should ignore their values from the responses.
+     * If value is `NUMERIC_SECONDS`, then `offsetSeconds`
+     * will be used for both requests and responses and the structured fields will be
+     * ignored in the requests and users should ignore their values from the responses.
      * <p>
-     * For clients using older versions of Apis and not sending `offsetType` in their requests, the behaviour is just like `NUMERIC_SECONDS`.
+     * For clients using older versions of Apis and not sending `offsetType` in their
+     * requests, the behaviour is just like `NUMERIC_SECONDS`.
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum OffsetType {
@@ -336,11 +348,16 @@ public class VolumeBackupSchedule {
         }
     };
     /**
-     * Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
+     * Indicates how the offset is defined. If value is `STRUCTURED`,
+     * then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used
+     * and `offsetSeconds` will be ignored in requests and users should ignore its
+     * value from the responses.
      * <p>
-     * `hourOfDay` is applicable for periods `ONE_DAY`, `ONE_WEEK`, `ONE_MONTH` and `ONE_YEAR`.
+     * `hourOfDay` is applicable for periods `ONE_DAY`,
+     * `ONE_WEEK`, `ONE_MONTH` and `ONE_YEAR`.
      * <p>
-     * `dayOfWeek` is applicable for period `ONE_WEEK`.
+     * `dayOfWeek` is applicable for period
+     * `ONE_WEEK`.
      * <p>
      * `dayOfMonth` is applicable for periods `ONE_MONTH` and `ONE_YEAR`.
      * <p>
@@ -348,9 +365,13 @@ public class VolumeBackupSchedule {
      * <p>
      * They will be ignored in the requests for inapplicable periods.
      * <p>
-     * If value is `NUMERIC_SECONDS`, then `offsetSeconds` will be used for both requests and responses and the structured fields will be ignored in the requests and users should ignore their values from the responses.
+     * If value is `NUMERIC_SECONDS`, then `offsetSeconds`
+     * will be used for both requests and responses and the structured fields will be
+     * ignored in the requests and users should ignore their values from the responses.
      * <p>
-     * For clients using older versions of Apis and not sending `offsetType` in their requests, the behaviour is just like `NUMERIC_SECONDS`.
+     * For clients using older versions of Apis and not sending `offsetType` in their
+     * requests, the behaviour is just like `NUMERIC_SECONDS`.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("offsetType")
     OffsetType offsetType;

@@ -71,13 +71,28 @@ public class CreateIPSecConnectionTunnelDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptionDomainConfig")
+        private CreateIPSecTunnelEncryptionDomainDetails encryptionDomainConfig;
+
+        public Builder encryptionDomainConfig(
+                CreateIPSecTunnelEncryptionDomainDetails encryptionDomainConfig) {
+            this.encryptionDomainConfig = encryptionDomainConfig;
+            this.__explicitlySet__.add("encryptionDomainConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateIPSecConnectionTunnelDetails build() {
             CreateIPSecConnectionTunnelDetails __instance__ =
                     new CreateIPSecConnectionTunnelDetails(
-                            displayName, routing, ikeVersion, sharedSecret, bgpSessionConfig);
+                            displayName,
+                            routing,
+                            ikeVersion,
+                            sharedSecret,
+                            bgpSessionConfig,
+                            encryptionDomainConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -89,7 +104,8 @@ public class CreateIPSecConnectionTunnelDetails {
                             .routing(o.getRouting())
                             .ikeVersion(o.getIkeVersion())
                             .sharedSecret(o.getSharedSecret())
-                            .bgpSessionConfig(o.getBgpSessionConfig());
+                            .bgpSessionConfig(o.getBgpSessionConfig())
+                            .encryptionDomainConfig(o.getEncryptionDomainConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -117,6 +133,7 @@ public class CreateIPSecConnectionTunnelDetails {
     public enum Routing {
         Bgp("BGP"),
         Static("STATIC"),
+        Policy("POLICY"),
         ;
 
         private final String value;
@@ -207,6 +224,9 @@ public class CreateIPSecConnectionTunnelDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("bgpSessionConfig")
     CreateIPSecTunnelBgpSessionDetails bgpSessionConfig;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptionDomainConfig")
+    CreateIPSecTunnelEncryptionDomainDetails encryptionDomainConfig;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -148,7 +148,8 @@ public class ListSubnetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
     /**
-     * A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+     * A filter to only return resources that match the given lifecycle
+     * state. The state value is case-insensitive.
      *
      */
     private Subnet.LifecycleState lifecycleState;

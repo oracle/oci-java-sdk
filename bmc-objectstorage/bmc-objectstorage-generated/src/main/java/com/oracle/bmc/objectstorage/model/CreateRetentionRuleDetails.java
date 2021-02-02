@@ -84,6 +84,8 @@ public class CreateRetentionRuleDetails {
 
     /**
      * A user-specified name for the retention rule. Names can be helpful in identifying retention rules.
+     * Avoid entering confidential information.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;

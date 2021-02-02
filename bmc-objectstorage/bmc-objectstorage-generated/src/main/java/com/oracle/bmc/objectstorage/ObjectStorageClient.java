@@ -1876,6 +1876,39 @@ public class ObjectStorageClient implements ObjectStorage {
     }
 
     @Override
+    public UpdateObjectStorageTierResponse updateObjectStorageTier(
+            UpdateObjectStorageTierRequest request) {
+        LOG.trace("Called updateObjectStorageTier");
+        final UpdateObjectStorageTierRequest interceptedRequest =
+                UpdateObjectStorageTierConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateObjectStorageTierConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateObjectStorageTierResponse>
+                transformer = UpdateObjectStorageTierConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getUpdateObjectStorageTierDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateRetentionRuleResponse updateRetentionRule(UpdateRetentionRuleRequest request) {
         LOG.trace("Called updateRetentionRule");
         final UpdateRetentionRuleRequest interceptedRequest =

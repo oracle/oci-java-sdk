@@ -283,6 +283,7 @@ public class UploadManager {
                 .invocationCallback(request.getInvocationCallback())
                 .namespaceName(request.getNamespaceName())
                 .objectName(request.getObjectName())
+                .storageTier(request.getStorageTier())
                 .opcClientRequestId(request.getOpcClientRequestId())
                 .service(objectStorage)
                 .cacheControl(request.getCacheControl())

@@ -267,7 +267,9 @@ public class AddSecurityRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
     DestinationType destinationType;
     /**
-     * Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
+     * Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets,
+     * or `INGRESS` for rules to allow inbound IP packets.
+     *
      **/
     public enum Direction {
         Egress("EGRESS"),
@@ -302,7 +304,9 @@ public class AddSecurityRuleDetails {
         }
     };
     /**
-     * Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
+     * Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets,
+     * or `INGRESS` for rules to allow inbound IP packets.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("direction")
     Direction direction;

@@ -269,6 +269,15 @@ public class ExadataInfrastructure {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceSLOStatus")
+        private MaintenanceSLOStatus maintenanceSLOStatus;
+
+        public Builder maintenanceSLOStatus(MaintenanceSLOStatus maintenanceSLOStatus) {
+            this.maintenanceSLOStatus = maintenanceSLOStatus;
+            this.__explicitlySet__.add("maintenanceSLOStatus");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
         private MaintenanceWindow maintenanceWindow;
 
@@ -330,6 +339,7 @@ public class ExadataInfrastructure {
                             lifecycleDetails,
                             csiNumber,
                             contacts,
+                            maintenanceSLOStatus,
                             maintenanceWindow,
                             freeformTags,
                             definedTags);
@@ -367,6 +377,7 @@ public class ExadataInfrastructure {
                             .lifecycleDetails(o.getLifecycleDetails())
                             .csiNumber(o.getCsiNumber())
                             .contacts(o.getContacts())
+                            .maintenanceSLOStatus(o.getMaintenanceSLOStatus())
                             .maintenanceWindow(o.getMaintenanceWindow())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
@@ -600,6 +611,57 @@ public class ExadataInfrastructure {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contacts")
     java.util.List<ExadataInfrastructureContact> contacts;
+    /**
+     * A field to capture \u2018Maintenance SLO Status\u2019 for the Exadata infrastructure with values \u2018OK\u2019, \u2018DEGRADED\u2019. Default is \u2018OK\u2019 when the infrastructure is provisioned.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum MaintenanceSLOStatus {
+        Ok("OK"),
+        Degraded("DEGRADED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, MaintenanceSLOStatus> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (MaintenanceSLOStatus v : MaintenanceSLOStatus.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        MaintenanceSLOStatus(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static MaintenanceSLOStatus create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'MaintenanceSLOStatus', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * A field to capture \u2018Maintenance SLO Status\u2019 for the Exadata infrastructure with values \u2018OK\u2019, \u2018DEGRADED\u2019. Default is \u2018OK\u2019 when the infrastructure is provisioned.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceSLOStatus")
+    MaintenanceSLOStatus maintenanceSLOStatus;
 
     @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
     MaintenanceWindow maintenanceWindow;

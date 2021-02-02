@@ -122,6 +122,15 @@ public class CopyObjectDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("destinationObjectStorageTier")
+        private StorageTier destinationObjectStorageTier;
+
+        public Builder destinationObjectStorageTier(StorageTier destinationObjectStorageTier) {
+            this.destinationObjectStorageTier = destinationObjectStorageTier;
+            this.__explicitlySet__.add("destinationObjectStorageTier");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -137,7 +146,8 @@ public class CopyObjectDetails {
                             destinationObjectName,
                             destinationObjectIfMatchETag,
                             destinationObjectIfNoneMatchETag,
-                            destinationObjectMetadata);
+                            destinationObjectMetadata,
+                            destinationObjectStorageTier);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -155,7 +165,8 @@ public class CopyObjectDetails {
                             .destinationObjectIfMatchETag(o.getDestinationObjectIfMatchETag())
                             .destinationObjectIfNoneMatchETag(
                                     o.getDestinationObjectIfNoneMatchETag())
-                            .destinationObjectMetadata(o.getDestinationObjectMetadata());
+                            .destinationObjectMetadata(o.getDestinationObjectMetadata())
+                            .destinationObjectStorageTier(o.getDestinationObjectStorageTier());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -208,7 +219,7 @@ public class CopyObjectDetails {
     String destinationBucket;
 
     /**
-     * The name of the destination object resulting from the copy operation.
+     * The name of the destination object resulting from the copy operation. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationObjectName")
     String destinationObjectName;
@@ -239,6 +250,14 @@ public class CopyObjectDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationObjectMetadata")
     java.util.Map<String, String> destinationObjectMetadata;
+
+    /**
+     * The storage tier that the object should be stored in. If not specified, the object will be stored in
+     * the same storage tier as the bucket.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("destinationObjectStorageTier")
+    StorageTier destinationObjectStorageTier;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -88,6 +88,20 @@ public interface ResourceManager extends AutoCloseable {
     ChangeStackCompartmentResponse changeStackCompartment(ChangeStackCompartmentRequest request);
 
     /**
+     * Moves a template into a different compartment within the same tenancy.
+     * For information about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ChangeTemplateCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeTemplateCompartment API.
+     */
+    ChangeTemplateCompartmentResponse changeTemplateCompartment(
+            ChangeTemplateCompartmentRequest request);
+
+    /**
      * Creates a configuration source provider in the specified compartment.
      * For more information, see
      * [To create a configuration source provider](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#CreateConfigurationSourceProvider).
@@ -128,6 +142,17 @@ public interface ResourceManager extends AutoCloseable {
     CreateStackResponse createStack(CreateStackRequest request);
 
     /**
+     * Creates a custom template in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/CreateTemplateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTemplate API.
+     */
+    CreateTemplateResponse createTemplate(CreateTemplateRequest request);
+
+    /**
      * Deletes the specified configuration source provider.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -147,6 +172,16 @@ public interface ResourceManager extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/DeleteStackExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteStack API.
      */
     DeleteStackResponse deleteStack(DeleteStackRequest request);
+
+    /**
+     * Deletes the specified template.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/DeleteTemplateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTemplate API.
+     */
+    DeleteTemplateResponse deleteTemplate(DeleteTemplateRequest request);
 
     /**
      * Checks drift status for the specified stack.
@@ -257,6 +292,40 @@ public interface ResourceManager extends AutoCloseable {
     GetStackTfStateResponse getStackTfState(GetStackTfStateRequest request);
 
     /**
+     * Gets the specified template.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetTemplateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTemplate API.
+     */
+    GetTemplateResponse getTemplate(GetTemplateRequest request);
+
+    /**
+     * Returns the Terraform logo file in .logo format for the specified template.
+     * Returns an error if no logo file is found.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetTemplateLogoExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTemplateLogo API.
+     */
+    GetTemplateLogoResponse getTemplateLogo(GetTemplateLogoRequest request);
+
+    /**
+     * Returns the Terraform configuration file in .zip format for the specified template.
+     * Returns an error if no zip file is found.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetTemplateTfConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTemplateTfConfig API.
+     */
+    GetTemplateTfConfigResponse getTemplateTfConfig(GetTemplateTfConfigRequest request);
+
+    /**
      * Return the given work request.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -335,6 +404,28 @@ public interface ResourceManager extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListStacksExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStacks API.
      */
     ListStacksResponse listStacks(ListStacksRequest request);
+
+    /**
+     * Lists template categories.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListTemplateCategoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTemplateCategories API.
+     */
+    ListTemplateCategoriesResponse listTemplateCategories(ListTemplateCategoriesRequest request);
+
+    /**
+     * Lists templates according to the specified filter.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListTemplatesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTemplates API.
+     */
+    ListTemplatesResponse listTemplates(ListTemplatesRequest request);
 
     /**
      * Returns a list of supported Terraform versions for use with stacks.
@@ -419,6 +510,17 @@ public interface ResourceManager extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/UpdateStackExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateStack API.
      */
     UpdateStackResponse updateStack(UpdateStackRequest request);
+
+    /**
+     * Updates the specified template.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/UpdateTemplateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTemplate API.
+     */
+    UpdateTemplateResponse updateTemplate(UpdateTemplateRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

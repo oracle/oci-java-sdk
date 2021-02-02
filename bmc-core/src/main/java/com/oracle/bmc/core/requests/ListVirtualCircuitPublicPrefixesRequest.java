@@ -20,7 +20,9 @@ public class ListVirtualCircuitPublicPrefixesRequest
     private String virtualCircuitId;
 
     /**
-     * A filter to only return resources that match the given verification state.
+     * A filter to only return resources that match the given verification
+     * state.
+     * <p>
      * The state value is case-insensitive.
      *
      */

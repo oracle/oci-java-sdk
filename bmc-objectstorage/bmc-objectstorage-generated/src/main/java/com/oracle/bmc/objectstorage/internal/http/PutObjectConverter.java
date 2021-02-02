@@ -108,6 +108,10 @@ public class PutObjectConverter {
             ib.header("opc-sse-customer-key-sha256", request.getOpcSseCustomerKeySha256());
         }
 
+        if (request.getStorageTier() != null) {
+            ib.header("storage-tier", request.getStorageTier().getValue());
+        }
+
         if (request.getOpcMeta() != null) {
             for (java.util.Map.Entry<String, String> header : request.getOpcMeta().entrySet()) {
                 ib.header(header.getKey(), header.getValue());

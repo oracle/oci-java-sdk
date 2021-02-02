@@ -279,7 +279,7 @@ public class Bucket {
     }
 
     /**
-     * The Object Storage namespace in which the bucket lives.
+     * The Object Storage namespace in which the bucket resides.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     String namespace;
@@ -384,10 +384,10 @@ public class Bucket {
     @com.fasterxml.jackson.annotation.JsonProperty("publicAccessType")
     PublicAccessType publicAccessType;
     /**
-     * The storage tier type assigned to the bucket. A bucket is set to 'Standard' tier by default, which means
-     * objects uploaded or copied to the bucket will be in the standard storage tier. When the 'Archive' tier type
+     * The storage tier type assigned to the bucket. A bucket is set to `Standard` tier by default, which means
+     * objects uploaded or copied to the bucket will be in the standard storage tier. When the `Archive` tier type
      * is set explicitly for a bucket, objects uploaded or copied to the bucket will be stored in archive storage.
-     * The 'storageTier' property is immutable after bucket is created.
+     * The `storageTier` property is immutable after bucket is created.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -434,10 +434,10 @@ public class Bucket {
         }
     };
     /**
-     * The storage tier type assigned to the bucket. A bucket is set to 'Standard' tier by default, which means
-     * objects uploaded or copied to the bucket will be in the standard storage tier. When the 'Archive' tier type
+     * The storage tier type assigned to the bucket. A bucket is set to `Standard` tier by default, which means
+     * objects uploaded or copied to the bucket will be in the standard storage tier. When the `Archive` tier type
      * is set explicitly for a bucket, objects uploaded or copied to the bucket will be stored in archive storage.
-     * The 'storageTier' property is immutable after bucket is created.
+     * The `storageTier` property is immutable after bucket is created.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageTier")

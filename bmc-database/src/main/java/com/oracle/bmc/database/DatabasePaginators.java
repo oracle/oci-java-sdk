@@ -3884,6 +3884,513 @@ public class DatabasePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listExternalContainerDatabases operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListExternalContainerDatabasesResponse>
+            listExternalContainerDatabasesResponseIterator(
+                    final ListExternalContainerDatabasesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExternalContainerDatabasesRequest.Builder,
+                ListExternalContainerDatabasesRequest, ListExternalContainerDatabasesResponse>(
+                new com.google.common.base.Supplier<
+                        ListExternalContainerDatabasesRequest.Builder>() {
+                    @Override
+                    public ListExternalContainerDatabasesRequest.Builder get() {
+                        return ListExternalContainerDatabasesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalContainerDatabasesResponse, String>() {
+                    @Override
+                    public String apply(ListExternalContainerDatabasesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalContainerDatabasesRequest.Builder>,
+                        ListExternalContainerDatabasesRequest>() {
+                    @Override
+                    public ListExternalContainerDatabasesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalContainerDatabasesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalContainerDatabasesRequest,
+                        ListExternalContainerDatabasesResponse>() {
+                    @Override
+                    public ListExternalContainerDatabasesResponse apply(
+                            ListExternalContainerDatabasesRequest request) {
+                        return client.listExternalContainerDatabases(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.ExternalContainerDatabaseSummary} objects
+     * contained in responses from the listExternalContainerDatabases operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.ExternalContainerDatabaseSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.ExternalContainerDatabaseSummary>
+            listExternalContainerDatabasesRecordIterator(
+                    final ListExternalContainerDatabasesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExternalContainerDatabasesRequest.Builder,
+                ListExternalContainerDatabasesRequest, ListExternalContainerDatabasesResponse,
+                com.oracle.bmc.database.model.ExternalContainerDatabaseSummary>(
+                new com.google.common.base.Supplier<
+                        ListExternalContainerDatabasesRequest.Builder>() {
+                    @Override
+                    public ListExternalContainerDatabasesRequest.Builder get() {
+                        return ListExternalContainerDatabasesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalContainerDatabasesResponse, String>() {
+                    @Override
+                    public String apply(ListExternalContainerDatabasesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalContainerDatabasesRequest.Builder>,
+                        ListExternalContainerDatabasesRequest>() {
+                    @Override
+                    public ListExternalContainerDatabasesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalContainerDatabasesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalContainerDatabasesRequest,
+                        ListExternalContainerDatabasesResponse>() {
+                    @Override
+                    public ListExternalContainerDatabasesResponse apply(
+                            ListExternalContainerDatabasesRequest request) {
+                        return client.listExternalContainerDatabases(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalContainerDatabasesResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model.ExternalContainerDatabaseSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.database.model.ExternalContainerDatabaseSummary>
+                            apply(ListExternalContainerDatabasesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listExternalDatabaseConnectors operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListExternalDatabaseConnectorsResponse>
+            listExternalDatabaseConnectorsResponseIterator(
+                    final ListExternalDatabaseConnectorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExternalDatabaseConnectorsRequest.Builder,
+                ListExternalDatabaseConnectorsRequest, ListExternalDatabaseConnectorsResponse>(
+                new com.google.common.base.Supplier<
+                        ListExternalDatabaseConnectorsRequest.Builder>() {
+                    @Override
+                    public ListExternalDatabaseConnectorsRequest.Builder get() {
+                        return ListExternalDatabaseConnectorsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalDatabaseConnectorsResponse, String>() {
+                    @Override
+                    public String apply(ListExternalDatabaseConnectorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalDatabaseConnectorsRequest.Builder>,
+                        ListExternalDatabaseConnectorsRequest>() {
+                    @Override
+                    public ListExternalDatabaseConnectorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalDatabaseConnectorsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalDatabaseConnectorsRequest,
+                        ListExternalDatabaseConnectorsResponse>() {
+                    @Override
+                    public ListExternalDatabaseConnectorsResponse apply(
+                            ListExternalDatabaseConnectorsRequest request) {
+                        return client.listExternalDatabaseConnectors(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.ExternalDatabaseConnectorSummary} objects
+     * contained in responses from the listExternalDatabaseConnectors operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.ExternalDatabaseConnectorSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.ExternalDatabaseConnectorSummary>
+            listExternalDatabaseConnectorsRecordIterator(
+                    final ListExternalDatabaseConnectorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExternalDatabaseConnectorsRequest.Builder,
+                ListExternalDatabaseConnectorsRequest, ListExternalDatabaseConnectorsResponse,
+                com.oracle.bmc.database.model.ExternalDatabaseConnectorSummary>(
+                new com.google.common.base.Supplier<
+                        ListExternalDatabaseConnectorsRequest.Builder>() {
+                    @Override
+                    public ListExternalDatabaseConnectorsRequest.Builder get() {
+                        return ListExternalDatabaseConnectorsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalDatabaseConnectorsResponse, String>() {
+                    @Override
+                    public String apply(ListExternalDatabaseConnectorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalDatabaseConnectorsRequest.Builder>,
+                        ListExternalDatabaseConnectorsRequest>() {
+                    @Override
+                    public ListExternalDatabaseConnectorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalDatabaseConnectorsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalDatabaseConnectorsRequest,
+                        ListExternalDatabaseConnectorsResponse>() {
+                    @Override
+                    public ListExternalDatabaseConnectorsResponse apply(
+                            ListExternalDatabaseConnectorsRequest request) {
+                        return client.listExternalDatabaseConnectors(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalDatabaseConnectorsResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model.ExternalDatabaseConnectorSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.database.model.ExternalDatabaseConnectorSummary>
+                            apply(ListExternalDatabaseConnectorsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listExternalNonContainerDatabases operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListExternalNonContainerDatabasesResponse>
+            listExternalNonContainerDatabasesResponseIterator(
+                    final ListExternalNonContainerDatabasesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExternalNonContainerDatabasesRequest.Builder,
+                ListExternalNonContainerDatabasesRequest,
+                ListExternalNonContainerDatabasesResponse>(
+                new com.google.common.base.Supplier<
+                        ListExternalNonContainerDatabasesRequest.Builder>() {
+                    @Override
+                    public ListExternalNonContainerDatabasesRequest.Builder get() {
+                        return ListExternalNonContainerDatabasesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalNonContainerDatabasesResponse, String>() {
+                    @Override
+                    public String apply(ListExternalNonContainerDatabasesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalNonContainerDatabasesRequest.Builder>,
+                        ListExternalNonContainerDatabasesRequest>() {
+                    @Override
+                    public ListExternalNonContainerDatabasesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalNonContainerDatabasesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalNonContainerDatabasesRequest,
+                        ListExternalNonContainerDatabasesResponse>() {
+                    @Override
+                    public ListExternalNonContainerDatabasesResponse apply(
+                            ListExternalNonContainerDatabasesRequest request) {
+                        return client.listExternalNonContainerDatabases(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.ExternalNonContainerDatabaseSummary} objects
+     * contained in responses from the listExternalNonContainerDatabases operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.ExternalNonContainerDatabaseSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.ExternalNonContainerDatabaseSummary>
+            listExternalNonContainerDatabasesRecordIterator(
+                    final ListExternalNonContainerDatabasesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExternalNonContainerDatabasesRequest.Builder,
+                ListExternalNonContainerDatabasesRequest, ListExternalNonContainerDatabasesResponse,
+                com.oracle.bmc.database.model.ExternalNonContainerDatabaseSummary>(
+                new com.google.common.base.Supplier<
+                        ListExternalNonContainerDatabasesRequest.Builder>() {
+                    @Override
+                    public ListExternalNonContainerDatabasesRequest.Builder get() {
+                        return ListExternalNonContainerDatabasesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalNonContainerDatabasesResponse, String>() {
+                    @Override
+                    public String apply(ListExternalNonContainerDatabasesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalNonContainerDatabasesRequest.Builder>,
+                        ListExternalNonContainerDatabasesRequest>() {
+                    @Override
+                    public ListExternalNonContainerDatabasesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalNonContainerDatabasesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalNonContainerDatabasesRequest,
+                        ListExternalNonContainerDatabasesResponse>() {
+                    @Override
+                    public ListExternalNonContainerDatabasesResponse apply(
+                            ListExternalNonContainerDatabasesRequest request) {
+                        return client.listExternalNonContainerDatabases(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalNonContainerDatabasesResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model
+                                        .ExternalNonContainerDatabaseSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.database.model
+                                            .ExternalNonContainerDatabaseSummary>
+                            apply(ListExternalNonContainerDatabasesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listExternalPluggableDatabases operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListExternalPluggableDatabasesResponse>
+            listExternalPluggableDatabasesResponseIterator(
+                    final ListExternalPluggableDatabasesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExternalPluggableDatabasesRequest.Builder,
+                ListExternalPluggableDatabasesRequest, ListExternalPluggableDatabasesResponse>(
+                new com.google.common.base.Supplier<
+                        ListExternalPluggableDatabasesRequest.Builder>() {
+                    @Override
+                    public ListExternalPluggableDatabasesRequest.Builder get() {
+                        return ListExternalPluggableDatabasesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalPluggableDatabasesResponse, String>() {
+                    @Override
+                    public String apply(ListExternalPluggableDatabasesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalPluggableDatabasesRequest.Builder>,
+                        ListExternalPluggableDatabasesRequest>() {
+                    @Override
+                    public ListExternalPluggableDatabasesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalPluggableDatabasesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalPluggableDatabasesRequest,
+                        ListExternalPluggableDatabasesResponse>() {
+                    @Override
+                    public ListExternalPluggableDatabasesResponse apply(
+                            ListExternalPluggableDatabasesRequest request) {
+                        return client.listExternalPluggableDatabases(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.ExternalPluggableDatabaseSummary} objects
+     * contained in responses from the listExternalPluggableDatabases operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.ExternalPluggableDatabaseSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.ExternalPluggableDatabaseSummary>
+            listExternalPluggableDatabasesRecordIterator(
+                    final ListExternalPluggableDatabasesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExternalPluggableDatabasesRequest.Builder,
+                ListExternalPluggableDatabasesRequest, ListExternalPluggableDatabasesResponse,
+                com.oracle.bmc.database.model.ExternalPluggableDatabaseSummary>(
+                new com.google.common.base.Supplier<
+                        ListExternalPluggableDatabasesRequest.Builder>() {
+                    @Override
+                    public ListExternalPluggableDatabasesRequest.Builder get() {
+                        return ListExternalPluggableDatabasesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalPluggableDatabasesResponse, String>() {
+                    @Override
+                    public String apply(ListExternalPluggableDatabasesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalPluggableDatabasesRequest.Builder>,
+                        ListExternalPluggableDatabasesRequest>() {
+                    @Override
+                    public ListExternalPluggableDatabasesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalPluggableDatabasesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalPluggableDatabasesRequest,
+                        ListExternalPluggableDatabasesResponse>() {
+                    @Override
+                    public ListExternalPluggableDatabasesResponse apply(
+                            ListExternalPluggableDatabasesRequest request) {
+                        return client.listExternalPluggableDatabases(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalPluggableDatabasesResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model.ExternalPluggableDatabaseSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.database.model.ExternalPluggableDatabaseSummary>
+                            apply(ListExternalPluggableDatabasesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listFlexComponents operation. This iterable
      * will fetch more data from the server as needed.
      *

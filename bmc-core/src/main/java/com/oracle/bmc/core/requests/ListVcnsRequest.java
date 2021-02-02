@@ -143,7 +143,8 @@ public class ListVcnsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
     };
     /**
-     * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+     * A filter to only return resources that match the given lifecycle
+     * state. The state value is case-insensitive.
      *
      */
     private Vcn.LifecycleState lifecycleState;

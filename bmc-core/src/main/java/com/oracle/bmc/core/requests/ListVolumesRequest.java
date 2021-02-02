@@ -156,7 +156,8 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String volumeGroupId;
 
     /**
-     * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+     * A filter to only return resources that match the given lifecycle state. The state
+     * value is case-insensitive.
      *
      */
     private Volume.LifecycleState lifecycleState;

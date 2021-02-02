@@ -80,6 +80,7 @@ public class UpdateDetails {
         RollingApply("ROLLING_APPLY"),
         NonRollingApply("NON_ROLLING_APPLY"),
         Precheck("PRECHECK"),
+        Rollback("ROLLBACK"),
         ;
 
         private final String value;
