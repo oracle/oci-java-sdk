@@ -5,7 +5,7 @@
 package com.oracle.bmc.computeinstanceagent.model;
 
 /**
- * Create Command Details
+ * Creation details for an Oracle Cloud Agent command.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -104,13 +104,15 @@ public class CreateInstanceAgentCommandDetails {
     }
 
     /**
-     * The OCID of the compartment you want to create the command.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment to create the command in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * Command execution time limit. Zero means no timeout.
+     * The amount of time that Oracle Cloud Agent is given to run the command on the instance before timing
+     * out. The timer starts when Oracle Cloud Agent starts the command. Zero means no timeout.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionTimeOutInSeconds")
     Integer executionTimeOutInSeconds;
@@ -118,15 +120,22 @@ public class CreateInstanceAgentCommandDetails {
     /**
      * A user-friendly name for the command. It does not have to be unique.
      * Avoid entering confidential information.
-     * Example: `Database Backup Command`
+     * <p>
+     * Example: `Database Backup Script`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
+    /**
+     * The target instance to run the command on.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("target")
     InstanceAgentCommandTarget target;
 
+    /**
+     * The contents of the command.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     InstanceAgentCommandContent content;
 

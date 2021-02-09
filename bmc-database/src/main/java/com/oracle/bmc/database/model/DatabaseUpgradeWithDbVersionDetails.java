@@ -33,6 +33,15 @@ public class DatabaseUpgradeWithDbVersionDetails extends DatabaseUpgradeSourceBa
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("options")
+        private String options;
+
+        public Builder options(String options) {
+            this.options = options;
+            this.__explicitlySet__.add("options");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
@@ -47,14 +56,14 @@ public class DatabaseUpgradeWithDbVersionDetails extends DatabaseUpgradeSourceBa
 
         public DatabaseUpgradeWithDbVersionDetails build() {
             DatabaseUpgradeWithDbVersionDetails __instance__ =
-                    new DatabaseUpgradeWithDbVersionDetails(dbVersion);
+                    new DatabaseUpgradeWithDbVersionDetails(options, dbVersion);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DatabaseUpgradeWithDbVersionDetails o) {
-            Builder copiedBuilder = dbVersion(o.getDbVersion());
+            Builder copiedBuilder = options(o.getOptions()).dbVersion(o.getDbVersion());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -69,8 +78,8 @@ public class DatabaseUpgradeWithDbVersionDetails extends DatabaseUpgradeSourceBa
     }
 
     @Deprecated
-    public DatabaseUpgradeWithDbVersionDetails(String dbVersion) {
-        super();
+    public DatabaseUpgradeWithDbVersionDetails(String options, String dbVersion) {
+        super(options);
         this.dbVersion = dbVersion;
     }
 

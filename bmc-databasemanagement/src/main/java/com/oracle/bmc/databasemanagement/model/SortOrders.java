@@ -2,29 +2,28 @@
  * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-package com.oracle.bmc.osmanagement.model;
+package com.oracle.bmc.databasemanagement.model;
 
 /**
- * A reason why an update may not be installable.
+ * The order in which information can be sorted.
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-public enum InstallationRequirements {
-    EulaAcceptanceRequired("EULA_ACCEPTANCE_REQUIRED"),
-    SoftwareMediaRequired("SOFTWARE_MEDIA_REQUIRED"),
-    UserInteractionRequired("USER_INTERACTION_REQUIRED"),
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum SortOrders {
+    Asc("ASC"),
+    Desc("DESC"),
     ;
 
     private final String value;
-    private static java.util.Map<String, InstallationRequirements> map;
+    private static java.util.Map<String, SortOrders> map;
 
     static {
         map = new java.util.HashMap<>();
-        for (InstallationRequirements v : InstallationRequirements.values()) {
+        for (SortOrders v : SortOrders.values()) {
             map.put(v.getValue(), v);
         }
     }
 
-    InstallationRequirements(String value) {
+    SortOrders(String value) {
         this.value = value;
     }
 
@@ -34,10 +33,10 @@ public enum InstallationRequirements {
     }
 
     @com.fasterxml.jackson.annotation.JsonCreator
-    public static InstallationRequirements create(String key) {
+    public static SortOrders create(String key) {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new IllegalArgumentException("Invalid InstallationRequirements: " + key);
+        throw new IllegalArgumentException("Invalid SortOrders: " + key);
     }
 }

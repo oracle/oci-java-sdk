@@ -80,6 +80,15 @@ public class InstalledPackageSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("issued")
+        private String issued;
+
+        public Builder issued(String issued) {
+            this.issued = issued;
+            this.__explicitlySet__.add("issued");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
         private java.util.List<SoftwareSourceId> softwareSources;
 
@@ -101,6 +110,7 @@ public class InstalledPackageSummary {
                             version,
                             architecture,
                             installTime,
+                            issued,
                             softwareSources);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -115,6 +125,7 @@ public class InstalledPackageSummary {
                             .version(o.getVersion())
                             .architecture(o.getArchitecture())
                             .installTime(o.getInstallTime())
+                            .issued(o.getIssued())
                             .softwareSources(o.getSoftwareSources());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -164,6 +175,12 @@ public class InstalledPackageSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("installTime")
     String installTime;
+
+    /**
+     * date the package was issued by a providing erratum (if available)
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("issued")
+    String issued;
 
     /**
      * list of software sources that provide the software package

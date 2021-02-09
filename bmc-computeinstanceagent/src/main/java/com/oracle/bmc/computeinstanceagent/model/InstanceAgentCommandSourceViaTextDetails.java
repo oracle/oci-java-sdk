@@ -5,7 +5,7 @@
 package com.oracle.bmc.computeinstanceagent.model;
 
 /**
- * Command content via text.
+ * The source of the command when provided using plain text.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -90,7 +90,7 @@ public class InstanceAgentCommandSourceViaTextDetails extends InstanceAgentComma
     String text;
 
     /**
-     * Sha256 checksum value of the text content
+     * SHA-256 checksum value of the text content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("textSha256")
     String textSha256;

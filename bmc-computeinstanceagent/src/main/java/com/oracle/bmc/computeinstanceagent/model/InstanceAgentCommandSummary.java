@@ -5,7 +5,7 @@
 package com.oracle.bmc.computeinstanceagent.model;
 
 /**
- * command summary.
+ * Summary information for a command.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -119,37 +119,41 @@ public class InstanceAgentCommandSummary {
     }
 
     /**
-     * The command OCID
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the command.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceAgentCommandId")
     String instanceAgentCommandId;
 
     /**
-     * The user friendly display name of the command.
+     * A user-friendly name. Does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * The OCID of the compartment the command is created in.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the command.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The command creation date
+     * The date and time the command was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The command last updated at date.
+     * The date and time the command was last updated, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
 
     /**
-     * Set to true, if the command has been canceled.
+     * Whether a request was made to cancel the command. Canceling a command is a best-effort attempt.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCanceled")
     Boolean isCanceled;

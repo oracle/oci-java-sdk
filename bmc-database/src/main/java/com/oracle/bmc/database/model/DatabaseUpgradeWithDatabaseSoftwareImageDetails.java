@@ -33,6 +33,15 @@ public class DatabaseUpgradeWithDatabaseSoftwareImageDetails extends DatabaseUpg
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("options")
+        private String options;
+
+        public Builder options(String options) {
+            this.options = options;
+            this.__explicitlySet__.add("options");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
         private String databaseSoftwareImageId;
 
@@ -47,14 +56,16 @@ public class DatabaseUpgradeWithDatabaseSoftwareImageDetails extends DatabaseUpg
 
         public DatabaseUpgradeWithDatabaseSoftwareImageDetails build() {
             DatabaseUpgradeWithDatabaseSoftwareImageDetails __instance__ =
-                    new DatabaseUpgradeWithDatabaseSoftwareImageDetails(databaseSoftwareImageId);
+                    new DatabaseUpgradeWithDatabaseSoftwareImageDetails(
+                            options, databaseSoftwareImageId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DatabaseUpgradeWithDatabaseSoftwareImageDetails o) {
-            Builder copiedBuilder = databaseSoftwareImageId(o.getDatabaseSoftwareImageId());
+            Builder copiedBuilder =
+                    options(o.getOptions()).databaseSoftwareImageId(o.getDatabaseSoftwareImageId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -69,8 +80,9 @@ public class DatabaseUpgradeWithDatabaseSoftwareImageDetails extends DatabaseUpg
     }
 
     @Deprecated
-    public DatabaseUpgradeWithDatabaseSoftwareImageDetails(String databaseSoftwareImageId) {
-        super();
+    public DatabaseUpgradeWithDatabaseSoftwareImageDetails(
+            String options, String databaseSoftwareImageId) {
+        super(options);
         this.databaseSoftwareImageId = databaseSoftwareImageId;
     }
 

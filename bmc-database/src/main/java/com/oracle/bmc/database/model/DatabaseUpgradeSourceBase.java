@@ -46,6 +46,14 @@ package com.oracle.bmc.database.model;
 public class DatabaseUpgradeSourceBase {
 
     /**
+     * Additional upgrade options supported by DBUA(Database Upgrade Assistant).
+     * Example: \"-upgradeTimezone false -keepEvents\"
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("options")
+    String options;
+
+    /**
      * The source of the Oracle Database software to be used for the upgrade.
      *  - Use `DB_HOME` to specify an existing Database Home to upgrade the database. The database is moved to the target Database Home and makes use of the Oracle Database software version of the target Database Home.
      *  - Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.

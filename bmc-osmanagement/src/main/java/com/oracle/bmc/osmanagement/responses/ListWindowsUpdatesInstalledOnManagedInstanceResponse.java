@@ -16,20 +16,17 @@ public class ListWindowsUpdatesInstalledOnManagedInstanceResponse {
     private final int __httpStatusCode__;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
 
     /**
-     * For pagination of a list of `InstalledWindowsUpdateSummary`s. If this header
-     * appears in the response, then this is a partial list of
-     * `InstalledWindowsUpdateSummary`s installed on the managed instance. Include this value
-     * as the `page` parameter in a subsequent
-     * <p>
-     * GET request to get the next batch of managed instances.
+     * For pagination of a list of items. When paging through a list, if this
+     * header appears in the response, then a partial list might have been
+     * returned. Include this value as the `page` parameter for the subsequent
+     * GET request to get the next batch of items.
      *
      */
     private String opcNextPage;

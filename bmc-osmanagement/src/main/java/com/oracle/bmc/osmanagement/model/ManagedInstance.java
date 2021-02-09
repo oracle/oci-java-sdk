@@ -168,6 +168,60 @@ public class ManagedInstance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("securityUpdatesAvailable")
+        private Integer securityUpdatesAvailable;
+
+        public Builder securityUpdatesAvailable(Integer securityUpdatesAvailable) {
+            this.securityUpdatesAvailable = securityUpdatesAvailable;
+            this.__explicitlySet__.add("securityUpdatesAvailable");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("bugUpdatesAvailable")
+        private Integer bugUpdatesAvailable;
+
+        public Builder bugUpdatesAvailable(Integer bugUpdatesAvailable) {
+            this.bugUpdatesAvailable = bugUpdatesAvailable;
+            this.__explicitlySet__.add("bugUpdatesAvailable");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("enhancementUpdatesAvailable")
+        private Integer enhancementUpdatesAvailable;
+
+        public Builder enhancementUpdatesAvailable(Integer enhancementUpdatesAvailable) {
+            this.enhancementUpdatesAvailable = enhancementUpdatesAvailable;
+            this.__explicitlySet__.add("enhancementUpdatesAvailable");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("otherUpdatesAvailable")
+        private Integer otherUpdatesAvailable;
+
+        public Builder otherUpdatesAvailable(Integer otherUpdatesAvailable) {
+            this.otherUpdatesAvailable = otherUpdatesAvailable;
+            this.__explicitlySet__.add("otherUpdatesAvailable");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("scheduledJobCount")
+        private Integer scheduledJobCount;
+
+        public Builder scheduledJobCount(Integer scheduledJobCount) {
+            this.scheduledJobCount = scheduledJobCount;
+            this.__explicitlySet__.add("scheduledJobCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("workRequestCount")
+        private Integer workRequestCount;
+
+        public Builder workRequestCount(Integer workRequestCount) {
+            this.workRequestCount = workRequestCount;
+            this.__explicitlySet__.add("workRequestCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -189,7 +243,13 @@ public class ManagedInstance {
                             childSoftwareSources,
                             managedInstanceGroups,
                             osFamily,
-                            isRebootRequired);
+                            isRebootRequired,
+                            securityUpdatesAvailable,
+                            bugUpdatesAvailable,
+                            enhancementUpdatesAvailable,
+                            otherUpdatesAvailable,
+                            scheduledJobCount,
+                            workRequestCount);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -212,7 +272,13 @@ public class ManagedInstance {
                             .childSoftwareSources(o.getChildSoftwareSources())
                             .managedInstanceGroups(o.getManagedInstanceGroups())
                             .osFamily(o.getOsFamily())
-                            .isRebootRequired(o.getIsRebootRequired());
+                            .isRebootRequired(o.getIsRebootRequired())
+                            .securityUpdatesAvailable(o.getSecurityUpdatesAvailable())
+                            .bugUpdatesAvailable(o.getBugUpdatesAvailable())
+                            .enhancementUpdatesAvailable(o.getEnhancementUpdatesAvailable())
+                            .otherUpdatesAvailable(o.getOtherUpdatesAvailable())
+                            .scheduledJobCount(o.getScheduledJobCount())
+                            .workRequestCount(o.getWorkRequestCount());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -370,6 +436,42 @@ public class ManagedInstance {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRebootRequired")
     Boolean isRebootRequired;
+
+    /**
+     * Number of security type updates available to be installed
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityUpdatesAvailable")
+    Integer securityUpdatesAvailable;
+
+    /**
+     * Number of bug fix type updates available to be installed
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bugUpdatesAvailable")
+    Integer bugUpdatesAvailable;
+
+    /**
+     * Number of enhancement type updates available to be installed
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("enhancementUpdatesAvailable")
+    Integer enhancementUpdatesAvailable;
+
+    /**
+     * Number of non-classified updates available to be installed
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("otherUpdatesAvailable")
+    Integer otherUpdatesAvailable;
+
+    /**
+     * Number of scheduled jobs associated with this instance
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scheduledJobCount")
+    Integer scheduledJobCount;
+
+    /**
+     * Number of work requests associated with this instance
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("workRequestCount")
+    Integer workRequestCount;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

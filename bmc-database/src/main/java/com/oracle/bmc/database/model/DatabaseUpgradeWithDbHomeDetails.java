@@ -33,6 +33,15 @@ public class DatabaseUpgradeWithDbHomeDetails extends DatabaseUpgradeSourceBase 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("options")
+        private String options;
+
+        public Builder options(String options) {
+            this.options = options;
+            this.__explicitlySet__.add("options");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dbHomeId")
         private String dbHomeId;
 
@@ -47,14 +56,14 @@ public class DatabaseUpgradeWithDbHomeDetails extends DatabaseUpgradeSourceBase 
 
         public DatabaseUpgradeWithDbHomeDetails build() {
             DatabaseUpgradeWithDbHomeDetails __instance__ =
-                    new DatabaseUpgradeWithDbHomeDetails(dbHomeId);
+                    new DatabaseUpgradeWithDbHomeDetails(options, dbHomeId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DatabaseUpgradeWithDbHomeDetails o) {
-            Builder copiedBuilder = dbHomeId(o.getDbHomeId());
+            Builder copiedBuilder = options(o.getOptions()).dbHomeId(o.getDbHomeId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -69,8 +78,8 @@ public class DatabaseUpgradeWithDbHomeDetails extends DatabaseUpgradeSourceBase 
     }
 
     @Deprecated
-    public DatabaseUpgradeWithDbHomeDetails(String dbHomeId) {
-        super();
+    public DatabaseUpgradeWithDbHomeDetails(String options, String dbHomeId) {
+        super(options);
         this.dbHomeId = dbHomeId;
     }
 

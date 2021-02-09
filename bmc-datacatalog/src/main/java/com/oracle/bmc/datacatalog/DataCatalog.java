@@ -1124,6 +1124,31 @@ public interface DataCatalog extends AutoCloseable {
     ParseConnectionResponse parseConnection(ParseConnectionRequest request);
 
     /**
+     * Act on a recommendation. A recommendation can be accepted or rejected. For example, if a recommendation of type LINK_GLOSSARY_TERM
+     * is accepted, the system will link the source object (e.g. an attribute) to a target glossary term.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ProcessRecommendationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ProcessRecommendation API.
+     */
+    ProcessRecommendationResponse processRecommendation(ProcessRecommendationRequest request);
+
+    /**
+     * Returns a list of recommendations for the given object and recommendation type.
+     * By default, it will return inferred recommendations for review. The optional query param 'RecommendationStatus' can be set,
+     * to return only recommendations having that status.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/RecommendationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use Recommendations API.
+     */
+    RecommendationsResponse recommendations(RecommendationsRequest request);
+
+    /**
      * Remove data selector pattern from the data asset.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

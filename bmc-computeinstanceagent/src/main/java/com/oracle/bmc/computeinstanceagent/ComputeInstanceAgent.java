@@ -8,7 +8,9 @@ import com.oracle.bmc.computeinstanceagent.requests.*;
 import com.oracle.bmc.computeinstanceagent.responses.*;
 
 /**
- * Instance Agent Service API
+ * API for the Oracle Cloud Agent software running on compute instances. Oracle Cloud Agent
+ * is a lightweight process that monitors and manages compute instances.
+ *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
 public interface ComputeInstanceAgent extends AutoCloseable {
@@ -46,7 +48,11 @@ public interface ComputeInstanceAgent extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Cancel a command. Cancel is best effort attempt. If the commmand has already completed it will skip cancel.
+     * Cancels a command that is scheduled to run on a compute instance that is managed
+     * by Oracle Cloud Agent.
+     * <p>
+     * Canceling a command is a best-effort attempt. If the command has already
+     * completed, it will not be canceled.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -58,7 +64,13 @@ public interface ComputeInstanceAgent extends AutoCloseable {
             CancelInstanceAgentCommandRequest request);
 
     /**
-     * Create command for one or more managed instances
+     * Creates a command or script to run on a compute instance that is managed by Oracle Cloud Agent.
+     * <p>
+     * On Linux instances, the script runs in a bash shell. On Windows instances, the
+     * script runs in a batch shell.
+     * <p>
+     * Commands that require administrator privileges will run only if Oracle Cloud Agent
+     * is running with administrator privileges.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -70,7 +82,7 @@ public interface ComputeInstanceAgent extends AutoCloseable {
             CreateInstanceAgentCommandRequest request);
 
     /**
-     * Gets information about the specified instance agent commandId.
+     * Gets information about an Oracle Cloud Agent command.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -91,8 +103,8 @@ public interface ComputeInstanceAgent extends AutoCloseable {
             GetInstanceAgentCommandExecutionRequest request);
 
     /**
-     * List all executions of a command, i.e return command execution results from all targeted instances batch by
-     * batch.
+     * Lists the execution details for Oracle Cloud Agent commands that run on the specified compute
+     * instance.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -104,8 +116,7 @@ public interface ComputeInstanceAgent extends AutoCloseable {
             ListInstanceAgentCommandExecutionsRequest request);
 
     /**
-     * List Instance agent commands issued with the specified filter.
-     * Additonally you can filter commands sent to a particular InstanceId
+     * Lists the Oracle Cloud Agent commands issued in a compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

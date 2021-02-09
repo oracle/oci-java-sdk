@@ -152,50 +152,62 @@ public class InstanceAgentCommand {
     }
 
     /**
-     * The command OCID
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the command.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The OCID of the compartment the command is created in.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the command.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The user friendly display name of the command.
+     * A user-friendly name. Does not have to be unique. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * the time command was created at.
+     * The date and time the command was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * the time command was updated at.
+     * The date and time the command was last updated, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
 
     /**
-     * Whether the command has been requested to be canceled.
+     * Whether a request was made to cancel the command. Canceling a command is a best-effort attempt.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCanceled")
     Boolean isCanceled;
 
     /**
-     * Command execution time limit that the instance agent will honor when executing the command inside the instance. This timer starts when the instance agent starts the commond. Zero means no timeout.
+     * The amount of time that Oracle Cloud Agent is given to run the command on the instance before timing
+     * out. The timer starts when Oracle Cloud Agent starts the command. Zero means no timeout.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionTimeOutInSeconds")
     Integer executionTimeOutInSeconds;
 
+    /**
+     * The target instance that the command runs on.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("target")
     InstanceAgentCommandTarget target;
 
+    /**
+     * The contents of the command.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     InstanceAgentCommandContent content;
 

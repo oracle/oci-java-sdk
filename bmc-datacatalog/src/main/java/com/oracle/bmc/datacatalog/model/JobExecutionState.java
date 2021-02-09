@@ -12,6 +12,7 @@ package com.oracle.bmc.datacatalog.model;
  * FAILED      - Job has failed due to errors during execution.
  * SUCCEEDED   - Job has successfully completed execution.
  * CANCELED    - Job has been aborted by the worker due to a user request.
+ * SUCCEEDED_WITH_WARNINGS - Job has successfully completed execution with one or more warnings.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
@@ -23,6 +24,7 @@ public enum JobExecutionState {
     Failed("FAILED"),
     Succeeded("SUCCEEDED"),
     Canceled("CANCELED"),
+    SucceededWithWarnings("SUCCEEDED_WITH_WARNINGS"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this
