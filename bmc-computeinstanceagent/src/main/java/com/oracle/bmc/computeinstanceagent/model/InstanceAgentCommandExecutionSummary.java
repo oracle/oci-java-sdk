@@ -5,7 +5,7 @@
 package com.oracle.bmc.computeinstanceagent.model;
 
 /**
- * A command's execution summary.
+ * Execution details for a command.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -152,23 +152,23 @@ public class InstanceAgentCommandExecutionSummary {
     }
 
     /**
-     * The OCID of the command
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the command.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceAgentCommandId")
     String instanceAgentCommandId;
 
     /**
-     * The OCID of the instance
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     String instanceId;
     /**
-     * Specifies the command delivery state.
-     *  * `VISIBLE` - The command is visible to instance.
-     *  * `PENDING` - The command is pending ack from the instance.
-     *  * `ACKED` - The command has been received and acked by the instance.
-     *  * `ACKED_CANCELED` - The canceled command has been received and acked by the instance.
-     *  * `EXPIRED` - The instance has not requested for commands and its delivery has expired.
+     * The command delivery state.
+     *  * `VISIBLE` - The command is visible to the instance.
+     *  * `PENDING` - The command is pending acknowledgment from the instance.
+     *  * `ACKED` - The command has been received and acknowledged by the instance.
+     *  * `ACKED_CANCELED` - The canceled command has been received and acknowledged by the instance.
+     *  * `EXPIRED` - The instance has not requested for commands and the command's delivery has expired.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -218,24 +218,24 @@ public class InstanceAgentCommandExecutionSummary {
         }
     };
     /**
-     * Specifies the command delivery state.
-     *  * `VISIBLE` - The command is visible to instance.
-     *  * `PENDING` - The command is pending ack from the instance.
-     *  * `ACKED` - The command has been received and acked by the instance.
-     *  * `ACKED_CANCELED` - The canceled command has been received and acked by the instance.
-     *  * `EXPIRED` - The instance has not requested for commands and its delivery has expired.
+     * The command delivery state.
+     *  * `VISIBLE` - The command is visible to the instance.
+     *  * `PENDING` - The command is pending acknowledgment from the instance.
+     *  * `ACKED` - The command has been received and acknowledged by the instance.
+     *  * `ACKED_CANCELED` - The canceled command has been received and acknowledged by the instance.
+     *  * `EXPIRED` - The instance has not requested for commands and the command's delivery has expired.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deliveryState")
     DeliveryState deliveryState;
     /**
-     * command execution life cycle state.
-     * * `ACCEPTED` - The command execution has been accepted to run.
-     * * `IN_PROGRESS` - The command execution is in progress.
-     * * `SUCCEEDED` - The command execution is successful.
-     * * `FAILED` - The command execution has failed.
-     * * `TIMED_OUT` - The command execution has timedout.
-     * * `CANCELED` - The command execution has canceled.
+     * The command execution lifecycle state.
+     * * `ACCEPTED` - The command has been accepted to run.
+     * * `IN_PROGRESS` - The command is in progress.
+     * * `SUCCEEDED` - The command was successfully executed.
+     * * `FAILED` - The command failed to execute.
+     * * `TIMED_OUT` - The command execution timed out.
+     * * `CANCELED` - The command execution was canceled.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -286,42 +286,49 @@ public class InstanceAgentCommandExecutionSummary {
         }
     };
     /**
-     * command execution life cycle state.
-     * * `ACCEPTED` - The command execution has been accepted to run.
-     * * `IN_PROGRESS` - The command execution is in progress.
-     * * `SUCCEEDED` - The command execution is successful.
-     * * `FAILED` - The command execution has failed.
-     * * `TIMED_OUT` - The command execution has timedout.
-     * * `CANCELED` - The command execution has canceled.
+     * The command execution lifecycle state.
+     * * `ACCEPTED` - The command has been accepted to run.
+     * * `IN_PROGRESS` - The command is in progress.
+     * * `SUCCEEDED` - The command was successfully executed.
+     * * `FAILED` - The command failed to execute.
+     * * `TIMED_OUT` - The command execution timed out.
+     * * `CANCELED` - The command execution was canceled.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
 
     /**
-     * The command creation date
+     * The date and time the command was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The command last updated at date.
+     * The date and time the command was last updated, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
 
     /**
-     * The large non-consecutive number that Run Command Service assigns to each created command.
+     * A large, non-consecutive number that Oracle Cloud Agent assigns to each created command.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sequenceNumber")
     Long sequenceNumber;
 
     /**
-     * The user friendly display name of the command.
+     * A user-friendly name. Does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
+    /**
+     * The execution output from a command.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     InstanceAgentCommandExecutionOutputContent content;
 

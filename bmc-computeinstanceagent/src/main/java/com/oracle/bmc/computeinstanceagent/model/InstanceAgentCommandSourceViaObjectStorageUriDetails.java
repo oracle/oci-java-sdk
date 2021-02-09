@@ -5,7 +5,7 @@
 package com.oracle.bmc.computeinstanceagent.model;
 
 /**
- * Command content via uri.
+ * The source of the command when imported from an Object Storage URL.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -75,7 +75,7 @@ public class InstanceAgentCommandSourceViaObjectStorageUriDetails
     }
 
     /**
-     * The Object Storage URL or PAR for the command.
+     * The Object Storage URL or pre-authenticated request (PAR) for the command.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceUri")
     String sourceUri;

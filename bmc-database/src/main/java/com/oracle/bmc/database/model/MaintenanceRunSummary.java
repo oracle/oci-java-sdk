@@ -254,6 +254,7 @@ public class MaintenanceRunSummary {
         Updating("UPDATING"),
         Deleting("DELETING"),
         Deleted("DELETED"),
+        Canceled("CANCELED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -447,6 +448,7 @@ public class MaintenanceRunSummary {
         Quarterly("QUARTERLY"),
         Hardware("HARDWARE"),
         Critical("CRITICAL"),
+        Oneoff("ONEOFF"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

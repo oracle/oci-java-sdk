@@ -1665,6 +1665,42 @@ public interface DataCatalogAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Act on a recommendation. A recommendation can be accepted or rejected. For example, if a recommendation of type LINK_GLOSSARY_TERM
+     * is accepted, the system will link the source object (e.g. an attribute) to a target glossary term.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ProcessRecommendationResponse> processRecommendation(
+            ProcessRecommendationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ProcessRecommendationRequest, ProcessRecommendationResponse>
+                    handler);
+
+    /**
+     * Returns a list of recommendations for the given object and recommendation type.
+     * By default, it will return inferred recommendations for review. The optional query param 'RecommendationStatus' can be set,
+     * to return only recommendations having that status.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RecommendationsResponse> recommendations(
+            RecommendationsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RecommendationsRequest, RecommendationsResponse>
+                    handler);
+
+    /**
      * Remove data selector pattern from the data asset.
      *
      * @param request The request object containing the details to send

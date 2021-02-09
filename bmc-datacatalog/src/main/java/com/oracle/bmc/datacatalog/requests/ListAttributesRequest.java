@@ -131,6 +131,8 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         ExternalDataType("externalDataType"),
         ExternalKey("externalKey"),
         Length("length"),
+        Precision("precision"),
+        Scale("scale"),
         IsNullable("isNullable"),
         Uri("uri"),
         Path("path"),

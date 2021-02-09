@@ -14,6 +14,8 @@ package com.oracle.bmc.datacatalog.model;
  * EXPORT - Export jobs export data catalog metadata for imports into other data catalog repositories.
  * IMPORT_GLOSSARY - Job type to import glossary metadata from a file.
  * EXPORT_GLOSSARY - Job type to export glossary metadata to a file.
+ * ASYNC_DELETE - Job type for asynchronous bulk delete on data assets, folders and data entities.
+ * PURGE - Job type for cleaning up schedules, executions and logs of a Job.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
@@ -34,6 +36,7 @@ public enum JobType {
     ImmediateExecution("IMMEDIATE_EXECUTION"),
     ScheduledExecution("SCHEDULED_EXECUTION"),
     ScheduledExecutionInstance("SCHEDULED_EXECUTION_INSTANCE"),
+    AsyncDelete("ASYNC_DELETE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

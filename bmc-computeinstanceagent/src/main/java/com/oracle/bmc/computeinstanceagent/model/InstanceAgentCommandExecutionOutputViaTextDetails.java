@@ -5,7 +5,7 @@
 package com.oracle.bmc.computeinstanceagent.model;
 
 /**
- * command execution output via text.
+ * The execution output from a command when returned in plain text.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -109,13 +109,13 @@ public class InstanceAgentCommandExecutionOutputViaTextDetails
     }
 
     /**
-     * The command response output.
+     * The command output.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     String text;
 
     /**
-     * Sha256 checksum value of the text content
+     * SHA-256 checksum value of the text content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("textSha256")
     String textSha256;

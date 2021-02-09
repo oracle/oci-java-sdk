@@ -87,6 +87,16 @@ public class Budget {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("budgetProcessingPeriodStartOffset")
+        private Integer budgetProcessingPeriodStartOffset;
+
+        public Builder budgetProcessingPeriodStartOffset(
+                Integer budgetProcessingPeriodStartOffset) {
+            this.budgetProcessingPeriodStartOffset = budgetProcessingPeriodStartOffset;
+            this.__explicitlySet__.add("budgetProcessingPeriodStartOffset");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("targetType")
         private TargetType targetType;
 
@@ -209,6 +219,7 @@ public class Budget {
                             description,
                             amount,
                             resetPeriod,
+                            budgetProcessingPeriodStartOffset,
                             targetType,
                             targets,
                             lifecycleState,
@@ -235,6 +246,8 @@ public class Budget {
                             .description(o.getDescription())
                             .amount(o.getAmount())
                             .resetPeriod(o.getResetPeriod())
+                            .budgetProcessingPeriodStartOffset(
+                                    o.getBudgetProcessingPeriodStartOffset())
                             .targetType(o.getTargetType())
                             .targets(o.getTargets())
                             .lifecycleState(o.getLifecycleState())
@@ -306,6 +319,12 @@ public class Budget {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resetPeriod")
     ResetPeriod resetPeriod;
+
+    /**
+     * The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("budgetProcessingPeriodStartOffset")
+    Integer budgetProcessingPeriodStartOffset;
 
     /**
      * The type of target on which the budget is applied.

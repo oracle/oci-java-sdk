@@ -5,7 +5,7 @@
 package com.oracle.bmc.computeinstanceagent.model;
 
 /**
- * Command output.
+ * The output destination for the command.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -45,8 +45,14 @@ package com.oracle.bmc.computeinstanceagent.model;
 public class InstanceAgentCommandOutputDetails {
 
     /**
-     * The output type of the command. Use `OBJECT_STORAGE_URI` when specifying the Object Storage URL.
-     * Use `OBJECT_STORAGE_TUPLE` when specifying the namespace, bucket name, and object name.
+     * The output type for the command. The following values are supported:
+     * <p>
+     * - `TEXT` - the command output is returned as plain text.
+     * - `OBJECT_STORAGE_URI` - the command output is saved to an Object Storage URL.
+     * - `OBJECT_STORAGE_TUPLE` - the command output is saved to an Object Storage bucket.
+     * <p>
+     * For background information about Object Storage buckets and URLs, see
+     * [Overview of Object Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm).
      *
      **/
     @lombok.extern.slf4j.Slf4j

@@ -561,6 +561,233 @@ public class OsManagementPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listErrata operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListErrataResponse> listErrataResponseIterator(
+            final ListErrataRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListErrataRequest.Builder, ListErrataRequest, ListErrataResponse>(
+                new com.google.common.base.Supplier<ListErrataRequest.Builder>() {
+                    @Override
+                    public ListErrataRequest.Builder get() {
+                        return ListErrataRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListErrataResponse, String>() {
+                    @Override
+                    public String apply(ListErrataResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListErrataRequest.Builder>,
+                        ListErrataRequest>() {
+                    @Override
+                    public ListErrataRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListErrataRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListErrataRequest, ListErrataResponse>() {
+                    @Override
+                    public ListErrataResponse apply(ListErrataRequest request) {
+                        return client.listErrata(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.ErratumSummary} objects
+     * contained in responses from the listErrata operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.ErratumSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.osmanagement.model.ErratumSummary> listErrataRecordIterator(
+            final ListErrataRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListErrataRequest.Builder, ListErrataRequest, ListErrataResponse,
+                com.oracle.bmc.osmanagement.model.ErratumSummary>(
+                new com.google.common.base.Supplier<ListErrataRequest.Builder>() {
+                    @Override
+                    public ListErrataRequest.Builder get() {
+                        return ListErrataRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListErrataResponse, String>() {
+                    @Override
+                    public String apply(ListErrataResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListErrataRequest.Builder>,
+                        ListErrataRequest>() {
+                    @Override
+                    public ListErrataRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListErrataRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListErrataRequest, ListErrataResponse>() {
+                    @Override
+                    public ListErrataResponse apply(ListErrataRequest request) {
+                        return client.listErrata(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListErrataResponse,
+                        java.util.List<com.oracle.bmc.osmanagement.model.ErratumSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.osmanagement.model.ErratumSummary> apply(
+                            ListErrataResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listManagedInstanceErrata operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListManagedInstanceErrataResponse> listManagedInstanceErrataResponseIterator(
+            final ListManagedInstanceErrataRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListManagedInstanceErrataRequest.Builder, ListManagedInstanceErrataRequest,
+                ListManagedInstanceErrataResponse>(
+                new com.google.common.base.Supplier<ListManagedInstanceErrataRequest.Builder>() {
+                    @Override
+                    public ListManagedInstanceErrataRequest.Builder get() {
+                        return ListManagedInstanceErrataRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListManagedInstanceErrataResponse, String>() {
+                    @Override
+                    public String apply(ListManagedInstanceErrataResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListManagedInstanceErrataRequest.Builder>,
+                        ListManagedInstanceErrataRequest>() {
+                    @Override
+                    public ListManagedInstanceErrataRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListManagedInstanceErrataRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListManagedInstanceErrataRequest, ListManagedInstanceErrataResponse>() {
+                    @Override
+                    public ListManagedInstanceErrataResponse apply(
+                            ListManagedInstanceErrataRequest request) {
+                        return client.listManagedInstanceErrata(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.ErratumSummary} objects
+     * contained in responses from the listManagedInstanceErrata operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.ErratumSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.osmanagement.model.ErratumSummary>
+            listManagedInstanceErrataRecordIterator(
+                    final ListManagedInstanceErrataRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListManagedInstanceErrataRequest.Builder, ListManagedInstanceErrataRequest,
+                ListManagedInstanceErrataResponse,
+                com.oracle.bmc.osmanagement.model.ErratumSummary>(
+                new com.google.common.base.Supplier<ListManagedInstanceErrataRequest.Builder>() {
+                    @Override
+                    public ListManagedInstanceErrataRequest.Builder get() {
+                        return ListManagedInstanceErrataRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListManagedInstanceErrataResponse, String>() {
+                    @Override
+                    public String apply(ListManagedInstanceErrataResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListManagedInstanceErrataRequest.Builder>,
+                        ListManagedInstanceErrataRequest>() {
+                    @Override
+                    public ListManagedInstanceErrataRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListManagedInstanceErrataRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListManagedInstanceErrataRequest, ListManagedInstanceErrataResponse>() {
+                    @Override
+                    public ListManagedInstanceErrataResponse apply(
+                            ListManagedInstanceErrataRequest request) {
+                        return client.listManagedInstanceErrata(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListManagedInstanceErrataResponse,
+                        java.util.List<com.oracle.bmc.osmanagement.model.ErratumSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.osmanagement.model.ErratumSummary> apply(
+                            ListManagedInstanceErrataResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listManagedInstanceGroups operation. This iterable
      * will fetch more data from the server as needed.
      *

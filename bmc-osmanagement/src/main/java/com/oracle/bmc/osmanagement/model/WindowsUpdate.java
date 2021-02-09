@@ -189,7 +189,52 @@ public class WindowsUpdate {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEligibleForInstallation")
     IsEligibleForInstallation isEligibleForInstallation;
+    /**
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum InstallationRequirements {
+        EulaAcceptanceRequired("EULA_ACCEPTANCE_REQUIRED"),
+        SoftwareMediaRequired("SOFTWARE_MEDIA_REQUIRED"),
+        UserInteractionRequired("USER_INTERACTION_REQUIRED"),
 
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, InstallationRequirements> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (InstallationRequirements v : InstallationRequirements.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        InstallationRequirements(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static InstallationRequirements create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'InstallationRequirements', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
     /**
      * List of requirements forinstalling on a managed instances
      **/

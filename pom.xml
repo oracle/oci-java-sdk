@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>1.31.0</version>
+  <version>1.32.0</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -138,7 +138,7 @@
                 <phase>process-sources</phase>
                 <configuration>
                   <target>
-                    <replace dir="src/main/java" token="{{DOC_SERVER_URL}}" value="https://docs.cloud.oracle.com"/>
+                    <replace dir="src/main/java" token="{{DOC_SERVER_URL}}" value="https://docs.cloud.oracle.com" />
                   </target>
                   <failOnError>false</failOnError>
                 </configuration>
@@ -724,6 +724,7 @@
     <module>bmc-optimizer</module>
     <module>bmc-tenantmanagercontrolplane</module>
     <module>bmc-rover</module>
+    <module>bmc-databasemanagement</module>
     <module>bmc-full</module>
     <module>bmc-shaded</module>
   </modules>

@@ -78,6 +78,24 @@ public class AttributeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("precision")
+        private Integer precision;
+
+        public Builder precision(Integer precision) {
+            this.precision = precision;
+            this.__explicitlySet__.add("precision");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("scale")
+        private Integer scale;
+
+        public Builder scale(Integer scale) {
+            this.scale = scale;
+            this.__explicitlySet__.add("scale");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isNullable")
         private Boolean isNullable;
 
@@ -207,6 +225,8 @@ public class AttributeSummary {
                             entityKey,
                             externalKey,
                             length,
+                            precision,
+                            scale,
                             isNullable,
                             uri,
                             lifecycleState,
@@ -233,6 +253,8 @@ public class AttributeSummary {
                             .entityKey(o.getEntityKey())
                             .externalKey(o.getExternalKey())
                             .length(o.getLength())
+                            .precision(o.getPrecision())
+                            .scale(o.getScale())
                             .isNullable(o.getIsNullable())
                             .uri(o.getUri())
                             .lifecycleState(o.getLifecycleState())
@@ -296,6 +318,18 @@ public class AttributeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("length")
     Long length;
+
+    /**
+     * Precision of the attribute value usually applies to float data type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("precision")
+    Integer precision;
+
+    /**
+     * Scale of the attribute value usually applies to float data type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scale")
+    Integer scale;
 
     /**
      * Property that identifies if this attribute can be assigned null values.

@@ -133,6 +133,15 @@ public class DatabaseUpgradeHistoryEntry {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("options")
+        private String options;
+
+        public Builder options(String options) {
+            this.options = options;
+            this.__explicitlySet__.add("options");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -149,7 +158,8 @@ public class DatabaseUpgradeHistoryEntry {
                             targetDbHomeId,
                             sourceDbHomeId,
                             timeStarted,
-                            timeEnded);
+                            timeEnded,
+                            options);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -167,7 +177,8 @@ public class DatabaseUpgradeHistoryEntry {
                             .targetDbHomeId(o.getTargetDbHomeId())
                             .sourceDbHomeId(o.getSourceDbHomeId())
                             .timeStarted(o.getTimeStarted())
-                            .timeEnded(o.getTimeEnded());
+                            .timeEnded(o.getTimeEnded())
+                            .options(o.getOptions());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -392,6 +403,14 @@ public class DatabaseUpgradeHistoryEntry {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     java.util.Date timeEnded;
+
+    /**
+     * Additional upgrade options supported by DBUA(Database Upgrade Assistant).
+     * Example: \"-upgradeTimezone false -keepEvents\"
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("options")
+    String options;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

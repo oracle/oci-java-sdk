@@ -5,7 +5,7 @@
 package com.oracle.bmc.computeinstanceagent.model;
 
 /**
- * Command output via uri.
+ * The command output destination when saved to an Object Storage URL.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -75,7 +75,7 @@ public class InstanceAgentCommandOutputViaObjectStorageUriDetails
     }
 
     /**
-     * The Object Storage URL or PAR for the command output.
+     * The Object Storage URL or pre-authenticated request (PAR) for the command output.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("outputUri")
     String outputUri;

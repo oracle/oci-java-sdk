@@ -1847,6 +1847,85 @@ public class OsManagementAsyncClient implements OsManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListErrataResponse> listErrata(
+            ListErrataRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListErrataRequest, ListErrataResponse>
+                    handler) {
+        LOG.trace("Called async listErrata");
+        final ListErrataRequest interceptedRequest = ListErrataConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListErrataConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListErrataResponse>
+                transformer = ListErrataConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListErrataRequest, ListErrataResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListErrataRequest, ListErrataResponse>,
+                        java.util.concurrent.Future<ListErrataResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListErrataRequest, ListErrataResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListManagedInstanceErrataResponse> listManagedInstanceErrata(
+            ListManagedInstanceErrataRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListManagedInstanceErrataRequest, ListManagedInstanceErrataResponse>
+                    handler) {
+        LOG.trace("Called async listManagedInstanceErrata");
+        final ListManagedInstanceErrataRequest interceptedRequest =
+                ListManagedInstanceErrataConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListManagedInstanceErrataConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListManagedInstanceErrataResponse>
+                transformer = ListManagedInstanceErrataConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListManagedInstanceErrataRequest, ListManagedInstanceErrataResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListManagedInstanceErrataRequest,
+                                ListManagedInstanceErrataResponse>,
+                        java.util.concurrent.Future<ListManagedInstanceErrataResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListManagedInstanceErrataRequest, ListManagedInstanceErrataResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListManagedInstanceGroupsResponse> listManagedInstanceGroups(
             ListManagedInstanceGroupsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

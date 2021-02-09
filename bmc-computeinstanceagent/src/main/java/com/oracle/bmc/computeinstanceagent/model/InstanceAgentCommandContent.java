@@ -5,7 +5,7 @@
 package com.oracle.bmc.computeinstanceagent.model;
 
 /**
- * Command content.
+ * The contents of the command.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -70,9 +70,15 @@ public class InstanceAgentCommandContent {
         return new Builder();
     }
 
+    /**
+     * The source of the command.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     InstanceAgentCommandSourceDetails source;
 
+    /**
+     * The output destination for the command.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("output")
     InstanceAgentCommandOutputDetails output;
 

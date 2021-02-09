@@ -53,6 +53,16 @@ public class UpdateBudgetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("budgetProcessingPeriodStartOffset")
+        private Integer budgetProcessingPeriodStartOffset;
+
+        public Builder budgetProcessingPeriodStartOffset(
+                Integer budgetProcessingPeriodStartOffset) {
+            this.budgetProcessingPeriodStartOffset = budgetProcessingPeriodStartOffset;
+            this.__explicitlySet__.add("budgetProcessingPeriodStartOffset");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("resetPeriod")
         private ResetPeriod resetPeriod;
 
@@ -90,6 +100,7 @@ public class UpdateBudgetDetails {
                             displayName,
                             description,
                             amount,
+                            budgetProcessingPeriodStartOffset,
                             resetPeriod,
                             freeformTags,
                             definedTags);
@@ -103,6 +114,8 @@ public class UpdateBudgetDetails {
                     displayName(o.getDisplayName())
                             .description(o.getDescription())
                             .amount(o.getAmount())
+                            .budgetProcessingPeriodStartOffset(
+                                    o.getBudgetProcessingPeriodStartOffset())
                             .resetPeriod(o.getResetPeriod())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
@@ -137,6 +150,12 @@ public class UpdateBudgetDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("amount")
     java.math.BigDecimal amount;
+
+    /**
+     * The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("budgetProcessingPeriodStartOffset")
+    Integer budgetProcessingPeriodStartOffset;
 
     /**
      * The reset period for the budget.

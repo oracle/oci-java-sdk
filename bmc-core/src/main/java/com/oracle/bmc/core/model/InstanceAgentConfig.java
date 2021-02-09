@@ -44,12 +44,35 @@ public class InstanceAgentConfig {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("areAllPluginsDisabled")
+        private Boolean areAllPluginsDisabled;
+
+        public Builder areAllPluginsDisabled(Boolean areAllPluginsDisabled) {
+            this.areAllPluginsDisabled = areAllPluginsDisabled;
+            this.__explicitlySet__.add("areAllPluginsDisabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("pluginsConfig")
+        private java.util.List<InstanceAgentPluginConfigDetails> pluginsConfig;
+
+        public Builder pluginsConfig(
+                java.util.List<InstanceAgentPluginConfigDetails> pluginsConfig) {
+            this.pluginsConfig = pluginsConfig;
+            this.__explicitlySet__.add("pluginsConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstanceAgentConfig build() {
             InstanceAgentConfig __instance__ =
-                    new InstanceAgentConfig(isMonitoringDisabled, isManagementDisabled);
+                    new InstanceAgentConfig(
+                            isMonitoringDisabled,
+                            isManagementDisabled,
+                            areAllPluginsDisabled,
+                            pluginsConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -58,7 +81,9 @@ public class InstanceAgentConfig {
         public Builder copy(InstanceAgentConfig o) {
             Builder copiedBuilder =
                     isMonitoringDisabled(o.getIsMonitoringDisabled())
-                            .isManagementDisabled(o.getIsManagementDisabled());
+                            .isManagementDisabled(o.getIsManagementDisabled())
+                            .areAllPluginsDisabled(o.getAreAllPluginsDisabled())
+                            .pluginsConfig(o.getPluginsConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -75,6 +100,18 @@ public class InstanceAgentConfig {
     /**
      * Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the
      * monitoring plugins.
+     * <p>
+     * These are the monitoring plugins: Compute Instance Monitoring
+     * and Custom Logs Monitoring.
+     * <p>
+     * The monitoring plugins are controlled by this parameter and by the per-plugin
+     * configuration in the `pluginsConfig` object.
+     * <p>
+     * - If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of
+     * the per-plugin configuration.
+     * - If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You
+     * can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig`
+     * object.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMonitoringDisabled")
@@ -82,10 +119,39 @@ public class InstanceAgentConfig {
 
     /**
      * Whether Oracle Cloud Agent can run all the available management plugins.
+     * <p>
+     * These are the management plugins: OS Management Service Agent and Compute Instance
+     * Run Command.
+     * <p>
+     * The management plugins are controlled by this parameter and by the per-plugin
+     * configuration in the `pluginsConfig` object.
+     * <p>
+     * - If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of
+     * the per-plugin configuration.
+     * - If `isManagementDisabled` is false, all of the management plugins are enabled. You
+     * can optionally disable individual management plugins by providing a value in the `pluginsConfig`
+     * object.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isManagementDisabled")
     Boolean isManagementDisabled;
+
+    /**
+     * Whether Oracle Cloud Agent can run all of the available plugins.
+     * This includes the management and monitoring plugins.
+     * <p>
+     * For more information about the available plugins, see
+     * [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("areAllPluginsDisabled")
+    Boolean areAllPluginsDisabled;
+
+    /**
+     * The configuration of plugins associated with this instance.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("pluginsConfig")
+    java.util.List<InstanceAgentPluginConfigDetails> pluginsConfig;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

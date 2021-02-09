@@ -5,7 +5,7 @@
 package com.oracle.bmc.computeinstanceagent.model;
 
 /**
- * command execution output.
+ * The execution output from a command.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -45,19 +45,27 @@ package com.oracle.bmc.computeinstanceagent.model;
 public class InstanceAgentCommandExecutionOutputContent {
 
     /**
-     * command exit code.
+     * The exit code for the command. Exit code `0` indicates success.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exitCode")
     Integer exitCode;
 
     /**
-     * optional status message that agent's can populate for additional troubleshooting.
+     * An optional status message that Oracle Cloud Agent can populate for additional troubleshooting.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     String message;
 
     /**
-     * The response type where the command reponse is made available
+     * The output destination type for the command. The following values are supported:
+     * <p>
+     * - TEXT - the command output is returned as plain text.
+     * - OBJECT_STORAGE_URI - the command output is saved to an Object Storage URL.
+     * - OBJECT_STORAGE_TUPLE - the command output is saved to an Object Storage bucket.
+     * <p>
+     * For background information about Object Storage buckets and URLs, see
+     * [Overview of Object Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm).
      *
      **/
     @lombok.extern.slf4j.Slf4j

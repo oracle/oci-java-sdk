@@ -456,6 +456,29 @@ public interface OsManagement extends AutoCloseable {
                     ListAvailableWindowsUpdatesForManagedInstanceRequest request);
 
     /**
+     * Returns a list of all of the currently available Errata in the system
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListErrataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListErrata API.
+     */
+    ListErrataResponse listErrata(ListErrataRequest request);
+
+    /**
+     * Returns a list of errata relevant to the Managed Instance.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListManagedInstanceErrataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagedInstanceErrata API.
+     */
+    ListManagedInstanceErrataResponse listManagedInstanceErrata(
+            ListManagedInstanceErrataRequest request);
+
+    /**
      * Returns a list of all Managed Instance Groups.
      *
      * @param request The request object containing the details to send

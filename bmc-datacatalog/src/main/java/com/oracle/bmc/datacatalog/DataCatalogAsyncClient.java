@@ -4537,6 +4537,86 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ProcessRecommendationResponse> processRecommendation(
+            ProcessRecommendationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ProcessRecommendationRequest, ProcessRecommendationResponse>
+                    handler) {
+        LOG.trace("Called async processRecommendation");
+        final ProcessRecommendationRequest interceptedRequest =
+                ProcessRecommendationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ProcessRecommendationConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ProcessRecommendationResponse>
+                transformer = ProcessRecommendationConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ProcessRecommendationRequest, ProcessRecommendationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ProcessRecommendationRequest, ProcessRecommendationResponse>,
+                        java.util.concurrent.Future<ProcessRecommendationResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ProcessRecommendationRequest, ProcessRecommendationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RecommendationsResponse> recommendations(
+            RecommendationsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RecommendationsRequest, RecommendationsResponse>
+                    handler) {
+        LOG.trace("Called async recommendations");
+        final RecommendationsRequest interceptedRequest =
+                RecommendationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RecommendationsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, RecommendationsResponse>
+                transformer = RecommendationsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<RecommendationsRequest, RecommendationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RecommendationsRequest, RecommendationsResponse>,
+                        java.util.concurrent.Future<RecommendationsResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RecommendationsRequest, RecommendationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RemoveDataSelectorPatternsResponse>
             removeDataSelectorPatterns(
                     RemoveDataSelectorPatternsRequest request,
