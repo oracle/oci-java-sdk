@@ -100,6 +100,15 @@ public class CreateMigrationDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isSelectiveMigration")
+        private Boolean isSelectiveMigration;
+
+        public Builder isSelectiveMigration(Boolean isSelectiveMigration) {
+            this.isSelectiveMigration = isSelectiveMigration;
+            this.__explicitlySet__.add("isSelectiveMigration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("serviceConfig")
         private java.util.Map<String, ConfigurationField> serviceConfig;
 
@@ -151,6 +160,7 @@ public class CreateMigrationDetails {
                             applicationName,
                             discoveryDetails,
                             preCreatedTargetDatabaseType,
+                            isSelectiveMigration,
                             serviceConfig,
                             applicationConfig,
                             freeformTags,
@@ -169,6 +179,7 @@ public class CreateMigrationDetails {
                             .applicationName(o.getApplicationName())
                             .discoveryDetails(o.getDiscoveryDetails())
                             .preCreatedTargetDatabaseType(o.getPreCreatedTargetDatabaseType())
+                            .isSelectiveMigration(o.getIsSelectiveMigration())
                             .serviceConfig(o.getServiceConfig())
                             .applicationConfig(o.getApplicationConfig())
                             .freeformTags(o.getFreeformTags())
@@ -227,6 +238,13 @@ public class CreateMigrationDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("preCreatedTargetDatabaseType")
     TargetDatabaseTypes preCreatedTargetDatabaseType;
+
+    /**
+     * If set to `true`, Application Migration migrates the application resources selectively depending on the source.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSelectiveMigration")
+    Boolean isSelectiveMigration;
 
     /**
      * Configuration required to migrate the application. In addition to the key and value, additional fields are provided

@@ -145,6 +145,15 @@ public class CreateIntegrationInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("networkEndpointDetails")
+        private NetworkEndpointDetails networkEndpointDetails;
+
+        public Builder networkEndpointDetails(NetworkEndpointDetails networkEndpointDetails) {
+            this.networkEndpointDetails = networkEndpointDetails;
+            this.__explicitlySet__.add("networkEndpointDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -163,7 +172,8 @@ public class CreateIntegrationInstanceDetails {
                             customEndpoint,
                             alternateCustomEndpoints,
                             consumptionModel,
-                            isFileServerEnabled);
+                            isFileServerEnabled,
+                            networkEndpointDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -183,7 +193,8 @@ public class CreateIntegrationInstanceDetails {
                             .customEndpoint(o.getCustomEndpoint())
                             .alternateCustomEndpoints(o.getAlternateCustomEndpoints())
                             .consumptionModel(o.getConsumptionModel())
-                            .isFileServerEnabled(o.getIsFileServerEnabled());
+                            .isFileServerEnabled(o.getIsFileServerEnabled())
+                            .networkEndpointDetails(o.getNetworkEndpointDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -274,7 +285,7 @@ public class CreateIntegrationInstanceDetails {
     Boolean isByol;
 
     /**
-     * IDCS Authentication token. This is is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
+     * IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsAt")
     String idcsAt;
@@ -348,6 +359,9 @@ public class CreateIntegrationInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFileServerEnabled")
     Boolean isFileServerEnabled;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("networkEndpointDetails")
+    NetworkEndpointDetails networkEndpointDetails;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

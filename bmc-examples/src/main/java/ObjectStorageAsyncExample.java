@@ -2,6 +2,7 @@
  * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
+import java.io.InputStream;
 import java.util.concurrent.CountDownLatch;
 
 import com.oracle.bmc.ConfigFileReader;
@@ -12,9 +13,11 @@ import com.oracle.bmc.objectstorage.ObjectStorageAsync;
 import com.oracle.bmc.objectstorage.ObjectStorageAsyncClient;
 import com.oracle.bmc.objectstorage.model.BucketSummary;
 import com.oracle.bmc.objectstorage.requests.GetNamespaceRequest;
+import com.oracle.bmc.objectstorage.requests.GetObjectRequest;
 import com.oracle.bmc.objectstorage.requests.ListBucketsRequest;
 import com.oracle.bmc.objectstorage.requests.ListBucketsRequest.Builder;
 import com.oracle.bmc.objectstorage.responses.GetNamespaceResponse;
+import com.oracle.bmc.objectstorage.responses.GetObjectResponse;
 import com.oracle.bmc.objectstorage.responses.ListBucketsResponse;
 import com.oracle.bmc.responses.AsyncHandler;
 
@@ -62,6 +65,25 @@ public class ObjectStorageAsyncExample {
             }
             nextToken = listBucketsResponse.getOpcNextPage();
         } while (nextToken != null);
+
+        // fetch the uploaded file from object storage
+        String bucketName = null;
+        String objectName = null;
+        ResponseHandler<GetObjectRequest, GetObjectResponse> objectHandler =
+                new ResponseHandler<>();
+        GetObjectRequest getObjectRequest =
+                GetObjectRequest.builder()
+                        .namespaceName(namespaceName)
+                        .bucketName(bucketName)
+                        .objectName(objectName)
+                        .build();
+        client.getObject(getObjectRequest, objectHandler);
+        GetObjectResponse getResponse = objectHandler.waitForCompletion();
+
+        // stream contents should match the file uploaded
+        try (final InputStream fileStream = getResponse.getInputStream()) {
+            // use fileStream
+        } // try-with-resources automatically closes fileStream
 
         client.close();
     }

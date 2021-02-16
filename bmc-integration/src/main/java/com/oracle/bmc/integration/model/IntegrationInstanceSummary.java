@@ -171,6 +171,15 @@ public class IntegrationInstanceSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("networkEndpointDetails")
+        private NetworkEndpointDetails networkEndpointDetails;
+
+        public Builder networkEndpointDetails(NetworkEndpointDetails networkEndpointDetails) {
+            this.networkEndpointDetails = networkEndpointDetails;
+            this.__explicitlySet__.add("networkEndpointDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -192,7 +201,8 @@ public class IntegrationInstanceSummary {
                             isVisualBuilderEnabled,
                             customEndpoint,
                             alternateCustomEndpoints,
-                            consumptionModel);
+                            consumptionModel,
+                            networkEndpointDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -215,7 +225,8 @@ public class IntegrationInstanceSummary {
                             .isVisualBuilderEnabled(o.getIsVisualBuilderEnabled())
                             .customEndpoint(o.getCustomEndpoint())
                             .alternateCustomEndpoints(o.getAlternateCustomEndpoints())
-                            .consumptionModel(o.getConsumptionModel());
+                            .consumptionModel(o.getConsumptionModel())
+                            .networkEndpointDetails(o.getNetworkEndpointDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -463,6 +474,9 @@ public class IntegrationInstanceSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("consumptionModel")
     ConsumptionModel consumptionModel;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("networkEndpointDetails")
+    NetworkEndpointDetails networkEndpointDetails;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

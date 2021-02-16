@@ -74,6 +74,15 @@ public class ConfigurationField {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceList")
+        private java.util.List<ResourceField> resourceList;
+
+        public Builder resourceList(java.util.List<ResourceField> resourceList) {
+            this.resourceList = resourceList;
+            this.__explicitlySet__.add("resourceList");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
         private Boolean isRequired;
 
@@ -98,7 +107,14 @@ public class ConfigurationField {
         public ConfigurationField build() {
             ConfigurationField __instance__ =
                     new ConfigurationField(
-                            name, group, type, value, description, isRequired, isMutable);
+                            name,
+                            group,
+                            type,
+                            value,
+                            description,
+                            resourceList,
+                            isRequired,
+                            isMutable);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -111,6 +127,7 @@ public class ConfigurationField {
                             .type(o.getType())
                             .value(o.getValue())
                             .description(o.getDescription())
+                            .resourceList(o.getResourceList())
                             .isRequired(o.getIsRequired())
                             .isMutable(o.getIsMutable());
 
@@ -155,6 +172,13 @@ public class ConfigurationField {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
+
+    /**
+     * A list of resources associated with a specific configuration object.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceList")
+    java.util.List<ResourceField> resourceList;
 
     /**
      * Indicates whether or not the field is required (defaults to `true`).
