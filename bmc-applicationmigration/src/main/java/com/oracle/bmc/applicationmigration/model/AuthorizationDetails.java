@@ -31,6 +31,10 @@ package com.oracle.bmc.applicationmigration.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = OccAuthorizationDetails.class,
+        name = "OCC"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = InternalAuthorizationDetails.class,
         name = "INTERNAL_COMPUTE"
     ),

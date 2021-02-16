@@ -12,6 +12,8 @@ package com.oracle.bmc.applicationmigration.model;
  * <p>
  * Specify `INTERNAL_COMPUTE` if you have a traditional Oracle Cloud Infrastructure - Classic account and you want to migrate Oracle
  * Process Cloud Service or Oracle Integration Cloud Service applications.
+ * <p>
+ * Specify `OCC` if you have an Oracle Cloud @ Customer account.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -35,6 +37,10 @@ package com.oracle.bmc.applicationmigration.model;
     defaultImpl = SourceDetails.class
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = OccSourceDetails.class,
+        name = "OCC"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = InternalSourceDetails.class,
         name = "INTERNAL_COMPUTE"

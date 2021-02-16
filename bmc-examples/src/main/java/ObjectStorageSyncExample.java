@@ -10,10 +10,14 @@ import com.oracle.bmc.objectstorage.ObjectStorage;
 import com.oracle.bmc.objectstorage.ObjectStorageClient;
 import com.oracle.bmc.objectstorage.model.BucketSummary;
 import com.oracle.bmc.objectstorage.requests.GetNamespaceRequest;
+import com.oracle.bmc.objectstorage.requests.GetObjectRequest;
 import com.oracle.bmc.objectstorage.requests.ListBucketsRequest;
 import com.oracle.bmc.objectstorage.requests.ListBucketsRequest.Builder;
 import com.oracle.bmc.objectstorage.responses.GetNamespaceResponse;
+import com.oracle.bmc.objectstorage.responses.GetObjectResponse;
 import com.oracle.bmc.objectstorage.responses.ListBucketsResponse;
+
+import java.io.InputStream;
 
 public class ObjectStorageSyncExample {
 
@@ -54,6 +58,22 @@ public class ObjectStorageSyncExample {
             }
             nextToken = listBucketsResponse.getOpcNextPage();
         } while (nextToken != null);
+
+        // fetch the file from the object storage
+        String bucketName = null;
+        String objectName = null;
+        GetObjectResponse getResponse =
+                client.getObject(
+                        GetObjectRequest.builder()
+                                .namespaceName(namespaceName)
+                                .bucketName(bucketName)
+                                .objectName(objectName)
+                                .build());
+
+        // stream contents should match the file uploaded
+        try (final InputStream fileStream = getResponse.getInputStream()) {
+            // use fileStream
+        } // try-with-resources automatically closes fileStream
 
         client.close();
     }

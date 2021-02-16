@@ -312,6 +312,24 @@ public class DbSystem {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("scanDnsName")
+        private String scanDnsName;
+
+        public Builder scanDnsName(String scanDnsName) {
+            this.scanDnsName = scanDnsName;
+            this.__explicitlySet__.add("scanDnsName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("zoneId")
+        private String zoneId;
+
+        public Builder zoneId(String zoneId) {
+            this.zoneId = zoneId;
+            this.__explicitlySet__.add("zoneId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
         private Integer dataStorageSizeInGBs;
 
@@ -451,6 +469,8 @@ public class DbSystem {
                             scanIpIds,
                             vipIds,
                             scanDnsRecordId,
+                            scanDnsName,
+                            zoneId,
                             dataStorageSizeInGBs,
                             recoStorageSizeInGB,
                             nodeCount,
@@ -501,6 +521,8 @@ public class DbSystem {
                             .scanIpIds(o.getScanIpIds())
                             .vipIds(o.getVipIds())
                             .scanDnsRecordId(o.getScanDnsRecordId())
+                            .scanDnsName(o.getScanDnsName())
+                            .zoneId(o.getZoneId())
                             .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
                             .recoStorageSizeInGB(o.getRecoStorageSizeInGB())
                             .nodeCount(o.getNodeCount())
@@ -897,6 +919,20 @@ public class DbSystem {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanDnsRecordId")
     String scanDnsRecordId;
+
+    /**
+     * The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scanDnsName")
+    String scanDnsName;
+
+    /**
+     * The OCID of the zone the DB system is associated with.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("zoneId")
+    String zoneId;
 
     /**
      * The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems.

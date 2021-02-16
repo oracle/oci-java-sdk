@@ -113,6 +113,15 @@ public class Migration {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isSelectiveMigration")
+        private Boolean isSelectiveMigration;
+
+        public Builder isSelectiveMigration(Boolean isSelectiveMigration) {
+            this.isSelectiveMigration = isSelectiveMigration;
+            this.__explicitlySet__.add("isSelectiveMigration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("serviceConfig")
         private java.util.Map<String, ConfigurationField> serviceConfig;
 
@@ -193,6 +202,7 @@ public class Migration {
                             applicationName,
                             applicationType,
                             preCreatedTargetDatabaseType,
+                            isSelectiveMigration,
                             serviceConfig,
                             applicationConfig,
                             lifecycleState,
@@ -216,6 +226,7 @@ public class Migration {
                             .applicationName(o.getApplicationName())
                             .applicationType(o.getApplicationType())
                             .preCreatedTargetDatabaseType(o.getPreCreatedTargetDatabaseType())
+                            .isSelectiveMigration(o.getIsSelectiveMigration())
                             .serviceConfig(o.getServiceConfig())
                             .applicationConfig(o.getApplicationConfig())
                             .lifecycleState(o.getLifecycleState())
@@ -292,6 +303,13 @@ public class Migration {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("preCreatedTargetDatabaseType")
     TargetDatabaseTypes preCreatedTargetDatabaseType;
+
+    /**
+     * If set to `true`, Application Migration migrates the application resources selectively depending on the source.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSelectiveMigration")
+    Boolean isSelectiveMigration;
 
     /**
      * Configuration required to migrate the application. In addition to the key and value, additional fields are provided

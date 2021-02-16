@@ -479,6 +479,44 @@ public class IntegrationInstanceClient implements IntegrationInstance {
     }
 
     @Override
+    public ChangeIntegrationInstanceNetworkEndpointResponse
+            changeIntegrationInstanceNetworkEndpoint(
+                    ChangeIntegrationInstanceNetworkEndpointRequest request) {
+        LOG.trace("Called changeIntegrationInstanceNetworkEndpoint");
+        final ChangeIntegrationInstanceNetworkEndpointRequest interceptedRequest =
+                ChangeIntegrationInstanceNetworkEndpointConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeIntegrationInstanceNetworkEndpointConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeIntegrationInstanceNetworkEndpointResponse>
+                transformer = ChangeIntegrationInstanceNetworkEndpointConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeIntegrationInstanceNetworkEndpointDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateIntegrationInstanceResponse createIntegrationInstance(
             CreateIntegrationInstanceRequest request) {
         LOG.trace("Called createIntegrationInstance");

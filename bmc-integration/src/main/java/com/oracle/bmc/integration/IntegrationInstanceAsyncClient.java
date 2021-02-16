@@ -412,6 +412,55 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeIntegrationInstanceNetworkEndpointResponse>
+            changeIntegrationInstanceNetworkEndpoint(
+                    ChangeIntegrationInstanceNetworkEndpointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeIntegrationInstanceNetworkEndpointRequest,
+                                    ChangeIntegrationInstanceNetworkEndpointResponse>
+                            handler) {
+        LOG.trace("Called async changeIntegrationInstanceNetworkEndpoint");
+        final ChangeIntegrationInstanceNetworkEndpointRequest interceptedRequest =
+                ChangeIntegrationInstanceNetworkEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeIntegrationInstanceNetworkEndpointConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeIntegrationInstanceNetworkEndpointResponse>
+                transformer = ChangeIntegrationInstanceNetworkEndpointConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeIntegrationInstanceNetworkEndpointRequest,
+                        ChangeIntegrationInstanceNetworkEndpointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeIntegrationInstanceNetworkEndpointRequest,
+                                ChangeIntegrationInstanceNetworkEndpointResponse>,
+                        java.util.concurrent.Future<
+                                ChangeIntegrationInstanceNetworkEndpointResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeIntegrationInstanceNetworkEndpointRequest,
+                    ChangeIntegrationInstanceNetworkEndpointResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateIntegrationInstanceResponse> createIntegrationInstance(
             CreateIntegrationInstanceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

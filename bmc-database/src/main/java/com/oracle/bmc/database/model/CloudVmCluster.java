@@ -350,6 +350,24 @@ public class CloudVmCluster {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("scanDnsName")
+        private String scanDnsName;
+
+        public Builder scanDnsName(String scanDnsName) {
+            this.scanDnsName = scanDnsName;
+            this.__explicitlySet__.add("scanDnsName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("zoneId")
+        private String zoneId;
+
+        public Builder zoneId(String zoneId) {
+            this.zoneId = zoneId;
+            this.__explicitlySet__.add("zoneId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -391,7 +409,9 @@ public class CloudVmCluster {
                             vipIds,
                             scanDnsRecordId,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            scanDnsName,
+                            zoneId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -434,7 +454,9 @@ public class CloudVmCluster {
                             .vipIds(o.getVipIds())
                             .scanDnsRecordId(o.getScanDnsRecordId())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .scanDnsName(o.getScanDnsName())
+                            .zoneId(o.getZoneId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -847,6 +869,20 @@ public class CloudVmCluster {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scanDnsName")
+    String scanDnsName;
+
+    /**
+     * The OCID of the zone the cloud VM cluster is associated with.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("zoneId")
+    String zoneId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
