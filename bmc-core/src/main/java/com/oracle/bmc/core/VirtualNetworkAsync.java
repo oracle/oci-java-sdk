@@ -628,7 +628,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * an Identity and Access Management (IAM) policy that gives the requestor permission
      * to connect to LPGs in the acceptor's compartment. Without that permission, this
      * operation will fail. For more information, see
-     * [VCN Peering](https://docs.cloud.oracle.com/Content/Network/Tasks/VCNpeering.htm).
+     * [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -652,7 +652,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * an Identity and Access Management (IAM) policy that gives the requestor permission
      * to connect to RPCs in the acceptor's compartment. Without that permission, this
      * operation will fail. For more information, see
-     * [VCN Peering](https://docs.cloud.oracle.com/Content/Network/Tasks/VCNpeering.htm).
+     * [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -688,17 +688,17 @@ public interface VirtualNetworkAsync extends AutoCloseable {
 
     /**
      * Creates a new virtual customer-premises equipment (CPE) object in the specified compartment. For
-     * more information, see [IPSec VPNs](https://docs.cloud.oracle.com/Content/Network/Tasks/managingIPsec.htm).
+     * more information, see [IPSec VPNs](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPsec.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want
      * the CPE to reside. Notice that the CPE doesn't have to be in the same compartment as the IPSec
      * connection or other Networking Service components. If you're not sure which compartment to
      * use, put the CPE in the same compartment as the DRG. For more information about
-     * compartments and access control, see [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
-     * For information about OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * compartments and access control, see [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+     * For information about OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You must provide the public IP address of your on-premises router. See
-     * [Configuring Your On-Premises Router for an IPSec VPN](https://docs.cloud.oracle.com/Content/Network/Tasks/configuringCPE.htm).
+     * [Configuring Your On-Premises Router for an IPSec VPN](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/configuringCPE.htm).
      * <p>
      * You may optionally specify a *display name* for the CPE, otherwise a default is provided. It does not have to
      * be unique, and you can change it. Avoid entering confidential information.
@@ -722,16 +722,16 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * <p>
      * After creating the `CrossConnect` object, you need to go the FastConnect location
      * and request to have the physical cable installed. For more information, see
-     * [FastConnect Overview](https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm).
+     * [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the
      * compartment where you want the cross-connect to reside. If you're
      * not sure which compartment to use, put the cross-connect in the
      * same compartment with your VCN. For more information about
      * compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
+     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      * For information about OCIDs, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the cross-connect.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -753,16 +753,16 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     /**
      * Creates a new cross-connect group to use with Oracle Cloud Infrastructure
      * FastConnect. For more information, see
-     * [FastConnect Overview](https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm).
+     * [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the
      * compartment where you want the cross-connect group to reside. If you're
      * not sure which compartment to use, put the cross-connect group in the
      * same compartment with your VCN. For more information about
      * compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
+     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      * For information about OCIDs, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the cross-connect group.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -789,8 +789,8 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * DHCP options to reside. Notice that the set of options doesn't have to be in the same compartment as the VCN,
      * subnets, or other Networking Service components. If you're not sure which compartment to use, put the set
      * of DHCP options in the same compartment as the VCN. For more information about compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
+     * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the set of DHCP options, otherwise a default is provided.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -811,14 +811,14 @@ public interface VirtualNetworkAsync extends AutoCloseable {
 
     /**
      * Creates a new dynamic routing gateway (DRG) in the specified compartment. For more information,
-     * see [Dynamic Routing Gateways (DRGs)](https://docs.cloud.oracle.com/Content/Network/Tasks/managingDRGs.htm).
+     * see [Dynamic Routing Gateways (DRGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDRGs.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want
      * the DRG to reside. Notice that the DRG doesn't have to be in the same compartment as the VCN,
      * the DRG attachment, or other Networking Service components. If you're not sure which compartment
      * to use, put the DRG in the same compartment as the VCN. For more information about compartments
-     * and access control, see [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
-     * For information about OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * and access control, see [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+     * For information about OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the DRG, otherwise a default is provided.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -839,14 +839,14 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * Attaches the specified DRG to the specified VCN. A VCN can be attached to only one DRG at a time,
      * and vice versa. The response includes a `DrgAttachment` object with its own OCID. For more
      * information about DRGs, see
-     * [Dynamic Routing Gateways (DRGs)](https://docs.cloud.oracle.com/Content/Network/Tasks/managingDRGs.htm).
+     * [Dynamic Routing Gateways (DRGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDRGs.htm).
      * <p>
      * You may optionally specify a *display name* for the attachment, otherwise a default is provided.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
      * <p>
      * For the purposes of access control, the DRG attachment is automatically placed into the same compartment
      * as the VCN. For more information about compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
+     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -864,7 +864,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
 
     /**
      * Creates a new IPSec connection between the specified DRG and CPE. For more information, see
-     * [IPSec VPNs](https://docs.cloud.oracle.com/Content/Network/Tasks/managingIPsec.htm).
+     * [IPSec VPNs](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPsec.htm).
      * <p>
      * If you configure at least one tunnel to use static routing, then in the request you must provide
      * at least one valid static route (you're allowed a maximum of 10). For example: 10.0.0.0/16.
@@ -877,8 +877,8 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * as the DRG, CPE, or other Networking Service components. If you're not sure which compartment to
      * use, put the IPSec connection in the same compartment as the DRG. For more information about
      * compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
-     * For information about OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+     * For information about OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the IPSec connection, otherwise a default is provided.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -891,7 +891,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * <p>
      * For each tunnel, you need the IP address of Oracle's VPN headend and the shared secret
      * (that is, the pre-shared key). For more information, see
-     * [Configuring Your On-Premises Router for an IPSec VPN](https://docs.cloud.oracle.com/Content/Network/Tasks/configuringCPE.htm).
+     * [Configuring Your On-Premises Router for an IPSec VPN](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/configuringCPE.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -909,14 +909,14 @@ public interface VirtualNetworkAsync extends AutoCloseable {
 
     /**
      * Creates a new internet gateway for the specified VCN. For more information, see
-     * [Access to the Internet](https://docs.cloud.oracle.com/Content/Network/Tasks/managingIGs.htm).
+     * [Access to the Internet](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIGs.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want the Internet
      * Gateway to reside. Notice that the internet gateway doesn't have to be in the same compartment as the VCN or
      * other Networking Service components. If you're not sure which compartment to use, put the Internet
      * Gateway in the same compartment with the VCN. For more information about compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
+     * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the internet gateway, otherwise a default is provided. It
      * does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -1013,7 +1013,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     /**
      * Creates a secondary private IP for the specified VNIC.
      * For more information about secondary private IPs, see
-     * [IP Addresses](https://docs.cloud.oracle.com/Content/Network/Tasks/managingIPaddresses.htm).
+     * [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -1031,7 +1031,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     /**
      * Creates a public IP. Use the `lifetime` property to specify whether it's an ephemeral or
      * reserved public IP. For information about limits on how many you can create, see
-     * [Public IP Addresses](https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm).
+     * [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      * <p>
      * **For an ephemeral public IP assigned to a private IP:** You must also specify a `privateIpId`
      * with the OCID of the primary private IP you want to assign the public IP to. The public IP is
@@ -1103,16 +1103,16 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     /**
      * Creates a new route table for the specified VCN. In the request you must also include at least one route
      * rule for the new route table. For information on the number of rules you can have in a route table, see
-     * [Service Limits](https://docs.cloud.oracle.com/Content/General/Concepts/servicelimits.htm). For general information about route
+     * [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm). For general information about route
      * tables in your VCN and the types of targets you can use in route rules,
-     * see [Route Tables](https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm).
+     * see [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want the route
      * table to reside. Notice that the route table doesn't have to be in the same compartment as the VCN, subnets,
      * or other Networking Service components. If you're not sure which compartment to use, put the route
      * table in the same compartment as the VCN. For more information about compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
+     * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the route table, otherwise a default is provided.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -1132,16 +1132,16 @@ public interface VirtualNetworkAsync extends AutoCloseable {
 
     /**
      * Creates a new security list for the specified VCN. For more information
-     * about security lists, see [Security Lists](https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm).
+     * about security lists, see [Security Lists](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm).
      * For information on the number of rules you can have in a security list, see
-     * [Service Limits](https://docs.cloud.oracle.com/Content/General/Concepts/servicelimits.htm).
+     * [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want the security
      * list to reside. Notice that the security list doesn't have to be in the same compartment as the VCN, subnets,
      * or other Networking Service components. If you're not sure which compartment to use, put the security
      * list in the same compartment as the VCN. For more information about compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
+     * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the security list, otherwise a default is provided.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -1165,8 +1165,8 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want
      * the service gateway to reside. For more information about compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
-     * For information about OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+     * For information about OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the service gateway, otherwise a default is provided.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -1188,35 +1188,35 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     /**
      * Creates a new subnet in the specified VCN. You can't change the size of the subnet after creation,
      * so it's important to think about the size of subnets you need before creating them.
-     * For more information, see [VCNs and Subnets](https://docs.cloud.oracle.com/Content/Network/Tasks/managingVCNs.htm).
+     * For more information, see [VCNs and Subnets](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm).
      * For information on the number of subnets you can have in a VCN, see
-     * [Service Limits](https://docs.cloud.oracle.com/Content/General/Concepts/servicelimits.htm).
+     * [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want the subnet
      * to reside. Notice that the subnet doesn't have to be in the same compartment as the VCN, route tables, or
      * other Networking Service components. If you're not sure which compartment to use, put the subnet in
      * the same compartment as the VCN. For more information about compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm). For information about OCIDs,
-     * see [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs,
+     * see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally associate a route table with the subnet. If you don't, the subnet will use the
      * VCN's default route table. For more information about route tables, see
-     * [Route Tables](https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm).
+     * [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
      * <p>
      * You may optionally associate a security list with the subnet. If you don't, the subnet will use the
      * VCN's default security list. For more information about security lists, see
-     * [Security Lists](https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm).
+     * [Security Lists](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm).
      * <p>
      * You may optionally associate a set of DHCP options with the subnet. If you don't, the subnet will use the
      * VCN's default set. For more information about DHCP options, see
-     * [DHCP Options](https://docs.cloud.oracle.com/Content/Network/Tasks/managingDHCP.htm).
+     * [DHCP Options](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDHCP.htm).
      * <p>
      * You may optionally specify a *display name* for the subnet, otherwise a default is provided.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
      * <p>
      * You can also add a DNS label for the subnet, which is required if you want the Internet and
      * VCN Resolver to resolve hostnames for instances in the subnet. For more information, see
-     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm).
+     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -1233,7 +1233,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
 
     /**
      * Creates a new virtual cloud network (VCN). For more information, see
-     * [VCNs and Subnets](https://docs.cloud.oracle.com/Content/Network/Tasks/managingVCNs.htm).
+     * [VCNs and Subnets](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm).
      * <p>
      * For the VCN, you specify a list of one or more IPv4 CIDR blocks that meet the following criteria:
      * <p>
@@ -1248,15 +1248,15 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * reside. Consult an Oracle Cloud Infrastructure administrator in your organization if you're not sure which
      * compartment to use. Notice that the VCN doesn't have to be in the same compartment as the subnets or other
      * Networking Service components. For more information about compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
+     * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the VCN, otherwise a default is provided. It does not have to
      * be unique, and you can change it. Avoid entering confidential information.
      * <p>
      * You can also add a DNS label for the VCN, which is required if you want the instances to use the
      * Interent and VCN Resolver option for DNS in the VCN. For more information, see
-     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm).
+     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * <p>
      * The VCN automatically comes with a default route table, default security list, and default set of DHCP options.
      * The OCID for each is returned in the response. You can't delete these default objects, but you can change their
@@ -1264,7 +1264,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * <p>
      * The VCN and subnets you create are not accessible until you attach an internet gateway or set up an IPSec VPN
      * or FastConnect. For more information, see
-     * [Overview of the Networking Service](https://docs.cloud.oracle.com/Content/Network/Concepts/overview.htm).
+     * [Overview of the Networking Service](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -1281,16 +1281,16 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     /**
      * Creates a new virtual circuit to use with Oracle Cloud
      * Infrastructure FastConnect. For more information, see
-     * [FastConnect Overview](https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm).
+     * [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the
      * compartment where you want the virtual circuit to reside. If you're
      * not sure which compartment to use, put the virtual circuit in the
      * same compartment with the DRG it's using. For more information about
      * compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
+     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      * For information about OCIDs, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the virtual circuit.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -1299,7 +1299,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * the traffic to flow through. Make sure you attach the DRG to your
      * VCN and confirm the VCN's routing sends traffic to the DRG. Otherwise
      * traffic will not flow. For more information, see
-     * [Route Tables](https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm).
+     * [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -1334,7 +1334,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * Deletes the specified `ByoipRange` resource.
      * The resource must be in one of the following states: CREATING, PROVISIONED, ACTIVE, or FAILED.
      * It must not have any subranges currently allocated to a PublicIpPool object or the deletion will fail.
-     * You must specify the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * You must specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * If the `ByoipRange` resource is currently in the PROVISIONED or ACTIVE state, it will be de-provisioned and then deleted.
      *
      *
@@ -1595,7 +1595,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * automatically unassigned and deleted when the VNIC is terminated.
      * <p>
      **Important:** If a secondary private IP is the
-     * [target of a route rule](https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm#privateip),
+     * [target of a route rule](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip),
      * unassigning it from the VNIC causes that route rule to blackhole and the traffic
      * will be dropped.
      *
@@ -1645,7 +1645,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     /**
      * Deletes the specified public IP pool.
      * To delete a public IP pool it must not have any active IP address allocations.
-     * You must specify the object's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) when deleting an IP pool.
+     * You must specify the object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) when deleting an IP pool.
      *
      *
      * @param request The request object containing the details to send
@@ -1841,7 +1841,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the `ByoipRange` resource. You must specify the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Gets the `ByoipRange` resource. You must specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -2041,7 +2041,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
 
     /**
      * Gets the redundancy status for the specified DRG. For more information, see
-     * [Redundancy Remedies](https://docs.cloud.oracle.com/Content/Network/Troubleshoot/drgredundancy.htm).
+     * [Redundancy Remedies](https://docs.cloud.oracle.com/iaas/Content/Network/Troubleshoot/drgredundancy.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -2059,7 +2059,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
 
     /**
      * Gets the specified provider service.
-     * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm).
+     * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -2415,7 +2415,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the specified `PublicIpPool` object. You must specify the object's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Gets the specified `PublicIpPool` object. You must specify the object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -2660,7 +2660,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
 
     /**
      * Lists the regions that support remote VCN peering (which is peering across regions).
-     * For more information, see [VCN Peering](https://docs.cloud.oracle.com/Content/Network/Tasks/VCNpeering.htm).
+     * For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -2890,7 +2890,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * <p>
      * For the compartment ID, provide the OCID of your tenancy (the root compartment).
      * <p>
-     * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm).
+     * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -2912,7 +2912,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * Gets the list of available virtual circuit bandwidth levels for a provider.
      * You need this information so you can specify your desired bandwidth level (shape) when you create a virtual circuit.
      * <p>
-     * For more information about virtual circuits, see [FastConnect Overview](https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm).
+     * For more information about virtual circuits, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -3829,7 +3829,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * a VNIC or instance can have. If you try to move a reserved public IP
      * to a VNIC or instance that has already reached its public IP limit, an error is
      * returned. For information about the public IP limits, see
-     * [Public IP Addresses](https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm).
+     * [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -4004,7 +4004,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * its state will return to PROVISIONED. Make sure you confirm that
      * the associated BGP session is back up. For more information
      * about the various states and how to test connectivity, see
-     * [FastConnect Overview](https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm).
+     * [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * <p>
      * To change the list of public IP prefixes for a public virtual circuit,
      * use {@link #bulkAddVirtualCircuitPublicPrefixes(BulkAddVirtualCircuitPublicPrefixesRequest, Consumer, Consumer) bulkAddVirtualCircuitPublicPrefixes}
@@ -4061,7 +4061,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
 
     /**
      * Submits the BYOIP CIDR block you are importing for validation. Do not submit to Oracle for validation if you have not already
-     * modified the information for the BYOIP CIDR block with your Regional Internet Registry. See [To import a CIDR block](https://docs.cloud.oracle.com/Content/Network/Concepts/BYOIP.htm#import_cidr) for details.
+     * modified the information for the BYOIP CIDR block with your Regional Internet Registry. See [To import a CIDR block](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm#import_cidr) for details.
      *
      *
      * @param request The request object containing the details to send

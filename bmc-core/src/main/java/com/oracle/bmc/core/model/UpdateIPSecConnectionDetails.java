@@ -153,7 +153,7 @@ public class UpdateIPSecConnectionDetails {
      * to the value for `cpeLocalIdentifierType`.
      * <p>
      * For information about why you'd provide this value, see
-     * [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/Content/Network/Tasks/overviewIPsec.htm#nat).
+     * [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
      * <p>
      * Example IP address: `10.0.3.3`
      * <p>
@@ -211,7 +211,7 @@ public class UpdateIPSecConnectionDetails {
      * Static routes to the CPE. If you provide this attribute, it replaces the entire current set of
      * static routes. A static route's CIDR must not be a multicast address or class E address.
      * The CIDR can be either IPv4 or IPv6. Note that IPv6 addressing is currently supported only
-     * in certain regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm).
+     * in certain regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
      * Example: `10.0.1.0/24`
      * <p>

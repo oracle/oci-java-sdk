@@ -113,7 +113,7 @@ public class CreateByoipRangeDetails {
     String cidrBlock;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")

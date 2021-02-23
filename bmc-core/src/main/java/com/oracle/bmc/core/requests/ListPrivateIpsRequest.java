@@ -49,7 +49,7 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     private String vnicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
      */
     private String vlanId;
 

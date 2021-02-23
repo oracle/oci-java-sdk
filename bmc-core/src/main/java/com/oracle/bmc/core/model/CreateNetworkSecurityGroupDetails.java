@@ -105,7 +105,7 @@ public class CreateNetworkSecurityGroupDetails {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment to contain the
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the
      * network security group.
      *
      **/
@@ -141,7 +141,7 @@ public class CreateNetworkSecurityGroupDetails {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VCN to create the network
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN to create the network
      * security group in.
      *
      **/

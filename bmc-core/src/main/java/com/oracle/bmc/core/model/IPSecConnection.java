@@ -21,11 +21,11 @@ package com.oracle.bmc.core.model;
  * if that tunnel's `routing` attribute = `STATIC`. Otherwise the static routes are ignored.
  * <p>
  * For more information about the workflow for setting up an IPSec connection, see
- * [IPSec VPN](https://docs.cloud.oracle.com/Content/Network/Tasks/managingIPsec.htm).
+ * [IPSec VPN](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPsec.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
- * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+ * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -318,7 +318,7 @@ public class IPSecConnection {
      * for the {@link Cpe} object specified by `cpeId` is used as the `cpeLocalIdentifier`.
      * <p>
      * For information about why you'd provide this value, see
-     * [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/Content/Network/Tasks/overviewIPsec.htm#nat).
+     * [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
      * <p>
      * Example IP address: `10.0.3.3`
      * <p>
@@ -393,7 +393,7 @@ public class IPSecConnection {
      * tunnels to use BGP dynamic routing, you can provide an empty list for the static routes.
      * <p>
      * The CIDR can be either IPv4 or IPv6. Note that IPv6 addressing is currently supported only
-     * in certain regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm).
+     * in certain regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
      * Example: `10.0.1.0/24`
      * <p>

@@ -159,7 +159,7 @@ public class ByoipRangeSummary {
     String cidrBlock;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the `ByoipRange` resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the `ByoipRange` resource.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -194,7 +194,7 @@ public class ByoipRangeSummary {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;

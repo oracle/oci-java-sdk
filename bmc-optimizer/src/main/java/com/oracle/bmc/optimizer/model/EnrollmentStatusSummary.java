@@ -6,8 +6,6 @@ package com.oracle.bmc.optimizer.model;
 
 /**
  * The metadata associated with the enrollment status summary.
- * <p>
- **Caution:** Avoid using any confidential information when you use the API to supply string values.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

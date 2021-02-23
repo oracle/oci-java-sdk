@@ -6,8 +6,6 @@ package com.oracle.bmc.optimizer.model;
 
 /**
  * The metadata associated with the recommendation summary.
- * <p>
- **Caution:** Avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

@@ -131,7 +131,7 @@ public class CreateNatGatewayDetails {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment to contain the
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the
      * NAT gateway.
      *
      **/
@@ -176,14 +176,14 @@ public class CreateNatGatewayDetails {
     Boolean blockTraffic;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VCN the gateway belongs to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the gateway belongs to.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     String vcnId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicIpId")

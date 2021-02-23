@@ -8,13 +8,13 @@ package com.oracle.bmc.core.model;
  * A NAT (Network Address Translation) gateway, which represents a router that lets instances
  * without public IPs contact the public internet without exposing the instance to inbound
  * internet traffic. For more information, see
- * [NAT Gateway](https://docs.cloud.oracle.com/Content/Network/Tasks/NATgateway.htm).
+ * [NAT Gateway](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/NATgateway.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an
  * IAM policy. If you are not authorized, talk to an
  * administrator. If you are an administrator who needs to write
  * policies to give users access, see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+ * Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -183,7 +183,7 @@ public class NatGateway {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains
      * the NAT gateway.
      *
      **/
@@ -219,7 +219,7 @@ public class NatGateway {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * NAT gateway.
      *
      **/
@@ -305,7 +305,7 @@ public class NatGateway {
     java.util.Date timeCreated;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VCN the NAT gateway
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the NAT gateway
      * belongs to.
      *
      **/
@@ -313,7 +313,7 @@ public class NatGateway {
     String vcnId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicIpId")

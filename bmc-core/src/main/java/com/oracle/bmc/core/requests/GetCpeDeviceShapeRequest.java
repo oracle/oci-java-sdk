@@ -14,7 +14,7 @@ import com.oracle.bmc.core.model.*;
 public class GetCpeDeviceShapeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the CPE device shape.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device shape.
      */
     private String cpeDeviceShapeId;
 

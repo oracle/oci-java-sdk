@@ -131,6 +131,16 @@ public class InstanceConfigurationLaunchInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("platformConfig")
+        private InstanceConfigurationLaunchInstancePlatformConfig platformConfig;
+
+        public Builder platformConfig(
+                InstanceConfigurationLaunchInstancePlatformConfig platformConfig) {
+            this.platformConfig = platformConfig;
+            this.__explicitlySet__.add("platformConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
         private InstanceConfigurationInstanceSourceDetails sourceDetails;
 
@@ -241,6 +251,7 @@ public class InstanceConfigurationLaunchInstanceDetails {
                             metadata,
                             shape,
                             shapeConfig,
+                            platformConfig,
                             sourceDetails,
                             faultDomain,
                             dedicatedVmHostId,
@@ -269,6 +280,7 @@ public class InstanceConfigurationLaunchInstanceDetails {
                             .metadata(o.getMetadata())
                             .shape(o.getShape())
                             .shapeConfig(o.getShapeConfig())
+                            .platformConfig(o.getPlatformConfig())
                             .sourceDetails(o.getSourceDetails())
                             .faultDomain(o.getFaultDomain())
                             .dedicatedVmHostId(o.getDedicatedVmHostId())
@@ -450,6 +462,9 @@ public class InstanceConfigurationLaunchInstanceDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("shapeConfig")
     InstanceConfigurationLaunchInstanceShapeConfigDetails shapeConfig;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("platformConfig")
+    InstanceConfigurationLaunchInstancePlatformConfig platformConfig;
 
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
     InstanceConfigurationInstanceSourceDetails sourceDetails;

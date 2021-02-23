@@ -168,7 +168,7 @@ public class CreatePublicIpDetails {
     /**
      * Defines when the public IP is deleted and released back to the Oracle Cloud
      * Infrastructure public IP pool. For more information, see
-     * [Public IP Addresses](https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm).
+     * [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      *
      **/
     public enum Lifetime {
@@ -206,7 +206,7 @@ public class CreatePublicIpDetails {
     /**
      * Defines when the public IP is deleted and released back to the Oracle Cloud
      * Infrastructure public IP pool. For more information, see
-     * [Public IP Addresses](https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm).
+     * [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
@@ -227,7 +227,7 @@ public class CreatePublicIpDetails {
     String privateIpId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the public IP pool.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")
     String publicIpPoolId;

@@ -6,8 +6,6 @@ package com.oracle.bmc.optimizer.model;
 
 /**
  * The metadata associated with the category summary.
- * <p>
- **Caution:** Avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -177,13 +175,13 @@ public class CategorySummary {
     String compartmentId;
 
     /**
-     * The name assigned to the category.
+     * The name assigned to the category. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Text describing the category.
+     * Text describing the category. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;

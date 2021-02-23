@@ -261,6 +261,15 @@ public class Instance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("platformConfig")
+        private PlatformConfig platformConfig;
+
+        public Builder platformConfig(PlatformConfig platformConfig) {
+            this.platformConfig = platformConfig;
+            this.__explicitlySet__.add("platformConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -291,7 +300,8 @@ public class Instance {
                             systemTags,
                             timeCreated,
                             agentConfig,
-                            timeMaintenanceRebootDue);
+                            timeMaintenanceRebootDue,
+                            platformConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -323,7 +333,8 @@ public class Instance {
                             .systemTags(o.getSystemTags())
                             .timeCreated(o.getTimeCreated())
                             .agentConfig(o.getAgentConfig())
-                            .timeMaintenanceRebootDue(o.getTimeMaintenanceRebootDue());
+                            .timeMaintenanceRebootDue(o.getTimeMaintenanceRebootDue())
+                            .platformConfig(o.getPlatformConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -650,6 +661,9 @@ public class Instance {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceRebootDue")
     java.util.Date timeMaintenanceRebootDue;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("platformConfig")
+    PlatformConfig platformConfig;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

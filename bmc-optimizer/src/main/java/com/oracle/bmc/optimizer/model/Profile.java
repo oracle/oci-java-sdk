@@ -6,8 +6,6 @@ package com.oracle.bmc.optimizer.model;
 
 /**
  * The metadata associated with the profile.
- * <p>
- **Caution:** Avoid using any confidential information when you use the API to supply string values.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -91,6 +89,24 @@ public class Profile {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("targetCompartments")
+        private TargetCompartments targetCompartments;
+
+        public Builder targetCompartments(TargetCompartments targetCompartments) {
+            this.targetCompartments = targetCompartments;
+            this.__explicitlySet__.add("targetCompartments");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("targetTags")
+        private TargetTags targetTags;
+
+        public Builder targetTags(TargetTags targetTags) {
+            this.targetTags = targetTags;
+            this.__explicitlySet__.add("targetTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -131,6 +147,8 @@ public class Profile {
                             definedTags,
                             freeformTags,
                             levelsConfiguration,
+                            targetCompartments,
+                            targetTags,
                             lifecycleState,
                             timeCreated,
                             timeUpdated);
@@ -148,6 +166,8 @@ public class Profile {
                             .definedTags(o.getDefinedTags())
                             .freeformTags(o.getFreeformTags())
                             .levelsConfiguration(o.getLevelsConfiguration())
+                            .targetCompartments(o.getTargetCompartments())
+                            .targetTags(o.getTargetTags())
                             .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated());
@@ -177,13 +197,13 @@ public class Profile {
     String compartmentId;
 
     /**
-     * The name assigned to the profile.
+     * The name assigned to the profile. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Text describing the profile.
+     * Text describing the profile. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
@@ -210,6 +230,12 @@ public class Profile {
 
     @com.fasterxml.jackson.annotation.JsonProperty("levelsConfiguration")
     LevelsConfiguration levelsConfiguration;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("targetCompartments")
+    TargetCompartments targetCompartments;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("targetTags")
+    TargetTags targetTags;
 
     /**
      * The profile's current state.

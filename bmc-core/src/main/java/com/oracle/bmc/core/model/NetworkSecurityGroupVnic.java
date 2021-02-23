@@ -84,7 +84,7 @@ public class NetworkSecurityGroupVnic {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the parent resource that the VNIC
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource that the VNIC
      * is attached to (for example, a Compute instance).
      *
      **/
@@ -102,7 +102,7 @@ public class NetworkSecurityGroupVnic {
     java.util.Date timeAssociated;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VNIC.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
     String vnicId;

@@ -13,7 +13,7 @@ package com.oracle.bmc.core.model;
  * 2. Reserved
  * <p>
  * For more information and comparison of the two types,
- * see [Public IP Addresses](https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm).
+ * see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -422,7 +422,7 @@ public class PublicIp {
      * whenever you like. It does not need to be assigned to a private IP at all times.
      * <p>
      * For more information and comparison of the two types,
-     * see [Public IP Addresses](https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm).
+     * see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -482,7 +482,7 @@ public class PublicIp {
      * whenever you like. It does not need to be assigned to a private IP at all times.
      * <p>
      * For more information and comparison of the two types,
-     * see [Public IP Addresses](https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm).
+     * see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
@@ -582,7 +582,7 @@ public class PublicIp {
     java.util.Date timeCreated;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")
     String publicIpPoolId;

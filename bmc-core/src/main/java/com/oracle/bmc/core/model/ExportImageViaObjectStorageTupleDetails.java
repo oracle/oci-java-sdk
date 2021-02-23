@@ -32,6 +32,15 @@ public class ExportImageViaObjectStorageTupleDetails extends ExportImageDetails 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("exportFormat")
+        private ExportFormat exportFormat;
+
+        public Builder exportFormat(ExportFormat exportFormat) {
+            this.exportFormat = exportFormat;
+            this.__explicitlySet__.add("exportFormat");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
@@ -65,7 +74,7 @@ public class ExportImageViaObjectStorageTupleDetails extends ExportImageDetails 
         public ExportImageViaObjectStorageTupleDetails build() {
             ExportImageViaObjectStorageTupleDetails __instance__ =
                     new ExportImageViaObjectStorageTupleDetails(
-                            bucketName, namespaceName, objectName);
+                            exportFormat, bucketName, namespaceName, objectName);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -73,7 +82,8 @@ public class ExportImageViaObjectStorageTupleDetails extends ExportImageDetails 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ExportImageViaObjectStorageTupleDetails o) {
             Builder copiedBuilder =
-                    bucketName(o.getBucketName())
+                    exportFormat(o.getExportFormat())
+                            .bucketName(o.getBucketName())
                             .namespaceName(o.getNamespaceName())
                             .objectName(o.getObjectName());
 
@@ -91,8 +101,8 @@ public class ExportImageViaObjectStorageTupleDetails extends ExportImageDetails 
 
     @Deprecated
     public ExportImageViaObjectStorageTupleDetails(
-            String bucketName, String namespaceName, String objectName) {
-        super();
+            ExportFormat exportFormat, String bucketName, String namespaceName, String objectName) {
+        super(exportFormat);
         this.bucketName = bucketName;
         this.namespaceName = namespaceName;
         this.objectName = objectName;

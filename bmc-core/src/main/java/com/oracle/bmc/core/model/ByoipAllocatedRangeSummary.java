@@ -78,7 +78,7 @@ public class ByoipAllocatedRangeSummary {
     String cidrBlock;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IP pool containing the CIDR block.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP pool containing the CIDR block.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")

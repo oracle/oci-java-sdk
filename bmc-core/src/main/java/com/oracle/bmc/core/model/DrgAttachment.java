@@ -6,7 +6,7 @@ package com.oracle.bmc.core.model;
 
 /**
  * A link between a DRG and VCN. For more information, see
- * [Overview of the Networking Service](https://docs.cloud.oracle.com/Content/Network/Concepts/overview.htm).
+ * [Overview of the Networking Service](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -233,8 +233,8 @@ public class DrgAttachment {
      * <p>
      * For information about why you would associate a route table with a DRG attachment, see:
      * <p>
-     * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/Content/Network/Tasks/transitrouting.htm)
-     *   * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/Content/Network/Tasks/transitroutingoracleservices.htm)
+     * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+     *   * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")

@@ -20,7 +20,7 @@ public class GetTunnelCpeDeviceConfigContentRequest
     private String ipscId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the tunnel.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tunnel.
      */
     private String tunnelId;
 

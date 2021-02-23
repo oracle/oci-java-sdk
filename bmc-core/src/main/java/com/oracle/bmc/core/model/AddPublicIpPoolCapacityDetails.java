@@ -71,7 +71,7 @@ public class AddPublicIpPoolCapacityDetails {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("byoipRangeId")
     String byoipRangeId;

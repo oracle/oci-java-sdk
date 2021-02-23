@@ -35,6 +35,15 @@ public class BulkApplyRecommendationsDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("actions")
+        private java.util.List<BulkApplyResourceAction> actions;
+
+        public Builder actions(java.util.List<BulkApplyResourceAction> actions) {
+            this.actions = actions;
+            this.__explicitlySet__.add("actions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
@@ -58,7 +67,8 @@ public class BulkApplyRecommendationsDetails {
 
         public BulkApplyRecommendationsDetails build() {
             BulkApplyRecommendationsDetails __instance__ =
-                    new BulkApplyRecommendationsDetails(resourceActionIds, status, timeStatusEnd);
+                    new BulkApplyRecommendationsDetails(
+                            resourceActionIds, actions, status, timeStatusEnd);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -67,6 +77,7 @@ public class BulkApplyRecommendationsDetails {
         public Builder copy(BulkApplyRecommendationsDetails o) {
             Builder copiedBuilder =
                     resourceActionIds(o.getResourceActionIds())
+                            .actions(o.getActions())
                             .status(o.getStatus())
                             .timeStatusEnd(o.getTimeStatusEnd());
 
@@ -84,9 +95,18 @@ public class BulkApplyRecommendationsDetails {
 
     /**
      * The unique OCIDs of the resource actions that recommendations are applied to.
+     * <p>
+     * This field is deprecated.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceActionIds")
     java.util.List<String> resourceActionIds;
+
+    /**
+     * The unique resource actions that recommendations are applied to.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("actions")
+    java.util.List<BulkApplyResourceAction> actions;
 
     /**
      * The current status of the recommendation.

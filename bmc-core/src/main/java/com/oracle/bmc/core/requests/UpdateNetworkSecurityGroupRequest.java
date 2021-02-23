@@ -15,7 +15,7 @@ public class UpdateNetworkSecurityGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdateNetworkSecurityGroupDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security group.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
      */
     private String networkSecurityGroupId;
 

@@ -173,7 +173,7 @@ public class CreateServiceGatewayDetails {
      * with the service gateway.
      * <p>
      * For information about why you would associate a route table with a service gateway, see
-     * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/Content/Network/Tasks/transitroutingoracleservices.htm).
+     * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
@@ -195,7 +195,7 @@ public class CreateServiceGatewayDetails {
     java.util.List<ServiceIdRequestDetails> services;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VCN.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")

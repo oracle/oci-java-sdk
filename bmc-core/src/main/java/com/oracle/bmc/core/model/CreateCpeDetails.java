@@ -161,7 +161,7 @@ public class CreateCpeDetails {
     String ipAddress;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the CPE device type. You can provide
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device type. You can provide
      * a value if you want to later generate CPE device configuration content for IPSec connections
      * that use this CPE. You can also call {@link #updateCpe(UpdateCpeRequest) updateCpe} later to
      * provide a value. For a list of possible values, see

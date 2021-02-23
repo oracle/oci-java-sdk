@@ -8,7 +8,7 @@ package com.oracle.bmc.core.model;
  * For use with Oracle Cloud Infrastructure FastConnect. A cross-connect represents a
  * physical connection between an existing network and Oracle. Customers who are colocated
  * with Oracle in a FastConnect location create and use cross-connects. For more
- * information, see [FastConnect Overview](https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm).
+ * information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
  * <p>
  * Oracle recommends you create each cross-connect in a
  * {@link CrossConnectGroup} so you can use link aggregation
@@ -20,7 +20,7 @@ package com.oracle.bmc.core.model;
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
- * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+ * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

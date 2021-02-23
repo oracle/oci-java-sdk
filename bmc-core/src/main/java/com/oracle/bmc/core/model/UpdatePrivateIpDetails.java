@@ -141,7 +141,7 @@ public class UpdatePrivateIpDetails {
      * [RFC 1123](https://tools.ietf.org/html/rfc1123).
      * <p>
      * For more information, see
-     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm).
+     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * <p>
      * Example: `bminstance-1`
      *

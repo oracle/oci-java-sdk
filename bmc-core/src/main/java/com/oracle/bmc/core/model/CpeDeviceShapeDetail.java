@@ -95,7 +95,7 @@ public class CpeDeviceShapeDetail {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the CPE device shape.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device shape.
      * This value uniquely identifies the type of CPE device.
      *
      **/

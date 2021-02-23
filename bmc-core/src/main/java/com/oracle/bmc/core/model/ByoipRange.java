@@ -6,7 +6,7 @@ package com.oracle.bmc.core.model;
 
 /**
  * Oracle offers the ability to Bring Your Own IP (BYOIP), importing public IP addresses that you currently own to Oracle Cloud Infrastructure. A `ByoipRange` resource is a record of the imported address block (a BYOIP CIDR block) and also some associated metadata.
- * The process used to [Bring Your Own IP](https://docs.cloud.oracle.com/Content/Network/Concepts/BYOIP.htm) is explained in the documentation.
+ * The process used to [Bring Your Own IP](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm) is explained in the documentation.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -202,7 +202,7 @@ public class ByoipRange {
     String cidrBlock;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -237,7 +237,7 @@ public class ByoipRange {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -391,7 +391,7 @@ public class ByoipRange {
     java.util.Date timeWithdrawn;
 
     /**
-     * The validation token is an internally-generated ASCII string used in the validation process. See [Importing a CIDR block](https://docs.cloud.oracle.com/Content/Network/Concepts/BYOIP.htm#import_cidr) for details.
+     * The validation token is an internally-generated ASCII string used in the validation process. See [Importing a CIDR block](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm#import_cidr) for details.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("validationToken")
     String validationToken;
