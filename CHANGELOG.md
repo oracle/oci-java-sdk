@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.32.2 - 2021-02-23
+### Added
+- Support for the OCI Registry service
+- Support for exporting an existing running VM, or a copy of VM, into a VMDK, QCOW2, VDI, VHD, or OCI formatted image in the Compute service
+- Support for platform configurations on instances in the Compute service
+- Support for providing target tags and target compartments on profiles in the Optimizer service
+- Support for the 'Fix it' feature in the Optimizer service
+
 ## 1.32.1 - 2021-02-16
 ### Added
 - Support for scan DNS names and zone ids on database system, cloud VM cluster, and autonomous Exadata infrastructure responses in the Database service

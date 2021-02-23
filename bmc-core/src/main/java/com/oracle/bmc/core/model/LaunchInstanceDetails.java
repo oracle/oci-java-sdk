@@ -228,6 +228,15 @@ public class LaunchInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("platformConfig")
+        private LaunchInstancePlatformConfig platformConfig;
+
+        public Builder platformConfig(LaunchInstancePlatformConfig platformConfig) {
+            this.platformConfig = platformConfig;
+            this.__explicitlySet__.add("platformConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -255,7 +264,8 @@ public class LaunchInstanceDetails {
                             shapeConfig,
                             sourceDetails,
                             subnetId,
-                            isPvEncryptionInTransitEnabled);
+                            isPvEncryptionInTransitEnabled,
+                            platformConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -284,7 +294,8 @@ public class LaunchInstanceDetails {
                             .shapeConfig(o.getShapeConfig())
                             .sourceDetails(o.getSourceDetails())
                             .subnetId(o.getSubnetId())
-                            .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled());
+                            .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled())
+                            .platformConfig(o.getPlatformConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -530,6 +541,9 @@ public class LaunchInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
     Boolean isPvEncryptionInTransitEnabled;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("platformConfig")
+    LaunchInstancePlatformConfig platformConfig;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

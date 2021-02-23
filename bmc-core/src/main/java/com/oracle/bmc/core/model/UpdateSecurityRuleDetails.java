@@ -200,7 +200,7 @@ public class UpdateSecurityRuleDetails {
      * <p>
      * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`
      *     Note that IPv6 addressing is currently supported only in certain regions. See
-     *     [IPv6 Addresses](https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm).
+     *     [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
      * The `cidrBlock` value for a {@link Service}, if you're
      *     setting up a security rule for traffic destined for a particular `Service` through
@@ -364,7 +364,7 @@ public class UpdateSecurityRuleDetails {
      * <p>
      * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`
      *     Note that IPv6 addressing is currently supported only in certain regions. See
-     *     [IPv6 Addresses](https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm).
+     *     [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
      * The `cidrBlock` value for a {@link Service}, if you're
      *     setting up a security rule for traffic coming from a particular `Service` through

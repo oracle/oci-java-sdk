@@ -9,7 +9,7 @@ package com.oracle.bmc.core.model;
  * is a link aggregation group (LAG), which can contain one or more
  * {@link CrossConnect}. Customers who are colocated with
  * Oracle in a FastConnect location create and use cross-connect groups. For more
- * information, see [FastConnect Overview](https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm).
+ * information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
  * <p>
  **Note:** If you're a provider who is setting up a physical connection to Oracle so customers
  * can use FastConnect over the connection, be aware that your connection is modeled the
@@ -17,7 +17,7 @@ package com.oracle.bmc.core.model;
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
- * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+ * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

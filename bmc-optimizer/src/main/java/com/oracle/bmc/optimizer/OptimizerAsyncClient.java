@@ -871,6 +871,50 @@ public class OptimizerAsyncClient implements OptimizerAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListRecommendationStrategiesResponse>
+            listRecommendationStrategies(
+                    ListRecommendationStrategiesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListRecommendationStrategiesRequest,
+                                    ListRecommendationStrategiesResponse>
+                            handler) {
+        LOG.trace("Called async listRecommendationStrategies");
+        final ListRecommendationStrategiesRequest interceptedRequest =
+                ListRecommendationStrategiesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRecommendationStrategiesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListRecommendationStrategiesResponse>
+                transformer = ListRecommendationStrategiesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListRecommendationStrategiesRequest, ListRecommendationStrategiesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListRecommendationStrategiesRequest,
+                                ListRecommendationStrategiesResponse>,
+                        java.util.concurrent.Future<ListRecommendationStrategiesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListRecommendationStrategiesRequest, ListRecommendationStrategiesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListRecommendationsResponse> listRecommendations(
             ListRecommendationsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

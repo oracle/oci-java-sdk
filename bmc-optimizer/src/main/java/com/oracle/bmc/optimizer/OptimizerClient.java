@@ -817,6 +817,36 @@ public class OptimizerClient implements Optimizer {
     }
 
     @Override
+    public ListRecommendationStrategiesResponse listRecommendationStrategies(
+            ListRecommendationStrategiesRequest request) {
+        LOG.trace("Called listRecommendationStrategies");
+        final ListRecommendationStrategiesRequest interceptedRequest =
+                ListRecommendationStrategiesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRecommendationStrategiesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListRecommendationStrategiesResponse>
+                transformer = ListRecommendationStrategiesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListRecommendationsResponse listRecommendations(ListRecommendationsRequest request) {
         LOG.trace("Called listRecommendations");
         final ListRecommendationsRequest interceptedRequest =

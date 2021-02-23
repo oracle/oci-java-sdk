@@ -15,7 +15,7 @@ public class DetachServiceIdRequest
         extends com.oracle.bmc.requests.BmcRequest<ServiceIdRequestDetails> {
 
     /**
-     * The service gateway's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The service gateway's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String serviceGatewayId;
 

@@ -162,7 +162,7 @@ public class CreateLocalPeeringGatewayDetails {
      * with the LPG.
      * <p>
      * For information about why you would associate a route table with an LPG, see
-     * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/Content/Network/Tasks/transitrouting.htm).
+     * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")

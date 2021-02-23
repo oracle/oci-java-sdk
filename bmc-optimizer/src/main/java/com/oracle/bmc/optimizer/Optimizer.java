@@ -190,6 +190,18 @@ public interface Optimizer extends AutoCloseable {
     ListProfilesResponse listProfiles(ListProfilesRequest request);
 
     /**
+     * Lists the existing strategies.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListRecommendationStrategiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRecommendationStrategies API.
+     */
+    ListRecommendationStrategiesResponse listRecommendationStrategies(
+            ListRecommendationStrategiesRequest request);
+
+    /**
      * Lists the Cloud Advisor recommendations that are currently supported in the specified category.
      *
      * @param request The request object containing the details to send

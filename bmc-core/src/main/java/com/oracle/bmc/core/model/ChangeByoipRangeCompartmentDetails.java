@@ -62,7 +62,7 @@ public class ChangeByoipRangeCompartmentDetails {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the destination compartment for the BYOIP CIDR block move.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the destination compartment for the BYOIP CIDR block move.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")

@@ -32,6 +32,15 @@ public class ExportImageViaObjectStorageUriDetails extends ExportImageDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("exportFormat")
+        private ExportFormat exportFormat;
+
+        public Builder exportFormat(ExportFormat exportFormat) {
+            this.exportFormat = exportFormat;
+            this.__explicitlySet__.add("exportFormat");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("destinationUri")
         private String destinationUri;
 
@@ -46,14 +55,15 @@ public class ExportImageViaObjectStorageUriDetails extends ExportImageDetails {
 
         public ExportImageViaObjectStorageUriDetails build() {
             ExportImageViaObjectStorageUriDetails __instance__ =
-                    new ExportImageViaObjectStorageUriDetails(destinationUri);
+                    new ExportImageViaObjectStorageUriDetails(exportFormat, destinationUri);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ExportImageViaObjectStorageUriDetails o) {
-            Builder copiedBuilder = destinationUri(o.getDestinationUri());
+            Builder copiedBuilder =
+                    exportFormat(o.getExportFormat()).destinationUri(o.getDestinationUri());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -68,8 +78,8 @@ public class ExportImageViaObjectStorageUriDetails extends ExportImageDetails {
     }
 
     @Deprecated
-    public ExportImageViaObjectStorageUriDetails(String destinationUri) {
-        super();
+    public ExportImageViaObjectStorageUriDetails(ExportFormat exportFormat, String destinationUri) {
+        super(exportFormat);
         this.destinationUri = destinationUri;
     }
 

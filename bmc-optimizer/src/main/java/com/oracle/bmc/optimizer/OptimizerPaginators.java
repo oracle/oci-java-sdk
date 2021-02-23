@@ -479,6 +479,130 @@ public class OptimizerPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listRecommendationStrategies operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListRecommendationStrategiesResponse>
+            listRecommendationStrategiesResponseIterator(
+                    final ListRecommendationStrategiesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListRecommendationStrategiesRequest.Builder, ListRecommendationStrategiesRequest,
+                ListRecommendationStrategiesResponse>(
+                new com.google.common.base.Supplier<ListRecommendationStrategiesRequest.Builder>() {
+                    @Override
+                    public ListRecommendationStrategiesRequest.Builder get() {
+                        return ListRecommendationStrategiesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListRecommendationStrategiesResponse, String>() {
+                    @Override
+                    public String apply(ListRecommendationStrategiesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRecommendationStrategiesRequest.Builder>,
+                        ListRecommendationStrategiesRequest>() {
+                    @Override
+                    public ListRecommendationStrategiesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRecommendationStrategiesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListRecommendationStrategiesRequest,
+                        ListRecommendationStrategiesResponse>() {
+                    @Override
+                    public ListRecommendationStrategiesResponse apply(
+                            ListRecommendationStrategiesRequest request) {
+                        return client.listRecommendationStrategies(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.optimizer.model.RecommendationStrategySummary} objects
+     * contained in responses from the listRecommendationStrategies operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.optimizer.model.RecommendationStrategySummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.optimizer.model.RecommendationStrategySummary>
+            listRecommendationStrategiesRecordIterator(
+                    final ListRecommendationStrategiesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListRecommendationStrategiesRequest.Builder, ListRecommendationStrategiesRequest,
+                ListRecommendationStrategiesResponse,
+                com.oracle.bmc.optimizer.model.RecommendationStrategySummary>(
+                new com.google.common.base.Supplier<ListRecommendationStrategiesRequest.Builder>() {
+                    @Override
+                    public ListRecommendationStrategiesRequest.Builder get() {
+                        return ListRecommendationStrategiesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListRecommendationStrategiesResponse, String>() {
+                    @Override
+                    public String apply(ListRecommendationStrategiesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRecommendationStrategiesRequest.Builder>,
+                        ListRecommendationStrategiesRequest>() {
+                    @Override
+                    public ListRecommendationStrategiesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRecommendationStrategiesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListRecommendationStrategiesRequest,
+                        ListRecommendationStrategiesResponse>() {
+                    @Override
+                    public ListRecommendationStrategiesResponse apply(
+                            ListRecommendationStrategiesRequest request) {
+                        return client.listRecommendationStrategies(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListRecommendationStrategiesResponse,
+                        java.util.List<
+                                com.oracle.bmc.optimizer.model.RecommendationStrategySummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.optimizer.model.RecommendationStrategySummary>
+                            apply(ListRecommendationStrategiesResponse response) {
+                        return response.getRecommendationStrategyCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listRecommendations operation. This iterable
      * will fetch more data from the server as needed.
      *

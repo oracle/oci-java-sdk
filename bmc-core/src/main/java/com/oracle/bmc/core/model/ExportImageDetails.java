@@ -47,4 +47,49 @@ package com.oracle.bmc.core.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class ExportImageDetails {}
+public class ExportImageDetails {
+
+    /**
+     * The format of the image to be exported. The default value is \"OCI\".
+     **/
+    public enum ExportFormat {
+        Qcow2("QCOW2"),
+        Vmdk("VMDK"),
+        Oci("OCI"),
+        Vhd("VHD"),
+        Vdi("VDI"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ExportFormat> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ExportFormat v : ExportFormat.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ExportFormat(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ExportFormat create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ExportFormat: " + key);
+        }
+    };
+    /**
+     * The format of the image to be exported. The default value is \"OCI\".
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("exportFormat")
+    ExportFormat exportFormat;
+}

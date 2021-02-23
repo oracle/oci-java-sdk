@@ -6,7 +6,7 @@ package com.oracle.bmc.core.model;
 
 /**
  * The redundancy status of the DRG. For more information, see
- * [Redundancy Remedies](https://docs.cloud.oracle.com/Content/Network/Troubleshoot/drgredundancy.htm).
+ * [Redundancy Remedies](https://docs.cloud.oracle.com/iaas/Content/Network/Troubleshoot/drgredundancy.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

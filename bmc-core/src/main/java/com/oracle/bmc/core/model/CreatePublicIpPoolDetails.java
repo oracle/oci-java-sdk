@@ -95,7 +95,7 @@ public class CreatePublicIpPoolDetails {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP pool.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP pool.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")

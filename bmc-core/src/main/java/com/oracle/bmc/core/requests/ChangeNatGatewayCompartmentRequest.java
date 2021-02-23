@@ -15,7 +15,7 @@ public class ChangeNatGatewayCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<ChangeNatGatewayCompartmentDetails> {
 
     /**
-     * The NAT gateway's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The NAT gateway's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String natGatewayId;
 

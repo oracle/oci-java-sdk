@@ -6,8 +6,6 @@ package com.oracle.bmc.optimizer.model;
 
 /**
  * Details for updating a profile.
- * <p>
- **Caution:** Avoid using any confidential information when you use the API to supply string values.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -66,13 +64,46 @@ public class UpdateProfileDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("targetCompartments")
+        private TargetCompartments targetCompartments;
+
+        public Builder targetCompartments(TargetCompartments targetCompartments) {
+            this.targetCompartments = targetCompartments;
+            this.__explicitlySet__.add("targetCompartments");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("targetTags")
+        private TargetTags targetTags;
+
+        public Builder targetTags(TargetTags targetTags) {
+            this.targetTags = targetTags;
+            this.__explicitlySet__.add("targetTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
+        private String name;
+
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateProfileDetails build() {
             UpdateProfileDetails __instance__ =
                     new UpdateProfileDetails(
-                            description, definedTags, freeformTags, levelsConfiguration);
+                            description,
+                            definedTags,
+                            freeformTags,
+                            levelsConfiguration,
+                            targetCompartments,
+                            targetTags,
+                            name);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -83,7 +114,10 @@ public class UpdateProfileDetails {
                     description(o.getDescription())
                             .definedTags(o.getDefinedTags())
                             .freeformTags(o.getFreeformTags())
-                            .levelsConfiguration(o.getLevelsConfiguration());
+                            .levelsConfiguration(o.getLevelsConfiguration())
+                            .targetCompartments(o.getTargetCompartments())
+                            .targetTags(o.getTargetTags())
+                            .name(o.getName());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -98,7 +132,7 @@ public class UpdateProfileDetails {
     }
 
     /**
-     * Text describing the profile.
+     * Text describing the profile. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
@@ -125,6 +159,18 @@ public class UpdateProfileDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("levelsConfiguration")
     LevelsConfiguration levelsConfiguration;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("targetCompartments")
+    TargetCompartments targetCompartments;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("targetTags")
+    TargetTags targetTags;
+
+    /**
+     * The name assigned to the profile. Avoid entering confidential information.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    String name;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

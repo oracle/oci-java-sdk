@@ -114,8 +114,8 @@ public class CreateDrgAttachmentDetails {
      * with the DRG attachment.
      * For information about why you would associate a route table with a DRG attachment, see:
      * <p>
-     * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/Content/Network/Tasks/transitrouting.htm)
-     *   * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/Content/Network/Tasks/transitroutingoracleservices.htm)
+     * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+     *   * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")

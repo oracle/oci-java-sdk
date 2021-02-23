@@ -98,6 +98,24 @@ public class ProfileSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("targetCompartments")
+        private TargetCompartments targetCompartments;
+
+        public Builder targetCompartments(TargetCompartments targetCompartments) {
+            this.targetCompartments = targetCompartments;
+            this.__explicitlySet__.add("targetCompartments");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("targetTags")
+        private TargetTags targetTags;
+
+        public Builder targetTags(TargetTags targetTags) {
+            this.targetTags = targetTags;
+            this.__explicitlySet__.add("targetTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -130,6 +148,8 @@ public class ProfileSummary {
                             freeformTags,
                             lifecycleState,
                             levelsConfiguration,
+                            targetCompartments,
+                            targetTags,
                             timeCreated,
                             timeUpdated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -147,6 +167,8 @@ public class ProfileSummary {
                             .freeformTags(o.getFreeformTags())
                             .lifecycleState(o.getLifecycleState())
                             .levelsConfiguration(o.getLevelsConfiguration())
+                            .targetCompartments(o.getTargetCompartments())
+                            .targetTags(o.getTargetTags())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated());
 
@@ -214,6 +236,12 @@ public class ProfileSummary {
 
     @com.fasterxml.jackson.annotation.JsonProperty("levelsConfiguration")
     LevelsConfiguration levelsConfiguration;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("targetCompartments")
+    TargetCompartments targetCompartments;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("targetTags")
+    TargetTags targetTags;
 
     /**
      * The date and time the profile was created, in the format defined by RFC3339.

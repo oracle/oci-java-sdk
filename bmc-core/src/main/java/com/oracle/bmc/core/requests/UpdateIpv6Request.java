@@ -14,7 +14,7 @@ import com.oracle.bmc.core.model.*;
 public class UpdateIpv6Request extends com.oracle.bmc.requests.BmcRequest<UpdateIpv6Details> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IPv6.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
      */
     private String ipv6Id;
 

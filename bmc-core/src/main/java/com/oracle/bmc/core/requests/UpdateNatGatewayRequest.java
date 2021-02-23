@@ -15,7 +15,7 @@ public class UpdateNatGatewayRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdateNatGatewayDetails> {
 
     /**
-     * The NAT gateway's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The NAT gateway's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String natGatewayId;
 
