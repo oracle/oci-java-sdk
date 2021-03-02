@@ -33,6 +33,10 @@ package com.oracle.bmc.dataintegration.model;
         name = "DATA_LOADER_TASK"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PublishedObjectFromPipelineTask.class,
+        name = "PIPELINE_TASK"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = PublishedObjectFromIntegrationTask.class,
         name = "INTEGRATION_TASK"
     )
@@ -92,6 +96,7 @@ public class PublishedObject {
     public enum ModelType {
         IntegrationTask("INTEGRATION_TASK"),
         DataLoaderTask("DATA_LOADER_TASK"),
+        PipelineTask("PIPELINE_TASK"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

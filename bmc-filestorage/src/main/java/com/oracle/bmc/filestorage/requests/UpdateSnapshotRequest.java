@@ -15,7 +15,7 @@ public class UpdateSnapshotRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdateSnapshotDetails> {
 
     /**
-     * The OCID of the snapshot.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the snapshot.
      */
     private String snapshotId;
 

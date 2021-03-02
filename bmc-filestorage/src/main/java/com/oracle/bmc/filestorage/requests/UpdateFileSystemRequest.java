@@ -15,7 +15,7 @@ public class UpdateFileSystemRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdateFileSystemDetails> {
 
     /**
-     * The OCID of the file system.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system.
      */
     private String fileSystemId;
 

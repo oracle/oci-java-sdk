@@ -162,7 +162,7 @@ public class CreateMountTargetDetails {
     String availabilityDomain;
 
     /**
-     * The OCID of the compartment in which to create the mount target.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to create the mount target.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -207,7 +207,7 @@ public class CreateMountTargetDetails {
     String ipAddress;
 
     /**
-     * The OCID of the subnet in which to create the mount target.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")

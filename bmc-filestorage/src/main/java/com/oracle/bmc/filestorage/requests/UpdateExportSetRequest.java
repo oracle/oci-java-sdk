@@ -15,7 +15,7 @@ public class UpdateExportSetRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdateExportSetDetails> {
 
     /**
-     * The OCID of the export set.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the export set.
      */
     private String exportSetId;
 

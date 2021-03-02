@@ -168,6 +168,15 @@ public class ConnectionSummaryFromAdwc extends ConnectionSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("passwordSecret")
+        private SensitiveAttribute passwordSecret;
+
+        public Builder passwordSecret(SensitiveAttribute passwordSecret) {
+            this.passwordSecret = passwordSecret;
+            this.__explicitlySet__.add("passwordSecret");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -188,7 +197,8 @@ public class ConnectionSummaryFromAdwc extends ConnectionSummary {
                             metadata,
                             keyMap,
                             username,
-                            password);
+                            password,
+                            passwordSecret);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -210,7 +220,8 @@ public class ConnectionSummaryFromAdwc extends ConnectionSummary {
                             .metadata(o.getMetadata())
                             .keyMap(o.getKeyMap())
                             .username(o.getUsername())
-                            .password(o.getPassword());
+                            .password(o.getPassword())
+                            .passwordSecret(o.getPasswordSecret());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -240,7 +251,8 @@ public class ConnectionSummaryFromAdwc extends ConnectionSummary {
             ObjectMetadata metadata,
             java.util.Map<String, String> keyMap,
             String username,
-            String password) {
+            String password,
+            SensitiveAttribute passwordSecret) {
         super(
                 key,
                 modelVersion,
@@ -257,6 +269,7 @@ public class ConnectionSummaryFromAdwc extends ConnectionSummary {
                 keyMap);
         this.username = username;
         this.password = password;
+        this.passwordSecret = passwordSecret;
     }
 
     /**
@@ -270,6 +283,9 @@ public class ConnectionSummaryFromAdwc extends ConnectionSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     String password;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("passwordSecret")
+    SensitiveAttribute passwordSecret;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

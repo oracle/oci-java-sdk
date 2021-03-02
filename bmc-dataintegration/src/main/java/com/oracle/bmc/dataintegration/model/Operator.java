@@ -29,20 +29,12 @@ package com.oracle.bmc.dataintegration.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = Target.class,
-        name = "TARGET_OPERATOR"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = Joiner.class,
         name = "JOINER_OPERATOR"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = Distinct.class,
-        name = "DISTINCT_OPERATOR"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = Filter.class,
-        name = "FILTER_OPERATOR"
+        value = TaskOperator.class,
+        name = "TASK_OPERATOR"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = Aggregator.class,
@@ -57,8 +49,44 @@ package com.oracle.bmc.dataintegration.model;
         name = "PROJECTION_OPERATOR"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EndOperator.class,
+        name = "END_OPERATOR"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = Source.class,
         name = "SOURCE_OPERATOR"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = Union.class,
+        name = "UNION_OPERATOR"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = Intersect.class,
+        name = "INTERSECT_OPERATOR"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = Target.class,
+        name = "TARGET_OPERATOR"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = Distinct.class,
+        name = "DISTINCT_OPERATOR"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = Filter.class,
+        name = "FILTER_OPERATOR"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = StartOperator.class,
+        name = "START_OPERATOR"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = MergeOperator.class,
+        name = "MERGE_OPERATOR"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = Minus.class,
+        name = "MINUS_OPERATOR"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -143,6 +171,15 @@ public class Operator {
         TargetOperator("TARGET_OPERATOR"),
         DistinctOperator("DISTINCT_OPERATOR"),
         SortOperator("SORT_OPERATOR"),
+        UnionOperator("UNION_OPERATOR"),
+        IntersectOperator("INTERSECT_OPERATOR"),
+        MinusOperator("MINUS_OPERATOR"),
+        MergeOperator("MERGE_OPERATOR"),
+        StartOperator("START_OPERATOR"),
+        EndOperator("END_OPERATOR"),
+        PipelineOperator("PIPELINE_OPERATOR"),
+        RestOperator("REST_OPERATOR"),
+        TaskOperator("TASK_OPERATOR"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

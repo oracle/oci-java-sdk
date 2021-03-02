@@ -29,10 +29,6 @@ package com.oracle.bmc.dataintegration.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UniqueKey.class,
-        name = "UNIQUE_KEY"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ForeignKey.class,
         name = "FOREIGN_KEY"
     )
@@ -45,8 +41,6 @@ public class Key {
      **/
     public enum ModelType {
         ForeignKey("FOREIGN_KEY"),
-        PrimaryKey("PRIMARY_KEY"),
-        UniqueKey("UNIQUE_KEY"),
         ;
 
         private final String value;

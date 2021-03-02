@@ -42,18 +42,30 @@ public class DataFormat {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("compressionConfig")
+        private Compression compressionConfig;
+
+        public Builder compressionConfig(Compression compressionConfig) {
+            this.compressionConfig = compressionConfig;
+            this.__explicitlySet__.add("compressionConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataFormat build() {
-            DataFormat __instance__ = new DataFormat(formatAttribute, type);
+            DataFormat __instance__ = new DataFormat(formatAttribute, type, compressionConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DataFormat o) {
-            Builder copiedBuilder = formatAttribute(o.getFormatAttribute()).type(o.getType());
+            Builder copiedBuilder =
+                    formatAttribute(o.getFormatAttribute())
+                            .type(o.getType())
+                            .compressionConfig(o.getCompressionConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -123,6 +135,9 @@ public class DataFormat {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     Type type;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("compressionConfig")
+    Compression compressionConfig;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

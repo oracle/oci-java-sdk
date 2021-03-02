@@ -15,123 +15,26 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+@lombok.AllArgsConstructor(
+    onConstructor = @__({@Deprecated}),
+    access = lombok.AccessLevel.PROTECTED
+)
 @lombok.Value
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UniqueKey.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
+@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
+    property = "modelType",
+    defaultImpl = UniqueKey.class
 )
+@com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PrimaryKey.class,
+        name = "PRIMARY_KEY"
+    )
+})
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UniqueKey extends Key {
-    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
-    public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("key")
-        private String key;
-
-        public Builder key(String key) {
-            this.key = key;
-            this.__explicitlySet__.add("key");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
-        private String modelVersion;
-
-        public Builder modelVersion(String modelVersion) {
-            this.modelVersion = modelVersion;
-            this.__explicitlySet__.add("modelVersion");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("parentRef")
-        private ParentReference parentRef;
-
-        public Builder parentRef(ParentReference parentRef) {
-            this.parentRef = parentRef;
-            this.__explicitlySet__.add("parentRef");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("name")
-        private String name;
-
-        public Builder name(String name) {
-            this.name = name;
-            this.__explicitlySet__.add("name");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("attributeRefs")
-        private java.util.List<KeyAttribute> attributeRefs;
-
-        public Builder attributeRefs(java.util.List<KeyAttribute> attributeRefs) {
-            this.attributeRefs = attributeRefs;
-            this.__explicitlySet__.add("attributeRefs");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
-        private Integer objectStatus;
-
-        public Builder objectStatus(Integer objectStatus) {
-            this.objectStatus = objectStatus;
-            this.__explicitlySet__.add("objectStatus");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonIgnore
-        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-        public UniqueKey build() {
-            UniqueKey __instance__ =
-                    new UniqueKey(key, modelVersion, parentRef, name, attributeRefs, objectStatus);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UniqueKey o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .attributeRefs(o.getAttributeRefs())
-                            .objectStatus(o.getObjectStatus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
-        }
-    }
-
-    /**
-     * Create a new builder.
-     */
-    public static Builder builder() {
-        return new Builder();
-    }
-
-    @Deprecated
-    public UniqueKey(
-            String key,
-            String modelVersion,
-            ParentReference parentRef,
-            String name,
-            java.util.List<KeyAttribute> attributeRefs,
-            Integer objectStatus) {
-        super();
-        this.key = key;
-        this.modelVersion = modelVersion;
-        this.parentRef = parentRef;
-        this.name = name;
-        this.attributeRefs = attributeRefs;
-        this.objectStatus = objectStatus;
-    }
+public class UniqueKey {
 
     /**
      * The object key.
@@ -166,6 +69,50 @@ public class UniqueKey extends Key {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     Integer objectStatus;
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+    /**
+     * The key type.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum ModelType {
+        PrimaryKey("PRIMARY_KEY"),
+        UniqueKey("UNIQUE_KEY"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, ModelType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ModelType v : ModelType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ModelType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ModelType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ModelType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
 }

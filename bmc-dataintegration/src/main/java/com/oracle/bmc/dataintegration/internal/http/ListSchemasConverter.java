@@ -99,6 +99,15 @@ public class ListSchemasConverter {
                                     request.getName()));
         }
 
+        if (request.getNameList() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "nameList",
+                            request.getNameList(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

@@ -136,6 +136,11 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String opcRequestId;
 
+    /**
+     * Used to filter by the name of the object.
+     */
+    private java.util.List<String> nameList;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListSchemasRequest, java.lang.Void> {
@@ -181,6 +186,7 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
             sortOrder(o.getSortOrder());
             name(o.getName());
             opcRequestId(o.getOpcRequestId());
+            nameList(o.getNameList());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

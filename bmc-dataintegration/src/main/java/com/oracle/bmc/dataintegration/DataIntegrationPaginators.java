@@ -1526,6 +1526,234 @@ public class DataIntegrationPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listPipelineValidations operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListPipelineValidationsResponse> listPipelineValidationsResponseIterator(
+            final ListPipelineValidationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPipelineValidationsRequest.Builder, ListPipelineValidationsRequest,
+                ListPipelineValidationsResponse>(
+                new com.google.common.base.Supplier<ListPipelineValidationsRequest.Builder>() {
+                    @Override
+                    public ListPipelineValidationsRequest.Builder get() {
+                        return ListPipelineValidationsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListPipelineValidationsResponse, String>() {
+                    @Override
+                    public String apply(ListPipelineValidationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPipelineValidationsRequest.Builder>,
+                        ListPipelineValidationsRequest>() {
+                    @Override
+                    public ListPipelineValidationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPipelineValidationsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPipelineValidationsRequest, ListPipelineValidationsResponse>() {
+                    @Override
+                    public ListPipelineValidationsResponse apply(
+                            ListPipelineValidationsRequest request) {
+                        return client.listPipelineValidations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataintegration.model.PipelineValidationSummary} objects
+     * contained in responses from the listPipelineValidations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataintegration.model.PipelineValidationSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dataintegration.model.PipelineValidationSummary>
+            listPipelineValidationsRecordIterator(final ListPipelineValidationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPipelineValidationsRequest.Builder, ListPipelineValidationsRequest,
+                ListPipelineValidationsResponse,
+                com.oracle.bmc.dataintegration.model.PipelineValidationSummary>(
+                new com.google.common.base.Supplier<ListPipelineValidationsRequest.Builder>() {
+                    @Override
+                    public ListPipelineValidationsRequest.Builder get() {
+                        return ListPipelineValidationsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListPipelineValidationsResponse, String>() {
+                    @Override
+                    public String apply(ListPipelineValidationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPipelineValidationsRequest.Builder>,
+                        ListPipelineValidationsRequest>() {
+                    @Override
+                    public ListPipelineValidationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPipelineValidationsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPipelineValidationsRequest, ListPipelineValidationsResponse>() {
+                    @Override
+                    public ListPipelineValidationsResponse apply(
+                            ListPipelineValidationsRequest request) {
+                        return client.listPipelineValidations(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPipelineValidationsResponse,
+                        java.util.List<
+                                com.oracle.bmc.dataintegration.model.PipelineValidationSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.dataintegration.model.PipelineValidationSummary>
+                            apply(ListPipelineValidationsResponse response) {
+                        return response.getPipelineValidationSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listPipelines operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListPipelinesResponse> listPipelinesResponseIterator(
+            final ListPipelinesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPipelinesRequest.Builder, ListPipelinesRequest, ListPipelinesResponse>(
+                new com.google.common.base.Supplier<ListPipelinesRequest.Builder>() {
+                    @Override
+                    public ListPipelinesRequest.Builder get() {
+                        return ListPipelinesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListPipelinesResponse, String>() {
+                    @Override
+                    public String apply(ListPipelinesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPipelinesRequest.Builder>,
+                        ListPipelinesRequest>() {
+                    @Override
+                    public ListPipelinesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPipelinesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListPipelinesRequest, ListPipelinesResponse>() {
+                    @Override
+                    public ListPipelinesResponse apply(ListPipelinesRequest request) {
+                        return client.listPipelines(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataintegration.model.PipelineSummary} objects
+     * contained in responses from the listPipelines operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataintegration.model.PipelineSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dataintegration.model.PipelineSummary>
+            listPipelinesRecordIterator(final ListPipelinesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPipelinesRequest.Builder, ListPipelinesRequest, ListPipelinesResponse,
+                com.oracle.bmc.dataintegration.model.PipelineSummary>(
+                new com.google.common.base.Supplier<ListPipelinesRequest.Builder>() {
+                    @Override
+                    public ListPipelinesRequest.Builder get() {
+                        return ListPipelinesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListPipelinesResponse, String>() {
+                    @Override
+                    public String apply(ListPipelinesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPipelinesRequest.Builder>,
+                        ListPipelinesRequest>() {
+                    @Override
+                    public ListPipelinesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPipelinesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListPipelinesRequest, ListPipelinesResponse>() {
+                    @Override
+                    public ListPipelinesResponse apply(ListPipelinesRequest request) {
+                        return client.listPipelines(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPipelinesResponse,
+                        java.util.List<com.oracle.bmc.dataintegration.model.PipelineSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.dataintegration.model.PipelineSummary>
+                            apply(ListPipelinesResponse response) {
+                        return response.getPipelineSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listProjects operation. This iterable
      * will fetch more data from the server as needed.
      *

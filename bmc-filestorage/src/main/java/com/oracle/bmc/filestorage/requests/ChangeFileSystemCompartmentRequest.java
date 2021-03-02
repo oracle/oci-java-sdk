@@ -15,7 +15,7 @@ public class ChangeFileSystemCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<ChangeFileSystemCompartmentDetails> {
 
     /**
-     * The OCID of the file system.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system.
      */
     private String fileSystemId;
 

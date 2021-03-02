@@ -94,6 +94,7 @@ public class BaseType {
         JavaType("JAVA_TYPE"),
         ConfiguredType("CONFIGURED_TYPE"),
         CompositeType("COMPOSITE_TYPE"),
+        DerivedType("DERIVED_TYPE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

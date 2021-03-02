@@ -32,6 +32,12 @@ public class ListTaskRunsRequest extends com.oracle.bmc.requests.BmcRequest<java
     private String opcRequestId;
 
     /**
+     * Used to filter by the project or the folder object.
+     *
+     */
+    private String aggregatorKey;
+
+    /**
      * Specifies the fields to get for an object.
      */
     private java.util.List<String> fields;
@@ -175,6 +181,7 @@ public class ListTaskRunsRequest extends com.oracle.bmc.requests.BmcRequest<java
             workspaceId(o.getWorkspaceId());
             applicationKey(o.getApplicationKey());
             opcRequestId(o.getOpcRequestId());
+            aggregatorKey(o.getAggregatorKey());
             fields(o.getFields());
             name(o.getName());
             identifier(o.getIdentifier());

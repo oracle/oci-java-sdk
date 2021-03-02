@@ -149,6 +149,24 @@ public class UpdateDataAssetFromAtp extends UpdateDataAssetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("walletSecret")
+        private SensitiveAttribute walletSecret;
+
+        public Builder walletSecret(SensitiveAttribute walletSecret) {
+            this.walletSecret = walletSecret;
+            this.__explicitlySet__.add("walletSecret");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("walletPasswordSecret")
+        private SensitiveAttribute walletPasswordSecret;
+
+        public Builder walletPasswordSecret(SensitiveAttribute walletPasswordSecret) {
+            this.walletPasswordSecret = walletPasswordSecret;
+            this.__explicitlySet__.add("walletPasswordSecret");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("defaultConnection")
         private UpdateConnectionFromAtp defaultConnection;
 
@@ -177,6 +195,8 @@ public class UpdateDataAssetFromAtp extends UpdateDataAssetDetails {
                             serviceName,
                             driverClass,
                             credentialFileContent,
+                            walletSecret,
+                            walletPasswordSecret,
                             defaultConnection);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -198,6 +218,8 @@ public class UpdateDataAssetFromAtp extends UpdateDataAssetDetails {
                             .serviceName(o.getServiceName())
                             .driverClass(o.getDriverClass())
                             .credentialFileContent(o.getCredentialFileContent())
+                            .walletSecret(o.getWalletSecret())
+                            .walletPasswordSecret(o.getWalletPasswordSecret())
                             .defaultConnection(o.getDefaultConnection());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -227,6 +249,8 @@ public class UpdateDataAssetFromAtp extends UpdateDataAssetDetails {
             String serviceName,
             String driverClass,
             String credentialFileContent,
+            SensitiveAttribute walletSecret,
+            SensitiveAttribute walletPasswordSecret,
             UpdateConnectionFromAtp defaultConnection) {
         super(
                 key,
@@ -242,6 +266,8 @@ public class UpdateDataAssetFromAtp extends UpdateDataAssetDetails {
         this.serviceName = serviceName;
         this.driverClass = driverClass;
         this.credentialFileContent = credentialFileContent;
+        this.walletSecret = walletSecret;
+        this.walletPasswordSecret = walletPasswordSecret;
         this.defaultConnection = defaultConnection;
     }
 
@@ -262,6 +288,12 @@ public class UpdateDataAssetFromAtp extends UpdateDataAssetDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentialFileContent")
     String credentialFileContent;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("walletSecret")
+    SensitiveAttribute walletSecret;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("walletPasswordSecret")
+    SensitiveAttribute walletPasswordSecret;
 
     @com.fasterxml.jackson.annotation.JsonProperty("defaultConnection")
     UpdateConnectionFromAtp defaultConnection;

@@ -105,6 +105,23 @@ public class ListDataEntitiesConverter {
                                     request.getSortOrder().getValue()));
         }
 
+        if (request.getNameList() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "nameList",
+                            request.getNameList(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getIsPattern() != null) {
+            target =
+                    target.queryParam(
+                            "isPattern",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsPattern()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

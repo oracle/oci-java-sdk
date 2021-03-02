@@ -35,6 +35,10 @@ package com.oracle.bmc.dataintegration.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateTaskFromDataLoaderTask.class,
         name = "DATA_LOADER_TASK"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateTaskFromPipelineTask.class,
+        name = "PIPELINE_TASK"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -112,6 +116,7 @@ public class CreateTaskDetails {
     public enum ModelType {
         IntegrationTask("INTEGRATION_TASK"),
         DataLoaderTask("DATA_LOADER_TASK"),
+        PipelineTask("PIPELINE_TASK"),
         ;
 
         private final String value;

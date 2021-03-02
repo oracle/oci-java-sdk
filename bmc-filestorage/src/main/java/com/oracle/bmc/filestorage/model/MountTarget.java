@@ -210,7 +210,7 @@ public class MountTarget {
     String availabilityDomain;
 
     /**
-     * The OCID of the compartment that contains the mount target.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the mount target.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -226,7 +226,7 @@ public class MountTarget {
     String displayName;
 
     /**
-     * The OCID of the associated export set. Controls what file
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated export set. Controls what file
      * systems will be exported through Network File System (NFS) protocol on this
      * mount target.
      *
@@ -235,7 +235,7 @@ public class MountTarget {
     String exportSetId;
 
     /**
-     * The OCID of the mount target.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the mount target.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -307,7 +307,7 @@ public class MountTarget {
     java.util.List<String> privateIpIds;
 
     /**
-     * The OCID of the subnet the mount target is in.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     String subnetId;

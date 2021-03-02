@@ -121,13 +121,13 @@ public class CreateExportDetails {
     java.util.List<ClientOptions> exportOptions;
 
     /**
-     * The OCID of this export's export set.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this export's export set.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exportSetId")
     String exportSetId;
 
     /**
-     * The OCID of this export's file system.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this export's file system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileSystemId")
     String fileSystemId;

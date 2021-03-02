@@ -27,6 +27,11 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     private String opcRequestId;
 
     /**
+     * DIS workspace id
+     */
+    private String workspaceId;
+
+    /**
      * The work request status.
      */
     private WorkRequestStatus workRequestStatus;
@@ -198,6 +203,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         public Builder copy(ListWorkRequestsRequest o) {
             compartmentId(o.getCompartmentId());
             opcRequestId(o.getOpcRequestId());
+            workspaceId(o.getWorkspaceId());
             workRequestStatus(o.getWorkRequestStatus());
             page(o.getPage());
             limit(o.getLimit());
