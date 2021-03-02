@@ -194,6 +194,24 @@ public class DataAssetSummaryFromOracle extends DataAssetSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("walletSecret")
+        private SensitiveAttribute walletSecret;
+
+        public Builder walletSecret(SensitiveAttribute walletSecret) {
+            this.walletSecret = walletSecret;
+            this.__explicitlySet__.add("walletSecret");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("walletPasswordSecret")
+        private SensitiveAttribute walletPasswordSecret;
+
+        public Builder walletPasswordSecret(SensitiveAttribute walletPasswordSecret) {
+            this.walletPasswordSecret = walletPasswordSecret;
+            this.__explicitlySet__.add("walletPasswordSecret");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("defaultConnection")
         private ConnectionSummaryFromOracle defaultConnection;
 
@@ -227,6 +245,8 @@ public class DataAssetSummaryFromOracle extends DataAssetSummary {
                             driverClass,
                             sid,
                             credentialFileContent,
+                            walletSecret,
+                            walletPasswordSecret,
                             defaultConnection);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -253,6 +273,8 @@ public class DataAssetSummaryFromOracle extends DataAssetSummary {
                             .driverClass(o.getDriverClass())
                             .sid(o.getSid())
                             .credentialFileContent(o.getCredentialFileContent())
+                            .walletSecret(o.getWalletSecret())
+                            .walletPasswordSecret(o.getWalletPasswordSecret())
                             .defaultConnection(o.getDefaultConnection());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -287,6 +309,8 @@ public class DataAssetSummaryFromOracle extends DataAssetSummary {
             String driverClass,
             String sid,
             String credentialFileContent,
+            SensitiveAttribute walletSecret,
+            SensitiveAttribute walletPasswordSecret,
             ConnectionSummaryFromOracle defaultConnection) {
         super(
                 key,
@@ -307,6 +331,8 @@ public class DataAssetSummaryFromOracle extends DataAssetSummary {
         this.driverClass = driverClass;
         this.sid = sid;
         this.credentialFileContent = credentialFileContent;
+        this.walletSecret = walletSecret;
+        this.walletPasswordSecret = walletPasswordSecret;
         this.defaultConnection = defaultConnection;
     }
 
@@ -345,6 +371,12 @@ public class DataAssetSummaryFromOracle extends DataAssetSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentialFileContent")
     String credentialFileContent;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("walletSecret")
+    SensitiveAttribute walletSecret;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("walletPasswordSecret")
+    SensitiveAttribute walletPasswordSecret;
 
     @com.fasterxml.jackson.annotation.JsonProperty("defaultConnection")
     ConnectionSummaryFromOracle defaultConnection;

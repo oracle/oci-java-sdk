@@ -43,6 +43,14 @@ public class ListTaskRunsConverter {
                                         request.getApplicationKey()))
                         .path("taskRuns");
 
+        if (request.getAggregatorKey() != null) {
+            target =
+                    target.queryParam(
+                            "aggregatorKey",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getAggregatorKey()));
+        }
+
         if (request.getFields() != null) {
             target =
                     com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(

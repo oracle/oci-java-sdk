@@ -14,7 +14,7 @@ import com.oracle.bmc.filestorage.model.*;
 public class DeleteMountTargetRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the mount target.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the mount target.
      */
     private String mountTargetId;
 

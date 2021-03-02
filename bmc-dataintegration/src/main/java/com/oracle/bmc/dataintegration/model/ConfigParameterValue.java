@@ -44,6 +44,15 @@ public class ConfigParameterValue {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("objectValue")
+        private Object objectValue;
+
+        public Builder objectValue(Object objectValue) {
+            this.objectValue = objectValue;
+            this.__explicitlySet__.add("objectValue");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("refValue")
         private Object refValue;
 
@@ -67,7 +76,8 @@ public class ConfigParameterValue {
 
         public ConfigParameterValue build() {
             ConfigParameterValue __instance__ =
-                    new ConfigParameterValue(stringValue, intValue, refValue, parameterValue);
+                    new ConfigParameterValue(
+                            stringValue, intValue, objectValue, refValue, parameterValue);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -77,6 +87,7 @@ public class ConfigParameterValue {
             Builder copiedBuilder =
                     stringValue(o.getStringValue())
                             .intValue(o.getIntValue())
+                            .objectValue(o.getObjectValue())
                             .refValue(o.getRefValue())
                             .parameterValue(o.getParameterValue());
 
@@ -103,6 +114,12 @@ public class ConfigParameterValue {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("intValue")
     Integer intValue;
+
+    /**
+     * An object value of the parameter.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("objectValue")
+    Object objectValue;
 
     /**
      * The root object reference value.

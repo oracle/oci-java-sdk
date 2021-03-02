@@ -240,6 +240,39 @@ public interface DataIntegrationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreatePatchRequest, CreatePatchResponse> handler);
 
     /**
+     * Creates a new pipeline in a project or folder ready for performing task orchestration.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreatePipelineResponse> createPipeline(
+            CreatePipelineRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreatePipelineRequest, CreatePipelineResponse>
+                    handler);
+
+    /**
+     * Accepts the data flow definition in the request payload and creates a pipeline validation.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreatePipelineValidationResponse> createPipelineValidation(
+            CreatePipelineValidationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreatePipelineValidationRequest, CreatePipelineValidationResponse>
+                    handler);
+
+    /**
      * Creates a project. Projects are organizational constructs within a workspace that you use to organize your design-time resources, such as tasks or data flows. Projects can be organized into folders.
      *
      *
@@ -473,6 +506,37 @@ public interface DataIntegrationAsync extends AutoCloseable {
     java.util.concurrent.Future<DeletePatchResponse> deletePatch(
             DeletePatchRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeletePatchRequest, DeletePatchResponse> handler);
+
+    /**
+     * Removes a pipeline from a project or folder using the specified identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeletePipelineResponse> deletePipeline(
+            DeletePipelineRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeletePipelineRequest, DeletePipelineResponse>
+                    handler);
+
+    /**
+     * Removes a pipeline validation using the specified identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeletePipelineValidationResponse> deletePipelineValidation(
+            DeletePipelineValidationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeletePipelineValidationRequest, DeletePipelineValidationResponse>
+                    handler);
 
     /**
      * Removes a project from the workspace using the specified identifier.
@@ -751,6 +815,36 @@ public interface DataIntegrationAsync extends AutoCloseable {
     java.util.concurrent.Future<GetPatchResponse> getPatch(
             GetPatchRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetPatchRequest, GetPatchResponse> handler);
+
+    /**
+     * Retrieves a pipeline using the specified identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPipelineResponse> getPipeline(
+            GetPipelineRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetPipelineRequest, GetPipelineResponse> handler);
+
+    /**
+     * Retrieves a pipeline validation using the specified identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPipelineValidationResponse> getPipelineValidation(
+            GetPipelineValidationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetPipelineValidationRequest, GetPipelineValidationResponse>
+                    handler);
 
     /**
      * Retrieves a project using the specified identifier.
@@ -1092,6 +1186,38 @@ public interface DataIntegrationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListPatchesRequest, ListPatchesResponse> handler);
 
     /**
+     * Retrieves a list of pipeline validations within the specified workspace.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPipelineValidationsResponse> listPipelineValidations(
+            ListPipelineValidationsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListPipelineValidationsRequest, ListPipelineValidationsResponse>
+                    handler);
+
+    /**
+     * Retrieves a list of pipelines in a project or folder from within a workspace, the query parameter specifies the project or folder.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPipelinesResponse> listPipelines(
+            ListPipelinesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListPipelinesRequest, ListPipelinesResponse>
+                    handler);
+
+    /**
      * Retrieves a lists of projects in a workspace and provides options to filter the list.
      *
      *
@@ -1402,6 +1528,21 @@ public interface DataIntegrationAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateFolderResponse> updateFolder(
             UpdateFolderRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateFolderRequest, UpdateFolderResponse>
+                    handler);
+
+    /**
+     * Updates a specific pipeline.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdatePipelineResponse> updatePipeline(
+            UpdatePipelineRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdatePipelineRequest, UpdatePipelineResponse>
                     handler);
 
     /**

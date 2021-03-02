@@ -33,6 +33,10 @@ package com.oracle.bmc.dataintegration.model;
         name = "DATA_LOADER_TASK"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateTaskValidationFromPipelineTask.class,
+        name = "PIPELINE_TASK"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateTaskValidationFromIntegrationTask.class,
         name = "INTEGRATION_TASK"
     )
@@ -118,6 +122,7 @@ public class CreateTaskValidationDetails {
     public enum ModelType {
         IntegrationTask("INTEGRATION_TASK"),
         DataLoaderTask("DATA_LOADER_TASK"),
+        PipelineTask("PIPELINE_TASK"),
         ;
 
         private final String value;

@@ -89,6 +89,15 @@ public class DependentObjectSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("aggregator")
+        private AggregatorSummary aggregator;
+
+        public Builder aggregator(AggregatorSummary aggregator) {
+            this.aggregator = aggregator;
+            this.__explicitlySet__.add("aggregator");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("identifierPath")
         private String identifierPath;
 
@@ -147,6 +156,7 @@ public class DependentObjectSummary {
                             timeCreated,
                             timeUpdated,
                             aggregatorKey,
+                            aggregator,
                             identifierPath,
                             infoFields,
                             registryVersion,
@@ -166,6 +176,7 @@ public class DependentObjectSummary {
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
                             .aggregatorKey(o.getAggregatorKey())
+                            .aggregator(o.getAggregator())
                             .identifierPath(o.getIdentifierPath())
                             .infoFields(o.getInfoFields())
                             .registryVersion(o.getRegistryVersion())
@@ -225,6 +236,9 @@ public class DependentObjectSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("aggregatorKey")
     String aggregatorKey;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("aggregator")
+    AggregatorSummary aggregator;
 
     /**
      * The full path to identify this object.

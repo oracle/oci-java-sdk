@@ -113,19 +113,19 @@ public class ExportSummary {
     }
 
     /**
-     * The OCID of this export's export set.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this export's export set.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exportSetId")
     String exportSetId;
 
     /**
-     * The OCID of this export's file system.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this export's file system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileSystemId")
     String fileSystemId;
 
     /**
-     * The OCID of this export.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this export.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;

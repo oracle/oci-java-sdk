@@ -164,7 +164,7 @@ public class ExportSet {
     String availabilityDomain;
 
     /**
-     * The OCID of the compartment that contains the export set.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the export set.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -180,7 +180,7 @@ public class ExportSet {
     String displayName;
 
     /**
-     * The OCID of the export set.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the export set.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -279,7 +279,7 @@ public class ExportSet {
     java.util.Date timeCreated;
 
     /**
-     * The OCID of the virtual cloud network (VCN) the export set is in.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the virtual cloud network (VCN) the export set is in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     String vcnId;

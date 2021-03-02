@@ -183,6 +183,24 @@ public class Target extends Operator {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("schemaDriftConfig")
+        private SchemaDriftConfig schemaDriftConfig;
+
+        public Builder schemaDriftConfig(SchemaDriftConfig schemaDriftConfig) {
+            this.schemaDriftConfig = schemaDriftConfig;
+            this.__explicitlySet__.add("schemaDriftConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("fixedDataShape")
+        private Shape fixedDataShape;
+
+        public Builder fixedDataShape(Shape fixedDataShape) {
+            this.fixedDataShape = fixedDataShape;
+            this.__explicitlySet__.add("fixedDataShape");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("writeOperationConfig")
         private WriteOperationConfig writeOperationConfig;
 
@@ -215,6 +233,8 @@ public class Target extends Operator {
                             isCopyFields,
                             isPredefinedShape,
                             dataProperty,
+                            schemaDriftConfig,
+                            fixedDataShape,
                             writeOperationConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -240,6 +260,8 @@ public class Target extends Operator {
                             .isCopyFields(o.getIsCopyFields())
                             .isPredefinedShape(o.getIsPredefinedShape())
                             .dataProperty(o.getDataProperty())
+                            .schemaDriftConfig(o.getSchemaDriftConfig())
+                            .fixedDataShape(o.getFixedDataShape())
                             .writeOperationConfig(o.getWriteOperationConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -273,6 +295,8 @@ public class Target extends Operator {
             Boolean isCopyFields,
             Boolean isPredefinedShape,
             DataProperty dataProperty,
+            SchemaDriftConfig schemaDriftConfig,
+            Shape fixedDataShape,
             WriteOperationConfig writeOperationConfig) {
         super(
                 key,
@@ -292,6 +316,8 @@ public class Target extends Operator {
         this.isCopyFields = isCopyFields;
         this.isPredefinedShape = isPredefinedShape;
         this.dataProperty = dataProperty;
+        this.schemaDriftConfig = schemaDriftConfig;
+        this.fixedDataShape = fixedDataShape;
         this.writeOperationConfig = writeOperationConfig;
     }
 
@@ -370,6 +396,12 @@ public class Target extends Operator {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataProperty")
     DataProperty dataProperty;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("schemaDriftConfig")
+    SchemaDriftConfig schemaDriftConfig;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("fixedDataShape")
+    Shape fixedDataShape;
 
     @com.fasterxml.jackson.annotation.JsonProperty("writeOperationConfig")
     WriteOperationConfig writeOperationConfig;

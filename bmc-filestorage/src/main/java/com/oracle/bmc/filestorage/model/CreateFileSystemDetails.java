@@ -81,6 +81,15 @@ public class CreateFileSystemDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceSnapshotId")
+        private String sourceSnapshotId;
+
+        public Builder sourceSnapshotId(String sourceSnapshotId) {
+            this.sourceSnapshotId = sourceSnapshotId;
+            this.__explicitlySet__.add("sourceSnapshotId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -92,7 +101,8 @@ public class CreateFileSystemDetails {
                             displayName,
                             freeformTags,
                             definedTags,
-                            kmsKeyId);
+                            kmsKeyId,
+                            sourceSnapshotId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -105,7 +115,8 @@ public class CreateFileSystemDetails {
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
-                            .kmsKeyId(o.getKmsKeyId());
+                            .kmsKeyId(o.getKmsKeyId())
+                            .sourceSnapshotId(o.getSourceSnapshotId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -129,7 +140,7 @@ public class CreateFileSystemDetails {
     String availabilityDomain;
 
     /**
-     * The OCID of the compartment to create the file system in.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -164,11 +175,19 @@ public class CreateFileSystemDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * The OCID of KMS key used to encrypt the encryption keys associated with this file system.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     String kmsKeyId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system.
+     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceSnapshotId")
+    String sourceSnapshotId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

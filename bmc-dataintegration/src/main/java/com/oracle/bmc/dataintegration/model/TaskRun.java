@@ -159,6 +159,78 @@ public class TaskRun {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("expectedDuration")
+        private Double expectedDuration;
+
+        public Builder expectedDuration(Double expectedDuration) {
+            this.expectedDuration = expectedDuration;
+            this.__explicitlySet__.add("expectedDuration");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("expectedDurationUnit")
+        private ExpectedDurationUnit expectedDurationUnit;
+
+        public Builder expectedDurationUnit(ExpectedDurationUnit expectedDurationUnit) {
+            this.expectedDurationUnit = expectedDurationUnit;
+            this.__explicitlySet__.add("expectedDurationUnit");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("taskKey")
+        private String taskKey;
+
+        public Builder taskKey(String taskKey) {
+            this.taskKey = taskKey;
+            this.__explicitlySet__.add("taskKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("retryAttempt")
+        private Integer retryAttempt;
+
+        public Builder retryAttempt(Integer retryAttempt) {
+            this.retryAttempt = retryAttempt;
+            this.__explicitlySet__.add("retryAttempt");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("taskSchedule")
+        private TaskSchedule taskSchedule;
+
+        public Builder taskSchedule(TaskSchedule taskSchedule) {
+            this.taskSchedule = taskSchedule;
+            this.__explicitlySet__.add("taskSchedule");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("metrics")
+        private java.util.Map<String, Float> metrics;
+
+        public Builder metrics(java.util.Map<String, Float> metrics) {
+            this.metrics = metrics;
+            this.__explicitlySet__.add("metrics");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("executionErrors")
+        private java.util.List<String> executionErrors;
+
+        public Builder executionErrors(java.util.List<String> executionErrors) {
+            this.executionErrors = executionErrors;
+            this.__explicitlySet__.add("executionErrors");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("terminationErrors")
+        private java.util.List<String> terminationErrors;
+
+        public Builder terminationErrors(java.util.List<String> terminationErrors) {
+            this.terminationErrors = terminationErrors;
+            this.__explicitlySet__.add("terminationErrors");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("opcRequestId")
         private String opcRequestId;
 
@@ -234,6 +306,14 @@ public class TaskRun {
                             recordsWritten,
                             bytesProcessed,
                             errorMessage,
+                            expectedDuration,
+                            expectedDurationUnit,
+                            taskKey,
+                            retryAttempt,
+                            taskSchedule,
+                            metrics,
+                            executionErrors,
+                            terminationErrors,
                             opcRequestId,
                             objectStatus,
                             taskType,
@@ -262,6 +342,14 @@ public class TaskRun {
                             .recordsWritten(o.getRecordsWritten())
                             .bytesProcessed(o.getBytesProcessed())
                             .errorMessage(o.getErrorMessage())
+                            .expectedDuration(o.getExpectedDuration())
+                            .expectedDurationUnit(o.getExpectedDurationUnit())
+                            .taskKey(o.getTaskKey())
+                            .retryAttempt(o.getRetryAttempt())
+                            .taskSchedule(o.getTaskSchedule())
+                            .metrics(o.getMetrics())
+                            .executionErrors(o.getExecutionErrors())
+                            .terminationErrors(o.getTerminationErrors())
                             .opcRequestId(o.getOpcRequestId())
                             .objectStatus(o.getObjectStatus())
                             .taskType(o.getTaskType())
@@ -416,6 +504,98 @@ public class TaskRun {
     String errorMessage;
 
     /**
+     * The expected duration for the task run.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("expectedDuration")
+    Double expectedDuration;
+    /**
+     * The expected duration unit of measure.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum ExpectedDurationUnit {
+        Seconds("SECONDS"),
+        Minutes("MINUTES"),
+        Hours("HOURS"),
+        Days("DAYS"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, ExpectedDurationUnit> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ExpectedDurationUnit v : ExpectedDurationUnit.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ExpectedDurationUnit(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ExpectedDurationUnit create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ExpectedDurationUnit', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The expected duration unit of measure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("expectedDurationUnit")
+    ExpectedDurationUnit expectedDurationUnit;
+
+    /**
+     * Task Key of the task for which TaskRun is being created. If not specified, the AggregatorKey in RegistryMetadata will be assumed to be the TaskKey
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("taskKey")
+    String taskKey;
+
+    /**
+     * Holds the particular attempt number.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("retryAttempt")
+    Integer retryAttempt;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("taskSchedule")
+    TaskSchedule taskSchedule;
+
+    /**
+     * A map of metrics for the run.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("metrics")
+    java.util.Map<String, Float> metrics;
+
+    /**
+     * An array of execution errors from the run.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("executionErrors")
+    java.util.List<String> executionErrors;
+
+    /**
+     * An array of termination errors from the run.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("terminationErrors")
+    java.util.List<String> terminationErrors;
+
+    /**
      * The OPC request ID of execution of the task run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("opcRequestId")
@@ -433,6 +613,7 @@ public class TaskRun {
     public enum TaskType {
         IntegrationTask("INTEGRATION_TASK"),
         DataLoaderTask("DATA_LOADER_TASK"),
+        PipelineTask("PIPELINE_TASK"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

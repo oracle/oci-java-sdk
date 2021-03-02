@@ -85,6 +85,22 @@ public class ListFileSystemsConverter {
                                     request.getId()));
         }
 
+        if (request.getSourceSnapshotId() != null) {
+            target =
+                    target.queryParam(
+                            "sourceSnapshotId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSourceSnapshotId()));
+        }
+
+        if (request.getParentFileSystemId() != null) {
+            target =
+                    target.queryParam(
+                            "parentFileSystemId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getParentFileSystemId()));
+        }
+
         if (request.getSortBy() != null) {
             target =
                     target.queryParam(

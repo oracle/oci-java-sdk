@@ -14,7 +14,7 @@ import com.oracle.bmc.filestorage.model.*;
 public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
@@ -105,11 +105,21 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
     /**
-     * Filter results by OCID. Must be an OCID of the correct type for
+     * Filter results by [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for
      * the resouce type.
      *
      */
     private String id;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     */
+    private String sourceSnapshotId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     */
+    private String parentFileSystemId;
 
     /**
      * The field to sort by. You can provide either value, but not both.
@@ -254,6 +264,8 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<j
             displayName(o.getDisplayName());
             lifecycleState(o.getLifecycleState());
             id(o.getId());
+            sourceSnapshotId(o.getSourceSnapshotId());
+            parentFileSystemId(o.getParentFileSystemId());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             opcRequestId(o.getOpcRequestId());

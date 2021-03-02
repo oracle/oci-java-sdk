@@ -176,6 +176,29 @@ public interface DataIntegration extends AutoCloseable {
     CreatePatchResponse createPatch(CreatePatchRequest request);
 
     /**
+     * Creates a new pipeline in a project or folder ready for performing task orchestration.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreatePipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePipeline API.
+     */
+    CreatePipelineResponse createPipeline(CreatePipelineRequest request);
+
+    /**
+     * Accepts the data flow definition in the request payload and creates a pipeline validation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreatePipelineValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePipelineValidation API.
+     */
+    CreatePipelineValidationResponse createPipelineValidation(
+            CreatePipelineValidationRequest request);
+
+    /**
      * Creates a project. Projects are organizational constructs within a workspace that you use to organize your design-time resources, such as tasks or data flows. Projects can be organized into folders.
      *
      * @param request The request object containing the details to send
@@ -332,6 +355,27 @@ public interface DataIntegration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeletePatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePatch API.
      */
     DeletePatchResponse deletePatch(DeletePatchRequest request);
+
+    /**
+     * Removes a pipeline from a project or folder using the specified identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeletePipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePipeline API.
+     */
+    DeletePipelineResponse deletePipeline(DeletePipelineRequest request);
+
+    /**
+     * Removes a pipeline validation using the specified identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeletePipelineValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePipelineValidation API.
+     */
+    DeletePipelineValidationResponse deletePipelineValidation(
+            DeletePipelineValidationRequest request);
 
     /**
      * Removes a project from the workspace using the specified identifier.
@@ -516,6 +560,26 @@ public interface DataIntegration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPatch API.
      */
     GetPatchResponse getPatch(GetPatchRequest request);
+
+    /**
+     * Retrieves a pipeline using the specified identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetPipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPipeline API.
+     */
+    GetPipelineResponse getPipeline(GetPipelineRequest request);
+
+    /**
+     * Retrieves a pipeline validation using the specified identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetPipelineValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPipelineValidation API.
+     */
+    GetPipelineValidationResponse getPipelineValidation(GetPipelineValidationRequest request);
 
     /**
      * Retrieves a project using the specified identifier.
@@ -747,6 +811,27 @@ public interface DataIntegration extends AutoCloseable {
     ListPatchesResponse listPatches(ListPatchesRequest request);
 
     /**
+     * Retrieves a list of pipeline validations within the specified workspace.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListPipelineValidationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPipelineValidations API.
+     */
+    ListPipelineValidationsResponse listPipelineValidations(ListPipelineValidationsRequest request);
+
+    /**
+     * Retrieves a list of pipelines in a project or folder from within a workspace, the query parameter specifies the project or folder.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListPipelinesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPipelines API.
+     */
+    ListPipelinesResponse listPipelines(ListPipelinesRequest request);
+
+    /**
      * Retrieves a lists of projects in a workspace and provides options to filter the list.
      *
      * @param request The request object containing the details to send
@@ -955,6 +1040,16 @@ public interface DataIntegration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateFolderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFolder API.
      */
     UpdateFolderResponse updateFolder(UpdateFolderRequest request);
+
+    /**
+     * Updates a specific pipeline.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdatePipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePipeline API.
+     */
+    UpdatePipelineResponse updatePipeline(UpdatePipelineRequest request);
 
     /**
      * Updates a specific project.

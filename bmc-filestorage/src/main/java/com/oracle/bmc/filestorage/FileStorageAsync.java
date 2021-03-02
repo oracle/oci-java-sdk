@@ -124,9 +124,9 @@ public interface FileStorageAsync extends AutoCloseable {
      * <p>
      * All Oracle Cloud Infrastructure resources, including
      * file systems, get an Oracle-assigned, unique ID called an Oracle
-     * Cloud Identifier (OCID).  When you create a resource, you can
-     * find its OCID in the response. You can also retrieve a
-     * resource's OCID by using a List API operation on that resource
+     * Cloud Identifier ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)).
+     * When you create a resource, you can find its OCID in the response.
+     * You can also retrieve a resource's OCID by using a List API operation on that resource
      * type or by viewing the resource in the Console.
      *
      *
@@ -171,9 +171,9 @@ public interface FileStorageAsync extends AutoCloseable {
      * <p>
      * All Oracle Cloud Infrastructure Services resources, including
      * mount targets, get an Oracle-assigned, unique ID called an
-     * Oracle Cloud Identifier (OCID).  When you create a resource,
-     * you can find its OCID in the response. You can also retrieve a
-     * resource's OCID by using a List API operation on that resource
+     * Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)).
+     * When you create a resource, you can find its OCID in the response.
+     * You can also retrieve a resource's OCID by using a List API operation on that resource
      * type, or by viewing the resource in the Console.
      *
      *

@@ -14,7 +14,7 @@ import com.oracle.bmc.filestorage.model.*;
 public class ListExportsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
@@ -42,12 +42,12 @@ public class ListExportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String page;
 
     /**
-     * The OCID of the export set.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the export set.
      */
     private String exportSetId;
 
     /**
-     * The OCID of the file system.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system.
      */
     private String fileSystemId;
 
@@ -99,7 +99,7 @@ public class ListExportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
     /**
-     * Filter results by OCID. Must be an OCID of the correct type for
+     * Filter results by [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for
      * the resouce type.
      *
      */

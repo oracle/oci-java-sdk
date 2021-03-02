@@ -141,6 +141,16 @@ public class ListDataEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String opcRequestId;
 
+    /**
+     * Used to filter by the name of the object.
+     */
+    private java.util.List<String> nameList;
+
+    /**
+     * This parameter can be used to specify whether entity search type is pattern search or not.
+     */
+    private Boolean isPattern;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDataEntitiesRequest, java.lang.Void> {
@@ -187,6 +197,8 @@ public class ListDataEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             opcRequestId(o.getOpcRequestId());
+            nameList(o.getNameList());
+            isPattern(o.getIsPattern());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

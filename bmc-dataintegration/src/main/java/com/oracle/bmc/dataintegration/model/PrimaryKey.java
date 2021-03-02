@@ -15,12 +15,18 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PrimaryKey.Builder.class)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 @lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PrimaryKey {
+public class PrimaryKey extends UniqueKey {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
@@ -110,38 +116,16 @@ public class PrimaryKey {
         return new Builder();
     }
 
-    /**
-     * The object key.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
-
-    /**
-     * The object's model version.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
-    String modelVersion;
-
-    @com.fasterxml.jackson.annotation.JsonProperty("parentRef")
-    ParentReference parentRef;
-
-    /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
-
-    /**
-     * An array of attribute references.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("attributeRefs")
-    java.util.List<KeyAttribute> attributeRefs;
-
-    /**
-     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
-    Integer objectStatus;
+    @Deprecated
+    public PrimaryKey(
+            String key,
+            String modelVersion,
+            ParentReference parentRef,
+            String name,
+            java.util.List<KeyAttribute> attributeRefs,
+            Integer objectStatus) {
+        super(key, modelVersion, parentRef, name, attributeRefs, objectStatus);
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

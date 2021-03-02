@@ -14,7 +14,7 @@ import com.oracle.bmc.filestorage.model.*;
 public class GetExportRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the export.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the export.
      */
     private String exportId;
 

@@ -94,7 +94,7 @@ public class CreateSnapshotDetails {
     }
 
     /**
-     * The OCID of the file system to take a snapshot of.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileSystemId")
     String fileSystemId;
