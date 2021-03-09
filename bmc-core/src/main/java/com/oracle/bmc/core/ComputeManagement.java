@@ -51,6 +51,18 @@ public interface ComputeManagement extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Attach an instance to the instance pool.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachInstancePoolInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachInstancePoolInstance API.
+     */
+    AttachInstancePoolInstanceResponse attachInstancePoolInstance(
+            AttachInstancePoolInstanceRequest request);
+
+    /**
      * Attach a load balancer to the instance pool.
      *
      * @param request The request object containing the details to send
@@ -166,6 +178,18 @@ public interface ComputeManagement extends AutoCloseable {
             DeleteInstanceConfigurationRequest request);
 
     /**
+     * Detach instance from the instance pool.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DetachInstancePoolInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachInstancePoolInstance API.
+     */
+    DetachInstancePoolInstanceResponse detachInstancePoolInstance(
+            DetachInstancePoolInstanceRequest request);
+
+    /**
      * Detach a load balancer from the instance pool.
      *
      * @param request The request object containing the details to send
@@ -206,6 +230,16 @@ public interface ComputeManagement extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstancePoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInstancePool API.
      */
     GetInstancePoolResponse getInstancePool(GetInstancePoolRequest request);
+
+    /**
+     * Gets the instance pool instance
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstancePoolInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInstancePoolInstance API.
+     */
+    GetInstancePoolInstanceResponse getInstancePoolInstance(GetInstancePoolInstanceRequest request);
 
     /**
      * Gets information about a load balancer that is attached to the specified instance pool.

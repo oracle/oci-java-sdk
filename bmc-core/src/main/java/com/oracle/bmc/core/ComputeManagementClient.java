@@ -443,6 +443,42 @@ public class ComputeManagementClient implements ComputeManagement {
     }
 
     @Override
+    public AttachInstancePoolInstanceResponse attachInstancePoolInstance(
+            AttachInstancePoolInstanceRequest request) {
+        LOG.trace("Called attachInstancePoolInstance");
+        final AttachInstancePoolInstanceRequest interceptedRequest =
+                AttachInstancePoolInstanceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AttachInstancePoolInstanceConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, AttachInstancePoolInstanceResponse>
+                transformer = AttachInstancePoolInstanceConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getAttachInstancePoolInstanceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public AttachLoadBalancerResponse attachLoadBalancer(AttachLoadBalancerRequest request) {
         LOG.trace("Called attachLoadBalancer");
         final AttachLoadBalancerRequest interceptedRequest =
@@ -717,6 +753,42 @@ public class ComputeManagementClient implements ComputeManagement {
     }
 
     @Override
+    public DetachInstancePoolInstanceResponse detachInstancePoolInstance(
+            DetachInstancePoolInstanceRequest request) {
+        LOG.trace("Called detachInstancePoolInstance");
+        final DetachInstancePoolInstanceRequest interceptedRequest =
+                DetachInstancePoolInstanceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DetachInstancePoolInstanceConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DetachInstancePoolInstanceResponse>
+                transformer = DetachInstancePoolInstanceConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getDetachInstancePoolInstanceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DetachLoadBalancerResponse detachLoadBalancer(DetachLoadBalancerRequest request) {
         LOG.trace("Called detachLoadBalancer");
         final DetachLoadBalancerRequest interceptedRequest =
@@ -815,6 +887,35 @@ public class ComputeManagementClient implements ComputeManagement {
                 GetInstancePoolConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetInstancePoolResponse>
                 transformer = GetInstancePoolConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetInstancePoolInstanceResponse getInstancePoolInstance(
+            GetInstancePoolInstanceRequest request) {
+        LOG.trace("Called getInstancePoolInstance");
+        final GetInstancePoolInstanceRequest interceptedRequest =
+                GetInstancePoolInstanceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetInstancePoolInstanceConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetInstancePoolInstanceResponse>
+                transformer = GetInstancePoolInstanceConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(

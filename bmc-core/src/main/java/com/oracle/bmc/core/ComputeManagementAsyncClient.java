@@ -364,6 +364,51 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AttachInstancePoolInstanceResponse>
+            attachInstancePoolInstance(
+                    AttachInstancePoolInstanceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AttachInstancePoolInstanceRequest,
+                                    AttachInstancePoolInstanceResponse>
+                            handler) {
+        LOG.trace("Called async attachInstancePoolInstance");
+        final AttachInstancePoolInstanceRequest interceptedRequest =
+                AttachInstancePoolInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AttachInstancePoolInstanceConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, AttachInstancePoolInstanceResponse>
+                transformer = AttachInstancePoolInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        AttachInstancePoolInstanceRequest, AttachInstancePoolInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AttachInstancePoolInstanceRequest,
+                                AttachInstancePoolInstanceResponse>,
+                        java.util.concurrent.Future<AttachInstancePoolInstanceResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AttachInstancePoolInstanceRequest, AttachInstancePoolInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<AttachLoadBalancerResponse> attachLoadBalancer(
             AttachLoadBalancerRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -715,6 +760,51 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DetachInstancePoolInstanceResponse>
+            detachInstancePoolInstance(
+                    DetachInstancePoolInstanceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DetachInstancePoolInstanceRequest,
+                                    DetachInstancePoolInstanceResponse>
+                            handler) {
+        LOG.trace("Called async detachInstancePoolInstance");
+        final DetachInstancePoolInstanceRequest interceptedRequest =
+                DetachInstancePoolInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DetachInstancePoolInstanceConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DetachInstancePoolInstanceResponse>
+                transformer = DetachInstancePoolInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DetachInstancePoolInstanceRequest, DetachInstancePoolInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DetachInstancePoolInstanceRequest,
+                                DetachInstancePoolInstanceResponse>,
+                        java.util.concurrent.Future<DetachInstancePoolInstanceResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DetachInstancePoolInstanceRequest, DetachInstancePoolInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DetachLoadBalancerResponse> detachLoadBalancer(
             DetachLoadBalancerRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -861,6 +951,47 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetInstancePoolRequest, GetInstancePoolResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInstancePoolInstanceResponse> getInstancePoolInstance(
+            GetInstancePoolInstanceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetInstancePoolInstanceRequest, GetInstancePoolInstanceResponse>
+                    handler) {
+        LOG.trace("Called async getInstancePoolInstance");
+        final GetInstancePoolInstanceRequest interceptedRequest =
+                GetInstancePoolInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetInstancePoolInstanceConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetInstancePoolInstanceResponse>
+                transformer = GetInstancePoolInstanceConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetInstancePoolInstanceRequest, GetInstancePoolInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetInstancePoolInstanceRequest, GetInstancePoolInstanceResponse>,
+                        java.util.concurrent.Future<GetInstancePoolInstanceResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetInstancePoolInstanceRequest, GetInstancePoolInstanceResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.33.1 - 2021-03-09
+### Added
+- Support for the Application Performance Monitoring service
+- Support for the Golden Gate service
+- Support for SMS subscriptions in the Notifications service
+- Support for friendly-formatted messages in the Service Connector Hub service
+- Support for attaching and detaching instances to instance pools in the Autoscaling service
+
 ## 1.33.0 - 2021-03-02
 ### Added
 - Support for pipelines, pipeline tasks, and favorites in the Data Integration service

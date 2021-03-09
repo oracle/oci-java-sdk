@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>1.33.0</version>
+  <version>1.33.1</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -727,6 +727,10 @@
     <module>bmc-rover</module>
     <module>bmc-databasemanagement</module>
     <module>bmc-artifacts</module>
+    <module>bmc-apmsynthetics</module>
+    <module>bmc-goldengate</module>
+    <module>bmc-apmcontrolplane</module>
+    <module>bmc-apmtraces</module>
     <module>bmc-full</module>
     <module>bmc-shaded</module>
   </modules>
