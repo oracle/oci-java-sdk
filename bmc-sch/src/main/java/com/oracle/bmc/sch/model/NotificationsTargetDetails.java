@@ -42,18 +42,30 @@ public class NotificationsTargetDetails extends TargetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("enableFormattedMessaging")
+        private Boolean enableFormattedMessaging;
+
+        public Builder enableFormattedMessaging(Boolean enableFormattedMessaging) {
+            this.enableFormattedMessaging = enableFormattedMessaging;
+            this.__explicitlySet__.add("enableFormattedMessaging");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NotificationsTargetDetails build() {
-            NotificationsTargetDetails __instance__ = new NotificationsTargetDetails(topicId);
+            NotificationsTargetDetails __instance__ =
+                    new NotificationsTargetDetails(topicId, enableFormattedMessaging);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(NotificationsTargetDetails o) {
-            Builder copiedBuilder = topicId(o.getTopicId());
+            Builder copiedBuilder =
+                    topicId(o.getTopicId())
+                            .enableFormattedMessaging(o.getEnableFormattedMessaging());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -68,9 +80,10 @@ public class NotificationsTargetDetails extends TargetDetails {
     }
 
     @Deprecated
-    public NotificationsTargetDetails(String topicId) {
+    public NotificationsTargetDetails(String topicId, Boolean enableFormattedMessaging) {
         super();
         this.topicId = topicId;
+        this.enableFormattedMessaging = enableFormattedMessaging;
     }
 
     /**
@@ -79,6 +92,15 @@ public class NotificationsTargetDetails extends TargetDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("topicId")
     String topicId;
+
+    /**
+     * Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.
+     * <p>
+     * Example: `true`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("enableFormattedMessaging")
+    Boolean enableFormattedMessaging;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -154,6 +154,18 @@ public class ListTopicsConverter {
                                 }
 
                                 com.google.common.base.Optional<java.util.List<String>>
+                                        opcPreviousPageHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-previous-page");
+                                if (opcPreviousPageHeader.isPresent()) {
+                                    builder.opcPreviousPage(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-previous-page",
+                                                    opcPreviousPageHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
                                                 com.oracle.bmc.http.internal.HeaderUtils.get(
                                                         headers, "opc-request-id");

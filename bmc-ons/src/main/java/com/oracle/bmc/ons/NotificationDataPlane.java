@@ -118,7 +118,7 @@ public interface NotificationDataPlane extends AutoCloseable {
     GetSubscriptionResponse getSubscription(GetSubscriptionRequest request);
 
     /**
-     * Gets the unsubscription details for the specified subscription.
+     * Unsubscribes the subscription from the topic.
      * <p>
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      *
@@ -157,7 +157,7 @@ public interface NotificationDataPlane extends AutoCloseable {
      * Message delivery rate limit per endpoint: 60 messages per minute for HTTP-based protocols, 10 messages per minute for the `EMAIL` protocol.
      * HTTP-based protocols use URL endpoints that begin with \"http:\" or \"https:\".
      * <p>
-     * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60 per topic.
+     * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60 per topic. (This TPM limit represents messages per minute.)
      * <p>
      * For more information about publishing messages, see [Publishing Messages](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/publishingmessages.htm).
      * For steps to request a limit increase, see [Requesting a Service Limit Increase](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm#three).

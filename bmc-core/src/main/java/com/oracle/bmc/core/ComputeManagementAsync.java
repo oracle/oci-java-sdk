@@ -51,6 +51,23 @@ public interface ComputeManagementAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Attach an instance to the instance pool.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AttachInstancePoolInstanceResponse> attachInstancePoolInstance(
+            AttachInstancePoolInstanceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AttachInstancePoolInstanceRequest, AttachInstancePoolInstanceResponse>
+                    handler);
+
+    /**
      * Attach a load balancer to the instance pool.
      *
      *
@@ -215,6 +232,23 @@ public interface ComputeManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Detach instance from the instance pool.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DetachInstancePoolInstanceResponse> detachInstancePoolInstance(
+            DetachInstancePoolInstanceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DetachInstancePoolInstanceRequest, DetachInstancePoolInstanceResponse>
+                    handler);
+
+    /**
      * Detach a load balancer from the instance pool.
      *
      *
@@ -276,6 +310,22 @@ public interface ComputeManagementAsync extends AutoCloseable {
     java.util.concurrent.Future<GetInstancePoolResponse> getInstancePool(
             GetInstancePoolRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetInstancePoolRequest, GetInstancePoolResponse>
+                    handler);
+
+    /**
+     * Gets the instance pool instance
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetInstancePoolInstanceResponse> getInstancePoolInstance(
+            GetInstancePoolInstanceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetInstancePoolInstanceRequest, GetInstancePoolInstanceResponse>
                     handler);
 
     /**

@@ -23,8 +23,15 @@ public class ListTopicsResponse {
     private String opcNextPage;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
+     * For list pagination. When this header appears in the response, previous pages of results remain.
+     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
+    private String opcPreviousPage;
+
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
@@ -42,6 +49,7 @@ public class ListTopicsResponse {
         public Builder copy(ListTopicsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             opcNextPage(o.getOpcNextPage());
+            opcPreviousPage(o.getOpcPreviousPage());
             opcRequestId(o.getOpcRequestId());
             items(o.getItems());
 

@@ -32,13 +32,25 @@ public class PublishMessageRequest extends com.oracle.bmc.requests.BmcRequest<Me
     private String opcRequestId;
 
     /**
+     * **Deprecated.**
+     * Support for JSON is deprecated.
+     * You can send a JSON payload even when transmitting the payload as a raw string.
+     * Configure your receiving system to read the raw payload as JSON format.
+     * <p>
      * Type of message body in the request.
+     * For `messageType` of JSON, a default key-value pair is required. Example: `{\"default\": \"Alarm breached\", \"Email\": \"Alarm breached: <url>\"}.`
      *
      */
     private MessageType messageType;
 
     /**
+     * **Deprecated.**
+     * Support for JSON is deprecated.
+     * You can send a JSON payload even when transmitting the payload as a raw string.
+     * Configure your receiving system to read the raw payload as JSON format.
+     * <p>
      * Type of message body in the request.
+     * For `messageType` of JSON, a default key-value pair is required. Example: `{\"default\": \"Alarm breached\", \"Email\": \"Alarm breached: <url>\"}.`
      *
      **/
     public enum MessageType {

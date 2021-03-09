@@ -152,9 +152,10 @@ public class CreateSubscriptionDetails {
      *   * `CUSTOM_HTTPS`
      *   * `EMAIL`
      *   * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+     *   * `ORACLE_FUNCTIONS`
      *   * `PAGERDUTY`
      *   * `SLACK`
-     *   * `ORACLE_FUNCTIONS`
+     *   * `SMS`
      * <p>
      * For information about subscription protocols, see
      * [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).

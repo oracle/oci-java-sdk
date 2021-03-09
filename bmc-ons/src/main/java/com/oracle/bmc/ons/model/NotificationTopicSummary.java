@@ -45,6 +45,15 @@ public class NotificationTopicSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("shortTopicId")
+        private String shortTopicId;
+
+        public Builder shortTopicId(String shortTopicId) {
+            this.shortTopicId = shortTopicId;
+            this.__explicitlySet__.add("shortTopicId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -126,6 +135,7 @@ public class NotificationTopicSummary {
                     new NotificationTopicSummary(
                             name,
                             topicId,
+                            shortTopicId,
                             compartmentId,
                             lifecycleState,
                             description,
@@ -143,6 +153,7 @@ public class NotificationTopicSummary {
             Builder copiedBuilder =
                     name(o.getName())
                             .topicId(o.getTopicId())
+                            .shortTopicId(o.getShortTopicId())
                             .compartmentId(o.getCompartmentId())
                             .lifecycleState(o.getLifecycleState())
                             .description(o.getDescription())
@@ -177,6 +188,13 @@ public class NotificationTopicSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("topicId")
     String topicId;
+
+    /**
+     * A unique short topic Id. This is used only for SMS subscriptions.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shortTopicId")
+    String shortTopicId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the topic.
