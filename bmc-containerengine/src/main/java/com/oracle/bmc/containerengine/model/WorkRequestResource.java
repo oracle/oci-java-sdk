@@ -103,6 +103,9 @@ public class WorkRequestResource {
         Related("RELATED"),
         InProgress("IN_PROGRESS"),
         Failed("FAILED"),
+        CanceledCreate("CANCELED_CREATE"),
+        CanceledUpdate("CANCELED_UPDATE"),
+        CanceledDelete("CANCELED_DELETE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

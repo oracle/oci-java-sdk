@@ -31,6 +31,239 @@ public class DataSciencePaginators {
     private final DataScience client;
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listModelDeploymentShapes operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListModelDeploymentShapesResponse> listModelDeploymentShapesResponseIterator(
+            final ListModelDeploymentShapesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListModelDeploymentShapesRequest.Builder, ListModelDeploymentShapesRequest,
+                ListModelDeploymentShapesResponse>(
+                new com.google.common.base.Supplier<ListModelDeploymentShapesRequest.Builder>() {
+                    @Override
+                    public ListModelDeploymentShapesRequest.Builder get() {
+                        return ListModelDeploymentShapesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListModelDeploymentShapesResponse, String>() {
+                    @Override
+                    public String apply(ListModelDeploymentShapesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListModelDeploymentShapesRequest.Builder>,
+                        ListModelDeploymentShapesRequest>() {
+                    @Override
+                    public ListModelDeploymentShapesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListModelDeploymentShapesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListModelDeploymentShapesRequest, ListModelDeploymentShapesResponse>() {
+                    @Override
+                    public ListModelDeploymentShapesResponse apply(
+                            ListModelDeploymentShapesRequest request) {
+                        return client.listModelDeploymentShapes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary} objects
+     * contained in responses from the listModelDeploymentShapes operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary>
+            listModelDeploymentShapesRecordIterator(
+                    final ListModelDeploymentShapesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListModelDeploymentShapesRequest.Builder, ListModelDeploymentShapesRequest,
+                ListModelDeploymentShapesResponse,
+                com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary>(
+                new com.google.common.base.Supplier<ListModelDeploymentShapesRequest.Builder>() {
+                    @Override
+                    public ListModelDeploymentShapesRequest.Builder get() {
+                        return ListModelDeploymentShapesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListModelDeploymentShapesResponse, String>() {
+                    @Override
+                    public String apply(ListModelDeploymentShapesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListModelDeploymentShapesRequest.Builder>,
+                        ListModelDeploymentShapesRequest>() {
+                    @Override
+                    public ListModelDeploymentShapesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListModelDeploymentShapesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListModelDeploymentShapesRequest, ListModelDeploymentShapesResponse>() {
+                    @Override
+                    public ListModelDeploymentShapesResponse apply(
+                            ListModelDeploymentShapesRequest request) {
+                        return client.listModelDeploymentShapes(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListModelDeploymentShapesResponse,
+                        java.util.List<
+                                com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary>
+                            apply(ListModelDeploymentShapesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listModelDeployments operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListModelDeploymentsResponse> listModelDeploymentsResponseIterator(
+            final ListModelDeploymentsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListModelDeploymentsRequest.Builder, ListModelDeploymentsRequest,
+                ListModelDeploymentsResponse>(
+                new com.google.common.base.Supplier<ListModelDeploymentsRequest.Builder>() {
+                    @Override
+                    public ListModelDeploymentsRequest.Builder get() {
+                        return ListModelDeploymentsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListModelDeploymentsResponse, String>() {
+                    @Override
+                    public String apply(ListModelDeploymentsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListModelDeploymentsRequest.Builder>,
+                        ListModelDeploymentsRequest>() {
+                    @Override
+                    public ListModelDeploymentsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListModelDeploymentsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListModelDeploymentsRequest, ListModelDeploymentsResponse>() {
+                    @Override
+                    public ListModelDeploymentsResponse apply(ListModelDeploymentsRequest request) {
+                        return client.listModelDeployments(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.ModelDeploymentSummary} objects
+     * contained in responses from the listModelDeployments operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.ModelDeploymentSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datascience.model.ModelDeploymentSummary>
+            listModelDeploymentsRecordIterator(final ListModelDeploymentsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListModelDeploymentsRequest.Builder, ListModelDeploymentsRequest,
+                ListModelDeploymentsResponse,
+                com.oracle.bmc.datascience.model.ModelDeploymentSummary>(
+                new com.google.common.base.Supplier<ListModelDeploymentsRequest.Builder>() {
+                    @Override
+                    public ListModelDeploymentsRequest.Builder get() {
+                        return ListModelDeploymentsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListModelDeploymentsResponse, String>() {
+                    @Override
+                    public String apply(ListModelDeploymentsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListModelDeploymentsRequest.Builder>,
+                        ListModelDeploymentsRequest>() {
+                    @Override
+                    public ListModelDeploymentsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListModelDeploymentsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListModelDeploymentsRequest, ListModelDeploymentsResponse>() {
+                    @Override
+                    public ListModelDeploymentsResponse apply(ListModelDeploymentsRequest request) {
+                        return client.listModelDeployments(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListModelDeploymentsResponse,
+                        java.util.List<com.oracle.bmc.datascience.model.ModelDeploymentSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datascience.model.ModelDeploymentSummary>
+                            apply(ListModelDeploymentsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listModels operation. This iterable
      * will fetch more data from the server as needed.
      *

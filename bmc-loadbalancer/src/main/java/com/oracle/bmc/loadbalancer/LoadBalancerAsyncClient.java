@@ -687,6 +687,48 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRoutingPolicyResponse> createRoutingPolicy(
+            CreateRoutingPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateRoutingPolicyRequest, CreateRoutingPolicyResponse>
+                    handler) {
+        LOG.trace("Called async createRoutingPolicy");
+        final CreateRoutingPolicyRequest interceptedRequest =
+                CreateRoutingPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateRoutingPolicyConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateRoutingPolicyResponse>
+                transformer = CreateRoutingPolicyConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateRoutingPolicyRequest, CreateRoutingPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateRoutingPolicyRequest, CreateRoutingPolicyResponse>,
+                        java.util.concurrent.Future<CreateRoutingPolicyResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateRoutingPolicyRequest, CreateRoutingPolicyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateRuleSetResponse> createRuleSet(
             CreateRuleSetRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateRuleSetRequest, CreateRuleSetResponse>
@@ -1026,6 +1068,47 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeletePathRouteSetRequest, DeletePathRouteSetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRoutingPolicyResponse> deleteRoutingPolicy(
+            DeleteRoutingPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteRoutingPolicyRequest, DeleteRoutingPolicyResponse>
+                    handler) {
+        LOG.trace("Called async deleteRoutingPolicy");
+        final DeleteRoutingPolicyRequest interceptedRequest =
+                DeleteRoutingPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteRoutingPolicyConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteRoutingPolicyResponse>
+                transformer = DeleteRoutingPolicyConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteRoutingPolicyRequest, DeleteRoutingPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteRoutingPolicyRequest, DeleteRoutingPolicyResponse>,
+                        java.util.concurrent.Future<DeleteRoutingPolicyResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteRoutingPolicyRequest, DeleteRoutingPolicyResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1456,6 +1539,45 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetPathRouteSetRequest, GetPathRouteSetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRoutingPolicyResponse> getRoutingPolicy(
+            GetRoutingPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetRoutingPolicyRequest, GetRoutingPolicyResponse>
+                    handler) {
+        LOG.trace("Called async getRoutingPolicy");
+        final GetRoutingPolicyRequest interceptedRequest =
+                GetRoutingPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRoutingPolicyConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetRoutingPolicyResponse>
+                transformer = GetRoutingPolicyConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetRoutingPolicyRequest, GetRoutingPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetRoutingPolicyRequest, GetRoutingPolicyResponse>,
+                        java.util.concurrent.Future<GetRoutingPolicyResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetRoutingPolicyRequest, GetRoutingPolicyResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1959,6 +2081,47 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListProtocolsRequest, ListProtocolsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRoutingPoliciesResponse> listRoutingPolicies(
+            ListRoutingPoliciesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListRoutingPoliciesRequest, ListRoutingPoliciesResponse>
+                    handler) {
+        LOG.trace("Called async listRoutingPolicies");
+        final ListRoutingPoliciesRequest interceptedRequest =
+                ListRoutingPoliciesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRoutingPoliciesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListRoutingPoliciesResponse>
+                transformer = ListRoutingPoliciesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListRoutingPoliciesRequest, ListRoutingPoliciesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListRoutingPoliciesRequest, ListRoutingPoliciesResponse>,
+                        java.util.concurrent.Future<ListRoutingPoliciesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListRoutingPoliciesRequest, ListRoutingPoliciesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2481,6 +2644,48 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdatePathRouteSetRequest, UpdatePathRouteSetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRoutingPolicyResponse> updateRoutingPolicy(
+            UpdateRoutingPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateRoutingPolicyRequest, UpdateRoutingPolicyResponse>
+                    handler) {
+        LOG.trace("Called async updateRoutingPolicy");
+        final UpdateRoutingPolicyRequest interceptedRequest =
+                UpdateRoutingPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateRoutingPolicyConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateRoutingPolicyResponse>
+                transformer = UpdateRoutingPolicyConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateRoutingPolicyRequest, UpdateRoutingPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateRoutingPolicyRequest, UpdateRoutingPolicyResponse>,
+                        java.util.concurrent.Future<UpdateRoutingPolicyResponse>>
+                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateRoutingPolicyRequest, UpdateRoutingPolicyResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

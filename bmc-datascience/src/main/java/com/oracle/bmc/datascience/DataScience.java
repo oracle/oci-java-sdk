@@ -57,6 +57,16 @@ public interface DataScience extends AutoCloseable {
     ActivateModelResponse activateModel(ActivateModelRequest request);
 
     /**
+     * Activates the model deployment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ActivateModelDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ActivateModelDeployment API.
+     */
+    ActivateModelDeploymentResponse activateModelDeployment(ActivateModelDeploymentRequest request);
+
+    /**
      * Activates the notebook session.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -85,6 +95,17 @@ public interface DataScience extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ChangeModelCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeModelCompartment API.
      */
     ChangeModelCompartmentResponse changeModelCompartment(ChangeModelCompartmentRequest request);
+
+    /**
+     * Moves a model deployment into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ChangeModelDeploymentCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeModelDeploymentCompartment API.
+     */
+    ChangeModelDeploymentCompartmentResponse changeModelDeploymentCompartment(
+            ChangeModelDeploymentCompartmentRequest request);
 
     /**
      * Moves a notebook session resource into a different compartment.
@@ -156,6 +177,16 @@ public interface DataScience extends AutoCloseable {
     CreateModelArtifactResponse createModelArtifact(CreateModelArtifactRequest request);
 
     /**
+     * Creates a new model deployment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/CreateModelDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateModelDeployment API.
+     */
+    CreateModelDeploymentResponse createModelDeployment(CreateModelDeploymentRequest request);
+
+    /**
      * Creates provenance information for the specified model.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -196,6 +227,17 @@ public interface DataScience extends AutoCloseable {
     DeactivateModelResponse deactivateModel(DeactivateModelRequest request);
 
     /**
+     * Deactivates the model deployment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/DeactivateModelDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeactivateModelDeployment API.
+     */
+    DeactivateModelDeploymentResponse deactivateModelDeployment(
+            DeactivateModelDeploymentRequest request);
+
+    /**
      * Deactivates the notebook session.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -217,7 +259,17 @@ public interface DataScience extends AutoCloseable {
     DeleteModelResponse deleteModel(DeleteModelRequest request);
 
     /**
-     * Deletes the specified notebook session. Any unsaved work in this notebook session will be lost.
+     * Deletes the specified model deployment. Any unsaved work in this model deployment is lost.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/DeleteModelDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteModelDeployment API.
+     */
+    DeleteModelDeploymentResponse deleteModelDeployment(DeleteModelDeploymentRequest request);
+
+    /**
+     * Deletes the specified notebook session. Any unsaved work in this notebook session are lost.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -227,7 +279,7 @@ public interface DataScience extends AutoCloseable {
     DeleteNotebookSessionResponse deleteNotebookSession(DeleteNotebookSessionRequest request);
 
     /**
-     * Deletes the specified project. This operation will fail unless all associated resources (such as notebook sessions or models) are in a DELETED state. You must delete all associated resources before deleting a project.
+     * Deletes the specified project. This operation fails unless all associated resources (notebook sessions or models) are in a DELETED state. You must delete all associated resources before deleting a project.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -255,6 +307,16 @@ public interface DataScience extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/GetModelArtifactContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetModelArtifactContent API.
      */
     GetModelArtifactContentResponse getModelArtifactContent(GetModelArtifactContentRequest request);
+
+    /**
+     * Retrieves the model deployment for the specified `modelDeploymentId`.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/GetModelDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetModelDeployment API.
+     */
+    GetModelDeploymentResponse getModelDeployment(GetModelDeploymentRequest request);
 
     /**
      * Gets provenance information for specified model.
@@ -307,6 +369,28 @@ public interface DataScience extends AutoCloseable {
     HeadModelArtifactResponse headModelArtifact(HeadModelArtifactRequest request);
 
     /**
+     * Lists the valid model deployment shapes.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListModelDeploymentShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListModelDeploymentShapes API.
+     */
+    ListModelDeploymentShapesResponse listModelDeploymentShapes(
+            ListModelDeploymentShapesRequest request);
+
+    /**
+     * Lists all model deployments in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListModelDeploymentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListModelDeployments API.
+     */
+    ListModelDeploymentsResponse listModelDeployments(ListModelDeploymentsRequest request);
+
+    /**
      * Lists models in the specified compartment.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -328,7 +412,7 @@ public interface DataScience extends AutoCloseable {
             ListNotebookSessionShapesRequest request);
 
     /**
-     * Lists notebook sessions in the specified compartment.
+     * Lists the notebook sessions in the specified compartment.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -388,7 +472,21 @@ public interface DataScience extends AutoCloseable {
     UpdateModelResponse updateModel(UpdateModelRequest request);
 
     /**
-     * Updates provenance information for the specified model.
+     * Updates the properties of a model deployment. You can update the `displayName`.
+     * When the model deployment is in the ACTIVE lifecycle state, you can update `modelDeploymentConfigurationDetails` and  change `instanceShapeName` and `modelId`. Any update to
+     * `bandwidthMbps` or `instanceCount` can be done when the model deployment is in the INACTIVE lifecycle state. Changes to the `bandwidthMbps` or `instanceCount` will take effect
+     * the next time the `ActivateModelDeployment` action is invoked on the model deployment resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/UpdateModelDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateModelDeployment API.
+     */
+    UpdateModelDeploymentResponse updateModelDeployment(UpdateModelDeploymentRequest request);
+
+    /**
+     * Updates the provenance information for the specified model.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -400,7 +498,7 @@ public interface DataScience extends AutoCloseable {
     /**
      * Updates the properties of a notebook session. You can update the `displayName`, `freeformTags`, and `definedTags` properties.
      * When the notebook session is in the INACTIVE lifecycle state, you can update `notebookSessionConfigurationDetails` and change `shape`, `subnetId`, and `blockStorageSizeInGBs`.
-     * Changes to the `notebookSessionConfigurationDetails` will take effect the next time the `ActivateNotebookSession` action is invoked on the notebook session resource.
+     * Changes to the `notebookSessionConfigurationDetails` take effect the next time the `ActivateNotebookSession` action is invoked on the notebook session resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

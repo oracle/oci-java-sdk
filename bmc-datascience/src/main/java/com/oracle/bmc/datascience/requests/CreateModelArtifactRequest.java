@@ -15,7 +15,7 @@ public class CreateModelArtifactRequest
         extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the model.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
      */
     private String modelId;
 
@@ -30,7 +30,7 @@ public class CreateModelArtifactRequest
     private java.io.InputStream modelArtifact;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
      *
      */
     private String opcRequestId;

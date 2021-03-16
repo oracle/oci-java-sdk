@@ -224,6 +224,15 @@ public class LoadBalancer {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("routingPolicies")
+        private java.util.Map<String, RoutingPolicy> routingPolicies;
+
+        public Builder routingPolicies(java.util.Map<String, RoutingPolicy> routingPolicies) {
+            this.routingPolicies = routingPolicies;
+            this.__explicitlySet__.add("routingPolicies");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -250,7 +259,8 @@ public class LoadBalancer {
                             freeformTags,
                             definedTags,
                             systemTags,
-                            ruleSets);
+                            ruleSets,
+                            routingPolicies);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -278,7 +288,8 @@ public class LoadBalancer {
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .systemTags(o.getSystemTags())
-                            .ruleSets(o.getRuleSets());
+                            .ruleSets(o.getRuleSets())
+                            .routingPolicies(o.getRoutingPolicies());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -492,6 +503,9 @@ public class LoadBalancer {
 
     @com.fasterxml.jackson.annotation.JsonProperty("ruleSets")
     java.util.Map<String, RuleSet> ruleSets;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("routingPolicies")
+    java.util.Map<String, RoutingPolicy> routingPolicies;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

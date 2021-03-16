@@ -14,7 +14,8 @@ import com.oracle.bmc.resourcesearch.model.*;
 public class SearchResourcesRequest extends com.oracle.bmc.requests.BmcRequest<SearchDetails> {
 
     /**
-     * Request parameters that describe query criteria.
+     * Request parameters that describe query criteria. For more information, see {@link #searchDetails(SearchDetailsRequest) searchDetails}.
+     *
      */
     private SearchDetails searchDetails;
 

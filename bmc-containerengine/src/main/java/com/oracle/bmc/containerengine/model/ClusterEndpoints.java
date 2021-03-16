@@ -33,18 +33,40 @@ public class ClusterEndpoints {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("publicEndpoint")
+        private String publicEndpoint;
+
+        public Builder publicEndpoint(String publicEndpoint) {
+            this.publicEndpoint = publicEndpoint;
+            this.__explicitlySet__.add("publicEndpoint");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("privateEndpoint")
+        private String privateEndpoint;
+
+        public Builder privateEndpoint(String privateEndpoint) {
+            this.privateEndpoint = privateEndpoint;
+            this.__explicitlySet__.add("privateEndpoint");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ClusterEndpoints build() {
-            ClusterEndpoints __instance__ = new ClusterEndpoints(kubernetes);
+            ClusterEndpoints __instance__ =
+                    new ClusterEndpoints(kubernetes, publicEndpoint, privateEndpoint);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ClusterEndpoints o) {
-            Builder copiedBuilder = kubernetes(o.getKubernetes());
+            Builder copiedBuilder =
+                    kubernetes(o.getKubernetes())
+                            .publicEndpoint(o.getPublicEndpoint())
+                            .privateEndpoint(o.getPrivateEndpoint());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -59,10 +81,22 @@ public class ClusterEndpoints {
     }
 
     /**
-     * The Kubernetes API server endpoint.
+     * The non-native networking Kubernetes API server endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetes")
     String kubernetes;
+
+    /**
+     * The public native networking Kubernetes API server endpoint, if one was requested.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("publicEndpoint")
+    String publicEndpoint;
+
+    /**
+     * The private native networking Kubernetes API server endpoint.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateEndpoint")
+    String privateEndpoint;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

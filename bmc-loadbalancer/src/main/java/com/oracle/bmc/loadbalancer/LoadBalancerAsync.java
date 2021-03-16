@@ -207,6 +207,24 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Adds a routing policy to a load balancer. For more information, see
+     * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateRoutingPolicyResponse> createRoutingPolicy(
+            CreateRoutingPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateRoutingPolicyRequest, CreateRoutingPolicyResponse>
+                    handler);
+
+    /**
      * Creates a new rule set associated with the specified load balancer. For more information, see
      * [Managing Rule Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrulesets.htm).
      *
@@ -353,6 +371,26 @@ public interface LoadBalancerAsync extends AutoCloseable {
             DeletePathRouteSetRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeletePathRouteSetRequest, DeletePathRouteSetResponse>
+                    handler);
+
+    /**
+     * Deletes a routing policy from the specified load balancer.
+     * <p>
+     * To delete a routing rule from a routing policy, use the
+     * {@link #updateRoutingPolicy(UpdateRoutingPolicyRequest, Consumer, Consumer) updateRoutingPolicy} operation.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteRoutingPolicyResponse> deleteRoutingPolicy(
+            DeleteRoutingPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteRoutingPolicyRequest, DeleteRoutingPolicyResponse>
                     handler);
 
     /**
@@ -523,6 +561,21 @@ public interface LoadBalancerAsync extends AutoCloseable {
     java.util.concurrent.Future<GetPathRouteSetResponse> getPathRouteSet(
             GetPathRouteSetRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetPathRouteSetRequest, GetPathRouteSetResponse>
+                    handler);
+
+    /**
+     * Gets the specified routing policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetRoutingPolicyResponse> getRoutingPolicy(
+            GetRoutingPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetRoutingPolicyRequest, GetRoutingPolicyResponse>
                     handler);
 
     /**
@@ -729,6 +782,22 @@ public interface LoadBalancerAsync extends AutoCloseable {
     java.util.concurrent.Future<ListProtocolsResponse> listProtocols(
             ListProtocolsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListProtocolsRequest, ListProtocolsResponse>
+                    handler);
+
+    /**
+     * Lists all routing policies associated with the specified load balancer.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListRoutingPoliciesResponse> listRoutingPolicies(
+            ListRoutingPoliciesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListRoutingPoliciesRequest, ListRoutingPoliciesResponse>
                     handler);
 
     /**
@@ -943,6 +1012,26 @@ public interface LoadBalancerAsync extends AutoCloseable {
             UpdatePathRouteSetRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdatePathRouteSetRequest, UpdatePathRouteSetResponse>
+                    handler);
+
+    /**
+     * Overwrites an existing routing policy on the specified load balancer. Use this operation to add, delete, or alter
+     * routing policy rules in a routing policy.
+     * <p>
+     * To add a new routing rule to a routing policy, the body must include both the new routing rule to add and the existing rules to retain.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateRoutingPolicyResponse> updateRoutingPolicy(
+            UpdateRoutingPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateRoutingPolicyRequest, UpdateRoutingPolicyResponse>
                     handler);
 
     /**

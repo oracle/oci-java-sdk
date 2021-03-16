@@ -18,7 +18,7 @@ public class ResourceSearchClient implements ResourceSearch {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("RESOURCESEARCH")
                     .serviceEndpointPrefix("query")
-                    .serviceEndpointTemplate("https://query.{region}.{secondLevelDomain}")
+                    .serviceEndpointTemplate("https://query.{region}.oci.{secondLevelDomain}")
                     .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;

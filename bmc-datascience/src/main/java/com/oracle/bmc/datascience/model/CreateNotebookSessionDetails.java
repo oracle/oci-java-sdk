@@ -123,7 +123,7 @@ public class CreateNotebookSessionDetails {
     }
 
     /**
-     * A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information.
+     * A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
      * Example: `My NotebookSession`
      *
      **/
@@ -131,13 +131,13 @@ public class CreateNotebookSessionDetails {
     String displayName;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the project to associate with the notebook session.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     String projectId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the compartment where you want to create the notebook session.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the notebook session.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;

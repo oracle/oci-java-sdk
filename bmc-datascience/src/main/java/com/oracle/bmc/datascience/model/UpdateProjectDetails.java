@@ -94,13 +94,13 @@ public class UpdateProjectDetails {
     }
 
     /**
-     * A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information.
+     * A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * A short blurb describing the project.
+     * A short description of the project.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;

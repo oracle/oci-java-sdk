@@ -37,6 +37,9 @@ public class ObjectMetadataInterceptor {
     }
 
     public static CopyObjectRequest intercept(CopyObjectRequest request) {
+        if (request.getCopyObjectDetails().getDestinationObjectMetadata() == null) {
+            return request;
+        }
         Map<String, String> newMetadata =
                 toServiceMeta(request.getCopyObjectDetails().getDestinationObjectMetadata());
         CopyObjectDetails newDetails =

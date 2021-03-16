@@ -482,6 +482,119 @@ public class LoadBalancerPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listRoutingPolicies operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListRoutingPoliciesResponse> listRoutingPoliciesResponseIterator(
+            final ListRoutingPoliciesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListRoutingPoliciesRequest.Builder, ListRoutingPoliciesRequest,
+                ListRoutingPoliciesResponse>(
+                new com.google.common.base.Supplier<ListRoutingPoliciesRequest.Builder>() {
+                    @Override
+                    public ListRoutingPoliciesRequest.Builder get() {
+                        return ListRoutingPoliciesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListRoutingPoliciesResponse, String>() {
+                    @Override
+                    public String apply(ListRoutingPoliciesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRoutingPoliciesRequest.Builder>,
+                        ListRoutingPoliciesRequest>() {
+                    @Override
+                    public ListRoutingPoliciesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRoutingPoliciesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListRoutingPoliciesRequest, ListRoutingPoliciesResponse>() {
+                    @Override
+                    public ListRoutingPoliciesResponse apply(ListRoutingPoliciesRequest request) {
+                        return client.listRoutingPolicies(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.loadbalancer.model.RoutingPolicy} objects
+     * contained in responses from the listRoutingPolicies operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.loadbalancer.model.RoutingPolicy} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.loadbalancer.model.RoutingPolicy>
+            listRoutingPoliciesRecordIterator(final ListRoutingPoliciesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListRoutingPoliciesRequest.Builder, ListRoutingPoliciesRequest,
+                ListRoutingPoliciesResponse, com.oracle.bmc.loadbalancer.model.RoutingPolicy>(
+                new com.google.common.base.Supplier<ListRoutingPoliciesRequest.Builder>() {
+                    @Override
+                    public ListRoutingPoliciesRequest.Builder get() {
+                        return ListRoutingPoliciesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListRoutingPoliciesResponse, String>() {
+                    @Override
+                    public String apply(ListRoutingPoliciesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRoutingPoliciesRequest.Builder>,
+                        ListRoutingPoliciesRequest>() {
+                    @Override
+                    public ListRoutingPoliciesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRoutingPoliciesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListRoutingPoliciesRequest, ListRoutingPoliciesResponse>() {
+                    @Override
+                    public ListRoutingPoliciesResponse apply(ListRoutingPoliciesRequest request) {
+                        return client.listRoutingPolicies(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListRoutingPoliciesResponse,
+                        java.util.List<com.oracle.bmc.loadbalancer.model.RoutingPolicy>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.loadbalancer.model.RoutingPolicy> apply(
+                            ListRoutingPoliciesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listShapes operation. This iterable
      * will fetch more data from the server as needed.
      *

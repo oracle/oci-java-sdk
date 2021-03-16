@@ -330,7 +330,7 @@ public class MultipartObjectAssembler {
     /**
      * Aborts the current multi-part assembly and all uploads
      * that are currently in progress.
-     * @return
+     * @return abort response
      */
     public AbortMultipartUploadResponse abort() {
         // allow aborted calls to call abort again (in case the first call

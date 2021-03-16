@@ -87,6 +87,15 @@ public class ListenerDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("routingPolicyName")
+        private String routingPolicyName;
+
+        public Builder routingPolicyName(String routingPolicyName) {
+            this.routingPolicyName = routingPolicyName;
+            this.__explicitlySet__.add("routingPolicyName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("ruleSetNames")
         private java.util.List<String> ruleSetNames;
 
@@ -109,6 +118,7 @@ public class ListenerDetails {
                             pathRouteSetName,
                             sslConfiguration,
                             connectionConfiguration,
+                            routingPolicyName,
                             ruleSetNames);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -124,6 +134,7 @@ public class ListenerDetails {
                             .pathRouteSetName(o.getPathRouteSetName())
                             .sslConfiguration(o.getSslConfiguration())
                             .connectionConfiguration(o.getConnectionConfiguration())
+                            .routingPolicyName(o.getRoutingPolicyName())
                             .ruleSetNames(o.getRuleSetNames());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -174,6 +185,8 @@ public class ListenerDetails {
     java.util.List<String> hostnameNames;
 
     /**
+     * Deprecated. Please use `routingPolicies` instead.
+     * <p>
      * The name of the set of path-based routing rules, {@link PathRouteSet},
      * applied to this listener's traffic.
      * <p>
@@ -188,6 +201,15 @@ public class ListenerDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("connectionConfiguration")
     ConnectionConfiguration connectionConfiguration;
+
+    /**
+     * The name of the routing policy applied to this listener's traffic.
+     * <p>
+     * Example: `example_routing_policy`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("routingPolicyName")
+    String routingPolicyName;
 
     /**
      * The names of the {@link RuleSet} to apply to the listener.

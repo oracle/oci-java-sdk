@@ -1026,6 +1026,50 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateClusterEndpointConfigResponse>
+            updateClusterEndpointConfig(
+                    UpdateClusterEndpointConfigRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateClusterEndpointConfigRequest,
+                                    UpdateClusterEndpointConfigResponse>
+                            handler) {
+        LOG.trace("Called async updateClusterEndpointConfig");
+        final UpdateClusterEndpointConfigRequest interceptedRequest =
+                UpdateClusterEndpointConfigConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateClusterEndpointConfigConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateClusterEndpointConfigResponse>
+                transformer = UpdateClusterEndpointConfigConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateClusterEndpointConfigRequest, UpdateClusterEndpointConfigResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateClusterEndpointConfigRequest,
+                                UpdateClusterEndpointConfigResponse>,
+                        java.util.concurrent.Future<UpdateClusterEndpointConfigResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateClusterEndpointConfigRequest, UpdateClusterEndpointConfigResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateNodePoolResponse> updateNodePool(
             UpdateNodePoolRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
