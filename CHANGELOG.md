@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.33.2 - 2021-03-16
+### Added
+- Support for routing policies and HTTP2 listener protocols in the Load Balancing service
+- Support for model deployments in the Data Science service
+- Support for private clusters in the Container Engine for Kubernetes service
+- Support for updating an instance's usage type in the Content and Experience service
+
 ## 1.33.1 - 2021-03-09
 ### Added
 - Support for the Application Performance Monitoring service

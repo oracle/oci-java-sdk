@@ -51,6 +51,15 @@ public class ClusterSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("endpointConfig")
+        private ClusterEndpointConfig endpointConfig;
+
+        public Builder endpointConfig(ClusterEndpointConfig endpointConfig) {
+            this.endpointConfig = endpointConfig;
+            this.__explicitlySet__.add("endpointConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
@@ -133,6 +142,7 @@ public class ClusterSummary {
                             id,
                             name,
                             compartmentId,
+                            endpointConfig,
                             vcnId,
                             kubernetesVersion,
                             options,
@@ -151,6 +161,7 @@ public class ClusterSummary {
                     id(o.getId())
                             .name(o.getName())
                             .compartmentId(o.getCompartmentId())
+                            .endpointConfig(o.getEndpointConfig())
                             .vcnId(o.getVcnId())
                             .kubernetesVersion(o.getKubernetesVersion())
                             .options(o.getOptions())
@@ -189,6 +200,13 @@ public class ClusterSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
+
+    /**
+     * The network configuration for access to the Cluster control plane.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("endpointConfig")
+    ClusterEndpointConfig endpointConfig;
 
     /**
      * The OCID of the virtual cloud network (VCN) in which the cluster exists

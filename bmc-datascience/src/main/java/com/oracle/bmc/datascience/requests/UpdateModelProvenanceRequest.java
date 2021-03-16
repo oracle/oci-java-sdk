@@ -15,7 +15,7 @@ public class UpdateModelProvenanceRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdateModelProvenanceDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the model.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
      */
     private String modelId;
 
@@ -25,7 +25,7 @@ public class UpdateModelProvenanceRequest
     private UpdateModelProvenanceDetails updateModelProvenanceDetails;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
      *
      */
     private String opcRequestId;
@@ -34,7 +34,7 @@ public class UpdateModelProvenanceRequest
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the `if-match` parameter to the value of the
      * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the `etag` you
+     * The resource is updated or deleted only if the `etag` you
      * provide matches the resource's current `etag` value.
      *
      */

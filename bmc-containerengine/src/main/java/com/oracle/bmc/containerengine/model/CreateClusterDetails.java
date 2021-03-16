@@ -44,6 +44,15 @@ public class CreateClusterDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("endpointConfig")
+        private CreateClusterEndpointConfigDetails endpointConfig;
+
+        public Builder endpointConfig(CreateClusterEndpointConfigDetails endpointConfig) {
+            this.endpointConfig = endpointConfig;
+            this.__explicitlySet__.add("endpointConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
@@ -86,7 +95,13 @@ public class CreateClusterDetails {
         public CreateClusterDetails build() {
             CreateClusterDetails __instance__ =
                     new CreateClusterDetails(
-                            name, compartmentId, vcnId, kubernetesVersion, kmsKeyId, options);
+                            name,
+                            compartmentId,
+                            endpointConfig,
+                            vcnId,
+                            kubernetesVersion,
+                            kmsKeyId,
+                            options);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -96,6 +111,7 @@ public class CreateClusterDetails {
             Builder copiedBuilder =
                     name(o.getName())
                             .compartmentId(o.getCompartmentId())
+                            .endpointConfig(o.getEndpointConfig())
                             .vcnId(o.getVcnId())
                             .kubernetesVersion(o.getKubernetesVersion())
                             .kmsKeyId(o.getKmsKeyId())
@@ -124,6 +140,13 @@ public class CreateClusterDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
+
+    /**
+     * The network configuration for access to the Cluster control plane.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("endpointConfig")
+    CreateClusterEndpointConfigDetails endpointConfig;
 
     /**
      * The OCID of the virtual cloud network (VCN) in which to create the cluster.

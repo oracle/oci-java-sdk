@@ -14,18 +14,18 @@ import com.oracle.bmc.datascience.model.*;
 public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the compartment.
+     * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
     /**
-     * <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
+     * <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
      *
      */
     private String id;
 
     /**
-     * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the project.
+     * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      */
     private String projectId;
 
@@ -42,7 +42,7 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     private com.oracle.bmc.datascience.model.ModelLifecycleState lifecycleState;
 
     /**
-     * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the user who created the resource.
+     * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
      */
     private String createdBy;
 
@@ -50,7 +50,7 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      * For list pagination. The maximum number of results per page,
      * or items to return in a paginated \"List\" call.
      * 1 is the minimum, 1000 is the maximum.
-     * See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      * <p>
      * Example: `500`
      *
@@ -61,7 +61,7 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      * For list pagination. The value of the `opc-next-page` response
      * header from the previous \"List\" call.
      * <p>
-     * See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      *
      */
     private String page;
@@ -110,16 +110,16 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     };
     /**
      * Specifies the field to sort by. Accepts only one field.
-     * By default, when you sort by `timeCreated`, results are shown
-     * in descending order. All other fields default to ascending order. Sort order for `displayName` field is case sensitive.
+     * By default, when you sort by `timeCreated`, the results are shown
+     * in descending order. All other fields default to ascending order. Sort order for the `displayName` field is case sensitive.
      *
      */
     private SortBy sortBy;
 
     /**
      * Specifies the field to sort by. Accepts only one field.
-     * By default, when you sort by `timeCreated`, results are shown
-     * in descending order. All other fields default to ascending order. Sort order for `displayName` field is case sensitive.
+     * By default, when you sort by `timeCreated`, the results are shown
+     * in descending order. All other fields default to ascending order. Sort order for the `displayName` field is case sensitive.
      *
      **/
     public enum SortBy {
@@ -156,7 +156,7 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
      *
      */
     private String opcRequestId;

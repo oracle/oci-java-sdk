@@ -95,7 +95,7 @@ public class UpdateModelDetails {
     }
 
     /**
-     * A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information.
+     * A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
      *  Example: `My Model`
      *
      **/
@@ -103,7 +103,7 @@ public class UpdateModelDetails {
     String displayName;
 
     /**
-     * A short blurb describing the model.
+     * A short description of the model.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;

@@ -14,12 +14,12 @@ import com.oracle.bmc.datascience.model.*;
 public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the compartment.
+     * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
     /**
-     * <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
+     * <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
      *
      */
     private String id;
@@ -37,6 +37,11 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         NotebookSessionDelete("NOTEBOOK_SESSION_DELETE"),
         NotebookSessionActivate("NOTEBOOK_SESSION_ACTIVATE"),
         NotebookSessionDeactivate("NOTEBOOK_SESSION_DEACTIVATE"),
+        ModelDeploymentCreate("MODEL_DEPLOYMENT_CREATE"),
+        ModelDeploymentDelete("MODEL_DEPLOYMENT_DELETE"),
+        ModelDeploymentActivate("MODEL_DEPLOYMENT_ACTIVATE"),
+        ModelDeploymentDeactivate("MODEL_DEPLOYMENT_DEACTIVATE"),
+        ModelDeploymentUpdate("MODEL_DEPLOYMENT_UPDATE"),
         ProjectDelete("PROJECT_DELETE"),
         WorkrequestCancel("WORKREQUEST_CANCEL"),
         ;
@@ -116,7 +121,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      * For list pagination. The maximum number of results per page,
      * or items to return in a paginated \"List\" call.
      * 1 is the minimum, 1000 is the maximum.
-     * See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      * <p>
      * Example: `500`
      *
@@ -127,7 +132,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      * For list pagination. The value of the `opc-next-page` response
      * header from the previous \"List\" call.
      * <p>
-     * See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      *
      */
     private String page;
@@ -175,13 +180,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order.
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, the results are shown in descending order. All other fields default to ascending order.
      *
      */
     private SortBy sortBy;
 
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order.
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, the results are shown in descending order. All other fields default to ascending order.
      *
      **/
     public enum SortBy {
@@ -218,7 +223,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
      *
      */
     private String opcRequestId;

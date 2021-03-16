@@ -150,7 +150,7 @@ public class WorkRequest {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work request.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -168,7 +168,7 @@ public class WorkRequest {
     WorkRequestStatus status;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work request's compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request's compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -186,19 +186,19 @@ public class WorkRequest {
     java.util.List<WorkRequestResource> resources;
 
     /**
-     * The time the work request was accepted, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The time the work request was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     java.util.Date timeAccepted;
 
     /**
-     * The time the work request was started, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The time the work request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     java.util.Date timeStarted;
 
     /**
-     * The time the work request was finished, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The time the work request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     java.util.Date timeFinished;

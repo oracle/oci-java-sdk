@@ -162,6 +162,18 @@ public interface LoadBalancer extends AutoCloseable {
     CreatePathRouteSetResponse createPathRouteSet(CreatePathRouteSetRequest request);
 
     /**
+     * Adds a routing policy to a load balancer. For more information, see
+     * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateRoutingPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRoutingPolicy API.
+     */
+    CreateRoutingPolicyResponse createRoutingPolicy(CreateRoutingPolicyRequest request);
+
+    /**
      * Creates a new rule set associated with the specified load balancer. For more information, see
      * [Managing Rule Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrulesets.htm).
      *
@@ -260,6 +272,20 @@ public interface LoadBalancer extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeletePathRouteSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePathRouteSet API.
      */
     DeletePathRouteSetResponse deletePathRouteSet(DeletePathRouteSetRequest request);
+
+    /**
+     * Deletes a routing policy from the specified load balancer.
+     * <p>
+     * To delete a routing rule from a routing policy, use the
+     * {@link #updateRoutingPolicy(UpdateRoutingPolicyRequest) updateRoutingPolicy} operation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteRoutingPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRoutingPolicy API.
+     */
+    DeleteRoutingPolicyResponse deleteRoutingPolicy(DeleteRoutingPolicyRequest request);
 
     /**
      * Deletes a rule set from the specified load balancer.
@@ -374,6 +400,16 @@ public interface LoadBalancer extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetPathRouteSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPathRouteSet API.
      */
     GetPathRouteSetResponse getPathRouteSet(GetPathRouteSetRequest request);
+
+    /**
+     * Gets the specified routing policy.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetRoutingPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRoutingPolicy API.
+     */
+    GetRoutingPolicyResponse getRoutingPolicy(GetRoutingPolicyRequest request);
 
     /**
      * Gets the specified set of rules.
@@ -511,6 +547,16 @@ public interface LoadBalancer extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListProtocolsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProtocols API.
      */
     ListProtocolsResponse listProtocols(ListProtocolsRequest request);
+
+    /**
+     * Lists all routing policies associated with the specified load balancer.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListRoutingPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRoutingPolicies API.
+     */
+    ListRoutingPoliciesResponse listRoutingPolicies(ListRoutingPoliciesRequest request);
 
     /**
      * Lists all rule sets associated with the specified load balancer.
@@ -656,6 +702,20 @@ public interface LoadBalancer extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdatePathRouteSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePathRouteSet API.
      */
     UpdatePathRouteSetResponse updatePathRouteSet(UpdatePathRouteSetRequest request);
+
+    /**
+     * Overwrites an existing routing policy on the specified load balancer. Use this operation to add, delete, or alter
+     * routing policy rules in a routing policy.
+     * <p>
+     * To add a new routing rule to a routing policy, the body must include both the new routing rule to add and the existing rules to retain.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateRoutingPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRoutingPolicy API.
+     */
+    UpdateRoutingPolicyResponse updateRoutingPolicy(UpdateRoutingPolicyRequest request);
 
     /**
      * Overwrites an existing set of rules on the specified load balancer. Use this operation to add or alter

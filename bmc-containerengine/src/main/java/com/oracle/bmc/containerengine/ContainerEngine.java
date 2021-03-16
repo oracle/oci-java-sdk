@@ -219,6 +219,17 @@ public interface ContainerEngine extends AutoCloseable {
     UpdateClusterResponse updateCluster(UpdateClusterRequest request);
 
     /**
+     * Update the details of the cluster endpoint configuration.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/UpdateClusterEndpointConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateClusterEndpointConfig API.
+     */
+    UpdateClusterEndpointConfigResponse updateClusterEndpointConfig(
+            UpdateClusterEndpointConfigRequest request);
+
+    /**
      * Update the details of a node pool.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

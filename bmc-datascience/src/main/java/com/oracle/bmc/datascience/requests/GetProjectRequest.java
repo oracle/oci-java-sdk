@@ -14,12 +14,12 @@ import com.oracle.bmc.datascience.model.*;
 public class GetProjectRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the project.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      */
     private String projectId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
      *
      */
     private String opcRequestId;

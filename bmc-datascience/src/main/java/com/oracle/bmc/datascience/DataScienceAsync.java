@@ -62,6 +62,22 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Activates the model deployment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ActivateModelDeploymentResponse> activateModelDeployment(
+            ActivateModelDeploymentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ActivateModelDeploymentRequest, ActivateModelDeploymentResponse>
+                    handler);
+
+    /**
      * Activates the notebook session.
      *
      * @param request The request object containing the details to send
@@ -108,6 +124,24 @@ public interface DataScienceAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ChangeModelCompartmentRequest, ChangeModelCompartmentResponse>
                     handler);
+
+    /**
+     * Moves a model deployment into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeModelDeploymentCompartmentResponse>
+            changeModelDeploymentCompartment(
+                    ChangeModelDeploymentCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeModelDeploymentCompartmentRequest,
+                                    ChangeModelDeploymentCompartmentResponse>
+                            handler);
 
     /**
      * Moves a notebook session resource into a different compartment.
@@ -174,6 +208,22 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new model deployment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateModelDeploymentResponse> createModelDeployment(
+            CreateModelDeploymentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateModelDeploymentRequest, CreateModelDeploymentResponse>
+                    handler);
+
+    /**
      * Creates provenance information for the specified model.
      *
      * @param request The request object containing the details to send
@@ -236,6 +286,22 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deactivates the model deployment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeactivateModelDeploymentResponse> deactivateModelDeployment(
+            DeactivateModelDeploymentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeactivateModelDeploymentRequest, DeactivateModelDeploymentResponse>
+                    handler);
+
+    /**
      * Deactivates the notebook session.
      *
      * @param request The request object containing the details to send
@@ -266,7 +332,23 @@ public interface DataScienceAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<DeleteModelRequest, DeleteModelResponse> handler);
 
     /**
-     * Deletes the specified notebook session. Any unsaved work in this notebook session will be lost.
+     * Deletes the specified model deployment. Any unsaved work in this model deployment is lost.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteModelDeploymentResponse> deleteModelDeployment(
+            DeleteModelDeploymentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteModelDeploymentRequest, DeleteModelDeploymentResponse>
+                    handler);
+
+    /**
+     * Deletes the specified notebook session. Any unsaved work in this notebook session are lost.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -282,7 +364,7 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the specified project. This operation will fail unless all associated resources (such as notebook sessions or models) are in a DELETED state. You must delete all associated resources before deleting a project.
+     * Deletes the specified project. This operation fails unless all associated resources (notebook sessions or models) are in a DELETED state. You must delete all associated resources before deleting a project.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -324,6 +406,22 @@ public interface DataScienceAsync extends AutoCloseable {
             GetModelArtifactContentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetModelArtifactContentRequest, GetModelArtifactContentResponse>
+                    handler);
+
+    /**
+     * Retrieves the model deployment for the specified `modelDeploymentId`.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetModelDeploymentResponse> getModelDeployment(
+            GetModelDeploymentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetModelDeploymentRequest, GetModelDeploymentResponse>
                     handler);
 
     /**
@@ -404,6 +502,39 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the valid model deployment shapes.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListModelDeploymentShapesResponse> listModelDeploymentShapes(
+            ListModelDeploymentShapesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListModelDeploymentShapesRequest, ListModelDeploymentShapesResponse>
+                    handler);
+
+    /**
+     * Lists all model deployments in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListModelDeploymentsResponse> listModelDeployments(
+            ListModelDeploymentsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListModelDeploymentsRequest, ListModelDeploymentsResponse>
+                    handler);
+
+    /**
      * Lists models in the specified compartment.
      *
      * @param request The request object containing the details to send
@@ -434,7 +565,7 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists notebook sessions in the specified compartment.
+     * Lists the notebook sessions in the specified compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -526,7 +657,27 @@ public interface DataScienceAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<UpdateModelRequest, UpdateModelResponse> handler);
 
     /**
-     * Updates provenance information for the specified model.
+     * Updates the properties of a model deployment. You can update the `displayName`.
+     * When the model deployment is in the ACTIVE lifecycle state, you can update `modelDeploymentConfigurationDetails` and  change `instanceShapeName` and `modelId`. Any update to
+     * `bandwidthMbps` or `instanceCount` can be done when the model deployment is in the INACTIVE lifecycle state. Changes to the `bandwidthMbps` or `instanceCount` will take effect
+     * the next time the `ActivateModelDeployment` action is invoked on the model deployment resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateModelDeploymentResponse> updateModelDeployment(
+            UpdateModelDeploymentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateModelDeploymentRequest, UpdateModelDeploymentResponse>
+                    handler);
+
+    /**
+     * Updates the provenance information for the specified model.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -544,7 +695,7 @@ public interface DataScienceAsync extends AutoCloseable {
     /**
      * Updates the properties of a notebook session. You can update the `displayName`, `freeformTags`, and `definedTags` properties.
      * When the notebook session is in the INACTIVE lifecycle state, you can update `notebookSessionConfigurationDetails` and change `shape`, `subnetId`, and `blockStorageSizeInGBs`.
-     * Changes to the `notebookSessionConfigurationDetails` will take effect the next time the `ActivateNotebookSession` action is invoked on the notebook session resource.
+     * Changes to the `notebookSessionConfigurationDetails` take effect the next time the `ActivateNotebookSession` action is invoked on the notebook session resource.
      *
      *
      * @param request The request object containing the details to send

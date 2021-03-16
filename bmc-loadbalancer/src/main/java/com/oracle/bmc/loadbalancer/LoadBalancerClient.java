@@ -708,6 +708,39 @@ public class LoadBalancerClient implements LoadBalancer {
     }
 
     @Override
+    public CreateRoutingPolicyResponse createRoutingPolicy(CreateRoutingPolicyRequest request) {
+        LOG.trace("Called createRoutingPolicy");
+        final CreateRoutingPolicyRequest interceptedRequest =
+                CreateRoutingPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateRoutingPolicyConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateRoutingPolicyResponse>
+                transformer = CreateRoutingPolicyConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateRoutingPolicyDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateRuleSetResponse createRuleSet(CreateRuleSetRequest request) {
         LOG.trace("Called createRuleSet");
         final CreateRuleSetRequest interceptedRequest =
@@ -955,6 +988,35 @@ public class LoadBalancerClient implements LoadBalancer {
                 DeletePathRouteSetConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeletePathRouteSetResponse>
                 transformer = DeletePathRouteSetConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteRoutingPolicyResponse deleteRoutingPolicy(DeleteRoutingPolicyRequest request) {
+        LOG.trace("Called deleteRoutingPolicy");
+        final DeleteRoutingPolicyRequest interceptedRequest =
+                DeleteRoutingPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteRoutingPolicyConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRoutingPolicyResponse>
+                transformer = DeleteRoutingPolicyConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1266,6 +1328,34 @@ public class LoadBalancerClient implements LoadBalancer {
                 GetPathRouteSetConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetPathRouteSetResponse>
                 transformer = GetPathRouteSetConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetRoutingPolicyResponse getRoutingPolicy(GetRoutingPolicyRequest request) {
+        LOG.trace("Called getRoutingPolicy");
+        final GetRoutingPolicyRequest interceptedRequest =
+                GetRoutingPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRoutingPolicyConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetRoutingPolicyResponse>
+                transformer = GetRoutingPolicyConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1630,6 +1720,34 @@ public class LoadBalancerClient implements LoadBalancer {
                 ListProtocolsConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListProtocolsResponse>
                 transformer = ListProtocolsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListRoutingPoliciesResponse listRoutingPolicies(ListRoutingPoliciesRequest request) {
+        LOG.trace("Called listRoutingPolicies");
+        final ListRoutingPoliciesRequest interceptedRequest =
+                ListRoutingPoliciesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRoutingPoliciesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListRoutingPoliciesResponse>
+                transformer = ListRoutingPoliciesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -2054,6 +2172,39 @@ public class LoadBalancerClient implements LoadBalancer {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdatePathRouteSetDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateRoutingPolicyResponse updateRoutingPolicy(UpdateRoutingPolicyRequest request) {
+        LOG.trace("Called updateRoutingPolicy");
+        final UpdateRoutingPolicyRequest interceptedRequest =
+                UpdateRoutingPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateRoutingPolicyConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRoutingPolicyResponse>
+                transformer = UpdateRoutingPolicyConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateRoutingPolicyDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

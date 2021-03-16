@@ -401,6 +401,47 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ActivateModelDeploymentResponse> activateModelDeployment(
+            ActivateModelDeploymentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ActivateModelDeploymentRequest, ActivateModelDeploymentResponse>
+                    handler) {
+        LOG.trace("Called async activateModelDeployment");
+        final ActivateModelDeploymentRequest interceptedRequest =
+                ActivateModelDeploymentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ActivateModelDeploymentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ActivateModelDeploymentResponse>
+                transformer = ActivateModelDeploymentConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ActivateModelDeploymentRequest, ActivateModelDeploymentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ActivateModelDeploymentRequest, ActivateModelDeploymentResponse>,
+                        java.util.concurrent.Future<ActivateModelDeploymentResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ActivateModelDeploymentRequest, ActivateModelDeploymentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ActivateNotebookSessionResponse> activateNotebookSession(
             ActivateNotebookSessionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -510,6 +551,53 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ChangeModelCompartmentRequest, ChangeModelCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeModelDeploymentCompartmentResponse>
+            changeModelDeploymentCompartment(
+                    ChangeModelDeploymentCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeModelDeploymentCompartmentRequest,
+                                    ChangeModelDeploymentCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeModelDeploymentCompartment");
+        final ChangeModelDeploymentCompartmentRequest interceptedRequest =
+                ChangeModelDeploymentCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeModelDeploymentCompartmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeModelDeploymentCompartmentResponse>
+                transformer = ChangeModelDeploymentCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeModelDeploymentCompartmentRequest,
+                        ChangeModelDeploymentCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeModelDeploymentCompartmentRequest,
+                                ChangeModelDeploymentCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeModelDeploymentCompartmentResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeModelDeploymentCompartmentRequest,
+                    ChangeModelDeploymentCompartmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -709,6 +797,48 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateModelDeploymentResponse> createModelDeployment(
+            CreateModelDeploymentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateModelDeploymentRequest, CreateModelDeploymentResponse>
+                    handler) {
+        LOG.trace("Called async createModelDeployment");
+        final CreateModelDeploymentRequest interceptedRequest =
+                CreateModelDeploymentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateModelDeploymentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateModelDeploymentResponse>
+                transformer = CreateModelDeploymentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateModelDeploymentRequest, CreateModelDeploymentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateModelDeploymentRequest, CreateModelDeploymentResponse>,
+                        java.util.concurrent.Future<CreateModelDeploymentResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateModelDeploymentRequest, CreateModelDeploymentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateModelProvenanceResponse> createModelProvenance(
             CreateModelProvenanceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -871,6 +1001,48 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeactivateModelDeploymentResponse> deactivateModelDeployment(
+            DeactivateModelDeploymentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeactivateModelDeploymentRequest, DeactivateModelDeploymentResponse>
+                    handler) {
+        LOG.trace("Called async deactivateModelDeployment");
+        final DeactivateModelDeploymentRequest interceptedRequest =
+                DeactivateModelDeploymentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeactivateModelDeploymentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeactivateModelDeploymentResponse>
+                transformer = DeactivateModelDeploymentConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeactivateModelDeploymentRequest, DeactivateModelDeploymentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeactivateModelDeploymentRequest,
+                                DeactivateModelDeploymentResponse>,
+                        java.util.concurrent.Future<DeactivateModelDeploymentResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeactivateModelDeploymentRequest, DeactivateModelDeploymentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeactivateNotebookSessionResponse> deactivateNotebookSession(
             DeactivateNotebookSessionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -938,6 +1110,47 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteModelRequest, DeleteModelResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteModelDeploymentResponse> deleteModelDeployment(
+            DeleteModelDeploymentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteModelDeploymentRequest, DeleteModelDeploymentResponse>
+                    handler) {
+        LOG.trace("Called async deleteModelDeployment");
+        final DeleteModelDeploymentRequest interceptedRequest =
+                DeleteModelDeploymentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteModelDeploymentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteModelDeploymentResponse>
+                transformer = DeleteModelDeploymentConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteModelDeploymentRequest, DeleteModelDeploymentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteModelDeploymentRequest, DeleteModelDeploymentResponse>,
+                        java.util.concurrent.Future<DeleteModelDeploymentResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteModelDeploymentRequest, DeleteModelDeploymentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1094,6 +1307,45 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetModelArtifactContentRequest, GetModelArtifactContentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetModelDeploymentResponse> getModelDeployment(
+            GetModelDeploymentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetModelDeploymentRequest, GetModelDeploymentResponse>
+                    handler) {
+        LOG.trace("Called async getModelDeployment");
+        final GetModelDeploymentRequest interceptedRequest =
+                GetModelDeploymentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetModelDeploymentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetModelDeploymentResponse>
+                transformer = GetModelDeploymentConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetModelDeploymentRequest, GetModelDeploymentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetModelDeploymentRequest, GetModelDeploymentResponse>,
+                        java.util.concurrent.Future<GetModelDeploymentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetModelDeploymentRequest, GetModelDeploymentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1287,6 +1539,89 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     HeadModelArtifactRequest, HeadModelArtifactResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListModelDeploymentShapesResponse> listModelDeploymentShapes(
+            ListModelDeploymentShapesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListModelDeploymentShapesRequest, ListModelDeploymentShapesResponse>
+                    handler) {
+        LOG.trace("Called async listModelDeploymentShapes");
+        final ListModelDeploymentShapesRequest interceptedRequest =
+                ListModelDeploymentShapesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListModelDeploymentShapesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListModelDeploymentShapesResponse>
+                transformer = ListModelDeploymentShapesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListModelDeploymentShapesRequest, ListModelDeploymentShapesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListModelDeploymentShapesRequest,
+                                ListModelDeploymentShapesResponse>,
+                        java.util.concurrent.Future<ListModelDeploymentShapesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListModelDeploymentShapesRequest, ListModelDeploymentShapesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListModelDeploymentsResponse> listModelDeployments(
+            ListModelDeploymentsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListModelDeploymentsRequest, ListModelDeploymentsResponse>
+                    handler) {
+        LOG.trace("Called async listModelDeployments");
+        final ListModelDeploymentsRequest interceptedRequest =
+                ListModelDeploymentsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListModelDeploymentsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListModelDeploymentsResponse>
+                transformer = ListModelDeploymentsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListModelDeploymentsRequest, ListModelDeploymentsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListModelDeploymentsRequest, ListModelDeploymentsResponse>,
+                        java.util.concurrent.Future<ListModelDeploymentsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListModelDeploymentsRequest, ListModelDeploymentsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1604,6 +1939,47 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateModelRequest, UpdateModelResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateModelDeploymentResponse> updateModelDeployment(
+            UpdateModelDeploymentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateModelDeploymentRequest, UpdateModelDeploymentResponse>
+                    handler) {
+        LOG.trace("Called async updateModelDeployment");
+        final UpdateModelDeploymentRequest interceptedRequest =
+                UpdateModelDeploymentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateModelDeploymentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateModelDeploymentResponse>
+                transformer = UpdateModelDeploymentConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateModelDeploymentRequest, UpdateModelDeploymentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateModelDeploymentRequest, UpdateModelDeploymentResponse>,
+                        java.util.concurrent.Future<UpdateModelDeploymentResponse>>
+                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateModelDeploymentRequest, UpdateModelDeploymentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

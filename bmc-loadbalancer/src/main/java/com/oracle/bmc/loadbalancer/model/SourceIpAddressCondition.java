@@ -5,7 +5,7 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * An access control rule condition that requires a match on the specified source IP address or address range.
+ * A rule condition that checks client source IP against specified IP address or address range.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

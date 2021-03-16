@@ -78,7 +78,7 @@ public class WorkRequestError {
     }
 
     /**
-     * A short error code that defines the error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
+     * A short error code that defines the error, which is meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/Content/General/References/apierrors.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     String code;

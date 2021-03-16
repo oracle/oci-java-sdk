@@ -44,19 +44,31 @@ public class CreateClusterKubeconfigContentDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
+        private Endpoint endpoint;
+
+        public Builder endpoint(Endpoint endpoint) {
+            this.endpoint = endpoint;
+            this.__explicitlySet__.add("endpoint");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateClusterKubeconfigContentDetails build() {
             CreateClusterKubeconfigContentDetails __instance__ =
-                    new CreateClusterKubeconfigContentDetails(tokenVersion, expiration);
+                    new CreateClusterKubeconfigContentDetails(tokenVersion, expiration, endpoint);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateClusterKubeconfigContentDetails o) {
-            Builder copiedBuilder = tokenVersion(o.getTokenVersion()).expiration(o.getExpiration());
+            Builder copiedBuilder =
+                    tokenVersion(o.getTokenVersion())
+                            .expiration(o.getExpiration())
+                            .endpoint(o.getEndpoint());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -83,6 +95,47 @@ public class CreateClusterKubeconfigContentDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expiration")
     Integer expiration;
+    /**
+     * The endpoint to target. A cluster may have multiple endpoints exposed but the kubeconfig can only target one at a time.
+     **/
+    public enum Endpoint {
+        LegacyKubernetes("LEGACY_KUBERNETES"),
+        PublicEndpoint("PUBLIC_ENDPOINT"),
+        PrivateEndpoint("PRIVATE_ENDPOINT"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Endpoint> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Endpoint v : Endpoint.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Endpoint(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Endpoint create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Endpoint: " + key);
+        }
+    };
+    /**
+     * The endpoint to target. A cluster may have multiple endpoints exposed but the kubeconfig can only target one at a time.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
+    Endpoint endpoint;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

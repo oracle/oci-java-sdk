@@ -19,7 +19,7 @@ public class CreateModelRequest extends com.oracle.bmc.requests.BmcRequest<Creat
     private CreateModelDetails createModelDetails;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
      *
      */
     private String opcRequestId;

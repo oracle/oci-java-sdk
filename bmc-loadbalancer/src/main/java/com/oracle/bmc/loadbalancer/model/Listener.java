@@ -108,6 +108,15 @@ public class Listener {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("routingPolicyName")
+        private String routingPolicyName;
+
+        public Builder routingPolicyName(String routingPolicyName) {
+            this.routingPolicyName = routingPolicyName;
+            this.__explicitlySet__.add("routingPolicyName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -122,7 +131,8 @@ public class Listener {
                             pathRouteSetName,
                             sslConfiguration,
                             connectionConfiguration,
-                            ruleSetNames);
+                            ruleSetNames,
+                            routingPolicyName);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -138,7 +148,8 @@ public class Listener {
                             .pathRouteSetName(o.getPathRouteSetName())
                             .sslConfiguration(o.getSslConfiguration())
                             .connectionConfiguration(o.getConnectionConfiguration())
-                            .ruleSetNames(o.getRuleSetNames());
+                            .ruleSetNames(o.getRuleSetNames())
+                            .routingPolicyName(o.getRoutingPolicyName());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -197,6 +208,8 @@ public class Listener {
     java.util.List<String> hostnameNames;
 
     /**
+     * Deprecated. Please use `routingPolicies` instead.
+     * <p>
      * The name of the set of path-based routing rules, {@link PathRouteSet},
      * applied to this listener's traffic.
      * <p>
@@ -220,6 +233,15 @@ public class Listener {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleSetNames")
     java.util.List<String> ruleSetNames;
+
+    /**
+     * The name of the routing policy applied to this listener's traffic.
+     * <p>
+     * Example: `example_routing_policy_name`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("routingPolicyName")
+    String routingPolicyName;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
