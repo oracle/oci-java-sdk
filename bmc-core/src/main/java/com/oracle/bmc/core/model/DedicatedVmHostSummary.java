@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A dedicated virtual machine (VM) host that enables you to host multiple instances on a dedicated host instance that is not shared with other tenancies.
+ * A dedicated virtual machine (VM) host lets you host multiple instances on a dedicated server that is not shared with other tenancies.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -212,7 +212,7 @@ public class DedicatedVmHostSummary {
     String faultDomain;
 
     /**
-     * The OCID of the dedicated VM host.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")

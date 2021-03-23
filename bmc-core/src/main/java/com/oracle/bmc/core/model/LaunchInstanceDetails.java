@@ -37,6 +37,15 @@ public class LaunchInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+        private String capacityReservationId;
+
+        public Builder capacityReservationId(String capacityReservationId) {
+            this.capacityReservationId = capacityReservationId;
+            this.__explicitlySet__.add("capacityReservationId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -244,6 +253,7 @@ public class LaunchInstanceDetails {
             LaunchInstanceDetails __instance__ =
                     new LaunchInstanceDetails(
                             availabilityDomain,
+                            capacityReservationId,
                             compartmentId,
                             createVnicDetails,
                             dedicatedVmHostId,
@@ -274,6 +284,7 @@ public class LaunchInstanceDetails {
         public Builder copy(LaunchInstanceDetails o) {
             Builder copiedBuilder =
                     availabilityDomain(o.getAvailabilityDomain())
+                            .capacityReservationId(o.getCapacityReservationId())
                             .compartmentId(o.getCompartmentId())
                             .createVnicDetails(o.getCreateVnicDetails())
                             .dedicatedVmHostId(o.getDedicatedVmHostId())
@@ -319,6 +330,15 @@ public class LaunchInstanceDetails {
     String availabilityDomain;
 
     /**
+     * The OCID of the compute capacity reservation this instance is launched under.
+     * You can opt out of all default reservations by specifying an empty string as input for this field.
+     * For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+    String capacityReservationId;
+
+    /**
      * The OCID of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -336,7 +356,7 @@ public class LaunchInstanceDetails {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
@@ -390,7 +410,7 @@ public class LaunchInstanceDetails {
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Department\": \"Finance\"}`
      *
@@ -437,7 +457,7 @@ public class LaunchInstanceDetails {
      * <p>
      * For more information about the Bring Your Own Image feature of
      * Oracle Cloud Infrastructure, see
-     * [Bring Your Own Image](https://docs.cloud.oracle.com/Content/Compute/References/bringyourownimage.htm).
+     * [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
      * <p>
      * For more information about iPXE, see http://ipxe.org.
      *

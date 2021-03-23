@@ -6,8 +6,8 @@ package com.oracle.bmc.core.model;
 
 /**
  * A compute instance shape that can be used in {@link #launchInstance(LaunchInstanceRequest) launchInstance}.
- * For more information, see [Overview of the Compute Service](https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm) and
- * [Compute Shapes](https://docs.cloud.oracle.com/Content/Compute/References/computeshapes.htm).
+ * For more information, see [Overview of the Compute Service](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm) and
+ * [Compute Shapes](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

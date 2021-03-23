@@ -22,7 +22,7 @@ public class ListBootVolumesRequest extends com.oracle.bmc.requests.BmcRequest<j
     private String availabilityDomain;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 

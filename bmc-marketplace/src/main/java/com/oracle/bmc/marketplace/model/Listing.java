@@ -267,6 +267,25 @@ public class Listing {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("listingType")
+        private ListingType listingType;
+
+        public Builder listingType(ListingType listingType) {
+            this.listingType = listingType;
+            this.__explicitlySet__.add("listingType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("supportedOperatingSystems")
+        private java.util.List<OperatingSystem> supportedOperatingSystems;
+
+        public Builder supportedOperatingSystems(
+                java.util.List<OperatingSystem> supportedOperatingSystems) {
+            this.supportedOperatingSystems = supportedOperatingSystems;
+            this.__explicitlySet__.add("supportedOperatingSystems");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -299,7 +318,9 @@ public class Listing {
                             packageType,
                             defaultPackageVersion,
                             links,
-                            isFeatured);
+                            isFeatured,
+                            listingType,
+                            supportedOperatingSystems);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -333,7 +354,9 @@ public class Listing {
                             .packageType(o.getPackageType())
                             .defaultPackageVersion(o.getDefaultPackageVersion())
                             .links(o.getLinks())
-                            .isFeatured(o.getIsFeatured());
+                            .isFeatured(o.getIsFeatured())
+                            .listingType(o.getListingType())
+                            .supportedOperatingSystems(o.getSupportedOperatingSystems());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -500,6 +523,18 @@ public class Listing {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFeatured")
     Boolean isFeatured;
+
+    /**
+     * In which catalog the listing should exist.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("listingType")
+    ListingType listingType;
+
+    /**
+     * List of operating systems supported.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("supportedOperatingSystems")
+    java.util.List<OperatingSystem> supportedOperatingSystems;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

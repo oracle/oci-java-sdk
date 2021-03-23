@@ -79,7 +79,7 @@ public class InstancePoolPlacementSecondaryVnicSubnet {
     String displayName;
 
     /**
-     * The subnet [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+     * The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     String subnetId;

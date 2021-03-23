@@ -16,7 +16,7 @@ public class GetAnnouncementUserStatusResponse {
     private final int __httpStatusCode__;
 
     /**
-     *
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the complete request ID.
      */
     private String opcRequestId;
 

@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.34.0 - 2021-03-23
+### Added
+- Support for the Network Load Balancing service
+- Support for maintenance runs on autonomous databases in the Database service
+- Support for announcement preferences in the Announcements service
+- Support for domain claiming in the Organizations service
+- Support for saved reports in the Usage service
+- Support for the HeatWave in-memory analytics accelerator in the MySQL Database service
+- Support for community applications in the Marketplace service
+- Support for capacity reservations in the Compute service
+
+### Breaking Changes
+- Method `getCompartmentId()` is removed from `ListWorkRequestErrorsRequest` of `tenantmanagercontrolplane` service
+- Method `getCompartmentId()` is removed from `ListWorkRequestLogsRequest` of `tenantmanagercontrolplane` service
+- Value of Enum attribute `Operator` in Usage API service defaults to `UnknownEnumValue` when it receives an invalid value. In the earlier versions, this raises a `Invalid Operator` error
+
 ## 1.33.2 - 2021-03-16
 ### Added
 - Support for routing policies and HTTP2 listener protocols in the Load Balancing service

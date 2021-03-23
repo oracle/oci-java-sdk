@@ -76,7 +76,7 @@ public class WorkRequestLogEntry {
     String message;
 
     /**
-     * The time the log message was written. An RFC3339 formatted datetime string.
+     * The time the log message was written. An RFC3339-formatted date and time string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     java.util.Date timestamp;

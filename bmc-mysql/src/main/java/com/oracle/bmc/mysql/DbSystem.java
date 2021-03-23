@@ -46,6 +46,7 @@ public interface DbSystem extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * DEPRECATED -- please use HeatWave API instead.
      * Adds an Analytics Cluster to the DB System.
      *
      * @param request The request object containing the details to send
@@ -55,6 +56,17 @@ public interface DbSystem extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/AddAnalyticsClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddAnalyticsCluster API.
      */
     AddAnalyticsClusterResponse addAnalyticsCluster(AddAnalyticsClusterRequest request);
+
+    /**
+     * Adds a HeatWave cluster to the DB System.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/AddHeatWaveClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddHeatWaveCluster API.
+     */
+    AddHeatWaveClusterResponse addHeatWaveCluster(AddHeatWaveClusterRequest request);
 
     /**
      * Creates and launches a DB System.
@@ -68,6 +80,7 @@ public interface DbSystem extends AutoCloseable {
     CreateDbSystemResponse createDbSystem(CreateDbSystemRequest request);
 
     /**
+     * DEPRECATED -- please use HeatWave API instead.
      * Deletes the Analytics Cluster including terminating, detaching, removing, finalizing and
      * otherwise deleting all related resources.
      *
@@ -92,6 +105,19 @@ public interface DbSystem extends AutoCloseable {
     DeleteDbSystemResponse deleteDbSystem(DeleteDbSystemRequest request);
 
     /**
+     * Deletes the HeatWave cluster including terminating, detaching, removing, finalizing and
+     * otherwise deleting all related resources.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/DeleteHeatWaveClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteHeatWaveCluster API.
+     */
+    DeleteHeatWaveClusterResponse deleteHeatWaveCluster(DeleteHeatWaveClusterRequest request);
+
+    /**
+     * DEPRECATED -- please use HeatWave API instead.
      * Sends a request to estimate the memory footprints of user tables when loaded to Analytics Cluster memory.
      *
      * @param request The request object containing the details to send
@@ -104,7 +130,21 @@ public interface DbSystem extends AutoCloseable {
             GenerateAnalyticsClusterMemoryEstimateRequest request);
 
     /**
+     * Sends a request to estimate the memory footprints of user tables when loaded to HeatWave cluster memory.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GenerateHeatWaveClusterMemoryEstimateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateHeatWaveClusterMemoryEstimate API.
+     */
+    GenerateHeatWaveClusterMemoryEstimateResponse generateHeatWaveClusterMemoryEstimate(
+            GenerateHeatWaveClusterMemoryEstimateRequest request);
+
+    /**
+     * DEPRECATED -- please use HeatWave API instead.
      * Gets information about the Analytics Cluster.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -114,6 +154,7 @@ public interface DbSystem extends AutoCloseable {
     GetAnalyticsClusterResponse getAnalyticsCluster(GetAnalyticsClusterRequest request);
 
     /**
+     * DEPRECATED -- please use HeatWave API instead.
      * Gets the most recent Analytics Cluster memory estimate that can be used to determine a suitable
      * Analytics Cluster size.
      *
@@ -137,6 +178,29 @@ public interface DbSystem extends AutoCloseable {
     GetDbSystemResponse getDbSystem(GetDbSystemRequest request);
 
     /**
+     * Gets information about the HeatWave cluster.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetHeatWaveClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetHeatWaveCluster API.
+     */
+    GetHeatWaveClusterResponse getHeatWaveCluster(GetHeatWaveClusterRequest request);
+
+    /**
+     * Gets the most recent HeatWave cluster memory estimate that can be used to determine a suitable
+     * HeatWave cluster size.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetHeatWaveClusterMemoryEstimateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetHeatWaveClusterMemoryEstimate API.
+     */
+    GetHeatWaveClusterMemoryEstimateResponse getHeatWaveClusterMemoryEstimate(
+            GetHeatWaveClusterMemoryEstimateRequest request);
+
+    /**
      * Get a list of DB Systems in the specified compartment.
      * The default sort order is by timeUpdated, descending.
      *
@@ -149,7 +213,9 @@ public interface DbSystem extends AutoCloseable {
     ListDbSystemsResponse listDbSystems(ListDbSystemsRequest request);
 
     /**
+     * DEPRECATED -- please use HeatWave API instead.
      * Restarts the Analytics Cluster.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -169,7 +235,19 @@ public interface DbSystem extends AutoCloseable {
     RestartDbSystemResponse restartDbSystem(RestartDbSystemRequest request);
 
     /**
+     * Restarts the HeatWave cluster.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/RestartHeatWaveClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestartHeatWaveCluster API.
+     */
+    RestartHeatWaveClusterResponse restartHeatWaveCluster(RestartHeatWaveClusterRequest request);
+
+    /**
+     * DEPRECATED -- please use HeatWave API instead.
      * Starts the Analytics Cluster.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -189,7 +267,19 @@ public interface DbSystem extends AutoCloseable {
     StartDbSystemResponse startDbSystem(StartDbSystemRequest request);
 
     /**
+     * Starts the HeatWave cluster.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/StartHeatWaveClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartHeatWaveCluster API.
+     */
+    StartHeatWaveClusterResponse startHeatWaveCluster(StartHeatWaveClusterRequest request);
+
+    /**
+     * DEPRECATED -- please use HeatWave API instead.
      * Stops the Analytics Cluster.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -212,6 +302,17 @@ public interface DbSystem extends AutoCloseable {
     StopDbSystemResponse stopDbSystem(StopDbSystemRequest request);
 
     /**
+     * Stops the HeatWave cluster.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/StopHeatWaveClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopHeatWaveCluster API.
+     */
+    StopHeatWaveClusterResponse stopHeatWaveCluster(StopHeatWaveClusterRequest request);
+
+    /**
+     * DEPRECATED -- please use HeatWave API instead.
      * Updates the Analytics Cluster.
      *
      * @param request The request object containing the details to send
@@ -239,6 +340,17 @@ public interface DbSystem extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/UpdateDbSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDbSystem API.
      */
     UpdateDbSystemResponse updateDbSystem(UpdateDbSystemRequest request);
+
+    /**
+     * Updates the HeatWave cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/UpdateHeatWaveClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateHeatWaveCluster API.
+     */
+    UpdateHeatWaveClusterResponse updateHeatWaveCluster(UpdateHeatWaveClusterRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

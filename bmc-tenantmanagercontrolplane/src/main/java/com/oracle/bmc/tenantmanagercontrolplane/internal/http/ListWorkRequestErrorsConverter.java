@@ -31,7 +31,6 @@ public class ListWorkRequestErrorsConverter {
                     request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-        Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
@@ -41,12 +40,6 @@ public class ListWorkRequestErrorsConverter {
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
                                         request.getWorkRequestId()))
                         .path("errors");
-
-        target =
-                target.queryParam(
-                        "compartmentId",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getCompartmentId()));
 
         if (request.getPage() != null) {
             target =

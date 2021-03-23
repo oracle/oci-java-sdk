@@ -87,7 +87,7 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Creates a secondary VNIC and attaches it to the specified instance.
      * For more information about secondary VNICs, see
-     * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/Content/Network/Tasks/managingVNICs.htm).
+     * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -149,6 +149,27 @@ public interface ComputeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             CaptureConsoleHistoryRequest, CaptureConsoleHistoryResponse>
                     handler);
+
+    /**
+     * Moves a compute capacity reservation into a different compartment. For information about
+     * moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeComputeCapacityReservationCompartmentResponse>
+            changeComputeCapacityReservationCompartment(
+                    ChangeComputeCapacityReservationCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeComputeCapacityReservationCompartmentRequest,
+                                    ChangeComputeCapacityReservationCompartmentResponse>
+                            handler);
 
     /**
      * Moves a compute image capability schema into a different compartment within the same tenancy.
@@ -249,6 +270,29 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new compute capacity reservation in the specified compartment and availability domain.
+     * Compute capacity reservations let you reserve instances in a compartment.
+     * When you launch an instance using this reservation, you are assured that you have enough space for your instance,
+     * and you won't get out of capacity errors.
+     * For more information, see [Reserved Capacity](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateComputeCapacityReservationResponse>
+            createComputeCapacityReservation(
+                    CreateComputeCapacityReservationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateComputeCapacityReservationRequest,
+                                    CreateComputeCapacityReservationResponse>
+                            handler);
+
+    /**
      * Creates compute image capability schema.
      *
      *
@@ -292,7 +336,7 @@ public interface ComputeAsync extends AutoCloseable {
      * <p>
      * When creating a new image, you must provide the OCID of the instance you want to use as the basis for the image, and
      * the OCID of the compartment containing that instance. For more information about images,
-     * see [Managing Custom Images](https://docs.cloud.oracle.com/Content/Compute/Tasks/managingcustomimages.htm).
+     * see [Managing Custom Images](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
      * <p>
      * When importing an exported image from Object Storage, you specify the source information
      * in {@link #imageSourceDetails(ImageSourceDetailsRequest, Consumer, Consumer) imageSourceDetails}.
@@ -302,11 +346,11 @@ public interface ComputeAsync extends AutoCloseable {
      * <p>
      * When importing an image based on the Object Storage URL, use
      * {@link #imageSourceViaObjectStorageUriDetails(ImageSourceViaObjectStorageUriDetailsRequest, Consumer, Consumer) imageSourceViaObjectStorageUriDetails}.
-     * See [Object Storage URLs](https://docs.cloud.oracle.com/Content/Compute/Tasks/imageimportexport.htm#URLs) and [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
+     * See [Object Storage URLs](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs) and [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
      * for constructing URLs for image import/export.
      * <p>
      * For more information about importing exported images, see
-     * [Image Import/Export](https://docs.cloud.oracle.com/Content/Compute/Tasks/imageimportexport.htm).
+     * [Image Import/Export](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm).
      * <p>
      * You may optionally specify a *display name* for the image, which is simply a friendly name or description.
      * It does not have to be unique, and you can change it. See {@link #updateImage(UpdateImageRequest, Consumer, Consumer) updateImage}.
@@ -329,7 +373,7 @@ public interface ComputeAsync extends AutoCloseable {
      * After the console connection has been created and is available,
      * you connect to the console using SSH.
      * <p>
-     * For more information about instance console connections, see [Troubleshooting Instances Using Instance Console Connections](https://docs.cloud.oracle.com/Content/Compute/References/serialconsole.htm).
+     * For more information about instance console connections, see [Troubleshooting Instances Using Instance Console Connections](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -363,6 +407,24 @@ public interface ComputeAsync extends AutoCloseable {
                             DeleteAppCatalogSubscriptionRequest,
                             DeleteAppCatalogSubscriptionResponse>
                     handler);
+
+    /**
+     * Deletes the specified compute capacity reservation.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteComputeCapacityReservationResponse>
+            deleteComputeCapacityReservation(
+                    DeleteComputeCapacityReservationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteComputeCapacityReservationRequest,
+                                    DeleteComputeCapacityReservationResponse>
+                            handler);
 
     /**
      * Deletes the specified Compute Image Capability Schema
@@ -479,7 +541,7 @@ public interface ComputeAsync extends AutoCloseable {
      * <p>
      **Important:** If the VNIC has a
      * {@link PrivateIp} that is the
-     * [target of a route rule](https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm#privateip),
+     * [target of a route rule](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip),
      * deleting the VNIC causes that route rule to blackhole and the traffic
      * will be dropped.
      *
@@ -518,12 +580,12 @@ public interface ComputeAsync extends AutoCloseable {
      * Exports the specified image to the Oracle Cloud Infrastructure Object Storage service. You can use the Object Storage URL,
      * or the namespace, bucket name, and object name when specifying the location to export to.
      * <p>
-     * For more information about exporting images, see [Image Import/Export](https://docs.cloud.oracle.com/Content/Compute/Tasks/imageimportexport.htm).
+     * For more information about exporting images, see [Image Import/Export](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm).
      * <p>
      * To perform an image export, you need write access to the Object Storage bucket for the image,
-     * see [Let Users Write Objects to Object Storage Buckets](https://docs.cloud.oracle.com/Content/Identity/Concepts/commonpolicies.htm#Let4).
+     * see [Let Users Write Objects to Object Storage Buckets](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm#Let4).
      * <p>
-     * See [Object Storage URLs](https://docs.cloud.oracle.com/Content/Compute/Tasks/imageimportexport.htm#URLs) and [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
+     * See [Object Storage URLs](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs) and [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
      * for constructing URLs for image import/export.
      *
      *
@@ -605,6 +667,24 @@ public interface ComputeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetBootVolumeAttachmentRequest, GetBootVolumeAttachmentResponse>
                     handler);
+
+    /**
+     * Gets information about the specified compute capacity reservation.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetComputeCapacityReservationResponse>
+            getComputeCapacityReservation(
+                    GetComputeCapacityReservationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetComputeCapacityReservationRequest,
+                                    GetComputeCapacityReservationResponse>
+                            handler);
 
     /**
      * Gets the specified Compute Global Image Capability Schema
@@ -855,11 +935,11 @@ public interface ComputeAsync extends AutoCloseable {
      * OS to crash and then reboot. Before you send a diagnostic interrupt, you must configure the instance to generate a
      * crash dump file when it crashes. The crash dump captures information about the state of the OS at the time of
      * the crash. After the OS restarts, you can analyze the crash dump to diagnose the issue. For more information, see
-     * [Sending a Diagnostic Interrupt](https://docs.cloud.oracle.com/Content/Compute/Tasks/sendingdiagnosticinterrupt.htm).
+     * [Sending a Diagnostic Interrupt](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/sendingdiagnosticinterrupt.htm).
      * <p>
      *
      * For more information about managing instance lifecycle states, see
-     * [Stopping and Starting an Instance](https://docs.cloud.oracle.com/Content/Compute/Tasks/restartinginstance.htm).
+     * [Stopping and Starting an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/restartinginstance.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -877,13 +957,13 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Creates a new instance in the specified compartment and the specified availability domain.
      * For general information about instances, see
-     * [Overview of the Compute Service](https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm).
+     * [Overview of the Compute Service](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
      * <p>
      * For information about access control and compartments, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
+     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      * <p>
      * For information about availability domains, see
-     * [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm).
+     * [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * To get a list of availability domains, use the `ListAvailabilityDomains` operation
      * in the Identity and Access Management Service API.
      * <p>
@@ -905,7 +985,7 @@ public interface ComputeAsync extends AutoCloseable {
      * {@link #getVnic(GetVnicRequest, Consumer, Consumer) getVnic} with the VNIC ID.
      * <p>
      * You can later add secondary VNICs to an instance. For more information, see
-     * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/Content/Network/Tasks/managingVNICs.htm).
+     * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      * <p>
      * To launch an instance from a Marketplace image listing, you must provide the image ID of the
      * listing resource version that you want, but you also must subscribe to the listing before you try
@@ -995,6 +1075,66 @@ public interface ComputeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListBootVolumeAttachmentsRequest, ListBootVolumeAttachmentsResponse>
                     handler);
+
+    /**
+     * Lists the shapes that can be reserved within the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComputeCapacityReservationInstanceShapesResponse>
+            listComputeCapacityReservationInstanceShapes(
+                    ListComputeCapacityReservationInstanceShapesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeCapacityReservationInstanceShapesRequest,
+                                    ListComputeCapacityReservationInstanceShapesResponse>
+                            handler);
+
+    /**
+     * Lists the instances launched under a capacity reservation. You can filter results by specifying criteria.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComputeCapacityReservationInstancesResponse>
+            listComputeCapacityReservationInstances(
+                    ListComputeCapacityReservationInstancesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeCapacityReservationInstancesRequest,
+                                    ListComputeCapacityReservationInstancesResponse>
+                            handler);
+
+    /**
+     * Lists the compute capacity reservations that match the specified criteria and compartment.
+     * <p>
+     * You can limit the list by specifying a compute capacity reservation display name
+     * (the list will include all the identically-named compute capacity reservations in the compartment).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComputeCapacityReservationsResponse>
+            listComputeCapacityReservations(
+                    ListComputeCapacityReservationsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeCapacityReservationsRequest,
+                                    ListComputeCapacityReservationsResponse>
+                            handler);
 
     /**
      * Lists Compute Global Image Capability Schema versions in the specified compartment.
@@ -1165,8 +1305,8 @@ public interface ComputeAsync extends AutoCloseable {
 
     /**
      * Lists the available images in the specified compartment, including both
-     * [Oracle-provided images](https://docs.cloud.oracle.com/Content/Compute/References/images.htm) and
-     * [custom images](https://docs.cloud.oracle.com/Content/Compute/Tasks/managingcustomimages.htm) that have
+     * [Oracle-provided images](https://docs.cloud.oracle.com/iaas/Content/Compute/References/images.htm) and
+     * [custom images](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm) that have
      * been created. The list of images returned is ordered to first show all
      * Oracle-provided images, then all custom images.
      * <p>
@@ -1187,7 +1327,7 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Lists the console connections for the specified compartment or instance.
      * <p>
-     * For more information about instance console connections, see [Troubleshooting Instances Using Instance Console Connections](https://docs.cloud.oracle.com/Content/Compute/References/serialconsole.htm).
+     * For more information about instance console connections, see [Troubleshooting Instances Using Instance Console Connections](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -1336,6 +1476,28 @@ public interface ComputeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             TerminateInstanceRequest, TerminateInstanceResponse>
                     handler);
+
+    /**
+     * Updates the display name, defined tag, and freeform tag fields for the specified compute capacity reservation.
+     * Fields that are not provided in the request will not be updated. Avoid entering confidential information.
+     * <p>
+     * The update also modifies the reservation configurations of the specified compute capacity reservation.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateComputeCapacityReservationResponse>
+            updateComputeCapacityReservation(
+                    UpdateComputeCapacityReservationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateComputeCapacityReservationRequest,
+                                    UpdateComputeCapacityReservationResponse>
+                            handler);
 
     /**
      * Updates the specified Compute Image Capability Schema

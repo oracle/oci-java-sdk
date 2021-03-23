@@ -12,11 +12,8 @@ package com.oracle.bmc.core.model;
  * the entire parameter is not provided, the instance is created with the default
  * configuration values for the `shape` that you specify.
  * <p>
- * Each shape only supports certain configurable values. If the values that you provid are not valid for the
+ * Each shape only supports certain configurable values. If the values that you provide are not valid for the
  * specified `shape`, an error is returned.
- * <p>
- * For more information about customizing the resources that are allocated to a flexible shapes, see
- * [Flexible Shapes](https://docs.cloud.oracle.com/Content/Compute/References/computeshapes.htm#flexible).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

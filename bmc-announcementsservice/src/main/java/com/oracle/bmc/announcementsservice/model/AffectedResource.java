@@ -52,11 +52,21 @@ public class AffectedResource {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("additionalProperties")
+        private java.util.List<Property> additionalProperties;
+
+        public Builder additionalProperties(java.util.List<Property> additionalProperties) {
+            this.additionalProperties = additionalProperties;
+            this.__explicitlySet__.add("additionalProperties");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AffectedResource build() {
-            AffectedResource __instance__ = new AffectedResource(resourceId, resourceName, region);
+            AffectedResource __instance__ =
+                    new AffectedResource(resourceId, resourceName, region, additionalProperties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -66,7 +76,8 @@ public class AffectedResource {
             Builder copiedBuilder =
                     resourceId(o.getResourceId())
                             .resourceName(o.getResourceName())
-                            .region(o.getRegion());
+                            .region(o.getRegion())
+                            .additionalProperties(o.getAdditionalProperties());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -97,6 +108,12 @@ public class AffectedResource {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     String region;
+
+    /**
+     * Additional properties associated with the resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("additionalProperties")
+    java.util.List<Property> additionalProperties;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

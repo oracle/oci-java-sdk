@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>1.33.2</version>
+    <version>1.34.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <properties>
@@ -31,7 +31,7 @@
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-bom</artifactId>
-        <version>1.33.2</version>
+        <version>1.34.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -329,6 +329,10 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-apmtraces</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-networkloadbalancer</artifactId>
     </dependency>
   </dependencies>
 </project>

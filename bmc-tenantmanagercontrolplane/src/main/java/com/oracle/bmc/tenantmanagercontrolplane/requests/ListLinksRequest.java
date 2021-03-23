@@ -44,7 +44,7 @@ public class ListLinksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     private Integer limit;
 
     /**
-     * The sort order to use, either 'asc' or 'desc'.
+     * The sort order to use, whether 'asc' or 'desc'.
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.SortOrder sortOrder;
 

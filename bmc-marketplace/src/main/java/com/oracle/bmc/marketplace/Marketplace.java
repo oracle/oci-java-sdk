@@ -46,6 +46,17 @@ public interface Marketplace extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Changes the compartment of the Publication
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ChangePublicationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangePublicationCompartment API.
+     */
+    ChangePublicationCompartmentResponse changePublicationCompartment(
+            ChangePublicationCompartmentRequest request);
+
+    /**
      * Accepts a terms of use agreement for a specific package version of a listing. You must accept all
      * terms of use for a package before you can deploy the package.
      *
@@ -56,6 +67,16 @@ public interface Marketplace extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/CreateAcceptedAgreementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAcceptedAgreement API.
      */
     CreateAcceptedAgreementResponse createAcceptedAgreement(CreateAcceptedAgreementRequest request);
+
+    /**
+     * Creates a publication of the given type with an optional default package
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/CreatePublicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePublication API.
+     */
+    CreatePublicationResponse createPublication(CreatePublicationRequest request);
 
     /**
      * Removes a previously accepted terms of use agreement from the list of agreements that Marketplace checks
@@ -69,6 +90,16 @@ public interface Marketplace extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/DeleteAcceptedAgreementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAcceptedAgreement API.
      */
     DeleteAcceptedAgreementResponse deleteAcceptedAgreement(DeleteAcceptedAgreementRequest request);
+
+    /**
+     * Deletes a Publication. This will also remove the associated Listing from Marketplace.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/DeletePublicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePublication API.
+     */
+    DeletePublicationResponse deletePublication(DeletePublicationRequest request);
 
     /**
      * Gets the details of a specific, previously accepted terms of use agreement.
@@ -141,6 +172,26 @@ public interface Marketplace extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetPackageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPackage API.
      */
     GetPackageResponse getPackage(GetPackageRequest request);
+
+    /**
+     * Get details of a publication
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetPublicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPublication API.
+     */
+    GetPublicationResponse getPublication(GetPublicationRequest request);
+
+    /**
+     * Gets the details of a specific package within a given Publication
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetPublicationPackageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPublicationPackage API.
+     */
+    GetPublicationPackageResponse getPublicationPackage(GetPublicationPackageRequest request);
 
     /**
      * Lists the terms of use agreements that have been accepted in the specified compartment.
@@ -227,6 +278,26 @@ public interface Marketplace extends AutoCloseable {
     ListPackagesResponse listPackages(ListPackagesRequest request);
 
     /**
+     * Lists the packages in the given Publication
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListPublicationPackagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPublicationPackages API.
+     */
+    ListPublicationPackagesResponse listPublicationPackages(ListPublicationPackagesRequest request);
+
+    /**
+     * Lists the publications in the given compartment
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListPublicationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPublications API.
+     */
+    ListPublicationsResponse listPublications(ListPublicationsRequest request);
+
+    /**
      * Gets the list of all the publishers of listings available in Oracle Cloud Infrastructure Marketplace.
      *
      * @param request The request object containing the details to send
@@ -277,6 +348,23 @@ public interface Marketplace extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/UpdateAcceptedAgreementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAcceptedAgreement API.
      */
     UpdateAcceptedAgreementResponse updateAcceptedAgreement(UpdateAcceptedAgreementRequest request);
+
+    /**
+     * Updates details of an existing Publication
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/UpdatePublicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePublication API.
+     */
+    UpdatePublicationResponse updatePublication(UpdatePublicationRequest request);
+
+    /**
+     * Gets the pre-configured waiters available for resources for this service.
+     *
+     * @return The service waiters.
+     */
+    MarketplaceWaiters getWaiters();
 
     /**
      * Gets the pre-configured paginators available for list operations in this service which may return multiple

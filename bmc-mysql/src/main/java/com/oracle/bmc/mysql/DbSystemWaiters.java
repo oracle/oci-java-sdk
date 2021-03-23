@@ -219,4 +219,107 @@ public class DbSystemWaiters {
                                 com.oracle.bmc.mysql.model.DbSystem.LifecycleState.Deleted)),
                 request);
     }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetHeatWaveClusterRequest, GetHeatWaveClusterResponse>
+            forHeatWaveCluster(
+                    GetHeatWaveClusterRequest request,
+                    com.oracle.bmc.mysql.model.HeatWaveCluster.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forHeatWaveCluster(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetHeatWaveClusterRequest, GetHeatWaveClusterResponse>
+            forHeatWaveCluster(
+                    GetHeatWaveClusterRequest request,
+                    com.oracle.bmc.mysql.model.HeatWaveCluster.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forHeatWaveCluster(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetHeatWaveClusterRequest, GetHeatWaveClusterResponse>
+            forHeatWaveCluster(
+                    GetHeatWaveClusterRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.mysql.model.HeatWaveCluster.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forHeatWaveCluster(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for HeatWaveCluster.
+    private com.oracle.bmc.waiter.Waiter<GetHeatWaveClusterRequest, GetHeatWaveClusterResponse>
+            forHeatWaveCluster(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetHeatWaveClusterRequest request,
+                    final com.oracle.bmc.mysql.model.HeatWaveCluster.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.mysql.model.HeatWaveCluster.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetHeatWaveClusterRequest, GetHeatWaveClusterResponse>() {
+                            @Override
+                            public GetHeatWaveClusterResponse apply(
+                                    GetHeatWaveClusterRequest request) {
+                                return client.getHeatWaveCluster(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetHeatWaveClusterResponse>() {
+                            @Override
+                            public boolean apply(GetHeatWaveClusterResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getHeatWaveCluster().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.mysql.model.HeatWaveCluster.LifecycleState.Deleted)),
+                request);
+    }
 }

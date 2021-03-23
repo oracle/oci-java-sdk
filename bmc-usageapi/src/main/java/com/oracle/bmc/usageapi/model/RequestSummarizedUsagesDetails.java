@@ -62,6 +62,15 @@ public class RequestSummarizedUsagesDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isAggregateByTime")
+        private Boolean isAggregateByTime;
+
+        public Builder isAggregateByTime(Boolean isAggregateByTime) {
+            this.isAggregateByTime = isAggregateByTime;
+            this.__explicitlySet__.add("isAggregateByTime");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("queryType")
         private QueryType queryType;
 
@@ -77,6 +86,15 @@ public class RequestSummarizedUsagesDetails {
         public Builder groupBy(java.util.List<String> groupBy) {
             this.groupBy = groupBy;
             this.__explicitlySet__.add("groupBy");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("groupByTag")
+        private java.util.List<Tag> groupByTag;
+
+        public Builder groupByTag(java.util.List<Tag> groupByTag) {
+            this.groupByTag = groupByTag;
+            this.__explicitlySet__.add("groupByTag");
             return this;
         }
 
@@ -108,8 +126,10 @@ public class RequestSummarizedUsagesDetails {
                             timeUsageStarted,
                             timeUsageEnded,
                             granularity,
+                            isAggregateByTime,
                             queryType,
                             groupBy,
+                            groupByTag,
                             compartmentDepth,
                             filter);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -123,8 +143,10 @@ public class RequestSummarizedUsagesDetails {
                             .timeUsageStarted(o.getTimeUsageStarted())
                             .timeUsageEnded(o.getTimeUsageEnded())
                             .granularity(o.getGranularity())
+                            .isAggregateByTime(o.getIsAggregateByTime())
                             .queryType(o.getQueryType())
                             .groupBy(o.getGroupBy())
+                            .groupByTag(o.getGroupByTag())
                             .compartmentDepth(o.getCompartmentDepth())
                             .filter(o.getFilter());
 
@@ -209,8 +231,14 @@ public class RequestSummarizedUsagesDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("granularity")
     Granularity granularity;
+
     /**
-     * The query usage type.
+     * is aggregated by time. true isAggregateByTime will add up all usage/cost over query time period
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAggregateByTime")
+    Boolean isAggregateByTime;
+    /**
+     * The query usage type. COST by default if it is missing
      * Usage - Query the usage data.
      * Cost - Query the cost/billing data.
      *
@@ -248,7 +276,7 @@ public class RequestSummarizedUsagesDetails {
         }
     };
     /**
-     * The query usage type.
+     * The query usage type. COST by default if it is missing
      * Usage - Query the usage data.
      * Cost - Query the cost/billing data.
      *
@@ -259,11 +287,22 @@ public class RequestSummarizedUsagesDetails {
     /**
      * Aggregate the result by.
      * example:
-     *   `[\"service\"]`
+     *   `[\"tagNamespace\", \"tagKey\", \"tagValue\", \"service\", \"skuName\", \"skuPartNumber\", \"unit\",
+     *     \"compartmentName\", \"compartmentPath\", \"compartmentId\", \"platform\", \"region\", \"logicalAd\",
+     *     \"resourceId\", \"tenantId\", \"tenantName\"]`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
     java.util.List<String> groupBy;
+
+    /**
+     * GroupBy a specific tagKey. Provide tagNamespace and tagKey in tag object. Only support one tag in the list
+     * example:
+     *   `[{\"namespace\":\"oracle\", \"key\":\"createdBy\"]`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("groupByTag")
+    java.util.List<Tag> groupByTag;
 
     /**
      * The compartment depth level.

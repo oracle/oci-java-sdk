@@ -20,11 +20,6 @@ public class ListWorkRequestErrorsRequest
     private String workRequestId;
 
     /**
-     * The ID of the compartment in which to list resources.
-     */
-    private String compartmentId;
-
-    /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
@@ -40,7 +35,7 @@ public class ListWorkRequestErrorsRequest
     private Integer limit;
 
     /**
-     * The sort order to use, either 'asc' or 'desc'.
+     * The sort order to use, whether 'asc' or 'desc'.
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.SortOrder sortOrder;
 
@@ -80,7 +75,6 @@ public class ListWorkRequestErrorsRequest
          */
         public Builder copy(ListWorkRequestErrorsRequest o) {
             workRequestId(o.getWorkRequestId());
-            compartmentId(o.getCompartmentId());
             opcRequestId(o.getOpcRequestId());
             page(o.getPage());
             limit(o.getLimit());

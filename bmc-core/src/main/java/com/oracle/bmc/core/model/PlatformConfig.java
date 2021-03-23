@@ -5,8 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The platform configuration for the instance. The type of platform configuration is
- * determined by the `type`.
+ * The platform configuration for the instance.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -40,7 +39,7 @@ public class PlatformConfig {
 
     /**
      * The type of platform being configured. The only supported
-     * `type` is `AMD_MILAN_BM`
+     * `type` is `AMD_MILAN_BM`.
      *
      **/
     @lombok.extern.slf4j.Slf4j

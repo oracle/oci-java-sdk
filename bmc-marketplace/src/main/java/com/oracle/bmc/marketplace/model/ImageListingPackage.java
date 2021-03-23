@@ -86,6 +86,15 @@ public class ImageListingPackage extends ListingPackage {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
+        private OperatingSystem operatingSystem;
+
+        public Builder operatingSystem(OperatingSystem operatingSystem) {
+            this.operatingSystem = operatingSystem;
+            this.__explicitlySet__.add("operatingSystem");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("appCatalogListingId")
         private String appCatalogListingId;
 
@@ -134,6 +143,7 @@ public class ImageListingPackage extends ListingPackage {
                             pricing,
                             resourceId,
                             timeCreated,
+                            operatingSystem,
                             appCatalogListingId,
                             appCatalogListingResourceVersion,
                             imageId,
@@ -151,6 +161,7 @@ public class ImageListingPackage extends ListingPackage {
                             .pricing(o.getPricing())
                             .resourceId(o.getResourceId())
                             .timeCreated(o.getTimeCreated())
+                            .operatingSystem(o.getOperatingSystem())
                             .appCatalogListingId(o.getAppCatalogListingId())
                             .appCatalogListingResourceVersion(
                                     o.getAppCatalogListingResourceVersion())
@@ -177,11 +188,12 @@ public class ImageListingPackage extends ListingPackage {
             PricingModel pricing,
             String resourceId,
             java.util.Date timeCreated,
+            OperatingSystem operatingSystem,
             String appCatalogListingId,
             String appCatalogListingResourceVersion,
             String imageId,
             java.util.List<Region> regions) {
-        super(description, listingId, version, pricing, resourceId, timeCreated);
+        super(description, listingId, version, pricing, resourceId, timeCreated, operatingSystem);
         this.appCatalogListingId = appCatalogListingId;
         this.appCatalogListingResourceVersion = appCatalogListingResourceVersion;
         this.imageId = imageId;

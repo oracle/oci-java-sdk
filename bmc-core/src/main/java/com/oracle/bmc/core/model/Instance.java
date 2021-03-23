@@ -8,11 +8,11 @@ package com.oracle.bmc.core.model;
  * A compute host. The image used to launch the instance determines its operating system and other
  * software. The shape specified during the launch process determines the number of CPUs and memory
  * allocated to the instance. For more information, see
- * [Overview of the Compute Service](https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm).
+ * [Overview of the Compute Service](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
- * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+ * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  * <p>
  **Warning:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API.
@@ -41,6 +41,15 @@ public class Instance {
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+        private String capacityReservationId;
+
+        public Builder capacityReservationId(String capacityReservationId) {
+            this.capacityReservationId = capacityReservationId;
+            this.__explicitlySet__.add("capacityReservationId");
             return this;
         }
 
@@ -277,6 +286,7 @@ public class Instance {
             Instance __instance__ =
                     new Instance(
                             availabilityDomain,
+                            capacityReservationId,
                             compartmentId,
                             dedicatedVmHostId,
                             definedTags,
@@ -310,6 +320,7 @@ public class Instance {
         public Builder copy(Instance o) {
             Builder copiedBuilder =
                     availabilityDomain(o.getAvailabilityDomain())
+                            .capacityReservationId(o.getCapacityReservationId())
                             .compartmentId(o.getCompartmentId())
                             .dedicatedVmHostId(o.getDedicatedVmHostId())
                             .definedTags(o.getDefinedTags())
@@ -358,6 +369,15 @@ public class Instance {
     String availabilityDomain;
 
     /**
+     * The OCID of the compute capacity reservation this instance is launched under.
+     * When this field contains an empty string or is null, the instance is not currently in a capacity reservation.
+     * For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+    String capacityReservationId;
+
+    /**
      * The OCID of the compartment that contains the instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -372,7 +392,7 @@ public class Instance {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
@@ -420,7 +440,7 @@ public class Instance {
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Department\": \"Finance\"}`
      *
@@ -461,7 +481,7 @@ public class Instance {
      * <p>
      * For more information about the Bring Your Own Image feature of
      * Oracle Cloud Infrastructure, see
-     * [Bring Your Own Image](https://docs.cloud.oracle.com/Content/Compute/References/bringyourownimage.htm).
+     * [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
      * <p>
      * For more information about iPXE, see http://ipxe.org.
      *

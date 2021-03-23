@@ -5,6 +5,7 @@
 package com.oracle.bmc.mysql.model;
 
 /**
+ * DEPRECATED -- please use HeatWave API instead.
  * A summary of an Analytics Cluster.
  *
  * <br/>

@@ -405,6 +405,46 @@ public class DbSystemAsyncClient implements DbSystemAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AddHeatWaveClusterResponse> addHeatWaveCluster(
+            AddHeatWaveClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddHeatWaveClusterRequest, AddHeatWaveClusterResponse>
+                    handler) {
+        LOG.trace("Called async addHeatWaveCluster");
+        final AddHeatWaveClusterRequest interceptedRequest =
+                AddHeatWaveClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddHeatWaveClusterConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, AddHeatWaveClusterResponse>
+                transformer = AddHeatWaveClusterConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<AddHeatWaveClusterRequest, AddHeatWaveClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddHeatWaveClusterRequest, AddHeatWaveClusterResponse>,
+                        java.util.concurrent.Future<AddHeatWaveClusterResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddHeatWaveClusterRequest, AddHeatWaveClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDbSystemResponse> createDbSystem(
             CreateDbSystemRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -525,6 +565,47 @@ public class DbSystemAsyncClient implements DbSystemAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteHeatWaveClusterResponse> deleteHeatWaveCluster(
+            DeleteHeatWaveClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteHeatWaveClusterRequest, DeleteHeatWaveClusterResponse>
+                    handler) {
+        LOG.trace("Called async deleteHeatWaveCluster");
+        final DeleteHeatWaveClusterRequest interceptedRequest =
+                DeleteHeatWaveClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteHeatWaveClusterConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteHeatWaveClusterResponse>
+                transformer = DeleteHeatWaveClusterConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteHeatWaveClusterRequest, DeleteHeatWaveClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteHeatWaveClusterRequest, DeleteHeatWaveClusterResponse>,
+                        java.util.concurrent.Future<DeleteHeatWaveClusterResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteHeatWaveClusterRequest, DeleteHeatWaveClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GenerateAnalyticsClusterMemoryEstimateResponse>
             generateAnalyticsClusterMemoryEstimate(
                     GenerateAnalyticsClusterMemoryEstimateRequest request,
@@ -560,6 +641,54 @@ public class DbSystemAsyncClient implements DbSystemAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GenerateAnalyticsClusterMemoryEstimateRequest,
                     GenerateAnalyticsClusterMemoryEstimateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateHeatWaveClusterMemoryEstimateResponse>
+            generateHeatWaveClusterMemoryEstimate(
+                    GenerateHeatWaveClusterMemoryEstimateRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GenerateHeatWaveClusterMemoryEstimateRequest,
+                                    GenerateHeatWaveClusterMemoryEstimateResponse>
+                            handler) {
+        LOG.trace("Called async generateHeatWaveClusterMemoryEstimate");
+        final GenerateHeatWaveClusterMemoryEstimateRequest interceptedRequest =
+                GenerateHeatWaveClusterMemoryEstimateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateHeatWaveClusterMemoryEstimateConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GenerateHeatWaveClusterMemoryEstimateResponse>
+                transformer = GenerateHeatWaveClusterMemoryEstimateConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GenerateHeatWaveClusterMemoryEstimateRequest,
+                        GenerateHeatWaveClusterMemoryEstimateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GenerateHeatWaveClusterMemoryEstimateRequest,
+                                GenerateHeatWaveClusterMemoryEstimateResponse>,
+                        java.util.concurrent.Future<GenerateHeatWaveClusterMemoryEstimateResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GenerateHeatWaveClusterMemoryEstimateRequest,
+                    GenerateHeatWaveClusterMemoryEstimateResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -698,6 +827,91 @@ public class DbSystemAsyncClient implements DbSystemAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetHeatWaveClusterResponse> getHeatWaveCluster(
+            GetHeatWaveClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetHeatWaveClusterRequest, GetHeatWaveClusterResponse>
+                    handler) {
+        LOG.trace("Called async getHeatWaveCluster");
+        final GetHeatWaveClusterRequest interceptedRequest =
+                GetHeatWaveClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetHeatWaveClusterConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetHeatWaveClusterResponse>
+                transformer = GetHeatWaveClusterConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetHeatWaveClusterRequest, GetHeatWaveClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetHeatWaveClusterRequest, GetHeatWaveClusterResponse>,
+                        java.util.concurrent.Future<GetHeatWaveClusterResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetHeatWaveClusterRequest, GetHeatWaveClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetHeatWaveClusterMemoryEstimateResponse>
+            getHeatWaveClusterMemoryEstimate(
+                    GetHeatWaveClusterMemoryEstimateRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetHeatWaveClusterMemoryEstimateRequest,
+                                    GetHeatWaveClusterMemoryEstimateResponse>
+                            handler) {
+        LOG.trace("Called async getHeatWaveClusterMemoryEstimate");
+        final GetHeatWaveClusterMemoryEstimateRequest interceptedRequest =
+                GetHeatWaveClusterMemoryEstimateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetHeatWaveClusterMemoryEstimateConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetHeatWaveClusterMemoryEstimateResponse>
+                transformer = GetHeatWaveClusterMemoryEstimateConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetHeatWaveClusterMemoryEstimateRequest,
+                        GetHeatWaveClusterMemoryEstimateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetHeatWaveClusterMemoryEstimateRequest,
+                                GetHeatWaveClusterMemoryEstimateResponse>,
+                        java.util.concurrent.Future<GetHeatWaveClusterMemoryEstimateResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetHeatWaveClusterMemoryEstimateRequest,
+                    GetHeatWaveClusterMemoryEstimateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDbSystemsResponse> listDbSystems(
             ListDbSystemsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListDbSystemsRequest, ListDbSystemsResponse>
@@ -818,6 +1032,48 @@ public class DbSystemAsyncClient implements DbSystemAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RestartHeatWaveClusterResponse> restartHeatWaveCluster(
+            RestartHeatWaveClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RestartHeatWaveClusterRequest, RestartHeatWaveClusterResponse>
+                    handler) {
+        LOG.trace("Called async restartHeatWaveCluster");
+        final RestartHeatWaveClusterRequest interceptedRequest =
+                RestartHeatWaveClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RestartHeatWaveClusterConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RestartHeatWaveClusterResponse>
+                transformer = RestartHeatWaveClusterConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        RestartHeatWaveClusterRequest, RestartHeatWaveClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RestartHeatWaveClusterRequest, RestartHeatWaveClusterResponse>,
+                        java.util.concurrent.Future<RestartHeatWaveClusterResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RestartHeatWaveClusterRequest, RestartHeatWaveClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<StartAnalyticsClusterResponse> startAnalyticsCluster(
             StartAnalyticsClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -886,6 +1142,48 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     StartDbSystemRequest, StartDbSystemResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartHeatWaveClusterResponse> startHeatWaveCluster(
+            StartHeatWaveClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StartHeatWaveClusterRequest, StartHeatWaveClusterResponse>
+                    handler) {
+        LOG.trace("Called async startHeatWaveCluster");
+        final StartHeatWaveClusterRequest interceptedRequest =
+                StartHeatWaveClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StartHeatWaveClusterConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, StartHeatWaveClusterResponse>
+                transformer = StartHeatWaveClusterConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        StartHeatWaveClusterRequest, StartHeatWaveClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                StartHeatWaveClusterRequest, StartHeatWaveClusterResponse>,
+                        java.util.concurrent.Future<StartHeatWaveClusterResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StartHeatWaveClusterRequest, StartHeatWaveClusterResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -980,6 +1278,48 @@ public class DbSystemAsyncClient implements DbSystemAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<StopHeatWaveClusterResponse> stopHeatWaveCluster(
+            StopHeatWaveClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StopHeatWaveClusterRequest, StopHeatWaveClusterResponse>
+                    handler) {
+        LOG.trace("Called async stopHeatWaveCluster");
+        final StopHeatWaveClusterRequest interceptedRequest =
+                StopHeatWaveClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StopHeatWaveClusterConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, StopHeatWaveClusterResponse>
+                transformer = StopHeatWaveClusterConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        StopHeatWaveClusterRequest, StopHeatWaveClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                StopHeatWaveClusterRequest, StopHeatWaveClusterResponse>,
+                        java.util.concurrent.Future<StopHeatWaveClusterResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StopHeatWaveClusterRequest, StopHeatWaveClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateAnalyticsClusterResponse> updateAnalyticsCluster(
             UpdateAnalyticsClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1047,6 +1387,47 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateDbSystemRequest, UpdateDbSystemResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateHeatWaveClusterResponse> updateHeatWaveCluster(
+            UpdateHeatWaveClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateHeatWaveClusterRequest, UpdateHeatWaveClusterResponse>
+                    handler) {
+        LOG.trace("Called async updateHeatWaveCluster");
+        final UpdateHeatWaveClusterRequest interceptedRequest =
+                UpdateHeatWaveClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateHeatWaveClusterConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateHeatWaveClusterResponse>
+                transformer = UpdateHeatWaveClusterConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateHeatWaveClusterRequest, UpdateHeatWaveClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateHeatWaveClusterRequest, UpdateHeatWaveClusterResponse>,
+                        java.util.concurrent.Future<UpdateHeatWaveClusterResponse>>
+                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateHeatWaveClusterRequest, UpdateHeatWaveClusterResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

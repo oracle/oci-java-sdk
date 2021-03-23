@@ -86,6 +86,15 @@ public class OrchestrationListingPackage extends ListingPackage {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
+        private OperatingSystem operatingSystem;
+
+        public Builder operatingSystem(OperatingSystem operatingSystem) {
+            this.operatingSystem = operatingSystem;
+            this.__explicitlySet__.add("operatingSystem");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("resourceLink")
         private String resourceLink;
 
@@ -125,6 +134,7 @@ public class OrchestrationListingPackage extends ListingPackage {
                             pricing,
                             resourceId,
                             timeCreated,
+                            operatingSystem,
                             resourceLink,
                             variables,
                             regions);
@@ -141,6 +151,7 @@ public class OrchestrationListingPackage extends ListingPackage {
                             .pricing(o.getPricing())
                             .resourceId(o.getResourceId())
                             .timeCreated(o.getTimeCreated())
+                            .operatingSystem(o.getOperatingSystem())
                             .resourceLink(o.getResourceLink())
                             .variables(o.getVariables())
                             .regions(o.getRegions());
@@ -165,10 +176,11 @@ public class OrchestrationListingPackage extends ListingPackage {
             PricingModel pricing,
             String resourceId,
             java.util.Date timeCreated,
+            OperatingSystem operatingSystem,
             String resourceLink,
             java.util.List<OrchestrationVariable> variables,
             java.util.List<Region> regions) {
-        super(description, listingId, version, pricing, resourceId, timeCreated);
+        super(description, listingId, version, pricing, resourceId, timeCreated, operatingSystem);
         this.resourceLink = resourceLink;
         this.variables = variables;
         this.regions = regions;

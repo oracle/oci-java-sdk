@@ -510,6 +510,398 @@ public class ComputePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listComputeCapacityReservationInstanceShapes operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListComputeCapacityReservationInstanceShapesResponse>
+            listComputeCapacityReservationInstanceShapesResponseIterator(
+                    final ListComputeCapacityReservationInstanceShapesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListComputeCapacityReservationInstanceShapesRequest.Builder,
+                ListComputeCapacityReservationInstanceShapesRequest,
+                ListComputeCapacityReservationInstanceShapesResponse>(
+                new com.google.common.base.Supplier<
+                        ListComputeCapacityReservationInstanceShapesRequest.Builder>() {
+                    @Override
+                    public ListComputeCapacityReservationInstanceShapesRequest.Builder get() {
+                        return ListComputeCapacityReservationInstanceShapesRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeCapacityReservationInstanceShapesResponse, String>() {
+                    @Override
+                    public String apply(
+                            ListComputeCapacityReservationInstanceShapesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeCapacityReservationInstanceShapesRequest.Builder>,
+                        ListComputeCapacityReservationInstanceShapesRequest>() {
+                    @Override
+                    public ListComputeCapacityReservationInstanceShapesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeCapacityReservationInstanceShapesRequest
+                                                    .Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeCapacityReservationInstanceShapesRequest,
+                        ListComputeCapacityReservationInstanceShapesResponse>() {
+                    @Override
+                    public ListComputeCapacityReservationInstanceShapesResponse apply(
+                            ListComputeCapacityReservationInstanceShapesRequest request) {
+                        return client.listComputeCapacityReservationInstanceShapes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ComputeCapacityReservationInstanceShapeSummary} objects
+     * contained in responses from the listComputeCapacityReservationInstanceShapes operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ComputeCapacityReservationInstanceShapeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.ComputeCapacityReservationInstanceShapeSummary>
+            listComputeCapacityReservationInstanceShapesRecordIterator(
+                    final ListComputeCapacityReservationInstanceShapesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListComputeCapacityReservationInstanceShapesRequest.Builder,
+                ListComputeCapacityReservationInstanceShapesRequest,
+                ListComputeCapacityReservationInstanceShapesResponse,
+                com.oracle.bmc.core.model.ComputeCapacityReservationInstanceShapeSummary>(
+                new com.google.common.base.Supplier<
+                        ListComputeCapacityReservationInstanceShapesRequest.Builder>() {
+                    @Override
+                    public ListComputeCapacityReservationInstanceShapesRequest.Builder get() {
+                        return ListComputeCapacityReservationInstanceShapesRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeCapacityReservationInstanceShapesResponse, String>() {
+                    @Override
+                    public String apply(
+                            ListComputeCapacityReservationInstanceShapesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeCapacityReservationInstanceShapesRequest.Builder>,
+                        ListComputeCapacityReservationInstanceShapesRequest>() {
+                    @Override
+                    public ListComputeCapacityReservationInstanceShapesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeCapacityReservationInstanceShapesRequest
+                                                    .Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeCapacityReservationInstanceShapesRequest,
+                        ListComputeCapacityReservationInstanceShapesResponse>() {
+                    @Override
+                    public ListComputeCapacityReservationInstanceShapesResponse apply(
+                            ListComputeCapacityReservationInstanceShapesRequest request) {
+                        return client.listComputeCapacityReservationInstanceShapes(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeCapacityReservationInstanceShapesResponse,
+                        java.util.List<
+                                com.oracle.bmc.core.model
+                                        .ComputeCapacityReservationInstanceShapeSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.core.model
+                                            .ComputeCapacityReservationInstanceShapeSummary>
+                            apply(ListComputeCapacityReservationInstanceShapesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listComputeCapacityReservationInstances operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListComputeCapacityReservationInstancesResponse>
+            listComputeCapacityReservationInstancesResponseIterator(
+                    final ListComputeCapacityReservationInstancesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListComputeCapacityReservationInstancesRequest.Builder,
+                ListComputeCapacityReservationInstancesRequest,
+                ListComputeCapacityReservationInstancesResponse>(
+                new com.google.common.base.Supplier<
+                        ListComputeCapacityReservationInstancesRequest.Builder>() {
+                    @Override
+                    public ListComputeCapacityReservationInstancesRequest.Builder get() {
+                        return ListComputeCapacityReservationInstancesRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeCapacityReservationInstancesResponse, String>() {
+                    @Override
+                    public String apply(ListComputeCapacityReservationInstancesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeCapacityReservationInstancesRequest.Builder>,
+                        ListComputeCapacityReservationInstancesRequest>() {
+                    @Override
+                    public ListComputeCapacityReservationInstancesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeCapacityReservationInstancesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeCapacityReservationInstancesRequest,
+                        ListComputeCapacityReservationInstancesResponse>() {
+                    @Override
+                    public ListComputeCapacityReservationInstancesResponse apply(
+                            ListComputeCapacityReservationInstancesRequest request) {
+                        return client.listComputeCapacityReservationInstances(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.CapacityReservationInstanceSummary} objects
+     * contained in responses from the listComputeCapacityReservationInstances operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.CapacityReservationInstanceSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.CapacityReservationInstanceSummary>
+            listComputeCapacityReservationInstancesRecordIterator(
+                    final ListComputeCapacityReservationInstancesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListComputeCapacityReservationInstancesRequest.Builder,
+                ListComputeCapacityReservationInstancesRequest,
+                ListComputeCapacityReservationInstancesResponse,
+                com.oracle.bmc.core.model.CapacityReservationInstanceSummary>(
+                new com.google.common.base.Supplier<
+                        ListComputeCapacityReservationInstancesRequest.Builder>() {
+                    @Override
+                    public ListComputeCapacityReservationInstancesRequest.Builder get() {
+                        return ListComputeCapacityReservationInstancesRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeCapacityReservationInstancesResponse, String>() {
+                    @Override
+                    public String apply(ListComputeCapacityReservationInstancesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeCapacityReservationInstancesRequest.Builder>,
+                        ListComputeCapacityReservationInstancesRequest>() {
+                    @Override
+                    public ListComputeCapacityReservationInstancesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeCapacityReservationInstancesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeCapacityReservationInstancesRequest,
+                        ListComputeCapacityReservationInstancesResponse>() {
+                    @Override
+                    public ListComputeCapacityReservationInstancesResponse apply(
+                            ListComputeCapacityReservationInstancesRequest request) {
+                        return client.listComputeCapacityReservationInstances(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeCapacityReservationInstancesResponse,
+                        java.util.List<
+                                com.oracle.bmc.core.model.CapacityReservationInstanceSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.core.model.CapacityReservationInstanceSummary>
+                            apply(ListComputeCapacityReservationInstancesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listComputeCapacityReservations operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListComputeCapacityReservationsResponse>
+            listComputeCapacityReservationsResponseIterator(
+                    final ListComputeCapacityReservationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListComputeCapacityReservationsRequest.Builder,
+                ListComputeCapacityReservationsRequest, ListComputeCapacityReservationsResponse>(
+                new com.google.common.base.Supplier<
+                        ListComputeCapacityReservationsRequest.Builder>() {
+                    @Override
+                    public ListComputeCapacityReservationsRequest.Builder get() {
+                        return ListComputeCapacityReservationsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeCapacityReservationsResponse, String>() {
+                    @Override
+                    public String apply(ListComputeCapacityReservationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeCapacityReservationsRequest.Builder>,
+                        ListComputeCapacityReservationsRequest>() {
+                    @Override
+                    public ListComputeCapacityReservationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeCapacityReservationsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeCapacityReservationsRequest,
+                        ListComputeCapacityReservationsResponse>() {
+                    @Override
+                    public ListComputeCapacityReservationsResponse apply(
+                            ListComputeCapacityReservationsRequest request) {
+                        return client.listComputeCapacityReservations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ComputeCapacityReservationSummary} objects
+     * contained in responses from the listComputeCapacityReservations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ComputeCapacityReservationSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.ComputeCapacityReservationSummary>
+            listComputeCapacityReservationsRecordIterator(
+                    final ListComputeCapacityReservationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListComputeCapacityReservationsRequest.Builder,
+                ListComputeCapacityReservationsRequest, ListComputeCapacityReservationsResponse,
+                com.oracle.bmc.core.model.ComputeCapacityReservationSummary>(
+                new com.google.common.base.Supplier<
+                        ListComputeCapacityReservationsRequest.Builder>() {
+                    @Override
+                    public ListComputeCapacityReservationsRequest.Builder get() {
+                        return ListComputeCapacityReservationsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeCapacityReservationsResponse, String>() {
+                    @Override
+                    public String apply(ListComputeCapacityReservationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeCapacityReservationsRequest.Builder>,
+                        ListComputeCapacityReservationsRequest>() {
+                    @Override
+                    public ListComputeCapacityReservationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeCapacityReservationsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeCapacityReservationsRequest,
+                        ListComputeCapacityReservationsResponse>() {
+                    @Override
+                    public ListComputeCapacityReservationsResponse apply(
+                            ListComputeCapacityReservationsRequest request) {
+                        return client.listComputeCapacityReservations(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeCapacityReservationsResponse,
+                        java.util.List<
+                                com.oracle.bmc.core.model.ComputeCapacityReservationSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.core.model.ComputeCapacityReservationSummary>
+                            apply(ListComputeCapacityReservationsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listComputeGlobalImageCapabilitySchemaVersions operation. This iterable
      * will fetch more data from the server as needed.
      *

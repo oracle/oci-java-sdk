@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details for updating an external non-container database.
+ * Details for updating an external non-container database. This API is not currently supported.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

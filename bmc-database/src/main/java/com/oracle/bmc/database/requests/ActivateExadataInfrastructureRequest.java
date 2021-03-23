@@ -20,7 +20,7 @@ public class ActivateExadataInfrastructureRequest
     private String exadataInfrastructureId;
 
     /**
-     * The activation details for the Exadata infrastructure.
+     * The activation details for the Exadata infrastructure and the additional storage servers requested.
      */
     private ActivateExadataInfrastructureDetails activateExadataInfrastructureDetails;
 

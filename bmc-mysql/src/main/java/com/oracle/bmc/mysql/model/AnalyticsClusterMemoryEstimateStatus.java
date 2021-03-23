@@ -5,7 +5,9 @@
 package com.oracle.bmc.mysql.model;
 
 /**
+ * DEPRECATED -- please use HeatWave API instead.
  * Possible operation status.
+ *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @lombok.extern.slf4j.Slf4j

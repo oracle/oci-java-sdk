@@ -19,11 +19,6 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
     private String workRequestId;
 
     /**
-     * The ID of the compartment in which to list resources.
-     */
-    private String compartmentId;
-
-    /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
@@ -39,7 +34,7 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
     private Integer limit;
 
     /**
-     * The sort order to use, either 'asc' or 'desc'.
+     * The sort order to use, whether 'asc' or 'desc'.
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.SortOrder sortOrder;
 
@@ -79,7 +74,6 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
          */
         public Builder copy(ListWorkRequestLogsRequest o) {
             workRequestId(o.getWorkRequestId());
-            compartmentId(o.getCompartmentId());
             opcRequestId(o.getOpcRequestId());
             page(o.getPage());
             limit(o.getLimit());

@@ -79,6 +79,24 @@ public class DbSystemSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveClusterAttached")
+        private Boolean isHeatWaveClusterAttached;
+
+        public Builder isHeatWaveClusterAttached(Boolean isHeatWaveClusterAttached) {
+            this.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
+            this.__explicitlySet__.add("isHeatWaveClusterAttached");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("heatWaveCluster")
+        private HeatWaveClusterSummary heatWaveCluster;
+
+        public Builder heatWaveCluster(HeatWaveClusterSummary heatWaveCluster) {
+            this.heatWaveCluster = heatWaveCluster;
+            this.__explicitlySet__.add("heatWaveCluster");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
@@ -173,6 +191,8 @@ public class DbSystemSummary {
                             compartmentId,
                             isAnalyticsClusterAttached,
                             analyticsCluster,
+                            isHeatWaveClusterAttached,
+                            heatWaveCluster,
                             availabilityDomain,
                             faultDomain,
                             endpoints,
@@ -195,6 +215,8 @@ public class DbSystemSummary {
                             .compartmentId(o.getCompartmentId())
                             .isAnalyticsClusterAttached(o.getIsAnalyticsClusterAttached())
                             .analyticsCluster(o.getAnalyticsCluster())
+                            .isHeatWaveClusterAttached(o.getIsHeatWaveClusterAttached())
+                            .heatWaveCluster(o.getHeatWaveCluster())
                             .availabilityDomain(o.getAvailabilityDomain())
                             .faultDomain(o.getFaultDomain())
                             .endpoints(o.getEndpoints())
@@ -242,6 +264,7 @@ public class DbSystemSummary {
     String compartmentId;
 
     /**
+     * DEPRECATED -- please use `isHeatWaveClusterAttached` instead.
      * If the DB System has an Analytics Cluster attached.
      *
      **/
@@ -250,6 +273,16 @@ public class DbSystemSummary {
 
     @com.fasterxml.jackson.annotation.JsonProperty("analyticsCluster")
     AnalyticsClusterSummary analyticsCluster;
+
+    /**
+     * If the DB System has a HeatWave Cluster attached.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveClusterAttached")
+    Boolean isHeatWaveClusterAttached;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("heatWaveCluster")
+    HeatWaveClusterSummary heatWaveCluster;
 
     /**
      * The Availability Domain where the primary DB System should be located.

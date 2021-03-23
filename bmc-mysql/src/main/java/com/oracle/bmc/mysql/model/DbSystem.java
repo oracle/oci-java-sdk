@@ -6,8 +6,6 @@ package com.oracle.bmc.mysql.model;
 
 /**
  * A DB System is the core logical unit of MySQL Database Service.
- * # NOTE: definitions/DbSystemSnapshot is a snapshot version of DbSystem which is stored during backup. Any
- * # addition/deletion of properties should also consider snapshot's definition
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -87,6 +85,24 @@ public class DbSystem {
         public Builder analyticsCluster(AnalyticsClusterSummary analyticsCluster) {
             this.analyticsCluster = analyticsCluster;
             this.__explicitlySet__.add("analyticsCluster");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveClusterAttached")
+        private Boolean isHeatWaveClusterAttached;
+
+        public Builder isHeatWaveClusterAttached(Boolean isHeatWaveClusterAttached) {
+            this.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
+            this.__explicitlySet__.add("isHeatWaveClusterAttached");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("heatWaveCluster")
+        private HeatWaveClusterSummary heatWaveCluster;
+
+        public Builder heatWaveCluster(HeatWaveClusterSummary heatWaveCluster) {
+            this.heatWaveCluster = heatWaveCluster;
+            this.__explicitlySet__.add("heatWaveCluster");
             return this;
         }
 
@@ -293,6 +309,8 @@ public class DbSystem {
                             subnetId,
                             isAnalyticsClusterAttached,
                             analyticsCluster,
+                            isHeatWaveClusterAttached,
+                            heatWaveCluster,
                             availabilityDomain,
                             faultDomain,
                             shapeName,
@@ -328,6 +346,8 @@ public class DbSystem {
                             .subnetId(o.getSubnetId())
                             .isAnalyticsClusterAttached(o.getIsAnalyticsClusterAttached())
                             .analyticsCluster(o.getAnalyticsCluster())
+                            .isHeatWaveClusterAttached(o.getIsHeatWaveClusterAttached())
+                            .heatWaveCluster(o.getHeatWaveCluster())
                             .availabilityDomain(o.getAvailabilityDomain())
                             .faultDomain(o.getFaultDomain())
                             .shapeName(o.getShapeName())
@@ -394,6 +414,7 @@ public class DbSystem {
     String subnetId;
 
     /**
+     * DEPRECATED -- please use `isHeatWaveClusterAttached` instead.
      * If the DB System has an Analytics Cluster attached.
      *
      **/
@@ -402,6 +423,16 @@ public class DbSystem {
 
     @com.fasterxml.jackson.annotation.JsonProperty("analyticsCluster")
     AnalyticsClusterSummary analyticsCluster;
+
+    /**
+     * If the DB System has a HeatWave Cluster attached.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveClusterAttached")
+    Boolean isHeatWaveClusterAttached;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("heatWaveCluster")
+    HeatWaveClusterSummary heatWaveCluster;
 
     /**
      * The Availability Domain where the primary DB System should be located.

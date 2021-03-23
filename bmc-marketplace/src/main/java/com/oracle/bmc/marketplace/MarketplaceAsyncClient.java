@@ -363,6 +363,51 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangePublicationCompartmentResponse>
+            changePublicationCompartment(
+                    ChangePublicationCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangePublicationCompartmentRequest,
+                                    ChangePublicationCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changePublicationCompartment");
+        final ChangePublicationCompartmentRequest interceptedRequest =
+                ChangePublicationCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangePublicationCompartmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangePublicationCompartmentResponse>
+                transformer = ChangePublicationCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangePublicationCompartmentRequest, ChangePublicationCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangePublicationCompartmentRequest,
+                                ChangePublicationCompartmentResponse>,
+                        java.util.concurrent.Future<ChangePublicationCompartmentResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangePublicationCompartmentRequest, ChangePublicationCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAcceptedAgreementResponse> createAcceptedAgreement(
             CreateAcceptedAgreementRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -405,6 +450,46 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePublicationResponse> createPublication(
+            CreatePublicationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreatePublicationRequest, CreatePublicationResponse>
+                    handler) {
+        LOG.trace("Called async createPublication");
+        final CreatePublicationRequest interceptedRequest =
+                CreatePublicationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreatePublicationConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreatePublicationResponse>
+                transformer = CreatePublicationConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<CreatePublicationRequest, CreatePublicationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreatePublicationRequest, CreatePublicationResponse>,
+                        java.util.concurrent.Future<CreatePublicationResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreatePublicationRequest, CreatePublicationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAcceptedAgreementResponse> deleteAcceptedAgreement(
             DeleteAcceptedAgreementRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -433,6 +518,45 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteAcceptedAgreementRequest, DeleteAcceptedAgreementResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePublicationResponse> deletePublication(
+            DeletePublicationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeletePublicationRequest, DeletePublicationResponse>
+                    handler) {
+        LOG.trace("Called async deletePublication");
+        final DeletePublicationRequest interceptedRequest =
+                DeletePublicationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeletePublicationConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DeletePublicationResponse>
+                transformer = DeletePublicationConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<DeletePublicationRequest, DeletePublicationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeletePublicationRequest, DeletePublicationResponse>,
+                        java.util.concurrent.Future<DeletePublicationResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeletePublicationRequest, DeletePublicationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -586,6 +710,86 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetPackageRequest, GetPackageResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPublicationResponse> getPublication(
+            GetPublicationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetPublicationRequest, GetPublicationResponse>
+                    handler) {
+        LOG.trace("Called async getPublication");
+        final GetPublicationRequest interceptedRequest =
+                GetPublicationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPublicationConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetPublicationResponse>
+                transformer = GetPublicationConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetPublicationRequest, GetPublicationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetPublicationRequest, GetPublicationResponse>,
+                        java.util.concurrent.Future<GetPublicationResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetPublicationRequest, GetPublicationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPublicationPackageResponse> getPublicationPackage(
+            GetPublicationPackageRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetPublicationPackageRequest, GetPublicationPackageResponse>
+                    handler) {
+        LOG.trace("Called async getPublicationPackage");
+        final GetPublicationPackageRequest interceptedRequest =
+                GetPublicationPackageConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPublicationPackageConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetPublicationPackageResponse>
+                transformer = GetPublicationPackageConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetPublicationPackageRequest, GetPublicationPackageResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetPublicationPackageRequest, GetPublicationPackageResponse>,
+                        java.util.concurrent.Future<GetPublicationPackageResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetPublicationPackageRequest, GetPublicationPackageResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -794,6 +998,86 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListPublicationPackagesResponse> listPublicationPackages(
+            ListPublicationPackagesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListPublicationPackagesRequest, ListPublicationPackagesResponse>
+                    handler) {
+        LOG.trace("Called async listPublicationPackages");
+        final ListPublicationPackagesRequest interceptedRequest =
+                ListPublicationPackagesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPublicationPackagesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListPublicationPackagesResponse>
+                transformer = ListPublicationPackagesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListPublicationPackagesRequest, ListPublicationPackagesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListPublicationPackagesRequest, ListPublicationPackagesResponse>,
+                        java.util.concurrent.Future<ListPublicationPackagesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListPublicationPackagesRequest, ListPublicationPackagesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPublicationsResponse> listPublications(
+            ListPublicationsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListPublicationsRequest, ListPublicationsResponse>
+                    handler) {
+        LOG.trace("Called async listPublications");
+        final ListPublicationsRequest interceptedRequest =
+                ListPublicationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPublicationsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListPublicationsResponse>
+                transformer = ListPublicationsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListPublicationsRequest, ListPublicationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListPublicationsRequest, ListPublicationsResponse>,
+                        java.util.concurrent.Future<ListPublicationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListPublicationsRequest, ListPublicationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPublishersResponse> listPublishers(
             ListPublishersRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -975,6 +1259,46 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateAcceptedAgreementRequest, UpdateAcceptedAgreementResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePublicationResponse> updatePublication(
+            UpdatePublicationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdatePublicationRequest, UpdatePublicationResponse>
+                    handler) {
+        LOG.trace("Called async updatePublication");
+        final UpdatePublicationRequest interceptedRequest =
+                UpdatePublicationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdatePublicationConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePublicationResponse>
+                transformer = UpdatePublicationConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<UpdatePublicationRequest, UpdatePublicationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdatePublicationRequest, UpdatePublicationResponse>,
+                        java.util.concurrent.Future<UpdatePublicationResponse>>
+                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdatePublicationRequest, UpdatePublicationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

@@ -5,7 +5,7 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /**
- * A summary of workrequest status.
+ * A summary of work request status.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -170,10 +170,7 @@ public class WorkRequestSummary {
     String id;
 
     /**
-     * The ocid of the compartment that contains the work request. Work requests should be scoped to
-     * the same compartment as the resource the work request affects. If the work request affects multiple resources,
-     * and those resources are not in the same compartment, it is up to the service team to pick the primary
-     * resource whose compartment should be used.
+     * The OCID of the compartment that contains the work request.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")

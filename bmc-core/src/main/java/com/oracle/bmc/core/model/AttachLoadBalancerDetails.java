@@ -94,7 +94,7 @@ public class AttachLoadBalancerDetails {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer to attach to the instance pool.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to attach to the instance pool.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")

@@ -474,6 +474,39 @@ public class DbSystemClient implements DbSystem {
     }
 
     @Override
+    public AddHeatWaveClusterResponse addHeatWaveCluster(AddHeatWaveClusterRequest request) {
+        LOG.trace("Called addHeatWaveCluster");
+        final AddHeatWaveClusterRequest interceptedRequest =
+                AddHeatWaveClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddHeatWaveClusterConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, AddHeatWaveClusterResponse>
+                transformer = AddHeatWaveClusterConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getAddHeatWaveClusterDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateDbSystemResponse createDbSystem(CreateDbSystemRequest request) {
         LOG.trace("Called createDbSystem");
         final CreateDbSystemRequest interceptedRequest =
@@ -566,6 +599,36 @@ public class DbSystemClient implements DbSystem {
     }
 
     @Override
+    public DeleteHeatWaveClusterResponse deleteHeatWaveCluster(
+            DeleteHeatWaveClusterRequest request) {
+        LOG.trace("Called deleteHeatWaveCluster");
+        final DeleteHeatWaveClusterRequest interceptedRequest =
+                DeleteHeatWaveClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteHeatWaveClusterConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteHeatWaveClusterResponse>
+                transformer = DeleteHeatWaveClusterConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GenerateAnalyticsClusterMemoryEstimateResponse generateAnalyticsClusterMemoryEstimate(
             GenerateAnalyticsClusterMemoryEstimateRequest request) {
         LOG.trace("Called generateAnalyticsClusterMemoryEstimate");
@@ -577,6 +640,39 @@ public class DbSystemClient implements DbSystem {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, GenerateAnalyticsClusterMemoryEstimateResponse>
                 transformer = GenerateAnalyticsClusterMemoryEstimateConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GenerateHeatWaveClusterMemoryEstimateResponse generateHeatWaveClusterMemoryEstimate(
+            GenerateHeatWaveClusterMemoryEstimateRequest request) {
+        LOG.trace("Called generateHeatWaveClusterMemoryEstimate");
+        final GenerateHeatWaveClusterMemoryEstimateRequest interceptedRequest =
+                GenerateHeatWaveClusterMemoryEstimateConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateHeatWaveClusterMemoryEstimateConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GenerateHeatWaveClusterMemoryEstimateResponse>
+                transformer = GenerateHeatWaveClusterMemoryEstimateConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -665,6 +761,64 @@ public class DbSystemClient implements DbSystem {
                 GetDbSystemConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetDbSystemResponse>
                 transformer = GetDbSystemConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetHeatWaveClusterResponse getHeatWaveCluster(GetHeatWaveClusterRequest request) {
+        LOG.trace("Called getHeatWaveCluster");
+        final GetHeatWaveClusterRequest interceptedRequest =
+                GetHeatWaveClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetHeatWaveClusterConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetHeatWaveClusterResponse>
+                transformer = GetHeatWaveClusterConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetHeatWaveClusterMemoryEstimateResponse getHeatWaveClusterMemoryEstimate(
+            GetHeatWaveClusterMemoryEstimateRequest request) {
+        LOG.trace("Called getHeatWaveClusterMemoryEstimate");
+        final GetHeatWaveClusterMemoryEstimateRequest interceptedRequest =
+                GetHeatWaveClusterMemoryEstimateConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetHeatWaveClusterMemoryEstimateConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetHeatWaveClusterMemoryEstimateResponse>
+                transformer = GetHeatWaveClusterMemoryEstimateConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -777,6 +931,37 @@ public class DbSystemClient implements DbSystem {
     }
 
     @Override
+    public RestartHeatWaveClusterResponse restartHeatWaveCluster(
+            RestartHeatWaveClusterRequest request) {
+        LOG.trace("Called restartHeatWaveCluster");
+        final RestartHeatWaveClusterRequest interceptedRequest =
+                RestartHeatWaveClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RestartHeatWaveClusterConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, RestartHeatWaveClusterResponse>
+                transformer = RestartHeatWaveClusterConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public StartAnalyticsClusterResponse startAnalyticsCluster(
             StartAnalyticsClusterRequest request) {
         LOG.trace("Called startAnalyticsCluster");
@@ -816,6 +1001,36 @@ public class DbSystemClient implements DbSystem {
                 StartDbSystemConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, StartDbSystemResponse>
                 transformer = StartDbSystemConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public StartHeatWaveClusterResponse startHeatWaveCluster(StartHeatWaveClusterRequest request) {
+        LOG.trace("Called startHeatWaveCluster");
+        final StartHeatWaveClusterRequest interceptedRequest =
+                StartHeatWaveClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StartHeatWaveClusterConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, StartHeatWaveClusterResponse>
+                transformer = StartHeatWaveClusterConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -901,6 +1116,36 @@ public class DbSystemClient implements DbSystem {
     }
 
     @Override
+    public StopHeatWaveClusterResponse stopHeatWaveCluster(StopHeatWaveClusterRequest request) {
+        LOG.trace("Called stopHeatWaveCluster");
+        final StopHeatWaveClusterRequest interceptedRequest =
+                StopHeatWaveClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StopHeatWaveClusterConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, StopHeatWaveClusterResponse>
+                transformer = StopHeatWaveClusterConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateAnalyticsClusterResponse updateAnalyticsCluster(
             UpdateAnalyticsClusterRequest request) {
         LOG.trace("Called updateAnalyticsCluster");
@@ -959,6 +1204,39 @@ public class DbSystemClient implements DbSystem {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateDbSystemDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateHeatWaveClusterResponse updateHeatWaveCluster(
+            UpdateHeatWaveClusterRequest request) {
+        LOG.trace("Called updateHeatWaveCluster");
+        final UpdateHeatWaveClusterRequest interceptedRequest =
+                UpdateHeatWaveClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateHeatWaveClusterConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateHeatWaveClusterResponse>
+                transformer = UpdateHeatWaveClusterConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateHeatWaveClusterDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

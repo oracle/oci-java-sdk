@@ -592,6 +592,236 @@ public class MarketplacePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listPublicationPackages operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListPublicationPackagesResponse> listPublicationPackagesResponseIterator(
+            final ListPublicationPackagesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPublicationPackagesRequest.Builder, ListPublicationPackagesRequest,
+                ListPublicationPackagesResponse>(
+                new com.google.common.base.Supplier<ListPublicationPackagesRequest.Builder>() {
+                    @Override
+                    public ListPublicationPackagesRequest.Builder get() {
+                        return ListPublicationPackagesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListPublicationPackagesResponse, String>() {
+                    @Override
+                    public String apply(ListPublicationPackagesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPublicationPackagesRequest.Builder>,
+                        ListPublicationPackagesRequest>() {
+                    @Override
+                    public ListPublicationPackagesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPublicationPackagesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPublicationPackagesRequest, ListPublicationPackagesResponse>() {
+                    @Override
+                    public ListPublicationPackagesResponse apply(
+                            ListPublicationPackagesRequest request) {
+                        return client.listPublicationPackages(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.marketplace.model.PublicationPackageSummary} objects
+     * contained in responses from the listPublicationPackages operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.marketplace.model.PublicationPackageSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.marketplace.model.PublicationPackageSummary>
+            listPublicationPackagesRecordIterator(final ListPublicationPackagesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPublicationPackagesRequest.Builder, ListPublicationPackagesRequest,
+                ListPublicationPackagesResponse,
+                com.oracle.bmc.marketplace.model.PublicationPackageSummary>(
+                new com.google.common.base.Supplier<ListPublicationPackagesRequest.Builder>() {
+                    @Override
+                    public ListPublicationPackagesRequest.Builder get() {
+                        return ListPublicationPackagesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListPublicationPackagesResponse, String>() {
+                    @Override
+                    public String apply(ListPublicationPackagesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPublicationPackagesRequest.Builder>,
+                        ListPublicationPackagesRequest>() {
+                    @Override
+                    public ListPublicationPackagesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPublicationPackagesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPublicationPackagesRequest, ListPublicationPackagesResponse>() {
+                    @Override
+                    public ListPublicationPackagesResponse apply(
+                            ListPublicationPackagesRequest request) {
+                        return client.listPublicationPackages(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPublicationPackagesResponse,
+                        java.util.List<
+                                com.oracle.bmc.marketplace.model.PublicationPackageSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.marketplace.model.PublicationPackageSummary>
+                            apply(ListPublicationPackagesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listPublications operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListPublicationsResponse> listPublicationsResponseIterator(
+            final ListPublicationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPublicationsRequest.Builder, ListPublicationsRequest, ListPublicationsResponse>(
+                new com.google.common.base.Supplier<ListPublicationsRequest.Builder>() {
+                    @Override
+                    public ListPublicationsRequest.Builder get() {
+                        return ListPublicationsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListPublicationsResponse, String>() {
+                    @Override
+                    public String apply(ListPublicationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPublicationsRequest.Builder>,
+                        ListPublicationsRequest>() {
+                    @Override
+                    public ListPublicationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPublicationsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPublicationsRequest, ListPublicationsResponse>() {
+                    @Override
+                    public ListPublicationsResponse apply(ListPublicationsRequest request) {
+                        return client.listPublications(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.marketplace.model.PublicationSummary} objects
+     * contained in responses from the listPublications operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.marketplace.model.PublicationSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.marketplace.model.PublicationSummary>
+            listPublicationsRecordIterator(final ListPublicationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPublicationsRequest.Builder, ListPublicationsRequest, ListPublicationsResponse,
+                com.oracle.bmc.marketplace.model.PublicationSummary>(
+                new com.google.common.base.Supplier<ListPublicationsRequest.Builder>() {
+                    @Override
+                    public ListPublicationsRequest.Builder get() {
+                        return ListPublicationsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListPublicationsResponse, String>() {
+                    @Override
+                    public String apply(ListPublicationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPublicationsRequest.Builder>,
+                        ListPublicationsRequest>() {
+                    @Override
+                    public ListPublicationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPublicationsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPublicationsRequest, ListPublicationsResponse>() {
+                    @Override
+                    public ListPublicationsResponse apply(ListPublicationsRequest request) {
+                        return client.listPublications(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPublicationsResponse,
+                        java.util.List<com.oracle.bmc.marketplace.model.PublicationSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.marketplace.model.PublicationSummary>
+                            apply(ListPublicationsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listPublishers operation. This iterable
      * will fetch more data from the server as needed.
      *

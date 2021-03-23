@@ -23,6 +23,13 @@ public enum WorkRequestOperationType {
     StopAnalyticsCluster("STOP_ANALYTICS_CLUSTER"),
     RestartAnalyticsCluster("RESTART_ANALYTICS_CLUSTER"),
     GenerateAnalyticsClusterMemoryEstimate("GENERATE_ANALYTICS_CLUSTER_MEMORY_ESTIMATE"),
+    AddHeatwaveCluster("ADD_HEATWAVE_CLUSTER"),
+    UpdateHeatwaveCluster("UPDATE_HEATWAVE_CLUSTER"),
+    DeleteHeatwaveCluster("DELETE_HEATWAVE_CLUSTER"),
+    StartHeatwaveCluster("START_HEATWAVE_CLUSTER"),
+    StopHeatwaveCluster("STOP_HEATWAVE_CLUSTER"),
+    RestartHeatwaveCluster("RESTART_HEATWAVE_CLUSTER"),
+    GenerateHeatwaveClusterMemoryEstimate("GENERATE_HEATWAVE_CLUSTER_MEMORY_ESTIMATE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

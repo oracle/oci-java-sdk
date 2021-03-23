@@ -5,7 +5,8 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The platform configuration used when launching a bare metal instance specific to the AMD Milan platform.
+ * The platform configuration used when launching a bare metal instance with an E4 shape
+ * (the AMD Milan platform).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

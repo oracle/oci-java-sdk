@@ -15,7 +15,7 @@ public class ChangeInstanceCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<ChangeInstanceCompartmentDetails> {
 
     /**
-     * The OCID of the instance.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
      */
     private String instanceId;
 

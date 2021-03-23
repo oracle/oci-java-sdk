@@ -46,6 +46,7 @@ public interface DbSystemAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * DEPRECATED -- please use HeatWave API instead.
      * Adds an Analytics Cluster to the DB System.
      *
      *
@@ -60,6 +61,23 @@ public interface DbSystemAsync extends AutoCloseable {
             AddAnalyticsClusterRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             AddAnalyticsClusterRequest, AddAnalyticsClusterResponse>
+                    handler);
+
+    /**
+     * Adds a HeatWave cluster to the DB System.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddHeatWaveClusterResponse> addHeatWaveCluster(
+            AddHeatWaveClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddHeatWaveClusterRequest, AddHeatWaveClusterResponse>
                     handler);
 
     /**
@@ -79,6 +97,7 @@ public interface DbSystemAsync extends AutoCloseable {
                     handler);
 
     /**
+     * DEPRECATED -- please use HeatWave API instead.
      * Deletes the Analytics Cluster including terminating, detaching, removing, finalizing and
      * otherwise deleting all related resources.
      *
@@ -114,6 +133,25 @@ public interface DbSystemAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the HeatWave cluster including terminating, detaching, removing, finalizing and
+     * otherwise deleting all related resources.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteHeatWaveClusterResponse> deleteHeatWaveCluster(
+            DeleteHeatWaveClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteHeatWaveClusterRequest, DeleteHeatWaveClusterResponse>
+                    handler);
+
+    /**
+     * DEPRECATED -- please use HeatWave API instead.
      * Sends a request to estimate the memory footprints of user tables when loaded to Analytics Cluster memory.
      *
      *
@@ -133,7 +171,28 @@ public interface DbSystemAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Sends a request to estimate the memory footprints of user tables when loaded to HeatWave cluster memory.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GenerateHeatWaveClusterMemoryEstimateResponse>
+            generateHeatWaveClusterMemoryEstimate(
+                    GenerateHeatWaveClusterMemoryEstimateRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GenerateHeatWaveClusterMemoryEstimateRequest,
+                                    GenerateHeatWaveClusterMemoryEstimateResponse>
+                            handler);
+
+    /**
+     * DEPRECATED -- please use HeatWave API instead.
      * Gets information about the Analytics Cluster.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -149,6 +208,7 @@ public interface DbSystemAsync extends AutoCloseable {
                     handler);
 
     /**
+     * DEPRECATED -- please use HeatWave API instead.
      * Gets the most recent Analytics Cluster memory estimate that can be used to determine a suitable
      * Analytics Cluster size.
      *
@@ -183,6 +243,42 @@ public interface DbSystemAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetDbSystemRequest, GetDbSystemResponse> handler);
 
     /**
+     * Gets information about the HeatWave cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetHeatWaveClusterResponse> getHeatWaveCluster(
+            GetHeatWaveClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetHeatWaveClusterRequest, GetHeatWaveClusterResponse>
+                    handler);
+
+    /**
+     * Gets the most recent HeatWave cluster memory estimate that can be used to determine a suitable
+     * HeatWave cluster size.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetHeatWaveClusterMemoryEstimateResponse>
+            getHeatWaveClusterMemoryEstimate(
+                    GetHeatWaveClusterMemoryEstimateRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetHeatWaveClusterMemoryEstimateRequest,
+                                    GetHeatWaveClusterMemoryEstimateResponse>
+                            handler);
+
+    /**
      * Get a list of DB Systems in the specified compartment.
      * The default sort order is by timeUpdated, descending.
      *
@@ -200,7 +296,9 @@ public interface DbSystemAsync extends AutoCloseable {
                     handler);
 
     /**
+     * DEPRECATED -- please use HeatWave API instead.
      * Restarts the Analytics Cluster.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -231,7 +329,25 @@ public interface DbSystemAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Restarts the HeatWave cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RestartHeatWaveClusterResponse> restartHeatWaveCluster(
+            RestartHeatWaveClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RestartHeatWaveClusterRequest, RestartHeatWaveClusterResponse>
+                    handler);
+
+    /**
+     * DEPRECATED -- please use HeatWave API instead.
      * Starts the Analytics Cluster.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -262,7 +378,25 @@ public interface DbSystemAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Starts the HeatWave cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<StartHeatWaveClusterResponse> startHeatWaveCluster(
+            StartHeatWaveClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            StartHeatWaveClusterRequest, StartHeatWaveClusterResponse>
+                    handler);
+
+    /**
+     * DEPRECATED -- please use HeatWave API instead.
      * Stops the Analytics Cluster.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -296,6 +430,23 @@ public interface DbSystemAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Stops the HeatWave cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<StopHeatWaveClusterResponse> stopHeatWaveCluster(
+            StopHeatWaveClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            StopHeatWaveClusterRequest, StopHeatWaveClusterResponse>
+                    handler);
+
+    /**
+     * DEPRECATED -- please use HeatWave API instead.
      * Updates the Analytics Cluster.
      *
      *
@@ -333,5 +484,22 @@ public interface DbSystemAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateDbSystemResponse> updateDbSystem(
             UpdateDbSystemRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateDbSystemRequest, UpdateDbSystemResponse>
+                    handler);
+
+    /**
+     * Updates the HeatWave cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateHeatWaveClusterResponse> updateHeatWaveCluster(
+            UpdateHeatWaveClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateHeatWaveClusterRequest, UpdateHeatWaveClusterResponse>
                     handler);
 }

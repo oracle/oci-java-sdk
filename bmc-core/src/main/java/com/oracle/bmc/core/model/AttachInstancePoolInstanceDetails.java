@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Contains an instance and availability domain information for attaching an instance to the pool.
+ * An instance that is to be attached to an instance pool.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -63,7 +63,7 @@ public class AttachInstancePoolInstanceDetails {
     }
 
     /**
-     * the instance ocid to attach.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     String instanceId;

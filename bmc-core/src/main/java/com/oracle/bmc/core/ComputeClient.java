@@ -610,6 +610,45 @@ public class ComputeClient implements Compute {
     }
 
     @Override
+    public ChangeComputeCapacityReservationCompartmentResponse
+            changeComputeCapacityReservationCompartment(
+                    ChangeComputeCapacityReservationCompartmentRequest request) {
+        LOG.trace("Called changeComputeCapacityReservationCompartment");
+        final ChangeComputeCapacityReservationCompartmentRequest interceptedRequest =
+                ChangeComputeCapacityReservationCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeComputeCapacityReservationCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeComputeCapacityReservationCompartmentResponse>
+                transformer = ChangeComputeCapacityReservationCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeComputeCapacityReservationCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeComputeImageCapabilitySchemaCompartmentResponse
             changeComputeImageCapabilitySchemaCompartment(
                     ChangeComputeImageCapabilitySchemaCompartmentRequest request) {
@@ -791,6 +830,42 @@ public class ComputeClient implements Compute {
     }
 
     @Override
+    public CreateComputeCapacityReservationResponse createComputeCapacityReservation(
+            CreateComputeCapacityReservationRequest request) {
+        LOG.trace("Called createComputeCapacityReservation");
+        final CreateComputeCapacityReservationRequest interceptedRequest =
+                CreateComputeCapacityReservationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateComputeCapacityReservationConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateComputeCapacityReservationResponse>
+                transformer = CreateComputeCapacityReservationConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateComputeCapacityReservationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateComputeImageCapabilitySchemaResponse createComputeImageCapabilitySchema(
             CreateComputeImageCapabilitySchemaRequest request) {
         LOG.trace("Called createComputeImageCapabilitySchema");
@@ -940,6 +1015,37 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteAppCatalogSubscriptionResponse>
                 transformer = DeleteAppCatalogSubscriptionConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteComputeCapacityReservationResponse deleteComputeCapacityReservation(
+            DeleteComputeCapacityReservationRequest request) {
+        LOG.trace("Called deleteComputeCapacityReservation");
+        final DeleteComputeCapacityReservationRequest interceptedRequest =
+                DeleteComputeCapacityReservationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteComputeCapacityReservationConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteComputeCapacityReservationResponse>
+                transformer = DeleteComputeCapacityReservationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1328,6 +1434,36 @@ public class ComputeClient implements Compute {
                 GetBootVolumeAttachmentConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetBootVolumeAttachmentResponse>
                 transformer = GetBootVolumeAttachmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetComputeCapacityReservationResponse getComputeCapacityReservation(
+            GetComputeCapacityReservationRequest request) {
+        LOG.trace("Called getComputeCapacityReservation");
+        final GetComputeCapacityReservationRequest interceptedRequest =
+                GetComputeCapacityReservationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetComputeCapacityReservationConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetComputeCapacityReservationResponse>
+                transformer = GetComputeCapacityReservationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1912,6 +2048,100 @@ public class ComputeClient implements Compute {
     }
 
     @Override
+    public ListComputeCapacityReservationInstanceShapesResponse
+            listComputeCapacityReservationInstanceShapes(
+                    ListComputeCapacityReservationInstanceShapesRequest request) {
+        LOG.trace("Called listComputeCapacityReservationInstanceShapes");
+        final ListComputeCapacityReservationInstanceShapesRequest interceptedRequest =
+                ListComputeCapacityReservationInstanceShapesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListComputeCapacityReservationInstanceShapesConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ListComputeCapacityReservationInstanceShapesResponse>
+                transformer = ListComputeCapacityReservationInstanceShapesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListComputeCapacityReservationInstancesResponse listComputeCapacityReservationInstances(
+            ListComputeCapacityReservationInstancesRequest request) {
+        LOG.trace("Called listComputeCapacityReservationInstances");
+        final ListComputeCapacityReservationInstancesRequest interceptedRequest =
+                ListComputeCapacityReservationInstancesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListComputeCapacityReservationInstancesConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListComputeCapacityReservationInstancesResponse>
+                transformer = ListComputeCapacityReservationInstancesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListComputeCapacityReservationsResponse listComputeCapacityReservations(
+            ListComputeCapacityReservationsRequest request) {
+        LOG.trace("Called listComputeCapacityReservations");
+        final ListComputeCapacityReservationsRequest interceptedRequest =
+                ListComputeCapacityReservationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListComputeCapacityReservationsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListComputeCapacityReservationsResponse>
+                transformer = ListComputeCapacityReservationsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListComputeGlobalImageCapabilitySchemaVersionsResponse
             listComputeGlobalImageCapabilitySchemaVersions(
                     ListComputeGlobalImageCapabilitySchemaVersionsRequest request) {
@@ -2434,6 +2664,41 @@ public class ComputeClient implements Compute {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateComputeCapacityReservationResponse updateComputeCapacityReservation(
+            UpdateComputeCapacityReservationRequest request) {
+        LOG.trace("Called updateComputeCapacityReservation");
+        final UpdateComputeCapacityReservationRequest interceptedRequest =
+                UpdateComputeCapacityReservationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateComputeCapacityReservationConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateComputeCapacityReservationResponse>
+                transformer = UpdateComputeCapacityReservationConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateComputeCapacityReservationDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

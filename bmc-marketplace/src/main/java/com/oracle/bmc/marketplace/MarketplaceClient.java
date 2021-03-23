@@ -23,6 +23,8 @@ public class MarketplaceClient implements Marketplace {
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
+    private final MarketplaceWaiters waiters;
+
     private final MarketplacePaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
@@ -182,6 +184,44 @@ public class MarketplaceClient implements Marketplace {
                 signingStrategyRequestSignerFactories,
                 additionalClientConfigurators,
                 endpoint,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     */
+    public MarketplaceClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                executorService,
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
     }
 
@@ -199,6 +239,7 @@ public class MarketplaceClient implements Marketplace {
      * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
      * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
      * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
      */
     protected MarketplaceClient(
@@ -212,6 +253,7 @@ public class MarketplaceClient implements Marketplace {
                     signingStrategyRequestSignerFactories,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint,
+            java.util.concurrent.ExecutorService executorService,
             com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
         this.authenticationDetailsProvider = authenticationDetailsProvider;
         java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
@@ -259,6 +301,25 @@ public class MarketplaceClient implements Marketplace {
                 restClientFactory.create(
                         defaultRequestSigner, requestSigners, clientConfigurationToUse);
 
+        if (executorService == null) {
+            // up to 50 (core) threads, time out after 60s idle, all daemon
+            java.util.concurrent.ThreadPoolExecutor threadPoolExecutor =
+                    new java.util.concurrent.ThreadPoolExecutor(
+                            50,
+                            50,
+                            60L,
+                            java.util.concurrent.TimeUnit.SECONDS,
+                            new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
+                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
+                                    .setDaemon(true)
+                                    .setNameFormat("Marketplace-waiters-%d")
+                                    .build());
+            threadPoolExecutor.allowCoreThreadTimeOut(true);
+
+            executorService = threadPoolExecutor;
+        }
+        this.waiters = new MarketplaceWaiters(executorService, this);
+
         this.paginators = new MarketplacePaginators(this);
 
         if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
@@ -294,11 +355,23 @@ public class MarketplaceClient implements Marketplace {
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, MarketplaceClient> {
+        private java.util.concurrent.ExecutorService executorService;
+
         private Builder(com.oracle.bmc.Service service) {
             super(service);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Set the ExecutorService for the client to be created.
+         * @param executorService executorService
+         * @return this builder
+         */
+        public Builder executorService(java.util.concurrent.ExecutorService executorService) {
+            this.executorService = executorService;
+            return this;
         }
 
         /**
@@ -317,7 +390,8 @@ public class MarketplaceClient implements Marketplace {
                     requestSignerFactory,
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
-                    endpoint);
+                    endpoint,
+                    executorService);
         }
     }
 
@@ -367,6 +441,42 @@ public class MarketplaceClient implements Marketplace {
     }
 
     @Override
+    public ChangePublicationCompartmentResponse changePublicationCompartment(
+            ChangePublicationCompartmentRequest request) {
+        LOG.trace("Called changePublicationCompartment");
+        final ChangePublicationCompartmentRequest interceptedRequest =
+                ChangePublicationCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangePublicationCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangePublicationCompartmentResponse>
+                transformer = ChangePublicationCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangePublicationCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateAcceptedAgreementResponse createAcceptedAgreement(
             CreateAcceptedAgreementRequest request) {
         LOG.trace("Called createAcceptedAgreement");
@@ -401,6 +511,39 @@ public class MarketplaceClient implements Marketplace {
     }
 
     @Override
+    public CreatePublicationResponse createPublication(CreatePublicationRequest request) {
+        LOG.trace("Called createPublication");
+        final CreatePublicationRequest interceptedRequest =
+                CreatePublicationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreatePublicationConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreatePublicationResponse>
+                transformer = CreatePublicationConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreatePublicationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteAcceptedAgreementResponse deleteAcceptedAgreement(
             DeleteAcceptedAgreementRequest request) {
         LOG.trace("Called deleteAcceptedAgreement");
@@ -410,6 +553,35 @@ public class MarketplaceClient implements Marketplace {
                 DeleteAcceptedAgreementConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAcceptedAgreementResponse>
                 transformer = DeleteAcceptedAgreementConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeletePublicationResponse deletePublication(DeletePublicationRequest request) {
+        LOG.trace("Called deletePublication");
+        final DeletePublicationRequest interceptedRequest =
+                DeletePublicationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeletePublicationConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeletePublicationResponse>
+                transformer = DeletePublicationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -521,6 +693,63 @@ public class MarketplaceClient implements Marketplace {
                 GetPackageConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetPackageResponse> transformer =
                 GetPackageConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetPublicationResponse getPublication(GetPublicationRequest request) {
+        LOG.trace("Called getPublication");
+        final GetPublicationRequest interceptedRequest =
+                GetPublicationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPublicationConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetPublicationResponse>
+                transformer = GetPublicationConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetPublicationPackageResponse getPublicationPackage(
+            GetPublicationPackageRequest request) {
+        LOG.trace("Called getPublicationPackage");
+        final GetPublicationPackageRequest interceptedRequest =
+                GetPublicationPackageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPublicationPackageConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetPublicationPackageResponse>
+                transformer = GetPublicationPackageConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -662,6 +891,63 @@ public class MarketplaceClient implements Marketplace {
                 ListPackagesConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListPackagesResponse>
                 transformer = ListPackagesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListPublicationPackagesResponse listPublicationPackages(
+            ListPublicationPackagesRequest request) {
+        LOG.trace("Called listPublicationPackages");
+        final ListPublicationPackagesRequest interceptedRequest =
+                ListPublicationPackagesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPublicationPackagesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListPublicationPackagesResponse>
+                transformer = ListPublicationPackagesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListPublicationsResponse listPublications(ListPublicationsRequest request) {
+        LOG.trace("Called listPublications");
+        final ListPublicationsRequest interceptedRequest =
+                ListPublicationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPublicationsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListPublicationsResponse>
+                transformer = ListPublicationsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -824,6 +1110,44 @@ public class MarketplaceClient implements Marketplace {
                                 return transformer.apply(response);
                             });
                 });
+    }
+
+    @Override
+    public UpdatePublicationResponse updatePublication(UpdatePublicationRequest request) {
+        LOG.trace("Called updatePublication");
+        final UpdatePublicationRequest interceptedRequest =
+                UpdatePublicationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdatePublicationConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePublicationResponse>
+                transformer = UpdatePublicationConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdatePublicationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public MarketplaceWaiters getWaiters() {
+        return waiters;
     }
 
     @Override

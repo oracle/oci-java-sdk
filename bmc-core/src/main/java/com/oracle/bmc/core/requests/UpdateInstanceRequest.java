@@ -15,7 +15,7 @@ public class UpdateInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdateInstanceDetails> {
 
     /**
-     * The OCID of the instance.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
      */
     private String instanceId;
 

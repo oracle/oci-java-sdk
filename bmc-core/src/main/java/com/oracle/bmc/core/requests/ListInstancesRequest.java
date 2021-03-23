@@ -14,7 +14,7 @@ import com.oracle.bmc.core.model.*;
 public class ListInstancesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
@@ -25,6 +25,11 @@ public class ListInstancesRequest extends com.oracle.bmc.requests.BmcRequest<jav
      *
      */
     private String availabilityDomain;
+
+    /**
+     * The OCID of the compute capacity reservation.
+     */
+    private String capacityReservationId;
 
     /**
      * A filter to return only resources that match the given display name exactly.
@@ -194,6 +199,7 @@ public class ListInstancesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         public Builder copy(ListInstancesRequest o) {
             compartmentId(o.getCompartmentId());
             availabilityDomain(o.getAvailabilityDomain());
+            capacityReservationId(o.getCapacityReservationId());
             displayName(o.getDisplayName());
             limit(o.getLimit());
             page(o.getPage());

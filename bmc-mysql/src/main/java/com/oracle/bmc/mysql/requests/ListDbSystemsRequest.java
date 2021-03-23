@@ -27,12 +27,21 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     private String opcRequestId;
 
     /**
+     * DEPRECATED -- please use HeatWave API instead.
      * If true, return only DB Systems with an Analytics Cluster attached, if false
      * return only DB Systems with no Analytics Cluster attached. If not
      * present, return all DB Systems.
      *
      */
     private Boolean isAnalyticsClusterAttached;
+
+    /**
+     * If true, return only DB Systems with a HeatWave cluster attached, if false
+     * return only DB Systems with no HeatWave cluster attached. If not
+     * present, return all DB Systems.
+     *
+     */
+    private Boolean isHeatWaveClusterAttached;
 
     /**
      * The DB System [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -196,6 +205,7 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             compartmentId(o.getCompartmentId());
             opcRequestId(o.getOpcRequestId());
             isAnalyticsClusterAttached(o.getIsAnalyticsClusterAttached());
+            isHeatWaveClusterAttached(o.getIsHeatWaveClusterAttached());
             dbSystemId(o.getDbSystemId());
             displayName(o.getDisplayName());
             lifecycleState(o.getLifecycleState());
