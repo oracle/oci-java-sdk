@@ -7,9 +7,9 @@ package com.oracle.bmc.core.model;
 /**
  * The platform configuration requested for the instance.
  * <p>
- * If the parameter is provided, the instance is created with the platform configured as specified. If some
- * properties are missing or the entire parameter is not provided, the instance is created
- * with the default configuration values for the `shape` that you specify.
+ * If you provide the parameter, the instance is created with the platform configuration that you specify.
+ * For any values that you omit, the instance uses the default configuration values for the `shape` that you
+ * specify. If you don't provide the parameter, the default values for the `shape` are used.
  * <p>
  * Each shape only supports certain configurable values. If the values that you provide are not valid for the
  * specified `shape`, an error is returned.
@@ -46,7 +46,7 @@ public class InstanceConfigurationLaunchInstancePlatformConfig {
 
     /**
      * The type of platform being configured. The only supported
-     * `type` is `AMD_MILAN_BM`
+     * `type` is `AMD_MILAN_BM`.
      *
      **/
     @lombok.extern.slf4j.Slf4j

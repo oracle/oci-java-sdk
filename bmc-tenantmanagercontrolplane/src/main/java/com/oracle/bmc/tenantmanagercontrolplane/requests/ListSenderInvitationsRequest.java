@@ -55,13 +55,19 @@ public class ListSenderInvitationsRequest
     private Integer limit;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     * The field to sort by. Only one sort order can be provided.
+     * * The default order for timeCreated is descending.
+     * * The default order for displayName is ascending.
+     * * If no value is specified, timeCreated is the default.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     * The field to sort by. Only one sort order can be provided.
+     * * The default order for timeCreated is descending.
+     * * The default order for displayName is ascending.
+     * * If no value is specified, timeCreated is the default.
      *
      **/
     public enum SortBy {
@@ -97,7 +103,7 @@ public class ListSenderInvitationsRequest
         }
     };
     /**
-     * The sort order to use, either 'asc' or 'desc'.
+     * The sort order to use, whether 'asc' or 'desc'.
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.SortOrder sortOrder;
 

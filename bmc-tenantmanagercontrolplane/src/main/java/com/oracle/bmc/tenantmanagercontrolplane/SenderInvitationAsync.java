@@ -8,7 +8,7 @@ import com.oracle.bmc.tenantmanagercontrolplane.requests.*;
 import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
 
 /**
- * A description of the TenantManager API
+ * The Organizations API allows you to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and its resources.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public interface SenderInvitationAsync extends AutoCloseable {
@@ -62,7 +62,7 @@ public interface SenderInvitationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a sender invitation and asynchronously sends the invitation to recipient.
+     * Creates a sender invitation and asynchronously sends the invitation to the recipient.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

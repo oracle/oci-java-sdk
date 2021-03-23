@@ -240,7 +240,8 @@ public class MaintenanceRun {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
     /**
-     * The current state of the maintenance run.
+     * The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -293,7 +294,8 @@ public class MaintenanceRun {
         }
     };
     /**
-     * The current state of the maintenance run.
+     * The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
@@ -331,6 +333,7 @@ public class MaintenanceRun {
         ExadataDbSystem("EXADATA_DB_SYSTEM"),
         CloudExadataInfrastructure("CLOUD_EXADATA_INFRASTRUCTURE"),
         ExaccInfrastructure("EXACC_INFRASTRUCTURE"),
+        AutonomousDatabase("AUTONOMOUS_DATABASE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -446,6 +449,8 @@ public class MaintenanceRun {
         Quarterly("QUARTERLY"),
         Hardware("HARDWARE"),
         Critical("CRITICAL"),
+        Infrastructure("INFRASTRUCTURE"),
+        Database("DATABASE"),
         Oneoff("ONEOFF"),
 
         /**

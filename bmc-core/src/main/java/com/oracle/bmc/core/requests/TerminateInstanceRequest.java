@@ -14,7 +14,7 @@ import com.oracle.bmc.core.model.*;
 public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the instance.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
      */
     private String instanceId;
 

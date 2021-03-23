@@ -40,6 +40,14 @@ public class ListInstancesConverter {
                                     request.getAvailabilityDomain()));
         }
 
+        if (request.getCapacityReservationId() != null) {
+            target =
+                    target.queryParam(
+                            "capacityReservationId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCapacityReservationId()));
+        }
+
         target =
                 target.queryParam(
                         "compartmentId",

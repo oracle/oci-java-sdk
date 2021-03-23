@@ -67,6 +67,15 @@ public class Announcement extends BaseAnnouncement {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOneType")
+        private TimeOneType timeOneType;
+
+        public Builder timeOneType(TimeOneType timeOneType) {
+            this.timeOneType = timeOneType;
+            this.__explicitlySet__.add("timeOneType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeOneValue")
         private java.util.Date timeOneValue;
 
@@ -82,6 +91,15 @@ public class Announcement extends BaseAnnouncement {
         public Builder timeTwoTitle(String timeTwoTitle) {
             this.timeTwoTitle = timeTwoTitle;
             this.__explicitlySet__.add("timeTwoTitle");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeTwoType")
+        private TimeTwoType timeTwoType;
+
+        public Builder timeTwoType(TimeTwoType timeTwoType) {
+            this.timeTwoType = timeTwoType;
+            this.__explicitlySet__.add("timeTwoType");
             return this;
         }
 
@@ -194,8 +212,10 @@ public class Announcement extends BaseAnnouncement {
                             referenceTicketNumber,
                             summary,
                             timeOneTitle,
+                            timeOneType,
                             timeOneValue,
                             timeTwoTitle,
+                            timeTwoType,
                             timeTwoValue,
                             services,
                             affectedRegions,
@@ -218,8 +238,10 @@ public class Announcement extends BaseAnnouncement {
                             .referenceTicketNumber(o.getReferenceTicketNumber())
                             .summary(o.getSummary())
                             .timeOneTitle(o.getTimeOneTitle())
+                            .timeOneType(o.getTimeOneType())
                             .timeOneValue(o.getTimeOneValue())
                             .timeTwoTitle(o.getTimeTwoTitle())
+                            .timeTwoType(o.getTimeTwoType())
                             .timeTwoValue(o.getTimeTwoValue())
                             .services(o.getServices())
                             .affectedRegions(o.getAffectedRegions())
@@ -250,8 +272,10 @@ public class Announcement extends BaseAnnouncement {
             String referenceTicketNumber,
             String summary,
             String timeOneTitle,
+            TimeOneType timeOneType,
             java.util.Date timeOneValue,
             String timeTwoTitle,
+            TimeTwoType timeTwoType,
             java.util.Date timeTwoValue,
             java.util.List<String> services,
             java.util.List<String> affectedRegions,
@@ -268,8 +292,10 @@ public class Announcement extends BaseAnnouncement {
                 referenceTicketNumber,
                 summary,
                 timeOneTitle,
+                timeOneType,
                 timeOneValue,
                 timeTwoTitle,
+                timeTwoType,
                 timeTwoValue,
                 services,
                 affectedRegions,

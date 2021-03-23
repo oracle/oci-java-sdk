@@ -46,6 +46,23 @@ public interface MarketplaceAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Changes the compartment of the Publication
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangePublicationCompartmentResponse> changePublicationCompartment(
+            ChangePublicationCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangePublicationCompartmentRequest,
+                            ChangePublicationCompartmentResponse>
+                    handler);
+
+    /**
      * Accepts a terms of use agreement for a specific package version of a listing. You must accept all
      * terms of use for a package before you can deploy the package.
      *
@@ -61,6 +78,22 @@ public interface MarketplaceAsync extends AutoCloseable {
             CreateAcceptedAgreementRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateAcceptedAgreementRequest, CreateAcceptedAgreementResponse>
+                    handler);
+
+    /**
+     * Creates a publication of the given type with an optional default package
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreatePublicationResponse> createPublication(
+            CreatePublicationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreatePublicationRequest, CreatePublicationResponse>
                     handler);
 
     /**
@@ -80,6 +113,22 @@ public interface MarketplaceAsync extends AutoCloseable {
             DeleteAcceptedAgreementRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteAcceptedAgreementRequest, DeleteAcceptedAgreementResponse>
+                    handler);
+
+    /**
+     * Deletes a Publication. This will also remove the associated Listing from Marketplace.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeletePublicationResponse> deletePublication(
+            DeletePublicationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeletePublicationRequest, DeletePublicationResponse>
                     handler);
 
     /**
@@ -172,6 +221,37 @@ public interface MarketplaceAsync extends AutoCloseable {
     java.util.concurrent.Future<GetPackageResponse> getPackage(
             GetPackageRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetPackageRequest, GetPackageResponse> handler);
+
+    /**
+     * Get details of a publication
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPublicationResponse> getPublication(
+            GetPublicationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetPublicationRequest, GetPublicationResponse>
+                    handler);
+
+    /**
+     * Gets the details of a specific package within a given Publication
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPublicationPackageResponse> getPublicationPackage(
+            GetPublicationPackageRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetPublicationPackageRequest, GetPublicationPackageResponse>
+                    handler);
 
     /**
      * Lists the terms of use agreements that have been accepted in the specified compartment.
@@ -284,6 +364,37 @@ public interface MarketplaceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the packages in the given Publication
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPublicationPackagesResponse> listPublicationPackages(
+            ListPublicationPackagesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListPublicationPackagesRequest, ListPublicationPackagesResponse>
+                    handler);
+
+    /**
+     * Lists the publications in the given compartment
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPublicationsResponse> listPublications(
+            ListPublicationsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListPublicationsRequest, ListPublicationsResponse>
+                    handler);
+
+    /**
      * Gets the list of all the publishers of listings available in Oracle Cloud Infrastructure Marketplace.
      *
      *
@@ -357,5 +468,21 @@ public interface MarketplaceAsync extends AutoCloseable {
             UpdateAcceptedAgreementRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateAcceptedAgreementRequest, UpdateAcceptedAgreementResponse>
+                    handler);
+
+    /**
+     * Updates details of an existing Publication
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdatePublicationResponse> updatePublication(
+            UpdatePublicationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdatePublicationRequest, UpdatePublicationResponse>
                     handler);
 }

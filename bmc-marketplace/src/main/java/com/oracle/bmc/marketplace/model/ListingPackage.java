@@ -76,4 +76,7 @@ public class ListingPackage {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
+    OperatingSystem operatingSystem;
 }

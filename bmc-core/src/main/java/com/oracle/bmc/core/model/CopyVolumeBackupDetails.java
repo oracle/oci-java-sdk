@@ -107,8 +107,8 @@ public class CopyVolumeBackupDetails {
      * <p>
      *
      * For more information about the Key Management service and encryption keys, see
-     * [Overview of Key Management](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm) and
-     * [Using Keys](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/usingkeys.htm).
+     * [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")

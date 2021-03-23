@@ -31,6 +31,7 @@ public class AnnouncementAsyncClient implements AnnouncementAsync {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("ANNOUNCEMENT")
                     .serviceEndpointPrefix("announcements")
+                    .serviceEndpointTemplate("https://announcements.{region}.{secondLevelDomain}")
                     .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)

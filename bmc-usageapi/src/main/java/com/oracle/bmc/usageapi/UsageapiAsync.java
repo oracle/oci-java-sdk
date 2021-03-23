@@ -8,7 +8,7 @@ import com.oracle.bmc.usageapi.requests.*;
 import com.oracle.bmc.usageapi.responses.*;
 
 /**
- * Use the Usage API to view your Oracle Cloud usage and costs. The API allows you to request data that meets the specified filter criteria, and to group that data by the dimension of your choosing. The Usage API is used by the Cost Analysis tool in the Console.
+ * Use the Usage API to view your Oracle Cloud usage and costs. The API allows you to request data that meets the specified filter criteria, and to group that data by the dimension of your choosing. The Usage API is used by the Cost Analysis tool in the Console. Also see [Using the Usage API](https://docs.cloud.oracle.com/Content/Billing/Concepts/costanalysisoverview.htm#cost_analysis_using_the_api) for more information.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 public interface UsageapiAsync extends AutoCloseable {
@@ -46,6 +46,66 @@ public interface UsageapiAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Returns the created query.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateQueryResponse> createQuery(
+            CreateQueryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateQueryRequest, CreateQueryResponse> handler);
+
+    /**
+     * Delete a saved query by the OCID.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteQueryResponse> deleteQuery(
+            DeleteQueryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteQueryRequest, DeleteQueryResponse> handler);
+
+    /**
+     * Returns the saved query.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetQueryResponse> getQuery(
+            GetQueryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetQueryRequest, GetQueryResponse> handler);
+
+    /**
+     * Returns the saved query list.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListQueriesResponse> listQueries(
+            ListQueriesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListQueriesRequest, ListQueriesResponse> handler);
+
+    /**
      * Returns the configurations list for the UI drop-down list.
      *
      *
@@ -80,4 +140,19 @@ public interface UsageapiAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             RequestSummarizedUsagesRequest, RequestSummarizedUsagesResponse>
                     handler);
+
+    /**
+     * Update a saved query by the OCID.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateQueryResponse> updateQuery(
+            UpdateQueryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateQueryRequest, UpdateQueryResponse> handler);
 }

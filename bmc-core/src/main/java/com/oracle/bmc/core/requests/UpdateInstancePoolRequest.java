@@ -15,7 +15,7 @@ public class UpdateInstancePoolRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdateInstancePoolDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the instance pool.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
      */
     private String instancePoolId;
 

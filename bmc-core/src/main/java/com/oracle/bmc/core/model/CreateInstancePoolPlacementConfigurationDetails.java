@@ -127,7 +127,7 @@ public class CreateInstancePoolPlacementConfigurationDetails {
     java.util.List<String> faultDomains;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("primarySubnetId")

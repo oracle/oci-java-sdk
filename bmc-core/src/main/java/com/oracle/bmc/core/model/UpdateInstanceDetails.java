@@ -26,6 +26,15 @@ public class UpdateInstanceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+        private String capacityReservationId;
+
+        public Builder capacityReservationId(String capacityReservationId) {
+            this.capacityReservationId = capacityReservationId;
+            this.__explicitlySet__.add("capacityReservationId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -142,6 +151,7 @@ public class UpdateInstanceDetails {
         public UpdateInstanceDetails build() {
             UpdateInstanceDetails __instance__ =
                     new UpdateInstanceDetails(
+                            capacityReservationId,
                             definedTags,
                             displayName,
                             freeformTags,
@@ -161,7 +171,8 @@ public class UpdateInstanceDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateInstanceDetails o) {
             Builder copiedBuilder =
-                    definedTags(o.getDefinedTags())
+                    capacityReservationId(o.getCapacityReservationId())
+                            .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
                             .agentConfig(o.getAgentConfig())
@@ -187,8 +198,17 @@ public class UpdateInstanceDetails {
     }
 
     /**
+     * The OCID of the compute capacity reservation this instance is launched under.
+     * You can remove the instance from a reservation by specifying an empty string as input for this field.
+     * For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+    String capacityReservationId;
+
+    /**
      * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
@@ -208,7 +228,7 @@ public class UpdateInstanceDetails {
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Department\": \"Finance\"}`
      *

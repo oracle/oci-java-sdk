@@ -7,11 +7,11 @@ package com.oracle.bmc.core.model;
 /**
  * A point-in-time copy of a volume that can then be used to create a new block volume
  * or recover a block volume. For more information, see
- * [Overview of Cloud Volume Storage](https://docs.cloud.oracle.com/Content/Block/Concepts/overview.htm).
+ * [Overview of Cloud Volume Storage](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
- * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+ * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  * <p>
  **Warning:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API.
@@ -278,7 +278,7 @@ public class VolumeBackup {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
@@ -315,7 +315,7 @@ public class VolumeBackup {
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Department\": \"Finance\"}`
      *
@@ -332,8 +332,8 @@ public class VolumeBackup {
     /**
      * The OCID of the Key Management key which is the master encryption key for the volume backup.
      * For more information about the Key Management service and encryption keys, see
-     * [Overview of Key Management](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm) and
-     * [Using Keys](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/usingkeys.htm).
+     * [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")

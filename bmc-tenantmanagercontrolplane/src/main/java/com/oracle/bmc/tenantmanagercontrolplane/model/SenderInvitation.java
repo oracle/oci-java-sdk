@@ -231,7 +231,7 @@ public class SenderInvitation {
     SenderInvitationStatus status;
 
     /**
-     * A user-created name to describe the invitation.
+     * A user-created name to describe the invitation. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;

@@ -5,6 +5,7 @@
 package com.oracle.bmc.mysql.model;
 
 /**
+ * DEPRECATED -- please use HeatWave API instead.
  * An Analytics Cluster Node is a compute host that is part of an Analytics Cluster.
  *
  * <br/>

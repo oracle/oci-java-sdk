@@ -5,6 +5,7 @@
 package com.oracle.bmc.mysql.model;
 
 /**
+ * DEPRECATED -- please use HeatWave API instead.
  * An Analytics Cluster is a database accelerator for a DB System.
  *
  * <br/>

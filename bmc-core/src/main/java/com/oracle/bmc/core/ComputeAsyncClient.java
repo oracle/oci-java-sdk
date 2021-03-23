@@ -568,6 +568,56 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeComputeCapacityReservationCompartmentResponse>
+            changeComputeCapacityReservationCompartment(
+                    ChangeComputeCapacityReservationCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeComputeCapacityReservationCompartmentRequest,
+                                    ChangeComputeCapacityReservationCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeComputeCapacityReservationCompartment");
+        final ChangeComputeCapacityReservationCompartmentRequest interceptedRequest =
+                ChangeComputeCapacityReservationCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeComputeCapacityReservationCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeComputeCapacityReservationCompartmentResponse>
+                transformer = ChangeComputeCapacityReservationCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeComputeCapacityReservationCompartmentRequest,
+                        ChangeComputeCapacityReservationCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeComputeCapacityReservationCompartmentRequest,
+                                ChangeComputeCapacityReservationCompartmentResponse>,
+                        java.util.concurrent.Future<
+                                ChangeComputeCapacityReservationCompartmentResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeComputeCapacityReservationCompartmentRequest,
+                    ChangeComputeCapacityReservationCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeComputeImageCapabilitySchemaCompartmentResponse>
             changeComputeImageCapabilitySchemaCompartment(
                     ChangeComputeImageCapabilitySchemaCompartmentRequest request,
@@ -795,6 +845,53 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateComputeCapacityReservationResponse>
+            createComputeCapacityReservation(
+                    CreateComputeCapacityReservationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateComputeCapacityReservationRequest,
+                                    CreateComputeCapacityReservationResponse>
+                            handler) {
+        LOG.trace("Called async createComputeCapacityReservation");
+        final CreateComputeCapacityReservationRequest interceptedRequest =
+                CreateComputeCapacityReservationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateComputeCapacityReservationConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateComputeCapacityReservationResponse>
+                transformer = CreateComputeCapacityReservationConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateComputeCapacityReservationRequest,
+                        CreateComputeCapacityReservationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateComputeCapacityReservationRequest,
+                                CreateComputeCapacityReservationResponse>,
+                        java.util.concurrent.Future<CreateComputeCapacityReservationResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateComputeCapacityReservationRequest,
+                    CreateComputeCapacityReservationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateComputeImageCapabilitySchemaResponse>
             createComputeImageCapabilitySchema(
                     CreateComputeImageCapabilitySchemaRequest request,
@@ -1001,6 +1098,52 @@ public class ComputeAsyncClient implements ComputeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteAppCatalogSubscriptionRequest, DeleteAppCatalogSubscriptionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteComputeCapacityReservationResponse>
+            deleteComputeCapacityReservation(
+                    DeleteComputeCapacityReservationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteComputeCapacityReservationRequest,
+                                    DeleteComputeCapacityReservationResponse>
+                            handler) {
+        LOG.trace("Called async deleteComputeCapacityReservation");
+        final DeleteComputeCapacityReservationRequest interceptedRequest =
+                DeleteComputeCapacityReservationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteComputeCapacityReservationConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteComputeCapacityReservationResponse>
+                transformer = DeleteComputeCapacityReservationConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteComputeCapacityReservationRequest,
+                        DeleteComputeCapacityReservationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteComputeCapacityReservationRequest,
+                                DeleteComputeCapacityReservationResponse>,
+                        java.util.concurrent.Future<DeleteComputeCapacityReservationResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteComputeCapacityReservationRequest,
+                    DeleteComputeCapacityReservationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1540,6 +1683,50 @@ public class ComputeAsyncClient implements ComputeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetBootVolumeAttachmentRequest, GetBootVolumeAttachmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetComputeCapacityReservationResponse>
+            getComputeCapacityReservation(
+                    GetComputeCapacityReservationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetComputeCapacityReservationRequest,
+                                    GetComputeCapacityReservationResponse>
+                            handler) {
+        LOG.trace("Called async getComputeCapacityReservation");
+        final GetComputeCapacityReservationRequest interceptedRequest =
+                GetComputeCapacityReservationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetComputeCapacityReservationConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetComputeCapacityReservationResponse>
+                transformer = GetComputeCapacityReservationConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetComputeCapacityReservationRequest, GetComputeCapacityReservationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetComputeCapacityReservationRequest,
+                                GetComputeCapacityReservationResponse>,
+                        java.util.concurrent.Future<GetComputeCapacityReservationResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetComputeCapacityReservationRequest, GetComputeCapacityReservationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2359,6 +2546,149 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListComputeCapacityReservationInstanceShapesResponse>
+            listComputeCapacityReservationInstanceShapes(
+                    ListComputeCapacityReservationInstanceShapesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeCapacityReservationInstanceShapesRequest,
+                                    ListComputeCapacityReservationInstanceShapesResponse>
+                            handler) {
+        LOG.trace("Called async listComputeCapacityReservationInstanceShapes");
+        final ListComputeCapacityReservationInstanceShapesRequest interceptedRequest =
+                ListComputeCapacityReservationInstanceShapesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListComputeCapacityReservationInstanceShapesConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ListComputeCapacityReservationInstanceShapesResponse>
+                transformer = ListComputeCapacityReservationInstanceShapesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListComputeCapacityReservationInstanceShapesRequest,
+                        ListComputeCapacityReservationInstanceShapesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListComputeCapacityReservationInstanceShapesRequest,
+                                ListComputeCapacityReservationInstanceShapesResponse>,
+                        java.util.concurrent.Future<
+                                ListComputeCapacityReservationInstanceShapesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListComputeCapacityReservationInstanceShapesRequest,
+                    ListComputeCapacityReservationInstanceShapesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListComputeCapacityReservationInstancesResponse>
+            listComputeCapacityReservationInstances(
+                    ListComputeCapacityReservationInstancesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeCapacityReservationInstancesRequest,
+                                    ListComputeCapacityReservationInstancesResponse>
+                            handler) {
+        LOG.trace("Called async listComputeCapacityReservationInstances");
+        final ListComputeCapacityReservationInstancesRequest interceptedRequest =
+                ListComputeCapacityReservationInstancesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListComputeCapacityReservationInstancesConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListComputeCapacityReservationInstancesResponse>
+                transformer = ListComputeCapacityReservationInstancesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListComputeCapacityReservationInstancesRequest,
+                        ListComputeCapacityReservationInstancesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListComputeCapacityReservationInstancesRequest,
+                                ListComputeCapacityReservationInstancesResponse>,
+                        java.util.concurrent.Future<
+                                ListComputeCapacityReservationInstancesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListComputeCapacityReservationInstancesRequest,
+                    ListComputeCapacityReservationInstancesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListComputeCapacityReservationsResponse>
+            listComputeCapacityReservations(
+                    ListComputeCapacityReservationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeCapacityReservationsRequest,
+                                    ListComputeCapacityReservationsResponse>
+                            handler) {
+        LOG.trace("Called async listComputeCapacityReservations");
+        final ListComputeCapacityReservationsRequest interceptedRequest =
+                ListComputeCapacityReservationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListComputeCapacityReservationsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListComputeCapacityReservationsResponse>
+                transformer = ListComputeCapacityReservationsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListComputeCapacityReservationsRequest,
+                        ListComputeCapacityReservationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListComputeCapacityReservationsRequest,
+                                ListComputeCapacityReservationsResponse>,
+                        java.util.concurrent.Future<ListComputeCapacityReservationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListComputeCapacityReservationsRequest,
+                    ListComputeCapacityReservationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListComputeGlobalImageCapabilitySchemaVersionsResponse>
             listComputeGlobalImageCapabilitySchemaVersions(
                     ListComputeGlobalImageCapabilitySchemaVersionsRequest request,
@@ -3115,6 +3445,52 @@ public class ComputeAsyncClient implements ComputeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     TerminateInstanceRequest, TerminateInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateComputeCapacityReservationResponse>
+            updateComputeCapacityReservation(
+                    UpdateComputeCapacityReservationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateComputeCapacityReservationRequest,
+                                    UpdateComputeCapacityReservationResponse>
+                            handler) {
+        LOG.trace("Called async updateComputeCapacityReservation");
+        final UpdateComputeCapacityReservationRequest interceptedRequest =
+                UpdateComputeCapacityReservationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateComputeCapacityReservationConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateComputeCapacityReservationResponse>
+                transformer = UpdateComputeCapacityReservationConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateComputeCapacityReservationRequest,
+                        UpdateComputeCapacityReservationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateComputeCapacityReservationRequest,
+                                UpdateComputeCapacityReservationResponse>,
+                        java.util.concurrent.Future<UpdateComputeCapacityReservationResponse>>
+                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateComputeCapacityReservationRequest,
+                    UpdateComputeCapacityReservationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Instance data along with the lifecycleState of instance to instance pool attachment.
+ * Information about an instance that belongs to an instance pool.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -197,13 +197,13 @@ public class InstancePoolInstance {
     }
 
     /**
-     * The OCID of the instance.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The OCID of the instance pool.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instancePoolId")
     String instancePoolId;
@@ -214,7 +214,7 @@ public class InstancePoolInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     String availabilityDomain;
     /**
-     * the lifecycle state of the instance in the instance pool
+     * The attachment state of the instance in relation to the instance pool.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -261,13 +261,15 @@ public class InstancePoolInstance {
         }
     };
     /**
-     * the lifecycle state of the instance in the instance pool
+     * The attachment state of the instance in relation to the instance pool.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
 
     /**
-     * The OCID of the compartment that contains the instance.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the
+     * instance.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -285,7 +287,9 @@ public class InstancePoolInstance {
     String faultDomain;
 
     /**
-     * The OCID of the instance configuration used to create the instance.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration
+     * used to create the instance.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceConfigurationId")
     String instanceConfigurationId;
@@ -297,17 +301,15 @@ public class InstancePoolInstance {
     String region;
 
     /**
-     * The shape of an instance. The shape determines the number of CPUs, amount of memory,
+     * The shape of the instance. The shape determines the number of CPUs, amount of memory,
      * and other resources allocated to the instance.
-     * <p>
-     * You can enumerate all available shapes by calling {@link #listShapes(ListShapesRequest) listShapes}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     String shape;
 
     /**
-     * The lifecycleState of the underlying instance. Refer lifecycleState in {@link Instance}
+     * The lifecycle state of the instance. Refer to `lifecycleState` in the {@link Instance} resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     String state;
@@ -321,7 +323,7 @@ public class InstancePoolInstance {
     java.util.Date timeCreated;
 
     /**
-     * The load balancer backends that are configured for the instance pool instance.
+     * The load balancer backends that are configured for the instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerBackends")

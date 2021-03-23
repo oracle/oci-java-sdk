@@ -39,6 +39,7 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     public enum IsSupportedFor {
         Dbsystem("DBSYSTEM"),
         Analyticscluster("ANALYTICSCLUSTER"),
+        Heatwavecluster("HEATWAVECLUSTER"),
         ;
 
         private final String value;

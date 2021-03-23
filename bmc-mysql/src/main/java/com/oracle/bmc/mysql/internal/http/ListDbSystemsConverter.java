@@ -40,6 +40,14 @@ public class ListDbSystemsConverter {
                                     request.getIsAnalyticsClusterAttached()));
         }
 
+        if (request.getIsHeatWaveClusterAttached() != null) {
+            target =
+                    target.queryParam(
+                            "isHeatWaveClusterAttached",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsHeatWaveClusterAttached()));
+        }
+
         target =
                 target.queryParam(
                         "compartmentId",

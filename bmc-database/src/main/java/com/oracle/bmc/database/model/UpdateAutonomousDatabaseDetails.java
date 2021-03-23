@@ -592,6 +592,7 @@ public class UpdateAutonomousDatabaseDetails {
 
     /**
      * Indicates whether the Autonomous Database has Data Guard enabled.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDataGuardEnabled")
     Boolean isDataGuardEnabled;

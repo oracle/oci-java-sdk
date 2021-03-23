@@ -158,6 +158,16 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
     private Boolean isFeatured;
 
     /**
+     * The type of the listing
+     */
+    private java.util.List<com.oracle.bmc.marketplace.model.ListingType> listingTypes;
+
+    /**
+     * OS of the listing.
+     */
+    private java.util.List<String> operatingSystems;
+
+    /**
      * The unique identifier for the compartment.
      */
     private String compartmentId;
@@ -209,6 +219,8 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             category(o.getCategory());
             pricing(o.getPricing());
             isFeatured(o.getIsFeatured());
+            listingTypes(o.getListingTypes());
+            operatingSystems(o.getOperatingSystems());
             compartmentId(o.getCompartmentId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());

@@ -122,6 +122,24 @@ public class ListListingsConverter {
                                     request.getIsFeatured()));
         }
 
+        if (request.getListingTypes() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "listingTypes",
+                            request.getListingTypes(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getOperatingSystems() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "operatingSystems",
+                            request.getOperatingSystems(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         if (request.getCompartmentId() != null) {
             target =
                     target.queryParam(

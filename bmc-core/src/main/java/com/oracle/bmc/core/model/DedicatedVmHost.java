@@ -5,8 +5,8 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A dedicated virtual machine host that enables you to host multiple VM instances
- * on a dedicated host that is not shared with other tenancies.
+ * A dedicated virtual machine host lets you host multiple VM instances
+ * on a dedicated server that is not shared with other tenancies.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -210,7 +210,7 @@ public class DedicatedVmHost {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
@@ -245,7 +245,7 @@ public class DedicatedVmHost {
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Department\": \"Finance\"}`
      *
@@ -254,7 +254,7 @@ public class DedicatedVmHost {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The OCID of the dedicated VM host.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;

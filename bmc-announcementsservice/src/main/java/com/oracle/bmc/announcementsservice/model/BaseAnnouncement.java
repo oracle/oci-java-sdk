@@ -67,10 +67,58 @@ public class BaseAnnouncement {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOneTitle")
     String timeOneTitle;
+    /**
+     * The type of a time associated with an initial time value. If the `timeOneTitle` attribute is present, then the `timeOneTitle` attribute contains a label of `timeOneType` in English.
+     * Example: `START_TIME`
+     *
+     **/
+    public enum TimeOneType {
+        ActionRequiredBy("ACTION_REQUIRED_BY"),
+        NewStartTime("NEW_START_TIME"),
+        OriginalEndTime("ORIGINAL_END_TIME"),
+        ReportDate("REPORT_DATE"),
+        StartTime("START_TIME"),
+        TimeDetected("TIME_DETECTED"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, TimeOneType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (TimeOneType v : TimeOneType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        TimeOneType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static TimeOneType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid TimeOneType: " + key);
+        }
+    };
+    /**
+     * The type of a time associated with an initial time value. If the `timeOneTitle` attribute is present, then the `timeOneTitle` attribute contains a label of `timeOneType` in English.
+     * Example: `START_TIME`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeOneType")
+    TimeOneType timeOneType;
 
     /**
-     * The actual value of the first time value for the event. Typically, this is the time an event started, but the meaning
-     * can vary, depending on the announcement type.
+     * The actual value of the first time value for the event. Typically, this denotes the time an event started, but the meaning
+     * can vary, depending on the announcement type. The `timeOneType` attribute describes the meaning.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOneValue")
@@ -83,10 +131,54 @@ public class BaseAnnouncement {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeTwoTitle")
     String timeTwoTitle;
+    /**
+     * The type of a time associated with second time value. If the `timeTwoTitle` attribute is present, then the `timeTwoTitle` attribute contains a label of `timeTwoType` in English.
+     * Example: `END_TIME`
+     *
+     **/
+    public enum TimeTwoType {
+        EndTime("END_TIME"),
+        NewEndTime("NEW_END_TIME"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, TimeTwoType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (TimeTwoType v : TimeTwoType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        TimeTwoType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static TimeTwoType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid TimeTwoType: " + key);
+        }
+    };
+    /**
+     * The type of a time associated with second time value. If the `timeTwoTitle` attribute is present, then the `timeTwoTitle` attribute contains a label of `timeTwoType` in English.
+     * Example: `END_TIME`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeTwoType")
+    TimeTwoType timeTwoType;
 
     /**
-     * The actual value of the second time value. Typically, this is the time an event ended, but the meaning
-     * can vary, depending on the announcement type.
+     * The actual value of the second time value. Typically, this denotes the time an event ended, but the meaning
+     * can vary, depending on the announcement type. The `timeTwoType` attribute describes the meaning.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeTwoValue")

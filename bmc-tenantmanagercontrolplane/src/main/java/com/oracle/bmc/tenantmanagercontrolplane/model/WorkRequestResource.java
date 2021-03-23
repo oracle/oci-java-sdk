@@ -101,7 +101,7 @@ public class WorkRequestResource {
     /**
      * The way in which this resource is affected by the work tracked in the work request.
      * A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
-     * work is complete for that resource at which point it will transition to CREATED, UPDATED,
+     * work is complete for that resource, at which point it will transition to CREATED, UPDATED,
      * or DELETED, respectively.
      *
      **/

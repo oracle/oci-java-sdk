@@ -51,7 +51,9 @@ public interface ComputeManagement extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Attach an instance to the instance pool.
+     * Attaches an instance to an instance pool. For information about the prerequisites
+     * that an instance must meet before you can attach it to a pool, see
+     * [Attaching an Instance to an Instance Pool](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/updatinginstancepool.htm#attach-instance).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -178,7 +180,7 @@ public interface ComputeManagement extends AutoCloseable {
             DeleteInstanceConfigurationRequest request);
 
     /**
-     * Detach instance from the instance pool.
+     * Detaches an instance from an instance pool.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -232,7 +234,7 @@ public interface ComputeManagement extends AutoCloseable {
     GetInstancePoolResponse getInstancePool(GetInstancePoolRequest request);
 
     /**
-     * Gets the instance pool instance
+     * Gets information about an instance that belongs to an instance pool.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

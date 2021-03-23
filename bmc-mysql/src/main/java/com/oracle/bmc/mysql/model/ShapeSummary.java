@@ -117,6 +117,7 @@ public class ShapeSummary {
     public enum IsSupportedFor {
         Dbsystem("DBSYSTEM"),
         Analyticscluster("ANALYTICSCLUSTER"),
+        Heatwavecluster("HEATWAVECLUSTER"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

@@ -35,7 +35,7 @@ public class RequestSummarizedUsagesRequest
     private String page;
 
     /**
-     * The maximum number of items to return.
+     * The maximumimum number of items to return.
      */
     private Integer limit;
 

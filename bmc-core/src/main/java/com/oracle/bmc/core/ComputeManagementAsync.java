@@ -51,7 +51,9 @@ public interface ComputeManagementAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Attach an instance to the instance pool.
+     * Attaches an instance to an instance pool. For information about the prerequisites
+     * that an instance must meet before you can attach it to a pool, see
+     * [Attaching an Instance to an Instance Pool](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/updatinginstancepool.htm#attach-instance).
      *
      *
      * @param request The request object containing the details to send
@@ -232,7 +234,7 @@ public interface ComputeManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Detach instance from the instance pool.
+     * Detaches an instance from an instance pool.
      *
      *
      * @param request The request object containing the details to send
@@ -313,7 +315,7 @@ public interface ComputeManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the instance pool instance
+     * Gets information about an instance that belongs to an instance pool.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

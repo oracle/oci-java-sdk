@@ -8,7 +8,7 @@ import com.oracle.bmc.tenantmanagercontrolplane.requests.*;
 import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
 
 /**
- * A description of the TenantManager API
+ * The Organizations API allows you to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and its resources.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public interface WorkRequestAsync extends AutoCloseable {

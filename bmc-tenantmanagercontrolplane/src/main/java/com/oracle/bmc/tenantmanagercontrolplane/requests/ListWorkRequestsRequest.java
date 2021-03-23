@@ -34,7 +34,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     private Integer limit;
 
     /**
-     * The sort order to use, either 'asc' or 'desc'.
+     * The sort order to use, whether 'asc' or 'desc'.
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.SortOrder sortOrder;
 

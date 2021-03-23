@@ -6,11 +6,11 @@ package com.oracle.bmc.core.model;
 
 /**
  * A boot disk image for launching an instance. For more information, see
- * [Overview of the Compute Service](https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm).
+ * [Overview of the Compute Service](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
- * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+ * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  * <p>
  **Warning:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API.
@@ -151,6 +151,15 @@ public class Image {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("listingType")
+        private ListingType listingType;
+
+        public Builder listingType(ListingType listingType) {
+            this.listingType = listingType;
+            this.__explicitlySet__.add("listingType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
         private Long sizeInMBs;
 
@@ -188,6 +197,7 @@ public class Image {
                             operatingSystem,
                             operatingSystemVersion,
                             agentFeatures,
+                            listingType,
                             sizeInMBs,
                             timeCreated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -210,6 +220,7 @@ public class Image {
                             .operatingSystem(o.getOperatingSystem())
                             .operatingSystemVersion(o.getOperatingSystemVersion())
                             .agentFeatures(o.getAgentFeatures())
+                            .listingType(o.getListingType())
                             .sizeInMBs(o.getSizeInMBs())
                             .timeCreated(o.getTimeCreated());
 
@@ -250,7 +261,7 @@ public class Image {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
@@ -272,7 +283,7 @@ public class Image {
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Department\": \"Finance\"}`
      *
@@ -424,9 +435,60 @@ public class Image {
 
     @com.fasterxml.jackson.annotation.JsonProperty("agentFeatures")
     InstanceAgentFeatures agentFeatures;
+    /**
+     * The listing type of the image. The default value is \"NONE\".
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum ListingType {
+        Community("COMMUNITY"),
+        None("NONE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, ListingType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ListingType v : ListingType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ListingType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ListingType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ListingType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The listing type of the image. The default value is \"NONE\".
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("listingType")
+    ListingType listingType;
 
     /**
-     * The boot volume size for an instance launched from this image, (1 MB = 1048576 bytes).
+     * The boot volume size for an instance launched from this image (1 MB = 1,048,576 bytes).
      * Note this is not the same as the size of the image when it was exported or the actual size of the image.
      * <p>
      * Example: `47694`

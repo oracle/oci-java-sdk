@@ -15,7 +15,7 @@ public class AttachLoadBalancerRequest
         extends com.oracle.bmc.requests.BmcRequest<AttachLoadBalancerDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the instance pool.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
      */
     private String instancePoolId;
 
