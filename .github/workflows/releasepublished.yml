@@ -1,0 +1,77 @@
+# This workflow triggers when a new release has been made.
+
+name: ReleasePublished
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  release:
+    types: [released]
+
+  # Allows you to run this workflow manually from the Actions tab.
+  workflow_dispatch:
+    inputs:
+      release:
+        description: 'Release version number ("latest" or "v3.3.0.0")'
+        required: true
+        default: latest
+      repo_name:
+        description: 'Repository name'
+        required: true
+        default: oracle/oci-java-sdk
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Report the parameters
+        run: |
+          echo "GITHUB_REF is \"$GITHUB_REF\""
+          echo "GITHUB_SHA is \"$GITHUB_SHA\""
+          echo "inputs.release is \"${{github.event.inputs.release}}\""
+          if [ -z "${{github.event.inputs.release}}" ]; then
+            echo "Release not set manually, using GITHUB_REF"
+            export RELEASE=`echo "$GITHUB_REF" | sed "s#refs/tags/##"`
+          else
+            echo "Release set manually, using inputs.release"
+            export RELEASE=${{github.event.inputs.release}}
+          fi
+          echo "Release is $RELEASE"
+          pat="^v.*"
+          if [ "$RELEASE" = "latest" ]; then
+            echo "Using latest release"
+          elif [[ $RELEASE =~ $pat ]]; then
+            echo "Specified '$RELEASE' as release"
+          else
+            echo "Unsupported release, should be 'latest' or something like 'v3.3.0.0'; was '$RELEASE'"
+            exit 1
+          fi
+          echo "RELEASE=$RELEASE" >> $GITHUB_ENV
+      - name: Download the release asset
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        run: |
+          export repo=${{github.event.inputs.repo_name}}
+          export file="individual-modules.zip"
+          if [ "$RELEASE" = "latest" ]; then
+            echo "Using latest release"
+            asset_id=`curl -H "Authorization: Bearer $ACCESS_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -s https://api.github.com/repos/$repo/releases | jq ".[0].assets | map(select(.name|test(\"$file\")))[0].id"`
+          else
+            echo "Using release $RELEASE"
+            asset_id=`curl -H "Authorization: Bearer $ACCESS_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -s https://api.github.com/repos/$repo/releases | jq ". | map(select(.tag_name == \"$RELEASE\"))[0].assets | map(select(.name|test(\"$file\")))[0].id"`
+          fi
+          echo "Asset id for release $RELEASE file $file is $asset_id"
+          wget -q --header="Authorization: Bearer $ACCESS_TOKEN" --auth-no-challenge --header='Accept:application/octet-stream' https://api.github.com/repos/$repo/releases/assets/$asset_id -O $file
+      - name: Examine artifact
+        run: |
+          ls
+          mkdir unpacked
+          cd unpacked
+          export file="individual-modules.zip"
+          unzip -q ../$file
+          find .
