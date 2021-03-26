@@ -18,6 +18,10 @@ on:
       repo_name:
         description: 'Repository name (leave blank for this repo)'
         required: false
+      file_name_part:
+        description: 'File name part (substring of file name to use)'
+        required: true
+        default: individual-modules.zip
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -57,13 +61,20 @@ jobs:
             echo "Repo name specified as '${{github.event.inputs.repo_name}}'"
             export REPO=${{github.event.inputs.repo_name}}
           fi
+          if [ -z "${{github.event.inputs.file_name_part}}" ]; then
+            echo "File name part not set manually, using 'individual-modules.zip'"
+            export FILE_NAME_PART="individual-modules.zip"
+          else
+            echo "File name part specified as '${{github.event.inputs.file_name_part}}'"
+            export FILE_NAME_PART="${{github.event.inputs.file_name_part}}"
+          fi
           echo "RELEASE=$RELEASE" >> $GITHUB_ENV
           echo "REPO=$REPO" >> $GITHUB_ENV
+          echo "FILE_NAME_PART=$FILE_NAME_PART" >> $GITHUB_ENV
       - name: Download the release asset
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
-          export file="individual-modules.zip"
           if [ "$RELEASE" = "latest" ]; then
             echo "Using latest release"
             set +e
@@ -73,15 +84,15 @@ jobs:
               echo "curl returned '$result': Bad access token or repo (was '$REPO')"
               exit $result
             fi
-            asset_id=`cat releases.json | jq ".[0].assets | map(select(.name|test(\"$file\")))[0].id"`
+            asset_id=`cat releases.json | jq ".[0].assets | map(select(.name|test(\"$FILE_NAME_PART\")))[0].id"`
             result="$?"
             if [ "$result" -ne 0 ]; then
-              echo "jq returned '$result': No releases or bad file (was '$file')"
+              echo "jq returned '$result': No releases or bad file (was '$FILE_NAME_PART')"
               cat releases.json
               exit $result
             fi
             if [ "$asset_id" == "null" ]; then
-              echo "jq returned asset id '$asset_id': No releases or bad file (was '$file')"
+              echo "jq returned asset id '$asset_id': No releases or bad file (was '$FILE_NAME_PART')"
               cat releases.json
               exit 1
             fi
@@ -95,27 +106,26 @@ jobs:
               echo "curl returned '$result': Bad access token or repo (was '$REPO')"
               exit $result
             fi
-            asset_id=`cat releases.json | jq ". | map(select(.tag_name == \"$RELEASE\"))[0].assets | map(select(.name|test(\"$file\")))[0].id"`
+            asset_id=`cat releases.json | jq ". | map(select(.tag_name == \"$RELEASE\"))[0].assets | map(select(.name|test(\"$FILE_NAME_PART\")))[0].id"`
             result="$?"
             if [ "$result" -ne 0 ]; then
-              echo "jq returned '$result': Bad release (was '$RELEASE') or bad file (was '$file')"
+              echo "jq returned '$result': Bad release (was '$RELEASE') or bad file (was '$FILE_NAME_PART')"
               cat releases.json
               exit $result
             fi
             if [ "$asset_id" == "null" ]; then
-              echo "jq returned asset id '$asset_id': Bad release (was '$RELEASE') or bad file (was '$file')"
+              echo "jq returned asset id '$asset_id': Bad release (was '$RELEASE') or bad file (was '$FILE_NAME_PART')"
               cat releases.json
               exit 1
             fi
             set -e
           fi
-          echo "Asset id for release $RELEASE file $file is $asset_id"
-          wget -q --header="Authorization: Bearer $ACCESS_TOKEN" --auth-no-challenge --header='Accept:application/octet-stream' https://api.github.com/repos/$REPO/releases/assets/$asset_id -O $file
+          echo "Asset id for release $RELEASE file $FILE_NAME_PART is $asset_id"
+          wget -q --header="Authorization: Bearer $ACCESS_TOKEN" --auth-no-challenge --header='Accept:application/octet-stream' https://api.github.com/repos/$REPO/releases/assets/$asset_id -O asset.zip
       - name: Examine artifact
         run: |
           ls
           mkdir unpacked
           cd unpacked
-          export file="individual-modules.zip"
-          unzip -q ../$file
+          unzip -q ../asset.zip
           find .
