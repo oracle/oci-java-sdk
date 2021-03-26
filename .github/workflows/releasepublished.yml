@@ -16,9 +16,8 @@ on:
         required: true
         default: latest
       repo_name:
-        description: 'Repository name'
-        required: true
-        default: oracle/oci-java-sdk
+        description: 'Repository name (leave blank for this repo)'
+        required: false
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -51,22 +50,67 @@ jobs:
             echo "Unsupported release, should be 'latest' or something like 'v3.3.0.0'; was '$RELEASE'"
             exit 1
           fi
+          if [ -z "${{github.event.inputs.repo_name}}" ]; then
+            echo "Repo name not set manually, using '${GITHUB_REPOSITORY}'"
+            export REPO=${GITHUB_REPOSITORY}
+          else
+            echo "Repo name specified as '${{github.event.inputs.repo_name}}'"
+            export REPO=${{github.event.inputs.repo_name}}
+          fi
           echo "RELEASE=$RELEASE" >> $GITHUB_ENV
+          echo "REPO=$REPO" >> $GITHUB_ENV
       - name: Download the release asset
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
-          export repo=${{github.event.inputs.repo_name}}
           export file="individual-modules.zip"
           if [ "$RELEASE" = "latest" ]; then
             echo "Using latest release"
-            asset_id=`curl -H "Authorization: Bearer $ACCESS_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -s https://api.github.com/repos/$repo/releases | jq ".[0].assets | map(select(.name|test(\"$file\")))[0].id"`
+            set +e
+            curl -f -H "Authorization: Bearer $ACCESS_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -s https://api.github.com/repos/$REPO/releases > releases.json
+            result="$?"
+            if [ "$result" -ne 0 ]; then
+              echo "curl returned '$result': Bad access token or repo (was '$REPO')"
+              exit $result
+            fi
+            asset_id=`cat releases.json | jq ".[0].assets | map(select(.name|test(\"$file\")))[0].id"`
+            result="$?"
+            if [ "$result" -ne 0 ]; then
+              echo "jq returned '$result': No releases or bad file (was '$file')"
+              cat releases.json
+              exit $result
+            fi
+            if [ "$asset_id" == "null" ]; then
+              echo "jq returned asset id '$asset_id': No releases or bad file (was '$file')"
+              cat releases.json
+              exit 1
+            fi
+            set -e
           else
             echo "Using release $RELEASE"
-            asset_id=`curl -H "Authorization: Bearer $ACCESS_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -s https://api.github.com/repos/$repo/releases | jq ". | map(select(.tag_name == \"$RELEASE\"))[0].assets | map(select(.name|test(\"$file\")))[0].id"`
+            set +e
+            curl -f -H "Authorization: Bearer $ACCESS_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -s https://api.github.com/repos/$REPO/releases > releases.json
+            result="$?"
+            if [ "$result" -ne 0 ]; then
+              echo "curl returned '$result': Bad access token or repo (was '$REPO')"
+              exit $result
+            fi
+            asset_id=`cat releases.json | jq ". | map(select(.tag_name == \"$RELEASE\"))[0].assets | map(select(.name|test(\"$file\")))[0].id"`
+            result="$?"
+            if [ "$result" -ne 0 ]; then
+              echo "jq returned '$result': Bad release (was '$RELEASE') or bad file (was '$file')"
+              cat releases.json
+              exit $result
+            fi
+            if [ "$asset_id" == "null" ]; then
+              echo "jq returned asset id '$asset_id': Bad release (was '$RELEASE') or bad file (was '$file')"
+              cat releases.json
+              exit 1
+            fi
+            set -e
           fi
           echo "Asset id for release $RELEASE file $file is $asset_id"
-          wget -q --header="Authorization: Bearer $ACCESS_TOKEN" --auth-no-challenge --header='Accept:application/octet-stream' https://api.github.com/repos/$repo/releases/assets/$asset_id -O $file
+          wget -q --header="Authorization: Bearer $ACCESS_TOKEN" --auth-no-challenge --header='Accept:application/octet-stream' https://api.github.com/repos/$REPO/releases/assets/$asset_id -O $file
       - name: Examine artifact
         run: |
           ls
