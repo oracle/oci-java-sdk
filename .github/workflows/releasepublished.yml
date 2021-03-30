@@ -12,16 +12,9 @@ on:
   workflow_dispatch:
     inputs:
       release:
-        description: 'Release version number ("latest" or "v3.3.0.0")'
+        description: 'Release version number ("latest" or "v1.35.0")'
         required: true
         default: latest
-      repo_name:
-        description: 'Repository name (leave blank for this repo)'
-        required: false
-      file_name_part:
-        description: 'File name part (substring of file name to use)'
-        required: true
-        default: individual-modules.zip
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -54,23 +47,12 @@ jobs:
           elif [[ $RELEASE =~ $pat ]]; then
             echo "Specified '$RELEASE' as release"
           else
-            echo "Unsupported release, should be 'latest' or something like 'v3.3.0.0'; was '$RELEASE'"
+            echo "Unsupported release, should be 'latest' or something like 'v1.35.0'; was '$RELEASE'"
             exit 1
           fi
-          if [ -z "${{github.event.inputs.repo_name}}" ]; then
-            echo "Repo name not set manually, using '${GITHUB_REPOSITORY}'"
-            export REPO=${GITHUB_REPOSITORY}
-          else
-            echo "Repo name specified as '${{github.event.inputs.repo_name}}'"
-            export REPO=${{github.event.inputs.repo_name}}
-          fi
-          if [ -z "${{github.event.inputs.file_name_part}}" ]; then
-            echo "File name part not set manually, using 'individual-modules.zip'"
-            export FILE_NAME_PART="individual-modules.zip"
-          else
-            echo "File name part specified as '${{github.event.inputs.file_name_part}}'"
-            export FILE_NAME_PART="${{github.event.inputs.file_name_part}}"
-          fi
+          echo "Repo name not set manually, using '${GITHUB_REPOSITORY}'"
+          export REPO=${GITHUB_REPOSITORY}
+          export FILE_NAME_PART="individual-modules.zip"
           echo "RELEASE=$RELEASE" >> $GITHUB_ENV
           echo "REPO=$REPO" >> $GITHUB_ENV
           echo "FILE_NAME_PART=$FILE_NAME_PART" >> $GITHUB_ENV
