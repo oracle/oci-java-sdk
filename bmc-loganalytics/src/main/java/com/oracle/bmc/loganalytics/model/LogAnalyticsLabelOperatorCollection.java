@@ -62,7 +62,7 @@ public class LogAnalyticsLabelOperatorCollection {
     }
 
     /**
-     * list of label operators
+     * An array of of label operators.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<LogAnalyticsLabelOperator> items;

@@ -9,7 +9,13 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListConfigWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListConfigWorkRequestsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
+@lombok.Builder(
+    builderClassName = "Builder",
+    buildMethodName = "buildWithoutInvocationCallback",
+    toBuilder = true
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ListConfigWorkRequestsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
@@ -68,12 +74,12 @@ public class ListConfigWorkRequestsRequest
         }
     };
     /**
-     * work requests sort by
+     * The attribute used to sort the returned work requests
      */
     private SortBy sortBy;
 
     /**
-     * work requests sort by
+     * The attribute used to sort the returned work requests
      **/
     public enum SortBy {
         TimeAccepted("timeAccepted"),

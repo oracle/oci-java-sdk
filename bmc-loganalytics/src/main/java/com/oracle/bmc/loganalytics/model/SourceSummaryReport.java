@@ -83,19 +83,19 @@ public class SourceSummaryReport {
     }
 
     /**
-     * non out-of-the-box count
+     * The count of custom (user defined) sources.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nonOobCount")
     Integer nonOobCount;
 
     /**
-     * count of sources set to auto-associate
+     * The count of sources set to auto-associate.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoAssociationSourceCount")
     Integer autoAssociationSourceCount;
 
     /**
-     * out-of-the-box count
+     * The count of built in sources.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oobCount")
     Integer oobCount;

@@ -101,30 +101,30 @@ public class Violation {
     }
 
     /**
-     * indexes
+     * The indices associated with regular expression violations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("indexes")
     java.util.List<Indexes> indexes;
 
     /**
-     * ruleDescription
+     * The rule description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleDescription")
     String ruleDescription;
 
     /**
-     * ruleName
+     * The rule name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
     String ruleName;
 
     /**
-     * ruleRemediation
+     * The rule remediation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleRemediation")
     String ruleRemediation;
     /**
-     * ruleType
+     * The rule type.  Either WARN or ERROR.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum RuleType {
@@ -170,7 +170,7 @@ public class Violation {
         }
     };
     /**
-     * ruleType
+     * The rule type.  Either WARN or ERROR.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleType")
     RuleType ruleType;

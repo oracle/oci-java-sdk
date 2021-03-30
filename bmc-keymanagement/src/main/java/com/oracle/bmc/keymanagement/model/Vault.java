@@ -142,6 +142,24 @@ public class Vault {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("replicaDetails")
+        private VaultReplicaDetails replicaDetails;
+
+        public Builder replicaDetails(VaultReplicaDetails replicaDetails) {
+            this.replicaDetails = replicaDetails;
+            this.__explicitlySet__.add("replicaDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
+        private Boolean isPrimary;
+
+        public Builder isPrimary(Boolean isPrimary) {
+            this.isPrimary = isPrimary;
+            this.__explicitlySet__.add("isPrimary");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -160,7 +178,9 @@ public class Vault {
                             timeOfDeletion,
                             vaultType,
                             restoredFromVaultId,
-                            wrappingkeyId);
+                            wrappingkeyId,
+                            replicaDetails,
+                            isPrimary);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -180,7 +200,9 @@ public class Vault {
                             .timeOfDeletion(o.getTimeOfDeletion())
                             .vaultType(o.getVaultType())
                             .restoredFromVaultId(o.getRestoredFromVaultId())
-                            .wrappingkeyId(o.getWrappingkeyId());
+                            .wrappingkeyId(o.getWrappingkeyId())
+                            .replicaDetails(o.getReplicaDetails())
+                            .isPrimary(o.getIsPrimary());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -399,6 +421,12 @@ public class Vault {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("wrappingkeyId")
     String wrappingkeyId;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("replicaDetails")
+    VaultReplicaDetails replicaDetails;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
+    Boolean isPrimary;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

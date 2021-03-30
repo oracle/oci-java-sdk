@@ -141,49 +141,49 @@ public class LogAnalyticsMetaSourceType {
     }
 
     /**
-     * built in parser name
+     * The built in parser name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("builtInParserName")
     String builtInParserName;
 
     /**
-     * type description
+     * The source type description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * display name
+     * The source type display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * entity display name
+     * The entity display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityDisplayName")
     String entityDisplayName;
 
     /**
-     * entity name
+     * The entity internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
     String entityName;
 
     /**
-     * source type name
+     * The source type name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * maximum exclude pattern
+     * The maximum exclude pattern.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maximumExcludePattern")
     Long maximumExcludePattern;
 
     /**
-     * maximum include pattern
+     * The maximum include pattern.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maximumIncludePattern")
     Long maximumIncludePattern;

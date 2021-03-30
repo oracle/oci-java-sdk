@@ -8,6 +8,8 @@ import com.oracle.bmc.dataintegration.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @lombok.Builder(builderClassName = "Builder")
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode
 @lombok.Getter
 public class GetReferenceResponse {
     /**

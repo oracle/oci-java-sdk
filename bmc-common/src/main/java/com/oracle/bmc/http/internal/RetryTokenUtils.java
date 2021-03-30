@@ -4,6 +4,8 @@
  */
 package com.oracle.bmc.http.internal;
 
+import com.oracle.bmc.retrier.Retriers;
+
 import java.util.UUID;
 
 /**
@@ -16,7 +18,16 @@ public class RetryTokenUtils {
 
     public static void addRetryToken(WrappedInvocationBuilder ib) {
 
-        boolean isOpcRetryTokenAlreadySet = ib.getHeaders().containsKey(OPC_RETRY_TOKEN_HEADER);
+        if (!Retriers.shouldSendOpcRetryToken()) {
+            return;
+        }
+
+        final boolean isOpcRetryTokenAlreadySet =
+                ib.getHeaders()
+                        .keySet()
+                        .stream()
+                        .anyMatch(
+                                headerName -> headerName.equalsIgnoreCase(OPC_RETRY_TOKEN_HEADER));
 
         if (isOpcRetryTokenAlreadySet) {
             return;

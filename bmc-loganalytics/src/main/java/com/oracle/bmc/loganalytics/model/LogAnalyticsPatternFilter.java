@@ -144,37 +144,39 @@ public class LogAnalyticsPatternFilter {
     LogAnalyticsSourcePattern pattern;
 
     /**
-     * agent version
+     * The agent version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentVersion")
     String agentVersion;
 
     /**
-     * is in use flag
+     * A flag indicating whether or not the pattern filter is currently
+     * in use.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isInUse")
     Boolean isInUse;
 
     /**
-     * operating system
+     * The operating system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
     String operatingSystem;
 
     /**
-     * pattern Id
+     * The pattern unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patternId")
     Long patternId;
 
     /**
-     * source Id
+     * The source unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     Long sourceId;
 
     /**
-     * version
+     * The pattern filter version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     String version;

@@ -61,7 +61,7 @@ public class ColumnNameCollection {
     }
 
     /**
-     * list of column names
+     * A list of SQL query column names.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<ColumnName> items;

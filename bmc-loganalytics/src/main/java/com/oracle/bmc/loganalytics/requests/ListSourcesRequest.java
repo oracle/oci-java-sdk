@@ -9,7 +9,13 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListSourcesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSourcesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
+@lombok.Builder(
+    builderClassName = "Builder",
+    buildMethodName = "buildWithoutInvocationCallback",
+    toBuilder = true
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,23 +31,31 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String compartmentId;
 
     /**
-     * entityType
+     * A filter to return only sources associated with entities of the specified type.
+     * The match is case-insensitive.
+     *
      */
     private String entityType;
 
     /**
-     * Search by source display name or description.
+     * The source display text used for filtering.  Only sources with the specified name
+     * or description will be returned.
+     *
      */
     private String sourceDisplayText;
 
     /**
-     * Is system param of value (all, custom, sourceUsing)
+     * The system value used for filtering.  Only items with the specified system value
+     * will be returned.  Valid values are built in, custom (for user defined items), or
+     * all (for all items, regardless of system value).
      *
      */
     private IsSystem isSystem;
 
     /**
-     * Is system param of value (all, custom, sourceUsing)
+     * The system value used for filtering.  Only items with the specified system value
+     * will be returned.  Valid values are built in, custom (for user defined items), or
+     * all (for all items, regardless of system value).
      *
      **/
     public enum IsSystem {
@@ -78,7 +92,9 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
     /**
-     * auto association flag
+     * An auto-associate flag used for filtering.  Only sources which are marked for automatic
+     * association will be returned.
+     *
      */
     private Boolean isAutoAssociated;
 
@@ -125,12 +141,12 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
     /**
-     * sort by source
+     * The attribute used to sort the returned sources
      */
     private SortBy sortBy;
 
     /**
-     * sort by source
+     * The attribute used to sort the returned sources
      **/
     public enum SortBy {
         Name("name"),
@@ -184,7 +200,11 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String name;
 
     /**
-     * is simplified
+     * A flag specifying whether or not to return all source information, or a subset of the
+     * information about each source.  A value of true will return only the source unique
+     * identifier and the source name.  A value of false will return all source information
+     * (such as author, updated date, system flag, etc.)
+     *
      */
     private Boolean isSimplified;
 

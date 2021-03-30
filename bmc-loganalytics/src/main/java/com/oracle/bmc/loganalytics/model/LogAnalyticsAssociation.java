@@ -240,48 +240,52 @@ public class LogAnalyticsAssociation {
     }
 
     /**
-     * failure message
+     * The failure message.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failureMessage")
     String failureMessage;
 
     /**
-     * Lama Idf
+     * The agent unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     String agentId;
 
     /**
-     * last attempt date
+     * The last attempt date.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastAttempted")
     java.util.Date timeLastAttempted;
 
     /**
-     * retry count
+     * The number of times the association will be attempted
+     * before failing.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("retryCount")
     Long retryCount;
 
     /**
-     * source name
+     * The source name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
     String sourceName;
 
     /**
-     * source display name
+     * The source display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDisplayName")
     String sourceDisplayName;
 
     /**
-     * source type internal name
+     * The source type internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceTypeName")
     String sourceTypeName;
     /**
-     * lifeCycleState
+     * The lifecycle status.  Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED
+     * or FAILED.
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifeCycleState {
@@ -329,61 +333,63 @@ public class LogAnalyticsAssociation {
         }
     };
     /**
-     * lifeCycleState
+     * The lifecycle status.  Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED
+     * or FAILED.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifeCycleState")
     LifeCycleState lifeCycleState;
 
     /**
-     * entity GUID
+     * The entity unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     String entityId;
 
     /**
-     * entity name
+     * The entity name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
     String entityName;
 
     /**
-     * entity type internal name
+     * The entity type internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeName")
     String entityTypeName;
 
     /**
-     * host name
+     * The host name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     String host;
 
     /**
-     * Agent entity name
+     * The name of the entity which contains the agent.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentEntityName")
     String agentEntityName;
 
     /**
-     * entity type display name
+     * The entity type display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeDisplayName")
     String entityTypeDisplayName;
 
     /**
-     * log group ocid
+     * The log group unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
     String logGroupId;
 
     /**
-     * log group name
+     * The log group name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupName")
     String logGroupName;
 
     /**
-     * log group compartment
+     * The log group compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupCompartment")
     String logGroupCompartment;

@@ -83,19 +83,19 @@ public class UiParserTestMetadata {
     }
 
     /**
-     * Last modified time
+     * The last modified time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastModifiedTime")
     String lastModifiedTime;
 
     /**
-     * Name of log file
+     * The log file name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logFileName")
     String logFileName;
 
     /**
-     * timeZone
+     * The time zone.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     java.util.Date timeZone;

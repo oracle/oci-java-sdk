@@ -166,43 +166,43 @@ public class LogAnalyticsParserField {
     LogAnalyticsField field;
 
     /**
-     * parser field map Id
+     * The parser field unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserFieldId")
     Long parserFieldId;
 
     /**
-     * field expression
+     * the parser field expression.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserFieldExpression")
     String parserFieldExpression;
 
     /**
-     * field internal name
+     * The parser field internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserFieldName")
     String parserFieldName;
 
     /**
-     * internal name
+     * The storage field name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageFieldName")
     String storageFieldName;
 
     /**
-     * integrator name
+     * The integrator name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserFieldIntegratorName")
     String parserFieldIntegratorName;
 
     /**
-     * parser internal name
+     * The parser internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserName")
     String parserName;
 
     /**
-     * sequence
+     * The parser field sequence.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserFieldSequence")
     Long parserFieldSequence;
@@ -211,7 +211,7 @@ public class LogAnalyticsParserField {
     LogAnalyticsParser parser;
 
     /**
-     * structured column information
+     * The structured column information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("structuredColumnInfo")
     String structuredColumnInfo;

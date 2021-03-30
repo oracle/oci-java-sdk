@@ -9,7 +9,13 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListLabelSourceDetailsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListLabelSourceDetailsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
+@lombok.Builder(
+    builderClassName = "Builder",
+    buildMethodName = "buildWithoutInvocationCallback",
+    toBuilder = true
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ListLabelSourceDetailsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
@@ -21,7 +27,9 @@ public class ListLabelSourceDetailsRequest
     private String namespaceName;
 
     /**
-     * label name
+     * The label name used for filtering.  Only items with, or associated with, the
+     * specified label name will be returned.
+     *
      */
     private String labelName;
 
@@ -78,12 +86,12 @@ public class ListLabelSourceDetailsRequest
         }
     };
     /**
-     * sort by source displayname
+     * The attribute used to sort the returned sources
      */
     private LabelSourceSortBy labelSourceSortBy;
 
     /**
-     * sort by source displayname
+     * The attribute used to sort the returned sources
      **/
     public enum LabelSourceSortBy {
         SourceDisplayName("sourceDisplayName"),

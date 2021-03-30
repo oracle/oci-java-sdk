@@ -62,7 +62,7 @@ public class LogAnalyticsSourceExtendedFieldDefinitionCollection {
     }
 
     /**
-     * list of extended field definitions
+     * An array of extended field definitions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<LogAnalyticsSourceExtendedFieldDefinition> items;

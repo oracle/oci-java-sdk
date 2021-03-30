@@ -62,7 +62,7 @@ public class LogAnalyticsMetaFunctionCollection {
     }
 
     /**
-     * list of meta functions
+     * An array of meta functions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<LogAnalyticsMetaFunction> items;

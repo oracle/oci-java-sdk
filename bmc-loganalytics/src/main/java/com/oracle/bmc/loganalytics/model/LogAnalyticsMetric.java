@@ -284,84 +284,89 @@ public class LogAnalyticsMetric {
     }
 
     /**
-     * aggregation field
+     * The aggregation field.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("aggregationField")
     String aggregationField;
 
     /**
-     * bucket metadata
+     * The bucket metadata.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketMetadata")
     String bucketMetadata;
 
     /**
-     * clock period
+     * The clock period.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clockPeriod")
     String clockPeriod;
 
     /**
-     * description
+     * The metric description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * edit version
+     * The metric edit version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
     Long editVersion;
 
     /**
-     * field name
+     * The field name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
     String fieldName;
 
     /**
-     * field value array
+     * The field values.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldValues")
     java.util.List<String> fieldValues;
 
     /**
-     * grouping fields
+     * The grouping fields.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupingField")
     String groupingField;
 
     /**
-     * is enabled flag
+     * A flag inidcating whether or not the metric is enabled.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     Boolean isEnabled;
 
     /**
-     * is system flag
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     Boolean isSystem;
 
     /**
-     * metric display name
+     * The metric display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * metric Id
+     * The metric unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricReference")
     Long metricReference;
 
     /**
-     * name
+     * The metric name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
     /**
-     * metric type
+     * The metric type, specifying the type of aggreation to perform.  Default value
+     * is COUNT.
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum MetricType {
@@ -411,18 +416,21 @@ public class LogAnalyticsMetric {
         }
     };
     /**
-     * metric type
+     * The metric type, specifying the type of aggreation to perform.  Default value
+     * is COUNT.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricType")
     MetricType metricType;
 
     /**
-     * is metric source map enabled flag
+     * A flag specifying whether or not the metric source is enabled.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMetricSourceEnabled")
     Boolean isMetricSourceEnabled;
     /**
-     * operator
+     * The metric operator.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Operator {
@@ -470,37 +478,38 @@ public class LogAnalyticsMetric {
         }
     };
     /**
-     * operator
+     * The metric operator.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
     Operator operator;
 
     /**
-     * sources
+     * The metric sources.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sources")
     java.util.List<LogAnalyticsSource> sources;
 
     /**
-     * entity type
+     * The entity type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     String entityType;
 
     /**
-     * last updated date
+     * The last updated date.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
 
     /**
-     * unit type
+     * The unit type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unitType")
     String unitType;
 
     /**
-     * user customized
+     * A flag specifying whether or not this is a custom (user defined) metric.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUserCustomized")
     Boolean isUserCustomized;

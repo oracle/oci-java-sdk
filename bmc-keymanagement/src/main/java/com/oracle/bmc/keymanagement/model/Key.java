@@ -142,6 +142,24 @@ public class Key {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("replicaDetails")
+        private KeyReplicaDetails replicaDetails;
+
+        public Builder replicaDetails(KeyReplicaDetails replicaDetails) {
+            this.replicaDetails = replicaDetails;
+            this.__explicitlySet__.add("replicaDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
+        private Boolean isPrimary;
+
+        public Builder isPrimary(Boolean isPrimary) {
+            this.isPrimary = isPrimary;
+            this.__explicitlySet__.add("isPrimary");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -160,7 +178,9 @@ public class Key {
                             timeCreated,
                             timeOfDeletion,
                             vaultId,
-                            restoredFromKeyId);
+                            restoredFromKeyId,
+                            replicaDetails,
+                            isPrimary);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -180,7 +200,9 @@ public class Key {
                             .timeCreated(o.getTimeCreated())
                             .timeOfDeletion(o.getTimeOfDeletion())
                             .vaultId(o.getVaultId())
-                            .restoredFromKeyId(o.getRestoredFromKeyId());
+                            .restoredFromKeyId(o.getRestoredFromKeyId())
+                            .replicaDetails(o.getReplicaDetails())
+                            .isPrimary(o.getIsPrimary());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -401,6 +423,12 @@ public class Key {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("restoredFromKeyId")
     String restoredFromKeyId;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("replicaDetails")
+    KeyReplicaDetails replicaDetails;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
+    Boolean isPrimary;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

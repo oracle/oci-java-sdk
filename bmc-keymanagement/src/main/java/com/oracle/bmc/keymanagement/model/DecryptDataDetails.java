@@ -147,14 +147,17 @@ public class DecryptDataDetails {
     java.util.Map<String, String> loggingContext;
 
     /**
-     * The OCID of the keyVersion used to encrypt the ciphertext.
+     * The OCID of the key version used to encrypt the ciphertext.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyVersionId")
     String keyVersionId;
     /**
-     * Encryption algorithm to be used while encrypting/decrypting data using a customer key
-     * AES_256_GCM is the supported value AES keys and uses GCM mode of operation
-     * RSA_OAEP_SHA_1 and RSA_OAEP_SHA_256 are supported for RSA keys and use OAEP padding.
+     * The encryption algorithm to use to encrypt or decrypt data with a customer-managed key.
+     * `AES_256_GCM` indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and
+     * that the mode of encryption is the Galois/Counter Mode (GCM). `RSA_OAEP_SHA_1` indicates that the
+     * key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP).
+     * `RSA_OAEP_SHA_256` indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash
+     * and uses OAEP.
      *
      **/
     public enum EncryptionAlgorithm {
@@ -191,9 +194,12 @@ public class DecryptDataDetails {
         }
     };
     /**
-     * Encryption algorithm to be used while encrypting/decrypting data using a customer key
-     * AES_256_GCM is the supported value AES keys and uses GCM mode of operation
-     * RSA_OAEP_SHA_1 and RSA_OAEP_SHA_256 are supported for RSA keys and use OAEP padding.
+     * The encryption algorithm to use to encrypt or decrypt data with a customer-managed key.
+     * `AES_256_GCM` indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and
+     * that the mode of encryption is the Galois/Counter Mode (GCM). `RSA_OAEP_SHA_1` indicates that the
+     * key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP).
+     * `RSA_OAEP_SHA_256` indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash
+     * and uses OAEP.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")

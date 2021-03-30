@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * summary of fields
+ * A summary of a field.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -292,121 +292,133 @@ public class LogAnalyticsFieldSummary {
     String ceeAlias;
 
     /**
-     * data type
+     * The field data type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     String dataType;
 
     /**
-     * default regular expression
+     * The field default regular expression.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regularExpression")
     String regularExpression;
 
     /**
-     * description
+     * The field description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * display name
+     * The field display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * edit version
+     * The field edit version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
     Long editVersion;
 
     /**
-     * facet priority
+     * The facet priority.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("facetPriority")
     Long facetPriority;
 
     /**
-     * internal name
+     * The field internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * is facet eligible flag
+     * A flag inidcating whether or not the facet is elibigle for use.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFacetEligible")
     Boolean isFacetEligible;
 
     /**
-     * is high cardinality flag
+     * A flag inidcating whether or not the cardinality of the field is high.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHighCardinality")
     Boolean isHighCardinality;
 
     /**
-     * is larget data flag
+     * A flag inidcating whether or not the field is a large data field.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLargeData")
     Boolean isLargeData;
 
     /**
-     * is multi-valued flag
+     * A flag indicating whether or not the field is multi-valued.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMultiValued")
     Boolean isMultiValued;
 
     /**
-     * is primary flag
+     * A flag inidcating whether or not this is a primary field.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
     Boolean isPrimary;
 
     /**
-     * is system flag
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     Boolean isSystem;
 
     /**
-     * is summarizable flag
+     * A flag inidcating whether or not the field can be summarized.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSummarizable")
     Boolean isSummarizable;
 
     /**
-     * mappable
+     * The mapped value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mappedValue")
     String mappedValue;
 
     /**
-     * metric key eligible
+     * A flag inidcating whether or not the field is metric key eligible.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMetricKeyEligible")
     Boolean isMetricKeyEligible;
 
     /**
-     * metric value eligible
+     * A flag inidcating whether or not the field is metric value eligible.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMetricValueEligible")
     Boolean isMetricValueEligible;
 
     /**
-     * range facet eligible
+     * A flag inidcating whether or not the field is range facet eligible.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rangeFacetEligible")
     Long rangeFacetEligible;
 
     /**
-     * table eligible
+     * A flag inidcating whether or not the field is table eligible.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isTableEligible")
     Boolean isTableEligible;
 
     /**
-     * unit type
+     * The field unit type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unitType")
     String unitType;

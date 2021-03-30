@@ -54,6 +54,15 @@ public class CreateDbSystemDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isHighlyAvailable")
+        private Boolean isHighlyAvailable;
+
+        public Builder isHighlyAvailable(Boolean isHighlyAvailable) {
+            this.isHighlyAvailable = isHighlyAvailable;
+            this.__explicitlySet__.add("isHighlyAvailable");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
@@ -226,6 +235,7 @@ public class CreateDbSystemDetails {
                             displayName,
                             description,
                             compartmentId,
+                            isHighlyAvailable,
                             availabilityDomain,
                             faultDomain,
                             configurationId,
@@ -254,6 +264,7 @@ public class CreateDbSystemDetails {
                     displayName(o.getDisplayName())
                             .description(o.getDescription())
                             .compartmentId(o.getCompartmentId())
+                            .isHighlyAvailable(o.getIsHighlyAvailable())
                             .availabilityDomain(o.getAvailabilityDomain())
                             .faultDomain(o.getFaultDomain())
                             .configurationId(o.getConfigurationId())
@@ -304,14 +315,39 @@ public class CreateDbSystemDetails {
     String compartmentId;
 
     /**
-     * The Availability Domain where the primary instance should be located.
+     * Specifies if the DB System is highly available.
+     * <p>
+     * When creating a DB System with High Availability, three instances
+     * are created and placed according to your region- and
+     * subnet-type. The secondaries are placed automatically in the other
+     * two availability or fault domains.  You can choose the preferred
+     * location of your primary instance, only.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isHighlyAvailable")
+    Boolean isHighlyAvailable;
+
+    /**
+     * The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+     * <p>
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains
+     * and the MySQL instance in that domain is promoted to the primary instance.
+     * This redirection does not affect the IP address of the DB System in any way.
+     * <p>
+     * For a standalone DB System, this defines the availability domain in which the DB System is placed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     String availabilityDomain;
 
     /**
-     * The name of the Fault Domain the DB System is located in.
+     * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+     * <p>
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains
+     * and the MySQL instance in that domain is promoted to the primary instance.
+     * This redirection does not affect the IP address of the DB System in any way.
+     * <p>
+     * For a standalone DB System, this defines the fault domain in which the DB System is placed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")

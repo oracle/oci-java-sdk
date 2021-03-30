@@ -9,7 +9,13 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/TestParserExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use TestParserRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
+@lombok.Builder(
+    builderClassName = "Builder",
+    buildMethodName = "buildWithoutInvocationCallback",
+    toBuilder = true
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class TestParserRequest
         extends com.oracle.bmc.requests.BmcRequest<TestParserPayloadDetails> {
@@ -26,12 +32,12 @@ public class TestParserRequest
     private TestParserPayloadDetails testParserPayloadDetails;
 
     /**
-     * scope
+     * The scope used when testing a parser.
      */
     private Scope scope;
 
     /**
-     * scope
+     * The scope used when testing a parser.
      **/
     public enum Scope {
         LogLines("LOG_LINES"),
@@ -67,7 +73,9 @@ public class TestParserRequest
         }
     };
     /**
-     * module
+     * The module to test.  A value of 'ParserFunctionTest' will result in testing of
+     * the parser functions.
+     *
      */
     private String reqOriginModule;
 

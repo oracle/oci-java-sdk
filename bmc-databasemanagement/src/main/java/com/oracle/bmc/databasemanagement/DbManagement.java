@@ -63,6 +63,30 @@ public interface DbManagement extends AutoCloseable {
             AddManagedDatabaseToManagedDatabaseGroupRequest request);
 
     /**
+     * Changes database parameters' values. There are two kinds of database
+     * parameters:
+     * <p>
+     * - Dynamic parameters: They can be changed for the current Oracle
+     * Database instance. The changes take effect immediately.
+     * - Static parameters: They cannot be changed for the current instance.
+     * You must change these parameters and then restart the database before
+     * changes take effect.
+     * <p>
+     **Note:** If the instance is started using a text initialization
+     * parameter file, the parameter changes are applicable only for the
+     * current instance. You must update them manually to be passed to
+     * a future instance.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ChangeDatabaseParametersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDatabaseParameters API.
+     */
+    ChangeDatabaseParametersResponse changeDatabaseParameters(
+            ChangeDatabaseParametersRequest request);
+
+    /**
      * Moves a job.
      *
      * @param request The request object containing the details to send
@@ -215,6 +239,17 @@ public interface DbManagement extends AutoCloseable {
     GetManagedDatabaseGroupResponse getManagedDatabaseGroup(GetManagedDatabaseGroupRequest request);
 
     /**
+     * Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListDatabaseParametersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDatabaseParameters API.
+     */
+    ListDatabaseParametersResponse listDatabaseParameters(ListDatabaseParametersRequest request);
+
+    /**
      * Gets the job execution for a specific ID or the list of job executions for a job, Managed Database or Managed Database Group
      * in a specific compartment. Only one of the parameters, ID, jobId, managedDatabaseId or managedDatabaseGroupId should be provided.
      * If none of these parameters is provided, all the job executions in the compartment are listed. Job executions can also be filtered
@@ -285,6 +320,16 @@ public interface DbManagement extends AutoCloseable {
     ListManagedDatabasesResponse listManagedDatabases(ListManagedDatabasesRequest request);
 
     /**
+     * Gets the list of tablespaces for the specified managedDatabaseId.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListTablespacesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTablespaces API.
+     */
+    ListTablespacesResponse listTablespaces(ListTablespacesRequest request);
+
+    /**
      * Removes a Managed Database from a Managed Database Group. Any management
      * activities that are currently running on this database will continue to
      * run to completion. However, any activities scheduled to run in the future
@@ -299,6 +344,17 @@ public interface DbManagement extends AutoCloseable {
     RemoveManagedDatabaseFromManagedDatabaseGroupResponse
             removeManagedDatabaseFromManagedDatabaseGroup(
                     RemoveManagedDatabaseFromManagedDatabaseGroupRequest request);
+
+    /**
+     * Resets database parameters' values to their default or startup values.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ResetDatabaseParametersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ResetDatabaseParameters API.
+     */
+    ResetDatabaseParametersResponse resetDatabaseParameters(ResetDatabaseParametersRequest request);
 
     /**
      * Updates the Managed Database Group specified by managedDatabaseGroupId.

@@ -9,7 +9,13 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UploadLogFileExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UploadLogFileRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
+@lombok.Builder(
+    builderClassName = "Builder",
+    buildMethodName = "buildWithoutInvocationCallback",
+    toBuilder = true
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream> {
 
@@ -115,6 +121,12 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
     private String opcRetryToken;
 
     /**
+     * The log set that gets associated with the uploaded logs.
+     *
+     */
+    private String logSet;
+
+    /**
      * Alternative accessor for the body parameter.
      * @return body parameter
      */
@@ -175,6 +187,7 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
             contentMd5(o.getContentMd5());
             contentType(o.getContentType());
             opcRetryToken(o.getOpcRetryToken());
+            logSet(o.getLogSet());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

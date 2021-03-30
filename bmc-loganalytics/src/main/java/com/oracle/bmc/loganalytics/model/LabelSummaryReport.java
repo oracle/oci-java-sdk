@@ -70,13 +70,13 @@ public class LabelSummaryReport {
     }
 
     /**
-     * non out-of-the-box count
+     * The count of custom (user defined) labels.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nonOobCount")
     Integer nonOobCount;
 
     /**
-     * out-of-the-box count
+     * The count of built in labels.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oobCount")
     Integer oobCount;

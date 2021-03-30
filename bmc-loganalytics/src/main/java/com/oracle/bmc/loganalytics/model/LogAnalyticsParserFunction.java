@@ -167,55 +167,58 @@ public class LogAnalyticsParserFunction {
     LogAnalyticsParserMetaPlugin parserMetaPlugin;
 
     /**
-     * plugin instance Id
+     * The parser function unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionId")
     Long parserFunctionId;
 
     /**
-     * plugin instance internal name
+     * The parser function internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionName")
     String parserFunctionName;
 
     /**
-     * is enabled flag
+     * A flag inidcating whether or not the parser function is enabled.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     Boolean isEnabled;
 
     /**
-     * is system flag
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     Boolean isSystem;
 
     /**
-     * parser Id
+     * The associated parser unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserId")
     Long parserId;
 
     /**
-     * parser internal name
+     * The associated parser internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserName")
     String parserName;
 
     /**
-     * plugin type internal name
+     * The plugin internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserMetaPluginName")
     String parserMetaPluginName;
 
     /**
-     * priority
+     * The parser function priority.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionPriority")
     Long parserFunctionPriority;
 
     /**
-     * parameter map list
+     * The parser function parameter list.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionParameters")
     java.util.List<LogAnalyticsParserFunctionParameter> parserFunctionParameters;

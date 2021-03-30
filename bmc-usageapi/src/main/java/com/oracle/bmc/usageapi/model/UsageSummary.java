@@ -267,6 +267,15 @@ public class UsageSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isForecast")
+        private Boolean isForecast;
+
+        public Builder isForecast(Boolean isForecast) {
+            this.isForecast = isForecast;
+            this.__explicitlySet__.add("isForecast");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("tags")
         private java.util.List<Tag> tags;
 
@@ -309,6 +318,7 @@ public class UsageSummary {
                             currency,
                             subscriptionId,
                             overage,
+                            isForecast,
                             tags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -344,6 +354,7 @@ public class UsageSummary {
                             .currency(o.getCurrency())
                             .subscriptionId(o.getSubscriptionId())
                             .overage(o.getOverage())
+                            .isForecast(o.getIsForecast())
                             .tags(o.getTags());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -519,6 +530,12 @@ public class UsageSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("overage")
     String overage;
+
+    /**
+     * is forecasted data
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isForecast")
+    Boolean isForecast;
 
     /**
      * For grouping, a tag definition. For filtering, a definition and key.

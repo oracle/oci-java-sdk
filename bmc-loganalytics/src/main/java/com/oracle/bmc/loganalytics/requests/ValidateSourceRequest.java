@@ -9,7 +9,13 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ValidateSourceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ValidateSourceRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
+@lombok.Builder(
+    builderClassName = "Builder",
+    buildMethodName = "buildWithoutInvocationCallback",
+    toBuilder = true
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ValidateSourceRequest
         extends com.oracle.bmc.requests.BmcRequest<UpsertLogAnalyticsSourceDetails> {
@@ -26,12 +32,16 @@ public class ValidateSourceRequest
     private UpsertLogAnalyticsSourceDetails upsertLogAnalyticsSourceDetails;
 
     /**
-     * create like sourceId
+     * The unique identifier of the source to use as the reference for a create like
+     * operation.
+     *
      */
     private Integer createLikeSourceId;
 
     /**
-     * is incremental
+     * A flag indicating whether or not the update of a source is incremental or not.  If incremental,
+     * the name of the source must be specified.
+     *
      */
     private Boolean isIncremental;
 

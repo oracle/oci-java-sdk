@@ -61,7 +61,7 @@ public class LabelPriorityCollection {
     }
 
     /**
-     * list of tag priorities
+     * An array of label priorities.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<LabelPriority> items;

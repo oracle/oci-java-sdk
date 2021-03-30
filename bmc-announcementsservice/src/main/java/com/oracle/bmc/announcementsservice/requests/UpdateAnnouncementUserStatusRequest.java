@@ -9,7 +9,13 @@ import com.oracle.bmc.announcementsservice.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/UpdateAnnouncementUserStatusExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateAnnouncementUserStatusRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
-@lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
+@lombok.Builder(
+    builderClassName = "Builder",
+    buildMethodName = "buildWithoutInvocationCallback",
+    toBuilder = true
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateAnnouncementUserStatusRequest
         extends com.oracle.bmc.requests.BmcRequest<AnnouncementUserStatusDetails> {

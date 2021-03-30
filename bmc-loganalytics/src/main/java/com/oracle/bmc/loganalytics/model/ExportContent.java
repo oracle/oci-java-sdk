@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * ExportContent
+ * The content to export.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -80,19 +80,19 @@ public class ExportContent {
     }
 
     /**
-     * fieldNames
+     * The field names.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldNames")
     java.util.List<String> fieldNames;
 
     /**
-     * parserNames
+     * The parser names.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserNames")
     java.util.List<String> parserNames;
 
     /**
-     * sourceNames
+     * The source names.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceNames")
     java.util.List<String> sourceNames;

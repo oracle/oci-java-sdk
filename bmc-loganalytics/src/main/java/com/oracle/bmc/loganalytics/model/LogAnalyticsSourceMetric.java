@@ -94,25 +94,26 @@ public class LogAnalyticsSourceMetric {
     }
 
     /**
-     * is enabled flag
+     * A flag specifying whether or not the metric source is enabled.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMetricSourceEnabled")
     Boolean isMetricSourceEnabled;
 
     /**
-     * metric name
+     * The metric name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricName")
     String metricName;
 
     /**
-     * source internal name
+     * The source internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
     String sourceName;
 
     /**
-     * entity type
+     * The entity type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     String entityType;

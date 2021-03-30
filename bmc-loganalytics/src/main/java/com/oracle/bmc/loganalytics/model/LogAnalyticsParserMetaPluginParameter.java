@@ -114,37 +114,39 @@ public class LogAnalyticsParserMetaPluginParameter {
     }
 
     /**
-     * parameter description
+     * The parameter description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * parameter internal name
+     * The parameter internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * is mandatory flag
+     * A flag indicating whether or not the parameter is mandatory.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMandatory")
     Boolean isMandatory;
 
     /**
-     * is repeatable flag
+     * A flag indicating whether or not the parameter is repeatable.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRepeatable")
     Boolean isRepeatable;
 
     /**
-     * plugin internal name
+     * The plugin internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pluginName")
     String pluginName;
 
     /**
-     * parameter type
+     * The parameter type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     String type;

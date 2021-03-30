@@ -525,6 +525,86 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateVaultReplicaResponse> createVaultReplica(
+            CreateVaultReplicaRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateVaultReplicaRequest, CreateVaultReplicaResponse>
+                    handler) {
+        LOG.trace("Called async createVaultReplica");
+        final CreateVaultReplicaRequest interceptedRequest =
+                CreateVaultReplicaConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateVaultReplicaConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVaultReplicaResponse>
+                transformer = CreateVaultReplicaConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<CreateVaultReplicaRequest, CreateVaultReplicaResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateVaultReplicaRequest, CreateVaultReplicaResponse>,
+                        java.util.concurrent.Future<CreateVaultReplicaResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateVaultReplicaRequest, CreateVaultReplicaResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVaultReplicaResponse> deleteVaultReplica(
+            DeleteVaultReplicaRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteVaultReplicaRequest, DeleteVaultReplicaResponse>
+                    handler) {
+        LOG.trace("Called async deleteVaultReplica");
+        final DeleteVaultReplicaRequest interceptedRequest =
+                DeleteVaultReplicaConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteVaultReplicaConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVaultReplicaResponse>
+                transformer = DeleteVaultReplicaConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<DeleteVaultReplicaRequest, DeleteVaultReplicaResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteVaultReplicaRequest, DeleteVaultReplicaResponse>,
+                        java.util.concurrent.Future<DeleteVaultReplicaResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteVaultReplicaRequest, DeleteVaultReplicaResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetVaultResponse> getVault(
             GetVaultRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetVaultRequest, GetVaultResponse>
@@ -586,6 +666,46 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetVaultUsageRequest, GetVaultUsageResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVaultReplicasResponse> listVaultReplicas(
+            ListVaultReplicasRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListVaultReplicasRequest, ListVaultReplicasResponse>
+                    handler) {
+        LOG.trace("Called async listVaultReplicas");
+        final ListVaultReplicasRequest interceptedRequest =
+                ListVaultReplicasConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListVaultReplicasConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListVaultReplicasResponse>
+                transformer = ListVaultReplicasConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<ListVaultReplicasRequest, ListVaultReplicasResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListVaultReplicasRequest, ListVaultReplicasResponse>,
+                        java.util.concurrent.Future<ListVaultReplicasResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListVaultReplicasRequest, ListVaultReplicasResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

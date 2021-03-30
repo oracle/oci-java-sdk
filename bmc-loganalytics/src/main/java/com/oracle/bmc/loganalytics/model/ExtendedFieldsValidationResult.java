@@ -61,7 +61,7 @@ public class ExtendedFieldsValidationResult {
     }
 
     /**
-     * items
+     * The regular expression evaluation result of an extended field definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<EfdRegexResult> items;

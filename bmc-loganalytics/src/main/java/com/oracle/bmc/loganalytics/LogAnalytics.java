@@ -57,8 +57,18 @@ public interface LogAnalytics extends AutoCloseable {
     AddEntityAssociationResponse addEntityAssociation(AddEntityAssociationRequest request);
 
     /**
-     * Append data to a lookup.  The file containing the information to append
-     * must be provided.
+     * Add one or more event types to a source. An event type and version can be enabled only on one source.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/AddSourceEventTypesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddSourceEventTypes API.
+     */
+    AddSourceEventTypesResponse addSourceEventTypes(AddSourceEventTypesRequest request);
+
+    /**
+     * Appends data to the lookup content. The csv file containing the content to be appended is passed in as binary data in the request.
      *
      *
      * Note: This operation consumes a stream.
@@ -96,7 +106,8 @@ public interface LogAnalytics extends AutoCloseable {
     AppendLookupDataResponse appendLookupData(AppendLookupDataRequest request);
 
     /**
-     * get basic information about a specified set of labels
+     * Lists basic information about a specified set of labels in batch.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -116,6 +127,17 @@ public interface LogAnalytics extends AutoCloseable {
     CancelQueryWorkRequestResponse cancelQueryWorkRequest(CancelQueryWorkRequestRequest request);
 
     /**
+     * Update the compartment of the log analytics enterprise manager bridge with the given id.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ChangeLogAnalyticsEmBridgeCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeLogAnalyticsEmBridgeCompartment API.
+     */
+    ChangeLogAnalyticsEmBridgeCompartmentResponse changeLogAnalyticsEmBridgeCompartment(
+            ChangeLogAnalyticsEmBridgeCompartmentRequest request);
+
+    /**
      * Update the compartment of the log analytics entity with the given id.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -127,7 +149,8 @@ public interface LogAnalytics extends AutoCloseable {
             ChangeLogAnalyticsEntityCompartmentRequest request);
 
     /**
-     * Updates the compartment of the Log-Analytics group with the given id.
+     * Moves the specified log group to a different compartment.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -174,6 +197,17 @@ public interface LogAnalytics extends AutoCloseable {
     CleanResponse clean(CleanRequest request);
 
     /**
+     * Add configuration for enterprise manager bridge. Enterprise manager bridge is used to automatically add selected entities from enterprise manager cloud control. A corresponding OCI bridge configuration is required in enterprise manager.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/CreateLogAnalyticsEmBridgeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateLogAnalyticsEmBridge API.
+     */
+    CreateLogAnalyticsEmBridgeResponse createLogAnalyticsEmBridge(
+            CreateLogAnalyticsEmBridgeRequest request);
+
+    /**
      * Create a new log analytics entity.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -196,7 +230,8 @@ public interface LogAnalytics extends AutoCloseable {
             CreateLogAnalyticsEntityTypeRequest request);
 
     /**
-     * Creates a new Log-Analytics group.
+     * Creates a new log group in the specified compartment with the input display name. You may also specify optional information such as description, defined tags, and free-form tags.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -228,7 +263,8 @@ public interface LogAnalytics extends AutoCloseable {
     CreateScheduledTaskResponse createScheduledTask(CreateScheduledTaskRequest request);
 
     /**
-     * delete associations
+     * Deletes the associations between the sources and entities specified.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -238,7 +274,8 @@ public interface LogAnalytics extends AutoCloseable {
     DeleteAssociationsResponse deleteAssociations(DeleteAssociationsRequest request);
 
     /**
-     * delete field with specified name
+     * Deletes field with the specified name.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -248,7 +285,8 @@ public interface LogAnalytics extends AutoCloseable {
     DeleteFieldResponse deleteField(DeleteFieldRequest request);
 
     /**
-     * delete a label
+     * Deletes label with the specified name.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -256,6 +294,17 @@ public interface LogAnalytics extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteLabelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteLabel API.
      */
     DeleteLabelResponse deleteLabel(DeleteLabelRequest request);
+
+    /**
+     * Delete log analytics enterprise manager bridge with the given id.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteLogAnalyticsEmBridgeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteLogAnalyticsEmBridge API.
+     */
+    DeleteLogAnalyticsEmBridgeResponse deleteLogAnalyticsEmBridge(
+            DeleteLogAnalyticsEmBridgeRequest request);
 
     /**
      * Delete log analytics entity with the given id.
@@ -280,7 +329,8 @@ public interface LogAnalytics extends AutoCloseable {
             DeleteLogAnalyticsEntityTypeRequest request);
 
     /**
-     * Deletes the Log-Analytics group with the given id.
+     * Deletes the specified log group. The log group cannot be part of an active association or have an active upload.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -304,7 +354,7 @@ public interface LogAnalytics extends AutoCloseable {
             DeleteLogAnalyticsObjectCollectionRuleRequest request);
 
     /**
-     * Delete the specified lookup.
+     * Deletes lookup with the specified name.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -315,7 +365,8 @@ public interface LogAnalytics extends AutoCloseable {
     DeleteLookupResponse deleteLookup(DeleteLookupRequest request);
 
     /**
-     * delete parser with specified name
+     * Deletes parser with the specified name.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -335,7 +386,8 @@ public interface LogAnalytics extends AutoCloseable {
     DeleteScheduledTaskResponse deleteScheduledTask(DeleteScheduledTaskRequest request);
 
     /**
-     * delete source with specified ID
+     * Deletes source with the specified name.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -391,6 +443,30 @@ public interface LogAnalytics extends AutoCloseable {
     DisableArchivingResponse disableArchiving(DisableArchivingRequest request);
 
     /**
+     * Disables auto association for a log source. In the future, this log source would not be automatically
+     * associated with any entity that becomes eligible for association. In addition, you may also optionally
+     * remove all existing associations for this log source.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DisableAutoAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableAutoAssociation API.
+     */
+    DisableAutoAssociationResponse disableAutoAssociation(DisableAutoAssociationRequest request);
+
+    /**
+     * Disable one or more event types in a source.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DisableSourceEventTypesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableSourceEventTypes API.
+     */
+    DisableSourceEventTypesResponse disableSourceEventTypes(DisableSourceEventTypesRequest request);
+
+    /**
      * THis API enables archiving.
      *
      * @param request The request object containing the details to send
@@ -400,6 +476,30 @@ public interface LogAnalytics extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/EnableArchivingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableArchiving API.
      */
     EnableArchivingResponse enableArchiving(EnableArchivingRequest request);
+
+    /**
+     * Enables auto association for a log source. This would initiate immediate association of the source
+     * to any eligible entities it is not already associated with, and would also ensure the log source gets
+     * associated with entities that are added or become eligible in the future.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/EnableAutoAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableAutoAssociation API.
+     */
+    EnableAutoAssociationResponse enableAutoAssociation(EnableAutoAssociationRequest request);
+
+    /**
+     * Enable one or more event types in a source. An event type and version can be enabled only in one source.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/EnableSourceEventTypesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableSourceEventTypes API.
+     */
+    EnableSourceEventTypesResponse enableSourceEventTypes(EnableSourceEventTypesRequest request);
 
     /**
      * This API estimates the size of data to be purged based based on time interval, purge query etc.
@@ -435,7 +535,8 @@ public interface LogAnalytics extends AutoCloseable {
     EstimateReleaseDataSizeResponse estimateReleaseDataSize(EstimateReleaseDataSizeRequest request);
 
     /**
-     * export
+     * Exports all custom details of the specified sources, parsers, fields and labels, in zip format.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -455,7 +556,8 @@ public interface LogAnalytics extends AutoCloseable {
     ExportQueryResultResponse exportQueryResult(ExportQueryResultRequest request);
 
     /**
-     * structured log fieldpaths
+     * Extracts the field paths from the example json or xml content.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -466,7 +568,8 @@ public interface LogAnalytics extends AutoCloseable {
             ExtractStructuredLogFieldPathsRequest request);
 
     /**
-     * structured log header paths
+     * Extracts the header paths from the example json or xml content.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -487,7 +590,8 @@ public interface LogAnalytics extends AutoCloseable {
     FilterResponse filter(FilterRequest request);
 
     /**
-     * association summary
+     * Returns the count of source associations for entities in the specified compartment.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -497,7 +601,8 @@ public interface LogAnalytics extends AutoCloseable {
     GetAssociationSummaryResponse getAssociationSummary(GetAssociationSummaryRequest request);
 
     /**
-     * extract column names from SQL query
+     * Extracts column names from the input SQL query.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -507,7 +612,8 @@ public interface LogAnalytics extends AutoCloseable {
     GetColumnNamesResponse getColumnNames(GetColumnNamesRequest request);
 
     /**
-     * association summary by source
+     * Returns detailed information about the configuration work request with the specified id.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -517,7 +623,8 @@ public interface LogAnalytics extends AutoCloseable {
     GetConfigWorkRequestResponse getConfigWorkRequest(GetConfigWorkRequestRequest request);
 
     /**
-     * get common field with specified name
+     * Gets detailed information about the field with the specified name.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -527,7 +634,8 @@ public interface LogAnalytics extends AutoCloseable {
     GetFieldResponse getField(GetFieldRequest request);
 
     /**
-     * get field summary
+     * Returns the count of fields. You may optionally specify isShowDetail=true to view a summary of each field data type.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -537,7 +645,8 @@ public interface LogAnalytics extends AutoCloseable {
     GetFieldsSummaryResponse getFieldsSummary(GetFieldsSummaryRequest request);
 
     /**
-     * get label with specified name
+     * Gets detailed information about the label with the specified name.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -547,7 +656,8 @@ public interface LogAnalytics extends AutoCloseable {
     GetLabelResponse getLabel(GetLabelRequest request);
 
     /**
-     * get total count
+     * Returns the count of labels.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -555,6 +665,27 @@ public interface LogAnalytics extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetLabelSummaryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLabelSummary API.
      */
     GetLabelSummaryResponse getLabelSummary(GetLabelSummaryRequest request);
+
+    /**
+     * Retrieve the log analytics enterprise manager bridge with the given id.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetLogAnalyticsEmBridgeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLogAnalyticsEmBridge API.
+     */
+    GetLogAnalyticsEmBridgeResponse getLogAnalyticsEmBridge(GetLogAnalyticsEmBridgeRequest request);
+
+    /**
+     * Returns log analytics enterprise manager bridges summary report.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetLogAnalyticsEmBridgeSummaryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLogAnalyticsEmBridgeSummary API.
+     */
+    GetLogAnalyticsEmBridgeSummaryResponse getLogAnalyticsEmBridgeSummary(
+            GetLogAnalyticsEmBridgeSummaryRequest request);
 
     /**
      * Returns log analytics entities count summary report.
@@ -589,7 +720,8 @@ public interface LogAnalytics extends AutoCloseable {
             GetLogAnalyticsEntityTypeRequest request);
 
     /**
-     * Retrieves the Log-Analytics group with the given id.
+     * Gets detailed information about the specified log group such as display name, description, defined tags, and free-form tags.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -599,7 +731,8 @@ public interface LogAnalytics extends AutoCloseable {
     GetLogAnalyticsLogGroupResponse getLogAnalyticsLogGroup(GetLogAnalyticsLogGroupRequest request);
 
     /**
-     * Returns a count of Log-Analytics groups.
+     * Returns the count of log groups in a compartment.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -621,7 +754,7 @@ public interface LogAnalytics extends AutoCloseable {
             GetLogAnalyticsObjectCollectionRuleRequest request);
 
     /**
-     * Obtains the lookup with the specified reference.
+     * Gets detailed information about the lookup with the specified name.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -630,6 +763,16 @@ public interface LogAnalytics extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetLookupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLookup API.
      */
     GetLookupResponse getLookup(GetLookupRequest request);
+
+    /**
+     * Returns the count of user created and oracle defined lookups.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetLookupSummaryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLookupSummary API.
+     */
+    GetLookupSummaryResponse getLookupSummary(GetLookupSummaryRequest request);
 
     /**
      * This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
@@ -643,7 +786,8 @@ public interface LogAnalytics extends AutoCloseable {
     GetNamespaceResponse getNamespace(GetNamespaceRequest request);
 
     /**
-     * get parser with fields by Name
+     * Gets detailed information about the parser with the specified name.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -653,7 +797,8 @@ public interface LogAnalytics extends AutoCloseable {
     GetParserResponse getParser(GetParserRequest request);
 
     /**
-     * parser summary
+     * Returns the count of parsers.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -695,7 +840,8 @@ public interface LogAnalytics extends AutoCloseable {
     GetScheduledTaskResponse getScheduledTask(GetScheduledTaskRequest request);
 
     /**
-     * get source with specified name
+     * Gets detailed information about the source with the specified name.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -705,7 +851,8 @@ public interface LogAnalytics extends AutoCloseable {
     GetSourceResponse getSource(GetSourceRequest request);
 
     /**
-     * source summary
+     * Returns the count of sources.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -770,7 +917,8 @@ public interface LogAnalytics extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
-     * register custom content
+     * Imports the specified custom content from the input in zip format.
+     *
      *
      * Note: This operation consumes a stream.
      *
@@ -807,7 +955,19 @@ public interface LogAnalytics extends AutoCloseable {
     ImportCustomContentResponse importCustomContent(ImportCustomContentRequest request);
 
     /**
-     * list of entities that have been associated to at least one source
+     * Lists the entities in the specified compartment which are (in)eligible for association with this source.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListAssociableEntitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAssociableEntities API.
+     */
+    ListAssociableEntitiesResponse listAssociableEntities(ListAssociableEntitiesRequest request);
+
+    /**
+     * Lists the association details of entities in the specified compartment that are associated with at least one source.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -817,7 +977,19 @@ public interface LogAnalytics extends AutoCloseable {
     ListAssociatedEntitiesResponse listAssociatedEntities(ListAssociatedEntitiesRequest request);
 
     /**
-     * association summary by source
+     * Gets information related to auto association for the source with the specified name.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListAutoAssociationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutoAssociations API.
+     */
+    ListAutoAssociationsResponse listAutoAssociations(ListAutoAssociationsRequest request);
+
+    /**
+     * Returns the list of configuration work requests such as association or lookup operations, containing detailed information about them. You may paginate or limit the number of results.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -837,7 +1009,8 @@ public interface LogAnalytics extends AutoCloseable {
     ListEntityAssociationsResponse listEntityAssociations(ListEntityAssociationsRequest request);
 
     /**
-     * entity associations summary
+     * Returns the list of source associations for the specified entity.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -848,7 +1021,8 @@ public interface LogAnalytics extends AutoCloseable {
             ListEntitySourceAssociationsRequest request);
 
     /**
-     * get all common field with specified display name and description
+     * Returns a list of log fields, containing detailed information about them. You may limit the number of results, provide sorting order, and filter by specifying various options including parser and source names.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -858,7 +1032,8 @@ public interface LogAnalytics extends AutoCloseable {
     ListFieldsResponse listFields(ListFieldsRequest request);
 
     /**
-     * get list of priorities
+     * Lists the available problem priorities that could be associated with a label.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -868,7 +1043,8 @@ public interface LogAnalytics extends AutoCloseable {
     ListLabelPrioritiesResponse listLabelPriorities(ListLabelPrioritiesRequest request);
 
     /**
-     * get details of sources using the label
+     * Lists sources using the label, along with configuration details like base field, operator and condition.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -878,7 +1054,8 @@ public interface LogAnalytics extends AutoCloseable {
     ListLabelSourceDetailsResponse listLabelSourceDetails(ListLabelSourceDetailsRequest request);
 
     /**
-     * get labels passing specified filter
+     * Returns a list of labels, containing detailed information about them. You may limit the number of results, provide sorting order, and filter by information such as label name, display name, description and priority.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -886,6 +1063,17 @@ public interface LogAnalytics extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListLabelsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLabels API.
      */
     ListLabelsResponse listLabels(ListLabelsRequest request);
+
+    /**
+     * Return a list of log analytics enterprise manager bridges.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListLogAnalyticsEmBridgesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLogAnalyticsEmBridges API.
+     */
+    ListLogAnalyticsEmBridgesResponse listLogAnalyticsEmBridges(
+            ListLogAnalyticsEmBridgesRequest request);
 
     /**
      * Return a list of log analytics entities.
@@ -910,7 +1098,8 @@ public interface LogAnalytics extends AutoCloseable {
             ListLogAnalyticsEntityTypesRequest request);
 
     /**
-     * Returns a list of Log-Analytics groups.
+     * Returns a list of log groups in a compartment. You may limit the number of log groups, provide sorting options, and filter the results by specifying a display name.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -932,8 +1121,18 @@ public interface LogAnalytics extends AutoCloseable {
             ListLogAnalyticsObjectCollectionRulesRequest request);
 
     /**
-     * Obtains a list of lookups.  The list is filtered according to the filter criteria
-     * specified by the user, and sorted according to the ordering criteria specified.
+     * This API returns a list of log sets.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListLogSetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLogSets API.
+     */
+    ListLogSetsResponse listLogSets(ListLogSetsRequest request);
+
+    /**
+     * Returns a list of lookups, containing detailed information about them. You may limit the number of results, provide sorting order, and filter by information such as lookup name, description and type.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -944,7 +1143,8 @@ public interface LogAnalytics extends AutoCloseable {
     ListLookupsResponse listLookups(ListLookupsRequest request);
 
     /**
-     * get all meta source types
+     * Lists the types of log sources supported.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -966,7 +1166,8 @@ public interface LogAnalytics extends AutoCloseable {
     ListNamespacesResponse listNamespaces(ListNamespacesRequest request);
 
     /**
-     * get pre-process plugin instance
+     * Lists the parser functions defined for the specified parser.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -976,7 +1177,8 @@ public interface LogAnalytics extends AutoCloseable {
     ListParserFunctionsResponse listParserFunctions(ListParserFunctionsRequest request);
 
     /**
-     * get pre-process Meta plugins
+     * Lists the parser meta plugins available for defining parser functions.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -986,7 +1188,8 @@ public interface LogAnalytics extends AutoCloseable {
     ListParserMetaPluginsResponse listParserMetaPlugins(ListParserMetaPluginsRequest request);
 
     /**
-     * List parsers passing specified filter
+     * Returns a list of parsers, containing detailed information about them. You may limit the number of results, provide sorting order, and filter by information such as parser name, type, display name and description.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1027,7 +1230,8 @@ public interface LogAnalytics extends AutoCloseable {
     ListScheduledTasksResponse listScheduledTasks(ListScheduledTasksRequest request);
 
     /**
-     * association summary by source
+     * Returns the list of entity associations in the input compartment for the specified source.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1037,7 +1241,19 @@ public interface LogAnalytics extends AutoCloseable {
     ListSourceAssociationsResponse listSourceAssociations(ListSourceAssociationsRequest request);
 
     /**
-     * get source extended fields for source with specified Id
+     * Lists the event types mapped to the source with the specified name. The event type string could be the fully qualified name or a prefix that matches the event type.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListSourceEventTypesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSourceEventTypes API.
+     */
+    ListSourceEventTypesResponse listSourceEventTypes(ListSourceEventTypesRequest request);
+
+    /**
+     * Lists the extended field definitions for the source with the specified name.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1048,7 +1264,8 @@ public interface LogAnalytics extends AutoCloseable {
             ListSourceExtendedFieldDefinitionsRequest request);
 
     /**
-     * list source label operators
+     * Lists the supported conditional operators that could be used for matching log field values to generate a label. You may use patterns to specify a condition. If a log entry matches that condition, it is tagged with the corresponding label.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1059,7 +1276,8 @@ public interface LogAnalytics extends AutoCloseable {
             ListSourceLabelOperatorsRequest request);
 
     /**
-     * get source meta functions
+     * Lists the functions that could be used to enrich log entries based on meaningful information extracted from the log fields.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1069,7 +1287,8 @@ public interface LogAnalytics extends AutoCloseable {
     ListSourceMetaFunctionsResponse listSourceMetaFunctions(ListSourceMetaFunctionsRequest request);
 
     /**
-     * get source patterns for source with specified Id
+     * Lists the source patterns for the source with the specified name.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1079,7 +1298,8 @@ public interface LogAnalytics extends AutoCloseable {
     ListSourcePatternsResponse listSourcePatterns(ListSourcePatternsRequest request);
 
     /**
-     * source list
+     * Returns a list of sources, containing detailed information about them. You may limit the number of results, provide sorting order, and filter by information such as display name, description and entity type.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1164,8 +1384,7 @@ public interface LogAnalytics extends AutoCloseable {
     ListUploadsResponse listUploads(ListUploadsRequest request);
 
     /**
-     * Obtains a list of warnings.  The list is filtered according to the filter criteria
-     * specified by the user, and sorted according to the ordering criteria specified.
+     * Returns a list of collection warnings, containing detailed information about them. You may limit the number of results, provide sorting order, and filter by information such as start time, end time, warning type, warning state, source name, source pattern and entity name.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1296,7 +1515,8 @@ public interface LogAnalytics extends AutoCloseable {
     RecallArchivedDataResponse recallArchivedData(RecallArchivedDataRequest request);
 
     /**
-     * register lookup
+     * Creates a lookup with the specified name, type and description. The csv file containing the lookup content is passed in as binary data in the request.
+     *
      *
      * Note: This operation consumes a stream.
      *
@@ -1355,6 +1575,17 @@ public interface LogAnalytics extends AutoCloseable {
             RemoveEntityAssociationsRequest request);
 
     /**
+     * Remove one or more event types from a source.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/RemoveSourceEventTypesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveSourceEventTypes API.
+     */
+    RemoveSourceEventTypesResponse removeSourceEventTypes(RemoveSourceEventTypesRequest request);
+
+    /**
      * Resume the scheduled task specified by {scheduledTaskId}.
      *
      * @param request The request object containing the details to send
@@ -1389,9 +1620,7 @@ public interface LogAnalytics extends AutoCloseable {
     SuggestResponse suggest(SuggestRequest request);
 
     /**
-     * Accepts a list of warnings.  Any unsuppressed warnings in the input list will
-     * be suppressed.  Warnings in the input list which are already suppressed will
-     * not be modified.
+     * Supresses a list of warnings. Any unsuppressed warnings in the input list would be suppressed. Warnings in the input list which are already suppressed will not be modified.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1402,7 +1631,8 @@ public interface LogAnalytics extends AutoCloseable {
     SuppressWarningResponse suppressWarning(SuppressWarningRequest request);
 
     /**
-     * test parser
+     * Tests the parser definition against the specified example content to ensure fields are successfully extracted.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1412,9 +1642,7 @@ public interface LogAnalytics extends AutoCloseable {
     TestParserResponse testParser(TestParserRequest request);
 
     /**
-     * Accepts a list of warnings.  Any suppressed warnings in the input list will
-     * be unsuppressed.  Warnings in the input list which are unsuppressed will
-     * not be modified.
+     * Unsupresses a list of warnings. Any suppressed warnings in the input list would be unsuppressed. Warnings in the input list which are already unsuppressed will not be modified.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1423,6 +1651,17 @@ public interface LogAnalytics extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UnsuppressWarningExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UnsuppressWarning API.
      */
     UnsuppressWarningResponse unsuppressWarning(UnsuppressWarningRequest request);
+
+    /**
+     * Update log analytics enterprise manager bridge with the given id.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpdateLogAnalyticsEmBridgeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateLogAnalyticsEmBridge API.
+     */
+    UpdateLogAnalyticsEmBridgeResponse updateLogAnalyticsEmBridge(
+            UpdateLogAnalyticsEmBridgeRequest request);
 
     /**
      * Update the log analytics entity with the given id.
@@ -1447,7 +1686,8 @@ public interface LogAnalytics extends AutoCloseable {
             UpdateLogAnalyticsEntityTypeRequest request);
 
     /**
-     * Updates the Log-Analytics group with the given id.
+     * Updates the specified log group's display name, description, defined tags, and free-form tags.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1480,8 +1720,7 @@ public interface LogAnalytics extends AutoCloseable {
     UpdateLookupResponse updateLookup(UpdateLookupRequest request);
 
     /**
-     * Updates the specified lookup with the details provided.  This API will not update
-     * lookup metadata (such as lookup description).
+     * Updates the lookup content. The csv file containing the content to be updated is passed in as binary data in the request.
      *
      *
      * Note: This operation consumes a stream.
@@ -1540,6 +1779,44 @@ public interface LogAnalytics extends AutoCloseable {
     UpdateStorageResponse updateStorage(UpdateStorageRequest request);
 
     /**
+     * Accepts log events for processing by Logging Analytics.
+     *
+     *
+     * Note: This operation consumes a stream.
+     *
+     * If the stream supports {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}, when a retry is
+     * necessary, the stream is reset so it starts at the beginning (or whatever the stream's position was at the time this
+     * operation is called}.
+     *
+     * Note this means that if the caller has used {@link java.io.InputStream#mark(int)} before, then the mark
+     * will not be the same anymore after this operation, and a subsequent call to {@link java.io.InputStream#reset()} by
+     * the caller will reset the stream not to the caller's mark, but to the position the stream was in when this operation
+     * was called.
+     *
+     * If the stream is a {@link java.io.FileInputStream}, and the stream's {@link java.nio.channels.FileChannel} position
+     * can be changed (like for a regular file), the stream will be wrapped in such a way that it does provide
+     * support for {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}. Then the same procedure as
+     * above is followed. If the stream's {@link java.nio.channels.FileChannel} position cannot be changed (like for a
+     * named pipe), then the stream's contents will be buffered in memory, as described below.
+     *
+     * If the stream does not support {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}, then
+     * the stream is wrapped in a {@link java.io.BufferedInputStream}, which means the entire contents may
+     * be buffered in memory. Then the same procedure as above is followed.
+     *
+     * The contents of the stream, except when the stream is a {@link java.io.FileInputStream} whose
+     * {@link java.nio.channels.FileChannel} position can be changed, should be less than 2 GiB in size if retries are used.
+     * This is because streams 2 GiB in size or larger do no guarantee that mark-and-reset can be performed. If the stream
+     * is larger, do not use built-in retries and manage retries yourself.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UploadLogEventsFileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UploadLogEventsFile API.
+     */
+    UploadLogEventsFileResponse uploadLogEventsFile(UploadLogEventsFileRequest request);
+
+    /**
      * Accepts log data for processing by Logging Analytics.
      *
      *
@@ -1578,7 +1855,8 @@ public interface LogAnalytics extends AutoCloseable {
     UploadLogFileResponse uploadLogFile(UploadLogFileRequest request);
 
     /**
-     * create or update associations for a source
+     * Creates or updates associations between sources and entities. All entities should belong to the specified input compartment.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1588,7 +1866,8 @@ public interface LogAnalytics extends AutoCloseable {
     UpsertAssociationsResponse upsertAssociations(UpsertAssociationsRequest request);
 
     /**
-     * Defines or update a field.
+     * Creates or updates a field that could be used in parser expressions to extract and assign value. To create a field, specify its display name. A name would be generated for the field. For subsequent calls to update the field, include the name attribute.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1598,7 +1877,8 @@ public interface LogAnalytics extends AutoCloseable {
     UpsertFieldResponse upsertField(UpsertFieldRequest request);
 
     /**
-     * Define or update a label.
+     * Creates or updates a label that could be used to tag a log entry. You may optionally designate the label as a problem, and assign it a priority. You may also provide its related terms (aliases). To create a label, specify its display name. A name would be generated for the label. For subsequent calls to update the label, include the name attribute.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1608,7 +1888,8 @@ public interface LogAnalytics extends AutoCloseable {
     UpsertLabelResponse upsertLabel(UpsertLabelRequest request);
 
     /**
-     * Define or update parser
+     * Creates or updates a parser, which defines how fields are extracted from a log entry.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1618,7 +1899,8 @@ public interface LogAnalytics extends AutoCloseable {
     UpsertParserResponse upsertParser(UpsertParserRequest request);
 
     /**
-     * Define or update a source
+     * Creates or updates a log source. You may also specify parsers, labels, extended fields etc., for the source.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1628,7 +1910,8 @@ public interface LogAnalytics extends AutoCloseable {
     UpsertSourceResponse upsertSource(UpsertSourceRequest request);
 
     /**
-     * association parameter validation
+     * Checks if the passed in entities could be associated with the specified sources. The validation is performed to ensure that the entities have the relevant property values that are used in the corresponding source patterns.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1649,7 +1932,8 @@ public interface LogAnalytics extends AutoCloseable {
     ValidateFileResponse validateFile(ValidateFileRequest request);
 
     /**
-     * Pre-define or update a source
+     * Checks if the specified input is a valid log source definition.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1659,7 +1943,8 @@ public interface LogAnalytics extends AutoCloseable {
     ValidateSourceResponse validateSource(ValidateSourceRequest request);
 
     /**
-     * test extended fields
+     * Checks if the specified input contains valid extended field definitions against the provided example content.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

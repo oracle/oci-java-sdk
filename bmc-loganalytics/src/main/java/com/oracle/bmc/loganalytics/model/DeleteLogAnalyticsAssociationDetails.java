@@ -5,7 +5,8 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * DeleteLogAnalyticsAssociationDetails
+ * The information required to delete a list of associations.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -71,13 +72,14 @@ public class DeleteLogAnalyticsAssociationDetails {
     }
 
     /**
-     * compartmentId
+     * The compartment ID
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * list of rule entity association details
+     * The information required to delete an association.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<DeleteLogAnalyticsAssociation> items;

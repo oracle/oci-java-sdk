@@ -131,37 +131,37 @@ public class LogAnalyticsParserFunctionParameter {
     }
 
     /**
-     * plugin Id
+     * The parser function unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionId")
     Long parserFunctionId;
 
     /**
-     * internal name
+     * The internal name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionParameterName")
     String parserFunctionParameterName;
 
     /**
-     * plugin instance Id
+     * The parameter unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionParameterId")
     Long parserFunctionParameterId;
 
     /**
-     * parameter internal name
+     * The parameter internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserMetaPluginParameterName")
     String parserMetaPluginParameterName;
 
     /**
-     * parameter value
+     * The parameter value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserMetaPluginParameterValue")
     String parserMetaPluginParameterValue;
 
     /**
-     * parser internal name
+     * The parser internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserName")
     String parserName;

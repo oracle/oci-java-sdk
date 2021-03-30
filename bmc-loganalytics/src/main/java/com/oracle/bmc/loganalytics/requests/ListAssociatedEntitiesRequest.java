@@ -9,7 +9,13 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListAssociatedEntitiesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAssociatedEntitiesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
+@lombok.Builder(
+    builderClassName = "Builder",
+    buildMethodName = "buildWithoutInvocationCallback",
+    toBuilder = true
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ListAssociatedEntitiesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
@@ -32,12 +38,16 @@ public class ListAssociatedEntitiesRequest
     private String entityId;
 
     /**
-     * entity type name
+     * The entity type used for filtering.  Only associations on an entity with the
+     * specified type will be returned.
+     *
      */
     private String entityType;
 
     /**
-     * entity type display name
+     * The entity type display name used for filtering.  Only items associated with the entity
+     * with the specified type display name will be returned.
+     *
      */
     private String entityTypeDisplayName;
 
@@ -94,12 +104,12 @@ public class ListAssociatedEntitiesRequest
         }
     };
     /**
-     * sort by field
+     * The attribute used to sort the returned entities
      */
     private SortBy sortBy;
 
     /**
-     * sort by field
+     * The attribute used to sort the returned entities
      **/
     public enum SortBy {
         EntityName("entityName"),

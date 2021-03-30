@@ -188,6 +188,24 @@ public class CreateSddcDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationVlanId")
+        private String replicationVlanId;
+
+        public Builder replicationVlanId(String replicationVlanId) {
+            this.replicationVlanId = replicationVlanId;
+            this.__explicitlySet__.add("replicationVlanId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("provisioningVlanId")
+        private String provisioningVlanId;
+
+        public Builder provisioningVlanId(String provisioningVlanId) {
+            this.provisioningVlanId = provisioningVlanId;
+            this.__explicitlySet__.add("provisioningVlanId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -231,6 +249,8 @@ public class CreateSddcDetails {
                             nsxEdgeVTepVlanId,
                             nsxEdgeUplink1VlanId,
                             nsxEdgeUplink2VlanId,
+                            replicationVlanId,
+                            provisioningVlanId,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -258,6 +278,8 @@ public class CreateSddcDetails {
                             .nsxEdgeVTepVlanId(o.getNsxEdgeVTepVlanId())
                             .nsxEdgeUplink1VlanId(o.getNsxEdgeUplink1VlanId())
                             .nsxEdgeUplink2VlanId(o.getNsxEdgeUplink2VlanId())
+                            .replicationVlanId(o.getReplicationVlanId())
+                            .provisioningVlanId(o.getProvisioningVlanId())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -292,7 +314,7 @@ public class CreateSddcDetails {
     /**
      * The VMware software bundle to install on the ESXi hosts in the SDDC. To get a
      * list of the available versions, use
-     * {@link #* ListSupportedVmwareSoftwareVersions(* ListSupportedVmwareSoftwareVersionsRequest) * ListSupportedVmwareSoftwareVersions}.
+     * {@link #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest) listSupportedVmwareSoftwareVersions}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vmwareSoftwareVersion")
@@ -330,14 +352,15 @@ public class CreateSddcDetails {
     Integer esxiHostsCount;
 
     /**
-     * This flag tells us if HCX is enabled or not.
+     * Indicates whether to enable HCX for this SDDC.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHcxEnabled")
     Boolean isHcxEnabled;
 
     /**
-     * This id is required only when hcxEnabled is true
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX
+     * component of the VMware environment. This value is required only when `isHcxEnabled` is true.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hcxVlanId")
@@ -419,10 +442,28 @@ public class CreateSddcDetails {
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge
      * Uplink 2 component of the VMware environment.
+     * <p>
+     **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsxEdgeUplink2VlanId")
     String nsxEdgeUplink2VlanId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+     * for the vSphere Replication component of the VMware environment.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationVlanId")
+    String replicationVlanId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+     * for the Provisioning component of the VMware environment.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("provisioningVlanId")
+    String provisioningVlanId;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no

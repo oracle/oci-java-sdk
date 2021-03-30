@@ -9,7 +9,13 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListSourceAssociationsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSourceAssociationsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
+@lombok.Builder(
+    builderClassName = "Builder",
+    buildMethodName = "buildWithoutInvocationCallback",
+    toBuilder = true
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ListSourceAssociationsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
@@ -21,7 +27,7 @@ public class ListSourceAssociationsRequest
     private String namespaceName;
 
     /**
-     * sourceName
+     * The souce name used for filtering associations.
      */
     private String sourceName;
 
@@ -37,12 +43,16 @@ public class ListSourceAssociationsRequest
     private String entityId;
 
     /**
-     * Status
+     * The life cycle state used for filtering.  Only associations with the specified
+     * life cycle state will be returned.
+     *
      */
     private LifeCycleState lifeCycleState;
 
     /**
-     * Status
+     * The life cycle state used for filtering.  Only associations with the specified
+     * life cycle state will be returned.
+     *
      **/
     public enum LifeCycleState {
         All("ALL"),
@@ -80,7 +90,7 @@ public class ListSourceAssociationsRequest
         }
     };
     /**
-     * is Show Total
+     * A flag indicating whether or not to return the total number of items returned.
      */
     private Boolean isShowTotal;
 
@@ -142,12 +152,12 @@ public class ListSourceAssociationsRequest
         }
     };
     /**
-     * sort by field
+     * The attribute used to sort the returned associations
      */
     private SortBy sortBy;
 
     /**
-     * sort by field
+     * The attribute used to sort the returned associations
      **/
     public enum SortBy {
         EntityName("entityName"),

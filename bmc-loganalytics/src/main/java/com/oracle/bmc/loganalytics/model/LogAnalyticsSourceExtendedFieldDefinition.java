@@ -232,91 +232,94 @@ public class LogAnalyticsSourceExtendedFieldDefinition {
     LogAnalyticsField field;
 
     /**
-     * display regular expression
+     * The regular expression.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayRegularExpression")
     String displayRegularExpression;
 
     /**
-     * extended fields
+     * An array of extended fields.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendedFields")
     java.util.List<LogAnalyticsExtendedField> extendedFields;
 
     /**
-     * base field internal name
+     * The base field internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("baseFieldName")
     String baseFieldName;
 
     /**
-     * base field log text
+     * The base field log text.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("baseFieldLogText")
     String baseFieldLogText;
 
     /**
-     * conditional data type
+     * The conditional data type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("conditionDataType")
     String conditionDataType;
 
     /**
-     * conditional field
+     * The onditional field.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("conditionField")
     String conditionField;
 
     /**
-     * conditional operator
+     * The conditional operator.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("conditionOperator")
     String conditionOperator;
 
     /**
-     * conditional value
+     * The conditional value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("conditionValue")
     String conditionValue;
 
     /**
-     * converted regular expression
+     * The converted regular expression.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("convertedRegularExpression")
     String convertedRegularExpression;
 
     /**
-     * enabled
+     * A flag inidcating whether or not the extended definition is enabled.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     Boolean isEnabled;
 
     /**
-     * id
+     * The extended field definition unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendedFieldDefinitionId")
     Long extendedFieldDefinitionId;
 
     /**
-     * is system flag
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     Boolean isSystem;
 
     /**
-     * regular expression
+     * The regular expression.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regularExpression")
     String regularExpression;
 
     /**
-     * source Id
+     * The source unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     Long sourceId;
 
     /**
-     * last updated date
+     * The last updated date.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;

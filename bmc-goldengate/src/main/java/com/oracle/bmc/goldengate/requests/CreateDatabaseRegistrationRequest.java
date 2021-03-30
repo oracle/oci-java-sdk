@@ -9,7 +9,13 @@ import com.oracle.bmc.goldengate.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/CreateDatabaseRegistrationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateDatabaseRegistrationRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-@lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
+@lombok.Builder(
+    builderClassName = "Builder",
+    buildMethodName = "buildWithoutInvocationCallback",
+    toBuilder = true
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateDatabaseRegistrationRequest
         extends com.oracle.bmc.requests.BmcRequest<CreateDatabaseRegistrationDetails> {

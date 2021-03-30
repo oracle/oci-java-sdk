@@ -135,6 +135,15 @@ public class LogAnalyticsEntity {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("creationSource")
+        private CreationSource creationSource;
+
+        public Builder creationSource(CreationSource creationSource) {
+            this.creationSource = creationSource;
+            this.__explicitlySet__.add("creationSource");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -226,6 +235,7 @@ public class LogAnalyticsEntity {
                             managementAgentCompartmentId,
                             timezoneRegion,
                             properties,
+                            creationSource,
                             timeCreated,
                             timeUpdated,
                             areLogsCollected,
@@ -253,6 +263,7 @@ public class LogAnalyticsEntity {
                             .managementAgentCompartmentId(o.getManagementAgentCompartmentId())
                             .timezoneRegion(o.getTimezoneRegion())
                             .properties(o.getProperties())
+                            .creationSource(o.getCreationSource())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
                             .areLogsCollected(o.getAreLogsCollected())
@@ -357,6 +368,9 @@ public class LogAnalyticsEntity {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     java.util.Map<String, String> properties;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("creationSource")
+    CreationSource creationSource;
 
     /**
      * The date and time the resource was created, in the format defined by RFC3339.

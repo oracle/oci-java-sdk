@@ -161,13 +161,13 @@ public class EfdRegexResult {
     }
 
     /**
-     * baseFieldName
+     * The base field name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("baseFieldName")
     String baseFieldName;
 
     /**
-     * id
+     * the unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     Long id;
@@ -176,43 +176,44 @@ public class EfdRegexResult {
     RegexMatchResult matchResult;
 
     /**
-     * parsedFieldCount
+     * The parsed field count.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parsedFieldCount")
     Integer parsedFieldCount;
 
     /**
-     * parsedFields
+     * The parsed fields.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parsedFields")
     java.util.Map<String, String> parsedFields;
 
     /**
-     * regex
+     * The regular expression.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regex")
     String regex;
 
     /**
-     * status
+     * The status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     String status;
 
     /**
-     * statusDescription
+     * The Status description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("statusDescription")
     String statusDescription;
 
     /**
-     * isValidRegexSyntax
+     * A flag indicating whether or not the regular expression is valid.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isValidRegexSyntax")
     Boolean isValidRegexSyntax;
 
     /**
-     * violations
+     * The list of violations (if any).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("violations")
     java.util.List<Violation> violations;

@@ -128,43 +128,44 @@ public class LookupField {
     }
 
     /**
-     * common field name
+     * The common field name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("commonFieldName")
     String commonFieldName;
 
     /**
-     * default match value
+     * The default match value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultMatchValue")
     String defaultMatchValue;
 
     /**
-     * display name
+     * The field display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * is common field
+     * A flag indicating whether or not the lookup field is a common field.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCommonField")
     Boolean isCommonField;
 
     /**
-     * match operator
+     * The match operator.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchOperator")
     String matchOperator;
 
     /**
-     * name
+     * The field name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * position
+     * THe field position.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("position")
     Long position;

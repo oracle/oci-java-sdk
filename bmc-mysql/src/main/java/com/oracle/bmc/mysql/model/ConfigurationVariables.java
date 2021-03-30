@@ -90,6 +90,16 @@ public class ConfigurationVariables {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("groupReplicationConsistency")
+        private GroupReplicationConsistency groupReplicationConsistency;
+
+        public Builder groupReplicationConsistency(
+                GroupReplicationConsistency groupReplicationConsistency) {
+            this.groupReplicationConsistency = groupReplicationConsistency;
+            this.__explicitlySet__.add("groupReplicationConsistency");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("innodbFtEnableStopword")
         private Boolean innodbFtEnableStopword;
 
@@ -495,6 +505,7 @@ public class ConfigurationVariables {
                             mandatoryRoles,
                             autocommit,
                             foreignKeyChecks,
+                            groupReplicationConsistency,
                             innodbFtEnableStopword,
                             localInfile,
                             mysqlFirewallMode,
@@ -552,6 +563,7 @@ public class ConfigurationVariables {
                             .mandatoryRoles(o.getMandatoryRoles())
                             .autocommit(o.getAutocommit())
                             .foreignKeyChecks(o.getForeignKeyChecks())
+                            .groupReplicationConsistency(o.getGroupReplicationConsistency())
                             .innodbFtEnableStopword(o.getInnodbFtEnableStopword())
                             .localInfile(o.getLocalInfile())
                             .mysqlFirewallMode(o.getMysqlFirewallMode())
@@ -797,6 +809,118 @@ public class ConfigurationVariables {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("foreignKeyChecks")
     Boolean foreignKeyChecks;
+    /**
+     * - EVENTUAL:
+     *     Both RO and RW transactions do not wait for preceding transactions to be applied before executing.
+     *     A RW transaction does not wait for other members to apply a transaction. This means that a transaction
+     *     could be externalized on one member before the others. This also means that in the event of a primary failover,
+     *     the new primary can accept new RO and RW transactions before the previous primary transactions are all applied.
+     *     RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
+     * - BEFORE_ON_PRIMARY_FAILOVER:
+     *     New RO or RW transactions with a newly elected primary that is applying backlog from the old
+     *     primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens,
+     *     intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that
+     *     clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal,
+     *     but does depend on the size of the backlog.
+     * - BEFORE:
+     *     A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding
+     *     transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the
+     *     latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is
+     *     used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+     * - AFTER:
+     *     A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions.
+     *     This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or
+     *     a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that
+     *     applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent
+     *     reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction,
+     *     by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees
+     *     provided by BEFORE_ON_PRIMARY_FAILOVER.
+     * - BEFORE_AND_AFTER:
+     *     A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been
+     *     applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place.
+     *     This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum GroupReplicationConsistency {
+        Eventual("EVENTUAL"),
+        BeforeOnPrimaryFailover("BEFORE_ON_PRIMARY_FAILOVER"),
+        Before("BEFORE"),
+        After("AFTER"),
+        BeforeAndAfter("BEFORE_AND_AFTER"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, GroupReplicationConsistency> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (GroupReplicationConsistency v : GroupReplicationConsistency.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        GroupReplicationConsistency(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static GroupReplicationConsistency create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'GroupReplicationConsistency', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * - EVENTUAL:
+     *     Both RO and RW transactions do not wait for preceding transactions to be applied before executing.
+     *     A RW transaction does not wait for other members to apply a transaction. This means that a transaction
+     *     could be externalized on one member before the others. This also means that in the event of a primary failover,
+     *     the new primary can accept new RO and RW transactions before the previous primary transactions are all applied.
+     *     RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
+     * - BEFORE_ON_PRIMARY_FAILOVER:
+     *     New RO or RW transactions with a newly elected primary that is applying backlog from the old
+     *     primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens,
+     *     intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that
+     *     clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal,
+     *     but does depend on the size of the backlog.
+     * - BEFORE:
+     *     A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding
+     *     transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the
+     *     latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is
+     *     used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+     * - AFTER:
+     *     A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions.
+     *     This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or
+     *     a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that
+     *     applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent
+     *     reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction,
+     *     by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees
+     *     provided by BEFORE_ON_PRIMARY_FAILOVER.
+     * - BEFORE_AND_AFTER:
+     *     A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been
+     *     applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place.
+     *     This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("groupReplicationConsistency")
+    GroupReplicationConsistency groupReplicationConsistency;
 
     /**
      * (\"innodb_ft_enable_stopword\")

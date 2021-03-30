@@ -8,6 +8,8 @@ import com.oracle.bmc.waas.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @lombok.Builder(builderClassName = "Builder")
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode
 @lombok.Getter
 public class ListAccessRulesResponse {
     /**

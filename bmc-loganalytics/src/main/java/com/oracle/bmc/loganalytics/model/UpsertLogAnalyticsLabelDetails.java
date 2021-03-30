@@ -174,7 +174,7 @@ public class UpsertLogAnalyticsLabelDetails {
     }
 
     /**
-     * alias list
+     * The alias list.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("aliases")
     java.util.List<LogAnalyticsLabelAlias> aliases;
@@ -186,42 +186,44 @@ public class UpsertLogAnalyticsLabelDetails {
     Long suggestType;
 
     /**
-     * description
+     * The label description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * display name
+     * The label display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * edit version
+     * The edit version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
     Long editVersion;
 
     /**
-     * impact
+     * The label impact.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("impact")
     String impact;
 
     /**
-     * is system flag
+     * The system flag.  A value of false denotes a custom, or user
+     * defined label.  A value of true denotes a built in label.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     Boolean isSystem;
 
     /**
-     * label identifier
+     * The label name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
     /**
-     * Valid values are (NONE, LOW, HIGH). NONE is default.
+     * The label priority. Valid values are (NONE, LOW, HIGH). NONE is default.
      **/
     public enum Priority {
         None("NONE"),
@@ -258,18 +260,18 @@ public class UpsertLogAnalyticsLabelDetails {
         }
     };
     /**
-     * Valid values are (NONE, LOW, HIGH). NONE is default.
+     * The label priority. Valid values are (NONE, LOW, HIGH). NONE is default.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
     Priority priority;
 
     /**
-     * tag recommendation
+     * The label recommendation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
     String recommendation;
     /**
-     * Valid values are (INFO, PROBLEM). INFO is default.
+     * The label type. Valid values are (INFO, PROBLEM). INFO is default.
      **/
     public enum Type {
         Info("INFO"),
@@ -304,7 +306,7 @@ public class UpsertLogAnalyticsLabelDetails {
         }
     };
     /**
-     * Valid values are (INFO, PROBLEM). INFO is default.
+     * The label type. Valid values are (INFO, PROBLEM). INFO is default.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     Type type;

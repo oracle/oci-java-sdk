@@ -114,36 +114,38 @@ public class LogAnalyticsLabelAlias {
     }
 
     /**
-     * alias
+     * The alias.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("alias")
     String alias;
 
     /**
-     * alias display name
+     * The alias display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("aliasDisplayName")
     String aliasDisplayName;
 
     /**
-     * is system flag
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     Boolean isSystem;
 
     /**
-     * label display name
+     * The label display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * label name
+     * The label name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
     /**
-     * priority
+     * The label priority. Default value is NONE.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Priority {
@@ -191,7 +193,7 @@ public class LogAnalyticsLabelAlias {
         }
     };
     /**
-     * priority
+     * The label priority. Default value is NONE.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
     Priority priority;

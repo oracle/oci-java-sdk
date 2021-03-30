@@ -138,6 +138,54 @@ public interface KmsVaultAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateVaultRequest, CreateVaultResponse> handler);
 
     /**
+     * Creates a replica for the vault in another region in the same realm
+     * <p>
+     * The API is a no-op if called for same region that a vault is already replicated to.
+     * 409 if called on a vault that is already replicated to a different region. Users need to delete
+     * existing replica first before calling it with a different region.
+     * <p>
+     * As a provisioning operation, this call is subject to a Key Management limit that applies to
+     * the total number of requests across all provisioning write operations. Key Management might
+     * throttle this call to reject an otherwise valid request when the total rate of provisioning
+     * write operations exceeds 10 requests per second for a given tenancy.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateVaultReplicaResponse> createVaultReplica(
+            CreateVaultReplicaRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateVaultReplicaRequest, CreateVaultReplicaResponse>
+                    handler);
+
+    /**
+     * Deletes a vault replica
+     * <p>
+     * As a provisioning operation, this call is subject to a Key Management limit that applies to
+     * the total number of requests across all provisioning write operations. Key Management might
+     * throttle this call to reject an otherwise valid request when the total rate of provisioning
+     * write operations exceeds 10 requests per second for a given tenancy.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteVaultReplicaResponse> deleteVaultReplica(
+            DeleteVaultReplicaRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteVaultReplicaRequest, DeleteVaultReplicaResponse>
+                    handler);
+
+    /**
      * Gets the specified vault's configuration information.
      * <p>
      * As a provisioning operation, this call is subject to a Key Management limit that applies to
@@ -171,6 +219,28 @@ public interface KmsVaultAsync extends AutoCloseable {
     java.util.concurrent.Future<GetVaultUsageResponse> getVaultUsage(
             GetVaultUsageRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetVaultUsageRequest, GetVaultUsageResponse>
+                    handler);
+
+    /**
+     * Lists the replicas for a vault
+     * <p>
+     * As a provisioning operation, this call is subject to a Key Management limit that applies to
+     * the total number of requests across all provisioning write operations. Key Management might
+     * throttle this call to reject an otherwise valid request when the total rate of provisioning
+     * write operations exceeds 10 requests per second for a given tenancy.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListVaultReplicasResponse> listVaultReplicas(
+            ListVaultReplicasRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListVaultReplicasRequest, ListVaultReplicasResponse>
                     handler);
 
     /**

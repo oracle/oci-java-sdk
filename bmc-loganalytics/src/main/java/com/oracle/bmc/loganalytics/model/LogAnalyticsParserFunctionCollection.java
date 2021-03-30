@@ -62,7 +62,7 @@ public class LogAnalyticsParserFunctionCollection {
     }
 
     /**
-     * meta pre-process pagination list
+     * An array of parser function.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<LogAnalyticsParserFunction> items;

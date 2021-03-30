@@ -103,31 +103,32 @@ public class LogAnalyticsParameter {
     }
 
     /**
-     * default value
+     * The default value of the parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
     String defaultValue;
 
     /**
-     * description
+     * The parameter description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * is active flag
+     * A flag indicating whether or not the parameter is active.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isActive")
     Boolean isActive;
 
     /**
-     * parameter name
+     * The parameter name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * source Id
+     * The source unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     Long sourceId;

@@ -412,6 +412,48 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeDatabaseParametersResponse> changeDatabaseParameters(
+            ChangeDatabaseParametersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeDatabaseParametersRequest, ChangeDatabaseParametersResponse>
+                    handler) {
+        LOG.trace("Called async changeDatabaseParameters");
+        final ChangeDatabaseParametersRequest interceptedRequest =
+                ChangeDatabaseParametersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeDatabaseParametersConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeDatabaseParametersResponse>
+                transformer = ChangeDatabaseParametersConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeDatabaseParametersRequest, ChangeDatabaseParametersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeDatabaseParametersRequest, ChangeDatabaseParametersResponse>,
+                        java.util.concurrent.Future<ChangeDatabaseParametersResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeDatabaseParametersRequest, ChangeDatabaseParametersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeJobCompartmentResponse> changeJobCompartment(
             ChangeJobCompartmentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -938,6 +980,47 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListDatabaseParametersResponse> listDatabaseParameters(
+            ListDatabaseParametersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListDatabaseParametersRequest, ListDatabaseParametersResponse>
+                    handler) {
+        LOG.trace("Called async listDatabaseParameters");
+        final ListDatabaseParametersRequest interceptedRequest =
+                ListDatabaseParametersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDatabaseParametersConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDatabaseParametersResponse>
+                transformer = ListDatabaseParametersConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDatabaseParametersRequest, ListDatabaseParametersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDatabaseParametersRequest, ListDatabaseParametersResponse>,
+                        java.util.concurrent.Future<ListDatabaseParametersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDatabaseParametersRequest, ListDatabaseParametersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListJobExecutionsResponse> listJobExecutions(
             ListJobExecutionsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1134,6 +1217,45 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListTablespacesResponse> listTablespaces(
+            ListTablespacesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListTablespacesRequest, ListTablespacesResponse>
+                    handler) {
+        LOG.trace("Called async listTablespaces");
+        final ListTablespacesRequest interceptedRequest =
+                ListTablespacesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTablespacesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListTablespacesResponse>
+                transformer = ListTablespacesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListTablespacesRequest, ListTablespacesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListTablespacesRequest, ListTablespacesResponse>,
+                        java.util.concurrent.Future<ListTablespacesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListTablespacesRequest, ListTablespacesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RemoveManagedDatabaseFromManagedDatabaseGroupResponse>
             removeManagedDatabaseFromManagedDatabaseGroup(
                     RemoveManagedDatabaseFromManagedDatabaseGroupRequest request,
@@ -1171,6 +1293,48 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RemoveManagedDatabaseFromManagedDatabaseGroupRequest,
                     RemoveManagedDatabaseFromManagedDatabaseGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetDatabaseParametersResponse> resetDatabaseParameters(
+            ResetDatabaseParametersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ResetDatabaseParametersRequest, ResetDatabaseParametersResponse>
+                    handler) {
+        LOG.trace("Called async resetDatabaseParameters");
+        final ResetDatabaseParametersRequest interceptedRequest =
+                ResetDatabaseParametersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ResetDatabaseParametersConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ResetDatabaseParametersResponse>
+                transformer = ResetDatabaseParametersConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ResetDatabaseParametersRequest, ResetDatabaseParametersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ResetDatabaseParametersRequest, ResetDatabaseParametersResponse>,
+                        java.util.concurrent.Future<ResetDatabaseParametersResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ResetDatabaseParametersRequest, ResetDatabaseParametersResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

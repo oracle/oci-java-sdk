@@ -456,211 +456,218 @@ public class LogAnalyticsSource {
     }
 
     /**
-     * alert conditions
+     * The label alert conditions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labelConditions")
     java.util.List<LogAnalyticsSourceLabelCondition> labelConditions;
 
     /**
-     * association count
+     * The association count.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("associationCount")
     Integer associationCount;
 
     /**
-     * association entity
+     * The association entities.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("associationEntity")
     java.util.List<LogAnalyticsAssociation> associationEntity;
 
     /**
-     * data filter definitions
+     * The data filter definitions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataFilterDefinitions")
     java.util.List<LogAnalyticsSourceDataFilter> dataFilterDefinitions;
 
     /**
-     * DB credential
+     * The database credential.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
     String databaseCredential;
 
     /**
-     * extended field definition
+     * The extended field definitions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendedFieldDefinitions")
     java.util.List<LogAnalyticsSourceExtendedFieldDefinition> extendedFieldDefinitions;
 
     /**
-     * is for cloud flag
+     * A flag indicating whether or not this is a cloud source.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isForCloud")
     Boolean isForCloud;
 
     /**
-     * labels
+     * The labels associated with the source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     java.util.List<LogAnalyticsLabelView> labels;
 
     /**
-     * metric definitions
+     * The metric definitions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricDefinitions")
     java.util.List<LogAnalyticsMetric> metricDefinitions;
 
     /**
-     * metric source map
+     * The metric source map.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metrics")
     java.util.List<LogAnalyticsSourceMetric> metrics;
 
     /**
-     * out-of-the-box source parser list
+     * The built in parsers associated with source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oobParsers")
     java.util.List<LogAnalyticsParser> oobParsers;
 
     /**
-     * parameters
+     * The source parameters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     java.util.List<LogAnalyticsParameter> parameters;
 
     /**
-     * pattern count
+     * The pattern count.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patternCount")
     Integer patternCount;
 
     /**
-     * patterns
+     * The source patterns.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patterns")
     java.util.List<LogAnalyticsSourcePattern> patterns;
 
     /**
-     * description
+     * The source description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * display name
+     * The source display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * source edit version
+     * The source edit version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
     Long editVersion;
 
     /**
-     * source functions
+     * The source functions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("functions")
     java.util.List<LogAnalyticsSourceFunction> functions;
 
     /**
-     * source Id
+     * The source unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     Long sourceId;
 
     /**
-     * source internal name
+     * The source internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * is secure content flag
+     * A flag indicating whether or not the source content is secure.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSecureContent")
     Boolean isSecureContent;
 
     /**
-     * is system flag
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     Boolean isSystem;
 
     /**
-     * parser list
+     * The list of parsers used by the source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parsers")
     java.util.List<LogAnalyticsParser> parsers;
 
     /**
-     * rule auto association enabled flag
+     * A flag indicating whether or not the source is marked for auto-association.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoAssociationEnabled")
     Boolean isAutoAssociationEnabled;
 
     /**
-     * rule auto association override
+     * A flag indicating whether or not the auto-association state should be overriden.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoAssociationOverride")
     Boolean isAutoAssociationOverride;
 
     /**
-     * rule Id
+     * The rule unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleId")
     Long ruleId;
 
     /**
-     * source type internal name
+     * The source type internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeName")
     String typeName;
 
     /**
-     * source type name
+     * The source type name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeDisplayName")
     String typeDisplayName;
 
     /**
-     * source warning configuration
+     * The source warning configuration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("warningConfig")
     Long warningConfig;
 
     /**
-     * source metadata fields
+     * The source metadata fields.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadataFields")
     java.util.List<LogAnalyticsSourceMetadataField> metadataFields;
 
     /**
-     * tags
+     * The labls used by the source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labelDefinitions")
     java.util.List<LogAnalyticsLabelDefinition> labelDefinitions;
 
     /**
-     * Entity types
+     * The entity types.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypes")
     java.util.List<LogAnalyticsSourceEntityType> entityTypes;
 
     /**
-     * time zone override
+     * A flag indicating whether or not the source has a time zone override.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isTimezoneOverride")
     Boolean isTimezoneOverride;
 
     /**
-     * source parser list
+     * An array of custom parsers.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userParsers")
     java.util.List<LogAnalyticsParser> userParsers;
 
     /**
-     * timeUpdated
+     * The last updated date.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;

@@ -70,13 +70,13 @@ public class SourceValidateDetails {
     }
 
     /**
-     * key
+     * The key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     String key;
 
     /**
-     * value
+     * The value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     String value;

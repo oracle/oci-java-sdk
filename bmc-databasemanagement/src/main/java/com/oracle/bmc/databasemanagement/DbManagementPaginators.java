@@ -601,4 +601,117 @@ public class DbManagementPaginators {
                     }
                 });
     }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listTablespaces operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListTablespacesResponse> listTablespacesResponseIterator(
+            final ListTablespacesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListTablespacesRequest.Builder, ListTablespacesRequest, ListTablespacesResponse>(
+                new com.google.common.base.Supplier<ListTablespacesRequest.Builder>() {
+                    @Override
+                    public ListTablespacesRequest.Builder get() {
+                        return ListTablespacesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListTablespacesResponse, String>() {
+                    @Override
+                    public String apply(ListTablespacesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTablespacesRequest.Builder>,
+                        ListTablespacesRequest>() {
+                    @Override
+                    public ListTablespacesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTablespacesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListTablespacesRequest, ListTablespacesResponse>() {
+                    @Override
+                    public ListTablespacesResponse apply(ListTablespacesRequest request) {
+                        return client.listTablespaces(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemanagement.model.TablespaceSummary} objects
+     * contained in responses from the listTablespaces operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemanagement.model.TablespaceSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.TablespaceSummary>
+            listTablespacesRecordIterator(final ListTablespacesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListTablespacesRequest.Builder, ListTablespacesRequest, ListTablespacesResponse,
+                com.oracle.bmc.databasemanagement.model.TablespaceSummary>(
+                new com.google.common.base.Supplier<ListTablespacesRequest.Builder>() {
+                    @Override
+                    public ListTablespacesRequest.Builder get() {
+                        return ListTablespacesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListTablespacesResponse, String>() {
+                    @Override
+                    public String apply(ListTablespacesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTablespacesRequest.Builder>,
+                        ListTablespacesRequest>() {
+                    @Override
+                    public ListTablespacesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTablespacesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListTablespacesRequest, ListTablespacesResponse>() {
+                    @Override
+                    public ListTablespacesResponse apply(ListTablespacesRequest request) {
+                        return client.listTablespaces(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListTablespacesResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model.TablespaceSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.databasemanagement.model.TablespaceSummary>
+                            apply(ListTablespacesResponse response) {
+                        return response.getTablespaceCollection().getItems();
+                    }
+                });
+    }
 }

@@ -9,7 +9,13 @@ import com.oracle.bmc.functions.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/DeleteApplicationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteApplicationRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
+@lombok.Builder(
+    builderClassName = "Builder",
+    buildMethodName = "buildWithoutInvocationCallback",
+    toBuilder = true
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class DeleteApplicationRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

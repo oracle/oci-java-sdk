@@ -81,19 +81,19 @@ public class StepInfo {
     }
 
     /**
-     * inputSequenceCurrentMatch
+     * The currnet input sequence match.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inputSequenceCurrentMatch")
     String inputSequenceCurrentMatch;
 
     /**
-     * regexEngineClassName
+     * The regular expression engine class name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regexEngineClassName")
     String regexEngineClassName;
 
     /**
-     * stepCount
+     * The step count.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stepCount")
     Integer stepCount;

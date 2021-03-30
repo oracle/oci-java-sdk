@@ -137,31 +137,31 @@ public class LogAnalyticsExtendedField {
     LogAnalyticsSourceExtendedFieldDefinition extendedFieldDefinition;
 
     /**
-     * Id
+     * The extended field unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendedFieldDefinitionId")
     Long extendedFieldDefinitionId;
 
     /**
-     * new field internal name
+     * The field internal name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
     String fieldName;
 
     /**
-     * new field internal display name
+     * The field internal display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldDisplayName")
     String fieldDisplayName;
 
     /**
-     * saved regular expression internal name
+     * The saved regular expression name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("savedRegularExpressionName")
     String savedRegularExpressionName;
 
     /**
-     * extended field Id
+     * The extended field unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendedFieldId")
     Long extendedFieldId;

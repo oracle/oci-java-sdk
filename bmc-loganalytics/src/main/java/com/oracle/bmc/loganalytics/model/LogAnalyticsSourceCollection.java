@@ -61,7 +61,7 @@ public class LogAnalyticsSourceCollection {
     }
 
     /**
-     * list of sources
+     * An array of sources.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<LogAnalyticsSourceSummary> items;

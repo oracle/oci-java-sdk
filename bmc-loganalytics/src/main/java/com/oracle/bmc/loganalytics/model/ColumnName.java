@@ -59,7 +59,7 @@ public class ColumnName {
     }
 
     /**
-     * column name
+     * The column name from a SQL query.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;

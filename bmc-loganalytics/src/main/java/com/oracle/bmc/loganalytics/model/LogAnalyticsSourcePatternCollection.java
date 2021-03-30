@@ -62,7 +62,7 @@ public class LogAnalyticsSourcePatternCollection {
     }
 
     /**
-     * list of source patterns
+     * An array of source patterns.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<LogAnalyticsSourcePattern> items;

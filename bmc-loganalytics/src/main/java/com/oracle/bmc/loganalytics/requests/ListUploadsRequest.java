@@ -9,7 +9,13 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListUploadsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListUploadsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
+@lombok.Builder(
+    builderClassName = "Builder",
+    buildMethodName = "buildWithoutInvocationCallback",
+    toBuilder = true
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ListUploadsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -132,6 +138,52 @@ public class ListUploadsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String opcRequestId;
 
+    /**
+     * Use this for filtering uploads w.r.t warnings. Only one value is allowed. If no value is specified then ALL is taken as default,
+     * which means that all the uploads with and without warnings will be returned.
+     *
+     */
+    private WarningsFilter warningsFilter;
+
+    /**
+     * Use this for filtering uploads w.r.t warnings. Only one value is allowed. If no value is specified then ALL is taken as default,
+     * which means that all the uploads with and without warnings will be returned.
+     *
+     **/
+    public enum WarningsFilter {
+        WithWarnings("WITH_WARNINGS"),
+        WithoutWarnings("WITHOUT_WARNINGS"),
+        All("ALL"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, WarningsFilter> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (WarningsFilter v : WarningsFilter.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        WarningsFilter(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static WarningsFilter create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid WarningsFilter: " + key);
+        }
+    };
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListUploadsRequest, java.lang.Void> {
@@ -175,6 +227,7 @@ public class ListUploadsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
+            warningsFilter(o.getWarningsFilter());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

@@ -80,19 +80,19 @@ public class MatchInfo {
     }
 
     /**
-     * matchingLogEntryEndIndex
+     * The end index of the matching log entry.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchingLogEntryEndIndex")
     Integer matchingLogEntryEndIndex;
 
     /**
-     * regexScore
+     * The regular expression score.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regexScore")
     Integer regexScore;
 
     /**
-     * stepCount
+     * The step count.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stepCount")
     Integer stepCount;

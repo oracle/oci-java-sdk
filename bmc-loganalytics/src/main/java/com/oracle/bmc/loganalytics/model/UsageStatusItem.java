@@ -91,25 +91,26 @@ public class UsageStatusItem {
     }
 
     /**
-     * data type
+     * The field data type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     String dataType;
 
     /**
-     * is the field multi valued
+     * A flag indicating whether or not the field is multi-valued.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMultiValued")
     Boolean isMultiValued;
 
     /**
-     * current usage
+     * The current usage of the field.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentUsage")
     Long currentUsage;
 
     /**
-     * maximum available
+     * The maximum availability of the field.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxAvailable")
     Integer maxAvailable;

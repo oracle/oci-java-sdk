@@ -8,6 +8,8 @@ import com.oracle.bmc.resourcemanager.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @lombok.Builder(builderClassName = "Builder")
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode
 @lombok.Getter
 public class GetJobTfConfigResponse {
     /**

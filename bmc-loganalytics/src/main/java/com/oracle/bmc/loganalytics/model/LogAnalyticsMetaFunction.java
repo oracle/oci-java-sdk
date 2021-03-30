@@ -131,43 +131,43 @@ public class LogAnalyticsMetaFunction {
     }
 
     /**
-     * meta function argument object
+     * An array of meta function arguments.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metaFunctionArgument")
     java.util.List<LogAnalyticsMetaFunctionArgument> metaFunctionArgument;
 
     /**
-     * component
+     * The component.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("component")
     String component;
 
     /**
-     * description
+     * The description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * edit version
+     * The edit version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
     Long editVersion;
 
     /**
-     * meta function Id
+     * The meta function unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metaFunctionId")
     Long metaFunctionId;
 
     /**
-     * java class name
+     * The java class name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("javaClassName")
     String javaClassName;
 
     /**
-     * meta function name
+     * The meta function name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;

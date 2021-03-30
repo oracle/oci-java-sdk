@@ -104,31 +104,32 @@ public class UpsertLogAnalyticsFieldDetails {
     }
 
     /**
-     * data type
+     * The data type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     String dataType;
 
     /**
-     * is multi-valued flag
+     * A flag indicating whether or not the field is multi-valued.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMultiValued")
     Boolean isMultiValued;
 
     /**
-     * description
+     * The field description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * display name
+     * The field display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * internal name
+     * The field internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;

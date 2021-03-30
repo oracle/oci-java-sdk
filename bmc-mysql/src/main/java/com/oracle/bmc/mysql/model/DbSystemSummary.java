@@ -61,6 +61,24 @@ public class DbSystemSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isHighlyAvailable")
+        private Boolean isHighlyAvailable;
+
+        public Builder isHighlyAvailable(Boolean isHighlyAvailable) {
+            this.isHighlyAvailable = isHighlyAvailable;
+            this.__explicitlySet__.add("isHighlyAvailable");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("currentPlacement")
+        private DbSystemPlacement currentPlacement;
+
+        public Builder currentPlacement(DbSystemPlacement currentPlacement) {
+            this.currentPlacement = currentPlacement;
+            this.__explicitlySet__.add("currentPlacement");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isAnalyticsClusterAttached")
         private Boolean isAnalyticsClusterAttached;
 
@@ -189,6 +207,8 @@ public class DbSystemSummary {
                             displayName,
                             description,
                             compartmentId,
+                            isHighlyAvailable,
+                            currentPlacement,
                             isAnalyticsClusterAttached,
                             analyticsCluster,
                             isHeatWaveClusterAttached,
@@ -213,6 +233,8 @@ public class DbSystemSummary {
                             .displayName(o.getDisplayName())
                             .description(o.getDescription())
                             .compartmentId(o.getCompartmentId())
+                            .isHighlyAvailable(o.getIsHighlyAvailable())
+                            .currentPlacement(o.getCurrentPlacement())
                             .isAnalyticsClusterAttached(o.getIsAnalyticsClusterAttached())
                             .analyticsCluster(o.getAnalyticsCluster())
                             .isHeatWaveClusterAttached(o.getIsHeatWaveClusterAttached())
@@ -264,6 +286,17 @@ public class DbSystemSummary {
     String compartmentId;
 
     /**
+     * If the policy is to enable high availability of the instance, by
+     * maintaining secondary/failover capacity as necessary.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isHighlyAvailable")
+    Boolean isHighlyAvailable;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("currentPlacement")
+    DbSystemPlacement currentPlacement;
+
+    /**
      * DEPRECATED -- please use `isHeatWaveClusterAttached` instead.
      * If the DB System has an Analytics Cluster attached.
      *
@@ -285,14 +318,26 @@ public class DbSystemSummary {
     HeatWaveClusterSummary heatWaveCluster;
 
     /**
-     * The Availability Domain where the primary DB System should be located.
+     * The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+     * <p>
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains
+     * and the MySQL instance in that domain is promoted to the primary instance.
+     * This redirection does not affect the IP address of the DB System in any way.
+     * <p>
+     * For a standalone DB System, this defines the availability domain in which the DB System is placed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     String availabilityDomain;
 
     /**
-     * The name of the Fault Domain the DB System is located in.
+     * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+     * <p>
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains
+     * and the MySQL instance in that domain is promoted to the primary instance.
+     * This redirection does not affect the IP address of the DB System in any way.
+     * <p>
+     * For a standalone DB System, this defines the fault domain in which the DB System is placed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")

@@ -62,7 +62,7 @@ public class LogAnalyticsAssociationParameterCollection {
     }
 
     /**
-     * list of entities
+     * A list of association parameters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<LogAnalyticsAssociationParameter> items;

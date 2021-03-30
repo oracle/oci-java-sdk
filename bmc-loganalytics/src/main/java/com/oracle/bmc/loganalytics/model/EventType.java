@@ -60,11 +60,21 @@ public class EventType {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+        private java.util.Date timeUpdated;
+
+        public Builder timeUpdated(java.util.Date timeUpdated) {
+            this.timeUpdated = timeUpdated;
+            this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EventType build() {
-            EventType __instance__ = new EventType(eventTypeName, specVersion, isEnabled, isSystem);
+            EventType __instance__ =
+                    new EventType(eventTypeName, specVersion, isEnabled, isSystem, timeUpdated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -75,7 +85,8 @@ public class EventType {
                     eventTypeName(o.getEventTypeName())
                             .specVersion(o.getSpecVersion())
                             .isEnabled(o.getIsEnabled())
-                            .isSystem(o.getIsSystem());
+                            .isSystem(o.getIsSystem())
+                            .timeUpdated(o.getTimeUpdated());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -113,6 +124,12 @@ public class EventType {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     Boolean isSystem;
+
+    /**
+     * The last updated time.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+    java.util.Date timeUpdated;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

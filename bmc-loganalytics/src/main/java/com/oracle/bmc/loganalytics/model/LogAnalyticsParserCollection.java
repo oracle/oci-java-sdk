@@ -61,7 +61,7 @@ public class LogAnalyticsParserCollection {
     }
 
     /**
-     * list of parsers
+     * An array of parsers.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<LogAnalyticsParserSummary> items;

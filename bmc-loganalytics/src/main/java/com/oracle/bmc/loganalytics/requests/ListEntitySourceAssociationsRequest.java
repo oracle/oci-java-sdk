@@ -9,7 +9,13 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListEntitySourceAssociationsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListEntitySourceAssociationsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
+@lombok.Builder(
+    builderClassName = "Builder",
+    buildMethodName = "buildWithoutInvocationCallback",
+    toBuilder = true
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ListEntitySourceAssociationsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
@@ -32,22 +38,30 @@ public class ListEntitySourceAssociationsRequest
     private String entityId;
 
     /**
-     * entity type name
+     * The entity type used for filtering.  Only associations on an entity with the
+     * specified type will be returned.
+     *
      */
     private String entityType;
 
     /**
-     * entity type display name
+     * The entity type display name used for filtering.  Only items associated with the entity
+     * with the specified type display name will be returned.
+     *
      */
     private String entityTypeDisplayName;
 
     /**
-     * Status
+     * The life cycle state used for filtering.  Only associations with the specified
+     * life cycle state will be returned.
+     *
      */
     private LifeCycleState lifeCycleState;
 
     /**
-     * Status
+     * The life cycle state used for filtering.  Only associations with the specified
+     * life cycle state will be returned.
+     *
      **/
     public enum LifeCycleState {
         All("ALL"),
@@ -85,7 +99,7 @@ public class ListEntitySourceAssociationsRequest
         }
     };
     /**
-     * is Show Total
+     * A flag indicating whether or not to return the total number of items returned.
      */
     private Boolean isShowTotal;
 
@@ -142,12 +156,12 @@ public class ListEntitySourceAssociationsRequest
         }
     };
     /**
-     * sort by field
+     * The attribute used to sort the returned associations
      */
     private SortBy sortBy;
 
     /**
-     * sort by field
+     * The attribute used to sort the returned associations
      **/
     public enum SortBy {
         SourceDisplayName("sourceDisplayName"),

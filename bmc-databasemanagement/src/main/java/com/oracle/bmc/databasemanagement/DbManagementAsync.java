@@ -70,6 +70,35 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Changes database parameters' values. There are two kinds of database
+     * parameters:
+     * <p>
+     * - Dynamic parameters: They can be changed for the current Oracle
+     * Database instance. The changes take effect immediately.
+     * - Static parameters: They cannot be changed for the current instance.
+     * You must change these parameters and then restart the database before
+     * changes take effect.
+     * <p>
+     **Note:** If the instance is started using a text initialization
+     * parameter file, the parameter changes are applicable only for the
+     * current instance. You must update them manually to be passed to
+     * a future instance.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeDatabaseParametersResponse> changeDatabaseParameters(
+            ChangeDatabaseParametersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeDatabaseParametersRequest, ChangeDatabaseParametersResponse>
+                    handler);
+
+    /**
      * Moves a job.
      *
      *
@@ -291,6 +320,23 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDatabaseParametersResponse> listDatabaseParameters(
+            ListDatabaseParametersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDatabaseParametersRequest, ListDatabaseParametersResponse>
+                    handler);
+
+    /**
      * Gets the job execution for a specific ID or the list of job executions for a job, Managed Database or Managed Database Group
      * in a specific compartment. Only one of the parameters, ID, jobId, managedDatabaseId or managedDatabaseGroupId should be provided.
      * If none of these parameters is provided, all the job executions in the compartment are listed. Job executions can also be filtered
@@ -386,6 +432,21 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the list of tablespaces for the specified managedDatabaseId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListTablespacesResponse> listTablespaces(
+            ListTablespacesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListTablespacesRequest, ListTablespacesResponse>
+                    handler);
+
+    /**
      * Removes a Managed Database from a Managed Database Group. Any management
      * activities that are currently running on this database will continue to
      * run to completion. However, any activities scheduled to run in the future
@@ -406,6 +467,23 @@ public interface DbManagementAsync extends AutoCloseable {
                                     RemoveManagedDatabaseFromManagedDatabaseGroupRequest,
                                     RemoveManagedDatabaseFromManagedDatabaseGroupResponse>
                             handler);
+
+    /**
+     * Resets database parameters' values to their default or startup values.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ResetDatabaseParametersResponse> resetDatabaseParameters(
+            ResetDatabaseParametersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ResetDatabaseParametersRequest, ResetDatabaseParametersResponse>
+                    handler);
 
     /**
      * Updates the Managed Database Group specified by managedDatabaseGroupId.
