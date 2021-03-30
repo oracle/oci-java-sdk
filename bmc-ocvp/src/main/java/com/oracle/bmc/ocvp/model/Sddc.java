@@ -5,7 +5,7 @@
 package com.oracle.bmc.ocvp.model;
 
 /**
- * A software-defined data center (SDDC) contains the resources required for a
+ * An [Oracle Cloud VMware Solution](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm) software-defined data center (SDDC) contains the resources required for a
  * functional VMware environment. Instances in an SDDC
  * (see {@link EsxiHost}) run in a virtual cloud network (VCN)
  * and are preconfigured with VMware and storage. Use the vCenter utility to manage
@@ -276,6 +276,24 @@ public class Sddc {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationVlanId")
+        private String replicationVlanId;
+
+        public Builder replicationVlanId(String replicationVlanId) {
+            this.replicationVlanId = replicationVlanId;
+            this.__explicitlySet__.add("replicationVlanId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("provisioningVlanId")
+        private String provisioningVlanId;
+
+        public Builder provisioningVlanId(String provisioningVlanId) {
+            this.provisioningVlanId = provisioningVlanId;
+            this.__explicitlySet__.add("provisioningVlanId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("hcxPrivateIpId")
         private String hcxPrivateIpId;
 
@@ -409,6 +427,8 @@ public class Sddc {
                             nsxEdgeVTepVlanId,
                             nsxEdgeUplink1VlanId,
                             nsxEdgeUplink2VlanId,
+                            replicationVlanId,
+                            provisioningVlanId,
                             hcxPrivateIpId,
                             hcxFqdn,
                             hcxInitialPassword,
@@ -454,6 +474,8 @@ public class Sddc {
                             .nsxEdgeVTepVlanId(o.getNsxEdgeVTepVlanId())
                             .nsxEdgeUplink1VlanId(o.getNsxEdgeUplink1VlanId())
                             .nsxEdgeUplink2VlanId(o.getNsxEdgeUplink2VlanId())
+                            .replicationVlanId(o.getReplicationVlanId())
+                            .provisioningVlanId(o.getProvisioningVlanId())
                             .hcxPrivateIpId(o.getHcxPrivateIpId())
                             .hcxFqdn(o.getHcxFqdn())
                             .hcxInitialPassword(o.getHcxInitialPassword())
@@ -517,7 +539,7 @@ public class Sddc {
     /**
      * In general, this is a specific version of bundled VMware software supported by
      * Oracle Cloud VMware Solution (see
-     * {@link #* ListSupportedVmwareSoftwareVersions(* ListSupportedVmwareSoftwareVersionsRequest) * ListSupportedVmwareSoftwareVersions}).
+     * {@link #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest) listSupportedVmwareSoftwareVersions}).
      * <p>
      * This attribute is not guaranteed to reflect the version of
      * software currently installed on the ESXi hosts in the SDDC. The purpose
@@ -549,7 +571,7 @@ public class Sddc {
     Integer esxiHostsCount;
 
     /**
-     * FQDN for vCenter
+     * The FQDN for vCenter.
      * <p>
      * Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
      *
@@ -558,7 +580,7 @@ public class Sddc {
     String vcenterFqdn;
 
     /**
-     * FQDN for NSX Manager
+     * The FQDN for NSX Manager.
      * <p>
      * Example: `nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
      *
@@ -803,40 +825,75 @@ public class Sddc {
     String nsxEdgeUplink2VlanId;
 
     /**
-     * HCX Private IP
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+     * for the vSphere Replication component of the VMware environment.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationVlanId")
+    String replicationVlanId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+     * for the Provisioning component of the VMware environment.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("provisioningVlanId")
+    String provisioningVlanId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is
+     * the virtual IP (VIP) for HCX Manager. For information about `PrivateIp` objects, see the
+     * Core Services API.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hcxPrivateIpId")
     String hcxPrivateIpId;
 
     /**
-     * HCX Fully Qualified Domain Name
+     * The FQDN for HCX Manager.
+     * <p>
+     * Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hcxFqdn")
     String hcxFqdn;
 
     /**
-     * HCX initial password
+     * The SDDC includes an administrator username and initial password for HCX Manager. Make sure
+     * to change this initial HCX Manager password to a different value.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hcxInitialPassword")
     String hcxInitialPassword;
 
     /**
-     * HCX vlan id
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+     * for the HCX component of the VMware environment.
+     * <p>
+     * This attribute is not guaranteed to reflect the HCX VLAN
+     * currently used by the ESXi hosts in the SDDC. The purpose
+     * of this attribute is to show the HCX VLAN that the Oracle
+     * Cloud VMware Solution will use for any new ESXi hosts that you *add to this
+     * SDDC in the future* with {@link #createEsxiHost(CreateEsxiHostRequest) createEsxiHost}.
+     * <p>
+     * Therefore, if you change the existing ESXi hosts in the SDDC to use a different VLAN
+     * for the HCX component of the VMware environment, you
+     * should use {@link #updateSddc(UpdateSddcRequest) updateSddc} to update the SDDC's
+     * `hcxVlanId` with that new VLAN's OCID.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hcxVlanId")
     String hcxVlanId;
 
     /**
-     * HCX enabled or not
+     * Indicates whether HCX is enabled for this SDDC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHcxEnabled")
     Boolean isHcxEnabled;
 
     /**
-     * HCX on-premise license key
+     * The activation key to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
+     * Your implementation might need more than one activation key. To obtain additional keys, contact Oracle Support.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hcxOnPremKey")

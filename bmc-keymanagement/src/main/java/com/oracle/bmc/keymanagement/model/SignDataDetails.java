@@ -102,25 +102,25 @@ public class SignDataDetails {
     }
 
     /**
-     * The Base64-encoded binary data object denoting the message or message digest to be signed. Message can be upto 4096 size in bytes. To sign a larger message, provide the message digest.
+     * The base64-encoded binary data object denoting the message or message digest to sign. You can have a message up to 4096 bytes in size. To sign a larger message, provide the message digest.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     String message;
 
     /**
-     * The OCID of the key used to sign the message
+     * The OCID of the key used to sign the message.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     String keyId;
 
     /**
-     * The OCID of the keyVersion used to sign the message.
+     * The OCID of the key version used to sign the message.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyVersionId")
     String keyVersionId;
     /**
      * Denotes whether the value of the message parameter is a raw message or a message digest.
-     * The default value, RAW, indicates a message. To indicate a message digest, use DIGEST.
+     * The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
      *
      **/
     public enum MessageType {
@@ -157,18 +157,18 @@ public class SignDataDetails {
     };
     /**
      * Denotes whether the value of the message parameter is a raw message or a message digest.
-     * The default value, RAW, indicates a message. To indicate a message digest, use DIGEST.
+     * The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("messageType")
     MessageType messageType;
     /**
-     * The algorithm to be used for signing the message or message digest
-     * For RSA keys, there are two supported Signature Schemes: PKCS1 and PSS along with
-     * different Hashing algorithms.
+     * The algorithm to use to sign the message or message digest.
+     * For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with
+     * different hashing algorithms.
      * For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms.
-     * In case of passing digest for signing, make sure the same hashing algorithm is
-     * specified as used for created for digest.
+     * When you pass a message digest for signing, ensure that you specify the same hashing algorithm
+     * as used when creating the message digest.
      *
      **/
     public enum SigningAlgorithm {
@@ -213,12 +213,12 @@ public class SignDataDetails {
         }
     };
     /**
-     * The algorithm to be used for signing the message or message digest
-     * For RSA keys, there are two supported Signature Schemes: PKCS1 and PSS along with
-     * different Hashing algorithms.
+     * The algorithm to use to sign the message or message digest.
+     * For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with
+     * different hashing algorithms.
      * For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms.
-     * In case of passing digest for signing, make sure the same hashing algorithm is
-     * specified as used for created for digest.
+     * When you pass a message digest for signing, ensure that you specify the same hashing algorithm
+     * as used when creating the message digest.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("signingAlgorithm")

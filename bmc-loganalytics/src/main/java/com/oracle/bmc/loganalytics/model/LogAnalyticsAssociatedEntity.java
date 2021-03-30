@@ -119,37 +119,37 @@ public class LogAnalyticsAssociatedEntity {
     }
 
     /**
-     * entity guid
+     * The entity unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     String entityId;
 
     /**
-     * entity name
+     * The entity name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
     String entityName;
 
     /**
-     * entity type
+     * The entity type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     String entityType;
 
     /**
-     * entity type display name
+     * The entity type display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeDisplayName")
     String entityTypeDisplayName;
 
     /**
-     * on host
+     * The host associated with the entity.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("onHost")
     String onHost;
 
     /**
-     * associationCount
+     * The association count for the entity.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("associationCount")
     Long associationCount;

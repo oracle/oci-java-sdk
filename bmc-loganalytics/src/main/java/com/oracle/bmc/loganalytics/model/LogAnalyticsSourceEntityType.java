@@ -94,25 +94,25 @@ public class LogAnalyticsSourceEntityType {
     }
 
     /**
-     * source Id
+     * The source unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     Long sourceId;
 
     /**
-     * Entity type
+     * The entity type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     String entityType;
 
     /**
-     * type category
+     * The type category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeCategory")
     String entityTypeCategory;
 
     /**
-     * Entity type display name
+     * The entity type display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeDisplayName")
     String entityTypeDisplayName;

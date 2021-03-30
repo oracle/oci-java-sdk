@@ -124,7 +124,7 @@ public class LogAnalyticsParserFilter {
     }
 
     /**
-     * id
+     * The parser filter unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -133,31 +133,32 @@ public class LogAnalyticsParserFilter {
     LogAnalyticsParser parser;
 
     /**
-     * agent version
+     * The agent version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentVersion")
     String agentVersion;
 
     /**
-     * is in use flag
+     * A flag idicating whether or not hte filter is currently being used.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isInUse")
     Long isInUse;
 
     /**
-     * operating system
+     * The operating system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
     String operatingSystem;
 
     /**
-     * parser Id
+     * The parser unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserId")
     Long parserId;
 
     /**
-     * version
+     * The version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     String version;

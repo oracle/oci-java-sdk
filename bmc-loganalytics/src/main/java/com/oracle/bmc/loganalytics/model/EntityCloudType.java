@@ -13,6 +13,7 @@ package com.oracle.bmc.loganalytics.model;
 public enum EntityCloudType {
     Cloud("CLOUD"),
     NonCloud("NON_CLOUD"),
+    All("ALL"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

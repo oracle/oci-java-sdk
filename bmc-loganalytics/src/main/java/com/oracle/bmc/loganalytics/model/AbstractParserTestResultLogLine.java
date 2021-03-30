@@ -73,13 +73,13 @@ public class AbstractParserTestResultLogLine {
     }
 
     /**
-     * original log line
+     * The original log line.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("originalLogLine")
     String originalLogLine;
 
     /**
-     * pre-processed log line
+     * The pre-processed log line.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("preProcessedLogLine")
     String preProcessedLogLine;

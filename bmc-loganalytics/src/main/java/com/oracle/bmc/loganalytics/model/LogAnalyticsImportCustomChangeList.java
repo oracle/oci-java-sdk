@@ -152,55 +152,55 @@ public class LogAnalyticsImportCustomChangeList {
     }
 
     /**
-     * createdParserNames
+     * An array of created parser names.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdParserNames")
     java.util.List<String> createdParserNames;
 
     /**
-     * updatedParserNames
+     * An array of updated parser names.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedParserNames")
     java.util.List<String> updatedParserNames;
 
     /**
-     * createdSourceNames
+     * An array of created source names.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdSourceNames")
     java.util.List<String> createdSourceNames;
 
     /**
-     * updatedSourceNames
+     * An array of updated source names.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedSourceNames")
     java.util.List<String> updatedSourceNames;
 
     /**
-     * createdFieldDisplayNames
+     * An array of created field display names.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdFieldDisplayNames")
     java.util.List<String> createdFieldDisplayNames;
 
     /**
-     * updatedFieldDisplayNames
+     * An array of updated field display names.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedFieldDisplayNames")
     java.util.List<String> updatedFieldDisplayNames;
 
     /**
-     * conflictParserNames
+     * A list of parser names with conflicts.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("conflictParserNames")
     java.util.List<String> conflictParserNames;
 
     /**
-     * conflictSourceNames
+     * A list of source names with conflicts.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("conflictSourceNames")
     java.util.List<String> conflictSourceNames;
 
     /**
-     * conflictFieldDisplayNames
+     * A list of field display names with conflicts.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("conflictFieldDisplayNames")
     java.util.List<String> conflictFieldDisplayNames;

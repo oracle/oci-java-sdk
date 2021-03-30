@@ -70,13 +70,13 @@ public class ExtractLogHeaderResults {
     }
 
     /**
-     * log header json paths
+     * The log header json paths.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jsonPaths")
     java.util.List<ExtractLogHeaderDetails> jsonPaths;
 
     /**
-     * log field or header values
+     * The log field or log header values.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("xmlPaths")
     java.util.List<String> xmlPaths;

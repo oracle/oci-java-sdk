@@ -62,7 +62,7 @@ public class LogAnalyticsAssociatedEntityCollection {
     }
 
     /**
-     * list of entities
+     * A list of entities.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<LogAnalyticsAssociatedEntity> items;

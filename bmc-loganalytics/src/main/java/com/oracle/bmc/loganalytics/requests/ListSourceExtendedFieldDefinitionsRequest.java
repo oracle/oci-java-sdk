@@ -9,7 +9,13 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListSourceExtendedFieldDefinitionsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSourceExtendedFieldDefinitionsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
+@lombok.Builder(
+    builderClassName = "Builder",
+    buildMethodName = "buildWithoutInvocationCallback",
+    toBuilder = true
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ListSourceExtendedFieldDefinitionsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
@@ -21,7 +27,7 @@ public class ListSourceExtendedFieldDefinitionsRequest
     private String namespaceName;
 
     /**
-     * source name
+     * The source name.
      */
     private String sourceName;
 
@@ -36,12 +42,12 @@ public class ListSourceExtendedFieldDefinitionsRequest
     private String page;
 
     /**
-     * sort by source extended field definition
+     * The attribute used to sort the returned source patterns
      */
     private SortBy sortBy;
 
     /**
-     * sort by source extended field definition
+     * The attribute used to sort the returned source patterns
      **/
     public enum SortBy {
         BaseFieldName("baseFieldName"),

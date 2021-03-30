@@ -104,31 +104,34 @@ public class LogAnalyticsSourceMetadataField {
     }
 
     /**
-     * field internal name
+     * The field internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
     String fieldName;
 
     /**
-     * is enabled flag
+     * A flag inidcating whether or not the source metadata field is enabled.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     Boolean isEnabled;
 
     /**
-     * is system flag
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     Boolean isSystem;
 
     /**
-     * key
+     * The key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     String key;
 
     /**
-     * source internal name
+     * The source internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
     String sourceName;

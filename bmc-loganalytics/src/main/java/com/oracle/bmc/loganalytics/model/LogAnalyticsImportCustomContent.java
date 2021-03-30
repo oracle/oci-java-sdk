@@ -104,19 +104,19 @@ public class LogAnalyticsImportCustomContent {
     }
 
     /**
-     * parserNames
+     * The parser names.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserNames")
     java.util.List<String> parserNames;
 
     /**
-     * sourceNames
+     * The source names.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceNames")
     java.util.List<String> sourceNames;
 
     /**
-     * fieldNames
+     * The field names.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldNames")
     java.util.List<String> fieldNames;
@@ -125,7 +125,7 @@ public class LogAnalyticsImportCustomContent {
     LogAnalyticsImportCustomChangeList changeList;
 
     /**
-     * contentName
+     * The content name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentName")
     String contentName;

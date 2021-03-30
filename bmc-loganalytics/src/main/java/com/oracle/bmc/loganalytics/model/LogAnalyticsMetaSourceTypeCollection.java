@@ -62,7 +62,7 @@ public class LogAnalyticsMetaSourceTypeCollection {
     }
 
     /**
-     * list of tag priorities
+     * An array of meta source types.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<LogAnalyticsMetaSourceType> items;

@@ -269,6 +269,24 @@ public class LogAnalyticsParserSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("fieldDelimiter")
+        private String fieldDelimiter;
+
+        public Builder fieldDelimiter(String fieldDelimiter) {
+            this.fieldDelimiter = fieldDelimiter;
+            this.__explicitlySet__.add("fieldDelimiter");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("fieldQualifier")
+        private String fieldQualifier;
+
+        public Builder fieldQualifier(String fieldQualifier) {
+            this.fieldQualifier = fieldQualifier;
+            this.__explicitlySet__.add("fieldQualifier");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
@@ -320,6 +338,8 @@ public class LogAnalyticsParserSummary {
                             sourcesCount,
                             sources,
                             shouldTokenizeOriginalText,
+                            fieldDelimiter,
+                            fieldQualifier,
                             type,
                             isUserDeleted);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -356,6 +376,8 @@ public class LogAnalyticsParserSummary {
                             .sourcesCount(o.getSourcesCount())
                             .sources(o.getSources())
                             .shouldTokenizeOriginalText(o.getShouldTokenizeOriginalText())
+                            .fieldDelimiter(o.getFieldDelimiter())
+                            .fieldQualifier(o.getFieldQualifier())
                             .type(o.getType())
                             .isUserDeleted(o.getIsUserDeleted());
 
@@ -372,127 +394,132 @@ public class LogAnalyticsParserSummary {
     }
 
     /**
-     * content
+     * The content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     String content;
 
     /**
-     * description
+     * The parser description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * display name
+     * The parser display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * edit version
+     * The parser edit version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
     Long editVersion;
 
     /**
-     * encoding
+     * The encoding.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("encoding")
     String encoding;
 
     /**
-     * example content
+     * The example content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exampleContent")
     String exampleContent;
 
     /**
-     * fields Maps
+     * The parser fields.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldMaps")
     java.util.List<LogAnalyticsParserField> fieldMaps;
 
     /**
-     * footer regular expression
+     * The footer regular expression.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("footerContent")
     String footerContent;
 
     /**
-     * header content
+     * The header content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("headerContent")
     String headerContent;
 
     /**
-     * Name
+     * The parser name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * is default flag
+     * A flag indicating if this is a default parser.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     Boolean isDefault;
 
     /**
-     * is single line content
+     * A flag indicating if this is a single line content parser.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSingleLineContent")
     Boolean isSingleLineContent;
 
     /**
-     * is system flag
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     Boolean isSystem;
 
     /**
-     * language
+     * The language.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("language")
     String language;
 
     /**
-     * last updated date
+     * The last updated date.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
 
     /**
-     * log type test request version
+     * The log type test request version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logTypeTestRequestVersion")
     Integer logTypeTestRequestVersion;
 
     /**
-     * mapped parser list
+     * The mapped parser list.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mappedParsers")
     java.util.List<LogAnalyticsParser> mappedParsers;
 
     /**
-     * parser ignore line characters
+     * The line characters for the parser to ignore.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserIgnorelineCharacters")
     String parserIgnorelineCharacters;
 
     /**
-     * is hidden flag
+     * A flag indicating if the parser is hidden or not.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
     Boolean isHidden;
 
     /**
-     * sequence
+     * The parser sequence.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserSequence")
     Integer parserSequence;
 
     /**
-     * time zone
+     * The time zone.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserTimezone")
     String parserTimezone;
@@ -501,36 +528,50 @@ public class LogAnalyticsParserSummary {
     LogAnalyticsParserFilter parserFilter;
 
     /**
-     * write once
+     * A flag indicating whther or not the parser is write once.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isParserWrittenOnce")
     Boolean isParserWrittenOnce;
 
     /**
-     * plugin instance list
+     * The parser function list.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserFunctions")
     java.util.List<LogAnalyticsParserFunction> parserFunctions;
 
     /**
-     * sources using this parser
+     * The number of sources using this parser.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourcesCount")
     Long sourcesCount;
 
     /**
-     * sources using list
+     * The list of sources using this parser.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sources")
     java.util.List<LogAnalyticsSource> sources;
 
     /**
-     * tokenize original text
+     * A flag indicating whether or not to tokenize the original text.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldTokenizeOriginalText")
     Boolean shouldTokenizeOriginalText;
+
     /**
-     * type
+     * The parser field delimiter.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("fieldDelimiter")
+    String fieldDelimiter;
+
+    /**
+     * The parser field qualifier.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("fieldQualifier")
+    String fieldQualifier;
+    /**
+     * The parser type.  Default value is REGEX.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Type {
@@ -538,6 +579,7 @@ public class LogAnalyticsParserSummary {
         Json("JSON"),
         Regex("REGEX"),
         Odl("ODL"),
+        Delimited("DELIMITED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -577,13 +619,14 @@ public class LogAnalyticsParserSummary {
         }
     };
     /**
-     * type
+     * The parser type.  Default value is REGEX.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     Type type;
 
     /**
-     * user deleted flag
+     * A flag indicating whether or not the parser has been deleted.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUserDeleted")
     Boolean isUserDeleted;

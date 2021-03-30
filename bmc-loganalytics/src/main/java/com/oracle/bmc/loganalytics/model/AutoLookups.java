@@ -69,13 +69,13 @@ public class AutoLookups {
     }
 
     /**
-     * canonical link
+     * The canonical link.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("canonicalLink")
     String canonicalLink;
 
     /**
-     * total count
+     * The total count.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalCount")
     Long totalCount;

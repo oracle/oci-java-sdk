@@ -178,6 +178,15 @@ public class DbSystemSnapshot {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isHighlyAvailable")
+        private Boolean isHighlyAvailable;
+
+        public Builder isHighlyAvailable(Boolean isHighlyAvailable) {
+            this.isHighlyAvailable = isHighlyAvailable;
+            this.__explicitlySet__.add("isHighlyAvailable");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("endpoints")
         private java.util.List<DbSystemEndpoint> endpoints;
 
@@ -238,6 +247,7 @@ public class DbSystemSnapshot {
                             ipAddress,
                             port,
                             portX,
+                            isHighlyAvailable,
                             endpoints,
                             maintenance,
                             freeformTags,
@@ -266,6 +276,7 @@ public class DbSystemSnapshot {
                             .ipAddress(o.getIpAddress())
                             .port(o.getPort())
                             .portX(o.getPortX())
+                            .isHighlyAvailable(o.getIsHighlyAvailable())
                             .endpoints(o.getEndpoints())
                             .maintenance(o.getMaintenance())
                             .freeformTags(o.getFreeformTags())
@@ -399,6 +410,14 @@ public class DbSystemSnapshot {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("portX")
     Integer portX;
+
+    /**
+     * If the policy is to enable high availability of the instance, by
+     * maintaining secondary/failover capacity as necessary.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isHighlyAvailable")
+    Boolean isHighlyAvailable;
 
     /**
      * The network endpoints available for this DB System.

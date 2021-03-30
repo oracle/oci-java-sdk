@@ -106,31 +106,31 @@ public class RegexMatchResult {
     }
 
     /**
-     * matchedLogEntryEndIndex
+     * The matched log entry end index.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchedLogEntryEndIndex")
     Integer matchedLogEntryEndIndex;
 
     /**
-     * regexScore
+     * The regular expression score.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regexScore")
     Integer regexScore;
 
     /**
-     * regexStepsInfo
+     * The regular expression steps information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regexStepsInfo")
     java.util.List<StepInfo> regexStepsInfo;
 
     /**
-     * stepCount
+     * The regular expression step count.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stepCount")
     Integer stepCount;
 
     /**
-     * subRegexesMatchInfo
+     * The regular expression match information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subRegexesMatchInfo")
     java.util.Map<String, MatchInfo> subRegexesMatchInfo;

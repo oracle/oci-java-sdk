@@ -194,6 +194,20 @@ public interface KmsManagement extends AutoCloseable {
     GetKeyVersionResponse getKeyVersion(GetKeyVersionRequest request);
 
     /**
+     * When a vault has a replica, each operation on the vault or its resources, such as
+     * keys, is replicated and has an associated replicationId. Replication status provides
+     * details about whether the operation associated with the given replicationId has been
+     * successfully applied across replicas.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GetReplicationStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetReplicationStatus API.
+     */
+    GetReplicationStatusResponse getReplicationStatus(GetReplicationStatusRequest request);
+
+    /**
      * Gets details about the public RSA wrapping key associated with the vault in the endpoint. Each vault has an RSA key-pair that wraps and
      * unwraps AES key material for import into Key Management.
      *
@@ -358,7 +372,7 @@ public interface KmsManagement extends AutoCloseable {
     /**
      * Updates the properties of a master encryption key. Specifically, you can update the
      * `displayName`, `freeformTags`, and `definedTags` properties. Furthermore,
-     * the key must in an ENABLED or CREATING state to be updated.
+     * the key must be in an `ENABLED` or `CREATING` state to be updated.
      * <p>
      * As a management operation, this call is subject to a Key Management limit that applies to the total number
      * of requests across all management write operations. Key Management might throttle this call to reject an

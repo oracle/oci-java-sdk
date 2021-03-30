@@ -90,6 +90,16 @@ public class LogAnalyticsEntityTypeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("managementAgentEligibilityStatus")
+        private ManagementAgentEligibilityStatus managementAgentEligibilityStatus;
+
+        public Builder managementAgentEligibilityStatus(
+                ManagementAgentEligibilityStatus managementAgentEligibilityStatus) {
+            this.managementAgentEligibilityStatus = managementAgentEligibilityStatus;
+            this.__explicitlySet__.add("managementAgentEligibilityStatus");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -102,7 +112,8 @@ public class LogAnalyticsEntityTypeSummary {
                             cloudType,
                             lifecycleState,
                             timeCreated,
-                            timeUpdated);
+                            timeUpdated,
+                            managementAgentEligibilityStatus);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -116,7 +127,9 @@ public class LogAnalyticsEntityTypeSummary {
                             .cloudType(o.getCloudType())
                             .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated());
+                            .timeUpdated(o.getTimeUpdated())
+                            .managementAgentEligibilityStatus(
+                                    o.getManagementAgentEligibilityStatus());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -178,6 +191,60 @@ public class LogAnalyticsEntityTypeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
+    /**
+     * This field indicates whether logs for entities of this type can be collected using a management agent.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum ManagementAgentEligibilityStatus {
+        Eligible("ELIGIBLE"),
+        Ineligible("INELIGIBLE"),
+        Unknown("UNKNOWN"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, ManagementAgentEligibilityStatus> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ManagementAgentEligibilityStatus v : ManagementAgentEligibilityStatus.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ManagementAgentEligibilityStatus(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ManagementAgentEligibilityStatus create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ManagementAgentEligibilityStatus', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * This field indicates whether logs for entities of this type can be collected using a management agent.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("managementAgentEligibilityStatus")
+    ManagementAgentEligibilityStatus managementAgentEligibilityStatus;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

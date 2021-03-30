@@ -141,49 +141,49 @@ public class UpsertLogAnalyticsAssociation {
     }
 
     /**
-     * Lama Idf
+     * The agent unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     String agentId;
 
     /**
-     * source name
+     * The source name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
     String sourceName;
 
     /**
-     * source type internal name
+     * The source type internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceTypeName")
     String sourceTypeName;
 
     /**
-     * entity GUID
+     * The entity unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     String entityId;
 
     /**
-     * entity name
+     * The entity name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
     String entityName;
 
     /**
-     * entity type internal name
+     * The entity type internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeName")
     String entityTypeName;
 
     /**
-     * host name
+     * The host name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     String host;
 
     /**
-     * log group ocid
+     * The log group unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
     String logGroupId;

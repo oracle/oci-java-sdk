@@ -114,6 +114,24 @@ public class KeyVersion {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("replicaDetails")
+        private KeyVersionReplicaDetails replicaDetails;
+
+        public Builder replicaDetails(KeyVersionReplicaDetails replicaDetails) {
+            this.replicaDetails = replicaDetails;
+            this.__explicitlySet__.add("replicaDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
+        private Boolean isPrimary;
+
+        public Builder isPrimary(Boolean isPrimary) {
+            this.isPrimary = isPrimary;
+            this.__explicitlySet__.add("isPrimary");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -129,7 +147,9 @@ public class KeyVersion {
                             timeCreated,
                             timeOfDeletion,
                             vaultId,
-                            restoredFromKeyVersionId);
+                            restoredFromKeyVersionId,
+                            replicaDetails,
+                            isPrimary);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -146,7 +166,9 @@ public class KeyVersion {
                             .timeCreated(o.getTimeCreated())
                             .timeOfDeletion(o.getTimeOfDeletion())
                             .vaultId(o.getVaultId())
-                            .restoredFromKeyVersionId(o.getRestoredFromKeyVersionId());
+                            .restoredFromKeyVersionId(o.getRestoredFromKeyVersionId())
+                            .replicaDetails(o.getReplicaDetails())
+                            .isPrimary(o.getIsPrimary());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -179,7 +201,7 @@ public class KeyVersion {
     String keyId;
 
     /**
-     * The public key in PEM format which will be populated only in case of RSA and ECDSA keys.
+     * The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
@@ -335,6 +357,12 @@ public class KeyVersion {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("restoredFromKeyVersionId")
     String restoredFromKeyVersionId;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("replicaDetails")
+    KeyVersionReplicaDetails replicaDetails;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
+    Boolean isPrimary;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

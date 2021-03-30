@@ -32,8 +32,11 @@
         <fileSet>
             <directory>${project.build.directory}</directory>
             <includes>
-                <include>oci-java-sdk-addons-resteasy-client-configurator-${project.version}-*.jar</include>
+                <include>${project.artifactId}-${project.version}-*.jar</include>
             </includes>
+            <excludes>
+                <exclude>${project.artifactId}-${project.version}-signed.jar</exclude>
+            </excludes>
             <outputDirectory>lib</outputDirectory>
         </fileSet>
     </fileSets>
@@ -44,7 +47,7 @@
         <file>
             <source>${source.jar.for.zip}</source>
             <outputDirectory>lib</outputDirectory>
-            <destName>oci-java-sdk-addons-resteasy-client-configurator-${project.version}.jar</destName>
+            <destName>${project.artifactId}-${project.version}.jar</destName>
         </file>
     </files>
     <dependencySets>

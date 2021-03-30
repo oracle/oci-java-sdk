@@ -86,6 +86,14 @@ public class ListUploadsConverter {
                                     request.getSortBy().getValue()));
         }
 
+        if (request.getWarningsFilter() != null) {
+            target =
+                    target.queryParam(
+                            "warningsFilter",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getWarningsFilter().getValue()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

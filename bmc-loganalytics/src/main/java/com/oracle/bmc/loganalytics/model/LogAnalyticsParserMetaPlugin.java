@@ -95,25 +95,25 @@ public class LogAnalyticsParserMetaPlugin {
     }
 
     /**
-     * parameter list
+     * An array of plugin parameters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metaPluginParameters")
     java.util.List<LogAnalyticsParserMetaPluginParameter> metaPluginParameters;
 
     /**
-     * plugin description
+     * The plugin description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * plugin display name
+     * The plugin display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * plugin internal name
+     * The plugin internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;

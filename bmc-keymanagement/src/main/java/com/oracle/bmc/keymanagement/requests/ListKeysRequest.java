@@ -9,7 +9,13 @@ import com.oracle.bmc.keymanagement.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ListKeysExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListKeysRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-@lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
+@lombok.Builder(
+    builderClassName = "Builder",
+    buildMethodName = "buildWithoutInvocationCallback",
+    toBuilder = true
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ListKeysRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -178,13 +184,13 @@ public class ListKeysRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
     };
     /**
-     * The algorithm used by a key's key versions to encrypt or decrypt. Currently, only AES, RSA and ECDSA are supported.
+     * The algorithm used by a key's key versions to encrypt or decrypt data. Currently, support includes AES, RSA, and ECDSA algorithms.
      *
      */
     private Algorithm algorithm;
 
     /**
-     * The algorithm used by a key's key versions to encrypt or decrypt. Currently, only AES, RSA and ECDSA are supported.
+     * The algorithm used by a key's key versions to encrypt or decrypt data. Currently, support includes AES, RSA, and ECDSA algorithms.
      *
      **/
     public enum Algorithm {
@@ -221,19 +227,19 @@ public class ListKeysRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
     };
     /**
-     * The length of the key in bytes, expressed as an integer. Values of 16, 24, 32 are supported.
+     * The length of the key in bytes, expressed as an integer. Supported values include 16, 24, or 32.
      *
      */
     private Integer length;
 
     /**
-     * The curve Id of the keys in case of ECDSA keys
+     * The curve ID of the keys. (This pertains only to ECDSA keys.)
      *
      */
     private CurveId curveId;
 
     /**
-     * The curve Id of the keys in case of ECDSA keys
+     * The curve ID of the keys. (This pertains only to ECDSA keys.)
      *
      **/
     public enum CurveId {

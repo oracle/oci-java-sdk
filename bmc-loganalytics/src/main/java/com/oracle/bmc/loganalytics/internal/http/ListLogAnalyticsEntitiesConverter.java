@@ -127,6 +127,23 @@ public class ListLogAnalyticsEntitiesConverter {
                                     request.getSourceId()));
         }
 
+        if (request.getCreationSourceType() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "creationSourceType",
+                            request.getCreationSourceType(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getCreationSourceDetails() != null) {
+            target =
+                    target.queryParam(
+                            "creationSourceDetails",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCreationSourceDetails()));
+        }
+
         if (request.getLimit() != null) {
             target =
                     target.queryParam(

@@ -61,7 +61,7 @@ public class AssociationSummaryReport {
     }
 
     /**
-     * association count
+     * The association count.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("associationCount")
     Integer associationCount;

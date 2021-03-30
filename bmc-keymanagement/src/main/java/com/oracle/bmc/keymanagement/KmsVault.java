@@ -118,6 +118,42 @@ public interface KmsVault extends AutoCloseable {
     CreateVaultResponse createVault(CreateVaultRequest request);
 
     /**
+     * Creates a replica for the vault in another region in the same realm
+     * <p>
+     * The API is a no-op if called for same region that a vault is already replicated to.
+     * 409 if called on a vault that is already replicated to a different region. Users need to delete
+     * existing replica first before calling it with a different region.
+     * <p>
+     * As a provisioning operation, this call is subject to a Key Management limit that applies to
+     * the total number of requests across all provisioning write operations. Key Management might
+     * throttle this call to reject an otherwise valid request when the total rate of provisioning
+     * write operations exceeds 10 requests per second for a given tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/CreateVaultReplicaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVaultReplica API.
+     */
+    CreateVaultReplicaResponse createVaultReplica(CreateVaultReplicaRequest request);
+
+    /**
+     * Deletes a vault replica
+     * <p>
+     * As a provisioning operation, this call is subject to a Key Management limit that applies to
+     * the total number of requests across all provisioning write operations. Key Management might
+     * throttle this call to reject an otherwise valid request when the total rate of provisioning
+     * write operations exceeds 10 requests per second for a given tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/DeleteVaultReplicaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVaultReplica API.
+     */
+    DeleteVaultReplicaResponse deleteVaultReplica(DeleteVaultReplicaRequest request);
+
+    /**
      * Gets the specified vault's configuration information.
      * <p>
      * As a provisioning operation, this call is subject to a Key Management limit that applies to
@@ -143,6 +179,22 @@ public interface KmsVault extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GetVaultUsageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVaultUsage API.
      */
     GetVaultUsageResponse getVaultUsage(GetVaultUsageRequest request);
+
+    /**
+     * Lists the replicas for a vault
+     * <p>
+     * As a provisioning operation, this call is subject to a Key Management limit that applies to
+     * the total number of requests across all provisioning write operations. Key Management might
+     * throttle this call to reject an otherwise valid request when the total rate of provisioning
+     * write operations exceeds 10 requests per second for a given tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ListVaultReplicasExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVaultReplicas API.
+     */
+    ListVaultReplicasResponse listVaultReplicas(ListVaultReplicasRequest request);
 
     /**
      * Lists the vaults in the specified compartment.

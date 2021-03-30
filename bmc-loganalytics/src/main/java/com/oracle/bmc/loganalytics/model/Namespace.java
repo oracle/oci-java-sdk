@@ -51,11 +51,21 @@ public class Namespace {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isLogSetEnabled")
+        private Boolean isLogSetEnabled;
+
+        public Builder isLogSetEnabled(Boolean isLogSetEnabled) {
+            this.isLogSetEnabled = isLogSetEnabled;
+            this.__explicitlySet__.add("isLogSetEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Namespace build() {
-            Namespace __instance__ = new Namespace(namespaceName, compartmentId, isOnboarded);
+            Namespace __instance__ =
+                    new Namespace(namespaceName, compartmentId, isOnboarded, isLogSetEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -65,7 +75,8 @@ public class Namespace {
             Builder copiedBuilder =
                     namespaceName(o.getNamespaceName())
                             .compartmentId(o.getCompartmentId())
-                            .isOnboarded(o.getIsOnboarded());
+                            .isOnboarded(o.getIsOnboarded())
+                            .isLogSetEnabled(o.getIsLogSetEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -96,6 +107,12 @@ public class Namespace {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOnboarded")
     Boolean isOnboarded;
+
+    /**
+     * This indicates if the log set feature is enabled for the tenancy
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isLogSetEnabled")
+    Boolean isLogSetEnabled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

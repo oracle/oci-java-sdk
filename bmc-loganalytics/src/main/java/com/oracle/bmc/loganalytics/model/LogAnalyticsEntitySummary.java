@@ -153,6 +153,15 @@ public class LogAnalyticsEntitySummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("creationSource")
+        private CreationSource creationSource;
+
+        public Builder creationSource(CreationSource creationSource) {
+            this.creationSource = creationSource;
+            this.__explicitlySet__.add("creationSource");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -192,6 +201,7 @@ public class LogAnalyticsEntitySummary {
                             timeUpdated,
                             areLogsCollected,
                             sourceId,
+                            creationSource,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -215,6 +225,7 @@ public class LogAnalyticsEntitySummary {
                             .timeUpdated(o.getTimeUpdated())
                             .areLogsCollected(o.getAreLogsCollected())
                             .sourceId(o.getSourceId())
+                            .creationSource(o.getCreationSource())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -328,6 +339,9 @@ public class LogAnalyticsEntitySummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     String sourceId;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("creationSource")
+    CreationSource creationSource;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.

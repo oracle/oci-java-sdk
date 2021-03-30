@@ -9,7 +9,13 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListWarningsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWarningsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
+@lombok.Builder(
+    builderClassName = "Builder",
+    buildMethodName = "buildWithoutInvocationCallback",
+    toBuilder = true
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -74,12 +80,14 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
     /**
-     * sourceName
+     * The source name.
      */
     private String sourceName;
 
     /**
-     * sourcePattern
+     * The source pattern used for filtering.  Only warnings associated with a source with the
+     * specified pattern will be returned.
+     *
      */
     private String sourcePattern;
 
@@ -89,12 +97,16 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
     private String warningMessage;
 
     /**
-     * entityName
+     * The entity name used for filtering.  Only warnings associated with an entity with the
+     * specified name will be returned.
+     *
      */
     private String entityName;
 
     /**
-     * entity type name
+     * The entity type used for filtering.  Only associations on an entity with the
+     * specified type will be returned.
+     *
      */
     private String entityType;
 
@@ -104,7 +116,10 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
     private String warningType;
 
     /**
-     * isNoSource
+     * A flag indicating whether to filter warnings based on source display name or on warning level.
+     * A value of true will filter based on warning level (rule, source, or pattern), while a
+     * value of false will filter based on source display name.
+     *
      */
     private Boolean isNoSource;
 

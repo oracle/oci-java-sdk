@@ -130,43 +130,43 @@ public class AbstractParserTestResultLogEntry {
     }
 
     /**
-     * extra info attributes
+     * Extra information attributes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extraInfoAttributes")
     java.util.Map<String, String> extraInfoAttributes;
 
     /**
-     * field name value map
+     * The field name value map.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldNameValueMap")
     java.util.Map<String, String> fieldNameValueMap;
 
     /**
-     * field position value map
+     * The field position value map.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldPositionValueMap")
     java.util.Map<String, String> fieldPositionValueMap;
 
     /**
-     * fields
+     * The parser fields.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fields")
     java.util.Map<String, String> fields;
 
     /**
-     * log entry
+     * The log entry.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logEntry")
     String logEntry;
 
     /**
-     * match status
+     * The match status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchStatus")
     String matchStatus;
 
     /**
-     * match status description
+     * The match status description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchStatusDescription")
     String matchStatusDescription;

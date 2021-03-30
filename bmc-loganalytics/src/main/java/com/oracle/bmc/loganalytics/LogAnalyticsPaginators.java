@@ -31,6 +31,121 @@ public class LogAnalyticsPaginators {
     private final LogAnalytics client;
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listAssociableEntities operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAssociableEntitiesResponse> listAssociableEntitiesResponseIterator(
+            final ListAssociableEntitiesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAssociableEntitiesRequest.Builder, ListAssociableEntitiesRequest,
+                ListAssociableEntitiesResponse>(
+                new com.google.common.base.Supplier<ListAssociableEntitiesRequest.Builder>() {
+                    @Override
+                    public ListAssociableEntitiesRequest.Builder get() {
+                        return ListAssociableEntitiesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListAssociableEntitiesResponse, String>() {
+                    @Override
+                    public String apply(ListAssociableEntitiesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAssociableEntitiesRequest.Builder>,
+                        ListAssociableEntitiesRequest>() {
+                    @Override
+                    public ListAssociableEntitiesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAssociableEntitiesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAssociableEntitiesRequest, ListAssociableEntitiesResponse>() {
+                    @Override
+                    public ListAssociableEntitiesResponse apply(
+                            ListAssociableEntitiesRequest request) {
+                        return client.listAssociableEntities(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.loganalytics.model.AssociableEntity} objects
+     * contained in responses from the listAssociableEntities operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.loganalytics.model.AssociableEntity} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.loganalytics.model.AssociableEntity>
+            listAssociableEntitiesRecordIterator(final ListAssociableEntitiesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAssociableEntitiesRequest.Builder, ListAssociableEntitiesRequest,
+                ListAssociableEntitiesResponse, com.oracle.bmc.loganalytics.model.AssociableEntity>(
+                new com.google.common.base.Supplier<ListAssociableEntitiesRequest.Builder>() {
+                    @Override
+                    public ListAssociableEntitiesRequest.Builder get() {
+                        return ListAssociableEntitiesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListAssociableEntitiesResponse, String>() {
+                    @Override
+                    public String apply(ListAssociableEntitiesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAssociableEntitiesRequest.Builder>,
+                        ListAssociableEntitiesRequest>() {
+                    @Override
+                    public ListAssociableEntitiesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAssociableEntitiesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAssociableEntitiesRequest, ListAssociableEntitiesResponse>() {
+                    @Override
+                    public ListAssociableEntitiesResponse apply(
+                            ListAssociableEntitiesRequest request) {
+                        return client.listAssociableEntities(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAssociableEntitiesResponse,
+                        java.util.List<com.oracle.bmc.loganalytics.model.AssociableEntity>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.loganalytics.model.AssociableEntity> apply(
+                            ListAssociableEntitiesResponse response) {
+                        return response.getAssociableEntityCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listAssociatedEntities operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -144,6 +259,120 @@ public class LogAnalyticsPaginators {
                                     com.oracle.bmc.loganalytics.model.LogAnalyticsAssociatedEntity>
                             apply(ListAssociatedEntitiesResponse response) {
                         return response.getLogAnalyticsAssociatedEntityCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listAutoAssociations operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAutoAssociationsResponse> listAutoAssociationsResponseIterator(
+            final ListAutoAssociationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAutoAssociationsRequest.Builder, ListAutoAssociationsRequest,
+                ListAutoAssociationsResponse>(
+                new com.google.common.base.Supplier<ListAutoAssociationsRequest.Builder>() {
+                    @Override
+                    public ListAutoAssociationsRequest.Builder get() {
+                        return ListAutoAssociationsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListAutoAssociationsResponse, String>() {
+                    @Override
+                    public String apply(ListAutoAssociationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAutoAssociationsRequest.Builder>,
+                        ListAutoAssociationsRequest>() {
+                    @Override
+                    public ListAutoAssociationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAutoAssociationsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutoAssociationsRequest, ListAutoAssociationsResponse>() {
+                    @Override
+                    public ListAutoAssociationsResponse apply(ListAutoAssociationsRequest request) {
+                        return client.listAutoAssociations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.loganalytics.model.AutoAssociationState} objects
+     * contained in responses from the listAutoAssociations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.loganalytics.model.AutoAssociationState} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.loganalytics.model.AutoAssociationState>
+            listAutoAssociationsRecordIterator(final ListAutoAssociationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAutoAssociationsRequest.Builder, ListAutoAssociationsRequest,
+                ListAutoAssociationsResponse,
+                com.oracle.bmc.loganalytics.model.AutoAssociationState>(
+                new com.google.common.base.Supplier<ListAutoAssociationsRequest.Builder>() {
+                    @Override
+                    public ListAutoAssociationsRequest.Builder get() {
+                        return ListAutoAssociationsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListAutoAssociationsResponse, String>() {
+                    @Override
+                    public String apply(ListAutoAssociationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAutoAssociationsRequest.Builder>,
+                        ListAutoAssociationsRequest>() {
+                    @Override
+                    public ListAutoAssociationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAutoAssociationsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutoAssociationsRequest, ListAutoAssociationsResponse>() {
+                    @Override
+                    public ListAutoAssociationsResponse apply(ListAutoAssociationsRequest request) {
+                        return client.listAutoAssociations(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutoAssociationsResponse,
+                        java.util.List<com.oracle.bmc.loganalytics.model.AutoAssociationState>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.loganalytics.model.AutoAssociationState>
+                            apply(ListAutoAssociationsResponse response) {
+                        return response.getAutoAssociationCollection().getItems();
                     }
                 });
     }
@@ -958,6 +1187,125 @@ public class LogAnalyticsPaginators {
                                     com.oracle.bmc.loganalytics.model.LogAnalyticsLabelSummary>
                             apply(ListLabelsResponse response) {
                         return response.getLogAnalyticsLabelCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listLogAnalyticsEmBridges operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListLogAnalyticsEmBridgesResponse> listLogAnalyticsEmBridgesResponseIterator(
+            final ListLogAnalyticsEmBridgesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListLogAnalyticsEmBridgesRequest.Builder, ListLogAnalyticsEmBridgesRequest,
+                ListLogAnalyticsEmBridgesResponse>(
+                new com.google.common.base.Supplier<ListLogAnalyticsEmBridgesRequest.Builder>() {
+                    @Override
+                    public ListLogAnalyticsEmBridgesRequest.Builder get() {
+                        return ListLogAnalyticsEmBridgesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListLogAnalyticsEmBridgesResponse, String>() {
+                    @Override
+                    public String apply(ListLogAnalyticsEmBridgesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListLogAnalyticsEmBridgesRequest.Builder>,
+                        ListLogAnalyticsEmBridgesRequest>() {
+                    @Override
+                    public ListLogAnalyticsEmBridgesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListLogAnalyticsEmBridgesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListLogAnalyticsEmBridgesRequest, ListLogAnalyticsEmBridgesResponse>() {
+                    @Override
+                    public ListLogAnalyticsEmBridgesResponse apply(
+                            ListLogAnalyticsEmBridgesRequest request) {
+                        return client.listLogAnalyticsEmBridges(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.loganalytics.model.LogAnalyticsEmBridgeSummary} objects
+     * contained in responses from the listLogAnalyticsEmBridges operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.loganalytics.model.LogAnalyticsEmBridgeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.loganalytics.model.LogAnalyticsEmBridgeSummary>
+            listLogAnalyticsEmBridgesRecordIterator(
+                    final ListLogAnalyticsEmBridgesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListLogAnalyticsEmBridgesRequest.Builder, ListLogAnalyticsEmBridgesRequest,
+                ListLogAnalyticsEmBridgesResponse,
+                com.oracle.bmc.loganalytics.model.LogAnalyticsEmBridgeSummary>(
+                new com.google.common.base.Supplier<ListLogAnalyticsEmBridgesRequest.Builder>() {
+                    @Override
+                    public ListLogAnalyticsEmBridgesRequest.Builder get() {
+                        return ListLogAnalyticsEmBridgesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListLogAnalyticsEmBridgesResponse, String>() {
+                    @Override
+                    public String apply(ListLogAnalyticsEmBridgesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListLogAnalyticsEmBridgesRequest.Builder>,
+                        ListLogAnalyticsEmBridgesRequest>() {
+                    @Override
+                    public ListLogAnalyticsEmBridgesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListLogAnalyticsEmBridgesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListLogAnalyticsEmBridgesRequest, ListLogAnalyticsEmBridgesResponse>() {
+                    @Override
+                    public ListLogAnalyticsEmBridgesResponse apply(
+                            ListLogAnalyticsEmBridgesRequest request) {
+                        return client.listLogAnalyticsEmBridges(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListLogAnalyticsEmBridgesResponse,
+                        java.util.List<
+                                com.oracle.bmc.loganalytics.model.LogAnalyticsEmBridgeSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.loganalytics.model.LogAnalyticsEmBridgeSummary>
+                            apply(ListLogAnalyticsEmBridgesResponse response) {
+                        return response.getLogAnalyticsEmBridgeCollection().getItems();
                     }
                 });
     }
@@ -2477,6 +2825,119 @@ public class LogAnalyticsPaginators {
                     public java.util.List<com.oracle.bmc.loganalytics.model.LogAnalyticsAssociation>
                             apply(ListSourceAssociationsResponse response) {
                         return response.getLogAnalyticsAssociationCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listSourceEventTypes operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListSourceEventTypesResponse> listSourceEventTypesResponseIterator(
+            final ListSourceEventTypesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSourceEventTypesRequest.Builder, ListSourceEventTypesRequest,
+                ListSourceEventTypesResponse>(
+                new com.google.common.base.Supplier<ListSourceEventTypesRequest.Builder>() {
+                    @Override
+                    public ListSourceEventTypesRequest.Builder get() {
+                        return ListSourceEventTypesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSourceEventTypesResponse, String>() {
+                    @Override
+                    public String apply(ListSourceEventTypesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSourceEventTypesRequest.Builder>,
+                        ListSourceEventTypesRequest>() {
+                    @Override
+                    public ListSourceEventTypesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSourceEventTypesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSourceEventTypesRequest, ListSourceEventTypesResponse>() {
+                    @Override
+                    public ListSourceEventTypesResponse apply(ListSourceEventTypesRequest request) {
+                        return client.listSourceEventTypes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.loganalytics.model.EventType} objects
+     * contained in responses from the listSourceEventTypes operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.loganalytics.model.EventType} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.loganalytics.model.EventType> listSourceEventTypesRecordIterator(
+            final ListSourceEventTypesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSourceEventTypesRequest.Builder, ListSourceEventTypesRequest,
+                ListSourceEventTypesResponse, com.oracle.bmc.loganalytics.model.EventType>(
+                new com.google.common.base.Supplier<ListSourceEventTypesRequest.Builder>() {
+                    @Override
+                    public ListSourceEventTypesRequest.Builder get() {
+                        return ListSourceEventTypesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSourceEventTypesResponse, String>() {
+                    @Override
+                    public String apply(ListSourceEventTypesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSourceEventTypesRequest.Builder>,
+                        ListSourceEventTypesRequest>() {
+                    @Override
+                    public ListSourceEventTypesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSourceEventTypesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSourceEventTypesRequest, ListSourceEventTypesResponse>() {
+                    @Override
+                    public ListSourceEventTypesResponse apply(ListSourceEventTypesRequest request) {
+                        return client.listSourceEventTypes(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSourceEventTypesResponse,
+                        java.util.List<com.oracle.bmc.loganalytics.model.EventType>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.loganalytics.model.EventType> apply(
+                            ListSourceEventTypesResponse response) {
+                        return response.getEventTypeCollection().getItems();
                     }
                 });
     }

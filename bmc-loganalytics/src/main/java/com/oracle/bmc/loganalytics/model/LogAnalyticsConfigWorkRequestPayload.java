@@ -94,19 +94,19 @@ public class LogAnalyticsConfigWorkRequestPayload {
     }
 
     /**
-     * sourceName
+     * The source name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
     String sourceName;
 
     /**
-     * entityId
+     * The entity unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     String entityId;
 
     /**
-     * lookupReference
+     * The lookup reference as an integer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lookupReference")
     Long lookupReference;

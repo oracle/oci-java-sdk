@@ -252,109 +252,114 @@ public class LogAnalyticsSourceLabelCondition {
     }
 
     /**
-     * message
+     * The message.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     String message;
 
     /**
-     * visible flag
+     * A flag indicating whether or not the label condition is visible.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isVisible")
     Boolean isVisible;
 
     /**
-     * block condition field
+     * The block condition field.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockConditionField")
     String blockConditionField;
 
     /**
-     * block condition operator
+     * The block condition operator.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockConditionOperator")
     String blockConditionOperator;
 
     /**
-     * block condition value
+     * The block condition value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockConditionValue")
     String blockConditionValue;
 
     /**
-     * condition value
+     * The condition value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labelConditionValue")
     String labelConditionValue;
 
     /**
-     * list of condition values
+     * A list of condition values.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labelConditionValues")
     java.util.List<String> labelConditionValues;
 
     /**
-     * content example
+     * The content example.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentExample")
     String contentExample;
 
     /**
-     * enabled
+     * A flag inidcating whether or not the condition is enabled.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     Boolean isEnabled;
 
     /**
-     * field internal name
+     * The internal field name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
     String fieldName;
 
     /**
-     * Id
+     * The unique identifier of the condition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labelConditionId")
     Long labelConditionId;
 
     /**
-     * is system flag
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     Boolean isSystem;
 
     /**
-     * operator
+     * The condition operator.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labelConditionOperator")
     String labelConditionOperator;
 
     /**
-     * source Id
+     * The unique identifier of the source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     Long sourceId;
 
     /**
-     * label display name
+     * The label display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labelDisplayName")
     String labelDisplayName;
 
     /**
-     * label storage field
+     * The label storage field.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageField")
     String storageField;
 
     /**
-     * label name
+     * The label name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labelName")
     String labelName;
 
     /**
-     * inline label exists in DB flag
+     * A flag indicating whether or not the inline label exists in the database.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isInlineLabelExistingInDatabase")
     Boolean isInlineLabelExistingInDatabase;

@@ -9,7 +9,13 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ImportCustomContentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ImportCustomContentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
+@lombok.Builder(
+    builderClassName = "Builder",
+    buildMethodName = "buildWithoutInvocationCallback",
+    toBuilder = true
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ImportCustomContentRequest
         extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream> {
@@ -26,7 +32,9 @@ public class ImportCustomContentRequest
     private java.io.InputStream importCustomContentFileBody;
 
     /**
-     * is overwrite
+     * A flag indicating whether or not to overwrite existing content if a conflict is
+     * found during import content operation.
+     *
      */
     private Boolean isOverwrite;
 

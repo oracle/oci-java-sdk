@@ -71,6 +71,15 @@ public class RequestSummarizedUsagesDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("forecast")
+        private Forecast forecast;
+
+        public Builder forecast(Forecast forecast) {
+            this.forecast = forecast;
+            this.__explicitlySet__.add("forecast");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("queryType")
         private QueryType queryType;
 
@@ -127,6 +136,7 @@ public class RequestSummarizedUsagesDetails {
                             timeUsageEnded,
                             granularity,
                             isAggregateByTime,
+                            forecast,
                             queryType,
                             groupBy,
                             groupByTag,
@@ -144,6 +154,7 @@ public class RequestSummarizedUsagesDetails {
                             .timeUsageEnded(o.getTimeUsageEnded())
                             .granularity(o.getGranularity())
                             .isAggregateByTime(o.getIsAggregateByTime())
+                            .forecast(o.getForecast())
                             .queryType(o.getQueryType())
                             .groupBy(o.getGroupBy())
                             .groupByTag(o.getGroupByTag())
@@ -163,7 +174,7 @@ public class RequestSummarizedUsagesDetails {
     }
 
     /**
-     * Tenant ID
+     * Tenant ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     String tenantId;
@@ -237,6 +248,9 @@ public class RequestSummarizedUsagesDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAggregateByTime")
     Boolean isAggregateByTime;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("forecast")
+    Forecast forecast;
     /**
      * The query usage type. COST by default if it is missing
      * Usage - Query the usage data.

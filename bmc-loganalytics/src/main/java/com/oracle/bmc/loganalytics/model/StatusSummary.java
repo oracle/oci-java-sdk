@@ -102,31 +102,31 @@ public class StatusSummary {
     }
 
     /**
-     * chunks processed
+     * The number of chunks processed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("chunksProcessed")
     Long chunksProcessed;
 
     /**
-     * failure details
+     * The failure details, if any.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failureDetails")
     String failureDetails;
 
     /**
-     * filename
+     * The filename.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filename")
     String filename;
 
     /**
-     * status
+     * The status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     String status;
 
     /**
-     * total chunks
+     * The total number of chunks.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalChunks")
     Long totalChunks;

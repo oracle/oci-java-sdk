@@ -131,16 +131,16 @@ public class KeyShape {
     Algorithm algorithm;
 
     /**
-     * The length of the key in bytes, expressed as an integer. Values supported:
-     *   - AES: 16, 24 or 32
-     *   - RSA: 256, 384 or 512
-     *   - ECDSA: 32, 48, 66
+     * The length of the key in bytes, expressed as an integer. Supported values include the following:
+     *   - AES: 16, 24, or 32
+     *   - RSA: 256, 384, or 512
+     *   - ECDSA: 32, 48, or 66
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("length")
     Integer length;
     /**
-     * Supported curve Ids for ECDSA keys
+     * Supported curve IDs for ECDSA keys.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum CurveId {
@@ -187,7 +187,7 @@ public class KeyShape {
         }
     };
     /**
-     * Supported curve Ids for ECDSA keys
+     * Supported curve IDs for ECDSA keys.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("curveId")
     CurveId curveId;

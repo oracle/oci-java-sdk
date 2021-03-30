@@ -218,72 +218,74 @@ public class LogAnalyticsLabelView {
     }
 
     /**
-     * alias list
+     * An arrya of label aliases.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("aliases")
     java.util.List<LogAnalyticsLabelAlias> aliases;
 
     /**
-     * alert rule usage count
+     * The label alert rule usage count.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("countUsageInAlertRule")
     Long countUsageInAlertRule;
 
     /**
-     * source usage count
+     * The label source usage count.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("countUsageInSource")
     Long countUsageInSource;
 
     /**
-     * id
+     * The label unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     Object id;
 
     /**
-     * suggest type
+     * The label suggestion type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("suggestType")
     Long suggestType;
 
     /**
-     * label description
+     * The label description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * label display name
+     * The label display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * tag edit version
+     * The label edit version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
     Long editVersion;
 
     /**
-     * label impact
+     * The label impact.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("impact")
     String impact;
 
     /**
-     * is system flag
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     Boolean isSystem;
 
     /**
-     * label name
+     * The label name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
     /**
-     * priority
+     * The label priority.  Default value is NONE.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Priority {
@@ -331,25 +333,26 @@ public class LogAnalyticsLabelView {
         }
     };
     /**
-     * priority
+     * The label priority.  Default value is NONE.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
     Priority priority;
 
     /**
-     * recommendation
+     * The label recommendation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
     String recommendation;
 
     /**
-     * type
+     * The label type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     Long type;
 
     /**
-     * user deleted flag
+     * A flag indicating whether or not the label has been deleted.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUserDeleted")
     Boolean isUserDeleted;

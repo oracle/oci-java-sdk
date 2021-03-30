@@ -59,7 +59,7 @@ public class LabelNames {
     }
 
     /**
-     * string list
+     * An array of label names.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labelNames")
     java.util.List<String> labelNames;

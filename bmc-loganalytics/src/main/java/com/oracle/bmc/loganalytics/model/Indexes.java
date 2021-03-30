@@ -68,13 +68,13 @@ public class Indexes {
     }
 
     /**
-     * endIndex
+     * The end index.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endIndex")
     Integer endIndex;
 
     /**
-     * startIndex
+     * The start index.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("startIndex")
     Integer startIndex;

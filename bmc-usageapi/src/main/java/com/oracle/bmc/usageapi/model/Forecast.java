@@ -5,7 +5,7 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * Forcast configuration of usage/cost.
+ * Forecast configuration of usage/cost.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -24,12 +24,12 @@ public class Forecast {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("forcastType")
-        private ForcastType forcastType;
+        @com.fasterxml.jackson.annotation.JsonProperty("forecastType")
+        private ForecastType forecastType;
 
-        public Builder forcastType(ForcastType forcastType) {
-            this.forcastType = forcastType;
-            this.__explicitlySet__.add("forcastType");
+        public Builder forecastType(ForecastType forecastType) {
+            this.forecastType = forecastType;
+            this.__explicitlySet__.add("forecastType");
             return this;
         }
 
@@ -56,7 +56,7 @@ public class Forecast {
 
         public Forecast build() {
             Forecast __instance__ =
-                    new Forecast(forcastType, timeForecastStarted, timeForecastEnded);
+                    new Forecast(forecastType, timeForecastStarted, timeForecastEnded);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -64,7 +64,7 @@ public class Forecast {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Forecast o) {
             Builder copiedBuilder =
-                    forcastType(o.getForcastType())
+                    forecastType(o.getForecastType())
                             .timeForecastStarted(o.getTimeForecastStarted())
                             .timeForecastEnded(o.getTimeForecastEnded());
 
@@ -83,21 +83,29 @@ public class Forecast {
     /**
      * BASIC uses ETS to project future usage/cost based on history data. The basis for projections will be a rolling set of equivalent historical days for which projection is being made.
      **/
-    public enum ForcastType {
+    @lombok.extern.slf4j.Slf4j
+    public enum ForecastType {
         Basic("BASIC"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
 
         private final String value;
-        private static java.util.Map<String, ForcastType> map;
+        private static java.util.Map<String, ForecastType> map;
 
         static {
             map = new java.util.HashMap<>();
-            for (ForcastType v : ForcastType.values()) {
-                map.put(v.getValue(), v);
+            for (ForecastType v : ForecastType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
-        ForcastType(String value) {
+        ForecastType(String value) {
             this.value = value;
         }
 
@@ -107,21 +115,24 @@ public class Forecast {
         }
 
         @com.fasterxml.jackson.annotation.JsonCreator
-        public static ForcastType create(String key) {
+        public static ForecastType create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid ForcastType: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ForecastType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**
      * BASIC uses ETS to project future usage/cost based on history data. The basis for projections will be a rolling set of equivalent historical days for which projection is being made.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("forcastType")
-    ForcastType forcastType;
+    @com.fasterxml.jackson.annotation.JsonProperty("forecastType")
+    ForecastType forecastType;
 
     /**
-     * forecast start time.
+     * forecast start time. Will default to UTC-1 if not specified
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeForecastStarted")
     java.util.Date timeForecastStarted;

@@ -9,7 +9,13 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListLogAnalyticsEntitiesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListLogAnalyticsEntitiesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
+@lombok.Builder(
+    builderClassName = "Builder",
+    buildMethodName = "buildWithoutInvocationCallback",
+    toBuilder = true
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ListLogAnalyticsEntitiesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
@@ -125,6 +131,18 @@ public class ListLogAnalyticsEntitiesRequest
      *
      */
     private String sourceId;
+
+    /**
+     * A filter to return only those log analytics entities with the specified auto-creation source.
+     *
+     */
+    private java.util.List<com.oracle.bmc.loganalytics.model.CreationSourceType> creationSourceType;
+
+    /**
+     * A filter to return only log analytics entities whose auto-creation source details contains the specified string.
+     *
+     */
+    private String creationSourceDetails;
 
     /**
      * The maximum number of items to return.
@@ -275,6 +293,8 @@ public class ListLogAnalyticsEntitiesRequest
             hostname(o.getHostname());
             hostnameContains(o.getHostnameContains());
             sourceId(o.getSourceId());
+            creationSourceType(o.getCreationSourceType());
+            creationSourceDetails(o.getCreationSourceDetails());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());

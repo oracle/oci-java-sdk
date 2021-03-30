@@ -71,13 +71,13 @@ public class LogAnalyticsLabelOperator {
     }
 
     /**
-     * operator display name
+     * The operator display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * operator internal name
+     * The operator internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;

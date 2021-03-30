@@ -196,60 +196,62 @@ public class LogAnalyticsLabelSummary {
     }
 
     /**
-     * alias list
+     * The alias list.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("aliases")
     java.util.List<LogAnalyticsLabelAlias> aliases;
 
     /**
-     * count usage in source
+     * The source usage count for this label.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("countUsageInSource")
     Long countUsageInSource;
 
     /**
-     * suggest type
+     * The type of suggestion for label usage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("suggestType")
     Long suggestType;
 
     /**
-     * description
+     * The label description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * display name
+     * The label display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * edit version
+     * The label edit version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
     Long editVersion;
 
     /**
-     * impact
+     * The label impact.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("impact")
     String impact;
 
     /**
-     * is system flag
+     * The system flag.  A value of false denotes a custom, or user
+     * defined label.  A value of true denotes a built in label.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     Boolean isSystem;
 
     /**
-     * label identifier
+     * The label name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
     /**
-     * Valid values are (NONE, LOW, HIGH). NONE is default.
+     * The label priority. Valid values are (NONE, LOW, HIGH). NONE is default.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Priority {
@@ -297,18 +299,18 @@ public class LogAnalyticsLabelSummary {
         }
     };
     /**
-     * Valid values are (NONE, LOW, HIGH). NONE is default.
+     * The label priority. Valid values are (NONE, LOW, HIGH). NONE is default.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
     Priority priority;
 
     /**
-     * tag recommendation
+     * The label recommendation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
     String recommendation;
     /**
-     * Valid values are (INFO, PROBLEM). INFO is default.
+     * The label type.  Valid values are (INFO, PROBLEM). INFO is default.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Type {
@@ -353,13 +355,14 @@ public class LogAnalyticsLabelSummary {
         }
     };
     /**
-     * Valid values are (INFO, PROBLEM). INFO is default.
+     * The label type.  Valid values are (INFO, PROBLEM). INFO is default.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     Type type;
 
     /**
-     * user deleted flag
+     * A flag indicating whether or not the label has been deleted.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUserDeleted")
     Boolean isUserDeleted;

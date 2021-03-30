@@ -102,31 +102,31 @@ public class ParserTestResult {
     }
 
     /**
-     * additional info
+     * Additional information for the test result.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalInfo")
     java.util.Map<String, String> additionalInfo;
 
     /**
-     * entries
+     * The test result log entries.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entries")
     java.util.List<AbstractParserTestResultLogEntry> entries;
 
     /**
-     * example content
+     * The example content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exampleContent")
     String exampleContent;
 
     /**
-     * lines
+     * The test result log lines.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lines")
     java.util.List<AbstractParserTestResultLogLine> lines;
 
     /**
-     * named capture groups
+     * The named capture groups.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namedCaptureGroups")
     java.util.List<String> namedCaptureGroups;

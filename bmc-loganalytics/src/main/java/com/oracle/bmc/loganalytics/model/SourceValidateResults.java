@@ -61,7 +61,7 @@ public class SourceValidateResults {
     }
 
     /**
-     * items
+     * An arrya of source validation details.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<SourceValidateDetails> items;

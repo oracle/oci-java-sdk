@@ -9,7 +9,13 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListLabelsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListLabelsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
+@lombok.Builder(
+    builderClassName = "Builder",
+    buildMethodName = "buildWithoutInvocationCallback",
+    toBuilder = true
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -20,23 +26,31 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     private String namespaceName;
 
     /**
-     * label name
+     * The label name used for filtering.  Only items with, or associated with, the
+     * specified label name will be returned.
+     *
      */
     private String labelName;
 
     /**
-     * search by label display name or description
+     * The label display text used for filtering.  Only labels with the specified name or
+     * description will be returned.
+     *
      */
     private String labelDisplayText;
 
     /**
-     * Is system param of value (all, custom, sourceUsing)
+     * The system value used for filtering.  Only items with the specified system value
+     * will be returned.  Valid values are built in, custom (for user defined items), or
+     * all (for all items, regardless of system value).
      *
      */
     private IsSystem isSystem;
 
     /**
-     * Is system param of value (all, custom, sourceUsing)
+     * The system value used for filtering.  Only items with the specified system value
+     * will be returned.  Valid values are built in, custom (for user defined items), or
+     * all (for all items, regardless of system value).
      *
      **/
     public enum IsSystem {
@@ -73,12 +87,16 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
     /**
-     * label priority
+     * The label priority used for filtering.  Only labels with the specified
+     * priority will be returned.
+     *
      */
     private LabelPriority labelPriority;
 
     /**
-     * label priority
+     * The label priority used for filtering.  Only labels with the specified
+     * priority will be returned.
+     *
      **/
     public enum LabelPriority {
         None("NONE"),
@@ -115,12 +133,14 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
     /**
-     * isCountPop
+     * A flag indicating whether or not to count the label usage per source and per rule.
+     *
      */
     private Boolean isCountPop;
 
     /**
-     * isAliasPop
+     * A flag indicating whether or not return the aliases used by each label.
+     *
      */
     private Boolean isAliasPop;
 
@@ -177,12 +197,12 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
     /**
-     * sort by label
+     * The attribute used to sort the returned labels
      */
     private LabelSortBy labelSortBy;
 
     /**
-     * sort by label
+     * The attribute used to sort the returned labels
      **/
     public enum LabelSortBy {
         Name("name"),

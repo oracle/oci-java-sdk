@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * LogAnalytics Label Collection
+ * A collection of LogAnalytics Labels.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -62,7 +62,7 @@ public class LogAnalyticsLabelCollection {
     }
 
     /**
-     * Array of log analytics label summary.
+     * An array of log analytics label summaries.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<LogAnalyticsLabelSummary> items;

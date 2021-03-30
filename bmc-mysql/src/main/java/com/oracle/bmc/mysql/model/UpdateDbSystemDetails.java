@@ -54,6 +54,15 @@ public class UpdateDbSystemDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isHighlyAvailable")
+        private Boolean isHighlyAvailable;
+
+        public Builder isHighlyAvailable(Boolean isHighlyAvailable) {
+            this.isHighlyAvailable = isHighlyAvailable;
+            this.__explicitlySet__.add("isHighlyAvailable");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
@@ -208,6 +217,7 @@ public class UpdateDbSystemDetails {
                             displayName,
                             description,
                             subnetId,
+                            isHighlyAvailable,
                             availabilityDomain,
                             faultDomain,
                             shapeName,
@@ -234,6 +244,7 @@ public class UpdateDbSystemDetails {
                     displayName(o.getDisplayName())
                             .description(o.getDescription())
                             .subnetId(o.getSubnetId())
+                            .isHighlyAvailable(o.getIsHighlyAvailable())
                             .availabilityDomain(o.getAvailabilityDomain())
                             .faultDomain(o.getFaultDomain())
                             .shapeName(o.getShapeName())
@@ -283,14 +294,34 @@ public class UpdateDbSystemDetails {
     String subnetId;
 
     /**
-     * The Availability Domain where the primary instance should be located.
+     * If the policy is to enable high availability of the instance, by
+     * maintaining secondary/failover capacity as necessary.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isHighlyAvailable")
+    Boolean isHighlyAvailable;
+
+    /**
+     * The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+     * <p>
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains
+     * and the MySQL instance in that domain is promoted to the primary instance.
+     * This redirection does not affect the IP address of the DB System in any way.
+     * <p>
+     * For a standalone DB System, this defines the availability domain in which the DB System is placed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     String availabilityDomain;
 
     /**
-     * The name of the Fault Domain the DB System is located in.
+     * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+     * <p>
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains
+     * and the MySQL instance in that domain is promoted to the primary instance.
+     * This redirection does not affect the IP address of the DB System in any way.
+     * <p>
+     * For a standalone DB System, this defines the fault domain in which the DB System is placed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")

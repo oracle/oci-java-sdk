@@ -243,7 +243,7 @@ public class SddcSummary {
     /**
      * In general, this is a specific version of bundled VMware software supported by
      * Oracle Cloud VMware Solution (see
-     * {@link #* ListSupportedVmwareSoftwareVersions(* ListSupportedVmwareSoftwareVersionsRequest) * ListSupportedVmwareSoftwareVersions}).
+     * {@link #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest) listSupportedVmwareSoftwareVersions}).
      * <p>
      * This attribute is not guaranteed to reflect the version of
      * software currently installed on the ESXi hosts in the SDDC. The purpose

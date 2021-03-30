@@ -71,13 +71,13 @@ public class ExtractLogHeaderDetails {
     }
 
     /**
-     * key
+     * The log key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logKey")
     String logKey;
 
     /**
-     * log header values
+     * The log header values.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("headerValues")
     java.util.List<String> headerValues;

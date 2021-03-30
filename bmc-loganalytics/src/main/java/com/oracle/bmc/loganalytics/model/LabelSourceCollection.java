@@ -62,7 +62,7 @@ public class LabelSourceCollection {
     }
 
     /**
-     * list of fields
+     * An array labels.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<LabelSourceSummary> items;

@@ -218,31 +218,31 @@ public class LogAnalyticsLookup {
     }
 
     /**
-     * active edit version
+     * The active edit version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("activeEditVersion")
     Long activeEditVersion;
 
     /**
-     * canonical link
+     * The canonical link.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("canonicalLink")
     String canonicalLink;
 
     /**
-     * description
+     * The lookup description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * edit version
+     * The edit version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
     Long editVersion;
 
     /**
-     * fields
+     * The lookup fields.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fields")
     java.util.List<LookupField> fields;
@@ -310,25 +310,29 @@ public class LogAnalyticsLookup {
     Type type;
 
     /**
-     * iname
+     * The lookup name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * is built in
+     * A flag indicating if the lookup is custom (user-defined) or
+     * built in.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBuiltIn")
     Long isBuiltIn;
 
     /**
-     * is hidden
+     * A flag indicating if the lookup is hidden or not.  A hidden lookup will
+     * not be returned in list operations by default.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
     Boolean isHidden;
 
     /**
-     * name
+     * The lookup display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lookupDisplayName")
     String lookupDisplayName;
@@ -340,7 +344,7 @@ public class LogAnalyticsLookup {
     StatusSummary statusSummary;
 
     /**
-     * last updated date
+     * The last updated date.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;

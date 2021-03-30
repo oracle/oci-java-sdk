@@ -9,7 +9,13 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/RegisterLookupExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use RegisterLookupRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
+@lombok.Builder(
+    builderClassName = "Builder",
+    buildMethodName = "buildWithoutInvocationCallback",
+    toBuilder = true
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream> {
 
@@ -20,12 +26,12 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
     private String namespaceName;
 
     /**
-     * type - possible values are Lookup or Dictionary
+     * The lookup type.  Valid values are Lookup or Dictionary.
      */
     private Type type;
 
     /**
-     * type - possible values are Lookup or Dictionary
+     * The lookup type.  Valid values are Lookup or Dictionary.
      **/
     public enum Type {
         Lookup("Lookup"),
@@ -72,17 +78,19 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
     private String name;
 
     /**
-     * Description of the fields to get
+     * The description for a created lookup.
+     *
      */
     private String description;
 
     /**
-     * Character Encoding
+     * The character encoding of the uploaded file.
      */
     private String charEncoding;
 
     /**
-     * is hidden
+     * A flag indicating whether or not the new lookup should be hidden.
+     *
      */
     private Boolean isHidden;
 

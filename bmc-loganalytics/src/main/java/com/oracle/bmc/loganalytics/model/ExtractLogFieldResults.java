@@ -61,7 +61,7 @@ public class ExtractLogFieldResults {
     }
 
     /**
-     * log field path values
+     * The log field path values.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("paths")
     java.util.List<String> paths;

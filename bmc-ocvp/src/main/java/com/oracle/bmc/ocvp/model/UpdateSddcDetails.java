@@ -123,6 +123,24 @@ public class UpdateSddcDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationVlanId")
+        private String replicationVlanId;
+
+        public Builder replicationVlanId(String replicationVlanId) {
+            this.replicationVlanId = replicationVlanId;
+            this.__explicitlySet__.add("replicationVlanId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("provisioningVlanId")
+        private String provisioningVlanId;
+
+        public Builder provisioningVlanId(String provisioningVlanId) {
+            this.provisioningVlanId = provisioningVlanId;
+            this.__explicitlySet__.add("provisioningVlanId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("hcxVlanId")
         private String hcxVlanId;
 
@@ -167,6 +185,8 @@ public class UpdateSddcDetails {
                             nsxEdgeVTepVlanId,
                             nsxEdgeUplink1VlanId,
                             nsxEdgeUplink2VlanId,
+                            replicationVlanId,
+                            provisioningVlanId,
                             hcxVlanId,
                             freeformTags,
                             definedTags);
@@ -187,6 +207,8 @@ public class UpdateSddcDetails {
                             .nsxEdgeVTepVlanId(o.getNsxEdgeVTepVlanId())
                             .nsxEdgeUplink1VlanId(o.getNsxEdgeUplink1VlanId())
                             .nsxEdgeUplink2VlanId(o.getNsxEdgeUplink2VlanId())
+                            .replicationVlanId(o.getReplicationVlanId())
+                            .provisioningVlanId(o.getProvisioningVlanId())
                             .hcxVlanId(o.getHcxVlanId())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
@@ -216,7 +238,7 @@ public class UpdateSddcDetails {
      * install on any new ESXi hosts that you add to this SDDC in the future.
      * <p>
      * For the list of versions supported by the Oracle Cloud VMware Solution, see
-     * {@link #* ListSupportedVmwareSoftwareVersions(* ListSupportedVmwareSoftwareVersionsRequest) * ListSupportedVmwareSoftwareVersions}).
+     * {@link #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest) listSupportedVmwareSoftwareVersions}).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vmwareSoftwareVersion")
@@ -283,13 +305,32 @@ public class UpdateSddcDetails {
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
      * the NSX Edge Uplink 2 component of the VMware environment when adding new ESXi hosts to the SDDC.
+     * <p>
+     **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsxEdgeUplink2VlanId")
     String nsxEdgeUplink2VlanId;
 
     /**
-     * This id is editable only when hcxEnabled is true
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+     * for the vSphere Replication component of the VMware environment.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationVlanId")
+    String replicationVlanId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+     * for the Provisioning component of the VMware environment.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("provisioningVlanId")
+    String provisioningVlanId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX
+     * component of the VMware environment when adding new ESXi hosts to the SDDC. This value can be updated only when `isHcxEnabled` is true.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hcxVlanId")

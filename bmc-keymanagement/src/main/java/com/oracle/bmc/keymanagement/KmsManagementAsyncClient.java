@@ -677,6 +677,47 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetReplicationStatusResponse> getReplicationStatus(
+            GetReplicationStatusRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetReplicationStatusRequest, GetReplicationStatusResponse>
+                    handler) {
+        LOG.trace("Called async getReplicationStatus");
+        final GetReplicationStatusRequest interceptedRequest =
+                GetReplicationStatusConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetReplicationStatusConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetReplicationStatusResponse>
+                transformer = GetReplicationStatusConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetReplicationStatusRequest, GetReplicationStatusResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetReplicationStatusRequest, GetReplicationStatusResponse>,
+                        java.util.concurrent.Future<GetReplicationStatusResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetReplicationStatusRequest, GetReplicationStatusResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetWrappingKeyResponse> getWrappingKey(
             GetWrappingKeyRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

@@ -152,42 +152,42 @@ public class LogAnalyticsAssociationParameter {
     }
 
     /**
-     * agent guid
+     * The agent unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     String agentId;
 
     /**
-     * entity type
+     * The entity type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     String entityType;
 
     /**
-     * entity guid
+     * The entity unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     String entityId;
 
     /**
-     * source name
+     * The source name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     String sourceId;
 
     /**
-     * source display name
+     * The source display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDisplayName")
     String sourceDisplayName;
 
     /**
-     * source type
+     * The source type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
     String sourceType;
     /**
-     * status
+     * The status.  Either FAILED or SUCCEEDED.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Status {
@@ -233,19 +233,19 @@ public class LogAnalyticsAssociationParameter {
         }
     };
     /**
-     * status
+     * The status.  Either FAILED or SUCCEEDED.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     Status status;
 
     /**
-     * missingProperties
+     * A list of missing properties.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("missingProperties")
     java.util.List<String> missingProperties;
 
     /**
-     * requiredProperties
+     * A list of requried properties.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("requiredProperties")
     java.util.List<String> requiredProperties;

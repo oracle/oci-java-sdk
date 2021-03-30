@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Label Priority
+ * The label priority.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -60,7 +60,7 @@ public class LabelPriority {
     }
 
     /**
-     * tag priority
+     * The label priority. Default value is NONE.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Priority {
@@ -108,7 +108,7 @@ public class LabelPriority {
         }
     };
     /**
-     * tag priority
+     * The label priority. Default value is NONE.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
     Priority priority;

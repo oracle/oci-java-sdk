@@ -9,7 +9,13 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListParsersExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListParsersRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
+@lombok.Builder(
+    builderClassName = "Builder",
+    buildMethodName = "buildWithoutInvocationCallback",
+    toBuilder = true
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -20,17 +26,26 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String namespaceName;
 
     /**
-     * isMatchAll
+     * A flag indicating how to handle filtering when multiple filter criteria are specified.
+     * A value of true will always result in the most expansive list of items being returned.
+     * For example, if two field lists are supplies as filter criteria, a value of true will
+     * result in any item matching a field in either list being returned, while a value of
+     * false will result in a list of items which only have fields contained in both input lists.
+     *
      */
     private Boolean isMatchAll;
 
     /**
-     * source type
+     * The source type used for filtering.  Only parsers associated with a source of the
+     * specified type will be returned.
+     *
      */
     private SourceType sourceType;
 
     /**
-     * source type
+     * The source type used for filtering.  Only parsers associated with a source of the
+     * specified type will be returned.
+     *
      **/
     public enum SourceType {
         OsFile("OS_FILE"),
@@ -67,28 +82,37 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
     /**
-     * parserName
+     * The parser name used for filtering.
+     *
      */
     private String parserName;
 
     /**
-     * search by parser display name or description
+     * The parser display text used for filtering.  Only parsers with the specified name
+     * or description will be returned.
+     *
      */
     private String parserDisplayText;
 
     /**
-     * parserType
+     * The parser type used for filtering.  Only items with, or associated with, parsers
+     * of the specified type will be returned.
+     *
      */
     private ParserType parserType;
 
     /**
-     * parserType
+     * The parser type used for filtering.  Only items with, or associated with, parsers
+     * of the specified type will be returned.
+     *
      **/
     public enum ParserType {
         All("ALL"),
         Regex("REGEX"),
         Xml("XML"),
         Json("JSON"),
+        Odl("ODL"),
+        Delimited("DELIMITED"),
         ;
 
         private final String value;
@@ -119,13 +143,17 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
     /**
-     * Is system param of value (all, custom, sourceUsing)
+     * The system value used for filtering.  Only items with the specified system value
+     * will be returned.  Valid values are built in, custom (for user defined items), or
+     * all (for all items, regardless of system value).
      *
      */
     private IsSystem isSystem;
 
     /**
-     * Is system param of value (all, custom, sourceUsing)
+     * The system value used for filtering.  Only items with the specified system value
+     * will be returned.  Valid values are built in, custom (for user defined items), or
+     * all (for all items, regardless of system value).
      *
      **/
     public enum IsSystem {
@@ -214,12 +242,12 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
     /**
-     * sort by parser
+     * The attribute used to sort the returned parsers
      */
     private SortBy sortBy;
 
     /**
-     * sort by parser
+     * The attribute used to sort the returned parsers
      **/
     public enum SortBy {
         Name("name"),

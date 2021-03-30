@@ -62,7 +62,7 @@ public class LogAnalyticsConfigWorkRequestCollection {
     }
 
     /**
-     * list of workrequest responses
+     * A list of workrequest responses.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<LogAnalyticsConfigWorkRequestSummary> items;

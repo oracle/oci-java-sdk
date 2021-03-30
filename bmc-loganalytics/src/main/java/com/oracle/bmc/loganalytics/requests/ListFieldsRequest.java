@@ -9,7 +9,13 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListFieldsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListFieldsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
+@lombok.Builder(
+    builderClassName = "Builder",
+    buildMethodName = "buildWithoutInvocationCallback",
+    toBuilder = true
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -20,33 +26,48 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     private String namespaceName;
 
     /**
-     * isMatchAll
+     * A flag indicating how to handle filtering when multiple filter criteria are specified.
+     * A value of true will always result in the most expansive list of items being returned.
+     * For example, if two field lists are supplies as filter criteria, a value of true will
+     * result in any item matching a field in either list being returned, while a value of
+     * false will result in a list of items which only have fields contained in both input lists.
+     *
      */
     private Boolean isMatchAll;
 
     /**
-     * comma delimited list of source ids
+     * A list of source IDs used for filtering.  Only fields used by the specified
+     * sources will be returned.
+     *
      */
     private String sourceIds;
 
     /**
-     * comma delimited list of source Names
+     * A list of source names used for filtering.  Only fields used by the specified
+     * sources will be returned.
+     *
      */
     private String sourceNames;
 
     /**
-     * parserType
+     * The parser type used for filtering.  Only items with, or associated with, parsers
+     * of the specified type will be returned.
+     *
      */
     private ParserType parserType;
 
     /**
-     * parserType
+     * The parser type used for filtering.  Only items with, or associated with, parsers
+     * of the specified type will be returned.
+     *
      **/
     public enum ParserType {
         All("ALL"),
         Regex("REGEX"),
         Xml("XML"),
         Json("JSON"),
+        Odl("ODL"),
+        Delimited("DELIMITED"),
         ;
 
         private final String value;
@@ -77,12 +98,16 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
     /**
-     * comma delimited list of parser ids
+     * A list of parser names used for filtering.  Only fields used by the specified
+     * parsers will be returned.
+     *
      */
     private String parserIds;
 
     /**
-     * comma delimited list of parser names
+     * A list of parser names used for filtering.  Only fields used by the specified
+     * parsers will be returned.
+     *
      */
     private String parserNames;
 
@@ -149,12 +174,12 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
     /**
-     * sort by field
+     * The attribute used to sort the returned fields
      */
     private SortBy sortBy;
 
     /**
-     * sort by field
+     * The attribute used to sort the returned fields
      **/
     public enum SortBy {
         Name("name"),

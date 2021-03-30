@@ -59,7 +59,6 @@ public class CreateIpv6Example {
     private static final String SUBNET_DISPLAY_NAME = "java_sdk_ipv6_example_subnet";
     private static final String INSTANCE_DISPLAY_NAME = "java_sdk_ipv6_example_instance";
     private static final String VCN_V4_CIDR = "10.0.0.0/16";
-    private static final String VCN_V6_CIDR = "fd00:aaaa:0123::/48";
     private static final String SUBNET_V4_CIDR = "10.0.1.0/24";
     private static final String SUBNET_V6_CIDR = "fd00:aaaa:0123:1111::/64";
 
@@ -101,7 +100,6 @@ public class CreateIpv6Example {
                         CreateVcnDetails.builder()
                                 .isIpv6Enabled(true)
                                 .cidrBlock(VCN_V4_CIDR)
-                                .ipv6CidrBlock(VCN_V6_CIDR)
                                 .displayName(VCN_DISPLAY_NAME)
                                 .compartmentId(compartmentId)
                                 .build());

@@ -130,43 +130,43 @@ public class LabelSourceSummary {
     }
 
     /**
-     * display name
+     * The source display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDisplayName")
     String sourceDisplayName;
 
     /**
-     * source internal name
+     * The source internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
     String sourceName;
 
     /**
-     * source Id
+     * The source unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     Long sourceId;
 
     /**
-     * label Operator
+     * The label operator.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labelOperatorName")
     String labelOperatorName;
 
     /**
-     * label Condition
+     * The label condition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labelCondition")
     String labelCondition;
 
     /**
-     * label Field Display Name
+     * The label field display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labelFieldDisplayname")
     String labelFieldDisplayname;
 
     /**
-     * label Field name
+     * The label field name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labelFieldName")
     String labelFieldName;

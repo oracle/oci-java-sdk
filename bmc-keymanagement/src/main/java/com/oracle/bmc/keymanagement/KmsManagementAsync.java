@@ -241,6 +241,26 @@ public interface KmsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * When a vault has a replica, each operation on the vault or its resources, such as
+     * keys, is replicated and has an associated replicationId. Replication status provides
+     * details about whether the operation associated with the given replicationId has been
+     * successfully applied across replicas.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetReplicationStatusResponse> getReplicationStatus(
+            GetReplicationStatusRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetReplicationStatusRequest, GetReplicationStatusResponse>
+                    handler);
+
+    /**
      * Gets details about the public RSA wrapping key associated with the vault in the endpoint. Each vault has an RSA key-pair that wraps and
      * unwraps AES key material for import into Key Management.
      *
@@ -423,7 +443,7 @@ public interface KmsManagementAsync extends AutoCloseable {
     /**
      * Updates the properties of a master encryption key. Specifically, you can update the
      * `displayName`, `freeformTags`, and `definedTags` properties. Furthermore,
-     * the key must in an ENABLED or CREATING state to be updated.
+     * the key must be in an `ENABLED` or `CREATING` state to be updated.
      * <p>
      * As a management operation, this call is subject to a Key Management limit that applies to the total number
      * of requests across all management write operations. Key Management might throttle this call to reject an

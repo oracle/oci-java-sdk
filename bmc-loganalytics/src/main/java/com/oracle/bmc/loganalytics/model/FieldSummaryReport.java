@@ -83,19 +83,19 @@ public class FieldSummaryReport {
     }
 
     /**
-     * non out-of-the-box count
+     * The count of custom (user defined) fields.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nonOobCount")
     Integer nonOobCount;
 
     /**
-     * out-of-the-box count
+     * The count of built in fields.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oobCount")
     Integer oobCount;
 
     /**
-     * usage detail
+     * Field usage detailss
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageDetails")
     java.util.List<UsageStatusItem> usageDetails;

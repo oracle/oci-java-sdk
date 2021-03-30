@@ -70,13 +70,13 @@ public class ParserSummaryReport {
     }
 
     /**
-     * non out-of-the-box count
+     * The count of custom (user defined) parsers.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nonOobCount")
     Integer nonOobCount;
 
     /**
-     * out-of-the-box count
+     * The count of built in parsers.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oobCount")
     Integer oobCount;

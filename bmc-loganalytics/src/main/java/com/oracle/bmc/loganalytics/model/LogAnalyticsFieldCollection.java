@@ -61,7 +61,7 @@ public class LogAnalyticsFieldCollection {
     }
 
     /**
-     * list of fields
+     * An array of fields.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<LogAnalyticsFieldSummary> items;

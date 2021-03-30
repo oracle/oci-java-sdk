@@ -207,84 +207,87 @@ public class LogAnalyticsSourceDataFilter {
     }
 
     /**
-     * description
+     * The filter description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * display name
+     * The filter display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * edit version
+     * The filter edit version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
     Long editVersion;
 
     /**
-     * enabled
+     * A flag inidcating whether or not the filter is enabled.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     Boolean isEnabled;
 
     /**
-     * field internal name
+     * The field internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
     String fieldName;
 
     /**
-     * hash type
+     * The hash type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hashType")
     Integer hashType;
 
     /**
-     * filter Id
+     * The filter unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataFilterId")
     Long dataFilterId;
 
     /**
-     * is system flag
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     Boolean isSystem;
 
     /**
-     * regular expression match
+     * The regular expression for matching.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchRegularExpression")
     String matchRegularExpression;
 
     /**
-     * order
+     * The filter order.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("order")
     Long order;
 
     /**
-     * path
+     * The filter path.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     String path;
 
     /**
-     * replacement string
+     * The replacement string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("replacementString")
     String replacementString;
 
     /**
-     * source Id
+     * The source unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     Long sourceId;
     /**
-     * filterType
+     * The filter type.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum FilterType {
@@ -332,7 +335,7 @@ public class LogAnalyticsSourceDataFilter {
         }
     };
     /**
-     * filterType
+     * The filter type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filterType")
     FilterType filterType;

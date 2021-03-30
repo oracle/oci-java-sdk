@@ -152,18 +152,21 @@ public class LogAnalyticsConfigWorkRequest {
     }
 
     /**
-     * workrequest id
+     * The workrequest unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * compartment id
+     * The compartment unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
     /**
-     * operation type
+     * The operation type.  There are two classes of operations, association operations and
+     * lookup operations.  Associations may be created or deleted, and lookup operations include
+     * append, update and delete.
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum OperationType {
@@ -212,42 +215,47 @@ public class LogAnalyticsConfigWorkRequest {
         }
     };
     /**
-     * operation type
+     * The operation type.  There are two classes of operations, association operations and
+     * lookup operations.  Associations may be created or deleted, and lookup operations include
+     * append, update and delete.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     OperationType operationType;
 
     /**
-     * list of log group summary objects
+     * The list of config work request responses.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("payload")
     java.util.List<LogAnalyticsConfigWorkRequestPayload> payload;
 
     /**
-     * percentage complete
+     * The completion percentage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     Long percentComplete;
 
     /**
-     * when the work request was started
+     * The time at which the work request was started.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     java.util.Date timeStarted;
 
     /**
-     * when the work request was accepted
+     * The time at which the work request was accepted.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     java.util.Date timeAccepted;
 
     /**
-     * when the work request finished
+     * The time at which the work request was finished.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     java.util.Date timeFinished;
     /**
-     * status
+     * The lifecycle status.  Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED
+     * or FAILED
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -295,7 +303,9 @@ public class LogAnalyticsConfigWorkRequest {
         }
     };
     /**
-     * status
+     * The lifecycle status.  Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED
+     * or FAILED
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;

@@ -233,6 +233,24 @@ public class TestParserPayloadDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("fieldDelimiter")
+        private String fieldDelimiter;
+
+        public Builder fieldDelimiter(String fieldDelimiter) {
+            this.fieldDelimiter = fieldDelimiter;
+            this.__explicitlySet__.add("fieldDelimiter");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("fieldQualifier")
+        private String fieldQualifier;
+
+        public Builder fieldQualifier(String fieldQualifier) {
+            this.fieldQualifier = fieldQualifier;
+            this.__explicitlySet__.add("fieldQualifier");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
@@ -271,6 +289,8 @@ public class TestParserPayloadDetails {
                             isParserWrittenOnce,
                             parserFunctions,
                             shouldTokenizeOriginalText,
+                            fieldDelimiter,
+                            fieldQualifier,
                             type);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -302,6 +322,8 @@ public class TestParserPayloadDetails {
                             .isParserWrittenOnce(o.getIsParserWrittenOnce())
                             .parserFunctions(o.getParserFunctions())
                             .shouldTokenizeOriginalText(o.getShouldTokenizeOriginalText())
+                            .fieldDelimiter(o.getFieldDelimiter())
+                            .fieldQualifier(o.getFieldQualifier())
                             .type(o.getType());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -317,91 +339,95 @@ public class TestParserPayloadDetails {
     }
 
     /**
-     * content
+     * The content used for testing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     String content;
 
     /**
-     * description
+     * The parser description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * Display name
+     * The parser display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * encoding
+     * The content encoding.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("encoding")
     String encoding;
 
     /**
-     * exampleContent
+     * The example content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exampleContent")
     String exampleContent;
 
     /**
-     * fieldMaps
+     * The parser fields.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldMaps")
     java.util.List<LogAnalyticsParserField> fieldMaps;
 
     /**
-     * footerRegex
+     * The footer regular expression.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("footerContent")
     String footerContent;
 
     /**
-     * headerContent
+     * The header content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("headerContent")
     String headerContent;
 
     /**
-     * name
+     * The parser name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * isDefault
+     * A flag indicating if this is a default parser.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     Boolean isDefault;
 
     /**
-     * isSingleLineContent
+     * A flag indicating if this is a single line content parser.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSingleLineContent")
     Boolean isSingleLineContent;
 
     /**
-     * isSystem
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     Boolean isSystem;
 
     /**
-     * language
+     * The language.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("language")
     String language;
 
     /**
-     * lastUpdatedDate
+     * The last updated date.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
 
     /**
-     * logTypeTestRequestVersion
+     * The log type test request version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logTypeTestRequestVersion")
     Integer logTypeTestRequestVersion;
@@ -410,54 +436,69 @@ public class TestParserPayloadDetails {
     UiParserTestMetadata metadata;
 
     /**
-     * parser ignore linechars
+     * The line characters for the parser to ignore.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserIgnorelineCharacters")
     String parserIgnorelineCharacters;
 
     /**
-     * parser is hidden
+     * A flag indicating if the parser is hidden or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
     Long isHidden;
 
     /**
-     * parser seq
+     * The parser sequence.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserSequence")
     Integer parserSequence;
 
     /**
-     * parser timezone
+     * The parser timezone.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserTimezone")
     String parserTimezone;
 
     /**
-     * isParserWrittenOnce
+     * A flag indicating whther or not the parser is write once.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isParserWrittenOnce")
     Boolean isParserWrittenOnce;
 
     /**
-     * plugin instance list
+     * The parser function list.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserFunctions")
     java.util.List<LogAnalyticsParserFunction> parserFunctions;
 
     /**
-     * tokenize original text
+     * A flag indicating whether or not to tokenize the original text.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldTokenizeOriginalText")
     Boolean shouldTokenizeOriginalText;
+
     /**
-     * type
+     * The parser field delimiter.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("fieldDelimiter")
+    String fieldDelimiter;
+
+    /**
+     * The parser field qualifier.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("fieldQualifier")
+    String fieldQualifier;
+    /**
+     * The parser type.  Default value is REGEX.
      **/
     public enum Type {
         Xml("XML"),
         Json("JSON"),
         Regex("REGEX"),
         Odl("ODL"),
+        Delimited("DELIMITED"),
         ;
 
         private final String value;
@@ -488,7 +529,7 @@ public class TestParserPayloadDetails {
         }
     };
     /**
-     * type
+     * The parser type.  Default value is REGEX.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     Type type;

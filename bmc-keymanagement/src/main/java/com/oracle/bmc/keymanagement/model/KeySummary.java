@@ -343,7 +343,7 @@ public class KeySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
     ProtectionMode protectionMode;
     /**
-     * The algorithm used by a key's key versions to encrypt or decrypt.
+     * The algorithm used by a key's key versions to encrypt or decrypt data.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Algorithm {
@@ -390,7 +390,7 @@ public class KeySummary {
         }
     };
     /**
-     * The algorithm used by a key's key versions to encrypt or decrypt.
+     * The algorithm used by a key's key versions to encrypt or decrypt data.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
     Algorithm algorithm;

@@ -93,25 +93,27 @@ public class LogAnalyticsLabelDefinition {
     }
 
     /**
-     * edit version
+     * The edit version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
     Long editVersion;
 
     /**
-     * is system flag
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     Boolean isSystem;
 
     /**
-     * source Id
+     * The source unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     Long sourceId;
 
     /**
-     * label name
+     * The label name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labelName")
     String labelName;

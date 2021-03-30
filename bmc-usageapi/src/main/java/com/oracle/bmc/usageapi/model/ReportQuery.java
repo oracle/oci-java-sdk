@@ -69,6 +69,15 @@ public class ReportQuery {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("forecast")
+        private Forecast forecast;
+
+        public Builder forecast(Forecast forecast) {
+            this.forecast = forecast;
+            this.__explicitlySet__.add("forecast");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("queryType")
         private QueryType queryType;
 
@@ -134,6 +143,7 @@ public class ReportQuery {
                             timeUsageEnded,
                             granularity,
                             isAggregateByTime,
+                            forecast,
                             queryType,
                             groupBy,
                             groupByTag,
@@ -152,6 +162,7 @@ public class ReportQuery {
                             .timeUsageEnded(o.getTimeUsageEnded())
                             .granularity(o.getGranularity())
                             .isAggregateByTime(o.getIsAggregateByTime())
+                            .forecast(o.getForecast())
                             .queryType(o.getQueryType())
                             .groupBy(o.getGroupBy())
                             .groupByTag(o.getGroupByTag())
@@ -257,6 +268,9 @@ public class ReportQuery {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAggregateByTime")
     Boolean isAggregateByTime;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("forecast")
+    Forecast forecast;
     /**
      * The query usage type. COST by default if it is missing
      * Usage - Query the usage data.
@@ -327,8 +341,8 @@ public class ReportQuery {
     java.util.List<String> groupBy;
 
     /**
-     * GroupBy a specific tagKey. Provide tagNamespace and tagKey in tag object. Only support one tag in the list
-     * example:
+     * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list.
+     * For example:
      *   `[{\"namespace\":\"oracle\", \"key\":\"createdBy\"]`
      *
      **/

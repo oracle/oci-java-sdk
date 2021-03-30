@@ -92,6 +92,22 @@ public class ListScheduledTasksConverter {
                                     request.getSortBy().getValue()));
         }
 
+        if (request.getSavedSearchId() != null) {
+            target =
+                    target.queryParam(
+                            "savedSearchId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSavedSearchId()));
+        }
+
+        if (request.getDisplayNameContains() != null) {
+            target =
+                    target.queryParam(
+                            "displayNameContains",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDisplayNameContains()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

@@ -8,7 +8,7 @@ import com.oracle.bmc.ocvp.requests.*;
 import com.oracle.bmc.ocvp.responses.*;
 
 /**
- * Use this API to manage the Oracle Cloud VMware Solution.
+ * Use this API to manage your [Oracle Cloud VMware Solution](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm).
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
@@ -60,10 +60,12 @@ public interface Sddc extends AutoCloseable {
     ChangeSddcCompartmentResponse changeSddcCompartment(ChangeSddcCompartmentRequest request);
 
     /**
-     * Creates a software-defined data center (SDDC).
+     * Creates an Oracle Cloud VMware Solution software-defined data center (SDDC).
      * <p>
      * Use the {@link WorkRequest} operations to track the
      * creation of the SDDC.
+     * <p>
+     **Important:** You must configure the SDDC's networking resources with the security rules detailed in [Security Rules for Oracle Cloud VMware Solution SDDCs](https://docs.cloud.oracle.com/iaas/Content/VMware/Reference/ocvssecurityrules.htm). Otherwise, provisioning the SDDC will fail. The rules are based on the requirements set by VMware.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
