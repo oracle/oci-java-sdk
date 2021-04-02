@@ -139,12 +139,10 @@ jobs:
           cd unpacked
           unzip -q ../asset.zip
           head CHANGELOG.md 
-          find .
       - name: GPG sign all Maven files
         run: |
           cd unpacked/maven
           find . -type f -not -name \*.asc | xargs -n 1 -I % gpg --output %.asc --detach-sig %
-          find .
       - name: Checksum all Maven files
         run: |
           cd unpacked/maven
@@ -154,7 +152,6 @@ jobs:
       - name: Staging artifacts in SonaType
         run: |
           # Code mostly by mezzargh
-          set -x
           set -e
           WD=`pwd`
           START_XML=$(cat << EOF
