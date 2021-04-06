@@ -478,6 +478,42 @@ public class ArtifactsClient implements Artifacts {
     }
 
     @Override
+    public CreateContainerImageSignatureResponse createContainerImageSignature(
+            CreateContainerImageSignatureRequest request) {
+        LOG.trace("Called createContainerImageSignature");
+        final CreateContainerImageSignatureRequest interceptedRequest =
+                CreateContainerImageSignatureConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateContainerImageSignatureConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateContainerImageSignatureResponse>
+                transformer = CreateContainerImageSignatureConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateContainerImageSignatureDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateContainerRepositoryResponse createContainerRepository(
             CreateContainerRepositoryRequest request) {
         LOG.trace("Called createContainerRepository");
@@ -522,6 +558,37 @@ public class ArtifactsClient implements Artifacts {
                 DeleteContainerImageConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteContainerImageResponse>
                 transformer = DeleteContainerImageConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteContainerImageSignatureResponse deleteContainerImageSignature(
+            DeleteContainerImageSignatureRequest request) {
+        LOG.trace("Called deleteContainerImageSignature");
+        final DeleteContainerImageSignatureRequest interceptedRequest =
+                DeleteContainerImageSignatureConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteContainerImageSignatureConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteContainerImageSignatureResponse>
+                transformer = DeleteContainerImageSignatureConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -632,6 +699,36 @@ public class ArtifactsClient implements Artifacts {
     }
 
     @Override
+    public GetContainerImageSignatureResponse getContainerImageSignature(
+            GetContainerImageSignatureRequest request) {
+        LOG.trace("Called getContainerImageSignature");
+        final GetContainerImageSignatureRequest interceptedRequest =
+                GetContainerImageSignatureConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetContainerImageSignatureConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetContainerImageSignatureResponse>
+                transformer = GetContainerImageSignatureConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetContainerRepositoryResponse getContainerRepository(
             GetContainerRepositoryRequest request) {
         LOG.trace("Called getContainerRepository");
@@ -641,6 +738,36 @@ public class ArtifactsClient implements Artifacts {
                 GetContainerRepositoryConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetContainerRepositoryResponse>
                 transformer = GetContainerRepositoryConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListContainerImageSignaturesResponse listContainerImageSignatures(
+            ListContainerImageSignaturesRequest request) {
+        LOG.trace("Called listContainerImageSignatures");
+        final ListContainerImageSignaturesRequest interceptedRequest =
+                ListContainerImageSignaturesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListContainerImageSignaturesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListContainerImageSignaturesResponse>
+                transformer = ListContainerImageSignaturesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(

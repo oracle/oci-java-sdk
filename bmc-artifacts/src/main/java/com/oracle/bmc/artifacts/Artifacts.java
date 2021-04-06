@@ -62,6 +62,17 @@ public interface Artifacts extends AutoCloseable {
             ChangeContainerRepositoryCompartmentRequest request);
 
     /**
+     * Upload a signature to an image.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/CreateContainerImageSignatureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateContainerImageSignature API.
+     */
+    CreateContainerImageSignatureResponse createContainerImageSignature(
+            CreateContainerImageSignatureRequest request);
+
+    /**
      * Create a new empty container repository. Avoid entering confidential information.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -81,6 +92,17 @@ public interface Artifacts extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/DeleteContainerImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteContainerImage API.
      */
     DeleteContainerImageResponse deleteContainerImage(DeleteContainerImageRequest request);
+
+    /**
+     * Delete a container image signature.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/DeleteContainerImageSignatureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteContainerImageSignature API.
+     */
+    DeleteContainerImageSignatureResponse deleteContainerImageSignature(
+            DeleteContainerImageSignatureRequest request);
 
     /**
      * Delete container repository.
@@ -115,6 +137,17 @@ public interface Artifacts extends AutoCloseable {
     GetContainerImageResponse getContainerImage(GetContainerImageRequest request);
 
     /**
+     * Get container image signature metadata.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/GetContainerImageSignatureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetContainerImageSignature API.
+     */
+    GetContainerImageSignatureResponse getContainerImageSignature(
+            GetContainerImageSignatureRequest request);
+
+    /**
      * Get container repository.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -123,6 +156,17 @@ public interface Artifacts extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/GetContainerRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetContainerRepository API.
      */
     GetContainerRepositoryResponse getContainerRepository(GetContainerRepositoryRequest request);
+
+    /**
+     * List container image signatures in an image.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/ListContainerImageSignaturesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListContainerImageSignatures API.
+     */
+    ListContainerImageSignaturesResponse listContainerImageSignatures(
+            ListContainerImageSignaturesRequest request);
 
     /**
      * List container images in a compartment.

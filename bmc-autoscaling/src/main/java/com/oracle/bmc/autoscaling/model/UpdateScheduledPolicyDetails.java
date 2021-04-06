@@ -68,13 +68,22 @@ public class UpdateScheduledPolicyDetails extends UpdateAutoScalingPolicyDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceAction")
+        private ResourceAction resourceAction;
+
+        public Builder resourceAction(ResourceAction resourceAction) {
+            this.resourceAction = resourceAction;
+            this.__explicitlySet__.add("resourceAction");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateScheduledPolicyDetails build() {
             UpdateScheduledPolicyDetails __instance__ =
                     new UpdateScheduledPolicyDetails(
-                            displayName, capacity, isEnabled, executionSchedule);
+                            displayName, capacity, isEnabled, executionSchedule, resourceAction);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -85,7 +94,8 @@ public class UpdateScheduledPolicyDetails extends UpdateAutoScalingPolicyDetails
                     displayName(o.getDisplayName())
                             .capacity(o.getCapacity())
                             .isEnabled(o.getIsEnabled())
-                            .executionSchedule(o.getExecutionSchedule());
+                            .executionSchedule(o.getExecutionSchedule())
+                            .resourceAction(o.getResourceAction());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -104,13 +114,21 @@ public class UpdateScheduledPolicyDetails extends UpdateAutoScalingPolicyDetails
             String displayName,
             Capacity capacity,
             Boolean isEnabled,
-            ExecutionSchedule executionSchedule) {
+            ExecutionSchedule executionSchedule,
+            ResourceAction resourceAction) {
         super(displayName, capacity, isEnabled);
         this.executionSchedule = executionSchedule;
+        this.resourceAction = resourceAction;
     }
 
+    /**
+     * The schedule for executing the autoscaling policy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionSchedule")
     ExecutionSchedule executionSchedule;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceAction")
+    ResourceAction resourceAction;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

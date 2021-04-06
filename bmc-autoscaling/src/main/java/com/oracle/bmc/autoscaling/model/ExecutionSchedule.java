@@ -5,7 +5,7 @@
 package com.oracle.bmc.autoscaling.model;
 
 /**
- * Specifies the execution schedule for a policy.
+ * An execution schedule for an autoscaling policy.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -38,7 +38,7 @@ package com.oracle.bmc.autoscaling.model;
 public class ExecutionSchedule {
 
     /**
-     * Specifies the time zone the schedule is in.
+     * The time zone for the execution schedule.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Timezone {
@@ -83,7 +83,7 @@ public class ExecutionSchedule {
         }
     };
     /**
-     * Specifies the time zone the schedule is in.
+     * The time zone for the execution schedule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timezone")
     Timezone timezone;

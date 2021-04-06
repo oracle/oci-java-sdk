@@ -191,6 +191,7 @@ public class CreateDatabaseSoftwareImageDetails {
     public enum ImageShapeFamily {
         VmBmShape("VM_BM_SHAPE"),
         ExadataShape("EXADATA_SHAPE"),
+        ExaccShape("EXACC_SHAPE"),
         ;
 
         private final String value;

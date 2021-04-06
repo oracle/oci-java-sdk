@@ -114,6 +114,20 @@ public interface ApiGatewayAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new SDK.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSdkResponse> createSdk(
+            CreateSdkRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateSdkRequest, CreateSdkResponse> handler);
+
+    /**
      * Deletes the API with the given identifier.
      *
      * @param request The request object containing the details to send
@@ -142,6 +156,20 @@ public interface ApiGatewayAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteCertificateRequest, DeleteCertificateResponse>
                     handler);
+
+    /**
+     * Deletes provided SDK.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSdkResponse> deleteSdk(
+            DeleteSdkRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteSdkRequest, DeleteSdkResponse> handler);
 
     /**
      * Gets an API by identifier.
@@ -222,6 +250,20 @@ public interface ApiGatewayAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Return object store downloadable URL and metadata.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSdkResponse> getSdk(
+            GetSdkRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetSdkRequest, GetSdkResponse> handler);
+
+    /**
      * Returns a list of APIs.
      *
      *
@@ -253,6 +295,36 @@ public interface ApiGatewayAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists programming languages in which SDK can be generated.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSdkLanguageTypesResponse> listSdkLanguageTypes(
+            ListSdkLanguageTypesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSdkLanguageTypesRequest, ListSdkLanguageTypesResponse>
+                    handler);
+
+    /**
+     * Returns list of generated SDKs.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSdksResponse> listSdks(
+            ListSdksRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListSdksRequest, ListSdksResponse> handler);
+
+    /**
      * Updates the API with the given identifier.
      *
      * @param request The request object containing the details to send
@@ -281,4 +353,18 @@ public interface ApiGatewayAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateCertificateRequest, UpdateCertificateResponse>
                     handler);
+
+    /**
+     * Updates the SDK with the given identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateSdkResponse> updateSdk(
+            UpdateSdkRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateSdkRequest, UpdateSdkResponse> handler);
 }

@@ -250,4 +250,227 @@ public class ApiGatewayPaginators {
                     }
                 });
     }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listSdkLanguageTypes operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListSdkLanguageTypesResponse> listSdkLanguageTypesResponseIterator(
+            final ListSdkLanguageTypesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSdkLanguageTypesRequest.Builder, ListSdkLanguageTypesRequest,
+                ListSdkLanguageTypesResponse>(
+                new com.google.common.base.Supplier<ListSdkLanguageTypesRequest.Builder>() {
+                    @Override
+                    public ListSdkLanguageTypesRequest.Builder get() {
+                        return ListSdkLanguageTypesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSdkLanguageTypesResponse, String>() {
+                    @Override
+                    public String apply(ListSdkLanguageTypesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSdkLanguageTypesRequest.Builder>,
+                        ListSdkLanguageTypesRequest>() {
+                    @Override
+                    public ListSdkLanguageTypesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSdkLanguageTypesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSdkLanguageTypesRequest, ListSdkLanguageTypesResponse>() {
+                    @Override
+                    public ListSdkLanguageTypesResponse apply(ListSdkLanguageTypesRequest request) {
+                        return client.listSdkLanguageTypes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.apigateway.model.SdkLanguageTypeSummary} objects
+     * contained in responses from the listSdkLanguageTypes operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.apigateway.model.SdkLanguageTypeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.apigateway.model.SdkLanguageTypeSummary>
+            listSdkLanguageTypesRecordIterator(final ListSdkLanguageTypesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSdkLanguageTypesRequest.Builder, ListSdkLanguageTypesRequest,
+                ListSdkLanguageTypesResponse,
+                com.oracle.bmc.apigateway.model.SdkLanguageTypeSummary>(
+                new com.google.common.base.Supplier<ListSdkLanguageTypesRequest.Builder>() {
+                    @Override
+                    public ListSdkLanguageTypesRequest.Builder get() {
+                        return ListSdkLanguageTypesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSdkLanguageTypesResponse, String>() {
+                    @Override
+                    public String apply(ListSdkLanguageTypesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSdkLanguageTypesRequest.Builder>,
+                        ListSdkLanguageTypesRequest>() {
+                    @Override
+                    public ListSdkLanguageTypesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSdkLanguageTypesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSdkLanguageTypesRequest, ListSdkLanguageTypesResponse>() {
+                    @Override
+                    public ListSdkLanguageTypesResponse apply(ListSdkLanguageTypesRequest request) {
+                        return client.listSdkLanguageTypes(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSdkLanguageTypesResponse,
+                        java.util.List<com.oracle.bmc.apigateway.model.SdkLanguageTypeSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.apigateway.model.SdkLanguageTypeSummary>
+                            apply(ListSdkLanguageTypesResponse response) {
+                        return response.getSdkLanguageTypeCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listSdks operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListSdksResponse> listSdksResponseIterator(final ListSdksRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSdksRequest.Builder, ListSdksRequest, ListSdksResponse>(
+                new com.google.common.base.Supplier<ListSdksRequest.Builder>() {
+                    @Override
+                    public ListSdksRequest.Builder get() {
+                        return ListSdksRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSdksResponse, String>() {
+                    @Override
+                    public String apply(ListSdksResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSdksRequest.Builder>,
+                        ListSdksRequest>() {
+                    @Override
+                    public ListSdksRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSdksRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListSdksRequest, ListSdksResponse>() {
+                    @Override
+                    public ListSdksResponse apply(ListSdksRequest request) {
+                        return client.listSdks(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.apigateway.model.SdkSummary} objects
+     * contained in responses from the listSdks operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.apigateway.model.SdkSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.apigateway.model.SdkSummary> listSdksRecordIterator(
+            final ListSdksRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSdksRequest.Builder, ListSdksRequest, ListSdksResponse,
+                com.oracle.bmc.apigateway.model.SdkSummary>(
+                new com.google.common.base.Supplier<ListSdksRequest.Builder>() {
+                    @Override
+                    public ListSdksRequest.Builder get() {
+                        return ListSdksRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSdksResponse, String>() {
+                    @Override
+                    public String apply(ListSdksResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSdksRequest.Builder>,
+                        ListSdksRequest>() {
+                    @Override
+                    public ListSdksRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSdksRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListSdksRequest, ListSdksResponse>() {
+                    @Override
+                    public ListSdksResponse apply(ListSdksRequest request) {
+                        return client.listSdks(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSdksResponse,
+                        java.util.List<com.oracle.bmc.apigateway.model.SdkSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.apigateway.model.SdkSummary> apply(
+                            ListSdksResponse response) {
+                        return response.getSdkCollection().getItems();
+                    }
+                });
+    }
 }

@@ -298,14 +298,14 @@ public class Migration {
 
     /**
      * The pre-existing database type to be used in this migration. Currently, Application migration only supports Oracle Cloud
-     * Infrastrure databases and this option is currently available only for `JAVA_CLOUD_SERVICE` and `WEBLOGIC_CLOUD_SERVICE` target instance types.
+     * Infrastructure databases and this option is currently available only for `JAVA_CLOUD_SERVICE` and `WEBLOGIC_CLOUD_SERVICE` target instance types.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("preCreatedTargetDatabaseType")
     TargetDatabaseTypes preCreatedTargetDatabaseType;
 
     /**
-     * If set to `true`, Application Migration migrates the application resources selectively depending on the source.
+     * If set to `true`, Application Migration migrates only the application resources that you specify. If set to `false`, Application Migration migrates the entire application. When you migrate the entire application, all the application resources are migrated to the target environment. You can selectively migrate resources only for the Oracle Integration Cloud and Oracle Integration Cloud Service applications.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSelectiveMigration")

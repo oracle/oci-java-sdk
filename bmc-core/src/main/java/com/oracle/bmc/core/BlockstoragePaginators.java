@@ -157,6 +157,121 @@ public class BlockstoragePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listBlockVolumeReplicas operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListBlockVolumeReplicasResponse> listBlockVolumeReplicasResponseIterator(
+            final ListBlockVolumeReplicasRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListBlockVolumeReplicasRequest.Builder, ListBlockVolumeReplicasRequest,
+                ListBlockVolumeReplicasResponse>(
+                new com.google.common.base.Supplier<ListBlockVolumeReplicasRequest.Builder>() {
+                    @Override
+                    public ListBlockVolumeReplicasRequest.Builder get() {
+                        return ListBlockVolumeReplicasRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListBlockVolumeReplicasResponse, String>() {
+                    @Override
+                    public String apply(ListBlockVolumeReplicasResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBlockVolumeReplicasRequest.Builder>,
+                        ListBlockVolumeReplicasRequest>() {
+                    @Override
+                    public ListBlockVolumeReplicasRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBlockVolumeReplicasRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBlockVolumeReplicasRequest, ListBlockVolumeReplicasResponse>() {
+                    @Override
+                    public ListBlockVolumeReplicasResponse apply(
+                            ListBlockVolumeReplicasRequest request) {
+                        return client.listBlockVolumeReplicas(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.BlockVolumeReplica} objects
+     * contained in responses from the listBlockVolumeReplicas operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.BlockVolumeReplica} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.BlockVolumeReplica>
+            listBlockVolumeReplicasRecordIterator(final ListBlockVolumeReplicasRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListBlockVolumeReplicasRequest.Builder, ListBlockVolumeReplicasRequest,
+                ListBlockVolumeReplicasResponse, com.oracle.bmc.core.model.BlockVolumeReplica>(
+                new com.google.common.base.Supplier<ListBlockVolumeReplicasRequest.Builder>() {
+                    @Override
+                    public ListBlockVolumeReplicasRequest.Builder get() {
+                        return ListBlockVolumeReplicasRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListBlockVolumeReplicasResponse, String>() {
+                    @Override
+                    public String apply(ListBlockVolumeReplicasResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBlockVolumeReplicasRequest.Builder>,
+                        ListBlockVolumeReplicasRequest>() {
+                    @Override
+                    public ListBlockVolumeReplicasRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBlockVolumeReplicasRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBlockVolumeReplicasRequest, ListBlockVolumeReplicasResponse>() {
+                    @Override
+                    public ListBlockVolumeReplicasResponse apply(
+                            ListBlockVolumeReplicasRequest request) {
+                        return client.listBlockVolumeReplicas(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBlockVolumeReplicasResponse,
+                        java.util.List<com.oracle.bmc.core.model.BlockVolumeReplica>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.BlockVolumeReplica> apply(
+                            ListBlockVolumeReplicasResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listBootVolumeBackups operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -266,6 +381,121 @@ public class BlockstoragePaginators {
                     @Override
                     public java.util.List<com.oracle.bmc.core.model.BootVolumeBackup> apply(
                             ListBootVolumeBackupsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listBootVolumeReplicas operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListBootVolumeReplicasResponse> listBootVolumeReplicasResponseIterator(
+            final ListBootVolumeReplicasRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListBootVolumeReplicasRequest.Builder, ListBootVolumeReplicasRequest,
+                ListBootVolumeReplicasResponse>(
+                new com.google.common.base.Supplier<ListBootVolumeReplicasRequest.Builder>() {
+                    @Override
+                    public ListBootVolumeReplicasRequest.Builder get() {
+                        return ListBootVolumeReplicasRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListBootVolumeReplicasResponse, String>() {
+                    @Override
+                    public String apply(ListBootVolumeReplicasResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBootVolumeReplicasRequest.Builder>,
+                        ListBootVolumeReplicasRequest>() {
+                    @Override
+                    public ListBootVolumeReplicasRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBootVolumeReplicasRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBootVolumeReplicasRequest, ListBootVolumeReplicasResponse>() {
+                    @Override
+                    public ListBootVolumeReplicasResponse apply(
+                            ListBootVolumeReplicasRequest request) {
+                        return client.listBootVolumeReplicas(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.BootVolumeReplica} objects
+     * contained in responses from the listBootVolumeReplicas operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.BootVolumeReplica} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.BootVolumeReplica>
+            listBootVolumeReplicasRecordIterator(final ListBootVolumeReplicasRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListBootVolumeReplicasRequest.Builder, ListBootVolumeReplicasRequest,
+                ListBootVolumeReplicasResponse, com.oracle.bmc.core.model.BootVolumeReplica>(
+                new com.google.common.base.Supplier<ListBootVolumeReplicasRequest.Builder>() {
+                    @Override
+                    public ListBootVolumeReplicasRequest.Builder get() {
+                        return ListBootVolumeReplicasRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListBootVolumeReplicasResponse, String>() {
+                    @Override
+                    public String apply(ListBootVolumeReplicasResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBootVolumeReplicasRequest.Builder>,
+                        ListBootVolumeReplicasRequest>() {
+                    @Override
+                    public ListBootVolumeReplicasRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBootVolumeReplicasRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBootVolumeReplicasRequest, ListBootVolumeReplicasResponse>() {
+                    @Override
+                    public ListBootVolumeReplicasResponse apply(
+                            ListBootVolumeReplicasRequest request) {
+                        return client.listBootVolumeReplicas(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBootVolumeReplicasResponse,
+                        java.util.List<com.oracle.bmc.core.model.BootVolumeReplica>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.BootVolumeReplica> apply(
+                            ListBootVolumeReplicasResponse response) {
                         return response.getItems();
                     }
                 });

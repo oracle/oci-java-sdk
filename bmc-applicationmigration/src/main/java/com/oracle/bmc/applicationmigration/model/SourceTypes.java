@@ -13,6 +13,7 @@ public enum SourceTypes {
     Ocic("OCIC"),
     InternalCompute("INTERNAL_COMPUTE"),
     Occ("OCC"),
+    OcicIdcs("OCIC_IDCS"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

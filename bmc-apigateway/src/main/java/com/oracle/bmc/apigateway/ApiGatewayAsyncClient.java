@@ -527,6 +527,43 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSdkResponse> createSdk(
+            CreateSdkRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateSdkRequest, CreateSdkResponse>
+                    handler) {
+        LOG.trace("Called async createSdk");
+        final CreateSdkRequest interceptedRequest = CreateSdkConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSdkConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSdkResponse>
+                transformer = CreateSdkConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<CreateSdkRequest, CreateSdkResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<CreateSdkRequest, CreateSdkResponse>,
+                        java.util.concurrent.Future<CreateSdkResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateSdkRequest, CreateSdkResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteApiResponse> deleteApi(
             DeleteApiRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteApiRequest, DeleteApiResponse>
@@ -589,6 +626,42 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteCertificateRequest, DeleteCertificateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSdkResponse> deleteSdk(
+            DeleteSdkRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteSdkRequest, DeleteSdkResponse>
+                    handler) {
+        LOG.trace("Called async deleteSdk");
+        final DeleteSdkRequest interceptedRequest = DeleteSdkConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSdkConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSdkResponse>
+                transformer = DeleteSdkConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<DeleteSdkRequest, DeleteSdkResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<DeleteSdkRequest, DeleteSdkResponse>,
+                        java.util.concurrent.Future<DeleteSdkResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteSdkRequest, DeleteSdkResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -796,6 +869,40 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetSdkResponse> getSdk(
+            GetSdkRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetSdkRequest, GetSdkResponse> handler) {
+        LOG.trace("Called async getSdk");
+        final GetSdkRequest interceptedRequest = GetSdkConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSdkConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSdkResponse>
+                transformer = GetSdkConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetSdkRequest, GetSdkResponse> handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<GetSdkRequest, GetSdkResponse>,
+                        java.util.concurrent.Future<GetSdkResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSdkRequest, GetSdkResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListApisResponse> listApis(
             ListApisRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListApisRequest, ListApisResponse>
@@ -871,6 +978,83 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListSdkLanguageTypesResponse> listSdkLanguageTypes(
+            ListSdkLanguageTypesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSdkLanguageTypesRequest, ListSdkLanguageTypesResponse>
+                    handler) {
+        LOG.trace("Called async listSdkLanguageTypes");
+        final ListSdkLanguageTypesRequest interceptedRequest =
+                ListSdkLanguageTypesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSdkLanguageTypesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListSdkLanguageTypesResponse>
+                transformer = ListSdkLanguageTypesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSdkLanguageTypesRequest, ListSdkLanguageTypesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSdkLanguageTypesRequest, ListSdkLanguageTypesResponse>,
+                        java.util.concurrent.Future<ListSdkLanguageTypesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSdkLanguageTypesRequest, ListSdkLanguageTypesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSdksResponse> listSdks(
+            ListSdksRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListSdksRequest, ListSdksResponse>
+                    handler) {
+        LOG.trace("Called async listSdks");
+        final ListSdksRequest interceptedRequest = ListSdksConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSdksConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListSdksResponse>
+                transformer = ListSdksConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListSdksRequest, ListSdksResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<ListSdksRequest, ListSdksResponse>,
+                        java.util.concurrent.Future<ListSdksResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSdksRequest, ListSdksResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateApiResponse> updateApi(
             UpdateApiRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateApiRequest, UpdateApiResponse>
@@ -933,6 +1117,42 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateCertificateRequest, UpdateCertificateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSdkResponse> updateSdk(
+            UpdateSdkRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateSdkRequest, UpdateSdkResponse>
+                    handler) {
+        LOG.trace("Called async updateSdk");
+        final UpdateSdkRequest interceptedRequest = UpdateSdkConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSdkConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSdkResponse>
+                transformer = UpdateSdkConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<UpdateSdkRequest, UpdateSdkResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<UpdateSdkRequest, UpdateSdkResponse>,
+                        java.util.concurrent.Future<UpdateSdkResponse>>
+                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateSdkRequest, UpdateSdkResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

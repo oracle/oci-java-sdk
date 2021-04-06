@@ -102,6 +102,22 @@ public class ListDedicatedVmHostsConverter {
                                     request.getSortOrder().getValue()));
         }
 
+        if (request.getRemainingMemoryInGBsGreaterThanOrEqualTo() != null) {
+            target =
+                    target.queryParam(
+                            "remainingMemoryInGBsGreaterThanOrEqualTo",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getRemainingMemoryInGBsGreaterThanOrEqualTo()));
+        }
+
+        if (request.getRemainingOcpusGreaterThanOrEqualTo() != null) {
+            target =
+                    target.queryParam(
+                            "remainingOcpusGreaterThanOrEqualTo",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getRemainingOcpusGreaterThanOrEqualTo()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

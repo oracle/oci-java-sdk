@@ -31,6 +31,130 @@ public class ArtifactsPaginators {
     private final Artifacts client;
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listContainerImageSignatures operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListContainerImageSignaturesResponse>
+            listContainerImageSignaturesResponseIterator(
+                    final ListContainerImageSignaturesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListContainerImageSignaturesRequest.Builder, ListContainerImageSignaturesRequest,
+                ListContainerImageSignaturesResponse>(
+                new com.google.common.base.Supplier<ListContainerImageSignaturesRequest.Builder>() {
+                    @Override
+                    public ListContainerImageSignaturesRequest.Builder get() {
+                        return ListContainerImageSignaturesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListContainerImageSignaturesResponse, String>() {
+                    @Override
+                    public String apply(ListContainerImageSignaturesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListContainerImageSignaturesRequest.Builder>,
+                        ListContainerImageSignaturesRequest>() {
+                    @Override
+                    public ListContainerImageSignaturesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListContainerImageSignaturesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListContainerImageSignaturesRequest,
+                        ListContainerImageSignaturesResponse>() {
+                    @Override
+                    public ListContainerImageSignaturesResponse apply(
+                            ListContainerImageSignaturesRequest request) {
+                        return client.listContainerImageSignatures(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.artifacts.model.ContainerImageSignatureSummary} objects
+     * contained in responses from the listContainerImageSignatures operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.artifacts.model.ContainerImageSignatureSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.artifacts.model.ContainerImageSignatureSummary>
+            listContainerImageSignaturesRecordIterator(
+                    final ListContainerImageSignaturesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListContainerImageSignaturesRequest.Builder, ListContainerImageSignaturesRequest,
+                ListContainerImageSignaturesResponse,
+                com.oracle.bmc.artifacts.model.ContainerImageSignatureSummary>(
+                new com.google.common.base.Supplier<ListContainerImageSignaturesRequest.Builder>() {
+                    @Override
+                    public ListContainerImageSignaturesRequest.Builder get() {
+                        return ListContainerImageSignaturesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListContainerImageSignaturesResponse, String>() {
+                    @Override
+                    public String apply(ListContainerImageSignaturesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListContainerImageSignaturesRequest.Builder>,
+                        ListContainerImageSignaturesRequest>() {
+                    @Override
+                    public ListContainerImageSignaturesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListContainerImageSignaturesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListContainerImageSignaturesRequest,
+                        ListContainerImageSignaturesResponse>() {
+                    @Override
+                    public ListContainerImageSignaturesResponse apply(
+                            ListContainerImageSignaturesRequest request) {
+                        return client.listContainerImageSignatures(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListContainerImageSignaturesResponse,
+                        java.util.List<
+                                com.oracle.bmc.artifacts.model.ContainerImageSignatureSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.artifacts.model.ContainerImageSignatureSummary>
+                            apply(ListContainerImageSignaturesResponse response) {
+                        return response.getContainerImageSignatureCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listContainerImages operation. This iterable
      * will fetch more data from the server as needed.
      *

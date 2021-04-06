@@ -117,6 +117,24 @@ public class DedicatedVmHostSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("totalMemoryInGBs")
+        private Float totalMemoryInGBs;
+
+        public Builder totalMemoryInGBs(Float totalMemoryInGBs) {
+            this.totalMemoryInGBs = totalMemoryInGBs;
+            this.__explicitlySet__.add("totalMemoryInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("remainingMemoryInGBs")
+        private Float remainingMemoryInGBs;
+
+        public Builder remainingMemoryInGBs(Float remainingMemoryInGBs) {
+            this.remainingMemoryInGBs = remainingMemoryInGBs;
+            this.__explicitlySet__.add("remainingMemoryInGBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -132,7 +150,9 @@ public class DedicatedVmHostSummary {
                             lifecycleState,
                             timeCreated,
                             remainingOcpus,
-                            totalOcpus);
+                            totalOcpus,
+                            totalMemoryInGBs,
+                            remainingMemoryInGBs);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -149,7 +169,9 @@ public class DedicatedVmHostSummary {
                             .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
                             .remainingOcpus(o.getRemainingOcpus())
-                            .totalOcpus(o.getTotalOcpus());
+                            .totalOcpus(o.getTotalOcpus())
+                            .totalMemoryInGBs(o.getTotalMemoryInGBs())
+                            .remainingMemoryInGBs(o.getRemainingMemoryInGBs());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -297,6 +319,20 @@ public class DedicatedVmHostSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalOcpus")
     Float totalOcpus;
+
+    /**
+     * The current total memory of the dedicated VM host, in GBs.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("totalMemoryInGBs")
+    Float totalMemoryInGBs;
+
+    /**
+     * The current available memory of the dedicated VM host, in GBs.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("remainingMemoryInGBs")
+    Float remainingMemoryInGBs;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

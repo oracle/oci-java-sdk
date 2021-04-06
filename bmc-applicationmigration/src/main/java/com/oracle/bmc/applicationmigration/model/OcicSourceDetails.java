@@ -90,7 +90,7 @@ public class OcicSourceDetails extends SourceDetails {
     String region;
 
     /**
-     * If you are using a Oracle Cloud Infrastructure - Classic account with Identity Cloud Service (IDCS), enter the service instance ID.
+     * If you are using an Oracle Cloud Infrastructure - Classic account with Identity Cloud Service (IDCS), enter the service instance ID.
      * For example, if Compute-567890123 is the account name of your Oracle Cloud Infrastructure Classic Compute service entitlement,
      * then enter 567890123.
      * <p>

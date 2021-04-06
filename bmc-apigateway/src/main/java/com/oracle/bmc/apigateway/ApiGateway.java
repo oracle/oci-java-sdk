@@ -92,6 +92,16 @@ public interface ApiGateway extends AutoCloseable {
     CreateCertificateResponse createCertificate(CreateCertificateRequest request);
 
     /**
+     * Creates a new SDK.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/CreateSdkExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSdk API.
+     */
+    CreateSdkResponse createSdk(CreateSdkRequest request);
+
+    /**
      * Deletes the API with the given identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -110,6 +120,16 @@ public interface ApiGateway extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/DeleteCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCertificate API.
      */
     DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request);
+
+    /**
+     * Deletes provided SDK.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/DeleteSdkExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSdk API.
+     */
+    DeleteSdkResponse deleteSdk(DeleteSdkRequest request);
 
     /**
      * Gets an API by identifier.
@@ -163,6 +183,16 @@ public interface ApiGateway extends AutoCloseable {
     GetCertificateResponse getCertificate(GetCertificateRequest request);
 
     /**
+     * Return object store downloadable URL and metadata.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/GetSdkExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSdk API.
+     */
+    GetSdkResponse getSdk(GetSdkRequest request);
+
+    /**
      * Returns a list of APIs.
      *
      * @param request The request object containing the details to send
@@ -185,6 +215,26 @@ public interface ApiGateway extends AutoCloseable {
     ListCertificatesResponse listCertificates(ListCertificatesRequest request);
 
     /**
+     * Lists programming languages in which SDK can be generated.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ListSdkLanguageTypesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSdkLanguageTypes API.
+     */
+    ListSdkLanguageTypesResponse listSdkLanguageTypes(ListSdkLanguageTypesRequest request);
+
+    /**
+     * Returns list of generated SDKs.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ListSdksExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSdks API.
+     */
+    ListSdksResponse listSdks(ListSdksRequest request);
+
+    /**
      * Updates the API with the given identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -203,6 +253,16 @@ public interface ApiGateway extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/UpdateCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCertificate API.
      */
     UpdateCertificateResponse updateCertificate(UpdateCertificateRequest request);
+
+    /**
+     * Updates the SDK with the given identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/UpdateSdkExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSdk API.
+     */
+    UpdateSdkResponse updateSdk(UpdateSdkRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

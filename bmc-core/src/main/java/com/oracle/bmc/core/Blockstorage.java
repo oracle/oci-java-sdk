@@ -407,6 +407,16 @@ public interface Blockstorage extends AutoCloseable {
     DeleteVolumeKmsKeyResponse deleteVolumeKmsKey(DeleteVolumeKmsKeyRequest request);
 
     /**
+     * Gets information for the specified block volume replica.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetBlockVolumeReplicaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBlockVolumeReplica API.
+     */
+    GetBlockVolumeReplicaResponse getBlockVolumeReplica(GetBlockVolumeReplicaRequest request);
+
+    /**
      * Gets information for the specified boot volume.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -436,6 +446,16 @@ public interface Blockstorage extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetBootVolumeKmsKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBootVolumeKmsKey API.
      */
     GetBootVolumeKmsKeyResponse getBootVolumeKmsKey(GetBootVolumeKmsKeyRequest request);
+
+    /**
+     * Gets information for the specified boot volume replica.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetBootVolumeReplicaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBootVolumeReplica API.
+     */
+    GetBootVolumeReplicaResponse getBootVolumeReplica(GetBootVolumeReplicaRequest request);
 
     /**
      * Gets information for the specified volume.
@@ -524,6 +544,17 @@ public interface Blockstorage extends AutoCloseable {
     GetVolumeKmsKeyResponse getVolumeKmsKey(GetVolumeKmsKeyRequest request);
 
     /**
+     * Lists the block volume replicas in the specified compartment and availability domain.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListBlockVolumeReplicasExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBlockVolumeReplicas API.
+     */
+    ListBlockVolumeReplicasResponse listBlockVolumeReplicas(ListBlockVolumeReplicasRequest request);
+
+    /**
      * Lists the boot volume backups in the specified compartment. You can filter the results by boot volume.
      *
      * @param request The request object containing the details to send
@@ -533,6 +564,17 @@ public interface Blockstorage extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListBootVolumeBackupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBootVolumeBackups API.
      */
     ListBootVolumeBackupsResponse listBootVolumeBackups(ListBootVolumeBackupsRequest request);
+
+    /**
+     * Lists the boot volume replicas in the specified compartment and availability domain.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListBootVolumeReplicasExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBootVolumeReplicas API.
+     */
+    ListBootVolumeReplicasResponse listBootVolumeReplicas(ListBootVolumeReplicasRequest request);
 
     /**
      * Lists the boot volumes in the specified compartment and availability domain.

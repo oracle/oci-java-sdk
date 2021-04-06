@@ -13,7 +13,7 @@ package com.oracle.bmc.applicationmigration.model;
  * Specify `INTERNAL_COMPUTE` if you have a traditional Oracle Cloud Infrastructure - Classic account and you want to migrate Oracle
  * Process Cloud Service or Oracle Integration Cloud Service applications.
  * <p>
- * Specify `OCC` if you have an Oracle Cloud @ Customer account.
+ * Specify `OCC` if you want to migrate applications from Oracle Cloud@Customer.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

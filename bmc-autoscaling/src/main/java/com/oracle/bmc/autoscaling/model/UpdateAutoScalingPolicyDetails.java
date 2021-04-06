@@ -54,7 +54,7 @@ public class UpdateAutoScalingPolicyDetails {
     Capacity capacity;
 
     /**
-     * Boolean field indicating whether this policy is enabled or not.
+     * Whether the autoscaling policy is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     Boolean isEnabled;

@@ -214,6 +214,15 @@ public class ListDedicatedVmHostsRequest
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+    /**
+     * The remaining memory of the dedicated VM host, in GBs.
+     */
+    private Float remainingMemoryInGBsGreaterThanOrEqualTo;
+
+    /**
+     * The available OCPUs of the dedicated VM host.
+     */
+    private Float remainingOcpusGreaterThanOrEqualTo;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -260,6 +269,9 @@ public class ListDedicatedVmHostsRequest
             opcRequestId(o.getOpcRequestId());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
+            remainingMemoryInGBsGreaterThanOrEqualTo(
+                    o.getRemainingMemoryInGBsGreaterThanOrEqualTo());
+            remainingOcpusGreaterThanOrEqualTo(o.getRemainingOcpusGreaterThanOrEqualTo());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

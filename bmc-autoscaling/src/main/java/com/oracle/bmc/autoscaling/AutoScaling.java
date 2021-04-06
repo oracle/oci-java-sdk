@@ -81,6 +81,14 @@ public interface AutoScaling extends AutoCloseable {
 
     /**
      * Creates an autoscaling policy for the specified autoscaling configuration.
+     * <p>
+     * You can create the following types of autoscaling policies:
+     * <p>
+     * - **Schedule-based:** Autoscaling events take place at the specific times that you schedule.
+     * - **Threshold-based:** An autoscaling action is triggered when a performance metric meets or exceeds a threshold.
+     * <p>
+     * An autoscaling configuration can either have multiple schedule-based autoscaling policies, or one
+     * threshold-based autoscaling policy.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

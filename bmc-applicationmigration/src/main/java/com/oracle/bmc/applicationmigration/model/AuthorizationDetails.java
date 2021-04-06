@@ -39,6 +39,10 @@ package com.oracle.bmc.applicationmigration.model;
         name = "INTERNAL_COMPUTE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = OcicAuthorizationTokenDetails.class,
+        name = "OCIC_IDCS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = OcicAuthorizationDetails.class,
         name = "OCIC"
     )
