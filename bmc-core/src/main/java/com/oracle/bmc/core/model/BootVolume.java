@@ -205,6 +205,16 @@ public class BootVolume {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeReplicas")
+        private java.util.List<BootVolumeReplicaInfo> bootVolumeReplicas;
+
+        public Builder bootVolumeReplicas(
+                java.util.List<BootVolumeReplicaInfo> bootVolumeReplicas) {
+            this.bootVolumeReplicas = bootVolumeReplicas;
+            this.__explicitlySet__.add("bootVolumeReplicas");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -229,7 +239,8 @@ public class BootVolume {
                             volumeGroupId,
                             kmsKeyId,
                             isAutoTuneEnabled,
-                            autoTunedVpusPerGB);
+                            autoTunedVpusPerGB,
+                            bootVolumeReplicas);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -255,7 +266,8 @@ public class BootVolume {
                             .volumeGroupId(o.getVolumeGroupId())
                             .kmsKeyId(o.getKmsKeyId())
                             .isAutoTuneEnabled(o.getIsAutoTuneEnabled())
-                            .autoTunedVpusPerGB(o.getAutoTunedVpusPerGB());
+                            .autoTunedVpusPerGB(o.getAutoTunedVpusPerGB())
+                            .bootVolumeReplicas(o.getBootVolumeReplicas());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -460,6 +472,12 @@ public class BootVolume {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoTunedVpusPerGB")
     Long autoTunedVpusPerGB;
+
+    /**
+     * The list of boot volume replicas of this boot volume
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeReplicas")
+    java.util.List<BootVolumeReplicaInfo> bootVolumeReplicas;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -3,6 +3,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.35.1 - 2021-04-06
+### Added
+- Support for scheduling the suspension and resumption of compute instance pools based on predefined schedules in the Autoscaling service
+- Support for database software images for Cloud@Customer in the Database service
+- Support for OCIC IDCS authorization details in the Application Migration service
+- Support for cross-region asynchronous volume replication in the Block Storage service
+- Support for SDK generation in the API Gateway service
+- Support for container image signing in the Registry service
+- Support for cluster features as a part of the Container Engine for Kubernetes service
+- Support for filtering dedicated virtual machine hosts by remaining memory and OCPUs in the Compute service
+- Support for read/write-any object from buckets using pre-authenticated requests in the Object Storage service
+- Support for restricting pre-authenticated requests by prefix in the Object Storage service
+- Support for route filtering on public virtual circuits in the Virtual Networking service
+
 ## 1.35.0 - 2021-03-30
 ### Added
 - Support for the Vulnerability Scanning service

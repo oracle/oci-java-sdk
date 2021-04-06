@@ -411,6 +411,51 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateContainerImageSignatureResponse>
+            createContainerImageSignature(
+                    CreateContainerImageSignatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateContainerImageSignatureRequest,
+                                    CreateContainerImageSignatureResponse>
+                            handler) {
+        LOG.trace("Called async createContainerImageSignature");
+        final CreateContainerImageSignatureRequest interceptedRequest =
+                CreateContainerImageSignatureConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateContainerImageSignatureConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateContainerImageSignatureResponse>
+                transformer = CreateContainerImageSignatureConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateContainerImageSignatureRequest, CreateContainerImageSignatureResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateContainerImageSignatureRequest,
+                                CreateContainerImageSignatureResponse>,
+                        java.util.concurrent.Future<CreateContainerImageSignatureResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateContainerImageSignatureRequest, CreateContainerImageSignatureResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateContainerRepositoryResponse> createContainerRepository(
             CreateContainerRepositoryRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -482,6 +527,50 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteContainerImageRequest, DeleteContainerImageResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContainerImageSignatureResponse>
+            deleteContainerImageSignature(
+                    DeleteContainerImageSignatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteContainerImageSignatureRequest,
+                                    DeleteContainerImageSignatureResponse>
+                            handler) {
+        LOG.trace("Called async deleteContainerImageSignature");
+        final DeleteContainerImageSignatureRequest interceptedRequest =
+                DeleteContainerImageSignatureConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteContainerImageSignatureConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteContainerImageSignatureResponse>
+                transformer = DeleteContainerImageSignatureConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteContainerImageSignatureRequest, DeleteContainerImageSignatureResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteContainerImageSignatureRequest,
+                                DeleteContainerImageSignatureResponse>,
+                        java.util.concurrent.Future<DeleteContainerImageSignatureResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteContainerImageSignatureRequest, DeleteContainerImageSignatureResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -618,6 +707,50 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetContainerImageSignatureResponse>
+            getContainerImageSignature(
+                    GetContainerImageSignatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetContainerImageSignatureRequest,
+                                    GetContainerImageSignatureResponse>
+                            handler) {
+        LOG.trace("Called async getContainerImageSignature");
+        final GetContainerImageSignatureRequest interceptedRequest =
+                GetContainerImageSignatureConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetContainerImageSignatureConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetContainerImageSignatureResponse>
+                transformer = GetContainerImageSignatureConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetContainerImageSignatureRequest, GetContainerImageSignatureResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetContainerImageSignatureRequest,
+                                GetContainerImageSignatureResponse>,
+                        java.util.concurrent.Future<GetContainerImageSignatureResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetContainerImageSignatureRequest, GetContainerImageSignatureResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetContainerRepositoryResponse> getContainerRepository(
             GetContainerRepositoryRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -646,6 +779,50 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetContainerRepositoryRequest, GetContainerRepositoryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListContainerImageSignaturesResponse>
+            listContainerImageSignatures(
+                    ListContainerImageSignaturesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListContainerImageSignaturesRequest,
+                                    ListContainerImageSignaturesResponse>
+                            handler) {
+        LOG.trace("Called async listContainerImageSignatures");
+        final ListContainerImageSignaturesRequest interceptedRequest =
+                ListContainerImageSignaturesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListContainerImageSignaturesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListContainerImageSignaturesResponse>
+                transformer = ListContainerImageSignaturesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListContainerImageSignaturesRequest, ListContainerImageSignaturesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListContainerImageSignaturesRequest,
+                                ListContainerImageSignaturesResponse>,
+                        java.util.concurrent.Future<ListContainerImageSignaturesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListContainerImageSignaturesRequest, ListContainerImageSignaturesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

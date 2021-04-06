@@ -5,7 +5,7 @@
 package com.oracle.bmc.autoscaling.model;
 
 /**
- * An autoscaling configuration allows you to dynamically scale the resources in a Compute instance pool.
+ * An autoscaling configuration lets you dynamically scale the resources in a Compute instance pool.
  * For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/autoscalinginstancepools.htm).
  *
  * <br/>
@@ -228,8 +228,11 @@ public class AutoScalingConfiguration {
     String id;
 
     /**
-     * The minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize
-     * before rescaling. The minimum value is 300 seconds, which is also the default.
+     * For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions.
+     * The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which
+     * is also the default. The cooldown period starts when the instance pool reaches the running state.
+     * <p>
+     * For schedule-based autoscaling policies, this value is not used.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("coolDownInSeconds")
@@ -247,15 +250,13 @@ public class AutoScalingConfiguration {
     /**
      * Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that
      * trigger autoscaling actions and the actions to take.
-     * <p>
-     * Each autoscaling configuration can have one autoscaling policy.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policies")
     java.util.List<AutoScalingPolicy> policies;
 
     /**
-     * The date and time the AutoScalingConfiguration was created, in the format defined by RFC3339.
+     * The date and time the autoscaling configuration was created, in the format defined by RFC3339.
      * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *

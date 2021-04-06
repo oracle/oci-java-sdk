@@ -560,6 +560,22 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets information for the specified block volume replica.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetBlockVolumeReplicaResponse> getBlockVolumeReplica(
+            GetBlockVolumeReplicaRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetBlockVolumeReplicaRequest, GetBlockVolumeReplicaResponse>
+                    handler);
+
+    /**
      * Gets information for the specified boot volume.
      *
      * @param request The request object containing the details to send
@@ -605,6 +621,22 @@ public interface BlockstorageAsync extends AutoCloseable {
             GetBootVolumeKmsKeyRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetBootVolumeKmsKeyRequest, GetBootVolumeKmsKeyResponse>
+                    handler);
+
+    /**
+     * Gets information for the specified boot volume replica.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetBootVolumeReplicaResponse> getBootVolumeReplica(
+            GetBootVolumeReplicaRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetBootVolumeReplicaRequest, GetBootVolumeReplicaResponse>
                     handler);
 
     /**
@@ -739,6 +771,23 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the block volume replicas in the specified compartment and availability domain.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListBlockVolumeReplicasResponse> listBlockVolumeReplicas(
+            ListBlockVolumeReplicasRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListBlockVolumeReplicasRequest, ListBlockVolumeReplicasResponse>
+                    handler);
+
+    /**
      * Lists the boot volume backups in the specified compartment. You can filter the results by boot volume.
      *
      *
@@ -753,6 +802,23 @@ public interface BlockstorageAsync extends AutoCloseable {
             ListBootVolumeBackupsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListBootVolumeBackupsRequest, ListBootVolumeBackupsResponse>
+                    handler);
+
+    /**
+     * Lists the boot volume replicas in the specified compartment and availability domain.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListBootVolumeReplicasResponse> listBootVolumeReplicas(
+            ListBootVolumeReplicasRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListBootVolumeReplicasRequest, ListBootVolumeReplicasResponse>
                     handler);
 
     /**

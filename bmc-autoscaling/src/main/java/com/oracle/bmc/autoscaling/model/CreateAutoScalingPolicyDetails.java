@@ -5,12 +5,14 @@
 package com.oracle.bmc.autoscaling.model;
 
 /**
- * Creation details for an autoscaling policy.
+ * Creation details for an autoscaling policy. You can create the following types of autoscaling policies:
  * <p>
- * Each autoscaling configuration can have one autoscaling policy.
- * <p>
- * In a threshold-based autoscaling policy, an autoscaling action is triggered when a performance metric meets
+ * - **Schedule-based:** Autoscaling events take place at the specific times that you schedule.
+ * - **Threshold-based:** An autoscaling action is triggered when a performance metric meets
  * or exceeds a threshold.
+ * <p>
+ * An autoscaling configuration can either have multiple schedule-based autoscaling policies, or one
+ * threshold-based autoscaling policy.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -60,7 +62,7 @@ public class CreateAutoScalingPolicyDetails {
     String displayName;
 
     /**
-     * Boolean field indicating whether this policy is enabled or not.
+     * Whether the autoscaling policy is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     Boolean isEnabled;

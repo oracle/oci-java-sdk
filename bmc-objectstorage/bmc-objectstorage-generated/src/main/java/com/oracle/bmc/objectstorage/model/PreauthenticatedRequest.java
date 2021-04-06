@@ -70,6 +70,15 @@ public class PreauthenticatedRequest {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("bucketListingAction")
+        private BucketListingAction bucketListingAction;
+
+        public Builder bucketListingAction(BucketListingAction bucketListingAction) {
+            this.bucketListingAction = bucketListingAction;
+            this.__explicitlySet__.add("bucketListingAction");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("accessType")
         private AccessType accessType;
 
@@ -103,7 +112,14 @@ public class PreauthenticatedRequest {
         public PreauthenticatedRequest build() {
             PreauthenticatedRequest __instance__ =
                     new PreauthenticatedRequest(
-                            id, name, accessUri, objectName, accessType, timeExpires, timeCreated);
+                            id,
+                            name,
+                            accessUri,
+                            objectName,
+                            bucketListingAction,
+                            accessType,
+                            timeExpires,
+                            timeCreated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -115,6 +131,7 @@ public class PreauthenticatedRequest {
                             .name(o.getName())
                             .accessUri(o.getAccessUri())
                             .objectName(o.getObjectName())
+                            .bucketListingAction(o.getBucketListingAction())
                             .accessType(o.getAccessType())
                             .timeExpires(o.getTimeExpires())
                             .timeCreated(o.getTimeCreated());
@@ -158,6 +175,63 @@ public class PreauthenticatedRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     String objectName;
     /**
+     * Specifies whether a list operation is allowed on a PAR with accessType \"AnyObjectRead\" or \"AnyObjectReadWrite\".
+     * Deny: Prevents the user from performing a list operation.
+     * ListObjects: Authorizes the user to perform a list operation.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum BucketListingAction {
+        Deny("Deny"),
+        ListObjects("ListObjects"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, BucketListingAction> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (BucketListingAction v : BucketListingAction.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        BucketListingAction(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static BucketListingAction create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'BucketListingAction', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Specifies whether a list operation is allowed on a PAR with accessType \"AnyObjectRead\" or \"AnyObjectReadWrite\".
+     * Deny: Prevents the user from performing a list operation.
+     * ListObjects: Authorizes the user to perform a list operation.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bucketListingAction")
+    BucketListingAction bucketListingAction;
+    /**
      * The operation that can be performed on this resource.
      **/
     @lombok.extern.slf4j.Slf4j
@@ -166,6 +240,8 @@ public class PreauthenticatedRequest {
         ObjectWrite("ObjectWrite"),
         ObjectReadWrite("ObjectReadWrite"),
         AnyObjectWrite("AnyObjectWrite"),
+        AnyObjectRead("AnyObjectRead"),
+        AnyObjectReadWrite("AnyObjectReadWrite"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

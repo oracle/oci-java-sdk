@@ -7,7 +7,7 @@ package com.oracle.bmc.autoscaling.model;
 /**
  * Creation details for a schedule-based autoscaling policy.
  * <p>
- * In a schedule-based autoscaling policy, an autoscaling action is triggered when execution time is current.
+ * In a schedule-based autoscaling policy, an autoscaling action is triggered at the scheduled execution time.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -71,13 +71,22 @@ public class CreateScheduledPolicyDetails extends CreateAutoScalingPolicyDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceAction")
+        private ResourceAction resourceAction;
+
+        public Builder resourceAction(ResourceAction resourceAction) {
+            this.resourceAction = resourceAction;
+            this.__explicitlySet__.add("resourceAction");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateScheduledPolicyDetails build() {
             CreateScheduledPolicyDetails __instance__ =
                     new CreateScheduledPolicyDetails(
-                            capacity, displayName, isEnabled, executionSchedule);
+                            capacity, displayName, isEnabled, executionSchedule, resourceAction);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -88,7 +97,8 @@ public class CreateScheduledPolicyDetails extends CreateAutoScalingPolicyDetails
                     capacity(o.getCapacity())
                             .displayName(o.getDisplayName())
                             .isEnabled(o.getIsEnabled())
-                            .executionSchedule(o.getExecutionSchedule());
+                            .executionSchedule(o.getExecutionSchedule())
+                            .resourceAction(o.getResourceAction());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -107,13 +117,18 @@ public class CreateScheduledPolicyDetails extends CreateAutoScalingPolicyDetails
             Capacity capacity,
             String displayName,
             Boolean isEnabled,
-            ExecutionSchedule executionSchedule) {
+            ExecutionSchedule executionSchedule,
+            ResourceAction resourceAction) {
         super(capacity, displayName, isEnabled);
         this.executionSchedule = executionSchedule;
+        this.resourceAction = resourceAction;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("executionSchedule")
     ExecutionSchedule executionSchedule;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceAction")
+    ResourceAction resourceAction;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -9,6 +9,11 @@ package com.oracle.bmc.autoscaling.model;
  * <p>
  * An autoscaling policy is part of an autoscaling configuration. For more information, see
  * [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/autoscalinginstancepools.htm).
+ * <p>
+ * You can create the following types of autoscaling policies:
+ *
+ *   - **Schedule-based:** Autoscaling events take place at the specific times that you schedule.
+ *   - **Threshold-based:** An autoscaling action is triggered when a performance metric meets or exceeds a threshold.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -73,7 +78,7 @@ public class AutoScalingPolicy {
     java.util.Date timeCreated;
 
     /**
-     * Boolean field indicating whether this policy is enabled or not.
+     * Whether the autoscaling policy is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     Boolean isEnabled;

@@ -113,7 +113,7 @@ public class AutoScalingPolicySummary {
     String policyType;
 
     /**
-     * Boolean field indicated whether this policy is enabled or not.
+     * Whether the autoscaling policy is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     Boolean isEnabled;

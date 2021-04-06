@@ -32,6 +32,10 @@ package com.oracle.bmc.core.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = VolumeSourceFromBlockVolumeReplicaDetails.class,
+        name = "blockVolumeReplica"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = VolumeSourceFromVolumeDetails.class,
         name = "volume"
     ),

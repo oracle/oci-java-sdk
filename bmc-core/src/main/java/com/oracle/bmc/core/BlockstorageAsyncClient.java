@@ -1445,6 +1445,47 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetBlockVolumeReplicaResponse> getBlockVolumeReplica(
+            GetBlockVolumeReplicaRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetBlockVolumeReplicaRequest, GetBlockVolumeReplicaResponse>
+                    handler) {
+        LOG.trace("Called async getBlockVolumeReplica");
+        final GetBlockVolumeReplicaRequest interceptedRequest =
+                GetBlockVolumeReplicaConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBlockVolumeReplicaConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetBlockVolumeReplicaResponse>
+                transformer = GetBlockVolumeReplicaConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetBlockVolumeReplicaRequest, GetBlockVolumeReplicaResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetBlockVolumeReplicaRequest, GetBlockVolumeReplicaResponse>,
+                        java.util.concurrent.Future<GetBlockVolumeReplicaResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetBlockVolumeReplicaRequest, GetBlockVolumeReplicaResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetBootVolumeResponse> getBootVolume(
             GetBootVolumeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetBootVolumeRequest, GetBootVolumeResponse>
@@ -1552,6 +1593,47 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetBootVolumeKmsKeyRequest, GetBootVolumeKmsKeyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBootVolumeReplicaResponse> getBootVolumeReplica(
+            GetBootVolumeReplicaRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetBootVolumeReplicaRequest, GetBootVolumeReplicaResponse>
+                    handler) {
+        LOG.trace("Called async getBootVolumeReplica");
+        final GetBootVolumeReplicaRequest interceptedRequest =
+                GetBootVolumeReplicaConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBootVolumeReplicaConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetBootVolumeReplicaResponse>
+                transformer = GetBootVolumeReplicaConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetBootVolumeReplicaRequest, GetBootVolumeReplicaResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetBootVolumeReplicaRequest, GetBootVolumeReplicaResponse>,
+                        java.util.concurrent.Future<GetBootVolumeReplicaResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetBootVolumeReplicaRequest, GetBootVolumeReplicaResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1893,6 +1975,47 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListBlockVolumeReplicasResponse> listBlockVolumeReplicas(
+            ListBlockVolumeReplicasRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListBlockVolumeReplicasRequest, ListBlockVolumeReplicasResponse>
+                    handler) {
+        LOG.trace("Called async listBlockVolumeReplicas");
+        final ListBlockVolumeReplicasRequest interceptedRequest =
+                ListBlockVolumeReplicasConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBlockVolumeReplicasConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListBlockVolumeReplicasResponse>
+                transformer = ListBlockVolumeReplicasConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListBlockVolumeReplicasRequest, ListBlockVolumeReplicasResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListBlockVolumeReplicasRequest, ListBlockVolumeReplicasResponse>,
+                        java.util.concurrent.Future<ListBlockVolumeReplicasResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListBlockVolumeReplicasRequest, ListBlockVolumeReplicasResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListBootVolumeBackupsResponse> listBootVolumeBackups(
             ListBootVolumeBackupsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1921,6 +2044,47 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListBootVolumeBackupsRequest, ListBootVolumeBackupsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBootVolumeReplicasResponse> listBootVolumeReplicas(
+            ListBootVolumeReplicasRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListBootVolumeReplicasRequest, ListBootVolumeReplicasResponse>
+                    handler) {
+        LOG.trace("Called async listBootVolumeReplicas");
+        final ListBootVolumeReplicasRequest interceptedRequest =
+                ListBootVolumeReplicasConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBootVolumeReplicasConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListBootVolumeReplicasResponse>
+                transformer = ListBootVolumeReplicasConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListBootVolumeReplicasRequest, ListBootVolumeReplicasResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListBootVolumeReplicasRequest, ListBootVolumeReplicasResponse>,
+                        java.util.concurrent.Future<ListBootVolumeReplicasResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListBootVolumeReplicasRequest, ListBootVolumeReplicasResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

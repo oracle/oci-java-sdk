@@ -45,6 +45,15 @@ public class UpdateVirtualCircuitDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("routingPolicy")
+        private java.util.List<RoutingPolicy> routingPolicy;
+
+        public Builder routingPolicy(java.util.List<RoutingPolicy> routingPolicy) {
+            this.routingPolicy = routingPolicy;
+            this.__explicitlySet__.add("routingPolicy");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("customerBgpAsn")
         private Integer customerBgpAsn;
 
@@ -135,6 +144,7 @@ public class UpdateVirtualCircuitDetails {
                     new UpdateVirtualCircuitDetails(
                             bandwidthShapeName,
                             crossConnectMappings,
+                            routingPolicy,
                             customerBgpAsn,
                             customerAsn,
                             definedTags,
@@ -153,6 +163,7 @@ public class UpdateVirtualCircuitDetails {
             Builder copiedBuilder =
                     bandwidthShapeName(o.getBandwidthShapeName())
                             .crossConnectMappings(o.getCrossConnectMappings())
+                            .routingPolicy(o.getRoutingPolicy())
                             .customerBgpAsn(o.getCustomerBgpAsn())
                             .customerAsn(o.getCustomerAsn())
                             .definedTags(o.getDefinedTags())
@@ -196,6 +207,51 @@ public class UpdateVirtualCircuitDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("crossConnectMappings")
     java.util.List<CrossConnectMapping> crossConnectMappings;
+    /**
+     **/
+    public enum RoutingPolicy {
+        OracleServiceNetwork("ORACLE_SERVICE_NETWORK"),
+        Regional("REGIONAL"),
+        MarketLevel("MARKET_LEVEL"),
+        Global("GLOBAL"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, RoutingPolicy> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (RoutingPolicy v : RoutingPolicy.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        RoutingPolicy(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static RoutingPolicy create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid RoutingPolicy: " + key);
+        }
+    };
+    /**
+     * The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit.
+     * Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`.
+     * See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details.
+     * By default, routing information is shared for all routes in the same market.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("routingPolicy")
+    java.util.List<RoutingPolicy> routingPolicy;
 
     /**
      * Deprecated. Instead use `customerAsn`.

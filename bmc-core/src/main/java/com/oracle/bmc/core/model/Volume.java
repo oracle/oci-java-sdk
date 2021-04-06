@@ -197,6 +197,16 @@ public class Volume {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeReplicas")
+        private java.util.List<BlockVolumeReplicaInfo> blockVolumeReplicas;
+
+        public Builder blockVolumeReplicas(
+                java.util.List<BlockVolumeReplicaInfo> blockVolumeReplicas) {
+            this.blockVolumeReplicas = blockVolumeReplicas;
+            this.__explicitlySet__.add("blockVolumeReplicas");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -220,7 +230,8 @@ public class Volume {
                             timeCreated,
                             volumeGroupId,
                             isAutoTuneEnabled,
-                            autoTunedVpusPerGB);
+                            autoTunedVpusPerGB,
+                            blockVolumeReplicas);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -245,7 +256,8 @@ public class Volume {
                             .timeCreated(o.getTimeCreated())
                             .volumeGroupId(o.getVolumeGroupId())
                             .isAutoTuneEnabled(o.getIsAutoTuneEnabled())
-                            .autoTunedVpusPerGB(o.getAutoTunedVpusPerGB());
+                            .autoTunedVpusPerGB(o.getAutoTunedVpusPerGB())
+                            .blockVolumeReplicas(o.getBlockVolumeReplicas());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -444,6 +456,12 @@ public class Volume {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoTunedVpusPerGB")
     Long autoTunedVpusPerGB;
+
+    /**
+     * The list of block volume replicas of this volume.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeReplicas")
+    java.util.List<BlockVolumeReplicaInfo> blockVolumeReplicas;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

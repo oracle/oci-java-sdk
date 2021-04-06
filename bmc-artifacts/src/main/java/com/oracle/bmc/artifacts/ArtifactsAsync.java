@@ -69,6 +69,24 @@ public interface ArtifactsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Upload a signature to an image.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateContainerImageSignatureResponse>
+            createContainerImageSignature(
+                    CreateContainerImageSignatureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateContainerImageSignatureRequest,
+                                    CreateContainerImageSignatureResponse>
+                            handler);
+
+    /**
      * Create a new empty container repository. Avoid entering confidential information.
      *
      * @param request The request object containing the details to send
@@ -99,6 +117,24 @@ public interface ArtifactsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteContainerImageRequest, DeleteContainerImageResponse>
                     handler);
+
+    /**
+     * Delete a container image signature.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteContainerImageSignatureResponse>
+            deleteContainerImageSignature(
+                    DeleteContainerImageSignatureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteContainerImageSignatureRequest,
+                                    DeleteContainerImageSignatureResponse>
+                            handler);
 
     /**
      * Delete container repository.
@@ -149,6 +185,22 @@ public interface ArtifactsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Get container image signature metadata.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetContainerImageSignatureResponse> getContainerImageSignature(
+            GetContainerImageSignatureRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetContainerImageSignatureRequest, GetContainerImageSignatureResponse>
+                    handler);
+
+    /**
      * Get container repository.
      *
      * @param request The request object containing the details to send
@@ -162,6 +214,23 @@ public interface ArtifactsAsync extends AutoCloseable {
             GetContainerRepositoryRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetContainerRepositoryRequest, GetContainerRepositoryResponse>
+                    handler);
+
+    /**
+     * List container image signatures in an image.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListContainerImageSignaturesResponse> listContainerImageSignatures(
+            ListContainerImageSignaturesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListContainerImageSignaturesRequest,
+                            ListContainerImageSignaturesResponse>
                     handler);
 
     /**

@@ -89,6 +89,15 @@ public class CreateClusterDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("imagePolicyConfig")
+        private CreateImagePolicyConfigDetails imagePolicyConfig;
+
+        public Builder imagePolicyConfig(CreateImagePolicyConfigDetails imagePolicyConfig) {
+            this.imagePolicyConfig = imagePolicyConfig;
+            this.__explicitlySet__.add("imagePolicyConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -101,7 +110,8 @@ public class CreateClusterDetails {
                             vcnId,
                             kubernetesVersion,
                             kmsKeyId,
-                            options);
+                            options,
+                            imagePolicyConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -115,7 +125,8 @@ public class CreateClusterDetails {
                             .vcnId(o.getVcnId())
                             .kubernetesVersion(o.getKubernetesVersion())
                             .kmsKeyId(o.getKmsKeyId())
-                            .options(o.getOptions());
+                            .options(o.getOptions())
+                            .imagePolicyConfig(o.getImagePolicyConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -173,6 +184,15 @@ public class CreateClusterDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("options")
     ClusterCreateOptions options;
+
+    /**
+     * The image verification policy for signature validation. Once a policy is created and enabled with
+     * one or more kms keys, the policy will ensure all images deployed has been signed with the key(s)
+     * attached to the policy.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("imagePolicyConfig")
+    CreateImagePolicyConfigDetails imagePolicyConfig;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

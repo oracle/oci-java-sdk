@@ -54,6 +54,16 @@ public class PreauthenticatedRequestSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("bucketListingAction")
+        private PreauthenticatedRequest.BucketListingAction bucketListingAction;
+
+        public Builder bucketListingAction(
+                PreauthenticatedRequest.BucketListingAction bucketListingAction) {
+            this.bucketListingAction = bucketListingAction;
+            this.__explicitlySet__.add("bucketListingAction");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("accessType")
         private AccessType accessType;
 
@@ -87,7 +97,13 @@ public class PreauthenticatedRequestSummary {
         public PreauthenticatedRequestSummary build() {
             PreauthenticatedRequestSummary __instance__ =
                     new PreauthenticatedRequestSummary(
-                            id, name, objectName, accessType, timeExpires, timeCreated);
+                            id,
+                            name,
+                            objectName,
+                            bucketListingAction,
+                            accessType,
+                            timeExpires,
+                            timeCreated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -98,6 +114,7 @@ public class PreauthenticatedRequestSummary {
                     id(o.getId())
                             .name(o.getName())
                             .objectName(o.getObjectName())
+                            .bucketListingAction(o.getBucketListingAction())
                             .accessType(o.getAccessType())
                             .timeExpires(o.getTimeExpires())
                             .timeCreated(o.getTimeCreated());
@@ -133,6 +150,15 @@ public class PreauthenticatedRequestSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     String objectName;
+
+    /**
+     * Specifies whether a list operation is allowed on a PAR with accessType \"AnyObjectRead\" or \"AnyObjectReadWrite\".
+     * Deny: Prevents the user from performing a list operation.
+     * ListObjects: Authorizes the user to perform a list operation.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bucketListingAction")
+    PreauthenticatedRequest.BucketListingAction bucketListingAction;
     /**
      * The operation that can be performed on this resource.
      **/
@@ -142,6 +168,8 @@ public class PreauthenticatedRequestSummary {
         ObjectWrite("ObjectWrite"),
         ObjectReadWrite("ObjectReadWrite"),
         AnyObjectWrite("AnyObjectWrite"),
+        AnyObjectRead("AnyObjectRead"),
+        AnyObjectReadWrite("AnyObjectReadWrite"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

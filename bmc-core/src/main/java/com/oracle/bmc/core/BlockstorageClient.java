@@ -1282,6 +1282,35 @@ public class BlockstorageClient implements Blockstorage {
     }
 
     @Override
+    public GetBlockVolumeReplicaResponse getBlockVolumeReplica(
+            GetBlockVolumeReplicaRequest request) {
+        LOG.trace("Called getBlockVolumeReplica");
+        final GetBlockVolumeReplicaRequest interceptedRequest =
+                GetBlockVolumeReplicaConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBlockVolumeReplicaConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetBlockVolumeReplicaResponse>
+                transformer = GetBlockVolumeReplicaConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetBootVolumeResponse getBootVolume(GetBootVolumeRequest request) {
         LOG.trace("Called getBootVolume");
         final GetBootVolumeRequest interceptedRequest =
@@ -1346,6 +1375,34 @@ public class BlockstorageClient implements Blockstorage {
                 GetBootVolumeKmsKeyConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetBootVolumeKmsKeyResponse>
                 transformer = GetBootVolumeKmsKeyConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetBootVolumeReplicaResponse getBootVolumeReplica(GetBootVolumeReplicaRequest request) {
+        LOG.trace("Called getBootVolumeReplica");
+        final GetBootVolumeReplicaRequest interceptedRequest =
+                GetBootVolumeReplicaConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBootVolumeReplicaConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetBootVolumeReplicaResponse>
+                transformer = GetBootVolumeReplicaConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1595,6 +1652,35 @@ public class BlockstorageClient implements Blockstorage {
     }
 
     @Override
+    public ListBlockVolumeReplicasResponse listBlockVolumeReplicas(
+            ListBlockVolumeReplicasRequest request) {
+        LOG.trace("Called listBlockVolumeReplicas");
+        final ListBlockVolumeReplicasRequest interceptedRequest =
+                ListBlockVolumeReplicasConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBlockVolumeReplicasConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListBlockVolumeReplicasResponse>
+                transformer = ListBlockVolumeReplicasConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListBootVolumeBackupsResponse listBootVolumeBackups(
             ListBootVolumeBackupsRequest request) {
         LOG.trace("Called listBootVolumeBackups");
@@ -1604,6 +1690,35 @@ public class BlockstorageClient implements Blockstorage {
                 ListBootVolumeBackupsConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListBootVolumeBackupsResponse>
                 transformer = ListBootVolumeBackupsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListBootVolumeReplicasResponse listBootVolumeReplicas(
+            ListBootVolumeReplicasRequest request) {
+        LOG.trace("Called listBootVolumeReplicas");
+        final ListBootVolumeReplicasRequest interceptedRequest =
+                ListBootVolumeReplicasConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBootVolumeReplicasConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListBootVolumeReplicasResponse>
+                transformer = ListBootVolumeReplicasConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
