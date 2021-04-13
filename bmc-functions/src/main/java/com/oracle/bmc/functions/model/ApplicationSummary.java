@@ -72,6 +72,15 @@ public class ApplicationSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("traceConfig")
+        private ApplicationTraceConfig traceConfig;
+
+        public Builder traceConfig(ApplicationTraceConfig traceConfig) {
+            this.traceConfig = traceConfig;
+            this.__explicitlySet__.add("traceConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -120,6 +129,7 @@ public class ApplicationSummary {
                             displayName,
                             lifecycleState,
                             subnetIds,
+                            traceConfig,
                             freeformTags,
                             definedTags,
                             timeCreated,
@@ -136,6 +146,7 @@ public class ApplicationSummary {
                             .displayName(o.getDisplayName())
                             .lifecycleState(o.getLifecycleState())
                             .subnetIds(o.getSubnetIds())
+                            .traceConfig(o.getTraceConfig())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .timeCreated(o.getTimeCreated())
@@ -187,6 +198,9 @@ public class ApplicationSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
     java.util.List<String> subnetIds;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("traceConfig")
+    ApplicationTraceConfig traceConfig;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

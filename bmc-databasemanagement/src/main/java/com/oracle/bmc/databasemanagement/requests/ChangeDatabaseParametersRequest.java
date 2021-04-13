@@ -26,7 +26,7 @@ public class ChangeDatabaseParametersRequest
     private String managedDatabaseId;
 
     /**
-     * The details required to change database parameters' values.
+     * The details required to change database parameter values.
      */
     private ChangeDatabaseParametersDetails changeDatabaseParametersDetails;
 

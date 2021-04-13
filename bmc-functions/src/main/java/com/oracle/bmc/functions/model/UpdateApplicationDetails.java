@@ -45,6 +45,15 @@ public class UpdateApplicationDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("traceConfig")
+        private ApplicationTraceConfig traceConfig;
+
+        public Builder traceConfig(ApplicationTraceConfig traceConfig) {
+            this.traceConfig = traceConfig;
+            this.__explicitlySet__.add("traceConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -69,7 +78,8 @@ public class UpdateApplicationDetails {
 
         public UpdateApplicationDetails build() {
             UpdateApplicationDetails __instance__ =
-                    new UpdateApplicationDetails(config, syslogUrl, freeformTags, definedTags);
+                    new UpdateApplicationDetails(
+                            config, syslogUrl, traceConfig, freeformTags, definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -79,6 +89,7 @@ public class UpdateApplicationDetails {
             Builder copiedBuilder =
                     config(o.getConfig())
                             .syslogUrl(o.getSyslogUrl())
+                            .traceConfig(o.getTraceConfig())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -116,6 +127,9 @@ public class UpdateApplicationDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("syslogUrl")
     String syslogUrl;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("traceConfig")
+    ApplicationTraceConfig traceConfig;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

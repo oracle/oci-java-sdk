@@ -21,7 +21,7 @@ public class ChangeRouteTableCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<ChangeRouteTableCompartmentDetails> {
 
     /**
-     * The OCID of the route table.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the route table.
      */
     private String rtId;
 

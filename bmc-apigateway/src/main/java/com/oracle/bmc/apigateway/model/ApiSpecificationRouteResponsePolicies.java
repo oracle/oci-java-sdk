@@ -36,19 +36,31 @@ public class ApiSpecificationRouteResponsePolicies {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("responseCacheStore")
+        private ResponseCacheStorePolicy responseCacheStore;
+
+        public Builder responseCacheStore(ResponseCacheStorePolicy responseCacheStore) {
+            this.responseCacheStore = responseCacheStore;
+            this.__explicitlySet__.add("responseCacheStore");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ApiSpecificationRouteResponsePolicies build() {
             ApiSpecificationRouteResponsePolicies __instance__ =
-                    new ApiSpecificationRouteResponsePolicies(headerTransformations);
+                    new ApiSpecificationRouteResponsePolicies(
+                            headerTransformations, responseCacheStore);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ApiSpecificationRouteResponsePolicies o) {
-            Builder copiedBuilder = headerTransformations(o.getHeaderTransformations());
+            Builder copiedBuilder =
+                    headerTransformations(o.getHeaderTransformations())
+                            .responseCacheStore(o.getResponseCacheStore());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -64,6 +76,9 @@ public class ApiSpecificationRouteResponsePolicies {
 
     @com.fasterxml.jackson.annotation.JsonProperty("headerTransformations")
     HeaderTransformationPolicy headerTransformations;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("responseCacheStore")
+    ResponseCacheStorePolicy responseCacheStore;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -35,6 +35,52 @@ public class UpdateDrgAttachmentDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("drgRouteTableId")
+        private String drgRouteTableId;
+
+        public Builder drgRouteTableId(String drgRouteTableId) {
+            this.drgRouteTableId = drgRouteTableId;
+            this.__explicitlySet__.add("drgRouteTableId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("networkDetails")
+        private DrgAttachmentNetworkUpdateDetails networkDetails;
+
+        public Builder networkDetails(DrgAttachmentNetworkUpdateDetails networkDetails) {
+            this.networkDetails = networkDetails;
+            this.__explicitlySet__.add("networkDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("exportDrgRouteDistributionId")
+        private String exportDrgRouteDistributionId;
+
+        public Builder exportDrgRouteDistributionId(String exportDrgRouteDistributionId) {
+            this.exportDrgRouteDistributionId = exportDrgRouteDistributionId;
+            this.__explicitlySet__.add("exportDrgRouteDistributionId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
 
@@ -49,7 +95,14 @@ public class UpdateDrgAttachmentDetails {
 
         public UpdateDrgAttachmentDetails build() {
             UpdateDrgAttachmentDetails __instance__ =
-                    new UpdateDrgAttachmentDetails(displayName, routeTableId);
+                    new UpdateDrgAttachmentDetails(
+                            displayName,
+                            drgRouteTableId,
+                            networkDetails,
+                            definedTags,
+                            freeformTags,
+                            exportDrgRouteDistributionId,
+                            routeTableId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -57,7 +110,13 @@ public class UpdateDrgAttachmentDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateDrgAttachmentDetails o) {
             Builder copiedBuilder =
-                    displayName(o.getDisplayName()).routeTableId(o.getRouteTableId());
+                    displayName(o.getDisplayName())
+                            .drgRouteTableId(o.getDrgRouteTableId())
+                            .networkDetails(o.getNetworkDetails())
+                            .definedTags(o.getDefinedTags())
+                            .freeformTags(o.getFreeformTags())
+                            .exportDrgRouteDistributionId(o.getExportDrgRouteDistributionId())
+                            .routeTableId(o.getRouteTableId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -80,7 +139,51 @@ public class UpdateDrgAttachmentDetails {
     String displayName;
 
     /**
-     * The OCID of the route table the DRG attachment will use.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
+     * <p>
+     * The DRG route table manages traffic inside the DRG.
+     * <p>
+     * You can't remove a DRG route table from a DRG attachment, but you can reassign which
+     * DRG route table it uses.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("drgRouteTableId")
+    String drgRouteTableId;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("networkDetails")
+    DrgAttachmentNetworkUpdateDetails networkDetails;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Department\": \"Finance\"}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table
+     * are advertised out through the attachment.
+     * If this value is null, no routes are advertised through this attachment.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("exportDrgRouteDistributionId")
+    String exportDrgRouteDistributionId;
+
+    /**
+     * This is the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the route table that is used to route the traffic as it enters a VCN through this attachment.
      * <p>
      * For information about why you would associate a route table with a DRG attachment, see:
      * <p>

@@ -33,10 +33,16 @@ public class SummarizeSqlStatisticsTimeSeriesRequest
     private String sqlIdentifier;
 
     /**
-     * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
      *
      */
     private java.util.List<String> databaseId;
+
+    /**
+     * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     *
+     */
+    private java.util.List<String> id;
 
     /**
      * Specify time period in ISO 8601 format with respect to current time.
@@ -119,6 +125,7 @@ public class SummarizeSqlStatisticsTimeSeriesRequest
             compartmentId(o.getCompartmentId());
             sqlIdentifier(o.getSqlIdentifier());
             databaseId(o.getDatabaseId());
+            id(o.getId());
             analysisTimeInterval(o.getAnalysisTimeInterval());
             timeIntervalStart(o.getTimeIntervalStart());
             timeIntervalEnd(o.getTimeIntervalEnd());

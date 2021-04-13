@@ -21,7 +21,7 @@ public class UpdateLocalPeeringGatewayRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdateLocalPeeringGatewayDetails> {
 
     /**
-     * The OCID of the local peering gateway.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the local peering gateway.
      */
     private String localPeeringGatewayId;
 

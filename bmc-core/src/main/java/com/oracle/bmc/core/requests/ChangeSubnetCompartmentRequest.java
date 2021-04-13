@@ -21,7 +21,7 @@ public class ChangeSubnetCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<ChangeSubnetCompartmentDetails> {
 
     /**
-     * The OCID of the subnet.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet.
      */
     private String subnetId;
 

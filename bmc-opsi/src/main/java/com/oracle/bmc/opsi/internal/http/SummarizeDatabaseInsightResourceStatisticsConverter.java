@@ -93,6 +93,15 @@ public class SummarizeDatabaseInsightResourceStatisticsConverter {
                             com.oracle.bmc.util.internal.CollectionFormatType.Multi);
         }
 
+        if (request.getId() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "id",
+                            request.getId(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         if (request.getPercentile() != null) {
             target =
                     target.queryParam(
@@ -147,6 +156,15 @@ public class SummarizeDatabaseInsightResourceStatisticsConverter {
                             "sortBy",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getSortBy().getValue()));
+        }
+
+        if (request.getHostName() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "hostName",
+                            request.getHostName(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();

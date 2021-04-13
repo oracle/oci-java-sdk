@@ -21,12 +21,12 @@ public class ChangeIPSecConnectionCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<ChangeIPSecConnectionCompartmentDetails> {
 
     /**
-     * The OCID of the IPSec connection.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IPSec connection.
      */
     private String ipscId;
 
     /**
-     * Request to change the compartment of a Ipsec Connection.
+     * Request to change the compartment of a IPSec connection.
      */
     private ChangeIPSecConnectionCompartmentDetails changeIPSecConnectionCompartmentDetails;
 

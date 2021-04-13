@@ -6,7 +6,7 @@ package com.oracle.bmc.limits.responses;
 
 import com.oracle.bmc.limits.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: ")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
 @lombok.Builder(builderClassName = "Builder")
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode

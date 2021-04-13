@@ -80,6 +80,15 @@ public class CreateSddcDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("initialSku")
+        private Sku initialSku;
+
+        public Builder initialSku(Sku initialSku) {
+            this.initialSku = initialSku;
+            this.__explicitlySet__.add("initialSku");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isHcxEnabled")
         private Boolean isHcxEnabled;
 
@@ -237,6 +246,7 @@ public class CreateSddcDetails {
                             compartmentId,
                             instanceDisplayNamePrefix,
                             esxiHostsCount,
+                            initialSku,
                             isHcxEnabled,
                             hcxVlanId,
                             sshAuthorizedKeys,
@@ -266,6 +276,7 @@ public class CreateSddcDetails {
                             .compartmentId(o.getCompartmentId())
                             .instanceDisplayNamePrefix(o.getInstanceDisplayNamePrefix())
                             .esxiHostsCount(o.getEsxiHostsCount())
+                            .initialSku(o.getInitialSku())
                             .isHcxEnabled(o.getIsHcxEnabled())
                             .hcxVlanId(o.getHcxVlanId())
                             .sshAuthorizedKeys(o.getSshAuthorizedKeys())
@@ -350,6 +361,14 @@ public class CreateSddcDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("esxiHostsCount")
     Integer esxiHostsCount;
+
+    /**
+     * Billing option selected during SDDC creation
+     * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("initialSku")
+    Sku initialSku;
 
     /**
      * Indicates whether to enable HCX for this SDDC.

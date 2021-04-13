@@ -21,7 +21,7 @@ public class UpdateCrossConnectGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdateCrossConnectGroupDetails> {
 
     /**
-     * The OCID of the cross-connect group.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cross-connect group.
      */
     private String crossConnectGroupId;
 

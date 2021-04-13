@@ -35,18 +35,31 @@ public class DatabaseHomeMetrics {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseInstanceHomeMetrics")
+        private java.util.List<DatabaseInstanceHomeMetricsDefinition> databaseInstanceHomeMetrics;
+
+        public Builder databaseInstanceHomeMetrics(
+                java.util.List<DatabaseInstanceHomeMetricsDefinition> databaseInstanceHomeMetrics) {
+            this.databaseInstanceHomeMetrics = databaseInstanceHomeMetrics;
+            this.__explicitlySet__.add("databaseInstanceHomeMetrics");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseHomeMetrics build() {
-            DatabaseHomeMetrics __instance__ = new DatabaseHomeMetrics(databaseHomeMetrics);
+            DatabaseHomeMetrics __instance__ =
+                    new DatabaseHomeMetrics(databaseHomeMetrics, databaseInstanceHomeMetrics);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DatabaseHomeMetrics o) {
-            Builder copiedBuilder = databaseHomeMetrics(o.getDatabaseHomeMetrics());
+            Builder copiedBuilder =
+                    databaseHomeMetrics(o.getDatabaseHomeMetrics())
+                            .databaseInstanceHomeMetrics(o.getDatabaseInstanceHomeMetrics());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -62,6 +75,12 @@ public class DatabaseHomeMetrics {
 
     @com.fasterxml.jackson.annotation.JsonProperty("databaseHomeMetrics")
     DatabaseHomeMetricDefinition databaseHomeMetrics;
+
+    /**
+     * The metrics for the RAC database instances.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseInstanceHomeMetrics")
+    java.util.List<DatabaseInstanceHomeMetricsDefinition> databaseInstanceHomeMetrics;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

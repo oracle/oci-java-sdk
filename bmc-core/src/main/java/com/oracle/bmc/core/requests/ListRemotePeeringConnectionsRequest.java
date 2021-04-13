@@ -26,7 +26,7 @@ public class ListRemotePeeringConnectionsRequest
     private String compartmentId;
 
     /**
-     * The OCID of the DRG.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      */
     private String drgId;
 

@@ -243,6 +243,16 @@ public class InstanceConfigurationLaunchInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("preemptibleInstanceConfig")
+        private PreemptibleInstanceConfigDetails preemptibleInstanceConfig;
+
+        public Builder preemptibleInstanceConfig(
+                PreemptibleInstanceConfigDetails preemptibleInstanceConfig) {
+            this.preemptibleInstanceConfig = preemptibleInstanceConfig;
+            this.__explicitlySet__.add("preemptibleInstanceConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -271,7 +281,8 @@ public class InstanceConfigurationLaunchInstanceDetails {
                             isPvEncryptionInTransitEnabled,
                             preferredMaintenanceAction,
                             instanceOptions,
-                            availabilityConfig);
+                            availabilityConfig,
+                            preemptibleInstanceConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -301,7 +312,8 @@ public class InstanceConfigurationLaunchInstanceDetails {
                             .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled())
                             .preferredMaintenanceAction(o.getPreferredMaintenanceAction())
                             .instanceOptions(o.getInstanceOptions())
-                            .availabilityConfig(o.getAvailabilityConfig());
+                            .availabilityConfig(o.getAvailabilityConfig())
+                            .preemptibleInstanceConfig(o.getPreemptibleInstanceConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -517,7 +529,7 @@ public class InstanceConfigurationLaunchInstanceDetails {
     String dedicatedVmHostId;
     /**
      * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-     * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for Oracle-provided images.
+     * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
      * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
      * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
      * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
@@ -570,7 +582,7 @@ public class InstanceConfigurationLaunchInstanceDetails {
     };
     /**
      * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-     * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for Oracle-provided images.
+     * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
      * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
      * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
      * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
@@ -653,6 +665,9 @@ public class InstanceConfigurationLaunchInstanceDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityConfig")
     InstanceConfigurationAvailabilityConfig availabilityConfig;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("preemptibleInstanceConfig")
+    PreemptibleInstanceConfigDetails preemptibleInstanceConfig;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

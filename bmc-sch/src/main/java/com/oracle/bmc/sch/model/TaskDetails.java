@@ -33,6 +33,10 @@ package com.oracle.bmc.sch.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = FunctionTaskDetails.class,
+        name = "function"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = LogRuleTaskDetails.class,
         name = "logRule"
     )
@@ -46,6 +50,7 @@ public class TaskDetails {
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Kind {
+        Function("function"),
         LogRule("logRule"),
 
         /**

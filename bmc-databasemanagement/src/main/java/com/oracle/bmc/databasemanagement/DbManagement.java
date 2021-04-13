@@ -63,7 +63,7 @@ public interface DbManagement extends AutoCloseable {
             AddManagedDatabaseToManagedDatabaseGroupRequest request);
 
     /**
-     * Changes database parameters' values. There are two kinds of database
+     * Changes database parameter values. There are two kinds of database
      * parameters:
      * <p>
      * - Dynamic parameters: They can be changed for the current Oracle
@@ -159,6 +159,19 @@ public interface DbManagement extends AutoCloseable {
      */
     DeleteManagedDatabaseGroupResponse deleteManagedDatabaseGroup(
             DeleteManagedDatabaseGroupRequest request);
+
+    /**
+     * Gets the metrics related to cluster cache for the Oracle
+     * Real Application Clusters (Oracle RAC) database specified
+     * by managedDatabaseId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetClusterCacheMetricExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetClusterCacheMetric API.
+     */
+    GetClusterCacheMetricResponse getClusterCacheMetric(GetClusterCacheMetricRequest request);
 
     /**
      * Gets the health metrics for a fleet of databases in a compartment or in a Managed Database Group.
@@ -346,7 +359,7 @@ public interface DbManagement extends AutoCloseable {
                     RemoveManagedDatabaseFromManagedDatabaseGroupRequest request);
 
     /**
-     * Resets database parameters' values to their default or startup values.
+     * Resets database parameter values to their default or startup values.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

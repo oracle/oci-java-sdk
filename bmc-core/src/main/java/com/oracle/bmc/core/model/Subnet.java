@@ -124,15 +124,6 @@ public class Subnet {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("ipv6PublicCidrBlock")
-        private String ipv6PublicCidrBlock;
-
-        public Builder ipv6PublicCidrBlock(String ipv6PublicCidrBlock) {
-            this.ipv6PublicCidrBlock = ipv6PublicCidrBlock;
-            this.__explicitlySet__.add("ipv6PublicCidrBlock");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6VirtualRouterIp")
         private String ipv6VirtualRouterIp;
 
@@ -148,6 +139,15 @@ public class Subnet {
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("prohibitInternetIngress")
+        private Boolean prohibitInternetIngress;
+
+        public Builder prohibitInternetIngress(Boolean prohibitInternetIngress) {
+            this.prohibitInternetIngress = prohibitInternetIngress;
+            this.__explicitlySet__.add("prohibitInternetIngress");
             return this;
         }
 
@@ -239,9 +239,9 @@ public class Subnet {
                             freeformTags,
                             id,
                             ipv6CidrBlock,
-                            ipv6PublicCidrBlock,
                             ipv6VirtualRouterIp,
                             lifecycleState,
+                            prohibitInternetIngress,
                             prohibitPublicIpOnVnic,
                             routeTableId,
                             securityListIds,
@@ -267,9 +267,9 @@ public class Subnet {
                             .freeformTags(o.getFreeformTags())
                             .id(o.getId())
                             .ipv6CidrBlock(o.getIpv6CidrBlock())
-                            .ipv6PublicCidrBlock(o.getIpv6PublicCidrBlock())
                             .ipv6VirtualRouterIp(o.getIpv6VirtualRouterIp())
                             .lifecycleState(o.getLifecycleState())
+                            .prohibitInternetIngress(o.getProhibitInternetIngress())
                             .prohibitPublicIpOnVnic(o.getProhibitPublicIpOnVnic())
                             .routeTableId(o.getRouteTableId())
                             .securityListIds(o.getSecurityListIds())
@@ -377,27 +377,14 @@ public class Subnet {
     String id;
 
     /**
-     * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's private IP address
-     * space. The subnet size is always /64. Note that IPv6 addressing is currently supported only
-     * in certain regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's IP address space.
+     * The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
      * Example: `2001:0db8:0123:1111::/64`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
     String ipv6CidrBlock;
-
-    /**
-     * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's public IP address
-     * space. The subnet size is always /64. The left 48 bits are inherited from the
-     * `ipv6PublicCidrBlock` of the {@link Vcn},
-     * and the remaining 16 bits are from the subnet's `ipv6CidrBlock`.
-     * <p>
-     * Example: `2001:0db8:0123:1111::/64`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("ipv6PublicCidrBlock")
-    String ipv6PublicCidrBlock;
 
     /**
      * For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.
@@ -461,6 +448,25 @@ public class Subnet {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
+
+    /**
+     * Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
+     * <p>
+     * For IPV4, `prohibitInternetIngress` behaves similarly to `prohibitPublicIpOnVnic`.
+     * If it is set to false, VNICs created in this subnet will automatically be assigned public IP
+     * addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp`
+     * flag in {@link CreateVnicDetails}).
+     * If `prohibitInternetIngress` is set to true, VNICs created in this subnet cannot have public IP addresses
+     * (that is, it's a privatesubnet).
+     * <p>
+     * For IPv6, if `prohibitInternetIngress` is set to `true`, internet access is not allowed for any
+     * IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
+     * <p>
+     * Example: `true`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("prohibitInternetIngress")
+    Boolean prohibitInternetIngress;
 
     /**
      * Whether VNICs within this subnet can have public IP addresses.

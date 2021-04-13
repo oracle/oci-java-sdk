@@ -36,6 +36,15 @@ public class SqlResponseTimeDistributionAggregationCollection {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
+
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
@@ -78,7 +87,12 @@ public class SqlResponseTimeDistributionAggregationCollection {
         public SqlResponseTimeDistributionAggregationCollection build() {
             SqlResponseTimeDistributionAggregationCollection __instance__ =
                     new SqlResponseTimeDistributionAggregationCollection(
-                            sqlIdentifier, databaseId, timeIntervalStart, timeIntervalEnd, items);
+                            sqlIdentifier,
+                            id,
+                            databaseId,
+                            timeIntervalStart,
+                            timeIntervalEnd,
+                            items);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -87,6 +101,7 @@ public class SqlResponseTimeDistributionAggregationCollection {
         public Builder copy(SqlResponseTimeDistributionAggregationCollection o) {
             Builder copiedBuilder =
                     sqlIdentifier(o.getSqlIdentifier())
+                            .id(o.getId())
                             .databaseId(o.getDatabaseId())
                             .timeIntervalStart(o.getTimeIntervalStart())
                             .timeIntervalEnd(o.getTimeIntervalEnd())
@@ -110,6 +125,12 @@ public class SqlResponseTimeDistributionAggregationCollection {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
     String sqlIdentifier;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    String id;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.

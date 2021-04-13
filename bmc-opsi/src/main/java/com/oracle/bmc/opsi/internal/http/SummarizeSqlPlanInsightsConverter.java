@@ -28,7 +28,6 @@ public class SummarizeSqlPlanInsightsConverter {
             com.oracle.bmc.opsi.requests.SummarizeSqlPlanInsightsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
-        Validate.notNull(request.getDatabaseId(), "databaseId is required");
         Validate.notNull(request.getSqlIdentifier(), "sqlIdentifier is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
@@ -43,11 +42,21 @@ public class SummarizeSqlPlanInsightsConverter {
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getCompartmentId()));
 
-        target =
-                target.queryParam(
-                        "databaseId",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getDatabaseId()));
+        if (request.getDatabaseId() != null) {
+            target =
+                    target.queryParam(
+                            "databaseId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDatabaseId()));
+        }
+
+        if (request.getId() != null) {
+            target =
+                    target.queryParam(
+                            "id",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getId()));
+        }
 
         target =
                 target.queryParam(

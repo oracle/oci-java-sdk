@@ -94,6 +94,15 @@ public class SummarizeDatabaseInsightResourceCapacityTrendConverter {
                             com.oracle.bmc.util.internal.CollectionFormatType.Multi);
         }
 
+        if (request.getId() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "id",
+                            request.getId(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         if (request.getUtilizationLevel() != null) {
             target =
                     target.queryParam(
@@ -124,6 +133,23 @@ public class SummarizeDatabaseInsightResourceCapacityTrendConverter {
                             "sortBy",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getSortBy().getValue()));
+        }
+
+        if (request.getTablespaceName() != null) {
+            target =
+                    target.queryParam(
+                            "tablespaceName",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTablespaceName()));
+        }
+
+        if (request.getHostName() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "hostName",
+                            request.getHostName(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();

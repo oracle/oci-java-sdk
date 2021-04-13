@@ -94,6 +94,15 @@ public class SummarizeDatabaseInsightResourceForecastTrendConverter {
                             com.oracle.bmc.util.internal.CollectionFormatType.Multi);
         }
 
+        if (request.getId() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "id",
+                            request.getId(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         if (request.getStatistic() != null) {
             target =
                     target.queryParam(
@@ -140,6 +149,23 @@ public class SummarizeDatabaseInsightResourceForecastTrendConverter {
                             "page",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getPage()));
+        }
+
+        if (request.getHostName() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "hostName",
+                            request.getHostName(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getTablespaceName() != null) {
+            target =
+                    target.queryParam(
+                            "tablespaceName",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTablespaceName()));
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();

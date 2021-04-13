@@ -70,7 +70,7 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Changes database parameters' values. There are two kinds of database
+     * Changes database parameter values. There are two kinds of database
      * parameters:
      * <p>
      * - Dynamic parameters: They can be changed for the current Oracle
@@ -201,6 +201,25 @@ public interface DbManagementAsync extends AutoCloseable {
             DeleteManagedDatabaseGroupRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteManagedDatabaseGroupRequest, DeleteManagedDatabaseGroupResponse>
+                    handler);
+
+    /**
+     * Gets the metrics related to cluster cache for the Oracle
+     * Real Application Clusters (Oracle RAC) database specified
+     * by managedDatabaseId.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetClusterCacheMetricResponse> getClusterCacheMetric(
+            GetClusterCacheMetricRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetClusterCacheMetricRequest, GetClusterCacheMetricResponse>
                     handler);
 
     /**
@@ -469,7 +488,7 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Resets database parameters' values to their default or startup values.
+     * Resets database parameter values to their default or startup values.
      *
      *
      * @param request The request object containing the details to send

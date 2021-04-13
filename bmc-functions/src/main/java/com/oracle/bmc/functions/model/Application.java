@@ -88,6 +88,15 @@ public class Application {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("traceConfig")
+        private ApplicationTraceConfig traceConfig;
+
+        public Builder traceConfig(ApplicationTraceConfig traceConfig) {
+            this.traceConfig = traceConfig;
+            this.__explicitlySet__.add("traceConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -138,6 +147,7 @@ public class Application {
                             config,
                             subnetIds,
                             syslogUrl,
+                            traceConfig,
                             freeformTags,
                             definedTags,
                             timeCreated,
@@ -156,6 +166,7 @@ public class Application {
                             .config(o.getConfig())
                             .subnetIds(o.getSubnetIds())
                             .syslogUrl(o.getSyslogUrl())
+                            .traceConfig(o.getTraceConfig())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .timeCreated(o.getTimeCreated())
@@ -281,6 +292,9 @@ public class Application {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("syslogUrl")
     String syslogUrl;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("traceConfig")
+    ApplicationTraceConfig traceConfig;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

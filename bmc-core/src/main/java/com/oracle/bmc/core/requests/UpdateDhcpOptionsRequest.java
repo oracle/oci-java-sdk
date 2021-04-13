@@ -21,7 +21,7 @@ public class UpdateDhcpOptionsRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdateDhcpDetails> {
 
     /**
-     * The OCID for the set of DHCP options.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the set of DHCP options.
      */
     private String dhcpId;
 

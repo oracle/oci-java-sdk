@@ -108,6 +108,15 @@ public class CreateSubnetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("prohibitInternetIngress")
+        private Boolean prohibitInternetIngress;
+
+        public Builder prohibitInternetIngress(Boolean prohibitInternetIngress) {
+            this.prohibitInternetIngress = prohibitInternetIngress;
+            this.__explicitlySet__.add("prohibitInternetIngress");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("prohibitPublicIpOnVnic")
         private Boolean prohibitPublicIpOnVnic;
 
@@ -159,6 +168,7 @@ public class CreateSubnetDetails {
                             dnsLabel,
                             freeformTags,
                             ipv6CidrBlock,
+                            prohibitInternetIngress,
                             prohibitPublicIpOnVnic,
                             routeTableId,
                             securityListIds,
@@ -179,6 +189,7 @@ public class CreateSubnetDetails {
                             .dnsLabel(o.getDnsLabel())
                             .freeformTags(o.getFreeformTags())
                             .ipv6CidrBlock(o.getIpv6CidrBlock())
+                            .prohibitInternetIngress(o.getProhibitInternetIngress())
                             .prohibitPublicIpOnVnic(o.getProhibitPublicIpOnVnic())
                             .routeTableId(o.getRouteTableId())
                             .securityListIds(o.getSecurityListIds())
@@ -303,6 +314,21 @@ public class CreateSubnetDetails {
     String ipv6CidrBlock;
 
     /**
+     * Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
+     * <p>
+     * For IPv6, if `prohibitInternetIngress` is set to `true`, internet access is not allowed for any
+     * IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
+     * <p>
+     * `prohibitPublicIpOnVnic` will be set to the value of `prohibitInternetIngress` to dictate IPv4
+     * behavior in this subnet. Only one or the other flag should be specified.
+     * <p>
+     * Example: `true`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("prohibitInternetIngress")
+    Boolean prohibitInternetIngress;
+
+    /**
      * Whether VNICs within this subnet can have public IP addresses.
      * Defaults to false, which means VNICs created in this subnet will
      * automatically be assigned public IP addresses unless specified
@@ -312,8 +338,8 @@ public class CreateSubnetDetails {
      * subnet cannot have public IP addresses (that is, it's a private
      * subnet).
      * <p>
-     * For IPv6, if `prohibitPublicIpOnVnic` is set to `true`, internet access is not allowed for any
-     * IPv6s assigned to VNICs in the subnet.
+     * If you intend to use an IPv6 CIDR block, you should use the flag `prohibitInternetIngress` to
+     * specify ingress internet traffic behavior of the subnet.
      * <p>
      * Example: `true`
      *

@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details required to reset database parameters' values.
+ * The details required to reset database parameter values.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -88,12 +88,13 @@ public class ResetDatabaseParametersDetails {
     /**
      * The clause used to specify when the parameter change takes effect.
      * <p>
-     * Use `MEMORY` to make the change in memory and affect it immediately.
-     * Use `SPFILE` to make the change in the server parameter file. The
-     * change takes effect when the database is next shut down and started
-     * up again. Use `BOTH` to make the change in memory and in the server
-     * parameter file. The change takes effect immediately and persists
-     * after the database is shut down and started up again.
+     * Use `MEMORY` to make the change in memory and ensure that it takes
+     * effect immediately. Use `SPFILE` to make the change in the server
+     * parameter file. The change takes effect when the database is next
+     * shut down and started up again. Use `BOTH` to make the change in
+     * memory and in the server parameter file. The change takes effect
+     * immediately and persists after the database is shut down and
+     * started up again.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")

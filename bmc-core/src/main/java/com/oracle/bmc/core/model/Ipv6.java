@@ -11,7 +11,7 @@ package com.oracle.bmc.core.model;
  * You can create and assign an IPv6 to any VNIC that is in an IPv6-enabled subnet in an
  * IPv6-enabled VCN.
  * <p>
- **Note:** IPv6 addressing is currently supported only in certain regions. For important
+ **Note:** IPv6 addressing is supported for all commercial and government regions. For important
  * details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
  *
  * <br/>
@@ -87,30 +87,12 @@ public class Ipv6 {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("isInternetAccessAllowed")
-        private Boolean isInternetAccessAllowed;
-
-        public Builder isInternetAccessAllowed(Boolean isInternetAccessAllowed) {
-            this.isInternetAccessAllowed = isInternetAccessAllowed;
-            this.__explicitlySet__.add("isInternetAccessAllowed");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("publicIpAddress")
-        private String publicIpAddress;
-
-        public Builder publicIpAddress(String publicIpAddress) {
-            this.publicIpAddress = publicIpAddress;
-            this.__explicitlySet__.add("publicIpAddress");
             return this;
         }
 
@@ -153,9 +135,7 @@ public class Ipv6 {
                             freeformTags,
                             id,
                             ipAddress,
-                            isInternetAccessAllowed,
                             lifecycleState,
-                            publicIpAddress,
                             subnetId,
                             timeCreated,
                             vnicId);
@@ -172,9 +152,7 @@ public class Ipv6 {
                             .freeformTags(o.getFreeformTags())
                             .id(o.getId())
                             .ipAddress(o.getIpAddress())
-                            .isInternetAccessAllowed(o.getIsInternetAccessAllowed())
                             .lifecycleState(o.getLifecycleState())
-                            .publicIpAddress(o.getPublicIpAddress())
                             .subnetId(o.getSubnetId())
                             .timeCreated(o.getTimeCreated())
                             .vnicId(o.getVnicId());
@@ -234,26 +212,14 @@ public class Ipv6 {
     String id;
 
     /**
-     * The IPv6 address of the `IPv6` object. The address is within the private IPv6 CIDR block
-     * of the VNIC's subnet (see the `ipv6CidrBlock` attribute for the {@link Subnet}
-     * object.
+     * The IPv6 address of the `IPv6` object. The address is within the IPv6 CIDR block of the VNIC's subnet
+     * (see the `ipv6CidrBlock` attribute for the {@link Subnet} object.
      * <p>
      * Example: `2001:0db8:0123:1111:abcd:ef01:2345:6789`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     String ipAddress;
-
-    /**
-     * Whether the IPv6 can be used for internet communication. Allowed by default for an IPv6 in
-     * a public subnet. Never allowed for an IPv6 in a private subnet. If the value is `true`, the
-     * IPv6 uses its public IP address for internet communication.
-     * <p>
-     * Example: `true`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("isInternetAccessAllowed")
-    Boolean isInternetAccessAllowed;
     /**
      * The IPv6's current state.
      **/
@@ -307,28 +273,6 @@ public class Ipv6 {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
-
-    /**
-     * The IPv6 address to be used for internet communication. The address is within the public
-     * IPv6 CIDR block of the VNIC's subnet (see the `ipv6PublicCidrBlock` attribute for the
-     * {@link Subnet} object).
-     * <p>
-     * If your organization did NOT assign a custom IPv6 CIDR to the VCN for the private address
-     * space, Oracle provides the IPv6 CIDR and uses that same CIDR for the private and public
-     * address space. Therefore the `publicIpAddress` would be the same as the `ipAddress`.
-     * <p>
-     * If your organization assigned a custom IPv6 CIDR to the VCN for the private address space,
-     * the right 80 bits of the IPv6 public IP (the subnet and address bits) are the same as for
-     * the `ipAddress`. But the left 48 bits are from the public IPv6 CIDR that Oracle assigned
-     * to the VCN.
-     * <p>
-     * This is null if the IPv6 is created with `isInternetAccessAllowed` set to `false`.
-     * <p>
-     * Example: `2001:0db8:0123:1111:abcd:ef01:2345:6789`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("publicIpAddress")
-    String publicIpAddress;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.

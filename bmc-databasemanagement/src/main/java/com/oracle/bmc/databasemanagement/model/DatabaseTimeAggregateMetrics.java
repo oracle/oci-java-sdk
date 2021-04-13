@@ -62,12 +62,22 @@ public class DatabaseTimeAggregateMetrics {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cluster")
+        private MetricDataPoint cluster;
+
+        public Builder cluster(MetricDataPoint cluster) {
+            this.cluster = cluster;
+            this.__explicitlySet__.add("cluster");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseTimeAggregateMetrics build() {
             DatabaseTimeAggregateMetrics __instance__ =
-                    new DatabaseTimeAggregateMetrics(cpuCount, cpuTime, waitTime, userIoTime);
+                    new DatabaseTimeAggregateMetrics(
+                            cpuCount, cpuTime, waitTime, userIoTime, cluster);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -78,7 +88,8 @@ public class DatabaseTimeAggregateMetrics {
                     cpuCount(o.getCpuCount())
                             .cpuTime(o.getCpuTime())
                             .waitTime(o.getWaitTime())
-                            .userIoTime(o.getUserIoTime());
+                            .userIoTime(o.getUserIoTime())
+                            .cluster(o.getCluster());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -103,6 +114,9 @@ public class DatabaseTimeAggregateMetrics {
 
     @com.fasterxml.jackson.annotation.JsonProperty("userIoTime")
     MetricDataPoint userIoTime;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("cluster")
+    MetricDataPoint cluster;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -115,6 +115,15 @@ public class Function {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("traceConfig")
+        private FunctionTraceConfig traceConfig;
+
+        public Builder traceConfig(FunctionTraceConfig traceConfig) {
+            this.traceConfig = traceConfig;
+            this.__explicitlySet__.add("traceConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -177,6 +186,7 @@ public class Function {
                             memoryInMBs,
                             config,
                             timeoutInSeconds,
+                            traceConfig,
                             freeformTags,
                             invokeEndpoint,
                             definedTags,
@@ -199,6 +209,7 @@ public class Function {
                             .memoryInMBs(o.getMemoryInMBs())
                             .config(o.getConfig())
                             .timeoutInSeconds(o.getTimeoutInSeconds())
+                            .traceConfig(o.getTraceConfig())
                             .freeformTags(o.getFreeformTags())
                             .invokeEndpoint(o.getInvokeEndpoint())
                             .definedTags(o.getDefinedTags())
@@ -343,6 +354,9 @@ public class Function {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
     Integer timeoutInSeconds;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("traceConfig")
+    FunctionTraceConfig traceConfig;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

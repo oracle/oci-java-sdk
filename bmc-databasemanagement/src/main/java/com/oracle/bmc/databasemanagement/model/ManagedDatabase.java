@@ -114,6 +114,60 @@ public class ManagedDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("parentContainerName")
+        private String parentContainerName;
+
+        public Builder parentContainerName(String parentContainerName) {
+            this.parentContainerName = parentContainerName;
+            this.__explicitlySet__.add("parentContainerName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("parentContainerCompartmentId")
+        private String parentContainerCompartmentId;
+
+        public Builder parentContainerCompartmentId(String parentContainerCompartmentId) {
+            this.parentContainerCompartmentId = parentContainerCompartmentId;
+            this.__explicitlySet__.add("parentContainerCompartmentId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceCount")
+        private Integer instanceCount;
+
+        public Builder instanceCount(Integer instanceCount) {
+            this.instanceCount = instanceCount;
+            this.__explicitlySet__.add("instanceCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceDetails")
+        private java.util.List<InstanceDetails> instanceDetails;
+
+        public Builder instanceDetails(java.util.List<InstanceDetails> instanceDetails) {
+            this.instanceDetails = instanceDetails;
+            this.__explicitlySet__.add("instanceDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("pdbCount")
+        private Integer pdbCount;
+
+        public Builder pdbCount(Integer pdbCount) {
+            this.pdbCount = pdbCount;
+            this.__explicitlySet__.add("pdbCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("pdbStatus")
+        private java.util.List<PdbStatusDetails> pdbStatus;
+
+        public Builder pdbStatus(java.util.List<PdbStatusDetails> pdbStatus) {
+            this.pdbStatus = pdbStatus;
+            this.__explicitlySet__.add("pdbStatus");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
         private java.util.Map<String, String> additionalDetails;
 
@@ -139,6 +193,12 @@ public class ManagedDatabase {
                             managedDatabaseGroups,
                             timeCreated,
                             databaseStatus,
+                            parentContainerName,
+                            parentContainerCompartmentId,
+                            instanceCount,
+                            instanceDetails,
+                            pdbCount,
+                            pdbStatus,
                             additionalDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -157,6 +217,12 @@ public class ManagedDatabase {
                             .managedDatabaseGroups(o.getManagedDatabaseGroups())
                             .timeCreated(o.getTimeCreated())
                             .databaseStatus(o.getDatabaseStatus())
+                            .parentContainerName(o.getParentContainerName())
+                            .parentContainerCompartmentId(o.getParentContainerCompartmentId())
+                            .instanceCount(o.getInstanceCount())
+                            .instanceDetails(o.getInstanceDetails())
+                            .pdbCount(o.getPdbCount())
+                            .pdbStatus(o.getPdbStatus())
                             .additionalDetails(o.getAdditionalDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -234,6 +300,45 @@ public class ManagedDatabase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseStatus")
     DatabaseStatus databaseStatus;
+
+    /**
+     * The name of the parent Container Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parentContainerName")
+    String parentContainerName;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment
+     * in which the parent Container Database resides, if the Managed Database
+     * is a Pluggable Database (PDB).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parentContainerCompartmentId")
+    String parentContainerCompartmentId;
+
+    /**
+     * The number of Oracle Real Application Clusters (Oracle RAC) database instances.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceCount")
+    Integer instanceCount;
+
+    /**
+     * The details of the Oracle Real Application Clusters (Oracle RAC) database instances.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceDetails")
+    java.util.List<InstanceDetails> instanceDetails;
+
+    /**
+     * The number of PDBs in the Container Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("pdbCount")
+    Integer pdbCount;
+
+    /**
+     * The status of the PDB in the Container Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("pdbStatus")
+    java.util.List<PdbStatusDetails> pdbStatus;
 
     /**
      * The additional details specific to a type of database defined in `{\"key\": \"value\"}` format.

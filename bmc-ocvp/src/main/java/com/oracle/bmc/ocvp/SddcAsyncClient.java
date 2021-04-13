@@ -551,6 +551,45 @@ public class SddcAsyncClient implements SddcAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListSupportedSkusResponse> listSupportedSkus(
+            ListSupportedSkusRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSupportedSkusRequest, ListSupportedSkusResponse>
+                    handler) {
+        LOG.trace("Called async listSupportedSkus");
+        final ListSupportedSkusRequest interceptedRequest =
+                ListSupportedSkusConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSupportedSkusConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListSupportedSkusResponse>
+                transformer = ListSupportedSkusConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListSupportedSkusRequest, ListSupportedSkusResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSupportedSkusRequest, ListSupportedSkusResponse>,
+                        java.util.concurrent.Future<ListSupportedSkusResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSupportedSkusRequest, ListSupportedSkusResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSupportedVmwareSoftwareVersionsResponse>
             listSupportedVmwareSoftwareVersions(
                     ListSupportedVmwareSoftwareVersionsRequest request,

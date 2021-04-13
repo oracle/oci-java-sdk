@@ -180,6 +180,16 @@ public class Instance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("preemptibleInstanceConfig")
+        private PreemptibleInstanceConfigDetails preemptibleInstanceConfig;
+
+        public Builder preemptibleInstanceConfig(
+                PreemptibleInstanceConfigDetails preemptibleInstanceConfig) {
+            this.preemptibleInstanceConfig = preemptibleInstanceConfig;
+            this.__explicitlySet__.add("preemptibleInstanceConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -301,6 +311,7 @@ public class Instance {
                             launchOptions,
                             instanceOptions,
                             availabilityConfig,
+                            preemptibleInstanceConfig,
                             lifecycleState,
                             metadata,
                             region,
@@ -335,6 +346,7 @@ public class Instance {
                             .launchOptions(o.getLaunchOptions())
                             .instanceOptions(o.getInstanceOptions())
                             .availabilityConfig(o.getAvailabilityConfig())
+                            .preemptibleInstanceConfig(o.getPreemptibleInstanceConfig())
                             .lifecycleState(o.getLifecycleState())
                             .metadata(o.getMetadata())
                             .region(o.getRegion())
@@ -490,7 +502,7 @@ public class Instance {
     String ipxeScript;
     /**
      * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-     * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for Oracle-provided images.
+     * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
      * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
      * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
      * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
@@ -543,7 +555,7 @@ public class Instance {
     };
     /**
      * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-     * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for Oracle-provided images.
+     * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
      * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
      * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
      * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
@@ -560,6 +572,9 @@ public class Instance {
 
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityConfig")
     InstanceAvailabilityConfig availabilityConfig;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("preemptibleInstanceConfig")
+    PreemptibleInstanceConfigDetails preemptibleInstanceConfig;
     /**
      * The current state of the instance.
      **/

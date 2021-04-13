@@ -3,6 +3,40 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.36.0 - 2021-04-13
+### Added
+- Support for the Database Migration service
+- Support for the Networking Topology service
+- Support for getting the id of peered VCNs on local peering gateways in the Networking service
+- Support for burstable instances in the Compute service
+- Support for preemptible instances in the Compute service
+- Support for fractional resource usage and availability in the Limits service
+- Support for streaming analytics in the Service Connector Hub service
+- Support for flexible routing inside DRGs to enable packet flow between any two attachments in the Networking service
+- Support for routing policy to customize dynamic import/export of routes in the Networking service
+- Support for IPv6, including on FastConnect and IPsec resources, in the Networking service
+- Support for request validation policies in the API Gateway service
+- Support for RESP-compliant (e.g. REDIS) response caches, and for configuring response caching per-route in the API Gateway service
+- Support for flexible billing in the VMWare Solution service
+- Support for new DNS format for the Web Application Acceleration and Security service
+- Support for configuring APM tracing on applications and functions in the Functions service
+- Support for Enterprise Manager external databases and Management Agent Service managed external databases and hosts in the Operations Insights service
+- Support for getting cluster cache metrics for RAC CDB managed databases in the Database Management service
+
+### Breaking Changes
+- Method `public java.lang.Boolean getIsInternetAccessAllowed()` has been removed from the model `CreateIpv6Details` in the Core service
+- Method `public java.lang.String getIpv6CidrBlock()` has been removed from the model `CreateVcnDetails` in the Core service
+- Method `public java.lang.Boolean getIsInternetAccessAllowed()` has been removed from the model `Ipv6` in the Core service
+- Method `public java.lang.String getPublicIpAddress()` has been removed from the model `Ipv6` in the Core service
+- Method `public java.lang.String getIpv6PublicCidrBlock()` has been removed from the model `Subnet` in the Core service
+- Method `public java.lang.Boolean getIsInternetAccessAllowed()` has been removed from the model `UpdateIpv6Details` in the Core service
+- Method `public java.lang.String getIpv6CidrBlock()` has been removed from the model `Vcn` in the Core service
+- Method `public java.lang.String getIpv6PublicCidrBlock()` has been removed from the model `Vcn` in the Core service
+- Method `public com.oracle.bmc.opsi.model.DatabaseInsightSummary$Builder builder()` has been removed from the model `DatabaseInsightSummary` in the Opsi service
+- Method `public java.util.Set get__explicitlySet__()` has been removed from the model `DatabaseInsightSummary` in the Opsi service
+- Method `public com.oracle.bmc.opsi.model.DatabaseInsightSummary$Builder toBuilder()` has been removed from the model `DatabaseInsightSummary` in the Opsi service
+- Accessibility of method `public DatabaseInsightSummary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.util.List, java.util.Map, java.util.Map, java.util.Map)` from the model `DatabaseInsightSummary` in Opsi service has been decreased from public to protected
+
 ## 1.35.1 - 2021-04-06
 ### Added
 - Support for scheduling the suspension and resumption of compute instance pools based on predefined schedules in the Autoscaling service

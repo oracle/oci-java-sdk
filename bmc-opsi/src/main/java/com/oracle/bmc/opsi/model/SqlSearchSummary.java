@@ -24,6 +24,15 @@ public class SqlSearchSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
+
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
@@ -84,6 +93,7 @@ public class SqlSearchSummary {
         public SqlSearchSummary build() {
             SqlSearchSummary __instance__ =
                     new SqlSearchSummary(
+                            id,
                             databaseId,
                             compartmentId,
                             databaseName,
@@ -97,7 +107,8 @@ public class SqlSearchSummary {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(SqlSearchSummary o) {
             Builder copiedBuilder =
-                    databaseId(o.getDatabaseId())
+                    id(o.getId())
+                            .databaseId(o.getDatabaseId())
                             .compartmentId(o.getCompartmentId())
                             .databaseName(o.getDatabaseName())
                             .databaseDisplayName(o.getDatabaseDisplayName())
@@ -115,6 +126,12 @@ public class SqlSearchSummary {
     public static Builder builder() {
         return new Builder();
     }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    String id;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.

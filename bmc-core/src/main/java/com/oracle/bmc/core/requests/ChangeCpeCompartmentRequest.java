@@ -21,7 +21,7 @@ public class ChangeCpeCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<ChangeCpeCompartmentDetails> {
 
     /**
-     * The OCID of the CPE.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the CPE.
      */
     private String cpeId;
 

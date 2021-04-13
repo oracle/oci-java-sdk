@@ -90,6 +90,15 @@ public class UpdateSubnetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
+        private String ipv6CidrBlock;
+
+        public Builder ipv6CidrBlock(String ipv6CidrBlock) {
+            this.ipv6CidrBlock = ipv6CidrBlock;
+            this.__explicitlySet__.add("ipv6CidrBlock");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -102,7 +111,8 @@ public class UpdateSubnetDetails {
                             freeformTags,
                             routeTableId,
                             securityListIds,
-                            cidrBlock);
+                            cidrBlock,
+                            ipv6CidrBlock);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -116,7 +126,8 @@ public class UpdateSubnetDetails {
                             .freeformTags(o.getFreeformTags())
                             .routeTableId(o.getRouteTableId())
                             .securityListIds(o.getSecurityListIds())
-                            .cidrBlock(o.getCidrBlock());
+                            .cidrBlock(o.getCidrBlock())
+                            .ipv6CidrBlock(o.getIpv6CidrBlock());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -198,6 +209,21 @@ public class UpdateSubnetDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
     String cidrBlock;
+
+    /**
+     * This is the IPv6 CIDR block for the subnet's IP address space.
+     * The subnet size is always /64.
+     * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * The provided CIDR must maintain the following rules -
+     * <p>
+     * a. The IPv6 CIDR block is valid and correctly formatted.
+     * b. The IPv6 CIDR is within the parent VCN IPv6 range.
+     * <p>
+     * Example: `2001:0db8:0123:1111::/64`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
+    String ipv6CidrBlock;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

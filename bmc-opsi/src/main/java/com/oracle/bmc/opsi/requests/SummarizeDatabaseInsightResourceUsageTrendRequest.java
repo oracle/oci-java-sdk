@@ -27,7 +27,7 @@ public class SummarizeDatabaseInsightResourceUsageTrendRequest
 
     /**
      * Filter by resource metric.
-     * Supported values are CPU and STORAGE.
+     * Supported values are CPU , STORAGE, MEMORY and IO.
      *
      */
     private String resourceMetric;
@@ -62,14 +62,14 @@ public class SummarizeDatabaseInsightResourceUsageTrendRequest
 
     /**
      * Filter by one or more database type.
-     * Possible values are ADW-S, ATP-S, ADW-D, ATP-D
+     * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
      *
      */
     private java.util.List<DatabaseType> databaseType;
 
     /**
      * Filter by one or more database type.
-     * Possible values are ADW-S, ATP-S, ADW-D, ATP-D
+     * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
      *
      **/
     public enum DatabaseType {
@@ -77,6 +77,8 @@ public class SummarizeDatabaseInsightResourceUsageTrendRequest
         AtpS("ATP-S"),
         AdwD("ADW-D"),
         AtpD("ATP-D"),
+        ExternalPdb("EXTERNAL-PDB"),
+        ExternalNoncdb("EXTERNAL-NONCDB"),
         ;
 
         private final String value;
@@ -107,10 +109,16 @@ public class SummarizeDatabaseInsightResourceUsageTrendRequest
         }
     };
     /**
-     * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
      *
      */
     private java.util.List<String> databaseId;
+
+    /**
+     * Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     *
+     */
+    private java.util.List<String> id;
 
     /**
      * For list pagination. The value of the `opc-next-page` response header from
@@ -218,6 +226,7 @@ public class SummarizeDatabaseInsightResourceUsageTrendRequest
             timeIntervalEnd(o.getTimeIntervalEnd());
             databaseType(o.getDatabaseType());
             databaseId(o.getDatabaseId());
+            id(o.getId());
             page(o.getPage());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());

@@ -20,7 +20,7 @@ import com.oracle.bmc.core.model.*;
 public class GetIPSecConnectionRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the IPSec connection.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IPSec connection.
      */
     private String ipscId;
 

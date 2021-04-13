@@ -21,7 +21,7 @@ public class UpdateDrgAttachmentRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdateDrgAttachmentDetails> {
 
     /**
-     * The OCID of the DRG attachment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment.
      */
     private String drgAttachmentId;
 

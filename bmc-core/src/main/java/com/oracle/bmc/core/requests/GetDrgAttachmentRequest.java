@@ -20,7 +20,7 @@ import com.oracle.bmc.core.model.*;
 public class GetDrgAttachmentRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the DRG attachment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment.
      */
     private String drgAttachmentId;
 

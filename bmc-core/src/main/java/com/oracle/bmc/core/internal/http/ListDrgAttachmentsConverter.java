@@ -70,6 +70,62 @@ public class ListDrgAttachmentsConverter {
                                     request.getPage()));
         }
 
+        if (request.getNetworkId() != null) {
+            target =
+                    target.queryParam(
+                            "networkId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getNetworkId()));
+        }
+
+        if (request.getAttachmentType() != null) {
+            target =
+                    target.queryParam(
+                            "attachmentType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getAttachmentType().getValue()));
+        }
+
+        if (request.getDrgRouteTableId() != null) {
+            target =
+                    target.queryParam(
+                            "drgRouteTableId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDrgRouteTableId()));
+        }
+
+        if (request.getDisplayName() != null) {
+            target =
+                    target.queryParam(
+                            "displayName",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDisplayName()));
+        }
+
+        if (request.getSortBy() != null) {
+            target =
+                    target.queryParam(
+                            "sortBy",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSortBy().getValue()));
+        }
+
+        if (request.getSortOrder() != null) {
+            target =
+                    target.queryParam(
+                            "sortOrder",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSortOrder().getValue()));
+        }
+
+        if (request.getLifecycleState() != null) {
+            target =
+                    target.queryParam(
+                            "lifecycleState",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getLifecycleState().getValue()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

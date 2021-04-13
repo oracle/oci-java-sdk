@@ -10,7 +10,7 @@ import com.oracle.bmc.limits.responses.*;
 /**
  * APIs that interact with the resource limits of a specific resource type
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: ")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
 public interface Quotas extends AutoCloseable {
 
     /**

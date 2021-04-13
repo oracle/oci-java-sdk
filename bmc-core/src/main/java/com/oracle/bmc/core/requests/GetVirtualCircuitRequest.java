@@ -20,7 +20,7 @@ import com.oracle.bmc.core.model.*;
 public class GetVirtualCircuitRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the virtual circuit.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the virtual circuit.
      */
     private String virtualCircuitId;
 

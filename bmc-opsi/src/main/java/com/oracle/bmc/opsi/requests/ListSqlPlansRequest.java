@@ -25,12 +25,6 @@ public class ListSqlPlansRequest extends com.oracle.bmc.requests.BmcRequest<java
     private String compartmentId;
 
     /**
-     * Required [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-     *
-     */
-    private String databaseId;
-
-    /**
      * Unique SQL_ID for a SQL Statement.
      * Example: `6rgjh9bjmy2s7`
      *
@@ -43,6 +37,18 @@ public class ListSqlPlansRequest extends com.oracle.bmc.requests.BmcRequest<java
      *
      */
     private java.util.List<Long> planHash;
+
+    /**
+     * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
+     *
+     */
+    private String databaseId;
+
+    /**
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     *
+     */
+    private String id;
 
     /**
      * For list pagination. The value of the `opc-next-page` response header from
@@ -95,9 +101,10 @@ public class ListSqlPlansRequest extends com.oracle.bmc.requests.BmcRequest<java
          */
         public Builder copy(ListSqlPlansRequest o) {
             compartmentId(o.getCompartmentId());
-            databaseId(o.getDatabaseId());
             sqlIdentifier(o.getSqlIdentifier());
             planHash(o.getPlanHash());
+            databaseId(o.getDatabaseId());
+            id(o.getId());
             page(o.getPage());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());

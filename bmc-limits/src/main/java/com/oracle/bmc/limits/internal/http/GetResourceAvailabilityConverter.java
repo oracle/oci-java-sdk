@@ -10,7 +10,7 @@ import com.oracle.bmc.limits.requests.*;
 import com.oracle.bmc.limits.responses.*;
 import org.apache.commons.lang3.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: ")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
 @lombok.extern.slf4j.Slf4j
 public class GetResourceAvailabilityConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory

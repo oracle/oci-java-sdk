@@ -30,7 +30,7 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
     private String vcnId;
 
     /**
-     * The OCID of the DRG.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      */
     private String drgId;
 
@@ -51,6 +51,172 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
      *
      */
     private String page;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
+     */
+    private String networkId;
+
+    /**
+     * The type for the network resource attached to the DRG.
+     */
+    private AttachmentType attachmentType;
+
+    /**
+     * The type for the network resource attached to the DRG.
+     **/
+    public enum AttachmentType {
+        Vcn("VCN"),
+        VirtualCircuit("VIRTUAL_CIRCUIT"),
+        RemotePeeringConnection("REMOTE_PEERING_CONNECTION"),
+        IpsecTunnel("IPSEC_TUNNEL"),
+        All("ALL"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, AttachmentType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AttachmentType v : AttachmentType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        AttachmentType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AttachmentType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid AttachmentType: " + key);
+        }
+    };
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
+     */
+    private String drgRouteTableId;
+
+    /**
+     * A filter to return only resources that match the given display name exactly.
+     *
+     */
+    private String displayName;
+
+    /**
+     * The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+     * sort order is case sensitive.
+     * <p>
+     **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+     * optionally filter by availability domain if the scope of the resource type is within a
+     * single availability domain. If you call one of these \"List\" operations without specifying
+     * an availability domain, the resources are grouped by availability domain, then sorted.
+     *
+     */
+    private SortBy sortBy;
+
+    /**
+     * The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+     * sort order is case sensitive.
+     * <p>
+     **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+     * optionally filter by availability domain if the scope of the resource type is within a
+     * single availability domain. If you call one of these \"List\" operations without specifying
+     * an availability domain, the resources are grouped by availability domain, then sorted.
+     *
+     **/
+    public enum SortBy {
+        Timecreated("TIMECREATED"),
+        Displayname("DISPLAYNAME"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SortBy> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SortBy v : SortBy.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SortBy(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SortBy create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
+        }
+    };
+    /**
+     * The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+     * is case sensitive.
+     *
+     */
+    private SortOrder sortOrder;
+
+    /**
+     * The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+     * is case sensitive.
+     *
+     **/
+    public enum SortOrder {
+        Asc("ASC"),
+        Desc("DESC"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SortOrder> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SortOrder v : SortOrder.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SortOrder(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SortOrder create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid SortOrder: " + key);
+        }
+    };
+    /**
+     * A filter to return only resources that match the specified lifecycle
+     * state. The value is case insensitive.
+     *
+     */
+    private DrgAttachment.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -92,6 +258,13 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
             drgId(o.getDrgId());
             limit(o.getLimit());
             page(o.getPage());
+            networkId(o.getNetworkId());
+            attachmentType(o.getAttachmentType());
+            drgRouteTableId(o.getDrgRouteTableId());
+            displayName(o.getDisplayName());
+            sortBy(o.getSortBy());
+            sortOrder(o.getSortOrder());
+            lifecycleState(o.getLifecycleState());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

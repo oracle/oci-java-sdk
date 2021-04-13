@@ -26,15 +26,36 @@ public class ListDatabaseInsightsRequest
     private String compartmentId;
 
     /**
+     * Unique Enterprise Manager bridge identifier
+     */
+    private String enterpriseManagerBridgeId;
+
+    /**
+     * Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     *
+     */
+    private java.util.List<String> id;
+
+    /**
+     * Resource Status
+     */
+    private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status;
+
+    /**
+     * Lifecycle states
+     */
+    private java.util.List<com.oracle.bmc.opsi.model.LifecycleState> lifecycleState;
+
+    /**
      * Filter by one or more database type.
-     * Possible values are ADW-S, ATP-S, ADW-D, ATP-D
+     * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
      *
      */
     private java.util.List<DatabaseType> databaseType;
 
     /**
      * Filter by one or more database type.
-     * Possible values are ADW-S, ATP-S, ADW-D, ATP-D
+     * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
      *
      **/
     public enum DatabaseType {
@@ -42,6 +63,8 @@ public class ListDatabaseInsightsRequest
         AtpS("ATP-S"),
         AdwD("ADW-D"),
         AtpD("ATP-D"),
+        ExternalPdb("EXTERNAL-PDB"),
+        ExternalNoncdb("EXTERNAL-NONCDB"),
         ;
 
         private final String value;
@@ -72,7 +95,7 @@ public class ListDatabaseInsightsRequest
         }
     };
     /**
-     * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
      *
      */
     private java.util.List<String> databaseId;
@@ -235,6 +258,10 @@ public class ListDatabaseInsightsRequest
          */
         public Builder copy(ListDatabaseInsightsRequest o) {
             compartmentId(o.getCompartmentId());
+            enterpriseManagerBridgeId(o.getEnterpriseManagerBridgeId());
+            id(o.getId());
+            status(o.getStatus());
+            lifecycleState(o.getLifecycleState());
             databaseType(o.getDatabaseType());
             databaseId(o.getDatabaseId());
             fields(o.getFields());

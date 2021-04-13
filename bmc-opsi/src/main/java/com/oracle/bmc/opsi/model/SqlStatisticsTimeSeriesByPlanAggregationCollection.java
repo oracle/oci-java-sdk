@@ -36,6 +36,15 @@ public class SqlStatisticsTimeSeriesByPlanAggregationCollection {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
+
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
@@ -97,6 +106,7 @@ public class SqlStatisticsTimeSeriesByPlanAggregationCollection {
             SqlStatisticsTimeSeriesByPlanAggregationCollection __instance__ =
                     new SqlStatisticsTimeSeriesByPlanAggregationCollection(
                             sqlIdentifier,
+                            id,
                             databaseId,
                             timeIntervalStart,
                             timeIntervalEnd,
@@ -111,6 +121,7 @@ public class SqlStatisticsTimeSeriesByPlanAggregationCollection {
         public Builder copy(SqlStatisticsTimeSeriesByPlanAggregationCollection o) {
             Builder copiedBuilder =
                     sqlIdentifier(o.getSqlIdentifier())
+                            .id(o.getId())
                             .databaseId(o.getDatabaseId())
                             .timeIntervalStart(o.getTimeIntervalStart())
                             .timeIntervalEnd(o.getTimeIntervalEnd())
@@ -136,6 +147,12 @@ public class SqlStatisticsTimeSeriesByPlanAggregationCollection {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
     String sqlIdentifier;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    String id;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.

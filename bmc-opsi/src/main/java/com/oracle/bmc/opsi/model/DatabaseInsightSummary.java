@@ -5,7 +5,7 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Partial definition of the database insight resource.
+ * Summary of a database insight resource.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -15,153 +15,40 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DatabaseInsightSummary.Builder.class
+@lombok.AllArgsConstructor(
+    onConstructor = @__({@Deprecated}),
+    access = lombok.AccessLevel.PROTECTED
 )
+@lombok.Value
+@lombok.experimental.NonFinal
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "entitySource",
+    defaultImpl = DatabaseInsightSummary.class
+)
+@com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = MacsManagedExternalDatabaseInsightSummary.class,
+        name = "MACS_MANAGED_EXTERNAL_DATABASE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = AutonomousDatabaseInsightSummary.class,
+        name = "AUTONOMOUS_DATABASE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EmManagedExternalDatabaseInsightSummary.class,
+        name = "EM_MANAGED_EXTERNAL_DATABASE"
+    )
+})
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class DatabaseInsightSummary {
-    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
-    public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
-        private String databaseId;
-
-        public Builder databaseId(String databaseId) {
-            this.databaseId = databaseId;
-            this.__explicitlySet__.add("databaseId");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-        private String compartmentId;
-
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = compartmentId;
-            this.__explicitlySet__.add("compartmentId");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
-        private String databaseName;
-
-        public Builder databaseName(String databaseName) {
-            this.databaseName = databaseName;
-            this.__explicitlySet__.add("databaseName");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("databaseDisplayName")
-        private String databaseDisplayName;
-
-        public Builder databaseDisplayName(String databaseDisplayName) {
-            this.databaseDisplayName = databaseDisplayName;
-            this.__explicitlySet__.add("databaseDisplayName");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
-        private String databaseType;
-
-        public Builder databaseType(String databaseType) {
-            this.databaseType = databaseType;
-            this.__explicitlySet__.add("databaseType");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
-        private String databaseVersion;
-
-        public Builder databaseVersion(String databaseVersion) {
-            this.databaseVersion = databaseVersion;
-            this.__explicitlySet__.add("databaseVersion");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("databaseHostNames")
-        private java.util.List<String> databaseHostNames;
-
-        public Builder databaseHostNames(java.util.List<String> databaseHostNames) {
-            this.databaseHostNames = databaseHostNames;
-            this.__explicitlySet__.add("databaseHostNames");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-        private java.util.Map<String, String> freeformTags;
-
-        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
-            this.freeformTags = freeformTags;
-            this.__explicitlySet__.add("freeformTags");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
-
-        public Builder definedTags(
-                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
-            this.definedTags = definedTags;
-            this.__explicitlySet__.add("definedTags");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
-
-        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
-            this.systemTags = systemTags;
-            this.__explicitlySet__.add("systemTags");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonIgnore
-        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-        public DatabaseInsightSummary build() {
-            DatabaseInsightSummary __instance__ =
-                    new DatabaseInsightSummary(
-                            databaseId,
-                            compartmentId,
-                            databaseName,
-                            databaseDisplayName,
-                            databaseType,
-                            databaseVersion,
-                            databaseHostNames,
-                            freeformTags,
-                            definedTags,
-                            systemTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DatabaseInsightSummary o) {
-            Builder copiedBuilder =
-                    databaseId(o.getDatabaseId())
-                            .compartmentId(o.getCompartmentId())
-                            .databaseName(o.getDatabaseName())
-                            .databaseDisplayName(o.getDatabaseDisplayName())
-                            .databaseType(o.getDatabaseType())
-                            .databaseVersion(o.getDatabaseVersion())
-                            .databaseHostNames(o.getDatabaseHostNames())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
-        }
-    }
 
     /**
-     * Create a new builder.
-     */
-    public static Builder builder() {
-        return new Builder();
-    }
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    String id;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
@@ -229,6 +116,39 @@ public class DatabaseInsightSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+    /**
+     * Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("processorCount")
+    Integer processorCount;
+
+    /**
+     * Indicates the status of a database insight in Operations Insights
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
+    ResourceStatus status;
+
+    /**
+     * The time the the database insight was first enabled. An RFC3339 formatted datetime string
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    java.util.Date timeCreated;
+
+    /**
+     * The time the database insight was updated. An RFC3339 formatted datetime string
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+    java.util.Date timeUpdated;
+
+    /**
+     * The current state of the database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    LifecycleState lifecycleState;
+
+    /**
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    String lifecycleDetails;
 }

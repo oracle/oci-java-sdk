@@ -20,7 +20,7 @@ import com.oracle.bmc.core.model.*;
 public class DeletePublicIpRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the public IP.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the public IP.
      */
     private String publicIpId;
 

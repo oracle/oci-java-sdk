@@ -35,6 +35,15 @@ public class UpdateEsxiHostDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nextSku")
+        private Sku nextSku;
+
+        public Builder nextSku(Sku nextSku) {
+            this.nextSku = nextSku;
+            this.__explicitlySet__.add("nextSku");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -59,7 +68,7 @@ public class UpdateEsxiHostDetails {
 
         public UpdateEsxiHostDetails build() {
             UpdateEsxiHostDetails __instance__ =
-                    new UpdateEsxiHostDetails(displayName, freeformTags, definedTags);
+                    new UpdateEsxiHostDetails(displayName, nextSku, freeformTags, definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -68,6 +77,7 @@ public class UpdateEsxiHostDetails {
         public Builder copy(UpdateEsxiHostDetails o) {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
+                            .nextSku(o.getNextSku())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -92,6 +102,14 @@ public class UpdateEsxiHostDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * Billing option to switch to once existing billing cycle ends.
+     * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nextSku")
+    Sku nextSku;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no

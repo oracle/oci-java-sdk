@@ -27,16 +27,52 @@ public class ListDatabaseInsightsConverter {
             com.oracle.bmc.http.internal.RestClient client,
             com.oracle.bmc.opsi.requests.ListDatabaseInsightsRequest request) {
         Validate.notNull(request, "request instance is required");
-        Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20200630").path("databaseInsights");
 
-        target =
-                target.queryParam(
-                        "compartmentId",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getCompartmentId()));
+        if (request.getCompartmentId() != null) {
+            target =
+                    target.queryParam(
+                            "compartmentId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCompartmentId()));
+        }
+
+        if (request.getEnterpriseManagerBridgeId() != null) {
+            target =
+                    target.queryParam(
+                            "enterpriseManagerBridgeId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getEnterpriseManagerBridgeId()));
+        }
+
+        if (request.getId() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "id",
+                            request.getId(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getStatus() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "status",
+                            request.getStatus(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getLifecycleState() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "lifecycleState",
+                            request.getLifecycleState(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
 
         if (request.getDatabaseType() != null) {
             target =

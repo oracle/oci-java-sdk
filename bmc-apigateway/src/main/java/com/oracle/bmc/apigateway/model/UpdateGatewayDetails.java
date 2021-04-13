@@ -44,6 +44,15 @@ public class UpdateGatewayDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("responseCacheDetails")
+        private ResponseCacheDetails responseCacheDetails;
+
+        public Builder responseCacheDetails(ResponseCacheDetails responseCacheDetails) {
+            this.responseCacheDetails = responseCacheDetails;
+            this.__explicitlySet__.add("responseCacheDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -68,7 +77,12 @@ public class UpdateGatewayDetails {
 
         public UpdateGatewayDetails build() {
             UpdateGatewayDetails __instance__ =
-                    new UpdateGatewayDetails(displayName, certificateId, freeformTags, definedTags);
+                    new UpdateGatewayDetails(
+                            displayName,
+                            certificateId,
+                            responseCacheDetails,
+                            freeformTags,
+                            definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -78,6 +92,7 @@ public class UpdateGatewayDetails {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
                             .certificateId(o.getCertificateId())
+                            .responseCacheDetails(o.getResponseCacheDetails())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -109,6 +124,9 @@ public class UpdateGatewayDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
     String certificateId;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("responseCacheDetails")
+    ResponseCacheDetails responseCacheDetails;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair

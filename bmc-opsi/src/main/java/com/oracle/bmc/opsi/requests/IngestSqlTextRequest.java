@@ -20,20 +20,26 @@ import com.oracle.bmc.opsi.model.*;
 public class IngestSqlTextRequest extends com.oracle.bmc.requests.BmcRequest<IngestSqlTextDetails> {
 
     /**
+     * Collection of SQL text objects for a particular database.
+     */
+    private IngestSqlTextDetails ingestSqlTextDetails;
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
     /**
-     * Required [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+     * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
      *
      */
     private String databaseId;
 
     /**
-     * Collection of SQL text objects for a particular database.
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     *
      */
-    private IngestSqlTextDetails ingestSqlTextDetails;
+    private String id;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -106,9 +112,10 @@ public class IngestSqlTextRequest extends com.oracle.bmc.requests.BmcRequest<Ing
          * @return this builder instance
          */
         public Builder copy(IngestSqlTextRequest o) {
+            ingestSqlTextDetails(o.getIngestSqlTextDetails());
             compartmentId(o.getCompartmentId());
             databaseId(o.getDatabaseId());
-            ingestSqlTextDetails(o.getIngestSqlTextDetails());
+            id(o.getId());
             opcRequestId(o.getOpcRequestId());
             ifMatch(o.getIfMatch());
             opcRetryToken(o.getOpcRetryToken());

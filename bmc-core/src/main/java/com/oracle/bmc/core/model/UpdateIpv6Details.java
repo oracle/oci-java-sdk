@@ -54,15 +54,6 @@ public class UpdateIpv6Details {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("isInternetAccessAllowed")
-        private Boolean isInternetAccessAllowed;
-
-        public Builder isInternetAccessAllowed(Boolean isInternetAccessAllowed) {
-            this.isInternetAccessAllowed = isInternetAccessAllowed;
-            this.__explicitlySet__.add("isInternetAccessAllowed");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
         private String vnicId;
 
@@ -77,12 +68,7 @@ public class UpdateIpv6Details {
 
         public UpdateIpv6Details build() {
             UpdateIpv6Details __instance__ =
-                    new UpdateIpv6Details(
-                            definedTags,
-                            displayName,
-                            freeformTags,
-                            isInternetAccessAllowed,
-                            vnicId);
+                    new UpdateIpv6Details(definedTags, displayName, freeformTags, vnicId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -93,7 +79,6 @@ public class UpdateIpv6Details {
                     definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
-                            .isInternetAccessAllowed(o.getIsInternetAccessAllowed())
                             .vnicId(o.getVnicId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -135,20 +120,6 @@ public class UpdateIpv6Details {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
-
-    /**
-     * Whether the IPv6 can be used for internet communication. Allowed by default for an IPv6 in
-     * a public subnet. Never allowed for an IPv6 in a private subnet. If the value is `true`, the
-     * IPv6 uses its public IP address for internet communication.
-     * <p>
-     * If you switch this from `true` to `false`, the `publicIpAddress` attribute for the IPv6
-     * becomes null.
-     * <p>
-     * Example: `false`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("isInternetAccessAllowed")
-    Boolean isInternetAccessAllowed;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to reassign the IPv6 to.
