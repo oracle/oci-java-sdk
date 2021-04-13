@@ -16,7 +16,7 @@ package com.oracle.bmc.limits.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: ")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = QuotaSummary.Builder.class)

@@ -136,6 +136,15 @@ public class BlockVolumeReplica {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("totalDataTransferredInGBs")
+        private Long totalDataTransferredInGBs;
+
+        public Builder totalDataTransferredInGBs(Long totalDataTransferredInGBs) {
+            this.totalDataTransferredInGBs = totalDataTransferredInGBs;
+            this.__explicitlySet__.add("totalDataTransferredInGBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -152,7 +161,8 @@ public class BlockVolumeReplica {
                             sizeInGBs,
                             timeCreated,
                             timeLastSynced,
-                            blockVolumeId);
+                            blockVolumeId,
+                            totalDataTransferredInGBs);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -170,7 +180,8 @@ public class BlockVolumeReplica {
                             .sizeInGBs(o.getSizeInGBs())
                             .timeCreated(o.getTimeCreated())
                             .timeLastSynced(o.getTimeLastSynced())
-                            .blockVolumeId(o.getBlockVolumeId());
+                            .blockVolumeId(o.getBlockVolumeId())
+                            .totalDataTransferredInGBs(o.getTotalDataTransferredInGBs());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -316,6 +327,13 @@ public class BlockVolumeReplica {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeId")
     String blockVolumeId;
+
+    /**
+     * The total size of the data transferred from the source block volume to the block volume replica, in GBs.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("totalDataTransferredInGBs")
+    Long totalDataTransferredInGBs;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

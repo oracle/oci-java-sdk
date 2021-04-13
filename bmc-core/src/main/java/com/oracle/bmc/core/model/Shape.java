@@ -27,6 +27,26 @@ public class Shape {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("baselineOcpuUtilizations")
+        private java.util.List<BaselineOcpuUtilizations> baselineOcpuUtilizations;
+
+        public Builder baselineOcpuUtilizations(
+                java.util.List<BaselineOcpuUtilizations> baselineOcpuUtilizations) {
+            this.baselineOcpuUtilizations = baselineOcpuUtilizations;
+            this.__explicitlySet__.add("baselineOcpuUtilizations");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("minTotalBaselineOcpusRequired")
+        private java.math.BigDecimal minTotalBaselineOcpusRequired;
+
+        public Builder minTotalBaselineOcpusRequired(
+                java.math.BigDecimal minTotalBaselineOcpusRequired) {
+            this.minTotalBaselineOcpusRequired = minTotalBaselineOcpusRequired;
+            this.__explicitlySet__.add("minTotalBaselineOcpusRequired");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
@@ -170,6 +190,8 @@ public class Shape {
         public Shape build() {
             Shape __instance__ =
                     new Shape(
+                            baselineOcpuUtilizations,
+                            minTotalBaselineOcpusRequired,
                             shape,
                             processorDescription,
                             ocpus,
@@ -192,7 +214,9 @@ public class Shape {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Shape o) {
             Builder copiedBuilder =
-                    shape(o.getShape())
+                    baselineOcpuUtilizations(o.getBaselineOcpuUtilizations())
+                            .minTotalBaselineOcpusRequired(o.getMinTotalBaselineOcpusRequired())
+                            .shape(o.getShape())
                             .processorDescription(o.getProcessorDescription())
                             .ocpus(o.getOcpus())
                             .memoryInGBs(o.getMemoryInGBs())
@@ -219,6 +243,67 @@ public class Shape {
     public static Builder builder() {
         return new Builder();
     }
+
+    /**
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum BaselineOcpuUtilizations {
+        Baseline18("BASELINE_1_8"),
+        Baseline12("BASELINE_1_2"),
+        Baseline11("BASELINE_1_1"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, BaselineOcpuUtilizations> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (BaselineOcpuUtilizations v : BaselineOcpuUtilizations.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        BaselineOcpuUtilizations(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static BaselineOcpuUtilizations create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'BaselineOcpuUtilizations', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * For a subcore burstable VM, the supported baseline OCPU utilization for instances that use this shape.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("baselineOcpuUtilizations")
+    java.util.List<BaselineOcpuUtilizations> baselineOcpuUtilizations;
+
+    /**
+     * For a subcore burstable VM, the minimum total baseline OCPUs required. The total baseline OCPUs is equal to
+     * baselineOcpuUtilization chosen multiplied by the number of OCPUs chosen.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("minTotalBaselineOcpusRequired")
+    java.math.BigDecimal minTotalBaselineOcpusRequired;
 
     /**
      * The name of the shape. You can enumerate all available shapes by calling

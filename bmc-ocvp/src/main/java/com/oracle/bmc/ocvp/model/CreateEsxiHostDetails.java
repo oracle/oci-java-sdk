@@ -44,6 +44,24 @@ public class CreateEsxiHostDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("currentSku")
+        private Sku currentSku;
+
+        public Builder currentSku(Sku currentSku) {
+            this.currentSku = currentSku;
+            this.__explicitlySet__.add("currentSku");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("nextSku")
+        private Sku nextSku;
+
+        public Builder nextSku(Sku nextSku) {
+            this.nextSku = nextSku;
+            this.__explicitlySet__.add("nextSku");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -68,7 +86,8 @@ public class CreateEsxiHostDetails {
 
         public CreateEsxiHostDetails build() {
             CreateEsxiHostDetails __instance__ =
-                    new CreateEsxiHostDetails(sddcId, displayName, freeformTags, definedTags);
+                    new CreateEsxiHostDetails(
+                            sddcId, displayName, currentSku, nextSku, freeformTags, definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -78,6 +97,8 @@ public class CreateEsxiHostDetails {
             Builder copiedBuilder =
                     sddcId(o.getSddcId())
                             .displayName(o.getDisplayName())
+                            .currentSku(o.getCurrentSku())
+                            .nextSku(o.getNextSku())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -115,6 +136,23 @@ public class CreateEsxiHostDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * Billing option selected during SDDC creation.
+     * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("currentSku")
+    Sku currentSku;
+
+    /**
+     * Billing option to switch to once existing billing cycle ends.
+     * If nextSku is null or empty, currentSku will be used to continue with next billing term.
+     * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nextSku")
+    Sku nextSku;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no

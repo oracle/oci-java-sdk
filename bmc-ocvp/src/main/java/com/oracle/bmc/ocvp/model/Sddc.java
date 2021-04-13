@@ -96,6 +96,15 @@ public class Sddc {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("initialSku")
+        private Sku initialSku;
+
+        public Builder initialSku(Sku initialSku) {
+            this.initialSku = initialSku;
+            this.__explicitlySet__.add("initialSku");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vcenterFqdn")
         private String vcenterFqdn;
 
@@ -407,6 +416,7 @@ public class Sddc {
                             vmwareSoftwareVersion,
                             compartmentId,
                             esxiHostsCount,
+                            initialSku,
                             vcenterFqdn,
                             nsxManagerFqdn,
                             vcenterPrivateIpId,
@@ -454,6 +464,7 @@ public class Sddc {
                             .vmwareSoftwareVersion(o.getVmwareSoftwareVersion())
                             .compartmentId(o.getCompartmentId())
                             .esxiHostsCount(o.getEsxiHostsCount())
+                            .initialSku(o.getInitialSku())
                             .vcenterFqdn(o.getVcenterFqdn())
                             .nsxManagerFqdn(o.getNsxManagerFqdn())
                             .vcenterPrivateIpId(o.getVcenterPrivateIpId())
@@ -569,6 +580,14 @@ public class Sddc {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("esxiHostsCount")
     Integer esxiHostsCount;
+
+    /**
+     * Billing option selected during SDDC creation
+     * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("initialSku")
+    Sku initialSku;
 
     /**
      * The FQDN for vCenter.

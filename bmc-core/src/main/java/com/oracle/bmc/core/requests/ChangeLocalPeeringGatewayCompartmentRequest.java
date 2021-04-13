@@ -21,7 +21,7 @@ public class ChangeLocalPeeringGatewayCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<ChangeLocalPeeringGatewayCompartmentDetails> {
 
     /**
-     * The OCID of the local peering gateway.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the local peering gateway.
      */
     private String localPeeringGatewayId;
 

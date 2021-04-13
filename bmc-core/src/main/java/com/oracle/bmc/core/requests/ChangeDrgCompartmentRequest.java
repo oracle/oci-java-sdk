@@ -21,7 +21,7 @@ public class ChangeDrgCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<ChangeDrgCompartmentDetails> {
 
     /**
-     * The OCID of the DRG.
+     * The [[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)](/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      */
     private String drgId;
 

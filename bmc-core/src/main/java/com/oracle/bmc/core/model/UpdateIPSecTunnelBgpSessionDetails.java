@@ -44,6 +44,24 @@ public class UpdateIPSecTunnelBgpSessionDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("oracleInterfaceIpv6")
+        private String oracleInterfaceIpv6;
+
+        public Builder oracleInterfaceIpv6(String oracleInterfaceIpv6) {
+            this.oracleInterfaceIpv6 = oracleInterfaceIpv6;
+            this.__explicitlySet__.add("oracleInterfaceIpv6");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("customerInterfaceIpv6")
+        private String customerInterfaceIpv6;
+
+        public Builder customerInterfaceIpv6(String customerInterfaceIpv6) {
+            this.customerInterfaceIpv6 = customerInterfaceIpv6;
+            this.__explicitlySet__.add("customerInterfaceIpv6");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("customerBgpAsn")
         private String customerBgpAsn;
 
@@ -59,7 +77,11 @@ public class UpdateIPSecTunnelBgpSessionDetails {
         public UpdateIPSecTunnelBgpSessionDetails build() {
             UpdateIPSecTunnelBgpSessionDetails __instance__ =
                     new UpdateIPSecTunnelBgpSessionDetails(
-                            oracleInterfaceIp, customerInterfaceIp, customerBgpAsn);
+                            oracleInterfaceIp,
+                            customerInterfaceIp,
+                            oracleInterfaceIpv6,
+                            customerInterfaceIpv6,
+                            customerBgpAsn);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -69,6 +91,8 @@ public class UpdateIPSecTunnelBgpSessionDetails {
             Builder copiedBuilder =
                     oracleInterfaceIp(o.getOracleInterfaceIp())
                             .customerInterfaceIp(o.getCustomerInterfaceIp())
+                            .oracleInterfaceIpv6(o.getOracleInterfaceIpv6())
+                            .customerInterfaceIpv6(o.getCustomerInterfaceIpv6())
                             .customerBgpAsn(o.getCustomerBgpAsn());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -124,6 +148,42 @@ public class UpdateIPSecTunnelBgpSessionDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerInterfaceIp")
     String customerInterfaceIp;
+
+    /**
+     * The IPv6 address for the Oracle end of the inside tunnel interface. This IP address is optional.
+     * <p>
+     * If the tunnel's `routing` attribute is set to `BGP`
+     * (see {@link IPSecConnectionTunnel}), this IP address
+     * is used for the tunnel's BGP session.
+     * <p>
+     * If `routing` is instead set to `STATIC`, you can set this IP
+     * address to troubleshoot or monitor the tunnel.
+     * <p>
+     * Only subnet masks from /64 up to /127 are allowed.
+     * <p>
+     * Example: `2001:db8::1/64`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("oracleInterfaceIpv6")
+    String oracleInterfaceIpv6;
+
+    /**
+     * The IPv6 address for the CPE end of the inside tunnel interface. This IP address is optional.
+     * <p>
+     * If the tunnel's `routing` attribute is set to `BGP`
+     * (see {@link IPSecConnectionTunnel}), this IP address
+     * is used for the tunnel's BGP session.
+     * <p>
+     * If `routing` is instead set to `STATIC`, you can set this IP
+     * address to troubleshoot or monitor the tunnel.
+     * <p>
+     * Only subnet masks from /64 up to /127 are allowed.
+     * <p>
+     * Example: `2001:db8::1/64`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customerInterfaceIpv6")
+    String customerInterfaceIpv6;
 
     /**
      * The BGP ASN of the network on the CPE end of the BGP session. Can be a 2-byte or 4-byte ASN.

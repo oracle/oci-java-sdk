@@ -96,6 +96,33 @@ public class EsxiHostSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("currentSku")
+        private Sku currentSku;
+
+        public Builder currentSku(Sku currentSku) {
+            this.currentSku = currentSku;
+            this.__explicitlySet__.add("currentSku");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("nextSku")
+        private Sku nextSku;
+
+        public Builder nextSku(Sku nextSku) {
+            this.nextSku = nextSku;
+            this.__explicitlySet__.add("nextSku");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("billingContractEndDate")
+        private java.util.Date billingContractEndDate;
+
+        public Builder billingContractEndDate(java.util.Date billingContractEndDate) {
+            this.billingContractEndDate = billingContractEndDate;
+            this.__explicitlySet__.add("billingContractEndDate");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -129,6 +156,9 @@ public class EsxiHostSummary {
                             timeCreated,
                             timeUpdated,
                             lifecycleState,
+                            currentSku,
+                            nextSku,
+                            billingContractEndDate,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -146,6 +176,9 @@ public class EsxiHostSummary {
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
                             .lifecycleState(o.getLifecycleState())
+                            .currentSku(o.getCurrentSku())
+                            .nextSku(o.getNextSku())
+                            .billingContractEndDate(o.getBillingContractEndDate())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -224,6 +257,31 @@ public class EsxiHostSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleStates lifecycleState;
+
+    /**
+     * Billing option selected during SDDC creation.
+     * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("currentSku")
+    Sku currentSku;
+
+    /**
+     * Billing option to switch to once existing billing cycle ends.
+     * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nextSku")
+    Sku nextSku;
+
+    /**
+     * Current billing cycle end date. If nextSku is different from existing SKU, then we switch to newSKu
+     * after this contractEndDate
+     * Example: `2016-08-25T21:10:29.600Z`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("billingContractEndDate")
+    java.util.Date billingContractEndDate;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no

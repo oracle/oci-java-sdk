@@ -8,7 +8,7 @@ import com.oracle.bmc.limits.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/DeleteQuotaExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteQuotaRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: ")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
 @lombok.Builder(
     builderClassName = "Builder",
     buildMethodName = "buildWithoutInvocationCallback",

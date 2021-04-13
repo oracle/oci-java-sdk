@@ -21,7 +21,7 @@ public class UpdateVirtualCircuitRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdateVirtualCircuitDetails> {
 
     /**
-     * The OCID of the virtual circuit.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the virtual circuit.
      */
     private String virtualCircuitId;
 

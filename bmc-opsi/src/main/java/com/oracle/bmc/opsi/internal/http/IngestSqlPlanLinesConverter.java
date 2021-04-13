@@ -27,8 +27,6 @@ public class IngestSqlPlanLinesConverter {
             com.oracle.bmc.http.internal.RestClient client,
             com.oracle.bmc.opsi.requests.IngestSqlPlanLinesRequest request) {
         Validate.notNull(request, "request instance is required");
-        Validate.notNull(request.getCompartmentId(), "compartmentId is required");
-        Validate.notNull(request.getDatabaseId(), "databaseId is required");
         Validate.notNull(
                 request.getIngestSqlPlanLinesDetails(), "ingestSqlPlanLinesDetails is required");
 
@@ -39,17 +37,29 @@ public class IngestSqlPlanLinesConverter {
                         .path("actions")
                         .path("ingestSqlPlanLines");
 
-        target =
-                target.queryParam(
-                        "compartmentId",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getCompartmentId()));
+        if (request.getCompartmentId() != null) {
+            target =
+                    target.queryParam(
+                            "compartmentId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCompartmentId()));
+        }
 
-        target =
-                target.queryParam(
-                        "databaseId",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getDatabaseId()));
+        if (request.getDatabaseId() != null) {
+            target =
+                    target.queryParam(
+                            "databaseId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDatabaseId()));
+        }
+
+        if (request.getId() != null) {
+            target =
+                    target.queryParam(
+                            "id",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getId()));
+        }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 

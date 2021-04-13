@@ -21,7 +21,7 @@ public class ListFastConnectProviderVirtualCircuitBandwidthShapesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the provider service.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the provider service.
      */
     private String providerServiceId;
 

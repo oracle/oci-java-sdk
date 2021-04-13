@@ -21,7 +21,7 @@ public class UpdateIPSecConnectionRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdateIPSecConnectionDetails> {
 
     /**
-     * The OCID of the IPSec connection.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IPSec connection.
      */
     private String ipscId;
 

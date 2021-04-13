@@ -179,6 +179,24 @@ public class Certificate {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isTrustVerificationDisabled")
+        private Boolean isTrustVerificationDisabled;
+
+        public Builder isTrustVerificationDisabled(Boolean isTrustVerificationDisabled) {
+            this.isTrustVerificationDisabled = isTrustVerificationDisabled;
+            this.__explicitlySet__.add("isTrustVerificationDisabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("certificateData")
+        private String certificateData;
+
+        public Builder certificateData(String certificateData) {
+            this.certificateData = certificateData;
+            this.__explicitlySet__.add("certificateData");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -201,7 +219,9 @@ public class Certificate {
                             freeformTags,
                             definedTags,
                             lifecycleState,
-                            timeCreated);
+                            timeCreated,
+                            isTrustVerificationDisabled,
+                            certificateData);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -225,7 +245,9 @@ public class Certificate {
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated());
+                            .timeCreated(o.getTimeCreated())
+                            .isTrustVerificationDisabled(o.getIsTrustVerificationDisabled())
+                            .certificateData(o.getCertificateData());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -336,6 +358,20 @@ public class Certificate {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
+
+    /**
+     * This indicates whether trust verification was disabled during the creation of SSL certificate.
+     * If `true` SSL certificate trust verification was disabled and this SSL certificate is most likely self-signed.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isTrustVerificationDisabled")
+    Boolean isTrustVerificationDisabled;
+
+    /**
+     * The data of the SSL certificate.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("certificateData")
+    String certificateData;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -14,6 +14,7 @@ import com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.requests.BmcRequest;
 import com.oracle.bmc.responses.AsyncHandler;
+import com.oracle.bmc.retrier.DefaultRetryCondition;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 
@@ -69,7 +70,8 @@ public abstract class RefreshAuthTokenWrapper<REQUEST extends BmcRequest<?>, RES
     @Override
     public void onError(REQUEST request, Throwable error) {
         if (error instanceof BmcException) {
-            if (((BmcException) error).getStatusCode() == 401) {
+            if (((BmcException) error).getStatusCode() == 401
+                    || DefaultRetryCondition.isProcessingException(((BmcException) error))) {
                 if (!retryCall()) {
                     innerHandler.onError(request, error);
                 }

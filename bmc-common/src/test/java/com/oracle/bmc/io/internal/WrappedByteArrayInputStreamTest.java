@@ -42,4 +42,16 @@ public class WrappedByteArrayInputStreamTest {
             assertEquals(buffer[i], stream2buffer[i]);
         }
     }
+
+    @Test
+    public void testStreamWithOffsetLength() throws IOException {
+        byte[] buffer = new byte[20];
+        buffer[2] = 'a';
+        buffer[6] = 'b';
+
+        WrappedByteArrayInputStream stream1 = new WrappedByteArrayInputStream(buffer, 1, 15);
+        byte[] stream1buffer = new byte[7];
+        int read1 = stream1.read(stream1buffer);
+        assertEquals(7, read1);
+    }
 }

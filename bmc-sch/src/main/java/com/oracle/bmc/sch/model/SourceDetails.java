@@ -35,6 +35,10 @@ package com.oracle.bmc.sch.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = LoggingSourceDetails.class,
         name = "logging"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = StreamingSourceDetails.class,
+        name = "streaming"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -47,6 +51,7 @@ public class SourceDetails {
     @lombok.extern.slf4j.Slf4j
     public enum Kind {
         Logging("logging"),
+        Streaming("streaming"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

@@ -70,6 +70,15 @@ public class VirtualCircuit {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("bgpIpv6SessionState")
+        private BgpIpv6SessionState bgpIpv6SessionState;
+
+        public Builder bgpIpv6SessionState(BgpIpv6SessionState bgpIpv6SessionState) {
+            this.bgpIpv6SessionState = bgpIpv6SessionState;
+            this.__explicitlySet__.add("bgpIpv6SessionState");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -288,6 +297,7 @@ public class VirtualCircuit {
                             bandwidthShapeName,
                             bgpManagement,
                             bgpSessionState,
+                            bgpIpv6SessionState,
                             compartmentId,
                             crossConnectMappings,
                             routingPolicy,
@@ -321,6 +331,7 @@ public class VirtualCircuit {
                     bandwidthShapeName(o.getBandwidthShapeName())
                             .bgpManagement(o.getBgpManagement())
                             .bgpSessionState(o.getBgpSessionState())
+                            .bgpIpv6SessionState(o.getBgpIpv6SessionState())
                             .compartmentId(o.getCompartmentId())
                             .crossConnectMappings(o.getCrossConnectMappings())
                             .routingPolicy(o.getRoutingPolicy())
@@ -424,7 +435,7 @@ public class VirtualCircuit {
     @com.fasterxml.jackson.annotation.JsonProperty("bgpManagement")
     BgpManagement bgpManagement;
     /**
-     * The state of the BGP session associated with the virtual circuit.
+     * The state of the Ipv4 BGP session associated with the virtual circuit.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum BgpSessionState {
@@ -470,10 +481,61 @@ public class VirtualCircuit {
         }
     };
     /**
-     * The state of the BGP session associated with the virtual circuit.
+     * The state of the Ipv4 BGP session associated with the virtual circuit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bgpSessionState")
     BgpSessionState bgpSessionState;
+    /**
+     * The state of the Ipv6 BGP session associated with the virtual circuit.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum BgpIpv6SessionState {
+        Up("UP"),
+        Down("DOWN"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, BgpIpv6SessionState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (BgpIpv6SessionState v : BgpIpv6SessionState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        BgpIpv6SessionState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static BgpIpv6SessionState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'BgpIpv6SessionState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The state of the Ipv6 BGP session associated with the virtual circuit.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bgpIpv6SessionState")
+    BgpIpv6SessionState bgpIpv6SessionState;
 
     /**
      * The OCID of the compartment containing the virtual circuit.

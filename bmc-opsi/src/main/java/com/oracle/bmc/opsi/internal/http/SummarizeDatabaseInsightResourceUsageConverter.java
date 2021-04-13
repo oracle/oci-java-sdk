@@ -92,6 +92,15 @@ public class SummarizeDatabaseInsightResourceUsageConverter {
                             com.oracle.bmc.util.internal.CollectionFormatType.Multi);
         }
 
+        if (request.getId() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "id",
+                            request.getId(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         if (request.getPage() != null) {
             target =
                     target.queryParam(

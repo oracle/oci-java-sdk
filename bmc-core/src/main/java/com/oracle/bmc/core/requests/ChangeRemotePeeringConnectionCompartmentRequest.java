@@ -22,12 +22,12 @@ public class ChangeRemotePeeringConnectionCompartmentRequest
                 ChangeRemotePeeringConnectionCompartmentDetails> {
 
     /**
-     * The OCID of the remote peering connection (RPC).
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the remote peering connection (RPC).
      */
     private String remotePeeringConnectionId;
 
     /**
-     * Request to change the compartment of a Remote Peering Connection.
+     * Request to change the compartment of a remote peering connection.
      */
     private ChangeRemotePeeringConnectionCompartmentDetails
             changeRemotePeeringConnectionCompartmentDetails;

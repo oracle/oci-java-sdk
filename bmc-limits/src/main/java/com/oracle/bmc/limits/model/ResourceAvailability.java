@@ -16,7 +16,7 @@ package com.oracle.bmc.limits.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: ")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
@@ -46,18 +46,56 @@ public class ResourceAvailability {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("fractionalUsage")
+        private java.math.BigDecimal fractionalUsage;
+
+        public Builder fractionalUsage(java.math.BigDecimal fractionalUsage) {
+            this.fractionalUsage = fractionalUsage;
+            this.__explicitlySet__.add("fractionalUsage");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("fractionalAvailability")
+        private java.math.BigDecimal fractionalAvailability;
+
+        public Builder fractionalAvailability(java.math.BigDecimal fractionalAvailability) {
+            this.fractionalAvailability = fractionalAvailability;
+            this.__explicitlySet__.add("fractionalAvailability");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("effectiveQuotaValue")
+        private java.math.BigDecimal effectiveQuotaValue;
+
+        public Builder effectiveQuotaValue(java.math.BigDecimal effectiveQuotaValue) {
+            this.effectiveQuotaValue = effectiveQuotaValue;
+            this.__explicitlySet__.add("effectiveQuotaValue");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ResourceAvailability build() {
-            ResourceAvailability __instance__ = new ResourceAvailability(used, available);
+            ResourceAvailability __instance__ =
+                    new ResourceAvailability(
+                            used,
+                            available,
+                            fractionalUsage,
+                            fractionalAvailability,
+                            effectiveQuotaValue);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ResourceAvailability o) {
-            Builder copiedBuilder = used(o.getUsed()).available(o.getAvailable());
+            Builder copiedBuilder =
+                    used(o.getUsed())
+                            .available(o.getAvailable())
+                            .fractionalUsage(o.getFractionalUsage())
+                            .fractionalAvailability(o.getFractionalAvailability())
+                            .effectiveQuotaValue(o.getEffectiveQuotaValue());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -72,18 +110,42 @@ public class ResourceAvailability {
     }
 
     /**
-     * The current usage in the given compartment.
+     * The current usage in the given compartment. Because we have introduced resources with fractional counts,
+     * the field will round up to the nearest integer.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("used")
     Long used;
 
     /**
-     * The count of available resources.
+     * The count of available resources. Because we have introduced resources with fractional counts,
+     * the field will round down to the nearest integer.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("available")
     Long available;
+
+    /**
+     * The current most accurate usage in the given compartment.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("fractionalUsage")
+    java.math.BigDecimal fractionalUsage;
+
+    /**
+     * The most accurate count of available resources.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("fractionalAvailability")
+    java.math.BigDecimal fractionalAvailability;
+
+    /**
+     * The effective quota value for given compartment. This field is only present if there is a
+     * current quota policy affecting the current resource in the target region or availability domain.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("effectiveQuotaValue")
+    java.math.BigDecimal effectiveQuotaValue;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

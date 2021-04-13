@@ -27,14 +27,14 @@ public class SummarizeSqlInsightsRequest
 
     /**
      * Filter by one or more database type.
-     * Possible values are ADW-S, ATP-S, ADW-D, ATP-D
+     * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
      *
      */
     private java.util.List<DatabaseType> databaseType;
 
     /**
      * Filter by one or more database type.
-     * Possible values are ADW-S, ATP-S, ADW-D, ATP-D
+     * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
      *
      **/
     public enum DatabaseType {
@@ -42,6 +42,8 @@ public class SummarizeSqlInsightsRequest
         AtpS("ATP-S"),
         AdwD("ADW-D"),
         AtpD("ATP-D"),
+        ExternalPdb("EXTERNAL-PDB"),
+        ExternalNoncdb("EXTERNAL-NONCDB"),
         ;
 
         private final String value;
@@ -72,10 +74,16 @@ public class SummarizeSqlInsightsRequest
         }
     };
     /**
-     * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
      *
      */
     private java.util.List<String> databaseId;
+
+    /**
+     * Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     *
+     */
+    private java.util.List<String> id;
 
     /**
      * Filter sqls by percentage of db time.
@@ -164,6 +172,7 @@ public class SummarizeSqlInsightsRequest
             compartmentId(o.getCompartmentId());
             databaseType(o.getDatabaseType());
             databaseId(o.getDatabaseId());
+            id(o.getId());
             databaseTimePctGreaterThan(o.getDatabaseTimePctGreaterThan());
             analysisTimeInterval(o.getAnalysisTimeInterval());
             timeIntervalStart(o.getTimeIntervalStart());

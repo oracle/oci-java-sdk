@@ -140,6 +140,119 @@ public class SddcPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listSupportedSkus operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListSupportedSkusResponse> listSupportedSkusResponseIterator(
+            final ListSupportedSkusRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSupportedSkusRequest.Builder, ListSupportedSkusRequest,
+                ListSupportedSkusResponse>(
+                new com.google.common.base.Supplier<ListSupportedSkusRequest.Builder>() {
+                    @Override
+                    public ListSupportedSkusRequest.Builder get() {
+                        return ListSupportedSkusRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSupportedSkusResponse, String>() {
+                    @Override
+                    public String apply(ListSupportedSkusResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSupportedSkusRequest.Builder>,
+                        ListSupportedSkusRequest>() {
+                    @Override
+                    public ListSupportedSkusRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSupportedSkusRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSupportedSkusRequest, ListSupportedSkusResponse>() {
+                    @Override
+                    public ListSupportedSkusResponse apply(ListSupportedSkusRequest request) {
+                        return client.listSupportedSkus(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.ocvp.model.SupportedSkuSummary} objects
+     * contained in responses from the listSupportedSkus operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.ocvp.model.SupportedSkuSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.ocvp.model.SupportedSkuSummary> listSupportedSkusRecordIterator(
+            final ListSupportedSkusRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSupportedSkusRequest.Builder, ListSupportedSkusRequest,
+                ListSupportedSkusResponse, com.oracle.bmc.ocvp.model.SupportedSkuSummary>(
+                new com.google.common.base.Supplier<ListSupportedSkusRequest.Builder>() {
+                    @Override
+                    public ListSupportedSkusRequest.Builder get() {
+                        return ListSupportedSkusRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSupportedSkusResponse, String>() {
+                    @Override
+                    public String apply(ListSupportedSkusResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSupportedSkusRequest.Builder>,
+                        ListSupportedSkusRequest>() {
+                    @Override
+                    public ListSupportedSkusRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSupportedSkusRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSupportedSkusRequest, ListSupportedSkusResponse>() {
+                    @Override
+                    public ListSupportedSkusResponse apply(ListSupportedSkusRequest request) {
+                        return client.listSupportedSkus(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSupportedSkusResponse,
+                        java.util.List<com.oracle.bmc.ocvp.model.SupportedSkuSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.ocvp.model.SupportedSkuSummary> apply(
+                            ListSupportedSkusResponse response) {
+                        return response.getSupportedSkuSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listSupportedVmwareSoftwareVersions operation. This iterable
      * will fetch more data from the server as needed.
      *

@@ -141,13 +141,17 @@ public class SummarizeDatabaseInsightResourceUsageAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
     java.util.Date timeIntervalEnd;
     /**
-     * Defines the type of resource metric (CPU, STORAGE)
+     * Defines the type of resource metric (example: CPU, STORAGE)
      *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum ResourceMetric {
         Cpu("CPU"),
         Storage("STORAGE"),
+        Io("IO"),
+        Memory("MEMORY"),
+        MemoryPga("MEMORY_PGA"),
+        MemorySga("MEMORY_SGA"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -188,7 +192,7 @@ public class SummarizeDatabaseInsightResourceUsageAggregation {
         }
     };
     /**
-     * Defines the type of resource metric (CPU, STORAGE)
+     * Defines the type of resource metric (example: CPU, STORAGE)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceMetric")

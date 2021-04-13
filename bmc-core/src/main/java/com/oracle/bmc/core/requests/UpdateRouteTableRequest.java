@@ -21,7 +21,7 @@ public class UpdateRouteTableRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdateRouteTableDetails> {
 
     /**
-     * The OCID of the route table.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the route table.
      */
     private String rtId;
 

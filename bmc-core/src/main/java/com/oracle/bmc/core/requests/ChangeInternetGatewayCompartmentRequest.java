@@ -21,7 +21,7 @@ public class ChangeInternetGatewayCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<ChangeInternetGatewayCompartmentDetails> {
 
     /**
-     * The OCID of the internet gateway.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the internet gateway.
      */
     private String igId;
 

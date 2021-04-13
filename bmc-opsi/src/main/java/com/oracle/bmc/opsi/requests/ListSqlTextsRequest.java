@@ -32,10 +32,16 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
     private java.util.List<String> sqlIdentifier;
 
     /**
-     * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the assosicated DBaaS entity.
      *
      */
     private java.util.List<String> databaseId;
+
+    /**
+     * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     *
+     */
+    private java.util.List<String> id;
 
     /**
      * For list pagination. The value of the `opc-next-page` response header from
@@ -90,6 +96,7 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
             compartmentId(o.getCompartmentId());
             sqlIdentifier(o.getSqlIdentifier());
             databaseId(o.getDatabaseId());
+            id(o.getId());
             page(o.getPage());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());

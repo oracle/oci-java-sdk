@@ -51,6 +51,41 @@ public interface VirtualNetwork extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Adds one or more route distribution statements to the specified route distribution.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddDrgRouteDistributionStatementsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddDrgRouteDistributionStatements API.
+     */
+    AddDrgRouteDistributionStatementsResponse addDrgRouteDistributionStatements(
+            AddDrgRouteDistributionStatementsRequest request);
+
+    /**
+     * Adds one or more static route rules to the specified DRG route table.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddDrgRouteRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddDrgRouteRules API.
+     */
+    AddDrgRouteRulesResponse addDrgRouteRules(AddDrgRouteRulesRequest request);
+
+    /**
+     * Add an IPv6 CIDR to a VCN. The VCN size is always /56 and assigned by Oracle.
+     * Once added the IPv6 CIDR block cannot be removed or modified.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddIpv6VcnCidrExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddIpv6VcnCidr API.
+     */
+    AddIpv6VcnCidrResponse addIpv6VcnCidr(AddIpv6VcnCidrRequest request);
+
+    /**
      * Adds one or more security rules to the specified network security group.
      *
      * @param request The request object containing the details to send
@@ -498,7 +533,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * Creates a new virtual customer-premises equipment (CPE) object in the specified compartment. For
      * more information, see [IPSec VPNs](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPsec.htm).
      * <p>
-     * For the purposes of access control, you must provide the OCID of the compartment where you want
+     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where you want
      * the CPE to reside. Notice that the CPE doesn't have to be in the same compartment as the IPSec
      * connection or other Networking Service components. If you're not sure which compartment to
      * use, put the CPE in the same compartment as the DRG. For more information about
@@ -528,7 +563,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * and request to have the physical cable installed. For more information, see
      * [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * <p>
-     * For the purposes of access control, you must provide the OCID of the
+     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
      * compartment where you want the cross-connect to reside. If you're
      * not sure which compartment to use, put the cross-connect in the
      * same compartment with your VCN. For more information about
@@ -553,7 +588,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * FastConnect. For more information, see
      * [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * <p>
-     * For the purposes of access control, you must provide the OCID of the
+     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
      * compartment where you want the cross-connect group to reside. If you're
      * not sure which compartment to use, put the cross-connect group in the
      * same compartment with your VCN. For more information about
@@ -577,7 +612,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * Creates a new set of DHCP options for the specified VCN. For more information, see
      * {@link DhcpOptions}.
      * <p>
-     * For the purposes of access control, you must provide the OCID of the compartment where you want the set of
+     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where you want the set of
      * DHCP options to reside. Notice that the set of options doesn't have to be in the same compartment as the VCN,
      * subnets, or other Networking Service components. If you're not sure which compartment to use, put the set
      * of DHCP options in the same compartment as the VCN. For more information about compartments and access control, see
@@ -618,16 +653,16 @@ public interface VirtualNetwork extends AutoCloseable {
     CreateDrgResponse createDrg(CreateDrgRequest request);
 
     /**
-     * Attaches the specified DRG to the specified VCN. A VCN can be attached to only one DRG at a time,
-     * and vice versa. The response includes a `DrgAttachment` object with its own OCID. For more
-     * information about DRGs, see
+     * Attaches the specified DRG to the specified network resource. A VCN can be attached to only one DRG
+     * at a time, but a DRG can be attached to more than one VCN. The response includes a `DrgAttachment`
+     * object with its own [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). For more information about DRGs, see
      * [Dynamic Routing Gateways (DRGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDRGs.htm).
      * <p>
      * You may optionally specify a *display name* for the attachment, otherwise a default is provided.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
      * <p>
-     * For the purposes of access control, the DRG attachment is automatically placed into the same compartment
-     * as the VCN. For more information about compartments and access control, see
+     * For the purposes of access control, the DRG attachment is automatically placed into the currently selected compartment.
+     * For more information about compartments and access control, see
      * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      *
      * @param request The request object containing the details to send
@@ -639,6 +674,33 @@ public interface VirtualNetwork extends AutoCloseable {
     CreateDrgAttachmentResponse createDrgAttachment(CreateDrgAttachmentRequest request);
 
     /**
+     * Creates a new route distribution for the specified DRG.
+     * Assign the route distribution as an import distribution to a DRG route table using the `UpdateDrgRouteTable` or `CreateDrgRouteTable` operations.
+     * Assign the route distribution as an export distribution to a DRG attachment
+     * using the `UpdateDrgAttachment` or `CreateDrgAttachment` operations.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateDrgRouteDistributionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDrgRouteDistribution API.
+     */
+    CreateDrgRouteDistributionResponse createDrgRouteDistribution(
+            CreateDrgRouteDistributionRequest request);
+
+    /**
+     * Creates a new DRG route table for the specified DRG. Assign the DRG route table to a DRG attachment
+     * using the `UpdateDrgAttachment` or `CreateDrgAttachment` operations.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateDrgRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDrgRouteTable API.
+     */
+    CreateDrgRouteTableResponse createDrgRouteTable(CreateDrgRouteTableRequest request);
+
+    /**
      * Creates a new IPSec connection between the specified DRG and CPE. For more information, see
      * [IPSec VPNs](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPsec.htm).
      * <p>
@@ -648,13 +710,12 @@ public interface VirtualNetwork extends AutoCloseable {
      * the static routes. For more information, see the important note in
      * {@link IPSecConnection}.
      * <p>
-     * For the purposes of access control, you must provide the OCID of the compartment where you want the
+     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where you want the
      * IPSec connection to reside. Notice that the IPSec connection doesn't have to be in the same compartment
      * as the DRG, CPE, or other Networking Service components. If you're not sure which compartment to
      * use, put the IPSec connection in the same compartment as the DRG. For more information about
      * compartments and access control, see
      * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-     * For information about OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the IPSec connection, otherwise a default is provided.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -681,12 +742,11 @@ public interface VirtualNetwork extends AutoCloseable {
      * Creates a new internet gateway for the specified VCN. For more information, see
      * [Access to the Internet](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIGs.htm).
      * <p>
-     * For the purposes of access control, you must provide the OCID of the compartment where you want the Internet
+     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where you want the Internet
      * Gateway to reside. Notice that the internet gateway doesn't have to be in the same compartment as the VCN or
      * other Networking Service components. If you're not sure which compartment to use, put the Internet
      * Gateway in the same compartment with the VCN. For more information about compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      * <p>
      * You may optionally specify a *display name* for the internet gateway, otherwise a default is provided. It
      * does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -1099,8 +1159,8 @@ public interface VirtualNetwork extends AutoCloseable {
     DeleteDrgResponse deleteDrg(DeleteDrgRequest request);
 
     /**
-     * Detaches a DRG from a VCN by deleting the corresponding `DrgAttachment`. This is an asynchronous
-     * operation. The attachment's `lifecycleState` will change to DETACHING temporarily until the attachment
+     * Detaches a DRG from a network resource by deleting the corresponding `DrgAttachment` resource. This is an asynchronous
+     * operation. The attachment's `lifecycleState` will temporarily change to DETACHING until the attachment
      * is completely removed.
      *
      * @param request The request object containing the details to send
@@ -1110,6 +1170,31 @@ public interface VirtualNetwork extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteDrgAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDrgAttachment API.
      */
     DeleteDrgAttachmentResponse deleteDrgAttachment(DeleteDrgAttachmentRequest request);
+
+    /**
+     * Deletes the specified route distribution. You can't delete a route distribution currently in use by a DRG attachment or DRG route table.
+     * <p>
+     * Remove the DRG route distribution from a DRG attachment or DRG route table by using the \"RemoveExportDrgRouteDistribution\" or \"RemoveImportDrgRouteDistribution' operations.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteDrgRouteDistributionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDrgRouteDistribution API.
+     */
+    DeleteDrgRouteDistributionResponse deleteDrgRouteDistribution(
+            DeleteDrgRouteDistributionRequest request);
+
+    /**
+     * Deletes the specified DRG route table. There must not be any DRG attachments assigned.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteDrgRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDrgRouteTable API.
+     */
+    DeleteDrgRouteTableResponse deleteDrgRouteTable(DeleteDrgRouteTableRequest request);
 
     /**
      * Deletes the specified IPSec connection. If your goal is to disable the IPSec VPN between your VCN and
@@ -1145,7 +1230,7 @@ public interface VirtualNetwork extends AutoCloseable {
     DeleteInternetGatewayResponse deleteInternetGateway(DeleteInternetGatewayRequest request);
 
     /**
-     * Unassigns and deletes the specified IPv6. You must specify the object's OCID.
+     * Unassigns and deletes the specified IPv6. You must specify the object's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      * The IPv6 address is returned to the subnet's pool of available addresses.
      *
      * @param request The request object containing the details to send
@@ -1395,6 +1480,17 @@ public interface VirtualNetwork extends AutoCloseable {
     DetachServiceIdResponse detachServiceId(DetachServiceIdRequest request);
 
     /**
+     * Returns a complete list of DRG attachments that belong to a particular DRG.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetAllDrgAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAllDrgAttachments API.
+     */
+    GetAllDrgAttachmentsResponse getAllDrgAttachments(GetAllDrgAttachmentsRequest request);
+
+    /**
      * Gets the `ByoipRange` resource. You must specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
@@ -1526,7 +1622,7 @@ public interface VirtualNetwork extends AutoCloseable {
     GetDrgResponse getDrg(GetDrgRequest request);
 
     /**
-     * Gets the information for the specified `DrgAttachment`.
+     * Gets the `DrgAttachment` resource.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1546,6 +1642,26 @@ public interface VirtualNetwork extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetDrgRedundancyStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDrgRedundancyStatus API.
      */
     GetDrgRedundancyStatusResponse getDrgRedundancyStatus(GetDrgRedundancyStatusRequest request);
+
+    /**
+     * Gets the specified route distribution's information.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetDrgRouteDistributionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDrgRouteDistribution API.
+     */
+    GetDrgRouteDistributionResponse getDrgRouteDistribution(GetDrgRouteDistributionRequest request);
+
+    /**
+     * Gets the specified DRG route table's information.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetDrgRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDrgRouteTable API.
+     */
+    GetDrgRouteTableResponse getDrgRouteTable(GetDrgRouteTableRequest request);
 
     /**
      * Gets the specified provider service.
@@ -1682,7 +1798,7 @@ public interface VirtualNetwork extends AutoCloseable {
             GetIpsecCpeDeviceConfigContentRequest request);
 
     /**
-     * Gets the specified IPv6. You must specify the object's OCID.
+     * Gets the specified IPv6. You must specify the object's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      * Alternatively, you can get the object by using
      * {@link #listIpv6s(ListIpv6sRequest) listIpv6s}
      * with the IPv6 address (for example, 2001:0db8:0123:1111:98fe:dcba:9876:4321) and subnet OCID.
@@ -1731,6 +1847,16 @@ public interface VirtualNetwork extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetNetworkSecurityGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNetworkSecurityGroup API.
      */
     GetNetworkSecurityGroupResponse getNetworkSecurityGroup(GetNetworkSecurityGroupRequest request);
+
+    /**
+     * Gets a virtual networking topology for the current region.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetNetworkingTopologyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNetworkingTopology API.
+     */
+    GetNetworkingTopologyResponse getNetworkingTopology(GetNetworkingTopologyRequest request);
 
     /**
      * Gets the specified private IP. You must specify the object's OCID.
@@ -1924,6 +2050,17 @@ public interface VirtualNetwork extends AutoCloseable {
             GetTunnelCpeDeviceConfigContentRequest request);
 
     /**
+     * Returns the DRG upgrade status. The status can be not updated, in progress, or updated. Also indicates how much of the upgrade is completed.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetUpgradeStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetUpgradeStatus API.
+     */
+    GetUpgradeStatusResponse getUpgradeStatus(GetUpgradeStatusRequest request);
+
+    /**
      * Gets the specified VCN's information.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1943,6 +2080,16 @@ public interface VirtualNetwork extends AutoCloseable {
      */
     GetVcnDnsResolverAssociationResponse getVcnDnsResolverAssociation(
             GetVcnDnsResolverAssociationRequest request);
+
+    /**
+     * Gets a virtual network topology for a given VCN.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVcnTopologyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVcnTopology API.
+     */
+    GetVcnTopologyResponse getVcnTopology(GetVcnTopologyRequest request);
 
     /**
      * Gets the specified virtual circuit's information.
@@ -2023,7 +2170,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * <p>
      * If you want to generate CPE configuration content for one of the returned CPE device types,
      * ensure that the {@link Cpe} object's `cpeDeviceShapeId` attribute is set
-     * to the CPE device type's OCID (returned by this operation).
+     * to the CPE device type's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) (returned by this operation).
      * <p>
      * For information about generating CPE configuration content, see these operations:
      * <p>
@@ -2075,8 +2222,21 @@ public interface VirtualNetwork extends AutoCloseable {
             ListCrossConnectLocationsRequest request);
 
     /**
+     * Lists the Cross Connect mapping Details for the specified
+     * virtual circuit.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListCrossConnectMappingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCrossConnectMappings API.
+     */
+    ListCrossConnectMappingsResponse listCrossConnectMappings(
+            ListCrossConnectMappingsRequest request);
+
+    /**
      * Lists the cross-connects in the specified compartment. You can filter the list
-     * by specifying the OCID of a cross-connect group.
+     * by specifying the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a cross-connect group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2115,8 +2275,12 @@ public interface VirtualNetwork extends AutoCloseable {
     ListDhcpOptionsResponse listDhcpOptions(ListDhcpOptionsRequest request);
 
     /**
-     * Lists the `DrgAttachment` objects for the specified compartment. You can filter the
-     * results by VCN or DRG.
+     * Lists the `DrgAttachment` resource for the specified compartment. You can filter the
+     * results by DRG, attached network, attachment type, DRG route table or
+     * VCN route table.
+     * <p>
+     * The LIST API lists DRG attachments by attachment type. It will default to list VCN attachments,
+     * but you may request to list ALL attachments of ALL types.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2125,6 +2289,55 @@ public interface VirtualNetwork extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDrgAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDrgAttachments API.
      */
     ListDrgAttachmentsResponse listDrgAttachments(ListDrgAttachmentsRequest request);
+
+    /**
+     * Lists the statements for the specified route distribution.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDrgRouteDistributionStatementsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDrgRouteDistributionStatements API.
+     */
+    ListDrgRouteDistributionStatementsResponse listDrgRouteDistributionStatements(
+            ListDrgRouteDistributionStatementsRequest request);
+
+    /**
+     * Lists the route distributions in the specified DRG.
+     * <p>
+     * To retrieve the statements in a distribution, use the
+     * ListDrgRouteDistributionStatements operation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDrgRouteDistributionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDrgRouteDistributions API.
+     */
+    ListDrgRouteDistributionsResponse listDrgRouteDistributions(
+            ListDrgRouteDistributionsRequest request);
+
+    /**
+     * Lists the route rules in the specified DRG route table.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDrgRouteRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDrgRouteRules API.
+     */
+    ListDrgRouteRulesResponse listDrgRouteRules(ListDrgRouteRulesRequest request);
+
+    /**
+     * Lists the DRG route tables for the specified DRG.
+     * <p>
+     * Use the `ListDrgRouteRules` operation to retrieve the route rules in a table.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDrgRouteTablesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDrgRouteTables API.
+     */
+    ListDrgRouteTablesResponse listDrgRouteTables(ListDrgRouteTablesRequest request);
 
     /**
      * Lists the DRGs in the specified compartment.
@@ -2142,7 +2355,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * information so you can specify your desired provider and service
      * offering when you create a virtual circuit.
      * <p>
-     * For the compartment ID, provide the OCID of your tenancy (the root compartment).
+     * For the compartment ID, provide the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of your tenancy (the root compartment).
      * <p>
      * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      *
@@ -2507,6 +2720,54 @@ public interface VirtualNetwork extends AutoCloseable {
     ModifyVcnCidrResponse modifyVcnCidr(ModifyVcnCidrRequest request);
 
     /**
+     * Removes one or more route distribution statements from the specified route distribution's map.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveDrgRouteDistributionStatementsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveDrgRouteDistributionStatements API.
+     */
+    RemoveDrgRouteDistributionStatementsResponse removeDrgRouteDistributionStatements(
+            RemoveDrgRouteDistributionStatementsRequest request);
+
+    /**
+     * Removes one or more route rules from the specified DRG route table.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveDrgRouteRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveDrgRouteRules API.
+     */
+    RemoveDrgRouteRulesResponse removeDrgRouteRules(RemoveDrgRouteRulesRequest request);
+
+    /**
+     * Removes the export route distribution from the DRG attachment so no routes are advertised to it.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveExportDrgRouteDistributionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveExportDrgRouteDistribution API.
+     */
+    RemoveExportDrgRouteDistributionResponse removeExportDrgRouteDistribution(
+            RemoveExportDrgRouteDistributionRequest request);
+
+    /**
+     * Removes the import route distribution from the DRG route table so no routes are imported
+     * into it.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveImportDrgRouteDistributionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveImportDrgRouteDistribution API.
+     */
+    RemoveImportDrgRouteDistributionResponse removeImportDrgRouteDistribution(
+            RemoveImportDrgRouteDistributionRequest request);
+
+    /**
      * Removes one or more security rules from the specified network security group.
      *
      * @param request The request object containing the details to send
@@ -2616,7 +2877,7 @@ public interface VirtualNetwork extends AutoCloseable {
     UpdateDrgResponse updateDrg(UpdateDrgRequest request);
 
     /**
-     * Updates the display name for the specified `DrgAttachment`.
+     * Updates the display name and routing information for the specified `DrgAttachment`.
      * Avoid entering confidential information.
      *
      * @param request The request object containing the details to send
@@ -2626,6 +2887,52 @@ public interface VirtualNetwork extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDrgAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDrgAttachment API.
      */
     UpdateDrgAttachmentResponse updateDrgAttachment(UpdateDrgAttachmentRequest request);
+
+    /**
+     * Updates the specified route distribution
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDrgRouteDistributionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDrgRouteDistribution API.
+     */
+    UpdateDrgRouteDistributionResponse updateDrgRouteDistribution(
+            UpdateDrgRouteDistributionRequest request);
+
+    /**
+     * Updates one or more route distribution statements in the specified route distribution.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDrgRouteDistributionStatementsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDrgRouteDistributionStatements API.
+     */
+    UpdateDrgRouteDistributionStatementsResponse updateDrgRouteDistributionStatements(
+            UpdateDrgRouteDistributionStatementsRequest request);
+
+    /**
+     * Updates one or more route rules in the specified DRG route table.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDrgRouteRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDrgRouteRules API.
+     */
+    UpdateDrgRouteRulesResponse updateDrgRouteRules(UpdateDrgRouteRulesRequest request);
+
+    /**
+     * Updates the specified DRG route table.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDrgRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDrgRouteTable API.
+     */
+    UpdateDrgRouteTableResponse updateDrgRouteTable(UpdateDrgRouteTableRequest request);
 
     /**
      * Updates the specified IPSec connection.
@@ -2996,6 +3303,18 @@ public interface VirtualNetwork extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVnicExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVnic API.
      */
     UpdateVnicResponse updateVnic(UpdateVnicRequest request);
+
+    /**
+     * Upgrades the DRG. After upgrade, you can control routing inside your DRG
+     * via DRG attachments, route distributions, and DRG route tables.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpgradeDrgExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpgradeDrg API.
+     */
+    UpgradeDrgResponse upgradeDrg(UpgradeDrgRequest request);
 
     /**
      * Submits the BYOIP CIDR block you are importing for validation. Do not submit to Oracle for validation if you have not already

@@ -21,7 +21,7 @@ public class UpdatePrivateIpRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdatePrivateIpDetails> {
 
     /**
-     * The OCID of the private IP.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the private IP.
      */
     private String privateIpId;
 

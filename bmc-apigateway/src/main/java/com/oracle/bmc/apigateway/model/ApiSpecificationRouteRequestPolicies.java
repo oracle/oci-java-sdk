@@ -45,6 +45,34 @@ public class ApiSpecificationRouteRequestPolicies {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("queryParameterValidations")
+        private QueryParameterValidationRequestPolicy queryParameterValidations;
+
+        public Builder queryParameterValidations(
+                QueryParameterValidationRequestPolicy queryParameterValidations) {
+            this.queryParameterValidations = queryParameterValidations;
+            this.__explicitlySet__.add("queryParameterValidations");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("headerValidations")
+        private HeaderValidationRequestPolicy headerValidations;
+
+        public Builder headerValidations(HeaderValidationRequestPolicy headerValidations) {
+            this.headerValidations = headerValidations;
+            this.__explicitlySet__.add("headerValidations");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("bodyValidation")
+        private BodyValidationRequestPolicy bodyValidation;
+
+        public Builder bodyValidation(BodyValidationRequestPolicy bodyValidation) {
+            this.bodyValidation = bodyValidation;
+            this.__explicitlySet__.add("bodyValidation");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("headerTransformations")
         private HeaderTransformationPolicy headerTransformations;
 
@@ -64,6 +92,15 @@ public class ApiSpecificationRouteRequestPolicies {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("responseCacheLookup")
+        private ResponseCacheLookupPolicy responseCacheLookup;
+
+        public Builder responseCacheLookup(ResponseCacheLookupPolicy responseCacheLookup) {
+            this.responseCacheLookup = responseCacheLookup;
+            this.__explicitlySet__.add("responseCacheLookup");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -72,8 +109,12 @@ public class ApiSpecificationRouteRequestPolicies {
                     new ApiSpecificationRouteRequestPolicies(
                             authorization,
                             cors,
+                            queryParameterValidations,
+                            headerValidations,
+                            bodyValidation,
                             headerTransformations,
-                            queryParameterTransformations);
+                            queryParameterTransformations,
+                            responseCacheLookup);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -83,8 +124,12 @@ public class ApiSpecificationRouteRequestPolicies {
             Builder copiedBuilder =
                     authorization(o.getAuthorization())
                             .cors(o.getCors())
+                            .queryParameterValidations(o.getQueryParameterValidations())
+                            .headerValidations(o.getHeaderValidations())
+                            .bodyValidation(o.getBodyValidation())
                             .headerTransformations(o.getHeaderTransformations())
-                            .queryParameterTransformations(o.getQueryParameterTransformations());
+                            .queryParameterTransformations(o.getQueryParameterTransformations())
+                            .responseCacheLookup(o.getResponseCacheLookup());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -104,11 +149,23 @@ public class ApiSpecificationRouteRequestPolicies {
     @com.fasterxml.jackson.annotation.JsonProperty("cors")
     CorsPolicy cors;
 
+    @com.fasterxml.jackson.annotation.JsonProperty("queryParameterValidations")
+    QueryParameterValidationRequestPolicy queryParameterValidations;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("headerValidations")
+    HeaderValidationRequestPolicy headerValidations;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("bodyValidation")
+    BodyValidationRequestPolicy bodyValidation;
+
     @com.fasterxml.jackson.annotation.JsonProperty("headerTransformations")
     HeaderTransformationPolicy headerTransformations;
 
     @com.fasterxml.jackson.annotation.JsonProperty("queryParameterTransformations")
     QueryParameterTransformationPolicy queryParameterTransformations;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("responseCacheLookup")
+    ResponseCacheLookupPolicy responseCacheLookup;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

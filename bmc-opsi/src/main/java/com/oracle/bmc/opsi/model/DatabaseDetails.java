@@ -24,6 +24,15 @@ public class DatabaseDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
+
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
@@ -69,17 +78,28 @@ public class DatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("instances")
+        private java.util.List<HostInstanceMap> instances;
+
+        public Builder instances(java.util.List<HostInstanceMap> instances) {
+            this.instances = instances;
+            this.__explicitlySet__.add("instances");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseDetails build() {
             DatabaseDetails __instance__ =
                     new DatabaseDetails(
+                            id,
                             databaseId,
                             databaseName,
                             databaseDisplayName,
                             databaseType,
-                            databaseVersion);
+                            databaseVersion,
+                            instances);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -87,11 +107,13 @@ public class DatabaseDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DatabaseDetails o) {
             Builder copiedBuilder =
-                    databaseId(o.getDatabaseId())
+                    id(o.getId())
+                            .databaseId(o.getDatabaseId())
                             .databaseName(o.getDatabaseName())
                             .databaseDisplayName(o.getDatabaseDisplayName())
                             .databaseType(o.getDatabaseType())
-                            .databaseVersion(o.getDatabaseVersion());
+                            .databaseVersion(o.getDatabaseVersion())
+                            .instances(o.getInstances());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -104,6 +126,12 @@ public class DatabaseDetails {
     public static Builder builder() {
         return new Builder();
     }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    String id;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
@@ -134,6 +162,12 @@ public class DatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
     String databaseVersion;
+
+    /**
+     * Array of hostname and instance name.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("instances")
+    java.util.List<HostInstanceMap> instances;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

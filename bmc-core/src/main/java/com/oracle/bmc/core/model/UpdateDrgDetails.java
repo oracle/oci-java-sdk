@@ -34,6 +34,15 @@ public class UpdateDrgDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("defaultDrgRouteTables")
+        private DefaultDrgRouteTables defaultDrgRouteTables;
+
+        public Builder defaultDrgRouteTables(DefaultDrgRouteTables defaultDrgRouteTables) {
+            this.defaultDrgRouteTables = defaultDrgRouteTables;
+            this.__explicitlySet__.add("defaultDrgRouteTables");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -57,7 +66,8 @@ public class UpdateDrgDetails {
 
         public UpdateDrgDetails build() {
             UpdateDrgDetails __instance__ =
-                    new UpdateDrgDetails(definedTags, displayName, freeformTags);
+                    new UpdateDrgDetails(
+                            definedTags, defaultDrgRouteTables, displayName, freeformTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -66,6 +76,7 @@ public class UpdateDrgDetails {
         public Builder copy(UpdateDrgDetails o) {
             Builder copiedBuilder =
                     definedTags(o.getDefinedTags())
+                            .defaultDrgRouteTables(o.getDefaultDrgRouteTables())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags());
 
@@ -90,6 +101,9 @@ public class UpdateDrgDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("defaultDrgRouteTables")
+    DefaultDrgRouteTables defaultDrgRouteTables;
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.

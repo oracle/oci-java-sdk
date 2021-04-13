@@ -27,7 +27,7 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
 
     /**
      * Filter by resource metric.
-     * Supported values are CPU and STORAGE.
+     * Supported values are CPU , STORAGE, MEMORY and IO.
      *
      */
     private String resourceMetric;
@@ -62,14 +62,14 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
 
     /**
      * Filter by one or more database type.
-     * Possible values are ADW-S, ATP-S, ADW-D, ATP-D
+     * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
      *
      */
     private java.util.List<DatabaseType> databaseType;
 
     /**
      * Filter by one or more database type.
-     * Possible values are ADW-S, ATP-S, ADW-D, ATP-D
+     * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
      *
      **/
     public enum DatabaseType {
@@ -77,6 +77,8 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
         AtpS("ATP-S"),
         AdwD("ADW-D"),
         AtpD("ATP-D"),
+        ExternalPdb("EXTERNAL-PDB"),
+        ExternalNoncdb("EXTERNAL-NONCDB"),
         ;
 
         private final String value;
@@ -107,10 +109,16 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
         }
     };
     /**
-     * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
      *
      */
     private java.util.List<String> databaseId;
+
+    /**
+     * Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     *
+     */
+    private java.util.List<String> id;
 
     /**
      * Filter by utilization level by the following buckets:
@@ -222,6 +230,18 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
         }
     };
     /**
+     * Tablespace name for a database
+     *
+     */
+    private String tablespaceName;
+
+    /**
+     * Filter by one or more hostname.
+     *
+     */
+    private java.util.List<String> hostName;
+
+    /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
      *
@@ -270,10 +290,13 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
             timeIntervalEnd(o.getTimeIntervalEnd());
             databaseType(o.getDatabaseType());
             databaseId(o.getDatabaseId());
+            id(o.getId());
             utilizationLevel(o.getUtilizationLevel());
             page(o.getPage());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
+            tablespaceName(o.getTablespaceName());
+            hostName(o.getHostName());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());

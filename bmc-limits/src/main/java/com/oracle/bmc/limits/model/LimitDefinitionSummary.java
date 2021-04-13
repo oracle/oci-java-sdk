@@ -14,7 +14,7 @@ package com.oracle.bmc.limits.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: ")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
@@ -80,6 +80,24 @@ public class LimitDefinitionSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isDeprecated")
+        private Boolean isDeprecated;
+
+        public Builder isDeprecated(Boolean isDeprecated) {
+            this.isDeprecated = isDeprecated;
+            this.__explicitlySet__.add("isDeprecated");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isEligibleForLimitIncrease")
+        private Boolean isEligibleForLimitIncrease;
+
+        public Builder isEligibleForLimitIncrease(Boolean isEligibleForLimitIncrease) {
+            this.isEligibleForLimitIncrease = isEligibleForLimitIncrease;
+            this.__explicitlySet__.add("isEligibleForLimitIncrease");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -91,7 +109,9 @@ public class LimitDefinitionSummary {
                             description,
                             scopeType,
                             areQuotasSupported,
-                            isResourceAvailabilitySupported);
+                            isResourceAvailabilitySupported,
+                            isDeprecated,
+                            isEligibleForLimitIncrease);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -104,8 +124,9 @@ public class LimitDefinitionSummary {
                             .description(o.getDescription())
                             .scopeType(o.getScopeType())
                             .areQuotasSupported(o.getAreQuotasSupported())
-                            .isResourceAvailabilitySupported(
-                                    o.getIsResourceAvailabilitySupported());
+                            .isResourceAvailabilitySupported(o.getIsResourceAvailabilitySupported())
+                            .isDeprecated(o.getIsDeprecated())
+                            .isEligibleForLimitIncrease(o.getIsEligibleForLimitIncrease());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -206,6 +227,20 @@ public class LimitDefinitionSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isResourceAvailabilitySupported")
     Boolean isResourceAvailabilitySupported;
+
+    /**
+     * Indicates if the limit has been deprecated.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDeprecated")
+    Boolean isDeprecated;
+
+    /**
+     * Indicates if the customer can request a limit increase for this resource.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isEligibleForLimitIncrease")
+    Boolean isEligibleForLimitIncrease;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

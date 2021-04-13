@@ -5,8 +5,10 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A link between a DRG and VCN. For more information, see
- * [Overview of the Networking Service](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm).
+ * A DRG attachment serves as a link between a DRG and a network resource. A DRG can be attached to a VCN,
+ * IPSec tunnel, remote peering connection, or virtual circuit.
+ * <p>
+ * For more information, see [Overview of the Networking Service](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -80,6 +82,43 @@ public class DrgAttachment {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("drgRouteTableId")
+        private String drgRouteTableId;
+
+        public Builder drgRouteTableId(String drgRouteTableId) {
+            this.drgRouteTableId = drgRouteTableId;
+            this.__explicitlySet__.add("drgRouteTableId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("networkDetails")
+        private DrgAttachmentNetworkDetails networkDetails;
+
+        public Builder networkDetails(DrgAttachmentNetworkDetails networkDetails) {
+            this.networkDetails = networkDetails;
+            this.__explicitlySet__.add("networkDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
 
@@ -98,6 +137,24 @@ public class DrgAttachment {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("exportDrgRouteDistributionId")
+        private String exportDrgRouteDistributionId;
+
+        public Builder exportDrgRouteDistributionId(String exportDrgRouteDistributionId) {
+            this.exportDrgRouteDistributionId = exportDrgRouteDistributionId;
+            this.__explicitlySet__.add("exportDrgRouteDistributionId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isCrossTenancy")
+        private Boolean isCrossTenancy;
+
+        public Builder isCrossTenancy(Boolean isCrossTenancy) {
+            this.isCrossTenancy = isCrossTenancy;
+            this.__explicitlySet__.add("isCrossTenancy");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -110,8 +167,14 @@ public class DrgAttachment {
                             id,
                             lifecycleState,
                             timeCreated,
+                            drgRouteTableId,
+                            networkDetails,
+                            definedTags,
+                            freeformTags,
                             routeTableId,
-                            vcnId);
+                            vcnId,
+                            exportDrgRouteDistributionId,
+                            isCrossTenancy);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -125,8 +188,14 @@ public class DrgAttachment {
                             .id(o.getId())
                             .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
+                            .drgRouteTableId(o.getDrgRouteTableId())
+                            .networkDetails(o.getNetworkDetails())
+                            .definedTags(o.getDefinedTags())
+                            .freeformTags(o.getFreeformTags())
                             .routeTableId(o.getRouteTableId())
-                            .vcnId(o.getVcnId());
+                            .vcnId(o.getVcnId())
+                            .exportDrgRouteDistributionId(o.getExportDrgRouteDistributionId())
+                            .isCrossTenancy(o.getIsCrossTenancy());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -141,7 +210,7 @@ public class DrgAttachment {
     }
 
     /**
-     * The OCID of the compartment containing the DRG attachment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the DRG attachment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -155,13 +224,13 @@ public class DrgAttachment {
     String displayName;
 
     /**
-     * The OCID of the DRG.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DRG.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("drgId")
     String drgId;
 
     /**
-     * The DRG attachment's Oracle ID (OCID).
+     * The DRG attachment's Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -229,6 +298,38 @@ public class DrgAttachment {
     java.util.Date timeCreated;
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
+     * <p>
+     * The DRG route table manages traffic inside the DRG.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("drgRouteTableId")
+    String drgRouteTableId;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("networkDetails")
+    DrgAttachmentNetworkDetails networkDetails;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Department\": \"Finance\"}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
+
+    /**
      * The OCID of the route table the DRG attachment is using.
      * <p>
      * For information about why you would associate a route table with a DRG attachment, see:
@@ -236,16 +337,37 @@ public class DrgAttachment {
      * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
      *   * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
      *
+     * This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the attached resource.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     String routeTableId;
 
     /**
-     * The OCID of the VCN.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VCN.
+     * This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the attached resource.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     String vcnId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table
+     * are advertised to the attachment.
+     * If this value is null, no routes are advertised through this attachment.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("exportDrgRouteDistributionId")
+    String exportDrgRouteDistributionId;
+
+    /**
+     * Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.
+     * <p>
+     * Example: `false`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isCrossTenancy")
+    Boolean isCrossTenancy;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

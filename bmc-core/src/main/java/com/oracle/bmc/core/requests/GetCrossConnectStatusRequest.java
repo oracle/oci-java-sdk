@@ -21,7 +21,7 @@ public class GetCrossConnectStatusRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the cross-connect.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cross-connect.
      */
     private String crossConnectId;
 

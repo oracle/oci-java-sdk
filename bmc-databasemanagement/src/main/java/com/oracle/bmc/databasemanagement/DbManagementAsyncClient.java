@@ -706,6 +706,47 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetClusterCacheMetricResponse> getClusterCacheMetric(
+            GetClusterCacheMetricRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetClusterCacheMetricRequest, GetClusterCacheMetricResponse>
+                    handler) {
+        LOG.trace("Called async getClusterCacheMetric");
+        final GetClusterCacheMetricRequest interceptedRequest =
+                GetClusterCacheMetricConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetClusterCacheMetricConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetClusterCacheMetricResponse>
+                transformer = GetClusterCacheMetricConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetClusterCacheMetricRequest, GetClusterCacheMetricResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetClusterCacheMetricRequest, GetClusterCacheMetricResponse>,
+                        java.util.concurrent.Future<GetClusterCacheMetricResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetClusterCacheMetricRequest, GetClusterCacheMetricResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDatabaseFleetHealthMetricsResponse>
             getDatabaseFleetHealthMetrics(
                     GetDatabaseFleetHealthMetricsRequest request,

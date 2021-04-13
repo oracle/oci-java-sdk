@@ -46,6 +46,15 @@ public class InstanceShapeConfig {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("baselineOcpuUtilization")
+        private BaselineOcpuUtilization baselineOcpuUtilization;
+
+        public Builder baselineOcpuUtilization(BaselineOcpuUtilization baselineOcpuUtilization) {
+            this.baselineOcpuUtilization = baselineOcpuUtilization;
+            this.__explicitlySet__.add("baselineOcpuUtilization");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("processorDescription")
         private String processorDescription;
 
@@ -126,6 +135,7 @@ public class InstanceShapeConfig {
                     new InstanceShapeConfig(
                             ocpus,
                             memoryInGBs,
+                            baselineOcpuUtilization,
                             processorDescription,
                             networkingBandwidthInGbps,
                             maxVnicAttachments,
@@ -143,6 +153,7 @@ public class InstanceShapeConfig {
             Builder copiedBuilder =
                     ocpus(o.getOcpus())
                             .memoryInGBs(o.getMemoryInGBs())
+                            .baselineOcpuUtilization(o.getBaselineOcpuUtilization())
                             .processorDescription(o.getProcessorDescription())
                             .networkingBandwidthInGbps(o.getNetworkingBandwidthInGbps())
                             .maxVnicAttachments(o.getMaxVnicAttachments())
@@ -177,6 +188,72 @@ public class InstanceShapeConfig {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     Float memoryInGBs;
+    /**
+     * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
+     * non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+     * <p>
+     * The following values are supported:
+     * - `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+     * - `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+     * - `BASELINE_1_1` - baseline usage is the entire OCPU. This represents a non-burstable instance.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum BaselineOcpuUtilization {
+        Baseline18("BASELINE_1_8"),
+        Baseline12("BASELINE_1_2"),
+        Baseline11("BASELINE_1_1"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, BaselineOcpuUtilization> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (BaselineOcpuUtilization v : BaselineOcpuUtilization.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        BaselineOcpuUtilization(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static BaselineOcpuUtilization create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'BaselineOcpuUtilization', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
+     * non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+     * <p>
+     * The following values are supported:
+     * - `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+     * - `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+     * - `BASELINE_1_1` - baseline usage is the entire OCPU. This represents a non-burstable instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("baselineOcpuUtilization")
+    BaselineOcpuUtilization baselineOcpuUtilization;
 
     /**
      * A short description of the instance's processor (CPU).

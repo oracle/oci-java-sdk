@@ -71,13 +71,22 @@ public class ActivityTimeSeriesMetrics {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cluster")
+        private MetricDataPoint cluster;
+
+        public Builder cluster(MetricDataPoint cluster) {
+            this.cluster = cluster;
+            this.__explicitlySet__.add("cluster");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ActivityTimeSeriesMetrics build() {
             ActivityTimeSeriesMetrics __instance__ =
                     new ActivityTimeSeriesMetrics(
-                            timestamp, cpuTime, waitTime, userIoTime, cpuCount);
+                            timestamp, cpuTime, waitTime, userIoTime, cpuCount, cluster);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -89,7 +98,8 @@ public class ActivityTimeSeriesMetrics {
                             .cpuTime(o.getCpuTime())
                             .waitTime(o.getWaitTime())
                             .userIoTime(o.getUserIoTime())
-                            .cpuCount(o.getCpuCount());
+                            .cpuCount(o.getCpuCount())
+                            .cluster(o.getCluster());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -120,6 +130,9 @@ public class ActivityTimeSeriesMetrics {
 
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCount")
     MetricDataPoint cpuCount;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("cluster")
+    MetricDataPoint cluster;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

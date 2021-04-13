@@ -51,15 +51,6 @@ public class CreateVcnDetails {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
-        private String ipv6CidrBlock;
-
-        public Builder ipv6CidrBlock(String ipv6CidrBlock) {
-            this.ipv6CidrBlock = ipv6CidrBlock;
-            this.__explicitlySet__.add("ipv6CidrBlock");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -115,7 +106,6 @@ public class CreateVcnDetails {
                             cidrBlock,
                             cidrBlocks,
                             compartmentId,
-                            ipv6CidrBlock,
                             definedTags,
                             displayName,
                             dnsLabel,
@@ -131,7 +121,6 @@ public class CreateVcnDetails {
                     cidrBlock(o.getCidrBlock())
                             .cidrBlocks(o.getCidrBlocks())
                             .compartmentId(o.getCompartmentId())
-                            .ipv6CidrBlock(o.getIpv6CidrBlock())
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .dnsLabel(o.getDnsLabel())
@@ -175,32 +164,6 @@ public class CreateVcnDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
-
-    /**
-     * If you enable IPv6 for the VCN (see `isIpv6Enabled`), you may optionally provide an IPv6
-     * /48 CIDR block from the supported ranges (see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-     * The addresses in this block will be considered private and cannot be accessed
-     * from the internet. The documentation refers to this as a *custom CIDR* for the VCN.
-     * <p>
-     * If you don't provide a custom CIDR for the VCN, Oracle assigns the VCN's IPv6 /48 CIDR block.
-     * <p>
-     * Regardless of whether you or Oracle assigns the `ipv6CidrBlock`,
-     * Oracle *also* assigns the VCN an IPv6 CIDR block for the VCN's public IP address space
-     * (see the `ipv6PublicCidrBlock` of the {@link Vcn} object). If you do
-     * not assign a custom CIDR, Oracle uses the *same* Oracle-assigned CIDR for both the private
-     * IP address space (`ipv6CidrBlock` in the `Vcn` object) and the public IP addreses space
-     * (`ipv6PublicCidrBlock` in the `Vcn` object). This means that a given VNIC might use the same
-     * IPv6 IP address for both private and public (internet) communication. You control whether
-     * an IPv6 address can be used for internet communication by using the `isInternetAccessAllowed`
-     * attribute in the {@link Ipv6} object.
-     * <p>
-     * For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-     * <p>
-     * Example: `2001:0db8:0123::/48`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
-    String ipv6CidrBlock;
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -252,7 +215,8 @@ public class CreateVcnDetails {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * Whether IPv6 is enabled for the VCN. Default is `false`. You cannot change this later.
+     * Whether IPv6 is enabled for the VCN. Default is `false`.
+     * If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block.
      * For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
      * Example: `true`

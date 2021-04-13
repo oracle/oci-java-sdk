@@ -21,7 +21,7 @@ public class ChangeCrossConnectGroupCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<ChangeCrossConnectGroupCompartmentDetails> {
 
     /**
-     * The OCID of the cross-connect group.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cross-connect group.
      */
     private String crossConnectGroupId;
 

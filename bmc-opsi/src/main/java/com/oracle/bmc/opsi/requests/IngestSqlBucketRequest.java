@@ -21,20 +21,26 @@ public class IngestSqlBucketRequest
         extends com.oracle.bmc.requests.BmcRequest<IngestSqlBucketDetails> {
 
     /**
+     * Collection of SQL bucket objects for a particular database.
+     */
+    private IngestSqlBucketDetails ingestSqlBucketDetails;
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
     /**
-     * Required [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+     * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
      *
      */
     private String databaseId;
 
     /**
-     * Collection of SQL bucket objects for a particular database.
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     *
      */
-    private IngestSqlBucketDetails ingestSqlBucketDetails;
+    private String id;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -107,9 +113,10 @@ public class IngestSqlBucketRequest
          * @return this builder instance
          */
         public Builder copy(IngestSqlBucketRequest o) {
+            ingestSqlBucketDetails(o.getIngestSqlBucketDetails());
             compartmentId(o.getCompartmentId());
             databaseId(o.getDatabaseId());
-            ingestSqlBucketDetails(o.getIngestSqlBucketDetails());
+            id(o.getId());
             opcRequestId(o.getOpcRequestId());
             ifMatch(o.getIfMatch());
             opcRetryToken(o.getOpcRetryToken());

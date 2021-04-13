@@ -26,17 +26,23 @@ public class SummarizeSqlStatisticsTimeSeriesByPlanRequest
     private String compartmentId;
 
     /**
-     * Required [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-     *
-     */
-    private String databaseId;
-
-    /**
      * Unique SQL_ID for a SQL Statement.
      * Example: `6rgjh9bjmy2s7`
      *
      */
     private String sqlIdentifier;
+
+    /**
+     * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
+     *
+     */
+    private String databaseId;
+
+    /**
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     *
+     */
+    private String id;
 
     /**
      * Specify time period in ISO 8601 format with respect to current time.
@@ -117,8 +123,9 @@ public class SummarizeSqlStatisticsTimeSeriesByPlanRequest
          */
         public Builder copy(SummarizeSqlStatisticsTimeSeriesByPlanRequest o) {
             compartmentId(o.getCompartmentId());
-            databaseId(o.getDatabaseId());
             sqlIdentifier(o.getSqlIdentifier());
+            databaseId(o.getDatabaseId());
+            id(o.getId());
             analysisTimeInterval(o.getAnalysisTimeInterval());
             timeIntervalStart(o.getTimeIntervalStart());
             timeIntervalEnd(o.getTimeIntervalEnd());

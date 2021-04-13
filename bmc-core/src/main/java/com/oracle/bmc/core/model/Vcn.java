@@ -130,21 +130,12 @@ public class Vcn {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
-        private String ipv6CidrBlock;
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
+        private java.util.List<String> ipv6CidrBlocks;
 
-        public Builder ipv6CidrBlock(String ipv6CidrBlock) {
-            this.ipv6CidrBlock = ipv6CidrBlock;
-            this.__explicitlySet__.add("ipv6CidrBlock");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("ipv6PublicCidrBlock")
-        private String ipv6PublicCidrBlock;
-
-        public Builder ipv6PublicCidrBlock(String ipv6PublicCidrBlock) {
-            this.ipv6PublicCidrBlock = ipv6PublicCidrBlock;
-            this.__explicitlySet__.add("ipv6PublicCidrBlock");
+        public Builder ipv6CidrBlocks(java.util.List<String> ipv6CidrBlocks) {
+            this.ipv6CidrBlocks = ipv6CidrBlocks;
+            this.__explicitlySet__.add("ipv6CidrBlocks");
             return this;
         }
 
@@ -192,8 +183,7 @@ public class Vcn {
                             dnsLabel,
                             freeformTags,
                             id,
-                            ipv6CidrBlock,
-                            ipv6PublicCidrBlock,
+                            ipv6CidrBlocks,
                             lifecycleState,
                             timeCreated,
                             vcnDomainName);
@@ -215,8 +205,7 @@ public class Vcn {
                             .dnsLabel(o.getDnsLabel())
                             .freeformTags(o.getFreeformTags())
                             .id(o.getId())
-                            .ipv6CidrBlock(o.getIpv6CidrBlock())
-                            .ipv6PublicCidrBlock(o.getIpv6PublicCidrBlock())
+                            .ipv6CidrBlocks(o.getIpv6CidrBlocks())
                             .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
                             .vcnDomainName(o.getVcnDomainName());
@@ -328,30 +317,12 @@ public class Vcn {
     String id;
 
     /**
-     * For an IPv6-enabled VCN, this is the IPv6 CIDR block for the VCN's private IP address space.
-     * The VCN size is always /48. If you don't provide a value when creating the VCN, Oracle
-     * provides one and uses that *same* CIDR for the `ipv6PublicCidrBlock`. If you do provide a
-     * value, Oracle provides a *different* CIDR for the `ipv6PublicCidrBlock`. Note that IPv6
-     * addressing is currently supported only in certain regions. See
-     * [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-     * Example: `2001:0db8:0123::/48`
+     * For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address space.
+     * The CIDRs are provided by Oracle and the sizes are always /56.
      *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
-    String ipv6CidrBlock;
-
-    /**
-     * For an IPv6-enabled VCN, this is the IPv6 CIDR block for the VCN's public IP address space.
-     * The VCN size is always /48. This CIDR is always provided by Oracle. If you don't provide a
-     * custom CIDR for the `ipv6CidrBlock` when creating the VCN, Oracle assigns that value and also
-     * uses it for `ipv6PublicCidrBlock`. Oracle uses addresses from this block for the `publicIpAddress`
-     * attribute of an {@link Ipv6} that has internet access allowed.
-     * <p>
-     * Example: `2001:0db8:0123::/48`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("ipv6PublicCidrBlock")
-    String ipv6PublicCidrBlock;
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
+    java.util.List<String> ipv6CidrBlocks;
     /**
      * The VCN's current state.
      **/

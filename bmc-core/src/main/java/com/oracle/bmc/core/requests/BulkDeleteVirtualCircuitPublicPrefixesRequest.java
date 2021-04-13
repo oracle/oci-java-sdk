@@ -21,12 +21,12 @@ public class BulkDeleteVirtualCircuitPublicPrefixesRequest
         extends com.oracle.bmc.requests.BmcRequest<BulkDeleteVirtualCircuitPublicPrefixesDetails> {
 
     /**
-     * The OCID of the virtual circuit.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the virtual circuit.
      */
     private String virtualCircuitId;
 
     /**
-     * Request with publix prefixes to be deleted from the virtual circuit
+     * Request with public prefixes to be deleted from the virtual circuit.
      */
     private BulkDeleteVirtualCircuitPublicPrefixesDetails
             bulkDeleteVirtualCircuitPublicPrefixesDetails;

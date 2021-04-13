@@ -364,6 +364,132 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AddDrgRouteDistributionStatementsResponse>
+            addDrgRouteDistributionStatements(
+                    AddDrgRouteDistributionStatementsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AddDrgRouteDistributionStatementsRequest,
+                                    AddDrgRouteDistributionStatementsResponse>
+                            handler) {
+        LOG.trace("Called async addDrgRouteDistributionStatements");
+        final AddDrgRouteDistributionStatementsRequest interceptedRequest =
+                AddDrgRouteDistributionStatementsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddDrgRouteDistributionStatementsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, AddDrgRouteDistributionStatementsResponse>
+                transformer = AddDrgRouteDistributionStatementsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        AddDrgRouteDistributionStatementsRequest,
+                        AddDrgRouteDistributionStatementsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddDrgRouteDistributionStatementsRequest,
+                                AddDrgRouteDistributionStatementsResponse>,
+                        java.util.concurrent.Future<AddDrgRouteDistributionStatementsResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddDrgRouteDistributionStatementsRequest,
+                    AddDrgRouteDistributionStatementsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddDrgRouteRulesResponse> addDrgRouteRules(
+            AddDrgRouteRulesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddDrgRouteRulesRequest, AddDrgRouteRulesResponse>
+                    handler) {
+        LOG.trace("Called async addDrgRouteRules");
+        final AddDrgRouteRulesRequest interceptedRequest =
+                AddDrgRouteRulesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddDrgRouteRulesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, AddDrgRouteRulesResponse>
+                transformer = AddDrgRouteRulesConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<AddDrgRouteRulesRequest, AddDrgRouteRulesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddDrgRouteRulesRequest, AddDrgRouteRulesResponse>,
+                        java.util.concurrent.Future<AddDrgRouteRulesResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddDrgRouteRulesRequest, AddDrgRouteRulesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddIpv6VcnCidrResponse> addIpv6VcnCidr(
+            AddIpv6VcnCidrRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddIpv6VcnCidrRequest, AddIpv6VcnCidrResponse>
+                    handler) {
+        LOG.trace("Called async addIpv6VcnCidr");
+        final AddIpv6VcnCidrRequest interceptedRequest =
+                AddIpv6VcnCidrConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddIpv6VcnCidrConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, AddIpv6VcnCidrResponse>
+                transformer = AddIpv6VcnCidrConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<AddIpv6VcnCidrRequest, AddIpv6VcnCidrResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddIpv6VcnCidrRequest, AddIpv6VcnCidrResponse>,
+                        java.util.concurrent.Future<AddIpv6VcnCidrResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddIpv6VcnCidrRequest, AddIpv6VcnCidrResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<AddNetworkSecurityGroupSecurityRulesResponse>
             addNetworkSecurityGroupSecurityRules(
                     AddNetworkSecurityGroupSecurityRulesRequest request,
@@ -1981,6 +2107,93 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDrgRouteDistributionResponse>
+            createDrgRouteDistribution(
+                    CreateDrgRouteDistributionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateDrgRouteDistributionRequest,
+                                    CreateDrgRouteDistributionResponse>
+                            handler) {
+        LOG.trace("Called async createDrgRouteDistribution");
+        final CreateDrgRouteDistributionRequest interceptedRequest =
+                CreateDrgRouteDistributionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDrgRouteDistributionConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateDrgRouteDistributionResponse>
+                transformer = CreateDrgRouteDistributionConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateDrgRouteDistributionRequest, CreateDrgRouteDistributionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateDrgRouteDistributionRequest,
+                                CreateDrgRouteDistributionResponse>,
+                        java.util.concurrent.Future<CreateDrgRouteDistributionResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateDrgRouteDistributionRequest, CreateDrgRouteDistributionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDrgRouteTableResponse> createDrgRouteTable(
+            CreateDrgRouteTableRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateDrgRouteTableRequest, CreateDrgRouteTableResponse>
+                    handler) {
+        LOG.trace("Called async createDrgRouteTable");
+        final CreateDrgRouteTableRequest interceptedRequest =
+                CreateDrgRouteTableConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDrgRouteTableConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateDrgRouteTableResponse>
+                transformer = CreateDrgRouteTableConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateDrgRouteTableRequest, CreateDrgRouteTableResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateDrgRouteTableRequest, CreateDrgRouteTableResponse>,
+                        java.util.concurrent.Future<CreateDrgRouteTableResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateDrgRouteTableRequest, CreateDrgRouteTableResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateIPSecConnectionResponse> createIPSecConnection(
             CreateIPSecConnectionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2945,6 +3158,91 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteDrgRouteDistributionResponse>
+            deleteDrgRouteDistribution(
+                    DeleteDrgRouteDistributionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteDrgRouteDistributionRequest,
+                                    DeleteDrgRouteDistributionResponse>
+                            handler) {
+        LOG.trace("Called async deleteDrgRouteDistribution");
+        final DeleteDrgRouteDistributionRequest interceptedRequest =
+                DeleteDrgRouteDistributionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDrgRouteDistributionConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteDrgRouteDistributionResponse>
+                transformer = DeleteDrgRouteDistributionConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteDrgRouteDistributionRequest, DeleteDrgRouteDistributionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteDrgRouteDistributionRequest,
+                                DeleteDrgRouteDistributionResponse>,
+                        java.util.concurrent.Future<DeleteDrgRouteDistributionResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteDrgRouteDistributionRequest, DeleteDrgRouteDistributionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDrgRouteTableResponse> deleteDrgRouteTable(
+            DeleteDrgRouteTableRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDrgRouteTableRequest, DeleteDrgRouteTableResponse>
+                    handler) {
+        LOG.trace("Called async deleteDrgRouteTable");
+        final DeleteDrgRouteTableRequest interceptedRequest =
+                DeleteDrgRouteTableConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDrgRouteTableConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteDrgRouteTableResponse>
+                transformer = DeleteDrgRouteTableConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteDrgRouteTableRequest, DeleteDrgRouteTableResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteDrgRouteTableRequest, DeleteDrgRouteTableResponse>,
+                        java.util.concurrent.Future<DeleteDrgRouteTableResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteDrgRouteTableRequest, DeleteDrgRouteTableResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteIPSecConnectionResponse> deleteIPSecConnection(
             DeleteIPSecConnectionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -3660,6 +3958,47 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetAllDrgAttachmentsResponse> getAllDrgAttachments(
+            GetAllDrgAttachmentsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetAllDrgAttachmentsRequest, GetAllDrgAttachmentsResponse>
+                    handler) {
+        LOG.trace("Called async getAllDrgAttachments");
+        final GetAllDrgAttachmentsRequest interceptedRequest =
+                GetAllDrgAttachmentsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAllDrgAttachmentsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetAllDrgAttachmentsResponse>
+                transformer = GetAllDrgAttachmentsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetAllDrgAttachmentsRequest, GetAllDrgAttachmentsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetAllDrgAttachmentsRequest, GetAllDrgAttachmentsResponse>,
+                        java.util.concurrent.Future<GetAllDrgAttachmentsResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAllDrgAttachmentsRequest, GetAllDrgAttachmentsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetByoipRangeResponse> getByoipRange(
             GetByoipRangeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetByoipRangeRequest, GetByoipRangeResponse>
@@ -4120,6 +4459,86 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetDrgRedundancyStatusRequest, GetDrgRedundancyStatusResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDrgRouteDistributionResponse> getDrgRouteDistribution(
+            GetDrgRouteDistributionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetDrgRouteDistributionRequest, GetDrgRouteDistributionResponse>
+                    handler) {
+        LOG.trace("Called async getDrgRouteDistribution");
+        final GetDrgRouteDistributionRequest interceptedRequest =
+                GetDrgRouteDistributionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDrgRouteDistributionConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetDrgRouteDistributionResponse>
+                transformer = GetDrgRouteDistributionConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetDrgRouteDistributionRequest, GetDrgRouteDistributionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetDrgRouteDistributionRequest, GetDrgRouteDistributionResponse>,
+                        java.util.concurrent.Future<GetDrgRouteDistributionResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetDrgRouteDistributionRequest, GetDrgRouteDistributionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDrgRouteTableResponse> getDrgRouteTable(
+            GetDrgRouteTableRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetDrgRouteTableRequest, GetDrgRouteTableResponse>
+                    handler) {
+        LOG.trace("Called async getDrgRouteTable");
+        final GetDrgRouteTableRequest interceptedRequest =
+                GetDrgRouteTableConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDrgRouteTableConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDrgRouteTableResponse>
+                transformer = GetDrgRouteTableConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetDrgRouteTableRequest, GetDrgRouteTableResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetDrgRouteTableRequest, GetDrgRouteTableResponse>,
+                        java.util.concurrent.Future<GetDrgRouteTableResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetDrgRouteTableRequest, GetDrgRouteTableResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4679,6 +5098,47 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetNetworkingTopologyResponse> getNetworkingTopology(
+            GetNetworkingTopologyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetNetworkingTopologyRequest, GetNetworkingTopologyResponse>
+                    handler) {
+        LOG.trace("Called async getNetworkingTopology");
+        final GetNetworkingTopologyRequest interceptedRequest =
+                GetNetworkingTopologyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetNetworkingTopologyConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetNetworkingTopologyResponse>
+                transformer = GetNetworkingTopologyConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetNetworkingTopologyRequest, GetNetworkingTopologyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetNetworkingTopologyRequest, GetNetworkingTopologyResponse>,
+                        java.util.concurrent.Future<GetNetworkingTopologyResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetNetworkingTopologyRequest, GetNetworkingTopologyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPrivateIpResponse> getPrivateIp(
             GetPrivateIpRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetPrivateIpRequest, GetPrivateIpResponse>
@@ -5196,6 +5656,45 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetUpgradeStatusResponse> getUpgradeStatus(
+            GetUpgradeStatusRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetUpgradeStatusRequest, GetUpgradeStatusResponse>
+                    handler) {
+        LOG.trace("Called async getUpgradeStatus");
+        final GetUpgradeStatusRequest interceptedRequest =
+                GetUpgradeStatusConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetUpgradeStatusConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetUpgradeStatusResponse>
+                transformer = GetUpgradeStatusConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetUpgradeStatusRequest, GetUpgradeStatusResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetUpgradeStatusRequest, GetUpgradeStatusResponse>,
+                        java.util.concurrent.Future<GetUpgradeStatusResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetUpgradeStatusRequest, GetUpgradeStatusResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetVcnResponse> getVcn(
             GetVcnRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetVcnRequest, GetVcnResponse> handler) {
@@ -5261,6 +5760,45 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetVcnDnsResolverAssociationRequest, GetVcnDnsResolverAssociationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVcnTopologyResponse> getVcnTopology(
+            GetVcnTopologyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetVcnTopologyRequest, GetVcnTopologyResponse>
+                    handler) {
+        LOG.trace("Called async getVcnTopology");
+        final GetVcnTopologyRequest interceptedRequest =
+                GetVcnTopologyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVcnTopologyConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetVcnTopologyResponse>
+                transformer = GetVcnTopologyConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetVcnTopologyRequest, GetVcnTopologyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetVcnTopologyRequest, GetVcnTopologyResponse>,
+                        java.util.concurrent.Future<GetVcnTopologyResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetVcnTopologyRequest, GetVcnTopologyResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -5670,6 +6208,47 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListCrossConnectMappingsResponse> listCrossConnectMappings(
+            ListCrossConnectMappingsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCrossConnectMappingsRequest, ListCrossConnectMappingsResponse>
+                    handler) {
+        LOG.trace("Called async listCrossConnectMappings");
+        final ListCrossConnectMappingsRequest interceptedRequest =
+                ListCrossConnectMappingsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCrossConnectMappingsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListCrossConnectMappingsResponse>
+                transformer = ListCrossConnectMappingsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCrossConnectMappingsRequest, ListCrossConnectMappingsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCrossConnectMappingsRequest, ListCrossConnectMappingsResponse>,
+                        java.util.concurrent.Future<ListCrossConnectMappingsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCrossConnectMappingsRequest, ListCrossConnectMappingsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListCrossConnectsResponse> listCrossConnects(
             ListCrossConnectsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -5820,6 +6399,172 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListDrgAttachmentsRequest, ListDrgAttachmentsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDrgRouteDistributionStatementsResponse>
+            listDrgRouteDistributionStatements(
+                    ListDrgRouteDistributionStatementsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDrgRouteDistributionStatementsRequest,
+                                    ListDrgRouteDistributionStatementsResponse>
+                            handler) {
+        LOG.trace("Called async listDrgRouteDistributionStatements");
+        final ListDrgRouteDistributionStatementsRequest interceptedRequest =
+                ListDrgRouteDistributionStatementsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDrgRouteDistributionStatementsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDrgRouteDistributionStatementsResponse>
+                transformer = ListDrgRouteDistributionStatementsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDrgRouteDistributionStatementsRequest,
+                        ListDrgRouteDistributionStatementsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDrgRouteDistributionStatementsRequest,
+                                ListDrgRouteDistributionStatementsResponse>,
+                        java.util.concurrent.Future<ListDrgRouteDistributionStatementsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDrgRouteDistributionStatementsRequest,
+                    ListDrgRouteDistributionStatementsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDrgRouteDistributionsResponse> listDrgRouteDistributions(
+            ListDrgRouteDistributionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListDrgRouteDistributionsRequest, ListDrgRouteDistributionsResponse>
+                    handler) {
+        LOG.trace("Called async listDrgRouteDistributions");
+        final ListDrgRouteDistributionsRequest interceptedRequest =
+                ListDrgRouteDistributionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDrgRouteDistributionsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDrgRouteDistributionsResponse>
+                transformer = ListDrgRouteDistributionsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDrgRouteDistributionsRequest, ListDrgRouteDistributionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDrgRouteDistributionsRequest,
+                                ListDrgRouteDistributionsResponse>,
+                        java.util.concurrent.Future<ListDrgRouteDistributionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDrgRouteDistributionsRequest, ListDrgRouteDistributionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDrgRouteRulesResponse> listDrgRouteRules(
+            ListDrgRouteRulesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListDrgRouteRulesRequest, ListDrgRouteRulesResponse>
+                    handler) {
+        LOG.trace("Called async listDrgRouteRules");
+        final ListDrgRouteRulesRequest interceptedRequest =
+                ListDrgRouteRulesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDrgRouteRulesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListDrgRouteRulesResponse>
+                transformer = ListDrgRouteRulesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListDrgRouteRulesRequest, ListDrgRouteRulesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDrgRouteRulesRequest, ListDrgRouteRulesResponse>,
+                        java.util.concurrent.Future<ListDrgRouteRulesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDrgRouteRulesRequest, ListDrgRouteRulesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDrgRouteTablesResponse> listDrgRouteTables(
+            ListDrgRouteTablesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListDrgRouteTablesRequest, ListDrgRouteTablesResponse>
+                    handler) {
+        LOG.trace("Called async listDrgRouteTables");
+        final ListDrgRouteTablesRequest interceptedRequest =
+                ListDrgRouteTablesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDrgRouteTablesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListDrgRouteTablesResponse>
+                transformer = ListDrgRouteTablesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListDrgRouteTablesRequest, ListDrgRouteTablesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDrgRouteTablesRequest, ListDrgRouteTablesResponse>,
+                        java.util.concurrent.Future<ListDrgRouteTablesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDrgRouteTablesRequest, ListDrgRouteTablesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -6941,6 +7686,186 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveDrgRouteDistributionStatementsResponse>
+            removeDrgRouteDistributionStatements(
+                    RemoveDrgRouteDistributionStatementsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveDrgRouteDistributionStatementsRequest,
+                                    RemoveDrgRouteDistributionStatementsResponse>
+                            handler) {
+        LOG.trace("Called async removeDrgRouteDistributionStatements");
+        final RemoveDrgRouteDistributionStatementsRequest interceptedRequest =
+                RemoveDrgRouteDistributionStatementsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveDrgRouteDistributionStatementsConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RemoveDrgRouteDistributionStatementsResponse>
+                transformer = RemoveDrgRouteDistributionStatementsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveDrgRouteDistributionStatementsRequest,
+                        RemoveDrgRouteDistributionStatementsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveDrgRouteDistributionStatementsRequest,
+                                RemoveDrgRouteDistributionStatementsResponse>,
+                        java.util.concurrent.Future<RemoveDrgRouteDistributionStatementsResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveDrgRouteDistributionStatementsRequest,
+                    RemoveDrgRouteDistributionStatementsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveDrgRouteRulesResponse> removeDrgRouteRules(
+            RemoveDrgRouteRulesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveDrgRouteRulesRequest, RemoveDrgRouteRulesResponse>
+                    handler) {
+        LOG.trace("Called async removeDrgRouteRules");
+        final RemoveDrgRouteRulesRequest interceptedRequest =
+                RemoveDrgRouteRulesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveDrgRouteRulesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RemoveDrgRouteRulesResponse>
+                transformer = RemoveDrgRouteRulesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveDrgRouteRulesRequest, RemoveDrgRouteRulesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveDrgRouteRulesRequest, RemoveDrgRouteRulesResponse>,
+                        java.util.concurrent.Future<RemoveDrgRouteRulesResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveDrgRouteRulesRequest, RemoveDrgRouteRulesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveExportDrgRouteDistributionResponse>
+            removeExportDrgRouteDistribution(
+                    RemoveExportDrgRouteDistributionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveExportDrgRouteDistributionRequest,
+                                    RemoveExportDrgRouteDistributionResponse>
+                            handler) {
+        LOG.trace("Called async removeExportDrgRouteDistribution");
+        final RemoveExportDrgRouteDistributionRequest interceptedRequest =
+                RemoveExportDrgRouteDistributionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveExportDrgRouteDistributionConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RemoveExportDrgRouteDistributionResponse>
+                transformer = RemoveExportDrgRouteDistributionConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveExportDrgRouteDistributionRequest,
+                        RemoveExportDrgRouteDistributionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveExportDrgRouteDistributionRequest,
+                                RemoveExportDrgRouteDistributionResponse>,
+                        java.util.concurrent.Future<RemoveExportDrgRouteDistributionResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveExportDrgRouteDistributionRequest,
+                    RemoveExportDrgRouteDistributionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveImportDrgRouteDistributionResponse>
+            removeImportDrgRouteDistribution(
+                    RemoveImportDrgRouteDistributionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveImportDrgRouteDistributionRequest,
+                                    RemoveImportDrgRouteDistributionResponse>
+                            handler) {
+        LOG.trace("Called async removeImportDrgRouteDistribution");
+        final RemoveImportDrgRouteDistributionRequest interceptedRequest =
+                RemoveImportDrgRouteDistributionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveImportDrgRouteDistributionConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RemoveImportDrgRouteDistributionResponse>
+                transformer = RemoveImportDrgRouteDistributionConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveImportDrgRouteDistributionRequest,
+                        RemoveImportDrgRouteDistributionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveImportDrgRouteDistributionRequest,
+                                RemoveImportDrgRouteDistributionResponse>,
+                        java.util.concurrent.Future<RemoveImportDrgRouteDistributionResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveImportDrgRouteDistributionRequest,
+                    RemoveImportDrgRouteDistributionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RemoveNetworkSecurityGroupSecurityRulesResponse>
             removeNetworkSecurityGroupSecurityRules(
                     RemoveNetworkSecurityGroupSecurityRulesRequest request,
@@ -7331,6 +8256,179 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateDrgAttachmentRequest, UpdateDrgAttachmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDrgRouteDistributionResponse>
+            updateDrgRouteDistribution(
+                    UpdateDrgRouteDistributionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateDrgRouteDistributionRequest,
+                                    UpdateDrgRouteDistributionResponse>
+                            handler) {
+        LOG.trace("Called async updateDrgRouteDistribution");
+        final UpdateDrgRouteDistributionRequest interceptedRequest =
+                UpdateDrgRouteDistributionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDrgRouteDistributionConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateDrgRouteDistributionResponse>
+                transformer = UpdateDrgRouteDistributionConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateDrgRouteDistributionRequest, UpdateDrgRouteDistributionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateDrgRouteDistributionRequest,
+                                UpdateDrgRouteDistributionResponse>,
+                        java.util.concurrent.Future<UpdateDrgRouteDistributionResponse>>
+                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateDrgRouteDistributionRequest, UpdateDrgRouteDistributionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDrgRouteDistributionStatementsResponse>
+            updateDrgRouteDistributionStatements(
+                    UpdateDrgRouteDistributionStatementsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateDrgRouteDistributionStatementsRequest,
+                                    UpdateDrgRouteDistributionStatementsResponse>
+                            handler) {
+        LOG.trace("Called async updateDrgRouteDistributionStatements");
+        final UpdateDrgRouteDistributionStatementsRequest interceptedRequest =
+                UpdateDrgRouteDistributionStatementsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDrgRouteDistributionStatementsConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateDrgRouteDistributionStatementsResponse>
+                transformer = UpdateDrgRouteDistributionStatementsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateDrgRouteDistributionStatementsRequest,
+                        UpdateDrgRouteDistributionStatementsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateDrgRouteDistributionStatementsRequest,
+                                UpdateDrgRouteDistributionStatementsResponse>,
+                        java.util.concurrent.Future<UpdateDrgRouteDistributionStatementsResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateDrgRouteDistributionStatementsRequest,
+                    UpdateDrgRouteDistributionStatementsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDrgRouteRulesResponse> updateDrgRouteRules(
+            UpdateDrgRouteRulesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDrgRouteRulesRequest, UpdateDrgRouteRulesResponse>
+                    handler) {
+        LOG.trace("Called async updateDrgRouteRules");
+        final UpdateDrgRouteRulesRequest interceptedRequest =
+                UpdateDrgRouteRulesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDrgRouteRulesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateDrgRouteRulesResponse>
+                transformer = UpdateDrgRouteRulesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateDrgRouteRulesRequest, UpdateDrgRouteRulesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateDrgRouteRulesRequest, UpdateDrgRouteRulesResponse>,
+                        java.util.concurrent.Future<UpdateDrgRouteRulesResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateDrgRouteRulesRequest, UpdateDrgRouteRulesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDrgRouteTableResponse> updateDrgRouteTable(
+            UpdateDrgRouteTableRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDrgRouteTableRequest, UpdateDrgRouteTableResponse>
+                    handler) {
+        LOG.trace("Called async updateDrgRouteTable");
+        final UpdateDrgRouteTableRequest interceptedRequest =
+                UpdateDrgRouteTableConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDrgRouteTableConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateDrgRouteTableResponse>
+                transformer = UpdateDrgRouteTableConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateDrgRouteTableRequest, UpdateDrgRouteTableResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateDrgRouteTableRequest, UpdateDrgRouteTableResponse>,
+                        java.util.concurrent.Future<UpdateDrgRouteTableResponse>>
+                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateDrgRouteTableRequest, UpdateDrgRouteTableResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -8229,6 +9327,44 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateVnicRequest, UpdateVnicResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpgradeDrgResponse> upgradeDrg(
+            UpgradeDrgRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpgradeDrgRequest, UpgradeDrgResponse>
+                    handler) {
+        LOG.trace("Called async upgradeDrg");
+        final UpgradeDrgRequest interceptedRequest = UpgradeDrgConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpgradeDrgConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpgradeDrgResponse>
+                transformer = UpgradeDrgConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<UpgradeDrgRequest, UpgradeDrgResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpgradeDrgRequest, UpgradeDrgResponse>,
+                        java.util.concurrent.Future<UpgradeDrgResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpgradeDrgRequest, UpgradeDrgResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

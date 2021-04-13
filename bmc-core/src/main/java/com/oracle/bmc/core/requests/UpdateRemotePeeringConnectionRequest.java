@@ -21,7 +21,7 @@ public class UpdateRemotePeeringConnectionRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdateRemotePeeringConnectionDetails> {
 
     /**
-     * The OCID of the remote peering connection (RPC).
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the remote peering connection (RPC).
      */
     private String remotePeeringConnectionId;
 

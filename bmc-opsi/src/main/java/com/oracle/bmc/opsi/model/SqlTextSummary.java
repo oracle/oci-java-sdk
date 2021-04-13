@@ -34,6 +34,15 @@ public class SqlTextSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
+
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
@@ -56,7 +65,8 @@ public class SqlTextSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SqlTextSummary build() {
-            SqlTextSummary __instance__ = new SqlTextSummary(sqlIdentifier, databaseId, sqlText);
+            SqlTextSummary __instance__ =
+                    new SqlTextSummary(sqlIdentifier, id, databaseId, sqlText);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -65,6 +75,7 @@ public class SqlTextSummary {
         public Builder copy(SqlTextSummary o) {
             Builder copiedBuilder =
                     sqlIdentifier(o.getSqlIdentifier())
+                            .id(o.getId())
                             .databaseId(o.getDatabaseId())
                             .sqlText(o.getSqlText());
 
@@ -86,6 +97,12 @@ public class SqlTextSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
     String sqlIdentifier;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    String id;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.

@@ -51,6 +51,58 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Adds one or more route distribution statements to the specified route distribution.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddDrgRouteDistributionStatementsResponse>
+            addDrgRouteDistributionStatements(
+                    AddDrgRouteDistributionStatementsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AddDrgRouteDistributionStatementsRequest,
+                                    AddDrgRouteDistributionStatementsResponse>
+                            handler);
+
+    /**
+     * Adds one or more static route rules to the specified DRG route table.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddDrgRouteRulesResponse> addDrgRouteRules(
+            AddDrgRouteRulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<AddDrgRouteRulesRequest, AddDrgRouteRulesResponse>
+                    handler);
+
+    /**
+     * Add an IPv6 CIDR to a VCN. The VCN size is always /56 and assigned by Oracle.
+     * Once added the IPv6 CIDR block cannot be removed or modified.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddIpv6VcnCidrResponse> addIpv6VcnCidr(
+            AddIpv6VcnCidrRequest request,
+            com.oracle.bmc.responses.AsyncHandler<AddIpv6VcnCidrRequest, AddIpv6VcnCidrResponse>
+                    handler);
+
+    /**
      * Adds one or more security rules to the specified network security group.
      *
      *
@@ -690,7 +742,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * Creates a new virtual customer-premises equipment (CPE) object in the specified compartment. For
      * more information, see [IPSec VPNs](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPsec.htm).
      * <p>
-     * For the purposes of access control, you must provide the OCID of the compartment where you want
+     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where you want
      * the CPE to reside. Notice that the CPE doesn't have to be in the same compartment as the IPSec
      * connection or other Networking Service components. If you're not sure which compartment to
      * use, put the CPE in the same compartment as the DRG. For more information about
@@ -724,7 +776,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * and request to have the physical cable installed. For more information, see
      * [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * <p>
-     * For the purposes of access control, you must provide the OCID of the
+     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
      * compartment where you want the cross-connect to reside. If you're
      * not sure which compartment to use, put the cross-connect in the
      * same compartment with your VCN. For more information about
@@ -755,7 +807,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * FastConnect. For more information, see
      * [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * <p>
-     * For the purposes of access control, you must provide the OCID of the
+     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
      * compartment where you want the cross-connect group to reside. If you're
      * not sure which compartment to use, put the cross-connect group in the
      * same compartment with your VCN. For more information about
@@ -785,7 +837,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * Creates a new set of DHCP options for the specified VCN. For more information, see
      * {@link DhcpOptions}.
      * <p>
-     * For the purposes of access control, you must provide the OCID of the compartment where you want the set of
+     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where you want the set of
      * DHCP options to reside. Notice that the set of options doesn't have to be in the same compartment as the VCN,
      * subnets, or other Networking Service components. If you're not sure which compartment to use, put the set
      * of DHCP options in the same compartment as the VCN. For more information about compartments and access control, see
@@ -836,16 +888,16 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateDrgRequest, CreateDrgResponse> handler);
 
     /**
-     * Attaches the specified DRG to the specified VCN. A VCN can be attached to only one DRG at a time,
-     * and vice versa. The response includes a `DrgAttachment` object with its own OCID. For more
-     * information about DRGs, see
+     * Attaches the specified DRG to the specified network resource. A VCN can be attached to only one DRG
+     * at a time, but a DRG can be attached to more than one VCN. The response includes a `DrgAttachment`
+     * object with its own [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). For more information about DRGs, see
      * [Dynamic Routing Gateways (DRGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDRGs.htm).
      * <p>
      * You may optionally specify a *display name* for the attachment, otherwise a default is provided.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
      * <p>
-     * For the purposes of access control, the DRG attachment is automatically placed into the same compartment
-     * as the VCN. For more information about compartments and access control, see
+     * For the purposes of access control, the DRG attachment is automatically placed into the currently selected compartment.
+     * For more information about compartments and access control, see
      * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      *
      *
@@ -863,6 +915,44 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new route distribution for the specified DRG.
+     * Assign the route distribution as an import distribution to a DRG route table using the `UpdateDrgRouteTable` or `CreateDrgRouteTable` operations.
+     * Assign the route distribution as an export distribution to a DRG attachment
+     * using the `UpdateDrgAttachment` or `CreateDrgAttachment` operations.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateDrgRouteDistributionResponse> createDrgRouteDistribution(
+            CreateDrgRouteDistributionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateDrgRouteDistributionRequest, CreateDrgRouteDistributionResponse>
+                    handler);
+
+    /**
+     * Creates a new DRG route table for the specified DRG. Assign the DRG route table to a DRG attachment
+     * using the `UpdateDrgAttachment` or `CreateDrgAttachment` operations.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateDrgRouteTableResponse> createDrgRouteTable(
+            CreateDrgRouteTableRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateDrgRouteTableRequest, CreateDrgRouteTableResponse>
+                    handler);
+
+    /**
      * Creates a new IPSec connection between the specified DRG and CPE. For more information, see
      * [IPSec VPNs](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPsec.htm).
      * <p>
@@ -872,13 +962,12 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * the static routes. For more information, see the important note in
      * {@link IPSecConnection}.
      * <p>
-     * For the purposes of access control, you must provide the OCID of the compartment where you want the
+     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where you want the
      * IPSec connection to reside. Notice that the IPSec connection doesn't have to be in the same compartment
      * as the DRG, CPE, or other Networking Service components. If you're not sure which compartment to
      * use, put the IPSec connection in the same compartment as the DRG. For more information about
      * compartments and access control, see
      * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-     * For information about OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the IPSec connection, otherwise a default is provided.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -911,12 +1000,11 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * Creates a new internet gateway for the specified VCN. For more information, see
      * [Access to the Internet](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIGs.htm).
      * <p>
-     * For the purposes of access control, you must provide the OCID of the compartment where you want the Internet
+     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where you want the Internet
      * Gateway to reside. Notice that the internet gateway doesn't have to be in the same compartment as the VCN or
      * other Networking Service components. If you're not sure which compartment to use, put the Internet
      * Gateway in the same compartment with the VCN. For more information about compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      * <p>
      * You may optionally specify a *display name* for the internet gateway, otherwise a default is provided. It
      * does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -1444,8 +1532,8 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<DeleteDrgRequest, DeleteDrgResponse> handler);
 
     /**
-     * Detaches a DRG from a VCN by deleting the corresponding `DrgAttachment`. This is an asynchronous
-     * operation. The attachment's `lifecycleState` will change to DETACHING temporarily until the attachment
+     * Detaches a DRG from a network resource by deleting the corresponding `DrgAttachment` resource. This is an asynchronous
+     * operation. The attachment's `lifecycleState` will temporarily change to DETACHING until the attachment
      * is completely removed.
      *
      *
@@ -1460,6 +1548,42 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             DeleteDrgAttachmentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteDrgAttachmentRequest, DeleteDrgAttachmentResponse>
+                    handler);
+
+    /**
+     * Deletes the specified route distribution. You can't delete a route distribution currently in use by a DRG attachment or DRG route table.
+     * <p>
+     * Remove the DRG route distribution from a DRG attachment or DRG route table by using the \"RemoveExportDrgRouteDistribution\" or \"RemoveImportDrgRouteDistribution' operations.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDrgRouteDistributionResponse> deleteDrgRouteDistribution(
+            DeleteDrgRouteDistributionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDrgRouteDistributionRequest, DeleteDrgRouteDistributionResponse>
+                    handler);
+
+    /**
+     * Deletes the specified DRG route table. There must not be any DRG attachments assigned.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDrgRouteTableResponse> deleteDrgRouteTable(
+            DeleteDrgRouteTableRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDrgRouteTableRequest, DeleteDrgRouteTableResponse>
                     handler);
 
     /**
@@ -1508,7 +1632,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Unassigns and deletes the specified IPv6. You must specify the object's OCID.
+     * Unassigns and deletes the specified IPv6. You must specify the object's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      * The IPv6 address is returned to the subnet's pool of available addresses.
      *
      *
@@ -1841,6 +1965,23 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns a complete list of DRG attachments that belong to a particular DRG.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAllDrgAttachmentsResponse> getAllDrgAttachments(
+            GetAllDrgAttachmentsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetAllDrgAttachmentsRequest, GetAllDrgAttachmentsResponse>
+                    handler);
+
+    /**
      * Gets the `ByoipRange` resource. You must specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      *
@@ -2025,7 +2166,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetDrgRequest, GetDrgResponse> handler);
 
     /**
-     * Gets the information for the specified `DrgAttachment`.
+     * Gets the `DrgAttachment` resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2055,6 +2196,37 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             GetDrgRedundancyStatusRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetDrgRedundancyStatusRequest, GetDrgRedundancyStatusResponse>
+                    handler);
+
+    /**
+     * Gets the specified route distribution's information.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDrgRouteDistributionResponse> getDrgRouteDistribution(
+            GetDrgRouteDistributionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetDrgRouteDistributionRequest, GetDrgRouteDistributionResponse>
+                    handler);
+
+    /**
+     * Gets the specified DRG route table's information.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDrgRouteTableResponse> getDrgRouteTable(
+            GetDrgRouteTableRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetDrgRouteTableRequest, GetDrgRouteTableResponse>
                     handler);
 
     /**
@@ -2251,7 +2423,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets the specified IPv6. You must specify the object's OCID.
+     * Gets the specified IPv6. You must specify the object's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      * Alternatively, you can get the object by using
      * {@link #listIpv6s(ListIpv6sRequest, Consumer, Consumer) listIpv6s}
      * with the IPv6 address (for example, 2001:0db8:0123:1111:98fe:dcba:9876:4321) and subnet OCID.
@@ -2320,6 +2492,22 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             GetNetworkSecurityGroupRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetNetworkSecurityGroupRequest, GetNetworkSecurityGroupResponse>
+                    handler);
+
+    /**
+     * Gets a virtual networking topology for the current region.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetNetworkingTopologyResponse> getNetworkingTopology(
+            GetNetworkingTopologyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetNetworkingTopologyRequest, GetNetworkingTopologyResponse>
                     handler);
 
     /**
@@ -2580,6 +2768,22 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Returns the DRG upgrade status. The status can be not updated, in progress, or updated. Also indicates how much of the upgrade is completed.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetUpgradeStatusResponse> getUpgradeStatus(
+            GetUpgradeStatusRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetUpgradeStatusRequest, GetUpgradeStatusResponse>
+                    handler);
+
+    /**
      * Gets the specified VCN's information.
      *
      * @param request The request object containing the details to send
@@ -2608,6 +2812,21 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetVcnDnsResolverAssociationRequest,
                             GetVcnDnsResolverAssociationResponse>
+                    handler);
+
+    /**
+     * Gets a virtual network topology for a given VCN.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetVcnTopologyResponse> getVcnTopology(
+            GetVcnTopologyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetVcnTopologyRequest, GetVcnTopologyResponse>
                     handler);
 
     /**
@@ -2720,7 +2939,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * <p>
      * If you want to generate CPE configuration content for one of the returned CPE device types,
      * ensure that the {@link Cpe} object's `cpeDeviceShapeId` attribute is set
-     * to the CPE device type's OCID (returned by this operation).
+     * to the CPE device type's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) (returned by this operation).
      * <p>
      * For information about generating CPE configuration content, see these operations:
      * <p>
@@ -2793,8 +3012,26 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the Cross Connect mapping Details for the specified
+     * virtual circuit.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCrossConnectMappingsResponse> listCrossConnectMappings(
+            ListCrossConnectMappingsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCrossConnectMappingsRequest, ListCrossConnectMappingsResponse>
+                    handler);
+
+    /**
      * Lists the cross-connects in the specified compartment. You can filter the list
-     * by specifying the OCID of a cross-connect group.
+     * by specifying the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a cross-connect group.
      *
      *
      * @param request The request object containing the details to send
@@ -2851,8 +3088,12 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the `DrgAttachment` objects for the specified compartment. You can filter the
-     * results by VCN or DRG.
+     * Lists the `DrgAttachment` resource for the specified compartment. You can filter the
+     * results by DRG, attached network, attachment type, DRG route table or
+     * VCN route table.
+     * <p>
+     * The LIST API lists DRG attachments by attachment type. It will default to list VCN attachments,
+     * but you may request to list ALL attachments of ALL types.
      *
      *
      * @param request The request object containing the details to send
@@ -2866,6 +3107,79 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             ListDrgAttachmentsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListDrgAttachmentsRequest, ListDrgAttachmentsResponse>
+                    handler);
+
+    /**
+     * Lists the statements for the specified route distribution.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDrgRouteDistributionStatementsResponse>
+            listDrgRouteDistributionStatements(
+                    ListDrgRouteDistributionStatementsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListDrgRouteDistributionStatementsRequest,
+                                    ListDrgRouteDistributionStatementsResponse>
+                            handler);
+
+    /**
+     * Lists the route distributions in the specified DRG.
+     * <p>
+     * To retrieve the statements in a distribution, use the
+     * ListDrgRouteDistributionStatements operation.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDrgRouteDistributionsResponse> listDrgRouteDistributions(
+            ListDrgRouteDistributionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDrgRouteDistributionsRequest, ListDrgRouteDistributionsResponse>
+                    handler);
+
+    /**
+     * Lists the route rules in the specified DRG route table.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDrgRouteRulesResponse> listDrgRouteRules(
+            ListDrgRouteRulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDrgRouteRulesRequest, ListDrgRouteRulesResponse>
+                    handler);
+
+    /**
+     * Lists the DRG route tables for the specified DRG.
+     * <p>
+     * Use the `ListDrgRouteRules` operation to retrieve the route rules in a table.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDrgRouteTablesResponse> listDrgRouteTables(
+            ListDrgRouteTablesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDrgRouteTablesRequest, ListDrgRouteTablesResponse>
                     handler);
 
     /**
@@ -2888,7 +3202,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * information so you can specify your desired provider and service
      * offering when you create a virtual circuit.
      * <p>
-     * For the compartment ID, provide the OCID of your tenancy (the root compartment).
+     * For the compartment ID, provide the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of your tenancy (the root compartment).
      * <p>
      * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      *
@@ -3397,6 +3711,81 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Removes one or more route distribution statements from the specified route distribution's map.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveDrgRouteDistributionStatementsResponse>
+            removeDrgRouteDistributionStatements(
+                    RemoveDrgRouteDistributionStatementsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveDrgRouteDistributionStatementsRequest,
+                                    RemoveDrgRouteDistributionStatementsResponse>
+                            handler);
+
+    /**
+     * Removes one or more route rules from the specified DRG route table.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveDrgRouteRulesResponse> removeDrgRouteRules(
+            RemoveDrgRouteRulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveDrgRouteRulesRequest, RemoveDrgRouteRulesResponse>
+                    handler);
+
+    /**
+     * Removes the export route distribution from the DRG attachment so no routes are advertised to it.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveExportDrgRouteDistributionResponse>
+            removeExportDrgRouteDistribution(
+                    RemoveExportDrgRouteDistributionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveExportDrgRouteDistributionRequest,
+                                    RemoveExportDrgRouteDistributionResponse>
+                            handler);
+
+    /**
+     * Removes the import route distribution from the DRG route table so no routes are imported
+     * into it.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveImportDrgRouteDistributionResponse>
+            removeImportDrgRouteDistribution(
+                    RemoveImportDrgRouteDistributionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveImportDrgRouteDistributionRequest,
+                                    RemoveImportDrgRouteDistributionResponse>
+                            handler);
+
+    /**
      * Removes one or more security rules from the specified network security group.
      *
      *
@@ -3554,7 +3943,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<UpdateDrgRequest, UpdateDrgResponse> handler);
 
     /**
-     * Updates the display name for the specified `DrgAttachment`.
+     * Updates the display name and routing information for the specified `DrgAttachment`.
      * Avoid entering confidential information.
      *
      *
@@ -3569,6 +3958,76 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             UpdateDrgAttachmentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateDrgAttachmentRequest, UpdateDrgAttachmentResponse>
+                    handler);
+
+    /**
+     * Updates the specified route distribution
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDrgRouteDistributionResponse> updateDrgRouteDistribution(
+            UpdateDrgRouteDistributionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDrgRouteDistributionRequest, UpdateDrgRouteDistributionResponse>
+                    handler);
+
+    /**
+     * Updates one or more route distribution statements in the specified route distribution.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDrgRouteDistributionStatementsResponse>
+            updateDrgRouteDistributionStatements(
+                    UpdateDrgRouteDistributionStatementsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateDrgRouteDistributionStatementsRequest,
+                                    UpdateDrgRouteDistributionStatementsResponse>
+                            handler);
+
+    /**
+     * Updates one or more route rules in the specified DRG route table.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDrgRouteRulesResponse> updateDrgRouteRules(
+            UpdateDrgRouteRulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDrgRouteRulesRequest, UpdateDrgRouteRulesResponse>
+                    handler);
+
+    /**
+     * Updates the specified DRG route table.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDrgRouteTableResponse> updateDrgRouteTable(
+            UpdateDrgRouteTableRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDrgRouteTableRequest, UpdateDrgRouteTableResponse>
                     handler);
 
     /**
@@ -4058,6 +4517,22 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateVnicResponse> updateVnic(
             UpdateVnicRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateVnicRequest, UpdateVnicResponse> handler);
+
+    /**
+     * Upgrades the DRG. After upgrade, you can control routing inside your DRG
+     * via DRG attachments, route distributions, and DRG route tables.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpgradeDrgResponse> upgradeDrg(
+            UpgradeDrgRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpgradeDrgRequest, UpgradeDrgResponse> handler);
 
     /**
      * Submits the BYOIP CIDR block you are importing for validation. Do not submit to Oracle for validation if you have not already

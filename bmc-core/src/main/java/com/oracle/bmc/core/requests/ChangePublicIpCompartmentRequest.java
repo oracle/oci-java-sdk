@@ -21,7 +21,7 @@ public class ChangePublicIpCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<ChangePublicIpCompartmentDetails> {
 
     /**
-     * The OCID of the public IP.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the public IP.
      */
     private String publicIpId;
 

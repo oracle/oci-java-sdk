@@ -42,6 +42,24 @@ public class BgpSessionInfo {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("oracleInterfaceIpv6")
+        private String oracleInterfaceIpv6;
+
+        public Builder oracleInterfaceIpv6(String oracleInterfaceIpv6) {
+            this.oracleInterfaceIpv6 = oracleInterfaceIpv6;
+            this.__explicitlySet__.add("oracleInterfaceIpv6");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("customerInterfaceIpv6")
+        private String customerInterfaceIpv6;
+
+        public Builder customerInterfaceIpv6(String customerInterfaceIpv6) {
+            this.customerInterfaceIpv6 = customerInterfaceIpv6;
+            this.__explicitlySet__.add("customerInterfaceIpv6");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("oracleBgpAsn")
         private String oracleBgpAsn;
 
@@ -69,6 +87,15 @@ public class BgpSessionInfo {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("bgpIpv6State")
+        private BgpIpv6State bgpIpv6State;
+
+        public Builder bgpIpv6State(BgpIpv6State bgpIpv6State) {
+            this.bgpIpv6State = bgpIpv6State;
+            this.__explicitlySet__.add("bgpIpv6State");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -77,9 +104,12 @@ public class BgpSessionInfo {
                     new BgpSessionInfo(
                             oracleInterfaceIp,
                             customerInterfaceIp,
+                            oracleInterfaceIpv6,
+                            customerInterfaceIpv6,
                             oracleBgpAsn,
                             customerBgpAsn,
-                            bgpState);
+                            bgpState,
+                            bgpIpv6State);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -89,9 +119,12 @@ public class BgpSessionInfo {
             Builder copiedBuilder =
                     oracleInterfaceIp(o.getOracleInterfaceIp())
                             .customerInterfaceIp(o.getCustomerInterfaceIp())
+                            .oracleInterfaceIpv6(o.getOracleInterfaceIpv6())
+                            .customerInterfaceIpv6(o.getCustomerInterfaceIpv6())
                             .oracleBgpAsn(o.getOracleBgpAsn())
                             .customerBgpAsn(o.getCustomerBgpAsn())
-                            .bgpState(o.getBgpState());
+                            .bgpState(o.getBgpState())
+                            .bgpIpv6State(o.getBgpIpv6State());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -140,6 +173,42 @@ public class BgpSessionInfo {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerInterfaceIp")
     String customerInterfaceIp;
+
+    /**
+     * The IPv6 address for the Oracle end of the inside tunnel interface. This IP address is optional.
+     * <p>
+     * If the tunnel's `routing` attribute is set to `BGP`
+     * (see {@link IPSecConnectionTunnel}), this IP address
+     * is used for the tunnel's BGP session.
+     * <p>
+     * If `routing` is instead set to `STATIC`, you can set this IP
+     * address to troubleshoot or monitor the tunnel.
+     * <p>
+     * Only subnet masks from /64 up to /127 are allowed.
+     * <p>
+     * Example: `2001:db8::1/64`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("oracleInterfaceIpv6")
+    String oracleInterfaceIpv6;
+
+    /**
+     * The IPv6 address for the CPE end of the inside tunnel interface. This IP address is optional.
+     * <p>
+     * If the tunnel's `routing` attribute is set to `BGP`
+     * (see {@link IPSecConnectionTunnel}), this IP address
+     * is used for the tunnel's BGP session.
+     * <p>
+     * If `routing` is instead set to `STATIC`, you can set this IP
+     * address to troubleshoot or monitor the tunnel.
+     * <p>
+     * Only subnet masks from /64 up to /127 are allowed.
+     * <p>
+     * Example: `2001:db8::1/64`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customerInterfaceIpv6")
+    String customerInterfaceIpv6;
 
     /**
      * The Oracle BGP ASN.
@@ -214,6 +283,59 @@ public class BgpSessionInfo {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bgpState")
     BgpState bgpState;
+    /**
+     * The state of the BGP IPv6 session.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum BgpIpv6State {
+        Up("UP"),
+        Down("DOWN"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, BgpIpv6State> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (BgpIpv6State v : BgpIpv6State.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        BgpIpv6State(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static BgpIpv6State create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'BgpIpv6State', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The state of the BGP IPv6 session.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bgpIpv6State")
+    BgpIpv6State bgpIpv6State;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

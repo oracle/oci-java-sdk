@@ -174,6 +174,16 @@ public class LaunchInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("preemptibleInstanceConfig")
+        private PreemptibleInstanceConfigDetails preemptibleInstanceConfig;
+
+        public Builder preemptibleInstanceConfig(
+                PreemptibleInstanceConfigDetails preemptibleInstanceConfig) {
+            this.preemptibleInstanceConfig = preemptibleInstanceConfig;
+            this.__explicitlySet__.add("preemptibleInstanceConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, String> metadata;
 
@@ -268,6 +278,7 @@ public class LaunchInstanceDetails {
                             launchOptions,
                             instanceOptions,
                             availabilityConfig,
+                            preemptibleInstanceConfig,
                             metadata,
                             agentConfig,
                             shape,
@@ -299,6 +310,7 @@ public class LaunchInstanceDetails {
                             .launchOptions(o.getLaunchOptions())
                             .instanceOptions(o.getInstanceOptions())
                             .availabilityConfig(o.getAvailabilityConfig())
+                            .preemptibleInstanceConfig(o.getPreemptibleInstanceConfig())
                             .metadata(o.getMetadata())
                             .agentConfig(o.getAgentConfig())
                             .shape(o.getShape())
@@ -473,6 +485,9 @@ public class LaunchInstanceDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityConfig")
     LaunchInstanceAvailabilityConfigDetails availabilityConfig;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("preemptibleInstanceConfig")
+    PreemptibleInstanceConfigDetails preemptibleInstanceConfig;
 
     /**
      * Custom metadata key/value pairs that you provide, such as the SSH public key

@@ -21,7 +21,7 @@ public class ChangeVirtualCircuitCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<ChangeVirtualCircuitCompartmentDetails> {
 
     /**
-     * The OCID of the virtual circuit.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the virtual circuit.
      */
     private String virtualCircuitId;
 

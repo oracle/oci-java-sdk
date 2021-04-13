@@ -134,6 +134,15 @@ public class Gateway {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("responseCacheDetails")
+        private ResponseCacheDetails responseCacheDetails;
+
+        public Builder responseCacheDetails(ResponseCacheDetails responseCacheDetails) {
+            this.responseCacheDetails = responseCacheDetails;
+            this.__explicitlySet__.add("responseCacheDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -171,6 +180,7 @@ public class Gateway {
                             hostname,
                             certificateId,
                             ipAddresses,
+                            responseCacheDetails,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -192,6 +202,7 @@ public class Gateway {
                             .hostname(o.getHostname())
                             .certificateId(o.getCertificateId())
                             .ipAddresses(o.getIpAddresses())
+                            .responseCacheDetails(o.getResponseCacheDetails())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -393,6 +404,9 @@ public class Gateway {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddresses")
     java.util.List<IpAddress> ipAddresses;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("responseCacheDetails")
+    ResponseCacheDetails responseCacheDetails;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair

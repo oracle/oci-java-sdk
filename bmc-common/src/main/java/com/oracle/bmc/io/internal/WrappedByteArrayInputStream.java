@@ -25,6 +25,16 @@ public class WrappedByteArrayInputStream extends ByteArrayInputStream
     }
 
     /**
+     * Create a new stream from the given buffer.
+     * @param buf      The byte buffer.
+     * @param offset   The offset in the buffer of the first byte to read.
+     * @param length   The maximum number of bytes to read from the buffer.
+     */
+    public WrappedByteArrayInputStream(byte[] buf, int offset, int length) {
+        super(buf, offset, length);
+    }
+
+    /**
      * Returns the length of the underlying buffer (ie, the length of this stream).
      *
      * @return The length of the underlying buffer.

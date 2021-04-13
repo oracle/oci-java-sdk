@@ -21,20 +21,26 @@ public class IngestSqlPlanLinesRequest
         extends com.oracle.bmc.requests.BmcRequest<IngestSqlPlanLinesDetails> {
 
     /**
+     * Collection of SQL plan line objects for a particular database.
+     */
+    private IngestSqlPlanLinesDetails ingestSqlPlanLinesDetails;
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
     /**
-     * Required [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+     * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
      *
      */
     private String databaseId;
 
     /**
-     * Collection of SQL plan line objects for a particular database.
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     *
      */
-    private IngestSqlPlanLinesDetails ingestSqlPlanLinesDetails;
+    private String id;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -107,9 +113,10 @@ public class IngestSqlPlanLinesRequest
          * @return this builder instance
          */
         public Builder copy(IngestSqlPlanLinesRequest o) {
+            ingestSqlPlanLinesDetails(o.getIngestSqlPlanLinesDetails());
             compartmentId(o.getCompartmentId());
             databaseId(o.getDatabaseId());
-            ingestSqlPlanLinesDetails(o.getIngestSqlPlanLinesDetails());
+            id(o.getId());
             opcRequestId(o.getOpcRequestId());
             ifMatch(o.getIfMatch());
             opcRetryToken(o.getOpcRetryToken());

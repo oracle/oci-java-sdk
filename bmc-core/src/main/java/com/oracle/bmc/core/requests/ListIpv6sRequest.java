@@ -45,7 +45,7 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     private String ipAddress;
 
     /**
-     * The OCID of the subnet.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet.
      */
     private String subnetId;
 

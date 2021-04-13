@@ -20,7 +20,7 @@ import com.oracle.bmc.core.model.*;
 public class GetSecurityListRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the security list.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the security list.
      */
     private String securityListId;
 

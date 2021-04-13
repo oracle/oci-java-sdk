@@ -135,6 +135,15 @@ public class LocalPeeringGateway {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("peerId")
+        private String peerId;
+
+        public Builder peerId(String peerId) {
+            this.peerId = peerId;
+            this.__explicitlySet__.add("peerId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
 
@@ -179,6 +188,7 @@ public class LocalPeeringGateway {
                             peerAdvertisedCidrDetails,
                             peeringStatus,
                             peeringStatusDetails,
+                            peerId,
                             routeTableId,
                             timeCreated,
                             vcnId);
@@ -200,6 +210,7 @@ public class LocalPeeringGateway {
                             .peerAdvertisedCidrDetails(o.getPeerAdvertisedCidrDetails())
                             .peeringStatus(o.getPeeringStatus())
                             .peeringStatusDetails(o.getPeeringStatusDetails())
+                            .peerId(o.getPeerId())
                             .routeTableId(o.getRouteTableId())
                             .timeCreated(o.getTimeCreated())
                             .vcnId(o.getVcnId());
@@ -406,6 +417,12 @@ public class LocalPeeringGateway {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peeringStatusDetails")
     String peeringStatusDetails;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peered LPG.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("peerId")
+    String peerId;
 
     /**
      * The OCID of the route table the LPG is using.

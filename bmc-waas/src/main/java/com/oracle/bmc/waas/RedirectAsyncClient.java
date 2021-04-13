@@ -31,7 +31,7 @@ public class RedirectAsyncClient implements RedirectAsync {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("REDIRECT")
                     .serviceEndpointPrefix("waas")
-                    .serviceEndpointTemplate("https://waas.{region}.{secondLevelDomain}")
+                    .serviceEndpointTemplate("https://waas.{region}.oci.{secondLevelDomain}")
                     .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
