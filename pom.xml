@@ -306,7 +306,6 @@
                   <indent>4</indent>
                   <suppressWarnings>skip</suppressWarnings>
                 </formatPreferences>
-                <verbose>true</verbose>
               </configuration>
             </execution>
           </executions>
