@@ -252,6 +252,15 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
+        private java.util.List<CustomerContact> customerContacts;
+
+        public Builder customerContacts(java.util.List<CustomerContact> customerContacts) {
+            this.customerContacts = customerContacts;
+            this.__explicitlySet__.add("customerContacts");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
@@ -300,6 +309,7 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                             freeformTags,
                             definedTags,
                             dbVersion,
+                            customerContacts,
                             sourceId,
                             cloneType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -334,6 +344,7 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .dbVersion(o.getDbVersion())
+                            .customerContacts(o.getCustomerContacts())
                             .sourceId(o.getSourceId())
                             .cloneType(o.getCloneType());
 
@@ -375,6 +386,7 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String dbVersion,
+            java.util.List<CustomerContact> customerContacts,
             String sourceId,
             CloneType cloneType) {
         super(
@@ -401,7 +413,8 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                 privateEndpointLabel,
                 freeformTags,
                 definedTags,
-                dbVersion);
+                dbVersion,
+                customerContacts);
         this.sourceId = sourceId;
         this.cloneType = cloneType;
     }

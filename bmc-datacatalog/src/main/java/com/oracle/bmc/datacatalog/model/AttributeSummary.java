@@ -42,6 +42,15 @@ public class AttributeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("businessName")
+        private String businessName;
+
+        public Builder businessName(String businessName) {
+            this.businessName = businessName;
+            this.__explicitlySet__.add("businessName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -204,6 +213,16 @@ public class AttributeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+        private java.util.List<CustomPropertyGetUsage> customPropertyMembers;
+
+        public Builder customPropertyMembers(
+                java.util.List<CustomPropertyGetUsage> customPropertyMembers) {
+            this.customPropertyMembers = customPropertyMembers;
+            this.__explicitlySet__.add("customPropertyMembers");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("associatedRuleTypes")
         private java.util.List<RuleType> associatedRuleTypes;
 
@@ -221,6 +240,7 @@ public class AttributeSummary {
                     new AttributeSummary(
                             key,
                             displayName,
+                            businessName,
                             description,
                             entityKey,
                             externalKey,
@@ -239,6 +259,7 @@ public class AttributeSummary {
                             parentAttributeKey,
                             externalParentAttributeKey,
                             path,
+                            customPropertyMembers,
                             associatedRuleTypes);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -249,6 +270,7 @@ public class AttributeSummary {
             Builder copiedBuilder =
                     key(o.getKey())
                             .displayName(o.getDisplayName())
+                            .businessName(o.getBusinessName())
                             .description(o.getDescription())
                             .entityKey(o.getEntityKey())
                             .externalKey(o.getExternalKey())
@@ -267,6 +289,7 @@ public class AttributeSummary {
                             .parentAttributeKey(o.getParentAttributeKey())
                             .externalParentAttributeKey(o.getExternalParentAttributeKey())
                             .path(o.getPath())
+                            .customPropertyMembers(o.getCustomPropertyMembers())
                             .associatedRuleTypes(o.getAssociatedRuleTypes());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -294,6 +317,12 @@ public class AttributeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * Optional user friendly business name of the attribute. If set, this supplements the harvested display name of the object.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("businessName")
+    String businessName;
 
     /**
      * Detailed description of the attribute.
@@ -407,6 +436,12 @@ public class AttributeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     String path;
+
+    /**
+     * The list of customized properties along with the values for this object
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+    java.util.List<CustomPropertyGetUsage> customPropertyMembers;
 
     /**
      * Rule types associated with attribute.

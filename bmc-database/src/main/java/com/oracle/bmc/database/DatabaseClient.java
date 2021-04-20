@@ -2623,6 +2623,44 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public DisableExternalNonContainerDatabaseOperationsInsightsResponse
+            disableExternalNonContainerDatabaseOperationsInsights(
+                    DisableExternalNonContainerDatabaseOperationsInsightsRequest request) {
+        LOG.trace("Called disableExternalNonContainerDatabaseOperationsInsights");
+        final DisableExternalNonContainerDatabaseOperationsInsightsRequest interceptedRequest =
+                DisableExternalNonContainerDatabaseOperationsInsightsConverter.interceptRequest(
+                        request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableExternalNonContainerDatabaseOperationsInsightsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        DisableExternalNonContainerDatabaseOperationsInsightsResponse>
+                transformer =
+                        DisableExternalNonContainerDatabaseOperationsInsightsConverter
+                                .fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DisableExternalPluggableDatabaseDatabaseManagementResponse
             disableExternalPluggableDatabaseDatabaseManagement(
                     DisableExternalPluggableDatabaseDatabaseManagementRequest request) {
@@ -2638,6 +2676,43 @@ public class DatabaseClient implements Database {
                         DisableExternalPluggableDatabaseDatabaseManagementResponse>
                 transformer =
                         DisableExternalPluggableDatabaseDatabaseManagementConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DisableExternalPluggableDatabaseOperationsInsightsResponse
+            disableExternalPluggableDatabaseOperationsInsights(
+                    DisableExternalPluggableDatabaseOperationsInsightsRequest request) {
+        LOG.trace("Called disableExternalPluggableDatabaseOperationsInsights");
+        final DisableExternalPluggableDatabaseOperationsInsightsRequest interceptedRequest =
+                DisableExternalPluggableDatabaseOperationsInsightsConverter.interceptRequest(
+                        request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableExternalPluggableDatabaseOperationsInsightsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        DisableExternalPluggableDatabaseOperationsInsightsResponse>
+                transformer =
+                        DisableExternalPluggableDatabaseOperationsInsightsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -2842,6 +2917,48 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public EnableExternalNonContainerDatabaseOperationsInsightsResponse
+            enableExternalNonContainerDatabaseOperationsInsights(
+                    EnableExternalNonContainerDatabaseOperationsInsightsRequest request) {
+        LOG.trace("Called enableExternalNonContainerDatabaseOperationsInsights");
+        final EnableExternalNonContainerDatabaseOperationsInsightsRequest interceptedRequest =
+                EnableExternalNonContainerDatabaseOperationsInsightsConverter.interceptRequest(
+                        request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableExternalNonContainerDatabaseOperationsInsightsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        EnableExternalNonContainerDatabaseOperationsInsightsResponse>
+                transformer =
+                        EnableExternalNonContainerDatabaseOperationsInsightsConverter
+                                .fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getEnableExternalNonContainerDatabaseOperationsInsightsDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public EnableExternalPluggableDatabaseDatabaseManagementResponse
             enableExternalPluggableDatabaseDatabaseManagement(
                     EnableExternalPluggableDatabaseDatabaseManagementRequest request) {
@@ -2876,6 +2993,47 @@ public class DatabaseClient implements Database {
                                                 ib,
                                                 retriedRequest
                                                         .getEnableExternalPluggableDatabaseDatabaseManagementDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public EnableExternalPluggableDatabaseOperationsInsightsResponse
+            enableExternalPluggableDatabaseOperationsInsights(
+                    EnableExternalPluggableDatabaseOperationsInsightsRequest request) {
+        LOG.trace("Called enableExternalPluggableDatabaseOperationsInsights");
+        final EnableExternalPluggableDatabaseOperationsInsightsRequest interceptedRequest =
+                EnableExternalPluggableDatabaseOperationsInsightsConverter.interceptRequest(
+                        request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableExternalPluggableDatabaseOperationsInsightsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        EnableExternalPluggableDatabaseOperationsInsightsResponse>
+                transformer =
+                        EnableExternalPluggableDatabaseOperationsInsightsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getEnableExternalPluggableDatabaseOperationsInsightsDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

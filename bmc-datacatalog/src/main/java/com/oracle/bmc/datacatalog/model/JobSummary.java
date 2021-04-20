@@ -187,6 +187,15 @@ public class JobSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
+        private String dataAssetKey;
+
+        public Builder dataAssetKey(String dataAssetKey) {
+            this.dataAssetKey = dataAssetKey;
+            this.__explicitlySet__.add("dataAssetKey");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
         private String errorCode;
 
@@ -238,6 +247,7 @@ public class JobSummary {
                             executionCount,
                             timeOfLatestExecution,
                             jobDefinitionName,
+                            dataAssetKey,
                             errorCode,
                             errorMessage,
                             executions);
@@ -266,6 +276,7 @@ public class JobSummary {
                             .executionCount(o.getExecutionCount())
                             .timeOfLatestExecution(o.getTimeOfLatestExecution())
                             .jobDefinitionName(o.getJobDefinitionName())
+                            .dataAssetKey(o.getDataAssetKey())
                             .errorCode(o.getErrorCode())
                             .errorMessage(o.getErrorMessage())
                             .executions(o.getExecutions());
@@ -399,6 +410,12 @@ public class JobSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobDefinitionName")
     String jobDefinitionName;
+
+    /**
+     * Unique key of the data asset to which this job applies, if the job involves a data asset.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
+    String dataAssetKey;
 
     /**
      * Error code returned from the latest job execution for this job. Useful when the latest Job execution is in FAILED state.

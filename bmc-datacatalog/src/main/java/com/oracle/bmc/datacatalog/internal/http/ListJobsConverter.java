@@ -110,6 +110,14 @@ public class ListJobsConverter {
                                     request.getJobDefinitionKey()));
         }
 
+        if (request.getDataAssetKey() != null) {
+            target =
+                    target.queryParam(
+                            "dataAssetKey",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDataAssetKey()));
+        }
+
         if (request.getScheduleCronExpression() != null) {
             target =
                     target.queryParam(

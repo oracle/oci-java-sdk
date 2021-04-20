@@ -35,6 +35,24 @@ public class ListEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<java
     private String displayName;
 
     /**
+     * A filter to return only resources that match the entire business name given. The match is not case sensitive.
+     */
+    private String businessName;
+
+    /**
+     * A filter to return only resources that match display name or business name pattern given. The match is not case sensitive.
+     * For Example : /folders?displayOrBusinessNameContains=Cu.*
+     * The above would match all folders with display name or business name that starts with \"Cu\".
+     *
+     */
+    private String displayOrBusinessNameContains;
+
+    /**
+     * The key of the object type.
+     */
+    private String typeKey;
+
+    /**
      * A filter to return only resources that match display name pattern given. The match is not case sensitive.
      * For Example : /folders?displayNameContains=Cu.*
      * The above would match all folders with display name that starts with \"Cu\".
@@ -306,6 +324,9 @@ public class ListEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<java
             catalogId(o.getCatalogId());
             dataAssetKey(o.getDataAssetKey());
             displayName(o.getDisplayName());
+            businessName(o.getBusinessName());
+            displayOrBusinessNameContains(o.getDisplayOrBusinessNameContains());
+            typeKey(o.getTypeKey());
             displayNameContains(o.getDisplayNameContains());
             lifecycleState(o.getLifecycleState());
             timeCreated(o.getTimeCreated());

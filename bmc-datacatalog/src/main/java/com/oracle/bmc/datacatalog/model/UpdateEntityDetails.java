@@ -35,6 +35,15 @@ public class UpdateEntityDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("businessName")
+        private String businessName;
+
+        public Builder businessName(String businessName) {
+            this.businessName = businessName;
+            this.__explicitlySet__.add("businessName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -142,6 +151,7 @@ public class UpdateEntityDetails {
             UpdateEntityDetails __instance__ =
                     new UpdateEntityDetails(
                             displayName,
+                            businessName,
                             description,
                             timeExternal,
                             isLogical,
@@ -161,6 +171,7 @@ public class UpdateEntityDetails {
         public Builder copy(UpdateEntityDetails o) {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
+                            .businessName(o.getBusinessName())
                             .description(o.getDescription())
                             .timeExternal(o.getTimeExternal())
                             .isLogical(o.getIsLogical())
@@ -192,6 +203,12 @@ public class UpdateEntityDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * Optional user friendly business name of the data entity. If set, this supplements the harvested display name of the object.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("businessName")
+    String businessName;
 
     /**
      * Detailed description of a data entity.

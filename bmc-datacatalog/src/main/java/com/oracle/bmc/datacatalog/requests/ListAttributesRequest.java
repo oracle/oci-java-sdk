@@ -40,6 +40,19 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
     private String displayName;
 
     /**
+     * A filter to return only resources that match the entire business name given. The match is not case sensitive.
+     */
+    private String businessName;
+
+    /**
+     * A filter to return only resources that match display name or business name pattern given. The match is not case sensitive.
+     * For Example : /folders?displayOrBusinessNameContains=Cu.*
+     * The above would match all folders with display name or business name that starts with \"Cu\".
+     *
+     */
+    private String displayOrBusinessNameContains;
+
+    /**
      * A filter to return only resources that match display name pattern given. The match is not case sensitive.
      * For Example : /folders?displayNameContains=Cu.*
      * The above would match all folders with display name that starts with \"Cu\".
@@ -313,6 +326,8 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             dataAssetKey(o.getDataAssetKey());
             entityKey(o.getEntityKey());
             displayName(o.getDisplayName());
+            businessName(o.getBusinessName());
+            displayOrBusinessNameContains(o.getDisplayOrBusinessNameContains());
             displayNameContains(o.getDisplayNameContains());
             lifecycleState(o.getLifecycleState());
             timeCreated(o.getTimeCreated());

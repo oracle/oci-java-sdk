@@ -252,6 +252,15 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
+        private java.util.List<CustomerContact> customerContacts;
+
+        public Builder customerContacts(java.util.List<CustomerContact> customerContacts) {
+            this.customerContacts = customerContacts;
+            this.__explicitlySet__.add("customerContacts");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseBackupId")
         private String autonomousDatabaseBackupId;
 
@@ -300,6 +309,7 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
                             freeformTags,
                             definedTags,
                             dbVersion,
+                            customerContacts,
                             autonomousDatabaseBackupId,
                             cloneType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -334,6 +344,7 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .dbVersion(o.getDbVersion())
+                            .customerContacts(o.getCustomerContacts())
                             .autonomousDatabaseBackupId(o.getAutonomousDatabaseBackupId())
                             .cloneType(o.getCloneType());
 
@@ -375,6 +386,7 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String dbVersion,
+            java.util.List<CustomerContact> customerContacts,
             String autonomousDatabaseBackupId,
             CloneType cloneType) {
         super(
@@ -401,7 +413,8 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
                 privateEndpointLabel,
                 freeformTags,
                 definedTags,
-                dbVersion);
+                dbVersion,
+                customerContacts);
         this.autonomousDatabaseBackupId = autonomousDatabaseBackupId;
         this.cloneType = cloneType;
     }

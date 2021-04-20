@@ -16,6 +16,7 @@ import java.util.Map;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Optional;
+import com.oracle.bmc.auth.AbstractFederationClientAuthenticationDetailsProviderBuilder;
 import com.oracle.bmc.internal.EndpointBuilder;
 
 import com.oracle.bmc.model.RegionSchema;
@@ -29,11 +30,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.ClientProperties;
 
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 
+import static com.oracle.bmc.auth.AbstractFederationClientAuthenticationDetailsProviderBuilder.AUTHORIZATION_HEADER_VALUE;
+import static com.oracle.bmc.auth.AbstractFederationClientAuthenticationDetailsProviderBuilder.METADATA_SERVICE_BASE_URL;
 import static javax.ws.rs.core.HttpHeaders.AUTHORIZATION;
 
 /**
@@ -47,12 +47,6 @@ public final class Region implements Serializable, Comparable<Region> {
 
     // Region metadata env attribute key
     private final static String OCI_REGION_METADATA_ENV_VAR_NAME = "OCI_REGION_METADATA";
-
-    //Default base url of metadata service.
-    private final static String METADATA_SERVICE_BASE_URL = "http://169.254.169.254/opc/v2/";
-
-    //The Authorization header value to be sent for requests to the metadata service.
-    private static final String AUTHORIZATION_HEADER_VALUE = "Bearer Oracle";
 
     //The regions-config file path location
     private static final String REGIONS_CONFIG_FILE_PATH = "~/.oci/regions-config.json";
@@ -68,7 +62,7 @@ public final class Region implements Serializable, Comparable<Region> {
 
     static {
         imdsClientConfiguration =
-                imdsClientConfiguration.property(ClientProperties.CONNECT_TIMEOUT, 10000);
+                imdsClientConfiguration.property(ClientProperties.CONNECT_TIMEOUT, 30000);
         imdsClientConfiguration =
                 imdsClientConfiguration.property(ClientProperties.READ_TIMEOUT, 60000);
     }
@@ -572,19 +566,25 @@ public final class Region implements Serializable, Comparable<Region> {
         }
 
         try {
-            Client client = ClientBuilder.newClient(imdsClientConfiguration);
-            WebTarget base = client.target(METADATA_SERVICE_BASE_URL + "instance/");
             enableInstanceMetadataService();
             hasUsedInstanceMetadataService = true;
 
             LOG.info(
                     "Requesting region metadata blob from IMDS at {}",
                     METADATA_SERVICE_BASE_URL + "instance/regionInfo");
+            final String REGION_INFO = "regionInfo";
             String regionMetadataSchema =
-                    base.path("regionInfo")
-                            .request(MediaType.APPLICATION_JSON)
-                            .header(AUTHORIZATION, AUTHORIZATION_HEADER_VALUE)
-                            .get(String.class);
+                    AbstractFederationClientAuthenticationDetailsProviderBuilder.simpleRetry(
+                            base -> {
+                                String regionInfo =
+                                        base.path(REGION_INFO)
+                                                .request(MediaType.APPLICATION_JSON)
+                                                .header(AUTHORIZATION, AUTHORIZATION_HEADER_VALUE)
+                                                .get(String.class);
+                                return regionInfo;
+                            },
+                            METADATA_SERVICE_BASE_URL,
+                            REGION_INFO);
 
             hasReceivedInstanceMetadataServiceResponse = true;
             LOG.info("Region metadata blob from regionInfo service is {}", regionMetadataSchema);

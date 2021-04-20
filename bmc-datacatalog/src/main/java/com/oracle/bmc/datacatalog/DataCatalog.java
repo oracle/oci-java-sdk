@@ -1170,6 +1170,16 @@ public interface DataCatalog extends AutoCloseable {
     SearchCriteriaResponse searchCriteria(SearchCriteriaRequest request);
 
     /**
+     * Returns a list of potential string matches for a given input string.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/SuggestMatchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SuggestMatches API.
+     */
+    SuggestMatchesResponse suggestMatches(SuggestMatchesRequest request);
+
+    /**
      * Test the connection by connecting to the data asset using credentials in the metadata.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

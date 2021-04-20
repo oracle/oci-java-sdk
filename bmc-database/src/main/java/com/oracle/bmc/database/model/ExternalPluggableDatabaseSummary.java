@@ -45,6 +45,15 @@ public class ExternalPluggableDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsConfig")
+        private OperationsInsightsConfig operationsInsightsConfig;
+
+        public Builder operationsInsightsConfig(OperationsInsightsConfig operationsInsightsConfig) {
+            this.operationsInsightsConfig = operationsInsightsConfig;
+            this.__explicitlySet__.add("operationsInsightsConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -207,6 +216,7 @@ public class ExternalPluggableDatabaseSummary {
                     new ExternalPluggableDatabaseSummary(
                             sourceId,
                             externalContainerDatabaseId,
+                            operationsInsightsConfig,
                             compartmentId,
                             freeformTags,
                             definedTags,
@@ -233,6 +243,7 @@ public class ExternalPluggableDatabaseSummary {
             Builder copiedBuilder =
                     sourceId(o.getSourceId())
                             .externalContainerDatabaseId(o.getExternalContainerDatabaseId())
+                            .operationsInsightsConfig(o.getOperationsInsightsConfig())
                             .compartmentId(o.getCompartmentId())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
@@ -279,6 +290,9 @@ public class ExternalPluggableDatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalContainerDatabaseId")
     String externalContainerDatabaseId;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsConfig")
+    OperationsInsightsConfig operationsInsightsConfig;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.

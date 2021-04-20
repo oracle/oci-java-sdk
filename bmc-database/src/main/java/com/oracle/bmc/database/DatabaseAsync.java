@@ -1247,6 +1247,25 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Disable Operations Insights for the external non-container database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableExternalNonContainerDatabaseOperationsInsightsResponse>
+            disableExternalNonContainerDatabaseOperationsInsights(
+                    DisableExternalNonContainerDatabaseOperationsInsightsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalNonContainerDatabaseOperationsInsightsRequest,
+                                    DisableExternalNonContainerDatabaseOperationsInsightsResponse>
+                            handler);
+
+    /**
      * Disable Database Management Service for the external pluggable database.
      * For more information about the Database Management Service, see
      * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
@@ -1265,6 +1284,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     DisableExternalPluggableDatabaseDatabaseManagementRequest,
                                     DisableExternalPluggableDatabaseDatabaseManagementResponse>
+                            handler);
+
+    /**
+     * Disable Operations Insights for the external pluggable database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableExternalPluggableDatabaseOperationsInsightsResponse>
+            disableExternalPluggableDatabaseOperationsInsights(
+                    DisableExternalPluggableDatabaseOperationsInsightsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalPluggableDatabaseOperationsInsightsRequest,
+                                    DisableExternalPluggableDatabaseOperationsInsightsResponse>
                             handler);
 
     /**
@@ -1367,6 +1405,25 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Enable Operations Insights for the external non-container database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableExternalNonContainerDatabaseOperationsInsightsResponse>
+            enableExternalNonContainerDatabaseOperationsInsights(
+                    EnableExternalNonContainerDatabaseOperationsInsightsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalNonContainerDatabaseOperationsInsightsRequest,
+                                    EnableExternalNonContainerDatabaseOperationsInsightsResponse>
+                            handler);
+
+    /**
      * Enable Database Management Service for the external pluggable database.
      * For more information about the Database Management Service, see
      * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
@@ -1385,6 +1442,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     EnableExternalPluggableDatabaseDatabaseManagementRequest,
                                     EnableExternalPluggableDatabaseDatabaseManagementResponse>
+                            handler);
+
+    /**
+     * Enable Operations Insights for the external pluggable database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableExternalPluggableDatabaseOperationsInsightsResponse>
+            enableExternalPluggableDatabaseOperationsInsights(
+                    EnableExternalPluggableDatabaseOperationsInsightsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalPluggableDatabaseOperationsInsightsRequest,
+                                    EnableExternalPluggableDatabaseOperationsInsightsResponse>
                             handler);
 
     /**

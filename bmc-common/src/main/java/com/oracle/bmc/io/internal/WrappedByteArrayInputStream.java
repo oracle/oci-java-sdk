@@ -16,6 +16,9 @@ import com.oracle.bmc.io.DuplicatableInputStream;
 public class WrappedByteArrayInputStream extends ByteArrayInputStream
         implements DuplicatableInputStream {
 
+    private int length;
+    private int offset;
+
     /**
      * Create a new stream from the given buffer.
      * @param buf The byte buffer.
@@ -32,6 +35,8 @@ public class WrappedByteArrayInputStream extends ByteArrayInputStream
      */
     public WrappedByteArrayInputStream(byte[] buf, int offset, int length) {
         super(buf, offset, length);
+        this.offset = offset;
+        this.length = length;
     }
 
     /**
@@ -40,11 +45,12 @@ public class WrappedByteArrayInputStream extends ByteArrayInputStream
      * @return The length of the underlying buffer.
      */
     public long length() {
-        return buf.length;
+        return length == 0 ? buf.length : Math.min(offset + length, buf.length);
     }
 
     @Override
     public InputStream duplicate() {
-        return new WrappedByteArrayInputStream(this.buf);
+        if (length == 0 && offset == 0) return new WrappedByteArrayInputStream(this.buf);
+        else return new WrappedByteArrayInputStream(this.buf, offset, length);
     }
 }

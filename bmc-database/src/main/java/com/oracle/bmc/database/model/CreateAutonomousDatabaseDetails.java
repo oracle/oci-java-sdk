@@ -252,6 +252,15 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
+        private java.util.List<CustomerContact> customerContacts;
+
+        public Builder customerContacts(java.util.List<CustomerContact> customerContacts) {
+            this.customerContacts = customerContacts;
+            this.__explicitlySet__.add("customerContacts");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -281,7 +290,8 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                             privateEndpointLabel,
                             freeformTags,
                             definedTags,
-                            dbVersion);
+                            dbVersion,
+                            customerContacts);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -313,7 +323,8 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                             .privateEndpointLabel(o.getPrivateEndpointLabel())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
-                            .dbVersion(o.getDbVersion());
+                            .dbVersion(o.getDbVersion())
+                            .customerContacts(o.getCustomerContacts());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -352,7 +363,8 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
             String privateEndpointLabel,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            String dbVersion) {
+            String dbVersion,
+            java.util.List<CustomerContact> customerContacts) {
         super(
                 compartmentId,
                 dbName,
@@ -377,7 +389,8 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                 privateEndpointLabel,
                 freeformTags,
                 definedTags,
-                dbVersion);
+                dbVersion,
+                customerContacts);
     }
 
     @com.fasterxml.jackson.annotation.JsonIgnore

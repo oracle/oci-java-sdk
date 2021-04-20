@@ -247,7 +247,8 @@ public class AutonomousContainerDatabaseDataguardAssociation {
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousContainerDatabaseId")
     String autonomousContainerDatabaseId;
     /**
-     * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+     * The Data Guard role of the Autonomous Container Database, if Autonomous Data Guard is enabled.
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Role {
@@ -293,7 +294,8 @@ public class AutonomousContainerDatabaseDataguardAssociation {
         }
     };
     /**
-     * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+     * The Data Guard role of the Autonomous Container Database, if Autonomous Data Guard is enabled.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     Role role;
@@ -375,7 +377,8 @@ public class AutonomousContainerDatabaseDataguardAssociation {
     @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousContainerDatabaseId")
     String peerAutonomousContainerDatabaseId;
     /**
-     * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+     * The Data Guard role of the Autonomous Container Database, if Autonomous Data Guard is enabled.
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum PeerRole {
@@ -422,7 +425,8 @@ public class AutonomousContainerDatabaseDataguardAssociation {
         }
     };
     /**
-     * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+     * The Data Guard role of the Autonomous Container Database, if Autonomous Data Guard is enabled.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerRole")
     PeerRole peerRole;

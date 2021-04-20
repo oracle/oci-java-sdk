@@ -344,6 +344,12 @@ public class CreateAutonomousDatabaseBase {
     String dbVersion;
 
     /**
+     * Customer Contacts.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
+    java.util.List<CustomerContact> customerContacts;
+
+    /**
      * The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database.
      * <p>
      * For Autonomous Databases on [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI), the following cloning options are available: Use `BACKUP_FROM_ID` for creating a new Autonomous Database from a specified backup. Use `BACKUP_FROM_TIMESTAMP` for creating a point-in-time Autonomous Database clone using backups. For more information, see [Cloning an Autonomous Database](https://docs.cloud.oracle.com/Content/Database/Tasks/adbcloning.htm).

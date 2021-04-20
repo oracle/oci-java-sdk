@@ -246,6 +246,15 @@ public class UpdateAutonomousDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
+        private java.util.List<CustomerContact> customerContacts;
+
+        public Builder customerContacts(java.util.List<CustomerContact> customerContacts) {
+            this.customerContacts = customerContacts;
+            this.__explicitlySet__.add("customerContacts");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -275,7 +284,8 @@ public class UpdateAutonomousDatabaseDetails {
                             permissionLevel,
                             subnetId,
                             privateEndpointLabel,
-                            nsgIds);
+                            nsgIds,
+                            customerContacts);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -306,7 +316,8 @@ public class UpdateAutonomousDatabaseDetails {
                             .permissionLevel(o.getPermissionLevel())
                             .subnetId(o.getSubnetId())
                             .privateEndpointLabel(o.getPrivateEndpointLabel())
-                            .nsgIds(o.getNsgIds());
+                            .nsgIds(o.getNsgIds())
+                            .customerContacts(o.getCustomerContacts());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -713,6 +724,12 @@ public class UpdateAutonomousDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     java.util.List<String> nsgIds;
+
+    /**
+     * Customer Contacts. Setting this to an empty list removes all customer contacts of an Oracle Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
+    java.util.List<CustomerContact> customerContacts;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

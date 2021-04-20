@@ -51,6 +51,22 @@ public class ListFoldersConverter {
                                     request.getDisplayName()));
         }
 
+        if (request.getBusinessName() != null) {
+            target =
+                    target.queryParam(
+                            "businessName",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getBusinessName()));
+        }
+
+        if (request.getDisplayOrBusinessNameContains() != null) {
+            target =
+                    target.queryParam(
+                            "displayOrBusinessNameContains",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDisplayOrBusinessNameContains()));
+        }
+
         if (request.getDisplayNameContains() != null) {
             target =
                     target.queryParam(

@@ -253,6 +253,15 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
+        private java.util.List<CustomerContact> customerContacts;
+
+        public Builder customerContacts(java.util.List<CustomerContact> customerContacts) {
+            this.customerContacts = customerContacts;
+            this.__explicitlySet__.add("customerContacts");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
         private String autonomousDatabaseId;
 
@@ -310,6 +319,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                             freeformTags,
                             definedTags,
                             dbVersion,
+                            customerContacts,
                             autonomousDatabaseId,
                             timestamp,
                             cloneType);
@@ -345,6 +355,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .dbVersion(o.getDbVersion())
+                            .customerContacts(o.getCustomerContacts())
                             .autonomousDatabaseId(o.getAutonomousDatabaseId())
                             .timestamp(o.getTimestamp())
                             .cloneType(o.getCloneType());
@@ -387,6 +398,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String dbVersion,
+            java.util.List<CustomerContact> customerContacts,
             String autonomousDatabaseId,
             java.util.Date timestamp,
             CloneType cloneType) {
@@ -414,7 +426,8 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                 privateEndpointLabel,
                 freeformTags,
                 definedTags,
-                dbVersion);
+                dbVersion,
+                customerContacts);
         this.autonomousDatabaseId = autonomousDatabaseId;
         this.timestamp = timestamp;
         this.cloneType = cloneType;

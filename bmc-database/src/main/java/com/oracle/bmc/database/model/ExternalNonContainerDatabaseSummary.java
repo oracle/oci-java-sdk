@@ -28,6 +28,15 @@ public class ExternalNonContainerDatabaseSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsConfig")
+        private OperationsInsightsConfig operationsInsightsConfig;
+
+        public Builder operationsInsightsConfig(OperationsInsightsConfig operationsInsightsConfig) {
+            this.operationsInsightsConfig = operationsInsightsConfig;
+            this.__explicitlySet__.add("operationsInsightsConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -188,6 +197,7 @@ public class ExternalNonContainerDatabaseSummary {
         public ExternalNonContainerDatabaseSummary build() {
             ExternalNonContainerDatabaseSummary __instance__ =
                     new ExternalNonContainerDatabaseSummary(
+                            operationsInsightsConfig,
                             compartmentId,
                             freeformTags,
                             definedTags,
@@ -212,7 +222,8 @@ public class ExternalNonContainerDatabaseSummary {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ExternalNonContainerDatabaseSummary o) {
             Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
+                    operationsInsightsConfig(o.getOperationsInsightsConfig())
+                            .compartmentId(o.getCompartmentId())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
@@ -241,6 +252,9 @@ public class ExternalNonContainerDatabaseSummary {
     public static Builder builder() {
         return new Builder();
     }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsConfig")
+    OperationsInsightsConfig operationsInsightsConfig;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.

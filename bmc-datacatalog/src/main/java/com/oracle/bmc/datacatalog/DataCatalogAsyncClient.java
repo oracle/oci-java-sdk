@@ -4701,6 +4701,45 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<SuggestMatchesResponse> suggestMatches(
+            SuggestMatchesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SuggestMatchesRequest, SuggestMatchesResponse>
+                    handler) {
+        LOG.trace("Called async suggestMatches");
+        final SuggestMatchesRequest interceptedRequest =
+                SuggestMatchesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SuggestMatchesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, SuggestMatchesResponse>
+                transformer = SuggestMatchesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<SuggestMatchesRequest, SuggestMatchesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SuggestMatchesRequest, SuggestMatchesResponse>,
+                        java.util.concurrent.Future<SuggestMatchesResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SuggestMatchesRequest, SuggestMatchesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<TestConnectionResponse> testConnection(
             TestConnectionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

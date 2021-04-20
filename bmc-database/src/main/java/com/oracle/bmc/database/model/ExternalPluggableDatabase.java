@@ -44,6 +44,15 @@ public class ExternalPluggableDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsConfig")
+        private OperationsInsightsConfig operationsInsightsConfig;
+
+        public Builder operationsInsightsConfig(OperationsInsightsConfig operationsInsightsConfig) {
+            this.operationsInsightsConfig = operationsInsightsConfig;
+            this.__explicitlySet__.add("operationsInsightsConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -206,6 +215,7 @@ public class ExternalPluggableDatabase {
                     new ExternalPluggableDatabase(
                             sourceId,
                             externalContainerDatabaseId,
+                            operationsInsightsConfig,
                             compartmentId,
                             freeformTags,
                             definedTags,
@@ -232,6 +242,7 @@ public class ExternalPluggableDatabase {
             Builder copiedBuilder =
                     sourceId(o.getSourceId())
                             .externalContainerDatabaseId(o.getExternalContainerDatabaseId())
+                            .operationsInsightsConfig(o.getOperationsInsightsConfig())
                             .compartmentId(o.getCompartmentId())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
@@ -278,6 +289,9 @@ public class ExternalPluggableDatabase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalContainerDatabaseId")
     String externalContainerDatabaseId;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsConfig")
+    OperationsInsightsConfig operationsInsightsConfig;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.

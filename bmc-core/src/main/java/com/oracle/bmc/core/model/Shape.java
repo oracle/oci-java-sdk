@@ -146,6 +146,15 @@ public class Shape {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isLiveMigrationSupported")
+        private Boolean isLiveMigrationSupported;
+
+        public Builder isLiveMigrationSupported(Boolean isLiveMigrationSupported) {
+            this.isLiveMigrationSupported = isLiveMigrationSupported;
+            this.__explicitlySet__.add("isLiveMigrationSupported");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("ocpuOptions")
         private ShapeOcpuOptions ocpuOptions;
 
@@ -203,6 +212,7 @@ public class Shape {
                             localDisks,
                             localDisksTotalSizeInGBs,
                             localDiskDescription,
+                            isLiveMigrationSupported,
                             ocpuOptions,
                             memoryOptions,
                             networkingBandwidthOptions,
@@ -227,6 +237,7 @@ public class Shape {
                             .localDisks(o.getLocalDisks())
                             .localDisksTotalSizeInGBs(o.getLocalDisksTotalSizeInGBs())
                             .localDiskDescription(o.getLocalDiskDescription())
+                            .isLiveMigrationSupported(o.getIsLiveMigrationSupported())
                             .ocpuOptions(o.getOcpuOptions())
                             .memoryOptions(o.getMemoryOptions())
                             .networkingBandwidthOptions(o.getNetworkingBandwidthOptions())
@@ -388,6 +399,13 @@ public class Shape {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("localDiskDescription")
     String localDiskDescription;
+
+    /**
+     * Whether live migration is supported for this shape.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isLiveMigrationSupported")
+    Boolean isLiveMigrationSupported;
 
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuOptions")
     ShapeOcpuOptions ocpuOptions;
