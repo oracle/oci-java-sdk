@@ -35,6 +35,15 @@ public class CreateFolderDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("businessName")
+        private String businessName;
+
+        public Builder businessName(String businessName) {
+            this.businessName = businessName;
+            this.__explicitlySet__.add("businessName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -106,6 +115,7 @@ public class CreateFolderDetails {
             CreateFolderDetails __instance__ =
                     new CreateFolderDetails(
                             displayName,
+                            businessName,
                             description,
                             customPropertyMembers,
                             properties,
@@ -121,6 +131,7 @@ public class CreateFolderDetails {
         public Builder copy(CreateFolderDetails o) {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
+                            .businessName(o.getBusinessName())
                             .description(o.getDescription())
                             .customPropertyMembers(o.getCustomPropertyMembers())
                             .properties(o.getProperties())
@@ -148,6 +159,12 @@ public class CreateFolderDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * Optional user friendly business name of the folder. If set, this supplements the harvested display name of the object.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("businessName")
+    String businessName;
 
     /**
      * Detailed description of a folder.

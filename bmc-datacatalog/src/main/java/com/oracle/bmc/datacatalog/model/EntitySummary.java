@@ -45,6 +45,15 @@ public class EntitySummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("businessName")
+        private String businessName;
+
+        public Builder businessName(String businessName) {
+            this.businessName = businessName;
+            this.__explicitlySet__.add("businessName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -96,6 +105,15 @@ public class EntitySummary {
         public Builder patternKey(String patternKey) {
             this.patternKey = patternKey;
             this.__explicitlySet__.add("patternKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
+        private String typeKey;
+
+        public Builder typeKey(String typeKey) {
+            this.typeKey = typeKey;
+            this.__explicitlySet__.add("typeKey");
             return this;
         }
 
@@ -170,12 +188,14 @@ public class EntitySummary {
                     new EntitySummary(
                             key,
                             displayName,
+                            businessName,
                             description,
                             dataAssetKey,
                             folderKey,
                             folderName,
                             externalKey,
                             patternKey,
+                            typeKey,
                             realizedExpression,
                             path,
                             timeCreated,
@@ -192,12 +212,14 @@ public class EntitySummary {
             Builder copiedBuilder =
                     key(o.getKey())
                             .displayName(o.getDisplayName())
+                            .businessName(o.getBusinessName())
                             .description(o.getDescription())
                             .dataAssetKey(o.getDataAssetKey())
                             .folderKey(o.getFolderKey())
                             .folderName(o.getFolderName())
                             .externalKey(o.getExternalKey())
                             .patternKey(o.getPatternKey())
+                            .typeKey(o.getTypeKey())
                             .realizedExpression(o.getRealizedExpression())
                             .path(o.getPath())
                             .timeCreated(o.getTimeCreated())
@@ -231,6 +253,12 @@ public class EntitySummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * Optional user friendly business name of the data entity. If set, this supplements the harvested display name of the object.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("businessName")
+    String businessName;
 
     /**
      * Detailed description of a data entity.
@@ -267,6 +295,12 @@ public class EntitySummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patternKey")
     String patternKey;
+
+    /**
+     * The type of data entity object. Type keys can be found via the '/types' endpoint.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
+    String typeKey;
 
     /**
      * The expression realized after resolving qualifiers . Used in deriving this logical entity

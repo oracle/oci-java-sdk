@@ -26,6 +26,15 @@ public class ExternalNonContainerDatabase {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsConfig")
+        private OperationsInsightsConfig operationsInsightsConfig;
+
+        public Builder operationsInsightsConfig(OperationsInsightsConfig operationsInsightsConfig) {
+            this.operationsInsightsConfig = operationsInsightsConfig;
+            this.__explicitlySet__.add("operationsInsightsConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -186,6 +195,7 @@ public class ExternalNonContainerDatabase {
         public ExternalNonContainerDatabase build() {
             ExternalNonContainerDatabase __instance__ =
                     new ExternalNonContainerDatabase(
+                            operationsInsightsConfig,
                             compartmentId,
                             freeformTags,
                             definedTags,
@@ -210,7 +220,8 @@ public class ExternalNonContainerDatabase {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ExternalNonContainerDatabase o) {
             Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
+                    operationsInsightsConfig(o.getOperationsInsightsConfig())
+                            .compartmentId(o.getCompartmentId())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
@@ -239,6 +250,9 @@ public class ExternalNonContainerDatabase {
     public static Builder builder() {
         return new Builder();
     }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsConfig")
+    OperationsInsightsConfig operationsInsightsConfig;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.

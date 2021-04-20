@@ -35,6 +35,19 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String displayName;
 
     /**
+     * A filter to return only resources that match the entire business name given. The match is not case sensitive.
+     */
+    private String businessName;
+
+    /**
+     * A filter to return only resources that match display name or business name pattern given. The match is not case sensitive.
+     * For Example : /folders?displayOrBusinessNameContains=Cu.*
+     * The above would match all folders with display name or business name that starts with \"Cu\".
+     *
+     */
+    private String displayOrBusinessNameContains;
+
+    /**
      * A filter to return only resources that match display name pattern given. The match is not case sensitive.
      * For Example : /folders?displayNameContains=Cu.*
      * The above would match all folders with display name that starts with \"Cu\".
@@ -278,6 +291,8 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             catalogId(o.getCatalogId());
             dataAssetKey(o.getDataAssetKey());
             displayName(o.getDisplayName());
+            businessName(o.getBusinessName());
+            displayOrBusinessNameContains(o.getDisplayOrBusinessNameContains());
             displayNameContains(o.getDisplayNameContains());
             lifecycleState(o.getLifecycleState());
             parentFolderKey(o.getParentFolderKey());

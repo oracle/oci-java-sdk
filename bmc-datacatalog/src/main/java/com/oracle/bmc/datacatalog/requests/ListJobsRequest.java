@@ -73,6 +73,11 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     private String jobDefinitionKey;
 
     /**
+     * Unique data asset key.
+     */
+    private String dataAssetKey;
+
+    /**
      * Schedule specified in the cron expression format that has seven fields for second, minute, hour, day-of-month, month, day-of-week, year.
      * It can also include special characters like * for all and ? for any. There are also pre-defined schedules that can be specified using
      * special strings. For example, @hourly will run the job every hour.
@@ -315,6 +320,7 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             updatedById(o.getUpdatedById());
             jobType(o.getJobType());
             jobDefinitionKey(o.getJobDefinitionKey());
+            dataAssetKey(o.getDataAssetKey());
             scheduleCronExpression(o.getScheduleCronExpression());
             timeScheduleBegin(o.getTimeScheduleBegin());
             timeScheduleEnd(o.getTimeScheduleEnd());

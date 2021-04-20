@@ -261,6 +261,24 @@ public class SearchResult {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("businessName")
+        private String businessName;
+
+        public Builder businessName(String businessName) {
+            this.businessName = businessName;
+            this.__explicitlySet__.add("businessName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private LifecycleState lifecycleState;
+
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("expression")
         private String expression;
 
@@ -312,6 +330,8 @@ public class SearchResult {
                             createdById,
                             updatedById,
                             path,
+                            businessName,
+                            lifecycleState,
                             expression,
                             customProperties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -347,6 +367,8 @@ public class SearchResult {
                             .createdById(o.getCreatedById())
                             .updatedById(o.getUpdatedById())
                             .path(o.getPath())
+                            .businessName(o.getBusinessName())
+                            .lifecycleState(o.getLifecycleState())
                             .expression(o.getExpression())
                             .customProperties(o.getCustomProperties());
 
@@ -521,6 +543,18 @@ public class SearchResult {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     String path;
+
+    /**
+     * Optional user friendly business name of the data object. If set, this supplements the harvested display name of the object.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("businessName")
+    String businessName;
+
+    /**
+     * The current state of the data object.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    LifecycleState lifecycleState;
 
     /**
      * Expression for logical entities against which names of dataObjects will be matched.

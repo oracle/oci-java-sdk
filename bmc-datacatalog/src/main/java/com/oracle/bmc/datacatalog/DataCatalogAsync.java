@@ -1732,6 +1732,21 @@ public interface DataCatalogAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns a list of potential string matches for a given input string.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SuggestMatchesResponse> suggestMatches(
+            SuggestMatchesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<SuggestMatchesRequest, SuggestMatchesResponse>
+                    handler);
+
+    /**
      * Test the connection by connecting to the data asset using credentials in the metadata.
      *
      * @param request The request object containing the details to send

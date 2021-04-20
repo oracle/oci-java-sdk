@@ -155,6 +155,15 @@ public class JobDefinitionSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
+        private String dataAssetKey;
+
+        public Builder dataAssetKey(String dataAssetKey) {
+            this.dataAssetKey = dataAssetKey;
+            this.__explicitlySet__.add("dataAssetKey");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -174,7 +183,8 @@ public class JobDefinitionSummary {
                             timeLatestExecutionStarted,
                             timeLatestExecutionEnded,
                             jobExecutionState,
-                            scheduleType);
+                            scheduleType,
+                            dataAssetKey);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -195,7 +205,8 @@ public class JobDefinitionSummary {
                             .timeLatestExecutionStarted(o.getTimeLatestExecutionStarted())
                             .timeLatestExecutionEnded(o.getTimeLatestExecutionEnded())
                             .jobExecutionState(o.getJobExecutionState())
-                            .scheduleType(o.getScheduleType());
+                            .scheduleType(o.getScheduleType())
+                            .dataAssetKey(o.getDataAssetKey());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -299,6 +310,12 @@ public class JobDefinitionSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
     JobScheduleType scheduleType;
+
+    /**
+     * Unique key of the data asset to which this job applies, if the job involves a data asset.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
+    String dataAssetKey;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

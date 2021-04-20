@@ -3513,6 +3513,73 @@ public class DatabaseWaiters {
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    DisableExternalNonContainerDatabaseOperationsInsightsRequest,
+                    DisableExternalNonContainerDatabaseOperationsInsightsResponse>
+            forDisableExternalNonContainerDatabaseOperationsInsights(
+                    DisableExternalNonContainerDatabaseOperationsInsightsRequest request) {
+        return forDisableExternalNonContainerDatabaseOperationsInsights(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    DisableExternalNonContainerDatabaseOperationsInsightsRequest,
+                    DisableExternalNonContainerDatabaseOperationsInsightsResponse>
+            forDisableExternalNonContainerDatabaseOperationsInsights(
+                    DisableExternalNonContainerDatabaseOperationsInsightsRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<
+                        DisableExternalNonContainerDatabaseOperationsInsightsResponse>() {
+                    @Override
+                    public DisableExternalNonContainerDatabaseOperationsInsightsResponse call()
+                            throws Exception {
+                        final DisableExternalNonContainerDatabaseOperationsInsightsResponse
+                                response =
+                                        client
+                                                .disableExternalNonContainerDatabaseOperationsInsights(
+                                                        request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     DisableExternalPluggableDatabaseDatabaseManagementRequest,
                     DisableExternalPluggableDatabaseDatabaseManagementResponse>
             forDisableExternalPluggableDatabaseDatabaseManagement(
@@ -3552,6 +3619,70 @@ public class DatabaseWaiters {
                             throws Exception {
                         final DisableExternalPluggableDatabaseDatabaseManagementResponse response =
                                 client.disableExternalPluggableDatabaseDatabaseManagement(request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    DisableExternalPluggableDatabaseOperationsInsightsRequest,
+                    DisableExternalPluggableDatabaseOperationsInsightsResponse>
+            forDisableExternalPluggableDatabaseOperationsInsights(
+                    DisableExternalPluggableDatabaseOperationsInsightsRequest request) {
+        return forDisableExternalPluggableDatabaseOperationsInsights(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    DisableExternalPluggableDatabaseOperationsInsightsRequest,
+                    DisableExternalPluggableDatabaseOperationsInsightsResponse>
+            forDisableExternalPluggableDatabaseOperationsInsights(
+                    DisableExternalPluggableDatabaseOperationsInsightsRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<
+                        DisableExternalPluggableDatabaseOperationsInsightsResponse>() {
+                    @Override
+                    public DisableExternalPluggableDatabaseOperationsInsightsResponse call()
+                            throws Exception {
+                        final DisableExternalPluggableDatabaseOperationsInsightsResponse response =
+                                client.disableExternalPluggableDatabaseOperationsInsights(request);
 
                         final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
                                 getWorkRequestRequest =
@@ -3771,6 +3902,72 @@ public class DatabaseWaiters {
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    EnableExternalNonContainerDatabaseOperationsInsightsRequest,
+                    EnableExternalNonContainerDatabaseOperationsInsightsResponse>
+            forEnableExternalNonContainerDatabaseOperationsInsights(
+                    EnableExternalNonContainerDatabaseOperationsInsightsRequest request) {
+        return forEnableExternalNonContainerDatabaseOperationsInsights(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    EnableExternalNonContainerDatabaseOperationsInsightsRequest,
+                    EnableExternalNonContainerDatabaseOperationsInsightsResponse>
+            forEnableExternalNonContainerDatabaseOperationsInsights(
+                    EnableExternalNonContainerDatabaseOperationsInsightsRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<
+                        EnableExternalNonContainerDatabaseOperationsInsightsResponse>() {
+                    @Override
+                    public EnableExternalNonContainerDatabaseOperationsInsightsResponse call()
+                            throws Exception {
+                        final EnableExternalNonContainerDatabaseOperationsInsightsResponse
+                                response =
+                                        client.enableExternalNonContainerDatabaseOperationsInsights(
+                                                request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     EnableExternalPluggableDatabaseDatabaseManagementRequest,
                     EnableExternalPluggableDatabaseDatabaseManagementResponse>
             forEnableExternalPluggableDatabaseDatabaseManagement(
@@ -3810,6 +4007,70 @@ public class DatabaseWaiters {
                             throws Exception {
                         final EnableExternalPluggableDatabaseDatabaseManagementResponse response =
                                 client.enableExternalPluggableDatabaseDatabaseManagement(request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    EnableExternalPluggableDatabaseOperationsInsightsRequest,
+                    EnableExternalPluggableDatabaseOperationsInsightsResponse>
+            forEnableExternalPluggableDatabaseOperationsInsights(
+                    EnableExternalPluggableDatabaseOperationsInsightsRequest request) {
+        return forEnableExternalPluggableDatabaseOperationsInsights(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    EnableExternalPluggableDatabaseOperationsInsightsRequest,
+                    EnableExternalPluggableDatabaseOperationsInsightsResponse>
+            forEnableExternalPluggableDatabaseOperationsInsights(
+                    EnableExternalPluggableDatabaseOperationsInsightsRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<
+                        EnableExternalPluggableDatabaseOperationsInsightsResponse>() {
+                    @Override
+                    public EnableExternalPluggableDatabaseOperationsInsightsResponse call()
+                            throws Exception {
+                        final EnableExternalPluggableDatabaseOperationsInsightsResponse response =
+                                client.enableExternalPluggableDatabaseOperationsInsights(request);
 
                         final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
                                 getWorkRequestRequest =

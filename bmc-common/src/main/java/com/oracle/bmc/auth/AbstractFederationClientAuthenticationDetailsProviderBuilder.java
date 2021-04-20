@@ -4,6 +4,7 @@
  */
 package com.oracle.bmc.auth;
 
+import com.google.common.base.Function;
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableMap;
 import com.oracle.bmc.InternalSdk;
@@ -32,6 +33,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 import java.util.HashSet;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Abstract builder base class for authentication details provider extending
@@ -58,7 +60,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     /**
      * Default base url of metadata service.
      */
-    protected static final String METADATA_SERVICE_BASE_URL = "http://169.254.169.254/opc/v2/";
+    public static final String METADATA_SERVICE_BASE_URL = "http://169.254.169.254/opc/v2/";
 
     /**
      * Fallback url of metadata service.
@@ -68,7 +70,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     /**
      * The Authorization header value to be sent for requests to the metadata service.
      */
-    private static final String AUTHORIZATION_HEADER_VALUE = "Bearer Oracle";
+    public static final String AUTHORIZATION_HEADER_VALUE = "Bearer Oracle";
 
     /**
      * Base url of metadata service.
@@ -214,14 +216,21 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
         if (federationEndpoint == null) {
 
             executeInstanceFallback();
-            Client client = ClientBuilder.newClient();
-            WebTarget base = client.target(getMetadataBaseUrl() + "instance/");
-
+            final String REGION_CODE = "region";
             String regionStr =
-                    base.path("region")
-                            .request(MediaType.TEXT_PLAIN)
-                            .header(HttpHeaders.AUTHORIZATION, AUTHORIZATION_HEADER_VALUE)
-                            .get(String.class);
+                    simpleRetry(
+                            base -> {
+                                String region =
+                                        base.path(REGION_CODE)
+                                                .request(MediaType.TEXT_PLAIN)
+                                                .header(
+                                                        HttpHeaders.AUTHORIZATION,
+                                                        AUTHORIZATION_HEADER_VALUE)
+                                                .get(String.class);
+                                return region;
+                            },
+                            getMetadataBaseUrl(),
+                            REGION_CODE);
             LOG.info("Looking up region for {}", regionStr);
 
             try {
@@ -298,15 +307,22 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
      * Checks and falls back to V1 endpoint for both federation endpoint detection & certificates if necessary.
      */
     private void executeInstanceFallback() {
-        Client client = ClientBuilder.newClient();
-        WebTarget base = client.target(getMetadataBaseUrl() + "instance/");
-
         try {
+            final String INSTANCE_ID = "id";
             Response response =
-                    base.path("id")
-                            .request(MediaType.TEXT_PLAIN)
-                            .header(HttpHeaders.AUTHORIZATION, AUTHORIZATION_HEADER_VALUE)
-                            .get();
+                    simpleRetry(
+                            base -> {
+                                Response fallbackResponse =
+                                        base.path(INSTANCE_ID)
+                                                .request(MediaType.TEXT_PLAIN)
+                                                .header(
+                                                        HttpHeaders.AUTHORIZATION,
+                                                        AUTHORIZATION_HEADER_VALUE)
+                                                .get();
+                                return fallbackResponse;
+                            },
+                            getMetadataBaseUrl(),
+                            INSTANCE_ID);
             LOG.info(
                     "Rest call to verify if v2 endpoint exists, response from v2 was {}",
                     response.getStatus());
@@ -399,5 +415,43 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
         public void refreshKeys() {
             this.keyPair = GENERATOR.generateKeyPair();
         }
+    }
+
+    public static <T> T simpleRetry(
+            Function<WebTarget, T> retryOperation,
+            final String metadataServiceUrl,
+            final String endpoint) {
+        Client client = ClientBuilder.newClient();
+        WebTarget base = client.target(metadataServiceUrl + "instance/");
+
+        final int MAX_RETRIES = 3;
+        RuntimeException lastException = null;
+        for (int retry = 0; retry < MAX_RETRIES; retry++) {
+            try {
+                return retryOperation.apply(base);
+            } catch (RuntimeException e) {
+                LOG.warn(
+                        "Attempt {} - Rest call to get "
+                                + endpoint
+                                + " from metadata service failed ",
+                        (retry + 1),
+                        e);
+                lastException = e;
+                try {
+                    Thread.sleep(TimeUnit.SECONDS.toMillis(30));
+                } catch (InterruptedException interruptedException) {
+                    LOG.debug(
+                            "Thread interrupted while waiting to make next call to get "
+                                    + endpoint
+                                    + " from instance metadata service",
+                            interruptedException);
+                    Thread.currentThread().interrupt();
+                    break;
+                }
+            } finally {
+                client.close();
+            }
+        }
+        throw lastException;
     }
 }

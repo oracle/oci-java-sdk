@@ -116,6 +116,15 @@ public class CustomPropertyGetUsage {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isShownInList")
+        private Boolean isShownInList;
+
+        public Builder isShownInList(Boolean isShownInList) {
+            this.isShownInList = isShownInList;
+            this.__explicitlySet__.add("isShownInList");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isListType")
         private Boolean isListType;
 
@@ -150,6 +159,7 @@ public class CustomPropertyGetUsage {
                             isMultiValued,
                             isHidden,
                             isEditable,
+                            isShownInList,
                             isListType,
                             allowedValues);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -169,6 +179,7 @@ public class CustomPropertyGetUsage {
                             .isMultiValued(o.getIsMultiValued())
                             .isHidden(o.getIsHidden())
                             .isEditable(o.getIsEditable())
+                            .isShownInList(o.getIsShownInList())
                             .isListType(o.getIsListType())
                             .allowedValues(o.getAllowedValues());
 
@@ -243,6 +254,12 @@ public class CustomPropertyGetUsage {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEditable")
     Boolean isEditable;
+
+    /**
+     * If this field is displayed in a list view of applicable objects.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isShownInList")
+    Boolean isShownInList;
 
     /**
      * Is this property allowed to have list of values

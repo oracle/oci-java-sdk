@@ -5,7 +5,8 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
+ * Options for defining the availability of a VM instance after a maintenance event that impacts the underlying
+ * hardware, including whether to live migrate supported VM instances when possible.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -27,6 +28,15 @@ public class UpdateInstanceAvailabilityConfigDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("isLiveMigrationPreferred")
+        private Boolean isLiveMigrationPreferred;
+
+        public Builder isLiveMigrationPreferred(Boolean isLiveMigrationPreferred) {
+            this.isLiveMigrationPreferred = isLiveMigrationPreferred;
+            this.__explicitlySet__.add("isLiveMigrationPreferred");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("recoveryAction")
         private RecoveryAction recoveryAction;
 
@@ -41,14 +51,17 @@ public class UpdateInstanceAvailabilityConfigDetails {
 
         public UpdateInstanceAvailabilityConfigDetails build() {
             UpdateInstanceAvailabilityConfigDetails __instance__ =
-                    new UpdateInstanceAvailabilityConfigDetails(recoveryAction);
+                    new UpdateInstanceAvailabilityConfigDetails(
+                            isLiveMigrationPreferred, recoveryAction);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateInstanceAvailabilityConfigDetails o) {
-            Builder copiedBuilder = recoveryAction(o.getRecoveryAction());
+            Builder copiedBuilder =
+                    isLiveMigrationPreferred(o.getIsLiveMigrationPreferred())
+                            .recoveryAction(o.getRecoveryAction());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -62,6 +75,14 @@ public class UpdateInstanceAvailabilityConfigDetails {
         return new Builder();
     }
 
+    /**
+     * Whether to live migrate supported VM instances to a healthy physical VM host without
+     * disrupting running instances during infrastructure maintenance events. If null, Oracle
+     * chooses the best option for migrating the VM during infrastructure maintenance events.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isLiveMigrationPreferred")
+    Boolean isLiveMigrationPreferred;
     /**
      * The lifecycle state for an instance when it is recovered after infrastructure maintenance.
      * * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event.

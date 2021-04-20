@@ -124,6 +124,15 @@ public class CustomProperty {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isShownInList")
+        private Boolean isShownInList;
+
+        public Builder isShownInList(Boolean isShownInList) {
+            this.isShownInList = isShownInList;
+            this.__explicitlySet__.add("isShownInList");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isServiceDefined")
         private Boolean isServiceDefined;
 
@@ -240,6 +249,7 @@ public class CustomProperty {
                             isMultiValued,
                             isHidden,
                             isEditable,
+                            isShownInList,
                             isServiceDefined,
                             isHiddenInSearch,
                             lifecycleState,
@@ -269,6 +279,7 @@ public class CustomProperty {
                             .isMultiValued(o.getIsMultiValued())
                             .isHidden(o.getIsHidden())
                             .isEditable(o.getIsEditable())
+                            .isShownInList(o.getIsShownInList())
                             .isServiceDefined(o.getIsServiceDefined())
                             .isHiddenInSearch(o.getIsHiddenInSearch())
                             .lifecycleState(o.getLifecycleState())
@@ -358,6 +369,12 @@ public class CustomProperty {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEditable")
     Boolean isEditable;
+
+    /**
+     * If this field is displayed in a list view of applicable objects.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isShownInList")
+    Boolean isShownInList;
 
     /**
      * If this field is defined by service or by a user

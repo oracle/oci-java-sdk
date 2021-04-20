@@ -51,6 +51,30 @@ public class ListEntitiesConverter {
                                     request.getDisplayName()));
         }
 
+        if (request.getBusinessName() != null) {
+            target =
+                    target.queryParam(
+                            "businessName",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getBusinessName()));
+        }
+
+        if (request.getDisplayOrBusinessNameContains() != null) {
+            target =
+                    target.queryParam(
+                            "displayOrBusinessNameContains",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDisplayOrBusinessNameContains()));
+        }
+
+        if (request.getTypeKey() != null) {
+            target =
+                    target.queryParam(
+                            "typeKey",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTypeKey()));
+        }
+
         if (request.getDisplayNameContains() != null) {
             target =
                     target.queryParam(

@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.36.1 - 2021-04-20
+### Added
+- Support for opting in/out of live migration on instances in the Compute service
+- Support for enabling/disabling Operations Insights on external non-container and external pluggable databases in the Database service
+- Support for a GraphStudio URL as a connection URL on databases in the Database service
+- Support for adding customer contacts on autonomous databases in the Database service
+- Support for name annotations on harvested objects in the Data Catalog service
+
 ## 1.36.0 - 2021-04-13
 ### Added
 - Support for the Database Migration service

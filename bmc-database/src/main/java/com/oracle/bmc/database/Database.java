@@ -862,6 +862,19 @@ public interface Database extends AutoCloseable {
                     DisableExternalNonContainerDatabaseDatabaseManagementRequest request);
 
     /**
+     * Disable Operations Insights for the external non-container database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableExternalNonContainerDatabaseOperationsInsightsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalNonContainerDatabaseOperationsInsights API.
+     */
+    DisableExternalNonContainerDatabaseOperationsInsightsResponse
+            disableExternalNonContainerDatabaseOperationsInsights(
+                    DisableExternalNonContainerDatabaseOperationsInsightsRequest request);
+
+    /**
      * Disable Database Management Service for the external pluggable database.
      * For more information about the Database Management Service, see
      * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
@@ -875,6 +888,19 @@ public interface Database extends AutoCloseable {
     DisableExternalPluggableDatabaseDatabaseManagementResponse
             disableExternalPluggableDatabaseDatabaseManagement(
                     DisableExternalPluggableDatabaseDatabaseManagementRequest request);
+
+    /**
+     * Disable Operations Insights for the external pluggable database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableExternalPluggableDatabaseOperationsInsightsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalPluggableDatabaseOperationsInsights API.
+     */
+    DisableExternalPluggableDatabaseOperationsInsightsResponse
+            disableExternalPluggableDatabaseOperationsInsights(
+                    DisableExternalPluggableDatabaseOperationsInsightsRequest request);
 
     /**
      * Downloads the configuration file for the specified Exadata Cloud@Customer infrastructure.
@@ -943,6 +969,19 @@ public interface Database extends AutoCloseable {
                     EnableExternalNonContainerDatabaseDatabaseManagementRequest request);
 
     /**
+     * Enable Operations Insights for the external non-container database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableExternalNonContainerDatabaseOperationsInsightsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalNonContainerDatabaseOperationsInsights API.
+     */
+    EnableExternalNonContainerDatabaseOperationsInsightsResponse
+            enableExternalNonContainerDatabaseOperationsInsights(
+                    EnableExternalNonContainerDatabaseOperationsInsightsRequest request);
+
+    /**
      * Enable Database Management Service for the external pluggable database.
      * For more information about the Database Management Service, see
      * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
@@ -956,6 +995,19 @@ public interface Database extends AutoCloseable {
     EnableExternalPluggableDatabaseDatabaseManagementResponse
             enableExternalPluggableDatabaseDatabaseManagement(
                     EnableExternalPluggableDatabaseDatabaseManagementRequest request);
+
+    /**
+     * Enable Operations Insights for the external pluggable database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableExternalPluggableDatabaseOperationsInsightsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalPluggableDatabaseOperationsInsights API.
+     */
+    EnableExternalPluggableDatabaseOperationsInsightsResponse
+            enableExternalPluggableDatabaseOperationsInsights(
+                    EnableExternalPluggableDatabaseOperationsInsightsRequest request);
 
     /**
      * Initiates a failover the specified Autonomous Database to a standby.

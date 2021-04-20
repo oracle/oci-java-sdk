@@ -89,6 +89,15 @@ public class UpdateCustomPropertyDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isShownInList")
+        private Boolean isShownInList;
+
+        public Builder isShownInList(Boolean isShownInList) {
+            this.isShownInList = isShownInList;
+            this.__explicitlySet__.add("isShownInList");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isHiddenInSearch")
         private Boolean isHiddenInSearch;
 
@@ -129,6 +138,7 @@ public class UpdateCustomPropertyDetails {
                             isMultiValued,
                             isHidden,
                             isEditable,
+                            isShownInList,
                             isHiddenInSearch,
                             allowedValues,
                             properties);
@@ -146,6 +156,7 @@ public class UpdateCustomPropertyDetails {
                             .isMultiValued(o.getIsMultiValued())
                             .isHidden(o.getIsHidden())
                             .isEditable(o.getIsEditable())
+                            .isShownInList(o.getIsShownInList())
                             .isHiddenInSearch(o.getIsHiddenInSearch())
                             .allowedValues(o.getAllowedValues())
                             .properties(o.getProperties());
@@ -205,6 +216,12 @@ public class UpdateCustomPropertyDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEditable")
     Boolean isEditable;
+
+    /**
+     * If this field is displayed in a list view of applicable objects.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isShownInList")
+    Boolean isShownInList;
 
     /**
      * If this field is allowed to pop in search results

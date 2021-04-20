@@ -46,6 +46,15 @@ public class Folder {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("businessName")
+        private String businessName;
+
+        public Builder businessName(String businessName) {
+            this.businessName = businessName;
+            this.__explicitlySet__.add("businessName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -199,6 +208,7 @@ public class Folder {
                     new Folder(
                             key,
                             displayName,
+                            businessName,
                             description,
                             parentFolderKey,
                             path,
@@ -224,6 +234,7 @@ public class Folder {
             Builder copiedBuilder =
                     key(o.getKey())
                             .displayName(o.getDisplayName())
+                            .businessName(o.getBusinessName())
                             .description(o.getDescription())
                             .parentFolderKey(o.getParentFolderKey())
                             .path(o.getPath())
@@ -266,6 +277,12 @@ public class Folder {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * Optional user friendly business name of the folder. If set, this supplements the harvested display name of the object.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("businessName")
+    String businessName;
 
     /**
      * Detailed description of a folder.

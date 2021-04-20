@@ -56,13 +56,25 @@ public class AutonomousDatabaseConnectionUrls {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("graphStudioUrl")
+        private String graphStudioUrl;
+
+        public Builder graphStudioUrl(String graphStudioUrl) {
+            this.graphStudioUrl = graphStudioUrl;
+            this.__explicitlySet__.add("graphStudioUrl");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutonomousDatabaseConnectionUrls build() {
             AutonomousDatabaseConnectionUrls __instance__ =
                     new AutonomousDatabaseConnectionUrls(
-                            sqlDevWebUrl, apexUrl, machineLearningUserManagementUrl);
+                            sqlDevWebUrl,
+                            apexUrl,
+                            machineLearningUserManagementUrl,
+                            graphStudioUrl);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -73,7 +85,8 @@ public class AutonomousDatabaseConnectionUrls {
                     sqlDevWebUrl(o.getSqlDevWebUrl())
                             .apexUrl(o.getApexUrl())
                             .machineLearningUserManagementUrl(
-                                    o.getMachineLearningUserManagementUrl());
+                                    o.getMachineLearningUserManagementUrl())
+                            .graphStudioUrl(o.getGraphStudioUrl());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -104,6 +117,12 @@ public class AutonomousDatabaseConnectionUrls {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("machineLearningUserManagementUrl")
     String machineLearningUserManagementUrl;
+
+    /**
+     * The URL of the Graph Studio for the Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("graphStudioUrl")
+    String graphStudioUrl;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

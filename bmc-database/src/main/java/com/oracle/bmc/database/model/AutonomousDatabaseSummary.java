@@ -581,6 +581,15 @@ public class AutonomousDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
+        private java.util.List<CustomerContact> customerContacts;
+
+        public Builder customerContacts(java.util.List<CustomerContact> customerContacts) {
+            this.customerContacts = customerContacts;
+            this.__explicitlySet__.add("customerContacts");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -647,7 +656,8 @@ public class AutonomousDatabaseSummary {
                             role,
                             availableUpgradeVersions,
                             keyStoreId,
-                            keyStoreWalletName);
+                            keyStoreWalletName,
+                            customerContacts);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -717,7 +727,8 @@ public class AutonomousDatabaseSummary {
                             .role(o.getRole())
                             .availableUpgradeVersions(o.getAvailableUpgradeVersions())
                             .keyStoreId(o.getKeyStoreId())
-                            .keyStoreWalletName(o.getKeyStoreWalletName());
+                            .keyStoreWalletName(o.getKeyStoreWalletName())
+                            .customerContacts(o.getCustomerContacts());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -1616,7 +1627,8 @@ public class AutonomousDatabaseSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("standbyDb")
     AutonomousDatabaseStandbySummary standbyDb;
     /**
-     * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+     * The Data Guard role of the Autonomous Container Database, if Autonomous Data Guard is enabled.
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Role {
@@ -1662,7 +1674,8 @@ public class AutonomousDatabaseSummary {
         }
     };
     /**
-     * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+     * The Data Guard role of the Autonomous Container Database, if Autonomous Data Guard is enabled.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     Role role;
@@ -1684,6 +1697,12 @@ public class AutonomousDatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreWalletName")
     String keyStoreWalletName;
+
+    /**
+     * Customer Contacts.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
+    java.util.List<CustomerContact> customerContacts;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
