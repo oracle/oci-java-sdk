@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Database Admin Credentials details.
+ * Database Administrator Credentials details.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -60,7 +60,7 @@ public class AdminCredentials {
     }
 
     /**
-     * Admin username
+     * Administrator username
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")

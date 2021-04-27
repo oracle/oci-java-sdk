@@ -251,6 +251,7 @@ public class TargetDetectorRecipeDetectorRuleSummary {
         State("STATE"),
         City("CITY"),
         Tags("TAGS"),
+        Generic("GENERIC"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

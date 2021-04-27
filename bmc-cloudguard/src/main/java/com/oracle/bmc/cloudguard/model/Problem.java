@@ -168,6 +168,33 @@ public class Problem {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
+        private java.util.Map<String, String> additionalDetails;
+
+        public Builder additionalDetails(java.util.Map<String, String> additionalDetails) {
+            this.additionalDetails = additionalDetails;
+            this.__explicitlySet__.add("additionalDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
+        private String recommendation;
+
+        public Builder recommendation(String recommendation) {
+            this.recommendation = recommendation;
+            this.__explicitlySet__.add("recommendation");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("comment")
         private String comment;
 
@@ -199,6 +226,9 @@ public class Problem {
                             lifecycleDetail,
                             detectorId,
                             targetId,
+                            additionalDetails,
+                            description,
+                            recommendation,
                             comment);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -223,6 +253,9 @@ public class Problem {
                             .lifecycleDetail(o.getLifecycleDetail())
                             .detectorId(o.getDetectorId())
                             .targetId(o.getTargetId())
+                            .additionalDetails(o.getAdditionalDetails())
+                            .description(o.getDescription())
+                            .recommendation(o.getRecommendation())
                             .comment(o.getComment());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -332,6 +365,24 @@ public class Problem {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     String targetId;
+
+    /**
+     * The additional details of the Problem
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
+    java.util.Map<String, String> additionalDetails;
+
+    /**
+     * Description of the problem
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    String description;
+
+    /**
+     * Recommendation for the problem
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
+    String recommendation;
 
     /**
      * User Comments

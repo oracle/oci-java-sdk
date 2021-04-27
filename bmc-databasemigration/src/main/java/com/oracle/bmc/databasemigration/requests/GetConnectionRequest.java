@@ -20,7 +20,7 @@ import com.oracle.bmc.databasemigration.model.*;
 public class GetConnectionRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the job
+     * The OCID of the database connection
      *
      */
     private String connectionId;

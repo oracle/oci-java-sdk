@@ -54,12 +54,23 @@ public class UpdateClusterNetworkDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("instancePools")
+        private java.util.List<UpdateClusterNetworkInstancePoolDetails> instancePools;
+
+        public Builder instancePools(
+                java.util.List<UpdateClusterNetworkInstancePoolDetails> instancePools) {
+            this.instancePools = instancePools;
+            this.__explicitlySet__.add("instancePools");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateClusterNetworkDetails build() {
             UpdateClusterNetworkDetails __instance__ =
-                    new UpdateClusterNetworkDetails(definedTags, displayName, freeformTags);
+                    new UpdateClusterNetworkDetails(
+                            definedTags, displayName, freeformTags, instancePools);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -69,7 +80,8 @@ public class UpdateClusterNetworkDetails {
             Builder copiedBuilder =
                     definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags());
+                            .freeformTags(o.getFreeformTags())
+                            .instancePools(o.getInstancePools());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -110,6 +122,13 @@ public class UpdateClusterNetworkDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
+
+    /**
+     * The instance pools in the cluster network to update.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("instancePools")
+    java.util.List<UpdateClusterNetworkInstancePoolDetails> instancePools;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

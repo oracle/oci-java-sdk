@@ -212,6 +212,15 @@ public class Bucket {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("autoTiering")
+        private AutoTiering autoTiering;
+
+        public Builder autoTiering(AutoTiering autoTiering) {
+            this.autoTiering = autoTiering;
+            this.__explicitlySet__.add("autoTiering");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -237,7 +246,8 @@ public class Bucket {
                             replicationEnabled,
                             isReadOnly,
                             id,
-                            versioning);
+                            versioning,
+                            autoTiering);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -264,7 +274,8 @@ public class Bucket {
                             .replicationEnabled(o.getReplicationEnabled())
                             .isReadOnly(o.getIsReadOnly())
                             .id(o.getId())
-                            .versioning(o.getVersioning());
+                            .versioning(o.getVersioning())
+                            .autoTiering(o.getAutoTiering());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -578,6 +589,63 @@ public class Bucket {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("versioning")
     Versioning versioning;
+    /**
+     * The auto tiering status on the bucket. A bucket is created with auto tiering `Disabled` by default.
+     * For auto tiering `InfrequentAccess`, objects are transitioned automatically between the 'Standard'
+     * and 'InfrequentAccess' tiers based on the access pattern of the objects.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum AutoTiering {
+        Disabled("Disabled"),
+        InfrequentAccess("InfrequentAccess"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, AutoTiering> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AutoTiering v : AutoTiering.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        AutoTiering(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AutoTiering create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AutoTiering', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The auto tiering status on the bucket. A bucket is created with auto tiering `Disabled` by default.
+     * For auto tiering `InfrequentAccess`, objects are transitioned automatically between the 'Standard'
+     * and 'InfrequentAccess' tiers based on the access pattern of the objects.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autoTiering")
+    AutoTiering autoTiering;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

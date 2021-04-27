@@ -21,7 +21,7 @@ public class UpdateMigrationRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdateMigrationDetails> {
 
     /**
-     * The OCID of the job
+     * The OCID of the migration
      *
      */
     private String migrationId;

@@ -53,21 +53,24 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
     /**
      * Bucket summary includes the 'namespace', 'name', 'compartmentId', 'createdBy', 'timeCreated',
-     * and 'etag' fields. This parameter can also include 'approximateCount' (approximate number of objects) and 'approximateSize'
-     * (total approximate size in bytes of all objects). For example 'approximateCount,approximateSize'.
+     * and 'etag' fields. This parameter can also include 'approximateCount' (approximate number of objects), 'approximateSize'
+     * (total approximate size in bytes of all objects) and 'autoTiering' (state of auto tiering on the bucket).
+     * For example 'approximateCount,approximateSize,autoTiering'.
      *
      */
     private java.util.List<Fields> fields;
 
     /**
      * Bucket summary includes the 'namespace', 'name', 'compartmentId', 'createdBy', 'timeCreated',
-     * and 'etag' fields. This parameter can also include 'approximateCount' (approximate number of objects) and 'approximateSize'
-     * (total approximate size in bytes of all objects). For example 'approximateCount,approximateSize'.
+     * and 'etag' fields. This parameter can also include 'approximateCount' (approximate number of objects), 'approximateSize'
+     * (total approximate size in bytes of all objects) and 'autoTiering' (state of auto tiering on the bucket).
+     * For example 'approximateCount,approximateSize,autoTiering'.
      *
      **/
     public enum Fields {
         ApproximateCount("approximateCount"),
         ApproximateSize("approximateSize"),
+        AutoTiering("autoTiering"),
         ;
 
         private final String value;

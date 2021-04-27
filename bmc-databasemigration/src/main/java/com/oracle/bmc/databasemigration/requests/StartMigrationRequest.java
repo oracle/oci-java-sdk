@@ -21,7 +21,7 @@ public class StartMigrationRequest
         extends com.oracle.bmc.requests.BmcRequest<StartMigrationDetails> {
 
     /**
-     * The OCID of the job
+     * The OCID of the migration
      *
      */
     private String migrationId;

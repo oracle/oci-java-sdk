@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Details of the ssh key that will be used.
+ * Details of the SSH key that will be used.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -91,14 +91,14 @@ public class UpdateSshDetails {
     }
 
     /**
-     * Name of the host the sshkey is valid for.
+     * Name of the host the SSH key is valid for.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     String host;
 
     /**
-     * Private ssh key string.
+     * Private SSH key string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshkey")

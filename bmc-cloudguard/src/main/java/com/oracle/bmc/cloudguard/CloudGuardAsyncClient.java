@@ -503,6 +503,46 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDataMaskRuleResponse> createDataMaskRule(
+            CreateDataMaskRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateDataMaskRuleRequest, CreateDataMaskRuleResponse>
+                    handler) {
+        LOG.trace("Called async createDataMaskRule");
+        final CreateDataMaskRuleRequest interceptedRequest =
+                CreateDataMaskRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDataMaskRuleConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDataMaskRuleResponse>
+                transformer = CreateDataMaskRuleConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<CreateDataMaskRuleRequest, CreateDataMaskRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateDataMaskRuleRequest, CreateDataMaskRuleResponse>,
+                        java.util.concurrent.Future<CreateDataMaskRuleResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateDataMaskRuleRequest, CreateDataMaskRuleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDetectorRecipeResponse> createDetectorRecipe(
             CreateDetectorRecipeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -743,6 +783,45 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateTargetResponderRecipeRequest, CreateTargetResponderRecipeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDataMaskRuleResponse> deleteDataMaskRule(
+            DeleteDataMaskRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDataMaskRuleRequest, DeleteDataMaskRuleResponse>
+                    handler) {
+        LOG.trace("Called async deleteDataMaskRule");
+        final DeleteDataMaskRuleRequest interceptedRequest =
+                DeleteDataMaskRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDataMaskRuleConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDataMaskRuleResponse>
+                transformer = DeleteDataMaskRuleConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<DeleteDataMaskRuleRequest, DeleteDataMaskRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteDataMaskRuleRequest, DeleteDataMaskRuleResponse>,
+                        java.util.concurrent.Future<DeleteDataMaskRuleResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteDataMaskRuleRequest, DeleteDataMaskRuleResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1115,6 +1194,45 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetConfigurationRequest, GetConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataMaskRuleResponse> getDataMaskRule(
+            GetDataMaskRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetDataMaskRuleRequest, GetDataMaskRuleResponse>
+                    handler) {
+        LOG.trace("Called async getDataMaskRule");
+        final GetDataMaskRuleRequest interceptedRequest =
+                GetDataMaskRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDataMaskRuleConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDataMaskRuleResponse>
+                transformer = GetDataMaskRuleConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetDataMaskRuleRequest, GetDataMaskRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetDataMaskRuleRequest, GetDataMaskRuleResponse>,
+                        java.util.concurrent.Future<GetDataMaskRuleResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetDataMaskRuleRequest, GetDataMaskRuleResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1785,6 +1903,45 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListDataMaskRulesResponse> listDataMaskRules(
+            ListDataMaskRulesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListDataMaskRulesRequest, ListDataMaskRulesResponse>
+                    handler) {
+        LOG.trace("Called async listDataMaskRules");
+        final ListDataMaskRulesRequest interceptedRequest =
+                ListDataMaskRulesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDataMaskRulesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListDataMaskRulesResponse>
+                transformer = ListDataMaskRulesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListDataMaskRulesRequest, ListDataMaskRulesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDataMaskRulesRequest, ListDataMaskRulesResponse>,
+                        java.util.concurrent.Future<ListDataMaskRulesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDataMaskRulesRequest, ListDataMaskRulesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDetectorRecipeDetectorRulesResponse>
             listDetectorRecipeDetectorRules(
                     ListDetectorRecipeDetectorRulesRequest request,
@@ -2057,6 +2214,44 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListManagedListsRequest, ListManagedListsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPoliciesResponse> listPolicies(
+            ListPoliciesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListPoliciesRequest, ListPoliciesResponse>
+                    handler) {
+        LOG.trace("Called async listPolicies");
+        final ListPoliciesRequest interceptedRequest =
+                ListPoliciesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPoliciesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListPoliciesResponse>
+                transformer = ListPoliciesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListPoliciesRequest, ListPoliciesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListPoliciesRequest, ListPoliciesResponse>,
+                        java.util.concurrent.Future<ListPoliciesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListPoliciesRequest, ListPoliciesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3345,6 +3540,45 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateConfigurationRequest, UpdateConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataMaskRuleResponse> updateDataMaskRule(
+            UpdateDataMaskRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDataMaskRuleRequest, UpdateDataMaskRuleResponse>
+                    handler) {
+        LOG.trace("Called async updateDataMaskRule");
+        final UpdateDataMaskRuleRequest interceptedRequest =
+                UpdateDataMaskRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDataMaskRuleConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDataMaskRuleResponse>
+                transformer = UpdateDataMaskRuleConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<UpdateDataMaskRuleRequest, UpdateDataMaskRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateDataMaskRuleRequest, UpdateDataMaskRuleResponse>,
+                        java.util.concurrent.Future<UpdateDataMaskRuleResponse>>
+                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateDataMaskRuleRequest, UpdateDataMaskRuleResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

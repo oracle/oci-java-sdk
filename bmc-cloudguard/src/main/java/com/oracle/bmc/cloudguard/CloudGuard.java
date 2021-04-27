@@ -79,6 +79,17 @@ public interface CloudGuard extends AutoCloseable {
             ChangeResponderRecipeCompartmentRequest request);
 
     /**
+     * Creates a new Data Mask Rule Definition
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateDataMaskRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDataMaskRule API.
+     */
+    CreateDataMaskRuleResponse createDataMaskRule(CreateDataMaskRuleRequest request);
+
+    /**
      * Creates a DetectorRecipe
      *
      * @param request The request object containing the details to send
@@ -145,6 +156,16 @@ public interface CloudGuard extends AutoCloseable {
      */
     CreateTargetResponderRecipeResponse createTargetResponderRecipe(
             CreateTargetResponderRecipeRequest request);
+
+    /**
+     * Deletes a DataMaskRule identified by dataMaskRuleId
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteDataMaskRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDataMaskRule API.
+     */
+    DeleteDataMaskRuleResponse deleteDataMaskRule(DeleteDataMaskRuleRequest request);
 
     /**
      * Deletes a DetectorRecipe identified by detectorRecipeId
@@ -240,6 +261,16 @@ public interface CloudGuard extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConfiguration API.
      */
     GetConfigurationResponse getConfiguration(GetConfigurationRequest request);
+
+    /**
+     * Returns a DataMaskRule identified by DataMaskRuleId
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetDataMaskRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDataMaskRule API.
+     */
+    GetDataMaskRuleResponse getDataMaskRule(GetDataMaskRuleRequest request);
 
     /**
      * Returns a Detector identified by detectorId.
@@ -412,6 +443,17 @@ public interface CloudGuard extends AutoCloseable {
             ListConditionMetadataTypesRequest request);
 
     /**
+     * Returns a list of all Data Mask Rules in the root 'compartmentId' passed.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListDataMaskRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataMaskRules API.
+     */
+    ListDataMaskRulesResponse listDataMaskRules(ListDataMaskRulesRequest request);
+
+    /**
      * Returns a list of DetectorRule associated with DetectorRecipe.
      *
      * @param request The request object containing the details to send
@@ -514,6 +556,17 @@ public interface CloudGuard extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListManagedListsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagedLists API.
      */
     ListManagedListsResponse listManagedLists(ListManagedListsRequest request);
+
+    /**
+     * Returns the list of global policy statements needed by Cloud Guard when enabling
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPolicies API.
+     */
+    ListPoliciesResponse listPolicies(ListPoliciesRequest request);
 
     /**
      * Returns a list of Actions done on CloudGuard Problem
@@ -957,6 +1010,16 @@ public interface CloudGuard extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConfiguration API.
      */
     UpdateConfigurationResponse updateConfiguration(UpdateConfigurationRequest request);
+
+    /**
+     * Updates a DataMaskRule identified by dataMaskRuleId
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateDataMaskRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDataMaskRule API.
+     */
+    UpdateDataMaskRuleResponse updateDataMaskRule(UpdateDataMaskRuleRequest request);
 
     /**
      * Updates a detector recipe identified by detectorRecipeId

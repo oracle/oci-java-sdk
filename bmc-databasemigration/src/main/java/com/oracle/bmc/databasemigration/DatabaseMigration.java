@@ -8,7 +8,7 @@ import com.oracle.bmc.databasemigration.requests.*;
 import com.oracle.bmc.databasemigration.responses.*;
 
 /**
- * Provides users the ability to perform Zero Downtime migration operations
+ * Use the Oracle Cloud Infrastructure Database Migration APIs to perform database migration operations.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200720")
 public interface DatabaseMigration extends AutoCloseable {
@@ -57,7 +57,7 @@ public interface DatabaseMigration extends AutoCloseable {
     AbortJobResponse abortJob(AbortJobRequest request);
 
     /**
-     * Used to configure a ODMS Agent Compartment Id.
+     * Used to configure an ODMS Agent Compartment ID.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -68,7 +68,7 @@ public interface DatabaseMigration extends AutoCloseable {
     ChangeAgentCompartmentResponse changeAgentCompartment(ChangeAgentCompartmentRequest request);
 
     /**
-     * Used to change the Databasee Connection compartment.
+     * Used to change the Database Connection compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -116,7 +116,7 @@ public interface DatabaseMigration extends AutoCloseable {
 
     /**
      * Create a Migration resource that contains all the details to perform the
-     * database migration operation like source and destination database
+     * database migration operation, such as source and destination database
      * details, credentials, etc.
      *
      * @param request The request object containing the details to send
@@ -128,7 +128,7 @@ public interface DatabaseMigration extends AutoCloseable {
     CreateMigrationResponse createMigration(CreateMigrationRequest request);
 
     /**
-     * Delete the ODMS Agent represented by the given ODMS Agent id.
+     * Delete the ODMS Agent represented by the specified ODMS Agent ID.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -382,7 +382,7 @@ public interface DatabaseMigration extends AutoCloseable {
     StartMigrationResponse startMigration(StartMigrationRequest request);
 
     /**
-     * Modifies the ODMS Agent represented by the given ODMS agent Id.
+     * Modifies the ODMS Agent represented by the given ODMS Agent ID.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -393,7 +393,7 @@ public interface DatabaseMigration extends AutoCloseable {
     UpdateAgentResponse updateAgent(UpdateAgentRequest request);
 
     /**
-     * Update a Database Connection resource details.
+     * Update Database Connection resource details.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -404,7 +404,7 @@ public interface DatabaseMigration extends AutoCloseable {
     UpdateConnectionResponse updateConnection(UpdateConnectionRequest request);
 
     /**
-     * Update a Migration Job resource details.
+     * Update Migration Job resource details.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -415,7 +415,7 @@ public interface DatabaseMigration extends AutoCloseable {
     UpdateJobResponse updateJob(UpdateJobRequest request);
 
     /**
-     * Update a Migration resource details.
+     * Update Migration resource details.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

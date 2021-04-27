@@ -6,7 +6,7 @@ package com.oracle.bmc.databasemigration.model;
 
 /**
  * Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type
- * of medium details can be specified.
+ * of data transfer medium can be specified.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

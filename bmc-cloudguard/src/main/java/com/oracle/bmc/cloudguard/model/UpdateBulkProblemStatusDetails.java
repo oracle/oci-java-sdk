@@ -44,19 +44,29 @@ public class UpdateBulkProblemStatusDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("comment")
+        private String comment;
+
+        public Builder comment(String comment) {
+            this.comment = comment;
+            this.__explicitlySet__.add("comment");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateBulkProblemStatusDetails build() {
             UpdateBulkProblemStatusDetails __instance__ =
-                    new UpdateBulkProblemStatusDetails(status, problemIds);
+                    new UpdateBulkProblemStatusDetails(status, problemIds, comment);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateBulkProblemStatusDetails o) {
-            Builder copiedBuilder = status(o.getStatus()).problemIds(o.getProblemIds());
+            Builder copiedBuilder =
+                    status(o.getStatus()).problemIds(o.getProblemIds()).comment(o.getComment());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -81,6 +91,12 @@ public class UpdateBulkProblemStatusDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("problemIds")
     java.util.List<String> problemIds;
+
+    /**
+     * User defined comment to be passed in to update the problem.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("comment")
+    String comment;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

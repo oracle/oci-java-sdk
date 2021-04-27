@@ -21,7 +21,7 @@ public class ChangeMigrationCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<ChangeMigrationCompartmentDetails> {
 
     /**
-     * The OCID of the job
+     * The OCID of the migration
      *
      */
     private String migrationId;

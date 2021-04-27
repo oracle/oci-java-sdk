@@ -37,6 +37,15 @@ public class InstanceConfigurationCreateVnicDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("assignPrivateDnsRecord")
+        private Boolean assignPrivateDnsRecord;
+
+        public Builder assignPrivateDnsRecord(Boolean assignPrivateDnsRecord) {
+            this.assignPrivateDnsRecord = assignPrivateDnsRecord;
+            this.__explicitlySet__.add("assignPrivateDnsRecord");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -117,6 +126,7 @@ public class InstanceConfigurationCreateVnicDetails {
             InstanceConfigurationCreateVnicDetails __instance__ =
                     new InstanceConfigurationCreateVnicDetails(
                             assignPublicIp,
+                            assignPrivateDnsRecord,
                             definedTags,
                             displayName,
                             freeformTags,
@@ -133,6 +143,7 @@ public class InstanceConfigurationCreateVnicDetails {
         public Builder copy(InstanceConfigurationCreateVnicDetails o) {
             Builder copiedBuilder =
                     assignPublicIp(o.getAssignPublicIp())
+                            .assignPrivateDnsRecord(o.getAssignPrivateDnsRecord())
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
@@ -161,6 +172,14 @@ public class InstanceConfigurationCreateVnicDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("assignPublicIp")
     Boolean assignPublicIp;
+
+    /**
+     * Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of {@link CreateVnicDetails}
+     * for more information.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("assignPrivateDnsRecord")
+    Boolean assignPrivateDnsRecord;
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a

@@ -550,6 +550,39 @@ public class CloudGuardClient implements CloudGuard {
     }
 
     @Override
+    public CreateDataMaskRuleResponse createDataMaskRule(CreateDataMaskRuleRequest request) {
+        LOG.trace("Called createDataMaskRule");
+        final CreateDataMaskRuleRequest interceptedRequest =
+                CreateDataMaskRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDataMaskRuleConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDataMaskRuleResponse>
+                transformer = CreateDataMaskRuleConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateDataMaskRuleDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateDetectorRecipeResponse createDetectorRecipe(CreateDetectorRecipeRequest request) {
         LOG.trace("Called createDetectorRecipe");
         final CreateDetectorRecipeRequest interceptedRequest =
@@ -749,6 +782,35 @@ public class CloudGuardClient implements CloudGuard {
                                                 retriedRequest
                                                         .getAttachTargetResponderRecipeDetails(),
                                                 retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteDataMaskRuleResponse deleteDataMaskRule(DeleteDataMaskRuleRequest request) {
+        LOG.trace("Called deleteDataMaskRule");
+        final DeleteDataMaskRuleRequest interceptedRequest =
+                DeleteDataMaskRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDataMaskRuleConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDataMaskRuleResponse>
+                transformer = DeleteDataMaskRuleConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -1009,6 +1071,34 @@ public class CloudGuardClient implements CloudGuard {
                 GetConfigurationConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetConfigurationResponse>
                 transformer = GetConfigurationConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetDataMaskRuleResponse getDataMaskRule(GetDataMaskRuleRequest request) {
+        LOG.trace("Called getDataMaskRule");
+        final GetDataMaskRuleRequest interceptedRequest =
+                GetDataMaskRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDataMaskRuleConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetDataMaskRuleResponse>
+                transformer = GetDataMaskRuleConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1490,6 +1580,34 @@ public class CloudGuardClient implements CloudGuard {
     }
 
     @Override
+    public ListDataMaskRulesResponse listDataMaskRules(ListDataMaskRulesRequest request) {
+        LOG.trace("Called listDataMaskRules");
+        final ListDataMaskRulesRequest interceptedRequest =
+                ListDataMaskRulesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDataMaskRulesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListDataMaskRulesResponse>
+                transformer = ListDataMaskRulesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListDetectorRecipeDetectorRulesResponse listDetectorRecipeDetectorRules(
             ListDetectorRecipeDetectorRulesRequest request) {
         LOG.trace("Called listDetectorRecipeDetectorRules");
@@ -1669,6 +1787,34 @@ public class CloudGuardClient implements CloudGuard {
                 ListManagedListsConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListManagedListsResponse>
                 transformer = ListManagedListsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListPoliciesResponse listPolicies(ListPoliciesRequest request) {
+        LOG.trace("Called listPolicies");
+        final ListPoliciesRequest interceptedRequest =
+                ListPoliciesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPoliciesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListPoliciesResponse>
+                transformer = ListPoliciesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -2597,6 +2743,38 @@ public class CloudGuardClient implements CloudGuard {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateConfigurationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateDataMaskRuleResponse updateDataMaskRule(UpdateDataMaskRuleRequest request) {
+        LOG.trace("Called updateDataMaskRule");
+        final UpdateDataMaskRuleRequest interceptedRequest =
+                UpdateDataMaskRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDataMaskRuleConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDataMaskRuleResponse>
+                transformer = UpdateDataMaskRuleConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateDataMaskRuleDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

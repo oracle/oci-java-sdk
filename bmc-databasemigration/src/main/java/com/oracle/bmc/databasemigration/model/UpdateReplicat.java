@@ -90,14 +90,14 @@ public class UpdateReplicat {
     Integer mapParallelism;
 
     /**
-     * Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+     * Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minApplyParallelism")
     Integer minApplyParallelism;
 
     /**
-     * Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+     * Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxApplyParallelism")

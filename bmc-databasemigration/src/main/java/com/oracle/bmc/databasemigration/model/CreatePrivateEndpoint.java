@@ -86,7 +86,7 @@ public class CreatePrivateEndpoint {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment to contain the
-     * private endpoint. Required if the id was not specified.
+     * private endpoint.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -94,7 +94,6 @@ public class CreatePrivateEndpoint {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VCN where the Private Endpoint will be bound to.
-     * Required if the id was not specified.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
@@ -102,7 +101,7 @@ public class CreatePrivateEndpoint {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer's subnet where the private endpoint VNIC
-     * will reside.  Required if the id was not specified.
+     * will reside.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")

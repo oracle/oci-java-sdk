@@ -21,7 +21,7 @@ public class ChangeConnectionCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<ChangeConnectionCompartmentDetails> {
 
     /**
-     * The OCID of the job
+     * The OCID of the database connection
      *
      */
     private String connectionId;

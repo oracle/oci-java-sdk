@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * In lieu of a network database link, OCI Object Storage bucket will be used to store Datapump dump files for the migration.
+ * In lieu of a network database link, OCI Object Storage bucket will be used to store Data Pump dump files for the migration.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

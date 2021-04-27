@@ -166,21 +166,21 @@ public class UpdateGoldenGateHub {
     String url;
 
     /**
-     * Name of Microservices deployment to operate on source DB
+     * Name of GoldenGate deployment to operate on source database
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceMicroservicesDeploymentName")
     String sourceMicroservicesDeploymentName;
 
     /**
-     * Name of Microservices deployment to operate on target DB
+     * Name of GoldenGate deployment to operate on target database
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetMicroservicesDeploymentName")
     String targetMicroservicesDeploymentName;
 
     /**
-     * OCID of Golden Gate compute instance. An empty value will remove the stored computeId.
+     * OCID of GoldenGate compute instance. An empty value will remove the stored computeId.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeId")

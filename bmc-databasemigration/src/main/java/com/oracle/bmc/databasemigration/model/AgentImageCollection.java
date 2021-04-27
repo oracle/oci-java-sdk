@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Results of a ODMS Agent Image search. Contains AgentImageSummary items.
+ * Results of an ODMS Agent Image search. Contains AgentImageSummary items.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

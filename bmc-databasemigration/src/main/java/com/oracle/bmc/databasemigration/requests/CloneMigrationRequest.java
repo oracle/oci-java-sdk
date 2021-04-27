@@ -21,7 +21,7 @@ public class CloneMigrationRequest
         extends com.oracle.bmc.requests.BmcRequest<CloneMigrationDetails> {
 
     /**
-     * The OCID of the job
+     * The OCID of the migration
      *
      */
     private String migrationId;

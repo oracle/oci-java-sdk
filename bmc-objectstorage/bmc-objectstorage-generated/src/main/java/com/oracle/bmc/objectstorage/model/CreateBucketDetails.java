@@ -120,6 +120,15 @@ public class CreateBucketDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("autoTiering")
+        private Bucket.AutoTiering autoTiering;
+
+        public Builder autoTiering(Bucket.AutoTiering autoTiering) {
+            this.autoTiering = autoTiering;
+            this.__explicitlySet__.add("autoTiering");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -135,7 +144,8 @@ public class CreateBucketDetails {
                             freeformTags,
                             definedTags,
                             kmsKeyId,
-                            versioning);
+                            versioning,
+                            autoTiering);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -152,7 +162,8 @@ public class CreateBucketDetails {
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .kmsKeyId(o.getKmsKeyId())
-                            .versioning(o.getVersioning());
+                            .versioning(o.getVersioning())
+                            .autoTiering(o.getAutoTiering());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -362,6 +373,16 @@ public class CreateBucketDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("versioning")
     Versioning versioning;
+
+    /**
+     * Set the auto tiering status on the bucket. By default, a bucket is created with auto tiering `Disabled`.
+     * Use this option to enable auto tiering during bucket creation. Objects in a bucket with auto tiering set to
+     * `InfrequentAccess` are transitioned automatically between the 'Standard' and 'InfrequentAccess'
+     * tiers based on the access pattern of the objects.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autoTiering")
+    Bucket.AutoTiering autoTiering;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

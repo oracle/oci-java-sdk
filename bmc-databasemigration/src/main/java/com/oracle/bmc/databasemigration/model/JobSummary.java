@@ -216,14 +216,14 @@ public class JobSummary {
     MigrationJobProgressSummary progress;
 
     /**
-     * The time the DB Migration Job was created. An RFC3339 formatted datetime string
+     * The time the Migration Job was created. An RFC3339 formatted datetime string
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The time the DB Migration Job was last updated. An RFC3339 formatted datetime string
+     * The time the Migration Job was last updated. An RFC3339 formatted datetime string
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")

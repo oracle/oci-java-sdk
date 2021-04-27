@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Details of the ssh key that will be used. Required for source database Manual and UserManagerOci connection types.
+ * Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types.
  * Not required for source container database connections.
  *
  * <br/>
@@ -92,14 +92,14 @@ public class CreateSshDetails {
     }
 
     /**
-     * Name of the host the sshkey is valid for.
+     * Name of the host the SSH key is valid for.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     String host;
 
     /**
-     * Private ssh key string.
+     * Private SSH key string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshkey")

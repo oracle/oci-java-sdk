@@ -120,6 +120,15 @@ public class UpdateBucketDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("autoTiering")
+        private Bucket.AutoTiering autoTiering;
+
+        public Builder autoTiering(Bucket.AutoTiering autoTiering) {
+            this.autoTiering = autoTiering;
+            this.__explicitlySet__.add("autoTiering");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -135,7 +144,8 @@ public class UpdateBucketDetails {
                             freeformTags,
                             definedTags,
                             kmsKeyId,
-                            versioning);
+                            versioning,
+                            autoTiering);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -152,7 +162,8 @@ public class UpdateBucketDetails {
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .kmsKeyId(o.getKmsKeyId())
-                            .versioning(o.getVersioning());
+                            .versioning(o.getVersioning())
+                            .autoTiering(o.getAutoTiering());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -324,6 +335,15 @@ public class UpdateBucketDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("versioning")
     Versioning versioning;
+
+    /**
+     * The auto tiering status on the bucket. If in state `InfrequentAccess`, objects are transitioned
+     * automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
+     * When auto tiering is `Disabled`, there will be no automatic transitions between storage tiers.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autoTiering")
+    Bucket.AutoTiering autoTiering;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

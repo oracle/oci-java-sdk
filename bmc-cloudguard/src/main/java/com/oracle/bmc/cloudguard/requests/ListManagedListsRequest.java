@@ -32,7 +32,7 @@ public class ListManagedListsRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * Default is false.
      * When set to true, the list of all Oracle Managed Resources
-     * Metadata supported by Cloud Guard is returned.
+     * Metadata supported by Cloud Guard are returned.
      *
      */
     private Boolean resourceMetadataOnly;

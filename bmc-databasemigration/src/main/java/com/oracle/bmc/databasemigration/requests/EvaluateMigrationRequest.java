@@ -20,7 +20,7 @@ import com.oracle.bmc.databasemigration.model.*;
 public class EvaluateMigrationRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the job
+     * The OCID of the migration
      *
      */
     private String migrationId;
