@@ -180,6 +180,15 @@ public class ExternalNonContainerDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseConfiguration")
+        private DatabaseConfiguration databaseConfiguration;
+
+        public Builder databaseConfiguration(DatabaseConfiguration databaseConfiguration) {
+            this.databaseConfiguration = databaseConfiguration;
+            this.__explicitlySet__.add("databaseConfiguration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("databaseManagementConfig")
         private DatabaseManagementConfig databaseManagementConfig;
 
@@ -212,6 +221,7 @@ public class ExternalNonContainerDatabase {
                             characterSet,
                             ncharacterSet,
                             dbPacks,
+                            databaseConfiguration,
                             databaseManagementConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -237,6 +247,7 @@ public class ExternalNonContainerDatabase {
                             .characterSet(o.getCharacterSet())
                             .ncharacterSet(o.getNcharacterSet())
                             .dbPacks(o.getDbPacks())
+                            .databaseConfiguration(o.getDatabaseConfiguration())
                             .databaseManagementConfig(o.getDatabaseManagementConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -459,6 +470,57 @@ public class ExternalNonContainerDatabase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbPacks")
     String dbPacks;
+    /**
+     * The Oracle Database configuration
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum DatabaseConfiguration {
+        Rac("RAC"),
+        SingleInstance("SINGLE_INSTANCE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, DatabaseConfiguration> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DatabaseConfiguration v : DatabaseConfiguration.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DatabaseConfiguration(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DatabaseConfiguration create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DatabaseConfiguration', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The Oracle Database configuration
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseConfiguration")
+    DatabaseConfiguration databaseConfiguration;
 
     @com.fasterxml.jackson.annotation.JsonProperty("databaseManagementConfig")
     DatabaseManagementConfig databaseManagementConfig;

@@ -260,13 +260,13 @@ public class DetectorRecipe {
     DetectorEnum detector;
 
     /**
-     * List of detetor rules for the detector type for recipe
+     * List of detector rules for the detector type for recipe - user input
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRules")
     java.util.List<DetectorRecipeDetectorRule> detectorRules;
 
     /**
-     * List of detetor rules for the detector type for recipe
+     * List of effective detector rules for the detector type for recipe after applying defaults
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("effectiveDetectorRules")
     java.util.List<DetectorRecipeDetectorRule> effectiveDetectorRules;

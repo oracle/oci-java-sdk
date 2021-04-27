@@ -309,7 +309,7 @@ public class MigrationSummary {
     String executingJobId;
 
     /**
-     * The OCID of the registered On-Prem ODMS Agent. Required for Offline Migrations.
+     * The OCID of the registered on-premises ODMS Agent. Only valid for Offline Migrations.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")

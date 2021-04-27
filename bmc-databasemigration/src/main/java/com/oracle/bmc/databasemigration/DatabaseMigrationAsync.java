@@ -8,7 +8,7 @@ import com.oracle.bmc.databasemigration.requests.*;
 import com.oracle.bmc.databasemigration.responses.*;
 
 /**
- * Provides users the ability to perform Zero Downtime migration operations
+ * Use the Oracle Cloud Infrastructure Database Migration APIs to perform database migration operations.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200720")
 public interface DatabaseMigrationAsync extends AutoCloseable {
@@ -61,7 +61,7 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<AbortJobRequest, AbortJobResponse> handler);
 
     /**
-     * Used to configure a ODMS Agent Compartment Id.
+     * Used to configure an ODMS Agent Compartment ID.
      *
      *
      * @param request The request object containing the details to send
@@ -78,7 +78,7 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Used to change the Databasee Connection compartment.
+     * Used to change the Database Connection compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -146,7 +146,7 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
 
     /**
      * Create a Migration resource that contains all the details to perform the
-     * database migration operation like source and destination database
+     * database migration operation, such as source and destination database
      * details, credentials, etc.
      *
      *
@@ -163,7 +163,7 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Delete the ODMS Agent represented by the given ODMS Agent id.
+     * Delete the ODMS Agent represented by the specified ODMS Agent ID.
      *
      *
      * @param request The request object containing the details to send
@@ -530,7 +530,7 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Modifies the ODMS Agent represented by the given ODMS agent Id.
+     * Modifies the ODMS Agent represented by the given ODMS Agent ID.
      *
      *
      * @param request The request object containing the details to send
@@ -545,7 +545,7 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<UpdateAgentRequest, UpdateAgentResponse> handler);
 
     /**
-     * Update a Database Connection resource details.
+     * Update Database Connection resource details.
      *
      *
      * @param request The request object containing the details to send
@@ -561,7 +561,7 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update a Migration Job resource details.
+     * Update Migration Job resource details.
      *
      *
      * @param request The request object containing the details to send
@@ -576,7 +576,7 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<UpdateJobRequest, UpdateJobResponse> handler);
 
     /**
-     * Update a Migration resource details.
+     * Update Migration resource details.
      *
      *
      * @param request The request object containing the details to send

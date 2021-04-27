@@ -356,14 +356,14 @@ public class Migration {
     OdmsJobPhases waitAfter;
 
     /**
-     * The OCID of the registered On-Prem ODMS Agent. Required for Offline Migrations.
+     * The OCID of the registered on-premises ODMS Agent. Only valid for Offline Migrations.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     String agentId;
 
     /**
-     * OCID of the Secret in the OCI vault containing the Migration credentials. Used to store Golden Gate admin user credentials.
+     * OCID of the Secret in the OCI vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentialsSecretId")
@@ -438,7 +438,7 @@ public class Migration {
     java.util.Date timeLastMigration;
 
     /**
-     * The current state of the Migration Resource.
+     * The current state of the Migration resource.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")

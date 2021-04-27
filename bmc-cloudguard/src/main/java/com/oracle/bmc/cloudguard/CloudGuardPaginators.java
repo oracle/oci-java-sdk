@@ -150,6 +150,119 @@ public class CloudGuardPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listDataMaskRules operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListDataMaskRulesResponse> listDataMaskRulesResponseIterator(
+            final ListDataMaskRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDataMaskRulesRequest.Builder, ListDataMaskRulesRequest,
+                ListDataMaskRulesResponse>(
+                new com.google.common.base.Supplier<ListDataMaskRulesRequest.Builder>() {
+                    @Override
+                    public ListDataMaskRulesRequest.Builder get() {
+                        return ListDataMaskRulesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListDataMaskRulesResponse, String>() {
+                    @Override
+                    public String apply(ListDataMaskRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDataMaskRulesRequest.Builder>,
+                        ListDataMaskRulesRequest>() {
+                    @Override
+                    public ListDataMaskRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDataMaskRulesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDataMaskRulesRequest, ListDataMaskRulesResponse>() {
+                    @Override
+                    public ListDataMaskRulesResponse apply(ListDataMaskRulesRequest request) {
+                        return client.listDataMaskRules(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.DataMaskRuleSummary} objects
+     * contained in responses from the listDataMaskRules operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.DataMaskRuleSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.cloudguard.model.DataMaskRuleSummary>
+            listDataMaskRulesRecordIterator(final ListDataMaskRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDataMaskRulesRequest.Builder, ListDataMaskRulesRequest,
+                ListDataMaskRulesResponse, com.oracle.bmc.cloudguard.model.DataMaskRuleSummary>(
+                new com.google.common.base.Supplier<ListDataMaskRulesRequest.Builder>() {
+                    @Override
+                    public ListDataMaskRulesRequest.Builder get() {
+                        return ListDataMaskRulesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListDataMaskRulesResponse, String>() {
+                    @Override
+                    public String apply(ListDataMaskRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDataMaskRulesRequest.Builder>,
+                        ListDataMaskRulesRequest>() {
+                    @Override
+                    public ListDataMaskRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDataMaskRulesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDataMaskRulesRequest, ListDataMaskRulesResponse>() {
+                    @Override
+                    public ListDataMaskRulesResponse apply(ListDataMaskRulesRequest request) {
+                        return client.listDataMaskRules(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDataMaskRulesResponse,
+                        java.util.List<com.oracle.bmc.cloudguard.model.DataMaskRuleSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.cloudguard.model.DataMaskRuleSummary>
+                            apply(ListDataMaskRulesResponse response) {
+                        return response.getDataMaskRuleCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listDetectorRecipeDetectorRules operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -951,6 +1064,116 @@ public class CloudGuardPaginators {
                     public java.util.List<com.oracle.bmc.cloudguard.model.ManagedListSummary> apply(
                             ListManagedListsResponse response) {
                         return response.getManagedListCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listPolicies operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListPoliciesResponse> listPoliciesResponseIterator(
+            final ListPoliciesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPoliciesRequest.Builder, ListPoliciesRequest, ListPoliciesResponse>(
+                new com.google.common.base.Supplier<ListPoliciesRequest.Builder>() {
+                    @Override
+                    public ListPoliciesRequest.Builder get() {
+                        return ListPoliciesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListPoliciesResponse, String>() {
+                    @Override
+                    public String apply(ListPoliciesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPoliciesRequest.Builder>,
+                        ListPoliciesRequest>() {
+                    @Override
+                    public ListPoliciesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPoliciesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListPoliciesRequest, ListPoliciesResponse>() {
+                    @Override
+                    public ListPoliciesResponse apply(ListPoliciesRequest request) {
+                        return client.listPolicies(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.PolicySummary} objects
+     * contained in responses from the listPolicies operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.PolicySummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.cloudguard.model.PolicySummary> listPoliciesRecordIterator(
+            final ListPoliciesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPoliciesRequest.Builder, ListPoliciesRequest, ListPoliciesResponse,
+                com.oracle.bmc.cloudguard.model.PolicySummary>(
+                new com.google.common.base.Supplier<ListPoliciesRequest.Builder>() {
+                    @Override
+                    public ListPoliciesRequest.Builder get() {
+                        return ListPoliciesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListPoliciesResponse, String>() {
+                    @Override
+                    public String apply(ListPoliciesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPoliciesRequest.Builder>,
+                        ListPoliciesRequest>() {
+                    @Override
+                    public ListPoliciesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPoliciesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListPoliciesRequest, ListPoliciesResponse>() {
+                    @Override
+                    public ListPoliciesResponse apply(ListPoliciesRequest request) {
+                        return client.listPolicies(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPoliciesResponse,
+                        java.util.List<com.oracle.bmc.cloudguard.model.PolicySummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.cloudguard.model.PolicySummary> apply(
+                            ListPoliciesResponse response) {
+                        return response.getPolicyCollection().getItems();
                     }
                 });
     }

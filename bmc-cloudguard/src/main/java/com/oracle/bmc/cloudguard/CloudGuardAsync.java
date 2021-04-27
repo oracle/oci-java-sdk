@@ -99,6 +99,23 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Creates a new Data Mask Rule Definition
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateDataMaskRuleResponse> createDataMaskRule(
+            CreateDataMaskRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateDataMaskRuleRequest, CreateDataMaskRuleResponse>
+                    handler);
+
+    /**
      * Creates a DetectorRecipe
      *
      *
@@ -197,6 +214,22 @@ public interface CloudGuardAsync extends AutoCloseable {
             CreateTargetResponderRecipeRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateTargetResponderRecipeRequest, CreateTargetResponderRecipeResponse>
+                    handler);
+
+    /**
+     * Deletes a DataMaskRule identified by dataMaskRuleId
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDataMaskRuleResponse> deleteDataMaskRule(
+            DeleteDataMaskRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDataMaskRuleRequest, DeleteDataMaskRuleResponse>
                     handler);
 
     /**
@@ -340,6 +373,21 @@ public interface CloudGuardAsync extends AutoCloseable {
     java.util.concurrent.Future<GetConfigurationResponse> getConfiguration(
             GetConfigurationRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetConfigurationRequest, GetConfigurationResponse>
+                    handler);
+
+    /**
+     * Returns a DataMaskRule identified by DataMaskRuleId
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDataMaskRuleResponse> getDataMaskRule(
+            GetDataMaskRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetDataMaskRuleRequest, GetDataMaskRuleResponse>
                     handler);
 
     /**
@@ -602,6 +650,23 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns a list of all Data Mask Rules in the root 'compartmentId' passed.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDataMaskRulesResponse> listDataMaskRules(
+            ListDataMaskRulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDataMaskRulesRequest, ListDataMaskRulesResponse>
+                    handler);
+
+    /**
      * Returns a list of DetectorRule associated with DetectorRecipe.
      *
      *
@@ -744,6 +809,22 @@ public interface CloudGuardAsync extends AutoCloseable {
     java.util.concurrent.Future<ListManagedListsResponse> listManagedLists(
             ListManagedListsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListManagedListsRequest, ListManagedListsResponse>
+                    handler);
+
+    /**
+     * Returns the list of global policy statements needed by Cloud Guard when enabling
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPoliciesResponse> listPolicies(
+            ListPoliciesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListPoliciesRequest, ListPoliciesResponse>
                     handler);
 
     /**
@@ -1368,6 +1449,22 @@ public interface CloudGuardAsync extends AutoCloseable {
             UpdateConfigurationRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateConfigurationRequest, UpdateConfigurationResponse>
+                    handler);
+
+    /**
+     * Updates a DataMaskRule identified by dataMaskRuleId
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDataMaskRuleResponse> updateDataMaskRule(
+            UpdateDataMaskRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDataMaskRuleRequest, UpdateDataMaskRuleResponse>
                     handler);
 
     /**

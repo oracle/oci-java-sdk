@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Optional parameters for Datapump Export and Import. Refer to https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/ODMS_DATAPUMP.html#GUID-62324358-2F26-4A94-B69F-1075D53FA96D__BABDECJE
+ * Optional parameters for Data Pump Export and Import. Refer to [Configuring Optional Initial Load Advanced Settings](https://docs.us.oracle.com/en/cloud/paas/database-migration/dmsus/working-migration-resources.html#GUID-24BD3054-FDF8-48FF-8492-636C1D4B71ED)
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -121,7 +121,7 @@ public class CreateDataPumpParameters {
     }
 
     /**
-     * False to force datapump worker process to run on one instance.
+     * Set to false to force Data Pump worker process to run on one instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
@@ -142,14 +142,14 @@ public class CreateDataPumpParameters {
     DataPumpTableExistsAction tableExistsAction;
 
     /**
-     * Exclude paratemers for export and import.
+     * Exclude paratemers for Export and Import.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("excludeParameters")
     java.util.List<DataPumpExcludeParameters> excludeParameters;
 
     /**
-     * Maximum number of worker processes that can be used for a Datapump Import job.
+     * Maximum number of worker processes that can be used for a Data Pump Import job.
      * For an Autonomous Database, ODMS will automatically query its CPU core count and set this property.
      *
      **/
@@ -157,7 +157,7 @@ public class CreateDataPumpParameters {
     Integer importParallelismDegree;
 
     /**
-     * Maximum number of worker processes that can be used for a Datapump Export job.
+     * Maximum number of worker processes that can be used for a Data Pump Export job.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exportParallelismDegree")

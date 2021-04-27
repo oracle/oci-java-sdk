@@ -26,12 +26,12 @@ public class RequestSummarizedTrendProblemsRequest
     private String compartmentId;
 
     /**
-     * Start time for a filter. If start time is not specified, start time will be set to today's current time - 30 days.
+     * Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
      */
     private java.util.Date timeFirstDetectedGreaterThanOrEqualTo;
 
     /**
-     * End time for a filter. If end time is not specified, end time will be set to today's current time.
+     * End time for a filter. If end time is not specified, end time will be set to current time.
      */
     private java.util.Date timeFirstDetectedLessThanOrEqualTo;
 

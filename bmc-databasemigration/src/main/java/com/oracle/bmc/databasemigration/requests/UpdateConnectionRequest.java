@@ -21,7 +21,7 @@ public class UpdateConnectionRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdateConnectionDetails> {
 
     /**
-     * The OCID of the job
+     * The OCID of the database connection
      *
      */
     private String connectionId;

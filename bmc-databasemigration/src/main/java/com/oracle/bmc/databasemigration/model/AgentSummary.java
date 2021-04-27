@@ -234,7 +234,7 @@ public class AgentSummary {
     java.util.Date timeUpdated;
 
     /**
-     * The current state of the ODMS On Prem Agent.
+     * The current state of the ODMS on-premises Agent.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")

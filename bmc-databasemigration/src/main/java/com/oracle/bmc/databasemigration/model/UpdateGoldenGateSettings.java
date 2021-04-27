@@ -6,7 +6,7 @@ package com.oracle.bmc.databasemigration.model;
 
 /**
  * Optional settings for Oracle GoldenGate processes
- * If an empty object is specified, the stored Golden Gate Settings details will be removed.
+ * If an empty object is specified, the stored GoldenGate Settings details will be removed.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
