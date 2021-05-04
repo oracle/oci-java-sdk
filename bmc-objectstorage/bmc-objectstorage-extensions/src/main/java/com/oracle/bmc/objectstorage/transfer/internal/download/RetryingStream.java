@@ -72,7 +72,9 @@ public class RetryingStream extends InputStream {
 
     @Override
     public synchronized void close() throws IOException {
-        StreamUtils.closeQuietly(this.response.getInputStream());
+        if (this.response != null) {
+            StreamUtils.closeQuietly(this.response.getInputStream());
+        }
         this.response = null;
         this.request = null;
         this.isClosed = true;

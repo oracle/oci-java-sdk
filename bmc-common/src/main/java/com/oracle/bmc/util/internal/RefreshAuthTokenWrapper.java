@@ -70,8 +70,7 @@ public abstract class RefreshAuthTokenWrapper<REQUEST extends BmcRequest<?>, RES
     @Override
     public void onError(REQUEST request, Throwable error) {
         if (error instanceof BmcException) {
-            if (((BmcException) error).getStatusCode() == 401
-                    || DefaultRetryCondition.isProcessingException(((BmcException) error))) {
+            if (((BmcException) error).getStatusCode() == 401) {
                 if (!retryCall()) {
                     innerHandler.onError(request, error);
                 }
