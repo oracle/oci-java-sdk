@@ -91,6 +91,9 @@ public class UploadObjectExample {
                                 .objectName(objectName)
                                 .build());
 
+        // use the response's function to print the fetched object's metadata
+        System.out.println(getResponse.getOpcMeta());
+
         // stream contents should match the file uploaded
         try (final InputStream fileStream = getResponse.getInputStream()) {
             // use fileStream

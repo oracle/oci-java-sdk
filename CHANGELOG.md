@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.36.4 - 2021-05-11
+### Added
+- Support for creating notebook sessions with larger block volumes in the Data Science service
+- Support for database maintenance run patch modes in the Database service
+
 ## 1.36.3 - 2021-05-04
 ### Added
 - Support for the Operator Access Control service
