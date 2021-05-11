@@ -63,13 +63,22 @@ public class UpdateMaintenanceRunDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("patchingMode")
+        private PatchingMode patchingMode;
+
+        public Builder patchingMode(PatchingMode patchingMode) {
+            this.patchingMode = patchingMode;
+            this.__explicitlySet__.add("patchingMode");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateMaintenanceRunDetails build() {
             UpdateMaintenanceRunDetails __instance__ =
                     new UpdateMaintenanceRunDetails(
-                            isEnabled, timeScheduled, isPatchNowEnabled, patchId);
+                            isEnabled, timeScheduled, isPatchNowEnabled, patchId, patchingMode);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -80,7 +89,8 @@ public class UpdateMaintenanceRunDetails {
                     isEnabled(o.getIsEnabled())
                             .timeScheduled(o.getTimeScheduled())
                             .isPatchNowEnabled(o.getIsPatchNowEnabled())
-                            .patchId(o.getPatchId());
+                            .patchId(o.getPatchId())
+                            .patchingMode(o.getPatchingMode());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -117,6 +127,46 @@ public class UpdateMaintenanceRunDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchId")
     String patchId;
+    /**
+     * Maintenance method, it will be either \"ROLLING\" or \"NONROLLING\". Default value is ROLLING.
+     **/
+    public enum PatchingMode {
+        Rolling("ROLLING"),
+        Nonrolling("NONROLLING"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, PatchingMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (PatchingMode v : PatchingMode.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        PatchingMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static PatchingMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid PatchingMode: " + key);
+        }
+    };
+    /**
+     * Maintenance method, it will be either \"ROLLING\" or \"NONROLLING\". Default value is ROLLING.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("patchingMode")
+    PatchingMode patchingMode;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

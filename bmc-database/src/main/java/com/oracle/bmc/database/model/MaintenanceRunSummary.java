@@ -162,6 +162,24 @@ public class MaintenanceRunSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("patchingMode")
+        private PatchingMode patchingMode;
+
+        public Builder patchingMode(PatchingMode patchingMode) {
+            this.patchingMode = patchingMode;
+            this.__explicitlySet__.add("patchingMode");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("patchFailureCount")
+        private Integer patchFailureCount;
+
+        public Builder patchFailureCount(Integer patchFailureCount) {
+            this.patchFailureCount = patchFailureCount;
+            this.__explicitlySet__.add("patchFailureCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -182,7 +200,9 @@ public class MaintenanceRunSummary {
                             maintenanceType,
                             patchId,
                             maintenanceSubtype,
-                            peerMaintenanceRunId);
+                            peerMaintenanceRunId,
+                            patchingMode,
+                            patchFailureCount);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -204,7 +224,9 @@ public class MaintenanceRunSummary {
                             .maintenanceType(o.getMaintenanceType())
                             .patchId(o.getPatchId())
                             .maintenanceSubtype(o.getMaintenanceSubtype())
-                            .peerMaintenanceRunId(o.getPeerMaintenanceRunId());
+                            .peerMaintenanceRunId(o.getPeerMaintenanceRunId())
+                            .patchingMode(o.getPatchingMode())
+                            .patchFailureCount(o.getPatchFailureCount());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -504,6 +526,63 @@ public class MaintenanceRunSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerMaintenanceRunId")
     String peerMaintenanceRunId;
+    /**
+     * Maintenance method, it will be either \"ROLLING\" or \"NONROLLING\". Default value is ROLLING.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum PatchingMode {
+        Rolling("ROLLING"),
+        Nonrolling("NONROLLING"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, PatchingMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (PatchingMode v : PatchingMode.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        PatchingMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static PatchingMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'PatchingMode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Maintenance method, it will be either \"ROLLING\" or \"NONROLLING\". Default value is ROLLING.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("patchingMode")
+    PatchingMode patchingMode;
+
+    /**
+     * Contain the patch failure count.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("patchFailureCount")
+    Integer patchFailureCount;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
