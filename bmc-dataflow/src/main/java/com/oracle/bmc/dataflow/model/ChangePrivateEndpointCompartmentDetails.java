@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataflow.model;
 
 /**
- * The change private endpoint compartment details.
+ * The details required to change a private endpoint compartment.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

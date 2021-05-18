@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>1.36.4</version>
+    <version>1.36.5</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>oci-java-sdk-apmcontrolplane</artifactId>
@@ -17,7 +17,7 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>1.36.4</version>
+      <version>1.36.5</version>
     </dependency>
   </dependencies>
 </project>

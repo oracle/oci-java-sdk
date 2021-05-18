@@ -4,12 +4,20 @@
  */
 package com.oracle.bmc.auth;
 
+import com.google.common.base.Optional;
+import com.google.common.base.Preconditions;
 import com.oracle.bmc.Region;
+import com.oracle.bmc.Service;
+import com.oracle.bmc.auth.internal.DefaultRptPathProvider;
 import com.oracle.bmc.auth.internal.FederationClient;
 import com.oracle.bmc.auth.internal.FileBasedKeySupplier;
 import com.oracle.bmc.auth.internal.FileBasedResourcePrincipalFederationClient;
 import com.oracle.bmc.auth.internal.FixedContentKeySupplier;
 import com.oracle.bmc.auth.internal.FixedContentResourcePrincipalFederationClient;
+import com.oracle.bmc.auth.internal.ResourcePrincipalsFederationClient;
+import com.oracle.bmc.auth.internal.RptPathProvider;
+import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
+import com.oracle.bmc.util.CircuitBreakerUtils;
 import com.oracle.bmc.util.internal.NameUtils;
 import lombok.Getter;
 
@@ -21,9 +29,10 @@ import java.io.File;
  * <ul>
  *
  * <li>{@code OCI_RESOURCE_PRINCIPAL_VERSION}:
- * <p>permitted values are "2.2"</p>
+ * <p>permitted values are "2.2" and "1.1"</p>
  * </li>
  *
+ * For OCI_RESOURCE_PRINCIPAL_VERSION = "2.2",
  * <li>{@code OCI_RESOURCE_PRINCIPAL_RPST}:
  * <p>If this is an absolute path, then the filesystem-supplied resource principal session token will be retrieved from
  *   that location. This mode supports token refresh (if the environment replaces the RPST in the filesystem).</p>
@@ -46,6 +55,15 @@ import java.io.File;
  * <p>If set, this holds the canonical form of the local region. This is intended to enable executables to locate their
  *   "local" OCI service endpoints.</p>
  * </li>
+ *
+ * For OCI_RESOURCE_PRINCIPAL_VERSION = "1.1",
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT}:
+ * <p>This is required.</p>
+ * </li>
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT}:
+ * <p>If set, the value from environment variable is used.</p>
+ * <p>Otherwise, it uses the default resource principal token path provider.</p>
+ * </li>
  * </ul>
  */
 @AuthCachingPolicy(cacheKeyId = false, cachePrivateKey = false)
@@ -61,6 +79,11 @@ public class ResourcePrincipalAuthenticationDetailsProvider
             "OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE";
     final static String OCI_RESOURCE_PRINCIPAL_REGION_ENV_VAR_NAME =
             "OCI_RESOURCE_PRINCIPAL_REGION";
+    private static final String RP_VERSION_1_1 = "1.1";
+    private static final String OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT =
+            "OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT";
+    private static final String OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT =
+            "OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT";
 
     /**
      * Returns the region where the java code using resource principal authentication is running at
@@ -126,9 +149,94 @@ public class ResourcePrincipalAuthenticationDetailsProvider
     /**
      * Builder for ResourcePrincipalAuthenticationDetailsProvider that understands the V2.2 configuration
      */
-    public static class ResourcePrincipalAuthenticationDetailsProviderBuilder {
+    public static class ResourcePrincipalAuthenticationDetailsProviderBuilder
+            extends AbstractFederationClientAuthenticationDetailsProviderBuilder<
+                    ResourcePrincipalAuthenticationDetailsProvider
+                            .ResourcePrincipalAuthenticationDetailsProviderBuilder,
+                    ResourcePrincipalAuthenticationDetailsProvider> {
 
         ResourcePrincipalAuthenticationDetailsProviderBuilder() {}
+
+        /**
+         * The endpoint that can provide the resource principal token.
+         *
+         * Required.
+         */
+        private String resourcePrincipalTokenEndpoint;
+
+        /**
+         * The path provider for the resource principal token.
+         *
+         * Defaults to DefaultRptPathProvider if null
+         */
+        private RptPathProvider resourcePrincipalTokenPathProvider;
+
+        /**
+         * The configuration for the circuit breaker.
+         */
+        private CircuitBreakerConfiguration circuitBreakerConfig;
+
+        /**
+         * Configures the resourcePrincipalTokenPathProvider to use.
+         */
+        public ResourcePrincipalAuthenticationDetailsProviderBuilder
+                resourcePrincipalTokenPathProvider(
+                        RptPathProvider resourcePrincipalTokenPathProvider) {
+            this.resourcePrincipalTokenPathProvider = resourcePrincipalTokenPathProvider;
+            return this;
+        }
+
+        /**
+         * Configures the resourcePrincipalTokenEndpoint to use.
+         */
+        public ResourcePrincipalAuthenticationDetailsProviderBuilder resourcePrincipalTokenEndpoint(
+                String resourcePrincipalTokenEndpoint) {
+            this.resourcePrincipalTokenEndpoint = resourcePrincipalTokenEndpoint;
+            return this;
+        }
+
+        /**
+         * Set value for the CircuitBreaker Configuration.
+         */
+        public ResourcePrincipalAuthenticationDetailsProviderBuilder circuitBreakerConfig(
+                CircuitBreakerConfiguration circuitBreakerConfig) {
+            this.circuitBreakerConfig = circuitBreakerConfig;
+            return this;
+        }
+
+        /**
+         * Configures the resourcePrincipalTokenEndpoint to use.
+         */
+        public ResourcePrincipalAuthenticationDetailsProviderBuilder resourcePrincipalTokenEndpoint(
+                Service service, Region region) {
+            Optional<String> endpoint = region.getEndpoint(service);
+            if (endpoint.isPresent()) {
+                return resourcePrincipalTokenEndpoint(endpoint.get());
+            } else {
+                return resourcePrincipalTokenEndpoint(null);
+            }
+        }
+
+        /**
+         * Configures the resourcePrincipalSessionTokenEndpoint to use.
+         * @deprecated use {@link #federationEndpoint(String)}
+         */
+        @Deprecated
+        public ResourcePrincipalAuthenticationDetailsProviderBuilder
+                resourcePrincipalSessionTokenEndpoint(
+                        String resourcePrincipalSessionTokenEndpoint) {
+            return super.federationEndpoint(resourcePrincipalSessionTokenEndpoint);
+        }
+
+        /**
+         * Configures the custom leafCertificateSupplier to use.
+         */
+        public ResourcePrincipalAuthenticationDetailsProviderBuilder leafCertificateSupplier(
+                X509CertificateSupplier leafCertificateSupplier) {
+            // do not remove this method.  due to compile time resolution, older generated
+            // clients will bind to this, not the one in the superclass
+            return super.leafCertificateSupplier(leafCertificateSupplier);
+        }
 
         /**
          * Examine the environment of the running process; construct a {@link ResourcePrincipalAuthenticationDetailsProvider}
@@ -160,6 +268,14 @@ public class ResourcePrincipalAuthenticationDetailsProvider
                             ociResourcePrincipalRPST,
                             ociResourcePrincipalRegion,
                             inputType);
+                case RP_VERSION_1_1:
+                    final String ociResourcePrincipalRptEndpoint =
+                            System.getenv(OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT);
+                    final String ociResourcePrincipalRpstEndpoint =
+                            System.getenv(OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT);
+
+                    return build_1_1(
+                            ociResourcePrincipalRptEndpoint, ociResourcePrincipalRpstEndpoint);
                 default:
                     throw new IllegalArgumentException(
                             OCI_RESOURCE_PRINCIPAL_VERSION + " has unknown value");
@@ -237,6 +353,61 @@ public class ResourcePrincipalAuthenticationDetailsProvider
 
             return new ResourcePrincipalAuthenticationDetailsProvider(
                     federationClient, sessionKeySupplier, region);
+        }
+
+        /**
+         * Helper method that interprets the runtime environment to build a v1.1-configured client
+         * @return ResourcePrincipalAuthenticationDetailsProvider
+         */
+        private ResourcePrincipalAuthenticationDetailsProvider build_1_1(
+                String ociResourcePrincipalRptEndpoint, String ociResourcePrincipalRpstEndpoint) {
+            resourcePrincipalTokenEndpoint = ociResourcePrincipalRptEndpoint;
+            if (ociResourcePrincipalRpstEndpoint != null) {
+                federationEndpoint = ociResourcePrincipalRpstEndpoint;
+            } else {
+                federationEndpoint = autoDetectEndpointUsingMetadataUrl();
+                ;
+            }
+            sessionKeySupplier = new SessionKeySupplierImpl();
+            federationClient = createFederationClient(sessionKeySupplier);
+            return buildProvider(sessionKeySupplier);
+        }
+
+        @Override
+        protected FederationClient createFederationClient(SessionKeySupplier sessionKeySupplier) {
+            Preconditions.checkNotNull(resourcePrincipalTokenEndpoint);
+            if (resourcePrincipalTokenPathProvider == null)
+                resourcePrincipalTokenPathProvider = new DefaultRptPathProvider();
+
+            InstancePrincipalsAuthenticationDetailsProvider provider =
+                    InstancePrincipalsAuthenticationDetailsProvider.builder()
+                            .federationEndpoint(federationEndpoint)
+                            .leafCertificateSupplier(leafCertificateSupplier)
+                            .intermediateCertificateSuppliers(intermediateCertificateSuppliers)
+                            .circuitBreakerConfigurator(
+                                    circuitBreakerConfig != null
+                                            ? circuitBreakerConfig
+                                            : CircuitBreakerUtils.getDefaultCircuitBreakerConfig())
+                            // InstancePrincipalsAuthenticationDetailsProvider and ResourcePrincipalsFederationClient's
+                            // sessionKeysSupplier must be different. BTW ResourcePrincipalsFederationClient and
+                            // ResourcePrincipalsAuthenticationDetailsProvider's sessionKeysSupplier must be same.
+                            .build();
+
+            return new ResourcePrincipalsFederationClient(
+                    resourcePrincipalTokenEndpoint,
+                    resourcePrincipalTokenPathProvider,
+                    federationEndpoint,
+                    sessionKeySupplier,
+                    provider,
+                    federationClientConfigurator,
+                    circuitBreakerConfig);
+        }
+
+        @Override
+        protected ResourcePrincipalAuthenticationDetailsProvider buildProvider(
+                SessionKeySupplier sessionKeySupplierToUse) {
+            return new ResourcePrincipalAuthenticationDetailsProvider(
+                    federationClient, sessionKeySupplierToUse, region);
         }
     }
 }

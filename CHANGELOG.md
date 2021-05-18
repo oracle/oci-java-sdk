@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.36.5 - 2021-05-18
+### Added
+- Support for spark-submit compatible options in the Data Flow service
+- Support for Object Storage as a configuration source in the Resource Manager service
+
 ## 1.36.4 - 2021-05-11
 ### Added
 - Support for creating notebook sessions with larger block volumes in the Data Science service

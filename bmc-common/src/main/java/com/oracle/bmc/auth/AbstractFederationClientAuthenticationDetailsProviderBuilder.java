@@ -72,6 +72,8 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
      */
     public static final String AUTHORIZATION_HEADER_VALUE = "Bearer Oracle";
 
+    private static final String REGION_PATH_LITERAL = "region";
+
     /**
      * Base url of metadata service.
      */
@@ -216,12 +218,11 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
         if (federationEndpoint == null) {
 
             executeInstanceFallback();
-            final String REGION_CODE = "region";
             String regionStr =
                     simpleRetry(
                             base -> {
                                 String region =
-                                        base.path(REGION_CODE)
+                                        base.path(REGION_PATH_LITERAL)
                                                 .request(MediaType.TEXT_PLAIN)
                                                 .header(
                                                         HttpHeaders.AUTHORIZATION,
@@ -230,7 +231,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
                                 return region;
                             },
                             getMetadataBaseUrl(),
-                            REGION_CODE);
+                            REGION_PATH_LITERAL);
             LOG.info("Looking up region for {}", regionStr);
 
             try {
@@ -308,12 +309,11 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
      */
     private void executeInstanceFallback() {
         try {
-            final String INSTANCE_ID = "id";
             Response response =
                     simpleRetry(
                             base -> {
                                 Response fallbackResponse =
-                                        base.path(INSTANCE_ID)
+                                        base.path(REGION_PATH_LITERAL)
                                                 .request(MediaType.TEXT_PLAIN)
                                                 .header(
                                                         HttpHeaders.AUTHORIZATION,
@@ -322,7 +322,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
                                 return fallbackResponse;
                             },
                             getMetadataBaseUrl(),
-                            INSTANCE_ID);
+                            REGION_PATH_LITERAL);
             LOG.info(
                     "Rest call to verify if v2 endpoint exists, response from v2 was {}",
                     response.getStatus());
@@ -367,7 +367,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
      * The thread safety of this class is ensured through the Caching class above
      * which synchronizes on all methods.
      */
-    private static class SessionKeySupplierImpl implements SessionKeySupplier {
+    static class SessionKeySupplierImpl implements SessionKeySupplier {
         private final static KeyPairGenerator GENERATOR;
         private KeyPair keyPair = null;
 
@@ -380,7 +380,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
             }
         }
 
-        private SessionKeySupplierImpl() {
+        SessionKeySupplierImpl() {
             this.keyPair = GENERATOR.generateKeyPair();
         }
 

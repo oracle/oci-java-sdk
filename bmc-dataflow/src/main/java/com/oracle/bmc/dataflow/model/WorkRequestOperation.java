@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataflow.model;
 
 /**
- * The operation related to this work request.
+ * The operation related to a work request.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
