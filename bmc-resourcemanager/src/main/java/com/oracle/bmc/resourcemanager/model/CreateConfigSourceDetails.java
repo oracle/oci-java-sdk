@@ -38,6 +38,10 @@ package com.oracle.bmc.resourcemanager.model;
         name = "GIT_CONFIG_SOURCE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateObjectStorageConfigSourceDetails.class,
+        name = "OBJECT_STORAGE_CONFIG_SOURCE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateCompartmentConfigSourceDetails.class,
         name = "COMPARTMENT_CONFIG_SOURCE"
     ),

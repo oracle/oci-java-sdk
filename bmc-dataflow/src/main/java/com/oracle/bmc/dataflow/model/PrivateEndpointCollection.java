@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataflow.model;
 
 /**
- * Results of a query for a list of private endpoints. Contains PrivateEndpointSummary items.
+ * The results of a query for a list of private endpoints. It contains PrivateEndpointSummary items.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -62,7 +62,7 @@ public class PrivateEndpointCollection {
     }
 
     /**
-     * A list of private endpoints
+     * A list of private endpoints.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")

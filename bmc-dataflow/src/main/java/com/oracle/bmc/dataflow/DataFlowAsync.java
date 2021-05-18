@@ -122,7 +122,7 @@ public interface DataFlowAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a private endpoint to be used by an application.
+     * Creates a private endpoint to be used by applications.
      *
      *
      * @param request The request object containing the details to send
@@ -283,7 +283,7 @@ public interface DataFlowAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists all applications in the specified compartment.
+     * Lists all applications in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
      *
      *
      * @param request The request object containing the details to send
@@ -331,7 +331,7 @@ public interface DataFlowAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListRunLogsRequest, ListRunLogsResponse> handler);
 
     /**
-     * Lists all runs of an application in the specified compartment.
+     * Lists all runs of an application in the specified compartment.  Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
      *
      *
      * @param request The request object containing the details to send

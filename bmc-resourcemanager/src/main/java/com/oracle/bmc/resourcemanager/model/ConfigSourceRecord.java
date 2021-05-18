@@ -36,6 +36,10 @@ package com.oracle.bmc.resourcemanager.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ZipUploadConfigSourceRecord.class,
         name = "ZIP_UPLOAD"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ObjectStorageConfigSourceRecord.class,
+        name = "OBJECT_STORAGE_CONFIG_SOURCE"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -49,6 +53,7 @@ public class ConfigSourceRecord {
     public enum ConfigSourceRecordType {
         ZipUpload("ZIP_UPLOAD"),
         GitConfigSource("GIT_CONFIG_SOURCE"),
+        ObjectStorageConfigSource("OBJECT_STORAGE_CONFIG_SOURCE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

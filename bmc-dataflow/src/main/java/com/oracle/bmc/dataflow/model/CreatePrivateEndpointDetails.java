@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataflow.model;
 
 /**
- * The create private endpoint details.
+ * The details required to create a private endpoint.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

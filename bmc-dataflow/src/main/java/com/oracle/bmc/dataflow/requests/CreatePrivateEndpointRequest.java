@@ -21,7 +21,7 @@ public class CreatePrivateEndpointRequest
         extends com.oracle.bmc.requests.BmcRequest<CreatePrivateEndpointDetails> {
 
     /**
-     * Details to create a private endpoint.
+     * The parameters required to create a private endpoint.
      *
      */
     private CreatePrivateEndpointDetails createPrivateEndpointDetails;
