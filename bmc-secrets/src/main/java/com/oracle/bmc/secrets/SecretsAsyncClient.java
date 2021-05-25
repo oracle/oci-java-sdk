@@ -403,6 +403,47 @@ public class SecretsAsyncClient implements SecretsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetSecretBundleByNameResponse> getSecretBundleByName(
+            GetSecretBundleByNameRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSecretBundleByNameRequest, GetSecretBundleByNameResponse>
+                    handler) {
+        LOG.trace("Called async getSecretBundleByName");
+        final GetSecretBundleByNameRequest interceptedRequest =
+                GetSecretBundleByNameConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSecretBundleByNameConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetSecretBundleByNameResponse>
+                transformer = GetSecretBundleByNameConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetSecretBundleByNameRequest, GetSecretBundleByNameResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSecretBundleByNameRequest, GetSecretBundleByNameResponse>,
+                        java.util.concurrent.Future<GetSecretBundleByNameResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSecretBundleByNameRequest, GetSecretBundleByNameResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSecretBundleVersionsResponse> listSecretBundleVersions(
             ListSecretBundleVersionsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

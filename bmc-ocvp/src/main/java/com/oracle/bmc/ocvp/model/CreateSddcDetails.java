@@ -107,6 +107,15 @@ public class CreateSddcDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isHcxEnterpriseEnabled")
+        private Boolean isHcxEnterpriseEnabled;
+
+        public Builder isHcxEnterpriseEnabled(Boolean isHcxEnterpriseEnabled) {
+            this.isHcxEnterpriseEnabled = isHcxEnterpriseEnabled;
+            this.__explicitlySet__.add("isHcxEnterpriseEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sshAuthorizedKeys")
         private String sshAuthorizedKeys;
 
@@ -249,6 +258,7 @@ public class CreateSddcDetails {
                             initialSku,
                             isHcxEnabled,
                             hcxVlanId,
+                            isHcxEnterpriseEnabled,
                             sshAuthorizedKeys,
                             workloadNetworkCidr,
                             provisioningSubnetId,
@@ -279,6 +289,7 @@ public class CreateSddcDetails {
                             .initialSku(o.getInitialSku())
                             .isHcxEnabled(o.getIsHcxEnabled())
                             .hcxVlanId(o.getHcxVlanId())
+                            .isHcxEnterpriseEnabled(o.getIsHcxEnterpriseEnabled())
                             .sshAuthorizedKeys(o.getSshAuthorizedKeys())
                             .workloadNetworkCidr(o.getWorkloadNetworkCidr())
                             .provisioningSubnetId(o.getProvisioningSubnetId())
@@ -363,7 +374,9 @@ public class CreateSddcDetails {
     Integer esxiHostsCount;
 
     /**
-     * Billing option selected during SDDC creation
+     * Billing option selected during SDDC creation.
+     * Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
+     * HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
      * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
      *
      **/
@@ -384,6 +397,13 @@ public class CreateSddcDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hcxVlanId")
     String hcxVlanId;
+
+    /**
+     * Indicates whether to enable HCX Enterprise for this SDDC.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isHcxEnterpriseEnabled")
+    Boolean isHcxEnterpriseEnabled;
 
     /**
      * One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for

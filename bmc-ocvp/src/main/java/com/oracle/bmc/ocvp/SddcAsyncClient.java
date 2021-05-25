@@ -363,6 +363,46 @@ public class SddcAsyncClient implements SddcAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CancelDowngradeHcxResponse> cancelDowngradeHcx(
+            CancelDowngradeHcxRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CancelDowngradeHcxRequest, CancelDowngradeHcxResponse>
+                    handler) {
+        LOG.trace("Called async cancelDowngradeHcx");
+        final CancelDowngradeHcxRequest interceptedRequest =
+                CancelDowngradeHcxConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelDowngradeHcxConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CancelDowngradeHcxResponse>
+                transformer = CancelDowngradeHcxConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<CancelDowngradeHcxRequest, CancelDowngradeHcxResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CancelDowngradeHcxRequest, CancelDowngradeHcxResponse>,
+                        java.util.concurrent.Future<CancelDowngradeHcxResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CancelDowngradeHcxRequest, CancelDowngradeHcxResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeSddcCompartmentResponse> changeSddcCompartment(
             ChangeSddcCompartmentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -467,6 +507,45 @@ public class SddcAsyncClient implements SddcAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteSddcRequest, DeleteSddcResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DowngradeHcxResponse> downgradeHcx(
+            DowngradeHcxRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DowngradeHcxRequest, DowngradeHcxResponse>
+                    handler) {
+        LOG.trace("Called async downgradeHcx");
+        final DowngradeHcxRequest interceptedRequest =
+                DowngradeHcxConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DowngradeHcxConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DowngradeHcxResponse>
+                transformer = DowngradeHcxConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<DowngradeHcxRequest, DowngradeHcxResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DowngradeHcxRequest, DowngradeHcxResponse>,
+                        java.util.concurrent.Future<DowngradeHcxResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DowngradeHcxRequest, DowngradeHcxResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -637,6 +716,48 @@ public class SddcAsyncClient implements SddcAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RefreshHcxLicenseStatusResponse> refreshHcxLicenseStatus(
+            RefreshHcxLicenseStatusRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RefreshHcxLicenseStatusRequest, RefreshHcxLicenseStatusResponse>
+                    handler) {
+        LOG.trace("Called async refreshHcxLicenseStatus");
+        final RefreshHcxLicenseStatusRequest interceptedRequest =
+                RefreshHcxLicenseStatusConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RefreshHcxLicenseStatusConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RefreshHcxLicenseStatusResponse>
+                transformer = RefreshHcxLicenseStatusConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        RefreshHcxLicenseStatusRequest, RefreshHcxLicenseStatusResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RefreshHcxLicenseStatusRequest, RefreshHcxLicenseStatusResponse>,
+                        java.util.concurrent.Future<RefreshHcxLicenseStatusResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RefreshHcxLicenseStatusRequest, RefreshHcxLicenseStatusResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateSddcResponse> updateSddc(
             UpdateSddcRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateSddcRequest, UpdateSddcResponse>
@@ -661,6 +782,44 @@ public class SddcAsyncClient implements SddcAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateSddcRequest, UpdateSddcResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpgradeHcxResponse> upgradeHcx(
+            UpgradeHcxRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpgradeHcxRequest, UpgradeHcxResponse>
+                    handler) {
+        LOG.trace("Called async upgradeHcx");
+        final UpgradeHcxRequest interceptedRequest = UpgradeHcxConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpgradeHcxConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpgradeHcxResponse>
+                transformer = UpgradeHcxConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<UpgradeHcxRequest, UpgradeHcxResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpgradeHcxRequest, UpgradeHcxResponse>,
+                        java.util.concurrent.Future<UpgradeHcxResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpgradeHcxRequest, UpgradeHcxResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

@@ -384,4 +384,230 @@ public class ArtifactsPaginators {
                     }
                 });
     }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listGenericArtifacts operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListGenericArtifactsResponse> listGenericArtifactsResponseIterator(
+            final ListGenericArtifactsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListGenericArtifactsRequest.Builder, ListGenericArtifactsRequest,
+                ListGenericArtifactsResponse>(
+                new com.google.common.base.Supplier<ListGenericArtifactsRequest.Builder>() {
+                    @Override
+                    public ListGenericArtifactsRequest.Builder get() {
+                        return ListGenericArtifactsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListGenericArtifactsResponse, String>() {
+                    @Override
+                    public String apply(ListGenericArtifactsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListGenericArtifactsRequest.Builder>,
+                        ListGenericArtifactsRequest>() {
+                    @Override
+                    public ListGenericArtifactsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListGenericArtifactsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListGenericArtifactsRequest, ListGenericArtifactsResponse>() {
+                    @Override
+                    public ListGenericArtifactsResponse apply(ListGenericArtifactsRequest request) {
+                        return client.listGenericArtifacts(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.artifacts.model.GenericArtifactSummary} objects
+     * contained in responses from the listGenericArtifacts operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.artifacts.model.GenericArtifactSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.artifacts.model.GenericArtifactSummary>
+            listGenericArtifactsRecordIterator(final ListGenericArtifactsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListGenericArtifactsRequest.Builder, ListGenericArtifactsRequest,
+                ListGenericArtifactsResponse,
+                com.oracle.bmc.artifacts.model.GenericArtifactSummary>(
+                new com.google.common.base.Supplier<ListGenericArtifactsRequest.Builder>() {
+                    @Override
+                    public ListGenericArtifactsRequest.Builder get() {
+                        return ListGenericArtifactsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListGenericArtifactsResponse, String>() {
+                    @Override
+                    public String apply(ListGenericArtifactsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListGenericArtifactsRequest.Builder>,
+                        ListGenericArtifactsRequest>() {
+                    @Override
+                    public ListGenericArtifactsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListGenericArtifactsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListGenericArtifactsRequest, ListGenericArtifactsResponse>() {
+                    @Override
+                    public ListGenericArtifactsResponse apply(ListGenericArtifactsRequest request) {
+                        return client.listGenericArtifacts(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListGenericArtifactsResponse,
+                        java.util.List<com.oracle.bmc.artifacts.model.GenericArtifactSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.artifacts.model.GenericArtifactSummary>
+                            apply(ListGenericArtifactsResponse response) {
+                        return response.getGenericArtifactCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listRepositories operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListRepositoriesResponse> listRepositoriesResponseIterator(
+            final ListRepositoriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListRepositoriesRequest.Builder, ListRepositoriesRequest, ListRepositoriesResponse>(
+                new com.google.common.base.Supplier<ListRepositoriesRequest.Builder>() {
+                    @Override
+                    public ListRepositoriesRequest.Builder get() {
+                        return ListRepositoriesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListRepositoriesResponse, String>() {
+                    @Override
+                    public String apply(ListRepositoriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRepositoriesRequest.Builder>,
+                        ListRepositoriesRequest>() {
+                    @Override
+                    public ListRepositoriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRepositoriesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListRepositoriesRequest, ListRepositoriesResponse>() {
+                    @Override
+                    public ListRepositoriesResponse apply(ListRepositoriesRequest request) {
+                        return client.listRepositories(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.artifacts.model.RepositorySummary} objects
+     * contained in responses from the listRepositories operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.artifacts.model.RepositorySummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.artifacts.model.RepositorySummary>
+            listRepositoriesRecordIterator(final ListRepositoriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListRepositoriesRequest.Builder, ListRepositoriesRequest, ListRepositoriesResponse,
+                com.oracle.bmc.artifacts.model.RepositorySummary>(
+                new com.google.common.base.Supplier<ListRepositoriesRequest.Builder>() {
+                    @Override
+                    public ListRepositoriesRequest.Builder get() {
+                        return ListRepositoriesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListRepositoriesResponse, String>() {
+                    @Override
+                    public String apply(ListRepositoriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRepositoriesRequest.Builder>,
+                        ListRepositoriesRequest>() {
+                    @Override
+                    public ListRepositoriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRepositoriesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListRepositoriesRequest, ListRepositoriesResponse>() {
+                    @Override
+                    public ListRepositoriesResponse apply(ListRepositoriesRequest request) {
+                        return client.listRepositories(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListRepositoriesResponse,
+                        java.util.List<com.oracle.bmc.artifacts.model.RepositorySummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.artifacts.model.RepositorySummary> apply(
+                            ListRepositoriesResponse response) {
+                        return response.getRepositoryCollection().getItems();
+                    }
+                });
+    }
 }

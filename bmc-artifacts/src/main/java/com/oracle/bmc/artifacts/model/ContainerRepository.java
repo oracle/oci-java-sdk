@@ -143,6 +143,15 @@ public class ContainerRepository {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("billableSizeInGBs")
+        private Long billableSizeInGBs;
+
+        public Builder billableSizeInGBs(Long billableSizeInGBs) {
+            this.billableSizeInGBs = billableSizeInGBs;
+            this.__explicitlySet__.add("billableSizeInGBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -161,7 +170,8 @@ public class ContainerRepository {
                             lifecycleState,
                             readme,
                             timeCreated,
-                            timeLastPushed);
+                            timeLastPushed,
+                            billableSizeInGBs);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -181,7 +191,8 @@ public class ContainerRepository {
                             .lifecycleState(o.getLifecycleState())
                             .readme(o.getReadme())
                             .timeCreated(o.getTimeCreated())
-                            .timeLastPushed(o.getTimeLastPushed());
+                            .timeLastPushed(o.getTimeLastPushed())
+                            .billableSizeInGBs(o.getBillableSizeInGBs());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -318,6 +329,12 @@ public class ContainerRepository {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastPushed")
     java.util.Date timeLastPushed;
+
+    /**
+     * Total storage size in GBs that will be charged.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("billableSizeInGBs")
+    Long billableSizeInGBs;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

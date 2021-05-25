@@ -5,8 +5,8 @@
 package com.oracle.bmc.limits.model;
 
 /**
- * The availability of a given resource limit, based on the usage, tenant service limits and quotas set for the tenancy.
- * Note: We cannot guarantee this data for all the limits. In those cases, these fields will be empty.
+ * The availability of a given resource limit, based on the usage, tenant service limits, and quotas set for the tenancy.
+ * Note: We cannot guarantee this data for all the limits. In such cases, these fields will be empty.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -110,16 +110,16 @@ public class ResourceAvailability {
     }
 
     /**
-     * The current usage in the given compartment. Because we have introduced resources with fractional counts,
-     * the field will round up to the nearest integer.
+     * The current usage in the given compartment. To support resources with fractional counts,
+     * the field rounds up to the nearest integer.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("used")
     Long used;
 
     /**
-     * The count of available resources. Because we have introduced resources with fractional counts,
-     * the field will round down to the nearest integer.
+     * The count of available resources. To support resources with fractional counts,
+     * the field rounds down to the nearest integer.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("available")
@@ -140,7 +140,7 @@ public class ResourceAvailability {
     java.math.BigDecimal fractionalAvailability;
 
     /**
-     * The effective quota value for given compartment. This field is only present if there is a
+     * The effective quota value for the given compartment. This field is only present if there is a
      * current quota policy affecting the current resource in the target region or availability domain.
      *
      **/

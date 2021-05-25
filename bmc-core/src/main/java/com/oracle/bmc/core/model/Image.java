@@ -169,6 +169,15 @@ public class Image {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("billableSizeInGBs")
+        private Long billableSizeInGBs;
+
+        public Builder billableSizeInGBs(Long billableSizeInGBs) {
+            this.billableSizeInGBs = billableSizeInGBs;
+            this.__explicitlySet__.add("billableSizeInGBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -199,6 +208,7 @@ public class Image {
                             agentFeatures,
                             listingType,
                             sizeInMBs,
+                            billableSizeInGBs,
                             timeCreated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -222,6 +232,7 @@ public class Image {
                             .agentFeatures(o.getAgentFeatures())
                             .listingType(o.getListingType())
                             .sizeInMBs(o.getSizeInMBs())
+                            .billableSizeInGBs(o.getBillableSizeInGBs())
                             .timeCreated(o.getTimeCreated());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -496,6 +507,15 @@ public class Image {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
     Long sizeInMBs;
+
+    /**
+     * The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).
+     * <p>
+     * Example: `100`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("billableSizeInGBs")
+    Long billableSizeInGBs;
 
     /**
      * The date and time the image was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

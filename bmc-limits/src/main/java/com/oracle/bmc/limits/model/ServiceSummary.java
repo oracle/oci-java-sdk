@@ -68,7 +68,7 @@ public class ServiceSummary {
     }
 
     /**
-     * The service name. Use this when calling the other APIs.
+     * The service name. Use this when calling other APIs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;

@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>1.36.5</version>
+    <version>1.37.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -22,11 +22,12 @@
 
 
 
+
   <dependencies>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>1.36.5</version>
+      <version>1.37.0</version>
     </dependency>
   </dependencies>
 

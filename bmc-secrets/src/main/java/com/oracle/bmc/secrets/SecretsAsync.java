@@ -46,7 +46,7 @@ public interface SecretsAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Gets a secret bundle that matches either the specified `stage`, `label`, or `versionNumber` parameter.
+     * Gets a secret bundle that matches either the specified `stage`, `secretVersionName`, or `versionNumber` parameter.
      * If none of these parameters are provided, the bundle for the secret version marked as `CURRENT` will be returned.
      *
      *
@@ -60,6 +60,24 @@ public interface SecretsAsync extends AutoCloseable {
     java.util.concurrent.Future<GetSecretBundleResponse> getSecretBundle(
             GetSecretBundleRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetSecretBundleRequest, GetSecretBundleResponse>
+                    handler);
+
+    /**
+     * Gets a secret bundle by secret name and vault ID, and secret version that matches either the specified `stage`, `secretVersionName`, or `versionNumber` parameter.
+     * If none of these parameters are provided, the bundle for the secret version marked as `CURRENT` is returned.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSecretBundleByNameResponse> getSecretBundleByName(
+            GetSecretBundleByNameRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSecretBundleByNameRequest, GetSecretBundleByNameResponse>
                     handler);
 
     /**

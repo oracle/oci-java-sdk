@@ -43,12 +43,12 @@ public class ListQuotasRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     private String name;
 
     /**
-     * Filters returned quotas based on whether the given state.
+     * Filters returned quotas based on the given state.
      */
     private LifecycleState lifecycleState;
 
     /**
-     * Filters returned quotas based on whether the given state.
+     * Filters returned quotas based on the given state.
      **/
     public enum LifecycleState {
         Active("ACTIVE"),
@@ -82,13 +82,13 @@ public class ListQuotasRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
     /**
-     * The sort order to use, either 'asc' or 'desc'. By default it will be ascending.
+     * The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
      *
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either 'asc' or 'desc'. By default it will be ascending.
+     * The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
      *
      **/
     public enum SortOrder {
@@ -124,13 +124,13 @@ public class ListQuotasRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
     /**
-     * The field to sort by. Only one sort order may be provided. Time created is default ordered as descending. Display name is default ordered as ascending.
+     * The field to sort by. Only one sort order can be provided. Time created is default ordered as descending. Display name is default ordered as ascending.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Time created is default ordered as descending. Display name is default ordered as ascending.
+     * The field to sort by. Only one sort order can be provided. Time created is default ordered as descending. Display name is default ordered as ascending.
      *
      **/
     public enum SortBy {

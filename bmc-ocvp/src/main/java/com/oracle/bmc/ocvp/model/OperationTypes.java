@@ -14,6 +14,10 @@ public enum OperationTypes {
     DeleteSddc("DELETE_SDDC"),
     CreateEsxiHost("CREATE_ESXI_HOST"),
     DeleteEsxiHost("DELETE_ESXI_HOST"),
+    UpgradeHcx("UPGRADE_HCX"),
+    DowngradeHcx("DOWNGRADE_HCX"),
+    CancelDowngradeHcx("CANCEL_DOWNGRADE_HCX"),
+    RefreshHcxLicenseStatus("REFRESH_HCX_LICENSE_STATUS"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

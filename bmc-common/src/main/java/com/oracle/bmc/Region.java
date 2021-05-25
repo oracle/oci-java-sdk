@@ -23,6 +23,7 @@ import com.oracle.bmc.model.RegionSchema;
 import com.oracle.bmc.model.internal.JsonConverter;
 import com.oracle.bmc.util.internal.FileUtils;
 import com.oracle.bmc.util.internal.NameUtils;
+import java.util.concurrent.locks.ReentrantLock;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NonNull;
@@ -54,6 +55,7 @@ public final class Region implements Serializable, Comparable<Region> {
     private static volatile boolean hasUsedEnvVar = false;
     private static volatile boolean hasUsedConfigFile = false;
 
+    private static final ReentrantLock lock = new ReentrantLock();
     private static volatile boolean hasOptedForInstanceMetadataService = false;
     @VisibleForTesting static volatile boolean hasUsedInstanceMetadataService = false;
     private static volatile boolean hasReceivedInstanceMetadataServiceResponse = false;
@@ -69,6 +71,9 @@ public final class Region implements Serializable, Comparable<Region> {
 
     // LinkedHashMap to ensure stable ordering of registered regions
     private static final Map<String, Region> KNOWN_REGIONS = new LinkedHashMap<>();
+
+    // Region registered through the instance metadata service.
+    @Getter public static volatile Region regionFromImds = null;
 
     // OC1
     public static final Region AP_CHUNCHEON_1 = register("ap-chuncheon-1", Realm.OC1, "yny");
@@ -564,10 +569,24 @@ public final class Region implements Serializable, Comparable<Region> {
             // only read once
             return hasReceivedInstanceMetadataServiceResponse;
         }
-
         try {
+            /*
+             * If this method is called by multiple threads before the metadata service is used
+             * to successfully get the region info, all those threads are blocked until the region
+             * info is loaded.
+             */
+            lock.lock();
+            //
+            // while multiple threads were waiting for the lock, the first thread that entered
+            // this block would have successfully loaded the regionInfo. So, perform the check
+            // one more time and return the response from here itself, to load region info only
+            // once
+            //
+            if (hasUsedInstanceMetadataService) {
+                return hasReceivedInstanceMetadataServiceResponse;
+            }
+
             enableInstanceMetadataService();
-            hasUsedInstanceMetadataService = true;
 
             LOG.info(
                     "Requesting region metadata blob from IMDS at {}",
@@ -575,14 +594,11 @@ public final class Region implements Serializable, Comparable<Region> {
             final String REGION_INFO = "regionInfo";
             String regionMetadataSchema =
                     AbstractFederationClientAuthenticationDetailsProviderBuilder.simpleRetry(
-                            base -> {
-                                String regionInfo =
-                                        base.path(REGION_INFO)
-                                                .request(MediaType.APPLICATION_JSON)
-                                                .header(AUTHORIZATION, AUTHORIZATION_HEADER_VALUE)
-                                                .get(String.class);
-                                return regionInfo;
-                            },
+                            base ->
+                                    base.path(REGION_INFO)
+                                            .request(MediaType.APPLICATION_JSON)
+                                            .header(AUTHORIZATION, AUTHORIZATION_HEADER_VALUE)
+                                            .get(String.class),
                             METADATA_SERVICE_BASE_URL,
                             REGION_INFO);
 
@@ -594,18 +610,22 @@ public final class Region implements Serializable, Comparable<Region> {
                         JsonConverter.jsonBlobToObject(regionMetadataSchema, RegionSchema.class);
 
                 if (regionSchema != null && RegionSchema.isValid(regionSchema)) {
-                    Region.register(
-                            regionSchema.getRegionIdentifier(),
-                            Realm.register(
-                                    regionSchema.getRealmKey(),
-                                    regionSchema.getRealmDomainComponent()),
-                            regionSchema.getRegionKey());
+                    regionFromImds =
+                            Region.register(
+                                    regionSchema.getRegionIdentifier(),
+                                    Realm.register(
+                                            regionSchema.getRealmKey(),
+                                            regionSchema.getRealmDomainComponent()),
+                                    regionSchema.getRegionKey());
                 }
             }
+
         } catch (RuntimeException e) {
             LOG.warn("Rest call to get regionInfo from metadata service failed ", e);
         } finally {
-            return hasReceivedInstanceMetadataServiceResponse;
+            lock.unlock();
+            hasUsedInstanceMetadataService = true;
         }
+        return hasReceivedInstanceMetadataServiceResponse;
     }
 }

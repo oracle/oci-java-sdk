@@ -25,6 +25,8 @@ import com.google.common.base.Optional;
 import com.oracle.bmc.model.RegionSchema;
 import com.oracle.bmc.util.internal.FileUtils;
 import com.oracle.bmc.util.internal.NameUtils;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.ClientProperties;
 import org.junit.Assert;
@@ -309,6 +311,9 @@ public class RegionTest {
                     && Modifier.isStatic(field.getModifiers())
                     && Modifier.isPublic(field.getModifiers())) {
                 final Region region = (Region) field.get(null);
+                if (field.getName() == "regionFromImds") {
+                    continue;
+                }
                 assertEquals(
                         field.getName(), NameUtils.canonicalizeForEnumTypes(region.getRegionId()));
             }
@@ -520,6 +525,53 @@ public class RegionTest {
                         .property(ClientProperties.READ_TIMEOUT, 5000));
         Region.registerFromInstanceMetadataService();
         Region.values();
+    }
+
+    @Test
+    @Ignore("This test can be run when METADATA_SERVICE_BASE_URL is reachable")
+    public void testMultithreaded_Imds() {
+        try {
+            Region.setInstanceMetadataServiceClientConfig(
+                    new ClientConfig()
+                            .property(ClientProperties.CONNECT_TIMEOUT, 100)
+                            .property(ClientProperties.READ_TIMEOUT, 500));
+            Region.hasUsedInstanceMetadataService = false;
+            final ConcurrentMap<String, Boolean> resultMap = new ConcurrentHashMap<>();
+            Thread t1 =
+                    new Thread(
+                            () -> {
+                                boolean flag = Region.registerFromInstanceMetadataService();
+                                resultMap.put("t1", flag);
+                                System.out.println(
+                                        "Flag: "
+                                                + flag
+                                                + "\nThread1: "
+                                                + Arrays.toString(Region.values()));
+                            });
+            t1.setName("first-thread");
+            Thread t2 =
+                    new Thread(
+                            () -> {
+                                boolean flag = Region.registerFromInstanceMetadataService();
+                                resultMap.put("t2", flag);
+                                System.out.println(
+                                        "Flag: "
+                                                + flag
+                                                + "\nThread2: "
+                                                + Arrays.toString(Region.values()));
+                            });
+            t2.setName("second-thread");
+            t1.start();
+            t2.start();
+            t1.join();
+            t2.join();
+            Set<Boolean> set = new HashSet<>(resultMap.values());
+            Assert.assertFalse(set.isEmpty());
+            Assert.assertEquals(1, set.size());
+            Assert.assertEquals(true, set.iterator().next());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     // individual region lookups are fast if told to skip IMDS

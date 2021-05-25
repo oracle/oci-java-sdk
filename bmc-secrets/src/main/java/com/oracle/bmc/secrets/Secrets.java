@@ -46,7 +46,7 @@ public interface Secrets extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Gets a secret bundle that matches either the specified `stage`, `label`, or `versionNumber` parameter.
+     * Gets a secret bundle that matches either the specified `stage`, `secretVersionName`, or `versionNumber` parameter.
      * If none of these parameters are provided, the bundle for the secret version marked as `CURRENT` will be returned.
      *
      * @param request The request object containing the details to send
@@ -56,6 +56,18 @@ public interface Secrets extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/secrets/GetSecretBundleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecretBundle API.
      */
     GetSecretBundleResponse getSecretBundle(GetSecretBundleRequest request);
+
+    /**
+     * Gets a secret bundle by secret name and vault ID, and secret version that matches either the specified `stage`, `secretVersionName`, or `versionNumber` parameter.
+     * If none of these parameters are provided, the bundle for the secret version marked as `CURRENT` is returned.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/secrets/GetSecretBundleByNameExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecretBundleByName API.
+     */
+    GetSecretBundleByNameResponse getSecretBundleByName(GetSecretBundleByNameRequest request);
 
     /**
      * Lists all secret bundle versions for the specified secret.

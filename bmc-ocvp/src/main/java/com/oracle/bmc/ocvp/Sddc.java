@@ -47,6 +47,17 @@ public interface Sddc extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Cancel the pending SDDC downgrade from HCX Enterprise to HCX Advanced
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/CancelDowngradeHcxExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelDowngradeHcx API.
+     */
+    CancelDowngradeHcxResponse cancelDowngradeHcx(CancelDowngradeHcxRequest request);
+
+    /**
      * Moves an SDDC into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -92,6 +103,17 @@ public interface Sddc extends AutoCloseable {
     DeleteSddcResponse deleteSddc(DeleteSddcRequest request);
 
     /**
+     * Downgrade the specified SDDC from HCX Enterprise to HCX Advanced
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/DowngradeHcxExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DowngradeHcx API.
+     */
+    DowngradeHcxResponse downgradeHcx(DowngradeHcxRequest request);
+
+    /**
      * Gets the specified SDDC's information.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -114,8 +136,8 @@ public interface Sddc extends AutoCloseable {
     ListSddcsResponse listSddcs(ListSddcsRequest request);
 
     /**
-     * Lists supported SKUs. HHOUR, MONTH, ONE_YEAR and THREE_YEARS supported by the Oracle Cloud
-     * VMware Solution.
+     * Lists supported SKUs. Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
+     * HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -139,6 +161,16 @@ public interface Sddc extends AutoCloseable {
             ListSupportedVmwareSoftwareVersionsRequest request);
 
     /**
+     * Refresh HCX on-premise licenses status of the specified SDDC.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/RefreshHcxLicenseStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RefreshHcxLicenseStatus API.
+     */
+    RefreshHcxLicenseStatusResponse refreshHcxLicenseStatus(RefreshHcxLicenseStatusRequest request);
+
+    /**
      * Updates the specified SDDC.
      * <p>
      **Important:** Updating an SDDC affects only certain attributes in the `Sddc`
@@ -153,6 +185,17 @@ public interface Sddc extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/UpdateSddcExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSddc API.
      */
     UpdateSddcResponse updateSddc(UpdateSddcRequest request);
+
+    /**
+     * Upgrade the specified SDDC from HCX Advanced to HCX Enterprise.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/UpgradeHcxExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpgradeHcx API.
+     */
+    UpgradeHcxResponse upgradeHcx(UpgradeHcxRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

@@ -69,6 +69,25 @@ public interface ArtifactsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves a repository into a different compartment within the same tenancy. For information about moving
+     * resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeRepositoryCompartmentResponse> changeRepositoryCompartment(
+            ChangeRepositoryCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeRepositoryCompartmentRequest, ChangeRepositoryCompartmentResponse>
+                    handler);
+
+    /**
      * Upload a signature to an image.
      *
      * @param request The request object containing the details to send
@@ -100,6 +119,21 @@ public interface ArtifactsAsync extends AutoCloseable {
             CreateContainerRepositoryRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateContainerRepositoryRequest, CreateContainerRepositoryResponse>
+                    handler);
+
+    /**
+     * Creates a new repository for storing artifacts.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateRepositoryResponse> createRepository(
+            CreateRepositoryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateRepositoryRequest, CreateRepositoryResponse>
                     handler);
 
     /**
@@ -150,6 +184,53 @@ public interface ArtifactsAsync extends AutoCloseable {
             DeleteContainerRepositoryRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteContainerRepositoryRequest, DeleteContainerRepositoryResponse>
+                    handler);
+
+    /**
+     * Deletes an artifact with a specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteGenericArtifactResponse> deleteGenericArtifact(
+            DeleteGenericArtifactRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteGenericArtifactRequest, DeleteGenericArtifactResponse>
+                    handler);
+
+    /**
+     * Deletes an artifact with a specified `artifactPath` and `version`.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteGenericArtifactByPathResponse> deleteGenericArtifactByPath(
+            DeleteGenericArtifactByPathRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteGenericArtifactByPathRequest, DeleteGenericArtifactByPathResponse>
+                    handler);
+
+    /**
+     * Deletes the specified repository. This operation fails unless all associated artifacts are in a DELETED state. You must delete all associated artifacts before deleting a repository.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteRepositoryResponse> deleteRepository(
+            DeleteRepositoryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteRepositoryRequest, DeleteRepositoryResponse>
                     handler);
 
     /**
@@ -217,6 +298,53 @@ public interface ArtifactsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets information about an artifact with a specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetGenericArtifactResponse> getGenericArtifact(
+            GetGenericArtifactRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetGenericArtifactRequest, GetGenericArtifactResponse>
+                    handler);
+
+    /**
+     * Gets information about an artifact with a specified `artifactPath` and `version`.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetGenericArtifactByPathResponse> getGenericArtifactByPath(
+            GetGenericArtifactByPathRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetGenericArtifactByPathRequest, GetGenericArtifactByPathResponse>
+                    handler);
+
+    /**
+     * Gets the specified repository's information.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetRepositoryResponse> getRepository(
+            GetRepositoryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetRepositoryRequest, GetRepositoryResponse>
+                    handler);
+
+    /**
      * List container image signatures in an image.
      *
      * @param request The request object containing the details to send
@@ -263,6 +391,37 @@ public interface ArtifactsAsync extends AutoCloseable {
             ListContainerRepositoriesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListContainerRepositoriesRequest, ListContainerRepositoriesResponse>
+                    handler);
+
+    /**
+     * Lists artifacts in the specified repository.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListGenericArtifactsResponse> listGenericArtifacts(
+            ListGenericArtifactsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListGenericArtifactsRequest, ListGenericArtifactsResponse>
+                    handler);
+
+    /**
+     * Lists repositories in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListRepositoriesResponse> listRepositories(
+            ListRepositoriesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListRepositoriesRequest, ListRepositoriesResponse>
                     handler);
 
     /**
@@ -328,5 +487,52 @@ public interface ArtifactsAsync extends AutoCloseable {
             UpdateContainerRepositoryRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateContainerRepositoryRequest, UpdateContainerRepositoryResponse>
+                    handler);
+
+    /**
+     * Updates the artifact with the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can only update the tags of an artifact.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateGenericArtifactResponse> updateGenericArtifact(
+            UpdateGenericArtifactRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateGenericArtifactRequest, UpdateGenericArtifactResponse>
+                    handler);
+
+    /**
+     * Updates an artifact with a specified `artifactPath` and `version`. You can only update the tags of an artifact.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateGenericArtifactByPathResponse> updateGenericArtifactByPath(
+            UpdateGenericArtifactByPathRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateGenericArtifactByPathRequest, UpdateGenericArtifactByPathResponse>
+                    handler);
+
+    /**
+     * Updates the properties of a repository. You can update the `displayName` and  `description` properties.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateRepositoryResponse> updateRepository(
+            UpdateRepositoryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateRepositoryRequest, UpdateRepositoryResponse>
                     handler);
 }

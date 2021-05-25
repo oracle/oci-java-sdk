@@ -17,6 +17,10 @@ import javax.annotation.Nullable;
 import com.oracle.bmc.model.Range;
 import com.oracle.bmc.objectstorage.requests.GetObjectRequest;
 import com.oracle.bmc.objectstorage.transfer.DownloadManager;
+import com.oracle.bmc.util.StreamUtils;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -331,35 +335,16 @@ public class MultithreadStream extends InputStream {
      * @return The new async read.
      */
     private AsyncRead startAsyncRead(@Nullable byte[] buffer) {
-        // Calculate the new range
-        final long baseRequestRangeStart;
-        if (this.baseRequest.getRange() != null
-                && this.baseRequest.getRange().getStartByte() != null) {
-            baseRequestRangeStart = this.baseRequest.getRange().getStartByte();
-        } else {
-            baseRequestRangeStart = 0L;
-        }
-        final long baseRequestRangeEnd;
-        if (this.baseRequest.getRange() != null
-                && this.baseRequest.getRange().getEndByte() != null) {
-            baseRequestRangeEnd = this.baseRequest.getRange().getEndByte();
-        } else {
-            // If there is no end range we will treat it as max
-            baseRequestRangeEnd = Long.MAX_VALUE;
-        }
-        assert baseRequestRangeStart < baseRequestRangeEnd;
-        final long rangeStart = baseRequestRangeStart + this.nextReadOffset;
-        long rangeEnd = rangeStart + this.partSize - 1;
-        // Do not go past the end of the range in the request
-        rangeEnd = Math.min(rangeEnd, baseRequestRangeEnd);
-        // Or past the end of the object
-        rangeEnd = Math.min(rangeEnd, baseRequestRangeStart + this.objectSize - 1);
-        assert rangeEnd >= rangeStart;
-        final long rangeSize = rangeEnd - rangeStart + 1;
-        assert rangeSize > 0;
+        boolean isEndOnlyRange =
+                this.baseRequest.getRange() != null
+                        && this.baseRequest.getRange().getStartByte() == null
+                        && this.baseRequest.getRange().getEndByte() != null;
 
-        // Create the new request
-        final Range range = new Range(rangeStart, rangeEnd);
+        // Calculate the new range
+        RangeWrapper rangeWrapper = isEndOnlyRange ? endOnlyRange() : notEndOnlyRange();
+
+        int rangeSize = Math.toIntExact(rangeWrapper.getRangeSize());
+        Range range = rangeWrapper.getRange();
         final GetObjectRequest getObjectRequest =
                 GetObjectRequest.builder().copy(this.baseRequest).range(range).build();
 
@@ -380,7 +365,7 @@ public class MultithreadStream extends InputStream {
                 getObjectRequest.getRange().getEndByte(),
                 this.asyncReadIndex);
         final DownloadThread thread =
-                new DownloadThread(this.downloadManager, getObjectRequest, buffer);
+                new DownloadThread(this.downloadManager, getObjectRequest, buffer, rangeSize);
         final Future<byte[]> future = this.executorService.submit(() -> thread.run());
         final AsyncRead asyncRead = new AsyncRead(future, thread);
         this.nextReadOffset += rangeSize;
@@ -410,5 +395,64 @@ public class MultithreadStream extends InputStream {
             this.future = future;
             this.thread = thread;
         }
+    }
+
+    public RangeWrapper notEndOnlyRange() {
+        final long baseRequestRangeStart;
+        if (MultithreadStream.this.baseRequest.getRange() != null
+                && MultithreadStream.this.baseRequest.getRange().getStartByte() != null) {
+            baseRequestRangeStart = MultithreadStream.this.baseRequest.getRange().getStartByte();
+        } else {
+            baseRequestRangeStart = 0L;
+        }
+        final long baseRequestRangeEnd;
+        if (MultithreadStream.this.baseRequest.getRange() != null
+                && MultithreadStream.this.baseRequest.getRange().getEndByte() != null) {
+            baseRequestRangeEnd = MultithreadStream.this.baseRequest.getRange().getEndByte();
+        } else {
+            // If there is no end range we will treat it as max
+            baseRequestRangeEnd = Long.MAX_VALUE;
+        }
+        assert baseRequestRangeStart < baseRequestRangeEnd;
+        final long rangeStart = baseRequestRangeStart + MultithreadStream.this.nextReadOffset;
+        long rangeEnd = rangeStart + MultithreadStream.this.partSize - 1;
+        // Do not go past the end of the range in the request
+        rangeEnd = Math.min(rangeEnd, baseRequestRangeEnd);
+        // Or past the end of the object
+        rangeEnd =
+                Math.min(rangeEnd, baseRequestRangeStart + MultithreadStream.this.objectSize - 1);
+        assert rangeEnd >= rangeStart;
+        final long rangeSize = rangeEnd - rangeStart + 1;
+        assert rangeSize > 0;
+
+        // Create the new request
+        Range range = new Range(rangeStart, rangeEnd);
+        return new RangeWrapper(rangeSize, range);
+    }
+
+    public RangeWrapper endOnlyRange() {
+        long baseRequestRangeEnd = MultithreadStream.this.baseRequest.getRange().getEndByte();
+        if (baseRequestRangeEnd > objectSize) {
+            // the requested "end-only" range was larger than the object (e.g. "-101" on a 100 byte object)
+            // the first request will just start at the beginning of the object and read partSize bytes
+            // that means it's as if we had requested exactly the right size range ("-100").
+            baseRequestRangeEnd = objectSize;
+        }
+
+        long rangeEnd = baseRequestRangeEnd - MultithreadStream.this.nextReadOffset;
+        // Do not go past the end of the range in the request
+        rangeEnd = Math.max(rangeEnd, 0);
+        final long rangeSize = Math.min(rangeEnd, partSize);
+        assert rangeSize > 0;
+
+        // Create the new request
+        Range range = new Range(null, rangeEnd);
+        return new RangeWrapper(rangeSize, range);
+    }
+
+    @Value
+    private class RangeWrapper {
+        private final long rangeSize;
+        private final Range range;
     }
 }

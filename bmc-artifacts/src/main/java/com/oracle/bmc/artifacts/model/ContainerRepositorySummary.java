@@ -107,6 +107,15 @@ public class ContainerRepositorySummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("billableSizeInGBs")
+        private Long billableSizeInGBs;
+
+        public Builder billableSizeInGBs(Long billableSizeInGBs) {
+            this.billableSizeInGBs = billableSizeInGBs;
+            this.__explicitlySet__.add("billableSizeInGBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -121,7 +130,8 @@ public class ContainerRepositorySummary {
                             layerCount,
                             layersSizeInBytes,
                             lifecycleState,
-                            timeCreated);
+                            timeCreated,
+                            billableSizeInGBs);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -137,7 +147,8 @@ public class ContainerRepositorySummary {
                             .layerCount(o.getLayerCount())
                             .layersSizeInBytes(o.getLayersSizeInBytes())
                             .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated());
+                            .timeCreated(o.getTimeCreated())
+                            .billableSizeInGBs(o.getBillableSizeInGBs());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -207,6 +218,12 @@ public class ContainerRepositorySummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
+
+    /**
+     * Total storage size in GBs that will be charged.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("billableSizeInGBs")
+    Long billableSizeInGBs;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

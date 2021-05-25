@@ -98,6 +98,15 @@ public class LimitDefinitionSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isDynamic")
+        private Boolean isDynamic;
+
+        public Builder isDynamic(Boolean isDynamic) {
+            this.isDynamic = isDynamic;
+            this.__explicitlySet__.add("isDynamic");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -111,7 +120,8 @@ public class LimitDefinitionSummary {
                             areQuotasSupported,
                             isResourceAvailabilitySupported,
                             isDeprecated,
-                            isEligibleForLimitIncrease);
+                            isEligibleForLimitIncrease,
+                            isDynamic);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -126,7 +136,8 @@ public class LimitDefinitionSummary {
                             .areQuotasSupported(o.getAreQuotasSupported())
                             .isResourceAvailabilitySupported(o.getIsResourceAvailabilitySupported())
                             .isDeprecated(o.getIsDeprecated())
-                            .isEligibleForLimitIncrease(o.getIsEligibleForLimitIncrease());
+                            .isEligibleForLimitIncrease(o.getIsEligibleForLimitIncrease())
+                            .isDynamic(o.getIsDynamic());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -159,7 +170,7 @@ public class LimitDefinitionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
     /**
-     * Reflects the scope of the resource limit: which can be Global (across all regions), regional or ad specific.
+     * Reflects the scope of the resource limit, whether Global (across all regions), regional, or availability domain-specific.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -207,7 +218,7 @@ public class LimitDefinitionSummary {
         }
     };
     /**
-     * Reflects the scope of the resource limit: which can be Global (across all regions), regional or ad specific.
+     * Reflects the scope of the resource limit, whether Global (across all regions), regional, or availability domain-specific.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scopeType")
@@ -221,8 +232,8 @@ public class LimitDefinitionSummary {
     Boolean areQuotasSupported;
 
     /**
-     * Reflects if the GetResourceAvailability API is supported for this limit or not.
-     * If not, the API will return an empty JSON response.
+     * Reflects whether or not the GetResourceAvailability API is supported for this limit.
+     * If not, the API returns an empty JSON response.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isResourceAvailabilitySupported")
@@ -241,6 +252,13 @@ public class LimitDefinitionSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEligibleForLimitIncrease")
     Boolean isEligibleForLimitIncrease;
+
+    /**
+     * The limit for this resource has a dynamic value that is based on consumption across all OCI services.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDynamic")
+    Boolean isDynamic;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
