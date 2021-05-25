@@ -36,6 +36,12 @@ public class DownloadThread {
     private final GetObjectRequest getObjectRequest;
 
     /**
+     * The size of the range to be read. In the case of end-only ranges ("bytes=-99"), only the first
+     * rangeSize number of bytes will be read.
+     */
+    private final int rangeSize;
+
+    /**
      * The buffer we read into.
      */
     private final byte[] buffer;
@@ -83,9 +89,15 @@ public class DownloadThread {
     private volatile boolean threadCancelled;
 
     public DownloadThread(
-            DownloadManager downloadManager, GetObjectRequest getObjectRequest, byte[] buffer) {
+            DownloadManager downloadManager,
+            GetObjectRequest getObjectRequest,
+            byte[] buffer,
+            int rangeSize) {
+        assert rangeSize <= buffer.length;
+
         this.downloadManager = downloadManager;
         this.getObjectRequest = getObjectRequest;
+        this.rangeSize = rangeSize;
         this.buffer = buffer;
         this.lock = new Object();
         this.writeTo = 0;
@@ -108,9 +120,9 @@ public class DownloadThread {
      */
     public byte[] run() throws IOException {
         LOG.debug(
-                "Reading bytes {}-{} from {}/{}/{}",
-                this.getObjectRequest.getRange().getStartByte(),
-                this.getObjectRequest.getRange().getEndByte(),
+                "Reading the first {} bytes from range '{}' from {}/{}/{}",
+                this.rangeSize,
+                this.getObjectRequest.getRange(),
                 this.getObjectRequest.getNamespaceName(),
                 this.getObjectRequest.getBucketName(),
                 this.getObjectRequest.getObjectName());
@@ -118,8 +130,17 @@ public class DownloadThread {
             final GetObjectResponse getObjectResponse =
                     this.downloadManager.getObject_singleThreaded(this.getObjectRequest);
             try {
-                assert Math.toIntExact(getObjectResponse.getContentLength()) <= this.buffer.length;
-                this.objectSize = Math.toIntExact(getObjectResponse.getContentLength());
+                LOG.debug(
+                        "buffer.length = '{}', rangeSize = '{}', contentLength = '{}'",
+                        this.buffer.length,
+                        this.rangeSize,
+                        getObjectResponse.getContentLength());
+                this.objectSize =
+                        Math.min(
+                                Math.toIntExact(getObjectResponse.getContentLength()),
+                                this.rangeSize);
+                assert this.objectSize <= this.buffer.length;
+                assert this.objectSize <= this.rangeSize;
                 while (true) {
                     assert this.writeTo >= this.readFrom;
                     assert this.writeTo <= this.buffer.length;

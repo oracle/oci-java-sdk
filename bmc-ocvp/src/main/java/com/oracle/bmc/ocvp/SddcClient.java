@@ -441,6 +441,36 @@ public class SddcClient implements Sddc {
     }
 
     @Override
+    public CancelDowngradeHcxResponse cancelDowngradeHcx(CancelDowngradeHcxRequest request) {
+        LOG.trace("Called cancelDowngradeHcx");
+        final CancelDowngradeHcxRequest interceptedRequest =
+                CancelDowngradeHcxConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelDowngradeHcxConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CancelDowngradeHcxResponse>
+                transformer = CancelDowngradeHcxConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeSddcCompartmentResponse changeSddcCompartment(
             ChangeSddcCompartmentRequest request) {
         LOG.trace("Called changeSddcCompartment");
@@ -529,6 +559,39 @@ public class SddcClient implements Sddc {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DowngradeHcxResponse downgradeHcx(DowngradeHcxRequest request) {
+        LOG.trace("Called downgradeHcx");
+        final DowngradeHcxRequest interceptedRequest =
+                DowngradeHcxConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DowngradeHcxConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DowngradeHcxResponse>
+                transformer = DowngradeHcxConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getDowngradeHcxDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -648,6 +711,37 @@ public class SddcClient implements Sddc {
     }
 
     @Override
+    public RefreshHcxLicenseStatusResponse refreshHcxLicenseStatus(
+            RefreshHcxLicenseStatusRequest request) {
+        LOG.trace("Called refreshHcxLicenseStatus");
+        final RefreshHcxLicenseStatusRequest interceptedRequest =
+                RefreshHcxLicenseStatusConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RefreshHcxLicenseStatusConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, RefreshHcxLicenseStatusResponse>
+                transformer = RefreshHcxLicenseStatusConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateSddcResponse updateSddc(UpdateSddcRequest request) {
         LOG.trace("Called updateSddc");
         final UpdateSddcRequest interceptedRequest = UpdateSddcConverter.interceptRequest(request);
@@ -673,6 +767,35 @@ public class SddcClient implements Sddc {
                                                 ib,
                                                 retriedRequest.getUpdateSddcDetails(),
                                                 retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpgradeHcxResponse upgradeHcx(UpgradeHcxRequest request) {
+        LOG.trace("Called upgradeHcx");
+        final UpgradeHcxRequest interceptedRequest = UpgradeHcxConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpgradeHcxConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpgradeHcxResponse> transformer =
+                UpgradeHcxConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

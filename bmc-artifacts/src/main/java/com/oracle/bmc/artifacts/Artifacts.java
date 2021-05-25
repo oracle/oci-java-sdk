@@ -62,6 +62,20 @@ public interface Artifacts extends AutoCloseable {
             ChangeContainerRepositoryCompartmentRequest request);
 
     /**
+     * Moves a repository into a different compartment within the same tenancy. For information about moving
+     * resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/ChangeRepositoryCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeRepositoryCompartment API.
+     */
+    ChangeRepositoryCompartmentResponse changeRepositoryCompartment(
+            ChangeRepositoryCompartmentRequest request);
+
+    /**
      * Upload a signature to an image.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -82,6 +96,16 @@ public interface Artifacts extends AutoCloseable {
      */
     CreateContainerRepositoryResponse createContainerRepository(
             CreateContainerRepositoryRequest request);
+
+    /**
+     * Creates a new repository for storing artifacts.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/CreateRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRepository API.
+     */
+    CreateRepositoryResponse createRepository(CreateRepositoryRequest request);
 
     /**
      * Delete a container image.
@@ -114,6 +138,37 @@ public interface Artifacts extends AutoCloseable {
      */
     DeleteContainerRepositoryResponse deleteContainerRepository(
             DeleteContainerRepositoryRequest request);
+
+    /**
+     * Deletes an artifact with a specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/DeleteGenericArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteGenericArtifact API.
+     */
+    DeleteGenericArtifactResponse deleteGenericArtifact(DeleteGenericArtifactRequest request);
+
+    /**
+     * Deletes an artifact with a specified `artifactPath` and `version`.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/DeleteGenericArtifactByPathExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteGenericArtifactByPath API.
+     */
+    DeleteGenericArtifactByPathResponse deleteGenericArtifactByPath(
+            DeleteGenericArtifactByPathRequest request);
+
+    /**
+     * Deletes the specified repository. This operation fails unless all associated artifacts are in a DELETED state. You must delete all associated artifacts before deleting a repository.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/DeleteRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRepository API.
+     */
+    DeleteRepositoryResponse deleteRepository(DeleteRepositoryRequest request);
 
     /**
      * Get container configuration.
@@ -158,6 +213,37 @@ public interface Artifacts extends AutoCloseable {
     GetContainerRepositoryResponse getContainerRepository(GetContainerRepositoryRequest request);
 
     /**
+     * Gets information about an artifact with a specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/GetGenericArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetGenericArtifact API.
+     */
+    GetGenericArtifactResponse getGenericArtifact(GetGenericArtifactRequest request);
+
+    /**
+     * Gets information about an artifact with a specified `artifactPath` and `version`.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/GetGenericArtifactByPathExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetGenericArtifactByPath API.
+     */
+    GetGenericArtifactByPathResponse getGenericArtifactByPath(
+            GetGenericArtifactByPathRequest request);
+
+    /**
+     * Gets the specified repository's information.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/GetRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRepository API.
+     */
+    GetRepositoryResponse getRepository(GetRepositoryRequest request);
+
+    /**
      * List container image signatures in an image.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -188,6 +274,26 @@ public interface Artifacts extends AutoCloseable {
      */
     ListContainerRepositoriesResponse listContainerRepositories(
             ListContainerRepositoriesRequest request);
+
+    /**
+     * Lists artifacts in the specified repository.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/ListGenericArtifactsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListGenericArtifacts API.
+     */
+    ListGenericArtifactsResponse listGenericArtifacts(ListGenericArtifactsRequest request);
+
+    /**
+     * Lists repositories in the specified compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/ListRepositoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRepositories API.
+     */
+    ListRepositoriesResponse listRepositories(ListRepositoriesRequest request);
 
     /**
      * Remove version from container image.
@@ -230,6 +336,37 @@ public interface Artifacts extends AutoCloseable {
      */
     UpdateContainerRepositoryResponse updateContainerRepository(
             UpdateContainerRepositoryRequest request);
+
+    /**
+     * Updates the artifact with the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can only update the tags of an artifact.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/UpdateGenericArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateGenericArtifact API.
+     */
+    UpdateGenericArtifactResponse updateGenericArtifact(UpdateGenericArtifactRequest request);
+
+    /**
+     * Updates an artifact with a specified `artifactPath` and `version`. You can only update the tags of an artifact.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/UpdateGenericArtifactByPathExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateGenericArtifactByPath API.
+     */
+    UpdateGenericArtifactByPathResponse updateGenericArtifactByPath(
+            UpdateGenericArtifactByPathRequest request);
+
+    /**
+     * Updates the properties of a repository. You can update the `displayName` and  `description` properties.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/UpdateRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRepository API.
+     */
+    UpdateRepositoryResponse updateRepository(UpdateRepositoryRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

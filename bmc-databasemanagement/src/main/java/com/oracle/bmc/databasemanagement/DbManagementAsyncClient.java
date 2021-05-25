@@ -706,6 +706,86 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetAwrDbReportResponse> getAwrDbReport(
+            GetAwrDbReportRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetAwrDbReportRequest, GetAwrDbReportResponse>
+                    handler) {
+        LOG.trace("Called async getAwrDbReport");
+        final GetAwrDbReportRequest interceptedRequest =
+                GetAwrDbReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAwrDbReportConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetAwrDbReportResponse>
+                transformer = GetAwrDbReportConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<GetAwrDbReportRequest, GetAwrDbReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetAwrDbReportRequest, GetAwrDbReportResponse>,
+                        java.util.concurrent.Future<GetAwrDbReportResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAwrDbReportRequest, GetAwrDbReportResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAwrDbSqlReportResponse> getAwrDbSqlReport(
+            GetAwrDbSqlReportRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetAwrDbSqlReportRequest, GetAwrDbSqlReportResponse>
+                    handler) {
+        LOG.trace("Called async getAwrDbSqlReport");
+        final GetAwrDbSqlReportRequest interceptedRequest =
+                GetAwrDbSqlReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAwrDbSqlReportConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetAwrDbSqlReportResponse>
+                transformer = GetAwrDbSqlReportConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<GetAwrDbSqlReportRequest, GetAwrDbSqlReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetAwrDbSqlReportRequest, GetAwrDbSqlReportResponse>,
+                        java.util.concurrent.Future<GetAwrDbSqlReportResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAwrDbSqlReportRequest, GetAwrDbSqlReportResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetClusterCacheMetricResponse> getClusterCacheMetric(
             GetClusterCacheMetricRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1008,6 +1088,84 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetManagedDatabaseGroupRequest, GetManagedDatabaseGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAwrDbSnapshotsResponse> listAwrDbSnapshots(
+            ListAwrDbSnapshotsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAwrDbSnapshotsRequest, ListAwrDbSnapshotsResponse>
+                    handler) {
+        LOG.trace("Called async listAwrDbSnapshots");
+        final ListAwrDbSnapshotsRequest interceptedRequest =
+                ListAwrDbSnapshotsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAwrDbSnapshotsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListAwrDbSnapshotsResponse>
+                transformer = ListAwrDbSnapshotsConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<ListAwrDbSnapshotsRequest, ListAwrDbSnapshotsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAwrDbSnapshotsRequest, ListAwrDbSnapshotsResponse>,
+                        java.util.concurrent.Future<ListAwrDbSnapshotsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAwrDbSnapshotsRequest, ListAwrDbSnapshotsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAwrDbsResponse> listAwrDbs(
+            ListAwrDbsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListAwrDbsRequest, ListAwrDbsResponse>
+                    handler) {
+        LOG.trace("Called async listAwrDbs");
+        final ListAwrDbsRequest interceptedRequest = ListAwrDbsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAwrDbsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListAwrDbsResponse>
+                transformer = ListAwrDbsConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<ListAwrDbsRequest, ListAwrDbsResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAwrDbsRequest, ListAwrDbsResponse>,
+                        java.util.concurrent.Future<ListAwrDbsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAwrDbsRequest, ListAwrDbsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1376,6 +1534,398 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ResetDatabaseParametersRequest, ResetDatabaseParametersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeAwrDbCpuUsagesResponse> summarizeAwrDbCpuUsages(
+            SummarizeAwrDbCpuUsagesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeAwrDbCpuUsagesRequest, SummarizeAwrDbCpuUsagesResponse>
+                    handler) {
+        LOG.trace("Called async summarizeAwrDbCpuUsages");
+        final SummarizeAwrDbCpuUsagesRequest interceptedRequest =
+                SummarizeAwrDbCpuUsagesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeAwrDbCpuUsagesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, SummarizeAwrDbCpuUsagesResponse>
+                transformer = SummarizeAwrDbCpuUsagesConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeAwrDbCpuUsagesRequest, SummarizeAwrDbCpuUsagesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeAwrDbCpuUsagesRequest, SummarizeAwrDbCpuUsagesResponse>,
+                        java.util.concurrent.Future<SummarizeAwrDbCpuUsagesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeAwrDbCpuUsagesRequest, SummarizeAwrDbCpuUsagesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeAwrDbMetricsResponse> summarizeAwrDbMetrics(
+            SummarizeAwrDbMetricsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeAwrDbMetricsRequest, SummarizeAwrDbMetricsResponse>
+                    handler) {
+        LOG.trace("Called async summarizeAwrDbMetrics");
+        final SummarizeAwrDbMetricsRequest interceptedRequest =
+                SummarizeAwrDbMetricsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeAwrDbMetricsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, SummarizeAwrDbMetricsResponse>
+                transformer = SummarizeAwrDbMetricsConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeAwrDbMetricsRequest, SummarizeAwrDbMetricsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeAwrDbMetricsRequest, SummarizeAwrDbMetricsResponse>,
+                        java.util.concurrent.Future<SummarizeAwrDbMetricsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeAwrDbMetricsRequest, SummarizeAwrDbMetricsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeAwrDbParameterChangesResponse>
+            summarizeAwrDbParameterChanges(
+                    SummarizeAwrDbParameterChangesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeAwrDbParameterChangesRequest,
+                                    SummarizeAwrDbParameterChangesResponse>
+                            handler) {
+        LOG.trace("Called async summarizeAwrDbParameterChanges");
+        final SummarizeAwrDbParameterChangesRequest interceptedRequest =
+                SummarizeAwrDbParameterChangesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeAwrDbParameterChangesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, SummarizeAwrDbParameterChangesResponse>
+                transformer = SummarizeAwrDbParameterChangesConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeAwrDbParameterChangesRequest,
+                        SummarizeAwrDbParameterChangesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeAwrDbParameterChangesRequest,
+                                SummarizeAwrDbParameterChangesResponse>,
+                        java.util.concurrent.Future<SummarizeAwrDbParameterChangesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeAwrDbParameterChangesRequest, SummarizeAwrDbParameterChangesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeAwrDbParametersResponse> summarizeAwrDbParameters(
+            SummarizeAwrDbParametersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeAwrDbParametersRequest, SummarizeAwrDbParametersResponse>
+                    handler) {
+        LOG.trace("Called async summarizeAwrDbParameters");
+        final SummarizeAwrDbParametersRequest interceptedRequest =
+                SummarizeAwrDbParametersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeAwrDbParametersConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, SummarizeAwrDbParametersResponse>
+                transformer = SummarizeAwrDbParametersConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeAwrDbParametersRequest, SummarizeAwrDbParametersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeAwrDbParametersRequest, SummarizeAwrDbParametersResponse>,
+                        java.util.concurrent.Future<SummarizeAwrDbParametersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeAwrDbParametersRequest, SummarizeAwrDbParametersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeAwrDbSnapshotRangesResponse>
+            summarizeAwrDbSnapshotRanges(
+                    SummarizeAwrDbSnapshotRangesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeAwrDbSnapshotRangesRequest,
+                                    SummarizeAwrDbSnapshotRangesResponse>
+                            handler) {
+        LOG.trace("Called async summarizeAwrDbSnapshotRanges");
+        final SummarizeAwrDbSnapshotRangesRequest interceptedRequest =
+                SummarizeAwrDbSnapshotRangesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeAwrDbSnapshotRangesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, SummarizeAwrDbSnapshotRangesResponse>
+                transformer = SummarizeAwrDbSnapshotRangesConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeAwrDbSnapshotRangesRequest, SummarizeAwrDbSnapshotRangesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeAwrDbSnapshotRangesRequest,
+                                SummarizeAwrDbSnapshotRangesResponse>,
+                        java.util.concurrent.Future<SummarizeAwrDbSnapshotRangesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeAwrDbSnapshotRangesRequest, SummarizeAwrDbSnapshotRangesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeAwrDbSysstatsResponse> summarizeAwrDbSysstats(
+            SummarizeAwrDbSysstatsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeAwrDbSysstatsRequest, SummarizeAwrDbSysstatsResponse>
+                    handler) {
+        LOG.trace("Called async summarizeAwrDbSysstats");
+        final SummarizeAwrDbSysstatsRequest interceptedRequest =
+                SummarizeAwrDbSysstatsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeAwrDbSysstatsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, SummarizeAwrDbSysstatsResponse>
+                transformer = SummarizeAwrDbSysstatsConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeAwrDbSysstatsRequest, SummarizeAwrDbSysstatsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeAwrDbSysstatsRequest, SummarizeAwrDbSysstatsResponse>,
+                        java.util.concurrent.Future<SummarizeAwrDbSysstatsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeAwrDbSysstatsRequest, SummarizeAwrDbSysstatsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeAwrDbTopWaitEventsResponse>
+            summarizeAwrDbTopWaitEvents(
+                    SummarizeAwrDbTopWaitEventsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeAwrDbTopWaitEventsRequest,
+                                    SummarizeAwrDbTopWaitEventsResponse>
+                            handler) {
+        LOG.trace("Called async summarizeAwrDbTopWaitEvents");
+        final SummarizeAwrDbTopWaitEventsRequest interceptedRequest =
+                SummarizeAwrDbTopWaitEventsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeAwrDbTopWaitEventsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, SummarizeAwrDbTopWaitEventsResponse>
+                transformer = SummarizeAwrDbTopWaitEventsConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeAwrDbTopWaitEventsRequest, SummarizeAwrDbTopWaitEventsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeAwrDbTopWaitEventsRequest,
+                                SummarizeAwrDbTopWaitEventsResponse>,
+                        java.util.concurrent.Future<SummarizeAwrDbTopWaitEventsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeAwrDbTopWaitEventsRequest, SummarizeAwrDbTopWaitEventsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeAwrDbWaitEventBucketsResponse>
+            summarizeAwrDbWaitEventBuckets(
+                    SummarizeAwrDbWaitEventBucketsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeAwrDbWaitEventBucketsRequest,
+                                    SummarizeAwrDbWaitEventBucketsResponse>
+                            handler) {
+        LOG.trace("Called async summarizeAwrDbWaitEventBuckets");
+        final SummarizeAwrDbWaitEventBucketsRequest interceptedRequest =
+                SummarizeAwrDbWaitEventBucketsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeAwrDbWaitEventBucketsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, SummarizeAwrDbWaitEventBucketsResponse>
+                transformer = SummarizeAwrDbWaitEventBucketsConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeAwrDbWaitEventBucketsRequest,
+                        SummarizeAwrDbWaitEventBucketsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeAwrDbWaitEventBucketsRequest,
+                                SummarizeAwrDbWaitEventBucketsResponse>,
+                        java.util.concurrent.Future<SummarizeAwrDbWaitEventBucketsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeAwrDbWaitEventBucketsRequest, SummarizeAwrDbWaitEventBucketsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeAwrDbWaitEventsResponse> summarizeAwrDbWaitEvents(
+            SummarizeAwrDbWaitEventsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeAwrDbWaitEventsRequest, SummarizeAwrDbWaitEventsResponse>
+                    handler) {
+        LOG.trace("Called async summarizeAwrDbWaitEvents");
+        final SummarizeAwrDbWaitEventsRequest interceptedRequest =
+                SummarizeAwrDbWaitEventsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeAwrDbWaitEventsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, SummarizeAwrDbWaitEventsResponse>
+                transformer = SummarizeAwrDbWaitEventsConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeAwrDbWaitEventsRequest, SummarizeAwrDbWaitEventsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeAwrDbWaitEventsRequest, SummarizeAwrDbWaitEventsResponse>,
+                        java.util.concurrent.Future<SummarizeAwrDbWaitEventsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeAwrDbWaitEventsRequest, SummarizeAwrDbWaitEventsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

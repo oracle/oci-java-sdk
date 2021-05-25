@@ -31,7 +31,7 @@ public class PutLogsRequest extends com.oracle.bmc.requests.BmcRequest<PutLogsDe
 
     /**
      * Effective timestamp, for when the agent started processing the log
-     * segment being sent. An RFC3339-formatted date-time string.
+     * segment being sent. An RFC3339-formatted date-time string with milliseconds precision.
      *
      */
     private java.util.Date timestampOpcAgentProcessing;

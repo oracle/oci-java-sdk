@@ -26,7 +26,7 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
     private String compartmentId;
 
     /**
-     * The target service name
+     * The target service name.
      */
     private String serviceName;
 
@@ -72,7 +72,7 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
     /**
-     * Filter entries by availability domain. This implies that only AD-specific values will be returned.
+     * Filter entries by availability domain. This implies that only AD-specific values are returned.
      *
      */
     private String availabilityDomain;
@@ -83,13 +83,13 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
     private String name;
 
     /**
-     * The field to sort by. We will be implicitly sorting by availabilityDomain, as a second level field, if available.
+     * The field to sort by. The sorting is by availabilityDomain, as a second level field, if available.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. We will be implicitly sorting by availabilityDomain, as a second level field, if available.
+     * The field to sort by. The sorting is by availabilityDomain, as a second level field, if available.
      *
      **/
     public enum SortBy {
@@ -124,13 +124,13 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
     /**
-     * The sort order to use, either 'asc' or 'desc'. By default it will be ascending.
+     * The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
      *
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either 'asc' or 'desc'. By default it will be ascending.
+     * The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
      *
      **/
     public enum SortOrder {

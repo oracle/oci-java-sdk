@@ -346,30 +346,38 @@ public class DownloadManagerTest {
     }
 
     private void verify(GetObjectRequest request, GetObjectResponse response) throws IOException {
-        Assert.assertEquals(response.getETag(), etag);
-        Assert.assertEquals(response.getContentLength(), Long.valueOf(data.length));
+        Assert.assertEquals(etag, response.getETag());
+        Assert.assertEquals(Long.valueOf(data.length), response.getContentLength());
         final byte[] zeroLengthBuffer = new byte[0];
         final byte[] buffer = new byte[65 * 1024 - 1];
+        int dataStart = 0;
+        if (request.getRange() != null
+                && request.getRange().getStartByte() == null
+                && request.getRange().getEndByte() != null) {
+            // this is an end-only range
+            Long endByte = Math.min(Integer.MAX_VALUE, request.getRange().getEndByte());
+            dataStart = Math.max(0, data.length - Math.toIntExact(endByte));
+        }
         int offset = 0;
         while (offset < response.getContentLength()) {
-            Assert.assertEquals(response.getInputStream().read(buffer, 0, 0), 0);
+            Assert.assertEquals(0, response.getInputStream().read(buffer, 0, 0));
             int bytesRead = response.getInputStream().read(buffer);
             Assert.assertTrue(bytesRead > 0);
             for (int i = 0; i < bytesRead; ++i) {
                 // Do a cheap check before asserting
-                if (buffer[i] != data[i + offset]) {
-                    Assert.assertEquals(buffer[i], data[i + offset]);
+                if (buffer[i] != data[dataStart + i + offset]) {
+                    Assert.assertEquals(data[dataStart + i + offset], buffer[i]);
                 }
             }
             offset += bytesRead;
 
-            Assert.assertEquals(response.getInputStream().read(zeroLengthBuffer), 0);
-            Assert.assertEquals(response.getInputStream().read(buffer, 0, 0), 0);
+            Assert.assertEquals(0, response.getInputStream().read(zeroLengthBuffer));
+            Assert.assertEquals(0, response.getInputStream().read(buffer, 0, 0));
         }
 
-        Assert.assertEquals(response.getInputStream().read(), -1);
-        Assert.assertEquals(response.getInputStream().read(buffer), -1);
-        Assert.assertEquals(response.getInputStream().read(buffer, 0, 0), 0);
-        Assert.assertEquals(response.getInputStream().read(buffer, 0, 1), -1);
+        Assert.assertEquals(-1, response.getInputStream().read());
+        Assert.assertEquals(-1, response.getInputStream().read(buffer));
+        Assert.assertEquals(0, response.getInputStream().read(buffer, 0, 0));
+        Assert.assertEquals(-1, response.getInputStream().read(buffer, 0, 1));
     }
 }

@@ -47,6 +47,23 @@ public interface SddcAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Cancel the pending SDDC downgrade from HCX Enterprise to HCX Advanced
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CancelDowngradeHcxResponse> cancelDowngradeHcx(
+            CancelDowngradeHcxRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CancelDowngradeHcxRequest, CancelDowngradeHcxResponse>
+                    handler);
+
+    /**
      * Moves an SDDC into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -106,6 +123,22 @@ public interface SddcAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<DeleteSddcRequest, DeleteSddcResponse> handler);
 
     /**
+     * Downgrade the specified SDDC from HCX Enterprise to HCX Advanced
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DowngradeHcxResponse> downgradeHcx(
+            DowngradeHcxRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DowngradeHcxRequest, DowngradeHcxResponse>
+                    handler);
+
+    /**
      * Gets the specified SDDC's information.
      *
      * @param request The request object containing the details to send
@@ -136,8 +169,8 @@ public interface SddcAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListSddcsRequest, ListSddcsResponse> handler);
 
     /**
-     * Lists supported SKUs. HHOUR, MONTH, ONE_YEAR and THREE_YEARS supported by the Oracle Cloud
-     * VMware Solution.
+     * Lists supported SKUs. Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
+     * HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
      *
      *
      * @param request The request object containing the details to send
@@ -174,6 +207,22 @@ public interface SddcAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Refresh HCX on-premise licenses status of the specified SDDC.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RefreshHcxLicenseStatusResponse> refreshHcxLicenseStatus(
+            RefreshHcxLicenseStatusRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RefreshHcxLicenseStatusRequest, RefreshHcxLicenseStatusResponse>
+                    handler);
+
+    /**
      * Updates the specified SDDC.
      * <p>
      **Important:** Updating an SDDC affects only certain attributes in the `Sddc`
@@ -192,4 +241,19 @@ public interface SddcAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateSddcResponse> updateSddc(
             UpdateSddcRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateSddcRequest, UpdateSddcResponse> handler);
+
+    /**
+     * Upgrade the specified SDDC from HCX Advanced to HCX Enterprise.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpgradeHcxResponse> upgradeHcx(
+            UpgradeHcxRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpgradeHcxRequest, UpgradeHcxResponse> handler);
 }

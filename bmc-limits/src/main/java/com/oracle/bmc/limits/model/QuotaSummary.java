@@ -5,8 +5,8 @@
 package com.oracle.bmc.limits.model;
 
 /**
- * Entails a subset of all the properties of the corresponding Quota and is recommended to be used in cases requiring
- * security of quota details and slightly better API performance.
+ * Consists of a subset of all the properties of the corresponding quota, and is recommended to be used in cases requiring
+ * security of quota details, and for slightly better API performance.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -169,7 +169,7 @@ public class QuotaSummary {
     String description;
 
     /**
-     * Date and time the quota was created, in the format defined by RFC3339.
+     * Date and time the quota was created, in the format defined by RFC 3339.
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/

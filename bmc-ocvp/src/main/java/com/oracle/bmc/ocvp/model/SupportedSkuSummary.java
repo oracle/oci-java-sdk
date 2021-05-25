@@ -5,7 +5,8 @@
 package com.oracle.bmc.ocvp.model;
 
 /**
- * A specific SKU. HOUR, MONTH, ONE_YEAR and THREE_YEARS supported by the Oracle Cloud VMware Solution.
+ * A specific SKU. Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
+ * HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -28,9 +29,9 @@ public class SupportedSkuSummary {
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
-        private Name name;
+        private Sku name;
 
-        public Builder name(Name name) {
+        public Builder name(Sku name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
@@ -64,55 +65,8 @@ public class SupportedSkuSummary {
     /**
      * name of SKU
      **/
-    @lombok.extern.slf4j.Slf4j
-    public enum Name {
-        Hour("HOUR"),
-        Month("MONTH"),
-        OneYear("ONE_YEAR"),
-        ThreeYears("THREE_YEARS"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private final String value;
-        private static java.util.Map<String, Name> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (Name v : Name.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        Name(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static Name create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'Name', returning UnknownEnumValue", key);
-            return UnknownEnumValue;
-        }
-    };
-    /**
-     * name of SKU
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    Name name;
+    Sku name;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

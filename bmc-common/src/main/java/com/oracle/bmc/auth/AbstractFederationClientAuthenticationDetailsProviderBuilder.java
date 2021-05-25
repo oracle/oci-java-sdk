@@ -421,13 +421,14 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
             Function<WebTarget, T> retryOperation,
             final String metadataServiceUrl,
             final String endpoint) {
-        Client client = ClientBuilder.newClient();
-        WebTarget base = client.target(metadataServiceUrl + "instance/");
 
         final int MAX_RETRIES = 3;
         RuntimeException lastException = null;
+        Client client = null;
         for (int retry = 0; retry < MAX_RETRIES; retry++) {
             try {
+                client = ClientBuilder.newClient();
+                WebTarget base = client.target(metadataServiceUrl + "instance/");
                 return retryOperation.apply(base);
             } catch (RuntimeException e) {
                 LOG.warn(

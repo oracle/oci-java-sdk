@@ -232,4 +232,205 @@ public class ArtifactsWaiters {
                                         .Deleted)),
                 request);
     }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetGenericArtifactRequest, GetGenericArtifactResponse>
+            forGenericArtifact(
+                    GetGenericArtifactRequest request,
+                    com.oracle.bmc.artifacts.model.GenericArtifact.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forGenericArtifact(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetGenericArtifactRequest, GetGenericArtifactResponse>
+            forGenericArtifact(
+                    GetGenericArtifactRequest request,
+                    com.oracle.bmc.artifacts.model.GenericArtifact.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forGenericArtifact(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetGenericArtifactRequest, GetGenericArtifactResponse>
+            forGenericArtifact(
+                    GetGenericArtifactRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.artifacts.model.GenericArtifact.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forGenericArtifact(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for GenericArtifact.
+    private com.oracle.bmc.waiter.Waiter<GetGenericArtifactRequest, GetGenericArtifactResponse>
+            forGenericArtifact(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetGenericArtifactRequest request,
+                    final com.oracle.bmc.artifacts.model.GenericArtifact.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.artifacts.model.GenericArtifact.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetGenericArtifactRequest, GetGenericArtifactResponse>() {
+                            @Override
+                            public GetGenericArtifactResponse apply(
+                                    GetGenericArtifactRequest request) {
+                                return client.getGenericArtifact(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetGenericArtifactResponse>() {
+                            @Override
+                            public boolean apply(GetGenericArtifactResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getGenericArtifact().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.artifacts.model.GenericArtifact.LifecycleState
+                                        .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetRepositoryRequest, GetRepositoryResponse> forRepository(
+            GetRepositoryRequest request,
+            com.oracle.bmc.artifacts.model.Repository.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forRepository(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetRepositoryRequest, GetRepositoryResponse> forRepository(
+            GetRepositoryRequest request,
+            com.oracle.bmc.artifacts.model.Repository.LifecycleState targetState,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forRepository(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetRepositoryRequest, GetRepositoryResponse> forRepository(
+            GetRepositoryRequest request,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+            com.oracle.bmc.artifacts.model.Repository.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forRepository(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for Repository.
+    private com.oracle.bmc.waiter.Waiter<GetRepositoryRequest, GetRepositoryResponse> forRepository(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+            final GetRepositoryRequest request,
+            final com.oracle.bmc.artifacts.model.Repository.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.artifacts.model.Repository.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetRepositoryRequest, GetRepositoryResponse>() {
+                            @Override
+                            public GetRepositoryResponse apply(GetRepositoryRequest request) {
+                                return client.getRepository(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetRepositoryResponse>() {
+                            @Override
+                            public boolean apply(GetRepositoryResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getRepository().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.artifacts.model.Repository.LifecycleState.Deleted)),
+                request);
+    }
 }

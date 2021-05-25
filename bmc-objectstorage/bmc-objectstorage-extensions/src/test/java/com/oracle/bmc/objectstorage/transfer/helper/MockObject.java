@@ -91,24 +91,41 @@ public final class MockObject implements Answer<GetObjectResponse> {
         final InputStream inputStream;
         final long contentLength;
         if (request.getRange() != null) {
-            final long rangeStart =
-                    request.getRange().getStartByte() == null
-                            ? 0L
-                            : request.getRange().getStartByte();
-            final long rangeEnd =
-                    request.getRange().getEndByte() == null
-                            ? Long.MAX_VALUE
-                            : request.getRange().getEndByte();
-            final long availableData = getDataLength() - rangeStart;
-            Assert.assertTrue(availableData >= 0);
-            if (rangeEnd - rangeStart > availableData - 1) {
+            if (request.getRange().getStartByte() == null
+                    && request.getRange().getEndByte() != null) {
+                // end-only range
+                final long rangeStart =
+                        Math.max(0L, getDataLength() - request.getRange().getEndByte());
+                final long availableData = getDataLength() - rangeStart;
+                Assert.assertTrue(availableData >= 0);
                 contentLength = Math.toIntExact(availableData);
+                inputStream =
+                        new ByteArrayInputStream(
+                                getData(),
+                                Math.toIntExact(rangeStart),
+                                Math.toIntExact(contentLength));
             } else {
-                contentLength = Math.toIntExact(rangeEnd - rangeStart + 1);
+                final long rangeStart =
+                        request.getRange().getStartByte() == null
+                                ? 0L
+                                : request.getRange().getStartByte();
+                final long rangeEnd =
+                        request.getRange().getEndByte() == null
+                                ? Long.MAX_VALUE
+                                : request.getRange().getEndByte();
+                final long availableData = getDataLength() - rangeStart;
+                Assert.assertTrue(availableData >= 0);
+                if (rangeEnd - rangeStart > availableData - 1) {
+                    contentLength = Math.toIntExact(availableData);
+                } else {
+                    contentLength = Math.toIntExact(rangeEnd - rangeStart + 1);
+                }
+                inputStream =
+                        new ByteArrayInputStream(
+                                getData(),
+                                Math.toIntExact(rangeStart),
+                                Math.toIntExact(contentLength));
             }
-            inputStream =
-                    new ByteArrayInputStream(
-                            getData(), Math.toIntExact(rangeStart), Math.toIntExact(contentLength));
         } else {
             contentLength = getDataLength();
             inputStream = new ByteArrayInputStream(getData());

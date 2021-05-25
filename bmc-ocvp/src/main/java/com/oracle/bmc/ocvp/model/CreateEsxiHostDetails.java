@@ -139,6 +139,8 @@ public class CreateEsxiHostDetails {
 
     /**
      * Billing option selected during SDDC creation.
+     * Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
+     * HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
      * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
      *
      **/

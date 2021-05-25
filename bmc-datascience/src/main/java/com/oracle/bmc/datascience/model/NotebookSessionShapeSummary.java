@@ -54,12 +54,21 @@ public class NotebookSessionShapeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeSeries")
+        private NotebookSessionShapeSeries shapeSeries;
+
+        public Builder shapeSeries(NotebookSessionShapeSeries shapeSeries) {
+            this.shapeSeries = shapeSeries;
+            this.__explicitlySet__.add("shapeSeries");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NotebookSessionShapeSummary build() {
             NotebookSessionShapeSummary __instance__ =
-                    new NotebookSessionShapeSummary(name, coreCount, memoryInGBs);
+                    new NotebookSessionShapeSummary(name, coreCount, memoryInGBs, shapeSeries);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -67,7 +76,10 @@ public class NotebookSessionShapeSummary {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(NotebookSessionShapeSummary o) {
             Builder copiedBuilder =
-                    name(o.getName()).coreCount(o.getCoreCount()).memoryInGBs(o.getMemoryInGBs());
+                    name(o.getName())
+                            .coreCount(o.getCoreCount())
+                            .memoryInGBs(o.getMemoryInGBs())
+                            .shapeSeries(o.getShapeSeries());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -101,6 +113,13 @@ public class NotebookSessionShapeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     Integer memoryInGBs;
+
+    /**
+     * The family that the compute shape belongs to.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeSeries")
+    NotebookSessionShapeSeries shapeSeries;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

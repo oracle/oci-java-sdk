@@ -357,6 +357,51 @@ public class Sddc {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isHcxEnterpriseEnabled")
+        private Boolean isHcxEnterpriseEnabled;
+
+        public Builder isHcxEnterpriseEnabled(Boolean isHcxEnterpriseEnabled) {
+            this.isHcxEnterpriseEnabled = isHcxEnterpriseEnabled;
+            this.__explicitlySet__.add("isHcxEnterpriseEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isHcxPendingDowngrade")
+        private Boolean isHcxPendingDowngrade;
+
+        public Builder isHcxPendingDowngrade(Boolean isHcxPendingDowngrade) {
+            this.isHcxPendingDowngrade = isHcxPendingDowngrade;
+            this.__explicitlySet__.add("isHcxPendingDowngrade");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("hcxOnPremLicenses")
+        private java.util.List<HcxLicenseSummary> hcxOnPremLicenses;
+
+        public Builder hcxOnPremLicenses(java.util.List<HcxLicenseSummary> hcxOnPremLicenses) {
+            this.hcxOnPremLicenses = hcxOnPremLicenses;
+            this.__explicitlySet__.add("hcxOnPremLicenses");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeHcxBillingCycleEnd")
+        private java.util.Date timeHcxBillingCycleEnd;
+
+        public Builder timeHcxBillingCycleEnd(java.util.Date timeHcxBillingCycleEnd) {
+            this.timeHcxBillingCycleEnd = timeHcxBillingCycleEnd;
+            this.__explicitlySet__.add("timeHcxBillingCycleEnd");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeHcxLicenseStatusUpdated")
+        private java.util.Date timeHcxLicenseStatusUpdated;
+
+        public Builder timeHcxLicenseStatusUpdated(java.util.Date timeHcxLicenseStatusUpdated) {
+            this.timeHcxLicenseStatusUpdated = timeHcxLicenseStatusUpdated;
+            this.__explicitlySet__.add("timeHcxLicenseStatusUpdated");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -445,6 +490,11 @@ public class Sddc {
                             hcxVlanId,
                             isHcxEnabled,
                             hcxOnPremKey,
+                            isHcxEnterpriseEnabled,
+                            isHcxPendingDowngrade,
+                            hcxOnPremLicenses,
+                            timeHcxBillingCycleEnd,
+                            timeHcxLicenseStatusUpdated,
                             timeCreated,
                             timeUpdated,
                             lifecycleState,
@@ -493,6 +543,11 @@ public class Sddc {
                             .hcxVlanId(o.getHcxVlanId())
                             .isHcxEnabled(o.getIsHcxEnabled())
                             .hcxOnPremKey(o.getHcxOnPremKey())
+                            .isHcxEnterpriseEnabled(o.getIsHcxEnterpriseEnabled())
+                            .isHcxPendingDowngrade(o.getIsHcxPendingDowngrade())
+                            .hcxOnPremLicenses(o.getHcxOnPremLicenses())
+                            .timeHcxBillingCycleEnd(o.getTimeHcxBillingCycleEnd())
+                            .timeHcxLicenseStatusUpdated(o.getTimeHcxLicenseStatusUpdated())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
                             .lifecycleState(o.getLifecycleState())
@@ -582,7 +637,9 @@ public class Sddc {
     Integer esxiHostsCount;
 
     /**
-     * Billing option selected during SDDC creation
+     * Billing option selected during SDDC creation.
+     * Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
+     * HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
      * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
      *
      **/
@@ -917,6 +974,44 @@ public class Sddc {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hcxOnPremKey")
     String hcxOnPremKey;
+
+    /**
+     * Indicates whether HCX Enterprise is enabled for this SDDC.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isHcxEnterpriseEnabled")
+    Boolean isHcxEnterpriseEnabled;
+
+    /**
+     * Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isHcxPendingDowngrade")
+    Boolean isHcxPendingDowngrade;
+
+    /**
+     * The activation licenses to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hcxOnPremLicenses")
+    java.util.List<HcxLicenseSummary> hcxOnPremLicenses;
+
+    /**
+     * The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: `2016-08-25T21:10:29.600Z`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeHcxBillingCycleEnd")
+    java.util.Date timeHcxBillingCycleEnd;
+
+    /**
+     * The date and time the SDDC's HCX on-premise license status was updated, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: `2016-08-25T21:10:29.600Z`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeHcxLicenseStatusUpdated")
+    java.util.Date timeHcxLicenseStatusUpdated;
 
     /**
      * The date and time the SDDC was created, in the format defined by

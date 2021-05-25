@@ -53,12 +53,26 @@ public class NotebookSessionConfigurationDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("notebookSessionShapeConfigDetails")
+        private NotebookSessionShapeConfigDetails notebookSessionShapeConfigDetails;
+
+        public Builder notebookSessionShapeConfigDetails(
+                NotebookSessionShapeConfigDetails notebookSessionShapeConfigDetails) {
+            this.notebookSessionShapeConfigDetails = notebookSessionShapeConfigDetails;
+            this.__explicitlySet__.add("notebookSessionShapeConfigDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NotebookSessionConfigurationDetails build() {
             NotebookSessionConfigurationDetails __instance__ =
-                    new NotebookSessionConfigurationDetails(shape, blockStorageSizeInGBs, subnetId);
+                    new NotebookSessionConfigurationDetails(
+                            shape,
+                            blockStorageSizeInGBs,
+                            subnetId,
+                            notebookSessionShapeConfigDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -68,7 +82,9 @@ public class NotebookSessionConfigurationDetails {
             Builder copiedBuilder =
                     shape(o.getShape())
                             .blockStorageSizeInGBs(o.getBlockStorageSizeInGBs())
-                            .subnetId(o.getSubnetId());
+                            .subnetId(o.getSubnetId())
+                            .notebookSessionShapeConfigDetails(
+                                    o.getNotebookSessionShapeConfigDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -102,6 +118,9 @@ public class NotebookSessionConfigurationDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     String subnetId;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("notebookSessionShapeConfigDetails")
+    NotebookSessionShapeConfigDetails notebookSessionShapeConfigDetails;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

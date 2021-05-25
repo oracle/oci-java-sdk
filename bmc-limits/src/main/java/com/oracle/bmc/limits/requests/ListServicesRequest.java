@@ -68,13 +68,13 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
     /**
-     * The sort order to use, either 'asc' or 'desc'. By default it will be ascending.
+     * The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
      *
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either 'asc' or 'desc'. By default it will be ascending.
+     * The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
      *
      **/
     public enum SortOrder {

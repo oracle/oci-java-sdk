@@ -8,7 +8,7 @@ import com.oracle.bmc.limits.requests.*;
 import com.oracle.bmc.limits.responses.*;
 
 /**
- * APIs that interact with the resource limits of a specific resource type
+ * APIs that interact with the resource limits of a specific resource type.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
 public interface Quotas extends AutoCloseable {
@@ -76,7 +76,7 @@ public interface Quotas extends AutoCloseable {
     GetQuotaResponse getQuota(GetQuotaRequest request);
 
     /**
-     * Lists all quotas on resources from the given compartment
+     * Lists all quotas on resources from the given compartment.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
