@@ -142,6 +142,18 @@ public class CreateAutonomousDatabaseBase {
     Boolean isFreeTier;
 
     /**
+     * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    String kmsKeyId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
+    String vaultId;
+
+    /**
      * The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (\") or the username \"admin\", regardless of casing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")

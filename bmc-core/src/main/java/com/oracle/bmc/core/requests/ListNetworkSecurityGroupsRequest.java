@@ -26,6 +26,11 @@ public class ListNetworkSecurityGroupsRequest
     private String compartmentId;
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
+     */
+    private String vlanId;
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      */
     private String vcnId;
@@ -197,6 +202,7 @@ public class ListNetworkSecurityGroupsRequest
          */
         public Builder copy(ListNetworkSecurityGroupsRequest o) {
             compartmentId(o.getCompartmentId());
+            vlanId(o.getVlanId());
             vcnId(o.getVcnId());
             limit(o.getLimit());
             page(o.getPage());

@@ -39,6 +39,15 @@ public class CronSchedule extends Schedule {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOfFirstExecution")
+        private java.util.Date timeOfFirstExecution;
+
+        public Builder timeOfFirstExecution(java.util.Date timeOfFirstExecution) {
+            this.timeOfFirstExecution = timeOfFirstExecution;
+            this.__explicitlySet__.add("timeOfFirstExecution");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("expression")
         private String expression;
 
@@ -61,7 +70,8 @@ public class CronSchedule extends Schedule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CronSchedule build() {
-            CronSchedule __instance__ = new CronSchedule(misfirePolicy, expression, timeZone);
+            CronSchedule __instance__ =
+                    new CronSchedule(misfirePolicy, timeOfFirstExecution, expression, timeZone);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -70,6 +80,7 @@ public class CronSchedule extends Schedule {
         public Builder copy(CronSchedule o) {
             Builder copiedBuilder =
                     misfirePolicy(o.getMisfirePolicy())
+                            .timeOfFirstExecution(o.getTimeOfFirstExecution())
                             .expression(o.getExpression())
                             .timeZone(o.getTimeZone());
 
@@ -86,8 +97,12 @@ public class CronSchedule extends Schedule {
     }
 
     @Deprecated
-    public CronSchedule(MisfirePolicy misfirePolicy, String expression, String timeZone) {
-        super(misfirePolicy);
+    public CronSchedule(
+            MisfirePolicy misfirePolicy,
+            java.util.Date timeOfFirstExecution,
+            String expression,
+            String timeZone) {
+        super(misfirePolicy, timeOfFirstExecution);
         this.expression = expression;
         this.timeZone = timeZone;
     }

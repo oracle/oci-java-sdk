@@ -121,6 +121,61 @@ public class ScheduledTask {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskStatus")
     TaskStatus taskStatus;
+    /**
+     * reason for taskStatus PAUSED.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum PauseReason {
+        MetricExtractionNotValid("METRIC_EXTRACTION_NOT_VALID"),
+        SavedSearchNotValid("SAVED_SEARCH_NOT_VALID"),
+        SavedSearchNotFound("SAVED_SEARCH_NOT_FOUND"),
+        QueryStringNotValid("QUERY_STRING_NOT_VALID"),
+        UserAction("USER_ACTION"),
+        TenancyLifecycle("TENANCY_LIFECYCLE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, PauseReason> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (PauseReason v : PauseReason.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        PauseReason(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static PauseReason create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'PauseReason', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * reason for taskStatus PAUSED.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("pauseReason")
+    PauseReason pauseReason;
 
     /**
      * most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
@@ -153,6 +208,14 @@ public class ScheduledTask {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
+
+    /**
+     * The date and time the scheduled task will execute next,
+     * in the format defined by RFC3339.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeOfNextExecution")
+    java.util.Date timeOfNextExecution;
     /**
      * The current state of the scheduled task.
      **/

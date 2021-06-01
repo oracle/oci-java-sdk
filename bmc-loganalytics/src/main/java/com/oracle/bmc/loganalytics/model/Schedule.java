@@ -91,6 +91,14 @@ public class Schedule {
     MisfirePolicy misfirePolicy;
 
     /**
+     * The date and time the scheduled task should execute first time after create or update;
+     * thereafter the task will execute as specified in the schedule.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeOfFirstExecution")
+    java.util.Date timeOfFirstExecution;
+
+    /**
      * Schedule type discriminator.
      **/
     @lombok.extern.slf4j.Slf4j

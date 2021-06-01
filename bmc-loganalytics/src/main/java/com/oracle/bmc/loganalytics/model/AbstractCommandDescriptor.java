@@ -42,6 +42,10 @@ package com.oracle.bmc.loganalytics.model;
         name = "MULTI_SEARCH"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CompareCommandDescriptor.class,
+        name = "COMPARE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = StatsCommandDescriptor.class,
         name = "STATS"
     ),
@@ -279,6 +283,7 @@ public class AbstractCommandDescriptor {
         CreateView("CREATE_VIEW"),
         Map("MAP"),
         Nlp("NLP"),
+        Compare("COMPARE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

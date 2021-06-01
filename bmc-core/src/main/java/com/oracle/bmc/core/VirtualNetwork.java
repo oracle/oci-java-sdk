@@ -2488,7 +2488,8 @@ public interface VirtualNetwork extends AutoCloseable {
             ListNetworkSecurityGroupVnicsRequest request);
 
     /**
-     * Lists the network security groups in the specified compartment.
+     * Lists either the network security groups in the specified compartment, or those associated with the specified VLAN.
+     * You must specify either a `vlanId` or a `compartmentId`, but not both. If you specify a `vlanId`, all other parameters are ignored.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.37.1 - 2021-06-01
+### Added
+- Support for configuration of autonomous database KMS keys in the Database service
+- Support for creating database software images with any supported RUs in the Database service
+- Support for creating database software images from an existing database home in the Database service
+- Support for listing all NSGs associated with a given VLAN in the Networking service
+- Support for a duration windows, task failure reasons, and next execution times on scheduled tasks in the Logging Analytics service
+- Support for calling Oracle Cloud Infrastructure services in the sa-vinhedo-1 region
+
 ## 1.37.0 - 2021-05-25
 ### Added
 - Support for the Generic Artifacts service

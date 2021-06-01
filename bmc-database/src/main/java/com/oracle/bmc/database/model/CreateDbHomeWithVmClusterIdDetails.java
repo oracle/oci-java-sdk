@@ -88,6 +88,15 @@ public class CreateDbHomeWithVmClusterIdDetails extends CreateDbHomeBase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isDesupportedVersion")
+        private Boolean isDesupportedVersion;
+
+        public Builder isDesupportedVersion(Boolean isDesupportedVersion) {
+            this.isDesupportedVersion = isDesupportedVersion;
+            this.__explicitlySet__.add("isDesupportedVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
         private String vmClusterId;
 
@@ -127,6 +136,7 @@ public class CreateDbHomeWithVmClusterIdDetails extends CreateDbHomeBase {
                             databaseSoftwareImageId,
                             freeformTags,
                             definedTags,
+                            isDesupportedVersion,
                             vmClusterId,
                             dbVersion,
                             database);
@@ -143,6 +153,7 @@ public class CreateDbHomeWithVmClusterIdDetails extends CreateDbHomeBase {
                             .databaseSoftwareImageId(o.getDatabaseSoftwareImageId())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
+                            .isDesupportedVersion(o.getIsDesupportedVersion())
                             .vmClusterId(o.getVmClusterId())
                             .dbVersion(o.getDbVersion())
                             .database(o.getDatabase());
@@ -167,6 +178,7 @@ public class CreateDbHomeWithVmClusterIdDetails extends CreateDbHomeBase {
             String databaseSoftwareImageId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            Boolean isDesupportedVersion,
             String vmClusterId,
             String dbVersion,
             CreateDatabaseDetails database) {
@@ -176,7 +188,8 @@ public class CreateDbHomeWithVmClusterIdDetails extends CreateDbHomeBase {
                 kmsKeyVersionId,
                 databaseSoftwareImageId,
                 freeformTags,
-                definedTags);
+                definedTags,
+                isDesupportedVersion);
         this.vmClusterId = vmClusterId;
         this.dbVersion = dbVersion;
         this.database = database;

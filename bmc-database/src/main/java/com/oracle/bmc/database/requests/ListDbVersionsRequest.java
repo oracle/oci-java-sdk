@@ -57,6 +57,11 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private Boolean isUpgradeSupported;
 
+    /**
+     * If true, filters the results to the set of Oracle Database versions that are supported for OCI database software images.
+     */
+    private Boolean isDatabaseSoftwareImageSupported;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDbVersionsRequest, java.lang.Void> {
@@ -99,6 +104,7 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             dbSystemId(o.getDbSystemId());
             storageManagement(o.getStorageManagement());
             isUpgradeSupported(o.getIsUpgradeSupported());
+            isDatabaseSoftwareImageSupported(o.getIsDatabaseSoftwareImageSupported());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

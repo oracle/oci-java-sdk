@@ -86,6 +86,14 @@ public class ListDbVersionsConverter {
                                     request.getIsUpgradeSupported()));
         }
 
+        if (request.getIsDatabaseSoftwareImageSupported() != null) {
+            target =
+                    target.queryParam(
+                            "isDatabaseSoftwareImageSupported",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsDatabaseSoftwareImageSupported()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
