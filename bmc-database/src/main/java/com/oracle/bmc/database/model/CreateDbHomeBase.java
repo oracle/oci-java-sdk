@@ -99,6 +99,12 @@ public class CreateDbHomeBase {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
+     * If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDesupportedVersion")
+    Boolean isDesupportedVersion;
+
+    /**
      * The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup.
      *
      **/

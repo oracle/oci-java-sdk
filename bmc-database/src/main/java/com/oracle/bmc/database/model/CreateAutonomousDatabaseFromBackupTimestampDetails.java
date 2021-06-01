@@ -88,6 +88,24 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
+        private String vaultId;
+
+        public Builder vaultId(String vaultId) {
+            this.vaultId = vaultId;
+            this.__explicitlySet__.add("vaultId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
         private String adminPassword;
 
@@ -301,6 +319,8 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                             dbWorkload,
                             dataStorageSizeInTBs,
                             isFreeTier,
+                            kmsKeyId,
+                            vaultId,
                             adminPassword,
                             displayName,
                             licenseModel,
@@ -336,6 +356,8 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                             .dbWorkload(o.getDbWorkload())
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
                             .isFreeTier(o.getIsFreeTier())
+                            .kmsKeyId(o.getKmsKeyId())
+                            .vaultId(o.getVaultId())
                             .adminPassword(o.getAdminPassword())
                             .displayName(o.getDisplayName())
                             .licenseModel(o.getLicenseModel())
@@ -380,6 +402,8 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
             DbWorkload dbWorkload,
             Integer dataStorageSizeInTBs,
             Boolean isFreeTier,
+            String kmsKeyId,
+            String vaultId,
             String adminPassword,
             String displayName,
             LicenseModel licenseModel,
@@ -409,6 +433,8 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                 dbWorkload,
                 dataStorageSizeInTBs,
                 isFreeTier,
+                kmsKeyId,
+                vaultId,
                 adminPassword,
                 displayName,
                 licenseModel,

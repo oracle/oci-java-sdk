@@ -1267,6 +1267,54 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ConfigureAutonomousDatabaseVaultKeyResponse>
+            configureAutonomousDatabaseVaultKey(
+                    ConfigureAutonomousDatabaseVaultKeyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ConfigureAutonomousDatabaseVaultKeyRequest,
+                                    ConfigureAutonomousDatabaseVaultKeyResponse>
+                            handler) {
+        LOG.trace("Called async configureAutonomousDatabaseVaultKey");
+        final ConfigureAutonomousDatabaseVaultKeyRequest interceptedRequest =
+                ConfigureAutonomousDatabaseVaultKeyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ConfigureAutonomousDatabaseVaultKeyConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ConfigureAutonomousDatabaseVaultKeyResponse>
+                transformer = ConfigureAutonomousDatabaseVaultKeyConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ConfigureAutonomousDatabaseVaultKeyRequest,
+                        ConfigureAutonomousDatabaseVaultKeyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ConfigureAutonomousDatabaseVaultKeyRequest,
+                                ConfigureAutonomousDatabaseVaultKeyResponse>,
+                        java.util.concurrent.Future<ConfigureAutonomousDatabaseVaultKeyResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ConfigureAutonomousDatabaseVaultKeyRequest,
+                    ConfigureAutonomousDatabaseVaultKeyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAutonomousContainerDatabaseResponse>
             createAutonomousContainerDatabase(
                     CreateAutonomousContainerDatabaseRequest request,

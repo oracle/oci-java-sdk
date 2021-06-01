@@ -89,6 +89,15 @@ public class ScheduledTaskSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("pauseReason")
+        private ScheduledTask.PauseReason pauseReason;
+
+        public Builder pauseReason(ScheduledTask.PauseReason pauseReason) {
+            this.pauseReason = pauseReason;
+            this.__explicitlySet__.add("pauseReason");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
         private String workRequestId;
 
@@ -157,6 +166,7 @@ public class ScheduledTaskSummary {
                             timeUpdated,
                             lifecycleState,
                             taskStatus,
+                            pauseReason,
                             workRequestId,
                             displayName,
                             freeformTags,
@@ -177,6 +187,7 @@ public class ScheduledTaskSummary {
                             .timeUpdated(o.getTimeUpdated())
                             .lifecycleState(o.getLifecycleState())
                             .taskStatus(o.getTaskStatus())
+                            .pauseReason(o.getPauseReason())
                             .workRequestId(o.getWorkRequestId())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
@@ -287,6 +298,12 @@ public class ScheduledTaskSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskStatus")
     TaskStatus taskStatus;
+
+    /**
+     * reason for taskStatus PAUSED.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("pauseReason")
+    ScheduledTask.PauseReason pauseReason;
 
     /**
      * most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.

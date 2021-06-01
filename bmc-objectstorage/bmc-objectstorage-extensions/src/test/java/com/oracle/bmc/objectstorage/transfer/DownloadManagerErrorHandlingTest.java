@@ -13,6 +13,7 @@ import com.oracle.bmc.objectstorage.transfer.helper.MockObject;
 import com.oracle.bmc.objectstorage.transfer.helper.MockObjectStorage;
 import com.oracle.bmc.objectstorage.transfer.helper.RandomFailureInjector;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -23,6 +24,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
+@Ignore
 public class DownloadManagerErrorHandlingTest {
 
     /**

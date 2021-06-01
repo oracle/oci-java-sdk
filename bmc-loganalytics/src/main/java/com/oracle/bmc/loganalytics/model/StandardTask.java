@@ -85,6 +85,15 @@ public class StandardTask extends ScheduledTask {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("pauseReason")
+        private PauseReason pauseReason;
+
+        public Builder pauseReason(PauseReason pauseReason) {
+            this.pauseReason = pauseReason;
+            this.__explicitlySet__.add("pauseReason");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
         private String workRequestId;
 
@@ -127,6 +136,15 @@ public class StandardTask extends ScheduledTask {
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOfNextExecution")
+        private java.util.Date timeOfNextExecution;
+
+        public Builder timeOfNextExecution(java.util.Date timeOfNextExecution) {
+            this.timeOfNextExecution = timeOfNextExecution;
+            this.__explicitlySet__.add("timeOfNextExecution");
             return this;
         }
 
@@ -188,11 +206,13 @@ public class StandardTask extends ScheduledTask {
                             schedules,
                             action,
                             taskStatus,
+                            pauseReason,
                             workRequestId,
                             numOccurrences,
                             compartmentId,
                             timeCreated,
                             timeUpdated,
+                            timeOfNextExecution,
                             lifecycleState,
                             freeformTags,
                             definedTags,
@@ -211,11 +231,13 @@ public class StandardTask extends ScheduledTask {
                             .schedules(o.getSchedules())
                             .action(o.getAction())
                             .taskStatus(o.getTaskStatus())
+                            .pauseReason(o.getPauseReason())
                             .workRequestId(o.getWorkRequestId())
                             .numOccurrences(o.getNumOccurrences())
                             .compartmentId(o.getCompartmentId())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
+                            .timeOfNextExecution(o.getTimeOfNextExecution())
                             .lifecycleState(o.getLifecycleState())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
@@ -242,11 +264,13 @@ public class StandardTask extends ScheduledTask {
             java.util.List<Schedule> schedules,
             Action action,
             TaskStatus taskStatus,
+            PauseReason pauseReason,
             String workRequestId,
             Long numOccurrences,
             String compartmentId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            java.util.Date timeOfNextExecution,
             LifecycleState lifecycleState,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -259,11 +283,13 @@ public class StandardTask extends ScheduledTask {
                 schedules,
                 action,
                 taskStatus,
+                pauseReason,
                 workRequestId,
                 numOccurrences,
                 compartmentId,
                 timeCreated,
                 timeUpdated,
+                timeOfNextExecution,
                 lifecycleState,
                 freeformTags,
                 definedTags);

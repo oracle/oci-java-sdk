@@ -88,6 +88,15 @@ public class CreateDbHomeWithDbSystemIdFromBackupDetails extends CreateDbHomeBas
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isDesupportedVersion")
+        private Boolean isDesupportedVersion;
+
+        public Builder isDesupportedVersion(Boolean isDesupportedVersion) {
+            this.isDesupportedVersion = isDesupportedVersion;
+            this.__explicitlySet__.add("isDesupportedVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
@@ -118,6 +127,7 @@ public class CreateDbHomeWithDbSystemIdFromBackupDetails extends CreateDbHomeBas
                             databaseSoftwareImageId,
                             freeformTags,
                             definedTags,
+                            isDesupportedVersion,
                             dbSystemId,
                             database);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -133,6 +143,7 @@ public class CreateDbHomeWithDbSystemIdFromBackupDetails extends CreateDbHomeBas
                             .databaseSoftwareImageId(o.getDatabaseSoftwareImageId())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
+                            .isDesupportedVersion(o.getIsDesupportedVersion())
                             .dbSystemId(o.getDbSystemId())
                             .database(o.getDatabase());
 
@@ -156,6 +167,7 @@ public class CreateDbHomeWithDbSystemIdFromBackupDetails extends CreateDbHomeBas
             String databaseSoftwareImageId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            Boolean isDesupportedVersion,
             String dbSystemId,
             CreateDatabaseFromBackupDetails database) {
         super(
@@ -164,7 +176,8 @@ public class CreateDbHomeWithDbSystemIdFromBackupDetails extends CreateDbHomeBas
                 kmsKeyVersionId,
                 databaseSoftwareImageId,
                 freeformTags,
-                definedTags);
+                definedTags,
+                isDesupportedVersion);
         this.dbSystemId = dbSystemId;
         this.database = database;
     }

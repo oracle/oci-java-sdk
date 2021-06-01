@@ -121,6 +121,15 @@ public class CreateDatabaseSoftwareImageDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceDbHomeId")
+        private String sourceDbHomeId;
+
+        public Builder sourceDbHomeId(String sourceDbHomeId) {
+            this.sourceDbHomeId = sourceDbHomeId;
+            this.__explicitlySet__.add("sourceDbHomeId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -136,7 +145,8 @@ public class CreateDatabaseSoftwareImageDetails {
                             databaseSoftwareImageOneOffPatches,
                             lsInventory,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            sourceDbHomeId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -154,7 +164,8 @@ public class CreateDatabaseSoftwareImageDetails {
                                     o.getDatabaseSoftwareImageOneOffPatches())
                             .lsInventory(o.getLsInventory())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .sourceDbHomeId(o.getSourceDbHomeId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -302,6 +313,12 @@ public class CreateDatabaseSoftwareImageDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceDbHomeId")
+    String sourceDbHomeId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

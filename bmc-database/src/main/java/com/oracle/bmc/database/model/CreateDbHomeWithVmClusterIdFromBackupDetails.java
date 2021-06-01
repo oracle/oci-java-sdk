@@ -88,6 +88,15 @@ public class CreateDbHomeWithVmClusterIdFromBackupDetails extends CreateDbHomeBa
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isDesupportedVersion")
+        private Boolean isDesupportedVersion;
+
+        public Builder isDesupportedVersion(Boolean isDesupportedVersion) {
+            this.isDesupportedVersion = isDesupportedVersion;
+            this.__explicitlySet__.add("isDesupportedVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
         private String vmClusterId;
 
@@ -118,6 +127,7 @@ public class CreateDbHomeWithVmClusterIdFromBackupDetails extends CreateDbHomeBa
                             databaseSoftwareImageId,
                             freeformTags,
                             definedTags,
+                            isDesupportedVersion,
                             vmClusterId,
                             database);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -133,6 +143,7 @@ public class CreateDbHomeWithVmClusterIdFromBackupDetails extends CreateDbHomeBa
                             .databaseSoftwareImageId(o.getDatabaseSoftwareImageId())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
+                            .isDesupportedVersion(o.getIsDesupportedVersion())
                             .vmClusterId(o.getVmClusterId())
                             .database(o.getDatabase());
 
@@ -156,6 +167,7 @@ public class CreateDbHomeWithVmClusterIdFromBackupDetails extends CreateDbHomeBa
             String databaseSoftwareImageId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            Boolean isDesupportedVersion,
             String vmClusterId,
             CreateDatabaseFromBackupDetails database) {
         super(
@@ -164,7 +176,8 @@ public class CreateDbHomeWithVmClusterIdFromBackupDetails extends CreateDbHomeBa
                 kmsKeyVersionId,
                 databaseSoftwareImageId,
                 freeformTags,
-                definedTags);
+                definedTags,
+                isDesupportedVersion);
         this.vmClusterId = vmClusterId;
         this.database = database;
     }

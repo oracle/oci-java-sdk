@@ -65,6 +65,33 @@ public class AutonomousDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
+        private String vaultId;
+
+        public Builder vaultId(String vaultId) {
+            this.vaultId = vaultId;
+            this.__explicitlySet__.add("vaultId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyLifecycleDetails")
+        private String kmsKeyLifecycleDetails;
+
+        public Builder kmsKeyLifecycleDetails(String kmsKeyLifecycleDetails) {
+            this.kmsKeyLifecycleDetails = kmsKeyLifecycleDetails;
+            this.__explicitlySet__.add("kmsKeyLifecycleDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dbName")
         private String dbName;
 
@@ -118,6 +145,16 @@ public class AutonomousDatabaseSummary {
         public Builder backupConfig(AutonomousDatabaseBackupConfig backupConfig) {
             this.backupConfig = backupConfig;
             this.__explicitlySet__.add("backupConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("keyHistoryEntry")
+        private java.util.List<AutonomousDatabaseKeyHistoryEntry> keyHistoryEntry;
+
+        public Builder keyHistoryEntry(
+                java.util.List<AutonomousDatabaseKeyHistoryEntry> keyHistoryEntry) {
+            this.keyHistoryEntry = keyHistoryEntry;
+            this.__explicitlySet__.add("keyHistoryEntry");
             return this;
         }
 
@@ -600,12 +637,16 @@ public class AutonomousDatabaseSummary {
                             compartmentId,
                             lifecycleState,
                             lifecycleDetails,
+                            kmsKeyId,
+                            vaultId,
+                            kmsKeyLifecycleDetails,
                             dbName,
                             isFreeTier,
                             systemTags,
                             timeReclamationOfFreeAutonomousDatabase,
                             timeDeletionOfFreeAutonomousDatabase,
                             backupConfig,
+                            keyHistoryEntry,
                             cpuCoreCount,
                             dataStorageSizeInTBs,
                             dataStorageSizeInGBs,
@@ -669,6 +710,9 @@ public class AutonomousDatabaseSummary {
                             .compartmentId(o.getCompartmentId())
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails())
+                            .kmsKeyId(o.getKmsKeyId())
+                            .vaultId(o.getVaultId())
+                            .kmsKeyLifecycleDetails(o.getKmsKeyLifecycleDetails())
                             .dbName(o.getDbName())
                             .isFreeTier(o.getIsFreeTier())
                             .systemTags(o.getSystemTags())
@@ -677,6 +721,7 @@ public class AutonomousDatabaseSummary {
                             .timeDeletionOfFreeAutonomousDatabase(
                                     o.getTimeDeletionOfFreeAutonomousDatabase())
                             .backupConfig(o.getBackupConfig())
+                            .keyHistoryEntry(o.getKeyHistoryEntry())
                             .cpuCoreCount(o.getCpuCoreCount())
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
                             .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
@@ -777,6 +822,7 @@ public class AutonomousDatabaseSummary {
         Recreating("RECREATING"),
         RoleChangeInProgress("ROLE_CHANGE_IN_PROGRESS"),
         Upgrading("UPGRADING"),
+        Inaccessible("INACCESSIBLE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -829,6 +875,24 @@ public class AutonomousDatabaseSummary {
     String lifecycleDetails;
 
     /**
+     * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    String kmsKeyId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
+    String vaultId;
+
+    /**
+     * KMS key lifecycle details.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyLifecycleDetails")
+    String kmsKeyLifecycleDetails;
+
+    /**
      * The database name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
@@ -865,6 +929,12 @@ public class AutonomousDatabaseSummary {
 
     @com.fasterxml.jackson.annotation.JsonProperty("backupConfig")
     AutonomousDatabaseBackupConfig backupConfig;
+
+    /**
+     * Key History Entry.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("keyHistoryEntry")
+    java.util.List<AutonomousDatabaseKeyHistoryEntry> keyHistoryEntry;
 
     /**
      * The number of OCPU cores to be made available to the database.

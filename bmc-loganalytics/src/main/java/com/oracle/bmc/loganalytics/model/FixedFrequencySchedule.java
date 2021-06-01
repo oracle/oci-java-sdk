@@ -41,6 +41,15 @@ public class FixedFrequencySchedule extends Schedule {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOfFirstExecution")
+        private java.util.Date timeOfFirstExecution;
+
+        public Builder timeOfFirstExecution(java.util.Date timeOfFirstExecution) {
+            this.timeOfFirstExecution = timeOfFirstExecution;
+            this.__explicitlySet__.add("timeOfFirstExecution");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("recurringInterval")
         private String recurringInterval;
 
@@ -64,7 +73,8 @@ public class FixedFrequencySchedule extends Schedule {
 
         public FixedFrequencySchedule build() {
             FixedFrequencySchedule __instance__ =
-                    new FixedFrequencySchedule(misfirePolicy, recurringInterval, repeatCount);
+                    new FixedFrequencySchedule(
+                            misfirePolicy, timeOfFirstExecution, recurringInterval, repeatCount);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -73,6 +83,7 @@ public class FixedFrequencySchedule extends Schedule {
         public Builder copy(FixedFrequencySchedule o) {
             Builder copiedBuilder =
                     misfirePolicy(o.getMisfirePolicy())
+                            .timeOfFirstExecution(o.getTimeOfFirstExecution())
                             .recurringInterval(o.getRecurringInterval())
                             .repeatCount(o.getRepeatCount());
 
@@ -90,8 +101,11 @@ public class FixedFrequencySchedule extends Schedule {
 
     @Deprecated
     public FixedFrequencySchedule(
-            MisfirePolicy misfirePolicy, String recurringInterval, Integer repeatCount) {
-        super(misfirePolicy);
+            MisfirePolicy misfirePolicy,
+            java.util.Date timeOfFirstExecution,
+            String recurringInterval,
+            Integer repeatCount) {
+        super(misfirePolicy, timeOfFirstExecution);
         this.recurringInterval = recurringInterval;
         this.repeatCount = repeatCount;
     }

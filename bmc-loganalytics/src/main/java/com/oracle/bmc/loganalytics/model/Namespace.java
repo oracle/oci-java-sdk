@@ -60,12 +60,26 @@ public class Namespace {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isDataEverIngested")
+        private Boolean isDataEverIngested;
+
+        public Builder isDataEverIngested(Boolean isDataEverIngested) {
+            this.isDataEverIngested = isDataEverIngested;
+            this.__explicitlySet__.add("isDataEverIngested");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Namespace build() {
             Namespace __instance__ =
-                    new Namespace(namespaceName, compartmentId, isOnboarded, isLogSetEnabled);
+                    new Namespace(
+                            namespaceName,
+                            compartmentId,
+                            isOnboarded,
+                            isLogSetEnabled,
+                            isDataEverIngested);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -76,7 +90,8 @@ public class Namespace {
                     namespaceName(o.getNamespaceName())
                             .compartmentId(o.getCompartmentId())
                             .isOnboarded(o.getIsOnboarded())
-                            .isLogSetEnabled(o.getIsLogSetEnabled());
+                            .isLogSetEnabled(o.getIsLogSetEnabled())
+                            .isDataEverIngested(o.getIsDataEverIngested());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -113,6 +128,12 @@ public class Namespace {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLogSetEnabled")
     Boolean isLogSetEnabled;
+
+    /**
+     * This indicates if data has ever been ingested for the tenancy in Logging Analytics
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDataEverIngested")
+    Boolean isDataEverIngested;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
