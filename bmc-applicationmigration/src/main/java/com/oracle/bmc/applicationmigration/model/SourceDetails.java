@@ -38,6 +38,10 @@ package com.oracle.bmc.applicationmigration.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ImportSourceDetails.class,
+        name = "IMPORT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = OccSourceDetails.class,
         name = "OCC"
     ),

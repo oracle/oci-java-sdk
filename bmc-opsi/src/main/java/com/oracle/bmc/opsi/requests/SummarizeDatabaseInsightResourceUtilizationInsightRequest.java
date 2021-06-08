@@ -127,6 +127,20 @@ public class SummarizeDatabaseInsightResourceUtilizationInsightRequest
     private Integer forecastDays;
 
     /**
+     * Filter by one or more hostname.
+     *
+     */
+    private java.util.List<String> hostName;
+
+    /**
+     * Flag to indicate if database instance level metrics should be returned. The flag is ignored when a host name filter is not applied.
+     * When a hostname filter is applied this flag will determine whether to return metrics for the instances located on the specified host or for the
+     * whole database which contains an instance on this host.
+     *
+     */
+    private Boolean isDatabaseInstanceLevelMetrics;
+
+    /**
      * For list pagination. The value of the `opc-next-page` response header from
      * the previous \"List\" call. For important details about how pagination works,
      * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
@@ -185,6 +199,8 @@ public class SummarizeDatabaseInsightResourceUtilizationInsightRequest
             databaseId(o.getDatabaseId());
             id(o.getId());
             forecastDays(o.getForecastDays());
+            hostName(o.getHostName());
+            isDatabaseInstanceLevelMetrics(o.getIsDatabaseInstanceLevelMetrics());
             page(o.getPage());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());

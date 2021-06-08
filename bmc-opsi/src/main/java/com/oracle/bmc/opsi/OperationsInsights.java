@@ -296,6 +296,17 @@ public interface OperationsInsights extends AutoCloseable {
     IngestSqlTextResponse ingestSqlText(IngestSqlTextRequest request);
 
     /**
+     * Gets a list of database insight configurations based on the query parameters specified. Either compartmentId or databaseInsightId query parameter must be specified.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListDatabaseConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDatabaseConfigurations API.
+     */
+    ListDatabaseConfigurationsResponse listDatabaseConfigurations(
+            ListDatabaseConfigurationsRequest request);
+
+    /**
      * Gets a list of database insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

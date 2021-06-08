@@ -68,6 +68,15 @@ public class SummarizeSqlInsightsConverter {
                             com.oracle.bmc.util.internal.CollectionFormatType.Multi);
         }
 
+        if (request.getHostName() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "hostName",
+                            request.getHostName(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         if (request.getDatabaseTimePctGreaterThan() != null) {
             target =
                     target.queryParam(

@@ -112,6 +112,23 @@ public class SummarizeDatabaseInsightResourceUtilizationInsightConverter {
                                     request.getForecastDays()));
         }
 
+        if (request.getHostName() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "hostName",
+                            request.getHostName(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getIsDatabaseInstanceLevelMetrics() != null) {
+            target =
+                    target.queryParam(
+                            "isDatabaseInstanceLevelMetrics",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsDatabaseInstanceLevelMetrics()));
+        }
+
         if (request.getPage() != null) {
             target =
                     target.queryParam(

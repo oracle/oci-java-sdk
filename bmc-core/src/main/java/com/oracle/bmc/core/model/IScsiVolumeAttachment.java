@@ -140,6 +140,24 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isMultipath")
+        private Boolean isMultipath;
+
+        public Builder isMultipath(Boolean isMultipath) {
+            this.isMultipath = isMultipath;
+            this.__explicitlySet__.add("isMultipath");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("iscsiLoginState")
+        private IscsiLoginState iscsiLoginState;
+
+        public Builder iscsiLoginState(IscsiLoginState iscsiLoginState) {
+            this.iscsiLoginState = iscsiLoginState;
+            this.__explicitlySet__.add("iscsiLoginState");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("chapSecret")
         private String chapSecret;
 
@@ -185,6 +203,24 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("multipathDevices")
+        private java.util.List<MultipathDevice> multipathDevices;
+
+        public Builder multipathDevices(java.util.List<MultipathDevice> multipathDevices) {
+            this.multipathDevices = multipathDevices;
+            this.__explicitlySet__.add("multipathDevices");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptionInTransitType")
+        private EncryptionInTransitType encryptionInTransitType;
+
+        public Builder encryptionInTransitType(EncryptionInTransitType encryptionInTransitType) {
+            this.encryptionInTransitType = encryptionInTransitType;
+            this.__explicitlySet__.add("encryptionInTransitType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -203,11 +239,15 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
                             timeCreated,
                             volumeId,
                             isPvEncryptionInTransitEnabled,
+                            isMultipath,
+                            iscsiLoginState,
                             chapSecret,
                             chapUsername,
                             ipv4,
                             iqn,
-                            port);
+                            port,
+                            multipathDevices,
+                            encryptionInTransitType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -227,11 +267,15 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
                             .timeCreated(o.getTimeCreated())
                             .volumeId(o.getVolumeId())
                             .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled())
+                            .isMultipath(o.getIsMultipath())
+                            .iscsiLoginState(o.getIscsiLoginState())
                             .chapSecret(o.getChapSecret())
                             .chapUsername(o.getChapUsername())
                             .ipv4(o.getIpv4())
                             .iqn(o.getIqn())
-                            .port(o.getPort());
+                            .port(o.getPort())
+                            .multipathDevices(o.getMultipathDevices())
+                            .encryptionInTransitType(o.getEncryptionInTransitType());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -259,11 +303,15 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
             java.util.Date timeCreated,
             String volumeId,
             Boolean isPvEncryptionInTransitEnabled,
+            Boolean isMultipath,
+            IscsiLoginState iscsiLoginState,
             String chapSecret,
             String chapUsername,
             String ipv4,
             String iqn,
-            Integer port) {
+            Integer port,
+            java.util.List<MultipathDevice> multipathDevices,
+            EncryptionInTransitType encryptionInTransitType) {
         super(
                 availabilityDomain,
                 compartmentId,
@@ -276,12 +324,16 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
                 lifecycleState,
                 timeCreated,
                 volumeId,
-                isPvEncryptionInTransitEnabled);
+                isPvEncryptionInTransitEnabled,
+                isMultipath,
+                iscsiLoginState);
         this.chapSecret = chapSecret;
         this.chapUsername = chapUsername;
         this.ipv4 = ipv4;
         this.iqn = iqn;
         this.port = port;
+        this.multipathDevices = multipathDevices;
+        this.encryptionInTransitType = encryptionInTransitType;
     }
 
     /**
@@ -330,6 +382,20 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     Integer port;
+
+    /**
+     * A list of secondary multipath devices
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("multipathDevices")
+    java.util.List<MultipathDevice> multipathDevices;
+
+    /**
+     * Refer the top-level definition of encryptionInTransitType.
+     * The default value is NONE.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptionInTransitType")
+    EncryptionInTransitType encryptionInTransitType;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

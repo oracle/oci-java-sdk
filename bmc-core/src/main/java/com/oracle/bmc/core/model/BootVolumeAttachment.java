@@ -111,6 +111,15 @@ public class BootVolumeAttachment {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptionInTransitType")
+        private EncryptionInTransitType encryptionInTransitType;
+
+        public Builder encryptionInTransitType(EncryptionInTransitType encryptionInTransitType) {
+            this.encryptionInTransitType = encryptionInTransitType;
+            this.__explicitlySet__.add("encryptionInTransitType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -125,7 +134,8 @@ public class BootVolumeAttachment {
                             instanceId,
                             lifecycleState,
                             timeCreated,
-                            isPvEncryptionInTransitEnabled);
+                            isPvEncryptionInTransitEnabled,
+                            encryptionInTransitType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -141,7 +151,8 @@ public class BootVolumeAttachment {
                             .instanceId(o.getInstanceId())
                             .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
-                            .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled());
+                            .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled())
+                            .encryptionInTransitType(o.getEncryptionInTransitType());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -265,6 +276,14 @@ public class BootVolumeAttachment {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
     Boolean isPvEncryptionInTransitEnabled;
+
+    /**
+     * Refer the top-level definition of encryptionInTransitType.
+     * The default value is NONE.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptionInTransitType")
+    EncryptionInTransitType encryptionInTransitType;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

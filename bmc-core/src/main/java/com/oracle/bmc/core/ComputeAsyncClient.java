@@ -3756,4 +3756,45 @@ public class ComputeAsyncClient implements ComputeAsync {
             return futureSupplier.apply(handlerToUse);
         }
     }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVolumeAttachmentResponse> updateVolumeAttachment(
+            UpdateVolumeAttachmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateVolumeAttachmentRequest, UpdateVolumeAttachmentResponse>
+                    handler) {
+        LOG.trace("Called async updateVolumeAttachment");
+        final UpdateVolumeAttachmentRequest interceptedRequest =
+                UpdateVolumeAttachmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateVolumeAttachmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateVolumeAttachmentResponse>
+                transformer = UpdateVolumeAttachmentConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateVolumeAttachmentRequest, UpdateVolumeAttachmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateVolumeAttachmentRequest, UpdateVolumeAttachmentResponse>,
+                        java.util.concurrent.Future<UpdateVolumeAttachmentResponse>>
+                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateVolumeAttachmentRequest, UpdateVolumeAttachmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
 }

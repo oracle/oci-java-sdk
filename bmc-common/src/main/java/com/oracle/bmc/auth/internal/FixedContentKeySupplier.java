@@ -8,6 +8,7 @@ import com.oracle.bmc.auth.SessionKeySupplier;
 import com.oracle.bmc.http.signing.internal.PEMFileRSAPrivateKeySupplier;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.security.InvalidKeyException;
 import java.security.KeyFactory;
 import java.security.KeyPair;
@@ -26,13 +27,13 @@ public class FixedContentKeySupplier implements SessionKeySupplier {
     final private KeyPair keyPair;
 
     public FixedContentKeySupplier(String privateKeyContents, char[] passphrase) {
-        final RSAPrivateKey privateKey =
-                new PEMFileRSAPrivateKeySupplier(
-                                new ByteArrayInputStream(privateKeyContents.getBytes()), passphrase)
-                        .getKey("unused")
-                        .orNull();
+        try (ByteArrayInputStream inputStream =
+                new ByteArrayInputStream(privateKeyContents.getBytes())) {
+            final RSAPrivateKey privateKey =
+                    new PEMFileRSAPrivateKeySupplier(inputStream, passphrase)
+                            .getKey("unused")
+                            .orNull();
 
-        try {
             KeyFactory keyFactory = KeyFactory.getInstance("RSA");
             RSAPrivateCrtKeySpec keySpec =
                     keyFactory.getKeySpec(
@@ -43,7 +44,10 @@ public class FixedContentKeySupplier implements SessionKeySupplier {
                                     new RSAPublicKeySpec(
                                             keySpec.getModulus(), keySpec.getPublicExponent()));
             keyPair = new KeyPair(publicKey, privateKey);
-        } catch (NoSuchAlgorithmException | InvalidKeyException | InvalidKeySpecException e) {
+        } catch (NoSuchAlgorithmException
+                | InvalidKeyException
+                | InvalidKeySpecException
+                | IOException e) {
             throw new IllegalStateException("problem handling private key", e);
         }
     }

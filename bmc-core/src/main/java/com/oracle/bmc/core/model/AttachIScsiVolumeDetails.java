@@ -95,6 +95,15 @@ public class AttachIScsiVolumeDetails extends AttachVolumeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptionInTransitType")
+        private EncryptionInTransitType encryptionInTransitType;
+
+        public Builder encryptionInTransitType(EncryptionInTransitType encryptionInTransitType) {
+            this.encryptionInTransitType = encryptionInTransitType;
+            this.__explicitlySet__.add("encryptionInTransitType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -107,7 +116,8 @@ public class AttachIScsiVolumeDetails extends AttachVolumeDetails {
                             isReadOnly,
                             isShareable,
                             volumeId,
-                            useChap);
+                            useChap,
+                            encryptionInTransitType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -121,7 +131,8 @@ public class AttachIScsiVolumeDetails extends AttachVolumeDetails {
                             .isReadOnly(o.getIsReadOnly())
                             .isShareable(o.getIsShareable())
                             .volumeId(o.getVolumeId())
-                            .useChap(o.getUseChap());
+                            .useChap(o.getUseChap())
+                            .encryptionInTransitType(o.getEncryptionInTransitType());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -143,9 +154,11 @@ public class AttachIScsiVolumeDetails extends AttachVolumeDetails {
             Boolean isReadOnly,
             Boolean isShareable,
             String volumeId,
-            Boolean useChap) {
+            Boolean useChap,
+            EncryptionInTransitType encryptionInTransitType) {
         super(device, displayName, instanceId, isReadOnly, isShareable, volumeId);
         this.useChap = useChap;
+        this.encryptionInTransitType = encryptionInTransitType;
     }
 
     /**
@@ -154,6 +167,14 @@ public class AttachIScsiVolumeDetails extends AttachVolumeDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("useChap")
     Boolean useChap;
+
+    /**
+     * Refer the top-level definition of encryptionInTransitType.
+     * The default value is NONE.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptionInTransitType")
+    EncryptionInTransitType encryptionInTransitType;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

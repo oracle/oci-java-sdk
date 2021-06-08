@@ -168,6 +168,14 @@ public class SummarizeDatabaseInsightResourceForecastTrendConverter {
                                     request.getTablespaceName()));
         }
 
+        if (request.getIsDatabaseInstanceLevelMetrics() != null) {
+            target =
+                    target.queryParam(
+                            "isDatabaseInstanceLevelMetrics",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsDatabaseInstanceLevelMetrics()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

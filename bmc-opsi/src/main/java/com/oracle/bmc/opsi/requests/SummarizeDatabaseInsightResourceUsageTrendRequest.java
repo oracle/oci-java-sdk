@@ -178,6 +178,20 @@ public class SummarizeDatabaseInsightResourceUsageTrendRequest
         }
     };
     /**
+     * Filter by one or more hostname.
+     *
+     */
+    private java.util.List<String> hostName;
+
+    /**
+     * Flag to indicate if database instance level metrics should be returned. The flag is ignored when a host name filter is not applied.
+     * When a hostname filter is applied this flag will determine whether to return metrics for the instances located on the specified host or for the
+     * whole database which contains an instance on this host.
+     *
+     */
+    private Boolean isDatabaseInstanceLevelMetrics;
+
+    /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
      *
@@ -230,6 +244,8 @@ public class SummarizeDatabaseInsightResourceUsageTrendRequest
             page(o.getPage());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
+            hostName(o.getHostName());
+            isDatabaseInstanceLevelMetrics(o.getIsDatabaseInstanceLevelMetrics());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());

@@ -185,4 +185,70 @@ public class VolumeAttachment {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
     Boolean isPvEncryptionInTransitEnabled;
+
+    /**
+     * Whether the attachment is multipath or not.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isMultipath")
+    Boolean isMultipath;
+    /**
+     * The iscsi login state of the volume attachment. For a multipath volume attachment,
+     * all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum IscsiLoginState {
+        Unknown("UNKNOWN"),
+        LoggingIn("LOGGING_IN"),
+        LoginSucceeded("LOGIN_SUCCEEDED"),
+        LoginFailed("LOGIN_FAILED"),
+        LoggingOut("LOGGING_OUT"),
+        LogoutSucceeded("LOGOUT_SUCCEEDED"),
+        LogoutFailed("LOGOUT_FAILED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, IscsiLoginState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (IscsiLoginState v : IscsiLoginState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        IscsiLoginState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static IscsiLoginState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'IscsiLoginState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The iscsi login state of the volume attachment. For a multipath volume attachment,
+     * all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("iscsiLoginState")
+    IscsiLoginState iscsiLoginState;
 }

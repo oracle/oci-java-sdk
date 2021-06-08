@@ -1327,6 +1327,50 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListDatabaseConfigurationsResponse>
+            listDatabaseConfigurations(
+                    ListDatabaseConfigurationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDatabaseConfigurationsRequest,
+                                    ListDatabaseConfigurationsResponse>
+                            handler) {
+        LOG.trace("Called async listDatabaseConfigurations");
+        final ListDatabaseConfigurationsRequest interceptedRequest =
+                ListDatabaseConfigurationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDatabaseConfigurationsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDatabaseConfigurationsResponse>
+                transformer = ListDatabaseConfigurationsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDatabaseConfigurationsRequest, ListDatabaseConfigurationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDatabaseConfigurationsRequest,
+                                ListDatabaseConfigurationsResponse>,
+                        java.util.concurrent.Future<ListDatabaseConfigurationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDatabaseConfigurationsRequest, ListDatabaseConfigurationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDatabaseInsightsResponse> listDatabaseInsights(
             ListDatabaseInsightsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

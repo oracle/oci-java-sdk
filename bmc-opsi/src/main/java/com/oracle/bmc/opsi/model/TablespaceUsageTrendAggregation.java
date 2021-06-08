@@ -83,7 +83,7 @@ public class TablespaceUsageTrendAggregation {
     }
 
     /**
-     * Name of tablespace
+     * The name of tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tablespaceName")
     String tablespaceName;

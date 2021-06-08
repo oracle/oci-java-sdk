@@ -71,6 +71,15 @@ public class SummarizeDatabaseInsightResourceForecastTrendAggregation {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("tablespaceName")
+        private String tablespaceName;
+
+        public Builder tablespaceName(String tablespaceName) {
+            this.tablespaceName = tablespaceName;
+            this.__explicitlySet__.add("tablespaceName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("historicalData")
         private java.util.List<HistoricalDataItem> historicalData;
 
@@ -100,6 +109,7 @@ public class SummarizeDatabaseInsightResourceForecastTrendAggregation {
                             resourceMetric,
                             usageUnit,
                             pattern,
+                            tablespaceName,
                             historicalData,
                             projectedData);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -114,6 +124,7 @@ public class SummarizeDatabaseInsightResourceForecastTrendAggregation {
                             .resourceMetric(o.getResourceMetric())
                             .usageUnit(o.getUsageUnit())
                             .pattern(o.getPattern())
+                            .tablespaceName(o.getTablespaceName())
                             .historicalData(o.getHistoricalData())
                             .projectedData(o.getProjectedData());
 
@@ -261,6 +272,12 @@ public class SummarizeDatabaseInsightResourceForecastTrendAggregation {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pattern")
     Pattern pattern;
+
+    /**
+     * The name of tablespace.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("tablespaceName")
+    String tablespaceName;
 
     /**
      * Time series data used for the forecast analysis.
