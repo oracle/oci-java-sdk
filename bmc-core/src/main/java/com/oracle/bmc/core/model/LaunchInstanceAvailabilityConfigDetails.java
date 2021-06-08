@@ -5,8 +5,8 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Options for defining the availability of a VM instance after a maintenance event that impacts the underlying
- * hardware, including whether to live migrate supported VM instances when possible.
+ * Options for VM migration during infrastructure maintenance events and for defining
+ * the availability of a VM instance after a maintenance event that impacts the underlying hardware.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

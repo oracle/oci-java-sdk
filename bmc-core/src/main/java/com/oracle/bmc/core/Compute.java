@@ -1140,6 +1140,16 @@ public interface Compute extends AutoCloseable {
             UpdateInstanceConsoleConnectionRequest request);
 
     /**
+     * Updates information about the specified volume attachment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVolumeAttachment API.
+     */
+    UpdateVolumeAttachmentResponse updateVolumeAttachment(UpdateVolumeAttachmentRequest request);
+
+    /**
      * Gets the pre-configured waiters available for resources for this service.
      *
      * @return The service waiters.

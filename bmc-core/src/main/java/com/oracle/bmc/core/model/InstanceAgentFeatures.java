@@ -73,14 +73,14 @@ public class InstanceAgentFeatures {
     }
 
     /**
-     * Whether Oracle Cloud Agent can gather performance metrics and monitor the instance.
+     * This attribute is not used.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMonitoringSupported")
     Boolean isMonitoringSupported;
 
     /**
-     * Whether Oracle Cloud Agent can run all the available management plugins.
+     * This attribute is not used.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isManagementSupported")

@@ -140,6 +140,24 @@ public class EmulatedVolumeAttachment extends VolumeAttachment {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isMultipath")
+        private Boolean isMultipath;
+
+        public Builder isMultipath(Boolean isMultipath) {
+            this.isMultipath = isMultipath;
+            this.__explicitlySet__.add("isMultipath");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("iscsiLoginState")
+        private IscsiLoginState iscsiLoginState;
+
+        public Builder iscsiLoginState(IscsiLoginState iscsiLoginState) {
+            this.iscsiLoginState = iscsiLoginState;
+            this.__explicitlySet__.add("iscsiLoginState");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -157,7 +175,9 @@ public class EmulatedVolumeAttachment extends VolumeAttachment {
                             lifecycleState,
                             timeCreated,
                             volumeId,
-                            isPvEncryptionInTransitEnabled);
+                            isPvEncryptionInTransitEnabled,
+                            isMultipath,
+                            iscsiLoginState);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -176,7 +196,9 @@ public class EmulatedVolumeAttachment extends VolumeAttachment {
                             .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
                             .volumeId(o.getVolumeId())
-                            .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled());
+                            .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled())
+                            .isMultipath(o.getIsMultipath())
+                            .iscsiLoginState(o.getIscsiLoginState());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -203,7 +225,9 @@ public class EmulatedVolumeAttachment extends VolumeAttachment {
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
             String volumeId,
-            Boolean isPvEncryptionInTransitEnabled) {
+            Boolean isPvEncryptionInTransitEnabled,
+            Boolean isMultipath,
+            IscsiLoginState iscsiLoginState) {
         super(
                 availabilityDomain,
                 compartmentId,
@@ -216,7 +240,9 @@ public class EmulatedVolumeAttachment extends VolumeAttachment {
                 lifecycleState,
                 timeCreated,
                 volumeId,
-                isPvEncryptionInTransitEnabled);
+                isPvEncryptionInTransitEnabled,
+                isMultipath,
+                iscsiLoginState);
     }
 
     @com.fasterxml.jackson.annotation.JsonIgnore

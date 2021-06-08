@@ -112,11 +112,9 @@ public class PEMFileRSAPrivateKeySupplier implements KeySupplier<RSAPrivateKey> 
                 }
 
                 this.key = (RSAPrivateKey) converter.getPrivateKey(keyInfo);
-            } finally {
-                StreamUtils.closeQuietly(inputStream);
             }
         } catch (IOException ex) {
-            LOG.debug("Failed to read RSA private key from file", ex);
+            LOG.debug("Failed to read RSA private key from file ", ex);
             throw new PEMFileRSAPrivateKeySupplierException(ex);
         }
     }

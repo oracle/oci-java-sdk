@@ -223,24 +223,39 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
 
     /**
      * Read the private key from url.
-     * @param privateKeyResouceDetails the private key resource details.
+     * @param privateKeyResourceDetails the private key resource details.
      * @param privateKeyPassphrase the private key passhprase
      * @return the private key
      */
     private static RSAPrivateKey readPrivateKey(
-            final ResourceDetails privateKeyResouceDetails, char[] privateKeyPassphrase) {
-        if (privateKeyResouceDetails == null || privateKeyResouceDetails.getUrl() == null) {
+            final ResourceDetails privateKeyResourceDetails, char[] privateKeyPassphrase) {
+        if (privateKeyResourceDetails == null || privateKeyResourceDetails.getUrl() == null) {
             return null;
         }
 
-        try {
-            return new PEMFileRSAPrivateKeySupplier(
-                            getResourceStream(privateKeyResouceDetails), privateKeyPassphrase)
-                    .getKey(null)
-                    .orNull();
-        } catch (IOException e) {
-            throw new IllegalArgumentException("No file for private key", e);
+        final int MAX_RETRIES = 3;
+        Exception lastException = null;
+        for (int retry = 0; retry < MAX_RETRIES; retry++) {
+            try (InputStream inputStream = getResourceStream(privateKeyResourceDetails)) {
+                return new PEMFileRSAPrivateKeySupplier(inputStream, privateKeyPassphrase)
+                        .getKey(null)
+                        .orNull();
+            } catch (IOException
+                    | PEMFileRSAPrivateKeySupplier.PEMFileRSAPrivateKeySupplierException e) {
+                LOG.info("Attempt {} to read private key failed. ", (retry + 1), e);
+                lastException = e;
+                try {
+                    Thread.sleep(TimeUnit.SECONDS.toMillis(30));
+                } catch (InterruptedException interruptedException) {
+                    LOG.debug(
+                            "Thread interrupted while waiting to make next readPrivateKey call to instance metadata service ",
+                            interruptedException);
+                    Thread.currentThread().interrupt();
+                    break;
+                }
+            }
         }
+        throw new IllegalArgumentException("No file for private key ", lastException);
     }
 
     /**

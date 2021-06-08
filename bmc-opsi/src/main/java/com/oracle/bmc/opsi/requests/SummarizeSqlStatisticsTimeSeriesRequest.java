@@ -45,6 +45,12 @@ public class SummarizeSqlStatisticsTimeSeriesRequest
     private java.util.List<String> id;
 
     /**
+     * Filter by one or more hostname.
+     *
+     */
+    private java.util.List<String> hostName;
+
+    /**
      * Specify time period in ISO 8601 format with respect to current time.
      * Default is last 30 days represented by P30D.
      * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
@@ -126,6 +132,7 @@ public class SummarizeSqlStatisticsTimeSeriesRequest
             sqlIdentifier(o.getSqlIdentifier());
             databaseId(o.getDatabaseId());
             id(o.getId());
+            hostName(o.getHostName());
             analysisTimeInterval(o.getAnalysisTimeInterval());
             timeIntervalStart(o.getTimeIntervalStart());
             timeIntervalEnd(o.getTimeIntervalEnd());

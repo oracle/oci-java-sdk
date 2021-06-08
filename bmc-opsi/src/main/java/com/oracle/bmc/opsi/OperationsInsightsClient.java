@@ -1188,6 +1188,36 @@ public class OperationsInsightsClient implements OperationsInsights {
     }
 
     @Override
+    public ListDatabaseConfigurationsResponse listDatabaseConfigurations(
+            ListDatabaseConfigurationsRequest request) {
+        LOG.trace("Called listDatabaseConfigurations");
+        final ListDatabaseConfigurationsRequest interceptedRequest =
+                ListDatabaseConfigurationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDatabaseConfigurationsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDatabaseConfigurationsResponse>
+                transformer = ListDatabaseConfigurationsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListDatabaseInsightsResponse listDatabaseInsights(ListDatabaseInsightsRequest request) {
         LOG.trace("Called listDatabaseInsights");
         final ListDatabaseInsightsRequest interceptedRequest =

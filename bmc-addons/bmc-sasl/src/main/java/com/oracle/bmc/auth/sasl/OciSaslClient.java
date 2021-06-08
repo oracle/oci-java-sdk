@@ -33,6 +33,8 @@ import javax.security.auth.callback.UnsupportedCallbackException;
 import javax.security.sasl.SaslClient;
 import javax.security.sasl.SaslClientFactory;
 import javax.security.sasl.SaslException;
+
+import com.oracle.bmc.util.StreamUtils;
 import lombok.RequiredArgsConstructor;
 
 /**
@@ -102,11 +104,17 @@ public class OciSaslClient implements SaslClient {
                 ((RefreshableOnNotAuthenticatedProvider) authProvider).refresh();
             }
 
-            currentPrivateKey =
-                    new OciPrivateKey(
-                            authProvider.getKeyId(),
-                            authProvider.getPrivateKey(),
-                            authProvider.getPassphraseCharacters());
+            InputStream inputStream = null;
+            try {
+                inputStream = authProvider.getPrivateKey();
+                currentPrivateKey =
+                        new OciPrivateKey(
+                                authProvider.getKeyId(),
+                                inputStream,
+                                authProvider.getPassphraseCharacters());
+            } finally {
+                StreamUtils.closeQuietly(inputStream);
+            }
 
             return Key.newBuilder().setKeyId(currentPrivateKey.keyId).setIntent(intent).build();
         }

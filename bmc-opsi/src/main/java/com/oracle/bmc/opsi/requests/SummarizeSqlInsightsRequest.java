@@ -86,6 +86,12 @@ public class SummarizeSqlInsightsRequest
     private java.util.List<String> id;
 
     /**
+     * Filter by one or more hostname.
+     *
+     */
+    private java.util.List<String> hostName;
+
+    /**
      * Filter sqls by percentage of db time.
      *
      */
@@ -173,6 +179,7 @@ public class SummarizeSqlInsightsRequest
             databaseType(o.getDatabaseType());
             databaseId(o.getDatabaseId());
             id(o.getId());
+            hostName(o.getHostName());
             databaseTimePctGreaterThan(o.getDatabaseTimePctGreaterThan());
             analysisTimeInterval(o.getAnalysisTimeInterval());
             timeIntervalStart(o.getTimeIntervalStart());

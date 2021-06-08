@@ -31,6 +31,123 @@ public class OperationsInsightsPaginators {
     private final OperationsInsights client;
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listDatabaseConfigurations operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListDatabaseConfigurationsResponse> listDatabaseConfigurationsResponseIterator(
+            final ListDatabaseConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDatabaseConfigurationsRequest.Builder, ListDatabaseConfigurationsRequest,
+                ListDatabaseConfigurationsResponse>(
+                new com.google.common.base.Supplier<ListDatabaseConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListDatabaseConfigurationsRequest.Builder get() {
+                        return ListDatabaseConfigurationsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListDatabaseConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(ListDatabaseConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDatabaseConfigurationsRequest.Builder>,
+                        ListDatabaseConfigurationsRequest>() {
+                    @Override
+                    public ListDatabaseConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDatabaseConfigurationsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDatabaseConfigurationsRequest, ListDatabaseConfigurationsResponse>() {
+                    @Override
+                    public ListDatabaseConfigurationsResponse apply(
+                            ListDatabaseConfigurationsRequest request) {
+                        return client.listDatabaseConfigurations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.opsi.model.DatabaseConfigurationSummary} objects
+     * contained in responses from the listDatabaseConfigurations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.opsi.model.DatabaseConfigurationSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.opsi.model.DatabaseConfigurationSummary>
+            listDatabaseConfigurationsRecordIterator(
+                    final ListDatabaseConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDatabaseConfigurationsRequest.Builder, ListDatabaseConfigurationsRequest,
+                ListDatabaseConfigurationsResponse,
+                com.oracle.bmc.opsi.model.DatabaseConfigurationSummary>(
+                new com.google.common.base.Supplier<ListDatabaseConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListDatabaseConfigurationsRequest.Builder get() {
+                        return ListDatabaseConfigurationsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListDatabaseConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(ListDatabaseConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDatabaseConfigurationsRequest.Builder>,
+                        ListDatabaseConfigurationsRequest>() {
+                    @Override
+                    public ListDatabaseConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDatabaseConfigurationsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDatabaseConfigurationsRequest, ListDatabaseConfigurationsResponse>() {
+                    @Override
+                    public ListDatabaseConfigurationsResponse apply(
+                            ListDatabaseConfigurationsRequest request) {
+                        return client.listDatabaseConfigurations(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDatabaseConfigurationsResponse,
+                        java.util.List<com.oracle.bmc.opsi.model.DatabaseConfigurationSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.opsi.model.DatabaseConfigurationSummary>
+                            apply(ListDatabaseConfigurationsResponse response) {
+                        return response.getDatabaseConfigurationCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listDatabaseInsights operation. This iterable
      * will fetch more data from the server as needed.
      *
