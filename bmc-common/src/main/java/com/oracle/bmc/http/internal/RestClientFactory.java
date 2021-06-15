@@ -122,6 +122,12 @@ public class RestClientFactory {
         return this.create(defaultRequestSigner, requestSigners, null);
     }
 
+    public RestClient create(
+            RequestSigner defaultRequestSigner,
+            Map<SigningStrategy, RequestSigner> requestSigners,
+            ClientConfiguration configuration) {
+        return create(defaultRequestSigner, requestSigners, configuration, false);
+    }
     /**
      * Creates a new client that will use the given
      * {@link com.oracle.bmc.auth.AuthenticationDetailsProvider} and {@link ClientConfiguration}.
@@ -133,12 +139,15 @@ public class RestClientFactory {
      * @param configuration
      *            The client configuration to use, or null for default
      *            configuration.
+     * @param isNonBuffering
+     *            The boolean value indicating if entities should be buffered
      * @return A new RestClient instance.
      */
     public RestClient create(
             RequestSigner defaultRequestSigner,
             Map<SigningStrategy, RequestSigner> requestSigners,
-            ClientConfiguration configuration) {
+            ClientConfiguration configuration,
+            boolean isNonBuffering) {
         ClientConfiguration clientConfigurationToUse =
                 configuration != null ? configuration : ClientConfiguration.builder().build();
         Client client =
@@ -163,7 +172,8 @@ public class RestClientFactory {
             } else if (configuration.getCircuitBreaker() != null)
                 circuitBreaker = configuration.getCircuitBreaker();
         }
-        return new RestClient(client, new EntityFactory(), circuitBreaker);
+
+        return new RestClient(client, new EntityFactory(), circuitBreaker, isNonBuffering);
     }
 
     @VisibleForTesting

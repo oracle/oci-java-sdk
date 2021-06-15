@@ -32,6 +32,8 @@ public class ClientConfiguration {
     private final int readTimeoutMillis;
     /**
      * The max number of async threads to use.  Default is 50;
+     * Note: This property is only supported for Jersey default HttpUrlConnector
+     * To configure connection pool for Apache client, use ApacheConnectorProperties
      */
     private final int maxAsyncThreads;
 

@@ -46,6 +46,23 @@ public interface DataSafeAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Reactivates a previously deactivated Data Safe target database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ActivateTargetDatabaseResponse> activateTargetDatabase(
+            ActivateTargetDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ActivateTargetDatabaseRequest, ActivateTargetDatabaseResponse>
+                    handler);
+
+    /**
      * Moves the Data Safe private endpoint and its dependent resources to the specified compartment.
      *
      * @param request The request object containing the details to send
@@ -79,6 +96,24 @@ public interface DataSafeAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ChangeOnPremConnectorCompartmentRequest,
                                     ChangeOnPremConnectorCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves the Data Safe target database to the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeTargetDatabaseCompartmentResponse>
+            changeTargetDatabaseCompartment(
+                    ChangeTargetDatabaseCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeTargetDatabaseCompartmentRequest,
+                                    ChangeTargetDatabaseCompartmentResponse>
                             handler);
 
     /**
@@ -118,6 +153,40 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Registers the specified database with Data Safe and creates a Data Safe target database in the Data Safe Console.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateTargetDatabaseResponse> createTargetDatabase(
+            CreateTargetDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateTargetDatabaseRequest, CreateTargetDatabaseResponse>
+                    handler);
+
+    /**
+     * Deactivates a target database in Data Safe.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeactivateTargetDatabaseResponse> deactivateTargetDatabase(
+            DeactivateTargetDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeactivateTargetDatabaseRequest, DeactivateTargetDatabaseResponse>
+                    handler);
+
+    /**
      * Deletes the specified Data Safe private endpoint.
      *
      * @param request The request object containing the details to send
@@ -149,6 +218,39 @@ public interface DataSafeAsync extends AutoCloseable {
             DeleteOnPremConnectorRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteOnPremConnectorRequest, DeleteOnPremConnectorResponse>
+                    handler);
+
+    /**
+     * Deregisters the specified database from Data Safe and removes the target database from the Data Safe Console.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteTargetDatabaseResponse> deleteTargetDatabase(
+            DeleteTargetDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteTargetDatabaseRequest, DeleteTargetDatabaseResponse>
+                    handler);
+
+    /**
+     * Downloads the privilege script to grant/revoke required roles from the Data Safe account on the target database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DownloadPrivilegeScriptResponse> downloadPrivilegeScript(
+            DownloadPrivilegeScriptRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DownloadPrivilegeScriptRequest, DownloadPrivilegeScriptResponse>
                     handler);
 
     /**
@@ -236,6 +338,23 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns the details of the specified Data Safe target database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetTargetDatabaseResponse> getTargetDatabase(
+            GetTargetDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetTargetDatabaseRequest, GetTargetDatabaseResponse>
+                    handler);
+
+    /**
      * Gets the details of the specified work request.
      *
      * @param request The request object containing the details to send
@@ -283,6 +402,23 @@ public interface DataSafeAsync extends AutoCloseable {
             ListOnPremConnectorsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListOnPremConnectorsRequest, ListOnPremConnectorsResponse>
+                    handler);
+
+    /**
+     * Returns the list of registered target databases in Data Safe.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListTargetDatabasesResponse> listTargetDatabases(
+            ListTargetDatabasesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListTargetDatabasesRequest, ListTargetDatabasesResponse>
                     handler);
 
     /**
@@ -384,5 +520,21 @@ public interface DataSafeAsync extends AutoCloseable {
             UpdateOnPremConnectorWalletRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateOnPremConnectorWalletRequest, UpdateOnPremConnectorWalletResponse>
+                    handler);
+
+    /**
+     * Updates one or more attributes of the specified Data Safe target database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateTargetDatabaseResponse> updateTargetDatabase(
+            UpdateTargetDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateTargetDatabaseRequest, UpdateTargetDatabaseResponse>
                     handler);
 }

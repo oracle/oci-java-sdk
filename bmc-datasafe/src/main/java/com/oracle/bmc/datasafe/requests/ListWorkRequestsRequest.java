@@ -25,6 +25,11 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     private String compartmentId;
 
     /**
+     * A filter to return only work requests that match the specific operation type.
+     */
+    private String operationType;
+
+    /**
      * A filter to return only work requests that match the specified resource OCID.
      */
     private String resourceId;
@@ -80,6 +85,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
          */
         public Builder copy(ListWorkRequestsRequest o) {
             compartmentId(o.getCompartmentId());
+            operationType(o.getOperationType());
             resourceId(o.getResourceId());
             opcRequestId(o.getOpcRequestId());
             page(o.getPage());

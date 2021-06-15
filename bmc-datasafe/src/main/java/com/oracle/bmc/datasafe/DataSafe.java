@@ -46,6 +46,17 @@ public interface DataSafe extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Reactivates a previously deactivated Data Safe target database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ActivateTargetDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ActivateTargetDatabase API.
+     */
+    ActivateTargetDatabaseResponse activateTargetDatabase(ActivateTargetDatabaseRequest request);
+
+    /**
      * Moves the Data Safe private endpoint and its dependent resources to the specified compartment.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -66,6 +77,17 @@ public interface DataSafe extends AutoCloseable {
      */
     ChangeOnPremConnectorCompartmentResponse changeOnPremConnectorCompartment(
             ChangeOnPremConnectorCompartmentRequest request);
+
+    /**
+     * Moves the Data Safe target database to the specified compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ChangeTargetDatabaseCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeTargetDatabaseCompartment API.
+     */
+    ChangeTargetDatabaseCompartmentResponse changeTargetDatabaseCompartment(
+            ChangeTargetDatabaseCompartmentRequest request);
 
     /**
      * Creates a new Data Safe private endpoint.
@@ -91,6 +113,29 @@ public interface DataSafe extends AutoCloseable {
     CreateOnPremConnectorResponse createOnPremConnector(CreateOnPremConnectorRequest request);
 
     /**
+     * Registers the specified database with Data Safe and creates a Data Safe target database in the Data Safe Console.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/CreateTargetDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTargetDatabase API.
+     */
+    CreateTargetDatabaseResponse createTargetDatabase(CreateTargetDatabaseRequest request);
+
+    /**
+     * Deactivates a target database in Data Safe.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeactivateTargetDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeactivateTargetDatabase API.
+     */
+    DeactivateTargetDatabaseResponse deactivateTargetDatabase(
+            DeactivateTargetDatabaseRequest request);
+
+    /**
      * Deletes the specified Data Safe private endpoint.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -110,6 +155,27 @@ public interface DataSafe extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteOnPremConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOnPremConnector API.
      */
     DeleteOnPremConnectorResponse deleteOnPremConnector(DeleteOnPremConnectorRequest request);
+
+    /**
+     * Deregisters the specified database from Data Safe and removes the target database from the Data Safe Console.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteTargetDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTargetDatabase API.
+     */
+    DeleteTargetDatabaseResponse deleteTargetDatabase(DeleteTargetDatabaseRequest request);
+
+    /**
+     * Downloads the privilege script to grant/revoke required roles from the Data Safe account on the target database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DownloadPrivilegeScriptExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DownloadPrivilegeScript API.
+     */
+    DownloadPrivilegeScriptResponse downloadPrivilegeScript(DownloadPrivilegeScriptRequest request);
 
     /**
      * Enables Data Safe in the tenancy and region.
@@ -168,6 +234,17 @@ public interface DataSafe extends AutoCloseable {
     GetOnPremConnectorResponse getOnPremConnector(GetOnPremConnectorRequest request);
 
     /**
+     * Returns the details of the specified Data Safe target database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetTargetDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTargetDatabase API.
+     */
+    GetTargetDatabaseResponse getTargetDatabase(GetTargetDatabaseRequest request);
+
+    /**
      * Gets the details of the specified work request.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -199,6 +276,17 @@ public interface DataSafe extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListOnPremConnectorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOnPremConnectors API.
      */
     ListOnPremConnectorsResponse listOnPremConnectors(ListOnPremConnectorsRequest request);
+
+    /**
+     * Returns the list of registered target databases in Data Safe.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListTargetDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTargetDatabases API.
+     */
+    ListTargetDatabasesResponse listTargetDatabases(ListTargetDatabasesRequest request);
 
     /**
      * Gets a list of errors for the specified work request.
@@ -265,6 +353,16 @@ public interface DataSafe extends AutoCloseable {
      */
     UpdateOnPremConnectorWalletResponse updateOnPremConnectorWallet(
             UpdateOnPremConnectorWalletRequest request);
+
+    /**
+     * Updates one or more attributes of the specified Data Safe target database.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateTargetDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTargetDatabase API.
+     */
+    UpdateTargetDatabaseResponse updateTargetDatabase(UpdateTargetDatabaseRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

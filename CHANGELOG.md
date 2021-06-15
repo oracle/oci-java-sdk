@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.0.0 - 2021-06-15
+### Added
+- Support for elastic storage on Exadata Infrastructure resources for Cloud at Customer in the Database service
+- Support for registration and management of target databases in the Data Safe service
+- Support for config on metadata in the Management Dashboard service
+- Support for a new work request operation type for node pool reconciliation events in the Container Engine for Kubernetes service
+- Support for migrating clusters with a public Kubernetes API endpoint which are not integrated with a customer's VCN to a VCN-native cluster in the Container Engine for Kubernetes service
+- Support for getting the spark version of applications, and filtering applications by spark version, in the Data Flow service
+
+### Breaking Changes
+- Usage of Jersey's `ApacheConnectorProvider` by default to send requests to the service. For switching back to Jersey's default `HttpUrlConnectorProvider`, see "ApacheConnector-README"
+- Performance issues for APIs that return binary/stream response due to upgrade to Jersey's `ApacheConnectorProvider`. For more details, see "ApacheConnector-README"
+- Auto-close behavior for response streams on full-read for APIs that return binary/stream response. For more details, see "ApacheConnector-README"
+- Method `public java.util.Map getDefinedTags()` has been removed from the model `com.oracle.bmc.managementdashboard.model.ManagementDashboardExportDetails` in the Management Dashboard service
+- Method `public java.util.Map getFreeformTags()` has been removed from the model `com.oracle.bmc.managementdashboard.model.ManagementDashboardExportDetails` in the Management Dashboard service
+
 ## 1.37.2 - 2021-06-08
 ### Added
 - Support for Java Management service

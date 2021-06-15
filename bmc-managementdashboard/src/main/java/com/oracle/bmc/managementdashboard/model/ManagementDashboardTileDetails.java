@@ -127,6 +127,15 @@ public class ManagementDashboardTileDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("parametersMap")
+        private Object parametersMap;
+
+        public Builder parametersMap(Object parametersMap) {
+            this.parametersMap = parametersMap;
+            this.__explicitlySet__.add("parametersMap");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -143,7 +152,8 @@ public class ManagementDashboardTileDetails {
                             uiConfig,
                             dataConfig,
                             state,
-                            drilldownConfig);
+                            drilldownConfig,
+                            parametersMap);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -161,7 +171,8 @@ public class ManagementDashboardTileDetails {
                             .uiConfig(o.getUiConfig())
                             .dataConfig(o.getDataConfig())
                             .state(o.getState())
-                            .drilldownConfig(o.getDrilldownConfig());
+                            .drilldownConfig(o.getDrilldownConfig())
+                            .parametersMap(o.getParametersMap());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -286,6 +297,12 @@ public class ManagementDashboardTileDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("drilldownConfig")
     Object drilldownConfig;
+
+    /**
+     * Specifies the saved search parameters values
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parametersMap")
+    Object parametersMap;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

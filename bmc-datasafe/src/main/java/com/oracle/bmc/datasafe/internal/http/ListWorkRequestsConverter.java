@@ -38,6 +38,14 @@ public class ListWorkRequestsConverter {
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getCompartmentId()));
 
+        if (request.getOperationType() != null) {
+            target =
+                    target.queryParam(
+                            "operationType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getOperationType()));
+        }
+
         if (request.getResourceId() != null) {
             target =
                     target.queryParam(

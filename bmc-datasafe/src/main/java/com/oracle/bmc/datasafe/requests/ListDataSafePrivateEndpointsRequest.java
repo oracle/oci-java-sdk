@@ -92,13 +92,17 @@ public class ListDataSafePrivateEndpointsRequest
         }
     };
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+     * The field used for sorting. Only one sorting order (sortOrder) can be specified.
+     * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
+     * The DISPLAYNAME sort order is case sensitive.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+     * The field used for sorting. Only one sorting order (sortOrder) can be specified.
+     * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
+     * The DISPLAYNAME sort order is case sensitive.
      *
      **/
     public enum SortBy {
@@ -137,6 +141,62 @@ public class ListDataSafePrivateEndpointsRequest
      * Unique identifier for the request.
      */
     private String opcRequestId;
+
+    /**
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
+     */
+    private Boolean compartmentIdInSubtree;
+
+    /**
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
+     */
+    private AccessLevel accessLevel;
+
+    /**
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
+     **/
+    public enum AccessLevel {
+        Restricted("RESTRICTED"),
+        Accessible("ACCESSIBLE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, AccessLevel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AccessLevel v : AccessLevel.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        AccessLevel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AccessLevel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid AccessLevel: " + key);
+        }
+    };
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -182,6 +242,8 @@ public class ListDataSafePrivateEndpointsRequest
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
+            accessLevel(o.getAccessLevel());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

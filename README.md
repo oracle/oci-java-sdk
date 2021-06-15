@@ -59,6 +59,25 @@ You can find information on any known issues with the SDK [here](https://docs.cl
 
 **Direct link to this issue**: [Potential data corruption issue with OCI Java SDK on binary data upload with `RefreshableOnNotAuthenticatedProvider`](https://docs.cloud.oracle.com/en-us/iaas/Content/knownissues.htm#javaSDKStreamDataCorrupt)
 
+### Program hangs for an indefinite time
+
+If the request to the server hangs for an indefinite time and the program gets stuck, it could be 
+because the connection is not released from the Apache connection 
+pool. If you're calling APIs that return a binary/stream response, 
+please make sure to close all the streams returned from the response to release the connections from the connection pool in case of partial reads. If reading the stream completely, the SDK will 
+automatically try to close the stream to release the connection from the connection pool, to disable this feature of auto-closing streams on full read, please call `ResponseHelper.shouldAutoCloseResponseInputStream(false)`. This is because the SDK for Java supports the Apache Connector for sending requests and managing connections to the service. By default, the Apache Connector supports connection pooling and in the cases where the stream from the response is not closed, the connections don't get released from the connection pool and in turn results in an indefinite wait time. This can be avoided either by closing the streams or switching back to the Jersey default connector, i.e. `HttpUrlConnector`. You can find more information about the same in the OCI Java SDK Troubleshooting section.
+ 
+### Performance issues and switching between connection closing strategies with the Apache Connector
+ 
+The Java SDK supports the Apache Connector as the default. The Apache Connector supports the use of two connection closing strategies - `ApacheConnectionClosingStrategy.GracefulClosingStrategy` and `ApacheConnectionClosingStrategy.ImmediateClosingStrategy`. 
+When using `ApacheConnectionClosingStrategy.GracefulClosingStrategy`, streams returned from response are read till the end of the stream when closing the stream. This can introduce additional time when closing the stream with partial read, depending on how large the remaining stream is.
+Use `ApacheConnectionClosingStrategy.ImmediateClosingStrategy` for large files with partial reads instead for faster close. One of the disadvantages of using
+`ApacheConnectionClosingStrategy.ImmediateClosingStrategy` on the other hand takes longer when using partial read for smaller stream size (< 1MB). Please consider your use-case and change accordingly. For more info please look into : https://github.com/oracle/oci-java-sdk/blob/master/ApacheConnector-README.md. 
+ 
+Note : If both the above Apache Connection closing strategies do not give you optimal results for your use-cases, please consider switching back to Jersey Default `HttpUrlConnectorProvider`.
+For more info on Apache Connector, please look into ApacheConnector-README.
+ 
+You can find information on any known issues with the SDK [here](https://docs.cloud.oracle.com/iaas/Content/knownissues.htm) and under the “Issues” tab of this GitHub repository.
 
 ## License
 

@@ -154,6 +154,42 @@ public class ExadataInfrastructureSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("storageCount")
+        private Integer storageCount;
+
+        public Builder storageCount(Integer storageCount) {
+            this.storageCount = storageCount;
+            this.__explicitlySet__.add("storageCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("additionalStorageCount")
+        private Integer additionalStorageCount;
+
+        public Builder additionalStorageCount(Integer additionalStorageCount) {
+            this.additionalStorageCount = additionalStorageCount;
+            this.__explicitlySet__.add("additionalStorageCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("activatedStorageCount")
+        private Integer activatedStorageCount;
+
+        public Builder activatedStorageCount(Integer activatedStorageCount) {
+            this.activatedStorageCount = activatedStorageCount;
+            this.__explicitlySet__.add("activatedStorageCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+        private Integer computeCount;
+
+        public Builder computeCount(Integer computeCount) {
+            this.computeCount = computeCount;
+            this.__explicitlySet__.add("computeCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("cloudControlPlaneServer1")
         private String cloudControlPlaneServer1;
 
@@ -346,6 +382,10 @@ public class ExadataInfrastructureSummary {
                             maxDbNodeStorageInGBs,
                             dataStorageSizeInTBs,
                             maxDataStorageInTBs,
+                            storageCount,
+                            additionalStorageCount,
+                            activatedStorageCount,
+                            computeCount,
                             cloudControlPlaneServer1,
                             cloudControlPlaneServer2,
                             netmask,
@@ -386,6 +426,10 @@ public class ExadataInfrastructureSummary {
                             .maxDbNodeStorageInGBs(o.getMaxDbNodeStorageInGBs())
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
                             .maxDataStorageInTBs(o.getMaxDataStorageInTBs())
+                            .storageCount(o.getStorageCount())
+                            .additionalStorageCount(o.getAdditionalStorageCount())
+                            .activatedStorageCount(o.getActivatedStorageCount())
+                            .computeCount(o.getComputeCount())
                             .cloudControlPlaneServer1(o.getCloudControlPlaneServer1())
                             .cloudControlPlaneServer2(o.getCloudControlPlaneServer2())
                             .netmask(o.getNetmask())
@@ -557,6 +601,30 @@ public class ExadataInfrastructureSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxDataStorageInTBs")
     Double maxDataStorageInTBs;
+
+    /**
+     * The number of Exadata storage servers for the Exadata infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("storageCount")
+    Integer storageCount;
+
+    /**
+     * The requested number of additional storage servers for the Exadata infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("additionalStorageCount")
+    Integer additionalStorageCount;
+
+    /**
+     * The requested number of additional storage servers activated for the Exadata infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("activatedStorageCount")
+    Integer activatedStorageCount;
+
+    /**
+     * The number of compute servers for the Exadata infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+    Integer computeCount;
 
     /**
      * The IP address for the first control plane server.

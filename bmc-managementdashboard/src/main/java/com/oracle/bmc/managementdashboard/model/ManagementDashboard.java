@@ -35,6 +35,15 @@ public class ManagementDashboard {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
+
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("providerId")
         private String providerId;
 
@@ -233,6 +242,24 @@ public class ManagementDashboard {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private LifecycleStates lifecycleState;
+
+        public Builder lifecycleState(LifecycleStates lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("parametersConfig")
+        private java.util.List<Object> parametersConfig;
+
+        public Builder parametersConfig(java.util.List<Object> parametersConfig) {
+            this.parametersConfig = parametersConfig;
+            this.__explicitlySet__.add("parametersConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -259,6 +286,7 @@ public class ManagementDashboard {
             ManagementDashboard __instance__ =
                     new ManagementDashboard(
                             dashboardId,
+                            id,
                             providerId,
                             providerName,
                             providerVersion,
@@ -281,6 +309,8 @@ public class ManagementDashboard {
                             type,
                             isFavorite,
                             savedSearches,
+                            lifecycleState,
+                            parametersConfig,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -291,6 +321,7 @@ public class ManagementDashboard {
         public Builder copy(ManagementDashboard o) {
             Builder copiedBuilder =
                     dashboardId(o.getDashboardId())
+                            .id(o.getId())
                             .providerId(o.getProviderId())
                             .providerName(o.getProviderName())
                             .providerVersion(o.getProviderVersion())
@@ -313,6 +344,8 @@ public class ManagementDashboard {
                             .type(o.getType())
                             .isFavorite(o.getIsFavorite())
                             .savedSearches(o.getSavedSearches())
+                            .lifecycleState(o.getLifecycleState())
+                            .parametersConfig(o.getParametersConfig())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -329,10 +362,16 @@ public class ManagementDashboard {
     }
 
     /**
-     * ID of the dashboard.
+     * ID of the dashboard.  Same as id.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dashboardId")
     String dashboardId;
+
+    /**
+     * ID of the dashboard.  Same as dashboardId.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    String id;
 
     /**
      * ID of the service (for example, log-analytics) that owns the dashboard. Each service has a unique ID.
@@ -465,6 +504,18 @@ public class ManagementDashboard {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("savedSearches")
     java.util.List<ManagementSavedSearch> savedSearches;
+
+    /**
+     * State of dashboard.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    LifecycleStates lifecycleState;
+
+    /**
+     * Defines parameters for the dashboard.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parametersConfig")
+    java.util.List<Object> parametersConfig;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.

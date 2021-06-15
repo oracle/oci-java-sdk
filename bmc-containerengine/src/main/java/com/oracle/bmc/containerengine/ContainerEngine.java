@@ -49,6 +49,17 @@ public interface ContainerEngine extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Initiates cluster migration to use native VCN.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/ClusterMigrateToNativeVcnExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ClusterMigrateToNativeVcn API.
+     */
+    ClusterMigrateToNativeVcnResponse clusterMigrateToNativeVcn(
+            ClusterMigrateToNativeVcnRequest request);
+
+    /**
      * Create a new cluster.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -117,6 +128,17 @@ public interface ContainerEngine extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/GetClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCluster API.
      */
     GetClusterResponse getCluster(GetClusterRequest request);
+
+    /**
+     * Get details on a cluster's migration to native VCN.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/GetClusterMigrateToNativeVcnStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetClusterMigrateToNativeVcnStatus API.
+     */
+    GetClusterMigrateToNativeVcnStatusResponse getClusterMigrateToNativeVcnStatus(
+            GetClusterMigrateToNativeVcnStatusRequest request);
 
     /**
      * Get options available for clusters.

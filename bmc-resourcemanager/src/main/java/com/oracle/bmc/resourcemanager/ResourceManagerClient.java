@@ -33,6 +33,8 @@ public class ResourceManagerClient implements ResourceManager {
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
 
     /**
      * Creates a new service instance using the given authentication provider.
@@ -273,9 +275,15 @@ public class ResourceManagerClient implements ResourceManager {
                         .clientConfigurator(clientConfigurator)
                         .additionalClientConfigurators(allConfigurators)
                         .build();
+        boolean isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
                         SERVICE, this.authenticationDetailsProvider);
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
         java.util.Map<
                         com.oracle.bmc.http.signing.SigningStrategy,
                         com.oracle.bmc.http.signing.RequestSigner>
@@ -299,7 +307,10 @@ public class ResourceManagerClient implements ResourceManager {
         this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
         this.client =
                 restClientFactory.create(
-                        defaultRequestSigner, requestSigners, clientConfigurationToUse);
+                        defaultRequestSigner,
+                        requestSigners,
+                        clientConfigurationToUse,
+                        isNonBufferingApacheClient);
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -948,6 +959,14 @@ public class ResourceManagerClient implements ResourceManager {
     @Override
     public GetJobTfConfigResponse getJobTfConfig(GetJobTfConfigRequest request) {
         LOG.trace("Called getJobTfConfig");
+        LOG.warn(
+                "getJobTfConfig returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         final GetJobTfConfigRequest interceptedRequest =
                 GetJobTfConfigConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -976,6 +995,14 @@ public class ResourceManagerClient implements ResourceManager {
     @Override
     public GetJobTfStateResponse getJobTfState(GetJobTfStateRequest request) {
         LOG.trace("Called getJobTfState");
+        LOG.warn(
+                "getJobTfState returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         final GetJobTfStateRequest interceptedRequest =
                 GetJobTfStateConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -1031,6 +1058,14 @@ public class ResourceManagerClient implements ResourceManager {
     @Override
     public GetStackTfConfigResponse getStackTfConfig(GetStackTfConfigRequest request) {
         LOG.trace("Called getStackTfConfig");
+        LOG.warn(
+                "getStackTfConfig returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         final GetStackTfConfigRequest interceptedRequest =
                 GetStackTfConfigConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -1059,6 +1094,14 @@ public class ResourceManagerClient implements ResourceManager {
     @Override
     public GetStackTfStateResponse getStackTfState(GetStackTfStateRequest request) {
         LOG.trace("Called getStackTfState");
+        LOG.warn(
+                "getStackTfState returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         final GetStackTfStateRequest interceptedRequest =
                 GetStackTfStateConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -1115,6 +1158,14 @@ public class ResourceManagerClient implements ResourceManager {
     @Override
     public GetTemplateLogoResponse getTemplateLogo(GetTemplateLogoRequest request) {
         LOG.trace("Called getTemplateLogo");
+        LOG.warn(
+                "getTemplateLogo returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         final GetTemplateLogoRequest interceptedRequest =
                 GetTemplateLogoConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -1143,6 +1194,14 @@ public class ResourceManagerClient implements ResourceManager {
     @Override
     public GetTemplateTfConfigResponse getTemplateTfConfig(GetTemplateTfConfigRequest request) {
         LOG.trace("Called getTemplateTfConfig");
+        LOG.warn(
+                "getTemplateTfConfig returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         final GetTemplateTfConfigRequest interceptedRequest =
                 GetTemplateTfConfigConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =

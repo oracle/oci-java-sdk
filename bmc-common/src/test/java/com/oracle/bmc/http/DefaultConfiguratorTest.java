@@ -4,32 +4,31 @@
  */
 package com.oracle.bmc.http;
 
+import com.oracle.bmc.util.internal.ReflectionUtils;
 import org.junit.*;
+import org.junit.runner.RunWith;
+import org.mockito.Matchers;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Unit tests for DefaultConfigurator.
  */
+@RunWith(PowerMockRunner.class)
+@PrepareForTest(ReflectionUtils.class)
 public class DefaultConfiguratorTest {
-    @Test
-    public void succeedIfPropertyNotSet() {
-        DefaultConfigurator.setAllowRestrictedHeadersProperty(null);
-        assertEquals(
-                "true",
-                System.getProperty(DefaultConfigurator.SUN_NET_HTTP_ALLOW_RESTRICTED_HEADERS));
-    }
-
-    @Test(expected = IllegalStateException.class)
-    public void failIfPropertyFalse() {
-        DefaultConfigurator.setAllowRestrictedHeadersProperty("false");
-    }
 
     @Test
-    public void succeedIfPropertyTrue() {
-        DefaultConfigurator.setAllowRestrictedHeadersProperty("true");
-        assertEquals(
-                "true",
-                System.getProperty(DefaultConfigurator.SUN_NET_HTTP_ALLOW_RESTRICTED_HEADERS));
+    public void createJerseyDefaultConfiguratorIfApacheClassAbsent() {
+        PowerMockito.mockStatic(ReflectionUtils.class);
+        PowerMockito.when(ReflectionUtils.isClassPresent(Matchers.anyString(), Matchers.any()))
+                .thenReturn(false);
+        DefaultConfigurator defaultConfigurator = new DefaultConfigurator();
+        assertTrue(
+                defaultConfigurator.getEffectiveClientConfigurator()
+                        instanceof JerseyDefaultConnectorConfigurator);
     }
 }

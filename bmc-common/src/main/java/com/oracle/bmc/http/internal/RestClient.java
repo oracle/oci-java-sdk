@@ -8,6 +8,7 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Throwables;
 import com.oracle.bmc.circuitbreaker.CallNotAllowedException;
 import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
+import com.oracle.bmc.io.DuplicatableInputStream;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.requests.BmcRequest;
 import com.oracle.bmc.responses.AsyncHandler;
@@ -54,6 +55,7 @@ public class RestClient implements AutoCloseable {
     private final Client client;
 
     @VisibleForTesting final JaxRsCircuitBreaker circuitBreaker;
+    private final boolean isApacheNonBufferingClient;
 
     private WrappedWebTarget baseTarget;
 
@@ -69,9 +71,27 @@ public class RestClient implements AutoCloseable {
             @NonNull Client client,
             @NonNull EntityFactory entityFactory,
             JaxRsCircuitBreaker circuitBreaker) {
+        this(client, entityFactory, circuitBreaker, false);
+    }
+
+    /**
+     * Create a new client that uses a provided client to make all its requests.
+     * It's up to the caller to properly configure the client.
+     *
+     * @param client        A HTTP client to make all requests with.
+     * @param entityFactory An entity factory to create entities for POST/PUT operations.
+     * @param circuitBreaker A circuit breaker instance to decorate http client
+     * @param isApacheNonBufferingClient A boolean value to disable buffering of entities in memory for Apache client
+     */
+    public RestClient(
+            @NonNull Client client,
+            @NonNull EntityFactory entityFactory,
+            JaxRsCircuitBreaker circuitBreaker,
+            boolean isApacheNonBufferingClient) {
         this.client = client;
         this.entityFactory = entityFactory;
         this.circuitBreaker = circuitBreaker;
+        this.isApacheNonBufferingClient = isApacheNonBufferingClient;
     }
 
     /**
@@ -98,6 +118,17 @@ public class RestClient implements AutoCloseable {
             throw new NullPointerException("No endpoint has been configured");
         }
         return this.baseTarget;
+    }
+
+    /**
+     * Gets the underlying circuitBreaker implementation for this client
+     * @return CircuitBreaker
+     */
+    public JaxRsCircuitBreaker getCircuitBreaker() {
+        if (this.circuitBreaker == null) {
+            throw new NullPointerException("CircuitBreaker has been configured");
+        }
+        return this.circuitBreaker;
     }
 
     /**
@@ -240,29 +271,11 @@ public class RestClient implements AutoCloseable {
             throws BmcException {
         InvocationInformation info = preprocessRequest(ib, request);
         try {
-            Entity<?> requestBody = this.entityFactory.forPost(request, attemptToSerialize(body));
+            Entity<?> requestBody =
+                    this.entityFactory.forPost(request, attemptToSerialize(request, body));
             return decorateSupplier(() -> ib.post(requestBody)).get();
         } catch (ProcessingException e) {
             throw convertToBmcException(baseTarget, e, info);
-        }
-    }
-
-    /**
-     * Convert the body to a JSON string, unless it is already a string, or if it is an InputStream
-     * @param body body
-     * @return body as string, or unchanged if String or InputStream
-     */
-    private Object attemptToSerialize(@Nullable Object body) {
-        try {
-            if (body instanceof String || body instanceof InputStream) {
-                return body;
-            } else if (body != null) {
-                return RestClientFactory.getObjectMapper().writeValueAsString(body);
-            } else {
-                return StringUtils.EMPTY;
-            }
-        } catch (IOException e) {
-            throw new IllegalArgumentException("Unable to process JSON body", e);
         }
     }
 
@@ -288,7 +301,8 @@ public class RestClient implements AutoCloseable {
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {
         InvocationInformation info = preprocessRequest(ib, request);
-        Entity<?> requestBody = this.entityFactory.forPost(request, attemptToSerialize(body));
+        Entity<?> requestBody =
+                this.entityFactory.forPost(request, attemptToSerialize(request, body));
 
         if (onSuccess == null && onError == null) {
             return decorateFuture(() -> ib.async().post(requestBody)).get();
@@ -401,7 +415,8 @@ public class RestClient implements AutoCloseable {
             throws BmcException {
         InvocationInformation info = preprocessRequest(ib, request);
         try {
-            Entity<?> requestBody = this.entityFactory.forPatch(request, attemptToSerialize(body));
+            Entity<?> requestBody =
+                    this.entityFactory.forPatch(request, attemptToSerialize(request, body));
             return decorateSupplier(() -> ib.method(PATCH_VERB, requestBody)).get();
         } catch (ProcessingException e) {
             throw convertToBmcException(baseTarget, e, info);
@@ -452,7 +467,8 @@ public class RestClient implements AutoCloseable {
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {
         InvocationInformation info = preprocessRequest(ib, request);
-        Entity<?> requestBody = this.entityFactory.forPatch(request, attemptToSerialize(body));
+        Entity<?> requestBody =
+                this.entityFactory.forPatch(request, attemptToSerialize(request, body));
 
         if (onSuccess == null && onError == null) {
             return decorateFuture(() -> ib.async().method(PATCH_VERB, requestBody)).get();
@@ -538,7 +554,8 @@ public class RestClient implements AutoCloseable {
             throws BmcException {
         InvocationInformation info = preprocessRequest(ib, request);
         try {
-            Entity<?> requestBody = this.entityFactory.forPut(request, attemptToSerialize(body));
+            Entity<?> requestBody =
+                    this.entityFactory.forPut(request, attemptToSerialize(request, body));
             return decorateSupplier(() -> ib.put(requestBody)).get();
         } catch (ProcessingException e) {
             throw convertToBmcException(baseTarget, e, info);
@@ -598,7 +615,8 @@ public class RestClient implements AutoCloseable {
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {
         InvocationInformation info = preprocessRequest(ib, request);
-        Entity<?> requestBody = this.entityFactory.forPut(request, attemptToSerialize(body));
+        Entity<?> requestBody =
+                this.entityFactory.forPut(request, attemptToSerialize(request, body));
 
         if (onSuccess == null && onError == null) {
             return decorateFuture(() -> ib.async().put(requestBody)).get();
@@ -1129,5 +1147,53 @@ public class RestClient implements AutoCloseable {
     static class InvocationInformation {
         private final String requestId;
         private final MultivaluedMap<String, Object> headersSetInCallback;
+    }
+    /**
+     * Convert the body to a JSON string, unless it is already a string, or if it is an InputStream
+     * @param request The original client request object given to the service
+     *      *                client.
+     * @param body body
+     * @return body as string, or unchanged if String or InputStream
+     */
+    private <T extends BmcRequest> Object attemptToSerialize(T request, @Nullable Object body) {
+        try {
+            if (body instanceof String) {
+                return body;
+            } else if (body instanceof InputStream) {
+                final Long contentLength = tryGetContentLength(request);
+                if (this.isApacheNonBufferingClient && contentLength != null && contentLength > 0) {
+                    // Customization for providing Apache HTTP Entity instead of InputStream. This is required to avoid
+                    // buffering all the data in memory by Jersey Apache Connector. Create the HTTP entity only when a
+                    // content length value can be retrieved from the request.
+                    if (body instanceof DuplicatableInputStream) {
+                        return new ApacheDuplicatableInputStreamEntity(
+                                (DuplicatableInputStream) body, contentLength);
+                    }
+                    return new ApacheInputStreamEntity((InputStream) body, contentLength);
+                }
+                return body;
+            } else if (body != null) {
+                return RestClientFactory.getObjectMapper().writeValueAsString(body);
+            } else {
+                return StringUtils.EMPTY;
+            }
+        } catch (IOException e) {
+            throw new IllegalArgumentException("Unable to process JSON body", e);
+        }
+    }
+
+    /**
+     * Try to retrieve the content length set in the request.
+     *
+     * @param request The original client request object given to the service
+     *                client.
+     * @return content length or null.
+     */
+    private <T extends BmcRequest> Long tryGetContentLength(T request) {
+        if (request instanceof com.oracle.bmc.requests.HasContentLength) {
+            return ((com.oracle.bmc.requests.HasContentLength) request).getContentLength();
+        } else {
+            return null;
+        }
     }
 }

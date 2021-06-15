@@ -59,6 +59,18 @@ public interface Database extends AutoCloseable {
             ActivateExadataInfrastructureRequest request);
 
     /**
+     * Makes the storage capacity from additional storage servers available for VM Cluster consumption. Applies to Exadata Cloud@Customer instances only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/AddStorageCapacityExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddStorageCapacityExadataInfrastructure API.
+     */
+    AddStorageCapacityExadataInfrastructureResponse addStorageCapacityExadataInfrastructure(
+            AddStorageCapacityExadataInfrastructureRequest request);
+
+    /**
      * Initiates a data refresh for an Autonomous Database refreshable clone. Data is refreshed from the source database to the point of a specified timestamp.
      *
      * @param request The request object containing the details to send

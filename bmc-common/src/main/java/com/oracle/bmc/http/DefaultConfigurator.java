@@ -4,18 +4,11 @@
  */
 package com.oracle.bmc.http;
 
-import com.oracle.bmc.util.JavaRuntimeUtils;
-import com.oracle.bmc.util.JavaRuntimeUtils.JreVersion;
+import com.oracle.bmc.util.internal.ReflectionUtils;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.Validate;
-import org.glassfish.jersey.SslConfigurator;
-import org.glassfish.jersey.client.ClientConfig;
-import org.glassfish.jersey.client.ClientProperties;
-import org.glassfish.jersey.client.HttpUrlConnectorProvider;
-import org.glassfish.jersey.client.RequestEntityProcessing;
-import org.glassfish.jersey.client.spi.ConnectorProvider;
+import org.apache.commons.lang3.StringUtils;
 
-import javax.net.ssl.SSLContext;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import java.util.LinkedList;
@@ -28,83 +21,98 @@ import java.util.List;
  * <p>
  * It currently does the following:
  * <ul>
- * <li>Sets the SSL context to use TLS 1.2 if running on Java7</li>
- * <li>Updates the client to use a custom connector that allows large objects to
- * be uploaded without buffering
+ * <li>Checks for the presence of Apache Config Classes and creates the appropriate configurator</li>
  * </ul>
  * <p>
  * If the default configurator results in any issues, callers can provide their
  * own implementation when constructing service objects.
  */
 @Slf4j
-public class DefaultConfigurator implements ClientConfigurator {
+public class DefaultConfigurator
+        implements ClientConfigurator, HasEffectiveClientConfigurator, SetsClientBuilderProperties {
 
-    static final String SUN_NET_HTTP_ALLOW_RESTRICTED_HEADERS =
-            "sun.net.http.allowRestrictedHeaders";
+    protected static final String APACHE_HTTP_CLIENT_CONFIG_CLASS_NAME =
+            "org.apache.http.client.config.RequestConfig";
+
+    protected static final String APACHE_CONNECTOR_CLASS_NAME =
+            "org.glassfish.jersey.apache.connector.ApacheConnector";
+
+    // Region metadata env attribute key
+    private final static String OCI_JAVASDK_JERSEY_CLIENT_DEFAULT_CONNECTOR_ENABLED_ENV_VAR =
+            "OCI_JAVASDK_JERSEY_CLIENT_DEFAULT_CONNECTOR_ENABLED";
+
+    /** The boolean value indicating if the Apache Dependency classes are present on the classpath */
+    @Getter private static final boolean isApacheDependencyPresent;
 
     static {
-        setAllowRestrictedHeadersProperty(
-                System.getProperty(SUN_NET_HTTP_ALLOW_RESTRICTED_HEADERS));
+        if (checkForApacheDependencies() && !jerseyDefaultConnectorEnabled()) {
+            isApacheDependencyPresent = true;
+        } else isApacheDependencyPresent = false;
+    }
+
+    private static boolean checkForApacheDependencies() {
+        // Check for existing of Apache dependencies, this is to ensure easier shift to Jersey default connector
+        // (HttpUrlConnector). Excluding these dependencies makes it easier to switch back to the default jersey
+        // connector
+        if ((ReflectionUtils.isClassPresent(
+                        APACHE_HTTP_CLIENT_CONFIG_CLASS_NAME, DefaultConfigurator.class)
+                && ReflectionUtils.isClassPresent(
+                        APACHE_CONNECTOR_CLASS_NAME, DefaultConfigurator.class))) {
+            return true;
+        }
+        return false;
+    }
+
+    private static boolean jerseyDefaultConnectorEnabled() {
+        final String jerseyDefaultConnectorEnabledString =
+                System.getenv(OCI_JAVASDK_JERSEY_CLIENT_DEFAULT_CONNECTOR_ENABLED_ENV_VAR);
+        if (jerseyDefaultConnectorEnabledString != null
+                && !jerseyDefaultConnectorEnabledString.isEmpty()) {
+            String trimmedValue = jerseyDefaultConnectorEnabledString.trim();
+            if (StringUtils.equalsIgnoreCase("true", trimmedValue)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /** The list of {@code ClientConfigDecorator}s to support the ability to decorate {@code ClientConfig} */
     protected final List<ClientConfigDecorator> clientConfigDecorators = new LinkedList<>();
 
-    /** Creates a new {@code DefaultConfigurator} object. */
-    public DefaultConfigurator() {}
+    @Getter private final ClientConfigurator effectiveClientConfigurator;
 
-    /**
-     * Creates a new {@code DefaultConfigurator} object.
-     *
-     * @param clientConfigDecorators a list of client config decorators
-     */
-    public DefaultConfigurator(List<ClientConfigDecorator> clientConfigDecorators) {
-        this.clientConfigDecorators.addAll(clientConfigDecorators);
+    /** Creates a new {@code DefaultConfigurator} object. */
+    public DefaultConfigurator() {
+        if (isApacheDependencyPresent()) {
+            effectiveClientConfigurator = new ApacheConfigurator();
+        } else {
+            effectiveClientConfigurator = new JerseyDefaultConnectorConfigurator();
+        }
     }
 
-    static void setAllowRestrictedHeadersProperty(String previousValue) {
-        // necessary for the default HttpUrlConnector implementation;
-        // check if this property was explicitly set to false; if so, fail
-        if (previousValue != null && !Boolean.valueOf(previousValue)) {
-            throw new IllegalStateException(
-                    "Property "
-                            + SUN_NET_HTTP_ALLOW_RESTRICTED_HEADERS
-                            + " was explicitly "
-                            + "set to "
-                            + previousValue
-                            + "; the OCI SDK needs to set this property to true. Failing...");
+    /**
+     * Creates a new {@code DefaultConfigurator} and registers the list of provided {@code ClientConfigDecorator}s.
+     *
+     * @param clientConfigDecorators the list of client configuration decorators
+     */
+    public DefaultConfigurator(final List<ClientConfigDecorator> clientConfigDecorators) {
+        this.clientConfigDecorators.addAll(clientConfigDecorators);
+        if (isApacheDependencyPresent()) {
+            effectiveClientConfigurator = new ApacheConfigurator(this.clientConfigDecorators);
+        } else {
+            effectiveClientConfigurator =
+                    new JerseyDefaultConnectorConfigurator(this.clientConfigDecorators);
         }
-        System.setProperty(SUN_NET_HTTP_ALLOW_RESTRICTED_HEADERS, "true");
     }
 
     @Override
     public void customizeBuilder(ClientBuilder builder) {
-        setSslContext(builder);
-        setConnectorProvider(builder);
+        effectiveClientConfigurator.customizeBuilder(builder);
     }
 
-    /**
-     * Sets the SSL context on the builder.
-     * <p>
-     * Separate so subclasses can call if desired.
-     *
-     * @param builder
-     *            The client builder to use.
-     */
-    protected void setSslContext(ClientBuilder builder) {
-        JreVersion version = JavaRuntimeUtils.getRuntimeVersion();
-        if (version == JreVersion.Java_7) {
-            LOG.info("Running on 1.7 VM, manually setting security protocol to TLSv1.2");
-            SSLContext sslContext =
-                    SslConfigurator.newInstance(true)
-                            .securityProtocol("TLSv1.2")
-                            .createSSLContext();
-            builder.sslContext(sslContext);
-        } else if (version == JreVersion.Unsupported) {
-            LOG.error("Using an unsupported runtime only 1.7+ is supported");
-        } else if (version == JreVersion.Unknown) {
-            LOG.warn("Using an unknown runtime, calls may not work");
-        }
+    @Override
+    public void customizeClient(Client client) {
+        effectiveClientConfigurator.customizeClient(client);
     }
 
     /**
@@ -115,28 +123,34 @@ public class DefaultConfigurator implements ClientConfigurator {
      * @param builder
      *            The builder to set the provider on
      */
-    protected void setConnectorProvider(ClientBuilder builder) {
-        LOG.info("Setting connector provider to HttpUrlConnectorProvider");
-
-        ClientConfig clientConfig = new ClientConfig();
-
-        // 1) enable workaround for 'patch' requests
-        HttpUrlConnectorProvider provider = new HttpUrlConnectorProvider().useSetMethodWorkaround();
-        clientConfig.connectorProvider(provider);
-        for (ClientConfigDecorator clientConfigDecorator : clientConfigDecorators) {
-            clientConfigDecorator.customizeClientConfig(clientConfig);
+    @Override
+    public void setConnectorProvider(ClientBuilder builder) {
+        try {
+            SetsClientBuilderProperties setsClientBuilderProperties =
+                    (SetsClientBuilderProperties) effectiveClientConfigurator;
+            setsClientBuilderProperties.setConnectorProvider(builder);
+        } catch (Exception e) {
+            LOG.info("Cannot call setConnectorProvider on this ClientConfigurator");
         }
-
-        builder.withConfig(clientConfig);
     }
 
+    /**
+     * Sets the SSL context on the builder.
+     * <p>
+     * Separate so subclasses can call if desired.
+     *
+     * @param builder
+     *            The client builder to use.
+     */
     @Override
-    public void customizeClient(Client client) {
-        // Use buffered processing to get better error messages on POST and PUT
-        // but the downside is that this will buffer large uploads in memory.
-        // Operations that should not use buffering should set null instead
-        client.property(
-                ClientProperties.REQUEST_ENTITY_PROCESSING, RequestEntityProcessing.BUFFERED);
+    public void setSslContext(ClientBuilder builder) {
+        try {
+            SetsClientBuilderProperties setsClientBuilderProperties =
+                    (SetsClientBuilderProperties) effectiveClientConfigurator;
+            setsClientBuilderProperties.setConnectorProvider(builder);
+        } catch (Exception e) {
+            LOG.info("Cannot call setSslContext on this ClientConfigurator");
+        }
     }
 
     /**
@@ -144,40 +158,50 @@ public class DefaultConfigurator implements ClientConfigurator {
      *
      * Note: for PUT and POST requests, this will result in less accurate error messages
      */
-    public static class NonBuffering extends DefaultConfigurator {
+    public static class NonBuffering extends DefaultConfigurator
+            implements ClientConfigurator, HasEffectiveClientConfigurator,
+                    SetsClientBuilderProperties {
+
+        @Getter private final ClientConfigurator effectiveClientConfigurator;
 
         public NonBuffering() {
-            super();
-            clientConfigDecorators.add(new NonBufferingClientConfigDecorator());
+            if (isApacheDependencyPresent()) {
+                effectiveClientConfigurator = new ApacheConfigurator.NonBuffering();
+            } else {
+                effectiveClientConfigurator = new JerseyDefaultConnectorConfigurator.NonBuffering();
+            }
+        }
+
+        @Override
+        public void customizeBuilder(ClientBuilder builder) {
+            effectiveClientConfigurator.customizeBuilder(builder);
         }
 
         @Override
         public void customizeClient(Client client) {
-            super.customizeClient(client);
-            client.property(ClientProperties.REQUEST_ENTITY_PROCESSING, null);
+            effectiveClientConfigurator.customizeClient(client);
         }
 
         @Override
-        protected void setConnectorProvider(ClientBuilder builder) {
-            super.setConnectorProvider(builder);
-        }
-    }
-
-    private static class NonBufferingClientConfigDecorator implements ClientConfigDecorator {
-        @Override
-        public void customizeClientConfig(ClientConfig clientConfig) {
-            Validate.notNull(clientConfig, "ClientConfig must not be null");
-
-            final ConnectorProvider provider = clientConfig.getConnectorProvider();
-            // Only configure HttpUrlConnectorProvider types
-            if (!(provider instanceof HttpUrlConnectorProvider)) {
-                return;
+        public void setConnectorProvider(ClientBuilder builder) {
+            try {
+                SetsClientBuilderProperties setsClientBuilderProperties =
+                        (SetsClientBuilderProperties) effectiveClientConfigurator;
+                setsClientBuilderProperties.setConnectorProvider(builder);
+            } catch (ClassCastException e) {
+                LOG.info("Cannot call setConnectorProvider on this ClientConfigurator");
             }
+        }
 
-            final HttpUrlConnectorProvider httpProvider = (HttpUrlConnectorProvider) provider;
-            LOG.info("Configuring non-buffering for HttpUrlConnectorProvider");
-            // Use fixed length streaming when possible to allow large uploads without buffering.
-            httpProvider.useFixedLengthStreaming();
+        @Override
+        public void setSslContext(ClientBuilder builder) {
+            try {
+                SetsClientBuilderProperties setsClientBuilderProperties =
+                        (SetsClientBuilderProperties) effectiveClientConfigurator;
+                setsClientBuilderProperties.setConnectorProvider(builder);
+            } catch (ClassCastException e) {
+                LOG.info("Cannot call setSslContext on this ClientConfigurator");
+            }
         }
     }
 }

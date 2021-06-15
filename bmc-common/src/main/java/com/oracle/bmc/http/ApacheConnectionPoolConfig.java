@@ -19,8 +19,8 @@ public class ApacheConnectionPoolConfig {
      */
     public static ApacheConnectionPoolConfig newDefault() {
         return ApacheConnectionPoolConfig.builder()
-                .defaultMaxConnectionsPerRoute(5)
-                .totalOpenConnections(20)
+                .defaultMaxConnectionsPerRoute(50)
+                .totalOpenConnections(50)
                 .build();
     }
 

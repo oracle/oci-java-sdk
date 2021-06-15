@@ -108,6 +108,15 @@ public class OnPremConnectorSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("createdVersion")
         private String createdVersion;
 
@@ -132,6 +141,7 @@ public class OnPremConnectorSummary {
                             lifecycleDetails,
                             freeformTags,
                             definedTags,
+                            systemTags,
                             createdVersion);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -149,6 +159,7 @@ public class OnPremConnectorSummary {
                             .lifecycleDetails(o.getLifecycleDetails())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
+                            .systemTags(o.getSystemTags())
                             .createdVersion(o.getCreatedVersion());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -222,6 +233,14 @@ public class OnPremConnectorSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
+     * Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
      * Created version of the on-premises connector.

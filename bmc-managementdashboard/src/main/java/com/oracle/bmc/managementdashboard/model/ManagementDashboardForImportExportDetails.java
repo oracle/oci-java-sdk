@@ -198,6 +198,15 @@ public class ManagementDashboardForImportExportDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("parametersConfig")
+        private java.util.List<Object> parametersConfig;
+
+        public Builder parametersConfig(java.util.List<Object> parametersConfig) {
+            this.parametersConfig = parametersConfig;
+            this.__explicitlySet__.add("parametersConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -242,6 +251,7 @@ public class ManagementDashboardForImportExportDetails {
                             type,
                             isFavorite,
                             savedSearches,
+                            parametersConfig,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -270,6 +280,7 @@ public class ManagementDashboardForImportExportDetails {
                             .type(o.getType())
                             .isFavorite(o.getIsFavorite())
                             .savedSearches(o.getSavedSearches())
+                            .parametersConfig(o.getParametersConfig())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -398,6 +409,12 @@ public class ManagementDashboardForImportExportDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("savedSearches")
     java.util.List<ManagementSavedSearchForImportDetails> savedSearches;
+
+    /**
+     * Defines parameters for the dashboard.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parametersConfig")
+    java.util.List<Object> parametersConfig;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.

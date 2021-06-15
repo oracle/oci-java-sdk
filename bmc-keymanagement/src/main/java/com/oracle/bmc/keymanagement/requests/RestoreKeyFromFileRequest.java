@@ -18,7 +18,8 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RestoreKeyFromFileRequest
-        extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream> {
+        extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream>
+        implements com.oracle.bmc.requests.HasContentLength {
 
     /**
      * The content length of the body.

@@ -17,7 +17,8 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UploadPartRequest extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream> {
+public class UploadPartRequest extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream>
+        implements com.oracle.bmc.requests.HasContentLength {
 
     /**
      * The Object Storage namespace used for the request.
