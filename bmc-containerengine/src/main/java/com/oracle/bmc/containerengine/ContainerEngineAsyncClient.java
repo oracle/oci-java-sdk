@@ -41,6 +41,9 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
 
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+
     /**
      * Creates a new service instance using the given authentication provider.
      * @param authenticationDetailsProvider The authentication details provider, required.
@@ -238,6 +241,12 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         .clientConfigurator(clientConfigurator)
                         .additionalClientConfigurators(allConfigurators)
                         .build();
+        boolean isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
                         SERVICE, this.authenticationDetailsProvider);
@@ -256,7 +265,12 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                                 .createRequestSigner(SERVICE, authenticationDetailsProvider));
             }
         }
-        this.client = restClientFactory.create(defaultRequestSigner, requestSigners, configuration);
+        this.client =
+                restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        configuration,
+                        isNonBufferingApacheClient);
 
         if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
             com.oracle.bmc.auth.RegionProvider provider =
@@ -365,6 +379,48 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ClusterMigrateToNativeVcnResponse> clusterMigrateToNativeVcn(
+            ClusterMigrateToNativeVcnRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ClusterMigrateToNativeVcnRequest, ClusterMigrateToNativeVcnResponse>
+                    handler) {
+        LOG.trace("Called async clusterMigrateToNativeVcn");
+        final ClusterMigrateToNativeVcnRequest interceptedRequest =
+                ClusterMigrateToNativeVcnConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ClusterMigrateToNativeVcnConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ClusterMigrateToNativeVcnResponse>
+                transformer = ClusterMigrateToNativeVcnConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ClusterMigrateToNativeVcnRequest, ClusterMigrateToNativeVcnResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ClusterMigrateToNativeVcnRequest,
+                                ClusterMigrateToNativeVcnResponse>,
+                        java.util.concurrent.Future<ClusterMigrateToNativeVcnResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ClusterMigrateToNativeVcnRequest, ClusterMigrateToNativeVcnResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateClusterResponse> createCluster(
             CreateClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateClusterRequest, CreateClusterResponse>
@@ -410,6 +466,12 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                             CreateKubeconfigRequest, CreateKubeconfigResponse>
                     handler) {
         LOG.trace("Called async createKubeconfig");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         final CreateKubeconfigRequest interceptedRequest =
                 CreateKubeconfigConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -623,6 +685,52 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetClusterRequest, GetClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetClusterMigrateToNativeVcnStatusResponse>
+            getClusterMigrateToNativeVcnStatus(
+                    GetClusterMigrateToNativeVcnStatusRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetClusterMigrateToNativeVcnStatusRequest,
+                                    GetClusterMigrateToNativeVcnStatusResponse>
+                            handler) {
+        LOG.trace("Called async getClusterMigrateToNativeVcnStatus");
+        final GetClusterMigrateToNativeVcnStatusRequest interceptedRequest =
+                GetClusterMigrateToNativeVcnStatusConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetClusterMigrateToNativeVcnStatusConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetClusterMigrateToNativeVcnStatusResponse>
+                transformer = GetClusterMigrateToNativeVcnStatusConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetClusterMigrateToNativeVcnStatusRequest,
+                        GetClusterMigrateToNativeVcnStatusResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetClusterMigrateToNativeVcnStatusRequest,
+                                GetClusterMigrateToNativeVcnStatusResponse>,
+                        java.util.concurrent.Future<GetClusterMigrateToNativeVcnStatusResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetClusterMigrateToNativeVcnStatusRequest,
+                    GetClusterMigrateToNativeVcnStatusResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

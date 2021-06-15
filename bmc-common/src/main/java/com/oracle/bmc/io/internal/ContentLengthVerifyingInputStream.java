@@ -20,11 +20,11 @@ import java.io.InputStream;
 @Slf4j
 @RequiredArgsConstructor
 public class ContentLengthVerifyingInputStream extends InputStream {
-    private final InputStream delegate;
-    private final long contentLength;
+    protected final InputStream delegate;
+    protected final long contentLength;
 
-    private long totalBytesProcessed = 0L;
-    private boolean isVerificationEnabled = true;
+    protected long totalBytesProcessed = 0L;
+    protected boolean isVerificationEnabled = true;
 
     @Override
     public int read() throws IOException {
@@ -83,7 +83,7 @@ public class ContentLengthVerifyingInputStream extends InputStream {
         return delegate.markSupported();
     }
 
-    private void processBytesRead(final int bytesRead) throws IOException {
+    protected void processBytesRead(final int bytesRead) throws IOException {
         if (!isVerificationEnabled) {
             return;
         }

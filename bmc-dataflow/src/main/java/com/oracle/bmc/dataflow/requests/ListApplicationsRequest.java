@@ -148,6 +148,12 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String displayNameStartsWith;
 
+    /**
+     * The Spark version utilized to run the application.
+     *
+     */
+    private String sparkVersion;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListApplicationsRequest, java.lang.Void> {
@@ -192,6 +198,7 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
             displayName(o.getDisplayName());
             ownerPrincipalId(o.getOwnerPrincipalId());
             displayNameStartsWith(o.getDisplayNameStartsWith());
+            sparkVersion(o.getSparkVersion());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

@@ -40,6 +40,9 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
 
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+
     /**
      * Creates a new service instance using the given authentication provider.
      * @param authenticationDetailsProvider The authentication details provider, required.
@@ -237,6 +240,12 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                         .clientConfigurator(clientConfigurator)
                         .additionalClientConfigurators(allConfigurators)
                         .build();
+        boolean isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
                         SERVICE, this.authenticationDetailsProvider);
@@ -255,7 +264,12 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                                 .createRequestSigner(SERVICE, authenticationDetailsProvider));
             }
         }
-        this.client = restClientFactory.create(defaultRequestSigner, requestSigners, configuration);
+        this.client =
+                restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        configuration,
+                        isNonBufferingApacheClient);
 
         if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
             com.oracle.bmc.auth.RegionProvider provider =
@@ -395,6 +409,55 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ActivateExadataInfrastructureRequest, ActivateExadataInfrastructureResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddStorageCapacityExadataInfrastructureResponse>
+            addStorageCapacityExadataInfrastructure(
+                    AddStorageCapacityExadataInfrastructureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AddStorageCapacityExadataInfrastructureRequest,
+                                    AddStorageCapacityExadataInfrastructureResponse>
+                            handler) {
+        LOG.trace("Called async addStorageCapacityExadataInfrastructure");
+        final AddStorageCapacityExadataInfrastructureRequest interceptedRequest =
+                AddStorageCapacityExadataInfrastructureConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddStorageCapacityExadataInfrastructureConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, AddStorageCapacityExadataInfrastructureResponse>
+                transformer = AddStorageCapacityExadataInfrastructureConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        AddStorageCapacityExadataInfrastructureRequest,
+                        AddStorageCapacityExadataInfrastructureResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddStorageCapacityExadataInfrastructureRequest,
+                                AddStorageCapacityExadataInfrastructureResponse>,
+                        java.util.concurrent.Future<
+                                AddStorageCapacityExadataInfrastructureResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddStorageCapacityExadataInfrastructureRequest,
+                    AddStorageCapacityExadataInfrastructureResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3436,6 +3499,12 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                                     DownloadExadataInfrastructureConfigFileResponse>
                             handler) {
         LOG.trace("Called async downloadExadataInfrastructureConfigFile");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         final DownloadExadataInfrastructureConfigFileRequest interceptedRequest =
                 DownloadExadataInfrastructureConfigFileConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -3485,6 +3554,12 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                                     DownloadVmClusterNetworkConfigFileResponse>
                             handler) {
         LOG.trace("Called async downloadVmClusterNetworkConfigFile");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         final DownloadVmClusterNetworkConfigFileRequest interceptedRequest =
                 DownloadVmClusterNetworkConfigFileConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -3985,6 +4060,12 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                                     GenerateAutonomousDatabaseWalletResponse>
                             handler) {
         LOG.trace("Called async generateAutonomousDatabaseWallet");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         final GenerateAutonomousDatabaseWalletRequest interceptedRequest =
                 GenerateAutonomousDatabaseWalletConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =

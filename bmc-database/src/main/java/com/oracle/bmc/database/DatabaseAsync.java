@@ -66,6 +66,25 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Makes the storage capacity from additional storage servers available for VM Cluster consumption. Applies to Exadata Cloud@Customer instances only.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddStorageCapacityExadataInfrastructureResponse>
+            addStorageCapacityExadataInfrastructure(
+                    AddStorageCapacityExadataInfrastructureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AddStorageCapacityExadataInfrastructureRequest,
+                                    AddStorageCapacityExadataInfrastructureResponse>
+                            handler);
+
+    /**
      * Initiates a data refresh for an Autonomous Database refreshable clone. Data is refreshed from the source database to the point of a specified timestamp.
      *
      *

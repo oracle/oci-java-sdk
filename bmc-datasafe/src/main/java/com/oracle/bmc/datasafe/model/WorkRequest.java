@@ -164,6 +164,12 @@ public class WorkRequest {
         DeleteOnpremConnector("DELETE_ONPREM_CONNECTOR"),
         UpdateOnpremConnectorWallet("UPDATE_ONPREM_CONNECTOR_WALLET"),
         ChangeOnpremConnectorCompartment("CHANGE_ONPREM_CONNECTOR_COMPARTMENT"),
+        CreateTargetDatabase("CREATE_TARGET_DATABASE"),
+        UpdateTargetDatabase("UPDATE_TARGET_DATABASE"),
+        ActivateTargetDatabase("ACTIVATE_TARGET_DATABASE"),
+        DeactivateTargetDatabase("DEACTIVATE_TARGET_DATABASE"),
+        DeleteTargetDatabase("DELETE_TARGET_DATABASE"),
+        ChangeTargetDatabaseCompartment("CHANGE_TARGET_DATABASE_COMPARTMENT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

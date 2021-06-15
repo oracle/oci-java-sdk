@@ -149,6 +149,7 @@ public class MultithreadStream extends InputStream {
             }
         }
 
+        StreamUtils.closeQuietly(firstPart);
         // We will give the threads this long to stop
         final long deadline = 30_000;
         final long stopMillis = System.currentTimeMillis() + deadline;

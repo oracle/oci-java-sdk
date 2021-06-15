@@ -18,6 +18,7 @@ import java.io.InputStream;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.instanceOf;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.fail;
 import static org.mockito.Matchers.eq;
 import static org.mockito.Matchers.isA;
@@ -146,13 +147,12 @@ public class WrappedResponseInputStreamTest {
 
         try {
             streamUnderTest.close();
-            fail("ProcessingException should have been thrown");
-        } catch (Throwable t) {
-            assertThat(
-                    "Exception thrown should be a ProcessingException",
-                    t,
-                    instanceOf(ProcessingException.class));
             verify(mockRawResponseDelegate).close();
+        } catch (Throwable t) {
+            assertNotEquals(
+                    "Processing exception should not have been thrown",
+                    true,
+                    t instanceof ProcessingException);
         }
     }
 }

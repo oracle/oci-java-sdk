@@ -35,6 +35,15 @@ public class ManagementDashboardSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
+
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -178,6 +187,7 @@ public class ManagementDashboardSummary {
             ManagementDashboardSummary __instance__ =
                     new ManagementDashboardSummary(
                             dashboardId,
+                            id,
                             displayName,
                             description,
                             compartmentId,
@@ -201,6 +211,7 @@ public class ManagementDashboardSummary {
         public Builder copy(ManagementDashboardSummary o) {
             Builder copiedBuilder =
                     dashboardId(o.getDashboardId())
+                            .id(o.getId())
                             .displayName(o.getDisplayName())
                             .description(o.getDescription())
                             .compartmentId(o.getCompartmentId())
@@ -230,10 +241,16 @@ public class ManagementDashboardSummary {
     }
 
     /**
-     * ID of the dashboard.
+     * ID of the dashboard.  Same as id.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dashboardId")
     String dashboardId;
+
+    /**
+     * ID of the dashboard.  Same as dashboardId.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    String id;
 
     /**
      * Display name of the dashboard.

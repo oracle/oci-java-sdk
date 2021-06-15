@@ -145,6 +145,24 @@ public class CreateExadataInfrastructureDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("storageCount")
+        private Integer storageCount;
+
+        public Builder storageCount(Integer storageCount) {
+            this.storageCount = storageCount;
+            this.__explicitlySet__.add("storageCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+        private Integer computeCount;
+
+        public Builder computeCount(Integer computeCount) {
+            this.computeCount = computeCount;
+            this.__explicitlySet__.add("computeCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dnsServer")
         private java.util.List<String> dnsServer;
 
@@ -201,6 +219,8 @@ public class CreateExadataInfrastructureDetails {
                             corporateProxy,
                             contacts,
                             maintenanceWindow,
+                            storageCount,
+                            computeCount,
                             dnsServer,
                             ntpServer,
                             freeformTags,
@@ -225,6 +245,8 @@ public class CreateExadataInfrastructureDetails {
                             .corporateProxy(o.getCorporateProxy())
                             .contacts(o.getContacts())
                             .maintenanceWindow(o.getMaintenanceWindow())
+                            .storageCount(o.getStorageCount())
+                            .computeCount(o.getComputeCount())
                             .dnsServer(o.getDnsServer())
                             .ntpServer(o.getNtpServer())
                             .freeformTags(o.getFreeformTags())
@@ -322,6 +344,18 @@ public class CreateExadataInfrastructureDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
     MaintenanceWindow maintenanceWindow;
+
+    /**
+     * The number of storage servers for the Exadata infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("storageCount")
+    Integer storageCount;
+
+    /**
+     * The number of compute servers for the Exadata infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+    Integer computeCount;
 
     /**
      * The list of DNS server IP addresses. Maximum of 3 allowed.

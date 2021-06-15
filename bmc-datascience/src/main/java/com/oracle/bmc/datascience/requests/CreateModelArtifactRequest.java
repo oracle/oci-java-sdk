@@ -18,7 +18,8 @@ import com.oracle.bmc.datascience.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateModelArtifactRequest
-        extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream> {
+        extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream>
+        implements com.oracle.bmc.requests.HasContentLength {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.

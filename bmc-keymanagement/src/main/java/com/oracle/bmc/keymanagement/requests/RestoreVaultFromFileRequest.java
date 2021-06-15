@@ -18,7 +18,8 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RestoreVaultFromFileRequest
-        extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream> {
+        extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream>
+        implements com.oracle.bmc.requests.HasContentLength {
 
     /**
      * The OCID of the compartment.

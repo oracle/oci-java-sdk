@@ -109,6 +109,15 @@ public class ApplicationSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sparkVersion")
+        private String sparkVersion;
+
+        public Builder sparkVersion(String sparkVersion) {
+            this.sparkVersion = sparkVersion;
+            this.__explicitlySet__.add("sparkVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -142,6 +151,7 @@ public class ApplicationSummary {
                             lifecycleState,
                             ownerPrincipalId,
                             ownerUserName,
+                            sparkVersion,
                             timeCreated,
                             timeUpdated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -160,6 +170,7 @@ public class ApplicationSummary {
                             .lifecycleState(o.getLifecycleState())
                             .ownerPrincipalId(o.getOwnerPrincipalId())
                             .ownerUserName(o.getOwnerUserName())
+                            .sparkVersion(o.getSparkVersion())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated());
 
@@ -241,6 +252,13 @@ public class ApplicationSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ownerUserName")
     String ownerUserName;
+
+    /**
+     * The Spark version utilized to run the application.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sparkVersion")
+    String sparkVersion;
 
     /**
      * The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.

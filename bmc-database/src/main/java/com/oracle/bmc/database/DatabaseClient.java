@@ -34,6 +34,8 @@ public class DatabaseClient implements Database {
             authenticationDetailsProvider;
     private final java.util.concurrent.ExecutorService executorService;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
 
     /**
      * Creates a new service instance using the given authentication provider.
@@ -274,9 +276,15 @@ public class DatabaseClient implements Database {
                         .clientConfigurator(clientConfigurator)
                         .additionalClientConfigurators(allConfigurators)
                         .build();
+        boolean isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
                         SERVICE, this.authenticationDetailsProvider);
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
         java.util.Map<
                         com.oracle.bmc.http.signing.SigningStrategy,
                         com.oracle.bmc.http.signing.RequestSigner>
@@ -300,7 +308,10 @@ public class DatabaseClient implements Database {
         this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
         this.client =
                 restClientFactory.create(
-                        defaultRequestSigner, requestSigners, clientConfigurationToUse);
+                        defaultRequestSigner,
+                        requestSigners,
+                        clientConfigurationToUse,
+                        isNonBufferingApacheClient);
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -473,6 +484,39 @@ public class DatabaseClient implements Database {
                                                 retriedRequest
                                                         .getActivateExadataInfrastructureDetails(),
                                                 retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public AddStorageCapacityExadataInfrastructureResponse addStorageCapacityExadataInfrastructure(
+            AddStorageCapacityExadataInfrastructureRequest request) {
+        LOG.trace("Called addStorageCapacityExadataInfrastructure");
+        final AddStorageCapacityExadataInfrastructureRequest interceptedRequest =
+                AddStorageCapacityExadataInfrastructureConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddStorageCapacityExadataInfrastructureConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, AddStorageCapacityExadataInfrastructureResponse>
+                transformer = AddStorageCapacityExadataInfrastructureConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -2775,6 +2819,14 @@ public class DatabaseClient implements Database {
     public DownloadExadataInfrastructureConfigFileResponse downloadExadataInfrastructureConfigFile(
             DownloadExadataInfrastructureConfigFileRequest request) {
         LOG.trace("Called downloadExadataInfrastructureConfigFile");
+        LOG.warn(
+                "downloadExadataInfrastructureConfigFile returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         final DownloadExadataInfrastructureConfigFileRequest interceptedRequest =
                 DownloadExadataInfrastructureConfigFileConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -2808,6 +2860,14 @@ public class DatabaseClient implements Database {
     public DownloadVmClusterNetworkConfigFileResponse downloadVmClusterNetworkConfigFile(
             DownloadVmClusterNetworkConfigFileRequest request) {
         LOG.trace("Called downloadVmClusterNetworkConfigFile");
+        LOG.warn(
+                "downloadVmClusterNetworkConfigFile returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         final DownloadVmClusterNetworkConfigFileRequest interceptedRequest =
                 DownloadVmClusterNetworkConfigFileConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -3185,6 +3245,14 @@ public class DatabaseClient implements Database {
     public GenerateAutonomousDatabaseWalletResponse generateAutonomousDatabaseWallet(
             GenerateAutonomousDatabaseWalletRequest request) {
         LOG.trace("Called generateAutonomousDatabaseWallet");
+        LOG.warn(
+                "generateAutonomousDatabaseWallet returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         final GenerateAutonomousDatabaseWalletRequest interceptedRequest =
                 GenerateAutonomousDatabaseWalletConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =

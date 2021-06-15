@@ -41,6 +41,9 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
 
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+
     /**
      * Creates a new service instance using the given authentication provider.
      * @param authenticationDetailsProvider The authentication details provider, required.
@@ -238,6 +241,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         .clientConfigurator(clientConfigurator)
                         .additionalClientConfigurators(allConfigurators)
                         .build();
+        boolean isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
                         SERVICE, this.authenticationDetailsProvider);
@@ -256,7 +265,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                                 .createRequestSigner(SERVICE, authenticationDetailsProvider));
             }
         }
-        this.client = restClientFactory.create(defaultRequestSigner, requestSigners, configuration);
+        this.client =
+                restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        configuration,
+                        isNonBufferingApacheClient);
 
         if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
             com.oracle.bmc.auth.RegionProvider provider =
@@ -2112,6 +2126,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                             ExportCustomContentRequest, ExportCustomContentResponse>
                     handler) {
         LOG.trace("Called async exportCustomContent");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         final ExportCustomContentRequest interceptedRequest =
                 ExportCustomContentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -2154,6 +2174,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                             ExportQueryResultRequest, ExportQueryResultResponse>
                     handler) {
         LOG.trace("Called async exportQueryResult");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         final ExportQueryResultRequest interceptedRequest =
                 ExportQueryResultConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =

@@ -179,6 +179,15 @@ public class UpdateManagementDashboardDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("parametersConfig")
+        private java.util.List<Object> parametersConfig;
+
+        public Builder parametersConfig(java.util.List<Object> parametersConfig) {
+            this.parametersConfig = parametersConfig;
+            this.__explicitlySet__.add("parametersConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -221,6 +230,7 @@ public class UpdateManagementDashboardDetails {
                             dataConfig,
                             type,
                             isFavorite,
+                            parametersConfig,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -247,6 +257,7 @@ public class UpdateManagementDashboardDetails {
                             .dataConfig(o.getDataConfig())
                             .type(o.getType())
                             .isFavorite(o.getIsFavorite())
+                            .parametersConfig(o.getParametersConfig())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -363,6 +374,12 @@ public class UpdateManagementDashboardDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFavorite")
     Boolean isFavorite;
+
+    /**
+     * Defines parameters for the dashboard.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parametersConfig")
+    java.util.List<Object> parametersConfig;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.

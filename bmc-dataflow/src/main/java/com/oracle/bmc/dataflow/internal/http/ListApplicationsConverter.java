@@ -94,6 +94,14 @@ public class ListApplicationsConverter {
                                     request.getDisplayNameStartsWith()));
         }
 
+        if (request.getSparkVersion() != null) {
+            target =
+                    target.queryParam(
+                            "sparkVersion",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSparkVersion()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

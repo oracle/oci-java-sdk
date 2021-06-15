@@ -40,6 +40,9 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
 
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+
     /**
      * Creates a new service instance using the given authentication provider.
      * @param authenticationDetailsProvider The authentication details provider, required.
@@ -237,6 +240,12 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                         .clientConfigurator(clientConfigurator)
                         .additionalClientConfigurators(allConfigurators)
                         .build();
+        boolean isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
                         SERVICE, this.authenticationDetailsProvider);
@@ -255,7 +264,12 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                                 .createRequestSigner(SERVICE, authenticationDetailsProvider));
             }
         }
-        this.client = restClientFactory.create(defaultRequestSigner, requestSigners, configuration);
+        this.client =
+                restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        configuration,
+                        isNonBufferingApacheClient);
 
         if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
             com.oracle.bmc.auth.RegionProvider provider =
@@ -1022,6 +1036,12 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                             GetJobTfConfigRequest, GetJobTfConfigResponse>
                     handler) {
         LOG.trace("Called async getJobTfConfig");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         final GetJobTfConfigRequest interceptedRequest =
                 GetJobTfConfigConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -1060,6 +1080,12 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
             final com.oracle.bmc.responses.AsyncHandler<GetJobTfStateRequest, GetJobTfStateResponse>
                     handler) {
         LOG.trace("Called async getJobTfState");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         final GetJobTfStateRequest interceptedRequest =
                 GetJobTfStateConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -1135,6 +1161,12 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                             GetStackTfConfigRequest, GetStackTfConfigResponse>
                     handler) {
         LOG.trace("Called async getStackTfConfig");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         final GetStackTfConfigRequest interceptedRequest =
                 GetStackTfConfigConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -1174,6 +1206,12 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                             GetStackTfStateRequest, GetStackTfStateResponse>
                     handler) {
         LOG.trace("Called async getStackTfState");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         final GetStackTfStateRequest interceptedRequest =
                 GetStackTfStateConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -1251,6 +1289,12 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                             GetTemplateLogoRequest, GetTemplateLogoResponse>
                     handler) {
         LOG.trace("Called async getTemplateLogo");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         final GetTemplateLogoRequest interceptedRequest =
                 GetTemplateLogoConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -1290,6 +1334,12 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                             GetTemplateTfConfigRequest, GetTemplateTfConfigResponse>
                     handler) {
         LOG.trace("Called async getTemplateTfConfig");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         final GetTemplateTfConfigRequest interceptedRequest =
                 GetTemplateTfConfigConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =

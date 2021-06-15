@@ -189,6 +189,15 @@ public class ManagementSavedSearchForImportDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("parametersConfig")
+        private java.util.List<Object> parametersConfig;
+
+        public Builder parametersConfig(java.util.List<Object> parametersConfig) {
+            this.parametersConfig = parametersConfig;
+            this.__explicitlySet__.add("parametersConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -212,7 +221,8 @@ public class ManagementSavedSearchForImportDetails {
                             widgetTemplate,
                             widgetVM,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            parametersConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -237,7 +247,8 @@ public class ManagementSavedSearchForImportDetails {
                             .widgetTemplate(o.getWidgetTemplate())
                             .widgetVM(o.getWidgetVM())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .parametersConfig(o.getParametersConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -362,6 +373,12 @@ public class ManagementSavedSearchForImportDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Defines parameters for the saved search.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parametersConfig")
+    java.util.List<Object> parametersConfig;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

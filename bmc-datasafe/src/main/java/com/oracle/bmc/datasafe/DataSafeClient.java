@@ -33,6 +33,8 @@ public class DataSafeClient implements DataSafe {
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
 
     /**
      * Creates a new service instance using the given authentication provider.
@@ -273,9 +275,15 @@ public class DataSafeClient implements DataSafe {
                         .clientConfigurator(clientConfigurator)
                         .additionalClientConfigurators(allConfigurators)
                         .build();
+        boolean isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
                         SERVICE, this.authenticationDetailsProvider);
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
         java.util.Map<
                         com.oracle.bmc.http.signing.SigningStrategy,
                         com.oracle.bmc.http.signing.RequestSigner>
@@ -299,7 +307,10 @@ public class DataSafeClient implements DataSafe {
         this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
         this.client =
                 restClientFactory.create(
-                        defaultRequestSigner, requestSigners, clientConfigurationToUse);
+                        defaultRequestSigner,
+                        requestSigners,
+                        clientConfigurationToUse,
+                        isNonBufferingApacheClient);
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -441,6 +452,40 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public ActivateTargetDatabaseResponse activateTargetDatabase(
+            ActivateTargetDatabaseRequest request) {
+        LOG.trace("Called activateTargetDatabase");
+        final ActivateTargetDatabaseRequest interceptedRequest =
+                ActivateTargetDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ActivateTargetDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ActivateTargetDatabaseResponse>
+                transformer = ActivateTargetDatabaseConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getActivateTargetDatabaseDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeDataSafePrivateEndpointCompartmentResponse
             changeDataSafePrivateEndpointCompartment(
                     ChangeDataSafePrivateEndpointCompartmentRequest request) {
@@ -507,6 +552,42 @@ public class DataSafeClient implements DataSafe {
                                                 ib,
                                                 retriedRequest
                                                         .getChangeOnPremConnectorCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeTargetDatabaseCompartmentResponse changeTargetDatabaseCompartment(
+            ChangeTargetDatabaseCompartmentRequest request) {
+        LOG.trace("Called changeTargetDatabaseCompartment");
+        final ChangeTargetDatabaseCompartmentRequest interceptedRequest =
+                ChangeTargetDatabaseCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeTargetDatabaseCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeTargetDatabaseCompartmentResponse>
+                transformer = ChangeTargetDatabaseCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeTargetDatabaseCompartmentDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -584,6 +665,70 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public CreateTargetDatabaseResponse createTargetDatabase(CreateTargetDatabaseRequest request) {
+        LOG.trace("Called createTargetDatabase");
+        final CreateTargetDatabaseRequest interceptedRequest =
+                CreateTargetDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateTargetDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTargetDatabaseResponse>
+                transformer = CreateTargetDatabaseConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateTargetDatabaseDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeactivateTargetDatabaseResponse deactivateTargetDatabase(
+            DeactivateTargetDatabaseRequest request) {
+        LOG.trace("Called deactivateTargetDatabase");
+        final DeactivateTargetDatabaseRequest interceptedRequest =
+                DeactivateTargetDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeactivateTargetDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeactivateTargetDatabaseResponse>
+                transformer = DeactivateTargetDatabaseConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteDataSafePrivateEndpointResponse deleteDataSafePrivateEndpoint(
             DeleteDataSafePrivateEndpointRequest request) {
         LOG.trace("Called deleteDataSafePrivateEndpoint");
@@ -645,6 +790,66 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public DeleteTargetDatabaseResponse deleteTargetDatabase(DeleteTargetDatabaseRequest request) {
+        LOG.trace("Called deleteTargetDatabase");
+        final DeleteTargetDatabaseRequest interceptedRequest =
+                DeleteTargetDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteTargetDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTargetDatabaseResponse>
+                transformer = DeleteTargetDatabaseConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DownloadPrivilegeScriptResponse downloadPrivilegeScript(
+            DownloadPrivilegeScriptRequest request) {
+        LOG.trace("Called downloadPrivilegeScript");
+        final DownloadPrivilegeScriptRequest interceptedRequest =
+                DownloadPrivilegeScriptConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DownloadPrivilegeScriptConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DownloadPrivilegeScriptResponse>
+                transformer = DownloadPrivilegeScriptConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public EnableDataSafeConfigurationResponse enableDataSafeConfiguration(
             EnableDataSafeConfigurationRequest request) {
         LOG.trace("Called enableDataSafeConfiguration");
@@ -683,6 +888,14 @@ public class DataSafeClient implements DataSafe {
     public GenerateOnPremConnectorConfigurationResponse generateOnPremConnectorConfiguration(
             GenerateOnPremConnectorConfigurationRequest request) {
         LOG.trace("Called generateOnPremConnectorConfiguration");
+        LOG.warn(
+                "generateOnPremConnectorConfiguration returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         final GenerateOnPremConnectorConfigurationRequest interceptedRequest =
                 GenerateOnPremConnectorConfigurationConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -804,6 +1017,34 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public GetTargetDatabaseResponse getTargetDatabase(GetTargetDatabaseRequest request) {
+        LOG.trace("Called getTargetDatabase");
+        final GetTargetDatabaseRequest interceptedRequest =
+                GetTargetDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTargetDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetTargetDatabaseResponse>
+                transformer = GetTargetDatabaseConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
         LOG.trace("Called getWorkRequest");
         final GetWorkRequestRequest interceptedRequest =
@@ -870,6 +1111,34 @@ public class DataSafeClient implements DataSafe {
                 ListOnPremConnectorsConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListOnPremConnectorsResponse>
                 transformer = ListOnPremConnectorsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListTargetDatabasesResponse listTargetDatabases(ListTargetDatabasesRequest request) {
+        LOG.trace("Called listTargetDatabases");
+        final ListTargetDatabasesRequest interceptedRequest =
+                ListTargetDatabasesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTargetDatabasesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListTargetDatabasesResponse>
+                transformer = ListTargetDatabasesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1072,6 +1341,39 @@ public class DataSafeClient implements DataSafe {
                                                 ib,
                                                 retriedRequest
                                                         .getUpdateOnPremConnectorWalletDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateTargetDatabaseResponse updateTargetDatabase(UpdateTargetDatabaseRequest request) {
+        LOG.trace("Called updateTargetDatabase");
+        final UpdateTargetDatabaseRequest interceptedRequest =
+                UpdateTargetDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateTargetDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTargetDatabaseResponse>
+                transformer = UpdateTargetDatabaseConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateTargetDatabaseDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

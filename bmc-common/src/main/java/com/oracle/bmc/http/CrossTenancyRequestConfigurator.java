@@ -19,11 +19,11 @@ public class CrossTenancyRequestConfigurator implements ClientConfigurator {
     private final String[] authorizedTenancyIds;
 
     /**
-     * A configurator that sets the cross-tenancy request header, but otherwise behaves like the {@link DefaultConfigurator}.
+     * A configurator that sets the cross-tenancy request header, but otherwise behaves like the {@link JerseyDefaultConnectorConfigurator}.
      * @param authorizedTenancyIds tenancy OCIDs that might be accessed by requests made by the client configured
      */
     public CrossTenancyRequestConfigurator(String[] authorizedTenancyIds) {
-        this(authorizedTenancyIds, new DefaultConfigurator());
+        this(authorizedTenancyIds, new JerseyDefaultConnectorConfigurator());
     }
 
     /**

@@ -109,6 +109,15 @@ public class UpdateExadataInfrastructureDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("additionalStorageCount")
+        private Integer additionalStorageCount;
+
+        public Builder additionalStorageCount(Integer additionalStorageCount) {
+            this.additionalStorageCount = additionalStorageCount;
+            this.__explicitlySet__.add("additionalStorageCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dnsServer")
         private java.util.List<String> dnsServer;
 
@@ -170,6 +179,7 @@ public class UpdateExadataInfrastructureDetails {
                             corporateProxy,
                             contacts,
                             maintenanceWindow,
+                            additionalStorageCount,
                             dnsServer,
                             ntpServer,
                             timeZone,
@@ -191,6 +201,7 @@ public class UpdateExadataInfrastructureDetails {
                             .corporateProxy(o.getCorporateProxy())
                             .contacts(o.getContacts())
                             .maintenanceWindow(o.getMaintenanceWindow())
+                            .additionalStorageCount(o.getAdditionalStorageCount())
                             .dnsServer(o.getDnsServer())
                             .ntpServer(o.getNtpServer())
                             .timeZone(o.getTimeZone())
@@ -259,6 +270,12 @@ public class UpdateExadataInfrastructureDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
     MaintenanceWindow maintenanceWindow;
+
+    /**
+     * The requested number of additional storage servers for the Exadata infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("additionalStorageCount")
+    Integer additionalStorageCount;
 
     /**
      * The list of DNS server IP addresses. Maximum of 3 allowed.

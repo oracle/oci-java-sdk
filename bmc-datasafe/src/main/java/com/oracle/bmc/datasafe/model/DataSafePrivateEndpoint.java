@@ -153,6 +153,15 @@ public class DataSafePrivateEndpoint {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -172,7 +181,8 @@ public class DataSafePrivateEndpoint {
                             lifecycleState,
                             nsgIds,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            systemTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -193,7 +203,8 @@ public class DataSafePrivateEndpoint {
                             .lifecycleState(o.getLifecycleState())
                             .nsgIds(o.getNsgIds())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .systemTags(o.getSystemTags());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -298,6 +309,14 @@ public class DataSafePrivateEndpoint {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
+     * Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

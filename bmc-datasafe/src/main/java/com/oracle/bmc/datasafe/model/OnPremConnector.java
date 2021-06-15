@@ -106,6 +106,15 @@ public class OnPremConnector {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("availableVersion")
         private String availableVersion;
 
@@ -139,6 +148,7 @@ public class OnPremConnector {
                             lifecycleDetails,
                             freeformTags,
                             definedTags,
+                            systemTags,
                             availableVersion,
                             createdVersion);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -157,6 +167,7 @@ public class OnPremConnector {
                             .lifecycleDetails(o.getLifecycleDetails())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
+                            .systemTags(o.getSystemTags())
                             .availableVersion(o.getAvailableVersion())
                             .createdVersion(o.getCreatedVersion());
 
@@ -231,6 +242,14 @@ public class OnPremConnector {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
+     * Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
      * Latest available version of the on-premises connector.

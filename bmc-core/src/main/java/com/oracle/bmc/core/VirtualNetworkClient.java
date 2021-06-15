@@ -34,6 +34,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
             authenticationDetailsProvider;
     private final java.util.concurrent.ExecutorService executorService;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
 
     /**
      * Creates a new service instance using the given authentication provider.
@@ -274,9 +276,15 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         .clientConfigurator(clientConfigurator)
                         .additionalClientConfigurators(allConfigurators)
                         .build();
+        boolean isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
                         SERVICE, this.authenticationDetailsProvider);
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
         java.util.Map<
                         com.oracle.bmc.http.signing.SigningStrategy,
                         com.oracle.bmc.http.signing.RequestSigner>
@@ -300,7 +308,10 @@ public class VirtualNetworkClient implements VirtualNetwork {
         this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
         this.client =
                 restClientFactory.create(
-                        defaultRequestSigner, requestSigners, clientConfigurationToUse);
+                        defaultRequestSigner,
+                        requestSigners,
+                        clientConfigurationToUse,
+                        isNonBufferingApacheClient);
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -3340,6 +3351,14 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public GetCpeDeviceConfigContentResponse getCpeDeviceConfigContent(
             GetCpeDeviceConfigContentRequest request) {
         LOG.trace("Called getCpeDeviceConfigContent");
+        LOG.warn(
+                "getCpeDeviceConfigContent returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         final GetCpeDeviceConfigContentRequest interceptedRequest =
                 GetCpeDeviceConfigContentConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -3918,6 +3937,14 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public GetIpsecCpeDeviceConfigContentResponse getIpsecCpeDeviceConfigContent(
             GetIpsecCpeDeviceConfigContentRequest request) {
         LOG.trace("Called getIpsecCpeDeviceConfigContent");
+        LOG.warn(
+                "getIpsecCpeDeviceConfigContent returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         final GetIpsecCpeDeviceConfigContentRequest interceptedRequest =
                 GetIpsecCpeDeviceConfigContentConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -4437,6 +4464,14 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public GetTunnelCpeDeviceConfigContentResponse getTunnelCpeDeviceConfigContent(
             GetTunnelCpeDeviceConfigContentRequest request) {
         LOG.trace("Called getTunnelCpeDeviceConfigContent");
+        LOG.warn(
+                "getTunnelCpeDeviceConfigContent returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         final GetTunnelCpeDeviceConfigContentRequest interceptedRequest =
                 GetTunnelCpeDeviceConfigContentConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =

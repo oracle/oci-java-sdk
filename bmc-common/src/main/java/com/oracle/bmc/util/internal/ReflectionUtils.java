@@ -34,4 +34,20 @@ public class ReflectionUtils {
             return null;
         }
     }
+
+    /**
+     * Checks if a class is present on the classpath
+     *
+     * @param className The name of the class to check the presence of
+     * @param context The method name, if it exists.
+     * @return The boolean value indicating the presence of the class
+     */
+    public static boolean isClassPresent(String className, Class context) {
+        try {
+            Class.forName(className, false, context.getClassLoader());
+        } catch (ClassNotFoundException e) {
+            return false;
+        }
+        return true;
+    }
 }

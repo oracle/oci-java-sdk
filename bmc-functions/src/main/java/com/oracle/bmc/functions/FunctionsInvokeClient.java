@@ -29,6 +29,8 @@ public class FunctionsInvokeClient implements FunctionsInvoke {
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
 
     /**
      * Creates a new service instance using the given authentication provider.
@@ -229,9 +231,15 @@ public class FunctionsInvokeClient implements FunctionsInvoke {
                         .clientConfigurator(clientConfigurator)
                         .additionalClientConfigurators(allConfigurators)
                         .build();
+        boolean isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
                         SERVICE, this.authenticationDetailsProvider);
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
         java.util.Map<
                         com.oracle.bmc.http.signing.SigningStrategy,
                         com.oracle.bmc.http.signing.RequestSigner>
@@ -255,7 +263,10 @@ public class FunctionsInvokeClient implements FunctionsInvoke {
         this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
         this.client =
                 restClientFactory.create(
-                        defaultRequestSigner, requestSigners, clientConfigurationToUse);
+                        defaultRequestSigner,
+                        requestSigners,
+                        clientConfigurationToUse,
+                        isNonBufferingApacheClient);
 
         if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
             com.oracle.bmc.auth.RegionProvider provider =
@@ -365,6 +376,14 @@ public class FunctionsInvokeClient implements FunctionsInvoke {
     @Override
     public InvokeFunctionResponse invokeFunction(InvokeFunctionRequest request) {
         LOG.trace("Called invokeFunction");
+        LOG.warn(
+                "invokeFunction returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         try {
             if (request.getRetryConfiguration() != null
                     || retryConfiguration != null

@@ -85,6 +85,52 @@ public class DbSystemShapeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("minStorageCount")
+        private Integer minStorageCount;
+
+        public Builder minStorageCount(Integer minStorageCount) {
+            this.minStorageCount = minStorageCount;
+            this.__explicitlySet__.add("minStorageCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maxStorageCount")
+        private Integer maxStorageCount;
+
+        public Builder maxStorageCount(Integer maxStorageCount) {
+            this.maxStorageCount = maxStorageCount;
+            this.__explicitlySet__.add("maxStorageCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("availableDataStoragePerServerInTBs")
+        private Double availableDataStoragePerServerInTBs;
+
+        public Builder availableDataStoragePerServerInTBs(
+                Double availableDataStoragePerServerInTBs) {
+            this.availableDataStoragePerServerInTBs = availableDataStoragePerServerInTBs;
+            this.__explicitlySet__.add("availableDataStoragePerServerInTBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("availableMemoryPerNodeInGBs")
+        private Integer availableMemoryPerNodeInGBs;
+
+        public Builder availableMemoryPerNodeInGBs(Integer availableMemoryPerNodeInGBs) {
+            this.availableMemoryPerNodeInGBs = availableMemoryPerNodeInGBs;
+            this.__explicitlySet__.add("availableMemoryPerNodeInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("availableDbNodePerNodeInGBs")
+        private Integer availableDbNodePerNodeInGBs;
+
+        public Builder availableDbNodePerNodeInGBs(Integer availableDbNodePerNodeInGBs) {
+            this.availableDbNodePerNodeInGBs = availableDbNodePerNodeInGBs;
+            this.__explicitlySet__.add("availableDbNodePerNodeInGBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("minCoreCountPerNode")
         private Integer minCoreCountPerNode;
 
@@ -187,6 +233,11 @@ public class DbSystemShapeSummary {
                             availableCoreCount,
                             minimumCoreCount,
                             coreCountIncrement,
+                            minStorageCount,
+                            maxStorageCount,
+                            availableDataStoragePerServerInTBs,
+                            availableMemoryPerNodeInGBs,
+                            availableDbNodePerNodeInGBs,
                             minCoreCountPerNode,
                             availableMemoryInGBs,
                             minMemoryPerNodeInGBs,
@@ -210,6 +261,12 @@ public class DbSystemShapeSummary {
                             .availableCoreCount(o.getAvailableCoreCount())
                             .minimumCoreCount(o.getMinimumCoreCount())
                             .coreCountIncrement(o.getCoreCountIncrement())
+                            .minStorageCount(o.getMinStorageCount())
+                            .maxStorageCount(o.getMaxStorageCount())
+                            .availableDataStoragePerServerInTBs(
+                                    o.getAvailableDataStoragePerServerInTBs())
+                            .availableMemoryPerNodeInGBs(o.getAvailableMemoryPerNodeInGBs())
+                            .availableDbNodePerNodeInGBs(o.getAvailableDbNodePerNodeInGBs())
                             .minCoreCountPerNode(o.getMinCoreCountPerNode())
                             .availableMemoryInGBs(o.getAvailableMemoryInGBs())
                             .minMemoryPerNodeInGBs(o.getMinMemoryPerNodeInGBs())
@@ -270,6 +327,36 @@ public class DbSystemShapeSummary {
     Integer coreCountIncrement;
 
     /**
+     * The minimum number of Exadata storage servers available for the Exadata infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("minStorageCount")
+    Integer minStorageCount;
+
+    /**
+     * The maximum number of Exadata storage servers available for the Exadata infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxStorageCount")
+    Integer maxStorageCount;
+
+    /**
+     * The maximum data storage available per storage server for this shape. Only applicable to ExaCC Elastic shapes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("availableDataStoragePerServerInTBs")
+    Double availableDataStoragePerServerInTBs;
+
+    /**
+     * The maximum memory available per database node for this shape. Only applicable to ExaCC Elastic shapes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("availableMemoryPerNodeInGBs")
+    Integer availableMemoryPerNodeInGBs;
+
+    /**
+     * The maximum Db Node storage available per database node for this shape. Only applicable to ExaCC Elastic shapes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("availableDbNodePerNodeInGBs")
+    Integer availableDbNodePerNodeInGBs;
+
+    /**
      * The minimum number of CPU cores that can be enabled per node for this shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minCoreCountPerNode")
@@ -324,7 +411,7 @@ public class DbSystemShapeSummary {
     Integer maximumNodeCount;
 
     /**
-     * The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape. Does not apply to X6, X7, and X8 fixed-shape systems.
+     * The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape and ExaCC Elastic shapes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableCoreCountPerNode")
     Integer availableCoreCountPerNode;

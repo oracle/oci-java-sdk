@@ -86,7 +86,11 @@ public interface DashxApisAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Creates a new dashboard.  Limit for number of saved searches in a dashboard is 20.
+     * Creates a new dashboard.  Limit for number of saved searches in a dashboard is 20. To get an example of what needs to be passed to CREATE, one can use GET API.
+     * oci management-dashboard dashboard get --management-dashboard-id  \"ocid1.managementdashboard.oc1..dashboardId1\" --query data > Create.json
+     * <p>
+     * Modify the Create.json by removing \"id\" attribute and other desired changes, then do
+     * oci management-dashboard dashboard create  --from-json file://Create.json
      *
      *
      * @param request The request object containing the details to send
@@ -103,7 +107,11 @@ public interface DashxApisAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new saved search.
+     * Creates a new saved search. To get an example of what needs to be passed to CREATE, one can use GET API.
+     * oci management-dashboard saved-search get --management-saved-search-id ocid1.managementsavedsearch.oc1..savedsearchId1 --query data > Create.json
+     * <p>
+     * Modify the Create.json by removing \"id\" attribute and other desired changes, then do
+     * oci management-dashboard saved-search create  --from-json file://Create.json
      *
      *
      * @param request The request object containing the details to send
@@ -152,7 +160,7 @@ public interface DashxApisAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Exports an array of dashboards and their saved searches.
+     * Exports an array of dashboards and their saved searches. Export is designed to work with importDashboard. An example using OCI CLI is $oci management-dashboard dashboard export --query data --export-dashboard-id \"{\\\"dashboardIds\\\":[\\\"ocid1.managementdashboard.oc1..dashboardId1\\\"]}\"  > dashboards.json $oci management-dashboard dashboard import --from-json file://dashboards.json
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -199,7 +207,9 @@ public interface DashxApisAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Imports an array of dashboards and their saved searches.
+     * Imports an array of dashboards and their saved searches. Import is designed to work with exportDashboard. An example using OCI CLI is
+     *     $oci management-dashboard dashboard export --query data --export-dashboard-id \"{\\\"dashboardIds\\\":[\\\"ocid1.managementdashboard.oc1..dashboardId1\\\"]}\"  > dashboards.json
+     *     $oci management-dashboard dashboard import --from-json file://dashboards.json
      *
      *
      * @param request The request object containing the details to send
@@ -215,7 +225,7 @@ public interface DashxApisAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the list of dashboards and their saved searches in a compartment with pagination.  Returned properties are the summary.
+     * Gets the list of dashboards in a compartment with pagination.  Returned properties are the summary.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

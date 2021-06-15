@@ -36,41 +36,19 @@ public class ManagementDashboardExportDetails {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-        private java.util.Map<String, String> freeformTags;
-
-        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
-            this.freeformTags = freeformTags;
-            this.__explicitlySet__.add("freeformTags");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
-
-        public Builder definedTags(
-                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
-            this.definedTags = definedTags;
-            this.__explicitlySet__.add("definedTags");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ManagementDashboardExportDetails build() {
             ManagementDashboardExportDetails __instance__ =
-                    new ManagementDashboardExportDetails(dashboards, freeformTags, definedTags);
+                    new ManagementDashboardExportDetails(dashboards);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ManagementDashboardExportDetails o) {
-            Builder copiedBuilder =
-                    dashboards(o.getDashboards())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+            Builder copiedBuilder = dashboards(o.getDashboards());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -89,22 +67,6 @@ public class ManagementDashboardExportDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dashboards")
     java.util.List<ManagementDashboardForImportExportDetails> dashboards;
-
-    /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
-
-    /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

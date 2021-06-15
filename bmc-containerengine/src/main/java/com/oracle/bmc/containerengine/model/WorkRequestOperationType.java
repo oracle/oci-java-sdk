@@ -16,6 +16,7 @@ public enum WorkRequestOperationType {
     NodepoolCreate("NODEPOOL_CREATE"),
     NodepoolUpdate("NODEPOOL_UPDATE"),
     NodepoolDelete("NODEPOOL_DELETE"),
+    NodepoolReconcile("NODEPOOL_RECONCILE"),
     WorkrequestCancel("WORKREQUEST_CANCEL"),
 
     /**

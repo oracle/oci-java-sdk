@@ -197,6 +197,15 @@ public class ManagementSavedSearchSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("parametersConfig")
+        private java.util.List<Object> parametersConfig;
+
+        public Builder parametersConfig(java.util.List<Object> parametersConfig) {
+            this.parametersConfig = parametersConfig;
+            this.__explicitlySet__.add("parametersConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -241,6 +250,7 @@ public class ManagementSavedSearchSummary {
                             widgetTemplate,
                             widgetVM,
                             lifecycleState,
+                            parametersConfig,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -269,6 +279,7 @@ public class ManagementSavedSearchSummary {
                             .widgetTemplate(o.getWidgetTemplate())
                             .widgetVM(o.getWidgetVM())
                             .lifecycleState(o.getLifecycleState())
+                            .parametersConfig(o.getParametersConfig())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -397,6 +408,12 @@ public class ManagementSavedSearchSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleStates lifecycleState;
+
+    /**
+     * Defines parameters for the saved search.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parametersConfig")
+    java.util.List<Object> parametersConfig;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
