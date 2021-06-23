@@ -2252,6 +2252,48 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePluggableDatabaseResponse> createPluggableDatabase(
+            CreatePluggableDatabaseRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreatePluggableDatabaseRequest, CreatePluggableDatabaseResponse>
+                    handler) {
+        LOG.trace("Called async createPluggableDatabase");
+        final CreatePluggableDatabaseRequest interceptedRequest =
+                CreatePluggableDatabaseConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreatePluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreatePluggableDatabaseResponse>
+                transformer = CreatePluggableDatabaseConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreatePluggableDatabaseRequest, CreatePluggableDatabaseResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreatePluggableDatabaseRequest, CreatePluggableDatabaseResponse>,
+                        java.util.concurrent.Future<CreatePluggableDatabaseResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreatePluggableDatabaseRequest, CreatePluggableDatabaseResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateVmClusterResponse> createVmCluster(
             CreateVmClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -3038,6 +3080,47 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteKeyStoreRequest, DeleteKeyStoreResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePluggableDatabaseResponse> deletePluggableDatabase(
+            DeletePluggableDatabaseRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeletePluggableDatabaseRequest, DeletePluggableDatabaseResponse>
+                    handler) {
+        LOG.trace("Called async deletePluggableDatabase");
+        final DeletePluggableDatabaseRequest interceptedRequest =
+                DeletePluggableDatabaseConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeletePluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeletePluggableDatabaseResponse>
+                transformer = DeletePluggableDatabaseConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeletePluggableDatabaseRequest, DeletePluggableDatabaseResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeletePluggableDatabaseRequest, DeletePluggableDatabaseResponse>,
+                        java.util.concurrent.Future<DeletePluggableDatabaseResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeletePluggableDatabaseRequest, DeletePluggableDatabaseResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -5796,6 +5879,47 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetPluggableDatabaseResponse> getPluggableDatabase(
+            GetPluggableDatabaseRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetPluggableDatabaseRequest, GetPluggableDatabaseResponse>
+                    handler) {
+        LOG.trace("Called async getPluggableDatabase");
+        final GetPluggableDatabaseRequest interceptedRequest =
+                GetPluggableDatabaseConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetPluggableDatabaseResponse>
+                transformer = GetPluggableDatabaseConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetPluggableDatabaseRequest, GetPluggableDatabaseResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetPluggableDatabaseRequest, GetPluggableDatabaseResponse>,
+                        java.util.concurrent.Future<GetPluggableDatabaseResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetPluggableDatabaseRequest, GetPluggableDatabaseResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetVmClusterResponse> getVmCluster(
             GetVmClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetVmClusterRequest, GetVmClusterResponse>
@@ -7800,6 +7924,47 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListPluggableDatabasesResponse> listPluggableDatabases(
+            ListPluggableDatabasesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListPluggableDatabasesRequest, ListPluggableDatabasesResponse>
+                    handler) {
+        LOG.trace("Called async listPluggableDatabases");
+        final ListPluggableDatabasesRequest interceptedRequest =
+                ListPluggableDatabasesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPluggableDatabasesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListPluggableDatabasesResponse>
+                transformer = ListPluggableDatabasesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListPluggableDatabasesRequest, ListPluggableDatabasesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListPluggableDatabasesRequest, ListPluggableDatabasesResponse>,
+                        java.util.concurrent.Future<ListPluggableDatabasesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListPluggableDatabasesRequest, ListPluggableDatabasesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListVmClusterNetworksResponse> listVmClusterNetworks(
             ListVmClusterNetworksRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -7954,6 +8119,51 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListVmClustersRequest, ListVmClustersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<LocalClonePluggableDatabaseResponse>
+            localClonePluggableDatabase(
+                    LocalClonePluggableDatabaseRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    LocalClonePluggableDatabaseRequest,
+                                    LocalClonePluggableDatabaseResponse>
+                            handler) {
+        LOG.trace("Called async localClonePluggableDatabase");
+        final LocalClonePluggableDatabaseRequest interceptedRequest =
+                LocalClonePluggableDatabaseConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                LocalClonePluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, LocalClonePluggableDatabaseResponse>
+                transformer = LocalClonePluggableDatabaseConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        LocalClonePluggableDatabaseRequest, LocalClonePluggableDatabaseResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                LocalClonePluggableDatabaseRequest,
+                                LocalClonePluggableDatabaseResponse>,
+                        java.util.concurrent.Future<LocalClonePluggableDatabaseResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    LocalClonePluggableDatabaseRequest, LocalClonePluggableDatabaseResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -8185,6 +8395,51 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ReinstateDataGuardAssociationRequest, ReinstateDataGuardAssociationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoteClonePluggableDatabaseResponse>
+            remoteClonePluggableDatabase(
+                    RemoteClonePluggableDatabaseRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoteClonePluggableDatabaseRequest,
+                                    RemoteClonePluggableDatabaseResponse>
+                            handler) {
+        LOG.trace("Called async remoteClonePluggableDatabase");
+        final RemoteClonePluggableDatabaseRequest interceptedRequest =
+                RemoteClonePluggableDatabaseConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoteClonePluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RemoteClonePluggableDatabaseResponse>
+                transformer = RemoteClonePluggableDatabaseConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoteClonePluggableDatabaseRequest, RemoteClonePluggableDatabaseResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoteClonePluggableDatabaseRequest,
+                                RemoteClonePluggableDatabaseResponse>,
+                        java.util.concurrent.Future<RemoteClonePluggableDatabaseResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoteClonePluggableDatabaseRequest, RemoteClonePluggableDatabaseResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -8678,6 +8933,48 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<StartPluggableDatabaseResponse> startPluggableDatabase(
+            StartPluggableDatabaseRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StartPluggableDatabaseRequest, StartPluggableDatabaseResponse>
+                    handler) {
+        LOG.trace("Called async startPluggableDatabase");
+        final StartPluggableDatabaseRequest interceptedRequest =
+                StartPluggableDatabaseConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StartPluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, StartPluggableDatabaseResponse>
+                transformer = StartPluggableDatabaseConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        StartPluggableDatabaseRequest, StartPluggableDatabaseResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                StartPluggableDatabaseRequest, StartPluggableDatabaseResponse>,
+                        java.util.concurrent.Future<StartPluggableDatabaseResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StartPluggableDatabaseRequest, StartPluggableDatabaseResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<StopAutonomousDatabaseResponse> stopAutonomousDatabase(
             StopAutonomousDatabaseRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -8706,6 +9003,48 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     StopAutonomousDatabaseRequest, StopAutonomousDatabaseResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopPluggableDatabaseResponse> stopPluggableDatabase(
+            StopPluggableDatabaseRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StopPluggableDatabaseRequest, StopPluggableDatabaseResponse>
+                    handler) {
+        LOG.trace("Called async stopPluggableDatabase");
+        final StopPluggableDatabaseRequest interceptedRequest =
+                StopPluggableDatabaseConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StopPluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, StopPluggableDatabaseResponse>
+                transformer = StopPluggableDatabaseConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        StopPluggableDatabaseRequest, StopPluggableDatabaseResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                StopPluggableDatabaseRequest, StopPluggableDatabaseResponse>,
+                        java.util.concurrent.Future<StopPluggableDatabaseResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StopPluggableDatabaseRequest, StopPluggableDatabaseResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -9933,6 +10272,47 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateMaintenanceRunRequest, UpdateMaintenanceRunResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePluggableDatabaseResponse> updatePluggableDatabase(
+            UpdatePluggableDatabaseRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdatePluggableDatabaseRequest, UpdatePluggableDatabaseResponse>
+                    handler) {
+        LOG.trace("Called async updatePluggableDatabase");
+        final UpdatePluggableDatabaseRequest interceptedRequest =
+                UpdatePluggableDatabaseConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdatePluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdatePluggableDatabaseResponse>
+                transformer = UpdatePluggableDatabaseConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdatePluggableDatabaseRequest, UpdatePluggableDatabaseResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdatePluggableDatabaseRequest, UpdatePluggableDatabaseResponse>,
+                        java.util.concurrent.Future<UpdatePluggableDatabaseResponse>>
+                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdatePluggableDatabaseRequest, UpdatePluggableDatabaseResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

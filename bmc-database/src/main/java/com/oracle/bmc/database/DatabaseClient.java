@@ -1920,6 +1920,40 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public CreatePluggableDatabaseResponse createPluggableDatabase(
+            CreatePluggableDatabaseRequest request) {
+        LOG.trace("Called createPluggableDatabase");
+        final CreatePluggableDatabaseRequest interceptedRequest =
+                CreatePluggableDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreatePluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreatePluggableDatabaseResponse>
+                transformer = CreatePluggableDatabaseConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreatePluggableDatabaseDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateVmClusterResponse createVmCluster(CreateVmClusterRequest request) {
         LOG.trace("Called createVmCluster");
         final CreateVmClusterRequest interceptedRequest =
@@ -2479,6 +2513,36 @@ public class DatabaseClient implements Database {
                 DeleteKeyStoreConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteKeyStoreResponse>
                 transformer = DeleteKeyStoreConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeletePluggableDatabaseResponse deletePluggableDatabase(
+            DeletePluggableDatabaseRequest request) {
+        LOG.trace("Called deletePluggableDatabase");
+        final DeletePluggableDatabaseRequest interceptedRequest =
+                DeletePluggableDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeletePluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeletePluggableDatabaseResponse>
+                transformer = DeletePluggableDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -4464,6 +4528,34 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public GetPluggableDatabaseResponse getPluggableDatabase(GetPluggableDatabaseRequest request) {
+        LOG.trace("Called getPluggableDatabase");
+        final GetPluggableDatabaseRequest interceptedRequest =
+                GetPluggableDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetPluggableDatabaseResponse>
+                transformer = GetPluggableDatabaseConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetVmClusterResponse getVmCluster(GetVmClusterRequest request) {
         LOG.trace("Called getVmCluster");
         final GetVmClusterRequest interceptedRequest =
@@ -5859,6 +5951,35 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public ListPluggableDatabasesResponse listPluggableDatabases(
+            ListPluggableDatabasesRequest request) {
+        LOG.trace("Called listPluggableDatabases");
+        final ListPluggableDatabasesRequest interceptedRequest =
+                ListPluggableDatabasesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPluggableDatabasesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListPluggableDatabasesResponse>
+                transformer = ListPluggableDatabasesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListVmClusterNetworksResponse listVmClusterNetworks(
             ListVmClusterNetworksRequest request) {
         LOG.trace("Called listVmClusterNetworks");
@@ -5968,6 +6089,42 @@ public class DatabaseClient implements Database {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public LocalClonePluggableDatabaseResponse localClonePluggableDatabase(
+            LocalClonePluggableDatabaseRequest request) {
+        LOG.trace("Called localClonePluggableDatabase");
+        final LocalClonePluggableDatabaseRequest interceptedRequest =
+                LocalClonePluggableDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                LocalClonePluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, LocalClonePluggableDatabaseResponse>
+                transformer = LocalClonePluggableDatabaseConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getLocalClonePluggableDatabaseDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -6140,6 +6297,42 @@ public class DatabaseClient implements Database {
                                                 ib,
                                                 retriedRequest
                                                         .getReinstateDataGuardAssociationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RemoteClonePluggableDatabaseResponse remoteClonePluggableDatabase(
+            RemoteClonePluggableDatabaseRequest request) {
+        LOG.trace("Called remoteClonePluggableDatabase");
+        final RemoteClonePluggableDatabaseRequest interceptedRequest =
+                RemoteClonePluggableDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoteClonePluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RemoteClonePluggableDatabaseResponse>
+                transformer = RemoteClonePluggableDatabaseConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRemoteClonePluggableDatabaseDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -6501,6 +6694,37 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public StartPluggableDatabaseResponse startPluggableDatabase(
+            StartPluggableDatabaseRequest request) {
+        LOG.trace("Called startPluggableDatabase");
+        final StartPluggableDatabaseRequest interceptedRequest =
+                StartPluggableDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StartPluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, StartPluggableDatabaseResponse>
+                transformer = StartPluggableDatabaseConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public StopAutonomousDatabaseResponse stopAutonomousDatabase(
             StopAutonomousDatabaseRequest request) {
         LOG.trace("Called stopAutonomousDatabase");
@@ -6514,6 +6738,37 @@ public class DatabaseClient implements Database {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public StopPluggableDatabaseResponse stopPluggableDatabase(
+            StopPluggableDatabaseRequest request) {
+        LOG.trace("Called stopPluggableDatabase");
+        final StopPluggableDatabaseRequest interceptedRequest =
+                StopPluggableDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StopPluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, StopPluggableDatabaseResponse>
+                transformer = StopPluggableDatabaseConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7470,6 +7725,39 @@ public class DatabaseClient implements Database {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateMaintenanceRunDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdatePluggableDatabaseResponse updatePluggableDatabase(
+            UpdatePluggableDatabaseRequest request) {
+        LOG.trace("Called updatePluggableDatabase");
+        final UpdatePluggableDatabaseRequest interceptedRequest =
+                UpdatePluggableDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdatePluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePluggableDatabaseResponse>
+                transformer = UpdatePluggableDatabaseConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdatePluggableDatabaseDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

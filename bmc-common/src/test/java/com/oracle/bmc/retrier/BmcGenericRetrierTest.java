@@ -100,12 +100,26 @@ public class BmcGenericRetrierTest {
     }
 
     @Test
-    public void retryForRelatedResourceNotAuthorizedOrNotFound() {
-        final Supplier<String> request =
-                setupMockRequest(400, "RelatedResourceNotAuthorizedOrNotFound");
+    public void retryForIncorrectState() {
+        final Supplier<String> request = setupMockRequest(409, "IncorrectState");
         final BmcGenericRetrier retrier = new BmcGenericRetrier(CUSTOM_RETRY_CONFIGURATION);
         retrier.execute(request, Supplier::get);
 
         verify(request, times(2)).get();
+    }
+
+    @Test
+    public void noRetryForNotAuthorizedOrResourceAlreadyExists() {
+        final Supplier<String> request =
+                setupMockRequest(409, "NotAuthorizedOrResourceAlreadyExists");
+        final BmcGenericRetrier retrier = new BmcGenericRetrier(CUSTOM_RETRY_CONFIGURATION);
+        try {
+            retrier.execute(request, Supplier::get);
+            fail("Should have thrown");
+        } catch (BmcException e) {
+            assertEquals(409, e.getStatusCode());
+        }
+
+        verify(request, times(1)).get();
     }
 }

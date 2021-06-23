@@ -5,7 +5,8 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details for updating an external [Management Agent cloud service (MACS)](https://docs.cloud.oracle.com/iaas/management-agents/index.html) database connection.
+ * Details for updating an external [Management Agent cloud service (MACS)](https://docs.cloud.oracle.com/iaas/management-agents/index.html)
+ * database connection.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

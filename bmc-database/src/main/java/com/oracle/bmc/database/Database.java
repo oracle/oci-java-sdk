@@ -574,6 +574,18 @@ public interface Database extends AutoCloseable {
     CreateKeyStoreResponse createKeyStore(CreateKeyStoreRequest request);
 
     /**
+     * Create and start a pluggable database in the specified container database.
+     * If needed call actions/stop to stop the PDB.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreatePluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePluggableDatabase API.
+     */
+    CreatePluggableDatabaseResponse createPluggableDatabase(CreatePluggableDatabaseRequest request);
+
+    /**
      * Creates an Exadata Cloud@Customer VM cluster.
      *
      * @param request The request object containing the details to send
@@ -809,6 +821,16 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteKeyStoreExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteKeyStore API.
      */
     DeleteKeyStoreResponse deleteKeyStore(DeleteKeyStoreRequest request);
+
+    /**
+     * Delete a pluggable database
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeletePluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePluggableDatabase API.
+     */
+    DeletePluggableDatabaseResponse deletePluggableDatabase(DeletePluggableDatabaseRequest request);
 
     /**
      * Deletes the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
@@ -1553,6 +1575,16 @@ public interface Database extends AutoCloseable {
     GetMaintenanceRunResponse getMaintenanceRun(GetMaintenanceRunRequest request);
 
     /**
+     * Gets information about a specific pluggable database
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetPluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPluggableDatabase API.
+     */
+    GetPluggableDatabaseResponse getPluggableDatabase(GetPluggableDatabaseRequest request);
+
+    /**
      * Gets information about the VM cluster. Applies to Exadata Cloud@Customer instances only.
      *
      * @param request The request object containing the details to send
@@ -2109,6 +2141,18 @@ public interface Database extends AutoCloseable {
     ListMaintenanceRunsResponse listMaintenanceRuns(ListMaintenanceRunsRequest request);
 
     /**
+     * Gets a list of the pluggable databases based on databaseId or compartmentId specified.
+     * Either one of the query parameters must be provided.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListPluggableDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPluggableDatabases API.
+     */
+    ListPluggableDatabasesResponse listPluggableDatabases(ListPluggableDatabasesRequest request);
+
+    /**
      * Gets a list of the VM cluster networks in the specified compartment. Applies to Exadata Cloud@Customer instances only.
      *
      * @param request The request object containing the details to send
@@ -2153,6 +2197,17 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListVmClustersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVmClusters API.
      */
     ListVmClustersResponse listVmClusters(ListVmClustersRequest request);
+
+    /**
+     * Clone and start a pluggable database on the same CDB. Only a started pluggable database can be cloned.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/LocalClonePluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use LocalClonePluggableDatabase API.
+     */
+    LocalClonePluggableDatabaseResponse localClonePluggableDatabase(
+            LocalClonePluggableDatabaseRequest request);
 
     /**
      * Migrates the Exadata DB system to the new [Exadata resource model](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model).
@@ -2213,6 +2268,17 @@ public interface Database extends AutoCloseable {
      */
     ReinstateDataGuardAssociationResponse reinstateDataGuardAssociation(
             ReinstateDataGuardAssociationRequest request);
+
+    /**
+     * Clone and start a pluggable database on a different CDB. Only a started pluggable database can be cloned.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RemoteClonePluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoteClonePluggableDatabase API.
+     */
+    RemoteClonePluggableDatabaseResponse remoteClonePluggableDatabase(
+            RemoteClonePluggableDatabaseRequest request);
 
     /**
      * Rolling restarts the specified Autonomous Container Database.
@@ -2342,6 +2408,16 @@ public interface Database extends AutoCloseable {
     StartAutonomousDatabaseResponse startAutonomousDatabase(StartAutonomousDatabaseRequest request);
 
     /**
+     * start a stopped pluggable database. The openMode of the pluggable database will be READ_WRITE upon completion.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/StartPluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartPluggableDatabase API.
+     */
+    StartPluggableDatabaseResponse startPluggableDatabase(StartPluggableDatabaseRequest request);
+
+    /**
      * Stops the specified Autonomous Database.
      *
      * @param request The request object containing the details to send
@@ -2351,6 +2427,16 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/StopAutonomousDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopAutonomousDatabase API.
      */
     StopAutonomousDatabaseResponse stopAutonomousDatabase(StopAutonomousDatabaseRequest request);
+
+    /**
+     * stop a started pluggable database. The openMode of the pluggable database will be MOUNTED upon completion.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/StopPluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopPluggableDatabase API.
+     */
+    StopPluggableDatabaseResponse stopPluggableDatabase(StopPluggableDatabaseRequest request);
 
     /**
      * Switches over the primary Autonomous Container Database of an Autonomous Data Guard peer association to standby role. The standby Autonomous Container Database associated with autonomousContainerDatabaseDataguardAssociationId assumes the primary Autonomous Container Database role.
@@ -2697,6 +2783,16 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateMaintenanceRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMaintenanceRun API.
      */
     UpdateMaintenanceRunResponse updateMaintenanceRun(UpdateMaintenanceRunRequest request);
+
+    /**
+     * Update a pluggable database
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdatePluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePluggableDatabase API.
+     */
+    UpdatePluggableDatabaseResponse updatePluggableDatabase(UpdatePluggableDatabaseRequest request);
 
     /**
      * Updates the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
