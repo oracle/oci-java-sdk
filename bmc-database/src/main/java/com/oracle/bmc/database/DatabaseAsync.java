@@ -827,6 +827,24 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Create and start a pluggable database in the specified container database.
+     * If needed call actions/stop to stop the PDB.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreatePluggableDatabaseResponse> createPluggableDatabase(
+            CreatePluggableDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreatePluggableDatabaseRequest, CreatePluggableDatabaseResponse>
+                    handler);
+
+    /**
      * Creates an Exadata Cloud@Customer VM cluster.
      *
      *
@@ -1170,6 +1188,22 @@ public interface DatabaseAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteKeyStoreResponse> deleteKeyStore(
             DeleteKeyStoreRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteKeyStoreRequest, DeleteKeyStoreResponse>
+                    handler);
+
+    /**
+     * Delete a pluggable database
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeletePluggableDatabaseResponse> deletePluggableDatabase(
+            DeletePluggableDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeletePluggableDatabaseRequest, DeletePluggableDatabaseResponse>
                     handler);
 
     /**
@@ -2275,6 +2309,22 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets information about a specific pluggable database
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPluggableDatabaseResponse> getPluggableDatabase(
+            GetPluggableDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetPluggableDatabaseRequest, GetPluggableDatabaseResponse>
+                    handler);
+
+    /**
      * Gets information about the VM cluster. Applies to Exadata Cloud@Customer instances only.
      *
      *
@@ -3111,6 +3161,24 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a list of the pluggable databases based on databaseId or compartmentId specified.
+     * Either one of the query parameters must be provided.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPluggableDatabasesResponse> listPluggableDatabases(
+            ListPluggableDatabasesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListPluggableDatabasesRequest, ListPluggableDatabasesResponse>
+                    handler);
+
+    /**
      * Gets a list of the VM cluster networks in the specified compartment. Applies to Exadata Cloud@Customer instances only.
      *
      *
@@ -3178,6 +3246,22 @@ public interface DatabaseAsync extends AutoCloseable {
     java.util.concurrent.Future<ListVmClustersResponse> listVmClusters(
             ListVmClustersRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListVmClustersRequest, ListVmClustersResponse>
+                    handler);
+
+    /**
+     * Clone and start a pluggable database on the same CDB. Only a started pluggable database can be cloned.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<LocalClonePluggableDatabaseResponse> localClonePluggableDatabase(
+            LocalClonePluggableDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            LocalClonePluggableDatabaseRequest, LocalClonePluggableDatabaseResponse>
                     handler);
 
     /**
@@ -3271,6 +3355,23 @@ public interface DatabaseAsync extends AutoCloseable {
                                     ReinstateDataGuardAssociationRequest,
                                     ReinstateDataGuardAssociationResponse>
                             handler);
+
+    /**
+     * Clone and start a pluggable database on a different CDB. Only a started pluggable database can be cloned.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoteClonePluggableDatabaseResponse> remoteClonePluggableDatabase(
+            RemoteClonePluggableDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoteClonePluggableDatabaseRequest,
+                            RemoteClonePluggableDatabaseResponse>
+                    handler);
 
     /**
      * Rolling restarts the specified Autonomous Container Database.
@@ -3462,6 +3563,22 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * start a stopped pluggable database. The openMode of the pluggable database will be READ_WRITE upon completion.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<StartPluggableDatabaseResponse> startPluggableDatabase(
+            StartPluggableDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            StartPluggableDatabaseRequest, StartPluggableDatabaseResponse>
+                    handler);
+
+    /**
      * Stops the specified Autonomous Database.
      *
      *
@@ -3476,6 +3593,22 @@ public interface DatabaseAsync extends AutoCloseable {
             StopAutonomousDatabaseRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             StopAutonomousDatabaseRequest, StopAutonomousDatabaseResponse>
+                    handler);
+
+    /**
+     * stop a started pluggable database. The openMode of the pluggable database will be MOUNTED upon completion.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<StopPluggableDatabaseResponse> stopPluggableDatabase(
+            StopPluggableDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            StopPluggableDatabaseRequest, StopPluggableDatabaseResponse>
                     handler);
 
     /**
@@ -3995,6 +4128,22 @@ public interface DatabaseAsync extends AutoCloseable {
             UpdateMaintenanceRunRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateMaintenanceRunRequest, UpdateMaintenanceRunResponse>
+                    handler);
+
+    /**
+     * Update a pluggable database
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdatePluggableDatabaseResponse> updatePluggableDatabase(
+            UpdatePluggableDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdatePluggableDatabaseRequest, UpdatePluggableDatabaseResponse>
                     handler);
 
     /**

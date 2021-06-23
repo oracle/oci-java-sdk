@@ -822,6 +822,14 @@ public class DataSafeClient implements DataSafe {
     public DownloadPrivilegeScriptResponse downloadPrivilegeScript(
             DownloadPrivilegeScriptRequest request) {
         LOG.trace("Called downloadPrivilegeScript");
+        LOG.warn(
+                "downloadPrivilegeScript returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
         final DownloadPrivilegeScriptRequest interceptedRequest =
                 DownloadPrivilegeScriptConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =

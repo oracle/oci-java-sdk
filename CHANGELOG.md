@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.0.2 - 2021-06-22
+### Added
+- Support for virtual machine and bare metal pluggable databases in the Database service
+
 ## 2.0.0 - 2021-06-15
 ### Added
 - Support for elastic storage on Exadata Infrastructure resources for Cloud at Customer in the Database service

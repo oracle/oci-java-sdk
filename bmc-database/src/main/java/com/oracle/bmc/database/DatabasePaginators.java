@@ -4839,6 +4839,122 @@ public class DatabasePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listPluggableDatabases operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListPluggableDatabasesResponse> listPluggableDatabasesResponseIterator(
+            final ListPluggableDatabasesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPluggableDatabasesRequest.Builder, ListPluggableDatabasesRequest,
+                ListPluggableDatabasesResponse>(
+                new com.google.common.base.Supplier<ListPluggableDatabasesRequest.Builder>() {
+                    @Override
+                    public ListPluggableDatabasesRequest.Builder get() {
+                        return ListPluggableDatabasesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListPluggableDatabasesResponse, String>() {
+                    @Override
+                    public String apply(ListPluggableDatabasesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPluggableDatabasesRequest.Builder>,
+                        ListPluggableDatabasesRequest>() {
+                    @Override
+                    public ListPluggableDatabasesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPluggableDatabasesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPluggableDatabasesRequest, ListPluggableDatabasesResponse>() {
+                    @Override
+                    public ListPluggableDatabasesResponse apply(
+                            ListPluggableDatabasesRequest request) {
+                        return client.listPluggableDatabases(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.PluggableDatabaseSummary} objects
+     * contained in responses from the listPluggableDatabases operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.PluggableDatabaseSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.PluggableDatabaseSummary>
+            listPluggableDatabasesRecordIterator(final ListPluggableDatabasesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPluggableDatabasesRequest.Builder, ListPluggableDatabasesRequest,
+                ListPluggableDatabasesResponse,
+                com.oracle.bmc.database.model.PluggableDatabaseSummary>(
+                new com.google.common.base.Supplier<ListPluggableDatabasesRequest.Builder>() {
+                    @Override
+                    public ListPluggableDatabasesRequest.Builder get() {
+                        return ListPluggableDatabasesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListPluggableDatabasesResponse, String>() {
+                    @Override
+                    public String apply(ListPluggableDatabasesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPluggableDatabasesRequest.Builder>,
+                        ListPluggableDatabasesRequest>() {
+                    @Override
+                    public ListPluggableDatabasesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPluggableDatabasesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPluggableDatabasesRequest, ListPluggableDatabasesResponse>() {
+                    @Override
+                    public ListPluggableDatabasesResponse apply(
+                            ListPluggableDatabasesRequest request) {
+                        return client.listPluggableDatabases(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPluggableDatabasesResponse,
+                        java.util.List<com.oracle.bmc.database.model.PluggableDatabaseSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.database.model.PluggableDatabaseSummary>
+                            apply(ListPluggableDatabasesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listVmClusterNetworks operation. This iterable
      * will fetch more data from the server as needed.
      *
