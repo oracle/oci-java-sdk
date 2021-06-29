@@ -35,6 +35,15 @@ public class NodePoolNodeConfigDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("placementConfigs")
         private java.util.List<NodePoolPlacementConfigDetails> placementConfigs;
 
@@ -50,14 +59,17 @@ public class NodePoolNodeConfigDetails {
 
         public NodePoolNodeConfigDetails build() {
             NodePoolNodeConfigDetails __instance__ =
-                    new NodePoolNodeConfigDetails(size, placementConfigs);
+                    new NodePoolNodeConfigDetails(size, nsgIds, placementConfigs);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(NodePoolNodeConfigDetails o) {
-            Builder copiedBuilder = size(o.getSize()).placementConfigs(o.getPlacementConfigs());
+            Builder copiedBuilder =
+                    size(o.getSize())
+                            .nsgIds(o.getNsgIds())
+                            .placementConfigs(o.getPlacementConfigs());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -77,6 +89,13 @@ public class NodePoolNodeConfigDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("size")
     Integer size;
+
+    /**
+     * The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see {@link NetworkSecurityGroup}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    java.util.List<String> nsgIds;
 
     /**
      * The placement configurations for the node pool. Provide one placement

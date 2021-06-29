@@ -60,6 +60,15 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
+        private Float ocpuCount;
+
+        public Builder ocpuCount(Float ocpuCount) {
+            this.ocpuCount = ocpuCount;
+            this.__explicitlySet__.add("ocpuCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
         private DbWorkload dbWorkload;
 
@@ -75,6 +84,15 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
         public Builder dataStorageSizeInTBs(Integer dataStorageSizeInTBs) {
             this.dataStorageSizeInTBs = dataStorageSizeInTBs;
             this.__explicitlySet__.add("dataStorageSizeInTBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
+        private Integer dataStorageSizeInGBs;
+
+        public Builder dataStorageSizeInGBs(Integer dataStorageSizeInGBs) {
+            this.dataStorageSizeInGBs = dataStorageSizeInGBs;
+            this.__explicitlySet__.add("dataStorageSizeInGBs");
             return this;
         }
 
@@ -288,8 +306,10 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                             compartmentId,
                             dbName,
                             cpuCoreCount,
+                            ocpuCount,
                             dbWorkload,
                             dataStorageSizeInTBs,
+                            dataStorageSizeInGBs,
                             isFreeTier,
                             kmsKeyId,
                             vaultId,
@@ -322,8 +342,10 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                     compartmentId(o.getCompartmentId())
                             .dbName(o.getDbName())
                             .cpuCoreCount(o.getCpuCoreCount())
+                            .ocpuCount(o.getOcpuCount())
                             .dbWorkload(o.getDbWorkload())
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
+                            .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
                             .isFreeTier(o.getIsFreeTier())
                             .kmsKeyId(o.getKmsKeyId())
                             .vaultId(o.getVaultId())
@@ -365,8 +387,10 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
             String compartmentId,
             String dbName,
             Integer cpuCoreCount,
+            Float ocpuCount,
             DbWorkload dbWorkload,
             Integer dataStorageSizeInTBs,
+            Integer dataStorageSizeInGBs,
             Boolean isFreeTier,
             String kmsKeyId,
             String vaultId,
@@ -393,8 +417,10 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                 compartmentId,
                 dbName,
                 cpuCoreCount,
+                ocpuCount,
                 dbWorkload,
                 dataStorageSizeInTBs,
+                dataStorageSizeInGBs,
                 isFreeTier,
                 kmsKeyId,
                 vaultId,

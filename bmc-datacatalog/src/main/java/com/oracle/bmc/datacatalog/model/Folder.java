@@ -73,6 +73,33 @@ public class Folder {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
+        private String typeKey;
+
+        public Builder typeKey(String typeKey) {
+            this.typeKey = typeKey;
+            this.__explicitlySet__.add("typeKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeHarvested")
+        private java.util.Date timeHarvested;
+
+        public Builder timeHarvested(java.util.Date timeHarvested) {
+            this.timeHarvested = timeHarvested;
+            this.__explicitlySet__.add("timeHarvested");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("objectRelationships")
+        private java.util.List<ObjectRelationship> objectRelationships;
+
+        public Builder objectRelationships(java.util.List<ObjectRelationship> objectRelationships) {
+            this.objectRelationships = objectRelationships;
+            this.__explicitlySet__.add("objectRelationships");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
@@ -211,6 +238,9 @@ public class Folder {
                             businessName,
                             description,
                             parentFolderKey,
+                            typeKey,
+                            timeHarvested,
+                            objectRelationships,
                             path,
                             dataAssetKey,
                             customPropertyMembers,
@@ -237,6 +267,9 @@ public class Folder {
                             .businessName(o.getBusinessName())
                             .description(o.getDescription())
                             .parentFolderKey(o.getParentFolderKey())
+                            .typeKey(o.getTypeKey())
+                            .timeHarvested(o.getTimeHarvested())
+                            .objectRelationships(o.getObjectRelationships())
                             .path(o.getPath())
                             .dataAssetKey(o.getDataAssetKey())
                             .customPropertyMembers(o.getCustomPropertyMembers())
@@ -295,6 +328,25 @@ public class Folder {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentFolderKey")
     String parentFolderKey;
+
+    /**
+     * The type of folder object. Type keys can be found via the '/types' endpoint.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
+    String typeKey;
+
+    /**
+     * The date and time the folder was harvested, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeHarvested")
+    java.util.Date timeHarvested;
+
+    /**
+     * List of objects and their relationships to this folder.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("objectRelationships")
+    java.util.List<ObjectRelationship> objectRelationships;
 
     /**
      * Full path of the folder.

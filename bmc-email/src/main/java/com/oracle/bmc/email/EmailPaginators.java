@@ -31,6 +31,227 @@ public class EmailPaginators {
     private final Email client;
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listDkims operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListDkimsResponse> listDkimsResponseIterator(final ListDkimsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDkimsRequest.Builder, ListDkimsRequest, ListDkimsResponse>(
+                new com.google.common.base.Supplier<ListDkimsRequest.Builder>() {
+                    @Override
+                    public ListDkimsRequest.Builder get() {
+                        return ListDkimsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListDkimsResponse, String>() {
+                    @Override
+                    public String apply(ListDkimsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDkimsRequest.Builder>,
+                        ListDkimsRequest>() {
+                    @Override
+                    public ListDkimsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDkimsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListDkimsRequest, ListDkimsResponse>() {
+                    @Override
+                    public ListDkimsResponse apply(ListDkimsRequest request) {
+                        return client.listDkims(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.email.model.DkimSummary} objects
+     * contained in responses from the listDkims operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.email.model.DkimSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.email.model.DkimSummary> listDkimsRecordIterator(
+            final ListDkimsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDkimsRequest.Builder, ListDkimsRequest, ListDkimsResponse,
+                com.oracle.bmc.email.model.DkimSummary>(
+                new com.google.common.base.Supplier<ListDkimsRequest.Builder>() {
+                    @Override
+                    public ListDkimsRequest.Builder get() {
+                        return ListDkimsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListDkimsResponse, String>() {
+                    @Override
+                    public String apply(ListDkimsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDkimsRequest.Builder>,
+                        ListDkimsRequest>() {
+                    @Override
+                    public ListDkimsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDkimsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListDkimsRequest, ListDkimsResponse>() {
+                    @Override
+                    public ListDkimsResponse apply(ListDkimsRequest request) {
+                        return client.listDkims(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDkimsResponse,
+                        java.util.List<com.oracle.bmc.email.model.DkimSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.email.model.DkimSummary> apply(
+                            ListDkimsResponse response) {
+                        return response.getDkimCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listEmailDomains operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListEmailDomainsResponse> listEmailDomainsResponseIterator(
+            final ListEmailDomainsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListEmailDomainsRequest.Builder, ListEmailDomainsRequest, ListEmailDomainsResponse>(
+                new com.google.common.base.Supplier<ListEmailDomainsRequest.Builder>() {
+                    @Override
+                    public ListEmailDomainsRequest.Builder get() {
+                        return ListEmailDomainsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListEmailDomainsResponse, String>() {
+                    @Override
+                    public String apply(ListEmailDomainsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListEmailDomainsRequest.Builder>,
+                        ListEmailDomainsRequest>() {
+                    @Override
+                    public ListEmailDomainsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListEmailDomainsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListEmailDomainsRequest, ListEmailDomainsResponse>() {
+                    @Override
+                    public ListEmailDomainsResponse apply(ListEmailDomainsRequest request) {
+                        return client.listEmailDomains(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.email.model.EmailDomainSummary} objects
+     * contained in responses from the listEmailDomains operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.email.model.EmailDomainSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.email.model.EmailDomainSummary> listEmailDomainsRecordIterator(
+            final ListEmailDomainsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListEmailDomainsRequest.Builder, ListEmailDomainsRequest, ListEmailDomainsResponse,
+                com.oracle.bmc.email.model.EmailDomainSummary>(
+                new com.google.common.base.Supplier<ListEmailDomainsRequest.Builder>() {
+                    @Override
+                    public ListEmailDomainsRequest.Builder get() {
+                        return ListEmailDomainsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListEmailDomainsResponse, String>() {
+                    @Override
+                    public String apply(ListEmailDomainsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListEmailDomainsRequest.Builder>,
+                        ListEmailDomainsRequest>() {
+                    @Override
+                    public ListEmailDomainsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListEmailDomainsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListEmailDomainsRequest, ListEmailDomainsResponse>() {
+                    @Override
+                    public ListEmailDomainsResponse apply(ListEmailDomainsRequest request) {
+                        return client.listEmailDomains(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListEmailDomainsResponse,
+                        java.util.List<com.oracle.bmc.email.model.EmailDomainSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.email.model.EmailDomainSummary> apply(
+                            ListEmailDomainsResponse response) {
+                        return response.getEmailDomainCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listSenders operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -248,6 +469,346 @@ public class EmailPaginators {
                     public java.util.List<com.oracle.bmc.email.model.SuppressionSummary> apply(
                             ListSuppressionsResponse response) {
                         return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestErrors operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListWorkRequestErrorsResponse> listWorkRequestErrorsResponseIterator(
+            final ListWorkRequestErrorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsResponse>(
+                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                    @Override
+                    public ListWorkRequestErrorsRequest.Builder get() {
+                        return ListWorkRequestErrorsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                    @Override
+                    public String apply(ListWorkRequestErrorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWorkRequestErrorsRequest.Builder>,
+                        ListWorkRequestErrorsRequest>() {
+                    @Override
+                    public ListWorkRequestErrorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWorkRequestErrorsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
+                    @Override
+                    public ListWorkRequestErrorsResponse apply(
+                            ListWorkRequestErrorsRequest request) {
+                        return client.listWorkRequestErrors(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.email.model.WorkRequestError} objects
+     * contained in responses from the listWorkRequestErrors operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.email.model.WorkRequestError} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.email.model.WorkRequestError>
+            listWorkRequestErrorsRecordIterator(final ListWorkRequestErrorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsResponse, com.oracle.bmc.email.model.WorkRequestError>(
+                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                    @Override
+                    public ListWorkRequestErrorsRequest.Builder get() {
+                        return ListWorkRequestErrorsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                    @Override
+                    public String apply(ListWorkRequestErrorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWorkRequestErrorsRequest.Builder>,
+                        ListWorkRequestErrorsRequest>() {
+                    @Override
+                    public ListWorkRequestErrorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWorkRequestErrorsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
+                    @Override
+                    public ListWorkRequestErrorsResponse apply(
+                            ListWorkRequestErrorsRequest request) {
+                        return client.listWorkRequestErrors(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWorkRequestErrorsResponse,
+                        java.util.List<com.oracle.bmc.email.model.WorkRequestError>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.email.model.WorkRequestError> apply(
+                            ListWorkRequestErrorsResponse response) {
+                        return response.getWorkRequestErrorCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestLogs operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListWorkRequestLogsResponse> listWorkRequestLogsResponseIterator(
+            final ListWorkRequestLogsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
+                ListWorkRequestLogsResponse>(
+                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                    @Override
+                    public ListWorkRequestLogsRequest.Builder get() {
+                        return ListWorkRequestLogsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                    @Override
+                    public String apply(ListWorkRequestLogsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWorkRequestLogsRequest.Builder>,
+                        ListWorkRequestLogsRequest>() {
+                    @Override
+                    public ListWorkRequestLogsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWorkRequestLogsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
+                    @Override
+                    public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
+                        return client.listWorkRequestLogs(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.email.model.WorkRequestLogEntry} objects
+     * contained in responses from the listWorkRequestLogs operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.email.model.WorkRequestLogEntry} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.email.model.WorkRequestLogEntry>
+            listWorkRequestLogsRecordIterator(final ListWorkRequestLogsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
+                ListWorkRequestLogsResponse, com.oracle.bmc.email.model.WorkRequestLogEntry>(
+                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                    @Override
+                    public ListWorkRequestLogsRequest.Builder get() {
+                        return ListWorkRequestLogsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                    @Override
+                    public String apply(ListWorkRequestLogsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWorkRequestLogsRequest.Builder>,
+                        ListWorkRequestLogsRequest>() {
+                    @Override
+                    public ListWorkRequestLogsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWorkRequestLogsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
+                    @Override
+                    public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
+                        return client.listWorkRequestLogs(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWorkRequestLogsResponse,
+                        java.util.List<com.oracle.bmc.email.model.WorkRequestLogEntry>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.email.model.WorkRequestLogEntry> apply(
+                            ListWorkRequestLogsResponse response) {
+                        return response.getWorkRequestLogEntryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequests operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListWorkRequestsResponse> listWorkRequestsResponseIterator(
+            final ListWorkRequestsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse>(
+                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                    @Override
+                    public ListWorkRequestsRequest.Builder get() {
+                        return ListWorkRequestsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                    @Override
+                    public String apply(ListWorkRequestsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWorkRequestsRequest.Builder>,
+                        ListWorkRequestsRequest>() {
+                    @Override
+                    public ListWorkRequestsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWorkRequestsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWorkRequestsRequest, ListWorkRequestsResponse>() {
+                    @Override
+                    public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
+                        return client.listWorkRequests(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.email.model.WorkRequestSummary} objects
+     * contained in responses from the listWorkRequests operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.email.model.WorkRequestSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.email.model.WorkRequestSummary> listWorkRequestsRecordIterator(
+            final ListWorkRequestsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
+                com.oracle.bmc.email.model.WorkRequestSummary>(
+                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                    @Override
+                    public ListWorkRequestsRequest.Builder get() {
+                        return ListWorkRequestsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                    @Override
+                    public String apply(ListWorkRequestsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWorkRequestsRequest.Builder>,
+                        ListWorkRequestsRequest>() {
+                    @Override
+                    public ListWorkRequestsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWorkRequestsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWorkRequestsRequest, ListWorkRequestsResponse>() {
+                    @Override
+                    public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
+                        return client.listWorkRequests(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWorkRequestsResponse,
+                        java.util.List<com.oracle.bmc.email.model.WorkRequestSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.email.model.WorkRequestSummary> apply(
+                            ListWorkRequestsResponse response) {
+                        return response.getWorkRequestSummaryCollection().getItems();
                     }
                 });
     }

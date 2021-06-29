@@ -69,12 +69,57 @@ public class Suppression {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastSuppressed")
+        private java.util.Date timeLastSuppressed;
+
+        public Builder timeLastSuppressed(java.util.Date timeLastSuppressed) {
+            this.timeLastSuppressed = timeLastSuppressed;
+            this.__explicitlySet__.add("timeLastSuppressed");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("messageId")
+        private String messageId;
+
+        public Builder messageId(String messageId) {
+            this.messageId = messageId;
+            this.__explicitlySet__.add("messageId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("errorDetail")
+        private String errorDetail;
+
+        public Builder errorDetail(String errorDetail) {
+            this.errorDetail = errorDetail;
+            this.__explicitlySet__.add("errorDetail");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("errorSource")
+        private String errorSource;
+
+        public Builder errorSource(String errorSource) {
+            this.errorSource = errorSource;
+            this.__explicitlySet__.add("errorSource");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Suppression build() {
             Suppression __instance__ =
-                    new Suppression(compartmentId, emailAddress, id, reason, timeCreated);
+                    new Suppression(
+                            compartmentId,
+                            emailAddress,
+                            id,
+                            reason,
+                            timeCreated,
+                            timeLastSuppressed,
+                            messageId,
+                            errorDetail,
+                            errorSource);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -86,7 +131,11 @@ public class Suppression {
                             .emailAddress(o.getEmailAddress())
                             .id(o.getId())
                             .reason(o.getReason())
-                            .timeCreated(o.getTimeCreated());
+                            .timeCreated(o.getTimeCreated())
+                            .timeLastSuppressed(o.getTimeLastSuppressed())
+                            .messageId(o.getMessageId())
+                            .errorDetail(o.getErrorDetail())
+                            .errorSource(o.getErrorSource());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -183,6 +232,44 @@ public class Suppression {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
+
+    /**
+     * The last date and time the suppression prevented submission
+     * in \"YYYY-MM-ddThh:mmZ\"
+     * format with a Z offset, as defined by RFC 3339.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastSuppressed")
+    java.util.Date timeLastSuppressed;
+
+    /**
+     * The value of the Message-ID header from the email that triggered a suppression.
+     * This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets.
+     * Not provided for all types of suppressions.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("messageId")
+    String messageId;
+
+    /**
+     * The specific error message returned by a system that resulted in the suppression.
+     * This message is usually an SMTP error code with additional descriptive text.
+     * Not provided for all types of suppressions.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("errorDetail")
+    String errorDetail;
+
+    /**
+     * DNS name of the source of the error that caused the suppression.
+     * Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available.
+     * Not provided for all types of suppressions, and not always known.
+     * <p>
+     * Note: Most SMTP errors that cause suppressions come from software run by email receiving systems rather than from OCI email delivery itself.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("errorSource")
+    String errorSource;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

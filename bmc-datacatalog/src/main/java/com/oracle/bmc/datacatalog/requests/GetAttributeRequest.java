@@ -40,6 +40,11 @@ public class GetAttributeRequest extends com.oracle.bmc.requests.BmcRequest<java
     private String attributeKey;
 
     /**
+     * Indicates whether the list of objects and their relationships to this object will be provided in the response.
+     */
+    private Boolean isIncludeObjectRelationships;
+
+    /**
      * Specifies the fields to return in an entity attribute response.
      *
      */
@@ -150,6 +155,7 @@ public class GetAttributeRequest extends com.oracle.bmc.requests.BmcRequest<java
             dataAssetKey(o.getDataAssetKey());
             entityKey(o.getEntityKey());
             attributeKey(o.getAttributeKey());
+            isIncludeObjectRelationships(o.getIsIncludeObjectRelationships());
             fields(o.getFields());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());

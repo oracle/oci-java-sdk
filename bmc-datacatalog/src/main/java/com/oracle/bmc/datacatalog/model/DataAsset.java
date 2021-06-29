@@ -108,6 +108,15 @@ public class DataAsset {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeHarvested")
+        private java.util.Date timeHarvested;
+
+        public Builder timeHarvested(java.util.Date timeHarvested) {
+            this.timeHarvested = timeHarvested;
+            this.__explicitlySet__.add("timeHarvested");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("createdById")
         private String createdById;
 
@@ -178,6 +187,7 @@ public class DataAsset {
                             lifecycleState,
                             timeCreated,
                             timeUpdated,
+                            timeHarvested,
                             createdById,
                             updatedById,
                             uri,
@@ -200,6 +210,7 @@ public class DataAsset {
                             .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
+                            .timeHarvested(o.getTimeHarvested())
                             .createdById(o.getCreatedById())
                             .updatedById(o.getUpdatedById())
                             .uri(o.getUri())
@@ -278,6 +289,13 @@ public class DataAsset {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
+
+    /**
+     * The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeHarvested")
+    java.util.Date timeHarvested;
 
     /**
      * OCID of the user who created the data asset.

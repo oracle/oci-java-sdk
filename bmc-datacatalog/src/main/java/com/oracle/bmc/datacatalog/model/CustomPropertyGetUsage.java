@@ -125,6 +125,15 @@ public class CustomPropertyGetUsage {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
+        private Boolean isEventEnabled;
+
+        public Builder isEventEnabled(Boolean isEventEnabled) {
+            this.isEventEnabled = isEventEnabled;
+            this.__explicitlySet__.add("isEventEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isListType")
         private Boolean isListType;
 
@@ -160,6 +169,7 @@ public class CustomPropertyGetUsage {
                             isHidden,
                             isEditable,
                             isShownInList,
+                            isEventEnabled,
                             isListType,
                             allowedValues);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -180,6 +190,7 @@ public class CustomPropertyGetUsage {
                             .isHidden(o.getIsHidden())
                             .isEditable(o.getIsEditable())
                             .isShownInList(o.getIsShownInList())
+                            .isEventEnabled(o.getIsEventEnabled())
                             .isListType(o.getIsListType())
                             .allowedValues(o.getAllowedValues());
 
@@ -260,6 +271,12 @@ public class CustomPropertyGetUsage {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isShownInList")
     Boolean isShownInList;
+
+    /**
+     * If an OCI Event will be emitted when the custom property is modified.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
+    Boolean isEventEnabled;
 
     /**
      * Is this property allowed to have list of values

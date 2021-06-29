@@ -6,6 +6,8 @@ package com.oracle.bmc.database.model;
 
 /**
  * Details to create an Oracle Autonomous Database.
+ * Choose either Fractional ocpuCount or cpuCoreCount.
+ * Choose either dataStorageSizeInGBs or dataStorageSizeInTBs
  * <p>
  **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
@@ -72,6 +74,12 @@ public class CreateAutonomousDatabaseBase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     Integer cpuCoreCount;
+
+    /**
+     * The number of Fractional OCPU cores to be made available to the database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
+    Float ocpuCount;
     /**
      * The Autonomous Database workload type. The following values are valid:
      * <p>
@@ -133,6 +141,13 @@ public class CreateAutonomousDatabaseBase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
     Integer dataStorageSizeInTBs;
+
+    /**
+     * The size, in gigabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
+    Integer dataStorageSizeInGBs;
 
     /**
      * Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.

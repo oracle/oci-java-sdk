@@ -279,6 +279,15 @@ public class SearchResult {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("attributeType")
+        private String attributeType;
+
+        public Builder attributeType(String attributeType) {
+            this.attributeType = attributeType;
+            this.__explicitlySet__.add("attributeType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("expression")
         private String expression;
 
@@ -332,6 +341,7 @@ public class SearchResult {
                             path,
                             businessName,
                             lifecycleState,
+                            attributeType,
                             expression,
                             customProperties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -369,6 +379,7 @@ public class SearchResult {
                             .path(o.getPath())
                             .businessName(o.getBusinessName())
                             .lifecycleState(o.getLifecycleState())
+                            .attributeType(o.getAttributeType())
                             .expression(o.getExpression())
                             .customProperties(o.getCustomProperties());
 
@@ -555,6 +566,12 @@ public class SearchResult {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
+
+    /**
+     * Type name of the attribute. For example - complex, primitive, or array.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("attributeType")
+    String attributeType;
 
     /**
      * Expression for logical entities against which names of dataObjects will be matched.

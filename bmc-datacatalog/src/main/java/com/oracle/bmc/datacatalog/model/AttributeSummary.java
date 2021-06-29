@@ -232,6 +232,24 @@ public class AttributeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isDerivedAttribute")
+        private Boolean isDerivedAttribute;
+
+        public Builder isDerivedAttribute(Boolean isDerivedAttribute) {
+            this.isDerivedAttribute = isDerivedAttribute;
+            this.__explicitlySet__.add("isDerivedAttribute");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+        private java.util.Date timeUpdated;
+
+        public Builder timeUpdated(java.util.Date timeUpdated) {
+            this.timeUpdated = timeUpdated;
+            this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -260,7 +278,9 @@ public class AttributeSummary {
                             externalParentAttributeKey,
                             path,
                             customPropertyMembers,
-                            associatedRuleTypes);
+                            associatedRuleTypes,
+                            isDerivedAttribute,
+                            timeUpdated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -290,7 +310,9 @@ public class AttributeSummary {
                             .externalParentAttributeKey(o.getExternalParentAttributeKey())
                             .path(o.getPath())
                             .customPropertyMembers(o.getCustomPropertyMembers())
-                            .associatedRuleTypes(o.getAssociatedRuleTypes());
+                            .associatedRuleTypes(o.getAssociatedRuleTypes())
+                            .isDerivedAttribute(o.getIsDerivedAttribute())
+                            .timeUpdated(o.getTimeUpdated());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -448,6 +470,19 @@ public class AttributeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("associatedRuleTypes")
     java.util.List<RuleType> associatedRuleTypes;
+
+    /**
+     * Whether a column is derived or not.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDerivedAttribute")
+    Boolean isDerivedAttribute;
+
+    /**
+     * The last time that any change was made to the attribute. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+    java.util.Date timeUpdated;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

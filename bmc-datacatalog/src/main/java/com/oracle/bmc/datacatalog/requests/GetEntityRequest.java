@@ -35,6 +35,11 @@ public class GetEntityRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     private String entityKey;
 
     /**
+     * Indicates whether the list of objects and their relationships to this object will be provided in the response.
+     */
+    private Boolean isIncludeObjectRelationships;
+
+    /**
      * Specifies the fields to return in an entity response.
      *
      */
@@ -139,6 +144,7 @@ public class GetEntityRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             catalogId(o.getCatalogId());
             dataAssetKey(o.getDataAssetKey());
             entityKey(o.getEntityKey());
+            isIncludeObjectRelationships(o.getIsIncludeObjectRelationships());
             fields(o.getFields());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
