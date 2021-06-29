@@ -52,6 +52,14 @@ public class GetAttributeConverter {
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
                                         request.getAttributeKey()));
 
+        if (request.getIsIncludeObjectRelationships() != null) {
+            target =
+                    target.queryParam(
+                            "isIncludeObjectRelationships",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsIncludeObjectRelationships()));
+        }
+
         if (request.getFields() != null) {
             target =
                     com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(

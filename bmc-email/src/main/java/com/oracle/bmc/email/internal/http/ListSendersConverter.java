@@ -46,6 +46,14 @@ public class ListSendersConverter {
                                     request.getLifecycleState().getValue()));
         }
 
+        if (request.getDomain() != null) {
+            target =
+                    target.queryParam(
+                            "domain",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDomain()));
+        }
+
         if (request.getEmailAddress() != null) {
             target =
                     target.queryParam(

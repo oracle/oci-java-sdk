@@ -167,6 +167,15 @@ public class AutonomousDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
+        private Float ocpuCount;
+
+        public Builder ocpuCount(Float ocpuCount) {
+            this.ocpuCount = ocpuCount;
+            this.__explicitlySet__.add("ocpuCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
         private Integer dataStorageSizeInTBs;
 
@@ -648,6 +657,7 @@ public class AutonomousDatabaseSummary {
                             backupConfig,
                             keyHistoryEntry,
                             cpuCoreCount,
+                            ocpuCount,
                             dataStorageSizeInTBs,
                             dataStorageSizeInGBs,
                             infrastructureType,
@@ -723,6 +733,7 @@ public class AutonomousDatabaseSummary {
                             .backupConfig(o.getBackupConfig())
                             .keyHistoryEntry(o.getKeyHistoryEntry())
                             .cpuCoreCount(o.getCpuCoreCount())
+                            .ocpuCount(o.getOcpuCount())
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
                             .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
                             .infrastructureType(o.getInfrastructureType())
@@ -941,6 +952,12 @@ public class AutonomousDatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     Integer cpuCoreCount;
+
+    /**
+     * The number of Fractional OCPU cores to be made available to the database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
+    Float ocpuCount;
 
     /**
      * The quantity of data in the database, in terabytes.

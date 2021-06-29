@@ -107,6 +107,15 @@ public class UpdateCustomPropertyDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
+        private Boolean isEventEnabled;
+
+        public Builder isEventEnabled(Boolean isEventEnabled) {
+            this.isEventEnabled = isEventEnabled;
+            this.__explicitlySet__.add("isEventEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
         private java.util.List<String> allowedValues;
 
@@ -140,6 +149,7 @@ public class UpdateCustomPropertyDetails {
                             isEditable,
                             isShownInList,
                             isHiddenInSearch,
+                            isEventEnabled,
                             allowedValues,
                             properties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -158,6 +168,7 @@ public class UpdateCustomPropertyDetails {
                             .isEditable(o.getIsEditable())
                             .isShownInList(o.getIsShownInList())
                             .isHiddenInSearch(o.getIsHiddenInSearch())
+                            .isEventEnabled(o.getIsEventEnabled())
                             .allowedValues(o.getAllowedValues())
                             .properties(o.getProperties());
 
@@ -228,6 +239,12 @@ public class UpdateCustomPropertyDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHiddenInSearch")
     Boolean isHiddenInSearch;
+
+    /**
+     * If an OCI Event will be emitted when the custom property is modified.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
+    Boolean isEventEnabled;
 
     /**
      * Allowed values for the custom property if any

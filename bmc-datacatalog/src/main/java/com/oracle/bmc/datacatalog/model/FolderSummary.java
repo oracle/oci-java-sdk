@@ -83,6 +83,15 @@ public class FolderSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
+        private String typeKey;
+
+        public Builder typeKey(String typeKey) {
+            this.typeKey = typeKey;
+            this.__explicitlySet__.add("typeKey");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
@@ -149,6 +158,7 @@ public class FolderSummary {
                             description,
                             dataAssetKey,
                             parentFolderKey,
+                            typeKey,
                             path,
                             externalKey,
                             timeExternal,
@@ -168,6 +178,7 @@ public class FolderSummary {
                             .description(o.getDescription())
                             .dataAssetKey(o.getDataAssetKey())
                             .parentFolderKey(o.getParentFolderKey())
+                            .typeKey(o.getTypeKey())
                             .path(o.getPath())
                             .externalKey(o.getExternalKey())
                             .timeExternal(o.getTimeExternal())
@@ -224,6 +235,12 @@ public class FolderSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentFolderKey")
     String parentFolderKey;
+
+    /**
+     * The type of folder object. Type keys can be found via the '/types' endpoint.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
+    String typeKey;
 
     /**
      * Full path of the folder.

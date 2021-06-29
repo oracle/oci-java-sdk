@@ -625,6 +625,41 @@ public class DataCatalogClient implements DataCatalog {
     }
 
     @Override
+    public ChangeMetastoreCompartmentResponse changeMetastoreCompartment(
+            ChangeMetastoreCompartmentRequest request) {
+        LOG.trace("Called changeMetastoreCompartment");
+        final ChangeMetastoreCompartmentRequest interceptedRequest =
+                ChangeMetastoreCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeMetastoreCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeMetastoreCompartmentResponse>
+                transformer = ChangeMetastoreCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeMetastoreCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateAttributeResponse createAttribute(CreateAttributeRequest request) {
         LOG.trace("Called createAttribute");
         final CreateAttributeRequest interceptedRequest =
@@ -1148,6 +1183,39 @@ public class DataCatalogClient implements DataCatalog {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getCreateJobExecutionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateMetastoreResponse createMetastore(CreateMetastoreRequest request) {
+        LOG.trace("Called createMetastore");
+        final CreateMetastoreRequest interceptedRequest =
+                CreateMetastoreConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateMetastoreConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateMetastoreResponse>
+                transformer = CreateMetastoreConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateMetastoreDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -1702,6 +1770,35 @@ public class DataCatalogClient implements DataCatalog {
                 DeleteJobDefinitionConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteJobDefinitionResponse>
                 transformer = DeleteJobDefinitionConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteMetastoreResponse deleteMetastore(DeleteMetastoreRequest request) {
+        LOG.trace("Called deleteMetastore");
+        final DeleteMetastoreRequest interceptedRequest =
+                DeleteMetastoreConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteMetastoreConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteMetastoreResponse>
+                transformer = DeleteMetastoreConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -2472,6 +2569,34 @@ public class DataCatalogClient implements DataCatalog {
     }
 
     @Override
+    public GetMetastoreResponse getMetastore(GetMetastoreRequest request) {
+        LOG.trace("Called getMetastore");
+        final GetMetastoreRequest interceptedRequest =
+                GetMetastoreConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMetastoreConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetMetastoreResponse>
+                transformer = GetMetastoreConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetNamespaceResponse getNamespace(GetNamespaceRequest request) {
         LOG.trace("Called getNamespace");
         final GetNamespaceRequest interceptedRequest =
@@ -2663,6 +2788,39 @@ public class DataCatalogClient implements DataCatalog {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getImportConnectionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ImportDataAssetResponse importDataAsset(ImportDataAssetRequest request) {
+        LOG.trace("Called importDataAsset");
+        final ImportDataAssetRequest interceptedRequest =
+                ImportDataAssetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ImportDataAssetConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ImportDataAssetResponse>
+                transformer = ImportDataAssetConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getImportDataAssetDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -3271,6 +3429,34 @@ public class DataCatalogClient implements DataCatalog {
     }
 
     @Override
+    public ListMetastoresResponse listMetastores(ListMetastoresRequest request) {
+        LOG.trace("Called listMetastores");
+        final ListMetastoresRequest interceptedRequest =
+                ListMetastoresConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMetastoresConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListMetastoresResponse>
+                transformer = ListMetastoresConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListNamespacesResponse listNamespaces(ListNamespacesRequest request) {
         LOG.trace("Called listNamespaces");
         final ListNamespacesRequest interceptedRequest =
@@ -3769,6 +3955,50 @@ public class DataCatalogClient implements DataCatalog {
     }
 
     @Override
+    public SynchronousExportDataAssetResponse synchronousExportDataAsset(
+            SynchronousExportDataAssetRequest request) {
+        LOG.trace("Called synchronousExportDataAsset");
+        LOG.warn(
+                "synchronousExportDataAsset returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
+        final SynchronousExportDataAssetRequest interceptedRequest =
+                SynchronousExportDataAssetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SynchronousExportDataAssetConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, SynchronousExportDataAssetResponse>
+                transformer = SynchronousExportDataAssetConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getSynchronousExportDataAssetDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public TestConnectionResponse testConnection(TestConnectionRequest request) {
         LOG.trace("Called testConnection");
         final TestConnectionRequest interceptedRequest =
@@ -4146,6 +4376,38 @@ public class DataCatalogClient implements DataCatalog {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateJobDefinitionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateMetastoreResponse updateMetastore(UpdateMetastoreRequest request) {
+        LOG.trace("Called updateMetastore");
+        final UpdateMetastoreRequest interceptedRequest =
+                UpdateMetastoreConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateMetastoreConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateMetastoreResponse>
+                transformer = UpdateMetastoreConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateMetastoreDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

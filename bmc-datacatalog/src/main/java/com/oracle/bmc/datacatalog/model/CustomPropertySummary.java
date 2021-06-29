@@ -189,6 +189,42 @@ public class CustomPropertySummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+        private java.util.Date timeUpdated;
+
+        public Builder timeUpdated(java.util.Date timeUpdated) {
+            this.timeUpdated = timeUpdated;
+            this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("createdById")
+        private String createdById;
+
+        public Builder createdById(String createdById) {
+            this.createdById = createdById;
+            this.__explicitlySet__.add("createdById");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("updatedById")
+        private String updatedById;
+
+        public Builder updatedById(String updatedById) {
+            this.updatedById = updatedById;
+            this.__explicitlySet__.add("updatedById");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
+        private Boolean isEventEnabled;
+
+        public Builder isEventEnabled(Boolean isEventEnabled) {
+            this.isEventEnabled = isEventEnabled;
+            this.__explicitlySet__.add("isEventEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -212,7 +248,11 @@ public class CustomPropertySummary {
                             lifecycleState,
                             usageCount,
                             scope,
-                            allowedValues);
+                            allowedValues,
+                            timeUpdated,
+                            createdById,
+                            updatedById,
+                            isEventEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -237,7 +277,11 @@ public class CustomPropertySummary {
                             .lifecycleState(o.getLifecycleState())
                             .usageCount(o.getUsageCount())
                             .scope(o.getScope())
-                            .allowedValues(o.getAllowedValues());
+                            .allowedValues(o.getAllowedValues())
+                            .timeUpdated(o.getTimeUpdated())
+                            .createdById(o.getCreatedById())
+                            .updatedById(o.getUpdatedById())
+                            .isEventEnabled(o.getIsEventEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -361,6 +405,31 @@ public class CustomPropertySummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
     java.util.List<String> allowedValues;
+
+    /**
+     * The last time that any change was made to the custom property. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+    java.util.Date timeUpdated;
+
+    /**
+     * OCID of the user who created the custom property.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("createdById")
+    String createdById;
+
+    /**
+     * OCID of the user who last modified the custom property.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("updatedById")
+    String updatedById;
+
+    /**
+     * If an OCI Event will be emitted when the custom property is modified.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
+    Boolean isEventEnabled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

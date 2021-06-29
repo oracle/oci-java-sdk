@@ -595,6 +595,50 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeMetastoreCompartmentResponse>
+            changeMetastoreCompartment(
+                    ChangeMetastoreCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeMetastoreCompartmentRequest,
+                                    ChangeMetastoreCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeMetastoreCompartment");
+        final ChangeMetastoreCompartmentRequest interceptedRequest =
+                ChangeMetastoreCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeMetastoreCompartmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeMetastoreCompartmentResponse>
+                transformer = ChangeMetastoreCompartmentConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeMetastoreCompartmentRequest, ChangeMetastoreCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeMetastoreCompartmentRequest,
+                                ChangeMetastoreCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeMetastoreCompartmentResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeMetastoreCompartmentRequest, ChangeMetastoreCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAttributeResponse> createAttribute(
             CreateAttributeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1225,6 +1269,46 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateJobExecutionRequest, CreateJobExecutionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMetastoreResponse> createMetastore(
+            CreateMetastoreRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateMetastoreRequest, CreateMetastoreResponse>
+                    handler) {
+        LOG.trace("Called async createMetastore");
+        final CreateMetastoreRequest interceptedRequest =
+                CreateMetastoreConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateMetastoreConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateMetastoreResponse>
+                transformer = CreateMetastoreConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<CreateMetastoreRequest, CreateMetastoreResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateMetastoreRequest, CreateMetastoreResponse>,
+                        java.util.concurrent.Future<CreateMetastoreResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateMetastoreRequest, CreateMetastoreResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1972,6 +2056,45 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteJobDefinitionRequest, DeleteJobDefinitionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMetastoreResponse> deleteMetastore(
+            DeleteMetastoreRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteMetastoreRequest, DeleteMetastoreResponse>
+                    handler) {
+        LOG.trace("Called async deleteMetastore");
+        final DeleteMetastoreRequest interceptedRequest =
+                DeleteMetastoreConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteMetastoreConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteMetastoreResponse>
+                transformer = DeleteMetastoreConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<DeleteMetastoreRequest, DeleteMetastoreResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteMetastoreRequest, DeleteMetastoreResponse>,
+                        java.util.concurrent.Future<DeleteMetastoreResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteMetastoreRequest, DeleteMetastoreResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2993,6 +3116,44 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetMetastoreResponse> getMetastore(
+            GetMetastoreRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetMetastoreRequest, GetMetastoreResponse>
+                    handler) {
+        LOG.trace("Called async getMetastore");
+        final GetMetastoreRequest interceptedRequest =
+                GetMetastoreConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMetastoreConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetMetastoreResponse>
+                transformer = GetMetastoreConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetMetastoreRequest, GetMetastoreResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetMetastoreRequest, GetMetastoreResponse>,
+                        java.util.concurrent.Future<GetMetastoreResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMetastoreRequest, GetMetastoreResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetNamespaceResponse> getNamespace(
             GetNamespaceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetNamespaceRequest, GetNamespaceResponse>
@@ -3245,6 +3406,46 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ImportConnectionRequest, ImportConnectionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportDataAssetResponse> importDataAsset(
+            ImportDataAssetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ImportDataAssetRequest, ImportDataAssetResponse>
+                    handler) {
+        LOG.trace("Called async importDataAsset");
+        final ImportDataAssetRequest interceptedRequest =
+                ImportDataAssetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ImportDataAssetConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ImportDataAssetResponse>
+                transformer = ImportDataAssetConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<ImportDataAssetRequest, ImportDataAssetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ImportDataAssetRequest, ImportDataAssetResponse>,
+                        java.util.concurrent.Future<ImportDataAssetResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ImportDataAssetRequest, ImportDataAssetResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4090,6 +4291,45 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListMetastoresResponse> listMetastores(
+            ListMetastoresRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListMetastoresRequest, ListMetastoresResponse>
+                    handler) {
+        LOG.trace("Called async listMetastores");
+        final ListMetastoresRequest interceptedRequest =
+                ListMetastoresConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMetastoresConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListMetastoresResponse>
+                transformer = ListMetastoresConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListMetastoresRequest, ListMetastoresResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMetastoresRequest, ListMetastoresResponse>,
+                        java.util.concurrent.Future<ListMetastoresResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMetastoresRequest, ListMetastoresResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListNamespacesResponse> listNamespaces(
             ListNamespacesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -4754,6 +4994,57 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<SynchronousExportDataAssetResponse>
+            synchronousExportDataAsset(
+                    SynchronousExportDataAssetRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SynchronousExportDataAssetRequest,
+                                    SynchronousExportDataAssetResponse>
+                            handler) {
+        LOG.trace("Called async synchronousExportDataAsset");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
+        final SynchronousExportDataAssetRequest interceptedRequest =
+                SynchronousExportDataAssetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SynchronousExportDataAssetConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, SynchronousExportDataAssetResponse>
+                transformer = SynchronousExportDataAssetConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SynchronousExportDataAssetRequest, SynchronousExportDataAssetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SynchronousExportDataAssetRequest,
+                                SynchronousExportDataAssetResponse>,
+                        java.util.concurrent.Future<SynchronousExportDataAssetResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SynchronousExportDataAssetRequest, SynchronousExportDataAssetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<TestConnectionResponse> testConnection(
             TestConnectionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -5213,6 +5504,45 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateJobDefinitionRequest, UpdateJobDefinitionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMetastoreResponse> updateMetastore(
+            UpdateMetastoreRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateMetastoreRequest, UpdateMetastoreResponse>
+                    handler) {
+        LOG.trace("Called async updateMetastore");
+        final UpdateMetastoreRequest interceptedRequest =
+                UpdateMetastoreConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateMetastoreConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateMetastoreResponse>
+                transformer = UpdateMetastoreConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<UpdateMetastoreRequest, UpdateMetastoreResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateMetastoreRequest, UpdateMetastoreResponse>,
+                        java.util.concurrent.Future<UpdateMetastoreResponse>>
+                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateMetastoreRequest, UpdateMetastoreResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

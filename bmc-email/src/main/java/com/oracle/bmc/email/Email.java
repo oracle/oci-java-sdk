@@ -12,7 +12,8 @@ import com.oracle.bmc.email.responses.*;
  * emails. For more information, see [Overview of the Email Delivery Service](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm).
  *
  *
- **Note:** Write actions (POST, UPDATE, DELETE) may take several minutes to propagate and be reflected by the API. If a subsequent read request fails to reflect your changes, wait a few minutes and try again.
+ **Note:** Write actions (POST, UPDATE, DELETE) may take several minutes to propagate and be reflected by the API.
+ * If a subsequent read request fails to reflect your changes, wait a few minutes and try again.
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
@@ -51,6 +52,23 @@ public interface Email extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Moves a email domain into a different compartment.
+     * When provided, If-Match is checked against ETag value of the resource.
+     * For information about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * <p>
+     **Note:** All Dkim objects associated with this email domain will also be moved into the provided compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ChangeEmailDomainCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeEmailDomainCompartment API.
+     */
+    ChangeEmailDomainCompartmentResponse changeEmailDomainCompartment(
+            ChangeEmailDomainCompartmentRequest request);
+
+    /**
      * Moves a sender into a different compartment. When provided, If-Match is checked against ETag values of the resource.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -59,6 +77,31 @@ public interface Email extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ChangeSenderCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSenderCompartment API.
      */
     ChangeSenderCompartmentResponse changeSenderCompartment(ChangeSenderCompartmentRequest request);
+
+    /**
+     * Creates a new DKIM for a email domain.
+     * This DKIM will sign all approved senders in the tenancy that are in this email domain.
+     * Best security practices indicate to periodically rotate the DKIM that is doing the signing.
+     * When a second DKIM is applied, all senders will seamlessly pick up the new key
+     * without interruption in signing.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/CreateDkimExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDkim API.
+     */
+    CreateDkimResponse createDkim(CreateDkimRequest request);
+
+    /**
+     * Creates a new email domain. Avoid entering confidential information.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/CreateEmailDomainExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateEmailDomain API.
+     */
+    CreateEmailDomainResponse createEmailDomain(CreateEmailDomainRequest request);
 
     /**
      * Creates a sender for a tenancy in a given compartment.
@@ -85,6 +128,32 @@ public interface Email extends AutoCloseable {
     CreateSuppressionResponse createSuppression(CreateSuppressionRequest request);
 
     /**
+     * Deletes a DKIM.
+     * If this key is currently the active key for the email domain, deleting the key
+     * will stop signing the domain's outgoing mail.
+     * DKIM keys are left in DELETING state for about a day to allow DKIM signatures on
+     * in-transit mail to be validated.
+     * Consider instead of deletion creating a new DKIM for this domain so the signing can be rotated to it.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/DeleteDkimExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDkim API.
+     */
+    DeleteDkimResponse deleteDkim(DeleteDkimRequest request);
+
+    /**
+     * Deletes a email domain.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/DeleteEmailDomainExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteEmailDomain API.
+     */
+    DeleteEmailDomainResponse deleteEmailDomain(DeleteEmailDomainRequest request);
+
+    /**
      * Deletes an approved sender for a tenancy in a given compartment for a
      * provided `senderId`.
      *
@@ -109,6 +178,26 @@ public interface Email extends AutoCloseable {
     DeleteSuppressionResponse deleteSuppression(DeleteSuppressionRequest request);
 
     /**
+     * Retrieves the specified DKIM.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetDkimExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDkim API.
+     */
+    GetDkimResponse getDkim(GetDkimRequest request);
+
+    /**
+     * Retrieves the specified email domain.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetEmailDomainExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEmailDomain API.
+     */
+    GetEmailDomainResponse getEmailDomain(GetEmailDomainRequest request);
+
+    /**
      * Gets an approved sender for a given `senderId`.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -129,6 +218,36 @@ public interface Email extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetSuppressionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSuppression API.
      */
     GetSuppressionResponse getSuppression(GetSuppressionRequest request);
+
+    /**
+     * Gets the status of the work request with the given ID.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     */
+    GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
+
+    /**
+     * Lists DKIMs for a email domain.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListDkimsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDkims API.
+     */
+    ListDkimsResponse listDkims(ListDkimsRequest request);
+
+    /**
+     * Lists email domains in the specified compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListEmailDomainsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEmailDomains API.
+     */
+    ListEmailDomainsResponse listEmailDomains(ListEmailDomainsRequest request);
 
     /**
      * Gets a collection of approved sender email addresses and sender IDs.
@@ -153,6 +272,59 @@ public interface Email extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListSuppressionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSuppressions API.
      */
     ListSuppressionsResponse listSuppressions(ListSuppressionsRequest request);
+
+    /**
+     * Return a (paginated) list of errors for a given work request.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     */
+    ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
+
+    /**
+     * Return a (paginated) list of logs for a given work request.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     */
+    ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
+
+    /**
+     * Lists the work requests in a compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     */
+    ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
+
+    /**
+     * Modifies a DKIM.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/UpdateDkimExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDkim API.
+     */
+    UpdateDkimResponse updateDkim(UpdateDkimRequest request);
+
+    /**
+     * Modifies a email domain.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/UpdateEmailDomainExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateEmailDomain API.
+     */
+    UpdateEmailDomainResponse updateEmailDomain(UpdateEmailDomainRequest request);
 
     /**
      * Replaces the set of tags for a sender with the tags provided. If either freeform

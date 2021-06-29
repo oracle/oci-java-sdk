@@ -47,6 +47,14 @@ public class GetEntityConverter {
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
                                         request.getEntityKey()));
 
+        if (request.getIsIncludeObjectRelationships() != null) {
+            target =
+                    target.queryParam(
+                            "isIncludeObjectRelationships",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsIncludeObjectRelationships()));
+        }
+
         if (request.getFields() != null) {
             target =
                     com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(

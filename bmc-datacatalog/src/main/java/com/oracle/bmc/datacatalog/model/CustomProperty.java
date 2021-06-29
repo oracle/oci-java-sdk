@@ -205,6 +205,15 @@ public class CustomProperty {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
+        private Boolean isEventEnabled;
+
+        public Builder isEventEnabled(Boolean isEventEnabled) {
+            this.isEventEnabled = isEventEnabled;
+            this.__explicitlySet__.add("isEventEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
         private java.util.List<CustomPropertyTypeUsage> scope;
 
@@ -258,6 +267,7 @@ public class CustomProperty {
                             createdById,
                             updatedById,
                             usageCount,
+                            isEventEnabled,
                             scope,
                             allowedValues,
                             properties);
@@ -288,6 +298,7 @@ public class CustomProperty {
                             .createdById(o.getCreatedById())
                             .updatedById(o.getUpdatedById())
                             .usageCount(o.getUsageCount())
+                            .isEventEnabled(o.getIsEventEnabled())
                             .scope(o.getScope())
                             .allowedValues(o.getAllowedValues())
                             .properties(o.getProperties());
@@ -426,6 +437,12 @@ public class CustomProperty {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageCount")
     Integer usageCount;
+
+    /**
+     * If an OCI Event will be emitted when the custom property is modified.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
+    Boolean isEventEnabled;
 
     /**
      * Type or scope of the custom property belongs to. This will be an array of type id it will be belongs to

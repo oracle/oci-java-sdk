@@ -35,19 +35,30 @@ public class TypeCustomPropertyDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
+        private Boolean isEventEnabled;
+
+        public Builder isEventEnabled(Boolean isEventEnabled) {
+            this.isEventEnabled = isEventEnabled;
+            this.__explicitlySet__.add("isEventEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TypeCustomPropertyDetails build() {
             TypeCustomPropertyDetails __instance__ =
-                    new TypeCustomPropertyDetails(customPropertyIds);
+                    new TypeCustomPropertyDetails(customPropertyIds, isEventEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(TypeCustomPropertyDetails o) {
-            Builder copiedBuilder = customPropertyIds(o.getCustomPropertyIds());
+            Builder copiedBuilder =
+                    customPropertyIds(o.getCustomPropertyIds())
+                            .isEventEnabled(o.getIsEventEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -66,6 +77,12 @@ public class TypeCustomPropertyDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customPropertyIds")
     java.util.List<String> customPropertyIds;
+
+    /**
+     * If an OCI Event will be emitted when the custom property is modified.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
+    Boolean isEventEnabled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

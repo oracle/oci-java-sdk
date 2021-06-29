@@ -99,6 +99,17 @@ public interface DataCatalog extends AutoCloseable {
             ChangeCatalogPrivateEndpointCompartmentRequest request);
 
     /**
+     * Moves a resource into a different compartment. When provided, 'If-Match' is checked against 'ETag' values of the resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ChangeMetastoreCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeMetastoreCompartment API.
+     */
+    ChangeMetastoreCompartmentResponse changeMetastoreCompartment(
+            ChangeMetastoreCompartmentRequest request);
+
+    /**
      * Creates a new entity attribute.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -260,6 +271,17 @@ public interface DataCatalog extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateJobExecutionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateJobExecution API.
      */
     CreateJobExecutionResponse createJobExecution(CreateJobExecutionRequest request);
+
+    /**
+     * Creates a new metastore.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateMetastoreExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMetastore API.
+     */
+    CreateMetastoreResponse createMetastore(CreateMetastoreRequest request);
 
     /**
      * Create a new Namespace to be used by a custom property
@@ -451,6 +473,16 @@ public interface DataCatalog extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteJobDefinitionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteJobDefinition API.
      */
     DeleteJobDefinitionResponse deleteJobDefinition(DeleteJobDefinitionRequest request);
+
+    /**
+     * Deletes a metastore resource by identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteMetastoreExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMetastore API.
+     */
+    DeleteMetastoreResponse deleteMetastore(DeleteMetastoreRequest request);
 
     /**
      * Deletes a specific Namespace identified by it's key.
@@ -716,6 +748,16 @@ public interface DataCatalog extends AutoCloseable {
     GetJobMetricsResponse getJobMetrics(GetJobMetricsRequest request);
 
     /**
+     * Gets a metastore by identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetMetastoreExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMetastore API.
+     */
+    GetMetastoreResponse getMetastore(GetMetastoreRequest request);
+
+    /**
      * Gets a specific namespace for the given key within a data catalog.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -784,6 +826,16 @@ public interface DataCatalog extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ImportConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportConnection API.
      */
     ImportConnectionResponse importConnection(ImportConnectionRequest request);
+
+    /**
+     * Import technical objects to a Data Asset
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ImportDataAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportDataAsset API.
+     */
+    ImportDataAssetResponse importDataAsset(ImportDataAssetRequest request);
 
     /**
      * Import the glossary and the terms from csv or json files and return the imported glossary resource.
@@ -1001,6 +1053,17 @@ public interface DataCatalog extends AutoCloseable {
     ListJobsResponse listJobs(ListJobsRequest request);
 
     /**
+     * Returns a list of all metastores in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListMetastoresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMetastores API.
+     */
+    ListMetastoresResponse listMetastores(ListMetastoresRequest request);
+
+    /**
      * Returns a list of namespaces within a data catalog.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1180,6 +1243,17 @@ public interface DataCatalog extends AutoCloseable {
     SuggestMatchesResponse suggestMatches(SuggestMatchesRequest request);
 
     /**
+     * Export technical objects from a Data Asset
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/SynchronousExportDataAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SynchronousExportDataAsset API.
+     */
+    SynchronousExportDataAssetResponse synchronousExportDataAsset(
+            SynchronousExportDataAssetRequest request);
+
+    /**
      * Test the connection by connecting to the data asset using credentials in the metadata.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1299,6 +1373,16 @@ public interface DataCatalog extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateJobDefinitionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateJobDefinition API.
      */
     UpdateJobDefinitionResponse updateJobDefinition(UpdateJobDefinitionRequest request);
+
+    /**
+     * Updates a metastore resource by identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateMetastoreExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMetastore API.
+     */
+    UpdateMetastoreResponse updateMetastore(UpdateMetastoreRequest request);
 
     /**
      * Updates a specific namespace identified by the given key.

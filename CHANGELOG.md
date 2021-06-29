@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.1.0 - 2021-06-29
+### Added
+- Support for the DevOps service
+- Support for configuring network security groups for node pools in the Container Engine for Kubernetes service
+- Support for optionally specifying CPU core count and data storage size when creating autonomous databases in the Database service
+- Support for metastore and initial data asset import/export in the Data Catalog service
+- Support for associating domain names to emails and managing email domain names / DKIM in the Email Delivery service
+- Support for email domain names on senders and suppressions in the Email Delivery service
+
+### Breaking Changes
+- Return type of method `getSortOrder()` in `com.oracle.bmc.email.requests.ListSendersRequest` has been changed to `com.oracle.bmc.email.model.SortOrder` in the Email Delivery service
+- Class `com.oracle.bmc.email.requests.ListSendersRequest$SortOrder` has been removed from `com.oracle.bmc.email.requests.ListSendersRequest` in the Email Delivery service
+- Return type of method `getSortOrder()` in `com.oracle.bmc.email.requests.ListSuppressionsRequest` has been changed to `com.oracle.bmc.email.model.SortOrder` in the Email Delivery service
+- Class `com.oracle.bmc.email.requests.ListSuppressionsRequest$SortOrder` has been removed from `com.oracle.bmc.email.requests.ListSuppressionsRequest` in the Email Delivery service
+- Removed field `Displayname` from `com.oracle.bmc.datacatalog.requests.ListJobExecutionsRequest$SortBy` in the Data Catalog service
+
 ## 2.0.2 - 2021-06-22
 ### Added
 - Support for virtual machine and bare metal pluggable databases in the Database service

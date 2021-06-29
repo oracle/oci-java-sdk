@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>2.0.2</version>
+  <version>2.1.0</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -381,8 +381,8 @@
             </docletArtifact>
             <useStandardDocletOptions>true</useStandardDocletOptions>
             <aggregate>true</aggregate>
-            <minmemory>256m</minmemory>
-            <maxmemory>2048m</maxmemory>
+            <minmemory>512m</minmemory>
+            <maxmemory>3072m</maxmemory>
             <additionalparam>-Xdoclint:none -disable-highlight</additionalparam>
             <sourcepath>target/generated-sources-for-docs/delombok</sourcepath>
             <links>
@@ -711,6 +711,7 @@
     <module>bmc-bastion</module>
     <module>bmc-genericartifactscontent</module>
     <module>bmc-jms</module>
+    <module>bmc-devops</module>
     <module>bmc-full</module>
     <module>bmc-shaded</module>
   </modules>

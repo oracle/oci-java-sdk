@@ -166,18 +166,17 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     * The field to sort by. Only one sort order may be provided; the default is descending. Use sortOrder query param to specify order.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     * The field to sort by. Only one sort order may be provided; the default is descending. Use sortOrder query param to specify order.
      *
      **/
     public enum SortBy {
         Timecreated("TIMECREATED"),
-        Displayname("DISPLAYNAME"),
         ;
 
         private final String value;

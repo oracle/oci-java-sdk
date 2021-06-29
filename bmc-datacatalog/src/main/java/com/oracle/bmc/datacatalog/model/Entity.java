@@ -144,6 +144,24 @@ public class Entity {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeHarvested")
+        private java.util.Date timeHarvested;
+
+        public Builder timeHarvested(java.util.Date timeHarvested) {
+            this.timeHarvested = timeHarvested;
+            this.__explicitlySet__.add("timeHarvested");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("objectRelationships")
+        private java.util.List<ObjectRelationship> objectRelationships;
+
+        public Builder objectRelationships(java.util.List<ObjectRelationship> objectRelationships) {
+            this.objectRelationships = objectRelationships;
+            this.__explicitlySet__.add("objectRelationships");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeStatusUpdated")
         private java.util.Date timeStatusUpdated;
 
@@ -281,6 +299,8 @@ public class Entity {
                             patternKey,
                             realizedExpression,
                             timeExternal,
+                            timeHarvested,
+                            objectRelationships,
                             timeStatusUpdated,
                             isLogical,
                             isPartition,
@@ -314,6 +334,8 @@ public class Entity {
                             .patternKey(o.getPatternKey())
                             .realizedExpression(o.getRealizedExpression())
                             .timeExternal(o.getTimeExternal())
+                            .timeHarvested(o.getTimeHarvested())
+                            .objectRelationships(o.getObjectRelationships())
                             .timeStatusUpdated(o.getTimeStatusUpdated())
                             .isLogical(o.getIsLogical())
                             .isPartition(o.getIsPartition())
@@ -422,6 +444,19 @@ public class Entity {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExternal")
     java.util.Date timeExternal;
+
+    /**
+     * The date and time the entity was harvested, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeHarvested")
+    java.util.Date timeHarvested;
+
+    /**
+     * List of objects and their relationships to this entity.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("objectRelationships")
+    java.util.List<ObjectRelationship> objectRelationships;
 
     /**
      * Time that the data entities status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.

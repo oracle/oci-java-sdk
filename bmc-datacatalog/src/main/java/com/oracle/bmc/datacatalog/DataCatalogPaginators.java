@@ -2050,6 +2050,118 @@ public class DataCatalogPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listMetastores operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListMetastoresResponse> listMetastoresResponseIterator(
+            final ListMetastoresRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListMetastoresRequest.Builder, ListMetastoresRequest, ListMetastoresResponse>(
+                new com.google.common.base.Supplier<ListMetastoresRequest.Builder>() {
+                    @Override
+                    public ListMetastoresRequest.Builder get() {
+                        return ListMetastoresRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListMetastoresResponse, String>() {
+                    @Override
+                    public String apply(ListMetastoresResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMetastoresRequest.Builder>,
+                        ListMetastoresRequest>() {
+                    @Override
+                    public ListMetastoresRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMetastoresRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListMetastoresRequest, ListMetastoresResponse>() {
+                    @Override
+                    public ListMetastoresResponse apply(ListMetastoresRequest request) {
+                        return client.listMetastores(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datacatalog.model.MetastoreSummary} objects
+     * contained in responses from the listMetastores operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datacatalog.model.MetastoreSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datacatalog.model.MetastoreSummary> listMetastoresRecordIterator(
+            final ListMetastoresRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListMetastoresRequest.Builder, ListMetastoresRequest, ListMetastoresResponse,
+                com.oracle.bmc.datacatalog.model.MetastoreSummary>(
+                new com.google.common.base.Supplier<ListMetastoresRequest.Builder>() {
+                    @Override
+                    public ListMetastoresRequest.Builder get() {
+                        return ListMetastoresRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListMetastoresResponse, String>() {
+                    @Override
+                    public String apply(ListMetastoresResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMetastoresRequest.Builder>,
+                        ListMetastoresRequest>() {
+                    @Override
+                    public ListMetastoresRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMetastoresRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListMetastoresRequest, ListMetastoresResponse>() {
+                    @Override
+                    public ListMetastoresResponse apply(ListMetastoresRequest request) {
+                        return client.listMetastores(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListMetastoresResponse,
+                        java.util.List<com.oracle.bmc.datacatalog.model.MetastoreSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datacatalog.model.MetastoreSummary> apply(
+                            ListMetastoresResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listNamespaces operation. This iterable
      * will fetch more data from the server as needed.
      *

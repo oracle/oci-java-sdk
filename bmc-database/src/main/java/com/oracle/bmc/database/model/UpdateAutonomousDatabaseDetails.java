@@ -38,12 +38,30 @@ public class UpdateAutonomousDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
+        private Float ocpuCount;
+
+        public Builder ocpuCount(Float ocpuCount) {
+            this.ocpuCount = ocpuCount;
+            this.__explicitlySet__.add("ocpuCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
         private Integer dataStorageSizeInTBs;
 
         public Builder dataStorageSizeInTBs(Integer dataStorageSizeInTBs) {
             this.dataStorageSizeInTBs = dataStorageSizeInTBs;
             this.__explicitlySet__.add("dataStorageSizeInTBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
+        private Integer dataStorageSizeInGBs;
+
+        public Builder dataStorageSizeInGBs(Integer dataStorageSizeInGBs) {
+            this.dataStorageSizeInGBs = dataStorageSizeInGBs;
+            this.__explicitlySet__.add("dataStorageSizeInGBs");
             return this;
         }
 
@@ -262,7 +280,9 @@ public class UpdateAutonomousDatabaseDetails {
             UpdateAutonomousDatabaseDetails __instance__ =
                     new UpdateAutonomousDatabaseDetails(
                             cpuCoreCount,
+                            ocpuCount,
                             dataStorageSizeInTBs,
+                            dataStorageSizeInGBs,
                             displayName,
                             isFreeTier,
                             adminPassword,
@@ -294,7 +314,9 @@ public class UpdateAutonomousDatabaseDetails {
         public Builder copy(UpdateAutonomousDatabaseDetails o) {
             Builder copiedBuilder =
                     cpuCoreCount(o.getCpuCoreCount())
+                            .ocpuCount(o.getOcpuCount())
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
+                            .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
                             .displayName(o.getDisplayName())
                             .isFreeTier(o.getIsFreeTier())
                             .adminPassword(o.getAdminPassword())
@@ -338,11 +360,24 @@ public class UpdateAutonomousDatabaseDetails {
     Integer cpuCoreCount;
 
     /**
+     * The number of Fractional OCPU cores to be made available to the database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
+    Float ocpuCount;
+
+    /**
      * The size, in terabytes, of the data volume that will be attached to the database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
     Integer dataStorageSizeInTBs;
+
+    /**
+     * The size, in gigabytes, of the data volume that will be attached to the database.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
+    Integer dataStorageSizeInGBs;
 
     /**
      * The user-friendly name for the Autonomous Database. The name does not have to be unique. Can only be updated for Autonomous Databases

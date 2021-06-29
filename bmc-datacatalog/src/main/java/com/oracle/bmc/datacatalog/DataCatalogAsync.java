@@ -129,6 +129,22 @@ public interface DataCatalogAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves a resource into a different compartment. When provided, 'If-Match' is checked against 'ETag' values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeMetastoreCompartmentResponse> changeMetastoreCompartment(
+            ChangeMetastoreCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeMetastoreCompartmentRequest, ChangeMetastoreCompartmentResponse>
+                    handler);
+
+    /**
      * Creates a new entity attribute.
      *
      * @param request The request object containing the details to send
@@ -374,6 +390,22 @@ public interface DataCatalogAsync extends AutoCloseable {
             CreateJobExecutionRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateJobExecutionRequest, CreateJobExecutionResponse>
+                    handler);
+
+    /**
+     * Creates a new metastore.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateMetastoreResponse> createMetastore(
+            CreateMetastoreRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateMetastoreRequest, CreateMetastoreResponse>
                     handler);
 
     /**
@@ -664,6 +696,21 @@ public interface DataCatalogAsync extends AutoCloseable {
             DeleteJobDefinitionRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteJobDefinitionRequest, DeleteJobDefinitionResponse>
+                    handler);
+
+    /**
+     * Deletes a metastore resource by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteMetastoreResponse> deleteMetastore(
+            DeleteMetastoreRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteMetastoreRequest, DeleteMetastoreResponse>
                     handler);
 
     /**
@@ -1057,6 +1104,21 @@ public interface DataCatalogAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a metastore by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetMetastoreResponse> getMetastore(
+            GetMetastoreRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetMetastoreRequest, GetMetastoreResponse>
+                    handler);
+
+    /**
      * Gets a specific namespace for the given key within a data catalog.
      *
      * @param request The request object containing the details to send
@@ -1157,6 +1219,21 @@ public interface DataCatalogAsync extends AutoCloseable {
     java.util.concurrent.Future<ImportConnectionResponse> importConnection(
             ImportConnectionRequest request,
             com.oracle.bmc.responses.AsyncHandler<ImportConnectionRequest, ImportConnectionResponse>
+                    handler);
+
+    /**
+     * Import technical objects to a Data Asset
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ImportDataAssetResponse> importDataAsset(
+            ImportDataAssetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ImportDataAssetRequest, ImportDataAssetResponse>
                     handler);
 
     /**
@@ -1484,6 +1561,22 @@ public interface DataCatalogAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListJobsRequest, ListJobsResponse> handler);
 
     /**
+     * Returns a list of all metastores in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMetastoresResponse> listMetastores(
+            ListMetastoresRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListMetastoresRequest, ListMetastoresResponse>
+                    handler);
+
+    /**
      * Returns a list of namespaces within a data catalog.
      *
      * @param request The request object containing the details to send
@@ -1747,6 +1840,22 @@ public interface DataCatalogAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Export technical objects from a Data Asset
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SynchronousExportDataAssetResponse> synchronousExportDataAsset(
+            SynchronousExportDataAssetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SynchronousExportDataAssetRequest, SynchronousExportDataAssetResponse>
+                    handler);
+
+    /**
      * Test the connection by connecting to the data asset using credentials in the metadata.
      *
      * @param request The request object containing the details to send
@@ -1927,6 +2036,21 @@ public interface DataCatalogAsync extends AutoCloseable {
             UpdateJobDefinitionRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateJobDefinitionRequest, UpdateJobDefinitionResponse>
+                    handler);
+
+    /**
+     * Updates a metastore resource by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateMetastoreResponse> updateMetastore(
+            UpdateMetastoreRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateMetastoreRequest, UpdateMetastoreResponse>
                     handler);
 
     /**

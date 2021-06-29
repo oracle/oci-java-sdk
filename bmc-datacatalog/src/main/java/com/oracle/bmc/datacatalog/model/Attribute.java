@@ -251,6 +251,33 @@ public class Attribute {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeHarvested")
+        private java.util.Date timeHarvested;
+
+        public Builder timeHarvested(java.util.Date timeHarvested) {
+            this.timeHarvested = timeHarvested;
+            this.__explicitlySet__.add("timeHarvested");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("objectRelationships")
+        private java.util.List<ObjectRelationship> objectRelationships;
+
+        public Builder objectRelationships(java.util.List<ObjectRelationship> objectRelationships) {
+            this.objectRelationships = objectRelationships;
+            this.__explicitlySet__.add("objectRelationships");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isDerivedAttribute")
+        private Boolean isDerivedAttribute;
+
+        public Builder isDerivedAttribute(Boolean isDerivedAttribute) {
+            this.isDerivedAttribute = isDerivedAttribute;
+            this.__explicitlySet__.add("isDerivedAttribute");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("uri")
         private String uri;
 
@@ -328,6 +355,9 @@ public class Attribute {
                             precision,
                             scale,
                             timeExternal,
+                            timeHarvested,
+                            objectRelationships,
+                            isDerivedAttribute,
                             uri,
                             path,
                             customPropertyMembers,
@@ -365,6 +395,9 @@ public class Attribute {
                             .precision(o.getPrecision())
                             .scale(o.getScale())
                             .timeExternal(o.getTimeExternal())
+                            .timeHarvested(o.getTimeHarvested())
+                            .objectRelationships(o.getObjectRelationships())
+                            .isDerivedAttribute(o.getIsDerivedAttribute())
                             .uri(o.getUri())
                             .path(o.getPath())
                             .customPropertyMembers(o.getCustomPropertyMembers())
@@ -544,6 +577,24 @@ public class Attribute {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExternal")
     java.util.Date timeExternal;
+
+    /**
+     * The date and time the attribute was harvested, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeHarvested")
+    java.util.Date timeHarvested;
+
+    /**
+     * List of objects and their relationships to this attribute.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("objectRelationships")
+    java.util.List<ObjectRelationship> objectRelationships;
+
+    /**
+     * Whether a column is derived or not.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDerivedAttribute")
+    Boolean isDerivedAttribute;
 
     /**
      * URI to the attribute instance in the API.

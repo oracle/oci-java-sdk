@@ -53,12 +53,21 @@ public class CustomPropertyTypeUsage {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
+        private Boolean isEventEnabled;
+
+        public Builder isEventEnabled(Boolean isEventEnabled) {
+            this.isEventEnabled = isEventEnabled;
+            this.__explicitlySet__.add("isEventEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CustomPropertyTypeUsage build() {
             CustomPropertyTypeUsage __instance__ =
-                    new CustomPropertyTypeUsage(typeId, typeName, count);
+                    new CustomPropertyTypeUsage(typeId, typeName, count, isEventEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -66,7 +75,10 @@ public class CustomPropertyTypeUsage {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CustomPropertyTypeUsage o) {
             Builder copiedBuilder =
-                    typeId(o.getTypeId()).typeName(o.getTypeName()).count(o.getCount());
+                    typeId(o.getTypeId())
+                            .typeName(o.getTypeName())
+                            .count(o.getCount())
+                            .isEventEnabled(o.getIsEventEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -97,6 +109,12 @@ public class CustomPropertyTypeUsage {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     Integer count;
+
+    /**
+     * If an OCI Event will be emitted when the custom property is modified.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
+    Boolean isEventEnabled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

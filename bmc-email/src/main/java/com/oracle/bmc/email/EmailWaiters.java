@@ -26,6 +26,202 @@ public class EmailWaiters {
      * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
+    public com.oracle.bmc.waiter.Waiter<GetDkimRequest, GetDkimResponse> forDkim(
+            GetDkimRequest request,
+            com.oracle.bmc.email.model.Dkim.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forDkim(com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetDkimRequest, GetDkimResponse> forDkim(
+            GetDkimRequest request,
+            com.oracle.bmc.email.model.Dkim.LifecycleState targetState,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forDkim(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetDkimRequest, GetDkimResponse> forDkim(
+            GetDkimRequest request,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+            com.oracle.bmc.email.model.Dkim.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forDkim(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for Dkim.
+    private com.oracle.bmc.waiter.Waiter<GetDkimRequest, GetDkimResponse> forDkim(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+            final GetDkimRequest request,
+            final com.oracle.bmc.email.model.Dkim.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.email.model.Dkim.LifecycleState> targetStatesSet =
+                new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<GetDkimRequest, GetDkimResponse>() {
+                            @Override
+                            public GetDkimResponse apply(GetDkimRequest request) {
+                                return client.getDkim(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetDkimResponse>() {
+                            @Override
+                            public boolean apply(GetDkimResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getDkim().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.email.model.Dkim.LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetEmailDomainRequest, GetEmailDomainResponse>
+            forEmailDomain(
+                    GetEmailDomainRequest request,
+                    com.oracle.bmc.email.model.EmailDomain.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forEmailDomain(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetEmailDomainRequest, GetEmailDomainResponse>
+            forEmailDomain(
+                    GetEmailDomainRequest request,
+                    com.oracle.bmc.email.model.EmailDomain.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forEmailDomain(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetEmailDomainRequest, GetEmailDomainResponse>
+            forEmailDomain(
+                    GetEmailDomainRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.email.model.EmailDomain.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forEmailDomain(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for EmailDomain.
+    private com.oracle.bmc.waiter.Waiter<GetEmailDomainRequest, GetEmailDomainResponse>
+            forEmailDomain(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetEmailDomainRequest request,
+                    final com.oracle.bmc.email.model.EmailDomain.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.email.model.EmailDomain.LifecycleState> targetStatesSet =
+                new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetEmailDomainRequest, GetEmailDomainResponse>() {
+                            @Override
+                            public GetEmailDomainResponse apply(GetEmailDomainRequest request) {
+                                return client.getEmailDomain(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetEmailDomainResponse>() {
+                            @Override
+                            public boolean apply(GetEmailDomainResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getEmailDomain().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.email.model.EmailDomain.LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
     public com.oracle.bmc.waiter.Waiter<GetSenderRequest, GetSenderResponse> forSender(
             GetSenderRequest request,
             com.oracle.bmc.email.model.Sender.LifecycleState... targetStates) {
@@ -112,6 +308,62 @@ public class EmailWaiters {
                         },
                         targetStatesSet.contains(
                                 com.oracle.bmc.email.model.Sender.LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetWorkRequestRequest, GetWorkRequestResponse>
+            forWorkRequest(GetWorkRequestRequest request) {
+        return forWorkRequest(com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@linkcom.oracle.bmc.waiter. DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetWorkRequestRequest, GetWorkRequestResponse>
+            forWorkRequest(
+                    GetWorkRequestRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        return forWorkRequest(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request);
+    }
+
+    // Helper method to create a new Waiter for WorkRequest.
+    private com.oracle.bmc.waiter.Waiter<GetWorkRequestRequest, GetWorkRequestResponse>
+            forWorkRequest(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetWorkRequestRequest request) {
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetWorkRequestRequest, GetWorkRequestResponse>() {
+                            @Override
+                            public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
+                                return client.getWorkRequest(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                            @Override
+                            public boolean apply(GetWorkRequestResponse response) {
+                                // work requests are complete once the time finished is available
+                                return response.getWorkRequest().getTimeFinished() != null;
+                            }
+                        },
+                        false),
                 request);
     }
 }
