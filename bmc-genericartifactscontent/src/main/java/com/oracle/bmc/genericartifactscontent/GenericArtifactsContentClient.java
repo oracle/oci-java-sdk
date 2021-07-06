@@ -18,7 +18,8 @@ public class GenericArtifactsContentClient implements GenericArtifactsContent {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("GENERICARTIFACTSCONTENT")
                     .serviceEndpointPrefix("")
-                    .serviceEndpointTemplate("https://generic.{region}.ocir.io")
+                    .serviceEndpointTemplate(
+                            "https://generic.artifacts.{region}.oci.{secondLevelDomain}")
                     .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;

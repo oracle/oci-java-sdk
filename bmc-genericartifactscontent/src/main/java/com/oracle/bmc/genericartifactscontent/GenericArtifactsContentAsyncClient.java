@@ -31,7 +31,8 @@ public class GenericArtifactsContentAsyncClient implements GenericArtifactsConte
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("GENERICARTIFACTSCONTENT")
                     .serviceEndpointPrefix("")
-                    .serviceEndpointTemplate("https://generic.{region}.ocir.io")
+                    .serviceEndpointTemplate(
+                            "https://generic.artifacts.{region}.oci.{secondLevelDomain}")
                     .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)

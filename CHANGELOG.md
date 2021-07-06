@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.1.1 - 2021-07-06
+### Added
+- Support for order activation in the Organizations service
+- Support for resource principal authorization on Enterprise Manager bridge resources in the Operations Insights service
+- Support for the starter edition license type in the Content and Experience service
+- Support for the Generic Artifacts service's new domain name
+
 ## 2.1.0 - 2021-06-29
 ### Added
 - Support for the DevOps service

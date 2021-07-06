@@ -32,6 +32,14 @@ public class ListOceInstancesConverter {
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20190912").path("oceInstances");
 
+        if (request.getTenancyId() != null) {
+            target =
+                    target.queryParam(
+                            "tenancyId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTenancyId()));
+        }
+
         target =
                 target.queryParam(
                         "compartmentId",

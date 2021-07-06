@@ -14,6 +14,8 @@ package com.oracle.bmc.oce.model;
 public enum LicenseType {
     New("NEW"),
     Byol("BYOL"),
+    Premium("PREMIUM"),
+    Starter("STARTER"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this
