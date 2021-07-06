@@ -25,6 +25,11 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
     private String compartmentId;
 
     /**
+     * The ID of the tenancy in which to list resources.
+     */
+    private String tenancyId;
+
+    /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * <p>
      * Example: `My new resource`
@@ -209,6 +214,7 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
          */
         public Builder copy(ListOceInstancesRequest o) {
             compartmentId(o.getCompartmentId());
+            tenancyId(o.getTenancyId());
             displayName(o.getDisplayName());
             limit(o.getLimit());
             page(o.getPage());

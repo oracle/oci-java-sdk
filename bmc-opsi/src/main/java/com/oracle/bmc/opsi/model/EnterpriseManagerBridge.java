@@ -80,6 +80,15 @@ public class EnterpriseManagerBridge {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("objectStorageBucketStatusDetails")
+        private String objectStorageBucketStatusDetails;
+
+        public Builder objectStorageBucketStatusDetails(String objectStorageBucketStatusDetails) {
+            this.objectStorageBucketStatusDetails = objectStorageBucketStatusDetails;
+            this.__explicitlySet__.add("objectStorageBucketStatusDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -156,6 +165,7 @@ public class EnterpriseManagerBridge {
                             description,
                             objectStorageNamespaceName,
                             objectStorageBucketName,
+                            objectStorageBucketStatusDetails,
                             freeformTags,
                             definedTags,
                             systemTags,
@@ -176,6 +186,8 @@ public class EnterpriseManagerBridge {
                             .description(o.getDescription())
                             .objectStorageNamespaceName(o.getObjectStorageNamespaceName())
                             .objectStorageBucketName(o.getObjectStorageBucketName())
+                            .objectStorageBucketStatusDetails(
+                                    o.getObjectStorageBucketStatusDetails())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .systemTags(o.getSystemTags())
@@ -231,6 +243,12 @@ public class EnterpriseManagerBridge {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageBucketName")
     String objectStorageBucketName;
+
+    /**
+     * A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("objectStorageBucketStatusDetails")
+    String objectStorageBucketStatusDetails;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.

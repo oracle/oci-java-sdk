@@ -223,6 +223,15 @@ public class OceInstance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("service")
         private java.util.Map<String, Object> service;
 
@@ -260,6 +269,7 @@ public class OceInstance {
                             stateMessage,
                             freeformTags,
                             definedTags,
+                            systemTags,
                             service);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -290,6 +300,7 @@ public class OceInstance {
                             .stateMessage(o.getStateMessage())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
+                            .systemTags(o.getSystemTags())
                             .service(o.getService());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -624,6 +635,14 @@ public class OceInstance {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
      * SERVICE data.

@@ -11,6 +11,7 @@ import com.oracle.bmc.retrier.RetryConfiguration;
 import com.oracle.bmc.util.internal.Consumer;
 import lombok.Getter;
 import lombok.Setter;
+import java.util.Objects;
 
 /**
  * Request base class.
@@ -51,6 +52,30 @@ public class BmcRequest<B> {
     @com.oracle.bmc.InternalSdk
     public B getBody$() {
         throw new IllegalStateException("This request does not support a body");
+    }
+
+    /**
+     * Uses invocationCallback and retryConfiguration to determine object equality.
+     **/
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BmcRequest)) {
+            return false;
+        }
+        BmcRequest<?> that = (BmcRequest<?>) o;
+        return Objects.equals(getInvocationCallback(), that.getInvocationCallback())
+                && Objects.equals(getRetryConfiguration(), that.getRetryConfiguration());
+    }
+
+    /**
+     * Uses invocationCallback and retryConfiguration to generate a hash.
+     **/
+    @Override
+    public int hashCode() {
+        return Objects.hash(getInvocationCallback(), getRetryConfiguration());
     }
 
     /**
