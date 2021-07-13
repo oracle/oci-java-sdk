@@ -114,6 +114,15 @@ public class ClusterDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ambariUrl")
+        private String ambariUrl;
+
+        public Builder ambariUrl(String ambariUrl) {
+            this.ambariUrl = ambariUrl;
+            this.__explicitlySet__.add("ambariUrl");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("bigDataManagerUrl")
         private String bigDataManagerUrl;
 
@@ -148,6 +157,7 @@ public class ClusterDetails {
                             timeCreated,
                             timeRefreshed,
                             clouderaManagerUrl,
+                            ambariUrl,
                             bigDataManagerUrl,
                             hueServerUrl);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -167,6 +177,7 @@ public class ClusterDetails {
                             .timeCreated(o.getTimeCreated())
                             .timeRefreshed(o.getTimeRefreshed())
                             .clouderaManagerUrl(o.getClouderaManagerUrl())
+                            .ambariUrl(o.getAmbariUrl())
                             .bigDataManagerUrl(o.getBigDataManagerUrl())
                             .hueServerUrl(o.getHueServerUrl());
 
@@ -189,69 +200,74 @@ public class ClusterDetails {
     String bdaVersion;
 
     /**
-     * Big Data Manager version installed in the cluster
+     * Big Data Manager version installed in the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bdmVersion")
     String bdmVersion;
 
     /**
-     * Big Data Service version installed in the cluster
+     * Big Data Service version installed in the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bdsVersion")
     String bdsVersion;
 
     /**
-     * Oracle Linux version installed in the cluster
+     * Oracle Linux version installed in the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("osVersion")
     String osVersion;
 
     /**
-     * Query Server Database version
+     * Cloud SQL query server database version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     String dbVersion;
 
     /**
-     * Cloud SQL cell version
+     * Cloud SQL cell version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bdCellVersion")
     String bdCellVersion;
 
     /**
-     * Big Data SQL version
+     * Big Data SQL version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("csqlCellVersion")
     String csqlCellVersion;
 
     /**
-     * The time the cluster was created. An RFC3339 formatted datetime string
+     * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The time the BDS instance was automatically, or manually refreshed.
-     * An RFC3339 formatted datetime string
+     * The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRefreshed")
     java.util.Date timeRefreshed;
 
     /**
-     * The URL of a Cloudera Manager
+     * The URL of Cloudera Manager
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clouderaManagerUrl")
     String clouderaManagerUrl;
 
     /**
-     * The URL of a Big Data Manager
+     * The URL of Ambari
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ambariUrl")
+    String ambariUrl;
+
+    /**
+     * The URL of Big Data Manager.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bigDataManagerUrl")
     String bigDataManagerUrl;
 
     /**
-     * The URL of a Hue Server
+     * The URL of the Hue server.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hueServerUrl")
     String hueServerUrl;

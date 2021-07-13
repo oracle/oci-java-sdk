@@ -53,6 +53,15 @@ public class ListingPackageSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("pricing")
+        private PricingModel pricing;
+
+        public Builder pricing(PricingModel pricing) {
+            this.pricing = pricing;
+            this.__explicitlySet__.add("pricing");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("regions")
         private java.util.List<Region> regions;
 
@@ -89,6 +98,7 @@ public class ListingPackageSummary {
                             listingId,
                             packageVersion,
                             packageType,
+                            pricing,
                             regions,
                             resourceId,
                             timeCreated);
@@ -102,6 +112,7 @@ public class ListingPackageSummary {
                     listingId(o.getListingId())
                             .packageVersion(o.getPackageVersion())
                             .packageType(o.getPackageType())
+                            .pricing(o.getPricing())
                             .regions(o.getRegions())
                             .resourceId(o.getResourceId())
                             .timeCreated(o.getTimeCreated());
@@ -135,6 +146,9 @@ public class ListingPackageSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageType")
     PackageTypeEnum packageType;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("pricing")
+    PricingModel pricing;
 
     /**
      * The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)

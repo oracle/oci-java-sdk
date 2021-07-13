@@ -25,7 +25,7 @@ public class ListBdsInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
     private String compartmentId;
 
     /**
-     * The state of the BDS instance.
+     * The state of the cluster.
      */
     private BdsInstance.LifecycleState lifecycleState;
 

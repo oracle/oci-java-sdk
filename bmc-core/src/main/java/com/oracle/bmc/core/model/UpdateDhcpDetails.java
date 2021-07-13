@@ -63,12 +63,22 @@ public class UpdateDhcpDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("domainNameType")
+        private DomainNameType domainNameType;
+
+        public Builder domainNameType(DomainNameType domainNameType) {
+            this.domainNameType = domainNameType;
+            this.__explicitlySet__.add("domainNameType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateDhcpDetails build() {
             UpdateDhcpDetails __instance__ =
-                    new UpdateDhcpDetails(definedTags, displayName, freeformTags, options);
+                    new UpdateDhcpDetails(
+                            definedTags, displayName, freeformTags, options, domainNameType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -79,7 +89,8 @@ public class UpdateDhcpDetails {
                     definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
-                            .options(o.getOptions());
+                            .options(o.getOptions())
+                            .domainNameType(o.getDomainNameType());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -123,6 +134,47 @@ public class UpdateDhcpDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("options")
     java.util.List<DhcpOption> options;
+    /**
+     * The search domain name type of DHCP options
+     **/
+    public enum DomainNameType {
+        SubnetDomain("SUBNET_DOMAIN"),
+        VcnDomain("VCN_DOMAIN"),
+        CustomDomain("CUSTOM_DOMAIN"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, DomainNameType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DomainNameType v : DomainNameType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        DomainNameType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DomainNameType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid DomainNameType: " + key);
+        }
+    };
+    /**
+     * The search domain name type of DHCP options
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("domainNameType")
+    DomainNameType domainNameType;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -95,12 +95,13 @@ public class DownloadManager {
         // We have read the object. Remember the etag so that a retried request
         // will fail if the object is changed underneath us.
         final String etag = response.getETag();
-        final GetObjectRequest requestWithEtag =
-                GetObjectRequest.builder().copy(request).ifMatch(etag).build();
+        final GetObjectRequest.Builder requestWithEtagBuilder =
+                GetObjectRequest.builder().copy(request).ifMatch(etag);
 
         // This input stream will read the first part of the object.
         final InputStream retryingStream =
-                new RetryingStream(this.objectStorage, requestWithEtag, response, execution);
+                new RetryingStream(
+                        this.objectStorage, requestWithEtagBuilder.build(), response, execution);
 
         // Do we want a single-threaded, or multi-threaded download?
         final InputStream stream;
@@ -145,10 +146,18 @@ public class DownloadManager {
             final int numThreads = Math.min(this.config.getParallelDownloads(), numParts - 1);
             assert numThreads > 0;
 
+            // In cache, some requests set if-none-match to get an unchanged response back if the object hasn't changed.
+            // For parallel downloads, the download manager adds the if-match header to ensure all parts are from the same
+            // object version. But it is illegal to have both if-match and if-none-match in the same request. Therefore,
+            // we need to set if-none-match to null for the following parts to allow downloads using download manager.
+            if (request.getIfNoneMatch() != null) {
+                requestWithEtagBuilder.ifNoneMatch(null);
+            }
+
             stream =
                     new MultithreadStream(
                             this,
-                            requestWithEtag,
+                            requestWithEtagBuilder.build(),
                             response.getContentLength(),
                             retryingStream,
                             this.config.getParallelDownloads(),

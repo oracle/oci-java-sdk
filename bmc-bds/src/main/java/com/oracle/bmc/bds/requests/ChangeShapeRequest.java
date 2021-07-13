@@ -20,12 +20,12 @@ import com.oracle.bmc.bds.model.*;
 public class ChangeShapeRequest extends com.oracle.bmc.requests.BmcRequest<ChangeShapeDetails> {
 
     /**
-     * The OCID of the BDS instance
+     * The OCID of the cluster.
      */
     private String bdsInstanceId;
 
     /**
-     * Individual change shape settings per node group. You can change the shape of master, worker, utility and cloudsql nodes.
+     * Individual change shape settings per node type. You can change the shape of master, worker, utility and Cloud SQL nodes.
      */
     private ChangeShapeDetails changeShapeDetails;
 
@@ -46,8 +46,8 @@ public class ChangeShapeRequest extends com.oracle.bmc.requests.BmcRequest<Chang
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * server error, without risk of executing that same action again. Retry tokens expire after 24
+     * hours but can be invalidated before then due to conflicting operations. For example, if a resource
      * has been deleted and purged from the system, then a retry of the original creation request
      * might be rejected.
      *

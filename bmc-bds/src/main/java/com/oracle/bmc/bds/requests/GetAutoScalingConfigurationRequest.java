@@ -21,12 +21,12 @@ public class GetAutoScalingConfigurationRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the BDS instance
+     * The OCID of the cluster.
      */
     private String bdsInstanceId;
 
     /**
-     * Unique Oracle-assigned identifier of the autoscaling configuration.
+     * Unique Oracle-assigned identifier of the autoscale configuration.
      */
     private String autoScalingConfigurationId;
 

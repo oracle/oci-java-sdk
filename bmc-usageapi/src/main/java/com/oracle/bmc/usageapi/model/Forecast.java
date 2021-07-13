@@ -81,7 +81,7 @@ public class Forecast {
     }
 
     /**
-     * BASIC uses ETS to project future usage/cost based on history data. The basis for projections will be a rolling set of equivalent historical days for which projection is being made.
+     * BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum ForecastType {
@@ -126,19 +126,19 @@ public class Forecast {
         }
     };
     /**
-     * BASIC uses ETS to project future usage/cost based on history data. The basis for projections will be a rolling set of equivalent historical days for which projection is being made.
+     * BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("forecastType")
     ForecastType forecastType;
 
     /**
-     * forecast start time. Will default to UTC-1 if not specified
+     * The forecast start time. Defaults to UTC-1 if not specified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeForecastStarted")
     java.util.Date timeForecastStarted;
 
     /**
-     * forecast end time.
+     * The forecast end time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeForecastEnded")
     java.util.Date timeForecastEnded;

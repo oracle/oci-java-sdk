@@ -5,7 +5,7 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * Description of the BDS instance
+ * Description of the cluster.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -250,24 +250,24 @@ public class BdsInstance {
     }
 
     /**
-     * The OCID of the BDS resource
+     * The OCID of the Big Data Service resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The OCID of the compartment
+     * The OCID of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * Name of the BDS instance
+     * The name of the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
     /**
-     * The state of the BDS instance
+     * The state of the cluster.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -320,17 +320,18 @@ public class BdsInstance {
         }
     };
     /**
-     * The state of the BDS instance
+     * The state of the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
     /**
-     * Version of the Hadoop distribution
+     * Version of the Hadoop distribution.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum ClusterVersion {
         Cdh5("CDH5"),
         Cdh6("CDH6"),
+        Odh1("ODH1"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -371,25 +372,25 @@ public class BdsInstance {
         }
     };
     /**
-     * Version of the Hadoop distribution
+     * Version of the Hadoop distribution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterVersion")
     ClusterVersion clusterVersion;
 
     /**
-     * Boolean flag specifying whether or not the cluster is HA
+     * Boolean flag specifying whether or not the cluster is highly available (HA)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHighAvailability")
     Boolean isHighAvailability;
 
     /**
-     * Boolean flag specifying whether or not the cluster should be setup as secure.
+     * Boolean flag specifying whether or not the cluster should be set up as secure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSecure")
     Boolean isSecure;
 
     /**
-     * Boolean flag specifying whether we configure Cloud SQL or not
+     * Boolean flag specifying whether or not Cloud SQL should be configured.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCloudSqlConfigured")
     Boolean isCloudSqlConfigured;
@@ -401,7 +402,7 @@ public class BdsInstance {
     ClusterDetails clusterDetails;
 
     /**
-     * The list of nodes in the BDS instance
+     * The list of nodes in the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodes")
     java.util.List<Node> nodes;
@@ -410,19 +411,19 @@ public class BdsInstance {
     CloudSqlDetails cloudSqlDetails;
 
     /**
-     * The user who created the BDS instance.
+     * The user who created the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     String createdBy;
 
     /**
-     * The time the BDS instance was created. An RFC3339 formatted datetime string
+     * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The time the BDS instance was updated. An RFC3339 formatted datetime string
+     * The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
@@ -434,8 +435,8 @@ public class BdsInstance {
     Integer numberOfNodes;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Simple key-value pair that is applied without any predefined name, type, or scope.
+     * Exists for cross-compatibility only. For example, `{\"bar-key\": \"value\"}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -443,7 +444,7 @@ public class BdsInstance {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * For example, `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

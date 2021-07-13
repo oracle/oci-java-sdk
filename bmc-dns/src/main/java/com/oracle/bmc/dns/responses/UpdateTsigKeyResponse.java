@@ -27,11 +27,17 @@ public class UpdateTsigKeyResponse {
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to
-     * contact Oracle about a particular request, please provide the request
-     * ID.
+     * contact Oracle about a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
+
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request.
+     * You can use this to query status of the asynchronous operation.
+     *
+     */
+    private String opcWorkRequestId;
 
     /**
      * The returned TsigKey instance.
@@ -47,6 +53,7 @@ public class UpdateTsigKeyResponse {
             __httpStatusCode__(o.get__httpStatusCode__());
             eTag(o.getETag());
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
             tsigKey(o.getTsigKey());
 
             return this;

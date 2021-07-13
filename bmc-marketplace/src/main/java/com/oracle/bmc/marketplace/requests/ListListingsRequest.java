@@ -164,12 +164,12 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
     private Boolean isFeatured;
 
     /**
-     * The type of the listing
+     * The type of the listing.
      */
     private java.util.List<com.oracle.bmc.marketplace.model.ListingType> listingTypes;
 
     /**
-     * OS of the listing.
+     * The operating system of the listing.
      */
     private java.util.List<String> operatingSystems;
 

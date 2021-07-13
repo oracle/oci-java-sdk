@@ -5,7 +5,7 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * Moves a BDS instance into a different compartment.
+ * Move a Cluster to a Different Compartment
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -62,7 +62,7 @@ public class ChangeBdsInstanceCompartmentDetails {
     }
 
     /**
-     * The OCID of the compartment
+     * The OCID of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;

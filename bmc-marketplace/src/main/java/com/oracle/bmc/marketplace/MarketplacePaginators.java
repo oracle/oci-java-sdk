@@ -1154,4 +1154,116 @@ public class MarketplacePaginators {
                     }
                 });
     }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the searchListings operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<SearchListingsResponse> searchListingsResponseIterator(
+            final SearchListingsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                SearchListingsRequest.Builder, SearchListingsRequest, SearchListingsResponse>(
+                new com.google.common.base.Supplier<SearchListingsRequest.Builder>() {
+                    @Override
+                    public SearchListingsRequest.Builder get() {
+                        return SearchListingsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<SearchListingsResponse, String>() {
+                    @Override
+                    public String apply(SearchListingsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                SearchListingsRequest.Builder>,
+                        SearchListingsRequest>() {
+                    @Override
+                    public SearchListingsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            SearchListingsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        SearchListingsRequest, SearchListingsResponse>() {
+                    @Override
+                    public SearchListingsResponse apply(SearchListingsRequest request) {
+                        return client.searchListings(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.marketplace.model.ListingSummary} objects
+     * contained in responses from the searchListings operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.marketplace.model.ListingSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.marketplace.model.ListingSummary> searchListingsRecordIterator(
+            final SearchListingsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                SearchListingsRequest.Builder, SearchListingsRequest, SearchListingsResponse,
+                com.oracle.bmc.marketplace.model.ListingSummary>(
+                new com.google.common.base.Supplier<SearchListingsRequest.Builder>() {
+                    @Override
+                    public SearchListingsRequest.Builder get() {
+                        return SearchListingsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<SearchListingsResponse, String>() {
+                    @Override
+                    public String apply(SearchListingsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                SearchListingsRequest.Builder>,
+                        SearchListingsRequest>() {
+                    @Override
+                    public SearchListingsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            SearchListingsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        SearchListingsRequest, SearchListingsResponse>() {
+                    @Override
+                    public SearchListingsResponse apply(SearchListingsRequest request) {
+                        return client.searchListings(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        SearchListingsResponse,
+                        java.util.List<com.oracle.bmc.marketplace.model.ListingSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.marketplace.model.ListingSummary> apply(
+                            SearchListingsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
 }

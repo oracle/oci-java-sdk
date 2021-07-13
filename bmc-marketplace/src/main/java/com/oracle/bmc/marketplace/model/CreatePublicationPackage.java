@@ -5,7 +5,7 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * A base object for the properties of the package
+ * A base object for creating a publication package.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -37,7 +37,7 @@ package com.oracle.bmc.marketplace.model;
 public class CreatePublicationPackage {
 
     /**
-     * The version of the package
+     * The package version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageVersion")
     String packageVersion;
@@ -46,7 +46,7 @@ public class CreatePublicationPackage {
     OperatingSystem operatingSystem;
 
     /**
-     * End User License Agreeement that a consumer of this listing has to accept
+     * The end user license agreeement (EULA) that consumers of this listing must accept.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("eula")
     java.util.List<Eula> eula;

@@ -41,13 +41,13 @@ package com.oracle.bmc.marketplace.model;
 public class PublicationPackage {
 
     /**
-     * Description of this package.
+     * A description of the package.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * The ID of the listing this package belongs to.
+     * The ID of the listing that the specified package belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
     String listingId;
@@ -65,7 +65,7 @@ public class PublicationPackage {
     String resourceId;
 
     /**
-     * The date and time this listing package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * The date and time the publication package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
      * timestamp format.
      * <p>
      * Example: `2016-08-25T21:10:29.600Z`

@@ -6,71 +6,19 @@ import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
+import com.oracle.bmc.io.internal.WrappedFileInputStream;
 import com.oracle.bmc.keymanagement.KmsCryptoClient;
 import com.oracle.bmc.keymanagement.KmsManagementClient;
 import com.oracle.bmc.keymanagement.KmsVaultClient;
-import com.oracle.bmc.keymanagement.model.GenerateKeyDetails;
-import com.oracle.bmc.keymanagement.model.KeyShape;
-import com.oracle.bmc.keymanagement.model.KeySummary;
-import com.oracle.bmc.keymanagement.model.KeyVersionSummary;
-import com.oracle.bmc.keymanagement.model.ScheduleKeyDeletionDetails;
-import com.oracle.bmc.keymanagement.model.ScheduleVaultDeletionDetails;
-import com.oracle.bmc.keymanagement.model.UpdateKeyDetails;
-import com.oracle.bmc.keymanagement.model.UpdateVaultDetails;
-import com.oracle.bmc.keymanagement.model.Vault;
-import com.oracle.bmc.keymanagement.model.VaultSummary;
-import com.oracle.bmc.keymanagement.model.CreateVaultDetails;
-import com.oracle.bmc.keymanagement.model.CreateKeyDetails;
-import com.oracle.bmc.keymanagement.model.EncryptDataDetails;
-import com.oracle.bmc.keymanagement.model.DecryptDataDetails;
-import com.oracle.bmc.keymanagement.model.ChangeVaultCompartmentDetails;
-import com.oracle.bmc.keymanagement.model.Key;
-import com.oracle.bmc.keymanagement.model.ChangeKeyCompartmentDetails;
-import com.oracle.bmc.keymanagement.requests.CancelKeyDeletionRequest;
-import com.oracle.bmc.keymanagement.requests.CancelVaultDeletionRequest;
-import com.oracle.bmc.keymanagement.requests.ChangeKeyCompartmentRequest;
-import com.oracle.bmc.keymanagement.requests.ChangeVaultCompartmentRequest;
-import com.oracle.bmc.keymanagement.requests.CreateKeyRequest;
-import com.oracle.bmc.keymanagement.requests.CreateKeyVersionRequest;
-import com.oracle.bmc.keymanagement.requests.CreateVaultRequest;
-import com.oracle.bmc.keymanagement.requests.DecryptRequest;
-import com.oracle.bmc.keymanagement.requests.DisableKeyRequest;
-import com.oracle.bmc.keymanagement.requests.EnableKeyRequest;
-import com.oracle.bmc.keymanagement.requests.EncryptRequest;
-import com.oracle.bmc.keymanagement.requests.GenerateDataEncryptionKeyRequest;
-import com.oracle.bmc.keymanagement.requests.GetKeyRequest;
-import com.oracle.bmc.keymanagement.requests.GetVaultRequest;
-import com.oracle.bmc.keymanagement.requests.ListKeyVersionsRequest;
-import com.oracle.bmc.keymanagement.requests.ListKeysRequest;
-import com.oracle.bmc.keymanagement.requests.ListVaultsRequest;
-import com.oracle.bmc.keymanagement.requests.ScheduleKeyDeletionRequest;
-import com.oracle.bmc.keymanagement.requests.ScheduleVaultDeletionRequest;
-import com.oracle.bmc.keymanagement.requests.UpdateKeyRequest;
-import com.oracle.bmc.keymanagement.requests.UpdateVaultRequest;
-import com.oracle.bmc.keymanagement.responses.CancelKeyDeletionResponse;
-import com.oracle.bmc.keymanagement.responses.CancelVaultDeletionResponse;
-import com.oracle.bmc.keymanagement.responses.ChangeKeyCompartmentResponse;
-import com.oracle.bmc.keymanagement.responses.ChangeVaultCompartmentResponse;
-import com.oracle.bmc.keymanagement.responses.CreateKeyResponse;
-import com.oracle.bmc.keymanagement.responses.CreateKeyVersionResponse;
-import com.oracle.bmc.keymanagement.responses.CreateVaultResponse;
-import com.oracle.bmc.keymanagement.responses.DecryptResponse;
-import com.oracle.bmc.keymanagement.responses.DisableKeyResponse;
-import com.oracle.bmc.keymanagement.responses.EnableKeyResponse;
-import com.oracle.bmc.keymanagement.responses.EncryptResponse;
-import com.oracle.bmc.keymanagement.responses.GenerateDataEncryptionKeyResponse;
-import com.oracle.bmc.keymanagement.responses.GetKeyResponse;
-import com.oracle.bmc.keymanagement.responses.GetVaultResponse;
-import com.oracle.bmc.keymanagement.responses.ListKeyVersionsResponse;
-import com.oracle.bmc.keymanagement.responses.ListKeysResponse;
-import com.oracle.bmc.keymanagement.responses.ListVaultsResponse;
-import com.oracle.bmc.keymanagement.responses.ScheduleKeyDeletionResponse;
-import com.oracle.bmc.keymanagement.responses.ScheduleVaultDeletionResponse;
-import com.oracle.bmc.keymanagement.responses.UpdateKeyResponse;
-import com.oracle.bmc.keymanagement.responses.UpdateVaultResponse;
+import com.oracle.bmc.keymanagement.model.*;
+import com.oracle.bmc.keymanagement.requests.*;
+import com.oracle.bmc.keymanagement.responses.*;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -147,6 +95,7 @@ public class KmsExample {
         // The ManagementClient and CryptoClient use Vault specific endpoints; Set them now.
         kmsManagementClient.setEndpoint(vault.getManagementEndpoint());
         kmsCryptoClient.setEndpoint(vault.getCryptoEndpoint());
+        System.out.println();
 
         // Vault Operations
         updateVaultResetTagsTest(kmsVaultClient, vault.getId());
@@ -155,7 +104,8 @@ public class KmsExample {
         scheduleVaultDeletionTest(kmsVaultClient, vault.getId());
         // After scheduling deletion, the Vault will stay in SCHEDULING_DELETION state shortly and then
         // transit to PENDING_DELETION state. Wait a bit for the transition to happen.
-        System.out.println("Wait a bit for the deletion scheduling to finish");
+        System.out.println("Wait a bit for the vault deletion scheduling to finish");
+        System.out.println();
         kmsVaultClient
                 .getWaiters()
                 .forVault(
@@ -166,7 +116,8 @@ public class KmsExample {
         cancelVaultDeletionTest(kmsVaultClient, vault.getId());
         // After cancelling deletion, the Vault will stay in CANCELLING_DELETION state shortly and then
         // transit to ACTIVE state. Wait a bit for the transition to happen.
-        System.out.println("Wait a bit for the deletion cancelling to finish");
+        System.out.println("Wait a bit for the vault deletion cancelling to finish");
+        System.out.println();
         kmsVaultClient
                 .getWaiters()
                 .forVault(
@@ -174,11 +125,48 @@ public class KmsExample {
                         Vault.LifecycleState.Active)
                 .execute();
 
+        backupVaultTest(kmsVaultClient, vault.getId());
+        // After backing up, the Vault will stay in BACKUP_IN_PROGRESS state shortly and then
+        // transit to ACTIVE state. Wait a bit for the transition to happen.
+        System.out.println("Wait a bit for the vault to be backed up");
+        System.out.println();
+        kmsVaultClient
+                .getWaiters()
+                .forVault(
+                        GetVaultRequest.builder().vaultId(vault.getId()).build(),
+                        Vault.LifecycleState.Active)
+                .execute();
+
+        restoreVaultFromObjectStoreTest(kmsVaultClient, compartmentId);
+        // After backing up, the Vault will stay in RESTORING state shortly and then
+        // transit to ACTIVE state. Wait a bit for the transition to happen.
+        System.out.println("Wait a bit for the vault to be restored from object store");
+        System.out.println();
+        kmsVaultClient
+                .getWaiters()
+                .forVault(
+                        GetVaultRequest.builder().vaultId(vault.getId()).build(),
+                        Vault.LifecycleState.Active)
+                .execute();
+
+        restoreVaultFromFileTest(kmsVaultClient, compartmentId);
+        // After restoring, the Vault will stay in RESTORING state shortly and then
+        // transit to ACTIVE state. Wait a bit for the transition to happen.
+        System.out.println("Wait a bit for the vault to be restored from a local file");
+        System.out.println();
+        kmsVaultClient
+                .getWaiters()
+                .forVault(
+                        GetVaultRequest.builder().vaultId(vaultId).build(),
+                        Vault.LifecycleState.Active)
+                .execute();
+
         // Management / Key Operations
         String keyId = createKeyTest(kmsManagementClient, compartmentId);
         // After creating a Key, the Key will stay in CREATING state shortly and then
         // transit to ENABLED state. Wait a bit for the transition to happen.
-        System.out.println("Wait a bit for Key creation to finish");
+        System.out.println("Wait a bit for key creation to finish");
+        System.out.println();
         kmsManagementClient
                 .getWaiters()
                 .forKey(GetKeyRequest.builder().keyId(keyId).build(), Key.LifecycleState.Enabled)
@@ -201,7 +189,8 @@ public class KmsExample {
         disableKeyTest(kmsManagementClient, keyId);
         // After disabling a Key, the Key will stay in DISABLING state shortly and then
         // transit to DISABLED state. Wait a bit for the transition to happen.
-        System.out.println("Wait a bit for Key disabling to finish");
+        System.out.println("Wait a bit for key disabling to finish");
+        System.out.println();
         kmsManagementClient
                 .getWaiters()
                 .forKey(GetKeyRequest.builder().keyId(keyId).build(), Key.LifecycleState.Disabled)
@@ -210,16 +199,18 @@ public class KmsExample {
         enableKeyTest(kmsManagementClient, keyId);
         // After enabling a Key, the Key will stay in ENABLING state shortly and then
         // transit to ENABLED state. Wait a bit for the transition to happen.
-        System.out.println("Wait a bit for Key enabling to finish");
+        System.out.println("Wait a bit for key enabling to finish");
+        System.out.println();
         kmsManagementClient
                 .getWaiters()
                 .forKey(GetKeyRequest.builder().keyId(keyId).build(), Key.LifecycleState.Enabled)
                 .execute();
 
-        scheduleKeyDetetionTest(kmsManagementClient, keyId);
+        scheduleKeyDeletionTest(kmsManagementClient, keyId);
         // After scheduling deletion, the Key will stay in SCHEDULING_DELETION state shortly and then
         // transit to PENDING_DELETION state. Wait a bit for the transition to happen.
-        System.out.println("Wait a bit for the deletion scheduling to finish");
+        System.out.println("Wait a bit for the key deletion scheduling to finish");
+        System.out.println();
         kmsManagementClient
                 .getWaiters()
                 .forKey(
@@ -227,10 +218,11 @@ public class KmsExample {
                         Key.LifecycleState.PendingDeletion)
                 .execute();
 
-        cancelKeyDetetionTest(kmsManagementClient, keyId);
+        cancelKeyDeletionTest(kmsManagementClient, keyId);
         // After cancelling deletion, the Key will stay in CANCELLING_DELETION state shortly and then
         // transit to Enabled state. Wait a bit for the transition to happen.
-        System.out.println("Wait a bit for the deletion cancelling to finish");
+        System.out.println("Wait a bit for the key deletion cancelling to finish");
+        System.out.println();
         kmsManagementClient
                 .getWaiters()
                 .forKey(GetKeyRequest.builder().keyId(keyId).build(), Key.LifecycleState.Enabled)
@@ -248,16 +240,63 @@ public class KmsExample {
                 .forKey(GetKeyRequest.builder().keyId(keyId).build(), Key.LifecycleState.Enabled)
                 .execute();
 
+        // Backup + Restore Operations
+        backupKeyTest(kmsManagementClient, keyId);
+        // After backing up, the Key will stay in BACKUP_IN_PROGRESS state shortly and then
+        // transit to ENABLED state. Wait a bit for the transition to happen.
+        System.out.println("Wait a bit for the key to be backed up");
+        System.out.println();
+        kmsManagementClient
+                .getWaiters()
+                .forKey(GetKeyRequest.builder().keyId(keyId).build(), Key.LifecycleState.Enabled)
+                .execute();
+
+        restoreKeyFromObjectStoreTest(kmsManagementClient);
+        // After restoring, the Key will stay in RESTORING state shortly and then
+        // transit to ENABLED state. Wait a bit for the transition to happen.
+        System.out.println("Wait a bit for the key to be restored from object store");
+        System.out.println();
+        kmsManagementClient
+                .getWaiters()
+                .forKey(GetKeyRequest.builder().keyId(keyId).build(), Key.LifecycleState.Enabled)
+                .execute();
+        kmsVaultClient
+                .getWaiters()
+                .forVault(
+                        GetVaultRequest.builder().vaultId(vaultId).build(),
+                        Vault.LifecycleState.Active)
+                .execute();
+        Thread.sleep(30000); // wait to avoid throttling
+
+        restoreKeyFromFileTest(kmsManagementClient);
+        // After restoring, the Key will stay in RESTORING state shortly and then
+        // transit to ENABLED state. Wait a bit for the transition to happen.
+        System.out.println("Wait a bit for the key to be restored from a local file");
+        System.out.println();
+        kmsManagementClient
+                .getWaiters()
+                .forKey(GetKeyRequest.builder().keyId(keyId).build(), Key.LifecycleState.Enabled)
+                .execute();
+        kmsVaultClient
+                .getWaiters()
+                .forVault(
+                        GetVaultRequest.builder().vaultId(vaultId).build(),
+                        Vault.LifecycleState.Active)
+                .execute();
+        Thread.sleep(30000); // wait to avoid throttling
+
         // change compartment operations
         changeKeyCompartmentTest(kmsManagementClient, keyId, targetCompartmentForMove);
-        System.out.println("Wait a bit for Key move to finish");
+        System.out.println("Wait a bit for key move to finish");
+        System.out.println();
         kmsManagementClient
                 .getWaiters()
                 .forKey(GetKeyRequest.builder().keyId(keyId).build(), Key.LifecycleState.Enabled)
                 .execute();
 
         changeVaultCompartmentTest(kmsVaultClient, vaultId, targetCompartmentForMove);
-        System.out.println("Wait a bit for Vault move to finish");
+        System.out.println("Wait a bit for vault move to finish");
+        System.out.println();
         kmsManagementClient
                 .getWaiters()
                 .forKey(GetKeyRequest.builder().keyId(keyId).build(), Key.LifecycleState.Enabled)
@@ -265,7 +304,7 @@ public class KmsExample {
     }
 
     public static Vault createVaultTest(KmsVaultClient kmsVaultClient, String compartmentId) {
-        System.out.println("CreateVault Test: ");
+        System.out.println("CreateVault Test");
         CreateVaultDetails createVaultDetails =
                 CreateVaultDetails.builder()
                         .compartmentId(compartmentId)
@@ -278,27 +317,29 @@ public class KmsExample {
                 CreateVaultRequest.builder().createVaultDetails(createVaultDetails).build();
 
         CreateVaultResponse response = kmsVaultClient.createVault(request);
-        System.out.println("Newly Created Vault: ");
+        System.out.println("Creating a new vault: ");
         System.out.println(response.getVault());
+        System.out.println();
         return response.getVault();
     }
 
     public static Vault getVaultTest(KmsVaultClient kmsVaultClient, String vaultId) {
-        System.out.println("GetVault Test: ");
+        System.out.println("GetVault Test");
         GetVaultRequest getVaultRequest = GetVaultRequest.builder().vaultId(vaultId).build();
         GetVaultResponse response = kmsVaultClient.getVault(getVaultRequest);
-        System.out.println("Vault Retrieved: ");
+        System.out.println("Vault retrieved: ");
         System.out.println(response.getVault());
+        System.out.println();
         return response.getVault();
     }
 
     public static void listVaultsTest(KmsVaultClient kmsVaultClient, String compartmentId) {
-        System.out.println("ListVaults Test: ");
+        System.out.println("ListVaults Test");
         ListVaultsRequest listVaultsRequest =
                 ListVaultsRequest.builder().compartmentId(compartmentId).build();
         ListVaultsResponse response = kmsVaultClient.listVaults(listVaultsRequest);
 
-        System.out.println("ListVaults Response: ");
+        System.out.println("ListVaults response: ");
         for (VaultSummary vault : response.getItems()) {
             System.out.println(vault);
         }
@@ -306,7 +347,7 @@ public class KmsExample {
     }
 
     public static void updateVaultResetTagsTest(KmsVaultClient kmsVaultClient, String vaultId) {
-        System.out.println("UpdateVault Test: ");
+        System.out.println("UpdateVaultResetTags Test");
         Map<String, String> newEmptyFreeformTag = Collections.emptyMap();
 
         UpdateVaultDetails updateVaultDetails =
@@ -317,13 +358,13 @@ public class KmsExample {
                         .vaultId(vaultId)
                         .build();
         UpdateVaultResponse response = kmsVaultClient.updateVault(updateVaultRequest);
-        System.out.println("Updated Vault: ");
+        System.out.println("Updated vault: ");
         System.out.println(response.getVault());
         System.out.println();
     }
 
     public static void updateVaultTest(KmsVaultClient kmsVaultClient, String vaultId) {
-        System.out.println("UpdateVault Test: ");
+        System.out.println("UpdateVault Test");
         Map<String, String> newFreeformTag = getSampleFreeformTagData();
         newFreeformTag.put("dummyfreeformkey3", "dummyfreeformvalue3");
 
@@ -338,13 +379,13 @@ public class KmsExample {
                         .vaultId(vaultId)
                         .build();
         UpdateVaultResponse response = kmsVaultClient.updateVault(updateVaultRequest);
-        System.out.println("Updated Vault: ");
+        System.out.println("Updated vault: ");
         System.out.println(response.getVault());
         System.out.println();
     }
 
     public static void scheduleVaultDeletionTest(KmsVaultClient kmsVaultClient, String vaultId) {
-        System.out.println("ScheduleVaultDeletion Test: ");
+        System.out.println("ScheduleVaultDeletion Test");
         ScheduleVaultDeletionDetails scheduleVaultDeletionDetails =
                 ScheduleVaultDeletionDetails.builder().timeOfDeletion(null).build();
         ScheduleVaultDeletionRequest scheduleVaultDeletionRequest =
@@ -354,25 +395,97 @@ public class KmsExample {
                         .build();
         ScheduleVaultDeletionResponse response =
                 kmsVaultClient.scheduleVaultDeletion(scheduleVaultDeletionRequest);
-        System.out.println("Deletion Scheduled Successfully, Updated Vault: ");
+        System.out.println("Scheduling deletion, updated vault: ");
         System.out.println(response.getVault());
         System.out.println();
     }
 
     public static void cancelVaultDeletionTest(KmsVaultClient kmsVaultClient, String vaultId) {
-        System.out.println("CancelVaultDeletion Test: ");
+        System.out.println("CancelVaultDeletion Test");
         CancelVaultDeletionRequest cancelVaultDeletionRequest =
                 CancelVaultDeletionRequest.builder().vaultId(vaultId).build();
         CancelVaultDeletionResponse response =
                 kmsVaultClient.cancelVaultDeletion(cancelVaultDeletionRequest);
-        System.out.println("Deletion Cancelled Successfully, Updated Vault: ");
+        System.out.println("Cancelling deletion, updated vault: ");
         System.out.println(response.getVault());
         System.out.println();
     }
 
+    public static void backupVaultTest(KmsVaultClient kmsVaultClient, String vaultId) {
+        System.out.println("BackupVault Test");
+        BackupVaultRequest backupVaultRequest =
+                BackupVaultRequest.builder()
+                        .backupVaultDetails(
+                                BackupVaultDetails.builder()
+                                        .backupLocation(
+                                                BackupLocationBucket.builder()
+                                                        .bucketName("JavaSdkExamples")
+                                                        .objectName("BackupVaultSdkTest")
+                                                        .namespace("kmstest")
+                                                        .build())
+                                        .isIncludeKeys(true)
+                                        .build())
+                        .vaultId(vaultId)
+                        .build();
+        BackupVaultResponse response = kmsVaultClient.backupVault(backupVaultRequest);
+        System.out.println("Backing up vault, updated vault: ");
+        System.out.println(response.getVault());
+        System.out.println();
+    }
+
+    public static void restoreVaultFromObjectStoreTest(
+            KmsVaultClient kmsVaultClient, String compartmentId) {
+        System.out.println("RestoreVaultFromObjectStore Test");
+        RestoreVaultFromObjectStoreRequest restoreVaultFromObjectStoreRequest =
+                RestoreVaultFromObjectStoreRequest.builder()
+                        .restoreVaultFromObjectStoreDetails(
+                                RestoreVaultFromObjectStoreDetails.builder()
+                                        .backupLocation(
+                                                BackupLocationBucket.builder()
+                                                        .bucketName("JavaSdkExamples")
+                                                        .objectName("BackupVaultSdkTest")
+                                                        .namespace("kmstest")
+                                                        .build())
+                                        .build())
+                        .compartmentId(compartmentId)
+                        .build();
+        RestoreVaultFromObjectStoreResponse response =
+                kmsVaultClient.restoreVaultFromObjectStore(restoreVaultFromObjectStoreRequest);
+        System.out.println("Restoring vault from object store, updated vault: ");
+        System.out.println(response.getVault());
+        System.out.println();
+    }
+
+    public static void restoreVaultFromFileTest(
+            KmsVaultClient kmsVaultClient, String compartmentId) {
+        System.out.println("RestoreVaultFromFile Test");
+
+        // please take a second and download backup to a local file before proceeding
+        String backupFile = "/tmp/BackupVaultSdkTest";
+
+        try (WrappedFileInputStream fileInputStream =
+                new WrappedFileInputStream(new File(backupFile))) {
+            RestoreVaultFromFileRequest request =
+                    RestoreVaultFromFileRequest.builder()
+                            .compartmentId(compartmentId)
+                            .restoreVaultFromFileDetails(fileInputStream)
+                            .build();
+            RestoreVaultFromFileResponse response = kmsVaultClient.restoreVaultFromFile(request);
+            System.out.println("Restoring vault from local file, updated vault: ");
+            System.out.println(response.getVault());
+            System.out.println();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+
+        }
+    }
+
     public static String createKeyTest(
             KmsManagementClient kmsManagementClient, String compartmentId) {
-        System.out.println("CreateKey Test: ");
+        System.out.println("CreateKey Test");
         CreateKeyDetails createKeyDetails =
                 CreateKeyDetails.builder()
                         .keyShape(TEST_KEY_SHAPE)
@@ -383,27 +496,28 @@ public class KmsExample {
         CreateKeyRequest createKeyRequest =
                 CreateKeyRequest.builder().createKeyDetails(createKeyDetails).build();
         CreateKeyResponse response = kmsManagementClient.createKey(createKeyRequest);
-        System.out.println("Newly Created Key: ");
+        System.out.println("Creating a new key: ");
         System.out.println(response.getKey());
         System.out.println();
         return response.getKey().getId();
     }
 
     public static void getKeyTest(KmsManagementClient kmsManagementClient, String keyId) {
-        System.out.println("GetKey Test: ");
+        System.out.println("GetKey Test");
         GetKeyRequest getKeyRequest = GetKeyRequest.builder().keyId(keyId).build();
         GetKeyResponse response = kmsManagementClient.getKey(getKeyRequest);
-        System.out.println("Key Retrieved: ");
+        System.out.println("Key retrieved: ");
         System.out.println(response.getKey());
+        System.out.println();
     }
 
     public static void listKeysTest(KmsManagementClient kmsManagementClient, String compartmentId) {
-        System.out.println("ListKeys Test: ");
+        System.out.println("ListKeys Test");
         ListKeysRequest listKeysRequest =
                 ListKeysRequest.builder().compartmentId(compartmentId).build();
         ListKeysResponse response = kmsManagementClient.listKeys(listKeysRequest);
 
-        System.out.println("ListKeys Response: ");
+        System.out.println("ListKeys response: ");
         for (KeySummary key : response.getItems()) {
             System.out.println(key);
         }
@@ -412,7 +526,7 @@ public class KmsExample {
 
     public static void updateKeyResetTagsTest(
             KmsManagementClient kmsManagementClient, String keyId) {
-        System.out.println("UpdateKey Test: ");
+        System.out.println("UpdateKeyResetTags Test");
         Map<String, String> newEmptyFreeformTag = Collections.emptyMap();
 
         UpdateKeyDetails updateKeyDetails =
@@ -423,61 +537,61 @@ public class KmsExample {
         UpdateKeyRequest updateKeyRequest =
                 UpdateKeyRequest.builder().updateKeyDetails(updateKeyDetails).keyId(keyId).build();
         UpdateKeyResponse response = kmsManagementClient.updateKey(updateKeyRequest);
-        System.out.println("Updated Key: ");
+        System.out.println("Updated key: ");
         System.out.println(response.getKey());
         System.out.println();
     }
 
     public static void updateKeyTest(KmsManagementClient kmsManagementClient, String keyId) {
-        System.out.println("UpdateKey Test: ");
+        System.out.println("UpdateKey Test");
         Map<String, String> newFreeformTag = getSampleFreeformTagData();
         newFreeformTag.put("dummyfreeformkey3", "dummyfreeformvalue3");
         UpdateKeyDetails updateKeyDetails =
                 UpdateKeyDetails.builder()
-                        .displayName("Test_Key_V2")
+                        .displayName("Test_Key_V3")
                         .freeformTags(newFreeformTag)
                         .build();
         UpdateKeyRequest updateKeyRequest =
                 UpdateKeyRequest.builder().updateKeyDetails(updateKeyDetails).keyId(keyId).build();
         UpdateKeyResponse response = kmsManagementClient.updateKey(updateKeyRequest);
-        System.out.println("Updated Key: ");
+        System.out.println("Updated key: ");
         System.out.println(response.getKey());
         System.out.println();
     }
 
     public static void disableKeyTest(KmsManagementClient kmsManagementClient, String keyId) {
-        System.out.println("DisableKey Test: ");
+        System.out.println("DisableKey Test");
         DisableKeyRequest disableKeyRequest = DisableKeyRequest.builder().keyId(keyId).build();
         DisableKeyResponse response = kmsManagementClient.disableKey(disableKeyRequest);
-        System.out.println("Key Disabled Successfully, Updated Key: ");
+        System.out.println("Disabling key, updated key: ");
         System.out.println(response.getKey());
         System.out.println();
     }
 
     public static void enableKeyTest(KmsManagementClient kmsManagementClient, String keyId) {
-        System.out.println("EnableKey Test: ");
+        System.out.println("EnableKey Test");
         EnableKeyRequest enableKeyRequest = EnableKeyRequest.builder().keyId(keyId).build();
         EnableKeyResponse response = kmsManagementClient.enableKey(enableKeyRequest);
-        System.out.println("Key Enabled Successfully, Updated Key: ");
+        System.out.println("Enabling key, updated key: ");
         System.out.println(response.getKey());
         System.out.println();
     }
 
-    public static void cancelKeyDetetionTest(
+    public static void cancelKeyDeletionTest(
             KmsManagementClient kmsManagementClient, String keyId) {
-        System.out.println("CancelKeyDeletion Test: ");
+        System.out.println("CancelKeyDeletion Test");
         CancelKeyDeletionRequest cancelKeyDeletionRequest =
                 CancelKeyDeletionRequest.builder().keyId(keyId).build();
         CancelKeyDeletionResponse response =
                 kmsManagementClient.cancelKeyDeletion(cancelKeyDeletionRequest);
-        System.out.println("Key Cancelled deletion Successfully, Updated Key: ");
+        System.out.println("Cancelling key deletion, updated key: ");
         System.out.println(response.getKey());
         System.out.println();
     }
 
-    public static void scheduleKeyDetetionTest(
+    public static void scheduleKeyDeletionTest(
             KmsManagementClient kmsManagementClient, String keyId) {
-        System.out.println("ScheduleKeyDeletion Test: ");
+        System.out.println("ScheduleKeyDeletion Test");
         ScheduleKeyDeletionDetails scheduleKeyDeletionDetails =
                 ScheduleKeyDeletionDetails.builder().timeOfDeletion(null).build();
         ScheduleKeyDeletionRequest scheduleKeyDeletionRequest =
@@ -487,29 +601,29 @@ public class KmsExample {
                         .build();
         ScheduleKeyDeletionResponse response =
                 kmsManagementClient.scheduleKeyDeletion(scheduleKeyDeletionRequest);
-        System.out.println("Key Scheduled deletion Successfully, Updated Key: ");
+        System.out.println("Scheduling key deletion, updated key: ");
         System.out.println(response.getKey());
         System.out.println();
     }
 
     public static void createKeyVersionTest(KmsManagementClient kmsManagementClient, String keyId) {
-        System.out.println("CreateKeyVersion Test: ");
+        System.out.println("CreateKeyVersion Test");
         CreateKeyVersionRequest createKeyVersionRequest =
                 CreateKeyVersionRequest.builder().keyId(keyId).build();
         CreateKeyVersionResponse response =
                 kmsManagementClient.createKeyVersion(createKeyVersionRequest);
-        System.out.println("Newly Created KeyVersion: ");
+        System.out.println("Creating a new key version: ");
         System.out.println(response.getKeyVersion());
         System.out.println();
     }
 
     public static void listKeyVersionsTest(KmsManagementClient kmsManagementClient, String keyId) {
-        System.out.println("ListKeyVersions Test: ");
+        System.out.println("ListKeyVersions Test");
         ListKeyVersionsRequest listKeyVersionsRequest =
                 ListKeyVersionsRequest.builder().keyId(keyId).build();
         ListKeyVersionsResponse response =
                 kmsManagementClient.listKeyVersions(listKeyVersionsRequest);
-        System.out.println("ListKeyVersions Response: ");
+        System.out.println("ListKeyVersions response: ");
         for (KeyVersionSummary keyVersion : response.getItems()) {
             System.out.println(keyVersion);
         }
@@ -517,7 +631,7 @@ public class KmsExample {
     }
 
     public static String encryptTest(KmsCryptoClient kmsCryptoClient, String keyId) {
-        System.out.println("Encrypt Test: ");
+        System.out.println("Encrypt Test");
         String plaintext = "I love OCI!";
         EncryptDataDetails encryptDataDetails =
                 EncryptDataDetails.builder()
@@ -530,14 +644,14 @@ public class KmsExample {
         EncryptResponse response = kmsCryptoClient.encrypt(encryptRequest);
 
         System.out.println("Plaintext: " + plaintext);
-        System.out.println("Cipheretext: " + response.getEncryptedData().getCiphertext());
+        System.out.println("Ciphertext: " + response.getEncryptedData().getCiphertext());
         System.out.println();
         return response.getEncryptedData().getCiphertext();
     }
 
     public static void decryptTest(
             KmsCryptoClient kmsCryptoClient, String keyId, String cipherText) {
-        System.out.println("Decrypt Test: ");
+        System.out.println("Decrypt Test");
         DecryptDataDetails decryptDataDetails =
                 DecryptDataDetails.builder()
                         .ciphertext(cipherText)
@@ -553,7 +667,7 @@ public class KmsExample {
 
     public static void generateDataEncryptionKeyTest(
             KmsCryptoClient kmsCryptoClient, String keyId) {
-        System.out.println("GenerateDataEncryptionKey Test: ");
+        System.out.println("GenerateDataEncryptionKey Test");
         GenerateKeyDetails generateKeyDetails =
                 GenerateKeyDetails.builder()
                         .keyId(keyId)
@@ -567,14 +681,81 @@ public class KmsExample {
                         .build();
         GenerateDataEncryptionKeyResponse response =
                 kmsCryptoClient.generateDataEncryptionKey(generateDataEncryptionKeyRequest);
-        System.out.println("GenerateDataEncryptionKey Response: ");
+        System.out.println("GenerateDataEncryptionKey response: ");
         System.out.println(response.getGeneratedKey());
         System.out.println();
     }
 
+    public static void backupKeyTest(KmsManagementClient kmsManagementClient, String keyId) {
+        System.out.println("BackupKey Test");
+        BackupKeyRequest backupKeyRequest =
+                BackupKeyRequest.builder()
+                        .backupKeyDetails(
+                                BackupKeyDetails.builder()
+                                        .backupLocation(
+                                                BackupLocationBucket.builder()
+                                                        .bucketName("JavaSdkExamples")
+                                                        .objectName("BackupKeySdkTest")
+                                                        .namespace("kmstest")
+                                                        .build())
+                                        .build())
+                        .keyId(keyId)
+                        .build();
+        BackupKeyResponse response = kmsManagementClient.backupKey(backupKeyRequest);
+        System.out.println("Backing up key, updated key:");
+        System.out.println(response.getKey());
+        System.out.println();
+    }
+
+    public static void restoreKeyFromObjectStoreTest(KmsManagementClient kmsManagementClient) {
+        System.out.println("RestoreKeyFromObjectStore Test");
+        RestoreKeyFromObjectStoreRequest restoreKeyFromObjectStoreRequest =
+                RestoreKeyFromObjectStoreRequest.builder()
+                        .restoreKeyFromObjectStoreDetails(
+                                RestoreKeyFromObjectStoreDetails.builder()
+                                        .backupLocation(
+                                                BackupLocationBucket.builder()
+                                                        .bucketName("JavaSdkExamples")
+                                                        .objectName("BackupKeySdkTest")
+                                                        .namespace("kmstest")
+                                                        .build())
+                                        .build())
+                        .build();
+        RestoreKeyFromObjectStoreResponse response =
+                kmsManagementClient.restoreKeyFromObjectStore(restoreKeyFromObjectStoreRequest);
+        System.out.println("Restoring key from object store, updated key: ");
+        System.out.println(response.getKey());
+        System.out.println();
+    }
+
+    public static void restoreKeyFromFileTest(KmsManagementClient kmsManagementClient) {
+        System.out.println("RestoreKeyFromFile Test");
+
+        // please take a second and download backup to a local file before proceeding
+        String backupFile = "/tmp/BackupKeySdkTest";
+
+        try (WrappedFileInputStream fileInputStream =
+                new WrappedFileInputStream(new File(backupFile))) {
+            RestoreKeyFromFileRequest request =
+                    RestoreKeyFromFileRequest.builder()
+                            .restoreKeyFromFileDetails(fileInputStream)
+                            .build();
+            RestoreKeyFromFileResponse response = kmsManagementClient.restoreKeyFromFile(request);
+            System.out.println("Restoring key from local file, updated key: ");
+            System.out.println(response.getKey());
+            System.out.println();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+
+        }
+    }
+
     public static void changeVaultCompartmentTest(
             KmsVaultClient kmsVaultClient, String vaultId, String targetCompartment) {
-        System.out.println("ChangeVaultCompartment Test: ");
+        System.out.println("ChangeVaultCompartment Test");
         ChangeVaultCompartmentDetails changeVaultCompartmentDetails =
                 ChangeVaultCompartmentDetails.builder().compartmentId(targetCompartment).build();
 
@@ -586,13 +767,13 @@ public class KmsExample {
 
         ChangeVaultCompartmentResponse response = kmsVaultClient.changeVaultCompartment(request);
 
-        System.out.println("ChangeVaultCompartment operation succeeded");
+        System.out.println("Changing compartment of vault");
         System.out.println();
     }
 
     public static void changeKeyCompartmentTest(
             KmsManagementClient kmsManagementClient, String keyId, String targetCompartment) {
-        System.out.println("ChangeKeyCompartment Test: ");
+        System.out.println("ChangeKeyCompartment Test");
         ChangeKeyCompartmentDetails changeKeyCompartmentDetails =
                 ChangeKeyCompartmentDetails.builder().compartmentId(targetCompartment).build();
 
@@ -604,7 +785,7 @@ public class KmsExample {
 
         ChangeKeyCompartmentResponse response = kmsManagementClient.changeKeyCompartment(request);
 
-        System.out.println("ChangeKeyCompartment success");
+        System.out.println("Changing compartment of key");
         System.out.println();
     }
 

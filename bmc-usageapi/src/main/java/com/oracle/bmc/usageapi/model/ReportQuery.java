@@ -5,7 +5,7 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * the request of generated cost analysis report.
+ * The request of the generated Cost Analysis report.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -183,7 +183,7 @@ public class ReportQuery {
     }
 
     /**
-     * Tenant ID
+     * Tenant ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     String tenantId;
@@ -264,7 +264,7 @@ public class ReportQuery {
     Granularity granularity;
 
     /**
-     * is aggregated by time. true isAggregateByTime will add up all usage/cost over query time period
+     * Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAggregateByTime")
     Boolean isAggregateByTime;
@@ -272,15 +272,21 @@ public class ReportQuery {
     @com.fasterxml.jackson.annotation.JsonProperty("forecast")
     Forecast forecast;
     /**
-     * The query usage type. COST by default if it is missing
+     * The query usage type. COST by default if it is missing.
      * Usage - Query the usage data.
      * Cost - Query the cost/billing data.
+     * Credit - Query the credit adjustments data.
+     * ExpiredCredit - Query the expired credits data
+     * AllCredit - Query the credit adjustments and expired credit
      *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum QueryType {
         Usage("USAGE"),
         Cost("COST"),
+        Credit("CREDIT"),
+        Expiredcredit("EXPIREDCREDIT"),
+        Allcredit("ALLCREDIT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -321,9 +327,12 @@ public class ReportQuery {
         }
     };
     /**
-     * The query usage type. COST by default if it is missing
+     * The query usage type. COST by default if it is missing.
      * Usage - Query the usage data.
      * Cost - Query the cost/billing data.
+     * Credit - Query the credit adjustments data.
+     * ExpiredCredit - Query the expired credits data
+     * AllCredit - Query the credit adjustments and expired credit
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryType")
@@ -358,7 +367,7 @@ public class ReportQuery {
     @com.fasterxml.jackson.annotation.JsonProperty("filter")
     Filter filter;
     /**
-     * the date range for ui, eg LAST_THREE_MONTHS. It is conflict with timeUsageStarted and timeUsageEnded
+     * The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum DateRangeName {
@@ -412,7 +421,7 @@ public class ReportQuery {
         }
     };
     /**
-     * the date range for ui, eg LAST_THREE_MONTHS. It is conflict with timeUsageStarted and timeUsageEnded
+     * The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dateRangeName")
     DateRangeName dateRangeName;

@@ -5,7 +5,7 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * The information about additionally added block volumes
+ * The information about added block volumes.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -73,14 +73,14 @@ public class AddBlockStorageDetails {
     }
 
     /**
-     * Base-64 encoded password for Cloudera Manager admin user
+     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
     String clusterAdminPassword;
 
     /**
-     * The size of block volume in GB that needs to be added to each worker node.
-     * All the necessary details needed for attachment are managed by service itself.
+     * The size of block volume in GB to be added to each worker node. All the
+     * details needed for attaching the block volume are managed by service itself.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")

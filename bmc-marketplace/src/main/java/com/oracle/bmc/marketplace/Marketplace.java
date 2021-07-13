@@ -46,7 +46,7 @@ public interface Marketplace extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Changes the compartment of the Publication
+     * Moves the specified publication from one compartment to another.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -69,7 +69,7 @@ public interface Marketplace extends AutoCloseable {
     CreateAcceptedAgreementResponse createAcceptedAgreement(CreateAcceptedAgreementRequest request);
 
     /**
-     * Creates a publication of the given type with an optional default package
+     * Creates a publication of the specified listing type with an optional default package.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -80,7 +80,7 @@ public interface Marketplace extends AutoCloseable {
 
     /**
      * Removes a previously accepted terms of use agreement from the list of agreements that Marketplace checks
-     * before initiating a deployment. Listings in the Marketplace that require acceptance of the specified terms
+     * before initiating a deployment. Listings in Marketplace that require acceptance of the specified terms
      * of use can no longer be deployed, but existing deployments aren't affected.
      *
      * @param request The request object containing the details to send
@@ -92,7 +92,7 @@ public interface Marketplace extends AutoCloseable {
     DeleteAcceptedAgreementResponse deleteAcceptedAgreement(DeleteAcceptedAgreementRequest request);
 
     /**
-     * Deletes a Publication. This will also remove the associated Listing from Marketplace.
+     * Deletes a publication, which also removes the associated listing from anywhere it was published, such as Marketplace or Compute.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -174,7 +174,7 @@ public interface Marketplace extends AutoCloseable {
     GetPackageResponse getPackage(GetPackageRequest request);
 
     /**
-     * Get details of a publication
+     * Gets the details of the specified publication.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -184,7 +184,7 @@ public interface Marketplace extends AutoCloseable {
     GetPublicationResponse getPublication(GetPublicationRequest request);
 
     /**
-     * Gets the details of a specific package within a given Publication
+     * Gets the details of a specific package version within a given publication.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -278,7 +278,7 @@ public interface Marketplace extends AutoCloseable {
     ListPackagesResponse listPackages(ListPackagesRequest request);
 
     /**
-     * Lists the packages in the given Publication
+     * Lists the packages in the specified publication.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -288,7 +288,7 @@ public interface Marketplace extends AutoCloseable {
     ListPublicationPackagesResponse listPublicationPackages(ListPublicationPackagesRequest request);
 
     /**
-     * Lists the publications in the given compartment
+     * Lists the publications in the specified compartment.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -339,6 +339,18 @@ public interface Marketplace extends AutoCloseable {
     ListTaxesResponse listTaxes(ListTaxesRequest request);
 
     /**
+     * Find listings that match the specified criteria. The search query could be free text
+     * or structured.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/SearchListingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SearchListings API.
+     */
+    SearchListingsResponse searchListings(SearchListingsRequest request);
+
+    /**
      * Updates the display name or tags associated with a listing's previously accepted terms of use agreement.
      *
      * @param request The request object containing the details to send
@@ -350,7 +362,7 @@ public interface Marketplace extends AutoCloseable {
     UpdateAcceptedAgreementResponse updateAcceptedAgreement(UpdateAcceptedAgreementRequest request);
 
     /**
-     * Updates details of an existing Publication
+     * Updates the details of an existing publication.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

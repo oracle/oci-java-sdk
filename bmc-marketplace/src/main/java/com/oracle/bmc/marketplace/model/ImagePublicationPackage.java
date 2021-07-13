@@ -5,7 +5,7 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * A package for image publications.
+ * A publication package for image publications.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -183,13 +183,13 @@ public class ImagePublicationPackage extends PublicationPackage {
     String appCatalogListingId;
 
     /**
-     * The resource version of the listing resource associated with this listing package.
+     * The resource version of the listing resource associated with this publication package.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("appCatalogListingResourceVersion")
     String appCatalogListingResourceVersion;
 
     /**
-     * The ID of the image corresponding to the package.
+     * The ID of the image that corresponds to the package.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     String imageId;

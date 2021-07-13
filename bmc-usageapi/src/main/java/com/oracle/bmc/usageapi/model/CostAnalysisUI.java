@@ -68,7 +68,7 @@ public class CostAnalysisUI {
     }
 
     /**
-     * the type of graph mode.
+     * The graph type.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Graph {
@@ -115,13 +115,13 @@ public class CostAnalysisUI {
         }
     };
     /**
-     * the type of graph mode.
+     * The graph type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("graph")
     Graph graph;
 
     /**
-     * is cumulative graph.
+     * A cumulative graph.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCumulativeGraph")
     Boolean isCumulativeGraph;

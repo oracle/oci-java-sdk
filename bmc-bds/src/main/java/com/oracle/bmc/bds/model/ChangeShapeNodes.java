@@ -5,7 +5,7 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * Inidividual worker nodes groups details
+ * Individual worker nodes groups details.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -108,7 +108,7 @@ public class ChangeShapeNodes {
     String utility;
 
     /**
-     * Change shape of cloudsql node to the desired target shape. Only VM_STANDARD shapes are allowed here.
+     * Change shape of the Cloud SQL node to the desired target shape. Only VM_STANDARD shapes are allowed here.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudsql")
     String cloudsql;

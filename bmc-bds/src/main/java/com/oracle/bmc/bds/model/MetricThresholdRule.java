@@ -5,7 +5,7 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * An autoscaling action is triggered when a performance metric meets or exceeds a threshold
+ * An autoscale action is triggered when a performance metric meets or exceeds a threshold.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -83,12 +83,12 @@ public class MetricThresholdRule {
     }
 
     /**
-     * This value is the minimum period of time metric value meets or exceeds threshold value before action is trigger. The value is in minutes.
+     * This value is the minimum period of time the metric value meets or exceeds the threshold value before the action is triggered. The value is in minutes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("durationInMinutes")
     Integer durationInMinutes;
     /**
-     * The comparison operator to use. Options are greater than (GT), less than (LT).
+     * The comparison operator to use. Options are greater than (GT) or less than (LT).
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Operator {
@@ -134,13 +134,13 @@ public class MetricThresholdRule {
         }
     };
     /**
-     * The comparison operator to use. Options are greater than (GT), less than (LT).
+     * The comparison operator to use. Options are greater than (GT) or less than (LT).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
     Operator operator;
 
     /**
-     * integer non negative value. 0 < value < 100
+     * Integer non-negative value. 0 < value < 100
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     Integer value;

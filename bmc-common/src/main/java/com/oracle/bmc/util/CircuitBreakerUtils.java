@@ -15,6 +15,7 @@ public class CircuitBreakerUtils {
 
     /**
      * Get default CircuitBreakerConfiguration
+     * @return the default CircuitBreakerConfiguration
      */
     public static CircuitBreakerConfiguration getDefaultCircuitBreakerConfig() {
         return defaultCircuitBreakerConfiguration;

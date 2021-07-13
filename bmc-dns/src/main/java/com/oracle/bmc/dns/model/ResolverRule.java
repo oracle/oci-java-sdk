@@ -55,8 +55,8 @@ public class ResolverRule {
     java.util.List<String> qnameCoverConditions;
 
     /**
-     * The action determines the behavior of the rule. If a query matches a supplied condition then the action will
-     * apply. If there are no conditions on the rule then all queries are subject to the specified action.
+     * The action determines the behavior of the rule. If a query matches a supplied condition, the action will
+     * apply. If there are no conditions on the rule, all queries are subject to the specified action.
      * * `FORWARD` - Matching requests will be forwarded from the source interface to the destination address.
      *
      **/

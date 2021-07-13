@@ -5,7 +5,7 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * The information about removed Cloud SQL capability
+ * The information about the Cloud SQL installation that was removed.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,7 +61,7 @@ public class RemoveCloudSqlDetails {
     }
 
     /**
-     * Base-64 encoded password for Cloudera Manager admin user
+     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
     String clusterAdminPassword;

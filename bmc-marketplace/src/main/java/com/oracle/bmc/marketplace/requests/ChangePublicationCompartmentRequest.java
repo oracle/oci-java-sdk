@@ -21,12 +21,12 @@ public class ChangePublicationCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<ChangePublicationCompartmentDetails> {
 
     /**
-     * The unique identifier for the listing.
+     * The unique identifier for the publication.
      */
     private String publicationId;
 
     /**
-     * Request to change the compartment of a given Publication.
+     * The details of the request to change the compartment of a given publication.
      */
     private ChangePublicationCompartmentDetails changePublicationCompartmentDetails;
 

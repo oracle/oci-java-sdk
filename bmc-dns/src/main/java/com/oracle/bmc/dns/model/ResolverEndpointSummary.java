@@ -40,7 +40,7 @@ package com.oracle.bmc.dns.model;
 public class ResolverEndpointSummary {
 
     /**
-     * The name of the resolver endpoint. Must be unique within the resolver.
+     * The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -70,7 +70,7 @@ public class ResolverEndpointSummary {
 
     /**
      * An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the
-     * subnet and will be assigned by the system if unspecified.
+     * subnet and will be assigned by the system if unspecified when isListening is true.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listeningAddress")

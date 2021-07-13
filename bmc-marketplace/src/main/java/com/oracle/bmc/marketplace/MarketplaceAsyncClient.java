@@ -1244,6 +1244,45 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<SearchListingsResponse> searchListings(
+            SearchListingsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SearchListingsRequest, SearchListingsResponse>
+                    handler) {
+        LOG.trace("Called async searchListings");
+        final SearchListingsRequest interceptedRequest =
+                SearchListingsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SearchListingsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, SearchListingsResponse>
+                transformer = SearchListingsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<SearchListingsRequest, SearchListingsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SearchListingsRequest, SearchListingsResponse>,
+                        java.util.concurrent.Future<SearchListingsResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SearchListingsRequest, SearchListingsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateAcceptedAgreementResponse> updateAcceptedAgreement(
             UpdateAcceptedAgreementRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

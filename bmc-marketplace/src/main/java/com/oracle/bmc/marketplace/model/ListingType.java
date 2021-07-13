@@ -5,7 +5,8 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * To which catalog a listing belongs
+ * Possible values for the publisher category to which a publication can belong. The publisher category informs where the listing appears for use.
+ *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @lombok.extern.slf4j.Slf4j

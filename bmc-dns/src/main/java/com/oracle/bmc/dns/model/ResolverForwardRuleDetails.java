@@ -121,8 +121,8 @@ public class ResolverForwardRuleDetails extends ResolverRuleDetails {
     java.util.List<String> destinationAddresses;
 
     /**
-     * Name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The
-     * endpoint must have isForwarding set to true.
+     * Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding
+     * interface. The endpoint must have isForwarding set to true.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceEndpointName")

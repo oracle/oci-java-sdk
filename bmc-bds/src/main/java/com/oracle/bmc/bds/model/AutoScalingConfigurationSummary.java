@@ -5,7 +5,7 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * The information about auto scale configuration.
+ * The information about the autoscale configuration.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -130,38 +130,37 @@ public class AutoScalingConfigurationSummary {
     }
 
     /**
-     * The OCID of the autoscaling configuration.
+     * The OCID of the autoscale configuration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * The state of the autoscaling configuration
+     * The state of the autoscale configuration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     AutoScalingConfiguration.LifecycleState lifecycleState;
 
     /**
-     * A node type that is managed by an autoscaling configuration. The only supported type is WORKER.
+     * A node type that is managed by an autoscale configuration. The only supported type is WORKER.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
     Node.NodeType nodeType;
 
     /**
-     * The time the BDS instance was created. An RFC3339 formatted datetime string
+     * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The time the autoscale configuration was updated.
-     * An RFC3339 formatted datetime string
+     * The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")

@@ -20,7 +20,7 @@ import com.oracle.bmc.marketplace.model.*;
 public class DeletePublicationRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The unique identifier for the listing.
+     * The unique identifier for the publication.
      */
     private String publicationId;
 

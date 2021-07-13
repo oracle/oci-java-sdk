@@ -5,7 +5,7 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * A publication package for orchestration.
+ * A publication package for stack publications.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -162,13 +162,13 @@ public class OrchestrationPublicationPackage extends PublicationPackage {
     }
 
     /**
-     * Link to the orchestration resource.
+     * A link to the stack resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceLink")
     String resourceLink;
 
     /**
-     * List of variables for the orchestration resource.
+     * A list of variables for the stack resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("variables")
     java.util.List<OrchestrationVariable> variables;

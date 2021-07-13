@@ -8,9 +8,7 @@ import com.oracle.bmc.bds.requests.*;
 import com.oracle.bmc.bds.responses.*;
 
 /**
- * API for the Big Data Service. Use this API to build, deploy, and manage fully elastic Big Data Service
- * build on Hadoop, Spark and Data Science distribution, which can be fully integrated with existing enterprise
- * data in Oracle Database and Oracle Applications..
+ * REST API for Oracle Big Data Service. Use this API to build, deploy, and manage fully elastic Big Data Service clusters. Build on Hadoop, Spark and Data Science distributions, which can be fully integrated with existing enterprise data in Oracle Database and Oracle applications.
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
@@ -49,7 +47,7 @@ public interface BdsAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Add autoscaling configuration.
+     * Add an autoscale configuration to the cluster.
      *
      *
      * @param request The request object containing the details to send
@@ -66,8 +64,7 @@ public interface BdsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Adds storage to existing worker nodes. The same amount of storage will be added to all workers.
-     * No change will be made to already attached storage. Block Storage once added cannot be removed.
+     * Adds block storage to existing worker nodes. The same amount of  storage will be added to all worker nodes. No change will be made  to storage that is already attached. Block storage cannot be removed.
      *
      *
      * @param request The request object containing the details to send
@@ -83,8 +80,7 @@ public interface BdsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Adds Cloud SQL to your cluster. This will add a query server node to the cluster
-     * and create cell servers on all your worker nodes.
+     * Adds Cloud SQL to your cluster. You can use Cloud SQL to query against non-relational data stored in multiple big data sources, including Apache Hive, HDFS, Oracle NoSQL Database, and Apache HBase. Adding Cloud SQL adds a query server node to the cluster and creates cell servers on all the worker nodes in the cluster.
      *
      *
      * @param request The request object containing the details to send
@@ -99,8 +95,7 @@ public interface BdsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<AddCloudSqlRequest, AddCloudSqlResponse> handler);
 
     /**
-     * Add worker nodes to an existing cluster. The worker nodes added will be based on an identical shape
-     * and have the same amount of attached block storage as other worker nodes in the cluster.
+     * Increases the size (scales out) a cluster by adding worker nodes. The added worker nodes will have the same shape and will have the same amount of attached block storage as other worker nodes in the cluster.
      *
      *
      * @param request The request object containing the details to send
@@ -116,7 +111,7 @@ public interface BdsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves a BDS instance into a different compartment.
+     * Moves a Big Data Service cluster into a different compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -134,9 +129,7 @@ public interface BdsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Scale-up/down individial nodes (per role type) in the cluster. Customer can choose
-     * arbitrarty VM_STANDARD shape to scale-up/down the instance. Only VM_STANDARD nodes
-     * can be re-shaped.
+     * Changes the size of a cluster by scaling up or scaling down the nodes. Nodes are scaled up or down by changing the shapes of all the nodes of the same type to the next larger or smaller shape. The node types are master, utility, worker, and Cloud SQL. Only nodes with VM-STANDARD shapes can be scaled.
      *
      *
      * @param request The request object containing the details to send
@@ -151,7 +144,7 @@ public interface BdsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ChangeShapeRequest, ChangeShapeResponse> handler);
 
     /**
-     * Creates a new BDS instance.
+     * Creates a Big Data Service cluster.
      *
      *
      * @param request The request object containing the details to send
@@ -168,7 +161,7 @@ public interface BdsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a BDS instance by identifier
+     * Deletes the cluster identified by the given ID.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -184,7 +177,7 @@ public interface BdsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified autoscaling configuration.
+     * Returns details of the autoscale configuration identified by the given ID.
      *
      *
      * @param request The request object containing the details to send
@@ -201,7 +194,7 @@ public interface BdsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a BDS instance by identifier
+     * Returns information about the Big Data Service cluster identified by the given ID.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -216,7 +209,7 @@ public interface BdsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the status of the work request with the given ID.
+     * Returns the status of the work request identified by the given ID.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -231,7 +224,7 @@ public interface BdsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the  autoscaling configuration.
+     * Returns information about the autoscaling configurations for a cluster.
      *
      *
      * @param request The request object containing the details to send
@@ -250,7 +243,7 @@ public interface BdsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns a list of BDS instances.
+     * Returns a list of all Big Data Service clusters in a compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -266,7 +259,7 @@ public interface BdsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Return a (paginated) list of errors for a given work request.
+     * Returns a paginated list of errors for a work request identified by the given ID.
      *
      *
      * @param request The request object containing the details to send
@@ -283,7 +276,7 @@ public interface BdsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Return a (paginated) list of logs for a given work request.
+     * Returns a paginated list of logs for a given work request.
      *
      *
      * @param request The request object containing the details to send
@@ -316,7 +309,7 @@ public interface BdsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Remove autoscaling configuration.
+     * Deletes an autoscale configuration.
      *
      *
      * @param request The request object containing the details to send
@@ -335,7 +328,7 @@ public interface BdsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Remove Cloud SQL capability.
+     * Removes Cloud SQL from the cluster.
      *
      *
      * @param request The request object containing the details to send
@@ -351,7 +344,7 @@ public interface BdsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Restarts a single node of a BDS instance.
+     * Restarts a single node of a Big Data Service cluster
      *
      *
      * @param request The request object containing the details to send
@@ -366,7 +359,7 @@ public interface BdsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<RestartNodeRequest, RestartNodeResponse> handler);
 
     /**
-     * Updates certain fields on the specified autoscaling configuration, such as the name, the threshold value, and whether the autoscaling configuration is enabled.
+     * Updates fields on an autoscale configuration, including the name, the threshold value, and whether the autoscale configuration is enabled.
      *
      *
      * @param request The request object containing the details to send
@@ -385,7 +378,7 @@ public interface BdsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Update the BDS instance identified by the id
+     * Updates the Big Data Service cluster identified by the given ID.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

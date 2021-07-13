@@ -1043,6 +1043,121 @@ public class DnsPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listZoneTransferServers operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListZoneTransferServersResponse> listZoneTransferServersResponseIterator(
+            final ListZoneTransferServersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListZoneTransferServersRequest.Builder, ListZoneTransferServersRequest,
+                ListZoneTransferServersResponse>(
+                new com.google.common.base.Supplier<ListZoneTransferServersRequest.Builder>() {
+                    @Override
+                    public ListZoneTransferServersRequest.Builder get() {
+                        return ListZoneTransferServersRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListZoneTransferServersResponse, String>() {
+                    @Override
+                    public String apply(ListZoneTransferServersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListZoneTransferServersRequest.Builder>,
+                        ListZoneTransferServersRequest>() {
+                    @Override
+                    public ListZoneTransferServersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListZoneTransferServersRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListZoneTransferServersRequest, ListZoneTransferServersResponse>() {
+                    @Override
+                    public ListZoneTransferServersResponse apply(
+                            ListZoneTransferServersRequest request) {
+                        return client.listZoneTransferServers(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dns.model.ZoneTransferServer} objects
+     * contained in responses from the listZoneTransferServers operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dns.model.ZoneTransferServer} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dns.model.ZoneTransferServer>
+            listZoneTransferServersRecordIterator(final ListZoneTransferServersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListZoneTransferServersRequest.Builder, ListZoneTransferServersRequest,
+                ListZoneTransferServersResponse, com.oracle.bmc.dns.model.ZoneTransferServer>(
+                new com.google.common.base.Supplier<ListZoneTransferServersRequest.Builder>() {
+                    @Override
+                    public ListZoneTransferServersRequest.Builder get() {
+                        return ListZoneTransferServersRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListZoneTransferServersResponse, String>() {
+                    @Override
+                    public String apply(ListZoneTransferServersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListZoneTransferServersRequest.Builder>,
+                        ListZoneTransferServersRequest>() {
+                    @Override
+                    public ListZoneTransferServersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListZoneTransferServersRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListZoneTransferServersRequest, ListZoneTransferServersResponse>() {
+                    @Override
+                    public ListZoneTransferServersResponse apply(
+                            ListZoneTransferServersRequest request) {
+                        return client.listZoneTransferServers(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListZoneTransferServersResponse,
+                        java.util.List<com.oracle.bmc.dns.model.ZoneTransferServer>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.dns.model.ZoneTransferServer> apply(
+                            ListZoneTransferServersResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listZones operation. This iterable
      * will fetch more data from the server as needed.
      *

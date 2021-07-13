@@ -120,7 +120,7 @@ public class CloudSqlDetails {
     Long blockVolumeSizeInGBs;
 
     /**
-     * Boolean flag specifying whether or not are Kerberos principals mapped
+     * Boolean flag specifying whether or not Kerberos principals are mapped
      * to database users.
      *
      **/
@@ -128,13 +128,13 @@ public class CloudSqlDetails {
     Boolean isKerberosMappedToDatabaseUsers;
 
     /**
-     * IP address of the Cloud SQL node
+     * IP address of the Cloud SQL node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     String ipAddress;
 
     /**
-     * Details about Kerberos principals
+     * Details about the Kerberos principals.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kerberosDetails")
     java.util.List<KerberosDetails> kerberosDetails;

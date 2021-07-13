@@ -525,13 +525,13 @@ public class Listing {
     Boolean isFeatured;
 
     /**
-     * In which catalog the listing should exist.
+     * The publisher category to which the listing belongs. The publisher category informs where the listing appears for use.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingType")
     ListingType listingType;
 
     /**
-     * List of operating systems supported.
+     * List of operating systems supported by the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedOperatingSystems")
     java.util.List<OperatingSystem> supportedOperatingSystems;

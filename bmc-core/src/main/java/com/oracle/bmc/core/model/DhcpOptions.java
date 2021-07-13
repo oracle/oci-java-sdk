@@ -121,6 +121,15 @@ public class DhcpOptions {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("domainNameType")
+        private DomainNameType domainNameType;
+
+        public Builder domainNameType(DomainNameType domainNameType) {
+            this.domainNameType = domainNameType;
+            this.__explicitlySet__.add("domainNameType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -135,7 +144,8 @@ public class DhcpOptions {
                             lifecycleState,
                             options,
                             timeCreated,
-                            vcnId);
+                            vcnId,
+                            domainNameType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -151,7 +161,8 @@ public class DhcpOptions {
                             .lifecycleState(o.getLifecycleState())
                             .options(o.getOptions())
                             .timeCreated(o.getTimeCreated())
-                            .vcnId(o.getVcnId());
+                            .vcnId(o.getVcnId())
+                            .domainNameType(o.getDomainNameType());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -278,6 +289,58 @@ public class DhcpOptions {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     String vcnId;
+    /**
+     * The search domain name type of DHCP options
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum DomainNameType {
+        SubnetDomain("SUBNET_DOMAIN"),
+        VcnDomain("VCN_DOMAIN"),
+        CustomDomain("CUSTOM_DOMAIN"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, DomainNameType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DomainNameType v : DomainNameType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DomainNameType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DomainNameType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DomainNameType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The search domain name type of DHCP options
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("domainNameType")
+    DomainNameType domainNameType;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

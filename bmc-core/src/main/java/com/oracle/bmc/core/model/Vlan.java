@@ -205,7 +205,8 @@ public class Vlan {
     }
 
     /**
-     * The availability domain of the VLAN.
+     * The VLAN's availability domain. This attribute will be null if this is a regional VLAN
+     * rather than an AD-specific VLAN.
      * <p>
      * Example: `Uocm:PHX-AD-1`
      *

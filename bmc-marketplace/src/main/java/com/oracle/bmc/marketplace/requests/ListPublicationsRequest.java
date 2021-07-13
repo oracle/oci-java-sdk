@@ -25,22 +25,22 @@ public class ListPublicationsRequest extends com.oracle.bmc.requests.BmcRequest<
     private String compartmentId;
 
     /**
-     * The type of the listing
+     * The type of the listing.
      */
     private com.oracle.bmc.marketplace.model.ListingType listingType;
 
     /**
-     * The name of the listing.
+     * The name of the publication.
      */
     private java.util.List<String> name;
 
     /**
-     * The unique identifier for the listing.
+     * The unique identifier for the publication.
      */
     private String publicationId;
 
     /**
-     * OS of the listing.
+     * The operating system of the listing.
      */
     private java.util.List<String> operatingSystems;
 

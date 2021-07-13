@@ -31,7 +31,7 @@ public class DnsAsyncClient implements DnsAsync {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("DNS")
                     .serviceEndpointPrefix("dns")
-                    .serviceEndpointTemplate("https://dns.{region}.{secondLevelDomain}")
+                    .serviceEndpointTemplate("https://dns.{region}.oci.{secondLevelDomain}")
                     .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
@@ -1498,6 +1498,51 @@ public class DnsAsyncClient implements DnsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetZoneContentResponse> getZoneContent(
+            GetZoneContentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetZoneContentRequest, GetZoneContentResponse>
+                    handler) {
+        LOG.trace("Called async getZoneContent");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
+        final GetZoneContentRequest interceptedRequest =
+                GetZoneContentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetZoneContentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetZoneContentResponse>
+                transformer = GetZoneContentConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetZoneContentRequest, GetZoneContentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetZoneContentRequest, GetZoneContentResponse>,
+                        java.util.concurrent.Future<GetZoneContentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetZoneContentRequest, GetZoneContentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetZoneRecordsResponse> getZoneRecords(
             GetZoneRecordsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1762,6 +1807,47 @@ public class DnsAsyncClient implements DnsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListViewsRequest, ListViewsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListZoneTransferServersResponse> listZoneTransferServers(
+            ListZoneTransferServersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListZoneTransferServersRequest, ListZoneTransferServersResponse>
+                    handler) {
+        LOG.trace("Called async listZoneTransferServers");
+        final ListZoneTransferServersRequest interceptedRequest =
+                ListZoneTransferServersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListZoneTransferServersConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListZoneTransferServersResponse>
+                transformer = ListZoneTransferServersConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListZoneTransferServersRequest, ListZoneTransferServersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListZoneTransferServersRequest, ListZoneTransferServersResponse>,
+                        java.util.concurrent.Future<ListZoneTransferServersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListZoneTransferServersRequest, ListZoneTransferServersResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

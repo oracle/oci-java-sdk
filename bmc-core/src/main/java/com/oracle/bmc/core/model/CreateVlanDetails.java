@@ -164,7 +164,15 @@ public class CreateVlanDetails {
     }
 
     /**
-     * The availability domain of the VLAN.
+     * Controls whether the VLAN is regional or specific to an availability domain.
+     * A regional VLAN has the flexibility to implement failover across availability domains.
+     * Previously, all VLANs were AD-specific.
+     * <p>
+     * To create a regional VLAN, omit this attribute. Resources created subsequently in this
+     * VLAN (such as a Compute instance) can be created in any availability domain in the region.
+     * <p>
+     * To create an AD-specific VLAN, use this attribute to specify the availability domain.
+     * Resources created in this VLAN must be in that availability domain.
      * <p>
      * Example: `Uocm:PHX-AD-1`
      *

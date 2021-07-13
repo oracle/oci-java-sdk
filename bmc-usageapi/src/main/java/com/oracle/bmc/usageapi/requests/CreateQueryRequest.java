@@ -20,7 +20,7 @@ import com.oracle.bmc.usageapi.model.*;
 public class CreateQueryRequest extends com.oracle.bmc.requests.BmcRequest<CreateQueryDetails> {
 
     /**
-     * New query details. It is up to 10 saved query.
+     * New query details. Up to ten saved queries.
      */
     private CreateQueryDetails createQueryDetails;
 
