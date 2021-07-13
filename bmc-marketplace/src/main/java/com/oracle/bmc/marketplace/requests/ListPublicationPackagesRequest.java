@@ -21,7 +21,7 @@ public class ListPublicationPackagesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The unique identifier for the listing.
+     * The unique identifier for the publication.
      */
     private String publicationId;
 

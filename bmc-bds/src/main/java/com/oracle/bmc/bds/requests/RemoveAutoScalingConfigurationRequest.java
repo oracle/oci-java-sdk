@@ -21,17 +21,17 @@ public class RemoveAutoScalingConfigurationRequest
         extends com.oracle.bmc.requests.BmcRequest<RemoveAutoScalingConfigurationDetails> {
 
     /**
-     * The OCID of the BDS instance
+     * The OCID of the cluster.
      */
     private String bdsInstanceId;
 
     /**
-     * Unique Oracle-assigned identifier of the autoscaling configuration.
+     * Unique Oracle-assigned identifier of the autoscale configuration.
      */
     private String autoScalingConfigurationId;
 
     /**
-     * Details for the Auto Scaling Configuration
+     * Details for the autoscale configuration
      */
     private RemoveAutoScalingConfigurationDetails removeAutoScalingConfigurationDetails;
 
@@ -52,8 +52,8 @@ public class RemoveAutoScalingConfigurationRequest
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * server error, without risk of executing that same action again. Retry tokens expire after 24
+     * hours but can be invalidated before then due to conflicting operations. For example, if a resource
      * has been deleted and purged from the system, then a retry of the original creation request
      * might be rejected.
      *

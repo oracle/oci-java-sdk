@@ -26,7 +26,7 @@ public class ListAutoScalingConfigurationsRequest
     private String compartmentId;
 
     /**
-     * The OCID of the BDS instance
+     * The OCID of the cluster.
      */
     private String bdsInstanceId;
 
@@ -93,7 +93,7 @@ public class ListAutoScalingConfigurationsRequest
     private String displayName;
 
     /**
-     * The state of the autoscaling configuration.
+     * The state of the autoscale configuration.
      */
     private AutoScalingConfiguration.LifecycleState lifecycleState;
 

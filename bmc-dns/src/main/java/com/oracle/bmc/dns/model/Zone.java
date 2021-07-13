@@ -172,6 +172,15 @@ public class Zone {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("zoneTransferServers")
+        private java.util.List<ZoneTransferServer> zoneTransferServers;
+
+        public Builder zoneTransferServers(java.util.List<ZoneTransferServer> zoneTransferServers) {
+            this.zoneTransferServers = zoneTransferServers;
+            this.__explicitlySet__.add("zoneTransferServers");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -193,7 +202,8 @@ public class Zone {
                             serial,
                             lifecycleState,
                             isProtected,
-                            nameservers);
+                            nameservers,
+                            zoneTransferServers);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -216,7 +226,8 @@ public class Zone {
                             .serial(o.getSerial())
                             .lifecycleState(o.getLifecycleState())
                             .isProtected(o.getIsProtected())
-                            .nameservers(o.getNameservers());
+                            .nameservers(o.getNameservers())
+                            .zoneTransferServers(o.getZoneTransferServers());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -387,6 +398,7 @@ public class Zone {
         Deleted("DELETED"),
         Deleting("DELETING"),
         Failed("FAILED"),
+        Updating("UPDATING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -444,6 +456,13 @@ public class Zone {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nameservers")
     java.util.List<Nameserver> nameservers;
+
+    /**
+     * The OCI nameservers that transfer the zone data with external nameservers.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("zoneTransferServers")
+    java.util.List<ZoneTransferServer> zoneTransferServers;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

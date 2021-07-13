@@ -523,7 +523,8 @@ public class DnsWaiters {
                                         response.getTsigKey().getLifecycleState());
                             }
                         },
-                        false),
+                        targetStatesSet.contains(
+                                com.oracle.bmc.dns.model.TsigKey.LifecycleState.Deleted)),
                 request);
     }
 

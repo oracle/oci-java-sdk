@@ -5,7 +5,7 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * The updated details of the resource
+ * The model for the parameters needed to update a publication.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -120,25 +120,25 @@ public class UpdatePublicationDetails {
     }
 
     /**
-     * The name of the listing.
+     * The name of the publication, which is also used in the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * short description of the catalog listing
+     * A short description of the publication to use in the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shortDescription")
     String shortDescription;
 
     /**
-     * short description of the catalog listing
+     * A long description of the publication to use in the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("longDescription")
     String longDescription;
 
     /**
-     * Contact information to use to get support from the publisher for the listing.
+     * Contact information for getting support from the publisher for the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportContacts")
     java.util.List<SupportContact> supportContacts;

@@ -5,10 +5,9 @@
 package com.oracle.bmc.dns.model;
 
 /**
- * The body for defining a new resolver VNIC endpoint. Either isForwarding or isListening must be true but not both.
- * If a listeningAddress is not provided then one will be chosen automatically. If isForwarding is true then a
- * forwardingAddress may be provided. If one is not then one will be chosen automatically. A listeningAddress will
- * be consumed regardless of if the resolver is configured for listening or not.
+ * The body for defining a new resolver VNIC endpoint. Either isForwarding or isListening must be true, but not both.
+ * If isListening is true, a listeningAddress may be provided. If isForwarding is true, a forwardingAddress
+ * may be provided. When not provided, an address will be chosen automatically.
  * <p>
  **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
@@ -162,7 +161,8 @@ public class CreateResolverVnicEndpointDetails extends CreateResolverEndpointDet
     String subnetId;
 
     /**
-     * An array of NSG OCIDs for the resolver endpoint.
+     * An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the
+     * resolver endpoint is a part of.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")

@@ -5,7 +5,7 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * Summary of the BDS instance
+ * Summary details of the Big Data Service cluster.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -186,68 +186,68 @@ public class BdsInstanceSummary {
     }
 
     /**
-     * The OCID of the BDS resource
+     * The OCID of the Big Data Service resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The OCID of the compartment
+     * The OCID of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * Name of the BDS instance
+     * The name of the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * The state of the BDS instance
+     * The state of the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     BdsInstance.LifecycleState lifecycleState;
 
     /**
-     * Number of nodes that forming the cluster
+     * The number of nodes that form the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfNodes")
     Integer numberOfNodes;
 
     /**
-     * Version of the Hadoop distribution
+     * Version of the Hadoop distribution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterVersion")
     BdsInstance.ClusterVersion clusterVersion;
 
     /**
-     * Boolean flag specifying whether or not the cluster is HA
+     * Boolean flag specifying whether or not the cluster is highly available(HA).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHighAvailability")
     Boolean isHighAvailability;
 
     /**
-     * Boolean flag specifying whether or not the cluster should be setup as secure.
+     * Boolean flag specifying whether or not the cluster should be set up as secure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSecure")
     Boolean isSecure;
 
     /**
-     * Boolean flag specifying whether we configure Cloud SQL or not
+     * Boolean flag specifying whether Cloud SQL is configured or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCloudSqlConfigured")
     Boolean isCloudSqlConfigured;
 
     /**
-     * The time the BDS instance was created. An RFC3339 formatted datetime string
+     * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Simple key-value pair that is applied without any predefined name, type, or scope.
+     * Exists for cross-compatibility only. For example, `{\"bar-key\": \"value\"}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -255,7 +255,7 @@ public class BdsInstanceSummary {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * For example, `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

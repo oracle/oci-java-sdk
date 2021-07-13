@@ -21,12 +21,12 @@ public class UpdatePublicationRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdatePublicationDetails> {
 
     /**
-     * The unique identifier for the listing.
+     * The unique identifier for the publication.
      */
     private String publicationId;
 
     /**
-     * Details of the Publication which needs to be updated
+     * The details for updating the publication.
      */
     private UpdatePublicationDetails updatePublicationDetails;
 

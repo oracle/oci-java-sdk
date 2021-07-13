@@ -46,7 +46,7 @@ public interface MarketplaceAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Changes the compartment of the Publication
+     * Moves the specified publication from one compartment to another.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -81,7 +81,7 @@ public interface MarketplaceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a publication of the given type with an optional default package
+     * Creates a publication of the specified listing type with an optional default package.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -98,7 +98,7 @@ public interface MarketplaceAsync extends AutoCloseable {
 
     /**
      * Removes a previously accepted terms of use agreement from the list of agreements that Marketplace checks
-     * before initiating a deployment. Listings in the Marketplace that require acceptance of the specified terms
+     * before initiating a deployment. Listings in Marketplace that require acceptance of the specified terms
      * of use can no longer be deployed, but existing deployments aren't affected.
      *
      *
@@ -116,7 +116,7 @@ public interface MarketplaceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a Publication. This will also remove the associated Listing from Marketplace.
+     * Deletes a publication, which also removes the associated listing from anywhere it was published, such as Marketplace or Compute.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -223,7 +223,7 @@ public interface MarketplaceAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetPackageRequest, GetPackageResponse> handler);
 
     /**
-     * Get details of a publication
+     * Gets the details of the specified publication.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -238,7 +238,7 @@ public interface MarketplaceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the details of a specific package within a given Publication
+     * Gets the details of a specific package version within a given publication.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -364,7 +364,7 @@ public interface MarketplaceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the packages in the given Publication
+     * Lists the packages in the specified publication.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -380,7 +380,7 @@ public interface MarketplaceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the publications in the given compartment
+     * Lists the publications in the specified compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -454,6 +454,23 @@ public interface MarketplaceAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListTaxesRequest, ListTaxesResponse> handler);
 
     /**
+     * Find listings that match the specified criteria. The search query could be free text
+     * or structured.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SearchListingsResponse> searchListings(
+            SearchListingsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<SearchListingsRequest, SearchListingsResponse>
+                    handler);
+
+    /**
      * Updates the display name or tags associated with a listing's previously accepted terms of use agreement.
      *
      *
@@ -471,7 +488,7 @@ public interface MarketplaceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates details of an existing Publication
+     * Updates the details of an existing publication.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

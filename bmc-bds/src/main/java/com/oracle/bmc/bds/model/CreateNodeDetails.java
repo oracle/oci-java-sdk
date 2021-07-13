@@ -5,7 +5,7 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * The information about new node
+ * The information about the new node.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -93,27 +93,27 @@ public class CreateNodeDetails {
     }
 
     /**
-     * BDS instance node type
+     * The Big Data Service cluster node type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
     Node.NodeType nodeType;
 
     /**
-     * Shape of the node
+     * Shape of the node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     String shape;
 
     /**
-     * The size of block volume in GB that needs to be attached to a given node.
-     * All the necessary details needed for attachment are managed by service itself.
+     * The size of block volume in GB to be attached to a given node. All the
+     * details needed for attaching the block volume are managed by service itself.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
     Long blockVolumeSizeInGBs;
 
     /**
-     * The OCID of the subnet in which the node should be created
+     * The OCID of the subnet in which the node will be created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     String subnetId;

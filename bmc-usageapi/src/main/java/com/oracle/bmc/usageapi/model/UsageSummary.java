@@ -532,7 +532,7 @@ public class UsageSummary {
     String overage;
 
     /**
-     * is forecasted data
+     * The forecasted data.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isForecast")
     Boolean isForecast;

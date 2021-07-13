@@ -103,7 +103,7 @@ public class QueryDefinition {
     CostAnalysisUI costAnalysisUI;
 
     /**
-     * the version of saved query.
+     * The saved query version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     java.math.BigDecimal version;

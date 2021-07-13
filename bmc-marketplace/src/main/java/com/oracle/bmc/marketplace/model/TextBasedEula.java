@@ -5,7 +5,7 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * An EULA that is provided as text
+ * An end user license agreement that is provided as text.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -71,7 +71,7 @@ public class TextBasedEula extends Eula {
     }
 
     /**
-     * text of the eula
+     * The text of the end user license agreement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseText")
     String licenseText;

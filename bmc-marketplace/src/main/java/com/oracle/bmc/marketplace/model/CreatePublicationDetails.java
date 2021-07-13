@@ -5,7 +5,7 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * Publication Creation Details
+ * The model for the parameters needed to create a publication.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -164,37 +164,38 @@ public class CreatePublicationDetails {
     }
 
     /**
-     * In which catalog the listing should exist.
+     * The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingType")
     ListingType listingType;
 
     /**
-     * The name of the listing.
+     * The name of the publication, which is also used in the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * short description of the catalog listing
+     * A short description of the publication to use in the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shortDescription")
     String shortDescription;
 
     /**
-     * short description of the catalog listing
+     * A long description of the publication to use in the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("longDescription")
     String longDescription;
 
     /**
-     * Contact information to use to get support from the publisher for the listing.
+     * Contact information for getting support from the publisher for the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportContacts")
     java.util.List<SupportContact> supportContacts;
 
     /**
-     * The OCID of the compartment to create the resource within.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the publication.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -203,7 +204,8 @@ public class CreatePublicationDetails {
     CreatePublicationPackage packageDetails;
 
     /**
-     * Acknowledgement that invoker has the right and authority to share this Community Image in accordance with their agreement with Oracle applicable to the Services and the related Service Specifications
+     * Whether the publisher acknowledged that they have the right and authority to share the contents of the publication and that they accepted the Oracle terms of use agreements required to create a publication.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAgreementAcknowledged")
     Boolean isAgreementAcknowledged;

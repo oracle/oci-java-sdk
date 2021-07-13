@@ -21,7 +21,7 @@ public class CreatePublicationRequest
         extends com.oracle.bmc.requests.BmcRequest<CreatePublicationDetails> {
 
     /**
-     * Details of Publication to be created including optional default package.
+     * The details for creating the publication.
      */
     private CreatePublicationDetails createPublicationDetails;
 

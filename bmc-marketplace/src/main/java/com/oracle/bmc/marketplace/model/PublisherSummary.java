@@ -77,7 +77,7 @@ public class PublisherSummary {
     }
 
     /**
-     * Unique identifier for the publisher.
+     * The unique identifier for the publisher.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;

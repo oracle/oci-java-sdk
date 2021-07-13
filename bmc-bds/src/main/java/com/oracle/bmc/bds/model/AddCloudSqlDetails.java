@@ -5,7 +5,7 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * The information about added Cloud SQL capability
+ * The information about the added Cloud SQL.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -83,21 +83,20 @@ public class AddCloudSqlDetails {
     }
 
     /**
-     * Shape of the node
+     * Shape of the node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     String shape;
 
     /**
-     * The size of block volume in GB that needs to be attached to a given node.
-     * All the necessary details needed for attachment are managed by service itself.
+     * The size of block volume in GB to be attached to the given node. All details needed for attaching the block volume are managed by the service itself.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
     Long blockVolumeSizeInGBs;
 
     /**
-     * Base-64 encoded password for Cloudera Manager admin user
+     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
     String clusterAdminPassword;

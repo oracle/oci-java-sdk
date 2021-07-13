@@ -19,7 +19,7 @@ public class ListAutoScalingConfigurationsResponse {
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Oracle about a request, provide this request ID.
      *
      */
     private String opcRequestId;

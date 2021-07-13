@@ -49,7 +49,7 @@ public interface Dns extends AutoCloseable {
 
     /**
      * Moves a resolver into a different compartment along with its protected default view and any endpoints.
-     * Zones in the default view are not moved.
+     * Zones in the default view are not moved. Requires a `PRIVATE` scope query parameter.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -62,6 +62,7 @@ public interface Dns extends AutoCloseable {
 
     /**
      * Moves a steering policy into a different compartment.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -73,6 +74,7 @@ public interface Dns extends AutoCloseable {
 
     /**
      * Moves a TSIG key into a different compartment.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -83,7 +85,8 @@ public interface Dns extends AutoCloseable {
             ChangeTsigKeyCompartmentRequest request);
 
     /**
-     * Moves a view into a different compartment. Protected views cannot have their compartment changed.
+     * Moves a view into a different compartment. Protected views cannot have their compartment changed. Requires a
+     * `PRIVATE` scope query parameter.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -94,7 +97,9 @@ public interface Dns extends AutoCloseable {
     ChangeViewCompartmentResponse changeViewCompartment(ChangeViewCompartmentRequest request);
 
     /**
-     * Moves a zone into a different compartment. Protected zones cannot have their compartment changed.
+     * Moves a zone into a different compartment. Protected zones cannot have their compartment changed. For private
+     * zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is provided as a
+     * path parameter and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
      * <p>
      **Note:** All SteeringPolicyAttachment objects associated with this zone will also be moved into the provided compartment.
      *
@@ -107,7 +112,7 @@ public interface Dns extends AutoCloseable {
     ChangeZoneCompartmentResponse changeZoneCompartment(ChangeZoneCompartmentRequest request);
 
     /**
-     * Creates a new resolver endpoint.
+     * Creates a new resolver endpoint. Requires a `PRIVATE` scope query parameter.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -159,7 +164,7 @@ public interface Dns extends AutoCloseable {
     CreateTsigKeyResponse createTsigKey(CreateTsigKeyRequest request);
 
     /**
-     * Creates a new view in the specified compartment.
+     * Creates a new view in the specified compartment. Requires a `PRIVATE` scope query parameter.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -170,9 +175,11 @@ public interface Dns extends AutoCloseable {
     CreateViewResponse createView(CreateViewRequest request);
 
     /**
-     * Creates a new zone in the specified compartment. If the `Content-Type` header for the request is `text/dns`, the
-     * `compartmentId` query parameter is required. Additionally, for `text/dns`, the `scope` and `viewId` query
-     * parameters are required to create a private zone.
+     * Creates a new zone in the specified compartment. For global zones, if the `Content-Type` header for the request
+     * is `text/dns`, the `compartmentId` query parameter is required. `text/dns` for the `Content-Type` header is
+     * not supported for private zones. Query parameter scope with a value of `PRIVATE` is required when creating a
+     * private zone. Private zones must have a zone type of `PRIMARY`. Creating a private zone at or under
+     * `oraclevcn.com` within the default protected view of a VCN-dedicated resolver is not permitted.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -183,7 +190,10 @@ public interface Dns extends AutoCloseable {
     CreateZoneResponse createZone(CreateZoneRequest request);
 
     /**
-     * Deletes all records at the specified zone and domain.
+     * Deletes all records at the specified zone and domain. For private zones, the scope query parameter is
+     * required with a value of `PRIVATE`. When the zone name is provided as a path parameter and `PRIVATE` is used
+     * for the scope query parameter then the viewId query parameter is required.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -193,7 +203,9 @@ public interface Dns extends AutoCloseable {
     DeleteDomainRecordsResponse deleteDomainRecords(DeleteDomainRecordsRequest request);
 
     /**
-     * Deletes all records in the specified RRSet.
+     * Deletes all records in the specified RRSet. For private zones, the scope query parameter is required with a
+     * value of `PRIVATE`. When the zone name is provided as a path parameter and `PRIVATE` is used for the scope
+     * query parameter then the viewId query parameter is required.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -205,8 +217,9 @@ public interface Dns extends AutoCloseable {
 
     /**
      * Deletes the specified resolver endpoint. Note that attempting to delete a resolver endpoint in the
-     * DELETED lifecycle state will result in a 404 to be consistent with other operations of the API.
-     * Resolver endpoints may not be deleted if they are referenced by a resolver rule.
+     * DELETED lifecycle state will result in a `404` response to be consistent with other operations of the API.
+     * Resolver endpoints may not be deleted if they are referenced by a resolver rule. Requires a `PRIVATE` scope
+     * query parameter.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -256,10 +269,10 @@ public interface Dns extends AutoCloseable {
 
     /**
      * Deletes the specified view. Note that attempting to delete a
-     * view in the DELETED lifecycleState will result in a 404 to be
-     * consistent with other operations of the API. Views can not be
+     * view in the DELETED lifecycleState will result in a `404` response to be
+     * consistent with other operations of the API. Views cannot be
      * deleted if they are referenced by non-deleted zones or resolvers.
-     * Protected views cannot be deleted.
+     * Protected views cannot be deleted. Requires a `PRIVATE` scope query parameter.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -270,9 +283,10 @@ public interface Dns extends AutoCloseable {
     DeleteViewResponse deleteView(DeleteViewRequest request);
 
     /**
-     * Deletes the specified zone and all its steering policy attachments.
-     * A `204` response indicates that the zone has been successfully deleted.
-     * Protected zones cannot be deleted.
+     * Deletes the specified zone and all its steering policy attachments. A `204` response indicates that the zone has
+     * been successfully deleted. Protected zones cannot be deleted. For private zones, the scope query parameter is
+     * required with a value of `PRIVATE`. When the zone name is provided as a path parameter and `PRIVATE` is used
+     * for the scope query parameter then the viewId query parameter is required.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -283,9 +297,11 @@ public interface Dns extends AutoCloseable {
     DeleteZoneResponse deleteZone(DeleteZoneRequest request);
 
     /**
-     * Gets a list of all records at the specified zone and domain.
-     * The results are sorted by `rtype` in alphabetical order by default. You
-     * can optionally filter and/or sort the results using the listed parameters.
+     * Gets a list of all records at the specified zone and domain. The results are sorted by `rtype` in
+     * alphabetical order by default. You can optionally filter and/or sort the results using the listed parameters.
+     * For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
+     * provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
+     * parameter is required.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -296,8 +312,10 @@ public interface Dns extends AutoCloseable {
     GetDomainRecordsResponse getDomainRecords(GetDomainRecordsRequest request);
 
     /**
-     * Gets a list of all records in the specified RRSet. The results are
-     * sorted by `recordHash` by default.
+     * Gets a list of all records in the specified RRSet. The results are sorted by `recordHash` by default. For
+     * private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
+     * provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
+     * parameter is required.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -308,9 +326,9 @@ public interface Dns extends AutoCloseable {
     GetRRSetResponse getRRSet(GetRRSetRequest request);
 
     /**
-     * Get information about a specific resolver. Note that attempting to get a
-     * resolver in the DELETED lifecycleState will result in a 404 to be
-     * consistent with other operations of the API.
+     * Gets information about a specific resolver. Note that attempting to get a
+     * resolver in the DELETED lifecycleState will result in a `404` response to be
+     * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -321,8 +339,9 @@ public interface Dns extends AutoCloseable {
     GetResolverResponse getResolver(GetResolverRequest request);
 
     /**
-     * Get information about a specific resolver endpoint. Note that attempting to get a resolver endpoint
-     * in the DELETED lifecycle state will result in a 404 to be consistent with other operations of the API.
+     * Gets information about a specific resolver endpoint. Note that attempting to get a resolver endpoint
+     * in the DELETED lifecycle state will result in a `404` response to be consistent with other operations of the
+     * API. Requires a `PRIVATE` scope query parameter.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -367,9 +386,9 @@ public interface Dns extends AutoCloseable {
     GetTsigKeyResponse getTsigKey(GetTsigKeyRequest request);
 
     /**
-     * Get information about a specific view. Note that attempting to get a
-     * view in the DELETED lifecycleState will result in a 404 to be
-     * consistent with other operations of the API.
+     * Gets information about a specific view. Note that attempting to get a
+     * view in the DELETED lifecycleState will result in a `404` response to be
+     * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -380,8 +399,9 @@ public interface Dns extends AutoCloseable {
     GetViewResponse getView(GetViewRequest request);
 
     /**
-     * Gets information about the specified zone, including its creation date,
-     * zone type, and serial.
+     * Gets information about the specified zone, including its creation date, zone type, and serial. For private
+     * zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is provided as a
+     * path parameter and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -392,9 +412,22 @@ public interface Dns extends AutoCloseable {
     GetZoneResponse getZone(GetZoneRequest request);
 
     /**
-     * Gets all records in the specified zone. The results are
-     * sorted by `domain` in alphabetical order by default. For more
-     * information about records, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+     * Gets the requested zone's zone file.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetZoneContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetZoneContent API.
+     */
+    GetZoneContentResponse getZoneContent(GetZoneContentRequest request);
+
+    /**
+     * Gets all records in the specified zone. The results are sorted by `domain` in alphabetical order by default.
+     * For more information about records, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+     * For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
+     * provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
+     * parameter is required.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -407,8 +440,8 @@ public interface Dns extends AutoCloseable {
     /**
      * Gets a list of all endpoints within a resolver. The collection can be filtered by name or lifecycle state.
      * It can be sorted on creation time or name both in ASC or DESC order. Note that when no lifecycleState
-     * query parameter is provided that the collection does not include resolver endpoints in the DELETED
-     * lifecycle state to be consistent with other operations of the API.
+     * query parameter is provided, the collection does not include resolver endpoints in the DELETED
+     * lifecycle state to be consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -422,9 +455,9 @@ public interface Dns extends AutoCloseable {
      * Gets a list of all resolvers within a compartment. The collection can
      * be filtered by display name, id, or lifecycle state. It can be sorted
      * on creation time or displayName both in ASC or DESC order. Note that
-     * when no lifecycleState query parameter is provided that the collection
+     * when no lifecycleState query parameter is provided, the collection
      * does not include resolvers in the DELETED lifecycleState to be consistent
-     * with other operations of the API.
+     * with other operations of the API. Requires a `PRIVATE` scope query parameter.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -472,9 +505,9 @@ public interface Dns extends AutoCloseable {
      * Gets a list of all views within a compartment. The collection can
      * be filtered by display name, id, or lifecycle state. It can be sorted
      * on creation time or displayName both in ASC or DESC order. Note that
-     * when no lifecycleState query parameter is provided that the collection
+     * when no lifecycleState query parameter is provided, the collection
      * does not include views in the DELETED lifecycleState to be consistent
-     * with other operations of the API.
+     * with other operations of the API. Requires a `PRIVATE` scope query parameter.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -485,8 +518,21 @@ public interface Dns extends AutoCloseable {
     ListViewsResponse listViews(ListViewsRequest request);
 
     /**
-     * Gets a list of all zones in the specified compartment. The collection
-     * can be filtered by name, time created, scope, associated view, and zone type.
+     * Gets a list of IP addresses of OCI nameservers for inbound and outbound transfer of zones in the specified
+     * compartment (which must be the root compartment of a tenancy) that transfer zone data with external master or
+     * downstream nameservers.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListZoneTransferServersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListZoneTransferServers API.
+     */
+    ListZoneTransferServersResponse listZoneTransferServers(ListZoneTransferServersRequest request);
+
+    /**
+     * Gets a list of all zones in the specified compartment. The collection can be filtered by name, time created,
+     * scope, associated view, and zone type. Filtering by view is only supported for private zones.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -497,10 +543,11 @@ public interface Dns extends AutoCloseable {
     ListZonesResponse listZones(ListZonesRequest request);
 
     /**
-     * Updates records in the specified zone at a domain. You can update
-     * one record or all records for the specified zone depending on the changes
-     * provided in the request body. You can also add or remove records using this
-     * function.
+     * Updates records in the specified zone at a domain. You can update one record or all records for the specified
+     * zone depending on the changes provided in the request body. You can also add or remove records using this
+     * function. For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone
+     * name is provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId
+     * query parameter is required.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -511,7 +558,10 @@ public interface Dns extends AutoCloseable {
     PatchDomainRecordsResponse patchDomainRecords(PatchDomainRecordsRequest request);
 
     /**
-     * Updates records in the specified RRSet.
+     * Updates records in the specified RRSet. For private zones, the scope query parameter is required with a value
+     * of `PRIVATE`. When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
+     * parameter then the viewId query parameter is required.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -521,10 +571,11 @@ public interface Dns extends AutoCloseable {
     PatchRRSetResponse patchRRSet(PatchRRSetRequest request);
 
     /**
-     * Updates a collection of records in the specified zone. You can update
-     * one record or all records for the specified zone depending on the
-     * changes provided in the request body. You can also add or remove records
-     * using this function.
+     * Updates a collection of records in the specified zone. You can update one record or all records for the
+     * specified zone depending on the changes provided in the request body. You can also add or remove records
+     * using this function. For private zones, the scope query parameter is required with a value of `PRIVATE`. When
+     * the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter then the
+     * viewId query parameter is required.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -535,12 +586,12 @@ public interface Dns extends AutoCloseable {
     PatchZoneRecordsResponse patchZoneRecords(PatchZoneRecordsRequest request);
 
     /**
-     * Replaces records in the specified zone at a domain with the records
-     * specified in the request body. If a specified record does not exist,
-     * it will be created. If the record exists, then it will be updated to
-     * represent the record in the body of the request. If a record in the zone
-     * does not exist in the request body, the record will be removed from the
-     * zone.
+     * Replaces records in the specified zone at a domain with the records specified in the request body. If a
+     * specified record does not exist, it will be created. If the record exists, then it will be updated to
+     * represent the record in the body of the request. If a record in the zone does not exist in the request body,
+     * the record will be removed from the zone. For private zones, the scope query parameter is required with a
+     * value of `PRIVATE`. When the zone name is provided as a path parameter and `PRIVATE` is used for the scope
+     * query parameter then the viewId query parameter is required.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -551,7 +602,10 @@ public interface Dns extends AutoCloseable {
     UpdateDomainRecordsResponse updateDomainRecords(UpdateDomainRecordsRequest request);
 
     /**
-     * Replaces records in the specified RRSet.
+     * Replaces records in the specified RRSet. For private zones, the scope query parameter is required with a
+     * value of `PRIVATE`. When the zone name is provided as a path parameter and `PRIVATE` is used for the scope
+     * query parameter then the viewId query parameter is required.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -561,7 +615,7 @@ public interface Dns extends AutoCloseable {
     UpdateRRSetResponse updateRRSet(UpdateRRSetRequest request);
 
     /**
-     * Updates the specified resolver with your new information.
+     * Updates the specified resolver with your new information. Requires a `PRIVATE` scope query parameter.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -572,7 +626,7 @@ public interface Dns extends AutoCloseable {
     UpdateResolverResponse updateResolver(UpdateResolverRequest request);
 
     /**
-     * Updates the specified resolver endpoint with your new information.
+     * Updates the specified resolver endpoint with your new information. Requires a `PRIVATE` scope query parameter.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -617,7 +671,7 @@ public interface Dns extends AutoCloseable {
     UpdateTsigKeyResponse updateTsigKey(UpdateTsigKeyRequest request);
 
     /**
-     * Updates the specified view with your new information.
+     * Updates the specified view with your new information. Requires a `PRIVATE` scope query parameter.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -628,9 +682,11 @@ public interface Dns extends AutoCloseable {
     UpdateViewResponse updateView(UpdateViewRequest request);
 
     /**
-     * Updates the specified secondary zone with your new external master
-     * server information. For more information about secondary zone, see
-     * [Manage DNS Service Zone](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/managingdnszones.htm).
+     * Updates the zone with the specified information. Global secondary zones may have their external masters updated.
+     * For more information about secondary zone, see [Manage DNS Service Zone](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/managingdnszones.htm).
+     * For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
+     * provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
+     * parameter is required.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -641,11 +697,12 @@ public interface Dns extends AutoCloseable {
     UpdateZoneResponse updateZone(UpdateZoneRequest request);
 
     /**
-     * Replaces records in the specified zone with the records specified in the
-     * request body. If a specified record does not exist, it will be created.
-     * If the record exists, then it will be updated to represent the record in
-     * the body of the request. If a record in the zone does not exist in the
-     * request body, the record will be removed from the zone.
+     * Replaces records in the specified zone with the records specified in the request body. If a specified record
+     * does not exist, it will be created. If the record exists, then it will be updated to represent the record in
+     * the body of the request. If a record in the zone does not exist in the request body, the record will be
+     * removed from the zone. For private zones, the scope query parameter is required with a value of `PRIVATE`.
+     * When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
+     * the viewId query parameter is required.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

@@ -5,7 +5,7 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * A rule that defines a specific autoscaling action to take and the metric that triggers that action.
+ * A rule that defines a specific autoscale action to take and the metric that triggers that action.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -70,7 +70,7 @@ public class AutoScalePolicyRule {
     }
 
     /**
-     * The valid value are - CHANGE_SHAPE_SCALE_UP or CHANGE_SHAPE_SCALE_DOWN
+     * The valid value are CHANGE_SHAPE_SCALE_UP or CHANGE_SHAPE_SCALE_DOWN.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Action {
@@ -116,7 +116,7 @@ public class AutoScalePolicyRule {
         }
     };
     /**
-     * The valid value are - CHANGE_SHAPE_SCALE_UP or CHANGE_SHAPE_SCALE_DOWN
+     * The valid value are CHANGE_SHAPE_SCALE_UP or CHANGE_SHAPE_SCALE_DOWN.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     Action action;

@@ -21,12 +21,12 @@ public class UpdateBdsInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdateBdsInstanceDetails> {
 
     /**
-     * The OCID of the BDS instance
+     * The OCID of the cluster.
      */
     private String bdsInstanceId;
 
     /**
-     * Details for the to-be-updated BDS instace.
+     * Details for the cluster to be updated.
      */
     private UpdateBdsInstanceDetails updateBdsInstanceDetails;
 

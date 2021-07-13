@@ -21,12 +21,12 @@ public class AddAutoScalingConfigurationRequest
         extends com.oracle.bmc.requests.BmcRequest<AddAutoScalingConfigurationDetails> {
 
     /**
-     * The OCID of the BDS instance
+     * The OCID of the cluster.
      */
     private String bdsInstanceId;
 
     /**
-     * Details for create an autoscaling configuration.
+     * Details for creating an autoscale configuration.
      */
     private AddAutoScalingConfigurationDetails addAutoScalingConfigurationDetails;
 
@@ -47,8 +47,8 @@ public class AddAutoScalingConfigurationRequest
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * server error, without risk of executing that same action again. Retry tokens expire after 24
+     * hours but can be invalidated before then due to conflicting operations. For example, if a resource
      * has been deleted and purged from the system, then a retry of the original creation request
      * might be rejected.
      *

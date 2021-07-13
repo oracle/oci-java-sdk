@@ -113,6 +113,8 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
 
     /**
      * Configure the metadata endpoint to use when retrieving the instance data and principal for federation.
+     * @param metadataBaseUrl the metadata base url
+     * @return this builder
      */
     public B metadataBaseUrl(String metadataBaseUrl) {
         this.metadataBaseUrl = metadataBaseUrl;
@@ -124,6 +126,8 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
 
     /**
      * Configures the custom federationEndpoint to use.
+     * @param federationEndpoint the federation endpoint
+     * @return this builder
      */
     public B federationEndpoint(String federationEndpoint) {
         this.federationEndpoint = federationEndpoint;
@@ -132,17 +136,29 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
 
     /**
      * Configures the custom leafCertificateSupplier to use.
+     * @param leafCertificateSupplier
+     * @return this builder
      */
     public B leafCertificateSupplier(X509CertificateSupplier leafCertificateSupplier) {
         this.leafCertificateSupplier = leafCertificateSupplier;
         return (B) this;
     }
 
+    /**
+     * Configures the tenancy id to use.
+     * @param tenancyId the tenancy OCID
+     * @return this builder
+     */
     public B tenancyId(String tenancyId) {
         this.tenancyId = tenancyId;
         return (B) this;
     }
 
+    /**
+     * Configure the purpose to be used.
+     * @param purpose the purpose string
+     * @return this builder
+     */
     protected B purpose(String purpose) {
         this.purpose = purpose;
         return (B) this;
@@ -150,6 +166,8 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
 
     /**
      * Configures the Circuit Breaker to use, if any.
+     * @param circuitBreakerConfiguration the circuit breaker to use
+     * @return this builder
      */
     public B circuitBreakerConfigurator(CircuitBreakerConfiguration circuitBreakerConfiguration) {
         this.circuitBreakerConfiguration = circuitBreakerConfiguration;
@@ -170,6 +188,11 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
         return buildProvider(sessionKeySupplierToUse);
     }
 
+    /**
+     * Create the federation client.
+     * @param sessionKeySupplier the session key supplier
+     * @return the federation client
+     */
     protected FederationClient createFederationClient(SessionKeySupplier sessionKeySupplier) {
 
         CircuitBreakerConfiguration circuitBreakerConfig =
@@ -356,7 +379,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
 
     /**
      * Build the actual provider.
-     * @param sessionKeySupplierToUse
+     * @param sessionKeySupplierToUse the session key supplier to use
      * @return authentication details provider
      */
     protected abstract P buildProvider(SessionKeySupplier sessionKeySupplierToUse);

@@ -5,7 +5,7 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * A base object for all types of End User Licenses
+ * A base object for all types of end user license agreements.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

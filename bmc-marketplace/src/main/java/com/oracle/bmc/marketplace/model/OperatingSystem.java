@@ -5,7 +5,7 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * OS used by the listing.
+ * The operating system used by the listing.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -59,7 +59,7 @@ public class OperatingSystem {
     }
 
     /**
-     * name of the operating system
+     * The name of the operating system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;

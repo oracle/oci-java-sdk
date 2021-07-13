@@ -130,6 +130,7 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         Deleted("DELETED"),
         Deleting("DELETING"),
         Failed("FAILED"),
+        Updating("UPDATING"),
         ;
 
         private final String value;
@@ -217,6 +218,12 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String viewId;
 
+    /**
+     * Search for zones that are associated with a TSIG key.
+     *
+     */
+    private String tsigKeyId;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListZonesRequest, java.lang.Void> {
@@ -266,6 +273,7 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             sortOrder(o.getSortOrder());
             scope(o.getScope());
             viewId(o.getViewId());
+            tsigKeyId(o.getTsigKeyId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

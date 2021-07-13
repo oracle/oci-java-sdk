@@ -5,7 +5,7 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * Policy definitions for the autoscaling configuration
+ * Policy definitions for the autoscale configuration.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -68,7 +68,7 @@ public class AutoScalePolicy {
     }
 
     /**
-     * Types of autoscaling policies. SCHEDULE-BASED or  THRESHOLD-BASED, current only supported THRESHOLD-BASED.
+     * Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
      **/
     @lombok.extern.slf4j.Slf4j
     public enum PolicyType {
@@ -114,13 +114,13 @@ public class AutoScalePolicy {
         }
     };
     /**
-     * Types of autoscaling policies. SCHEDULE-BASED or  THRESHOLD-BASED, current only supported THRESHOLD-BASED.
+     * Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policyType")
     PolicyType policyType;
 
     /**
-     * The list of rules for autoscaling. If an action have multiple rules, last rule in the array will be applied.
+     * The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
     java.util.List<AutoScalePolicyRule> rules;

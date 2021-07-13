@@ -20,7 +20,7 @@ import com.oracle.bmc.bds.model.*;
 public class GetBdsInstanceRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the BDS instance
+     * The OCID of the cluster.
      */
     private String bdsInstanceId;
 

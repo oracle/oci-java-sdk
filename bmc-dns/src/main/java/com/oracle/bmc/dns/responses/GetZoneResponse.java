@@ -25,7 +25,7 @@ public class GetZoneResponse {
     private String opcRequestId;
 
     /**
-     * The current version of the zone, ending with a
+     * The current version of the resource, ending with a
      * representation-specific suffix. This value may be used in If-Match
      * and If-None-Match headers for later requests of the same resource.
      *

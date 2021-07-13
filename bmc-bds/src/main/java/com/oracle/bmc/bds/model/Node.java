@@ -5,7 +5,7 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * Specific info about a node
+ * Details about a node.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -217,18 +217,18 @@ public class Node {
     }
 
     /**
-     * The OCID of the underlying compute instance
+     * The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     String instanceId;
 
     /**
-     * The name of the node
+     * The name of the node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
     /**
-     * The state of the node
+     * The state of the node.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -279,12 +279,12 @@ public class Node {
         }
     };
     /**
-     * The state of the node
+     * The state of the node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
     /**
-     * BDS instance node type
+     * Cluster node type.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum NodeType {
@@ -334,13 +334,13 @@ public class Node {
         }
     };
     /**
-     * BDS instance node type
+     * Cluster node type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
     NodeType nodeType;
 
     /**
-     * Shape of the node
+     * Shape of the node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     String shape;
@@ -352,55 +352,55 @@ public class Node {
     java.util.List<VolumeAttachmentDetail> attachedBlockVolumes;
 
     /**
-     * The OCID of the subnet in which the node should be created
+     * The OCID of the subnet in which the node is to be created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     String subnetId;
 
     /**
-     * IP address of the node
+     * IP address of the node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     String ipAddress;
 
     /**
-     * The fully-qualified hostname (FQDN) of the node
+     * The fully-qualified hostname (FQDN) of the node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     String hostname;
 
     /**
-     * The OCID of the image from which the node was created
+     * The OCID of the image from which the node was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     String imageId;
 
     /**
-     * The fingerprint of the SSH key used for node access
+     * The fingerprint of the SSH key used for node access.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshFingerprint")
     String sshFingerprint;
 
     /**
-     * The name of the availability domain the node is running in
+     * The name of the availability domain in which the node is running.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     String availabilityDomain;
 
     /**
-     * The name of the fault domain the node is running in
+     * The name of the fault domain in which the node is running.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     String faultDomain;
 
     /**
-     * The time the node was created. An RFC3339 formatted datetime string
+     * The time the node was created, shown as an RFC 3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The time the BDS instance was updated. An RFC3339 formatted datetime string
+     * The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;

@@ -5,7 +5,7 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * Metric and threshold details for triggering an autoscaling action
+ * Metric and threshold details for triggering an autoscale action.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -71,7 +71,7 @@ public class AutoScalePolicyMetricRule {
     }
 
     /**
-     * Allowed value is CPU_UTILIZATION currently
+     * Allowed value is CPU_UTILIZATION.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum MetricType {
@@ -116,7 +116,7 @@ public class AutoScalePolicyMetricRule {
         }
     };
     /**
-     * Allowed value is CPU_UTILIZATION currently
+     * Allowed value is CPU_UTILIZATION.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricType")
     MetricType metricType;

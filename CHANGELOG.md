@@ -3,6 +3,32 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.2.0 - 2021-07-13
+### Added
+- Support for the AI Anomaly Detection service
+- Support for retrieving a DNS zone as a zone file in the DNS service
+- Support for querying manual adjustments in the Usage service
+- Support for searching Marketplace listings in the Marketplace service
+- Support for new cluster type `ODH` in the Big Data service
+- Support for availability domain as an optional parameter when creating VLANs in the Networking service
+- Support for search domain type on DHCP options, to support multi-level domain search in the Networking service
+
+### Breaking Changes
+- Method `public com.oracle.bmc.dns.model.TSIG getTsig()` has been removed from the model `com.oracle.bmc.dns.model.ExternalMaster` in the DNS service
+- Class `com.oracle.bmc.dns.model.TSIG` has been removed in the DNS service
+- Class `com.oracle.bmc.usageapi.model.CreateCustomTableDetails` has been removed in the Usage service
+- Class `com.oracle.bmc.usageapi.model.CreateScheduleReportDetails` has been removed in the Usage service
+- Class `com.oracle.bmc.usageapi.model.CustomTable` has been removed in the Usage service
+- Class `com.oracle.bmc.usageapi.model.CustomTableCollection` has been removed in the Usage service
+- Class `com.oracle.bmc.usageapi.model.CustomTableSummary` has been removed in the Usage service
+- Class `com.oracle.bmc.usageapi.model.SavedScheduleReport` has been removed in the Usage service
+- Class `com.oracle.bmc.usageapi.model.SavedScheduleReport$NotificationType` has been removed from the model `com.oracle.bmc.usageapi.model.SavedScheduleReport` in the Usage service
+- Class `com.oracle.bmc.usageapi.model.ScheduleReport` has been removed in the Usage service
+- Class `com.oracle.bmc.usageapi.model.ScheduleReportCollection` has been removed in the Usage service
+- Class `com.oracle.bmc.usageapi.model.ScheduleReportSummary` has been removed in the Usage service
+- Class `com.oracle.bmc.usageapi.model.UpdateCustomTableDetails` has been removed in the Usage service
+- Class `com.oracle.bmc.usageapi.model.UpdateScheduleReportDetails` has been removed in the Usage service
+
 ## 2.1.1 - 2021-07-06
 ### Added
 - Support for order activation in the Organizations service

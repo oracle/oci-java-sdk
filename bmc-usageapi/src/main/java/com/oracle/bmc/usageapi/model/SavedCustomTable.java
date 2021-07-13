@@ -117,13 +117,13 @@ public class SavedCustomTable {
     }
 
     /**
-     * the name of custom table.
+     * The name of the custom table.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * row groupBy key list.
+     * The row groupBy key list.
      * example:
      *   `[\"tagNamespace\", \"tagKey\", \"tagValue\", \"service\", \"skuName\", \"skuPartNumber\", \"unit\",
      *     \"compartmentName\", \"compartmentPath\", \"compartmentId\", \"platform\", \"region\", \"logicalAd\",
@@ -134,7 +134,7 @@ public class SavedCustomTable {
     java.util.List<String> rowGroupBy;
 
     /**
-     * column groupBy key list.
+     * The column groupBy key list.
      * example:
      *   `[\"tagNamespace\", \"tagKey\", \"tagValue\", \"service\", \"skuName\", \"skuPartNumber\", \"unit\",
      *     \"compartmentName\", \"compartmentPath\", \"compartmentId\", \"platform\", \"region\", \"logicalAd\",
@@ -145,8 +145,8 @@ public class SavedCustomTable {
     java.util.List<String> columnGroupBy;
 
     /**
-     * GroupBy a specific tagKey. Provide tagNamespace and tagKey in tag object. Only support one tag in the list
-     * example:
+     * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported.
+     * For example:
      *   `[{\"namespace\":\"oracle\", \"key\":\"createdBy\"]`
      *
      **/
@@ -160,7 +160,7 @@ public class SavedCustomTable {
     java.math.BigDecimal compartmentDepth;
 
     /**
-     * the version of custom table.
+     * The version of the custom table.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     java.math.BigDecimal version;

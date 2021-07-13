@@ -5,7 +5,7 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * A description of workrequest status
+ * Description of the work request status.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -150,29 +150,26 @@ public class WorkRequest {
     }
 
     /**
-     * The id of the work request.
+     * The ID of the work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The ocid of the compartment that contains the work request. Work requests should be scoped to
-     * the same compartment as the resource the work request affects. If the work request affects multiple resources,
-     * and those resources are not in the same compartment, it is up to the service team to pick the primary
-     * resource whose compartment should be used
+     * The OCID of the compartment that contains the work request. Work requests should be scoped to the same compartment as the resource the work request affects. If the work request affects multiple resources, and those resources are not in the same compartment, it is up to the service team to pick the primary resource whose compartment should be used.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * Type of the work request
+     * The type of this work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     OperationTypes operationType;
 
     /**
-     * Status of current work request.
+     * The status of this work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     OperationStatus status;
@@ -184,29 +181,27 @@ public class WorkRequest {
     java.util.List<WorkRequestResource> resources;
 
     /**
-     * Percentage of the request completed.
+     * Percentage of this work request completed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     Float percentComplete;
 
     /**
-     * The date and time the request was created, as described in
-     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the request was created, shown as an RFC 3339 formatted datetime string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     java.util.Date timeAccepted;
 
     /**
-     * The date and time the request was started, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-     * section 14.29.
+     * The time the request was started, shown as an RFC 3339 formatted datetime string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     java.util.Date timeStarted;
 
     /**
-     * The date and time the object was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * The time the object was finished, shown as an RFC 3339 formatted datetime string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")

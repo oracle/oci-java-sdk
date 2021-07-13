@@ -71,7 +71,7 @@ public class ChangeShapeDetails {
     }
 
     /**
-     * Base-64 encoded password for Cloudera Manager admin user
+     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
     String clusterAdminPassword;

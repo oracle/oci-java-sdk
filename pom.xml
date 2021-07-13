@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>2.1.1</version>
+  <version>2.2.0</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -357,7 +357,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>2.10.4</version>
+          <version>3.3.0</version>
           <goals>
             <goal>jar</goal>
           </goals>
@@ -373,17 +373,10 @@
           <configuration>
             <!-- Exclude classes that shouldn't be exposed to end users, ex, those in 'internal' packages -->
             <excludePackageNames>*.internal.*</excludePackageNames>
-            <doclet>org.jdrupes.mdoclet.MDoclet</doclet>
-            <docletArtifact>
-              <groupId>org.jdrupes.mdoclet</groupId>
-              <artifactId>doclet</artifactId>
-              <version>1.0.10</version>
-            </docletArtifact>
-            <useStandardDocletOptions>true</useStandardDocletOptions>
             <aggregate>true</aggregate>
             <minmemory>512m</minmemory>
             <maxmemory>3072m</maxmemory>
-            <additionalparam>-Xdoclint:none -disable-highlight</additionalparam>
+            <doclint>none</doclint>
             <sourcepath>target/generated-sources-for-docs/delombok</sourcepath>
             <links>
               <link>https://jax-rs-spec.java.net/nonav/2.0-rev-a/apidocs</link>
@@ -712,6 +705,7 @@
     <module>bmc-genericartifactscontent</module>
     <module>bmc-jms</module>
     <module>bmc-devops</module>
+    <module>bmc-aianomalydetection</module>
     <module>bmc-full</module>
     <module>bmc-shaded</module>
   </modules>

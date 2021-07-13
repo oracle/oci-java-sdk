@@ -5,7 +5,7 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * The information about new BDS instance
+ * The information about the new cluster.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -175,19 +175,19 @@ public class CreateBdsInstanceDetails {
     }
 
     /**
-     * The OCID of the compartment
+     * The OCID of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * Name of the BDS instance
+     * Name of the Big Data Service cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Version of the Hadoop distribution
+     * Version of the Hadoop distribution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterVersion")
     BdsInstance.ClusterVersion clusterVersion;
@@ -199,19 +199,19 @@ public class CreateBdsInstanceDetails {
     String clusterPublicKey;
 
     /**
-     * Base-64 encoded password for Cloudera Manager admin user
+     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
     String clusterAdminPassword;
 
     /**
-     * Boolean flag specifying whether or not the cluster is HA
+     * Boolean flag specifying whether or not the cluster is highly available (HA).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHighAvailability")
     Boolean isHighAvailability;
 
     /**
-     * Boolean flag specifying whether or not the cluster should be setup as secure.
+     * Boolean flag specifying whether or not the cluster should be set up as secure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSecure")
     Boolean isSecure;
@@ -220,14 +220,14 @@ public class CreateBdsInstanceDetails {
     NetworkConfig networkConfig;
 
     /**
-     * The list of nodes in the BDS instance
+     * The list of nodes in the Big Data Service cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodes")
     java.util.List<CreateNodeDetails> nodes;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Simple key-value pair that is applied without any predefined name, type, or scope.
+     * Exists for cross-compatibility only. For example, `{\"bar-key\": \"value\"}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -235,7 +235,7 @@ public class CreateBdsInstanceDetails {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * For example, `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

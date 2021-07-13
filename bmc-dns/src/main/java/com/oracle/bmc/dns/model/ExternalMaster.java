@@ -6,8 +6,6 @@ package com.oracle.bmc.dns.model;
 
 /**
  * An external master name server used as the source of zone data.
- * May either have a zone-embedded TSIG or reference a TSIG key by OCID,
- * but not both.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -45,15 +43,6 @@ public class ExternalMaster {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("tsig")
-        private TSIG tsig;
-
-        public Builder tsig(TSIG tsig) {
-            this.tsig = tsig;
-            this.__explicitlySet__.add("tsig");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("tsigKeyId")
         private String tsigKeyId;
 
@@ -67,7 +56,7 @@ public class ExternalMaster {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExternalMaster build() {
-            ExternalMaster __instance__ = new ExternalMaster(address, port, tsig, tsigKeyId);
+            ExternalMaster __instance__ = new ExternalMaster(address, port, tsigKeyId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -75,10 +64,7 @@ public class ExternalMaster {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ExternalMaster o) {
             Builder copiedBuilder =
-                    address(o.getAddress())
-                            .port(o.getPort())
-                            .tsig(o.getTsig())
-                            .tsigKeyId(o.getTsigKeyId());
+                    address(o.getAddress()).port(o.getPort()).tsigKeyId(o.getTsigKeyId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -105,9 +91,6 @@ public class ExternalMaster {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     Integer port;
-
-    @com.fasterxml.jackson.annotation.JsonProperty("tsig")
-    TSIG tsig;
 
     /**
      * The OCID of the TSIG key.

@@ -77,7 +77,8 @@ public class UpdateResolverVnicEndpointDetails extends UpdateResolverEndpointDet
     }
 
     /**
-     * An array of NSG OCIDs for the resolver endpoint.
+     * An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the
+     * resolver endpoint is a part of.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")

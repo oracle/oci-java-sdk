@@ -101,6 +101,7 @@ public class BmcRequest<B> {
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         * @param o other request from which to copy values
          * @return this builder instance
          */
         Builder<T, B> copy(T o);
