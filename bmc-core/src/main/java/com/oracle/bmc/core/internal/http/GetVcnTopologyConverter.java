@@ -77,6 +77,9 @@ public class GetVcnTopologyConverter {
             ib.header("cache-control", request.getCacheControl());
         }
 
+        if (client.getClientConfigurator() != null) {
+            client.getClientConfigurator().customizeRequest(request, ib);
+        }
         return ib;
     }
 

@@ -827,8 +827,8 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create and start a pluggable database in the specified container database.
-     * If needed call actions/stop to stop the PDB.
+     * Creates and starts a pluggable database in the specified container database.
+     * Use the [StartPluggableDatabase](#/en/database/latest/PluggableDatabase/StartPluggableDatabase] and [StopPluggableDatabase](#/en/database/latest/PluggableDatabase/StopPluggableDatabase] APIs to start and stop the pluggable database.
      *
      *
      * @param request The request object containing the details to send
@@ -1191,7 +1191,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Delete a pluggable database
+     * Deletes the specified pluggable database.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1395,6 +1395,23 @@ public interface DatabaseAsync extends AutoCloseable {
                                     DownloadExadataInfrastructureConfigFileRequest,
                                     DownloadExadataInfrastructureConfigFileResponse>
                             handler);
+
+    /**
+     * Downloads the network validation report file for the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DownloadValidationReportResponse> downloadValidationReport(
+            DownloadValidationReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DownloadValidationReportRequest, DownloadValidationReportResponse>
+                    handler);
 
     /**
      * Downloads the configuration file for the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
@@ -2309,7 +2326,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about a specific pluggable database
+     * Gets information about the specified pluggable database.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2392,6 +2409,42 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     GetVmClusterPatchHistoryEntryRequest,
                                     GetVmClusterPatchHistoryEntryResponse>
+                            handler);
+
+    /**
+     * Gets information about a specified maintenance update package for a VM cluster. Applies to Exadata Cloud@Customer instances only.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetVmClusterUpdateResponse> getVmClusterUpdate(
+            GetVmClusterUpdateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetVmClusterUpdateRequest, GetVmClusterUpdateResponse>
+                    handler);
+
+    /**
+     * Gets the maintenance update history details for the specified update history entry. Applies to Exadata Cloud@Customer instances only.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetVmClusterUpdateHistoryEntryResponse>
+            getVmClusterUpdateHistoryEntry(
+                    GetVmClusterUpdateHistoryEntryRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetVmClusterUpdateHistoryEntryRequest,
+                                    GetVmClusterUpdateHistoryEntryResponse>
                             handler);
 
     /**
@@ -3161,8 +3214,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of the pluggable databases based on databaseId or compartmentId specified.
-     * Either one of the query parameters must be provided.
+     * Gets a list of the pluggable databases in a database or compartment. You must provide either a `databaseId` or `compartmentId` value.
      *
      *
      * @param request The request object containing the details to send
@@ -3232,6 +3284,42 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the history of the maintenance update actions performed on the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListVmClusterUpdateHistoryEntriesResponse>
+            listVmClusterUpdateHistoryEntries(
+                    ListVmClusterUpdateHistoryEntriesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListVmClusterUpdateHistoryEntriesRequest,
+                                    ListVmClusterUpdateHistoryEntriesResponse>
+                            handler);
+
+    /**
+     * Lists the maintenance updates that can be applied to the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListVmClusterUpdatesResponse> listVmClusterUpdates(
+            ListVmClusterUpdatesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListVmClusterUpdatesRequest, ListVmClusterUpdatesResponse>
+                    handler);
+
+    /**
      * Lists the VM clusters in the specified compartment. Applies to Exadata Cloud@Customer instances only.
      * To list the cloud VM clusters in an Exadata Cloud Service instance, use the {@link #listCloudVmClusters(ListCloudVmClustersRequest, Consumer, Consumer) listCloudVmClusters} operation.
      *
@@ -3249,7 +3337,8 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Clone and start a pluggable database on the same CDB. Only a started pluggable database can be cloned.
+     * Clones and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -3357,7 +3446,8 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Clone and start a pluggable database on a different CDB. Only a started pluggable database can be cloned.
+     * Clones a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -3563,7 +3653,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * start a stopped pluggable database. The openMode of the pluggable database will be READ_WRITE upon completion.
+     * Starts a stopped pluggable database. The `openMode` value of the pluggable database will be `READ_WRITE` upon completion.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -3596,7 +3686,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * stop a started pluggable database. The openMode of the pluggable database will be MOUNTED upon completion.
+     * Stops a pluggable database. The `openMode` value of the pluggable database will be `MOUNTED` upon completion.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -3912,6 +4002,23 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Updates the Data Guard association the specified database. This API can be used to change the `protectionMode` and `transportType` of the Data Guard association.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDataGuardAssociationResponse> updateDataGuardAssociation(
+            UpdateDataGuardAssociationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDataGuardAssociationRequest, UpdateDataGuardAssociationResponse>
+                    handler);
+
+    /**
      * Update the specified database based on the request parameters provided.
      *
      *
@@ -4131,7 +4238,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update a pluggable database
+     * Updates the specified pluggable database.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

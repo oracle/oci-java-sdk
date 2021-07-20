@@ -42,6 +42,15 @@ public class GetProjectConverter {
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
                                         request.getProjectKey()));
 
+        if (request.getProjection() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "projection",
+                            request.getProjection(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
@@ -50,6 +59,9 @@ public class GetProjectConverter {
             ib.header("opc-request-id", request.getOpcRequestId());
         }
 
+        if (client.getClientConfigurator() != null) {
+            client.getClientConfigurator().customizeRequest(request, ib);
+        }
         return ib;
     }
 

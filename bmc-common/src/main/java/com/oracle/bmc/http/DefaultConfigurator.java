@@ -4,6 +4,8 @@
  */
 package com.oracle.bmc.http;
 
+import com.oracle.bmc.http.internal.WrappedInvocationBuilder;
+import com.oracle.bmc.requests.BmcRequest;
 import com.oracle.bmc.util.internal.ReflectionUtils;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -41,14 +43,14 @@ public class DefaultConfigurator
     private final static String OCI_JAVASDK_JERSEY_CLIENT_DEFAULT_CONNECTOR_ENABLED_ENV_VAR =
             "OCI_JAVASDK_JERSEY_CLIENT_DEFAULT_CONNECTOR_ENABLED";
 
-    /** The boolean value indicating if the Apache Dependency classes are present on the classpath */
-    @Getter private static final boolean isApacheDependencyPresent;
-
-    static {
-        if (checkForApacheDependencies() && !jerseyDefaultConnectorEnabled()) {
-            isApacheDependencyPresent = true;
-        } else isApacheDependencyPresent = false;
-    }
+    /**
+     * The boolean value indicating if the Apache Dependency classes are present on the classpath, and the
+     * environment variable in OCI_JAVASDK_JERSEY_CLIENT_DEFAULT_CONNECTOR_ENABLED_ENV_VAR hasn't been set to
+     * true to enable the Jersey default connector instead.
+     */
+    @Getter
+    private static final boolean isApacheDependencyPresent =
+            (checkForApacheDependencies() && !jerseyDefaultConnectorEnabled());
 
     private static boolean checkForApacheDependencies() {
         // Check for existing of Apache dependencies, this is to ensure easier shift to Jersey default connector
@@ -153,6 +155,11 @@ public class DefaultConfigurator
         }
     }
 
+    @Override
+    public void customizeRequest(BmcRequest<?> request, WrappedInvocationBuilder ib) {
+        effectiveClientConfigurator.customizeRequest(request, ib);
+    }
+
     /**
      * A {@link ClientConfigurator} for a client that does not buffer requests in memory.
      *
@@ -180,6 +187,11 @@ public class DefaultConfigurator
         @Override
         public void customizeClient(Client client) {
             effectiveClientConfigurator.customizeClient(client);
+        }
+
+        @Override
+        public void customizeRequest(BmcRequest<?> request, WrappedInvocationBuilder ib) {
+            effectiveClientConfigurator.customizeRequest(request, ib);
         }
 
         @Override

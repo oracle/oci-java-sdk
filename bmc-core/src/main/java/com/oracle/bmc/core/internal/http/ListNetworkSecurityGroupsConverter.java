@@ -107,6 +107,9 @@ public class ListNetworkSecurityGroupsConverter {
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 
+        if (client.getClientConfigurator() != null) {
+            client.getClientConfigurator().customizeRequest(request, ib);
+        }
         return ib;
     }
 

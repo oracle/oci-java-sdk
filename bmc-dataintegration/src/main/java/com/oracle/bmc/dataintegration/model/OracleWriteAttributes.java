@@ -15,14 +15,20 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = OracleWriteAttributes.Builder.class
 )
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 @lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OracleWriteAttributes {
+public class OracleWriteAttributes extends AbstractWriteAttribute {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
@@ -80,6 +86,14 @@ public class OracleWriteAttributes {
      */
     public static Builder builder() {
         return new Builder();
+    }
+
+    @Deprecated
+    public OracleWriteAttributes(Integer batchSize, Boolean isTruncate, String isolationLevel) {
+        super();
+        this.batchSize = batchSize;
+        this.isTruncate = isTruncate;
+        this.isolationLevel = isolationLevel;
     }
 
     /**

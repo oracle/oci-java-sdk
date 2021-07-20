@@ -21,7 +21,7 @@ public class RemoteClonePluggableDatabaseRequest
         extends com.oracle.bmc.requests.BmcRequest<RemoteClonePluggableDatabaseDetails> {
 
     /**
-     * Request to clone a pluggable database remotely.
+     * Request to clone a pluggable database (PDB) to a different database (CDB) from the source PDB.
      */
     private RemoteClonePluggableDatabaseDetails remoteClonePluggableDatabaseDetails;
 

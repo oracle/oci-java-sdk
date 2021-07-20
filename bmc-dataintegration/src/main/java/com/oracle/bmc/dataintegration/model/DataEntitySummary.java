@@ -37,6 +37,10 @@ package com.oracle.bmc.dataintegration.model;
         name = "TABLE_ENTITY"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DataEntitySummaryFromDataStore.class,
+        name = "DATA_STORE_ENTITY"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DataEntitySummaryFromView.class,
         name = "VIEW_ENTITY"
     )
@@ -55,6 +59,7 @@ public class DataEntitySummary {
         ViewEntity("VIEW_ENTITY"),
         TableEntity("TABLE_ENTITY"),
         FileEntity("FILE_ENTITY"),
+        DataStoreEntity("DATA_STORE_ENTITY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

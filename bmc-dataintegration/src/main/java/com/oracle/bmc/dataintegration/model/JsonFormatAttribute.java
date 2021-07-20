@@ -32,6 +32,15 @@ public class JsonFormatAttribute extends AbstractFormatAttribute {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("isFilePattern")
+        private Boolean isFilePattern;
+
+        public Builder isFilePattern(Boolean isFilePattern) {
+            this.isFilePattern = isFilePattern;
+            this.__explicitlySet__.add("isFilePattern");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("encoding")
         private String encoding;
 
@@ -45,14 +54,14 @@ public class JsonFormatAttribute extends AbstractFormatAttribute {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public JsonFormatAttribute build() {
-            JsonFormatAttribute __instance__ = new JsonFormatAttribute(encoding);
+            JsonFormatAttribute __instance__ = new JsonFormatAttribute(isFilePattern, encoding);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(JsonFormatAttribute o) {
-            Builder copiedBuilder = encoding(o.getEncoding());
+            Builder copiedBuilder = isFilePattern(o.getIsFilePattern()).encoding(o.getEncoding());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -67,8 +76,8 @@ public class JsonFormatAttribute extends AbstractFormatAttribute {
     }
 
     @Deprecated
-    public JsonFormatAttribute(String encoding) {
-        super();
+    public JsonFormatAttribute(Boolean isFilePattern, String encoding) {
+        super(isFilePattern);
         this.encoding = encoding;
     }
 

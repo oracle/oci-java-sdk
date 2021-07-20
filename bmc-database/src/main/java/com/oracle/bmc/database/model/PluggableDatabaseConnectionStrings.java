@@ -85,19 +85,19 @@ public class PluggableDatabaseConnectionStrings {
     }
 
     /**
-     * Host name based PDB Connection String.
+     * A host name-based PDB connection string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pdbDefault")
     String pdbDefault;
 
     /**
-     * IP based PDB Connection String.
+     * An IP-based PDB connection string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pdbIpDefault")
     String pdbIpDefault;
 
     /**
-     * All connection strings to use to connect to the Pluggable Database.
+     * All connection strings to use to connect to the pluggable database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allConnectionStrings")
     java.util.Map<String, String> allConnectionStrings;

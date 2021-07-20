@@ -61,6 +61,10 @@ package com.oracle.bmc.dataintegration.model;
         name = "UNION_OPERATOR"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ExpressionOperator.class,
+        name = "EXPRESSION_OPERATOR"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = Intersect.class,
         name = "INTERSECT_OPERATOR"
     ),
@@ -75,6 +79,10 @@ package com.oracle.bmc.dataintegration.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = Filter.class,
         name = "FILTER_OPERATOR"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = Lookup.class,
+        name = "LOOKUP_OPERATOR"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = StartOperator.class,
@@ -178,8 +186,9 @@ public class Operator {
         StartOperator("START_OPERATOR"),
         EndOperator("END_OPERATOR"),
         PipelineOperator("PIPELINE_OPERATOR"),
-        RestOperator("REST_OPERATOR"),
         TaskOperator("TASK_OPERATOR"),
+        ExpressionOperator("EXPRESSION_OPERATOR"),
+        LookupOperator("LOOKUP_OPERATOR"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

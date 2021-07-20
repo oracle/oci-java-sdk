@@ -60,6 +60,9 @@ public class GetIncidentConverter {
             ib.header("problem-type", request.getProblemType());
         }
 
+        if (client.getClientConfigurator() != null) {
+            client.getClientConfigurator().customizeRequest(request, ib);
+        }
         return ib;
     }
 

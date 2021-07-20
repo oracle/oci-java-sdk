@@ -55,7 +55,18 @@ public class BmcRequest<B> {
     }
 
     /**
-     * Uses invocationCallback and retryConfiguration to determine object equality.
+     * Returns true if this operation supports Expect: 100-Continue.
+     * @return true if this operation supports Expect: 100-Continue.
+     */
+    @JsonIgnore
+    @com.oracle.bmc.InternalSdk
+    public boolean supportsExpect100Continue() {
+        return false;
+    }
+
+    /**
+     * Uses getInvocationCallback and getRetryConfiguration to determine if passed
+     * request is equal to 'this'.
      **/
     @Override
     public boolean equals(Object o) {

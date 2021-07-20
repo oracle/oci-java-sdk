@@ -2092,6 +2092,116 @@ public class DataIntegrationPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listSchedules operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListSchedulesResponse> listSchedulesResponseIterator(
+            final ListSchedulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSchedulesRequest.Builder, ListSchedulesRequest, ListSchedulesResponse>(
+                new com.google.common.base.Supplier<ListSchedulesRequest.Builder>() {
+                    @Override
+                    public ListSchedulesRequest.Builder get() {
+                        return ListSchedulesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSchedulesResponse, String>() {
+                    @Override
+                    public String apply(ListSchedulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSchedulesRequest.Builder>,
+                        ListSchedulesRequest>() {
+                    @Override
+                    public ListSchedulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSchedulesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListSchedulesRequest, ListSchedulesResponse>() {
+                    @Override
+                    public ListSchedulesResponse apply(ListSchedulesRequest request) {
+                        return client.listSchedules(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataintegration.model.ScheduleSummary} objects
+     * contained in responses from the listSchedules operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataintegration.model.ScheduleSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dataintegration.model.ScheduleSummary>
+            listSchedulesRecordIterator(final ListSchedulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSchedulesRequest.Builder, ListSchedulesRequest, ListSchedulesResponse,
+                com.oracle.bmc.dataintegration.model.ScheduleSummary>(
+                new com.google.common.base.Supplier<ListSchedulesRequest.Builder>() {
+                    @Override
+                    public ListSchedulesRequest.Builder get() {
+                        return ListSchedulesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSchedulesResponse, String>() {
+                    @Override
+                    public String apply(ListSchedulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSchedulesRequest.Builder>,
+                        ListSchedulesRequest>() {
+                    @Override
+                    public ListSchedulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSchedulesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListSchedulesRequest, ListSchedulesResponse>() {
+                    @Override
+                    public ListSchedulesResponse apply(ListSchedulesRequest request) {
+                        return client.listSchedules(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSchedulesResponse,
+                        java.util.List<com.oracle.bmc.dataintegration.model.ScheduleSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.dataintegration.model.ScheduleSummary>
+                            apply(ListSchedulesResponse response) {
+                        return response.getScheduleSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listSchemas operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -2419,6 +2529,121 @@ public class DataIntegrationPaginators {
                     public java.util.List<com.oracle.bmc.dataintegration.model.TaskRunSummary>
                             apply(ListTaskRunsResponse response) {
                         return response.getTaskRunSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listTaskSchedules operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListTaskSchedulesResponse> listTaskSchedulesResponseIterator(
+            final ListTaskSchedulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListTaskSchedulesRequest.Builder, ListTaskSchedulesRequest,
+                ListTaskSchedulesResponse>(
+                new com.google.common.base.Supplier<ListTaskSchedulesRequest.Builder>() {
+                    @Override
+                    public ListTaskSchedulesRequest.Builder get() {
+                        return ListTaskSchedulesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListTaskSchedulesResponse, String>() {
+                    @Override
+                    public String apply(ListTaskSchedulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTaskSchedulesRequest.Builder>,
+                        ListTaskSchedulesRequest>() {
+                    @Override
+                    public ListTaskSchedulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTaskSchedulesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListTaskSchedulesRequest, ListTaskSchedulesResponse>() {
+                    @Override
+                    public ListTaskSchedulesResponse apply(ListTaskSchedulesRequest request) {
+                        return client.listTaskSchedules(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataintegration.model.TaskScheduleSummary} objects
+     * contained in responses from the listTaskSchedules operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataintegration.model.TaskScheduleSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dataintegration.model.TaskScheduleSummary>
+            listTaskSchedulesRecordIterator(final ListTaskSchedulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListTaskSchedulesRequest.Builder, ListTaskSchedulesRequest,
+                ListTaskSchedulesResponse,
+                com.oracle.bmc.dataintegration.model.TaskScheduleSummary>(
+                new com.google.common.base.Supplier<ListTaskSchedulesRequest.Builder>() {
+                    @Override
+                    public ListTaskSchedulesRequest.Builder get() {
+                        return ListTaskSchedulesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListTaskSchedulesResponse, String>() {
+                    @Override
+                    public String apply(ListTaskSchedulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTaskSchedulesRequest.Builder>,
+                        ListTaskSchedulesRequest>() {
+                    @Override
+                    public ListTaskSchedulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTaskSchedulesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListTaskSchedulesRequest, ListTaskSchedulesResponse>() {
+                    @Override
+                    public ListTaskSchedulesResponse apply(ListTaskSchedulesRequest request) {
+                        return client.listTaskSchedules(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListTaskSchedulesResponse,
+                        java.util.List<
+                                com.oracle.bmc.dataintegration.model.TaskScheduleSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.dataintegration.model.TaskScheduleSummary>
+                            apply(ListTaskSchedulesResponse response) {
+                        return response.getTaskScheduleSummaryCollection().getItems();
                     }
                 });
     }

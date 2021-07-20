@@ -574,8 +574,8 @@ public interface Database extends AutoCloseable {
     CreateKeyStoreResponse createKeyStore(CreateKeyStoreRequest request);
 
     /**
-     * Create and start a pluggable database in the specified container database.
-     * If needed call actions/stop to stop the PDB.
+     * Creates and starts a pluggable database in the specified container database.
+     * Use the [StartPluggableDatabase](#/en/database/latest/PluggableDatabase/StartPluggableDatabase] and [StopPluggableDatabase](#/en/database/latest/PluggableDatabase/StopPluggableDatabase] APIs to start and stop the pluggable database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -823,7 +823,7 @@ public interface Database extends AutoCloseable {
     DeleteKeyStoreResponse deleteKeyStore(DeleteKeyStoreRequest request);
 
     /**
-     * Delete a pluggable database
+     * Deletes the specified pluggable database.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -959,6 +959,18 @@ public interface Database extends AutoCloseable {
      */
     DownloadExadataInfrastructureConfigFileResponse downloadExadataInfrastructureConfigFile(
             DownloadExadataInfrastructureConfigFileRequest request);
+
+    /**
+     * Downloads the network validation report file for the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DownloadValidationReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DownloadValidationReport API.
+     */
+    DownloadValidationReportResponse downloadValidationReport(
+            DownloadValidationReportRequest request);
 
     /**
      * Downloads the configuration file for the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
@@ -1575,7 +1587,7 @@ public interface Database extends AutoCloseable {
     GetMaintenanceRunResponse getMaintenanceRun(GetMaintenanceRunRequest request);
 
     /**
-     * Gets information about a specific pluggable database
+     * Gets information about the specified pluggable database.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1629,6 +1641,29 @@ public interface Database extends AutoCloseable {
      */
     GetVmClusterPatchHistoryEntryResponse getVmClusterPatchHistoryEntry(
             GetVmClusterPatchHistoryEntryRequest request);
+
+    /**
+     * Gets information about a specified maintenance update package for a VM cluster. Applies to Exadata Cloud@Customer instances only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetVmClusterUpdateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVmClusterUpdate API.
+     */
+    GetVmClusterUpdateResponse getVmClusterUpdate(GetVmClusterUpdateRequest request);
+
+    /**
+     * Gets the maintenance update history details for the specified update history entry. Applies to Exadata Cloud@Customer instances only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetVmClusterUpdateHistoryEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVmClusterUpdateHistoryEntry API.
+     */
+    GetVmClusterUpdateHistoryEntryResponse getVmClusterUpdateHistoryEntry(
+            GetVmClusterUpdateHistoryEntryRequest request);
 
     /**
      * Creates a new Autonomous Exadata Infrastructure in the specified compartment and availability domain.
@@ -2141,8 +2176,7 @@ public interface Database extends AutoCloseable {
     ListMaintenanceRunsResponse listMaintenanceRuns(ListMaintenanceRunsRequest request);
 
     /**
-     * Gets a list of the pluggable databases based on databaseId or compartmentId specified.
-     * Either one of the query parameters must be provided.
+     * Gets a list of the pluggable databases in a database or compartment. You must provide either a `databaseId` or `compartmentId` value.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2187,6 +2221,29 @@ public interface Database extends AutoCloseable {
     ListVmClusterPatchesResponse listVmClusterPatches(ListVmClusterPatchesRequest request);
 
     /**
+     * Gets the history of the maintenance update actions performed on the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListVmClusterUpdateHistoryEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVmClusterUpdateHistoryEntries API.
+     */
+    ListVmClusterUpdateHistoryEntriesResponse listVmClusterUpdateHistoryEntries(
+            ListVmClusterUpdateHistoryEntriesRequest request);
+
+    /**
+     * Lists the maintenance updates that can be applied to the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListVmClusterUpdatesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVmClusterUpdates API.
+     */
+    ListVmClusterUpdatesResponse listVmClusterUpdates(ListVmClusterUpdatesRequest request);
+
+    /**
      * Lists the VM clusters in the specified compartment. Applies to Exadata Cloud@Customer instances only.
      * To list the cloud VM clusters in an Exadata Cloud Service instance, use the {@link #listCloudVmClusters(ListCloudVmClustersRequest) listCloudVmClusters} operation.
      *
@@ -2199,7 +2256,8 @@ public interface Database extends AutoCloseable {
     ListVmClustersResponse listVmClusters(ListVmClustersRequest request);
 
     /**
-     * Clone and start a pluggable database on the same CDB. Only a started pluggable database can be cloned.
+     * Clones and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -2270,7 +2328,8 @@ public interface Database extends AutoCloseable {
             ReinstateDataGuardAssociationRequest request);
 
     /**
-     * Clone and start a pluggable database on a different CDB. Only a started pluggable database can be cloned.
+     * Clones a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -2408,7 +2467,7 @@ public interface Database extends AutoCloseable {
     StartAutonomousDatabaseResponse startAutonomousDatabase(StartAutonomousDatabaseRequest request);
 
     /**
-     * start a stopped pluggable database. The openMode of the pluggable database will be READ_WRITE upon completion.
+     * Starts a stopped pluggable database. The `openMode` value of the pluggable database will be `READ_WRITE` upon completion.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -2429,7 +2488,7 @@ public interface Database extends AutoCloseable {
     StopAutonomousDatabaseResponse stopAutonomousDatabase(StopAutonomousDatabaseRequest request);
 
     /**
-     * stop a started pluggable database. The openMode of the pluggable database will be MOUNTED upon completion.
+     * Stops a pluggable database. The `openMode` value of the pluggable database will be `MOUNTED` upon completion.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -2636,6 +2695,18 @@ public interface Database extends AutoCloseable {
             UpdateCloudVmClusterIormConfigRequest request);
 
     /**
+     * Updates the Data Guard association the specified database. This API can be used to change the `protectionMode` and `transportType` of the Data Guard association.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateDataGuardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDataGuardAssociation API.
+     */
+    UpdateDataGuardAssociationResponse updateDataGuardAssociation(
+            UpdateDataGuardAssociationRequest request);
+
+    /**
      * Update the specified database based on the request parameters provided.
      *
      * @param request The request object containing the details to send
@@ -2785,7 +2856,7 @@ public interface Database extends AutoCloseable {
     UpdateMaintenanceRunResponse updateMaintenanceRun(UpdateMaintenanceRunRequest request);
 
     /**
-     * Update a pluggable database
+     * Updates the specified pluggable database.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

@@ -51,6 +51,9 @@ public class GetModelArtifactContentConverter {
             ib.header("range", request.getRange());
         }
 
+        if (client.getClientConfigurator() != null) {
+            client.getClientConfigurator().customizeRequest(request, ib);
+        }
         return ib;
     }
 

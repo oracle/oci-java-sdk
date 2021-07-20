@@ -4,7 +4,10 @@
  */
 package com.oracle.bmc.http;
 
+import com.oracle.bmc.http.internal.WrappedInvocationBuilder;
+import com.oracle.bmc.requests.BmcRequest;
 import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -46,6 +49,13 @@ public class CompositeClientConfigurator implements ClientConfigurator {
     public void customizeClient(Client client) {
         for (ClientConfigurator configurator : configurators) {
             configurator.customizeClient(client);
+        }
+    }
+
+    @Override
+    public void customizeRequest(BmcRequest<?> request, WrappedInvocationBuilder ib) {
+        for (ClientConfigurator configurator : configurators) {
+            configurator.customizeRequest(request, ib);
         }
     }
 

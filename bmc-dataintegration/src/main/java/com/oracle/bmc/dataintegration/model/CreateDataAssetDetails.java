@@ -45,6 +45,14 @@ package com.oracle.bmc.dataintegration.model;
         name = "ORACLE_ADWC_DATA_ASSET"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateDataAssetFromAmazonS3.class,
+        name = "AMAZON_S3_DATA_ASSET"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateDataAssetFromFusionApp.class,
+        name = "FUSION_APP_DATA_ASSET"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateDataAssetFromAtp.class,
         name = "ORACLE_ATP_DATA_ASSET"
     ),
@@ -117,6 +125,8 @@ public class CreateDataAssetDetails {
         OracleAdwcDataAsset("ORACLE_ADWC_DATA_ASSET"),
         MysqlDataAsset("MYSQL_DATA_ASSET"),
         GenericJdbcDataAsset("GENERIC_JDBC_DATA_ASSET"),
+        FusionAppDataAsset("FUSION_APP_DATA_ASSET"),
+        AmazonS3DataAsset("AMAZON_S3_DATA_ASSET"),
         ;
 
         private final String value;

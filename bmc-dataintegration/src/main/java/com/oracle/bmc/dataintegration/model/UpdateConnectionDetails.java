@@ -37,6 +37,14 @@ package com.oracle.bmc.dataintegration.model;
         name = "ORACLE_OBJECT_STORAGE_CONNECTION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateConnectionFromBICC.class,
+        name = "BICC_CONNECTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateConnectionFromAmazonS3.class,
+        name = "AMAZON_S3_CONNECTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateConnectionFromAtp.class,
         name = "ORACLE_ATP_CONNECTION"
     ),
@@ -120,6 +128,8 @@ public class UpdateConnectionDetails {
         OracledbConnection("ORACLEDB_CONNECTION"),
         MysqlConnection("MYSQL_CONNECTION"),
         GenericJdbcConnection("GENERIC_JDBC_CONNECTION"),
+        BiccConnection("BICC_CONNECTION"),
+        AmazonS3Connection("AMAZON_S3_CONNECTION"),
         ;
 
         private final String value;

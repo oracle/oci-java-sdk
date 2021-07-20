@@ -4,20 +4,60 @@
  */
 package com.oracle.bmc.http;
 
+import java.util.logging.Level;
+
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import org.glassfish.jersey.logging.LoggingFeature;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 
 /**
  * Configurator allowing SDK users to enable Jersey logging request & response on client-side.
+ *
+ * See also https://hc.apache.org/httpcomponents-client-4.5.x/logging.html
  */
-@RequiredArgsConstructor
 public class JerseyLoggingClientConfigurator implements ClientConfigurator {
 
     @NonNull private org.glassfish.jersey.logging.LoggingFeature.Verbosity verbosity;
+
+    /**
+     * This logging level is {@link java.util.logging.Level}.
+     *
+     *  The levels in descending order are:
+     *
+     *     SEVERE (highest value)
+     *     WARNING
+     *     INFO
+     *     CONFIG
+     *     FINE
+     *     FINER
+     *     FINEST (lowest value)
+     */
     @NonNull private String loggingLevel;
+
+    /**
+     * Create a Jersey logging configurator.
+     * @param verbosity verbosity
+     * @param loggingLevel logging level
+     */
+    public JerseyLoggingClientConfigurator(
+            @NonNull LoggingFeature.Verbosity verbosity, @NonNull String loggingLevel) {
+        this.verbosity = verbosity;
+        this.loggingLevel = loggingLevel;
+    }
+
+    /**
+     * Create a Jersey logging configurator.
+     * @param verbosity verbosity
+     * @param loggingLevel logging level
+     */
+    public JerseyLoggingClientConfigurator(
+            @NonNull LoggingFeature.Verbosity verbosity, @NonNull Level loggingLevel) {
+        this.verbosity = verbosity;
+        this.loggingLevel = loggingLevel.toString();
+    }
 
     @Override
     public void customizeBuilder(ClientBuilder builder) {}

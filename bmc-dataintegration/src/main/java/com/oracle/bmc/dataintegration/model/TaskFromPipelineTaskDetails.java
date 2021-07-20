@@ -167,6 +167,15 @@ public class TaskFromPipelineTaskDetails extends Task {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("registryMetadata")
+        private RegistryMetadata registryMetadata;
+
+        public Builder registryMetadata(RegistryMetadata registryMetadata) {
+            this.registryMetadata = registryMetadata;
+            this.__explicitlySet__.add("registryMetadata");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("pipeline")
         private Pipeline pipeline;
 
@@ -197,6 +206,7 @@ public class TaskFromPipelineTaskDetails extends Task {
                             configProviderDelegate,
                             metadata,
                             keyMap,
+                            registryMetadata,
                             pipeline);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -220,6 +230,7 @@ public class TaskFromPipelineTaskDetails extends Task {
                             .configProviderDelegate(o.getConfigProviderDelegate())
                             .metadata(o.getMetadata())
                             .keyMap(o.getKeyMap())
+                            .registryMetadata(o.getRegistryMetadata())
                             .pipeline(o.getPipeline());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -251,6 +262,7 @@ public class TaskFromPipelineTaskDetails extends Task {
             ConfigProvider configProviderDelegate,
             ObjectMetadata metadata,
             java.util.Map<String, String> keyMap,
+            RegistryMetadata registryMetadata,
             Pipeline pipeline) {
         super(
                 key,
@@ -267,7 +279,8 @@ public class TaskFromPipelineTaskDetails extends Task {
                 opConfigValues,
                 configProviderDelegate,
                 metadata,
-                keyMap);
+                keyMap,
+                registryMetadata);
         this.pipeline = pipeline;
     }
 

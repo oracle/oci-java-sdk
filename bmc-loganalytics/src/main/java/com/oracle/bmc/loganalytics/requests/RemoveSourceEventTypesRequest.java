@@ -61,6 +61,11 @@ public class RemoveSourceEventTypesRequest
         return removeEventTypeDetails;
     }
 
+    @Override
+    public boolean supportsExpect100Continue() {
+        return true;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     RemoveSourceEventTypesRequest, EventTypeDetails> {

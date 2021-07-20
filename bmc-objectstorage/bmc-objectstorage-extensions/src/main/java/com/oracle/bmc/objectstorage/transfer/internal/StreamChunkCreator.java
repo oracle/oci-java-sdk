@@ -161,8 +161,6 @@ public class StreamChunkCreator {
     /**
      * Creates a new SubRangeInputStream that represents a sub-range of bytes from another InputStream.
      * It's assumed the sub range stream can only be read once, and a sub range of bytes from another input stream.
-     * <<<<<<< HEAD
-     * =======
      *
      * Note: The behavior is a bit strange. A {@link SubRangeInputStream} doesn't guarantee that, if you read the
      * chunks out of order, it will actually read the designated subrange. All it guarantees is that if you read all of
@@ -175,7 +173,6 @@ public class StreamChunkCreator {
      * Because this stream cannot be duplicated for each thread, it does not support {@link InputStream#mark(int)} and
      * {@link InputStream#reset()}, even if the source stream does. This is because all threads share the same stream,
      * and resetting the stream in one thread would interfere with another thread reading from the stream.
-     * >>>>>>> 0d885027ab... DEX-7431/DEX-7469/DEX-7047/DEX-7411: Retries when uploading streams (manual changes)
      */
     public static class SubRangeInputStream extends InputStream {
         // used to advance the start offset to the desired offset.

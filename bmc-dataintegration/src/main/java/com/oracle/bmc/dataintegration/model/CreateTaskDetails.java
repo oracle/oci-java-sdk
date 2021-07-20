@@ -39,6 +39,18 @@ package com.oracle.bmc.dataintegration.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateTaskFromPipelineTask.class,
         name = "PIPELINE_TASK"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateTaskFromOCIDataflowTask.class,
+        name = "OCI_DATAFLOW_TASK"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateTaskFromSQLTask.class,
+        name = "SQL_TASK"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateTaskFromRestTask.class,
+        name = "REST_TASK"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -117,6 +129,9 @@ public class CreateTaskDetails {
         IntegrationTask("INTEGRATION_TASK"),
         DataLoaderTask("DATA_LOADER_TASK"),
         PipelineTask("PIPELINE_TASK"),
+        SqlTask("SQL_TASK"),
+        OciDataflowTask("OCI_DATAFLOW_TASK"),
+        RestTask("REST_TASK"),
         ;
 
         private final String value;

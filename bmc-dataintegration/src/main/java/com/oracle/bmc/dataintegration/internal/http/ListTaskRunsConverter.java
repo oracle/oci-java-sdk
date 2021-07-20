@@ -43,6 +43,15 @@ public class ListTaskRunsConverter {
                                         request.getApplicationKey()))
                         .path("taskRuns");
 
+        if (request.getKey() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "key",
+                            request.getKey(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         if (request.getAggregatorKey() != null) {
             target =
                     target.queryParam(
@@ -109,6 +118,15 @@ public class ListTaskRunsConverter {
                                     request.getSortBy().getValue()));
         }
 
+        if (request.getFilter() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "filter",
+                            request.getFilter(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
@@ -117,6 +135,9 @@ public class ListTaskRunsConverter {
             ib.header("opc-request-id", request.getOpcRequestId());
         }
 
+        if (client.getClientConfigurator() != null) {
+            client.getClientConfigurator().customizeRequest(request, ib);
+        }
         return ib;
     }
 

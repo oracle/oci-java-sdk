@@ -98,10 +98,14 @@ public class ApacheConnectorProperties {
             DEFAULT_APACHE_CONNECTION_POOL_CONFIG;
 
     /**
-     * A value that indicates whether to support expect 100 continue behavior for the Apache HttpClient
-     * The value MUST be boolean
+     * A value that indicates whether to support expect 100 continue behavior for the Apache HttpClient.
      *
-     * If the property is absent then default option of true will be used
+     * If this value is true, and the Apache HttpClient is used, and operation supports expect 100 continue, then this
+     * request header will be emitted.
+     *
+     * The value MUST be boolean.
+     *
+     * If the property is absent then default option of true will be used.
      */
     @Getter @Builder.Default private final boolean expectContinue = DEFAULT_EXPECT_CONTINUE;
 

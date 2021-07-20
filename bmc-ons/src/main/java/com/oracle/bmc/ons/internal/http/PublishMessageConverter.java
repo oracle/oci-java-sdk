@@ -51,6 +51,9 @@ public class PublishMessageConverter {
             ib.header("messageType", request.getMessageType().getValue());
         }
 
+        if (client.getClientConfigurator() != null) {
+            client.getClientConfigurator().customizeRequest(request, ib);
+        }
         return ib;
     }
 

@@ -134,6 +134,9 @@ public class GetObjectConverter {
             ib.header("opc-sse-customer-key-sha256", request.getOpcSseCustomerKeySha256());
         }
 
+        if (client.getClientConfigurator() != null) {
+            client.getClientConfigurator().customizeRequest(request, ib);
+        }
         return ib;
     }
 

@@ -55,6 +55,11 @@ public class UpdateStorageRequest extends com.oracle.bmc.requests.BmcRequest<Upd
         return updateStorageDetails;
     }
 
+    @Override
+    public boolean supportsExpect100Continue() {
+        return true;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateStorageRequest, UpdateStorageDetails> {

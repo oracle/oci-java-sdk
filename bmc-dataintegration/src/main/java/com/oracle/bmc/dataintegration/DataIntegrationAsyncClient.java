@@ -996,6 +996,46 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateScheduleResponse> createSchedule(
+            CreateScheduleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateScheduleRequest, CreateScheduleResponse>
+                    handler) {
+        LOG.trace("Called async createSchedule");
+        final CreateScheduleRequest interceptedRequest =
+                CreateScheduleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateScheduleConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateScheduleResponse>
+                transformer = CreateScheduleConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<CreateScheduleRequest, CreateScheduleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateScheduleRequest, CreateScheduleResponse>,
+                        java.util.concurrent.Future<CreateScheduleResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateScheduleRequest, CreateScheduleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTaskResponse> createTask(
             CreateTaskRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateTaskRequest, CreateTaskResponse>
@@ -1060,6 +1100,46 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateTaskRunRequest, CreateTaskRunResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTaskScheduleResponse> createTaskSchedule(
+            CreateTaskScheduleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateTaskScheduleRequest, CreateTaskScheduleResponse>
+                    handler) {
+        LOG.trace("Called async createTaskSchedule");
+        final CreateTaskScheduleRequest interceptedRequest =
+                CreateTaskScheduleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateTaskScheduleConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTaskScheduleResponse>
+                transformer = CreateTaskScheduleConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<CreateTaskScheduleRequest, CreateTaskScheduleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateTaskScheduleRequest, CreateTaskScheduleResponse>,
+                        java.util.concurrent.Future<CreateTaskScheduleResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateTaskScheduleRequest, CreateTaskScheduleResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1679,6 +1759,45 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteScheduleResponse> deleteSchedule(
+            DeleteScheduleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteScheduleRequest, DeleteScheduleResponse>
+                    handler) {
+        LOG.trace("Called async deleteSchedule");
+        final DeleteScheduleRequest interceptedRequest =
+                DeleteScheduleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteScheduleConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteScheduleResponse>
+                transformer = DeleteScheduleConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<DeleteScheduleRequest, DeleteScheduleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteScheduleRequest, DeleteScheduleResponse>,
+                        java.util.concurrent.Future<DeleteScheduleResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteScheduleRequest, DeleteScheduleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteTaskResponse> deleteTask(
             DeleteTaskRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteTaskRequest, DeleteTaskResponse>
@@ -1741,6 +1860,45 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteTaskRunRequest, DeleteTaskRunResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTaskScheduleResponse> deleteTaskSchedule(
+            DeleteTaskScheduleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteTaskScheduleRequest, DeleteTaskScheduleResponse>
+                    handler) {
+        LOG.trace("Called async deleteTaskSchedule");
+        final DeleteTaskScheduleRequest interceptedRequest =
+                DeleteTaskScheduleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteTaskScheduleConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTaskScheduleResponse>
+                transformer = DeleteTaskScheduleConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<DeleteTaskScheduleRequest, DeleteTaskScheduleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteTaskScheduleRequest, DeleteTaskScheduleResponse>,
+                        java.util.concurrent.Future<DeleteTaskScheduleResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteTaskScheduleRequest, DeleteTaskScheduleResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2537,6 +2695,44 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetScheduleResponse> getSchedule(
+            GetScheduleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetScheduleRequest, GetScheduleResponse>
+                    handler) {
+        LOG.trace("Called async getSchedule");
+        final GetScheduleRequest interceptedRequest =
+                GetScheduleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetScheduleConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetScheduleResponse>
+                transformer = GetScheduleConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetScheduleRequest, GetScheduleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetScheduleRequest, GetScheduleResponse>,
+                        java.util.concurrent.Future<GetScheduleResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetScheduleRequest, GetScheduleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSchemaResponse> getSchema(
             GetSchemaRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetSchemaRequest, GetSchemaResponse>
@@ -2632,6 +2828,45 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetTaskRunRequest, GetTaskRunResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTaskScheduleResponse> getTaskSchedule(
+            GetTaskScheduleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetTaskScheduleRequest, GetTaskScheduleResponse>
+                    handler) {
+        LOG.trace("Called async getTaskSchedule");
+        final GetTaskScheduleRequest interceptedRequest =
+                GetTaskScheduleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTaskScheduleConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetTaskScheduleResponse>
+                transformer = GetTaskScheduleConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetTaskScheduleRequest, GetTaskScheduleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetTaskScheduleRequest, GetTaskScheduleResponse>,
+                        java.util.concurrent.Future<GetTaskScheduleResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetTaskScheduleRequest, GetTaskScheduleResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3478,6 +3713,44 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListSchedulesResponse> listSchedules(
+            ListSchedulesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListSchedulesRequest, ListSchedulesResponse>
+                    handler) {
+        LOG.trace("Called async listSchedules");
+        final ListSchedulesRequest interceptedRequest =
+                ListSchedulesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSchedulesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListSchedulesResponse>
+                transformer = ListSchedulesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListSchedulesRequest, ListSchedulesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSchedulesRequest, ListSchedulesResponse>,
+                        java.util.concurrent.Future<ListSchedulesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSchedulesRequest, ListSchedulesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSchemasResponse> listSchemas(
             ListSchemasRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListSchemasRequest, ListSchemasResponse>
@@ -3580,6 +3853,45 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListTaskRunsRequest, ListTaskRunsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTaskSchedulesResponse> listTaskSchedules(
+            ListTaskSchedulesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListTaskSchedulesRequest, ListTaskSchedulesResponse>
+                    handler) {
+        LOG.trace("Called async listTaskSchedules");
+        final ListTaskSchedulesRequest interceptedRequest =
+                ListTaskSchedulesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTaskSchedulesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListTaskSchedulesResponse>
+                transformer = ListTaskSchedulesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListTaskSchedulesRequest, ListTaskSchedulesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListTaskSchedulesRequest, ListTaskSchedulesResponse>,
+                        java.util.concurrent.Future<ListTaskSchedulesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListTaskSchedulesRequest, ListTaskSchedulesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4262,6 +4574,45 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateScheduleResponse> updateSchedule(
+            UpdateScheduleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateScheduleRequest, UpdateScheduleResponse>
+                    handler) {
+        LOG.trace("Called async updateSchedule");
+        final UpdateScheduleRequest interceptedRequest =
+                UpdateScheduleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateScheduleConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateScheduleResponse>
+                transformer = UpdateScheduleConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<UpdateScheduleRequest, UpdateScheduleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateScheduleRequest, UpdateScheduleResponse>,
+                        java.util.concurrent.Future<UpdateScheduleResponse>>
+                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateScheduleRequest, UpdateScheduleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateTaskResponse> updateTask(
             UpdateTaskRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateTaskRequest, UpdateTaskResponse>
@@ -4324,6 +4675,45 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateTaskRunRequest, UpdateTaskRunResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTaskScheduleResponse> updateTaskSchedule(
+            UpdateTaskScheduleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateTaskScheduleRequest, UpdateTaskScheduleResponse>
+                    handler) {
+        LOG.trace("Called async updateTaskSchedule");
+        final UpdateTaskScheduleRequest interceptedRequest =
+                UpdateTaskScheduleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateTaskScheduleConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTaskScheduleResponse>
+                transformer = UpdateTaskScheduleConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<UpdateTaskScheduleRequest, UpdateTaskScheduleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateTaskScheduleRequest, UpdateTaskScheduleResponse>,
+                        java.util.concurrent.Future<UpdateTaskScheduleResponse>>
+                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateTaskScheduleRequest, UpdateTaskScheduleResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

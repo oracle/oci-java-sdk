@@ -45,12 +45,20 @@ package com.oracle.bmc.dataintegration.model;
         name = "GENERIC_JDBC_DATA_ASSET"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DataAssetSummaryFromAmazonS3.class,
+        name = "AMAZON_S3_DATA_ASSET"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DataAssetSummaryFromObjectStorage.class,
         name = "ORACLE_OBJECT_STORAGE_DATA_ASSET"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DataAssetSummaryFromOracle.class,
         name = "ORACLE_DATA_ASSET"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DataAssetSummaryFromFusionApp.class,
+        name = "FUSION_APP_DATA_ASSET"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -130,6 +138,8 @@ public class DataAssetSummary {
         OracleAdwcDataAsset("ORACLE_ADWC_DATA_ASSET"),
         MysqlDataAsset("MYSQL_DATA_ASSET"),
         GenericJdbcDataAsset("GENERIC_JDBC_DATA_ASSET"),
+        FusionAppDataAsset("FUSION_APP_DATA_ASSET"),
+        AmazonS3DataAsset("AMAZON_S3_DATA_ASSET"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

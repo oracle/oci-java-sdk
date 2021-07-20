@@ -33,18 +33,27 @@ public class ParentReference {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("rootDocId")
+        private String rootDocId;
+
+        public Builder rootDocId(String rootDocId) {
+            this.rootDocId = rootDocId;
+            this.__explicitlySet__.add("rootDocId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ParentReference build() {
-            ParentReference __instance__ = new ParentReference(parent);
+            ParentReference __instance__ = new ParentReference(parent, rootDocId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ParentReference o) {
-            Builder copiedBuilder = parent(o.getParent());
+            Builder copiedBuilder = parent(o.getParent()).rootDocId(o.getRootDocId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -63,6 +72,12 @@ public class ParentReference {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parent")
     String parent;
+
+    /**
+     * Key of the root document object.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("rootDocId")
+    String rootDocId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -187,6 +187,15 @@ public class VmCluster {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("systemVersion")
+        private String systemVersion;
+
+        public Builder systemVersion(String systemVersion) {
+            this.systemVersion = systemVersion;
+            this.__explicitlySet__.add("systemVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
         private java.util.List<String> sshPublicKeys;
 
@@ -248,6 +257,7 @@ public class VmCluster {
                             dataStorageSizeInTBs,
                             shape,
                             giVersion,
+                            systemVersion,
                             sshPublicKeys,
                             licenseModel,
                             freeformTags,
@@ -277,6 +287,7 @@ public class VmCluster {
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
                             .shape(o.getShape())
                             .giVersion(o.getGiVersion())
+                            .systemVersion(o.getSystemVersion())
                             .sshPublicKeys(o.getSshPublicKeys())
                             .licenseModel(o.getLicenseModel())
                             .freeformTags(o.getFreeformTags())
@@ -438,7 +449,6 @@ public class VmCluster {
 
     /**
      * Size, in terabytes, of the DATA disk group.
-     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
     Double dataStorageSizeInTBs;
@@ -455,6 +465,12 @@ public class VmCluster {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("giVersion")
     String giVersion;
+
+    /**
+     * Operating system version of the image.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemVersion")
+    String systemVersion;
 
     /**
      * The public key portion of one or more key pairs used for SSH access to the VM cluster.

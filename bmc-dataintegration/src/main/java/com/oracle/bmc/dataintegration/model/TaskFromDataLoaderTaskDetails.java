@@ -167,6 +167,15 @@ public class TaskFromDataLoaderTaskDetails extends Task {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("registryMetadata")
+        private RegistryMetadata registryMetadata;
+
+        public Builder registryMetadata(RegistryMetadata registryMetadata) {
+            this.registryMetadata = registryMetadata;
+            this.__explicitlySet__.add("registryMetadata");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dataFlow")
         private DataFlow dataFlow;
 
@@ -197,6 +206,7 @@ public class TaskFromDataLoaderTaskDetails extends Task {
                             configProviderDelegate,
                             metadata,
                             keyMap,
+                            registryMetadata,
                             dataFlow);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -220,6 +230,7 @@ public class TaskFromDataLoaderTaskDetails extends Task {
                             .configProviderDelegate(o.getConfigProviderDelegate())
                             .metadata(o.getMetadata())
                             .keyMap(o.getKeyMap())
+                            .registryMetadata(o.getRegistryMetadata())
                             .dataFlow(o.getDataFlow());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -251,6 +262,7 @@ public class TaskFromDataLoaderTaskDetails extends Task {
             ConfigProvider configProviderDelegate,
             ObjectMetadata metadata,
             java.util.Map<String, String> keyMap,
+            RegistryMetadata registryMetadata,
             DataFlow dataFlow) {
         super(
                 key,
@@ -267,7 +279,8 @@ public class TaskFromDataLoaderTaskDetails extends Task {
                 opConfigValues,
                 configProviderDelegate,
                 metadata,
-                keyMap);
+                keyMap,
+                registryMetadata);
         this.dataFlow = dataFlow;
     }
 

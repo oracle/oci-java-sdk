@@ -173,7 +173,12 @@ public class RestClientFactory {
                 circuitBreaker = configuration.getCircuitBreaker();
         }
 
-        return new RestClient(client, new EntityFactory(), circuitBreaker, isNonBuffering);
+        return new RestClient(
+                client,
+                new EntityFactory(),
+                circuitBreaker,
+                isNonBuffering,
+                this.clientConfigurator);
     }
 
     @VisibleForTesting

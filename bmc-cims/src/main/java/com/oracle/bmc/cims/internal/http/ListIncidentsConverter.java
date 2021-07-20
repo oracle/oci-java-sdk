@@ -104,6 +104,9 @@ public class ListIncidentsConverter {
             ib.header("homeregion", request.getHomeregion());
         }
 
+        if (client.getClientConfigurator() != null) {
+            client.getClientConfigurator().customizeRequest(request, ib);
+        }
         return ib;
     }
 

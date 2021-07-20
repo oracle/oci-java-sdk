@@ -143,6 +143,15 @@ public class DependentObjectSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("countStatistics")
+        private CountStatistic countStatistics;
+
+        public Builder countStatistics(CountStatistic countStatistics) {
+            this.countStatistics = countStatistics;
+            this.__explicitlySet__.add("countStatistics");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -161,7 +170,8 @@ public class DependentObjectSummary {
                             infoFields,
                             registryVersion,
                             labels,
-                            isFavorite);
+                            isFavorite,
+                            countStatistics);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -181,7 +191,8 @@ public class DependentObjectSummary {
                             .infoFields(o.getInfoFields())
                             .registryVersion(o.getRegistryVersion())
                             .labels(o.getLabels())
-                            .isFavorite(o.getIsFavorite());
+                            .isFavorite(o.getIsFavorite())
+                            .countStatistics(o.getCountStatistics());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -269,6 +280,9 @@ public class DependentObjectSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFavorite")
     Boolean isFavorite;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("countStatistics")
+    CountStatistic countStatistics;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
