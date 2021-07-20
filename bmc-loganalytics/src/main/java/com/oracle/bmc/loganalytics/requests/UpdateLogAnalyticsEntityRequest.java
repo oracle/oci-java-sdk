@@ -62,6 +62,11 @@ public class UpdateLogAnalyticsEntityRequest
         return updateLogAnalyticsEntityDetails;
     }
 
+    @Override
+    public boolean supportsExpect100Continue() {
+        return true;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateLogAnalyticsEntityRequest, UpdateLogAnalyticsEntityDetails> {

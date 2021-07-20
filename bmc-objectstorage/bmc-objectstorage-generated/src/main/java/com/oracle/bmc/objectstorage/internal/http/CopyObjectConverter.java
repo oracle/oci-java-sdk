@@ -81,6 +81,9 @@ public class CopyObjectConverter {
                     request.getOpcSourceSseCustomerKeySha256());
         }
 
+        if (client.getClientConfigurator() != null) {
+            client.getClientConfigurator().customizeRequest(request, ib);
+        }
         return ib;
     }
 

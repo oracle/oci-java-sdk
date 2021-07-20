@@ -32,6 +32,15 @@ public class AvroFormatAttribute extends AbstractFormatAttribute {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("isFilePattern")
+        private Boolean isFilePattern;
+
+        public Builder isFilePattern(Boolean isFilePattern) {
+            this.isFilePattern = isFilePattern;
+            this.__explicitlySet__.add("isFilePattern");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compression")
         private String compression;
 
@@ -45,14 +54,15 @@ public class AvroFormatAttribute extends AbstractFormatAttribute {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AvroFormatAttribute build() {
-            AvroFormatAttribute __instance__ = new AvroFormatAttribute(compression);
+            AvroFormatAttribute __instance__ = new AvroFormatAttribute(isFilePattern, compression);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AvroFormatAttribute o) {
-            Builder copiedBuilder = compression(o.getCompression());
+            Builder copiedBuilder =
+                    isFilePattern(o.getIsFilePattern()).compression(o.getCompression());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -67,8 +77,8 @@ public class AvroFormatAttribute extends AbstractFormatAttribute {
     }
 
     @Deprecated
-    public AvroFormatAttribute(String compression) {
-        super();
+    public AvroFormatAttribute(Boolean isFilePattern, String compression) {
+        super(isFilePattern);
         this.compression = compression;
     }
 

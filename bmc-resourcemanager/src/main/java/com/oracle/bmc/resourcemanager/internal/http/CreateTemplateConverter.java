@@ -48,6 +48,9 @@ public class CreateTemplateConverter {
             ib.header("oci-splat-generated-ocids", request.getOciSplatGeneratedOcids());
         }
 
+        if (client.getClientConfigurator() != null) {
+            client.getClientConfigurator().customizeRequest(request, ib);
+        }
         return ib;
     }
 

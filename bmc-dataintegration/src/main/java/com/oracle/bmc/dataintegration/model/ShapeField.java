@@ -94,9 +94,9 @@ public class ShapeField extends TypedObject {
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("type")
-        private String type;
+        private Object type;
 
-        public Builder type(String type) {
+        public Builder type(Object type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
@@ -175,7 +175,7 @@ public class ShapeField extends TypedObject {
             Integer objectStatus,
             String name,
             String description,
-            String type,
+            Object type,
             java.util.List<String> labels,
             NativeShapeField nativeShapeField) {
         super(key, modelVersion, parentRef, configValues, objectStatus, name, description);
@@ -188,7 +188,7 @@ public class ShapeField extends TypedObject {
      * The reference to the type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    String type;
+    Object type;
 
     /**
      * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.

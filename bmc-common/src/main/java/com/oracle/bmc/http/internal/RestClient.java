@@ -6,14 +6,18 @@ package com.oracle.bmc.http.internal;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Throwables;
+import com.oracle.bmc.ClientConfiguration;
 import com.oracle.bmc.circuitbreaker.CallNotAllowedException;
 import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
+import com.oracle.bmc.http.ApacheUtils;
+import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.io.DuplicatableInputStream;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.requests.BmcRequest;
 import com.oracle.bmc.responses.AsyncHandler;
 import com.oracle.bmc.util.internal.Consumer;
 import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
+import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
@@ -57,6 +61,11 @@ public class RestClient implements AutoCloseable {
     @VisibleForTesting final JaxRsCircuitBreaker circuitBreaker;
     private final boolean isApacheNonBufferingClient;
 
+    /**
+     * The client configurator used for configuring the client. May be null.
+     */
+    @Getter private final ClientConfigurator clientConfigurator;
+
     private WrappedWebTarget baseTarget;
 
     /**
@@ -88,10 +97,30 @@ public class RestClient implements AutoCloseable {
             @NonNull EntityFactory entityFactory,
             JaxRsCircuitBreaker circuitBreaker,
             boolean isApacheNonBufferingClient) {
+        this(client, entityFactory, circuitBreaker, isApacheNonBufferingClient, null);
+    }
+
+    /**
+     * Create a new client that uses a provided client to make all its requests.
+     * It's up to the caller to properly configure the client.
+     *
+     * @param client        A HTTP client to make all requests with.
+     * @param entityFactory An entity factory to create entities for POST/PUT operations.
+     * @param circuitBreaker A circuit breaker instance to decorate http client
+     * @param isApacheNonBufferingClient A boolean value to disable buffering of entities in memory for Apache client
+     * @param clientConfigurator The client configurator used when creating the client
+     */
+    public RestClient(
+            @NonNull Client client,
+            @NonNull EntityFactory entityFactory,
+            JaxRsCircuitBreaker circuitBreaker,
+            boolean isApacheNonBufferingClient,
+            ClientConfigurator clientConfigurator) {
         this.client = client;
         this.entityFactory = entityFactory;
         this.circuitBreaker = circuitBreaker;
         this.isApacheNonBufferingClient = isApacheNonBufferingClient;
+        this.clientConfigurator = clientConfigurator;
     }
 
     /**

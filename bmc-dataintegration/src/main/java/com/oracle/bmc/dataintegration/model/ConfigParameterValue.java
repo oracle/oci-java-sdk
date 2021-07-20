@@ -71,13 +71,27 @@ public class ConfigParameterValue {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("rootObjectValue")
+        private Object rootObjectValue;
+
+        public Builder rootObjectValue(Object rootObjectValue) {
+            this.rootObjectValue = rootObjectValue;
+            this.__explicitlySet__.add("rootObjectValue");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ConfigParameterValue build() {
             ConfigParameterValue __instance__ =
                     new ConfigParameterValue(
-                            stringValue, intValue, objectValue, refValue, parameterValue);
+                            stringValue,
+                            intValue,
+                            objectValue,
+                            refValue,
+                            parameterValue,
+                            rootObjectValue);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -89,7 +103,8 @@ public class ConfigParameterValue {
                             .intValue(o.getIntValue())
                             .objectValue(o.getObjectValue())
                             .refValue(o.getRefValue())
-                            .parameterValue(o.getParameterValue());
+                            .parameterValue(o.getParameterValue())
+                            .rootObjectValue(o.getRootObjectValue());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -132,6 +147,12 @@ public class ConfigParameterValue {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameterValue")
     String parameterValue;
+
+    /**
+     * The root object value, used in custom parameters.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("rootObjectValue")
+    Object rootObjectValue;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

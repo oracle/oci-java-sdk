@@ -1,0 +1,539 @@
+/**
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+ */
+package com.oracle.bmc.dataintegration.model;
+
+/**
+ * The view entity data entity details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = DataEntityFromDataStore.Builder.class
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
+public class DataEntityFromDataStore extends DataEntity {
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+        private ObjectMetadata metadata;
+
+        public Builder metadata(ObjectMetadata metadata) {
+            this.metadata = metadata;
+            this.__explicitlySet__.add("metadata");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("key")
+        private String key;
+
+        public Builder key(String key) {
+            this.key = key;
+            this.__explicitlySet__.add("key");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
+        private String modelVersion;
+
+        public Builder modelVersion(String modelVersion) {
+            this.modelVersion = modelVersion;
+            this.__explicitlySet__.add("modelVersion");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("parentRef")
+        private ParentReference parentRef;
+
+        public Builder parentRef(ParentReference parentRef) {
+            this.parentRef = parentRef;
+            this.__explicitlySet__.add("parentRef");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
+        private String name;
+
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
+        private Integer objectVersion;
+
+        public Builder objectVersion(Integer objectVersion) {
+            this.objectVersion = objectVersion;
+            this.__explicitlySet__.add("objectVersion");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
+        private String externalKey;
+
+        public Builder externalKey(String externalKey) {
+            this.externalKey = externalKey;
+            this.__explicitlySet__.add("externalKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("shape")
+        private Shape shape;
+
+        public Builder shape(Shape shape) {
+            this.shape = shape;
+            this.__explicitlySet__.add("shape");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeId")
+        private String shapeId;
+
+        public Builder shapeId(String shapeId) {
+            this.shapeId = shapeId;
+            this.__explicitlySet__.add("shapeId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("types")
+        private TypeLibrary types;
+
+        public Builder types(TypeLibrary types) {
+            this.types = types;
+            this.__explicitlySet__.add("types");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("entityType")
+        private EntityType entityType;
+
+        public Builder entityType(EntityType entityType) {
+            this.entityType = entityType;
+            this.__explicitlySet__.add("entityType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("otherTypeLabel")
+        private String otherTypeLabel;
+
+        public Builder otherTypeLabel(String otherTypeLabel) {
+            this.otherTypeLabel = otherTypeLabel;
+            this.__explicitlySet__.add("otherTypeLabel");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("uniqueKeys")
+        private java.util.List<UniqueKey> uniqueKeys;
+
+        public Builder uniqueKeys(java.util.List<UniqueKey> uniqueKeys) {
+            this.uniqueKeys = uniqueKeys;
+            this.__explicitlySet__.add("uniqueKeys");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("foreignKeys")
+        private java.util.List<ForeignKey> foreignKeys;
+
+        public Builder foreignKeys(java.util.List<ForeignKey> foreignKeys) {
+            this.foreignKeys = foreignKeys;
+            this.__explicitlySet__.add("foreignKeys");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
+        private String resourceName;
+
+        public Builder resourceName(String resourceName) {
+            this.resourceName = resourceName;
+            this.__explicitlySet__.add("resourceName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
+        private Integer objectStatus;
+
+        public Builder objectStatus(Integer objectStatus) {
+            this.objectStatus = objectStatus;
+            this.__explicitlySet__.add("objectStatus");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("identifier")
+        private String identifier;
+
+        public Builder identifier(String identifier) {
+            this.identifier = identifier;
+            this.__explicitlySet__.add("identifier");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("filters")
+        private String filters;
+
+        public Builder filters(String filters) {
+            this.filters = filters;
+            this.__explicitlySet__.add("filters");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isEffectiveDateDisabled")
+        private Boolean isEffectiveDateDisabled;
+
+        public Builder isEffectiveDateDisabled(Boolean isEffectiveDateDisabled) {
+            this.isEffectiveDateDisabled = isEffectiveDateDisabled;
+            this.__explicitlySet__.add("isEffectiveDateDisabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isFlexDataStore")
+        private Boolean isFlexDataStore;
+
+        public Builder isFlexDataStore(Boolean isFlexDataStore) {
+            this.isFlexDataStore = isFlexDataStore;
+            this.__explicitlySet__.add("isFlexDataStore");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isSilentError")
+        private Boolean isSilentError;
+
+        public Builder isSilentError(Boolean isSilentError) {
+            this.isSilentError = isSilentError;
+            this.__explicitlySet__.add("isSilentError");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("supportsIncremental")
+        private Boolean supportsIncremental;
+
+        public Builder supportsIncremental(Boolean supportsIncremental) {
+            this.supportsIncremental = supportsIncremental;
+            this.__explicitlySet__.add("supportsIncremental");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+        public DataEntityFromDataStore build() {
+            DataEntityFromDataStore __instance__ =
+                    new DataEntityFromDataStore(
+                            metadata,
+                            key,
+                            modelVersion,
+                            parentRef,
+                            name,
+                            description,
+                            objectVersion,
+                            externalKey,
+                            shape,
+                            shapeId,
+                            types,
+                            entityType,
+                            otherTypeLabel,
+                            uniqueKeys,
+                            foreignKeys,
+                            resourceName,
+                            objectStatus,
+                            identifier,
+                            filters,
+                            isEffectiveDateDisabled,
+                            isFlexDataStore,
+                            isSilentError,
+                            supportsIncremental);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        public Builder copy(DataEntityFromDataStore o) {
+            Builder copiedBuilder =
+                    metadata(o.getMetadata())
+                            .key(o.getKey())
+                            .modelVersion(o.getModelVersion())
+                            .parentRef(o.getParentRef())
+                            .name(o.getName())
+                            .description(o.getDescription())
+                            .objectVersion(o.getObjectVersion())
+                            .externalKey(o.getExternalKey())
+                            .shape(o.getShape())
+                            .shapeId(o.getShapeId())
+                            .types(o.getTypes())
+                            .entityType(o.getEntityType())
+                            .otherTypeLabel(o.getOtherTypeLabel())
+                            .uniqueKeys(o.getUniqueKeys())
+                            .foreignKeys(o.getForeignKeys())
+                            .resourceName(o.getResourceName())
+                            .objectStatus(o.getObjectStatus())
+                            .identifier(o.getIdentifier())
+                            .filters(o.getFilters())
+                            .isEffectiveDateDisabled(o.getIsEffectiveDateDisabled())
+                            .isFlexDataStore(o.getIsFlexDataStore())
+                            .isSilentError(o.getIsSilentError())
+                            .supportsIncremental(o.getSupportsIncremental());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
+        }
+    }
+
+    /**
+     * Create a new builder.
+     */
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Deprecated
+    public DataEntityFromDataStore(
+            ObjectMetadata metadata,
+            String key,
+            String modelVersion,
+            ParentReference parentRef,
+            String name,
+            String description,
+            Integer objectVersion,
+            String externalKey,
+            Shape shape,
+            String shapeId,
+            TypeLibrary types,
+            EntityType entityType,
+            String otherTypeLabel,
+            java.util.List<UniqueKey> uniqueKeys,
+            java.util.List<ForeignKey> foreignKeys,
+            String resourceName,
+            Integer objectStatus,
+            String identifier,
+            String filters,
+            Boolean isEffectiveDateDisabled,
+            Boolean isFlexDataStore,
+            Boolean isSilentError,
+            Boolean supportsIncremental) {
+        super(metadata);
+        this.key = key;
+        this.modelVersion = modelVersion;
+        this.parentRef = parentRef;
+        this.name = name;
+        this.description = description;
+        this.objectVersion = objectVersion;
+        this.externalKey = externalKey;
+        this.shape = shape;
+        this.shapeId = shapeId;
+        this.types = types;
+        this.entityType = entityType;
+        this.otherTypeLabel = otherTypeLabel;
+        this.uniqueKeys = uniqueKeys;
+        this.foreignKeys = foreignKeys;
+        this.resourceName = resourceName;
+        this.objectStatus = objectStatus;
+        this.identifier = identifier;
+        this.filters = filters;
+        this.isEffectiveDateDisabled = isEffectiveDateDisabled;
+        this.isFlexDataStore = isFlexDataStore;
+        this.isSilentError = isSilentError;
+        this.supportsIncremental = supportsIncremental;
+    }
+
+    /**
+     * The object key.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("key")
+    String key;
+
+    /**
+     * The object's model version.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
+    String modelVersion;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("parentRef")
+    ParentReference parentRef;
+
+    /**
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    String name;
+
+    /**
+     * Detailed description for the object.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    String description;
+
+    /**
+     * The version of the object that is used to track changes in the object instance.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
+    Integer objectVersion;
+
+    /**
+     * The external key for the object
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
+    String externalKey;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("shape")
+    Shape shape;
+
+    /**
+     * The shape ID.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeId")
+    String shapeId;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("types")
+    TypeLibrary types;
+    /**
+     * The entity type.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum EntityType {
+        Table("TABLE"),
+        View("VIEW"),
+        File("FILE"),
+        Queue("QUEUE"),
+        Stream("STREAM"),
+        Other("OTHER"),
+        DataStore("DATA_STORE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, EntityType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (EntityType v : EntityType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        EntityType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static EntityType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'EntityType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The entity type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("entityType")
+    EntityType entityType;
+
+    /**
+     * Specifies other type label.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("otherTypeLabel")
+    String otherTypeLabel;
+
+    /**
+     * An array of unique keys.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("uniqueKeys")
+    java.util.List<UniqueKey> uniqueKeys;
+
+    /**
+     * An array of foreign keys.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("foreignKeys")
+    java.util.List<ForeignKey> foreignKeys;
+
+    /**
+     * The resource name.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
+    String resourceName;
+
+    /**
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
+    Integer objectStatus;
+
+    /**
+     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("identifier")
+    String identifier;
+
+    /**
+     * Filters present in the Datastore. It can be Null.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("filters")
+    String filters;
+
+    /**
+     * It shows whether or not effective date is disabled
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isEffectiveDateDisabled")
+    Boolean isEffectiveDateDisabled;
+
+    /**
+     * It shows whether the datastore is of flex type
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isFlexDataStore")
+    Boolean isFlexDataStore;
+
+    /**
+     * It shows whether the extraction of this datastore will stop on error
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSilentError")
+    Boolean isSilentError;
+
+    /**
+     * It shows whether the datastore supports Incremental Extract or not.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("supportsIncremental")
+    Boolean supportsIncremental;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+}

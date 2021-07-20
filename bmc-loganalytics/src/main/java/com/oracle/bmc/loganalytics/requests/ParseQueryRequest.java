@@ -45,6 +45,11 @@ public class ParseQueryRequest extends com.oracle.bmc.requests.BmcRequest<ParseQ
         return parseQueryDetails;
     }
 
+    @Override
+    public boolean supportsExpect100Continue() {
+        return true;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ParseQueryRequest, ParseQueryDetails> {

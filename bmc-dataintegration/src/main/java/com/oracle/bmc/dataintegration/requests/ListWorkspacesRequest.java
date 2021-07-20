@@ -42,50 +42,8 @@ public class ListWorkspacesRequest extends com.oracle.bmc.requests.BmcRequest<ja
     /**
      * The lifecycle state of a resource. When specified, the operation only returns resources that match the given lifecycle state. When not specified, all lifecycle states are processed as a match.
      */
-    private LifecycleState lifecycleState;
+    private Workspace.LifecycleState lifecycleState;
 
-    /**
-     * The lifecycle state of a resource. When specified, the operation only returns resources that match the given lifecycle state. When not specified, all lifecycle states are processed as a match.
-     **/
-    public enum LifecycleState {
-        Creating("CREATING"),
-        Active("ACTIVE"),
-        Inactive("INACTIVE"),
-        Updating("UPDATING"),
-        Deleting("DELETING"),
-        Deleted("DELETED"),
-        Stopping("STOPPING"),
-        Stopped("STOPPED"),
-        Failed("FAILED"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, LifecycleState> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (LifecycleState v : LifecycleState.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        LifecycleState(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static LifecycleState create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new IllegalArgumentException("Invalid LifecycleState: " + key);
-        }
-    };
     /**
      * Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
      */

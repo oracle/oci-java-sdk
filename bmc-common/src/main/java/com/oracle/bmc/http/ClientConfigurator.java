@@ -6,6 +6,9 @@ package com.oracle.bmc.http;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.core.Request;
+
+import com.oracle.bmc.requests.BmcRequest;
 
 /**
  * Configurator allowing SDK users to customize the underlying REST client.
@@ -27,4 +30,14 @@ public interface ClientConfigurator {
      *            The client.
      */
     void customizeClient(Client client);
+
+    /**
+     * Customize a request before it is made.
+     * @param request The request
+     * @param ib the invocation builder
+     */
+    default void customizeRequest(
+            BmcRequest<?> request, com.oracle.bmc.http.internal.WrappedInvocationBuilder ib) {
+        // by default, do nothing
+    }
 }

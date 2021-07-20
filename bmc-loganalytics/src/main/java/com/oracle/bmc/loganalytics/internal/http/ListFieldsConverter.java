@@ -142,6 +142,9 @@ public class ListFieldsConverter {
             ib.header("opc-request-id", request.getOpcRequestId());
         }
 
+        if (client.getClientConfigurator() != null) {
+            client.getClientConfigurator().customizeRequest(request, ib);
+        }
         return ib;
     }
 

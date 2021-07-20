@@ -45,6 +45,11 @@ public class SuggestRequest extends com.oracle.bmc.requests.BmcRequest<SuggestDe
         return suggestDetails;
     }
 
+    @Override
+    public boolean supportsExpect100Continue() {
+        return true;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<SuggestRequest, SuggestDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>

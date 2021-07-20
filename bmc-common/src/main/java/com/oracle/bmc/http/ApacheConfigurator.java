@@ -5,10 +5,14 @@
 package com.oracle.bmc.http;
 
 import com.oracle.bmc.http.internal.ContentLengthFilter;
+import com.oracle.bmc.http.internal.WrappedInvocationBuilder;
+import com.oracle.bmc.requests.BmcRequest;
+import com.oracle.bmc.requests.HasContentLength;
 import com.oracle.bmc.util.JavaRuntimeUtils;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.http.protocol.HTTP;
 import org.glassfish.jersey.SslConfigurator;
 import org.glassfish.jersey.apache.connector.ApacheConnectorProvider;
 import org.glassfish.jersey.client.ClientConfig;
@@ -18,6 +22,7 @@ import org.glassfish.jersey.client.RequestEntityProcessing;
 import javax.net.ssl.SSLContext;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.core.Request;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -171,6 +176,32 @@ public class ApacheConfigurator
         @Override
         public void setConnectorProvider(ClientBuilder builder) {
             super.setConnectorProvider(builder);
+        }
+    }
+
+    @Override
+    public void customizeRequest(BmcRequest<?> request, WrappedInvocationBuilder ib) {
+        if (apacheConnectorProperties == null || !apacheConnectorProperties.isExpectContinue()) {
+            // expect 100 continue not enabled
+            LOG.trace("Not adding Expect: 100-Continue, not enabled");
+            return;
+        }
+        if (!request.supportsExpect100Continue()) {
+            // expect 100 continue not supported by this operation
+            LOG.trace(
+                    "Not adding Expect: 100-Continue, not supported by operation per {}",
+                    request.getClass().getName());
+            return;
+        }
+        if (request.getBody$() != null) {
+            LOG.trace(
+                    "Adding Expect: 100-Continue, request {} has a body",
+                    request.getClass().getName());
+            ib.header(HTTP.EXPECT_DIRECTIVE, HTTP.EXPECT_CONTINUE);
+        } else {
+            LOG.trace(
+                    "Not adding Expect: 100-Continue, request {} has no body",
+                    request.getClass().getName());
         }
     }
 }

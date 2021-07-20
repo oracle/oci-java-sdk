@@ -42,6 +42,14 @@ public class GetPipelineConverter {
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
                                         request.getPipelineKey()));
 
+        if (request.getExpandReferences() != null) {
+            target =
+                    target.queryParam(
+                            "expandReferences",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getExpandReferences()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
@@ -50,6 +58,9 @@ public class GetPipelineConverter {
             ib.header("opc-request-id", request.getOpcRequestId());
         }
 
+        if (client.getClientConfigurator() != null) {
+            client.getClientConfigurator().customizeRequest(request, ib);
+        }
         return ib;
     }
 

@@ -33,12 +33,32 @@ package com.oracle.bmc.dataintegration.model;
         name = "ORACLEADWCWRITEATTRIBUTE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = OracleAtpWriteAttributes.class,
+        name = "ORACLE_ATP_WRITE_ATTRIBUTE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = OracleWriteAttribute.class,
         name = "ORACLEWRITEATTRIBUTE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = OracleWriteAttributes.class,
+        name = "ORACLE_WRITE_ATTRIBUTE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = OracleAtpWriteAttribute.class,
         name = "ORACLEATPWRITEATTRIBUTE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ObjectStorageWriteAttribute.class,
+        name = "OBJECTSTORAGEWRITEATTRIBUTE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = OracleAdwcWriteAttributes.class,
+        name = "ORACLE_ADWC_WRITE_ATTRIBUTE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ObjectStorageWriteAttributes.class,
+        name = "OBJECT_STORAGE_WRITE_ATTRIBUTE"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -52,9 +72,11 @@ public class AbstractWriteAttribute {
         Oraclewriteattribute("ORACLEWRITEATTRIBUTE"),
         Oracleatpwriteattribute("ORACLEATPWRITEATTRIBUTE"),
         Oracleadwcwriteattribute("ORACLEADWCWRITEATTRIBUTE"),
+        Objectstoragewriteattribute("OBJECTSTORAGEWRITEATTRIBUTE"),
         OracleWriteAttribute("ORACLE_WRITE_ATTRIBUTE"),
         OracleAtpWriteAttribute("ORACLE_ATP_WRITE_ATTRIBUTE"),
         OracleAdwcWriteAttribute("ORACLE_ADWC_WRITE_ATTRIBUTE"),
+        ObjectStorageWriteAttribute("OBJECT_STORAGE_WRITE_ATTRIBUTE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

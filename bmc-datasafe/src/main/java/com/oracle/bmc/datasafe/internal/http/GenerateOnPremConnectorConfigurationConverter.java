@@ -59,6 +59,9 @@ public class GenerateOnPremConnectorConfigurationConverter {
             ib.header("if-match", request.getIfMatch());
         }
 
+        if (client.getClientConfigurator() != null) {
+            client.getClientConfigurator().customizeRequest(request, ib);
+        }
         return ib;
     }
 

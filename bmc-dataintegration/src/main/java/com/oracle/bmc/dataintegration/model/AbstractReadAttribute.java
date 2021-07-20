@@ -29,6 +29,14 @@ package com.oracle.bmc.dataintegration.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = OracleReadAttributes.class,
+        name = "ORACLE_READ_ATTRIBUTE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = BiccReadAttributes.class,
+        name = "BICC_READ_ATTRIBUTE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = OracleReadAttribute.class,
         name = "ORACLEREADATTRIBUTE"
     )
@@ -43,6 +51,7 @@ public class AbstractReadAttribute {
     public enum ModelType {
         Oraclereadattribute("ORACLEREADATTRIBUTE"),
         OracleReadAttribute("ORACLE_READ_ATTRIBUTE"),
+        BiccReadAttribute("BICC_READ_ATTRIBUTE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

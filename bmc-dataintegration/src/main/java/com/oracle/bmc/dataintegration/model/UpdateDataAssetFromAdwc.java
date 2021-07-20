@@ -167,6 +167,42 @@ public class UpdateDataAssetFromAdwc extends UpdateDataAssetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("regionId")
+        private String regionId;
+
+        public Builder regionId(String regionId) {
+            this.regionId = regionId;
+            this.__explicitlySet__.add("regionId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
+        private String tenancyId;
+
+        public Builder tenancyId(String tenancyId) {
+            this.tenancyId = tenancyId;
+            this.__explicitlySet__.add("tenancyId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDbId")
+        private String autonomousDbId;
+
+        public Builder autonomousDbId(String autonomousDbId) {
+            this.autonomousDbId = autonomousDbId;
+            this.__explicitlySet__.add("autonomousDbId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("defaultConnection")
         private UpdateConnectionFromAdwc defaultConnection;
 
@@ -197,6 +233,10 @@ public class UpdateDataAssetFromAdwc extends UpdateDataAssetDetails {
                             credentialFileContent,
                             walletSecret,
                             walletPasswordSecret,
+                            regionId,
+                            tenancyId,
+                            compartmentId,
+                            autonomousDbId,
                             defaultConnection);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -220,6 +260,10 @@ public class UpdateDataAssetFromAdwc extends UpdateDataAssetDetails {
                             .credentialFileContent(o.getCredentialFileContent())
                             .walletSecret(o.getWalletSecret())
                             .walletPasswordSecret(o.getWalletPasswordSecret())
+                            .regionId(o.getRegionId())
+                            .tenancyId(o.getTenancyId())
+                            .compartmentId(o.getCompartmentId())
+                            .autonomousDbId(o.getAutonomousDbId())
                             .defaultConnection(o.getDefaultConnection());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -251,6 +295,10 @@ public class UpdateDataAssetFromAdwc extends UpdateDataAssetDetails {
             String credentialFileContent,
             SensitiveAttribute walletSecret,
             SensitiveAttribute walletPasswordSecret,
+            String regionId,
+            String tenancyId,
+            String compartmentId,
+            String autonomousDbId,
             UpdateConnectionFromAdwc defaultConnection) {
         super(
                 key,
@@ -268,6 +316,10 @@ public class UpdateDataAssetFromAdwc extends UpdateDataAssetDetails {
         this.credentialFileContent = credentialFileContent;
         this.walletSecret = walletSecret;
         this.walletPasswordSecret = walletPasswordSecret;
+        this.regionId = regionId;
+        this.tenancyId = tenancyId;
+        this.compartmentId = compartmentId;
+        this.autonomousDbId = autonomousDbId;
         this.defaultConnection = defaultConnection;
     }
 
@@ -294,6 +346,30 @@ public class UpdateDataAssetFromAdwc extends UpdateDataAssetDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("walletPasswordSecret")
     SensitiveAttribute walletPasswordSecret;
+
+    /**
+     * The Autonomous Data Warehouse instance region Id.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("regionId")
+    String regionId;
+
+    /**
+     * The Autonomous Data Warehouse instance tenancy Id.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
+    String tenancyId;
+
+    /**
+     * The Autonomous Data Warehouse instance compartment Id.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    String compartmentId;
+
+    /**
+     * Tha Autonomous Database Id
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousDbId")
+    String autonomousDbId;
 
     @com.fasterxml.jackson.annotation.JsonProperty("defaultConnection")
     UpdateConnectionFromAdwc defaultConnection;

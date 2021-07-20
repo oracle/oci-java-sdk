@@ -7985,6 +7985,222 @@ public class DatabaseWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetVmClusterUpdateRequest, GetVmClusterUpdateResponse>
+            forVmClusterUpdate(
+                    GetVmClusterUpdateRequest request,
+                    com.oracle.bmc.database.model.VmClusterUpdate.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forVmClusterUpdate(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetVmClusterUpdateRequest, GetVmClusterUpdateResponse>
+            forVmClusterUpdate(
+                    GetVmClusterUpdateRequest request,
+                    com.oracle.bmc.database.model.VmClusterUpdate.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forVmClusterUpdate(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetVmClusterUpdateRequest, GetVmClusterUpdateResponse>
+            forVmClusterUpdate(
+                    GetVmClusterUpdateRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.database.model.VmClusterUpdate.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forVmClusterUpdate(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for VmClusterUpdate.
+    private com.oracle.bmc.waiter.Waiter<GetVmClusterUpdateRequest, GetVmClusterUpdateResponse>
+            forVmClusterUpdate(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetVmClusterUpdateRequest request,
+                    final com.oracle.bmc.database.model.VmClusterUpdate.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.database.model.VmClusterUpdate.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetVmClusterUpdateRequest, GetVmClusterUpdateResponse>() {
+                            @Override
+                            public GetVmClusterUpdateResponse apply(
+                                    GetVmClusterUpdateRequest request) {
+                                return client.getVmClusterUpdate(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetVmClusterUpdateResponse>() {
+                            @Override
+                            public boolean apply(GetVmClusterUpdateResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getVmClusterUpdate().getLifecycleState());
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetVmClusterUpdateHistoryEntryRequest, GetVmClusterUpdateHistoryEntryResponse>
+            forVmClusterUpdateHistoryEntry(
+                    GetVmClusterUpdateHistoryEntryRequest request,
+                    com.oracle.bmc.database.model.VmClusterUpdateHistoryEntry.LifecycleState...
+                            targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forVmClusterUpdateHistoryEntry(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetVmClusterUpdateHistoryEntryRequest, GetVmClusterUpdateHistoryEntryResponse>
+            forVmClusterUpdateHistoryEntry(
+                    GetVmClusterUpdateHistoryEntryRequest request,
+                    com.oracle.bmc.database.model.VmClusterUpdateHistoryEntry.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forVmClusterUpdateHistoryEntry(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetVmClusterUpdateHistoryEntryRequest, GetVmClusterUpdateHistoryEntryResponse>
+            forVmClusterUpdateHistoryEntry(
+                    GetVmClusterUpdateHistoryEntryRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.database.model.VmClusterUpdateHistoryEntry.LifecycleState...
+                            targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forVmClusterUpdateHistoryEntry(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for VmClusterUpdateHistoryEntry.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetVmClusterUpdateHistoryEntryRequest, GetVmClusterUpdateHistoryEntryResponse>
+            forVmClusterUpdateHistoryEntry(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetVmClusterUpdateHistoryEntryRequest request,
+                    final com.oracle.bmc.database.model.VmClusterUpdateHistoryEntry
+                                    .LifecycleState...
+                            targetStates) {
+        final java.util.Set<
+                        com.oracle.bmc.database.model.VmClusterUpdateHistoryEntry.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetVmClusterUpdateHistoryEntryRequest,
+                                GetVmClusterUpdateHistoryEntryResponse>() {
+                            @Override
+                            public GetVmClusterUpdateHistoryEntryResponse apply(
+                                    GetVmClusterUpdateHistoryEntryRequest request) {
+                                return client.getVmClusterUpdateHistoryEntry(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<
+                                GetVmClusterUpdateHistoryEntryResponse>() {
+                            @Override
+                            public boolean apply(GetVmClusterUpdateHistoryEntryResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getVmClusterUpdateHistoryEntry()
+                                                .getLifecycleState());
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
@@ -10241,6 +10457,65 @@ public class DatabaseWaiters {
                     public UpdateCloudVmClusterIormConfigResponse call() throws Exception {
                         final UpdateCloudVmClusterIormConfigResponse response =
                                 client.updateCloudVmClusterIormConfig(request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    UpdateDataGuardAssociationRequest, UpdateDataGuardAssociationResponse>
+            forUpdateDataGuardAssociation(UpdateDataGuardAssociationRequest request) {
+        return forUpdateDataGuardAssociation(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    UpdateDataGuardAssociationRequest, UpdateDataGuardAssociationResponse>
+            forUpdateDataGuardAssociation(
+                    UpdateDataGuardAssociationRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<UpdateDataGuardAssociationResponse>() {
+                    @Override
+                    public UpdateDataGuardAssociationResponse call() throws Exception {
+                        final UpdateDataGuardAssociationResponse response =
+                                client.updateDataGuardAssociation(request);
 
                         final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
                                 getWorkRequestRequest =

@@ -3629,6 +3629,54 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DownloadValidationReportResponse> downloadValidationReport(
+            DownloadValidationReportRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DownloadValidationReportRequest, DownloadValidationReportResponse>
+                    handler) {
+        LOG.trace("Called async downloadValidationReport");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
+        final DownloadValidationReportRequest interceptedRequest =
+                DownloadValidationReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DownloadValidationReportConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DownloadValidationReportResponse>
+                transformer = DownloadValidationReportConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DownloadValidationReportRequest, DownloadValidationReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DownloadValidationReportRequest, DownloadValidationReportResponse>,
+                        java.util.concurrent.Future<DownloadValidationReportResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DownloadValidationReportRequest, DownloadValidationReportResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DownloadVmClusterNetworkConfigFileResponse>
             downloadVmClusterNetworkConfigFile(
                     DownloadVmClusterNetworkConfigFileRequest request,
@@ -6082,6 +6130,90 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetVmClusterUpdateResponse> getVmClusterUpdate(
+            GetVmClusterUpdateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetVmClusterUpdateRequest, GetVmClusterUpdateResponse>
+                    handler) {
+        LOG.trace("Called async getVmClusterUpdate");
+        final GetVmClusterUpdateRequest interceptedRequest =
+                GetVmClusterUpdateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVmClusterUpdateConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetVmClusterUpdateResponse>
+                transformer = GetVmClusterUpdateConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetVmClusterUpdateRequest, GetVmClusterUpdateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetVmClusterUpdateRequest, GetVmClusterUpdateResponse>,
+                        java.util.concurrent.Future<GetVmClusterUpdateResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetVmClusterUpdateRequest, GetVmClusterUpdateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVmClusterUpdateHistoryEntryResponse>
+            getVmClusterUpdateHistoryEntry(
+                    GetVmClusterUpdateHistoryEntryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetVmClusterUpdateHistoryEntryRequest,
+                                    GetVmClusterUpdateHistoryEntryResponse>
+                            handler) {
+        LOG.trace("Called async getVmClusterUpdateHistoryEntry");
+        final GetVmClusterUpdateHistoryEntryRequest interceptedRequest =
+                GetVmClusterUpdateHistoryEntryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVmClusterUpdateHistoryEntryConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetVmClusterUpdateHistoryEntryResponse>
+                transformer = GetVmClusterUpdateHistoryEntryConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetVmClusterUpdateHistoryEntryRequest,
+                        GetVmClusterUpdateHistoryEntryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetVmClusterUpdateHistoryEntryRequest,
+                                GetVmClusterUpdateHistoryEntryResponse>,
+                        java.util.concurrent.Future<GetVmClusterUpdateHistoryEntryResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetVmClusterUpdateHistoryEntryRequest, GetVmClusterUpdateHistoryEntryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<LaunchAutonomousExadataInfrastructureResponse>
             launchAutonomousExadataInfrastructure(
                     LaunchAutonomousExadataInfrastructureRequest request,
@@ -8093,6 +8225,93 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListVmClusterUpdateHistoryEntriesResponse>
+            listVmClusterUpdateHistoryEntries(
+                    ListVmClusterUpdateHistoryEntriesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListVmClusterUpdateHistoryEntriesRequest,
+                                    ListVmClusterUpdateHistoryEntriesResponse>
+                            handler) {
+        LOG.trace("Called async listVmClusterUpdateHistoryEntries");
+        final ListVmClusterUpdateHistoryEntriesRequest interceptedRequest =
+                ListVmClusterUpdateHistoryEntriesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListVmClusterUpdateHistoryEntriesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListVmClusterUpdateHistoryEntriesResponse>
+                transformer = ListVmClusterUpdateHistoryEntriesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListVmClusterUpdateHistoryEntriesRequest,
+                        ListVmClusterUpdateHistoryEntriesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListVmClusterUpdateHistoryEntriesRequest,
+                                ListVmClusterUpdateHistoryEntriesResponse>,
+                        java.util.concurrent.Future<ListVmClusterUpdateHistoryEntriesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListVmClusterUpdateHistoryEntriesRequest,
+                    ListVmClusterUpdateHistoryEntriesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVmClusterUpdatesResponse> listVmClusterUpdates(
+            ListVmClusterUpdatesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListVmClusterUpdatesRequest, ListVmClusterUpdatesResponse>
+                    handler) {
+        LOG.trace("Called async listVmClusterUpdates");
+        final ListVmClusterUpdatesRequest interceptedRequest =
+                ListVmClusterUpdatesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListVmClusterUpdatesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListVmClusterUpdatesResponse>
+                transformer = ListVmClusterUpdatesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListVmClusterUpdatesRequest, ListVmClusterUpdatesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListVmClusterUpdatesRequest, ListVmClusterUpdatesResponse>,
+                        java.util.concurrent.Future<ListVmClusterUpdatesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListVmClusterUpdatesRequest, ListVmClusterUpdatesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListVmClustersResponse> listVmClusters(
             ListVmClustersRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -9763,6 +9982,50 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateCloudVmClusterIormConfigRequest, UpdateCloudVmClusterIormConfigResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataGuardAssociationResponse>
+            updateDataGuardAssociation(
+                    UpdateDataGuardAssociationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateDataGuardAssociationRequest,
+                                    UpdateDataGuardAssociationResponse>
+                            handler) {
+        LOG.trace("Called async updateDataGuardAssociation");
+        final UpdateDataGuardAssociationRequest interceptedRequest =
+                UpdateDataGuardAssociationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDataGuardAssociationConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateDataGuardAssociationResponse>
+                transformer = UpdateDataGuardAssociationConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateDataGuardAssociationRequest, UpdateDataGuardAssociationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateDataGuardAssociationRequest,
+                                UpdateDataGuardAssociationResponse>,
+                        java.util.concurrent.Future<UpdateDataGuardAssociationResponse>>
+                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateDataGuardAssociationRequest, UpdateDataGuardAssociationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

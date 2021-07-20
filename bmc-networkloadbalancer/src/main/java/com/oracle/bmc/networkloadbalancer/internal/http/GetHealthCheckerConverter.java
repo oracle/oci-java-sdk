@@ -61,6 +61,9 @@ public class GetHealthCheckerConverter {
             ib.header("if-none-match", request.getIfNoneMatch());
         }
 
+        if (client.getClientConfigurator() != null) {
+            client.getClientConfigurator().customizeRequest(request, ib);
+        }
         return ib;
     }
 

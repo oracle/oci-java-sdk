@@ -99,6 +99,11 @@ public class CopyObjectRequest extends com.oracle.bmc.requests.BmcRequest<CopyOb
         return copyObjectDetails;
     }
 
+    @Override
+    public boolean supportsExpect100Continue() {
+        return true;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CopyObjectRequest, CopyObjectDetails> {

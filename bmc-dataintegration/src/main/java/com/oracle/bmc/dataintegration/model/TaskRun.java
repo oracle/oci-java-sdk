@@ -186,6 +186,15 @@ public class TaskRun {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("externalId")
+        private String externalId;
+
+        public Builder externalId(String externalId) {
+            this.externalId = externalId;
+            this.__explicitlySet__.add("externalId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("retryAttempt")
         private Integer retryAttempt;
 
@@ -213,6 +222,15 @@ public class TaskRun {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("outputs")
+        private java.util.Map<String, ParameterValue> outputs;
+
+        public Builder outputs(java.util.Map<String, ParameterValue> outputs) {
+            this.outputs = outputs;
+            this.__explicitlySet__.add("outputs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("executionErrors")
         private java.util.List<String> executionErrors;
 
@@ -228,6 +246,15 @@ public class TaskRun {
         public Builder terminationErrors(java.util.List<String> terminationErrors) {
             this.terminationErrors = terminationErrors;
             this.__explicitlySet__.add("terminationErrors");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("authMode")
+        private AuthMode authMode;
+
+        public Builder authMode(AuthMode authMode) {
+            this.authMode = authMode;
+            this.__explicitlySet__.add("authMode");
             return this;
         }
 
@@ -309,11 +336,14 @@ public class TaskRun {
                             expectedDuration,
                             expectedDurationUnit,
                             taskKey,
+                            externalId,
                             retryAttempt,
                             taskSchedule,
                             metrics,
+                            outputs,
                             executionErrors,
                             terminationErrors,
+                            authMode,
                             opcRequestId,
                             objectStatus,
                             taskType,
@@ -345,11 +375,14 @@ public class TaskRun {
                             .expectedDuration(o.getExpectedDuration())
                             .expectedDurationUnit(o.getExpectedDurationUnit())
                             .taskKey(o.getTaskKey())
+                            .externalId(o.getExternalId())
                             .retryAttempt(o.getRetryAttempt())
                             .taskSchedule(o.getTaskSchedule())
                             .metrics(o.getMetrics())
+                            .outputs(o.getOutputs())
                             .executionErrors(o.getExecutionErrors())
                             .terminationErrors(o.getTerminationErrors())
+                            .authMode(o.getAuthMode())
                             .opcRequestId(o.getOpcRequestId())
                             .objectStatus(o.getObjectStatus())
                             .taskType(o.getTaskType())
@@ -569,6 +602,12 @@ public class TaskRun {
     String taskKey;
 
     /**
+     * The external identifier for the task run.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("externalId")
+    String externalId;
+
+    /**
      * Holds the particular attempt number.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("retryAttempt")
@@ -584,6 +623,12 @@ public class TaskRun {
     java.util.Map<String, Float> metrics;
 
     /**
+     * A map of the outputs of the run.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("outputs")
+    java.util.Map<String, ParameterValue> outputs;
+
+    /**
      * An array of execution errors from the run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionErrors")
@@ -594,6 +639,58 @@ public class TaskRun {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("terminationErrors")
     java.util.List<String> terminationErrors;
+    /**
+     * The autorization mode for when the task was executed.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum AuthMode {
+        Obo("OBO"),
+        ResourcePrincipal("RESOURCE_PRINCIPAL"),
+        UserCertificate("USER_CERTIFICATE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, AuthMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AuthMode v : AuthMode.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        AuthMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AuthMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AuthMode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The autorization mode for when the task was executed.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("authMode")
+    AuthMode authMode;
 
     /**
      * The OPC request ID of execution of the task run.
@@ -614,6 +711,9 @@ public class TaskRun {
         IntegrationTask("INTEGRATION_TASK"),
         DataLoaderTask("DATA_LOADER_TASK"),
         PipelineTask("PIPELINE_TASK"),
+        SqlTask("SQL_TASK"),
+        OciDataflowTask("OCI_DATAFLOW_TASK"),
+        RestTask("REST_TASK"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

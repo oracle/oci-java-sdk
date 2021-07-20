@@ -115,6 +115,9 @@ public class ListObjectVersionsConverter {
             ib.header("opc-client-request-id", request.getOpcClientRequestId());
         }
 
+        if (client.getClientConfigurator() != null) {
+            client.getClientConfigurator().customizeRequest(request, ib);
+        }
         return ib;
     }
 

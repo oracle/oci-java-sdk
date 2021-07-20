@@ -39,10 +39,20 @@ package com.oracle.bmc.dataintegration.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CsvFormatAttribute.class,
         name = "CSV_FORMAT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ParquetFormatAttribute.class,
+        name = "PARQUET_FORMAT"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class AbstractFormatAttribute {
+
+    /**
+     * Defines whether a file pattern is supported.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isFilePattern")
+    Boolean isFilePattern;
 
     /**
      * The type of the format attribute.

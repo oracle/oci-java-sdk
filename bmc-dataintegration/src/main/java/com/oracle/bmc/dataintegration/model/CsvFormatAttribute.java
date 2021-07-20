@@ -32,6 +32,15 @@ public class CsvFormatAttribute extends AbstractFormatAttribute {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("isFilePattern")
+        private Boolean isFilePattern;
+
+        public Builder isFilePattern(Boolean isFilePattern) {
+            this.isFilePattern = isFilePattern;
+            this.__explicitlySet__.add("isFilePattern");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("encoding")
         private String encoding;
 
@@ -77,15 +86,6 @@ public class CsvFormatAttribute extends AbstractFormatAttribute {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("isFilePattern")
-        private Boolean isFilePattern;
-
-        public Builder isFilePattern(Boolean isFilePattern) {
-            this.isFilePattern = isFilePattern;
-            this.__explicitlySet__.add("isFilePattern");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("timestampFormat")
         private String timestampFormat;
 
@@ -101,12 +101,12 @@ public class CsvFormatAttribute extends AbstractFormatAttribute {
         public CsvFormatAttribute build() {
             CsvFormatAttribute __instance__ =
                     new CsvFormatAttribute(
+                            isFilePattern,
                             encoding,
                             escapeCharacter,
                             delimiter,
                             quoteCharacter,
                             hasHeader,
-                            isFilePattern,
                             timestampFormat);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -115,12 +115,12 @@ public class CsvFormatAttribute extends AbstractFormatAttribute {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CsvFormatAttribute o) {
             Builder copiedBuilder =
-                    encoding(o.getEncoding())
+                    isFilePattern(o.getIsFilePattern())
+                            .encoding(o.getEncoding())
                             .escapeCharacter(o.getEscapeCharacter())
                             .delimiter(o.getDelimiter())
                             .quoteCharacter(o.getQuoteCharacter())
                             .hasHeader(o.getHasHeader())
-                            .isFilePattern(o.getIsFilePattern())
                             .timestampFormat(o.getTimestampFormat());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -137,20 +137,19 @@ public class CsvFormatAttribute extends AbstractFormatAttribute {
 
     @Deprecated
     public CsvFormatAttribute(
+            Boolean isFilePattern,
             String encoding,
             String escapeCharacter,
             String delimiter,
             String quoteCharacter,
             Boolean hasHeader,
-            Boolean isFilePattern,
             String timestampFormat) {
-        super();
+        super(isFilePattern);
         this.encoding = encoding;
         this.escapeCharacter = escapeCharacter;
         this.delimiter = delimiter;
         this.quoteCharacter = quoteCharacter;
         this.hasHeader = hasHeader;
-        this.isFilePattern = isFilePattern;
         this.timestampFormat = timestampFormat;
     }
 
@@ -183,12 +182,6 @@ public class CsvFormatAttribute extends AbstractFormatAttribute {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hasHeader")
     Boolean hasHeader;
-
-    /**
-     * Defines whether a file pattern is supported.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("isFilePattern")
-    Boolean isFilePattern;
 
     /**
      * Format for timestamp information.

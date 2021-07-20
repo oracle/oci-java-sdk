@@ -55,6 +55,11 @@ public class QueryRequest extends com.oracle.bmc.requests.BmcRequest<QueryDetail
         return queryDetails;
     }
 
+    @Override
+    public boolean supportsExpect100Continue() {
+        return true;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<QueryRequest, QueryDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>

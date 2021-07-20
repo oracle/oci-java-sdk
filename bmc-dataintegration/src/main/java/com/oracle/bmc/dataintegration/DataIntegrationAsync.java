@@ -289,6 +289,21 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Endpoint to create a new schedule
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateScheduleResponse> createSchedule(
+            CreateScheduleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateScheduleRequest, CreateScheduleResponse>
+                    handler);
+
+    /**
      * Creates a new task ready for performing data integrations. There are specialized types of tasks that include data loader and integration tasks.
      *
      *
@@ -316,6 +331,22 @@ public interface DataIntegrationAsync extends AutoCloseable {
     java.util.concurrent.Future<CreateTaskRunResponse> createTaskRun(
             CreateTaskRunRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateTaskRunRequest, CreateTaskRunResponse>
+                    handler);
+
+    /**
+     * Endpoint to be used create TaskSchedule.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateTaskScheduleResponse> createTaskSchedule(
+            CreateTaskScheduleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateTaskScheduleRequest, CreateTaskScheduleResponse>
                     handler);
 
     /**
@@ -554,6 +585,21 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Endpoint to delete schedule.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteScheduleResponse> deleteSchedule(
+            DeleteScheduleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteScheduleRequest, DeleteScheduleResponse>
+                    handler);
+
+    /**
      * Removes a task using the specified identifier.
      *
      * @param request The request object containing the details to send
@@ -580,6 +626,22 @@ public interface DataIntegrationAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteTaskRunResponse> deleteTaskRun(
             DeleteTaskRunRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteTaskRunRequest, DeleteTaskRunResponse>
+                    handler);
+
+    /**
+     * Endpoint to delete TaskSchedule.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteTaskScheduleResponse> deleteTaskSchedule(
+            DeleteTaskScheduleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteTaskScheduleRequest, DeleteTaskScheduleResponse>
                     handler);
 
     /**
@@ -892,6 +954,20 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Retrieves schedule by schedule key
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetScheduleResponse> getSchedule(
+            GetScheduleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetScheduleRequest, GetScheduleResponse> handler);
+
+    /**
      * Retrieves a schema that can be accessed using the specified connection.
      *
      * @param request The request object containing the details to send
@@ -932,6 +1008,21 @@ public interface DataIntegrationAsync extends AutoCloseable {
     java.util.concurrent.Future<GetTaskRunResponse> getTaskRun(
             GetTaskRunRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetTaskRunRequest, GetTaskRunResponse> handler);
+
+    /**
+     * Endpoint used to get taskSchedule by its key
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetTaskScheduleResponse> getTaskSchedule(
+            GetTaskScheduleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetTaskScheduleRequest, GetTaskScheduleResponse>
+                    handler);
 
     /**
      * Retrieves a task validation using the specified identifier.
@@ -1265,6 +1356,22 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Use this endpoint to list schedules.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSchedulesResponse> listSchedules(
+            ListSchedulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListSchedulesRequest, ListSchedulesResponse>
+                    handler);
+
+    /**
      * Retrieves a list of all the schemas that can be accessed using the specified connection.
      *
      * @param request The request object containing the details to send
@@ -1306,6 +1413,23 @@ public interface DataIntegrationAsync extends AutoCloseable {
     java.util.concurrent.Future<ListTaskRunsResponse> listTaskRuns(
             ListTaskRunsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListTaskRunsRequest, ListTaskRunsResponse>
+                    handler);
+
+    /**
+     * This endpoint can be used to get the list of all the TaskSchedule objects.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListTaskSchedulesResponse> listTaskSchedules(
+            ListTaskSchedulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListTaskSchedulesRequest, ListTaskSchedulesResponse>
                     handler);
 
     /**
@@ -1576,6 +1700,21 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Endpoint used to update the schedule
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateScheduleResponse> updateSchedule(
+            UpdateScheduleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateScheduleRequest, UpdateScheduleResponse>
+                    handler);
+
+    /**
      * Updates a specific task. For example, you can update the task description or move the task to a different folder by changing the `aggregatorKey` to a different folder in the registry.
      *
      * @param request The request object containing the details to send
@@ -1602,6 +1741,22 @@ public interface DataIntegrationAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateTaskRunResponse> updateTaskRun(
             UpdateTaskRunRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateTaskRunRequest, UpdateTaskRunResponse>
+                    handler);
+
+    /**
+     * Endpoint used to update the TaskSchedule
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateTaskScheduleResponse> updateTaskSchedule(
+            UpdateTaskScheduleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateTaskScheduleRequest, UpdateTaskScheduleResponse>
                     handler);
 
     /**

@@ -3,6 +3,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.3.0 - 2021-07-20
+### Added
+- Support for schedules, schedule tasks, REST tasks, operators, S3, and Fusion Apps in the Data Integration service
+- Support for getting available updates and update histories for VM clusters in the Database service
+- Support for downloading network validation reports for Exadata network resources in the Database service
+- Support for patch and upgrade of Grid Infrastructure (GI), and update of DomU OS software for VM clusters in the Database service
+- Support for updating data guard associations in the Database service
+
+### Breaking Changes
+- Return type of method `public java.lang.String getType()` has been changed to `java.lang.Object` in the model `com.oracle.bmc.dataintegration.model.NativeShapeField` in the Data Integration service
+- Removed field `RestOperator` from the model `com.oracle.bmc.dataintegration.model.Operator$ModelType` in the Data Integration service
+- Method `public java.lang.String getBucketName()` has been removed from the model `com.oracle.bmc.dataintegration.model.OracleAdwcWriteAttributes` in the Data Integration service
+- Method `public java.lang.String getBucketName()` has been removed from the model `com.oracle.bmc.dataintegration.model.OracleAtpWriteAttributes` in the Data Integration service
+- Return type of method `public com.oracle.bmc.dataintegration.model.BaseType getType()` has been changed to `java.lang.Object` in the model `com.oracle.bmc.dataintegration.model.Parameter` in the Data Integration service
+- Return type of method `public java.lang.String getType()` has been changed to `java.lang.Object` in the model `com.oracle.bmc.dataintegration.model.ShapeField` in the Data Integration service
+- Return type of method `public com.oracle.bmc.dataintegration.requests.ListWorkspacesRequest$LifecycleState getLifecycleState()` has been changed to `com.oracle.bmc.dataintegration.model.Workspace$LifecycleState` in the Data Integration service
+- Class `com.oracle.bmc.dataintegration.requests.ListWorkspacesRequest$LifecycleState` has been removed in the Data Integration service
+
 ## 2.2.0 - 2021-07-13
 ### Added
 - Support for the AI Anomaly Detection service

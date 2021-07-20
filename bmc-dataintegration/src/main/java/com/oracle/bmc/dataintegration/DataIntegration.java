@@ -210,6 +210,16 @@ public interface DataIntegration extends AutoCloseable {
     CreateProjectResponse createProject(CreateProjectRequest request);
 
     /**
+     * Endpoint to create a new schedule
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSchedule API.
+     */
+    CreateScheduleResponse createSchedule(CreateScheduleRequest request);
+
+    /**
      * Creates a new task ready for performing data integrations. There are specialized types of tasks that include data loader and integration tasks.
      *
      * @param request The request object containing the details to send
@@ -229,6 +239,16 @@ public interface DataIntegration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateTaskRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTaskRun API.
      */
     CreateTaskRunResponse createTaskRun(CreateTaskRunRequest request);
+
+    /**
+     * Endpoint to be used create TaskSchedule.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateTaskScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTaskSchedule API.
+     */
+    CreateTaskScheduleResponse createTaskSchedule(CreateTaskScheduleRequest request);
 
     /**
      * Validates a specific task.
@@ -388,6 +408,16 @@ public interface DataIntegration extends AutoCloseable {
     DeleteProjectResponse deleteProject(DeleteProjectRequest request);
 
     /**
+     * Endpoint to delete schedule.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSchedule API.
+     */
+    DeleteScheduleResponse deleteSchedule(DeleteScheduleRequest request);
+
+    /**
      * Removes a task using the specified identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -406,6 +436,16 @@ public interface DataIntegration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteTaskRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTaskRun API.
      */
     DeleteTaskRunResponse deleteTaskRun(DeleteTaskRunRequest request);
+
+    /**
+     * Endpoint to delete TaskSchedule.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteTaskScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTaskSchedule API.
+     */
+    DeleteTaskScheduleResponse deleteTaskSchedule(DeleteTaskScheduleRequest request);
 
     /**
      * Removes a task validation using the specified identifier.
@@ -612,6 +652,16 @@ public interface DataIntegration extends AutoCloseable {
     GetReferenceResponse getReference(GetReferenceRequest request);
 
     /**
+     * Retrieves schedule by schedule key
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSchedule API.
+     */
+    GetScheduleResponse getSchedule(GetScheduleRequest request);
+
+    /**
      * Retrieves a schema that can be accessed using the specified connection.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -640,6 +690,16 @@ public interface DataIntegration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetTaskRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTaskRun API.
      */
     GetTaskRunResponse getTaskRun(GetTaskRunRequest request);
+
+    /**
+     * Endpoint used to get taskSchedule by its key
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetTaskScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTaskSchedule API.
+     */
+    GetTaskScheduleResponse getTaskSchedule(GetTaskScheduleRequest request);
 
     /**
      * Retrieves a task validation using the specified identifier.
@@ -863,6 +923,17 @@ public interface DataIntegration extends AutoCloseable {
     ListReferencesResponse listReferences(ListReferencesRequest request);
 
     /**
+     * Use this endpoint to list schedules.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListSchedulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSchedules API.
+     */
+    ListSchedulesResponse listSchedules(ListSchedulesRequest request);
+
+    /**
      * Retrieves a list of all the schemas that can be accessed using the specified connection.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -891,6 +962,17 @@ public interface DataIntegration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListTaskRunsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTaskRuns API.
      */
     ListTaskRunsResponse listTaskRuns(ListTaskRunsRequest request);
+
+    /**
+     * This endpoint can be used to get the list of all the TaskSchedule objects.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListTaskSchedulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTaskSchedules API.
+     */
+    ListTaskSchedulesResponse listTaskSchedules(ListTaskSchedulesRequest request);
 
     /**
      * Retrieves a list of task validations within the specified workspace.
@@ -1072,6 +1154,16 @@ public interface DataIntegration extends AutoCloseable {
     UpdateReferenceResponse updateReference(UpdateReferenceRequest request);
 
     /**
+     * Endpoint used to update the schedule
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSchedule API.
+     */
+    UpdateScheduleResponse updateSchedule(UpdateScheduleRequest request);
+
+    /**
      * Updates a specific task. For example, you can update the task description or move the task to a different folder by changing the `aggregatorKey` to a different folder in the registry.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1090,6 +1182,16 @@ public interface DataIntegration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateTaskRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTaskRun API.
      */
     UpdateTaskRunResponse updateTaskRun(UpdateTaskRunRequest request);
+
+    /**
+     * Endpoint used to update the TaskSchedule
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateTaskScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTaskSchedule API.
+     */
+    UpdateTaskScheduleResponse updateTaskSchedule(UpdateTaskScheduleRequest request);
 
     /**
      * Updates the specified Data Integration workspace.

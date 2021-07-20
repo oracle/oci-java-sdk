@@ -45,6 +45,11 @@ public class ExportQueryResultRequest extends com.oracle.bmc.requests.BmcRequest
         return exportDetails;
     }
 
+    @Override
+    public boolean supportsExpect100Continue() {
+        return true;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ExportQueryResultRequest, ExportDetails> {

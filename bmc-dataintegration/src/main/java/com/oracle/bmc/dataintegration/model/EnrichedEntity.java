@@ -42,18 +42,41 @@ public class EnrichedEntity {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("modelType")
+        private String modelType;
+
+        public Builder modelType(String modelType) {
+            this.modelType = modelType;
+            this.__explicitlySet__.add("modelType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("parentRef")
+        private ParentReference parentRef;
+
+        public Builder parentRef(ParentReference parentRef) {
+            this.parentRef = parentRef;
+            this.__explicitlySet__.add("parentRef");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EnrichedEntity build() {
-            EnrichedEntity __instance__ = new EnrichedEntity(entity, dataFormat);
+            EnrichedEntity __instance__ =
+                    new EnrichedEntity(entity, dataFormat, modelType, parentRef);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(EnrichedEntity o) {
-            Builder copiedBuilder = entity(o.getEntity()).dataFormat(o.getDataFormat());
+            Builder copiedBuilder =
+                    entity(o.getEntity())
+                            .dataFormat(o.getDataFormat())
+                            .modelType(o.getModelType())
+                            .parentRef(o.getParentRef());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -72,6 +95,15 @@ public class EnrichedEntity {
 
     @com.fasterxml.jackson.annotation.JsonProperty("dataFormat")
     DataFormat dataFormat;
+
+    /**
+     * The model type for the entity which is referenced.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("modelType")
+    String modelType;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("parentRef")
+    ParentReference parentRef;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

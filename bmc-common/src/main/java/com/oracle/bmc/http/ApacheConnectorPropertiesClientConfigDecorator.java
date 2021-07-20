@@ -117,7 +117,8 @@ public class ApacheConnectorPropertiesClientConfigDecorator implements ClientCon
         final RequestConfig requestConfig =
                 RequestConfig.custom()
                         .setContentCompressionEnabled(false)
-                        .setExpectContinueEnabled(config.isExpectContinue())
+                        // do not add Expect: 100-Continue globally; this is done per operation in the *Converter
+                        .setExpectContinueEnabled(false)
                         .build();
 
         clientConfig.property(ApacheClientProperties.REQUEST_CONFIG, requestConfig);

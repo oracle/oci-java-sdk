@@ -38,6 +38,11 @@ public class ListTaskRunsRequest extends com.oracle.bmc.requests.BmcRequest<java
     private String opcRequestId;
 
     /**
+     * Used to filter by the key of the object.
+     */
+    private java.util.List<String> key;
+
+    /**
      * Used to filter by the project or the folder object.
      *
      */
@@ -148,6 +153,10 @@ public class ListTaskRunsRequest extends com.oracle.bmc.requests.BmcRequest<java
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+    /**
+     * This filter parameter can be used to filter by model specific queryable fields of the object <br><br><B>Examples:-</B><br> <ul> <li><B>?filter=status eq Failed</B> returns all objects that have a status field with value Failed</li> </ul>
+     */
+    private java.util.List<String> filter;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -187,6 +196,7 @@ public class ListTaskRunsRequest extends com.oracle.bmc.requests.BmcRequest<java
             workspaceId(o.getWorkspaceId());
             applicationKey(o.getApplicationKey());
             opcRequestId(o.getOpcRequestId());
+            key(o.getKey());
             aggregatorKey(o.getAggregatorKey());
             fields(o.getFields());
             name(o.getName());
@@ -195,6 +205,7 @@ public class ListTaskRunsRequest extends com.oracle.bmc.requests.BmcRequest<java
             limit(o.getLimit());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
+            filter(o.getFilter());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

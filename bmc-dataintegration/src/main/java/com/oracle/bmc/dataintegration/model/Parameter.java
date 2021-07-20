@@ -94,9 +94,9 @@ public class Parameter extends TypedObject {
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("type")
-        private BaseType type;
+        private Object type;
 
-        public Builder type(BaseType type) {
+        public Builder type(Object type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
@@ -219,7 +219,7 @@ public class Parameter extends TypedObject {
             Integer objectStatus,
             String name,
             String description,
-            BaseType type,
+            Object type,
             Object defaultValue,
             Object rootObjectDefaultValue,
             Boolean isInput,
@@ -236,8 +236,11 @@ public class Parameter extends TypedObject {
         this.typeName = typeName;
     }
 
+    /**
+     * This can either be a string value referencing the type or a BaseType object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    BaseType type;
+    Object type;
 
     /**
      * The default value of the parameter.

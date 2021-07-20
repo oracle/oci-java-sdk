@@ -7,6 +7,8 @@ package com.oracle.bmc.http;
 import org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy;
 
 import java.util.Optional;
+import java.util.function.Function;
+import java.util.function.Supplier;
 
 /**
  * Utility functions related to Apache
@@ -51,12 +53,44 @@ public final class ApacheUtils {
 
     /**
      * Determines the closing strategy used by the Apache connector
-     * @param clientConfigurator
+     * @param clientConfigurator client configurator used to configure the client
      * @return closingStrategy representing the Apache Connector closing strategy
      */
     public static ApacheConnectionClosingStrategy getApacheConnectionClosingStrategy(
             ClientConfigurator clientConfigurator) {
-        ApacheConnectionClosingStrategy closingStrategy = null;
+        return getApacheConnectionSetting(
+                clientConfigurator, acp -> acp.getConnectionClosingStrategy());
+    }
+
+    /**
+     * Determines the expect 100 continue setting used by the Apache connector
+     * @param clientConfigurator client configurator used to configure the client
+     * @return true if expect 100 continue is enabled
+     */
+    public static boolean getApacheConnectionExpectContinue(ClientConfigurator clientConfigurator) {
+        if (clientConfigurator == null) {
+            clientConfigurator = new DefaultConfigurator().getEffectiveClientConfigurator();
+        } else if (clientConfigurator instanceof DefaultConfigurator) {
+            clientConfigurator =
+                    ((DefaultConfigurator) clientConfigurator).getEffectiveClientConfigurator();
+        }
+        Boolean apacheConnectionSetting =
+                getApacheConnectionSetting(clientConfigurator, acp -> acp.isExpectContinue());
+        // this treats null as false
+        return apacheConnectionSetting == Boolean.TRUE;
+    }
+
+    /**
+     * Determines the value of an {@link ApacheConnectorProperties} setting in the client configurator
+     * @param clientConfigurator client configurator used to configure the client
+     * @param settingsExtractor function to extract the setting from the {@link ApacheConnectorProperties}
+     * @param <T> type of the setting
+     * @return setting, or null
+     */
+    static <T> T getApacheConnectionSetting(
+            ClientConfigurator clientConfigurator,
+            Function<ApacheConnectorProperties, T> settingsExtractor) {
+        T property = null;
         if (clientConfigurator instanceof com.oracle.bmc.http.CompositeClientConfigurator) {
             com.oracle.bmc.http.CompositeClientConfigurator compositeClientConfigurator =
                     (com.oracle.bmc.http.CompositeClientConfigurator) clientConfigurator;
@@ -80,10 +114,10 @@ public final class ApacheUtils {
                                             .getApacheConnectorProperties()
                                             .getConnectionClosingStrategy()
                                     != null) {
-                        closingStrategy =
-                                effectiveApacheConnectorConfigurator
-                                        .getApacheConnectorProperties()
-                                        .getConnectionClosingStrategy();
+                        property =
+                                settingsExtractor.apply(
+                                        effectiveApacheConnectorConfigurator
+                                                .getApacheConnectorProperties());
                     }
                 } else if (effectiveClientConfigurator
                         instanceof com.oracle.bmc.http.HasEffectiveClientConfigurator) {
@@ -100,10 +134,10 @@ public final class ApacheUtils {
                                                 .getApacheConnectorProperties()
                                                 .getConnectionClosingStrategy()
                                         != null) {
-                            closingStrategy =
-                                    innerEffectiveApacheClientConfigurator
-                                            .getApacheConnectorProperties()
-                                            .getConnectionClosingStrategy();
+                            property =
+                                    settingsExtractor.apply(
+                                            innerEffectiveApacheClientConfigurator
+                                                    .getApacheConnectorProperties());
                         }
                     }
                 }
@@ -116,13 +150,12 @@ public final class ApacheUtils {
                                     .getApacheConnectorProperties()
                                     .getConnectionClosingStrategy()
                             != null) {
-                closingStrategy =
-                        apacheClientConfigurator
-                                .getApacheConnectorProperties()
-                                .getConnectionClosingStrategy();
+                property =
+                        settingsExtractor.apply(
+                                apacheClientConfigurator.getApacheConnectorProperties());
             }
         }
-        return closingStrategy;
+        return property;
     }
 
     private static Optional<ClientConfigurator> filterOutEffectiveCompositeConfigurator(

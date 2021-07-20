@@ -84,7 +84,7 @@ public class ScanDetails {
     String hostname;
 
     /**
-     * The SCAN port. Default is 1521.
+     * The SCAN TCPIP port. Default is 1521.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     Integer port;

@@ -91,6 +91,15 @@ public class UpdateVmClusterDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("updateDetails")
+        private VmClusterUpdateDetails updateDetails;
+
+        public Builder updateDetails(VmClusterUpdateDetails updateDetails) {
+            this.updateDetails = updateDetails;
+            this.__explicitlySet__.add("updateDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -123,6 +132,7 @@ public class UpdateVmClusterDetails {
                             licenseModel,
                             sshPublicKeys,
                             version,
+                            updateDetails,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -139,6 +149,7 @@ public class UpdateVmClusterDetails {
                             .licenseModel(o.getLicenseModel())
                             .sshPublicKeys(o.getSshPublicKeys())
                             .version(o.getVersion())
+                            .updateDetails(o.getUpdateDetails())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -228,6 +239,9 @@ public class UpdateVmClusterDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     PatchDetails version;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("updateDetails")
+    VmClusterUpdateDetails updateDetails;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

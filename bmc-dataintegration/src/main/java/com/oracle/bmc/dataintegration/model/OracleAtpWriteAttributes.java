@@ -15,23 +15,29 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = OracleAtpWriteAttributes.Builder.class
 )
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 @lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OracleAtpWriteAttributes {
+public class OracleAtpWriteAttributes extends AbstractWriteAttribute {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
-        private String bucketName;
+        @com.fasterxml.jackson.annotation.JsonProperty("bucketSchema")
+        private Schema bucketSchema;
 
-        public Builder bucketName(String bucketName) {
-            this.bucketName = bucketName;
-            this.__explicitlySet__.add("bucketName");
+        public Builder bucketSchema(Schema bucketSchema) {
+            this.bucketSchema = bucketSchema;
+            this.__explicitlySet__.add("bucketSchema");
             return this;
         }
 
@@ -68,7 +74,7 @@ public class OracleAtpWriteAttributes {
         public OracleAtpWriteAttributes build() {
             OracleAtpWriteAttributes __instance__ =
                     new OracleAtpWriteAttributes(
-                            bucketName, stagingFileName, stagingDataAsset, stagingConnection);
+                            bucketSchema, stagingFileName, stagingDataAsset, stagingConnection);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -76,7 +82,7 @@ public class OracleAtpWriteAttributes {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(OracleAtpWriteAttributes o) {
             Builder copiedBuilder =
-                    bucketName(o.getBucketName())
+                    bucketSchema(o.getBucketSchema())
                             .stagingFileName(o.getStagingFileName())
                             .stagingDataAsset(o.getStagingDataAsset())
                             .stagingConnection(o.getStagingConnection());
@@ -93,11 +99,21 @@ public class OracleAtpWriteAttributes {
         return new Builder();
     }
 
-    /**
-     * The bucket name for the attribute.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
-    String bucketName;
+    @Deprecated
+    public OracleAtpWriteAttributes(
+            Schema bucketSchema,
+            String stagingFileName,
+            DataAsset stagingDataAsset,
+            Connection stagingConnection) {
+        super();
+        this.bucketSchema = bucketSchema;
+        this.stagingFileName = stagingFileName;
+        this.stagingDataAsset = stagingDataAsset;
+        this.stagingConnection = stagingConnection;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("bucketSchema")
+    Schema bucketSchema;
 
     /**
      * The file name for the attribute.

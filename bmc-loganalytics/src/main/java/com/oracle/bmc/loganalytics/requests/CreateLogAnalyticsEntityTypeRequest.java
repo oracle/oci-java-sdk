@@ -56,6 +56,11 @@ public class CreateLogAnalyticsEntityTypeRequest
         return createLogAnalyticsEntityTypeDetails;
     }
 
+    @Override
+    public boolean supportsExpect100Continue() {
+        return true;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateLogAnalyticsEntityTypeRequest, CreateLogAnalyticsEntityTypeDetails> {

@@ -176,6 +176,11 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
         return putObjectBody;
     }
 
+    @Override
+    public boolean supportsExpect100Continue() {
+        return true;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     PutObjectRequest, java.io.InputStream> {

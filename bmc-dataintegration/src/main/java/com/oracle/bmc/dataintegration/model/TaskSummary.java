@@ -33,6 +33,18 @@ package com.oracle.bmc.dataintegration.model;
         name = "INTEGRATION_TASK"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = TaskSummaryFromSQLTask.class,
+        name = "SQL_TASK"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = TaskSummaryFromOCIDataflowTask.class,
+        name = "OCI_DATAFLOW_TASK"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = TaskSummaryFromRestTask.class,
+        name = "REST_TASK"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = TaskSummaryFromPipelineTask.class,
         name = "PIPELINE_TASK"
     ),
@@ -130,6 +142,9 @@ public class TaskSummary {
         IntegrationTask("INTEGRATION_TASK"),
         DataLoaderTask("DATA_LOADER_TASK"),
         PipelineTask("PIPELINE_TASK"),
+        SqlTask("SQL_TASK"),
+        OciDataflowTask("OCI_DATAFLOW_TASK"),
+        RestTask("REST_TASK"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

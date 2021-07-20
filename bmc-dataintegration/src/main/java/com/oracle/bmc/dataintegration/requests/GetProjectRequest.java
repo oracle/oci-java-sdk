@@ -37,6 +37,46 @@ public class GetProjectRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String opcRequestId;
 
+    /**
+     * This parameter allows users to specify which view of the object to return. CHILD_COUNT_STATISTICS - This option is used to get statistics on immediate children of the object by their type.
+     */
+    private java.util.List<Projection> projection;
+
+    /**
+     * This parameter allows users to specify which view of the object to return. CHILD_COUNT_STATISTICS - This option is used to get statistics on immediate children of the object by their type.
+     **/
+    public enum Projection {
+        ChildCountStatistics("CHILD_COUNT_STATISTICS"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Projection> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Projection v : Projection.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Projection(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Projection create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Projection: " + key);
+        }
+    };
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetProjectRequest, java.lang.Void> {
@@ -75,6 +115,7 @@ public class GetProjectRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             workspaceId(o.getWorkspaceId());
             projectKey(o.getProjectKey());
             opcRequestId(o.getOpcRequestId());
+            projection(o.getProjection());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

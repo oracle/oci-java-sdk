@@ -89,6 +89,15 @@ public class UpdateTaskRunDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("taskScheduleKey")
+        private String taskScheduleKey;
+
+        public Builder taskScheduleKey(String taskScheduleKey) {
+            this.taskScheduleKey = taskScheduleKey;
+            this.__explicitlySet__.add("taskScheduleKey");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("registryMetadata")
         private RegistryMetadata registryMetadata;
 
@@ -111,6 +120,7 @@ public class UpdateTaskRunDetails {
                             name,
                             description,
                             objectVersion,
+                            taskScheduleKey,
                             registryMetadata);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -126,6 +136,7 @@ public class UpdateTaskRunDetails {
                             .name(o.getName())
                             .description(o.getDescription())
                             .objectVersion(o.getObjectVersion())
+                            .taskScheduleKey(o.getTaskScheduleKey())
                             .registryMetadata(o.getRegistryMetadata());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -214,6 +225,12 @@ public class UpdateTaskRunDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     Integer objectVersion;
+
+    /**
+     * Optional task schedule key reference.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("taskScheduleKey")
+    String taskScheduleKey;
 
     @com.fasterxml.jackson.annotation.JsonProperty("registryMetadata")
     RegistryMetadata registryMetadata;

@@ -43,9 +43,9 @@ public class NativeShapeField {
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("type")
-        private String type;
+        private Object type;
 
-        public Builder type(String type) {
+        public Builder type(Object type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
@@ -143,7 +143,7 @@ public class NativeShapeField {
      * The type reference.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    String type;
+    Object type;
 
     @com.fasterxml.jackson.annotation.JsonProperty("configValues")
     ConfigValues configValues;

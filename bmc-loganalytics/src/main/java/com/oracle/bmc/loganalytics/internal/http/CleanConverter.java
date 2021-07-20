@@ -72,6 +72,9 @@ public class CleanConverter {
             ib.header("opc-retry-token", request.getOpcRetryToken());
         }
 
+        if (client.getClientConfigurator() != null) {
+            client.getClientConfigurator().customizeRequest(request, ib);
+        }
         return ib;
     }
 
