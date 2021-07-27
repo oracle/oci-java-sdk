@@ -323,7 +323,7 @@ public class ResourceActionSummary {
     /**
      * The date and time that the resource action entered its current status. The format is defined by RFC3339.
      * <p>
-     * For example, \"The status of the resource action changed from `pending` to `current(ignored)` on this date and time.\"
+     * For example, "The status of the resource action changed from {@code pending} to {@code current(ignored)} on this date and time."
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStatusBegin")
@@ -332,8 +332,8 @@ public class ResourceActionSummary {
     /**
      * The date and time the current status will change. The format is defined by RFC3339.
      * <p>
-     * For example, \"The current `postponed` status of the resource action will end and change to `pending` on this
-     * date and time.\"
+     * For example, "The current {@code postponed} status of the resource action will end and change to {@code pending} on this
+     * date and time."
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStatusEnd")
@@ -344,13 +344,13 @@ public class ResourceActionSummary {
      * <p>
      **Metadata Example**
      * <p>
-     * \"metadata\" : {
-     *          \"cpuRecommendedShape\": \"VM.Standard1.1\",
-     *          \"computeMemoryUtilization\": \"26.05734124418388\",
-     *          \"currentShape\": \"VM.Standard1.2\",
-     *          \"instanceRecommendedShape\": \"VM.Standard1.1\",
-     *          \"computeCpuUtilization\": \"7.930035319720132\",
-     *          \"memoryRecommendedShape\": \"None\"
+     * "metadata" : {
+     *          "cpuRecommendedShape": "VM.Standard1.1",
+     *          "computeMemoryUtilization": "26.05734124418388",
+     *          "currentShape": "VM.Standard1.2",
+     *          "instanceRecommendedShape": "VM.Standard1.1",
+     *          "computeCpuUtilization": "7.930035319720132",
+     *          "memoryRecommendedShape": "None"
      *       }
      *
      **/
@@ -359,13 +359,13 @@ public class ResourceActionSummary {
 
     /**
      * Additional metadata key/value pairs that you provide.
-     * They serve the same purpose and functionality as fields in the `metadata` object.
+     * They serve the same purpose and functionality as fields in the {@code metadata} object.
      * <p>
-     * They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
+     * They are distinguished from {@code metadata} fields in that these can be nested JSON objects (whereas {@code metadata} fields are string/string maps only).
      * <p>
      * For example:
      * <p>
-     * `{\"CurrentShape\": {\"name\":\"VM.Standard2.16\"}, \"RecommendedShape\": {\"name\":\"VM.Standard2.8\"}}`
+     * {@code {"CurrentShape": {"name":"VM.Standard2.16"}, "RecommendedShape": {"name":"VM.Standard2.8"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")

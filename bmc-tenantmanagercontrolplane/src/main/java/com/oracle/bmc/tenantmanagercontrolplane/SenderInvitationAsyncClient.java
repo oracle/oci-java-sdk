@@ -444,7 +444,12 @@ public class SenderInvitationAsyncClient implements SenderInvitationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateSenderInvitationRequest, CreateSenderInvitationResponse>,
                         java.util.concurrent.Future<CreateSenderInvitationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSenderInvitationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -567,7 +572,12 @@ public class SenderInvitationAsyncClient implements SenderInvitationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateSenderInvitationRequest, UpdateSenderInvitationResponse>,
                         java.util.concurrent.Future<UpdateSenderInvitationResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSenderInvitationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

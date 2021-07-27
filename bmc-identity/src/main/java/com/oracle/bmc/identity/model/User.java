@@ -299,7 +299,7 @@ public class User {
     Boolean emailVerified;
 
     /**
-     * The OCID of the `IdentityProvider` this user belongs to.
+     * The OCID of the {@code IdentityProvider} this user belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identityProviderId")
     String identityProviderId;
@@ -313,13 +313,13 @@ public class User {
     /**
      * Date and time the user was created, in the format defined by RFC3339.
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
     /**
-     * The user's current state. After creating a user, make sure its `lifecycleState` changes from CREATING to
+     * The user's current state. After creating a user, make sure its {@code lifecycleState} changes from CREATING to
      * ACTIVE before using it.
      *
      **/
@@ -370,7 +370,7 @@ public class User {
         }
     };
     /**
-     * The user's current state. After creating a user, make sure its `lifecycleState` changes from CREATING to
+     * The user's current state. After creating a user, make sure its {@code lifecycleState} changes from CREATING to
      * ACTIVE before using it.
      *
      **/
@@ -378,7 +378,7 @@ public class User {
     LifecycleState lifecycleState;
 
     /**
-     * Returned only if the user's `lifecycleState` is INACTIVE. A 16-bit value showing the reason why the user
+     * Returned only if the user's {@code lifecycleState} is INACTIVE. A 16-bit value showing the reason why the user
      * is inactive:
      * <p>
      * - bit 0: SUSPENDED (reserved for future use)
@@ -393,7 +393,7 @@ public class User {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -402,7 +402,7 @@ public class User {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -419,16 +419,16 @@ public class User {
 
     /**
      * The date and time of when the user most recently logged in the
-     * format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`).
+     * format defined by RFC3339 (ex. {@code 2016-08-25T21:10:29.600Z}).
      * If there is no login history, this field is null.
      * <p>
      * For illustrative purposes, suppose we have a user who has logged in
      * at July 1st, 2020 at 1200 PST and logged out 30 minutes later.
      * They then login again on July 2nd, 2020 at 1500 PST.
      * <p>
-     * Their previousSuccessfulLoginTime would be `2020-07-01:19:00.000Z`.
+     * Their previousSuccessfulLoginTime would be {@code 2020-07-01:19:00.000Z}.
      * <p>
-     * Their lastSuccessfulLoginTime would be `2020-07-02:22:00.000Z`.
+     * Their lastSuccessfulLoginTime would be {@code 2020-07-02:22:00.000Z}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastSuccessfulLoginTime")
@@ -436,16 +436,16 @@ public class User {
 
     /**
      * The date and time of when the user most recently logged in the
-     * format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`).
+     * format defined by RFC3339 (ex. {@code 2016-08-25T21:10:29.600Z}).
      * If there is no login history, this field is null.
      * <p>
      * For illustrative purposes, suppose we have a user who has logged in
      * at July 1st, 2020 at 1200 PST and logged out 30 minutes later.
      * They then login again on July 2nd, 2020 at 1500 PST.
      * <p>
-     * Their previousSuccessfulLoginTime would be `2020-07-01:19:00.000Z`.
+     * Their previousSuccessfulLoginTime would be {@code 2020-07-01:19:00.000Z}.
      * <p>
-     * Their lastSuccessfulLoginTime would be `2020-07-02:22:00.000Z`.
+     * Their lastSuccessfulLoginTime would be {@code 2020-07-02:22:00.000Z}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("previousSuccessfulLoginTime")

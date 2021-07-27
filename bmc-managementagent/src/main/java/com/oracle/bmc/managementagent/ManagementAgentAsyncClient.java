@@ -406,7 +406,12 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                                 CreateManagementAgentInstallKeyRequest,
                                 CreateManagementAgentInstallKeyResponse>,
                         java.util.concurrent.Future<CreateManagementAgentInstallKeyResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateManagementAgentInstallKeyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -572,7 +577,12 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 DeployPluginsRequest, DeployPluginsResponse>,
                         java.util.concurrent.Future<DeployPluginsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDeployPluginsDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1125,7 +1135,12 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateManagementAgentRequest, UpdateManagementAgentResponse>,
                         java.util.concurrent.Future<UpdateManagementAgentResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateManagementAgentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1171,7 +1186,12 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                                 UpdateManagementAgentInstallKeyRequest,
                                 UpdateManagementAgentInstallKeyResponse>,
                         java.util.concurrent.Future<UpdateManagementAgentInstallKeyResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateManagementAgentInstallKeyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

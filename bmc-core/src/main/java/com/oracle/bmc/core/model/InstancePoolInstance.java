@@ -309,14 +309,14 @@ public class InstancePoolInstance {
     String shape;
 
     /**
-     * The lifecycle state of the instance. Refer to `lifecycleState` in the {@link Instance} resource.
+     * The lifecycle state of the instance. Refer to {@code lifecycleState} in the {@link Instance} resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     String state;
 
     /**
      * The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

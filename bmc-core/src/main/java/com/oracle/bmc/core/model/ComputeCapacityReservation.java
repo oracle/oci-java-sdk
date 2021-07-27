@@ -201,7 +201,7 @@ public class ComputeCapacityReservation {
     /**
      * The availability domain of the compute capacity reservation.
      * <p>
-     * Example: `Uocm:PHX-AD-1`
+     * Example: {@code Uocm:PHX-AD-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
@@ -219,7 +219,7 @@ public class ComputeCapacityReservation {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -237,7 +237,7 @@ public class ComputeCapacityReservation {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -324,7 +324,7 @@ public class ComputeCapacityReservation {
 
     /**
      * The number of instances for which capacity will be held with this
-     * compute capacity reservation. This number is the sum of the values of the `reservedCount` fields
+     * compute capacity reservation. This number is the sum of the values of the {@code reservedCount} fields
      * for all of the instance reservation configurations under this reservation.
      * The purpose of this field is to calculate the percentage usage of the reservation.
      *
@@ -335,7 +335,7 @@ public class ComputeCapacityReservation {
     /**
      * The date and time the compute capacity reservation was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
@@ -344,7 +344,7 @@ public class ComputeCapacityReservation {
     /**
      * The date and time the compute capacity reservation was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -352,7 +352,7 @@ public class ComputeCapacityReservation {
 
     /**
      * The total number of instances currently consuming space in
-     * this compute capacity reservation. This number is the sum of the values of the `usedCount` fields
+     * this compute capacity reservation. This number is the sum of the values of the {@code usedCount} fields
      * for all of the instance reservation configurations under this reservation.
      * The purpose of this field is to calculate the percentage usage of the reservation.
      *

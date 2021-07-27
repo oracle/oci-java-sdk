@@ -23,7 +23,7 @@ public class GetGenericArtifactContentByPathRequest
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
      * <p>
-     * Example: `ocid1.repository.oc1..exampleuniqueID`
+     * Example: {@code ocid1.repository.oc1..exampleuniqueID}
      *
      */
     private String repositoryId;
@@ -31,7 +31,7 @@ public class GetGenericArtifactContentByPathRequest
     /**
      * A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
      * <p>
-     * Example: `project01/my-web-app/artifact-abc`
+     * Example: {@code project01/my-web-app/artifact-abc}
      *
      */
     private String artifactPath;
@@ -39,7 +39,7 @@ public class GetGenericArtifactContentByPathRequest
     /**
      * A user-defined string to describe the artifact version.
      * <p>
-     * Example: `1.1.2` or `1.2-beta-2`
+     * Example: {@code 1.1.2} or {@code 1.2-beta-2}
      *
      */
     private String version;
@@ -47,7 +47,7 @@ public class GetGenericArtifactContentByPathRequest
     /**
      * Unique Oracle-assigned [request ID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
      * <p>
-     * Example: `bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx`
+     * Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx}
      * If you contact Oracle about a request, provide this request ID.
      *
      */

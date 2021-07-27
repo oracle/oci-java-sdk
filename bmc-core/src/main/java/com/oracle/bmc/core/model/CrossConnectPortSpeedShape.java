@@ -74,7 +74,7 @@ public class CrossConnectPortSpeedShape {
     /**
      * The name of the port speed shape.
      * <p>
-     * Example: `10 Gbps`
+     * Example: {@code 10 Gbps}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -83,7 +83,7 @@ public class CrossConnectPortSpeedShape {
     /**
      * The port speed in Gbps.
      * <p>
-     * Example: `10`
+     * Example: {@code 10}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("portSpeedInGbps")

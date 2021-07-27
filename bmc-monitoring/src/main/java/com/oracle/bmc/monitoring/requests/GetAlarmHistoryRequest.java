@@ -36,7 +36,7 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
      * The type of history entries to retrieve. State history (STATE_HISTORY) or state transition history (STATE_TRANSITION_HISTORY).
      * If not specified, entries of both types are retrieved.
      * <p>
-     * Example: `STATE_HISTORY`
+     * Example: {@code STATE_HISTORY}
      *
      */
     private AlarmHistorytype alarmHistorytype;
@@ -45,7 +45,7 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
      * The type of history entries to retrieve. State history (STATE_HISTORY) or state transition history (STATE_TRANSITION_HISTORY).
      * If not specified, entries of both types are retrieved.
      * <p>
-     * Example: `STATE_HISTORY`
+     * Example: {@code STATE_HISTORY}
      *
      **/
     public enum AlarmHistorytype {
@@ -81,14 +81,14 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
     /**
-     * For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
      * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String page;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
+     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
      * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * <p>
      * Default: 1000
@@ -101,7 +101,7 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
     /**
      * A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.
      * <p>
-     * Example: `2019-01-01T01:00:00.789Z`
+     * Example: {@code 2019-01-01T01:00:00.789Z}
      *
      */
     private java.util.Date timestampGreaterThanOrEqualTo;
@@ -109,7 +109,7 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
     /**
      * A filter to return only alarm history entries with timestamps occurring before the specified date and time. Format defined by RFC3339.
      * <p>
-     * Example: `2019-01-02T01:00:00.789Z`
+     * Example: {@code 2019-01-02T01:00:00.789Z}
      *
      */
     private java.util.Date timestampLessThan;

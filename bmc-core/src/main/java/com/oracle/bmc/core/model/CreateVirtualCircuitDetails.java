@@ -247,7 +247,7 @@ public class CreateVirtualCircuitDetails {
      * available bandwidth levels (that is, shapes), see
      * {@link #listFastConnectProviderVirtualCircuitBandwidthShapes(ListFastConnectProviderVirtualCircuitBandwidthShapesRequest) listFastConnectProviderVirtualCircuitBandwidthShapes}.
      * <p>
-     * Example: `10 Gbps`
+     * Example: {@code 10 Gbps}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bandwidthShapeName")
@@ -261,7 +261,7 @@ public class CreateVirtualCircuitDetails {
     String compartmentId;
 
     /**
-     * Create a `CrossConnectMapping` for each cross-connect or cross-connect
+     * Create a {@code CrossConnectMapping} for each cross-connect or cross-connect
      * group this virtual circuit will run on.
      *
      **/
@@ -305,7 +305,7 @@ public class CreateVirtualCircuitDetails {
     };
     /**
      * The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit.
-     * Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`.
+     * Policies available are: {@code ORACLE_SERVICE_NETWORK}, {@code REGIONAL}, {@code MARKET_LEVEL}, and {@code GLOBAL}.
      * See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details.
      * By default, routing information is shared for all routes in the same market.
      *
@@ -314,7 +314,7 @@ public class CreateVirtualCircuitDetails {
     java.util.List<RoutingPolicy> routingPolicy;
 
     /**
-     * Deprecated. Instead use `customerAsn`.
+     * Deprecated. Instead use {@code customerAsn}.
      * If you specify values for both, the request will be rejected.
      *
      **/
@@ -325,9 +325,9 @@ public class CreateVirtualCircuitDetails {
      * Your BGP ASN (either public or private). Provide this value only if
      * there's a BGP session that goes from your edge router to Oracle.
      * Otherwise, leave this empty or null.
-     * Can be a 2-byte or 4-byte ASN. Uses \"asplain\" format.
+     * Can be a 2-byte or 4-byte ASN. Uses "asplain" format.
      * <p>
-     * Example: `12345` (2-byte) or `1587232876` (4-byte)
+     * Example: {@code 12345} (2-byte) or {@code 1587232876} (4-byte)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerAsn")
@@ -337,7 +337,7 @@ public class CreateVirtualCircuitDetails {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -354,7 +354,7 @@ public class CreateVirtualCircuitDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -369,7 +369,7 @@ public class CreateVirtualCircuitDetails {
     String gatewayId;
 
     /**
-     * Deprecated. Instead use `providerServiceId`.
+     * Deprecated. Instead use {@code providerServiceId}.
      * To get a list of the provider names, see
      * {@link #listFastConnectProviderServices(ListFastConnectProviderServicesRequest) listFastConnectProviderServices}.
      *
@@ -394,7 +394,7 @@ public class CreateVirtualCircuitDetails {
     String providerServiceKeyName;
 
     /**
-     * Deprecated. Instead use `providerServiceId`.
+     * Deprecated. Instead use {@code providerServiceId}.
      * To get a list of the provider names, see
      * {@link #listFastConnectProviderServices(ListFastConnectProviderServicesRequest) listFastConnectProviderServices}.
      *
@@ -413,7 +413,7 @@ public class CreateVirtualCircuitDetails {
     /**
      * The Oracle Cloud Infrastructure region where this virtual
      * circuit is located.
-     * Example: `phx`
+     * Example: {@code phx}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")

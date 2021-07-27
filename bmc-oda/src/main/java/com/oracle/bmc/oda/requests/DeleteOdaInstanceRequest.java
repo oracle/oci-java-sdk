@@ -26,8 +26,8 @@ public class DeleteOdaInstanceRequest extends com.oracle.bmc.requests.BmcRequest
 
     /**
      * For optimistic concurrency control in a PUT or DELETE call for
-     * a Digital Assistant instance, set the `if-match` query parameter
-     * to the value of the `ETAG` header from a previous GET or POST
+     * a Digital Assistant instance, set the {@code if-match} query parameter
+     * to the value of the {@code ETAG} header from a previous GET or POST
      * response for that instance. The service updates or deletes the
      * instance only if the etag that you provide matches the instance's
      * current etag value.

@@ -79,7 +79,7 @@ public class TaggingWorkRequestLogSummary {
 
     /**
      * Date and time the log was written, in the format defined by RFC3339.
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")

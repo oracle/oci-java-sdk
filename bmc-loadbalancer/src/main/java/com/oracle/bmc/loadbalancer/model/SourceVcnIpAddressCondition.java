@@ -6,7 +6,7 @@ package com.oracle.bmc.loadbalancer.model;
 
 /**
  * An access control rule condition that requires a match on the specified source VCN and IP address range.
- * This condition must be used only in conjunction with `SourceVcnIdCondition`.
+ * This condition must be used only in conjunction with {@code SourceVcnIdCondition}.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -83,7 +83,7 @@ public class SourceVcnIpAddressCondition extends RuleCondition {
      * <p>
      * Specify 0.0.0.0/0 to match all incoming traffic in the customer VCN.
      * <p>
-     * example: \"10.10.1.0/24\"
+     * example: "10.10.1.0/24"
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeValue")

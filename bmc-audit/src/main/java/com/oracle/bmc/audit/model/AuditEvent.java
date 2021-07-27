@@ -143,10 +143,10 @@ public class AuditEvent {
      * The type of event that happened.
      * <p>
      * The service that produces the event can also add, remove, or change the meaning of a field.
-     * A service implementing these type changes would publish a new version of an `eventType` and
-     * revise the `eventTypeVersion` field.
+     * A service implementing these type changes would publish a new version of an {@code eventType} and
+     * revise the {@code eventTypeVersion} field.
      * <p>
-     * Example: `com.oraclecloud.ComputeApi.GetInstance`
+     * Example: {@code com.oraclecloud.ComputeApi.GetInstance}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventType")
@@ -159,7 +159,7 @@ public class AuditEvent {
      * <p>
      * Audit uses version 0.1 specification of the CloudEvents event envelope.
      * <p>
-     * Example: `0.1`
+     * Example: {@code 0.1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudEventsVersion")
@@ -167,9 +167,9 @@ public class AuditEvent {
 
     /**
      * The version of the event type. This version applies to the payload of the event, not the envelope.
-     * Use `cloudEventsVersion` to determine the version of the envelope.
+     * Use {@code cloudEventsVersion} to determine the version of the envelope.
      * <p>
-     * Example: `2.0`
+     * Example: {@code 2.0}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventTypeVersion")
@@ -178,7 +178,7 @@ public class AuditEvent {
     /**
      * The source of the event.
      * <p>
-     * Example: `ComputeApi`
+     * Example: {@code ComputeApi}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
@@ -194,16 +194,16 @@ public class AuditEvent {
     /**
      * The time the event occurred, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * <p>
-     * Example: `2019-09-18T00:10:59.252Z`
+     * Example: {@code 2019-09-18T00:10:59.252Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventTime")
     java.util.Date eventTime;
 
     /**
-     * The content type of the data contained in `data`.
+     * The content type of the data contained in {@code data}.
      * <p>
-     * Example: `application/json`
+     * Example: {@code application/json}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentType")

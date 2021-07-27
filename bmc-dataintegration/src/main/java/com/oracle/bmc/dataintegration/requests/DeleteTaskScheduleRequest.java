@@ -35,8 +35,8 @@ public class DeleteTaskScheduleRequest extends com.oracle.bmc.requests.BmcReques
     private String taskScheduleKey;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
      * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
      *
      */

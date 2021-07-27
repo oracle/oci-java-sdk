@@ -73,7 +73,7 @@ public class BackoffRetryPolicy {
     }
 
     /**
-     * The maximum retry duration in milliseconds. Default value is `7200000` (2 hours).
+     * The maximum retry duration in milliseconds. Default value is {@code 7200000} (2 hours).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxRetryDuration")
     Integer maxRetryDuration;

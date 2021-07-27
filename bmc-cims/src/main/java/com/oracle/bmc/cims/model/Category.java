@@ -74,7 +74,7 @@ public class Category {
     String categoryKey;
 
     /**
-     * The name of the category. For example, `Compute` or `Identity`.
+     * The name of the category. For example, {@code Compute} or {@code Identity}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;

@@ -118,7 +118,7 @@ public class SummarizeMetricsDataDetails {
     /**
      * The source service or application to use when searching for metric data points to aggregate.
      * <p>
-     * Example: `oci_computeagent`
+     * Example: {@code oci_computeagent}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
@@ -129,7 +129,7 @@ public class SummarizeMetricsDataDetails {
      * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
      * Avoid entering confidential information.
      * <p>
-     * Example: `frontend-fleet`
+     * Example: {@code frontend-fleet}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
@@ -138,8 +138,8 @@ public class SummarizeMetricsDataDetails {
     /**
      * The Monitoring Query Language (MQL) expression to use when searching for metric data points to
      * aggregate. The query must specify a metric, statistic, and interval. Supported values for
-     * interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions.
-     * Supported grouping functions: `grouping()`, `groupBy()`.
+     * interval: {@code 1m}-{@code 60m} (also {@code 1h}). You can optionally specify dimensions and grouping functions.
+     * Supported grouping functions: {@code grouping()}, {@code groupBy()}.
      * <p>
      * Construct your query to avoid exceeding limits on returned data. See {@link MetricData}.
      * <p>
@@ -148,7 +148,7 @@ public class SummarizeMetricsDataDetails {
      * For available dimensions, review the metric definition for the supported service.
      * See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
      * <p>
-     * Example: `CpuUtilization[1m].sum()`
+     * Example: {@code CpuUtilization[1m].sum()}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("query")
@@ -159,7 +159,7 @@ public class SummarizeMetricsDataDetails {
      * Format is defined by RFC3339. The response includes metric data points for the startTime.
      * Default value: the timestamp 3 hours before the call was sent.
      * <p>
-     * Example: `2019-02-01T01:02:29.600Z`
+     * Example: {@code 2019-02-01T01:02:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("startTime")
@@ -170,7 +170,7 @@ public class SummarizeMetricsDataDetails {
      * Format is defined by RFC3339. The response excludes metric data points for the endTime.
      * Default value: the timestamp representing when the call was sent.
      * <p>
-     * Example: `2019-02-01T02:02:29.600Z`
+     * Example: {@code 2019-02-01T02:02:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endTime")
@@ -181,9 +181,9 @@ public class SummarizeMetricsDataDetails {
      * frequency at which aggregated data points are returned. For example, use a query interval of
      * 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute
      * frequency. The resolution must be equal or less than the interval in the query. The default
-     * resolution is 1m (one minute). Supported values: `1m`-`60m` (also `1h`).
+     * resolution is 1m (one minute). Supported values: {@code 1m}-{@code 60m} (also {@code 1h}).
      * <p>
-     * Example: `5m`
+     * Example: {@code 5m}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resolution")

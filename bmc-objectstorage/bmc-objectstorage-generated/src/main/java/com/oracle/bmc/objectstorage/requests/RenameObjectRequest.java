@@ -26,7 +26,7 @@ public class RenameObjectRequest extends com.oracle.bmc.requests.BmcRequest<Rena
 
     /**
      * The name of the bucket. Avoid entering confidential information.
-     * Example: `my-new-bucket1`
+     * Example: {@code my-new-bucket1}
      *
      */
     private String bucketName;

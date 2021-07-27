@@ -20,7 +20,7 @@ import com.oracle.bmc.containerengine.model.*;
 public class GetClusterOptionsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The id of the option set to retrieve. Use \"all\" get all options, or use a cluster ID to get options specific to the provided cluster.
+     * The id of the option set to retrieve. Use "all" get all options, or use a cluster ID to get options specific to the provided cluster.
      */
     private String clusterOptionId;
 

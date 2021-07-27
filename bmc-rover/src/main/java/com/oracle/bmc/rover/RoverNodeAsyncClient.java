@@ -403,7 +403,12 @@ public class RoverNodeAsyncClient implements RoverNodeAsync {
                                 ChangeRoverNodeCompartmentRequest,
                                 ChangeRoverNodeCompartmentResponse>,
                         java.util.concurrent.Future<ChangeRoverNodeCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeRoverNodeCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -443,7 +448,12 @@ public class RoverNodeAsyncClient implements RoverNodeAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateRoverNodeRequest, CreateRoverNodeResponse>,
                         java.util.concurrent.Future<CreateRoverNodeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateRoverNodeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -723,7 +733,12 @@ public class RoverNodeAsyncClient implements RoverNodeAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 RoverNodeActionSetKeyRequest, RoverNodeActionSetKeyResponse>,
                         java.util.concurrent.Future<RoverNodeActionSetKeyResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRoverNodeActionSetKeyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -762,7 +777,12 @@ public class RoverNodeAsyncClient implements RoverNodeAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateRoverNodeRequest, UpdateRoverNodeResponse>,
                         java.util.concurrent.Future<UpdateRoverNodeResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateRoverNodeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

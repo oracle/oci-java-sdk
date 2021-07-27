@@ -400,7 +400,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 AddDataSelectorPatternsRequest, AddDataSelectorPatternsResponse>,
                         java.util.concurrent.Future<AddDataSelectorPatternsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDataSelectorPatternDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -442,7 +447,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 AssociateCustomPropertyRequest, AssociateCustomPropertyResponse>,
                         java.util.concurrent.Future<AssociateCustomPropertyResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAssociateCustomPropertyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -487,7 +497,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                                 AttachCatalogPrivateEndpointRequest,
                                 AttachCatalogPrivateEndpointResponse>,
                         java.util.concurrent.Future<AttachCatalogPrivateEndpointResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAttachCatalogPrivateEndpointDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -528,7 +543,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeCatalogCompartmentRequest, ChangeCatalogCompartmentResponse>,
                         java.util.concurrent.Future<ChangeCatalogCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeCatalogCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -575,7 +595,13 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                                 ChangeCatalogPrivateEndpointCompartmentResponse>,
                         java.util.concurrent.Future<
                                 ChangeCatalogPrivateEndpointCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeCatalogPrivateEndpointCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -620,7 +646,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                                 ChangeMetastoreCompartmentRequest,
                                 ChangeMetastoreCompartmentResponse>,
                         java.util.concurrent.Future<ChangeMetastoreCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeMetastoreCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -660,7 +691,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateAttributeRequest, CreateAttributeResponse>,
                         java.util.concurrent.Future<CreateAttributeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateAttributeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -700,7 +736,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateAttributeTagRequest, CreateAttributeTagResponse>,
                         java.util.concurrent.Future<CreateAttributeTagResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateAttributeTagDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -739,7 +780,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateCatalogRequest, CreateCatalogResponse>,
                         java.util.concurrent.Future<CreateCatalogResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateCatalogDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -784,7 +830,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                                 CreateCatalogPrivateEndpointRequest,
                                 CreateCatalogPrivateEndpointResponse>,
                         java.util.concurrent.Future<CreateCatalogPrivateEndpointResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateCatalogPrivateEndpointDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -824,7 +875,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateConnectionRequest, CreateConnectionResponse>,
                         java.util.concurrent.Future<CreateConnectionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateConnectionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -866,7 +922,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateCustomPropertyRequest, CreateCustomPropertyResponse>,
                         java.util.concurrent.Future<CreateCustomPropertyResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateCustomPropertyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -906,7 +967,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateDataAssetRequest, CreateDataAssetResponse>,
                         java.util.concurrent.Future<CreateDataAssetResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDataAssetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -946,7 +1012,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateDataAssetTagRequest, CreateDataAssetTagResponse>,
                         java.util.concurrent.Future<CreateDataAssetTagResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDataAssetTagDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -985,7 +1056,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateEntityRequest, CreateEntityResponse>,
                         java.util.concurrent.Future<CreateEntityResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateEntityDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1025,7 +1101,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateEntityTagRequest, CreateEntityTagResponse>,
                         java.util.concurrent.Future<CreateEntityTagResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateEntityTagDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1064,7 +1145,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateFolderRequest, CreateFolderResponse>,
                         java.util.concurrent.Future<CreateFolderResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateFolderDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1104,7 +1190,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateFolderTagRequest, CreateFolderTagResponse>,
                         java.util.concurrent.Future<CreateFolderTagResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateFolderTagDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1144,7 +1235,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateGlossaryRequest, CreateGlossaryResponse>,
                         java.util.concurrent.Future<CreateGlossaryResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateGlossaryDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1181,7 +1277,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<CreateJobRequest, CreateJobResponse>,
                         java.util.concurrent.Future<CreateJobResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateJobDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1223,7 +1324,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateJobDefinitionRequest, CreateJobDefinitionResponse>,
                         java.util.concurrent.Future<CreateJobDefinitionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateJobDefinitionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1263,7 +1369,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateJobExecutionRequest, CreateJobExecutionResponse>,
                         java.util.concurrent.Future<CreateJobExecutionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateJobExecutionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1303,7 +1414,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateMetastoreRequest, CreateMetastoreResponse>,
                         java.util.concurrent.Future<CreateMetastoreResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateMetastoreDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1343,7 +1459,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateNamespaceRequest, CreateNamespaceResponse>,
                         java.util.concurrent.Future<CreateNamespaceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateNamespaceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1382,7 +1503,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreatePatternRequest, CreatePatternResponse>,
                         java.util.concurrent.Future<CreatePatternResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreatePatternDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1420,7 +1546,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateTermRequest, CreateTermResponse>,
                         java.util.concurrent.Future<CreateTermResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTermDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1462,7 +1593,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateTermRelationshipRequest, CreateTermRelationshipResponse>,
                         java.util.concurrent.Future<CreateTermRelationshipResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTermRelationshipDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2288,7 +2424,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                                 DetachCatalogPrivateEndpointRequest,
                                 DetachCatalogPrivateEndpointResponse>,
                         java.util.concurrent.Future<DetachCatalogPrivateEndpointResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDetachCatalogPrivateEndpointDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2333,7 +2474,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                                 DisassociateCustomPropertyRequest,
                                 DisassociateCustomPropertyResponse>,
                         java.util.concurrent.Future<DisassociateCustomPropertyResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDisassociateCustomPropertyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3400,7 +3546,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ImportConnectionRequest, ImportConnectionResponse>,
                         java.util.concurrent.Future<ImportConnectionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getImportConnectionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3440,7 +3591,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ImportDataAssetRequest, ImportDataAssetResponse>,
                         java.util.concurrent.Future<ImportDataAssetResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getImportDataAssetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3480,7 +3636,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ImportGlossaryRequest, ImportGlossaryResponse>,
                         java.util.concurrent.Future<ImportGlossaryResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getImportGlossaryDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4772,7 +4933,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ParseConnectionRequest, ParseConnectionResponse>,
                         java.util.concurrent.Future<ParseConnectionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getParseConnectionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4813,7 +4979,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ProcessRecommendationRequest, ProcessRecommendationResponse>,
                         java.util.concurrent.Future<ProcessRecommendationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getProcessRecommendationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4897,7 +5068,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                                 RemoveDataSelectorPatternsRequest,
                                 RemoveDataSelectorPatternsResponse>,
                         java.util.concurrent.Future<RemoveDataSelectorPatternsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDataSelectorPatternDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4936,7 +5112,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 SearchCriteriaRequest, SearchCriteriaResponse>,
                         java.util.concurrent.Future<SearchCriteriaResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSearchCriteriaDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5026,7 +5207,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                                 SynchronousExportDataAssetRequest,
                                 SynchronousExportDataAssetResponse>,
                         java.util.concurrent.Future<SynchronousExportDataAssetResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSynchronousExportDataAssetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5105,7 +5291,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateAttributeRequest, UpdateAttributeResponse>,
                         java.util.concurrent.Future<UpdateAttributeResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateAttributeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5143,7 +5334,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateCatalogRequest, UpdateCatalogResponse>,
                         java.util.concurrent.Future<UpdateCatalogResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCatalogDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5187,7 +5383,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                                 UpdateCatalogPrivateEndpointRequest,
                                 UpdateCatalogPrivateEndpointResponse>,
                         java.util.concurrent.Future<UpdateCatalogPrivateEndpointResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCatalogPrivateEndpointDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5226,7 +5427,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateConnectionRequest, UpdateConnectionResponse>,
                         java.util.concurrent.Future<UpdateConnectionResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateConnectionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5267,7 +5473,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateCustomPropertyRequest, UpdateCustomPropertyResponse>,
                         java.util.concurrent.Future<UpdateCustomPropertyResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCustomPropertyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5306,7 +5517,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateDataAssetRequest, UpdateDataAssetResponse>,
                         java.util.concurrent.Future<UpdateDataAssetResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDataAssetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5344,7 +5560,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateEntityRequest, UpdateEntityResponse>,
                         java.util.concurrent.Future<UpdateEntityResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateEntityDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5382,7 +5603,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateFolderRequest, UpdateFolderResponse>,
                         java.util.concurrent.Future<UpdateFolderResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateFolderDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5421,7 +5647,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateGlossaryRequest, UpdateGlossaryResponse>,
                         java.util.concurrent.Future<UpdateGlossaryResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateGlossaryDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5457,7 +5688,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<UpdateJobRequest, UpdateJobResponse>,
                         java.util.concurrent.Future<UpdateJobResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateJobDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5498,7 +5734,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateJobDefinitionRequest, UpdateJobDefinitionResponse>,
                         java.util.concurrent.Future<UpdateJobDefinitionResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateJobDefinitionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5537,7 +5778,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateMetastoreRequest, UpdateMetastoreResponse>,
                         java.util.concurrent.Future<UpdateMetastoreResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateMetastoreDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5576,7 +5822,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateNamespaceRequest, UpdateNamespaceResponse>,
                         java.util.concurrent.Future<UpdateNamespaceResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateNamespaceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5614,7 +5865,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdatePatternRequest, UpdatePatternResponse>,
                         java.util.concurrent.Future<UpdatePatternResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdatePatternDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5651,7 +5907,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateTermRequest, UpdateTermResponse>,
                         java.util.concurrent.Future<UpdateTermResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTermDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5692,7 +5953,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateTermRelationshipRequest, UpdateTermRelationshipResponse>,
                         java.util.concurrent.Future<UpdateTermRelationshipResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTermRelationshipDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5732,7 +5998,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UploadCredentialsRequest, UploadCredentialsResponse>,
                         java.util.concurrent.Future<UploadCredentialsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUploadCredentialsDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5806,7 +6077,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ValidateConnectionRequest, ValidateConnectionResponse>,
                         java.util.concurrent.Future<ValidateConnectionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getValidateConnectionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5846,7 +6122,12 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ValidatePatternRequest, ValidatePatternResponse>,
                         java.util.concurrent.Future<ValidatePatternResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getValidatePatternDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

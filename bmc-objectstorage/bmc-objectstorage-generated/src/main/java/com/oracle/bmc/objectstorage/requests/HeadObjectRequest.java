@@ -26,14 +26,14 @@ public class HeadObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
     /**
      * The name of the bucket. Avoid entering confidential information.
-     * Example: `my-new-bucket1`
+     * Example: {@code my-new-bucket1}
      *
      */
     private String bucketName;
 
     /**
      * The name of the object. Avoid entering confidential information.
-     * Example: `test/object1.log`
+     * Example: {@code test/object1.log}
      *
      */
     private String objectName;
@@ -64,7 +64,7 @@ public class HeadObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     private String opcClientRequestId;
 
     /**
-     * The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
+     * The optional header that specifies "AES256" as the encryption algorithm. For more information, see
      * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
      *
      */

@@ -230,7 +230,7 @@ public class SdkLanguageOptionalParameters {
 
     /**
      * List of allowed input values.
-     * Example: `[{\"name\": \"name1\", \"description\": \"description1\"}, ...]`
+     * Example: {@code [{"name": "name1", "description": "description1"}, ...]}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")

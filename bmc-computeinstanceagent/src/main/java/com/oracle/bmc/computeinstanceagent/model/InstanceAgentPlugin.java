@@ -98,7 +98,7 @@ public class InstanceAgentPlugin {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
     /**
-     * The plugin status Specified the plugin state on the instance * `RUNNING` - The plugin is in running state * `STOPPED` - The plugin is in stopped state * `NOT_SUPPORTED` - The plugin is not supported on this platform * `INVALID` - The plugin state is not recognizable by the service
+     * The plugin status Specified the plugin state on the instance * {@code RUNNING} - The plugin is in running state * {@code STOPPED} - The plugin is in stopped state * {@code NOT_SUPPORTED} - The plugin is not supported on this platform * {@code INVALID} - The plugin state is not recognizable by the service
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Status {
@@ -146,7 +146,7 @@ public class InstanceAgentPlugin {
         }
     };
     /**
-     * The plugin status Specified the plugin state on the instance * `RUNNING` - The plugin is in running state * `STOPPED` - The plugin is in stopped state * `NOT_SUPPORTED` - The plugin is not supported on this platform * `INVALID` - The plugin state is not recognizable by the service
+     * The plugin status Specified the plugin state on the instance * {@code RUNNING} - The plugin is in running state * {@code STOPPED} - The plugin is in stopped state * {@code NOT_SUPPORTED} - The plugin is not supported on this platform * {@code INVALID} - The plugin state is not recognizable by the service
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     Status status;

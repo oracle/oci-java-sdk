@@ -27,7 +27,7 @@ public class GetListenerRequest extends com.oracle.bmc.requests.BmcRequest<java.
     /**
      * The name of the listener to get.
      * <p>
-     * Example: `example_listener`
+     * Example: {@code example_listener}
      *
      */
     private String listenerName;
@@ -42,9 +42,9 @@ public class GetListenerRequest extends com.oracle.bmc.requests.BmcRequest<java.
     /**
      * The system returns the requested resource, with a 200 status, only if the resource has no etag
      * matching the one specified. If the condition fails for the GET and HEAD methods, then the system returns the
-     * HTTP status code `304 (Not Modified)`.
+     * HTTP status code {@code 304 (Not Modified)}.
      * <p>
-     * Example: `example-etag`
+     * Example: {@code example-etag}
      *
      */
     private String ifNoneMatch;

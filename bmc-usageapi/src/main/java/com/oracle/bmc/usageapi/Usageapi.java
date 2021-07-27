@@ -46,6 +46,17 @@ public interface Usageapi extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Returns the created custom table.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/CreateCustomTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCustomTable API.
+     */
+    CreateCustomTableResponse createCustomTable(CreateCustomTableRequest request);
+
+    /**
      * Returns the created query.
      *
      * @param request The request object containing the details to send
@@ -55,6 +66,17 @@ public interface Usageapi extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/CreateQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateQuery API.
      */
     CreateQueryResponse createQuery(CreateQueryRequest request);
+
+    /**
+     * Delete a saved custom table by the OCID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/DeleteCustomTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCustomTable API.
+     */
+    DeleteCustomTableResponse deleteCustomTable(DeleteCustomTableRequest request);
 
     /**
      * Delete a saved query by the OCID.
@@ -68,6 +90,17 @@ public interface Usageapi extends AutoCloseable {
     DeleteQueryResponse deleteQuery(DeleteQueryRequest request);
 
     /**
+     * Returns the saved custom table.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/GetCustomTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCustomTable API.
+     */
+    GetCustomTableResponse getCustomTable(GetCustomTableRequest request);
+
+    /**
      * Returns the saved query.
      *
      * @param request The request object containing the details to send
@@ -77,6 +110,17 @@ public interface Usageapi extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/GetQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetQuery API.
      */
     GetQueryResponse getQuery(GetQueryRequest request);
+
+    /**
+     * Returns the saved custom table list.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/ListCustomTablesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCustomTables API.
+     */
+    ListCustomTablesResponse listCustomTables(ListCustomTablesRequest request);
 
     /**
      * Returns the saved query list.
@@ -111,6 +155,17 @@ public interface Usageapi extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/RequestSummarizedUsagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedUsages API.
      */
     RequestSummarizedUsagesResponse requestSummarizedUsages(RequestSummarizedUsagesRequest request);
+
+    /**
+     * Update a saved custom table by table id.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/UpdateCustomTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCustomTable API.
+     */
+    UpdateCustomTableResponse updateCustomTable(UpdateCustomTableRequest request);
 
     /**
      * Update a saved query by the OCID.

@@ -105,7 +105,7 @@ public class UpdateMaintenanceRunDetails {
     }
 
     /**
-     * If `FALSE`, skips the maintenance run.
+     * If {@code FALSE}, skips the maintenance run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     Boolean isEnabled;
@@ -117,7 +117,7 @@ public class UpdateMaintenanceRunDetails {
     java.util.Date timeScheduled;
 
     /**
-     * If set to `TRUE`, starts patching immediately.
+     * If set to {@code TRUE}, starts patching immediately.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPatchNowEnabled")
     Boolean isPatchNowEnabled;
@@ -128,7 +128,7 @@ public class UpdateMaintenanceRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("patchId")
     String patchId;
     /**
-     * Cloud Exadata infrastructure node patching method, either \"ROLLING\" or \"NONROLLING\". Default value is ROLLING.
+     * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
      * <p>
      *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
      *
@@ -166,7 +166,7 @@ public class UpdateMaintenanceRunDetails {
         }
     };
     /**
-     * Cloud Exadata infrastructure node patching method, either \"ROLLING\" or \"NONROLLING\". Default value is ROLLING.
+     * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
      * <p>
      *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
      *

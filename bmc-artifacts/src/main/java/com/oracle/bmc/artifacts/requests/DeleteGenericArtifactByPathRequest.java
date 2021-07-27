@@ -23,7 +23,7 @@ public class DeleteGenericArtifactByPathRequest
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
      * <p>
-     * Example: `ocid1.artifactrepository.oc1..exampleuniqueID`
+     * Example: {@code ocid1.artifactrepository.oc1..exampleuniqueID}
      *
      */
     private String repositoryId;
@@ -31,7 +31,7 @@ public class DeleteGenericArtifactByPathRequest
     /**
      * A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
      * <p>
-     * Example: `project01/my-web-app/artifact-abc`
+     * Example: {@code project01/my-web-app/artifact-abc}
      *
      */
     private String artifactPath;
@@ -39,13 +39,13 @@ public class DeleteGenericArtifactByPathRequest
     /**
      * A user-defined string to describe the artifact version.
      * <p>
-     * Example: `1.1.2` or `1.2-beta-2`
+     * Example: {@code 1.1.2} or {@code 1.2-beta-2}
      *
      */
     private String version;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
      * will be updated or deleted only if the etag you provide matches the resource's current etag value.
      *

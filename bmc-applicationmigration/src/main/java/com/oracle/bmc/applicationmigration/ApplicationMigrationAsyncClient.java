@@ -444,7 +444,12 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
                                 ChangeMigrationCompartmentRequest,
                                 ChangeMigrationCompartmentResponse>,
                         java.util.concurrent.Future<ChangeMigrationCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeMigrationCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -486,7 +491,12 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeSourceCompartmentRequest, ChangeSourceCompartmentResponse>,
                         java.util.concurrent.Future<ChangeSourceCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeSourceCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -526,7 +536,12 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateMigrationRequest, CreateMigrationResponse>,
                         java.util.concurrent.Future<CreateMigrationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateMigrationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -565,7 +580,12 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateSourceRequest, CreateSourceResponse>,
                         java.util.concurrent.Future<CreateSourceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSourceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1074,7 +1094,12 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateMigrationRequest, UpdateMigrationResponse>,
                         java.util.concurrent.Future<UpdateMigrationResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateMigrationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1112,7 +1137,12 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateSourceRequest, UpdateSourceResponse>,
                         java.util.concurrent.Future<UpdateSourceResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSourceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

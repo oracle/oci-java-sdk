@@ -7,7 +7,7 @@ package com.oracle.bmc.monitoring.model;
 /**
  * The request details for retrieving metric definitions. Specify optional properties to filter the returned results.
  * Use an asterisk (&#42;) as a wildcard character, placed anywhere in the string.
- * For example, to search for all metrics with names that begin with \"disk\", specify \"name\" as \"disk&#42;\".
+ * For example, to search for all metrics with names that begin with "disk", specify "name" as "disk&#42;".
  * If no properties are specified, then all metric definitions within the request scope are returned.
  *
  * <br/>
@@ -136,7 +136,7 @@ public class ListMetricsDetails {
     /**
      * The metric name to use when searching for metric definitions.
      * <p>
-     * Example: `CpuUtilization`
+     * Example: {@code CpuUtilization}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -145,7 +145,7 @@ public class ListMetricsDetails {
     /**
      * The source service or application to use when searching for metric definitions.
      * <p>
-     * Example: `oci_computeagent`
+     * Example: {@code oci_computeagent}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
@@ -156,7 +156,7 @@ public class ListMetricsDetails {
      * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
      * Avoid entering confidential information.
      * <p>
-     * Example: `frontend-fleet`
+     * Example: {@code frontend-fleet}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
@@ -166,7 +166,7 @@ public class ListMetricsDetails {
      * Qualifiers that you want to use when searching for metric definitions.
      * Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
      * <p>
-     * Example: { \"resourceId\": \"<var>&lt;instance_OCID&gt;</var>\" }
+     * Example: { "resourceId": "<var>&lt;instance_OCID&gt;</var>" }
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensionFilters")
@@ -174,10 +174,10 @@ public class ListMetricsDetails {
 
     /**
      * Group metrics by these fields in the response. For example, to list all metric namespaces available
-     *           in a compartment, groupBy the \"namespace\" field. Supported fields: namespace, name, resourceGroup.
+     *           in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup.
      * <p>
      * Example - group by namespace:
-     * `[ \"namespace\" ]`
+     * {@code [ "namespace" ]}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
@@ -185,7 +185,7 @@ public class ListMetricsDetails {
     /**
      * The field to use when sorting returned metric definitions. Only one sorting level is provided.
      * <p>
-     * Example: `NAMESPACE`
+     * Example: {@code NAMESPACE}
      *
      **/
     public enum SortBy {
@@ -224,7 +224,7 @@ public class ListMetricsDetails {
     /**
      * The field to use when sorting returned metric definitions. Only one sorting level is provided.
      * <p>
-     * Example: `NAMESPACE`
+     * Example: {@code NAMESPACE}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
@@ -233,7 +233,7 @@ public class ListMetricsDetails {
      * The sort order to use when sorting returned metric definitions. Ascending (ASC) or
      * descending (DESC).
      * <p>
-     * Example: `ASC`
+     * Example: {@code ASC}
      *
      **/
     public enum SortOrder {
@@ -272,7 +272,7 @@ public class ListMetricsDetails {
      * The sort order to use when sorting returned metric definitions. Ascending (ASC) or
      * descending (DESC).
      * <p>
-     * Example: `ASC`
+     * Example: {@code ASC}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")

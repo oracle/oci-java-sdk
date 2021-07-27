@@ -45,14 +45,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     private String opcRequestId;
 
     /**
-     * For list pagination. The value of the `opc-next-page` or `opc-previous-page` response header from the previous \"List\" call.
+     * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page} response header from the previous "List" call.
      * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String page;
 
     /**
-     * The maximum number of items to return in a paginated \"List\" call.
+     * The maximum number of items to return in a paginated "List" call.
      *
      */
     private Integer limit;

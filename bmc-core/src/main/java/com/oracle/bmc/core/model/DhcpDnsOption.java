@@ -85,7 +85,7 @@ public class DhcpDnsOption extends DhcpOption {
     }
 
     /**
-     * If you set `serverType` to `CustomDnsServer`, specify the
+     * If you set {@code serverType} to {@code CustomDnsServer}, specify the
      * IP address of at least one DNS server of your choice (three maximum).
      *
      **/
@@ -94,7 +94,7 @@ public class DhcpDnsOption extends DhcpOption {
     /**
      * * **VcnLocal:** Reserved for future use.
      * <p>
-     * **VcnLocalPlusInternet:** Also referred to as \"Internet and VCN Resolver\".
+     * **VcnLocalPlusInternet:** Also referred to as "Internet and VCN Resolver".
      * Instances can resolve internet hostnames (no internet gateway is required),
      * and can resolve hostnames of instances in the VCN. This is the default
      * value in the default set of DHCP options in the VCN. For the Internet and
@@ -156,7 +156,7 @@ public class DhcpDnsOption extends DhcpOption {
     /**
      * * **VcnLocal:** Reserved for future use.
      * <p>
-     * **VcnLocalPlusInternet:** Also referred to as \"Internet and VCN Resolver\".
+     * **VcnLocalPlusInternet:** Also referred to as "Internet and VCN Resolver".
      * Instances can resolve internet hostnames (no internet gateway is required),
      * and can resolve hostnames of instances in the VCN. This is the default
      * value in the default set of DHCP options in the VCN. For the Internet and

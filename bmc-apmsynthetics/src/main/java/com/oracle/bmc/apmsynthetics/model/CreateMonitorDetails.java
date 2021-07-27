@@ -248,7 +248,7 @@ public class CreateMonitorDetails {
     /**
      * List of script parameters in the monitor.
      * This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
-     * Example: `[{\"paramName\": \"userid\", \"paramValue\":\"testuser\"}]`
+     * Example: {@code [{"paramName": "userid", "paramValue":"testuser"}]}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scriptParameters")
@@ -259,7 +259,7 @@ public class CreateMonitorDetails {
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -267,7 +267,7 @@ public class CreateMonitorDetails {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

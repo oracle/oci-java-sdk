@@ -7,7 +7,7 @@ package com.oracle.bmc.core.model;
 /**
  * For a flexible shape, the number of VNIC attachments that are available for instances that use this shape.
  * <p>
- * If this field is null, then this shape has a fixed maximum number of VNIC attachments equal to `maxVnicAttachments`.
+ * If this field is null, then this shape has a fixed maximum number of VNIC attachments equal to {@code maxVnicAttachments}.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

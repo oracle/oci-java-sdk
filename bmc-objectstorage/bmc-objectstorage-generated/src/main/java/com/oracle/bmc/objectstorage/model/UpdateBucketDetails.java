@@ -204,10 +204,10 @@ public class UpdateBucketDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     java.util.Map<String, String> metadata;
     /**
-     * The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an
-     * authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access
-     * is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled
-     * on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
+     * The type of public access enabled on this bucket. A bucket is set to {@code NoPublicAccess} by default, which only allows an
+     * authenticated caller to access the bucket and its contents. When {@code ObjectRead} is enabled on the bucket, public access
+     * is allowed for the {@code GetObject}, {@code HeadObject}, and {@code ListObjects} operations. When {@code ObjectReadWithoutList} is enabled
+     * on the bucket, public access is allowed for the {@code GetObject} and {@code HeadObject} operations.
      *
      **/
     public enum PublicAccessType {
@@ -244,18 +244,18 @@ public class UpdateBucketDetails {
         }
     };
     /**
-     * The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an
-     * authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access
-     * is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled
-     * on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
+     * The type of public access enabled on this bucket. A bucket is set to {@code NoPublicAccess} by default, which only allows an
+     * authenticated caller to access the bucket and its contents. When {@code ObjectRead} is enabled on the bucket, public access
+     * is allowed for the {@code GetObject}, {@code HeadObject}, and {@code ListObjects} operations. When {@code ObjectReadWithoutList} is enabled
+     * on the bucket, public access is allowed for the {@code GetObject} and {@code HeadObject} operations.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicAccessType")
     PublicAccessType publicAccessType;
 
     /**
-     * Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is
-     * set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information
+     * Whether or not events are emitted for object state changes in this bucket. By default, {@code objectEventsEnabled} is
+     * set to {@code false}. Set {@code objectEventsEnabled} to {@code true} to emit events for object state changes. For more information
      * about events, see [Overview of Events](https://docs.cloud.oracle.com/Content/Events/Concepts/eventsoverview.htm).
      *
      **/
@@ -265,7 +265,7 @@ public class UpdateBucketDetails {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -274,7 +274,7 @@ public class UpdateBucketDetails {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}
+     * Example: {"Operations": {"CostCenter": "42"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -290,8 +290,8 @@ public class UpdateBucketDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     String kmsKeyId;
     /**
-     * The versioning status on the bucket. If in state `Enabled`, multiple versions of the same object can be kept in the bucket.
-     * When the object is overwritten or deleted, previous versions will still be available. When versioning is `Suspended`, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
+     * The versioning status on the bucket. If in state {@code Enabled}, multiple versions of the same object can be kept in the bucket.
+     * When the object is overwritten or deleted, previous versions will still be available. When versioning is {@code Suspended}, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
      * Versioning cannot be disabled on a bucket once enabled.
      *
      **/
@@ -328,8 +328,8 @@ public class UpdateBucketDetails {
         }
     };
     /**
-     * The versioning status on the bucket. If in state `Enabled`, multiple versions of the same object can be kept in the bucket.
-     * When the object is overwritten or deleted, previous versions will still be available. When versioning is `Suspended`, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
+     * The versioning status on the bucket. If in state {@code Enabled}, multiple versions of the same object can be kept in the bucket.
+     * When the object is overwritten or deleted, previous versions will still be available. When versioning is {@code Suspended}, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
      * Versioning cannot be disabled on a bucket once enabled.
      *
      **/
@@ -337,9 +337,9 @@ public class UpdateBucketDetails {
     Versioning versioning;
 
     /**
-     * The auto tiering status on the bucket. If in state `InfrequentAccess`, objects are transitioned
+     * The auto tiering status on the bucket. If in state {@code InfrequentAccess}, objects are transitioned
      * automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
-     * When auto tiering is `Disabled`, there will be no automatic transitions between storage tiers.
+     * When auto tiering is {@code Disabled}, there will be no automatic transitions between storage tiers.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoTiering")

@@ -227,7 +227,7 @@ public class EsxiHostSummary {
 
     /**
      * In terms of implementation, an ESXi host is a Compute instance that
-     * is configured with the chosen bundle of VMware software. The `computeInstanceId`
+     * is configured with the chosen bundle of VMware software. The {@code computeInstanceId}
      * is the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of that Compute instance.
      *
      **/
@@ -238,7 +238,7 @@ public class EsxiHostSummary {
      * The date and time the ESXi host was created, in the format defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -279,7 +279,7 @@ public class EsxiHostSummary {
     /**
      * Current billing cycle end date. If nextSku is different from existing SKU, then we switch to newSKu
      * after this contractEndDate
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("billingContractEndDate")
@@ -289,7 +289,7 @@ public class EsxiHostSummary {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -299,7 +299,7 @@ public class EsxiHostSummary {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

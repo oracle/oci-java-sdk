@@ -99,27 +99,27 @@ public class UpdateBackendDetails {
      * For more information about load balancing policies, see
      * [How Load Balancing Policies Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
      * <p>
-     * Example: `3`
+     * Example: {@code 3}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("weight")
     Integer weight;
 
     /**
-     * Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress
-     * traffic to this backend server unless all other backend servers not marked as \"isBackup\" fail the health check policy.
+     * Whether the network load balancer should treat this server as a backup unit. If {@code true}, then the network load balancer forwards no ingress
+     * traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.
      * <p>
-     * Example: `false`
+     * Example: {@code false}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBackup")
     Boolean isBackup;
 
     /**
-     * Whether the network load balancer should drain this server. Servers marked \"isDrain\" receive no
+     * Whether the network load balancer should drain this server. Servers marked "isDrain" receive no
      * incoming traffic.
      * <p>
-     * Example: `false`
+     * Example: {@code false}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDrain")
@@ -129,7 +129,7 @@ public class UpdateBackendDetails {
      * Whether the network load balancer should treat this server as offline. Offline servers receive no incoming
      * traffic.
      * <p>
-     * Example: `false`
+     * Example: {@code false}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOffline")

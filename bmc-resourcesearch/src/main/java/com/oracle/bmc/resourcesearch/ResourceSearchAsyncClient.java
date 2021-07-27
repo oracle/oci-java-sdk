@@ -476,7 +476,12 @@ public class ResourceSearchAsyncClient implements ResourceSearchAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 SearchResourcesRequest, SearchResourcesResponse>,
                         java.util.concurrent.Future<SearchResourcesResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSearchDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

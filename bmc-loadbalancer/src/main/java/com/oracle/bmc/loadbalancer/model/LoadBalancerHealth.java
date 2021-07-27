@@ -7,8 +7,8 @@ package com.oracle.bmc.loadbalancer.model;
 /**
  * The health status details for the specified load balancer.
  * <p>
- * This object does not explicitly enumerate backend sets with a status of `OK`. However, they are included in the
- * `totalBackendSetCount` sum.
+ * This object does not explicitly enumerate backend sets with a status of {@code OK}. However, they are included in the
+ * {@code totalBackendSetCount} sum.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -117,21 +117,21 @@ public class LoadBalancerHealth {
     /**
      * The overall health status of the load balancer.
      * <p>
-     *  **OK:** All backend sets associated with the load balancer return a status of `OK`.
+     *  **OK:** All backend sets associated with the load balancer return a status of {@code OK}.
      * <p>
-     *  **WARNING:** At least one of the backend sets associated with the load balancer returns a status of `WARNING`,
-     * no backend sets return a status of `CRITICAL`, and the load balancer life cycle state is `ACTIVE`.
+     *  **WARNING:** At least one of the backend sets associated with the load balancer returns a status of {@code WARNING},
+     * no backend sets return a status of {@code CRITICAL}, and the load balancer life cycle state is {@code ACTIVE}.
      * <p>
-     *  **CRITICAL:** One or more of the backend sets associated with the load balancer return a status of `CRITICAL`.
+     *  **CRITICAL:** One or more of the backend sets associated with the load balancer return a status of {@code CRITICAL}.
      * <p>
      *  **UNKNOWN:** If any one of the following conditions is true:
      * <p>
-     *  The load balancer life cycle state is not `ACTIVE`.
+     *  The load balancer life cycle state is not {@code ACTIVE}.
      * <p>
      *  No backend sets are defined for the load balancer.
      * <p>
-     *  More than half of the backend sets associated with the load balancer return a status of `UNKNOWN`, none of the backend
-     *        sets return a status of `WARNING` or `CRITICAL`, and the load balancer life cycle state is `ACTIVE`.
+     *  More than half of the backend sets associated with the load balancer return a status of {@code UNKNOWN}, none of the backend
+     *        sets return a status of {@code WARNING} or {@code CRITICAL}, and the load balancer life cycle state is {@code ACTIVE}.
      * <p>
      *  The system could not retrieve metrics for any reason.
      *
@@ -184,21 +184,21 @@ public class LoadBalancerHealth {
     /**
      * The overall health status of the load balancer.
      * <p>
-     *  **OK:** All backend sets associated with the load balancer return a status of `OK`.
+     *  **OK:** All backend sets associated with the load balancer return a status of {@code OK}.
      * <p>
-     *  **WARNING:** At least one of the backend sets associated with the load balancer returns a status of `WARNING`,
-     * no backend sets return a status of `CRITICAL`, and the load balancer life cycle state is `ACTIVE`.
+     *  **WARNING:** At least one of the backend sets associated with the load balancer returns a status of {@code WARNING},
+     * no backend sets return a status of {@code CRITICAL}, and the load balancer life cycle state is {@code ACTIVE}.
      * <p>
-     *  **CRITICAL:** One or more of the backend sets associated with the load balancer return a status of `CRITICAL`.
+     *  **CRITICAL:** One or more of the backend sets associated with the load balancer return a status of {@code CRITICAL}.
      * <p>
      *  **UNKNOWN:** If any one of the following conditions is true:
      * <p>
-     *  The load balancer life cycle state is not `ACTIVE`.
+     *  The load balancer life cycle state is not {@code ACTIVE}.
      * <p>
      *  No backend sets are defined for the load balancer.
      * <p>
-     *  More than half of the backend sets associated with the load balancer return a status of `UNKNOWN`, none of the backend
-     *        sets return a status of `WARNING` or `CRITICAL`, and the load balancer life cycle state is `ACTIVE`.
+     *  More than half of the backend sets associated with the load balancer return a status of {@code UNKNOWN}, none of the backend
+     *        sets return a status of {@code WARNING} or {@code CRITICAL}, and the load balancer life cycle state is {@code ACTIVE}.
      * <p>
      *  The system could not retrieve metrics for any reason.
      *
@@ -207,30 +207,30 @@ public class LoadBalancerHealth {
     Status status;
 
     /**
-     * A list of backend sets that are currently in the `WARNING` health state. The list identifies each backend set by the
+     * A list of backend sets that are currently in the {@code WARNING} health state. The list identifies each backend set by the
      * friendly name you assigned when you created it.
      * <p>
-     * Example: `example_backend_set3`
+     * Example: {@code example_backend_set3}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("warningStateBackendSetNames")
     java.util.List<String> warningStateBackendSetNames;
 
     /**
-     * A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the
+     * A list of backend sets that are currently in the {@code CRITICAL} health state. The list identifies each backend set by the
      * friendly name you assigned when you created it.
      * <p>
-     * Example: `example_backend_set`
+     * Example: {@code example_backend_set}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("criticalStateBackendSetNames")
     java.util.List<String> criticalStateBackendSetNames;
 
     /**
-     * A list of backend sets that are currently in the `UNKNOWN` health state. The list identifies each backend set by the
+     * A list of backend sets that are currently in the {@code UNKNOWN} health state. The list identifies each backend set by the
      * friendly name you assigned when you created it.
      * <p>
-     * Example: `example_backend_set2`
+     * Example: {@code example_backend_set2}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unknownStateBackendSetNames")
@@ -239,7 +239,7 @@ public class LoadBalancerHealth {
     /**
      * The total number of backend sets associated with this load balancer.
      * <p>
-     * Example: `4`
+     * Example: {@code 4}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalBackendSetCount")

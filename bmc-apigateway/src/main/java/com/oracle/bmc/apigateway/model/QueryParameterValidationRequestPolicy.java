@@ -76,13 +76,13 @@ public class QueryParameterValidationRequestPolicy {
     /**
      * Validation behavior mode.
      * <p>
-     * In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response
+     * In {@code ENFORCING} mode, upon a validation failure, the request will be rejected with a 4xx response
      * and not sent to the backend.
      * <p>
-     * In `PERMISSIVE` mode, the result of the validation will be exposed as metrics while the request
+     * In {@code PERMISSIVE} mode, the result of the validation will be exposed as metrics while the request
      * will follow the normal path.
      * <p>
-     * `DISABLED` type turns the validation off.
+     * {@code DISABLED} type turns the validation off.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -132,13 +132,13 @@ public class QueryParameterValidationRequestPolicy {
     /**
      * Validation behavior mode.
      * <p>
-     * In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response
+     * In {@code ENFORCING} mode, upon a validation failure, the request will be rejected with a 4xx response
      * and not sent to the backend.
      * <p>
-     * In `PERMISSIVE` mode, the result of the validation will be exposed as metrics while the request
+     * In {@code PERMISSIVE} mode, the result of the validation will be exposed as metrics while the request
      * will follow the normal path.
      * <p>
-     * `DISABLED` type turns the validation off.
+     * {@code DISABLED} type turns the validation off.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("validationMode")

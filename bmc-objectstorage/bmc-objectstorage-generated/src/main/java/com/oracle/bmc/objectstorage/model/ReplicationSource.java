@@ -89,7 +89,7 @@ public class ReplicationSource {
     String policyName;
 
     /**
-     * The source region replicating data from, for example \"us-ashburn-1\".
+     * The source region replicating data from, for example "us-ashburn-1".
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceRegionName")
     String sourceRegionName;

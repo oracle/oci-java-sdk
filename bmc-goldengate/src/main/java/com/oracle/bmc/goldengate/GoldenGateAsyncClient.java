@@ -405,7 +405,13 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                                 ChangeDatabaseRegistrationCompartmentRequest,
                                 ChangeDatabaseRegistrationCompartmentResponse>,
                         java.util.concurrent.Future<ChangeDatabaseRegistrationCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeDatabaseRegistrationCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -452,7 +458,12 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                                 ChangeDeploymentBackupCompartmentRequest,
                                 ChangeDeploymentBackupCompartmentResponse>,
                         java.util.concurrent.Future<ChangeDeploymentBackupCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeDeploymentBackupCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -498,7 +509,12 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                                 ChangeDeploymentCompartmentRequest,
                                 ChangeDeploymentCompartmentResponse>,
                         java.util.concurrent.Future<ChangeDeploymentCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeDeploymentCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -543,7 +559,12 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                                 CreateDatabaseRegistrationRequest,
                                 CreateDatabaseRegistrationResponse>,
                         java.util.concurrent.Future<CreateDatabaseRegistrationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDatabaseRegistrationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -583,7 +604,12 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateDeploymentRequest, CreateDeploymentResponse>,
                         java.util.concurrent.Future<CreateDeploymentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDeploymentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -625,7 +651,12 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateDeploymentBackupRequest, CreateDeploymentBackupResponse>,
                         java.util.concurrent.Future<CreateDeploymentBackupResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDeploymentBackupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1191,7 +1222,12 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 RestoreDeploymentRequest, RestoreDeploymentResponse>,
                         java.util.concurrent.Future<RestoreDeploymentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRestoreDeploymentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1231,7 +1267,12 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 StartDeploymentRequest, StartDeploymentResponse>,
                         java.util.concurrent.Future<StartDeploymentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getStartDeploymentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1271,7 +1312,12 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 StopDeploymentRequest, StopDeploymentResponse>,
                         java.util.concurrent.Future<StopDeploymentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getStopDeploymentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1315,7 +1361,12 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                                 UpdateDatabaseRegistrationRequest,
                                 UpdateDatabaseRegistrationResponse>,
                         java.util.concurrent.Future<UpdateDatabaseRegistrationResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDatabaseRegistrationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1354,7 +1405,12 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateDeploymentRequest, UpdateDeploymentResponse>,
                         java.util.concurrent.Future<UpdateDeploymentResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDeploymentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1395,7 +1451,12 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateDeploymentBackupRequest, UpdateDeploymentBackupResponse>,
                         java.util.concurrent.Future<UpdateDeploymentBackupResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDeploymentBackupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1435,7 +1496,12 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpgradeDeploymentRequest, UpgradeDeploymentResponse>,
                         java.util.concurrent.Future<UpgradeDeploymentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpgradeDeploymentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

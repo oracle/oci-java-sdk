@@ -188,7 +188,7 @@ public class ExportSummary {
      * <p>
      * Avoid entering confidential information.
      * <p>
-     * Example: `/mediafiles`
+     * Example: {@code /mediafiles}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
@@ -198,7 +198,7 @@ public class ExportSummary {
      * The date and time the export was created, expressed
      * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

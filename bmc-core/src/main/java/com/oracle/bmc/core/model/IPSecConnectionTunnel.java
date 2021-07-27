@@ -214,7 +214,7 @@ public class IPSecConnectionTunnel {
     /**
      * The IP address of Oracle's VPN headend.
      * <p>
-     * Example: `203.0.113.21`
+     * Example: {@code 203.0.113.21}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpnIp")
@@ -223,7 +223,7 @@ public class IPSecConnectionTunnel {
     /**
      * The IP address of the CPE's VPN headend.
      * <p>
-     * Example: `203.0.113.22`
+     * Example: {@code 203.0.113.22}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpeIp")
@@ -459,7 +459,7 @@ public class IPSecConnectionTunnel {
     /**
      * The date and time the IPSec connection tunnel was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -468,7 +468,7 @@ public class IPSecConnectionTunnel {
     /**
      * When the status of the tunnel last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStatusUpdated")

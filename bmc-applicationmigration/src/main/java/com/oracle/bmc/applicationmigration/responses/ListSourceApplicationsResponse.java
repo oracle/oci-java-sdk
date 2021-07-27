@@ -27,7 +27,7 @@ public class ListSourceApplicationsResponse {
     /**
      * For list pagination. When this header appears in the response, additional pages of results remain.
      * For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     * Include this value as the `page` parameter for the subsequent GET request to get the next batch of items.
+     * Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
      *
      */
     private String opcNextPage;

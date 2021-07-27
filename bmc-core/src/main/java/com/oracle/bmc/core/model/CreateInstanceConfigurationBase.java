@@ -53,7 +53,7 @@ public class CreateInstanceConfigurationBase {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -71,7 +71,7 @@ public class CreateInstanceConfigurationBase {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -102,9 +102,9 @@ public class CreateInstanceConfigurationBase {
      * <p>
      * The following values are supported:
      * <p>
-     * `NONE`: Creates an instance configuration using the list of settings that you specify.
+     * {@code NONE}: Creates an instance configuration using the list of settings that you specify.
      * <p>
-     * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+     * {@code INSTANCE}: Creates an instance configuration using an existing instance as a template.
      *
      **/
     public enum Source {

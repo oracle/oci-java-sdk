@@ -150,7 +150,7 @@ public class DeviceFingerprintChallenge {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     Boolean isEnabled;
     /**
-     * The action to take on requests from detected bots. If unspecified, defaults to `DETECT`.
+     * The action to take on requests from detected bots. If unspecified, defaults to {@code DETECT}.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Action {
@@ -196,37 +196,37 @@ public class DeviceFingerprintChallenge {
         }
     };
     /**
-     * The action to take on requests from detected bots. If unspecified, defaults to `DETECT`.
+     * The action to take on requests from detected bots. If unspecified, defaults to {@code DETECT}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     Action action;
 
     /**
-     * The number of failed requests allowed before taking action. If unspecified, defaults to `10`.
+     * The number of failed requests allowed before taking action. If unspecified, defaults to {@code 10}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failureThreshold")
     Integer failureThreshold;
 
     /**
-     * The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
+     * The number of seconds between challenges for the same IP address. If unspecified, defaults to {@code 60}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionExpirationInSeconds")
     Integer actionExpirationInSeconds;
 
     /**
-     * The number of seconds before the failure threshold resets. If unspecified, defaults to `60`.
+     * The number of seconds before the failure threshold resets. If unspecified, defaults to {@code 60}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failureThresholdExpirationInSeconds")
     Integer failureThresholdExpirationInSeconds;
 
     /**
-     * The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to `20`.
+     * The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to {@code 20}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxAddressCount")
     Integer maxAddressCount;
 
     /**
-     * The number of seconds before the maximum addresses count resets. If unspecified, defaults to `60`.
+     * The number of seconds before the maximum addresses count resets. If unspecified, defaults to {@code 60}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxAddressCountExpirationInSeconds")
     Integer maxAddressCountExpirationInSeconds;

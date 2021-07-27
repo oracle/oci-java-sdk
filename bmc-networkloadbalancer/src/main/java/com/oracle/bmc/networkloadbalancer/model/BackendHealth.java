@@ -72,13 +72,13 @@ public class BackendHealth {
     /**
      * The general health status of the specified backend server.
      * <p>
-     *   **OK:**  All health check probes return `OK`
+     *   **OK:**  All health check probes return {@code OK}
      * <p>
-     *   **WARNING:** At least one of the health check probes does not return `OK`
+     *   **WARNING:** At least one of the health check probes does not return {@code OK}
      * <p>
-     *   **CRITICAL:** None of the health check probes return `OK`.
+     *   **CRITICAL:** None of the health check probes return {@code OK}.
      * *
-     * *   **UNKNOWN:** One of the health checks probes return `UNKNOWN`,
+     * *   **UNKNOWN:** One of the health checks probes return {@code UNKNOWN},
      * *   or the system is unable to retrieve metrics at this time.
      *
      **/
@@ -130,13 +130,13 @@ public class BackendHealth {
     /**
      * The general health status of the specified backend server.
      * <p>
-     *   **OK:**  All health check probes return `OK`
+     *   **OK:**  All health check probes return {@code OK}
      * <p>
-     *   **WARNING:** At least one of the health check probes does not return `OK`
+     *   **WARNING:** At least one of the health check probes does not return {@code OK}
      * <p>
-     *   **CRITICAL:** None of the health check probes return `OK`.
+     *   **CRITICAL:** None of the health check probes return {@code OK}.
      * *
-     * *   **UNKNOWN:** One of the health checks probes return `UNKNOWN`,
+     * *   **UNKNOWN:** One of the health checks probes return {@code UNKNOWN},
      * *   or the system is unable to retrieve metrics at this time.
      *
      **/

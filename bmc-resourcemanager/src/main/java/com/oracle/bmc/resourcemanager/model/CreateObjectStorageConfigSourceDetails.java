@@ -111,7 +111,7 @@ public class CreateObjectStorageConfigSourceDetails extends CreateConfigSourceDe
 
     /**
      * The name of the bucket's region.
-     * Example: `PHX`
+     * Example: {@code PHX}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")

@@ -50,7 +50,7 @@ public class IngestSqlBucketRequest
     private String opcRequestId;
 
     /**
-     * Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match`
+     * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
      * will be updated or deleted only if the etag you provide matches the resource's current etag value.
      *

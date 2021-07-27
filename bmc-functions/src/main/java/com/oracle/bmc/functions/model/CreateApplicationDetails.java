@@ -160,7 +160,7 @@ public class CreateApplicationDetails {
      * Application configuration. These values are passed on to the function as environment variables, functions may override application configuration.
      * Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.
      * <p>
-     * Example: `{\"MY_FUNCTION_CONFIG\": \"ConfVal\"}`
+     * Example: {@code {"MY_FUNCTION_CONFIG": "ConfVal"}}
      * <p>
      * The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
      *
@@ -180,7 +180,7 @@ public class CreateApplicationDetails {
      * The syslog URL must be reachable from all of the subnets configured for the application.
      * Note: If you enable the OCI Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the OCI Logging service, and not to the syslog URL.
      * <p>
-     * Example: `tcp://logserver.myserver:1234`
+     * Example: {@code tcp://logserver.myserver:1234}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("syslogUrl")
@@ -193,7 +193,7 @@ public class CreateApplicationDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -202,7 +202,7 @@ public class CreateApplicationDetails {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

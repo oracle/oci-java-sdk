@@ -135,7 +135,7 @@ public class DatabaseParameterUpdateStatus {
     Status status;
 
     /**
-     * An error code that defines the failure or `null` if the parameter
+     * An error code that defines the failure or {@code null} if the parameter
      * was updated successfully.
      *
      **/
@@ -143,7 +143,7 @@ public class DatabaseParameterUpdateStatus {
     String errorCode;
 
     /**
-     * The error message indicating the reason for failure or `null` if
+     * The error message indicating the reason for failure or {@code null} if
      * the parameter was updated successfully.
      *
      **/

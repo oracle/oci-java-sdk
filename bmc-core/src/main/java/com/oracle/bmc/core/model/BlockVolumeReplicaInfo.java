@@ -99,7 +99,7 @@ public class BlockVolumeReplicaInfo {
     /**
      * The availability domain of the block volume replica.
      * <p>
-     * Example: `Uocm:PHX-AD-1`
+     * Example: {@code Uocm:PHX-AD-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")

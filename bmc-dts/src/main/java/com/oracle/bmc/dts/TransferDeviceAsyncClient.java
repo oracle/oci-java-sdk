@@ -402,7 +402,12 @@ public class TransferDeviceAsyncClient implements TransferDeviceAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateTransferDeviceRequest, CreateTransferDeviceResponse>,
                         java.util.concurrent.Future<CreateTransferDeviceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTransferDeviceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -564,7 +569,12 @@ public class TransferDeviceAsyncClient implements TransferDeviceAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateTransferDeviceRequest, UpdateTransferDeviceResponse>,
                         java.util.concurrent.Future<UpdateTransferDeviceResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTransferDeviceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

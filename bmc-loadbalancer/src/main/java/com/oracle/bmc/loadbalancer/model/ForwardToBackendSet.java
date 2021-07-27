@@ -76,7 +76,7 @@ public class ForwardToBackendSet extends Action {
     /**
      * Name of the backend set the listener will forward the traffic to.
      * <p>
-     * Example: `backendSetForImages`
+     * Example: {@code backendSetForImages}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backendSetName")

@@ -32,8 +32,8 @@ public class ListReplicationPoliciesResponse {
     /**
      * For paginating a list of replication policies.
      * In the GET request, set the limit to the number of buckets items that you want returned in the response.
-     * If the `opc-next-page` header appears in the response, then this is a partial list and there are additional
-     * policies to get. Include the header's value as the `page` parameter in the subsequent GET request to get the
+     * If the {@code opc-next-page} header appears in the response, then this is a partial list and there are additional
+     * policies to get. Include the header's value as the {@code page} parameter in the subsequent GET request to get the
      * next batch of policies. Repeat this process to retrieve the entire list of policies.
      * <p>
      * For more details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).

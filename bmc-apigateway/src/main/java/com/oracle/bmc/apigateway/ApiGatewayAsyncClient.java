@@ -400,7 +400,12 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeApiCompartmentRequest, ChangeApiCompartmentResponse>,
                         java.util.concurrent.Future<ChangeApiCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeApiCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -445,7 +450,12 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                                 ChangeCertificateCompartmentRequest,
                                 ChangeCertificateCompartmentResponse>,
                         java.util.concurrent.Future<ChangeCertificateCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeCertificateCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -482,7 +492,12 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<CreateApiRequest, CreateApiResponse>,
                         java.util.concurrent.Future<CreateApiResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateApiDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -522,7 +537,12 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateCertificateRequest, CreateCertificateResponse>,
                         java.util.concurrent.Future<CreateCertificateResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateCertificateDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -559,7 +579,12 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<CreateSdkRequest, CreateSdkResponse>,
                         java.util.concurrent.Future<CreateSdkResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSdkDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1092,7 +1117,12 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<UpdateApiRequest, UpdateApiResponse>,
                         java.util.concurrent.Future<UpdateApiResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateApiDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1131,7 +1161,12 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateCertificateRequest, UpdateCertificateResponse>,
                         java.util.concurrent.Future<UpdateCertificateResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCertificateDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1167,7 +1202,12 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<UpdateSdkRequest, UpdateSdkResponse>,
                         java.util.concurrent.Future<UpdateSdkResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSdkDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

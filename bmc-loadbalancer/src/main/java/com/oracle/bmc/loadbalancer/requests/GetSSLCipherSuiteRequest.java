@@ -28,7 +28,7 @@ public class GetSSLCipherSuiteRequest extends com.oracle.bmc.requests.BmcRequest
     /**
      * The name of the SSL cipher suite to retrieve.
      * <p>
-     * example: `example_cipher_suite`
+     * example: {@code example_cipher_suite}
      *
      */
     private String name;

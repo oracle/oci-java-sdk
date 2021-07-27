@@ -41,6 +41,14 @@ public class FailOverAutonomousDatabaseConverter {
                         .path("actions")
                         .path("failover");
 
+        if (request.getPeerDbId() != null) {
+            target =
+                    target.queryParam(
+                            "peerDbId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getPeerDbId()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

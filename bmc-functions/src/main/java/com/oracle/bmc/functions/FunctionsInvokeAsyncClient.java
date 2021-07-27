@@ -412,7 +412,12 @@ public class FunctionsInvokeAsyncClient implements FunctionsInvokeAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 InvokeFunctionRequest, InvokeFunctionResponse>,
                         java.util.concurrent.Future<InvokeFunctionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getInvokeFunctionBody(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

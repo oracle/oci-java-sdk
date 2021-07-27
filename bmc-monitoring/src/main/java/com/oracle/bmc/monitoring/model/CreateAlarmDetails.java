@@ -249,7 +249,7 @@ public class CreateAlarmDetails {
      * <p>
      * This name is sent as the title for notifications related to this alarm.
      * <p>
-     * Example: `High CPU Utilization`
+     * Example: {@code High CPU Utilization}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -277,7 +277,7 @@ public class CreateAlarmDetails {
      * then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified
      * in metricCompartmentId. Default is false.
      * <p>
-     * Example: `true`
+     * Example: {@code true}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricCompartmentIdInSubtree")
@@ -286,7 +286,7 @@ public class CreateAlarmDetails {
     /**
      * The source service or application emitting the metric that is evaluated by the alarm.
      * <p>
-     * Example: `oci_computeagent`
+     * Example: {@code oci_computeagent}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
@@ -297,7 +297,7 @@ public class CreateAlarmDetails {
      * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
      * Avoid entering confidential information.
      * <p>
-     * Example: `frontend-fleet`
+     * Example: {@code frontend-fleet}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
@@ -308,8 +308,8 @@ public class CreateAlarmDetails {
      * the Monitoring service interprets results for each returned time series as Boolean values,
      * where zero represents false and a non-zero value represents true. A true value means that the trigger
      * rule condition has been met. The query must specify a metric, statistic, interval, and trigger
-     * rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally
-     * specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+     * rule (threshold or absence). Supported values for interval: {@code 1m}-{@code 60m} (also {@code 1h}). You can optionally
+     * specify dimensions and grouping functions. Supported grouping functions: {@code grouping()}, {@code groupBy()}.
      * For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
      * For available dimensions, review the metric definition for the supported service.
      * See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
@@ -318,7 +318,7 @@ public class CreateAlarmDetails {
      * <p>
      * -----
      * <p>
-     * CpuUtilization[1m]{availabilityDomain=\"cumS:PHX-AD-1\"}.groupBy(availabilityDomain).percentile(0.9) > 85
+     * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
      * <p>
      * -----
      * <p>
@@ -326,7 +326,7 @@ public class CreateAlarmDetails {
      * <p>
      * -----
      * <p>
-     * CpuUtilization[1m]{availabilityDomain=\"cumS:PHX-AD-1\"}.absent()
+     * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
      * <p>
      * -----
      *
@@ -335,7 +335,7 @@ public class CreateAlarmDetails {
     String query;
 
     /**
-     * The time between calculated aggregation windows for the alarm. Supported value: `1m`
+     * The time between calculated aggregation windows for the alarm. Supported value: {@code 1m}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resolution")
@@ -343,29 +343,29 @@ public class CreateAlarmDetails {
 
     /**
      * The period of time that the condition defined in the alarm must persist before the alarm state
-     * changes from \"OK\" to \"FIRING\". For example, a value of 5 minutes means that the
+     * changes from "OK" to "FIRING". For example, a value of 5 minutes means that the
      * alarm must persist in breaching the condition for five minutes before the alarm updates its
-     * state to \"FIRING\".
+     * state to "FIRING".
      * <p>
-     * The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H`
+     * The duration is specified as a string in ISO 8601 format ({@code PT10M} for ten minutes or {@code PT1H}
      * for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
      * <p>
      * Under the default value of PT1M, the first evaluation that breaches the alarm updates the
-     * state to \"FIRING\".
+     * state to "FIRING".
      * <p>
-     * The alarm updates its status to \"OK\" when the breaching condition has been clear for
+     * The alarm updates its status to "OK" when the breaching condition has been clear for
      * the most recent minute.
      * <p>
-     * Example: `PT5M`
+     * Example: {@code PT5M}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pendingDuration")
     String pendingDuration;
 
     /**
-     * The perceived type of response required when the alarm is in the \"FIRING\" state.
+     * The perceived type of response required when the alarm is in the "FIRING" state.
      * <p>
-     * Example: `CRITICAL`
+     * Example: {@code CRITICAL}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
@@ -376,7 +376,7 @@ public class CreateAlarmDetails {
      * to operators for resolving the alarm condition. Consider adding links to standard runbook
      * practices. Avoid entering confidential information.
      * <p>
-     * Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+     * Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("body")
@@ -394,12 +394,12 @@ public class CreateAlarmDetails {
 
     /**
      * The frequency at which notifications are re-submitted, if the alarm keeps firing without
-     * interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours.
+     * interruption. Format defined by ISO 8601. For example, {@code PT4H} indicates four hours.
      * Minimum: PT1M. Maximum: P30D.
      * <p>
      * Default value: null (notifications are not re-submitted).
      * <p>
-     * Example: `PT2H`
+     * Example: {@code PT2H}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repeatNotificationDuration")
@@ -415,7 +415,7 @@ public class CreateAlarmDetails {
     /**
      * Whether the alarm is enabled.
      * <p>
-     * Example: `true`
+     * Example: {@code true}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
@@ -423,7 +423,7 @@ public class CreateAlarmDetails {
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -431,7 +431,7 @@ public class CreateAlarmDetails {
 
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

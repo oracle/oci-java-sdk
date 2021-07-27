@@ -109,6 +109,15 @@ public class CreateCloudExadataInfrastructureDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
+        private java.util.List<CustomerContact> customerContacts;
+
+        public Builder customerContacts(java.util.List<CustomerContact> customerContacts) {
+            this.customerContacts = customerContacts;
+            this.__explicitlySet__.add("customerContacts");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -123,7 +132,8 @@ public class CreateCloudExadataInfrastructureDetails {
                             storageCount,
                             maintenanceWindow,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            customerContacts);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -139,7 +149,8 @@ public class CreateCloudExadataInfrastructureDetails {
                             .storageCount(o.getStorageCount())
                             .maintenanceWindow(o.getMaintenanceWindow())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .customerContacts(o.getCustomerContacts());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -198,7 +209,7 @@ public class CreateCloudExadataInfrastructureDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -211,6 +222,12 @@ public class CreateCloudExadataInfrastructureDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Customer contacts.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
+    java.util.List<CustomerContact> customerContacts;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

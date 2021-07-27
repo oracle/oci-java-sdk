@@ -296,14 +296,14 @@ public class WorkRequestSummary {
     java.util.Date timeAccepted;
 
     /**
-     * The date and time the work request transitioned from `ACCEPTED` to `IN_PROGRESS`, in the timestamp format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * The date and time the work request transitioned from {@code ACCEPTED} to {@code IN_PROGRESS}, in the timestamp format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     java.util.Date timeStarted;
 
     /**
-     * The date and time the work request reached a terminal state, either `FAILED` or `SUCCEEDED`, in the timestamp format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * The date and time the work request reached a terminal state, either {@code FAILED} or {@code SUCCEEDED}, in the timestamp format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")

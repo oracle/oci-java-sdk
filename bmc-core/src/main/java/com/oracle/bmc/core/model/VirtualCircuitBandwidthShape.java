@@ -74,7 +74,7 @@ public class VirtualCircuitBandwidthShape {
     /**
      * The bandwidth in Mbps.
      * <p>
-     * Example: `10000`
+     * Example: {@code 10000}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bandwidthInMbps")
@@ -83,7 +83,7 @@ public class VirtualCircuitBandwidthShape {
     /**
      * The name of the bandwidth shape.
      * <p>
-     * Example: `10 Gbps`
+     * Example: {@code 10 Gbps}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")

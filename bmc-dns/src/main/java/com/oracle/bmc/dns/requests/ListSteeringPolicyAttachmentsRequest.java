@@ -40,7 +40,7 @@ public class ListSteeringPolicyAttachmentsRequest
     private Long limit;
 
     /**
-     * The value of the `opc-next-page` response header from the previous \"List\" call.
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
      *
      */
     private String page;
@@ -103,12 +103,12 @@ public class ListSteeringPolicyAttachmentsRequest
     private SteeringPolicyAttachmentSummary.LifecycleState lifecycleState;
 
     /**
-     * The field by which to sort steering policy attachments. If unspecified, defaults to `timeCreated`.
+     * The field by which to sort steering policy attachments. If unspecified, defaults to {@code timeCreated}.
      */
     private SortBy sortBy;
 
     /**
-     * The field by which to sort steering policy attachments. If unspecified, defaults to `timeCreated`.
+     * The field by which to sort steering policy attachments. If unspecified, defaults to {@code timeCreated}.
      **/
     public enum SortBy {
         DisplayName("displayName"),

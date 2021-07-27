@@ -32,7 +32,7 @@ public class ListGatewaysRequest extends com.oracle.bmc.requests.BmcRequest<java
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * <p>
-     * Example: `My new resource`
+     * Example: {@code My new resource}
      *
      */
     private String displayName;
@@ -40,7 +40,7 @@ public class ListGatewaysRequest extends com.oracle.bmc.requests.BmcRequest<java
     /**
      * A filter to return only resources that match the given lifecycle state.
      * <p>
-     * Example: `SUCCEEDED`
+     * Example: {@code SUCCEEDED}
      *
      */
     private Gateway.LifecycleState lifecycleState;
@@ -96,18 +96,18 @@ public class ListGatewaysRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
     /**
-     * The field to sort by. You can provide one sort order (`sortOrder`).
-     * Default order for `timeCreated` is descending. Default order for
-     * `displayName` is ascending. The `displayName` sort order is case
+     * The field to sort by. You can provide one sort order ({@code sortOrder}).
+     * Default order for {@code timeCreated} is descending. Default order for
+     * {@code displayName} is ascending. The {@code displayName} sort order is case
      * sensitive.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can provide one sort order (`sortOrder`).
-     * Default order for `timeCreated` is descending. Default order for
-     * `displayName` is ascending. The `displayName` sort order is case
+     * The field to sort by. You can provide one sort order ({@code sortOrder}).
+     * Default order for {@code timeCreated} is descending. Default order for
+     * {@code displayName} is ascending. The {@code displayName} sort order is case
      * sensitive.
      *
      **/

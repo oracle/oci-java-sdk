@@ -397,7 +397,12 @@ public class DbBackupsAsyncClient implements DbBackupsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateBackupRequest, CreateBackupResponse>,
                         java.util.concurrent.Future<CreateBackupResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateBackupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -547,7 +552,12 @@ public class DbBackupsAsyncClient implements DbBackupsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateBackupRequest, UpdateBackupResponse>,
                         java.util.concurrent.Future<UpdateBackupResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateBackupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

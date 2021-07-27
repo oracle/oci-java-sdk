@@ -139,7 +139,7 @@ public class CreateApmDomainDetails {
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -147,14 +147,14 @@ public class CreateApmDomainDetails {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Indicates whether this is an \"Always Free\" resource. The default value is false.
+     * Indicates whether this is an "Always Free" resource. The default value is false.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFreeTier")
     Boolean isFreeTier;

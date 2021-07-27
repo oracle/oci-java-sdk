@@ -131,13 +131,13 @@ public class IdentityProviderGroupSummary {
     }
 
     /**
-     * The OCID of the `IdentityProviderGroup`.
+     * The OCID of the {@code IdentityProviderGroup}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The OCID of the `IdentityProvider` this group belongs to.
+     * The OCID of the {@code IdentityProvider} this group belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identityProviderId")
     String identityProviderId;
@@ -161,18 +161,18 @@ public class IdentityProviderGroupSummary {
     String externalIdentifier;
 
     /**
-     * Date and time the `IdentityProviderGroup` was created, in the format defined by RFC3339.
+     * Date and time the {@code IdentityProviderGroup} was created, in the format defined by RFC3339.
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * Date and time the `IdentityProviderGroup` was last modified, in the format defined by RFC3339.
+     * Date and time the {@code IdentityProviderGroup} was last modified, in the format defined by RFC3339.
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeModified")

@@ -187,13 +187,13 @@ public class Category {
     String description;
 
     /**
-     * An array of `RecommendationCount` objects grouped by the level of importance assigned to the recommendation.
+     * An array of {@code RecommendationCount} objects grouped by the level of importance assigned to the recommendation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendationCounts")
     java.util.List<RecommendationCount> recommendationCounts;
 
     /**
-     * An array of `ResourceCount` objects grouped by the status of the recommendation.
+     * An array of {@code ResourceCount} objects grouped by the status of the recommendation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceCounts")
     java.util.List<ResourceCount> resourceCounts;

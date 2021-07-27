@@ -92,25 +92,25 @@ public class VaultUsage {
     }
 
     /**
-     * The number of keys in this vault that persist on a hardware security module (HSM), across all compartments, excluding keys in a `DELETED` state.
+     * The number of keys in this vault that persist on a hardware security module (HSM), across all compartments, excluding keys in a {@code DELETED} state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyCount")
     Integer keyCount;
 
     /**
-     * The number of key versions in this vault that persist on a hardware security module (HSM), across all compartments, excluding key versions in a `DELETED` state.
+     * The number of key versions in this vault that persist on a hardware security module (HSM), across all compartments, excluding key versions in a {@code DELETED} state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyVersionCount")
     Integer keyVersionCount;
 
     /**
-     * The number of keys in this vault that persist on the server, across all compartments, excluding keys in a `DELETED` state.
+     * The number of keys in this vault that persist on the server, across all compartments, excluding keys in a {@code DELETED} state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareKeyCount")
     Integer softwareKeyCount;
 
     /**
-     * The number of key versions in this vault that persist on the server, across all compartments, excluding key versions in a `DELETED` state.
+     * The number of key versions in this vault that persist on the server, across all compartments, excluding key versions in a {@code DELETED} state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareKeyVersionCount")
     Integer softwareKeyVersionCount;

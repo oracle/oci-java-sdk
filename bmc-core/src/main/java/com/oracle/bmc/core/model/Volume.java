@@ -274,7 +274,7 @@ public class Volume {
     /**
      * The availability domain of the volume.
      * <p>
-     * Example: `Uocm:PHX-AD-1`
+     * Example: {@code Uocm:PHX-AD-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
@@ -290,7 +290,7 @@ public class Volume {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -308,7 +308,7 @@ public class Volume {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -316,7 +316,7 @@ public class Volume {
 
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
@@ -404,11 +404,11 @@ public class Volume {
      * <p>
      * Allowed values:
      * <p>
-     * `0`: Represents Lower Cost option.
+     * {@code 0}: Represents Lower Cost option.
      * <p>
-     * `10`: Represents Balanced option.
+     * {@code 10}: Represents Balanced option.
      * <p>
-     * `20`: Represents Higher Performance option.
+     * {@code 20}: Represents Higher Performance option.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")

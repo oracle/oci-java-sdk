@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The configuration details for creating a Data Guard association for a virtual machine DB system database. For this type of DB system database, the `creationType` should be `NewDbSystem`. A new DB system will be launched to create the standby database.
+ * The configuration details for creating a Data Guard association for a virtual machine DB system database. For this type of DB system database, the {@code creationType} should be {@code NewDbSystem}. A new DB system will be launched to create the standby database.
  * <p>
  * To create a Data Guard association for a database in a bare metal or Exadata DB system, use the {@link #createDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssociationToExistingDbSystemDetailsRequest) createDataGuardAssociationToExistingDbSystemDetails} subtype instead.
  *
@@ -213,7 +213,7 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
     String displayName;
 
     /**
-     * The name of the availability domain that the standby database DB system will be located in. For example- \"Uocm:PHX-AD-1\".
+     * The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     String availabilityDomain;

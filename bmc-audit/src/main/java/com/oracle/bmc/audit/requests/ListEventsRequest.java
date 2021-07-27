@@ -28,10 +28,10 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      * Returns events that were processed at or after this start date and time, expressed in
      * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * <p>
-     * For example, a start value of `2017-01-15T11:30:00Z` will retrieve a list of all events processed
+     * For example, a start value of {@code 2017-01-15T11:30:00Z} will retrieve a list of all events processed
      * since 30 minutes after the 11th hour of January 15, 2017, in Coordinated Universal Time (UTC).
      * You can specify a value with granularity to the minute. Seconds (and milliseconds, if included) must
-     * be set to `0`.
+     * be set to {@code 0}.
      *
      */
     private java.util.Date startTime;
@@ -40,17 +40,17 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      * Returns events that were processed before this end date and time, expressed in
      * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * <p>
-     * For example, a start value of `2017-01-01T00:00:00Z` and an end value of `2017-01-02T00:00:00Z`
+     * For example, a start value of {@code 2017-01-01T00:00:00Z} and an end value of {@code 2017-01-02T00:00:00Z}
      * will retrieve a list of all events processed on January 1, 2017. Similarly, a start value of
-     * `2017-01-01T00:00:00Z` and an end value of `2017-02-01T00:00:00Z` will result in a list of all
+     * {@code 2017-01-01T00:00:00Z} and an end value of {@code 2017-02-01T00:00:00Z} will result in a list of all
      * events processed between January 1, 2017 and January 31, 2017. You can specify a value with
-     * granularity to the minute. Seconds (and milliseconds, if included) must be set to `0`.
+     * granularity to the minute. Seconds (and milliseconds, if included) must be set to {@code 0}.
      *
      */
     private java.util.Date endTime;
 
     /**
-     * For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
      * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */

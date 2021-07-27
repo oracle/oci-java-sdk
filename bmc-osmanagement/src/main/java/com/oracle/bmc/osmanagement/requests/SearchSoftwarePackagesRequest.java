@@ -28,14 +28,14 @@ public class SearchSoftwarePackagesRequest
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * <p>
-     * Example: `My new resource`
+     * Example: {@code My new resource}
      *
      */
     private String displayName;
 
     /**
      * The name of the CVE as published.
-     * Example: `CVE-2006-4535`
+     * Example: {@code CVE-2006-4535}
      *
      */
     private String cveName;

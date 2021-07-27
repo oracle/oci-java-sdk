@@ -155,7 +155,7 @@ public class JsChallenge {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     Boolean isEnabled;
     /**
-     * The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+     * The action to take against requests from detected bots. If unspecified, defaults to {@code DETECT}.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Action {
@@ -201,25 +201,25 @@ public class JsChallenge {
         }
     };
     /**
-     * The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+     * The action to take against requests from detected bots. If unspecified, defaults to {@code DETECT}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     Action action;
 
     /**
-     * The number of failed requests before taking action. If unspecified, defaults to `10`.
+     * The number of failed requests before taking action. If unspecified, defaults to {@code 10}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failureThreshold")
     Integer failureThreshold;
 
     /**
-     * The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+     * The number of seconds between challenges from the same IP address. If unspecified, defaults to {@code 60}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionExpirationInSeconds")
     Integer actionExpirationInSeconds;
 
     /**
-     * Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
+     * Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the {@code action} is set to {@code DETECT}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("setHttpHeader")
     Header setHttpHeader;

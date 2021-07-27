@@ -184,7 +184,7 @@ public class Api {
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
      * <p>
-     * Example: `My new resource`
+     * Example: {@code My new resource}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -299,7 +299,7 @@ public class Api {
      * with no predefined name, type, or namespace. For more information, see
      * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -310,7 +310,7 @@ public class Api {
      * namespace. For more information, see
      * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

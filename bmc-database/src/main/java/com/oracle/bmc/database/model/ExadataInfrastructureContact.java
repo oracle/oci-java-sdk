@@ -122,13 +122,13 @@ public class ExadataInfrastructureContact {
     String email;
 
     /**
-     * If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
+     * If {@code true}, this Exadata Infrastructure contact is a primary contact. If {@code false}, this Exadata Infrastructure is a secondary contact.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
     Boolean isPrimary;
 
     /**
-     * If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
+     * If {@code true}, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If {@code false}, this Exadata Infrastructure contact is not a valid MOS contact.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isContactMosValidated")
     Boolean isContactMosValidated;

@@ -431,7 +431,12 @@ public class QueryAsyncClient implements QueryAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<QueryRequest, QueryResponse>,
                         java.util.concurrent.Future<QueryResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getQueryDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -467,7 +472,12 @@ public class QueryAsyncClient implements QueryAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<QueryOldRequest, QueryOldResponse>,
                         java.util.concurrent.Future<QueryOldResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getQueryDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

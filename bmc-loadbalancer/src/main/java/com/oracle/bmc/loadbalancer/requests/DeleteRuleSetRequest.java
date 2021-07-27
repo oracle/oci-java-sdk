@@ -27,7 +27,7 @@ public class DeleteRuleSetRequest extends com.oracle.bmc.requests.BmcRequest<jav
     /**
      * The name of the rule set to delete.
      * <p>
-     * Example: `example_rule_set`
+     * Example: {@code example_rule_set}
      *
      */
     private String ruleSetName;

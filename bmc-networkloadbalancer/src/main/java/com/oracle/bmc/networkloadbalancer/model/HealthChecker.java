@@ -165,7 +165,7 @@ public class HealthChecker {
     /**
      * The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.
      * <p>
-     * Example: `HTTP`
+     * Example: {@code HTTP}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
@@ -173,19 +173,19 @@ public class HealthChecker {
 
     /**
      * The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the
-     * port information from the `Backend` object. The port must be specified if the backend port is 0.
+     * port information from the {@code Backend} object. The port must be specified if the backend port is 0.
      * <p>
-     * Example: `8080`
+     * Example: {@code 8080}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     Integer port;
 
     /**
-     * The number of retries to attempt before a backend server is considered \"unhealthy\". This number also applies
-     * when recovering a server to the \"healthy\" state. The default value is 3.
+     * The number of retries to attempt before a backend server is considered "unhealthy". This number also applies
+     * when recovering a server to the "healthy" state. The default value is 3.
      * <p>
-     * Example: `3`
+     * Example: {@code 3}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("retries")
@@ -195,7 +195,7 @@ public class HealthChecker {
      * The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply
      * returns within this timeout period. The default value is 3000 (3 seconds).
      * <p>
-     * Example: `3000`
+     * Example: {@code 3000}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInMillis")
@@ -204,7 +204,7 @@ public class HealthChecker {
     /**
      * The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).
      * <p>
-     * Example: `10000`
+     * Example: {@code 10000}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("intervalInMillis")
@@ -213,7 +213,7 @@ public class HealthChecker {
     /**
      * The path against which to run the health check.
      * <p>
-     * Example: `/healthcheck`
+     * Example: {@code /healthcheck}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("urlPath")
@@ -222,7 +222,7 @@ public class HealthChecker {
     /**
      * A regular expression for parsing the response body from the backend server.
      * <p>
-     * Example: `^((?!false).|\\s)*$`
+     * Example: {@code ^((?!false).|\\s)*$}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responseBodyRegex")
@@ -230,9 +230,9 @@ public class HealthChecker {
 
     /**
      * The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol,
-     * then you can use common HTTP status codes such as \"200\".
+     * then you can use common HTTP status codes such as "200".
      * <p>
-     * Example: `200`
+     * Example: {@code 200}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("returnCode")

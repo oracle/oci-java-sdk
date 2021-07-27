@@ -397,7 +397,12 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 BackupVaultRequest, BackupVaultResponse>,
                         java.util.concurrent.Future<BackupVaultResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBackupVaultDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -481,7 +486,12 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeVaultCompartmentRequest, ChangeVaultCompartmentResponse>,
                         java.util.concurrent.Future<ChangeVaultCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeVaultCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -520,7 +530,12 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateVaultRequest, CreateVaultResponse>,
                         java.util.concurrent.Future<CreateVaultResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateVaultDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -560,7 +575,12 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateVaultReplicaRequest, CreateVaultReplicaResponse>,
                         java.util.concurrent.Future<CreateVaultReplicaResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateVaultReplicaDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -600,7 +620,12 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 DeleteVaultReplicaRequest, DeleteVaultReplicaResponse>,
                         java.util.concurrent.Future<DeleteVaultReplicaResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDeleteVaultReplicaDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -801,7 +826,12 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 RestoreVaultFromFileRequest, RestoreVaultFromFileResponse>,
                         java.util.concurrent.Future<RestoreVaultFromFileResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRestoreVaultFromFileDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -850,7 +880,12 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
                                 RestoreVaultFromObjectStoreRequest,
                                 RestoreVaultFromObjectStoreResponse>,
                         java.util.concurrent.Future<RestoreVaultFromObjectStoreResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRestoreVaultFromObjectStoreDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -892,7 +927,12 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ScheduleVaultDeletionRequest, ScheduleVaultDeletionResponse>,
                         java.util.concurrent.Future<ScheduleVaultDeletionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getScheduleVaultDeletionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -930,7 +970,12 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateVaultRequest, UpdateVaultResponse>,
                         java.util.concurrent.Future<UpdateVaultResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateVaultDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

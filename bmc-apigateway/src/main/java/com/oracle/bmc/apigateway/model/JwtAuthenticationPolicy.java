@@ -195,7 +195,7 @@ public class JwtAuthenticationPolicy extends AuthenticationPolicy {
 
     /**
      * The authentication scheme that is to be used when authenticating
-     * the token. This must to be provided if \"tokenHeader\" is specified.
+     * the token. This must to be provided if "tokenHeader" is specified.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tokenAuthScheme")

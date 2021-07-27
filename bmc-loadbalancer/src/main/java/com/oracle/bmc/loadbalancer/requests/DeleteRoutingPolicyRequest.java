@@ -27,7 +27,7 @@ public class DeleteRoutingPolicyRequest extends com.oracle.bmc.requests.BmcReque
     /**
      * The name of the routing policy to delete.
      * <p>
-     * Example: `example_routing_policy`
+     * Example: {@code example_routing_policy}
      *
      */
     private String routingPolicyName;

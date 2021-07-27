@@ -48,7 +48,7 @@ public class ActionDetails {
     /**
      * Whether or not this action is currently enabled.
      * <p>
-     * Example: `true`
+     * Example: {@code true}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")

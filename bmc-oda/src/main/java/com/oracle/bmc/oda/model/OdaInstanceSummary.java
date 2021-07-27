@@ -388,7 +388,7 @@ public class OdaInstanceSummary {
 
     /**
      * A message describing the current state in more detail. For example, actionable
-     * information about an instance that's in the `FAILED` state.
+     * information about an instance that's in the {@code FAILED} state.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stateMessage")
@@ -396,7 +396,7 @@ public class OdaInstanceSummary {
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -404,7 +404,7 @@ public class OdaInstanceSummary {
 
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

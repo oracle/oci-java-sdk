@@ -403,7 +403,12 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
                                 ChangeConnectHarnessCompartmentRequest,
                                 ChangeConnectHarnessCompartmentResponse>,
                         java.util.concurrent.Future<ChangeConnectHarnessCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeConnectHarnessCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -445,7 +450,12 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeStreamCompartmentRequest, ChangeStreamCompartmentResponse>,
                         java.util.concurrent.Future<ChangeStreamCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeStreamCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -489,7 +499,12 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
                                 ChangeStreamPoolCompartmentRequest,
                                 ChangeStreamPoolCompartmentResponse>,
                         java.util.concurrent.Future<ChangeStreamPoolCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeStreamPoolCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -531,7 +546,12 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateConnectHarnessRequest, CreateConnectHarnessResponse>,
                         java.util.concurrent.Future<CreateConnectHarnessResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateConnectHarnessDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -569,7 +589,12 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateStreamRequest, CreateStreamResponse>,
                         java.util.concurrent.Future<CreateStreamResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateStreamDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -609,7 +634,12 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateStreamPoolRequest, CreateStreamPoolResponse>,
                         java.util.concurrent.Future<CreateStreamPoolResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateStreamPoolDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -999,7 +1029,12 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateConnectHarnessRequest, UpdateConnectHarnessResponse>,
                         java.util.concurrent.Future<UpdateConnectHarnessResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateConnectHarnessDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1037,7 +1072,12 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateStreamRequest, UpdateStreamResponse>,
                         java.util.concurrent.Future<UpdateStreamResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateStreamDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1076,7 +1116,12 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateStreamPoolRequest, UpdateStreamPoolResponse>,
                         java.util.concurrent.Future<UpdateStreamPoolResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateStreamPoolDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

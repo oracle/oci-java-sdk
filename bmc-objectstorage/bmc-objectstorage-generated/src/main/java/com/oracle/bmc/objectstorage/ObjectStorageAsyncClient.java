@@ -481,7 +481,12 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CommitMultipartUploadRequest, CommitMultipartUploadResponse>,
                         java.util.concurrent.Future<CommitMultipartUploadResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCommitMultipartUploadDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -518,7 +523,12 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CopyObjectRequest, CopyObjectResponse>,
                         java.util.concurrent.Future<CopyObjectResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCopyObjectDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -556,7 +566,12 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateBucketRequest, CreateBucketResponse>,
                         java.util.concurrent.Future<CreateBucketResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateBucketDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -597,7 +612,12 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateMultipartUploadRequest, CreateMultipartUploadResponse>,
                         java.util.concurrent.Future<CreateMultipartUploadResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateMultipartUploadDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -641,7 +661,12 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                                 CreatePreauthenticatedRequestRequest,
                                 CreatePreauthenticatedRequestResponse>,
                         java.util.concurrent.Future<CreatePreauthenticatedRequestResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreatePreauthenticatedRequestDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -682,7 +707,12 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateReplicationPolicyRequest, CreateReplicationPolicyResponse>,
                         java.util.concurrent.Future<CreateReplicationPolicyResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateReplicationPolicyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -723,7 +753,12 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateRetentionRuleRequest, CreateRetentionRuleResponse>,
                         java.util.concurrent.Future<CreateRetentionRuleResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateRetentionRuleDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1973,7 +2008,12 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<PutObjectRequest, PutObjectResponse>,
                         java.util.concurrent.Future<PutObjectResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getPutObjectBody(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2018,7 +2058,12 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 PutObjectLifecyclePolicyRequest, PutObjectLifecyclePolicyResponse>,
                         java.util.concurrent.Future<PutObjectLifecyclePolicyResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getPutObjectLifecyclePolicyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2096,7 +2141,12 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ReencryptObjectRequest, ReencryptObjectResponse>,
                         java.util.concurrent.Future<ReencryptObjectResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getReencryptObjectDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2134,7 +2184,12 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 RenameObjectRequest, RenameObjectResponse>,
                         java.util.concurrent.Future<RenameObjectResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRenameObjectDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2173,7 +2228,12 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 RestoreObjectsRequest, RestoreObjectsResponse>,
                         java.util.concurrent.Future<RestoreObjectsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRestoreObjectsDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2211,7 +2271,12 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateBucketRequest, UpdateBucketResponse>,
                         java.util.concurrent.Future<UpdateBucketResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateBucketDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2252,7 +2317,12 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateNamespaceMetadataRequest, UpdateNamespaceMetadataResponse>,
                         java.util.concurrent.Future<UpdateNamespaceMetadataResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateNamespaceMetadataDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2293,7 +2363,12 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateObjectStorageTierRequest, UpdateObjectStorageTierResponse>,
                         java.util.concurrent.Future<UpdateObjectStorageTierResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateObjectStorageTierDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2334,7 +2409,12 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateRetentionRuleRequest, UpdateRetentionRuleResponse>,
                         java.util.concurrent.Future<UpdateRetentionRuleResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateRetentionRuleDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2382,7 +2462,12 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UploadPartRequest, UploadPartResponse>,
                         java.util.concurrent.Future<UploadPartResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUploadPartBody(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

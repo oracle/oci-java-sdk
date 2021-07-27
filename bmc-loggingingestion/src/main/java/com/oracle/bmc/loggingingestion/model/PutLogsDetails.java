@@ -70,7 +70,7 @@ public class PutLogsDetails {
 
     /**
      * Required for identifying the version of the data format being used.
-     * Permitted values include: \"1.0\"
+     * Permitted values include: "1.0"
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("specversion")

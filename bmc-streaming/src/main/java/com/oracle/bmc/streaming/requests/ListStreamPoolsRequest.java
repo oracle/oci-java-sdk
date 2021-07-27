@@ -47,13 +47,13 @@ public class ListStreamPoolsRequest extends com.oracle.bmc.requests.BmcRequest<j
     private String page;
 
     /**
-     * The field to sort by. You can provide no more than one sort order. By default, `TIMECREATED` sorts results in descending order and `NAME` sorts results in ascending order.
+     * The field to sort by. You can provide no more than one sort order. By default, {@code TIMECREATED} sorts results in descending order and {@code NAME} sorts results in ascending order.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can provide no more than one sort order. By default, `TIMECREATED` sorts results in descending order and `NAME` sorts results in ascending order.
+     * The field to sort by. You can provide no more than one sort order. By default, {@code TIMECREATED} sorts results in descending order and {@code NAME} sorts results in ascending order.
      *
      **/
     public enum SortBy {

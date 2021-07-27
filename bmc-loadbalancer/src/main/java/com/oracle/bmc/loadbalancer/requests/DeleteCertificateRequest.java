@@ -29,7 +29,7 @@ public class DeleteCertificateRequest extends com.oracle.bmc.requests.BmcRequest
     /**
      * The name of the certificate bundle to delete.
      * <p>
-     * Example: `example_certificate_bundle`
+     * Example: {@code example_certificate_bundle}
      *
      */
     private String certificateName;

@@ -231,7 +231,7 @@ public class JobSummary {
     ApplyJobPlanResolution applyJobPlanResolution;
 
     /**
-     * Deprecated. Use the property `executionPlanJobId` in `jobOperationDetails` instead.
+     * Deprecated. Use the property {@code executionPlanJobId} in {@code jobOperationDetails} instead.
      * The plan job [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was used (if this was an apply job and was not auto-approved).
      *
      **/
@@ -241,7 +241,7 @@ public class JobSummary {
     /**
      * The date and time the job was created.
      * Format is defined by RFC3339.
-     * Example: `2020-01-25T21:10:29.600Z`
+     * Example: {@code 2020-01-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -250,7 +250,7 @@ public class JobSummary {
     /**
      * The date and time the job succeeded or failed.
      * Format is defined by RFC3339.
-     * Example: `2020-01-25T21:10:29.600Z`
+     * Example: {@code 2020-01-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
@@ -276,7 +276,7 @@ public class JobSummary {
     /**
      * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -285,7 +285,7 @@ public class JobSummary {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

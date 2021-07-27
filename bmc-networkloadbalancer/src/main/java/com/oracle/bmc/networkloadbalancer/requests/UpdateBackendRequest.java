@@ -32,7 +32,7 @@ public class UpdateBackendRequest extends com.oracle.bmc.requests.BmcRequest<Upd
     /**
      * The name of the backend set associated with the backend server.
      * <p>
-     * Example: `example_backend_set`
+     * Example: {@code example_backend_set}
      *
      */
     private String backendSetName;
@@ -40,7 +40,7 @@ public class UpdateBackendRequest extends com.oracle.bmc.requests.BmcRequest<Upd
     /**
      * The name of the backend server to update. This is specified as <ip>:<port>, or as <ip> <OCID>:<port>.
      * <p>
-     * Example: `10.0.0.3:8080` or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:8080`
+     * Example: {@code 10.0.0.3:8080} or {@code ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:8080}
      *
      */
     private String backendName;
@@ -64,7 +64,7 @@ public class UpdateBackendRequest extends com.oracle.bmc.requests.BmcRequest<Upd
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the `if-match` parameter to the value of the
+     * for a resource, set the {@code if-match} parameter to the value of the
      * etag from a previous GET or POST response for that resource.
      * The resource will be updated or deleted only if the etag you
      * provide matches the current etag value of the resource.

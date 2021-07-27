@@ -80,7 +80,7 @@ public class UpdateLoadBalancerShapeDetails {
      *   *  8000Mbps
      *   *  Flexible
      * <p>
-     * Example: `Flexible`
+     * Example: {@code Flexible}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")

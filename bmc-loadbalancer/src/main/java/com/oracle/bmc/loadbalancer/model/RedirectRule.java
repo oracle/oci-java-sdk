@@ -8,14 +8,14 @@ package com.oracle.bmc.loadbalancer.model;
  * An object that represents the action of returning a specified response code and a redirect URI. Each RedirectRule
  * object is configured for a particular listener and a designated path.
  * <p>
- * The default response code is `302 Found`.
+ * The default response code is {@code 302 Found}.
  * <p>
  **NOTES:**
  * *  This rule applies only to HTTP listeners.
  * *  You can specify this rule only with the {@link #ruleCondition(RuleConditionRequest) ruleCondition}
- *    type `PATH`.
+ *    type {@code PATH}.
  * *  A listener can have only one RedirectRule object for a given original path. The
- *   {@link #pathMatchCondition(PathMatchConditionRequest) pathMatchCondition} `attributeValue` specifies the
+ *   {@link #pathMatchCondition(PathMatchConditionRequest) pathMatchCondition} {@code attributeValue} specifies the
  *   original path.
  *
  * <br/>
@@ -120,9 +120,9 @@ public class RedirectRule extends Rule {
      * *  307
      * *  308
      * <p>
-     * The default value is `302` (Found).
+     * The default value is {@code 302} (Found).
      * <p>
-     * Example: `301`
+     * Example: {@code 301}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responseCode")

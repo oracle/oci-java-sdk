@@ -230,7 +230,7 @@ public class Sender {
     LifecycleState lifecycleState;
 
     /**
-     * The date and time the approved sender was added in \"YYYY-MM-ddThh:mmZ\"
+     * The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ"
      * format with a Z offset, as defined by RFC 3339.
      *
      **/
@@ -248,7 +248,7 @@ public class Sender {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -258,7 +258,7 @@ public class Sender {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

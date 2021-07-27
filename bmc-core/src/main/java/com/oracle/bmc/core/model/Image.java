@@ -264,7 +264,7 @@ public class Image {
      * Whether instances launched with this image can be used to create new images.
      * For example, you cannot create an image of an Oracle Database instance.
      * <p>
-     * Example: `true`
+     * Example: {@code true}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createImageAllowed")
@@ -274,7 +274,7 @@ public class Image {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -286,7 +286,7 @@ public class Image {
      * <p>
      * You cannot use a platform image name as a custom image name.
      * <p>
-     * Example: `My custom Oracle Linux image`
+     * Example: {@code My custom Oracle Linux image}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -296,7 +296,7 @@ public class Image {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -309,10 +309,10 @@ public class Image {
     String id;
     /**
      * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-     * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
-     * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
-     * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
-     * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+     * * {@code NATIVE} - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+     * * {@code EMULATED} - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+     * * {@code PARAVIRTUALIZED} - VM instances launch with paravirtualized devices using VirtIO drivers.
+     * * {@code CUSTOM} - VM instances launch with custom configuration settings specified in the {@code LaunchOptions} parameter.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -362,10 +362,10 @@ public class Image {
     };
     /**
      * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-     * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
-     * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
-     * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
-     * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+     * * {@code NATIVE} - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+     * * {@code EMULATED} - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+     * * {@code PARAVIRTUALIZED} - VM instances launch with paravirtualized devices using VirtIO drivers.
+     * * {@code CUSTOM} - VM instances launch with custom configuration settings specified in the {@code LaunchOptions} parameter.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("launchMode")
@@ -429,7 +429,7 @@ public class Image {
     /**
      * The image's operating system.
      * <p>
-     * Example: `Oracle Linux`
+     * Example: {@code Oracle Linux}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
@@ -438,7 +438,7 @@ public class Image {
     /**
      * The image's operating system version.
      * <p>
-     * Example: `7.2`
+     * Example: {@code 7.2}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystemVersion")
@@ -447,7 +447,7 @@ public class Image {
     @com.fasterxml.jackson.annotation.JsonProperty("agentFeatures")
     InstanceAgentFeatures agentFeatures;
     /**
-     * The listing type of the image. The default value is \"NONE\".
+     * The listing type of the image. The default value is "NONE".
      **/
     @lombok.extern.slf4j.Slf4j
     public enum ListingType {
@@ -493,7 +493,7 @@ public class Image {
         }
     };
     /**
-     * The listing type of the image. The default value is \"NONE\".
+     * The listing type of the image. The default value is "NONE".
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingType")
     ListingType listingType;
@@ -502,7 +502,7 @@ public class Image {
      * The boot volume size for an instance launched from this image (1 MB = 1,048,576 bytes).
      * Note this is not the same as the size of the image when it was exported or the actual size of the image.
      * <p>
-     * Example: `47694`
+     * Example: {@code 47694}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
@@ -511,7 +511,7 @@ public class Image {
     /**
      * The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).
      * <p>
-     * Example: `100`
+     * Example: {@code 100}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("billableSizeInGBs")
@@ -520,7 +520,7 @@ public class Image {
     /**
      * The date and time the image was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

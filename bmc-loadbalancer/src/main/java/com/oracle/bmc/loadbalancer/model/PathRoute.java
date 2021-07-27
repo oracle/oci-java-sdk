@@ -5,7 +5,7 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * A \"path route rule\" to evaluate an incoming URI path, and then route a matching request to the specified backend set.
+ * A "path route rule" to evaluate an incoming URI path, and then route a matching request to the specified backend set.
  * <p>
  * Path route rules apply only to HTTP and HTTPS requests. They have no effect on TCP requests.
  *
@@ -91,7 +91,7 @@ public class PathRoute {
      * <p>
      *  Regular expressions are not supported.
      * <p>
-     * Example: `/example/video/123`
+     * Example: {@code /example/video/123}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
@@ -106,7 +106,7 @@ public class PathRoute {
     /**
      * The name of the target backend set for requests where the incoming URI matches the specified path.
      * <p>
-     * Example: `example_backend_set`
+     * Example: {@code example_backend_set}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backendSetName")

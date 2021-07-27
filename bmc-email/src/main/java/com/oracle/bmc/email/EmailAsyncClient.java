@@ -403,7 +403,12 @@ public class EmailAsyncClient implements EmailAsync {
                                 ChangeEmailDomainCompartmentRequest,
                                 ChangeEmailDomainCompartmentResponse>,
                         java.util.concurrent.Future<ChangeEmailDomainCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeEmailDomainCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -444,7 +449,12 @@ public class EmailAsyncClient implements EmailAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeSenderCompartmentRequest, ChangeSenderCompartmentResponse>,
                         java.util.concurrent.Future<ChangeSenderCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeSenderCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -482,7 +492,12 @@ public class EmailAsyncClient implements EmailAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateDkimRequest, CreateDkimResponse>,
                         java.util.concurrent.Future<CreateDkimResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDkimDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -522,7 +537,12 @@ public class EmailAsyncClient implements EmailAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateEmailDomainRequest, CreateEmailDomainResponse>,
                         java.util.concurrent.Future<CreateEmailDomainResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateEmailDomainDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -560,7 +580,12 @@ public class EmailAsyncClient implements EmailAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateSenderRequest, CreateSenderResponse>,
                         java.util.concurrent.Future<CreateSenderResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSenderDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -599,7 +624,12 @@ public class EmailAsyncClient implements EmailAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateSuppressionRequest, CreateSuppressionResponse>,
                         java.util.concurrent.Future<CreateSuppressionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSuppressionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1250,7 +1280,12 @@ public class EmailAsyncClient implements EmailAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateDkimRequest, UpdateDkimResponse>,
                         java.util.concurrent.Future<UpdateDkimResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDkimDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1289,7 +1324,12 @@ public class EmailAsyncClient implements EmailAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateEmailDomainRequest, UpdateEmailDomainResponse>,
                         java.util.concurrent.Future<UpdateEmailDomainResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateEmailDomainDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1327,7 +1367,12 @@ public class EmailAsyncClient implements EmailAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateSenderRequest, UpdateSenderResponse>,
                         java.util.concurrent.Future<UpdateSenderResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSenderDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

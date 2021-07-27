@@ -250,12 +250,12 @@ public class SecretVersion {
         }
     };
     /**
-     * A list of possible rotation states for the secret version. A secret version marked `CURRENT` is currently in use. A secret version
-     * marked `PENDING` is staged and available for use, but has not been applied on the target system and, therefore, has not been rotated
-     * into current, active use. The secret most recently uploaded to a vault is always marked `LATEST`. (The first version of a secret is
-     * always marked as both `CURRENT` and `LATEST`.) A secret version marked `PREVIOUS` is the secret version that was most recently marked
-     * `CURRENT`, before the last secret version rotation. A secret version marked `DEPRECATED` is neither current, pending, nor the previous
-     * one in use. Only secret versions marked `DEPRECATED` can be scheduled for deletion.
+     * A list of possible rotation states for the secret version. A secret version marked {@code CURRENT} is currently in use. A secret version
+     * marked {@code PENDING} is staged and available for use, but has not been applied on the target system and, therefore, has not been rotated
+     * into current, active use. The secret most recently uploaded to a vault is always marked {@code LATEST}. (The first version of a secret is
+     * always marked as both {@code CURRENT} and {@code LATEST}.) A secret version marked {@code PREVIOUS} is the secret version that was most recently marked
+     * {@code CURRENT}, before the last secret version rotation. A secret version marked {@code DEPRECATED} is neither current, pending, nor the previous
+     * one in use. Only secret versions marked {@code DEPRECATED} can be scheduled for deletion.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stages")
@@ -263,7 +263,7 @@ public class SecretVersion {
 
     /**
      * A optional property indicating when the secret version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     * Example: `2019-04-03T21:10:29.600Z`
+     * Example: {@code 2019-04-03T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -271,7 +271,7 @@ public class SecretVersion {
 
     /**
      * An optional property indicating when to delete the secret version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     * Example: `2019-04-03T21:10:29.600Z`
+     * Example: {@code 2019-04-03T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
@@ -279,7 +279,7 @@ public class SecretVersion {
 
     /**
      * An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     * Example: `2019-04-03T21:10:29.600Z`
+     * Example: {@code 2019-04-03T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfCurrentVersionExpiry")

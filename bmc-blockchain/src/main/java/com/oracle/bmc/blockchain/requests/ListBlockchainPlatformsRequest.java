@@ -27,7 +27,7 @@ public class ListBlockchainPlatformsRequest
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Example: `My new resource`
+     * Example: {@code My new resource}
      *
      */
     private String displayName;

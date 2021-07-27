@@ -404,7 +404,12 @@ public class AnnouncementsPreferencesAsyncClient implements AnnouncementsPrefere
                                 CreateAnnouncementsPreferenceRequest,
                                 CreateAnnouncementsPreferenceResponse>,
                         java.util.concurrent.Future<CreateAnnouncementsPreferenceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAnnouncementsPreferenceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -536,7 +541,12 @@ public class AnnouncementsPreferencesAsyncClient implements AnnouncementsPrefere
                                 UpdateAnnouncementsPreferenceRequest,
                                 UpdateAnnouncementsPreferenceResponse>,
                         java.util.concurrent.Future<UpdateAnnouncementsPreferenceResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAnnouncementsPreferenceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

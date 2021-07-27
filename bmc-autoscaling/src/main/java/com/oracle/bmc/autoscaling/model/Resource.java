@@ -5,7 +5,7 @@
 package com.oracle.bmc.autoscaling.model;
 
 /**
- * A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
+ * A resource that is managed by an autoscaling configuration. The only supported type is {@code instancePool}.
  * <p>
  * Each instance pool can have one autoscaling configuration.
  *

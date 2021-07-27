@@ -32,7 +32,7 @@ public class ListJobDefinitionsRequest extends com.oracle.bmc.requests.BmcReques
     /**
      * A filter to return only resources that match display name pattern given. The match is not case sensitive.
      * For Example : /folders?displayNameContains=Cu.*
-     * The above would match all folders with display name that starts with \"Cu\".
+     * The above would match all folders with display name that starts with "Cu".
      *
      */
     private String displayNameContains;

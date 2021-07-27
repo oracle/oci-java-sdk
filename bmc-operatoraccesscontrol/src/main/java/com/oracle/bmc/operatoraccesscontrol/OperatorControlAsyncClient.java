@@ -406,7 +406,12 @@ public class OperatorControlAsyncClient implements OperatorControlAsync {
                                 ChangeOperatorControlCompartmentRequest,
                                 ChangeOperatorControlCompartmentResponse>,
                         java.util.concurrent.Future<ChangeOperatorControlCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeOperatorControlCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -449,7 +454,12 @@ public class OperatorControlAsyncClient implements OperatorControlAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateOperatorControlRequest, CreateOperatorControlResponse>,
                         java.util.concurrent.Future<CreateOperatorControlResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateOperatorControlDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -611,7 +621,12 @@ public class OperatorControlAsyncClient implements OperatorControlAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateOperatorControlRequest, UpdateOperatorControlResponse>,
                         java.util.concurrent.Future<UpdateOperatorControlResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateOperatorControlDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

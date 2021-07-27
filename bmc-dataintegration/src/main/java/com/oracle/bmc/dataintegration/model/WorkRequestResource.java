@@ -99,9 +99,9 @@ public class WorkRequestResource {
     String entityType;
     /**
      * The way in which this resource is affected by the work tracked in the work request.
-     * A resource being created, updated, or deleted will remain in the `IN_PROGRESS` state until
-     * work is complete for that resource at which point it will transition to `CREATED`, `UPDATED`,
-     * or `DELETED`, respectively.
+     * A resource being created, updated, or deleted will remain in the {@code IN_PROGRESS} state until
+     * work is complete for that resource at which point it will transition to {@code CREATED}, {@code UPDATED},
+     * or {@code DELETED}, respectively.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -155,9 +155,9 @@ public class WorkRequestResource {
     };
     /**
      * The way in which this resource is affected by the work tracked in the work request.
-     * A resource being created, updated, or deleted will remain in the `IN_PROGRESS` state until
-     * work is complete for that resource at which point it will transition to `CREATED`, `UPDATED`,
-     * or `DELETED`, respectively.
+     * A resource being created, updated, or deleted will remain in the {@code IN_PROGRESS} state until
+     * work is complete for that resource at which point it will transition to {@code CREATED}, {@code UPDATED},
+     * or {@code DELETED}, respectively.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionType")

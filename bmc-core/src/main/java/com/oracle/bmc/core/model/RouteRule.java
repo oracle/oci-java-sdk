@@ -104,15 +104,15 @@ public class RouteRule {
     }
 
     /**
-     * Deprecated. Instead use `destination` and `destinationType`. Requests that include both
-     * `cidrBlock` and `destination` will be rejected.
+     * Deprecated. Instead use {@code destination} and {@code destinationType}. Requests that include both
+     * {@code cidrBlock} and {@code destination} will be rejected.
      * <p>
      * A destination IP address range in CIDR notation. Matching packets will
      * be routed to the indicated network entity (the target).
      * <p>
      * Cannot be an IPv6 CIDR.
      * <p>
-     * Example: `0.0.0.0/0`
+     * Example: {@code 0.0.0.0/0}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
@@ -120,31 +120,31 @@ public class RouteRule {
 
     /**
      * Conceptually, this is the range of IP addresses used for matching when routing
-     * traffic. Required if you provide a `destinationType`.
+     * traffic. Required if you provide a {@code destinationType}.
      * <p>
      * Allowed values:
      * <p>
-     * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24`
-     *   or `2001:0db8:0123:45::/56`. If you set this to an IPv6 CIDR, the route rule's target
+     * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: {@code 192.168.1.0/24}
+     *   or {@code 2001:0db8:0123:45::/56}. If you set this to an IPv6 CIDR, the route rule's target
      *   can only be a DRG or internet gateway.
      *   IPv6 addressing is supported for all commercial and government regions.
      *   See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
-     * The `cidrBlock` value for a {@link Service}, if you're
-     *     setting up a route rule for traffic destined for a particular `Service` through
-     *     a service gateway. For example: `oci-phx-objectstorage`.
+     * The {@code cidrBlock} value for a {@link Service}, if you're
+     *     setting up a route rule for traffic destined for a particular {@code Service} through
+     *     a service gateway. For example: {@code oci-phx-objectstorage}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destination")
     String destination;
     /**
-     * Type of destination for the rule. Required if you provide a `destination`.
+     * Type of destination for the rule. Required if you provide a {@code destination}.
      * <p>
-     * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+     * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
      * <p>
-     * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a
+     * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code cidrBlock} value for a
      *     {@link Service} (the rule is for traffic destined for a
-     *     particular `Service` through a service gateway).
+     *     particular {@code Service} through a service gateway).
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -191,13 +191,13 @@ public class RouteRule {
         }
     };
     /**
-     * Type of destination for the rule. Required if you provide a `destination`.
+     * Type of destination for the rule. Required if you provide a {@code destination}.
      * <p>
-     * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+     * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
      * <p>
-     * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a
+     * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code cidrBlock} value for a
      *     {@link Service} (the rule is for traffic destined for a
-     *     particular `Service` through a service gateway).
+     *     particular {@code Service} through a service gateway).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationType")

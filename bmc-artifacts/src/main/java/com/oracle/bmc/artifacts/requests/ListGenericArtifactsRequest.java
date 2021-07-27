@@ -44,13 +44,13 @@ public class ListGenericArtifactsRequest
     private String displayName;
 
     /**
-     * Filter results by a prefix for the `artifactPath` and and return artifacts that begin with the specified prefix in their path.
+     * Filter results by a prefix for the {@code artifactPath} and and return artifacts that begin with the specified prefix in their path.
      *
      */
     private String artifactPath;
 
     /**
-     * Filter results by a prefix for `version` and return artifacts that that begin with the specified prefix in their version.
+     * Filter results by a prefix for {@code version} and return artifacts that that begin with the specified prefix in their version.
      *
      */
     private String version;
@@ -69,16 +69,16 @@ public class ListGenericArtifactsRequest
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a paginated
-     * \"List\" call. For important details about how pagination works, see
+     * "List" call. For important details about how pagination works, see
      * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * <p>
-     * Example: `50`
+     * Example: {@code 50}
      *
      */
     private Integer limit;
 
     /**
-     * For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
      * call. For important details about how pagination works, see
      * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
@@ -93,26 +93,26 @@ public class ListGenericArtifactsRequest
     private String opcRequestId;
 
     /**
-     * The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
      * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
      * sort order is case sensitive.
      * <p>
-     **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+     **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
      * optionally filter by availability domain if the scope of the resource type is within a
-     * single availability domain. If you call one of these \"List\" operations without specifying
+     * single availability domain. If you call one of these "List" operations without specifying
      * an availability domain, the resources are grouped by availability domain, then sorted.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
      * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
      * sort order is case sensitive.
      * <p>
-     **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+     **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
      * optionally filter by availability domain if the scope of the resource type is within a
-     * single availability domain. If you call one of these \"List\" operations without specifying
+     * single availability domain. If you call one of these "List" operations without specifying
      * an availability domain, the resources are grouped by availability domain, then sorted.
      *
      **/
@@ -149,14 +149,14 @@ public class ListGenericArtifactsRequest
         }
     };
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
      * is case sensitive.
      *
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
      * is case sensitive.
      *
      **/

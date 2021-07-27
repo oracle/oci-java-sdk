@@ -27,7 +27,7 @@ public class GetHostnameRequest extends com.oracle.bmc.requests.BmcRequest<java.
     /**
      * The name of the hostname resource to retrieve.
      * <p>
-     * Example: `example_hostname_001`
+     * Example: {@code example_hostname_001}
      *
      */
     private String name;

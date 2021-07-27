@@ -27,7 +27,7 @@ public class ListBackendsRequest extends com.oracle.bmc.requests.BmcRequest<java
     /**
      * The name of the backend set associated with the backend servers.
      * <p>
-     * Example: `example_backend_set`
+     * Example: {@code example_backend_set}
      *
      */
     private String backendSetName;

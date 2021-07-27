@@ -394,7 +394,12 @@ public class LoggingAsyncClient implements LoggingAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<PutLogsRequest, PutLogsResponse>,
                         java.util.concurrent.Future<PutLogsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getPutLogsDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

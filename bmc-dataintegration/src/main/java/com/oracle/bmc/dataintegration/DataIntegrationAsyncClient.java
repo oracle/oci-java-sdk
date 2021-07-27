@@ -400,7 +400,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeCompartmentRequest, ChangeCompartmentResponse>,
                         java.util.concurrent.Future<ChangeCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -440,7 +445,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateApplicationRequest, CreateApplicationResponse>,
                         java.util.concurrent.Future<CreateApplicationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateApplicationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -480,7 +490,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateConnectionRequest, CreateConnectionResponse>,
                         java.util.concurrent.Future<CreateConnectionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateConnectionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -525,7 +540,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                                 CreateConnectionValidationRequest,
                                 CreateConnectionValidationResponse>,
                         java.util.concurrent.Future<CreateConnectionValidationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateConnectionValidationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -565,7 +585,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateDataAssetRequest, CreateDataAssetResponse>,
                         java.util.concurrent.Future<CreateDataAssetResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDataAssetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -605,7 +630,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateDataFlowRequest, CreateDataFlowResponse>,
                         java.util.concurrent.Future<CreateDataFlowResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDataFlowDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -647,7 +677,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateDataFlowValidationRequest, CreateDataFlowValidationResponse>,
                         java.util.concurrent.Future<CreateDataFlowValidationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDataFlowValidationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -687,7 +722,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateEntityShapeRequest, CreateEntityShapeResponse>,
                         java.util.concurrent.Future<CreateEntityShapeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateEntityShapeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -730,7 +770,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                                 CreateExternalPublicationRequest,
                                 CreateExternalPublicationResponse>,
                         java.util.concurrent.Future<CreateExternalPublicationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateExternalPublicationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -777,7 +822,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                                 CreateExternalPublicationValidationRequest,
                                 CreateExternalPublicationValidationResponse>,
                         java.util.concurrent.Future<CreateExternalPublicationValidationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateExternalPublicationValidationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -817,7 +867,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateFolderRequest, CreateFolderResponse>,
                         java.util.concurrent.Future<CreateFolderResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateFolderDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -856,7 +911,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreatePatchRequest, CreatePatchResponse>,
                         java.util.concurrent.Future<CreatePatchResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreatePatchDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -896,7 +956,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreatePipelineRequest, CreatePipelineResponse>,
                         java.util.concurrent.Future<CreatePipelineResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreatePipelineDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -938,7 +1003,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreatePipelineValidationRequest, CreatePipelineValidationResponse>,
                         java.util.concurrent.Future<CreatePipelineValidationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreatePipelineValidationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -977,7 +1047,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateProjectRequest, CreateProjectResponse>,
                         java.util.concurrent.Future<CreateProjectResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateProjectDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1017,7 +1092,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateScheduleRequest, CreateScheduleResponse>,
                         java.util.concurrent.Future<CreateScheduleResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateScheduleDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1055,7 +1135,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateTaskRequest, CreateTaskResponse>,
                         java.util.concurrent.Future<CreateTaskResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTaskDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1094,7 +1179,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateTaskRunRequest, CreateTaskRunResponse>,
                         java.util.concurrent.Future<CreateTaskRunResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTaskRunDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1134,7 +1224,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateTaskScheduleRequest, CreateTaskScheduleResponse>,
                         java.util.concurrent.Future<CreateTaskScheduleResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTaskScheduleDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1176,7 +1271,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateTaskValidationRequest, CreateTaskValidationResponse>,
                         java.util.concurrent.Future<CreateTaskValidationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTaskValidationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1216,7 +1316,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateWorkspaceRequest, CreateWorkspaceResponse>,
                         java.util.concurrent.Future<CreateWorkspaceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateWorkspaceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4241,7 +4346,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateApplicationRequest, UpdateApplicationResponse>,
                         java.util.concurrent.Future<UpdateApplicationResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateApplicationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4280,7 +4390,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateConnectionRequest, UpdateConnectionResponse>,
                         java.util.concurrent.Future<UpdateConnectionResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateConnectionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4319,7 +4434,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateDataAssetRequest, UpdateDataAssetResponse>,
                         java.util.concurrent.Future<UpdateDataAssetResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDataAssetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4358,7 +4478,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateDataFlowRequest, UpdateDataFlowResponse>,
                         java.util.concurrent.Future<UpdateDataFlowResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDataFlowDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4400,7 +4525,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                                 UpdateExternalPublicationRequest,
                                 UpdateExternalPublicationResponse>,
                         java.util.concurrent.Future<UpdateExternalPublicationResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateExternalPublicationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4438,7 +4568,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateFolderRequest, UpdateFolderResponse>,
                         java.util.concurrent.Future<UpdateFolderResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateFolderDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4477,7 +4612,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdatePipelineRequest, UpdatePipelineResponse>,
                         java.util.concurrent.Future<UpdatePipelineResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdatePipelineDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4515,7 +4655,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateProjectRequest, UpdateProjectResponse>,
                         java.util.concurrent.Future<UpdateProjectResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateProjectDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4555,7 +4700,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateReferenceRequest, UpdateReferenceResponse>,
                         java.util.concurrent.Future<UpdateReferenceResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateReferenceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4594,7 +4744,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateScheduleRequest, UpdateScheduleResponse>,
                         java.util.concurrent.Future<UpdateScheduleResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateScheduleDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4631,7 +4786,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateTaskRequest, UpdateTaskResponse>,
                         java.util.concurrent.Future<UpdateTaskResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTaskDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4669,7 +4829,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateTaskRunRequest, UpdateTaskRunResponse>,
                         java.util.concurrent.Future<UpdateTaskRunResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTaskRunDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4708,7 +4873,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateTaskScheduleRequest, UpdateTaskScheduleResponse>,
                         java.util.concurrent.Future<UpdateTaskScheduleResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTaskScheduleDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4747,7 +4917,12 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateWorkspaceRequest, UpdateWorkspaceResponse>,
                         java.util.concurrent.Future<UpdateWorkspaceResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateWorkspaceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

@@ -25,7 +25,7 @@ public class GetRowRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
     private String tableNameOrId;
 
     /**
-     * An array of strings, each of the format \"column-name:value\",
+     * An array of strings, each of the format "column-name:value",
      * representing the primary key of the row.
      *
      */

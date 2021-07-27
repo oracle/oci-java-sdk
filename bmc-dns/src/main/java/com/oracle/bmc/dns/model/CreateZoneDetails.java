@@ -168,7 +168,7 @@ public class CreateZoneDetails extends CreateZoneBaseDetails {
     }
 
     /**
-     * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL
+     * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY} is only supported for GLOBAL
      * zones.
      *
      **/
@@ -205,7 +205,7 @@ public class CreateZoneDetails extends CreateZoneBaseDetails {
         }
     };
     /**
-     * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL
+     * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY} is only supported for GLOBAL
      * zones.
      *
      **/
@@ -226,8 +226,8 @@ public class CreateZoneDetails extends CreateZoneBaseDetails {
     Scope scope;
 
     /**
-     * External master servers for the zone. `externalMasters` becomes a
-     * required parameter when the `zoneType` value is `SECONDARY`.
+     * External master servers for the zone. {@code externalMasters} becomes a
+     * required parameter when the {@code zoneType} value is {@code SECONDARY}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalMasters")

@@ -62,7 +62,7 @@ public class RestartDbSystemDetails {
 
     /**
      * The InnoDB shutdown mode to use, following the option
-     * \"[innodb_fast_shutdown](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_fast_shutdown)\".
+     * "[innodb_fast_shutdown](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_fast_shutdown)".
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shutdownType")

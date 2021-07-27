@@ -105,12 +105,12 @@ public class LaunchInstanceAgentConfigDetails {
      * and Custom Logs Monitoring.
      * <p>
      * The monitoring plugins are controlled by this parameter and by the per-plugin
-     * configuration in the `pluginsConfig` object.
+     * configuration in the {@code pluginsConfig} object.
      * <p>
-     * - If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of
+     * - If {@code isMonitoringDisabled} is true, all of the monitoring plugins are disabled, regardless of
      * the per-plugin configuration.
-     * - If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You
-     * can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig`
+     * - If {@code isMonitoringDisabled} is false, all of the monitoring plugins are enabled. You
+     * can optionally disable individual monitoring plugins by providing a value in the {@code pluginsConfig}
      * object.
      *
      **/
@@ -125,12 +125,12 @@ public class LaunchInstanceAgentConfigDetails {
      * Run Command.
      * <p>
      * The management plugins are controlled by this parameter and by the per-plugin
-     * configuration in the `pluginsConfig` object.
+     * configuration in the {@code pluginsConfig} object.
      * <p>
-     * - If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of
+     * - If {@code isManagementDisabled} is true, all of the management plugins are disabled, regardless of
      * the per-plugin configuration.
-     * - If `isManagementDisabled` is false, all of the management plugins are enabled. You
-     * can optionally disable individual management plugins by providing a value in the `pluginsConfig`
+     * - If {@code isManagementDisabled} is false, all of the management plugins are enabled. You
+     * can optionally disable individual management plugins by providing a value in the {@code pluginsConfig}
      * object.
      *
      **/

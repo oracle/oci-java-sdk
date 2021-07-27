@@ -105,7 +105,7 @@ public class Metric {
     /**
      * The name of the metric.
      * <p>
-     * Example: `CpuUtilization`
+     * Example: {@code CpuUtilization}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -114,7 +114,7 @@ public class Metric {
     /**
      * The source service or application emitting the metric.
      * <p>
-     * Example: `oci_computeagent`
+     * Example: {@code oci_computeagent}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
@@ -125,7 +125,7 @@ public class Metric {
      * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
      * Avoid entering confidential information.
      * <p>
-     * Example: `frontend-fleet`
+     * Example: {@code frontend-fleet}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
@@ -143,7 +143,7 @@ public class Metric {
      * Qualifiers provided in a metric definition. Available dimensions vary by metric namespace.
      * Each dimension takes the form of a key-value pair.
      * <p>
-     * Example: `\"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"`
+     * Example: {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")

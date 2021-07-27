@@ -192,7 +192,7 @@ public class CreateSaml2IdentityProviderDetails extends CreateIdentityProviderDe
 
     /**
      * Extra name value pairs associated with this identity provider.
-     * Example: `{\"clientId\": \"app_sf3kdjf3\"}`
+     * Example: {@code {"clientId": "app_sf3kdjf3"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformAttributes")

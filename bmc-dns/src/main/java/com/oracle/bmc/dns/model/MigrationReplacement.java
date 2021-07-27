@@ -101,7 +101,7 @@ public class MigrationReplacement {
     String rtype;
 
     /**
-     * The canonical name for a substitute type of the replacement record to be used if the specified `rtype` is not allowed at the domain. The specified `ttl` and `rdata` will still apply with the substitute type.
+     * The canonical name for a substitute type of the replacement record to be used if the specified {@code rtype} is not allowed at the domain. The specified {@code ttl} and {@code rdata} will still apply with the substitute type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("substituteRtype")
     String substituteRtype;

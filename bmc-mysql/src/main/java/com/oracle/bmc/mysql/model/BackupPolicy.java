@@ -111,7 +111,7 @@ public class BackupPolicy {
     /**
      * The start of a 30-minute window of time in which daily, automated backups occur.
      * <p>
-     * This should be in the format of the \"Time\" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+     * This should be in the format of the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
      * <p>
      * At some point in the window, the system may incur a brief service disruption as the backup is performed.
      * <p>
@@ -138,7 +138,7 @@ public class BackupPolicy {
      * <p>
      * Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
      * <p>
-     * Example: `{\"bar-key\": \"value\"}`
+     * Example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -149,7 +149,7 @@ public class BackupPolicy {
      * <p>
      * Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
      * <p>
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

@@ -27,14 +27,14 @@ public class CommitMultipartUploadRequest
 
     /**
      * The name of the bucket. Avoid entering confidential information.
-     * Example: `my-new-bucket1`
+     * Example: {@code my-new-bucket1}
      *
      */
     private String bucketName;
 
     /**
      * The name of the object. Avoid entering confidential information.
-     * Example: `test/object1.log`
+     * Example: {@code test/object1.log}
      *
      */
     private String objectName;

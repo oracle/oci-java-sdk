@@ -158,7 +158,7 @@ public class MetricData {
      * The reference provided in a metric definition to indicate the source service or
      * application that emitted the metric.
      * <p>
-     * Example: `oci_computeagent`
+     * Example: {@code oci_computeagent}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
@@ -169,7 +169,7 @@ public class MetricData {
      * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
      * Avoid entering confidential information.
      * <p>
-     * Example: `frontend-fleet`
+     * Example: {@code frontend-fleet}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
@@ -186,7 +186,7 @@ public class MetricData {
     /**
      * The name of the metric.
      * <p>
-     * Example: `CpuUtilization`
+     * Example: {@code CpuUtilization}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -196,7 +196,7 @@ public class MetricData {
      * Qualifiers provided in the definition of the returned metric.
      * Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
      * <p>
-     * Example: `\"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"`
+     * Example: {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
@@ -205,7 +205,7 @@ public class MetricData {
     /**
      * The references provided in a metric definition to indicate extra information about the metric.
      * <p>
-     * Example: `\"unit\": \"bytes\"`
+     * Example: {@code "unit": "bytes"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
@@ -216,9 +216,9 @@ public class MetricData {
      * frequency at which aggregated data points are returned. For example, use a query interval of
      * 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute
      * frequency. The resolution must be equal or less than the interval in the query. The default
-     * resolution is 1m (one minute). Supported values: `1m`-`60m` (also `1h`).
+     * resolution is 1m (one minute). Supported values: {@code 1m}-{@code 60m} (also {@code 1h}).
      * <p>
-     * Example: `5m`
+     * Example: {@code 5m}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resolution")

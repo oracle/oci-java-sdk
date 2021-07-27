@@ -461,7 +461,7 @@ public class MaintenanceRunSummary {
     MaintenanceType maintenanceType;
 
     /**
-     * The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+     * The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier {@code ru_patch_19.9.0.0_201030} is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchId")
     String patchId;
@@ -527,7 +527,7 @@ public class MaintenanceRunSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("peerMaintenanceRunId")
     String peerMaintenanceRunId;
     /**
-     * Cloud Exadata infrastructure node patching method, either \"ROLLING\" or \"NONROLLING\". Default value is ROLLING.
+     * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
      * <p>
      *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
      *
@@ -576,7 +576,7 @@ public class MaintenanceRunSummary {
         }
     };
     /**
-     * Cloud Exadata infrastructure node patching method, either \"ROLLING\" or \"NONROLLING\". Default value is ROLLING.
+     * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
      * <p>
      *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
      *

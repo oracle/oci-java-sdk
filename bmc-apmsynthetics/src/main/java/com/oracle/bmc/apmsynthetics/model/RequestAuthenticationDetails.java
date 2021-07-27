@@ -171,7 +171,7 @@ public class RequestAuthenticationDetails {
     String authUrl;
 
     /**
-     * List of authentication headers. Example: `[{\"headerName\": \"content-type\", \"headerValue\":\"json\"}]`
+     * List of authentication headers. Example: {@code [{"headerName": "content-type", "headerValue":"json"}]}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authHeaders")

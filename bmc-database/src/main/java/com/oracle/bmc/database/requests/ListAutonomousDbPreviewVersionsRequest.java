@@ -42,7 +42,7 @@ public class ListAutonomousDbPreviewVersionsRequest
     private String opcRequestId;
 
     /**
-     * The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for DBWORKLOAD is ascending.
+     * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for DBWORKLOAD is ascending.
      * <p>
      **Note:** If you do not include the availability domain filter, the resources are grouped by availability domain, then sorted.
      *
@@ -50,7 +50,7 @@ public class ListAutonomousDbPreviewVersionsRequest
     private SortBy sortBy;
 
     /**
-     * The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for DBWORKLOAD is ascending.
+     * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for DBWORKLOAD is ascending.
      * <p>
      **Note:** If you do not include the availability domain filter, the resources are grouped by availability domain, then sorted.
      *
@@ -87,12 +87,12 @@ public class ListAutonomousDbPreviewVersionsRequest
         }
     };
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      **/
     public enum SortOrder {
         Asc("ASC"),

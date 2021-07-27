@@ -81,7 +81,7 @@ public class Datapoint {
     /**
      * Timestamp for this metric value. Format defined by RFC3339.
      * <p>
-     * Example: `2019-02-01T01:02:29.600Z`
+     * Example: {@code 2019-02-01T01:02:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
@@ -90,7 +90,7 @@ public class Datapoint {
     /**
      * Numeric value of the metric.
      * <p>
-     * Example: `10.23`
+     * Example: {@code 10.23}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")

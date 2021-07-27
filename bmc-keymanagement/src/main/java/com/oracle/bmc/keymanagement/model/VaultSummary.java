@@ -179,7 +179,7 @@ public class VaultSummary {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -196,7 +196,7 @@ public class VaultSummary {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -210,7 +210,7 @@ public class VaultSummary {
     /**
      * A vault's current lifecycle state.
      * <p>
-     * Example: `ACTIVE`
+     * Example: {@code ACTIVE}
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -267,14 +267,14 @@ public class VaultSummary {
     /**
      * A vault's current lifecycle state.
      * <p>
-     * Example: `ACTIVE`
+     * Example: {@code ACTIVE}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
 
     /**
-     * The service endpoint to perform management operations against. Management operations include \"Create,\" \"Update,\" \"List,\" \"Get,\" and \"Delete\" operations.
+     * The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementEndpoint")
@@ -283,7 +283,7 @@ public class VaultSummary {
     /**
      * The date and time a vault was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * <p>
-     * Example: `2018-04-03T21:10:29.600Z`
+     * Example: {@code 2018-04-03T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

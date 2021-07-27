@@ -111,12 +111,12 @@ public class CreateDkimDetails {
      * If you do not provide the selector, we will generate one for you.
      * If you do provide the selector, we suggest adding a short region indicator
      * to differentiate from your signing of emails in other regions you may be subscribed to.
-     * Selectors limited to ASCII characters may use alphanumeric, dash (\"-\"), and dot (\".\") characters.
+     * Selectors limited to ASCII characters may use alphanumeric, dash ("-"), and dot (".") characters.
      * Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
      * <p>
      * Avoid entering confidential information.
      * <p>
-     * Example: `mydomain-phx-20210228`
+     * Example: {@code mydomain-phx-20210228}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -141,7 +141,7 @@ public class CreateDkimDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -151,7 +151,7 @@ public class CreateDkimDetails {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

@@ -7,7 +7,7 @@ package com.oracle.bmc.core.model;
 /**
  * For a flexible shape, the amount of networking bandwidth available for instances that use this shape.
  * <p>
- * If this field is null, then this shape has a fixed amount of bandwidth equivalent to `networkingBandwidthInGbps`.
+ * If this field is null, then this shape has a fixed amount of bandwidth equivalent to {@code networkingBandwidthInGbps}.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

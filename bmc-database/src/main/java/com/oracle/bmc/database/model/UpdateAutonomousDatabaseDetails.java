@@ -8,8 +8,8 @@ package com.oracle.bmc.database.model;
  * Details to update an Oracle Autonomous Database.
  * <p>
  **Notes**
- * - To specify OCPU core count, you must use either `ocpuCount` or `cpuCoreCount`. You cannot use both parameters at the same time.
- * - To specify a storage allocation, you must use  either `dataStorageSizeInGBs` or `dataStorageSizeInTBs`.
+ * - To specify OCPU core count, you must use either {@code ocpuCount} or {@code cpuCoreCount}. You cannot use both parameters at the same time.
+ * - To specify a storage allocation, you must use  either {@code dataStorageSizeInGBs} or {@code dataStorageSizeInTBs}.
  * - See the individual parameter discriptions for more information on the OCPU and storage value parameters.
  * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
@@ -214,6 +214,15 @@ public class UpdateAutonomousDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("peerDbId")
+        private String peerDbId;
+
+        public Builder peerDbId(String peerDbId) {
+            this.peerDbId = peerDbId;
+            this.__explicitlySet__.add("peerDbId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
@@ -303,6 +312,7 @@ public class UpdateAutonomousDatabaseDetails {
                             isRefreshableClone,
                             refreshableMode,
                             isDataGuardEnabled,
+                            peerDbId,
                             dbVersion,
                             openMode,
                             permissionLevel,
@@ -337,6 +347,7 @@ public class UpdateAutonomousDatabaseDetails {
                             .isRefreshableClone(o.getIsRefreshableClone())
                             .refreshableMode(o.getRefreshableMode())
                             .isDataGuardEnabled(o.getIsDataGuardEnabled())
+                            .peerDbId(o.getPeerDbId())
                             .dbVersion(o.getDbVersion())
                             .openMode(o.getOpenMode())
                             .permissionLevel(o.getPermissionLevel())
@@ -360,7 +371,7 @@ public class UpdateAutonomousDatabaseDetails {
     /**
      * The number of OCPU cores to be made available to the Autonomous Database.
      * <p>
-     **Note:** This parameter cannot be used with the `ocpuCount` parameter.
+     **Note:** This parameter cannot be used with the {@code ocpuCount} parameter.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
@@ -369,7 +380,7 @@ public class UpdateAutonomousDatabaseDetails {
     /**
      * The number of OCPU cores to be made available to the Autonomous Database. To provision less than 1 core, enter a fractional value in an increment of 0.1. To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available to the infrastructure shape. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. Likewise, you can provision 2 cores or 3 cores, but not 2.5 cores. The maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      * <p>
-     **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
+     **Note:** This parameter cannot be used with the {@code cpuCoreCount} parameter.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
@@ -378,7 +389,7 @@ public class UpdateAutonomousDatabaseDetails {
     /**
      * The size, in terabytes, of the data volume that will be created and attached to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      * <p>
-     **Note:** This parameter cannot be used with the `dataStorageSizeInGBs` parameter.
+     **Note:** This parameter cannot be used with the {@code dataStorageSizeInGBs} parameter.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
@@ -389,7 +400,7 @@ public class UpdateAutonomousDatabaseDetails {
      * <p>
      * The size, in gigabytes, of the data volume that will be created and attached to the database. The maximum storage value depends on the system shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      * <p>
-     **Note:** This parameter cannot be used with the `dataStorageSizeInTBs` parameter.
+     **Note:** This parameter cannot be used with the {@code dataStorageSizeInTBs} parameter.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
@@ -411,7 +422,7 @@ public class UpdateAutonomousDatabaseDetails {
     Boolean isFreeTier;
 
     /**
-     * The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (\") or the username \"admin\", regardless of casing. It must be different from the last four passwords and it must not be a password used within the last 24 hours.
+     * The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. It must be different from the last four passwords and it must not be a password used within the last 24 hours.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
     String adminPassword;
@@ -429,7 +440,7 @@ public class UpdateAutonomousDatabaseDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -500,7 +511,7 @@ public class UpdateAutonomousDatabaseDetails {
      * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
      * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
      * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the
-     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
      *
      **/
     public enum LicenseModel {
@@ -539,7 +550,7 @@ public class UpdateAutonomousDatabaseDetails {
      * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
      * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
      * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the
-     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
@@ -548,8 +559,8 @@ public class UpdateAutonomousDatabaseDetails {
     /**
      * Indicates if the database-level access control is enabled.
      * If disabled, database access is defined by the network security rules.
-     * If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional,
-     *  if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console.
+     * If enabled, database access is restricted to the IP addresses defined by the rules specified with the {@code whitelistedIps} property. While specifying {@code whitelistedIps} rules is optional,
+     *  if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the {@code UpdateAutonomousDatabase} API operation or edit option in console.
      * When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
      * <p>
      * This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
@@ -564,9 +575,9 @@ public class UpdateAutonomousDatabaseDetails {
      * <p>
      * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
      * Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs.
-     * Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.<unique_id>\",\"ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1\",\"ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16\"]`
+     * Example: {@code ["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]}
      * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations.
-     * Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"1.1.2.25\"]`
+     * Example: {@code ["1.1.1.1","1.1.1.0/24","1.1.2.25"]}
      * <p>
      * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
      *
@@ -576,8 +587,8 @@ public class UpdateAutonomousDatabaseDetails {
 
     /**
      * This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled.
-     * It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby.
-     * It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
+     * It's value would be {@code TRUE} if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby.
+     * It's value would be {@code FALSE} if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("arePrimaryWhitelistedIpsUsed")
@@ -589,9 +600,9 @@ public class UpdateAutonomousDatabaseDetails {
      * <p>
      * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
      * Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs.
-     * Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.<unique_id>\",\"ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1\",\"ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16\"]`
+     * Example: {@code ["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]}
      * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations.
-     * Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"1.1.2.25\"]`
+     * Example: {@code ["1.1.1.1","1.1.1.0/24","1.1.2.25"]}
      * <p>
      * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
      *
@@ -600,7 +611,7 @@ public class UpdateAutonomousDatabaseDetails {
     java.util.List<String> standbyWhitelistedIps;
 
     /**
-     * Indicates whether to enable or disable auto scaling for the Autonomous Database OCPU core count. Setting to `true` enables auto scaling. Setting to `false` disables auto scaling. The default value is true. Auto scaling is available for databases on [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI) only.
+     * Indicates whether to enable or disable auto scaling for the Autonomous Database OCPU core count. Setting to {@code true} enables auto scaling. Setting to {@code false} disables auto scaling. The default value is true. Auto scaling is available for databases on [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI) only.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
@@ -653,11 +664,17 @@ public class UpdateAutonomousDatabaseDetails {
     RefreshableMode refreshableMode;
 
     /**
-     * Indicates whether the Autonomous Database has Data Guard enabled.
+     * If set to {@code FALSE} and {@code peerDbId} is specified, the specified remote region peer database is terminated. If set to {@code FALSE} and {@code peerDbId} is not specified, the peer database in the region of the source primary database terminated.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDataGuardEnabled")
     Boolean isDataGuardEnabled;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Data Guard standby database located in a different (remote) region from the source primary Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("peerDbId")
+    String peerDbId;
 
     /**
      * A valid Oracle Database version for Autonomous Database.
@@ -665,7 +682,7 @@ public class UpdateAutonomousDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     String dbVersion;
     /**
-     * The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+     * The {@code DATABASE OPEN} mode. You can open the database in {@code READ_ONLY} or {@code READ_WRITE} mode.
      **/
     public enum OpenMode {
         ReadOnly("READ_ONLY"),
@@ -700,7 +717,7 @@ public class UpdateAutonomousDatabaseDetails {
         }
     };
     /**
-     * The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+     * The {@code DATABASE OPEN} mode. You can open the database in {@code READ_ONLY} or {@code READ_WRITE} mode.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("openMode")
     OpenMode openMode;

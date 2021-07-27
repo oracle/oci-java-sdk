@@ -27,14 +27,14 @@ public class UploadPartRequest extends com.oracle.bmc.requests.BmcRequest<java.i
 
     /**
      * The name of the bucket. Avoid entering confidential information.
-     * Example: `my-new-bucket1`
+     * Example: {@code my-new-bucket1}
      *
      */
     private String bucketName;
 
     /**
      * The name of the object. Avoid entering confidential information.
-     * Example: `test/object1.log`
+     * Example: {@code test/object1.log}
      *
      */
     private String objectName;
@@ -90,13 +90,13 @@ public class UploadPartRequest extends com.oracle.bmc.requests.BmcRequest<java.i
      * MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error
      * is returned with the message:
      * <p>
-     * \"The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)\"
+     * "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
      *
      */
     private String contentMD5;
 
     /**
-     * The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
+     * The optional header that specifies "AES256" as the encryption algorithm. For more information, see
      * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
      *
      */

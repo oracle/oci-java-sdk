@@ -405,7 +405,12 @@ public class RoverEntitlementAsyncClient implements RoverEntitlementAsync {
                                 ChangeRoverEntitlementCompartmentRequest,
                                 ChangeRoverEntitlementCompartmentResponse>,
                         java.util.concurrent.Future<ChangeRoverEntitlementCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeRoverEntitlementCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -448,7 +453,12 @@ public class RoverEntitlementAsyncClient implements RoverEntitlementAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateRoverEntitlementRequest, CreateRoverEntitlementResponse>,
                         java.util.concurrent.Future<CreateRoverEntitlementResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateRoverEntitlementDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -614,7 +624,12 @@ public class RoverEntitlementAsyncClient implements RoverEntitlementAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateRoverEntitlementRequest, UpdateRoverEntitlementResponse>,
                         java.util.concurrent.Future<UpdateRoverEntitlementResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateRoverEntitlementDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

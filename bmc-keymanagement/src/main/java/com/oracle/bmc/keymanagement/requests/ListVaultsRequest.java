@@ -25,14 +25,14 @@ public class ListVaultsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     private String compartmentId;
 
     /**
-     * The maximum number of items to return in a paginated \"List\" call.
+     * The maximum number of items to return in a paginated "List" call.
      *
      */
     private Integer limit;
 
     /**
-     * The value of the `opc-next-page` response header
-     * from the previous \"List\" call.
+     * The value of the {@code opc-next-page} response header
+     * from the previous "List" call.
      *
      */
     private String page;
@@ -47,7 +47,7 @@ public class ListVaultsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
     /**
      * The field to sort by. You can specify only one sort order. The default
-     * order for `TIMECREATED` is descending. The default order for `DISPLAYNAME`
+     * order for {@code TIMECREATED} is descending. The default order for {@code DISPLAYNAME}
      * is ascending.
      *
      */
@@ -55,7 +55,7 @@ public class ListVaultsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
     /**
      * The field to sort by. You can specify only one sort order. The default
-     * order for `TIMECREATED` is descending. The default order for `DISPLAYNAME`
+     * order for {@code TIMECREATED} is descending. The default order for {@code DISPLAYNAME}
      * is ascending.
      *
      **/
@@ -92,13 +92,13 @@ public class ListVaultsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      *
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      *
      **/
     public enum SortOrder {

@@ -22,7 +22,7 @@ public class DetectLanguageTextClassificationRequest
 
     /**
      * The details to make text classification detect call.
-     * Example: `{\"text\": \"If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying\"}`
+     * Example: {@code {"text": "If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying"}}
      *
      */
     private DetectLanguageTextClassificationDetails detectLanguageTextClassificationDetails;

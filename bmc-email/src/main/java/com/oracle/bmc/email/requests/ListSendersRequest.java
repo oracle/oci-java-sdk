@@ -45,7 +45,7 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String emailAddress;
 
     /**
-     * For list pagination. The value of the opc-next-page response header from the previous \"List\" call.
+     * For list pagination. The value of the opc-next-page response header from the previous "List" call.
      * For important details about how pagination works,
      * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
@@ -54,25 +54,25 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated \"List\" call. `1` is the minimum, `1000` is the maximum. For important details about
+     * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important details about
      * how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private Integer limit;
 
     /**
-     * The field to sort by. The `TIMECREATED` value returns the list in in
-     * descending order by default. The `EMAILADDRESS` value returns the list in
-     * ascending order by default. Use the `SortOrderQueryParam` to change the
+     * The field to sort by. The {@code TIMECREATED} value returns the list in in
+     * descending order by default. The {@code EMAILADDRESS} value returns the list in
+     * ascending order by default. Use the {@code SortOrderQueryParam} to change the
      * direction of the returned list of items.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. The `TIMECREATED` value returns the list in in
-     * descending order by default. The `EMAILADDRESS` value returns the list in
-     * ascending order by default. Use the `SortOrderQueryParam` to change the
+     * The field to sort by. The {@code TIMECREATED} value returns the list in in
+     * descending order by default. The {@code EMAILADDRESS} value returns the list in
+     * ascending order by default. Use the {@code SortOrderQueryParam} to change the
      * direction of the returned list of items.
      *
      **/

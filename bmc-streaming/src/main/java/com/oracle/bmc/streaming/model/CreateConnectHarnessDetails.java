@@ -96,7 +96,7 @@ public class CreateConnectHarnessDetails {
     /**
      * The name of the connect harness. Avoid entering confidential information.
      * <p>
-     * Example: `JDBCConnector`
+     * Example: {@code JDBCConnector}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -112,7 +112,7 @@ public class CreateConnectHarnessDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -121,7 +121,7 @@ public class CreateConnectHarnessDetails {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

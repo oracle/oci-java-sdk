@@ -81,18 +81,18 @@ public class ListWorkRequestErrorsRequest
         }
     };
     /**
-     * The field to sort by. You can provide one sort order (`sortOrder`).
-     * Default order for `timeCreated` is descending. Default order for
-     * `displayName` is ascending. The `displayName` sort order is case
+     * The field to sort by. You can provide one sort order ({@code sortOrder}).
+     * Default order for {@code timeCreated} is descending. Default order for
+     * {@code displayName} is ascending. The {@code displayName} sort order is case
      * sensitive.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can provide one sort order (`sortOrder`).
-     * Default order for `timeCreated` is descending. Default order for
-     * `displayName` is ascending. The `displayName` sort order is case
+     * The field to sort by. You can provide one sort order ({@code sortOrder}).
+     * Default order for {@code timeCreated} is descending. Default order for
+     * {@code displayName} is ascending. The {@code displayName} sort order is case
      * sensitive.
      *
      **/

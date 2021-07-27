@@ -576,7 +576,7 @@ public class Sddc {
     /**
      * The availability domain the ESXi hosts are running in.
      * <p>
-     * Example: `Uocm:PHX-AD-1`
+     * Example: {@code Uocm:PHX-AD-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeAvailabilityDomain")
@@ -593,10 +593,10 @@ public class Sddc {
 
     /**
      * A prefix used in the name of each ESXi host and Compute instance in the SDDC.
-     * If this isn't set, the SDDC's `displayName` is used as the prefix.
+     * If this isn't set, the SDDC's {@code displayName} is used as the prefix.
      * <p>
-     * For example, if the value is `MySDDC`, the ESXi hosts are named `MySDDC-1`,
-     * `MySDDC-2`, and so on.
+     * For example, if the value is {@code MySDDC}, the ESXi hosts are named {@code MySDDC-1},
+     * {@code MySDDC-2}, and so on.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceDisplayNamePrefix")
@@ -616,7 +616,7 @@ public class Sddc {
      * Therefore, if you upgrade the existing ESXi hosts in the SDDC to use a newer
      * version of bundled VMware software supported by the Oracle Cloud VMware Solution, you
      * should use {@link #updateSddc(UpdateSddcRequest) updateSddc} to update the SDDC's
-     * `vmwareSoftwareVersion` with that new version.
+     * {@code vmwareSoftwareVersion} with that new version.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vmwareSoftwareVersion")
@@ -649,7 +649,7 @@ public class Sddc {
     /**
      * The FQDN for vCenter.
      * <p>
-     * Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
+     * Example: {@code vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcenterFqdn")
@@ -658,15 +658,15 @@ public class Sddc {
     /**
      * The FQDN for NSX Manager.
      * <p>
-     * Example: `nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
+     * Example: {@code nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsxManagerFqdn")
     String nsxManagerFqdn;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is
-     * the virtual IP (VIP) for vCenter. For information about `PrivateIp` objects, see the
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the {@code PrivateIp} object that is
+     * the virtual IP (VIP) for vCenter. For information about {@code PrivateIp} objects, see the
      * Core Services API.
      *
      **/
@@ -674,8 +674,8 @@ public class Sddc {
     String vcenterPrivateIpId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is
-     * the virtual IP (VIP) for NSX Manager. For information about `PrivateIp` objects, see the
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the {@code PrivateIp} object that is
+     * the virtual IP (VIP) for NSX Manager. For information about {@code PrivateIp} objects, see the
      * Core Services API.
      *
      **/
@@ -715,9 +715,9 @@ public class Sddc {
     String nsxManagerUsername;
 
     /**
-     * One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for
+     * One or more public SSH keys to be included in the {@code ~/.ssh/authorized_keys} file for
      * the default user on each ESXi host. Use a newline character to separate multiple keys.
-     * The SSH keys must be in the format required for the `authorized_keys` file.
+     * The SSH keys must be in the format required for the {@code authorized_keys} file.
      * <p>
      * This attribute is not guaranteed to reflect the public SSH keys
      * currently installed on the ESXi hosts in the SDDC. The purpose
@@ -727,7 +727,7 @@ public class Sddc {
      * <p>
      * Therefore, if you upgrade the existing ESXi hosts in the SDDC to use different
      * SSH keys, you should use {@link #updateSddc(UpdateSddcRequest) updateSddc} to update
-     * the SDDC's `sshAuthorizedKeys` with the new public keys.
+     * the SDDC's {@code sshAuthorizedKeys} with the new public keys.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshAuthorizedKeys")
@@ -750,10 +750,10 @@ public class Sddc {
     String nsxOverlaySegmentName;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the {@code PrivateIp} object that is
      * the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for
      * route table rules when setting up connectivity between the SDDC and other networks.
-     * For information about `PrivateIp` objects, see the Core Services API.
+     * For information about {@code PrivateIp} objects, see the Core Services API.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsxEdgeUplinkIpId")
@@ -780,7 +780,7 @@ public class Sddc {
      * Therefore, if you change the existing ESXi hosts in the SDDC to use a different VLAN
      * for the vSphere component of the VMware environment, you
      * should use {@link #updateSddc(UpdateSddcRequest) updateSddc} to update the SDDC's
-     * `vsphereVlanId` with that new VLAN's OCID.
+     * {@code vsphereVlanId} with that new VLAN's OCID.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vsphereVlanId")
@@ -799,7 +799,7 @@ public class Sddc {
      * Therefore, if you change the existing ESXi hosts in the SDDC to use a different VLAN
      * for the vMotion component of the VMware environment, you
      * should use {@link #updateSddc(UpdateSddcRequest) updateSddc} to update the SDDC's
-     * `vmotionVlanId` with that new VLAN's OCID.
+     * {@code vmotionVlanId} with that new VLAN's OCID.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vmotionVlanId")
@@ -818,7 +818,7 @@ public class Sddc {
      * Therefore, if you change the existing ESXi hosts in the SDDC to use a different VLAN
      * for the vSAN component of the VMware environment, you
      * should use {@link #updateSddc(UpdateSddcRequest) updateSddc} to update the SDDC's
-     * `vsanVlanId` with that new VLAN's OCID.
+     * {@code vsanVlanId} with that new VLAN's OCID.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vsanVlanId")
@@ -837,7 +837,7 @@ public class Sddc {
      * Therefore, if you change the existing ESXi hosts in the SDDC to use a different VLAN
      * for the NSX VTEP component of the VMware environment, you
      * should use {@link #updateSddc(UpdateSddcRequest) updateSddc} to update the SDDC's
-     * `nsxVTepVlanId` with that new VLAN's OCID.
+     * {@code nsxVTepVlanId} with that new VLAN's OCID.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsxVTepVlanId")
@@ -856,7 +856,7 @@ public class Sddc {
      * Therefore, if you change the existing ESXi hosts in the SDDC to use a different VLAN
      * for the NSX Edge VTEP component of the VMware environment, you
      * should use {@link #updateSddc(UpdateSddcRequest) updateSddc} to update the SDDC's
-     * `nsxEdgeVTepVlanId` with that new VLAN's OCID.
+     * {@code nsxEdgeVTepVlanId} with that new VLAN's OCID.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsxEdgeVTepVlanId")
@@ -875,7 +875,7 @@ public class Sddc {
      * Therefore, if you change the existing ESXi hosts in the SDDC to use a different VLAN
      * for the NSX Edge Uplink 1 component of the VMware environment, you
      * should use {@link #updateSddc(UpdateSddcRequest) updateSddc} to update the SDDC's
-     * `nsxEdgeUplink1VlanId` with that new VLAN's OCID.
+     * {@code nsxEdgeUplink1VlanId} with that new VLAN's OCID.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsxEdgeUplink1VlanId")
@@ -894,7 +894,7 @@ public class Sddc {
      * Therefore, if you change the existing ESXi hosts in the SDDC to use a different VLAN
      * for the NSX Edge Uplink 2 component of the VMware environment, you
      * should use {@link #updateSddc(UpdateSddcRequest) updateSddc} to update the SDDC's
-     * `nsxEdgeUplink2VlanId` with that new VLAN's OCID.
+     * {@code nsxEdgeUplink2VlanId} with that new VLAN's OCID.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsxEdgeUplink2VlanId")
@@ -917,8 +917,8 @@ public class Sddc {
     String provisioningVlanId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is
-     * the virtual IP (VIP) for HCX Manager. For information about `PrivateIp` objects, see the
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the {@code PrivateIp} object that is
+     * the virtual IP (VIP) for HCX Manager. For information about {@code PrivateIp} objects, see the
      * Core Services API.
      *
      **/
@@ -928,7 +928,7 @@ public class Sddc {
     /**
      * The FQDN for HCX Manager.
      * <p>
-     * Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
+     * Example: {@code hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hcxFqdn")
@@ -955,7 +955,7 @@ public class Sddc {
      * Therefore, if you change the existing ESXi hosts in the SDDC to use a different VLAN
      * for the HCX component of the VMware environment, you
      * should use {@link #updateSddc(UpdateSddcRequest) updateSddc} to update the SDDC's
-     * `hcxVlanId` with that new VLAN's OCID.
+     * {@code hcxVlanId} with that new VLAN's OCID.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hcxVlanId")
@@ -997,7 +997,7 @@ public class Sddc {
     /**
      * The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeHcxBillingCycleEnd")
@@ -1007,7 +1007,7 @@ public class Sddc {
      * The date and time the SDDC's HCX on-premise license status was updated, in the format defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeHcxLicenseStatusUpdated")
@@ -1017,7 +1017,7 @@ public class Sddc {
      * The date and time the SDDC was created, in the format defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -1041,7 +1041,7 @@ public class Sddc {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -1051,7 +1051,7 @@ public class Sddc {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

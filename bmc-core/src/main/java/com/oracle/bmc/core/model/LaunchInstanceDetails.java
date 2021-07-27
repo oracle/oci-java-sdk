@@ -6,7 +6,7 @@ package com.oracle.bmc.core.model;
 
 /**
  * Instance launch details.
- * Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+ * Use the {@code sourceDetails} parameter to specify whether a boot volume or an image should be used to launch a new instance.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -335,7 +335,7 @@ public class LaunchInstanceDetails {
     /**
      * The availability domain of the instance.
      * <p>
-     * Example: `Uocm:PHX-AD-1`
+     * Example: {@code Uocm:PHX-AD-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
@@ -370,7 +370,7 @@ public class LaunchInstanceDetails {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -380,7 +380,7 @@ public class LaunchInstanceDetails {
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
      * <p>
-     * Example: `My bare metal instance`
+     * Example: {@code My bare metal instance}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -388,12 +388,12 @@ public class LaunchInstanceDetails {
 
     /**
      * Additional metadata key/value pairs that you provide. They serve the same purpose and
-     * functionality as fields in the `metadata` object.
+     * functionality as fields in the {@code metadata} object.
      * <p>
-     * They are distinguished from `metadata` fields in that these can be nested JSON objects
-     * (whereas `metadata` fields are string/string maps only).
+     * They are distinguished from {@code metadata} fields in that these can be nested JSON objects
+     * (whereas {@code metadata} fields are string/string maps only).
      * <p>
-     * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of
+     * The combined size of the {@code metadata} and {@code extendedMetadata} objects can be a maximum of
      * 32,000 bytes.
      *
      **/
@@ -414,7 +414,7 @@ public class LaunchInstanceDetails {
      * {@link #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation in the
      * Identity and Access Management Service API.
      * <p>
-     * Example: `FAULT-DOMAIN-1`
+     * Example: {@code FAULT-DOMAIN-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
@@ -424,14 +424,14 @@ public class LaunchInstanceDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
 
     /**
-     * Deprecated. Instead use `hostnameLabel` in
+     * Deprecated. Instead use {@code hostnameLabel} in
      * {@link CreateVnicDetails}.
      * If you provide both, the values must match.
      *
@@ -440,7 +440,7 @@ public class LaunchInstanceDetails {
     String hostnameLabel;
 
     /**
-     * Deprecated. Use `sourceDetails` with {@link #instanceSourceViaImageDetails(InstanceSourceViaImageDetailsRequest) instanceSourceViaImageDetails}
+     * Deprecated. Use {@code sourceDetails} with {@link #instanceSourceViaImageDetails(InstanceSourceViaImageDetailsRequest) instanceSourceViaImageDetails}
      * source type instead. If you specify values for both, the values must match.
      *
      **/
@@ -507,37 +507,37 @@ public class LaunchInstanceDetails {
      * You can use the following metadata key names to provide information to
      *  Cloud-Init:
      * <p>
-     **\"ssh_authorized_keys\"** - Provide one or more public SSH keys to be
-     *  included in the `~/.ssh/authorized_keys` file for the default user on the
+     **"ssh_authorized_keys"** - Provide one or more public SSH keys to be
+     *  included in the {@code ~/.ssh/authorized_keys} file for the default user on the
      *  instance. Use a newline character to separate multiple keys. The SSH
-     *  keys must be in the format necessary for the `authorized_keys` file, as shown
+     *  keys must be in the format necessary for the {@code authorized_keys} file, as shown
      *  in the example below.
      * <p>
-     **\"user_data\"** - Provide your own base64-encoded data to be used by
+     **"user_data"** - Provide your own base64-encoded data to be used by
      *  Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For
      *  information about how to take advantage of user data, see the
      *  [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
      * <p>
      **Metadata Example**
      * <p>
-     * \"metadata\" : {
-     *          \"quake_bot_level\" : \"Severe\",
-     *          \"ssh_authorized_keys\" : \"ssh-rsa <your_public_SSH_key>== rsa-key-20160227\",
-     *          \"user_data\" : \"<your_public_SSH_key>==\"
+     * "metadata" : {
+     *          "quake_bot_level" : "Severe",
+     *          "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227",
+     *          "user_data" : "<your_public_SSH_key>=="
      *       }
      *  **Getting Metadata on the Instance**
      * <p>
      * To get information about your instance, connect to the instance using SSH and issue any of the
      *  following GET requests:
      * <p>
-     * curl -H \"Authorization: Bearer Oracle\" http://169.254.169.254/opc/v2/instance/
-     *      curl -H \"Authorization: Bearer Oracle\" http://169.254.169.254/opc/v2/instance/metadata/
-     *      curl -H \"Authorization: Bearer Oracle\" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+     * curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/
+     *      curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/
+     *      curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
      * <p>
      * You'll get back a response that includes all the instance information; only the metadata information; or
      *  the metadata information for the specified key name, respectively.
      * <p>
-     * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+     * The combined size of the {@code metadata} and {@code extendedMetadata} objects can be a maximum of 32,000 bytes.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
@@ -563,7 +563,7 @@ public class LaunchInstanceDetails {
     InstanceSourceDetails sourceDetails;
 
     /**
-     * Deprecated. Instead use `subnetId` in
+     * Deprecated. Instead use {@code subnetId} in
      * {@link CreateVnicDetails}.
      * At least one of them is required; if you provide both, the values must match.
      *

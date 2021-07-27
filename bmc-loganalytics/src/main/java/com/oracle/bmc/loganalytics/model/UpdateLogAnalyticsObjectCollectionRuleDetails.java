@@ -200,7 +200,7 @@ public class UpdateLogAnalyticsObjectCollectionRuleDetails {
     /**
      * Use this to override some property values which are defined at bucket level to the scope of object.
      * Supported propeties for override are: logSourceName, charEncoding, entityId.
-     * Supported matchType for override are \"contains\".
+     * Supported matchType for override are "contains".
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("overrides")
@@ -208,7 +208,7 @@ public class UpdateLogAnalyticsObjectCollectionRuleDetails {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -216,7 +216,7 @@ public class UpdateLogAnalyticsObjectCollectionRuleDetails {
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")

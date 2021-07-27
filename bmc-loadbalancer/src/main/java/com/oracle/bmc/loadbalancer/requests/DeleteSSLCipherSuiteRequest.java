@@ -29,7 +29,7 @@ public class DeleteSSLCipherSuiteRequest
     /**
      * The name of the SSL cipher suite to delete.
      * <p>
-     * example: `example_cipher_suite`
+     * example: {@code example_cipher_suite}
      *
      */
     private String name;

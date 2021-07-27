@@ -33,7 +33,7 @@ public class UpdateBackendSetRequest
     /**
      * The name of the backend set to update.
      * <p>
-     * Example: `example_backend_set`
+     * Example: {@code example_backend_set}
      *
      */
     private String backendSetName;
@@ -57,7 +57,7 @@ public class UpdateBackendSetRequest
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the `if-match` parameter to the value of the
+     * for a resource, set the {@code if-match} parameter to the value of the
      * etag from a previous GET or POST response for that resource.
      * The resource will be updated or deleted only if the etag you
      * provide matches the current etag value of the resource.

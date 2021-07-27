@@ -209,7 +209,7 @@ public class KeyVersion {
     /**
      * The key version's current lifecycle state.
      * <p>
-     * Example: `ENABLED`
+     * Example: {@code ENABLED}
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -266,14 +266,14 @@ public class KeyVersion {
     /**
      * The key version's current lifecycle state.
      * <p>
-     * Example: `ENABLED`
+     * Example: {@code ENABLED}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
     /**
-     * The source of the key material. When this value is `INTERNAL`, Key Management
-     * created the key material. When this value is `EXTERNAL`, the key material
+     * The source of the key material. When this value is {@code INTERNAL}, Key Management
+     * created the key material. When this value is {@code EXTERNAL}, the key material
      * was imported from an external source.
      *
      **/
@@ -321,8 +321,8 @@ public class KeyVersion {
         }
     };
     /**
-     * The source of the key material. When this value is `INTERNAL`, Key Management
-     * created the key material. When this value is `EXTERNAL`, the key material
+     * The source of the key material. When this value is {@code INTERNAL}, Key Management
+     * created the key material. When this value is {@code EXTERNAL}, the key material
      * was imported from an external source.
      *
      **/
@@ -332,7 +332,7 @@ public class KeyVersion {
     /**
      * The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * <p>
-     * Example: \"2018-04-03T21:10:29.600Z\"
+     * Example: "2018-04-03T21:10:29.600Z"
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -340,7 +340,7 @@ public class KeyVersion {
 
     /**
      * An optional property indicating when to delete the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     * Example: `2019-04-03T21:10:29.600Z`
+     * Example: {@code 2019-04-03T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")

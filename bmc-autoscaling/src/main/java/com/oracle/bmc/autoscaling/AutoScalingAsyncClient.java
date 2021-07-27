@@ -407,7 +407,12 @@ public class AutoScalingAsyncClient implements AutoScalingAsync {
                                 ChangeAutoScalingConfigurationCompartmentResponse>,
                         java.util.concurrent.Future<
                                 ChangeAutoScalingConfigurationCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -454,7 +459,12 @@ public class AutoScalingAsyncClient implements AutoScalingAsync {
                                 CreateAutoScalingConfigurationRequest,
                                 CreateAutoScalingConfigurationResponse>,
                         java.util.concurrent.Future<CreateAutoScalingConfigurationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateAutoScalingConfigurationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -496,7 +506,12 @@ public class AutoScalingAsyncClient implements AutoScalingAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateAutoScalingPolicyRequest, CreateAutoScalingPolicyResponse>,
                         java.util.concurrent.Future<CreateAutoScalingPolicyResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateAutoScalingPolicyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -798,7 +813,12 @@ public class AutoScalingAsyncClient implements AutoScalingAsync {
                                 UpdateAutoScalingConfigurationRequest,
                                 UpdateAutoScalingConfigurationResponse>,
                         java.util.concurrent.Future<UpdateAutoScalingConfigurationResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateAutoScalingConfigurationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -840,7 +860,12 @@ public class AutoScalingAsyncClient implements AutoScalingAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateAutoScalingPolicyRequest, UpdateAutoScalingPolicyResponse>,
                         java.util.concurrent.Future<UpdateAutoScalingPolicyResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateAutoScalingPolicyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

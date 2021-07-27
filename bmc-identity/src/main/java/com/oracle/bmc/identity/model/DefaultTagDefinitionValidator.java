@@ -6,8 +6,8 @@ package com.oracle.bmc.identity.model;
 
 /**
  * Use this validator to clear any existing validator on the tag key definition with the UpdateTag
- * operation. Using this `validatorType` is the same as not setting any value on the validator field.
- * The resultant value for `validatorType` returned in the response body is `null`.
+ * operation. Using this {@code validatorType} is the same as not setting any value on the validator field.
+ * The resultant value for {@code validatorType} returned in the response body is {@code null}.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

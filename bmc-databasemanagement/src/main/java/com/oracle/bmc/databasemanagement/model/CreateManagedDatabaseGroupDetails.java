@@ -84,7 +84,7 @@ public class CreateManagedDatabaseGroupDetails {
 
     /**
      * The name of the Managed Database Group. Valid characters are uppercase or
-     * lowercase letters, numbers, and \"_\". The name of the Managed Database Group
+     * lowercase letters, numbers, and "_". The name of the Managed Database Group
      * cannot be modified. It must be unique in the compartment and must begin with
      * an alphabetic character.
      *

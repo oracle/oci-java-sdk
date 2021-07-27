@@ -113,7 +113,7 @@ public class BackendDetails {
     /**
      * The IP address of the backend server.
      * <p>
-     * Example: `10.0.0.3`
+     * Example: {@code 10.0.0.3}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
@@ -122,7 +122,7 @@ public class BackendDetails {
     /**
      * The communication port for the backend server.
      * <p>
-     * Example: `8080`
+     * Example: {@code 8080}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
@@ -135,29 +135,29 @@ public class BackendDetails {
      * For more information on load balancing policies, see
      * [How Load Balancing Policies Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
      * <p>
-     * Example: `3`
+     * Example: {@code 3}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("weight")
     Integer weight;
 
     /**
-     * Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress
-     * traffic to this backend server unless all other backend servers not marked as \"backup\" fail the health check policy.
+     * Whether the load balancer should treat this server as a backup unit. If {@code true}, the load balancer forwards no ingress
+     * traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
      * <p>
-     **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+     **Note:** You cannot add a backend server marked as {@code backup} to a backend set that uses the IP Hash policy.
      * <p>
-     * Example: `false`
+     * Example: {@code false}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backup")
     Boolean backup;
 
     /**
-     * Whether the load balancer should drain this server. Servers marked \"drain\" receive no new
+     * Whether the load balancer should drain this server. Servers marked "drain" receive no new
      * incoming traffic.
      * <p>
-     * Example: `false`
+     * Example: {@code false}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("drain")
@@ -167,7 +167,7 @@ public class BackendDetails {
      * Whether the load balancer should treat this server as offline. Offline servers receive no incoming
      * traffic.
      * <p>
-     * Example: `false`
+     * Example: {@code false}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("offline")

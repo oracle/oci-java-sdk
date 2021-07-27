@@ -112,7 +112,7 @@ public class UpdateImageDetails {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -122,7 +122,7 @@ public class UpdateImageDetails {
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
      * <p>
-     * Example: `My custom Oracle Linux image`
+     * Example: {@code My custom Oracle Linux image}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -132,7 +132,7 @@ public class UpdateImageDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -141,7 +141,7 @@ public class UpdateImageDetails {
     /**
      * Operating system
      * <p>
-     * Example: `Oracle Linux`
+     * Example: {@code Oracle Linux}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
@@ -150,7 +150,7 @@ public class UpdateImageDetails {
     /**
      * Operating system version
      * <p>
-     * Example: `7.4`
+     * Example: {@code 7.4}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystemVersion")

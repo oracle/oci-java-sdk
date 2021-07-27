@@ -102,7 +102,7 @@ public class RegionSubscription {
      * The region's key. See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
      * for the full list of supported 3-letter region codes.
      * <p>
-     * Example: `PHX`
+     * Example: {@code PHX}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regionKey")
@@ -112,7 +112,7 @@ public class RegionSubscription {
      * The region's name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
      * for the full list of supported region names.
      * <p>
-     * Example: `us-phoenix-1`
+     * Example: {@code us-phoenix-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regionName")

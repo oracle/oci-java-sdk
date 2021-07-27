@@ -405,7 +405,12 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                                 ChangeContainerRepositoryCompartmentRequest,
                                 ChangeContainerRepositoryCompartmentResponse>,
                         java.util.concurrent.Future<ChangeContainerRepositoryCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeContainerRepositoryCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -451,7 +456,12 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                                 ChangeRepositoryCompartmentRequest,
                                 ChangeRepositoryCompartmentResponse>,
                         java.util.concurrent.Future<ChangeRepositoryCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeRepositoryCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -496,7 +506,12 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                                 CreateContainerImageSignatureRequest,
                                 CreateContainerImageSignatureResponse>,
                         java.util.concurrent.Future<CreateContainerImageSignatureResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateContainerImageSignatureDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -539,7 +554,12 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                                 CreateContainerRepositoryRequest,
                                 CreateContainerRepositoryResponse>,
                         java.util.concurrent.Future<CreateContainerRepositoryResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateContainerRepositoryDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -579,7 +599,12 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateRepositoryRequest, CreateRepositoryResponse>,
                         java.util.concurrent.Future<CreateRepositoryResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateRepositoryDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1363,7 +1388,12 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 RemoveContainerVersionRequest, RemoveContainerVersionResponse>,
                         java.util.concurrent.Future<RemoveContainerVersionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveContainerVersionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1405,7 +1435,12 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 RestoreContainerImageRequest, RestoreContainerImageResponse>,
                         java.util.concurrent.Future<RestoreContainerImageResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRestoreContainerImageDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1449,7 +1484,12 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                                 UpdateContainerConfigurationRequest,
                                 UpdateContainerConfigurationResponse>,
                         java.util.concurrent.Future<UpdateContainerConfigurationResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateContainerConfigurationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1491,7 +1531,12 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                                 UpdateContainerRepositoryRequest,
                                 UpdateContainerRepositoryResponse>,
                         java.util.concurrent.Future<UpdateContainerRepositoryResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateContainerRepositoryDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1532,7 +1577,12 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateGenericArtifactRequest, UpdateGenericArtifactResponse>,
                         java.util.concurrent.Future<UpdateGenericArtifactResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateGenericArtifactDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1576,7 +1626,12 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                                 UpdateGenericArtifactByPathRequest,
                                 UpdateGenericArtifactByPathResponse>,
                         java.util.concurrent.Future<UpdateGenericArtifactByPathResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateGenericArtifactByPathDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1615,7 +1670,12 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateRepositoryRequest, UpdateRepositoryResponse>,
                         java.util.concurrent.Future<UpdateRepositoryResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateRepositoryDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

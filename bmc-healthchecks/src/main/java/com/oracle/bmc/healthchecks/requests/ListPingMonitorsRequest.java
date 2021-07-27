@@ -32,14 +32,14 @@ public class ListPingMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<
     private String opcRequestId;
 
     /**
-     * The maximum number of items to return in a paginated \"List\" call.
+     * The maximum number of items to return in a paginated "List" call.
      *
      */
     private Integer limit;
 
     /**
-     * The value of the `opc-next-page` response header
-     * from the previous \"List\" call.
+     * The value of the {@code opc-next-page} response header
+     * from the previous "List" call.
      *
      */
     private String page;
@@ -126,12 +126,12 @@ public class ListPingMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
     /**
-     * Filters results that exactly match the `displayName` field.
+     * Filters results that exactly match the {@code displayName} field.
      */
     private String displayName;
 
     /**
-     * Filters results that match the `homeRegion`.
+     * Filters results that match the {@code homeRegion}.
      */
     private String homeRegion;
 

@@ -82,7 +82,7 @@ public class IpAddress {
     /**
      * An IP address.
      * <p>
-     * Example: `192.168.0.3`
+     * Example: {@code 192.168.0.3}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
@@ -91,9 +91,9 @@ public class IpAddress {
     /**
      * Whether the IP address is public or private.
      * <p>
-     * If \"true\", the IP address is public and accessible from the internet.
+     * If "true", the IP address is public and accessible from the internet.
      * <p>
-     * If \"false\", the IP address is private and accessible only from within the associated VCN.
+     * If "false", the IP address is private and accessible only from within the associated VCN.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPublic")

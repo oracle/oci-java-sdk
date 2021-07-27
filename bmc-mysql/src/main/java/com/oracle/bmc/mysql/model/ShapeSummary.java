@@ -101,7 +101,7 @@ public class ShapeSummary {
     String name;
 
     /**
-     * The number of CPU Cores the Instance provides. These are \"OCPU\"s.
+     * The number of CPU Cores the Instance provides. These are "OCPU"s.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     Integer cpuCoreCount;

@@ -55,18 +55,18 @@ public class ListNotebookSessionsRequest
 
     /**
      * For list pagination. The maximum number of results per page,
-     * or items to return in a paginated \"List\" call.
+     * or items to return in a paginated "List" call.
      * 1 is the minimum, 1000 is the maximum.
      * See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      * <p>
-     * Example: `500`
+     * Example: {@code 500}
      *
      */
     private Integer limit;
 
     /**
-     * For list pagination. The value of the `opc-next-page` response
-     * header from the previous \"List\" call.
+     * For list pagination. The value of the {@code opc-next-page} response
+     * header from the previous "List" call.
      * <p>
      * See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      *
@@ -74,13 +74,13 @@ public class ListNotebookSessionsRequest
     private String page;
 
     /**
-     * Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
+     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
      *
      */
     private SortOrder sortOrder;
 
     /**
-     * Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
+     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
      *
      **/
     public enum SortOrder {
@@ -117,18 +117,18 @@ public class ListNotebookSessionsRequest
     };
     /**
      * Specifies the field to sort by. Accepts only one field.
-     * By default, when you sort by `timeCreated`, the results are shown
-     * in descending order. When you sort by `displayName`, results are
-     * shown in ascending order. Sort order for the `displayName` field is case sensitive.
+     * By default, when you sort by {@code timeCreated}, the results are shown
+     * in descending order. When you sort by {@code displayName}, results are
+     * shown in ascending order. Sort order for the {@code displayName} field is case sensitive.
      *
      */
     private SortBy sortBy;
 
     /**
      * Specifies the field to sort by. Accepts only one field.
-     * By default, when you sort by `timeCreated`, the results are shown
-     * in descending order. When you sort by `displayName`, results are
-     * shown in ascending order. Sort order for the `displayName` field is case sensitive.
+     * By default, when you sort by {@code timeCreated}, the results are shown
+     * in descending order. When you sort by {@code displayName}, results are
+     * shown in ascending order. Sort order for the {@code displayName} field is case sensitive.
      *
      **/
     public enum SortBy {

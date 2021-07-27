@@ -69,8 +69,8 @@ public class DNS {
     }
 
     /**
-     * Total DNS resolution duration, in milliseconds. Calculated using `domainLookupEnd`
-     * minus `domainLookupStart`.
+     * Total DNS resolution duration, in milliseconds. Calculated using {@code domainLookupEnd}
+     * minus {@code domainLookupStart}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainLookupDuration")

@@ -81,7 +81,7 @@ public class UpgradeStatus {
     }
 
     /**
-     * The `drgId` of the upgraded DRG.
+     * The {@code drgId} of the upgraded DRG.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("drgId")

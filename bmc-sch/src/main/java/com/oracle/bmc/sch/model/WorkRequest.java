@@ -204,7 +204,7 @@ public class WorkRequest {
     /**
      * The date and time when the request was created.
      * Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * Example: `2020-01-25T21:10:29.600Z`
+     * Example: {@code 2020-01-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
@@ -213,7 +213,7 @@ public class WorkRequest {
     /**
      * The date and time when the request was started.
      * Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * Example: `2020-01-25T21:10:29.600Z`
+     * Example: {@code 2020-01-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
@@ -222,7 +222,7 @@ public class WorkRequest {
     /**
      * The date and time when the object finished.
      * Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * Example: `2020-01-25T21:10:29.600Z`
+     * Example: {@code 2020-01-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")

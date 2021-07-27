@@ -23,7 +23,7 @@ public class GetContainerRepositoryRequest
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
      * <p>
-     * Example: `ocid1.containerrepo.oc1..exampleuniqueID`
+     * Example: {@code ocid1.containerrepo.oc1..exampleuniqueID}
      *
      */
     private String repositoryId;

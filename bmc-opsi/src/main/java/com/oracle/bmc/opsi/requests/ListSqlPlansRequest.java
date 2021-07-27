@@ -26,14 +26,14 @@ public class ListSqlPlansRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * Unique SQL_ID for a SQL Statement.
-     * Example: `6rgjh9bjmy2s7`
+     * Example: {@code 6rgjh9bjmy2s7}
      *
      */
     private String sqlIdentifier;
 
     /**
      * Unique plan hash for a SQL Plan of a particular SQL Statement.
-     * Example: `9820154385`
+     * Example: {@code 9820154385}
      *
      */
     private java.util.List<Long> planHash;
@@ -51,8 +51,8 @@ public class ListSqlPlansRequest extends com.oracle.bmc.requests.BmcRequest<java
     private String id;
 
     /**
-     * For list pagination. The value of the `opc-next-page` response header from
-     * the previous \"List\" call. For important details about how pagination works,
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
      * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
      *
      */

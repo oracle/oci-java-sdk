@@ -12,10 +12,10 @@ package com.oracle.bmc.loadbalancer.model;
  * *  If you do not specify any access control rules, the default rule is to allow all traffic.
  * *  If you add access control rules, the load balancer denies any traffic that does not match the rules.
  * *  Maximum of two match conditions can be specified in a rule.
- * *  You can specify this rule only with the following `RuleCondition` combinations:
- *     *  `SOURCE_IP_ADDRESS`
- *     *  `SOURCE_VCN_ID`
- *     *  `SOURCE_VCN_ID\", \"SOURCE_VCN_IP_ADDRESS`
+ * *  You can specify this rule only with the following {@code RuleCondition} combinations:
+ *     *  {@code SOURCE_IP_ADDRESS}
+ *     *  {@code SOURCE_VCN_ID}
+ *     *  {@code SOURCE_VCN_ID", "SOURCE_VCN_IP_ADDRESS}
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -97,7 +97,7 @@ public class AllowRule extends Rule {
     /**
      * A brief description of the access control rule. Avoid entering confidential information.
      * <p>
-     * example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+     * example: {@code 192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")

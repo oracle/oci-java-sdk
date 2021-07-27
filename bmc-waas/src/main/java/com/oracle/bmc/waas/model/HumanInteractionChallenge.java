@@ -170,7 +170,7 @@ public class HumanInteractionChallenge {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     Boolean isEnabled;
     /**
-     * The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+     * The action to take against requests from detected bots. If unspecified, defaults to {@code DETECT}.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Action {
@@ -216,43 +216,43 @@ public class HumanInteractionChallenge {
         }
     };
     /**
-     * The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+     * The action to take against requests from detected bots. If unspecified, defaults to {@code DETECT}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     Action action;
 
     /**
-     * The number of failed requests before taking action. If unspecified, defaults to `10`.
+     * The number of failed requests before taking action. If unspecified, defaults to {@code 10}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failureThreshold")
     Integer failureThreshold;
 
     /**
-     * The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
+     * The number of seconds between challenges for the same IP address. If unspecified, defaults to {@code 60}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionExpirationInSeconds")
     Integer actionExpirationInSeconds;
 
     /**
-     * The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
+     * The number of seconds before the failure threshold resets. If unspecified, defaults to  {@code 60}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failureThresholdExpirationInSeconds")
     Integer failureThresholdExpirationInSeconds;
 
     /**
-     * The number of interactions required to pass the challenge. If unspecified, defaults to `3`.
+     * The number of interactions required to pass the challenge. If unspecified, defaults to {@code 3}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("interactionThreshold")
     Integer interactionThreshold;
 
     /**
-     * The number of seconds to record the interactions from the user. If unspecified, defaults to `15`.
+     * The number of seconds to record the interactions from the user. If unspecified, defaults to {@code 15}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recordingPeriodInSeconds")
     Integer recordingPeriodInSeconds;
 
     /**
-     * Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
+     * Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the {@code action} is set to {@code DETECT}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("setHttpHeader")
     Header setHttpHeader;

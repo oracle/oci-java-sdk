@@ -133,10 +133,10 @@ public class MetricDataDetails {
     /**
      * The source service or application emitting the metric.
      * <p>
-     * A valid namespace value starts with an alphabetical character and includes only alphanumeric characters and underscores. The \"oci_\" prefix is reserved.
+     * A valid namespace value starts with an alphabetical character and includes only alphanumeric characters and underscores. The "oci_" prefix is reserved.
      * Avoid entering confidential information.
      * <p>
-     * Example: `my_namespace`
+     * Example: {@code my_namespace}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
@@ -147,7 +147,7 @@ public class MetricDataDetails {
      * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
      * Avoid entering confidential information.
      * <p>
-     * Example: `frontend-fleet`
+     * Example: {@code frontend-fleet}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
@@ -163,10 +163,10 @@ public class MetricDataDetails {
     /**
      * The name of the metric.
      * <p>
-     * A valid name value starts with an alphabetical character and includes only alphanumeric characters, dots, underscores, hyphens, and dollar signs. The `oci_` prefix is reserved.
+     * A valid name value starts with an alphabetical character and includes only alphanumeric characters, dots, underscores, hyphens, and dollar signs. The {@code oci_} prefix is reserved.
      * Avoid entering confidential information.
      * <p>
-     * Example: `my_app.success_rate`
+     * Example: {@code my_app.success_rate}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -179,7 +179,7 @@ public class MetricDataDetails {
      * A valid dimension value includes only Unicode characters. The character limit for a dimension value is 256.
      * Empty strings are not allowed for keys or values. Avoid entering confidential information.
      * <p>
-     * Example: `\"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"`
+     * Example: {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
@@ -189,7 +189,7 @@ public class MetricDataDetails {
      * Properties describing metrics. These are not part of the unique fields identifying the metric.
      * Each metadata item takes the form of a key-value pair. The character limit for a metadata key is 256. The character limit for a metadata value is 256.
      * <p>
-     * Example: `\"unit\": \"bytes\"`
+     * Example: {@code "unit": "bytes"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")

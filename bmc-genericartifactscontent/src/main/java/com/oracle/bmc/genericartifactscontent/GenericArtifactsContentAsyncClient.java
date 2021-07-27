@@ -517,7 +517,12 @@ public class GenericArtifactsContentAsyncClient implements GenericArtifactsConte
                                 PutGenericArtifactContentByPathRequest,
                                 PutGenericArtifactContentByPathResponse>,
                         java.util.concurrent.Future<PutGenericArtifactContentByPathResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getGenericArtifactContentBody(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

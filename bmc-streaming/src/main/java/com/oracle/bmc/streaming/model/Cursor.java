@@ -60,7 +60,7 @@ public class Cursor {
     }
 
     /**
-     * The cursor to pass to the `GetMessages` operation.
+     * The cursor to pass to the {@code GetMessages} operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     String value;

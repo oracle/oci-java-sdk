@@ -400,7 +400,12 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ActivateTargetDatabaseRequest, ActivateTargetDatabaseResponse>,
                         java.util.concurrent.Future<ActivateTargetDatabaseResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getActivateTargetDatabaseDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -447,7 +452,13 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                                 ChangeDataSafePrivateEndpointCompartmentResponse>,
                         java.util.concurrent.Future<
                                 ChangeDataSafePrivateEndpointCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeDataSafePrivateEndpointCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -494,7 +505,12 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                                 ChangeOnPremConnectorCompartmentRequest,
                                 ChangeOnPremConnectorCompartmentResponse>,
                         java.util.concurrent.Future<ChangeOnPremConnectorCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeOnPremConnectorCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -541,7 +557,12 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                                 ChangeTargetDatabaseCompartmentRequest,
                                 ChangeTargetDatabaseCompartmentResponse>,
                         java.util.concurrent.Future<ChangeTargetDatabaseCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeTargetDatabaseCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -587,7 +608,12 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                                 CreateDataSafePrivateEndpointRequest,
                                 CreateDataSafePrivateEndpointResponse>,
                         java.util.concurrent.Future<CreateDataSafePrivateEndpointResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDataSafePrivateEndpointDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -629,7 +655,12 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateOnPremConnectorRequest, CreateOnPremConnectorResponse>,
                         java.util.concurrent.Future<CreateOnPremConnectorResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateOnPremConnectorDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -671,7 +702,12 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateTargetDatabaseRequest, CreateTargetDatabaseResponse>,
                         java.util.concurrent.Future<CreateTargetDatabaseResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTargetDatabaseDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -931,7 +967,12 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                                 EnableDataSafeConfigurationRequest,
                                 EnableDataSafeConfigurationResponse>,
                         java.util.concurrent.Future<EnableDataSafeConfigurationResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getEnableDataSafeConfigurationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -984,7 +1025,12 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                                 GenerateOnPremConnectorConfigurationRequest,
                                 GenerateOnPremConnectorConfigurationResponse>,
                         java.util.concurrent.Future<GenerateOnPremConnectorConfigurationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getGenerateOnPremConnectorConfigurationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1478,7 +1524,12 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                                 UpdateDataSafePrivateEndpointRequest,
                                 UpdateDataSafePrivateEndpointResponse>,
                         java.util.concurrent.Future<UpdateDataSafePrivateEndpointResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDataSafePrivateEndpointDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1519,7 +1570,12 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateOnPremConnectorRequest, UpdateOnPremConnectorResponse>,
                         java.util.concurrent.Future<UpdateOnPremConnectorResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateOnPremConnectorDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1564,7 +1620,12 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                                 UpdateOnPremConnectorWalletRequest,
                                 UpdateOnPremConnectorWalletResponse>,
                         java.util.concurrent.Future<UpdateOnPremConnectorWalletResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateOnPremConnectorWalletDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1606,7 +1667,12 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateTargetDatabaseRequest, UpdateTargetDatabaseResponse>,
                         java.util.concurrent.Future<UpdateTargetDatabaseResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTargetDatabaseDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

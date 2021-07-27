@@ -7,7 +7,7 @@ package com.oracle.bmc.core.model;
 /**
  * A route distribution establishes how routes get imported into DRG route tables and exported through the DRG attachments.
  * <p>
- * A route distribution is a list of statements. Each statement consists of a set of matches, all of which must be `True` in order for
+ * A route distribution is a list of statements. Each statement consists of a set of matches, all of which must be {@code True} in order for
  * the statement's action to take place. Each statement determines which routes are propagated.
  * <p>
  * You can assign a route distribution as a route table's import distribution. The statements in an import
@@ -187,7 +187,7 @@ public class DrgRouteDistribution {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -205,7 +205,7 @@ public class DrgRouteDistribution {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -273,7 +273,7 @@ public class DrgRouteDistribution {
     /**
      * The date and time the route distribution was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

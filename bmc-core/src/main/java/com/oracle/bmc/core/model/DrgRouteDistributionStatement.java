@@ -103,7 +103,7 @@ public class DrgRouteDistributionStatement {
     @com.fasterxml.jackson.annotation.JsonProperty("matchCriteria")
     java.util.List<DrgRouteDistributionMatchCriteria> matchCriteria;
     /**
-     * `ACCEPT` indicates the route should be imported or exported as-is.
+     * {@code ACCEPT} indicates the route should be imported or exported as-is.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -149,7 +149,7 @@ public class DrgRouteDistributionStatement {
         }
     };
     /**
-     * `ACCEPT` indicates the route should be imported or exported as-is.
+     * {@code ACCEPT} indicates the route should be imported or exported as-is.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")

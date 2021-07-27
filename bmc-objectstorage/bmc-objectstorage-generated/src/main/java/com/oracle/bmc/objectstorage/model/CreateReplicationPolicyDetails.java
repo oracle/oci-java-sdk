@@ -90,7 +90,7 @@ public class CreateReplicationPolicyDetails {
     String name;
 
     /**
-     * The destination region to replicate to, for example \"us-ashburn-1\".
+     * The destination region to replicate to, for example "us-ashburn-1".
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationRegionName")
     String destinationRegionName;

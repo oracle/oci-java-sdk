@@ -559,7 +559,12 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeModelCompartmentRequest, ChangeModelCompartmentResponse>,
                         java.util.concurrent.Future<ChangeModelCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeModelCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -605,7 +610,12 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                                 ChangeModelDeploymentCompartmentRequest,
                                 ChangeModelDeploymentCompartmentResponse>,
                         java.util.concurrent.Future<ChangeModelDeploymentCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeModelDeploymentCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -652,7 +662,12 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                                 ChangeNotebookSessionCompartmentRequest,
                                 ChangeNotebookSessionCompartmentResponse>,
                         java.util.concurrent.Future<ChangeNotebookSessionCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeNotebookSessionCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -695,7 +710,12 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeProjectCompartmentRequest, ChangeProjectCompartmentResponse>,
                         java.util.concurrent.Future<ChangeProjectCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeProjectCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -734,7 +754,12 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateModelRequest, CreateModelResponse>,
                         java.util.concurrent.Future<CreateModelResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateModelDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -788,7 +813,12 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateModelArtifactRequest, CreateModelArtifactResponse>,
                         java.util.concurrent.Future<CreateModelArtifactResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getModelArtifact(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -834,7 +864,12 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateModelDeploymentRequest, CreateModelDeploymentResponse>,
                         java.util.concurrent.Future<CreateModelDeploymentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateModelDeploymentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -876,7 +911,12 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateModelProvenanceRequest, CreateModelProvenanceResponse>,
                         java.util.concurrent.Future<CreateModelProvenanceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateModelProvenanceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -918,7 +958,12 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateNotebookSessionRequest, CreateNotebookSessionResponse>,
                         java.util.concurrent.Future<CreateNotebookSessionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateNotebookSessionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -957,7 +1002,12 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateProjectRequest, CreateProjectResponse>,
                         java.util.concurrent.Future<CreateProjectResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateProjectDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1953,7 +2003,12 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateModelRequest, UpdateModelResponse>,
                         java.util.concurrent.Future<UpdateModelResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateModelDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1994,7 +2049,12 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateModelDeploymentRequest, UpdateModelDeploymentResponse>,
                         java.util.concurrent.Future<UpdateModelDeploymentResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateModelDeploymentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2035,7 +2095,12 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateModelProvenanceRequest, UpdateModelProvenanceResponse>,
                         java.util.concurrent.Future<UpdateModelProvenanceResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateModelProvenanceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2076,7 +2141,12 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateNotebookSessionRequest, UpdateNotebookSessionResponse>,
                         java.util.concurrent.Future<UpdateNotebookSessionResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateNotebookSessionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2114,7 +2184,12 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateProjectRequest, UpdateProjectResponse>,
                         java.util.concurrent.Future<UpdateProjectResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateProjectDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

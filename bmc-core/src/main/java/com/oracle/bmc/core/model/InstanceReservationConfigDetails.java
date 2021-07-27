@@ -115,10 +115,10 @@ public class InstanceReservationConfigDetails {
      * that does not specify a fault domain. To change the fault domain for a reservation,
      * delete the reservation and create a new one in the preferred fault domain.
      * <p>
-     * To retrieve a list of fault domains, use the `ListFaultDomains` operation in
+     * To retrieve a list of fault domains, use the {@code ListFaultDomains} operation in
      * the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
      * <p>
-     * Example: `FAULT-DOMAIN-1`
+     * Example: {@code FAULT-DOMAIN-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")

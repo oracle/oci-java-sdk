@@ -6,8 +6,8 @@ package com.oracle.bmc.streaming.model;
 
 /**
  * Represents the result of a {@link #putMessages(PutMessagesRequest) putMessages} request, whether it was successful or not.
- * If a message was successfully appended to the stream, the entry includes the `offset`, `partition`, and `timestamp`.
- * If the message failed to be appended to the stream, the entry includes the `error` and `errorMessage`.
+ * If a message was successfully appended to the stream, the entry includes the {@code offset}, {@code partition}, and {@code timestamp}.
+ * If the message failed to be appended to the stream, the entry includes the {@code error} and {@code errorMessage}.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

@@ -63,7 +63,7 @@ public class HostConfigurationMetricGroup {
 
     /**
      * Collection timestamp
-     * Example: `\"2020-05-06T00:00:00.000Z\"`
+     * Example: {@code "2020-05-06T00:00:00.000Z"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")

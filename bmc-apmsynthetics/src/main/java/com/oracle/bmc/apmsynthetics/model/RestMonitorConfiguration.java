@@ -235,14 +235,14 @@ public class RestMonitorConfiguration extends MonitorConfiguration {
     RequestAuthenticationDetails reqAuthenticationDetails;
 
     /**
-     * List of request headers. Example: `[{\"headerName\": \"content-type\", \"headerValue\":\"json\"}]`
+     * List of request headers. Example: {@code [{"headerName": "content-type", "headerValue":"json"}]}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestHeaders")
     java.util.List<Header> requestHeaders;
 
     /**
-     * List of request query params. Example: `[{\"paramName\": \"sortOrder\", \"paramValue\": \"asc\"}]`
+     * List of request query params. Example: {@code [{"paramName": "sortOrder", "paramValue": "asc"}]}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestQueryParams")

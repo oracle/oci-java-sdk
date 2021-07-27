@@ -32,8 +32,8 @@ public class ListMultipartUploadPartsResponse {
     /**
      * For paginating a list of multipart upload parts.
      * In the GET request, set the limit to the number of multipart upload parts that you want returned in the
-     * response. If the `opc-next-page` header appears in the response, then this is a partial list and there are
-     * additional multipart upload parts to get. Include the header's value as the `page` parameter in the subsequent
+     * response. If the {@code opc-next-page} header appears in the response, then this is a partial list and there are
+     * additional multipart upload parts to get. Include the header's value as the {@code page} parameter in the subsequent
      * GET request to get the next batch of multipart upload parts. Repeat this process to retrieve the entire list
      * of multipart upload parts.
      * <p>

@@ -91,7 +91,7 @@ public class UpdateZoneDetails {
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      *
-     * **Example:** `{\"Department\": \"Finance\"}`
+     * **Example:** {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -102,15 +102,15 @@ public class UpdateZoneDetails {
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      *
-     * **Example:** `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * **Example:** {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * External master servers for the zone. `externalMasters` becomes a
-     * required parameter when the `zoneType` value is `SECONDARY`.
+     * External master servers for the zone. {@code externalMasters} becomes a
+     * required parameter when the {@code zoneType} value is {@code SECONDARY}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalMasters")

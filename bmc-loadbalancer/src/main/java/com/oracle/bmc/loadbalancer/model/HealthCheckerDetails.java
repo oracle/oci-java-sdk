@@ -143,7 +143,7 @@ public class HealthCheckerDetails {
     /**
      * The protocol the health check must use; either HTTP or TCP.
      * <p>
-     * Example: `HTTP`
+     * Example: {@code HTTP}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
@@ -152,7 +152,7 @@ public class HealthCheckerDetails {
     /**
      * The path against which to run the health check.
      * <p>
-     * Example: `/healthcheck`
+     * Example: {@code /healthcheck}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("urlPath")
@@ -160,9 +160,9 @@ public class HealthCheckerDetails {
 
     /**
      * The backend server port against which to run the health check. If the port is not specified, the load balancer uses the
-     * port information from the `Backend` object.
+     * port information from the {@code Backend} object.
      * <p>
-     * Example: `8080`
+     * Example: {@code 8080}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
@@ -171,17 +171,17 @@ public class HealthCheckerDetails {
     /**
      * The status code a healthy backend server should return.
      * <p>
-     * Example: `200`
+     * Example: {@code 200}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("returnCode")
     Integer returnCode;
 
     /**
-     * The number of retries to attempt before a backend server is considered \"unhealthy\". This number also applies
-     * when recovering a server to the \"healthy\" state.
+     * The number of retries to attempt before a backend server is considered "unhealthy". This number also applies
+     * when recovering a server to the "healthy" state.
      * <p>
-     * Example: `3`
+     * Example: {@code 3}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("retries")
@@ -191,7 +191,7 @@ public class HealthCheckerDetails {
      * The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply
      * returns within this timeout period.
      * <p>
-     * Example: `3000`
+     * Example: {@code 3000}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInMillis")
@@ -200,7 +200,7 @@ public class HealthCheckerDetails {
     /**
      * The interval between health checks, in milliseconds.
      * <p>
-     * Example: `10000`
+     * Example: {@code 10000}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("intervalInMillis")
@@ -209,7 +209,7 @@ public class HealthCheckerDetails {
     /**
      * A regular expression for parsing the response body from the backend server.
      * <p>
-     * Example: `^((?!false).|\\s)*$`
+     * Example: {@code ^((?!false).|\\s)*$}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responseBodyRegex")

@@ -47,7 +47,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     private String opcRequestId;
 
     /**
-     * The value of the `opc-next-page` response header from the previous \"List\" call.
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
      */
     private String page;
 
@@ -58,12 +58,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     private Integer limit;
 
     /**
-     * The sort order to apply, either `ASC` or `DESC`. Default is `ASC`.
+     * The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}.
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to apply, either `ASC` or `DESC`. Default is `ASC`.
+     * The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}.
      **/
     public enum SortOrder {
         Asc("ASC"),

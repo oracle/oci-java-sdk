@@ -145,7 +145,7 @@ public class ProtectionRule {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
     /**
-     * The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
+     * The action to take when the traffic is detected as malicious. If unspecified, defaults to {@code OFF}.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Action {
@@ -192,7 +192,7 @@ public class ProtectionRule {
         }
     };
     /**
-     * The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
+     * The action to take when the traffic is detected as malicious. If unspecified, defaults to {@code OFF}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     Action action;
@@ -200,7 +200,7 @@ public class ProtectionRule {
     /**
      * The list of labels for the protection rule.
      * <p>
-     **Note:** Protection rules with a `ResponseBody` label will have no effect unless `isResponseInspected` is true.
+     **Note:** Protection rules with a {@code ResponseBody} label will have no effect unless {@code isResponseInspected} is true.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     java.util.List<String> labels;

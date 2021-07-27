@@ -41,7 +41,7 @@ package com.oracle.bmc.resourcesearch.model;
 public class SearchDetails {
 
     /**
-     * The type of matching context returned in the response. If you specify `HIGHLIGHTS`, then the service will highlight fragments in its response. (For more information, see ResourceSummary.searchContext and SearchContext.) The default setting is `NONE`.
+     * The type of matching context returned in the response. If you specify {@code HIGHLIGHTS}, then the service will highlight fragments in its response. (For more information, see ResourceSummary.searchContext and SearchContext.) The default setting is {@code NONE}.
      *
      **/
     public enum MatchingContextType {
@@ -77,7 +77,7 @@ public class SearchDetails {
         }
     };
     /**
-     * The type of matching context returned in the response. If you specify `HIGHLIGHTS`, then the service will highlight fragments in its response. (For more information, see ResourceSummary.searchContext and SearchContext.) The default setting is `NONE`.
+     * The type of matching context returned in the response. If you specify {@code HIGHLIGHTS}, then the service will highlight fragments in its response. (For more information, see ResourceSummary.searchContext and SearchContext.) The default setting is {@code NONE}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchingContextType")

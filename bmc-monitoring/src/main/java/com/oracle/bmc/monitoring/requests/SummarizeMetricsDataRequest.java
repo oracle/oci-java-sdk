@@ -25,7 +25,7 @@ public class SummarizeMetricsDataRequest
      * resources monitored by the metric that you are searching for. Use tenancyId to search in
      * the root compartment.
      * <p>
-     * Example: `ocid1.compartment.oc1..exampleuniqueID`
+     * Example: {@code ocid1.compartment.oc1..exampleuniqueID}
      *
      */
     private String compartmentId;

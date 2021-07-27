@@ -39,7 +39,7 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     private Long limit;
 
     /**
-     * The value of the `opc-next-page` response header from the previous \"List\" call.
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
      *
      */
     private String page;
@@ -59,14 +59,14 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     private String nameContains;
 
     /**
-     * Search by zone type, `PRIMARY` or `SECONDARY`.
+     * Search by zone type, {@code PRIMARY} or {@code SECONDARY}.
      * Will match any zone whose type equals the provided value.
      *
      */
     private ZoneType zoneType;
 
     /**
-     * Search by zone type, `PRIMARY` or `SECONDARY`.
+     * Search by zone type, {@code PRIMARY} or {@code SECONDARY}.
      * Will match any zone whose type equals the provided value.
      *
      **/

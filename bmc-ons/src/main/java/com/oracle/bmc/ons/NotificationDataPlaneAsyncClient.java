@@ -404,7 +404,12 @@ public class NotificationDataPlaneAsyncClient implements NotificationDataPlaneAs
                                 ChangeSubscriptionCompartmentRequest,
                                 ChangeSubscriptionCompartmentResponse>,
                         java.util.concurrent.Future<ChangeSubscriptionCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeSubscriptionCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -444,7 +449,12 @@ public class NotificationDataPlaneAsyncClient implements NotificationDataPlaneAs
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateSubscriptionRequest, CreateSubscriptionResponse>,
                         java.util.concurrent.Future<CreateSubscriptionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSubscriptionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -680,7 +690,12 @@ public class NotificationDataPlaneAsyncClient implements NotificationDataPlaneAs
                         com.oracle.bmc.responses.AsyncHandler<
                                 PublishMessageRequest, PublishMessageResponse>,
                         java.util.concurrent.Future<PublishMessageResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getMessageDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -764,7 +779,12 @@ public class NotificationDataPlaneAsyncClient implements NotificationDataPlaneAs
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateSubscriptionRequest, UpdateSubscriptionResponse>,
                         java.util.concurrent.Future<UpdateSubscriptionResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSubscriptionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

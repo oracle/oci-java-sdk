@@ -268,7 +268,7 @@ public class FleetSummary {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -276,7 +276,7 @@ public class FleetSummary {
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+     * Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -287,7 +287,7 @@ public class FleetSummary {
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * System tags can be viewed by users, but can only be created by the system.
      * <p>
-     * Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")

@@ -456,7 +456,7 @@ public class Attribute {
 
     /**
      * The date and time the attribute was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * Example: `2019-03-25T21:10:29.600Z`
+     * Example: {@code 2019-03-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -517,7 +517,7 @@ public class Attribute {
 
     /**
      * The maximum count for the number of instances of a given type stored in this collection type attribute,applicable if this attribute is a complex type.
-     * For type specifications in systems that specify only \"capacity\" without upper or lower bound , this property can also be used to just mean \"capacity\".
+     * For type specifications in systems that specify only "capacity" without upper or lower bound , this property can also be used to just mean "capacity".
      * Some examples are Varray size in Oracle , Occurs Clause in Cobol , capacity in XmlSchemaObjectCollection , maxOccurs in  Xml , maxItems in Json
      *
      **/
@@ -618,8 +618,8 @@ public class Attribute {
      * A map of maps that contains the properties which are specific to the attribute type. Each attribute type
      * definition defines it's set of required and optional properties. The map keys are category names and the
      * values are maps of property name to property value. Every property is contained inside of a category. Most
-     * attributes have required properties within the \"default\" category.
-     * Example: `{\"properties\": { \"default\": { \"key1\": \"value1\"}}}`
+     * attributes have required properties within the "default" category.
+     * Example: {@code {"properties": { "default": { "key1": "value1"}}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")

@@ -8,7 +8,7 @@ package com.oracle.bmc.core.model;
  * The set of CPE configuration answers for the tunnel, which the customer provides in
  * {@link #updateTunnelCpeDeviceConfig(UpdateTunnelCpeDeviceConfigRequest) updateTunnelCpeDeviceConfig}.
  * The answers correlate to the questions that are specific to the CPE device type (see the
- * `parameters` attribute of {@link CpeDeviceShapeDetail}).
+ * {@code parameters} attribute of {@link CpeDeviceShapeDetail}).
  * <p>
  * See these related operations:
  * <p>

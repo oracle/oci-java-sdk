@@ -90,7 +90,7 @@ public class Certificate {
      * Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
      * Certificate bundle names cannot contain spaces. Avoid entering confidential information.
      * <p>
-     * Example: `example_certificate_bundle`
+     * Example: {@code example_certificate_bundle}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateName")

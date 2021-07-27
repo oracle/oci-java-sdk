@@ -71,7 +71,7 @@ public class DbIormConfigUpdateDetail {
     }
 
     /**
-     * The database name. For the default `DbPlan`, the `dbName` is `default`.
+     * The database name. For the default {@code DbPlan}, the {@code dbName} is {@code default}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")

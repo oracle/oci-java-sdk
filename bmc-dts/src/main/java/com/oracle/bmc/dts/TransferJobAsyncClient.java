@@ -404,7 +404,12 @@ public class TransferJobAsyncClient implements TransferJobAsync {
                                 ChangeTransferJobCompartmentRequest,
                                 ChangeTransferJobCompartmentResponse>,
                         java.util.concurrent.Future<ChangeTransferJobCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeTransferJobCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -444,7 +449,12 @@ public class TransferJobAsyncClient implements TransferJobAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateTransferJobRequest, CreateTransferJobResponse>,
                         java.util.concurrent.Future<CreateTransferJobResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTransferJobDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -600,7 +610,12 @@ public class TransferJobAsyncClient implements TransferJobAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateTransferJobRequest, UpdateTransferJobResponse>,
                         java.util.concurrent.Future<UpdateTransferJobResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTransferJobDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

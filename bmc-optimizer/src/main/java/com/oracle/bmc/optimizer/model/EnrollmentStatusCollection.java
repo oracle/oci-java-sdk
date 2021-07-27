@@ -5,7 +5,7 @@
 package com.oracle.bmc.optimizer.model;
 
 /**
- * A list of enrollment statuses that match filter criteria, if any. Results contain `EnrollmentStatusSummary` objects.
+ * A list of enrollment statuses that match filter criteria, if any. Results contain {@code EnrollmentStatusSummary} objects.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

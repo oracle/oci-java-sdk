@@ -403,7 +403,12 @@ public class RoverClusterAsyncClient implements RoverClusterAsync {
                                 ChangeRoverClusterCompartmentRequest,
                                 ChangeRoverClusterCompartmentResponse>,
                         java.util.concurrent.Future<ChangeRoverClusterCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeRoverClusterCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -443,7 +448,12 @@ public class RoverClusterAsyncClient implements RoverClusterAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateRoverClusterRequest, CreateRoverClusterResponse>,
                         java.util.concurrent.Future<CreateRoverClusterResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateRoverClusterDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -643,7 +653,12 @@ public class RoverClusterAsyncClient implements RoverClusterAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateRoverClusterRequest, UpdateRoverClusterResponse>,
                         java.util.concurrent.Future<UpdateRoverClusterResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateRoverClusterDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

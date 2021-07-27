@@ -32,7 +32,7 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * <p>
-     * Example: `My new resource`
+     * Example: {@code My new resource}
      *
      */
     private String displayName;

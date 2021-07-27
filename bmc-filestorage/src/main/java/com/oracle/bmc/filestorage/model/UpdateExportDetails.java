@@ -65,7 +65,7 @@ public class UpdateExportDetails {
      * <p>
      **Setting to the empty array will make the export invisible to all clients.**
      * <p>
-     * Leaving unset will leave the `exportOptions` unchanged.
+     * Leaving unset will leave the {@code exportOptions} unchanged.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exportOptions")

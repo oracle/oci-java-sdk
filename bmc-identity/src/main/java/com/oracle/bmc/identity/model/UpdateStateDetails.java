@@ -61,7 +61,7 @@ public class UpdateStateDetails {
     }
 
     /**
-     * Update state to blocked or unblocked. Only \"false\" is supported (for changing the state to unblocked).
+     * Update state to blocked or unblocked. Only "false" is supported (for changing the state to unblocked).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blocked")

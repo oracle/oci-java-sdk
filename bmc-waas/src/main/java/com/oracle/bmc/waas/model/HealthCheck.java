@@ -6,7 +6,7 @@ package com.oracle.bmc.waas.model;
 
 /**
  * Health checks monitor the status of your origin servers and only route traffic to the origins that pass the health check. If the health check fails, origin is automatically removed from the load balancing.
- * There is roughly one health check per EDGE POP per period. Any checks that pass will be reported as \"healthy\".
+ * There is roughly one health check per EDGE POP per period. Any checks that pass will be reported as "healthy".
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -238,7 +238,7 @@ public class HealthCheck {
     String path;
 
     /**
-     * HTTP header fields to include in health check requests, expressed as `\"name\": \"value\"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value \"waf health checks\".
+     * HTTP header fields to include in health check requests, expressed as {@code "name": "value"} properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
      * <p>
      **Note:** The only currently-supported header fields are Host and User-Agent.
      **/

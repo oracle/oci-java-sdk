@@ -29,7 +29,7 @@ public class ListServiceConnectorsRequest
     /**
      * A filter to return only resources that match the given lifecycle state.
      * <p>
-     * Example: `ACTIVE`
+     * Example: {@code ACTIVE}
      *
      */
     private com.oracle.bmc.sch.model.LifecycleState lifecycleState;
@@ -37,14 +37,14 @@ public class ListServiceConnectorsRequest
     /**
      * A filter to return only resources that match the given display name exactly.
      * <p>
-     * Example: `example_service_connector`
+     * Example: {@code example_service_connector}
      *
      */
     private String displayName;
 
     /**
      * For list pagination. The maximum number of results per page, or items to return
-     * in a paginated \"List\" call. For important details about how pagination works, see
+     * in a paginated "List" call. For important details about how pagination works, see
      * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
@@ -52,7 +52,7 @@ public class ListServiceConnectorsRequest
 
     /**
      * For list pagination. The value of the opc-next-page response header from the previous
-     * \"List\" call. For important details about how pagination works, see
+     * "List" call. For important details about how pagination works, see
      * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
@@ -65,15 +65,15 @@ public class ListServiceConnectorsRequest
     private com.oracle.bmc.sch.model.SortOrder sortOrder;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for `timeCreated` is descending.
-     * Default order for `displayName` is ascending. If no value is specified `timeCreated` is default.
+     * The field to sort by. Only one sort order may be provided. Default order for {@code timeCreated} is descending.
+     * Default order for {@code displayName} is ascending. If no value is specified {@code timeCreated} is default.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for `timeCreated` is descending.
-     * Default order for `displayName` is ascending. If no value is specified `timeCreated` is default.
+     * The field to sort by. Only one sort order may be provided. Default order for {@code timeCreated} is descending.
+     * Default order for {@code displayName} is ascending. If no value is specified {@code timeCreated} is default.
      *
      **/
     public enum SortBy {

@@ -398,7 +398,12 @@ public class IncidentAsyncClient implements IncidentAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateIncidentRequest, CreateIncidentResponse>,
                         java.util.concurrent.Future<CreateIncidentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateIncidentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -591,7 +596,12 @@ public class IncidentAsyncClient implements IncidentAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateIncidentRequest, UpdateIncidentResponse>,
                         java.util.concurrent.Future<UpdateIncidentResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateIncidentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

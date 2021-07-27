@@ -403,7 +403,12 @@ public class ApmDomainAsyncClient implements ApmDomainAsync {
                                 ChangeApmDomainCompartmentRequest,
                                 ChangeApmDomainCompartmentResponse>,
                         java.util.concurrent.Future<ChangeApmDomainCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeApmDomainCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -443,7 +448,12 @@ public class ApmDomainAsyncClient implements ApmDomainAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateApmDomainRequest, CreateApmDomainResponse>,
                         java.util.concurrent.Future<CreateApmDomainResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateApmDomainDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -521,7 +531,12 @@ public class ApmDomainAsyncClient implements ApmDomainAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 GenerateDataKeysRequest, GenerateDataKeysResponse>,
                         java.util.concurrent.Future<GenerateDataKeysResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getGenerateDataKeysListDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -877,7 +892,12 @@ public class ApmDomainAsyncClient implements ApmDomainAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 RemoveDataKeysRequest, RemoveDataKeysResponse>,
                         java.util.concurrent.Future<RemoveDataKeysResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveDataKeysListDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -916,7 +936,12 @@ public class ApmDomainAsyncClient implements ApmDomainAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateApmDomainRequest, UpdateApmDomainResponse>,
                         java.util.concurrent.Future<UpdateApmDomainResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateApmDomainDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

@@ -85,7 +85,7 @@ public class CopyBootVolumeBackupDetails {
     /**
      * The name of the destination region.
      * <p>
-     * Example: `us-ashburn-1`
+     * Example: {@code us-ashburn-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationRegion")

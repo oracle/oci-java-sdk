@@ -402,7 +402,12 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                                 ChangeFileSystemCompartmentRequest,
                                 ChangeFileSystemCompartmentResponse>,
                         java.util.concurrent.Future<ChangeFileSystemCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeFileSystemCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -446,7 +451,12 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                                 ChangeMountTargetCompartmentRequest,
                                 ChangeMountTargetCompartmentResponse>,
                         java.util.concurrent.Future<ChangeMountTargetCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeMountTargetCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -485,7 +495,12 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateExportRequest, CreateExportResponse>,
                         java.util.concurrent.Future<CreateExportResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateExportDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -525,7 +540,12 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateFileSystemRequest, CreateFileSystemResponse>,
                         java.util.concurrent.Future<CreateFileSystemResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateFileSystemDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -565,7 +585,12 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateMountTargetRequest, CreateMountTargetResponse>,
                         java.util.concurrent.Future<CreateMountTargetResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateMountTargetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -605,7 +630,12 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateSnapshotRequest, CreateSnapshotResponse>,
                         java.util.concurrent.Future<CreateSnapshotResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSnapshotDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1180,7 +1210,12 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateExportRequest, UpdateExportResponse>,
                         java.util.concurrent.Future<UpdateExportResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateExportDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1219,7 +1254,12 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateExportSetRequest, UpdateExportSetResponse>,
                         java.util.concurrent.Future<UpdateExportSetResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateExportSetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1258,7 +1298,12 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateFileSystemRequest, UpdateFileSystemResponse>,
                         java.util.concurrent.Future<UpdateFileSystemResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateFileSystemDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1297,7 +1342,12 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateMountTargetRequest, UpdateMountTargetResponse>,
                         java.util.concurrent.Future<UpdateMountTargetResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateMountTargetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1336,7 +1386,12 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateSnapshotRequest, UpdateSnapshotResponse>,
                         java.util.concurrent.Future<UpdateSnapshotResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSnapshotDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

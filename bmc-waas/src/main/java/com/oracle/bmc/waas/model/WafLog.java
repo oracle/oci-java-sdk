@@ -360,14 +360,14 @@ public class WafLog {
     }
 
     /**
-     * The action taken on the request, either `ALLOW`, `DETECT`, or `BLOCK`.
+     * The action taken on the request, either {@code ALLOW}, {@code DETECT}, or {@code BLOCK}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     String action;
 
     /**
-     * The CAPTCHA action taken on the request, `ALLOW` or `BLOCK`. For more information about
-     * CAPTCHAs, see `UpdateCaptchas`.
+     * The CAPTCHA action taken on the request, {@code ALLOW} or {@code BLOCK}. For more information about
+     * CAPTCHAs, see {@code UpdateCaptchas}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("captchaAction")
@@ -404,13 +404,13 @@ public class WafLog {
     String countryName;
 
     /**
-     * The value of the request's `User-Agent` header field.
+     * The value of the request's {@code User-Agent} header field.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userAgent")
     String userAgent;
 
     /**
-     * The `Host` header data of the request.
+     * The {@code Host} header data of the request.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
@@ -419,7 +419,7 @@ public class WafLog {
     /**
      * A map of protection rule keys to detection message details. Detections are
      * requests that matched the criteria of a protection rule but the rule's
-     * action was set to `DETECT`.
+     * action was set to {@code DETECT}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protectionRuleDetections")
@@ -444,7 +444,7 @@ public class WafLog {
     java.util.Map<String, String> httpHeaders;
 
     /**
-     * The `Referrer` header value of the request.
+     * The {@code Referrer} header value of the request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("referrer")
     String referrer;
@@ -472,7 +472,7 @@ public class WafLog {
 
     /**
      * The hashed signature of the device's fingerprint. For more information,
-     * see `DeviceFingerPrintChallenge`.
+     * see {@code DeviceFingerPrintChallenge}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
@@ -501,24 +501,24 @@ public class WafLog {
     java.util.Map<String, String> requestHeaders;
 
     /**
-     * The `ThreatFeed` key that matched the request. For more information about
-     * threat feeds, see `UpdateThreatFeeds`.
+     * The {@code ThreatFeed} key that matched the request. For more information about
+     * threat feeds, see {@code UpdateThreatFeeds}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("threatFeedKey")
     String threatFeedKey;
 
     /**
-     * The `AccessRule` key that matched the request. For more information about
-     * access rules, see `UpdateAccessRules`.
+     * The {@code AccessRule} key that matched the request. For more information about
+     * access rules, see {@code UpdateAccessRules}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessRuleKey")
     String accessRuleKey;
 
     /**
-     * The `AddressRateLimiting` key that matched the request. For more information
-     * about address rate limiting, see `UpdateWafAddressRateLimiting`.
+     * The {@code AddressRateLimiting} key that matched the request. For more information
+     * about address rate limiting, see {@code UpdateWafAddressRateLimiting}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("addressRateLimitingKey")

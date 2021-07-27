@@ -60,7 +60,7 @@ public class BootVolumeKmsKey {
     }
 
     /**
-     * The OCID of the Key Management key assigned to this volume. If the volume is not using Key Management, then the `kmsKeyId` will be a null string.
+     * The OCID of the Key Management key assigned to this volume. If the volume is not using Key Management, then the {@code kmsKeyId} will be a null string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")

@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Defines route rule details for a `routesTo` relationship.
+ * Defines route rule details for a {@code routesTo} relationship.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -86,16 +86,16 @@ public class TopologyRoutesToRelationshipDetails {
     /**
      * The destinationType can be set to one of two values:
      * <p>
-     * Use `CIDR_BLOCK` if the rule's `destination` is an IP address range in CIDR notation.
+     * Use {@code CIDR_BLOCK} if the rule's {@code destination} is an IP address range in CIDR notation.
      * <p>
-     * Use `SERVICE_CIDR_BLOCK` if the rule's `destination` is the `cidrBlock` value for a {@link Service}.
+     * Use {@code SERVICE_CIDR_BLOCK} if the rule's {@code destination} is the {@code cidrBlock} value for a {@link Service}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
     String destinationType;
 
     /**
-     * An IP address range in CIDR notation or the `cidrBlock` value for a {@link Service}.
+     * An IP address range in CIDR notation or the {@code cidrBlock} value for a {@link Service}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destination")
     String destination;

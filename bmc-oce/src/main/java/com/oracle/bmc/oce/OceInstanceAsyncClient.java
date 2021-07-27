@@ -403,7 +403,12 @@ public class OceInstanceAsyncClient implements OceInstanceAsync {
                                 ChangeOceInstanceCompartmentRequest,
                                 ChangeOceInstanceCompartmentResponse>,
                         java.util.concurrent.Future<ChangeOceInstanceCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeOceInstanceCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -443,7 +448,12 @@ public class OceInstanceAsyncClient implements OceInstanceAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateOceInstanceRequest, CreateOceInstanceResponse>,
                         java.util.concurrent.Future<CreateOceInstanceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateOceInstanceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -759,7 +769,12 @@ public class OceInstanceAsyncClient implements OceInstanceAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateOceInstanceRequest, UpdateOceInstanceResponse>,
                         java.util.concurrent.Future<UpdateOceInstanceResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateOceInstanceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

@@ -440,7 +440,12 @@ public class SddcAsyncClient implements SddcAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeSddcCompartmentRequest, ChangeSddcCompartmentResponse>,
                         java.util.concurrent.Future<ChangeSddcCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeSddcCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -478,7 +483,12 @@ public class SddcAsyncClient implements SddcAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateSddcRequest, CreateSddcResponse>,
                         java.util.concurrent.Future<CreateSddcResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSddcDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -554,7 +564,12 @@ public class SddcAsyncClient implements SddcAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 DowngradeHcxRequest, DowngradeHcxResponse>,
                         java.util.concurrent.Future<DowngradeHcxResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDowngradeHcxDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -790,7 +805,12 @@ public class SddcAsyncClient implements SddcAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateSddcRequest, UpdateSddcResponse>,
                         java.util.concurrent.Future<UpdateSddcResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSddcDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

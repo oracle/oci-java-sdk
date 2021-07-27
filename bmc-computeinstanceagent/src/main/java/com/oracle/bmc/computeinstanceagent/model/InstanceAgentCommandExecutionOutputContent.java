@@ -45,7 +45,7 @@ package com.oracle.bmc.computeinstanceagent.model;
 public class InstanceAgentCommandExecutionOutputContent {
 
     /**
-     * The exit code for the command. Exit code `0` indicates success.
+     * The exit code for the command. Exit code {@code 0} indicates success.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exitCode")
     Integer exitCode;

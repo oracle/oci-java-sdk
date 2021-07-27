@@ -36,13 +36,13 @@ public class ListDatabaseUpgradeHistoryEntriesRequest
     private DatabaseUpgradeHistoryEntrySummary.LifecycleState lifecycleState;
 
     /**
-     * The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for TIMECREATED is ascending.
+     * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is ascending.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for TIMECREATED is ascending.
+     * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is ascending.
      *
      **/
     public enum SortBy {
@@ -77,12 +77,12 @@ public class ListDatabaseUpgradeHistoryEntriesRequest
         }
     };
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      **/
     public enum SortOrder {
         Asc("ASC"),

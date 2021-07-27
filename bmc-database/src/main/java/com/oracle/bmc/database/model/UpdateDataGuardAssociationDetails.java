@@ -97,7 +97,7 @@ public class UpdateDataGuardAssociationDetails {
      * <p>
      * At least two numeric characters.
      * <p>
-     * At least two special characters. Valid special characters include \"_\", \"#\", and \"-\" only.
+     * At least two special characters. Valid special characters include "_", "#", and "-" only.
      * <p>
      **The password MUST be the same as the primary admin password.**
      *

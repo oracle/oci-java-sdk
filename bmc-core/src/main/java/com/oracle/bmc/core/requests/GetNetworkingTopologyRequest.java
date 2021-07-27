@@ -26,25 +26,25 @@ public class GetNetworkingTopologyRequest
     private String compartmentId;
 
     /**
-     * Valid values are `ANY` and `ACCESSIBLE`. The default is `ANY`.
-     * Setting this to `ACCESSIBLE` returns only compartments for which a
+     * Valid values are {@code ANY} and {@code ACCESSIBLE}. The default is {@code ANY}.
+     * Setting this to {@code ACCESSIBLE} returns only compartments for which a
      * user has INSPECT permissions, either directly or indirectly (permissions can be on a
      * resource in a subcompartment). A restricted set of fields is returned for compartments in which a user has
      * indirect INSPECT permissions.
      * <p>
-     * When set to `ANY` permissions are not checked.
+     * When set to {@code ANY} permissions are not checked.
      *
      */
     private AccessLevel accessLevel;
 
     /**
-     * Valid values are `ANY` and `ACCESSIBLE`. The default is `ANY`.
-     * Setting this to `ACCESSIBLE` returns only compartments for which a
+     * Valid values are {@code ANY} and {@code ACCESSIBLE}. The default is {@code ANY}.
+     * Setting this to {@code ACCESSIBLE} returns only compartments for which a
      * user has INSPECT permissions, either directly or indirectly (permissions can be on a
      * resource in a subcompartment). A restricted set of fields is returned for compartments in which a user has
      * indirect INSPECT permissions.
      * <p>
-     * When set to `ANY` permissions are not checked.
+     * When set to {@code ANY} permissions are not checked.
      *
      **/
     public enum AccessLevel {
@@ -82,7 +82,7 @@ public class GetNetworkingTopologyRequest
     /**
      * When set to true, the hierarchy of compartments is traversed
      * and the specified compartment and its subcompartments are
-     * inspected depending on the the setting of `accessLevel`.
+     * inspected depending on the the setting of {@code accessLevel}.
      * Default is false.
      *
      */

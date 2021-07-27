@@ -373,7 +373,7 @@ public class VirtualCircuit {
      * available bandwidth levels (that is, shapes), see
      * {@link #listFastConnectProviderVirtualCircuitBandwidthShapes(ListFastConnectProviderVirtualCircuitBandwidthShapesRequest) listFastConnectProviderVirtualCircuitBandwidthShapes}.
      * <p>
-     * Example: `10 Gbps`
+     * Example: {@code 10 Gbps}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bandwidthShapeName")
@@ -600,7 +600,7 @@ public class VirtualCircuit {
     };
     /**
      * The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit.
-     * Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`.
+     * Policies available are: {@code ORACLE_SERVICE_NETWORK}, {@code REGIONAL}, {@code MARKET_LEVEL}, and {@code GLOBAL}.
      * See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details.
      * By default, routing information is shared for all routes in the same market.
      *
@@ -609,7 +609,7 @@ public class VirtualCircuit {
     java.util.List<RoutingPolicy> routingPolicy;
 
     /**
-     * Deprecated. Instead use `customerAsn`.
+     * Deprecated. Instead use {@code customerAsn}.
      * If you specify values for both, the request will be rejected.
      *
      **/
@@ -622,7 +622,7 @@ public class VirtualCircuit {
      * edge router and Oracle, the value is the customer's ASN. If the BGP
      * session is between the provider's edge router and Oracle, the value
      * is the provider's ASN.
-     * Can be a 2-byte or 4-byte ASN. Uses \"asplain\" format.
+     * Can be a 2-byte or 4-byte ASN. Uses "asplain" format.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerAsn")
@@ -632,7 +632,7 @@ public class VirtualCircuit {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -650,7 +650,7 @@ public class VirtualCircuit {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -740,7 +740,7 @@ public class VirtualCircuit {
     Integer oracleBgpAsn;
 
     /**
-     * Deprecated. Instead use `providerServiceId`.
+     * Deprecated. Instead use {@code providerServiceId}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerName")
@@ -761,7 +761,7 @@ public class VirtualCircuit {
     String providerServiceKeyName;
 
     /**
-     * Deprecated. Instead use `providerServiceId`.
+     * Deprecated. Instead use {@code providerServiceId}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerServiceName")
@@ -910,7 +910,7 @@ public class VirtualCircuit {
      * The date and time the virtual circuit was created,
      * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

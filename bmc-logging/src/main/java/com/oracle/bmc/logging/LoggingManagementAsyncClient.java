@@ -401,7 +401,12 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                                 ChangeLogGroupCompartmentRequest,
                                 ChangeLogGroupCompartmentResponse>,
                         java.util.concurrent.Future<ChangeLogGroupCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeLogGroupCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -440,7 +445,12 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeLogLogGroupRequest, ChangeLogLogGroupResponse>,
                         java.util.concurrent.Future<ChangeLogLogGroupResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeLogLogGroupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -486,7 +496,12 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                                 ChangeLogSavedSearchCompartmentRequest,
                                 ChangeLogSavedSearchCompartmentResponse>,
                         java.util.concurrent.Future<ChangeLogSavedSearchCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeLogSavedSearchCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -536,7 +551,13 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                                 ChangeUnifiedAgentConfigurationCompartmentResponse>,
                         java.util.concurrent.Future<
                                 ChangeUnifiedAgentConfigurationCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeUnifiedAgentConfigurationCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -574,7 +595,12 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<CreateLogRequest, CreateLogResponse>,
                         java.util.concurrent.Future<CreateLogResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateLogDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -614,7 +640,12 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateLogGroupRequest, CreateLogGroupResponse>,
                         java.util.concurrent.Future<CreateLogGroupResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateLogGroupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -656,7 +687,12 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateLogSavedSearchRequest, CreateLogSavedSearchResponse>,
                         java.util.concurrent.Future<CreateLogSavedSearchResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateLogSavedSearchDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -702,7 +738,12 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                                 CreateUnifiedAgentConfigurationRequest,
                                 CreateUnifiedAgentConfigurationResponse>,
                         java.util.concurrent.Future<CreateUnifiedAgentConfigurationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateUnifiedAgentConfigurationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1535,7 +1576,12 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<UpdateLogRequest, UpdateLogResponse>,
                         java.util.concurrent.Future<UpdateLogResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateLogDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1574,7 +1620,12 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateLogGroupRequest, UpdateLogGroupResponse>,
                         java.util.concurrent.Future<UpdateLogGroupResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateLogGroupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1615,7 +1666,12 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateLogSavedSearchRequest, UpdateLogSavedSearchResponse>,
                         java.util.concurrent.Future<UpdateLogSavedSearchResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateLogSavedSearchDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1660,7 +1716,12 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                                 UpdateUnifiedAgentConfigurationRequest,
                                 UpdateUnifiedAgentConfigurationResponse>,
                         java.util.concurrent.Future<UpdateUnifiedAgentConfigurationResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateUnifiedAgentConfigurationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

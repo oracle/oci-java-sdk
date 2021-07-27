@@ -41,7 +41,7 @@ package com.oracle.bmc.apigateway.model;
 public class AuthenticationPolicy {
 
     /**
-     * Whether an unauthenticated user may access the API. Must be \"true\" to enable ANONYMOUS
+     * Whether an unauthenticated user may access the API. Must be "true" to enable ANONYMOUS
      * route authorization.
      *
      **/

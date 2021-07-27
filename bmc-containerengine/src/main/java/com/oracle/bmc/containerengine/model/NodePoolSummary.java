@@ -257,14 +257,14 @@ public class NodePoolSummary {
     String kubernetesVersion;
 
     /**
-     * Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
+     * Deprecated. see {@code nodeSource}. The OCID of the image running on the nodes in the node pool.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeImageId")
     String nodeImageId;
 
     /**
-     * Deprecated. see `nodeSource`. The name of the image running on the nodes in the node pool.
+     * Deprecated. see {@code nodeSource}. The name of the image running on the nodes in the node pool.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeImageName")
@@ -277,7 +277,7 @@ public class NodePoolSummary {
     NodeShapeConfig nodeShapeConfig;
 
     /**
-     * Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
+     * Deprecated. see {@code nodeSourceDetails}. Source running on the nodes in the node pool.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeSource")
     NodeSourceOption nodeSource;

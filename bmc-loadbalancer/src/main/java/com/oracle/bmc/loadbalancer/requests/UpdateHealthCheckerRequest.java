@@ -33,7 +33,7 @@ public class UpdateHealthCheckerRequest
     /**
      * The name of the backend set associated with the health check policy to be retrieved.
      * <p>
-     * Example: `example_backend_set`
+     * Example: {@code example_backend_set}
      *
      */
     private String backendSetName;

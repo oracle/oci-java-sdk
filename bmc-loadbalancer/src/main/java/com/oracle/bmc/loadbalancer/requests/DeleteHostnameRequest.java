@@ -27,7 +27,7 @@ public class DeleteHostnameRequest extends com.oracle.bmc.requests.BmcRequest<ja
     /**
      * The name of the hostname resource to delete.
      * <p>
-     * Example: `example_hostname_001`
+     * Example: {@code example_hostname_001}
      *
      */
     private String name;

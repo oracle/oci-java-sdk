@@ -33,7 +33,7 @@ public class UpdateListenerRequest
     /**
      * The name of the listener to update.
      * <p>
-     * Example: `example_listener`
+     * Example: {@code example_listener}
      *
      */
     private String listenerName;

@@ -23,7 +23,7 @@ package com.oracle.bmc.database.model;
  * For information about availability domains, see
  * [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm).
  * <p>
- * To get a list of availability domains, use the `ListAvailabilityDomains` operation
+ * To get a list of availability domains, use the {@code ListAvailabilityDomains} operation
  * in the Identity Service API.
  * <p>
  **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
@@ -1035,7 +1035,7 @@ public class DbSystemSummary {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")

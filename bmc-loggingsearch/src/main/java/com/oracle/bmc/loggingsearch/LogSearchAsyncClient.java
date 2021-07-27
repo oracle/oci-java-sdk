@@ -395,7 +395,12 @@ public class LogSearchAsyncClient implements LogSearchAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 SearchLogsRequest, SearchLogsResponse>,
                         java.util.concurrent.Future<SearchLogsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSearchLogsDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

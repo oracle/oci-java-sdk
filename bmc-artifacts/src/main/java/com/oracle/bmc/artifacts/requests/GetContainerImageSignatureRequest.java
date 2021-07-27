@@ -23,7 +23,7 @@ public class GetContainerImageSignatureRequest
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image signature.
      * <p>
-     * Example: `ocid1.containersignature.oc1..exampleuniqueID`
+     * Example: {@code ocid1.containersignature.oc1..exampleuniqueID}
      *
      */
     private String imageSignatureId;

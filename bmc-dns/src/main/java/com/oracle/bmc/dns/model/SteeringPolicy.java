@@ -221,8 +221,8 @@ public class SteeringPolicy {
 
     /**
      * The OCID of the health check monitor providing health data about the answers of the
-     * steering policy. A steering policy answer with `rdata` matching a monitored endpoint
-     * will use the health data of that endpoint. A steering policy answer with `rdata` not
+     * steering policy. A steering policy answer with {@code rdata} matching a monitored endpoint
+     * will use the health data of that endpoint. A steering policy answer with {@code rdata} not
      * matching any monitored endpoint will be assumed healthy.
      * <p>
      *
@@ -239,42 +239,42 @@ public class SteeringPolicy {
      * results when answering DNS queries.
      * <p>
      *
-     * **Example:** The `FAILOVER` template determines answers by filtering the policy's answers
-     * using the `FILTER` rule first, then the following rules in succession: `HEALTH`, `PRIORITY`,
-     * and `LIMIT`. This gives the domain dynamic failover capability.
+     * **Example:** The {@code FAILOVER} template determines answers by filtering the policy's answers
+     * using the {@code FILTER} rule first, then the following rules in succession: {@code HEALTH}, {@code PRIORITY},
+     * and {@code LIMIT}. This gives the domain dynamic failover capability.
      * <p>
      *
-     * It is **strongly recommended** to use a template other than `CUSTOM` when creating
+     * It is **strongly recommended** to use a template other than {@code CUSTOM} when creating
      * a steering policy.
      * <p>
      *
-     * All templates require the rule order to begin with an unconditional `FILTER` rule that keeps
-     * answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined
-     * `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`.
-     * The last rule of a template must must be a `LIMIT` rule. For more information about templates
+     * All templates require the rule order to begin with an unconditional {@code FILTER} rule that keeps
+     * answers contingent upon {@code answer.isDisabled != true}, except for {@code CUSTOM}. A defined
+     * {@code HEALTH} rule must follow the {@code FILTER} rule if the policy references a {@code healthCheckMonitorId}.
+     * The last rule of a template must must be a {@code LIMIT} rule. For more information about templates
      * and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
      * <p>
      **Template Types**
      * <p>
-     * `FAILOVER` - Uses health check information on your endpoints to determine which DNS answers
+     * {@code FAILOVER} - Uses health check information on your endpoints to determine which DNS answers
      * to serve. If an endpoint fails a health check, the answer for that endpoint will be removed
      * from the list of available answers until the endpoint is detected as healthy.
      * <p>
      *
-     * * `LOAD_BALANCE` - Distributes web traffic to specified endpoints based on defined weights.
+     * * {@code LOAD_BALANCE} - Distributes web traffic to specified endpoints based on defined weights.
      * <p>
      *
-     * * `ROUTE_BY_GEO` - Answers DNS queries based on the query's geographic location. For a list of geographic
+     * * {@code ROUTE_BY_GEO} - Answers DNS queries based on the query's geographic location. For a list of geographic
      * locations to route by, see [Traffic Management Geographic Locations](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm).
      * <p>
      *
-     * * `ROUTE_BY_ASN` - Answers DNS queries based on the query's originating ASN.
+     * * {@code ROUTE_BY_ASN} - Answers DNS queries based on the query's originating ASN.
      * <p>
      *
-     * * `ROUTE_BY_IP` - Answers DNS queries based on the query's IP address.
+     * * {@code ROUTE_BY_IP} - Answers DNS queries based on the query's IP address.
      * <p>
      *
-     * * `CUSTOM` - Allows a customized configuration of rules.
+     * * {@code CUSTOM} - Allows a customized configuration of rules.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -330,42 +330,42 @@ public class SteeringPolicy {
      * results when answering DNS queries.
      * <p>
      *
-     * **Example:** The `FAILOVER` template determines answers by filtering the policy's answers
-     * using the `FILTER` rule first, then the following rules in succession: `HEALTH`, `PRIORITY`,
-     * and `LIMIT`. This gives the domain dynamic failover capability.
+     * **Example:** The {@code FAILOVER} template determines answers by filtering the policy's answers
+     * using the {@code FILTER} rule first, then the following rules in succession: {@code HEALTH}, {@code PRIORITY},
+     * and {@code LIMIT}. This gives the domain dynamic failover capability.
      * <p>
      *
-     * It is **strongly recommended** to use a template other than `CUSTOM` when creating
+     * It is **strongly recommended** to use a template other than {@code CUSTOM} when creating
      * a steering policy.
      * <p>
      *
-     * All templates require the rule order to begin with an unconditional `FILTER` rule that keeps
-     * answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined
-     * `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`.
-     * The last rule of a template must must be a `LIMIT` rule. For more information about templates
+     * All templates require the rule order to begin with an unconditional {@code FILTER} rule that keeps
+     * answers contingent upon {@code answer.isDisabled != true}, except for {@code CUSTOM}. A defined
+     * {@code HEALTH} rule must follow the {@code FILTER} rule if the policy references a {@code healthCheckMonitorId}.
+     * The last rule of a template must must be a {@code LIMIT} rule. For more information about templates
      * and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
      * <p>
      **Template Types**
      * <p>
-     * `FAILOVER` - Uses health check information on your endpoints to determine which DNS answers
+     * {@code FAILOVER} - Uses health check information on your endpoints to determine which DNS answers
      * to serve. If an endpoint fails a health check, the answer for that endpoint will be removed
      * from the list of available answers until the endpoint is detected as healthy.
      * <p>
      *
-     * * `LOAD_BALANCE` - Distributes web traffic to specified endpoints based on defined weights.
+     * * {@code LOAD_BALANCE} - Distributes web traffic to specified endpoints based on defined weights.
      * <p>
      *
-     * * `ROUTE_BY_GEO` - Answers DNS queries based on the query's geographic location. For a list of geographic
+     * * {@code ROUTE_BY_GEO} - Answers DNS queries based on the query's geographic location. For a list of geographic
      * locations to route by, see [Traffic Management Geographic Locations](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm).
      * <p>
      *
-     * * `ROUTE_BY_ASN` - Answers DNS queries based on the query's originating ASN.
+     * * {@code ROUTE_BY_ASN} - Answers DNS queries based on the query's originating ASN.
      * <p>
      *
-     * * `ROUTE_BY_IP` - Answers DNS queries based on the query's IP address.
+     * * {@code ROUTE_BY_IP} - Answers DNS queries based on the query's IP address.
      * <p>
      *
-     * * `CUSTOM` - Allows a customized configuration of rules.
+     * * {@code CUSTOM} - Allows a customized configuration of rules.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("template")
@@ -376,7 +376,7 @@ public class SteeringPolicy {
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      *
-     * **Example:** `{\"Department\": \"Finance\"}`
+     * **Example:** {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -387,7 +387,7 @@ public class SteeringPolicy {
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      *
-     * **Example:** `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * **Example:** {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -428,7 +428,7 @@ public class SteeringPolicy {
     /**
      * The date and time the resource was created, expressed in RFC 3339 timestamp format.
      * <p>
-     **Example:** `2016-07-22T17:23:59:60Z`
+     **Example:** {@code 2016-07-22T17:23:59:60Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

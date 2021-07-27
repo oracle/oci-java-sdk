@@ -7,9 +7,9 @@ package com.oracle.bmc.limits.model;
 /**
  * Quotas are applied on top of the service limits and inherited through the nested compartment hierarchy.
  * Quotas allow compartment admins to limit resource consumption and set boundaries around acceptable resource use.
- * The term \"quota\" can be interpreted as the following:
+ * The term "quota" can be interpreted as the following:
  *   * An individual statement written in the declarative language.
- *   * A collection of statements in a single, named \"quota\" object (which has an Oracle Cloud ID (OCID) assigned to it).
+ *   * A collection of statements in a single, named "quota" object (which has an Oracle Cloud ID (OCID) assigned to it).
  *   * The overall body of quotas your organization uses to control access to resources.
  *
  * <br/>
@@ -191,13 +191,13 @@ public class Quota {
 
     /**
      * Date and time the quota was created, in the format defined by RFC 3339.
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
     /**
-     * The quota's current state. After creating a quota, make sure its `lifecycleState` is set to
+     * The quota's current state. After creating a quota, make sure its {@code lifecycleState} is set to
      * ACTIVE before using it.
      *
      **/
@@ -244,7 +244,7 @@ public class Quota {
         }
     };
     /**
-     * The quota's current state. After creating a quota, make sure its `lifecycleState` is set to
+     * The quota's current state. After creating a quota, make sure its {@code lifecycleState} is set to
      * ACTIVE before using it.
      *
      **/
@@ -254,7 +254,7 @@ public class Quota {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -263,7 +263,7 @@ public class Quota {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

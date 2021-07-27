@@ -170,7 +170,7 @@ public class CreateListenerDetails {
     /**
      * The name of the associated backend set.
      * <p>
-     * Example: `example_backend_set`
+     * Example: {@code example_backend_set}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultBackendSetName")
@@ -179,7 +179,7 @@ public class CreateListenerDetails {
     /**
      * The communication port for the listener.
      * <p>
-     * Example: `80`
+     * Example: {@code 80}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
@@ -190,7 +190,7 @@ public class CreateListenerDetails {
      * To get a list of valid protocols, use the {@link #listProtocols(ListProtocolsRequest) listProtocols}
      * operation.
      * <p>
-     * Example: `HTTP`
+     * Example: {@code HTTP}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
@@ -203,12 +203,12 @@ public class CreateListenerDetails {
     java.util.List<String> hostnameNames;
 
     /**
-     * Deprecated. Please use `routingPolicies` instead.
+     * Deprecated. Please use {@code routingPolicies} instead.
      * <p>
      * The name of the set of path-based routing rules, {@link PathRouteSet},
      * applied to this listener's traffic.
      * <p>
-     * Example: `example_path_route_set`
+     * Example: {@code example_path_route_set}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pathRouteSetName")
@@ -224,7 +224,7 @@ public class CreateListenerDetails {
      * A friendly name for the listener. It must be unique and it cannot be changed.
      * Avoid entering confidential information.
      * <p>
-     * Example: `example_listener`
+     * Example: {@code example_listener}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -233,7 +233,7 @@ public class CreateListenerDetails {
     /**
      * The name of the routing policy applied to this listener's traffic.
      * <p>
-     * Example: `example_routing_policy`
+     * Example: {@code example_routing_policy}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routingPolicyName")
@@ -242,7 +242,7 @@ public class CreateListenerDetails {
     /**
      * The names of the {@link RuleSet} to apply to the listener.
      * <p>
-     * Example: [\"example_rule_set\"]
+     * Example: ["example_rule_set"]
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleSetNames")

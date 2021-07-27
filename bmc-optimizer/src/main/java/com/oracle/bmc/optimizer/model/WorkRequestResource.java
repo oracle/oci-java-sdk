@@ -101,9 +101,9 @@ public class WorkRequestResource {
     /**
      * The way in which this resource was affected by the work tracked by the work request.
      * <p>
-     * A resource being created, updated, or deleted remains in the `IN_PROGRESS` state until
-     * work is complete for that resource. At that point, the resource transitions to the `CREATED`, `UPDATED`,
-     * or `DELETED` state.
+     * A resource being created, updated, or deleted remains in the {@code IN_PROGRESS} state until
+     * work is complete for that resource. At that point, the resource transitions to the {@code CREATED}, {@code UPDATED},
+     * or {@code DELETED} state.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionType")

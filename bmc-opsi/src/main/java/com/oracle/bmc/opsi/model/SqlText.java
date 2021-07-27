@@ -129,7 +129,7 @@ public class SqlText {
 
     /**
      * Version
-     * Example: `1`
+     * Example: {@code 1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
@@ -144,7 +144,7 @@ public class SqlText {
 
     /**
      * Collection timestamp
-     * Example: `\"2020-05-06T00:00:00.000Z\"`
+     * Example: {@code "2020-05-06T00:00:00.000Z"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
@@ -152,7 +152,7 @@ public class SqlText {
 
     /**
      * SQL command
-     * Example: `\"SELECT\"`
+     * Example: {@code "SELECT"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlCommand")
@@ -160,7 +160,7 @@ public class SqlText {
 
     /**
      * Exact matching signature
-     * Example: `\"18067345456756876713\"`
+     * Example: {@code "18067345456756876713"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exactMatchingSignature")
@@ -168,7 +168,7 @@ public class SqlText {
 
     /**
      * Force matching signature
-     * Example: `\"18067345456756876713\"`
+     * Example: {@code "18067345456756876713"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("forceMatchingSignature")
@@ -176,7 +176,7 @@ public class SqlText {
 
     /**
      * Full SQL Text
-     * Example: `\"SELECT username,profile,default_tablespace,temporary_tablespace FROM dba_users\"`
+     * Example: {@code "SELECT username,profile,default_tablespace,temporary_tablespace FROM dba_users"}
      * Disclaimer: SQL text being uploaded explicitly via APIs is not masked. Any sensitive literals contained in the sqlFullText column should be masked prior to ingestion.
      *
      **/

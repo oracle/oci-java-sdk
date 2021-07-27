@@ -27,7 +27,7 @@ public class CreateMultipartUploadRequest
 
     /**
      * The name of the bucket. Avoid entering confidential information.
-     * Example: `my-new-bucket1`
+     * Example: {@code my-new-bucket1}
      *
      */
     private String bucketName;
@@ -58,7 +58,7 @@ public class CreateMultipartUploadRequest
     private String opcClientRequestId;
 
     /**
-     * The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
+     * The optional header that specifies "AES256" as the encryption algorithm. For more information, see
      * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
      *
      */

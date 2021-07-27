@@ -110,12 +110,12 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
     private String opcRequestId;
 
     /**
-     * Search for DevOps resources that were created before a specific date. Specifying this parameter corresponding to `timeCreatedLessThan` parameter will retrieve all assessments created before the specified created date, in \"YYYY-MM-ddThh:mmZ\" format with a Z offset, as defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     * Search for DevOps resources that were created before a specific date. Specifying this parameter corresponding to {@code timeCreatedLessThan} parameter will retrieve all assessments created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
     private java.util.Date timeCreatedLessThan;
 
     /**
-     * Search for DevOps resources that were created after a specific date. Specifying this parameter corresponding to `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all security assessments created after the specified created date, in \"YYYY-MM-ddThh:mmZ\" format with a Z offset, as defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     * Search for DevOps resources that were created after a specific date. Specifying this parameter corresponding to {@code timeCreatedGreaterThanOrEqualTo} parameter will retrieve all security assessments created after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 

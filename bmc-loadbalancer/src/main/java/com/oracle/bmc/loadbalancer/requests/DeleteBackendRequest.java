@@ -27,7 +27,7 @@ public class DeleteBackendRequest extends com.oracle.bmc.requests.BmcRequest<jav
     /**
      * The name of the backend set associated with the backend server.
      * <p>
-     * Example: `example_backend_set`
+     * Example: {@code example_backend_set}
      *
      */
     private String backendSetName;
@@ -35,7 +35,7 @@ public class DeleteBackendRequest extends com.oracle.bmc.requests.BmcRequest<jav
     /**
      * The IP address and port of the backend server to remove.
      * <p>
-     * Example: `10.0.0.3:8080`
+     * Example: {@code 10.0.0.3:8080}
      *
      */
     private String backendName;

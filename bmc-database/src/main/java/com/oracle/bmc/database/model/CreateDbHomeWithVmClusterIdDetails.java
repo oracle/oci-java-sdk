@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Note that a valid `vmClusterId` value must be supplied for the `CreateDbHomeWithVmClusterId` API operation to successfully complete.
+ * Note that a valid {@code vmClusterId} value must be supplied for the {@code CreateDbHomeWithVmClusterId} API operation to successfully complete.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

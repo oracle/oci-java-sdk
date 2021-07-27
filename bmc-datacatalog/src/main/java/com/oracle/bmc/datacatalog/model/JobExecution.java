@@ -314,7 +314,7 @@ public class JobExecution {
 
     /**
      * The date and time the job execution was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * Example: `2019-03-25T21:10:29.600Z`
+     * Example: {@code 2019-03-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -396,8 +396,8 @@ public class JobExecution {
      * A map of maps that contains the execution context properties which are specific to a job execution. Each job
      * execution may define it's set of required and optional properties. The map keys are category names and the
      * values are maps of property name to property value. Every property is contained inside of a category. Most
-     * job executions have required properties within the \"default\" category.
-     * Example: `{\"properties\": { \"default\": { \"host\": \"host1\", \"port\": \"1521\", \"database\": \"orcl\"}}}`
+     * job executions have required properties within the "default" category.
+     * Example: {@code {"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")

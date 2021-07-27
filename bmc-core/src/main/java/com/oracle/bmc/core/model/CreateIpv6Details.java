@@ -108,7 +108,7 @@ public class CreateIpv6Details {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -126,7 +126,7 @@ public class CreateIpv6Details {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -136,9 +136,9 @@ public class CreateIpv6Details {
      * An IPv6 address of your choice. Must be an available IP address within
      * the subnet's CIDR. If you don't specify a value, Oracle automatically
      * assigns an IPv6 address from the subnet. The subnet is the one that
-     * contains the VNIC you specify in `vnicId`.
+     * contains the VNIC you specify in {@code vnicId}.
      * <p>
-     * Example: `2001:DB8::`
+     * Example: {@code 2001:DB8::}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")

@@ -77,9 +77,9 @@ public class SourceVcnIdCondition extends RuleCondition {
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the originating VCN that an incoming packet
      * must match.
      * <p>
-     * You can use this condition in conjunction with `SourceVcnIpAddressCondition`.
+     * You can use this condition in conjunction with {@code SourceVcnIpAddressCondition}.
      * <p>
-     **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition
+     **NOTE:** If you define this condition for a rule without a {@code SourceVcnIpAddressCondition}, this condition
      * matches all incoming traffic in the specified VCN.
      *
      **/

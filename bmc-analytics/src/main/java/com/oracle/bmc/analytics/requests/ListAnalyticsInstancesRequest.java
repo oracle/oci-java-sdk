@@ -62,16 +62,16 @@ public class ListAnalyticsInstancesRequest
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a paginated
-     * \"List\" call. For important details about how pagination works, see
+     * "List" call. For important details about how pagination works, see
      * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * <p>
-     * Example: `50`
+     * Example: {@code 50}
      *
      */
     private Integer limit;
 
     /**
-     * For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
      * call. For important details about how pagination works, see
      * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
@@ -80,13 +80,13 @@ public class ListAnalyticsInstancesRequest
 
     /**
      * The field to sort by (one column only). Default sort order is
-     * ascending exception of `timeCreated` column (descending).
+     * ascending exception of {@code timeCreated} column (descending).
      *
      */
     private com.oracle.bmc.analytics.model.SortBy sortBy;
 
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      *
      */
     private com.oracle.bmc.analytics.model.SortOrder sortOrder;

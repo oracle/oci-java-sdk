@@ -60,18 +60,18 @@ public class PathMatchType {
 
     /**
      * Specifies how the load balancing service compares a {@link #pathRoute(PathRouteRequest) pathRoute}
-     * object's `path` string against the incoming URI.
+     * object's {@code path} string against the incoming URI.
      * <p>
-     *  **EXACT_MATCH** - Looks for a `path` string that exactly matches the incoming URI path.
+     *  **EXACT_MATCH** - Looks for a {@code path} string that exactly matches the incoming URI path.
      * <p>
-     *  **FORCE_LONGEST_PREFIX_MATCH** - Looks for the `path` string with the best, longest match of the beginning
+     *  **FORCE_LONGEST_PREFIX_MATCH** - Looks for the {@code path} string with the best, longest match of the beginning
      *    portion of the incoming URI path.
      * <p>
-     *  **PREFIX_MATCH** - Looks for a `path` string that matches the beginning portion of the incoming URI path.
+     *  **PREFIX_MATCH** - Looks for a {@code path} string that matches the beginning portion of the incoming URI path.
      * <p>
-     *  **SUFFIX_MATCH** - Looks for a `path` string that matches the ending portion of the incoming URI path.
+     *  **SUFFIX_MATCH** - Looks for a {@code path} string that matches the ending portion of the incoming URI path.
      * <p>
-     * For a full description of how the system handles `matchType` in a path route set containing multiple rules, see
+     * For a full description of how the system handles {@code matchType} in a path route set containing multiple rules, see
      * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
      *
      **/
@@ -122,18 +122,18 @@ public class PathMatchType {
     };
     /**
      * Specifies how the load balancing service compares a {@link #pathRoute(PathRouteRequest) pathRoute}
-     * object's `path` string against the incoming URI.
+     * object's {@code path} string against the incoming URI.
      * <p>
-     *  **EXACT_MATCH** - Looks for a `path` string that exactly matches the incoming URI path.
+     *  **EXACT_MATCH** - Looks for a {@code path} string that exactly matches the incoming URI path.
      * <p>
-     *  **FORCE_LONGEST_PREFIX_MATCH** - Looks for the `path` string with the best, longest match of the beginning
+     *  **FORCE_LONGEST_PREFIX_MATCH** - Looks for the {@code path} string with the best, longest match of the beginning
      *    portion of the incoming URI path.
      * <p>
-     *  **PREFIX_MATCH** - Looks for a `path` string that matches the beginning portion of the incoming URI path.
+     *  **PREFIX_MATCH** - Looks for a {@code path} string that matches the beginning portion of the incoming URI path.
      * <p>
-     *  **SUFFIX_MATCH** - Looks for a `path` string that matches the ending portion of the incoming URI path.
+     *  **SUFFIX_MATCH** - Looks for a {@code path} string that matches the ending portion of the incoming URI path.
      * <p>
-     * For a full description of how the system handles `matchType` in a path route set containing multiple rules, see
+     * For a full description of how the system handles {@code matchType} in a path route set containing multiple rules, see
      * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
      *
      **/

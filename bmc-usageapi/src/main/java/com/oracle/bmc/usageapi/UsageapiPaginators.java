@@ -31,6 +31,118 @@ public class UsageapiPaginators {
     private final Usageapi client;
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listCustomTables operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListCustomTablesResponse> listCustomTablesResponseIterator(
+            final ListCustomTablesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCustomTablesRequest.Builder, ListCustomTablesRequest, ListCustomTablesResponse>(
+                new com.google.common.base.Supplier<ListCustomTablesRequest.Builder>() {
+                    @Override
+                    public ListCustomTablesRequest.Builder get() {
+                        return ListCustomTablesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListCustomTablesResponse, String>() {
+                    @Override
+                    public String apply(ListCustomTablesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCustomTablesRequest.Builder>,
+                        ListCustomTablesRequest>() {
+                    @Override
+                    public ListCustomTablesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCustomTablesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCustomTablesRequest, ListCustomTablesResponse>() {
+                    @Override
+                    public ListCustomTablesResponse apply(ListCustomTablesRequest request) {
+                        return client.listCustomTables(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.usageapi.model.CustomTableSummary} objects
+     * contained in responses from the listCustomTables operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.usageapi.model.CustomTableSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.usageapi.model.CustomTableSummary>
+            listCustomTablesRecordIterator(final ListCustomTablesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCustomTablesRequest.Builder, ListCustomTablesRequest, ListCustomTablesResponse,
+                com.oracle.bmc.usageapi.model.CustomTableSummary>(
+                new com.google.common.base.Supplier<ListCustomTablesRequest.Builder>() {
+                    @Override
+                    public ListCustomTablesRequest.Builder get() {
+                        return ListCustomTablesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListCustomTablesResponse, String>() {
+                    @Override
+                    public String apply(ListCustomTablesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCustomTablesRequest.Builder>,
+                        ListCustomTablesRequest>() {
+                    @Override
+                    public ListCustomTablesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCustomTablesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCustomTablesRequest, ListCustomTablesResponse>() {
+                    @Override
+                    public ListCustomTablesResponse apply(ListCustomTablesRequest request) {
+                        return client.listCustomTables(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCustomTablesResponse,
+                        java.util.List<com.oracle.bmc.usageapi.model.CustomTableSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.usageapi.model.CustomTableSummary> apply(
+                            ListCustomTablesResponse response) {
+                        return response.getCustomTableCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listQueries operation. This iterable
      * will fetch more data from the server as needed.
      *

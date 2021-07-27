@@ -166,7 +166,7 @@ public class Listener {
     /**
      * A friendly name for the listener. It must be unique and it cannot be changed.
      * <p>
-     * Example: `example_listener`
+     * Example: {@code example_listener}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -175,7 +175,7 @@ public class Listener {
     /**
      * The name of the associated backend set.
      * <p>
-     * Example: `example_backend_set`
+     * Example: {@code example_backend_set}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultBackendSetName")
@@ -184,7 +184,7 @@ public class Listener {
     /**
      * The communication port for the listener.
      * <p>
-     * Example: `80`
+     * Example: {@code 80}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
@@ -195,7 +195,7 @@ public class Listener {
      * To get a list of valid protocols, use the {@link #listProtocols(ListProtocolsRequest) listProtocols}
      * operation.
      * <p>
-     * Example: `HTTP`
+     * Example: {@code HTTP}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
@@ -208,12 +208,12 @@ public class Listener {
     java.util.List<String> hostnameNames;
 
     /**
-     * Deprecated. Please use `routingPolicies` instead.
+     * Deprecated. Please use {@code routingPolicies} instead.
      * <p>
      * The name of the set of path-based routing rules, {@link PathRouteSet},
      * applied to this listener's traffic.
      * <p>
-     * Example: `example_path_route_set`
+     * Example: {@code example_path_route_set}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pathRouteSetName")
@@ -228,7 +228,7 @@ public class Listener {
     /**
      * The names of the {@link RuleSet} to apply to the listener.
      * <p>
-     * Example: [\"example_rule_set\"]
+     * Example: ["example_rule_set"]
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleSetNames")
@@ -237,7 +237,7 @@ public class Listener {
     /**
      * The name of the routing policy applied to this listener's traffic.
      * <p>
-     * Example: `example_routing_policy_name`
+     * Example: {@code example_routing_policy_name}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routingPolicyName")

@@ -161,11 +161,11 @@ public class CreateConnectionDetails {
      * A map of maps that contains the properties which are specific to the connection type. Each connection type
      * definition defines it's set of required and optional properties. The map keys are category names and the
      * values are maps of property name to property value. Every property is contained inside of a category. Most
-     * connections have required properties within the \"default\" category. To determine the set of optional and
+     * connections have required properties within the "default" category. To determine the set of optional and
      * required properties for a connection type, a query can be done on '/types?type=connection' that returns a
      * collection of all connection types. The appropriate connection type, which will include definitions of all
      * of it's properties, can be identified from this collection.
-     * Example: `{\"properties\": { \"default\": { \"username\": \"user1\"}}}`
+     * Example: {@code {"properties": { "default": { "username": "user1"}}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
@@ -175,11 +175,11 @@ public class CreateConnectionDetails {
      * A map of maps that contains the encrypted values for sensitive properties which are specific to the
      * connection type. Each connection type definition defines it's set of required and optional properties.
      * The map keys are category names and the values are maps of property name to property value. Every property is
-     * contained inside of a category. Most connections have required properties within the \"default\" category.
+     * contained inside of a category. Most connections have required properties within the "default" category.
      * To determine the set of optional and required properties for a connection type, a query can be done
      * on '/types?type=connection' that returns a collection of all connection types. The appropriate connection
      * type, which will include definitions of all of it's properties, can be identified from this collection.
-     * Example: `{\"encProperties\": { \"default\": { \"password\": \"example-password\"}}}`
+     * Example: {@code {"encProperties": { "default": { "password": "example-password"}}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("encProperties")

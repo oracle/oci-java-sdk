@@ -324,7 +324,12 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<BackupKeyRequest, BackupKeyResponse>,
                         java.util.concurrent.Future<BackupKeyResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBackupKeyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -448,7 +453,12 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeKeyCompartmentRequest, ChangeKeyCompartmentResponse>,
                         java.util.concurrent.Future<ChangeKeyCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeKeyCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -485,7 +495,12 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<CreateKeyRequest, CreateKeyResponse>,
                         java.util.concurrent.Future<CreateKeyResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateKeyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -789,7 +804,12 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<ImportKeyRequest, ImportKeyResponse>,
                         java.util.concurrent.Future<ImportKeyResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getImportKeyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -829,7 +849,12 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ImportKeyVersionRequest, ImportKeyVersionResponse>,
                         java.util.concurrent.Future<ImportKeyVersionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getImportKeyVersionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -952,7 +977,12 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 RestoreKeyFromFileRequest, RestoreKeyFromFileResponse>,
                         java.util.concurrent.Future<RestoreKeyFromFileResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRestoreKeyFromFileDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -999,7 +1029,12 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
                                 RestoreKeyFromObjectStoreRequest,
                                 RestoreKeyFromObjectStoreResponse>,
                         java.util.concurrent.Future<RestoreKeyFromObjectStoreResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRestoreKeyFromObjectStoreDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1041,7 +1076,12 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ScheduleKeyDeletionRequest, ScheduleKeyDeletionResponse>,
                         java.util.concurrent.Future<ScheduleKeyDeletionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getScheduleKeyDeletionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1086,7 +1126,12 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
                                 ScheduleKeyVersionDeletionRequest,
                                 ScheduleKeyVersionDeletionResponse>,
                         java.util.concurrent.Future<ScheduleKeyVersionDeletionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getScheduleKeyVersionDeletionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1122,7 +1167,12 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<UpdateKeyRequest, UpdateKeyResponse>,
                         java.util.concurrent.Future<UpdateKeyResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateKeyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

@@ -96,7 +96,7 @@ public class NotificationsTargetDetails extends TargetDetails {
     /**
      * Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.
      * <p>
-     * Example: `true`
+     * Example: {@code true}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("enableFormattedMessaging")

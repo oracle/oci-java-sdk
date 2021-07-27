@@ -21,7 +21,7 @@ public class CreateDrgAttachmentRequest
         extends com.oracle.bmc.requests.BmcRequest<CreateDrgAttachmentDetails> {
 
     /**
-     * Details for creating a `DrgAttachment`.
+     * Details for creating a {@code DrgAttachment}.
      */
     private CreateDrgAttachmentDetails createDrgAttachmentDetails;
 

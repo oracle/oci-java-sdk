@@ -28,7 +28,7 @@ public class GetFastConnectProviderServiceKeyRequest
     /**
      * The provider service key that the provider gives you when you set up a virtual circuit connection
      * from the provider to Oracle Cloud Infrastructure. You can set up that connection and get your
-     * provider service key at the provider's website or portal. For the portal location, see the `description`
+     * provider service key at the provider's website or portal. For the portal location, see the {@code description}
      * attribute of the {@link FastConnectProviderService}.
      *
      */

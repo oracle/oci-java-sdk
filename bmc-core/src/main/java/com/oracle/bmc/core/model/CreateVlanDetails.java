@@ -174,7 +174,7 @@ public class CreateVlanDetails {
      * To create an AD-specific VLAN, use this attribute to specify the availability domain.
      * Resources created in this VLAN must be in that availability domain.
      * <p>
-     * Example: `Uocm:PHX-AD-1`
+     * Example: {@code Uocm:PHX-AD-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
@@ -187,7 +187,7 @@ public class CreateVlanDetails {
      * 1. The CIDR block is valid and correctly formatted.
      * 2. The new range is within one of the parent VCN ranges.
      * <p>
-     * Example: `192.0.2.0/24`
+     * Example: {@code 192.0.2.0/24}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
@@ -203,7 +203,7 @@ public class CreateVlanDetails {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -221,7 +221,7 @@ public class CreateVlanDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")

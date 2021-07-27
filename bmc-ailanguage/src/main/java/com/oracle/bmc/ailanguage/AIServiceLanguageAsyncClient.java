@@ -401,7 +401,12 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 DetectDominantLanguageRequest, DetectDominantLanguageResponse>,
                         java.util.concurrent.Future<DetectDominantLanguageResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDetectDominantLanguageDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -442,7 +447,12 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 DetectLanguageEntitiesRequest, DetectLanguageEntitiesResponse>,
                         java.util.concurrent.Future<DetectLanguageEntitiesResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDetectLanguageEntitiesDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -483,7 +493,12 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 DetectLanguageKeyPhrasesRequest, DetectLanguageKeyPhrasesResponse>,
                         java.util.concurrent.Future<DetectLanguageKeyPhrasesResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDetectLanguageKeyPhrasesDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -524,7 +539,12 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 DetectLanguageSentimentsRequest, DetectLanguageSentimentsResponse>,
                         java.util.concurrent.Future<DetectLanguageSentimentsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDetectLanguageSentimentsDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -569,7 +589,12 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
                                 DetectLanguageTextClassificationRequest,
                                 DetectLanguageTextClassificationResponse>,
                         java.util.concurrent.Future<DetectLanguageTextClassificationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDetectLanguageTextClassificationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

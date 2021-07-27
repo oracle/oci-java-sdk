@@ -225,7 +225,7 @@ public class Vcn {
     /**
      * Deprecated. The first CIDR IP address from cidrBlocks.
      * <p>
-     * Example: `172.16.0.0/16`
+     * Example: {@code 172.16.0.0/16}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
@@ -267,7 +267,7 @@ public class Vcn {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -284,7 +284,7 @@ public class Vcn {
     /**
      * A DNS label for the VCN, used in conjunction with the VNIC's hostname and
      * subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-     * within this subnet (for example, `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+     * within this subnet (for example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
      * Must be an alphanumeric string that begins with a letter.
      * The value cannot be changed.
      * <p>
@@ -294,7 +294,7 @@ public class Vcn {
      * For more information, see
      * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * <p>
-     * Example: `vcn1`
+     * Example: {@code vcn1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
@@ -304,7 +304,7 @@ public class Vcn {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -381,7 +381,7 @@ public class Vcn {
     /**
      * The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -389,12 +389,12 @@ public class Vcn {
 
     /**
      * The VCN's domain name, which consists of the VCN's DNS label, and the
-     * `oraclevcn.com` domain.
+     * {@code oraclevcn.com} domain.
      * <p>
      * For more information, see
      * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * <p>
-     * Example: `vcn1.oraclevcn.com`
+     * Example: {@code vcn1.oraclevcn.com}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnDomainName")

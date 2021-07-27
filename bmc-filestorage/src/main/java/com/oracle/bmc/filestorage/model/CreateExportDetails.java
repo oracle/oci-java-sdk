@@ -98,23 +98,23 @@ public class CreateExportDetails {
      * <p>
      * [
      *          {
-     *             \"source\" : \"0.0.0.0/0\",
-     *             \"requirePrivilegedSourcePort\" : false,
-     *             \"access\" : \"READ_WRITE\",
-     *             \"identitySquash\" : \"NONE\"
+     *             "source" : "0.0.0.0/0",
+     *             "requirePrivilegedSourcePort" : false,
+     *             "access" : "READ_WRITE",
+     *             "identitySquash" : "NONE"
      *           }
      *        ]
      * <p>
      **Note:** Mount targets do not have Internet-routable IP
      *   addresses.  Therefore they will not be reachable from the
-     *   Internet, even if an associated `ClientOptions` item has
-     *   a source of `0.0.0.0/0`.
+     *   Internet, even if an associated {@code ClientOptions} item has
+     *   a source of {@code 0.0.0.0/0}.
      * <p>
      **If set to the empty array then the export will not be
      *   visible to any clients.**
      * <p>
-     * The export's `exportOptions` can be changed after creation
-     *   using the `UpdateExport` operation.
+     * The export's {@code exportOptions} can be changed after creation
+     *   using the {@code UpdateExport} operation.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exportOptions")
@@ -137,7 +137,7 @@ public class CreateExportDetails {
      * <p>
      * Avoid entering confidential information.
      * <p>
-     * Example: `/mediafiles`
+     * Example: {@code /mediafiles}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")

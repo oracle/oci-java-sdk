@@ -167,14 +167,14 @@ public class CreateStackDetails {
      * Terraform variables associated with this resource.
      * Maximum number of variables supported is 250.
      * The maximum size of each variable, including both name and value, is 4096 bytes.
-     * Example: `{\"CompartmentId\": \"compartment-id-value\"}`
+     * Example: {@code {"CompartmentId": "compartment-id-value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("variables")
     java.util.Map<String, String> variables;
 
     /**
-     * The version of Terraform to use with the stack. Example: `0.12.x`
+     * The version of Terraform to use with the stack. Example: {@code 0.12.x}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("terraformVersion")
@@ -183,7 +183,7 @@ public class CreateStackDetails {
     /**
      * Free-form tags associated with this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -192,7 +192,7 @@ public class CreateStackDetails {
     /**
      * Defined tags associated with this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

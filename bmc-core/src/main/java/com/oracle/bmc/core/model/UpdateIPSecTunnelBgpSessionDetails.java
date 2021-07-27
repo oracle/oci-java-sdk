@@ -110,19 +110,19 @@ public class UpdateIPSecTunnelBgpSessionDetails {
     /**
      * The IP address for the Oracle end of the inside tunnel interface.
      * <p>
-     * If the tunnel's `routing` attribute is set to `BGP`
+     * If the tunnel's {@code routing} attribute is set to {@code BGP}
      * (see {@link #updateIPSecConnectionTunnelDetails(UpdateIPSecConnectionTunnelDetailsRequest) updateIPSecConnectionTunnelDetails}), this IP address
      * is used for the tunnel's BGP session.
      * <p>
-     * If `routing` is instead set to `STATIC`, you can set this IP address to troubleshoot or
+     * If {@code routing} is instead set to {@code STATIC}, you can set this IP address to troubleshoot or
      * monitor the tunnel.
      * <p>
      * The value must be a /30 or /31.
      * <p>
      * If you are switching the tunnel from using BGP dynamic routing to static routing and want
-     * to remove the value for `oracleInterfaceIp`, you can set the value to an empty string.
+     * to remove the value for {@code oracleInterfaceIp}, you can set the value to an empty string.
      * <p>
-     * Example: `10.0.0.4/31`
+     * Example: {@code 10.0.0.4/31}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleInterfaceIp")
@@ -131,19 +131,19 @@ public class UpdateIPSecTunnelBgpSessionDetails {
     /**
      * The IP address for the CPE end of the inside tunnel interface.
      * <p>
-     * If the tunnel's `routing` attribute is set to `BGP`
+     * If the tunnel's {@code routing} attribute is set to {@code BGP}
      * (see {@link #updateIPSecConnectionTunnelDetails(UpdateIPSecConnectionTunnelDetailsRequest) updateIPSecConnectionTunnelDetails}), this IP address
      * is used for the tunnel's BGP session.
      * <p>
-     * If `routing` is instead set to `STATIC`, you can set this IP address to troubleshoot or
+     * If {@code routing} is instead set to {@code STATIC}, you can set this IP address to troubleshoot or
      * monitor the tunnel.
      * <p>
      * The value must be a /30 or /31.
      * <p>
      * If you are switching the tunnel from using BGP dynamic routing to static routing and want
-     * to remove the value for `customerInterfaceIp`, you can set the value to an empty string.
+     * to remove the value for {@code customerInterfaceIp}, you can set the value to an empty string.
      * <p>
-     * Example: `10.0.0.5/31`
+     * Example: {@code 10.0.0.5/31}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerInterfaceIp")
@@ -152,16 +152,16 @@ public class UpdateIPSecTunnelBgpSessionDetails {
     /**
      * The IPv6 address for the Oracle end of the inside tunnel interface. This IP address is optional.
      * <p>
-     * If the tunnel's `routing` attribute is set to `BGP`
+     * If the tunnel's {@code routing} attribute is set to {@code BGP}
      * (see {@link IPSecConnectionTunnel}), this IP address
      * is used for the tunnel's BGP session.
      * <p>
-     * If `routing` is instead set to `STATIC`, you can set this IP
+     * If {@code routing} is instead set to {@code STATIC}, you can set this IP
      * address to troubleshoot or monitor the tunnel.
      * <p>
      * Only subnet masks from /64 up to /127 are allowed.
      * <p>
-     * Example: `2001:db8::1/64`
+     * Example: {@code 2001:db8::1/64}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleInterfaceIpv6")
@@ -170,16 +170,16 @@ public class UpdateIPSecTunnelBgpSessionDetails {
     /**
      * The IPv6 address for the CPE end of the inside tunnel interface. This IP address is optional.
      * <p>
-     * If the tunnel's `routing` attribute is set to `BGP`
+     * If the tunnel's {@code routing} attribute is set to {@code BGP}
      * (see {@link IPSecConnectionTunnel}), this IP address
      * is used for the tunnel's BGP session.
      * <p>
-     * If `routing` is instead set to `STATIC`, you can set this IP
+     * If {@code routing} is instead set to {@code STATIC}, you can set this IP
      * address to troubleshoot or monitor the tunnel.
      * <p>
      * Only subnet masks from /64 up to /127 are allowed.
      * <p>
-     * Example: `2001:db8::1/64`
+     * Example: {@code 2001:db8::1/64}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerInterfaceIpv6")
@@ -187,12 +187,12 @@ public class UpdateIPSecTunnelBgpSessionDetails {
 
     /**
      * The BGP ASN of the network on the CPE end of the BGP session. Can be a 2-byte or 4-byte ASN.
-     * Uses \"asplain\" format.
+     * Uses "asplain" format.
      * <p>
      * If you are switching the tunnel from using BGP dynamic routing to static routing, the
-     * `customerBgpAsn` must be null.
+     * {@code customerBgpAsn} must be null.
      * <p>
-     * Example: `12345` (2-byte) or `1587232876` (4-byte)
+     * Example: {@code 12345} (2-byte) or {@code 1587232876} (4-byte)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerBgpAsn")

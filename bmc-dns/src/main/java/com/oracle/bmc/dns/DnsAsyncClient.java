@@ -401,7 +401,12 @@ public class DnsAsyncClient implements DnsAsync {
                                 ChangeResolverCompartmentRequest,
                                 ChangeResolverCompartmentResponse>,
                         java.util.concurrent.Future<ChangeResolverCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeResolverCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -447,7 +452,12 @@ public class DnsAsyncClient implements DnsAsync {
                                 ChangeSteeringPolicyCompartmentRequest,
                                 ChangeSteeringPolicyCompartmentResponse>,
                         java.util.concurrent.Future<ChangeSteeringPolicyCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeSteeringPolicyCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -490,7 +500,12 @@ public class DnsAsyncClient implements DnsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeTsigKeyCompartmentRequest, ChangeTsigKeyCompartmentResponse>,
                         java.util.concurrent.Future<ChangeTsigKeyCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeTsigKeyCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -532,7 +547,12 @@ public class DnsAsyncClient implements DnsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeViewCompartmentRequest, ChangeViewCompartmentResponse>,
                         java.util.concurrent.Future<ChangeViewCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeViewCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -574,7 +594,12 @@ public class DnsAsyncClient implements DnsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeZoneCompartmentRequest, ChangeZoneCompartmentResponse>,
                         java.util.concurrent.Future<ChangeZoneCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeZoneCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -616,7 +641,12 @@ public class DnsAsyncClient implements DnsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateResolverEndpointRequest, CreateResolverEndpointResponse>,
                         java.util.concurrent.Future<CreateResolverEndpointResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateResolverEndpointDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -658,7 +688,12 @@ public class DnsAsyncClient implements DnsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateSteeringPolicyRequest, CreateSteeringPolicyResponse>,
                         java.util.concurrent.Future<CreateSteeringPolicyResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSteeringPolicyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -704,7 +739,12 @@ public class DnsAsyncClient implements DnsAsync {
                                 CreateSteeringPolicyAttachmentRequest,
                                 CreateSteeringPolicyAttachmentResponse>,
                         java.util.concurrent.Future<CreateSteeringPolicyAttachmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSteeringPolicyAttachmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -742,7 +782,12 @@ public class DnsAsyncClient implements DnsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateTsigKeyRequest, CreateTsigKeyResponse>,
                         java.util.concurrent.Future<CreateTsigKeyResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTsigKeyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -780,7 +825,12 @@ public class DnsAsyncClient implements DnsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateViewRequest, CreateViewResponse>,
                         java.util.concurrent.Future<CreateViewResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateViewDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -817,7 +867,12 @@ public class DnsAsyncClient implements DnsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateZoneRequest, CreateZoneResponse>,
                         java.util.concurrent.Future<CreateZoneResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateZoneDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1917,7 +1972,12 @@ public class DnsAsyncClient implements DnsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 PatchDomainRecordsRequest, PatchDomainRecordsResponse>,
                         java.util.concurrent.Future<PatchDomainRecordsResponse>>
-                futureSupplier = client.patchFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.patchFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getPatchDomainRecordsDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1954,7 +2014,12 @@ public class DnsAsyncClient implements DnsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 PatchRRSetRequest, PatchRRSetResponse>,
                         java.util.concurrent.Future<PatchRRSetResponse>>
-                futureSupplier = client.patchFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.patchFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getPatchRRSetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1993,7 +2058,12 @@ public class DnsAsyncClient implements DnsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 PatchZoneRecordsRequest, PatchZoneRecordsResponse>,
                         java.util.concurrent.Future<PatchZoneRecordsResponse>>
-                futureSupplier = client.patchFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.patchFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getPatchZoneRecordsDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2034,7 +2104,12 @@ public class DnsAsyncClient implements DnsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateDomainRecordsRequest, UpdateDomainRecordsResponse>,
                         java.util.concurrent.Future<UpdateDomainRecordsResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDomainRecordsDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2072,7 +2147,12 @@ public class DnsAsyncClient implements DnsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateRRSetRequest, UpdateRRSetResponse>,
                         java.util.concurrent.Future<UpdateRRSetResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateRRSetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2111,7 +2191,12 @@ public class DnsAsyncClient implements DnsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateResolverRequest, UpdateResolverResponse>,
                         java.util.concurrent.Future<UpdateResolverResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateResolverDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2152,7 +2237,12 @@ public class DnsAsyncClient implements DnsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateResolverEndpointRequest, UpdateResolverEndpointResponse>,
                         java.util.concurrent.Future<UpdateResolverEndpointResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateResolverEndpointDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2193,7 +2283,12 @@ public class DnsAsyncClient implements DnsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateSteeringPolicyRequest, UpdateSteeringPolicyResponse>,
                         java.util.concurrent.Future<UpdateSteeringPolicyResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSteeringPolicyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2238,7 +2333,12 @@ public class DnsAsyncClient implements DnsAsync {
                                 UpdateSteeringPolicyAttachmentRequest,
                                 UpdateSteeringPolicyAttachmentResponse>,
                         java.util.concurrent.Future<UpdateSteeringPolicyAttachmentResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSteeringPolicyAttachmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2276,7 +2376,12 @@ public class DnsAsyncClient implements DnsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateTsigKeyRequest, UpdateTsigKeyResponse>,
                         java.util.concurrent.Future<UpdateTsigKeyResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTsigKeyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2313,7 +2418,12 @@ public class DnsAsyncClient implements DnsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateViewRequest, UpdateViewResponse>,
                         java.util.concurrent.Future<UpdateViewResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateViewDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2350,7 +2460,12 @@ public class DnsAsyncClient implements DnsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateZoneRequest, UpdateZoneResponse>,
                         java.util.concurrent.Future<UpdateZoneResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateZoneDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2389,7 +2504,12 @@ public class DnsAsyncClient implements DnsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateZoneRecordsRequest, UpdateZoneRecordsResponse>,
                         java.util.concurrent.Future<UpdateZoneRecordsResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateZoneRecordsDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

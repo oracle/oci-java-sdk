@@ -125,9 +125,9 @@ public class SavedCustomTable {
     /**
      * The row groupBy key list.
      * example:
-     *   `[\"tagNamespace\", \"tagKey\", \"tagValue\", \"service\", \"skuName\", \"skuPartNumber\", \"unit\",
-     *     \"compartmentName\", \"compartmentPath\", \"compartmentId\", \"platform\", \"region\", \"logicalAd\",
-     *     \"resourceId\", \"tenantId\", \"tenantName\"]`
+     *   {@code ["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit",
+     *     "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd",
+     *     "resourceId", "tenantId", "tenantName"]}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rowGroupBy")
@@ -136,9 +136,9 @@ public class SavedCustomTable {
     /**
      * The column groupBy key list.
      * example:
-     *   `[\"tagNamespace\", \"tagKey\", \"tagValue\", \"service\", \"skuName\", \"skuPartNumber\", \"unit\",
-     *     \"compartmentName\", \"compartmentPath\", \"compartmentId\", \"platform\", \"region\", \"logicalAd\",
-     *     \"resourceId\", \"tenantId\", \"tenantName\"]`
+     *   {@code ["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit",
+     *     "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd",
+     *     "resourceId", "tenantId", "tenantName"]}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnGroupBy")
@@ -147,7 +147,7 @@ public class SavedCustomTable {
     /**
      * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported.
      * For example:
-     *   `[{\"namespace\":\"oracle\", \"key\":\"createdBy\"]`
+     *   {@code [{"namespace":"oracle", "key":"createdBy"]}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupByTag")

@@ -127,7 +127,7 @@ public class CreateCpeDetails {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -145,7 +145,7 @@ public class CreateCpeDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -154,7 +154,7 @@ public class CreateCpeDetails {
     /**
      * The public IP address of the on-premises router.
      * <p>
-     * Example: `203.0.113.2`
+     * Example: {@code 203.0.113.2}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")

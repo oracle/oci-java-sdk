@@ -100,7 +100,7 @@ public class InstancePoolPlacementConfiguration {
     /**
      * The availability domain to place instances.
      * <p>
-     * Example: `Uocm:PHX-AD-1`
+     * Example: {@code Uocm:PHX-AD-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
@@ -127,7 +127,7 @@ public class InstancePoolPlacementConfiguration {
      * {@link #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation
      * in the Identity and Access Management Service API.
      * <p>
-     * Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
+     * Example: {@code [FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomains")

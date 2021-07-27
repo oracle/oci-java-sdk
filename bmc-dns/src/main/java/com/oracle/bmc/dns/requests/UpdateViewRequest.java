@@ -30,9 +30,9 @@ public class UpdateViewRequest extends com.oracle.bmc.requests.BmcRequest<Update
     private UpdateViewDetails updateViewDetails;
 
     /**
-     * The `If-Match` header field makes the request method conditional on the
+     * The {@code If-Match} header field makes the request method conditional on the
      * existence of at least one current representation of the target resource,
-     * when the field-value is `*`, or having a current representation of the
+     * when the field-value is {@code *}, or having a current representation of the
      * target resource that has an entity-tag matching a member of the list of
      * entity-tags provided in the field-value.
      *
@@ -40,7 +40,7 @@ public class UpdateViewRequest extends com.oracle.bmc.requests.BmcRequest<Update
     private String ifMatch;
 
     /**
-     * The `If-Unmodified-Since` header field makes the request method
+     * The {@code If-Unmodified-Since} header field makes the request method
      * conditional on the selected representation's last modification date being
      * earlier than or equal to the date provided in the field-value.  This
      * field accomplishes the same purpose as If-Match for cases where the user

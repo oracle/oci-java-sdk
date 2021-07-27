@@ -411,7 +411,7 @@ public class CreateDbSystemDetails {
      * The hostname for the primary endpoint of the DB System. Used for DNS.
      * <p>
      * The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN)
-     * (for example, \"dbsystem-1\" in FQDN \"dbsystem-1.subnet123.vcn1.oraclevcn.com\").
+     * (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
      * <p>
      * Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
      *
@@ -424,7 +424,7 @@ public class CreateDbSystemDetails {
      * A private IP address of your choice to assign to the primary endpoint of the DB System.
      * Must be an available IP address within the subnet's CIDR. If you don't specify a value,
      * Oracle automatically assigns a private IP address from the subnet. This should be a
-     * \"dotted-quad\" style IPv4 address.
+     * "dotted-quad" style IPv4 address.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
@@ -454,7 +454,7 @@ public class CreateDbSystemDetails {
 
     /**
      * Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -462,7 +462,7 @@ public class CreateDbSystemDetails {
 
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

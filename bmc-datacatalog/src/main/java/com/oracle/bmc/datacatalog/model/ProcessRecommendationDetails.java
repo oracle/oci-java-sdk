@@ -99,14 +99,14 @@ public class ProcessRecommendationDetails {
     /**
      * A map of maps that contains additional properties which are specific to the associated objects.
      * Each associated object defines it's set of required and optional properties.
-     * Example: `{
-     *             \"DataEntity\": {
-     *               \"parentId\": \"entityId\"
+     * Example: {@code {
+     *             "DataEntity": {
+     *               "parentId": "entityId"
      *             },
-     *             \"Term\": {
-     *               \"parentId\": \"glossaryId\"
+     *             "Term": {
+     *               "parentId": "glossaryId"
      *             }
-     *           }`
+     *           }}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")

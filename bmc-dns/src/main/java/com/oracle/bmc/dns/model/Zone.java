@@ -247,7 +247,7 @@ public class Zone {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
     /**
-     * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
+     * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY} is only supported for GLOBAL zones.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -294,7 +294,7 @@ public class Zone {
         }
     };
     /**
-     * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
+     * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY} is only supported for GLOBAL zones.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("zoneType")
@@ -326,7 +326,7 @@ public class Zone {
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      *
-     * **Example:** `{\"Department\": \"Finance\"}`
+     * **Example:** {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -337,15 +337,15 @@ public class Zone {
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      *
-     * **Example:** `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * **Example:** {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * External master servers for the zone. `externalMasters` becomes a
-     * required parameter when the `zoneType` value is `SECONDARY`.
+     * External master servers for the zone. {@code externalMasters} becomes a
+     * required parameter when the {@code zoneType} value is {@code SECONDARY}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalMasters")
@@ -364,10 +364,10 @@ public class Zone {
     String id;
 
     /**
-     * The date and time the resource was created in \"YYYY-MM-ddThh:mm:ssZ\" format
+     * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format
      * with a Z offset, as defined by RFC 3339.
      * <p>
-     **Example:** `2016-07-22T17:23:59:60Z`
+     **Example:** {@code 2016-07-22T17:23:59:60Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

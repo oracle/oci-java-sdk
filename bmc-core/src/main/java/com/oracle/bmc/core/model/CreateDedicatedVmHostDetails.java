@@ -134,7 +134,7 @@ public class CreateDedicatedVmHostDetails {
     /**
      * The availability domain of the dedicated virtual machine host.
      * <p>
-     * Example: `Uocm:PHX-AD-1`
+     * Example: {@code Uocm:PHX-AD-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
@@ -158,7 +158,7 @@ public class CreateDedicatedVmHostDetails {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -168,7 +168,7 @@ public class CreateDedicatedVmHostDetails {
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
      * <p>
-     * Example: `My dedicated VM host`
+     * Example: {@code My dedicated VM host}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -180,10 +180,10 @@ public class CreateDedicatedVmHostDetails {
      * If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host,
      * delete it and create a new dedicated virtual machine host in the preferred fault domain.
      * <p>
-     * To get a list of fault domains, use the `ListFaultDomains` operation in
+     * To get a list of fault domains, use the {@code ListFaultDomains} operation in
      * the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
      * <p>
-     * Example: `FAULT-DOMAIN-1`
+     * Example: {@code FAULT-DOMAIN-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
@@ -193,7 +193,7 @@ public class CreateDedicatedVmHostDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")

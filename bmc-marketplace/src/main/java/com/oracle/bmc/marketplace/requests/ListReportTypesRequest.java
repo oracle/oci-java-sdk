@@ -32,7 +32,7 @@ public class ListReportTypesRequest extends com.oracle.bmc.requests.BmcRequest<j
     private String opcRequestId;
 
     /**
-     * The value of the `opc-next-page` response header from the previous \"List\" call.
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
      */
     private String page;
 

@@ -26,9 +26,9 @@ public class UpdateModelDeploymentRequest
     private String modelDeploymentId;
 
     /**
-     * Details for updating a model deployment. Some of the properties of `modelDeploymentConfigurationDetails` or `CategoryLogDetails` can also be updated with zero down time when
-     * the model deployment's lifecycle state is ACTIVE i.e `instanceShapeName` can be updated along with `modelId`, similarly `logId` can be updated along with `logGroupId`. But
-     * `instanceShapeName` or `modelId` cannot be updated along with `logId` or `logGroupId`. All of the fields can be updated when the deployment is in the INACTIVE lifecycle state.
+     * Details for updating a model deployment. Some of the properties of {@code modelDeploymentConfigurationDetails} or {@code CategoryLogDetails} can also be updated with zero down time when
+     * the model deployment's lifecycle state is ACTIVE i.e {@code instanceShapeName} can be updated along with {@code modelId}, similarly {@code logId} can be updated along with {@code logGroupId}. But
+     * {@code instanceShapeName} or {@code modelId} cannot be updated along with {@code logId} or {@code logGroupId}. All of the fields can be updated when the deployment is in the INACTIVE lifecycle state.
      * Changes will take effect the next time the model deployment is activated.
      *
      */
@@ -36,10 +36,10 @@ public class UpdateModelDeploymentRequest
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the `if-match` parameter to the value of the
+     * for a resource, set the {@code if-match} parameter to the value of the
      * etag from a previous GET or POST response for that resource.
-     * The resource is updated or deleted only if the `etag` you
-     * provide matches the resource's current `etag` value.
+     * The resource is updated or deleted only if the {@code etag} you
+     * provide matches the resource's current {@code etag} value.
      *
      */
     private String ifMatch;

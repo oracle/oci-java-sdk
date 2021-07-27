@@ -155,10 +155,10 @@ public class IngressSecurityRule {
     Boolean isStateless;
 
     /**
-     * The transport protocol. Specify either `all` or an IPv4 protocol number as
+     * The transport protocol. Specify either {@code all} or an IPv4 protocol number as
      * defined in
      * [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml).
-     * Options are supported only for ICMP (\"1\"), TCP (\"6\"), UDP (\"17\"), and ICMPv6 (\"58\").
+     * Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
@@ -170,25 +170,25 @@ public class IngressSecurityRule {
      * <p>
      * Allowed values:
      * <p>
-     * IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
+     * IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}.
      *     IPv6 addressing is supported for all commercial and government regions. See
      *     [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
-     * The `cidrBlock` value for a {@link Service}, if you're
-     *     setting up a security list rule for traffic coming from a particular `Service` through
-     *     a service gateway. For example: `oci-phx-objectstorage`.
+     * The {@code cidrBlock} value for a {@link Service}, if you're
+     *     setting up a security list rule for traffic coming from a particular {@code Service} through
+     *     a service gateway. For example: {@code oci-phx-objectstorage}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     String source;
     /**
-     * Type of source for the rule. The default is `CIDR_BLOCK`.
+     * Type of source for the rule. The default is {@code CIDR_BLOCK}.
      * <p>
-     * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+     * {@code CIDR_BLOCK}: If the rule's {@code source} is an IP address range in CIDR notation.
      * <p>
-     * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a
+     * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code source} is the {@code cidrBlock} value for a
      *     {@link Service} (the rule is for traffic coming from a
-     *     particular `Service` through a service gateway).
+     *     particular {@code Service} through a service gateway).
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -235,13 +235,13 @@ public class IngressSecurityRule {
         }
     };
     /**
-     * Type of source for the rule. The default is `CIDR_BLOCK`.
+     * Type of source for the rule. The default is {@code CIDR_BLOCK}.
      * <p>
-     * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+     * {@code CIDR_BLOCK}: If the rule's {@code source} is an IP address range in CIDR notation.
      * <p>
-     * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a
+     * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code source} is the {@code cidrBlock} value for a
      *     {@link Service} (the rule is for traffic coming from a
-     *     particular `Service` through a service gateway).
+     *     particular {@code Service} through a service gateway).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")

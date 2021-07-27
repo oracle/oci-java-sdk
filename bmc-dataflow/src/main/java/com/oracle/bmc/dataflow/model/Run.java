@@ -461,10 +461,10 @@ public class Run {
      * either a plain text or a placeholder. Placeholders are replaced using values from the parameters
      * map.  Each placeholder specified must be represented in the parameters map else the request
      * (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as
-     * `Service Api Spec`, where `name` is the name of the parameter.
-     * Example:  `[ \"--input\", \"${input_file}\", \"--name\", \"John Doe\" ]`
-     * If \"input_file\" has a value of \"mydata.xml\", then the value above will be translated to
-     * `--input mydata.xml --name \"John Doe\"`
+     * {@code Service Api Spec}, where {@code name} is the name of the parameter.
+     * Example:  {@code [ "--input", "${input_file}", "--name", "John Doe" ]}
+     * If "input_file" has a value of "mydata.xml", then the value above will be translated to
+     * {@code --input mydata.xml --name "John Doe"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("arguments")
@@ -494,7 +494,7 @@ public class Run {
     /**
      * The Spark configuration passed to the running process.
      * See https://spark.apache.org/docs/latest/configuration.html#available-properties.
-     * Example: { \"spark.app.name\" : \"My App Name\", \"spark.shuffle.io.maxRetries\" : \"4\" }
+     * Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" }
      * Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is
      * not allowed to be overwritten will cause a 400 status to be returned.
      *
@@ -518,7 +518,7 @@ public class Run {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -540,8 +540,8 @@ public class Run {
 
     /**
      * The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit.
-     * Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments.
-     * Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10``
+     * Supported options include {@code --class}{@code , }{@code --file}{@code , }{@code --jars}{@code , }{@code --conf}{@code , }{@code --py-files}{@code , and main application file with arguments.
+     * Example: }{@code --jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10}
      * Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit,
      * Data Flow service will use derived information from execute input only.
      *
@@ -567,7 +567,7 @@ public class Run {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -633,7 +633,7 @@ public class Run {
 
     /**
      * The username of the user who created the resource.  If the username of the owner does not exist,
-     * `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
+     * {@code null} will be returned and the caller should refer to the ownerPrincipalId value instead.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ownerUserName")
@@ -641,9 +641,9 @@ public class Run {
 
     /**
      * An array of name/value pairs used to fill placeholders found in properties like
-     * `Application.arguments`.  The name must be a string of one or more word characters
+     * {@code Application.arguments}.  The name must be a string of one or more word characters
      * (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind.
-     * Example:  [ { name: \"iterations\", value: \"10\"}, { name: \"input_file\", value: \"mydata.xml\" }, { name: \"variable_x\", value: \"${x}\"} ]
+     * Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
@@ -651,7 +651,7 @@ public class Run {
 
     /**
      * An array of DNS zone names.
-     * Example: `[ \"app.examplecorp.com\", \"app.examplecorp2.com\" ]`
+     * Example: {@code [ "app.examplecorp.com", "app.examplecorp2.com" ]}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointDnsZones")
@@ -704,7 +704,7 @@ public class Run {
 
     /**
      * The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     * Example: `2018-04-03T21:10:29.600Z`
+     * Example: {@code 2018-04-03T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -712,7 +712,7 @@ public class Run {
 
     /**
      * The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     * Example: `2018-04-03T21:10:29.600Z`
+     * Example: {@code 2018-04-03T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")

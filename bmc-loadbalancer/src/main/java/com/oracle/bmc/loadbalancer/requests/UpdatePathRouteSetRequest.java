@@ -33,7 +33,7 @@ public class UpdatePathRouteSetRequest
     /**
      * The name of the path route set to update.
      * <p>
-     * Example: `example_path_route_set`
+     * Example: {@code example_path_route_set}
      *
      */
     private String pathRouteSetName;

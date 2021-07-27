@@ -284,7 +284,7 @@ public class TypedNamePatternRule extends ProjectionRule {
     Boolean isSkipRemainingRulesOnMatch;
 
     /**
-     * Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a `TypedObject`, or a full `TypedObject` definition.
+     * Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a {@code TypedObject}, or a full {@code TypedObject} definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     Object scope;

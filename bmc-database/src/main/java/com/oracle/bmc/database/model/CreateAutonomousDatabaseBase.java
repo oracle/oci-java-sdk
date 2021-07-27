@@ -8,8 +8,8 @@ package com.oracle.bmc.database.model;
  * Details to create an Oracle Autonomous Database.
  * <p>
  **Notes:**
- * - To specify OCPU core count, you must use either `ocpuCount` or `cpuCoreCount`. You cannot use both parameters at the same time.
- * - To specify a storage allocation, you must use  either `dataStorageSizeInGBs` or `dataStorageSizeInTBs`.
+ * - To specify OCPU core count, you must use either {@code ocpuCount} or {@code cpuCoreCount}. You cannot use both parameters at the same time.
+ * - To specify a storage allocation, you must use  either {@code dataStorageSizeInGBs} or {@code dataStorageSizeInTBs}.
  * - See the individual parameter discriptions for more information on the OCPU and storage value parameters.
  * <p>
  **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
@@ -53,6 +53,10 @@ package com.oracle.bmc.database.model;
         name = "BACKUP_FROM_TIMESTAMP"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateCrossRegionAutonomousDatabaseDataGuardDetails.class,
+        name = "CROSS_REGION_DATAGUARD"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateAutonomousDatabaseDetails.class,
         name = "NONE"
     )
@@ -75,7 +79,7 @@ public class CreateAutonomousDatabaseBase {
     /**
      * The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      * <p>
-     **Note:** This parameter cannot be used with the `ocpuCount` parameter.
+     **Note:** This parameter cannot be used with the {@code ocpuCount} parameter.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
@@ -90,7 +94,7 @@ public class CreateAutonomousDatabaseBase {
      * <p>
      * For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      * <p>
-     **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
+     **Note:** This parameter cannot be used with the {@code cpuCoreCount} parameter.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
@@ -153,7 +157,7 @@ public class CreateAutonomousDatabaseBase {
     /**
      * The size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. For Autonomous Databases on dedicated Exadata infrastructure, the maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      * <p>
-     **Note:** This parameter cannot be used with the `dataStorageSizeInGBs` parameter.
+     **Note:** This parameter cannot be used with the {@code dataStorageSizeInGBs} parameter.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
@@ -164,7 +168,7 @@ public class CreateAutonomousDatabaseBase {
      * <p>
      **Notes**
      * - This parameter is only supported for dedicated Exadata infrastructure.
-     * - This parameter cannot be used with the `dataStorageSizeInTBs` parameter.
+     * - This parameter cannot be used with the {@code dataStorageSizeInTBs} parameter.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
@@ -190,7 +194,7 @@ public class CreateAutonomousDatabaseBase {
     String vaultId;
 
     /**
-     * The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (\") or the username \"admin\", regardless of casing.
+     * The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
     String adminPassword;
@@ -204,7 +208,7 @@ public class CreateAutonomousDatabaseBase {
      * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
      * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
      * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the
-     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
      *
      **/
     public enum LicenseModel {
@@ -243,21 +247,21 @@ public class CreateAutonomousDatabaseBase {
      * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
      * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
      * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the
-     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     LicenseModel licenseModel;
 
     /**
-     * If set to `TRUE`, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for databases on [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI).
+     * If set to {@code TRUE}, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for databases on [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPreviewVersionWithServiceTermsAccepted")
     Boolean isPreviewVersionWithServiceTermsAccepted;
 
     /**
-     * Indicates if auto scaling is enabled for the Autonomous Database OCPU core count. The default value is `FALSE`.
+     * Indicates if auto scaling is enabled for the Autonomous Database OCPU core count. The default value is {@code FALSE}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
@@ -279,8 +283,8 @@ public class CreateAutonomousDatabaseBase {
     /**
      * Indicates if the database-level access control is enabled.
      * If disabled, database access is defined by the network security rules.
-     * If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional,
-     *  if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console.
+     * If enabled, database access is restricted to the IP addresses defined by the rules specified with the {@code whitelistedIps} property. While specifying {@code whitelistedIps} rules is optional,
+     *  if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the {@code UpdateAutonomousDatabase} API operation or edit option in console.
      * When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
      * <p>
      * This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
@@ -295,9 +299,9 @@ public class CreateAutonomousDatabaseBase {
      * <p>
      * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
      * Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs.
-     * Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.<unique_id>\",\"ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1\",\"ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16\"]`
+     * Example: {@code ["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]}
      * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations.
-     * Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"1.1.2.25\"]`
+     * Example: {@code ["1.1.1.1","1.1.1.0/24","1.1.2.25"]}
      * <p>
      * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
      *
@@ -307,8 +311,8 @@ public class CreateAutonomousDatabaseBase {
 
     /**
      * This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled.
-     * It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby.
-     * It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
+     * It's value would be {@code TRUE} if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby.
+     * It's value would be {@code FALSE} if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("arePrimaryWhitelistedIpsUsed")
@@ -320,9 +324,9 @@ public class CreateAutonomousDatabaseBase {
      * <p>
      * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
      * Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs.
-     * Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.<unique_id>\",\"ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1\",\"ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16\"]`
+     * Example: {@code ["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]}
      * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations.
-     * Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"1.1.2.25\"]`
+     * Example: {@code ["1.1.1.1","1.1.1.0/24","1.1.2.25"]}
      * <p>
      * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
      *
@@ -371,7 +375,7 @@ public class CreateAutonomousDatabaseBase {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -398,9 +402,9 @@ public class CreateAutonomousDatabaseBase {
     java.util.List<CustomerContact> customerContacts;
 
     /**
-     * The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database.
+     * The source of the database: Use {@code NONE} for creating a new Autonomous Database. Use {@code DATABASE} for creating a new Autonomous Database by cloning an existing Autonomous Database.
      * <p>
-     * For Autonomous Databases on [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI), the following cloning options are available: Use `BACKUP_FROM_ID` for creating a new Autonomous Database from a specified backup. Use `BACKUP_FROM_TIMESTAMP` for creating a point-in-time Autonomous Database clone using backups. For more information, see [Cloning an Autonomous Database](https://docs.cloud.oracle.com/Content/Database/Tasks/adbcloning.htm).
+     * For Autonomous Databases on [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI), the following cloning options are available: Use {@code BACKUP_FROM_ID} for creating a new Autonomous Database from a specified backup. Use {@code BACKUP_FROM_TIMESTAMP} for creating a point-in-time Autonomous Database clone using backups. For more information, see [Cloning an Autonomous Database](https://docs.cloud.oracle.com/Content/Database/Tasks/adbcloning.htm).
      *
      **/
     public enum Source {
@@ -409,6 +413,7 @@ public class CreateAutonomousDatabaseBase {
         BackupFromId("BACKUP_FROM_ID"),
         BackupFromTimestamp("BACKUP_FROM_TIMESTAMP"),
         CloneToRefreshable("CLONE_TO_REFRESHABLE"),
+        CrossRegionDataguard("CROSS_REGION_DATAGUARD"),
         ;
 
         private final String value;

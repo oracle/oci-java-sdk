@@ -7,8 +7,8 @@ package com.oracle.bmc.ocvp.model;
 /**
  * The SDDC information to be updated.
  * <p>
- **Important:** Only the `displayName`, `freeFormTags`, and `definedTags` attributes
- * affect the existing SDDC. Changing the other attributes affects the `Sddc` object, but not
+ **Important:** Only the {@code displayName}, {@code freeFormTags}, and {@code definedTags} attributes
+ * affect the existing SDDC. Changing the other attributes affects the {@code Sddc} object, but not
  * the VMware environment currently running on that SDDC. Those other attributes are used
  * by the Oracle Cloud VMware Solution *only* for new ESXi hosts that you add to this
  * SDDC in the future with {@link #createEsxiHost(CreateEsxiHostRequest) createEsxiHost}.
@@ -245,10 +245,10 @@ public class UpdateSddcDetails {
     String vmwareSoftwareVersion;
 
     /**
-     * One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for
+     * One or more public SSH keys to be included in the {@code ~/.ssh/authorized_keys} file for
      * the default user on each ESXi host, only when adding new ESXi hosts to this SDDC.
      * Use a newline character to separate multiple keys.
-     * The SSH keys must be in the format required for the `authorized_keys` file.
+     * The SSH keys must be in the format required for the {@code authorized_keys} file.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshAuthorizedKeys")
@@ -330,7 +330,7 @@ public class UpdateSddcDetails {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX
-     * component of the VMware environment when adding new ESXi hosts to the SDDC. This value can be updated only when `isHcxEnabled` is true.
+     * component of the VMware environment when adding new ESXi hosts to the SDDC. This value can be updated only when {@code isHcxEnabled} is true.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hcxVlanId")
@@ -340,7 +340,7 @@ public class UpdateSddcDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -350,7 +350,7 @@ public class UpdateSddcDetails {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

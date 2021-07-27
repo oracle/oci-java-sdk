@@ -63,7 +63,7 @@ public class Configuration {
     /**
      * The retention period setting, specified in days. The minimum is 90, the maximum 365.
      * <p>
-     * Example: `90`
+     * Example: {@code 90}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriodDays")

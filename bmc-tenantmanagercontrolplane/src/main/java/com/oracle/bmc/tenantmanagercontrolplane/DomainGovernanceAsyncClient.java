@@ -402,7 +402,12 @@ public class DomainGovernanceAsyncClient implements DomainGovernanceAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateDomainGovernanceRequest, CreateDomainGovernanceResponse>,
                         java.util.concurrent.Future<CreateDomainGovernanceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDomainGovernanceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -566,7 +571,12 @@ public class DomainGovernanceAsyncClient implements DomainGovernanceAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateDomainGovernanceRequest, UpdateDomainGovernanceResponse>,
                         java.util.concurrent.Future<UpdateDomainGovernanceResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDomainGovernanceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

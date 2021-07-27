@@ -400,7 +400,12 @@ public class NosqlAsyncClient implements NosqlAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeTableCompartmentRequest, ChangeTableCompartmentResponse>,
                         java.util.concurrent.Future<ChangeTableCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeTableCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -439,7 +444,12 @@ public class NosqlAsyncClient implements NosqlAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateIndexRequest, CreateIndexResponse>,
                         java.util.concurrent.Future<CreateIndexResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateIndexDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -478,7 +488,12 @@ public class NosqlAsyncClient implements NosqlAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateTableRequest, CreateTableResponse>,
                         java.util.concurrent.Future<CreateTableResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTableDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1082,7 +1097,12 @@ public class NosqlAsyncClient implements NosqlAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<QueryRequest, QueryResponse>,
                         java.util.concurrent.Future<QueryResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getQueryDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1157,7 +1177,12 @@ public class NosqlAsyncClient implements NosqlAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<UpdateRowRequest, UpdateRowResponse>,
                         java.util.concurrent.Future<UpdateRowResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateRowDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1195,7 +1220,12 @@ public class NosqlAsyncClient implements NosqlAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateTableRequest, UpdateTableResponse>,
                         java.util.concurrent.Future<UpdateTableResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTableDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

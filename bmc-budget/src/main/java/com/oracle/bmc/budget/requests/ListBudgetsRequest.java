@@ -55,7 +55,7 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * <p>
-     * Example: `My new resource`
+     * Example: {@code My new resource}
      *
      */
     private String displayName;
@@ -63,8 +63,8 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     /**
      * The type of target to filter by.
      *   * ALL - List all budgets
-     *   * COMPARTMENT - List all budgets with targetType == \"COMPARTMENT\"
-     *   * TAG - List all budgets with targetType == \"TAG\"
+     *   * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
+     *   * TAG - List all budgets with targetType == "TAG"
      *
      */
     private TargetType targetType;
@@ -72,8 +72,8 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     /**
      * The type of target to filter by.
      *   * ALL - List all budgets
-     *   * COMPARTMENT - List all budgets with targetType == \"COMPARTMENT\"
-     *   * TAG - List all budgets with targetType == \"TAG\"
+     *   * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
+     *   * TAG - List all budgets with targetType == "TAG"
      *
      **/
     public enum TargetType {

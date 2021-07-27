@@ -199,22 +199,22 @@ public class CachingRuleSummary {
     Action action;
 
     /**
-     * The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`.
-     * Example: `PT1H`
+     * The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is {@code 99}. Mixing of multiple units is not supported. Only applies when the {@code action} is set to {@code CACHE}.
+     * Example: {@code PT1H}
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cachingDuration")
     String cachingDuration;
 
     /**
      * Enables or disables client caching.
-     * Browsers use the `Cache-Control` header value for caching content locally in the browser. This setting overrides the addition of a `Cache-Control` header in responses.
+     * Browsers use the {@code Cache-Control} header value for caching content locally in the browser. This setting overrides the addition of a {@code Cache-Control} header in responses.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isClientCachingEnabled")
     Boolean isClientCachingEnabled;
 
     /**
-     * The duration to cache content in the user's browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`.
-     * Example: `PT1H`
+     * The duration to cache content in the user's browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is {@code 99}. Mixing of multiple units is not supported. Only applies when the {@code action} is set to {@code CACHE}.
+     * Example: {@code PT1H}
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientCachingDuration")
     String clientCachingDuration;

@@ -71,15 +71,15 @@ public class CachingRuleCriteria {
 
     /**
      * The condition of the caching rule criteria.
-     * - **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field.
+     * - **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the {@code value} field.
      * <p>
-     * - **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field.
+     * - **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the {@code value} field.
      * <p>
-     * - **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the `value` field.
+     * - **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the {@code value} field.
      * <p>
-     * - **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the `value` field.
+     * - **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the {@code value} field.
      * <p>
-     * URLs must start with a `/`. URLs can't contain restricted double slashes `//`. URLs can't contain the restricted `'` `&` `?` symbols. Resources to cache can only be specified by a URL, any query parameters are ignored.
+     * URLs must start with a {@code /}. URLs can't contain restricted double slashes {@code //}. URLs can't contain the restricted {@code '} {@code &} {@code ?} symbols. Resources to cache can only be specified by a URL, any query parameters are ignored.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Condition {
@@ -128,15 +128,15 @@ public class CachingRuleCriteria {
     };
     /**
      * The condition of the caching rule criteria.
-     * - **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field.
+     * - **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the {@code value} field.
      * <p>
-     * - **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field.
+     * - **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the {@code value} field.
      * <p>
-     * - **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the `value` field.
+     * - **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the {@code value} field.
      * <p>
-     * - **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the `value` field.
+     * - **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the {@code value} field.
      * <p>
-     * URLs must start with a `/`. URLs can't contain restricted double slashes `//`. URLs can't contain the restricted `'` `&` `?` symbols. Resources to cache can only be specified by a URL, any query parameters are ignored.
+     * URLs must start with a {@code /}. URLs can't contain restricted double slashes {@code //}. URLs can't contain the restricted {@code '} {@code &} {@code ?} symbols. Resources to cache can only be specified by a URL, any query parameters are ignored.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("condition")
     Condition condition;

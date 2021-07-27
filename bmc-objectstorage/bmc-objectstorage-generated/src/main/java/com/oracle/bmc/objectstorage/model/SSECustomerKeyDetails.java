@@ -82,7 +82,7 @@ public class SSECustomerKeyDetails {
     }
 
     /**
-     * Specifies the encryption algorithm. The only supported value is \"AES256\".
+     * Specifies the encryption algorithm. The only supported value is "AES256".
      *
      **/
     public enum Algorithm {
@@ -117,7 +117,7 @@ public class SSECustomerKeyDetails {
         }
     };
     /**
-     * Specifies the encryption algorithm. The only supported value is \"AES256\".
+     * Specifies the encryption algorithm. The only supported value is "AES256".
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("algorithm")

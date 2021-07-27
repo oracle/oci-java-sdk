@@ -5,7 +5,7 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * A `CustomerSecretKey` is an Oracle-provided key for using the Object Storage Service's
+ * A {@code CustomerSecretKey} is an Oracle-provided key for using the Object Storage Service's
  * [Amazon S3 compatible API](https://docs.cloud.oracle.com/Content/Object/Tasks/s3compatibleapi.htm). The key consists of a
  * secret key/access key pair. A user can have up to two secret keys at a time.
  * <p>
@@ -173,9 +173,9 @@ public class CustomerSecretKey {
     String displayName;
 
     /**
-     * Date and time the `CustomerSecretKey` object was created, in the format defined by RFC3339.
+     * Date and time the {@code CustomerSecretKey} object was created, in the format defined by RFC3339.
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -185,13 +185,13 @@ public class CustomerSecretKey {
      * Date and time when this password will expire, in the format defined by RFC3339.
      * Null if it never expires.
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
     java.util.Date timeExpires;
     /**
-     * The secret key's current state. After creating a secret key, make sure its `lifecycleState` changes from
+     * The secret key's current state. After creating a secret key, make sure its {@code lifecycleState} changes from
      * CREATING to ACTIVE before using it.
      *
      **/
@@ -242,7 +242,7 @@ public class CustomerSecretKey {
         }
     };
     /**
-     * The secret key's current state. After creating a secret key, make sure its `lifecycleState` changes from
+     * The secret key's current state. After creating a secret key, make sure its {@code lifecycleState} changes from
      * CREATING to ACTIVE before using it.
      *
      **/

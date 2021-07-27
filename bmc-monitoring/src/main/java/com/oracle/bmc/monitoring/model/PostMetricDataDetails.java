@@ -86,7 +86,7 @@ public class PostMetricDataDetails {
      * their error messages. A value of ATOMIC requires a full pass: all metric objects in
      * the request must pass input validation.
      * <p>
-     * Example: `NON_ATOMIC`
+     * Example: {@code NON_ATOMIC}
      *
      **/
     public enum BatchAtomicity {
@@ -129,7 +129,7 @@ public class PostMetricDataDetails {
      * their error messages. A value of ATOMIC requires a full pass: all metric objects in
      * the request must pass input validation.
      * <p>
-     * Example: `NON_ATOMIC`
+     * Example: {@code NON_ATOMIC}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("batchAtomicity")

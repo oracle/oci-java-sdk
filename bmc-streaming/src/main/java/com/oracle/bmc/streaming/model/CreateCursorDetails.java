@@ -100,11 +100,11 @@ public class CreateCursorDetails {
     /**
      * The type of cursor, which determines the starting point from which the stream will be consumed:
      * <p>
-     * - `AFTER_OFFSET:` The partition position immediately following the offset you specify. (Offsets are assigned when you successfully append a message to a partition in a stream.)
-     * - `AT_OFFSET:` The exact partition position indicated by the offset you specify.
-     * - `AT_TIME:` A specific point in time.
-     * - `LATEST:` The most recent message in the partition that was added after the cursor was created.
-     * - `TRIM_HORIZON:` The oldest message in the partition that is within the retention period window.
+     * - {@code AFTER_OFFSET:} The partition position immediately following the offset you specify. (Offsets are assigned when you successfully append a message to a partition in a stream.)
+     * - {@code AT_OFFSET:} The exact partition position indicated by the offset you specify.
+     * - {@code AT_TIME:} A specific point in time.
+     * - {@code LATEST:} The most recent message in the partition that was added after the cursor was created.
+     * - {@code TRIM_HORIZON:} The oldest message in the partition that is within the retention period window.
      *
      **/
     public enum Type {
@@ -145,24 +145,24 @@ public class CreateCursorDetails {
     /**
      * The type of cursor, which determines the starting point from which the stream will be consumed:
      * <p>
-     * - `AFTER_OFFSET:` The partition position immediately following the offset you specify. (Offsets are assigned when you successfully append a message to a partition in a stream.)
-     * - `AT_OFFSET:` The exact partition position indicated by the offset you specify.
-     * - `AT_TIME:` A specific point in time.
-     * - `LATEST:` The most recent message in the partition that was added after the cursor was created.
-     * - `TRIM_HORIZON:` The oldest message in the partition that is within the retention period window.
+     * - {@code AFTER_OFFSET:} The partition position immediately following the offset you specify. (Offsets are assigned when you successfully append a message to a partition in a stream.)
+     * - {@code AT_OFFSET:} The exact partition position indicated by the offset you specify.
+     * - {@code AT_TIME:} A specific point in time.
+     * - {@code LATEST:} The most recent message in the partition that was added after the cursor was created.
+     * - {@code TRIM_HORIZON:} The oldest message in the partition that is within the retention period window.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     Type type;
 
     /**
-     * The offset to consume from if the cursor type is `AT_OFFSET` or `AFTER_OFFSET`.
+     * The offset to consume from if the cursor type is {@code AT_OFFSET} or {@code AFTER_OFFSET}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("offset")
     Long offset;
 
     /**
-     * The time to consume from if the cursor type is `AT_TIME`, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * The time to consume from if the cursor type is {@code AT_TIME}, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("time")

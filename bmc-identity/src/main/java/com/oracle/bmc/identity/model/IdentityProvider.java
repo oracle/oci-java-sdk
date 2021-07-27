@@ -7,8 +7,8 @@ package com.oracle.bmc.identity.model;
 /**
  * The resulting base object when you add an identity provider to your tenancy. A
  * {@link Saml2IdentityProvider}
- * is a specific type of `IdentityProvider` that supports the SAML 2.0 protocol. Each
- * `IdentityProvider` object has its own OCID. For more information, see
+ * is a specific type of {@code IdentityProvider} that supports the SAML 2.0 protocol. Each
+ * {@code IdentityProvider} object has its own OCID. For more information, see
  * [Identity Providers and Federation](https://docs.cloud.oracle.com/Content/Identity/Concepts/federation.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
@@ -49,20 +49,20 @@ package com.oracle.bmc.identity.model;
 public class IdentityProvider {
 
     /**
-     * The OCID of the `IdentityProvider`.
+     * The OCID of the {@code IdentityProvider}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The OCID of the tenancy containing the `IdentityProvider`.
+     * The OCID of the tenancy containing the {@code IdentityProvider}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The name you assign to the `IdentityProvider` during creation. The name
-     * must be unique across all `IdentityProvider` objects in the tenancy and
+     * The name you assign to the {@code IdentityProvider} during creation. The name
+     * must be unique across all {@code IdentityProvider} objects in the tenancy and
      * cannot be changed. This is the name federated users see when choosing
      * which identity provider to use when signing in to the Oracle Cloud Infrastructure
      * Console.
@@ -72,7 +72,7 @@ public class IdentityProvider {
     String name;
 
     /**
-     * The description you assign to the `IdentityProvider` during creation. Does
+     * The description you assign to the {@code IdentityProvider} during creation. Does
      * not have to be unique, and it's changeable.
      *
      **/
@@ -85,26 +85,26 @@ public class IdentityProvider {
      * Active Directory Federation Services (ADFS).
      * <p>
      * Allowed values are:
-     * - `ADFS`
-     * - `IDCS`
+     * - {@code ADFS}
+     * - {@code IDCS}
      * <p>
-     * Example: `IDCS`
+     * Example: {@code IDCS}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("productType")
     String productType;
 
     /**
-     * Date and time the `IdentityProvider` was created, in the format defined by RFC3339.
+     * Date and time the {@code IdentityProvider} was created, in the format defined by RFC3339.
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
     /**
-     * The current state. After creating an `IdentityProvider`, make sure its
-     * `lifecycleState` changes from CREATING to ACTIVE before using it.
+     * The current state. After creating an {@code IdentityProvider}, make sure its
+     * {@code lifecycleState} changes from CREATING to ACTIVE before using it.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -154,8 +154,8 @@ public class IdentityProvider {
         }
     };
     /**
-     * The current state. After creating an `IdentityProvider`, make sure its
-     * `lifecycleState` changes from CREATING to ACTIVE before using it.
+     * The current state. After creating an {@code IdentityProvider}, make sure its
+     * {@code lifecycleState} changes from CREATING to ACTIVE before using it.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
@@ -170,7 +170,7 @@ public class IdentityProvider {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -179,7 +179,7 @@ public class IdentityProvider {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

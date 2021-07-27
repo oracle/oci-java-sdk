@@ -190,7 +190,7 @@ public class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     String resourceId;
     /**
-     * The current state of the work request. The `SUCCEEDED`, `FAILED`, AND `CANCELED` states
+     * The current state of the work request. The {@code SUCCEEDED}, {@code FAILED}, AND {@code CANCELED} states
      * correspond to the action being performed.
      *
      **/
@@ -242,7 +242,7 @@ public class WorkRequestResource {
         }
     };
     /**
-     * The current state of the work request. The `SUCCEEDED`, `FAILED`, AND `CANCELED` states
+     * The current state of the work request. The {@code SUCCEEDED}, {@code FAILED}, AND {@code CANCELED} states
      * correspond to the action being performed.
      *
      **/

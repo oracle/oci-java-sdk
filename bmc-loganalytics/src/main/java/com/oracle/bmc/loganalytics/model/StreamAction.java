@@ -117,16 +117,16 @@ public class StreamAction extends Action {
      * value as specified in the following table.
      *    Schedule Interval Range          | Maximum Duration
      * ----------------------------------- | -----------------
-     *   5 Minutes     to 30 Minutes       |   1 hour  \"PT60M\"
-     *  31 Minutes     to  1 Hour          |  12 hours \"PT720M\"
-     *  1 Hour+1Minute to  1 Day           |   1 day   \"P1D\"
-     *  1 Day+1Minute  to  1 Week-1Minute  |   7 days  \"P7D\"
-     *  1 Week         to  2 Weeks         |  14 days  \"P14D\"
-     *  greater than 2 Weeks               |  30 days  \"P30D\"
+     *   5 Minutes     to 30 Minutes       |   1 hour  "PT60M"
+     *  31 Minutes     to  1 Hour          |  12 hours "PT720M"
+     *  1 Hour+1Minute to  1 Day           |   1 day   "P1D"
+     *  1 Day+1Minute  to  1 Week-1Minute  |   7 days  "P7D"
+     *  1 Week         to  2 Weeks         |  14 days  "P14D"
+     *  greater than 2 Weeks               |  30 days  "P30D"
      * <p>
      * If not specified, the duration will be based on the schedule. For example,
-     * if the schedule is every 5 minutes then the savedSearchDuration will be \"PT5M\";
-     * if the schedule is every 3 weeks then the savedSearchDuration will be \"P21D\".
+     * if the schedule is every 5 minutes then the savedSearchDuration will be "PT5M";
+     * if the schedule is every 3 weeks then the savedSearchDuration will be "P21D".
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("savedSearchDuration")

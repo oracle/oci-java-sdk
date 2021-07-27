@@ -181,11 +181,11 @@ public class CreateVnicDetails {
     /**
      * Whether the VNIC should be assigned a public IP address. Defaults to whether
      * the subnet is public or private. If not set and the VNIC is being created
-     * in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the
+     * in a private subnet (that is, where {@code prohibitPublicIpOnVnic} = true in the
      * {@link Subnet}), then no public IP address is assigned.
-     * If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then
+     * If not set and the subnet is public ({@code prohibitPublicIpOnVnic} = false), then
      * a public IP address is assigned. If set to true and
-     * `prohibitPublicIpOnVnic` = true, an error is returned.
+     * {@code prohibitPublicIpOnVnic} = true, an error is returned.
      * <p>
      **Note:** This public IP address is associated with the primary private IP
      * on the VNIC. For more information, see
@@ -198,9 +198,9 @@ public class CreateVnicDetails {
      * about the public IP limits, see
      * [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      * <p>
-     * Example: `false`
+     * Example: {@code false}
      * <p>
-     * If you specify a `vlanId`, then `assignPublicIp` must be set to false. See
+     * If you specify a {@code vlanId}, then {@code assignPublicIp} must be set to false. See
      * {@link Vlan}.
      *
      **/
@@ -212,7 +212,7 @@ public class CreateVnicDetails {
      * registration for the VNIC. If set to true, the DNS record will be registered. The default
      * value is true.
      * <p>
-     * If you specify a `hostnameLabel`, then `assignPrivateDnsRecord` must be set to true.
+     * If you specify a {@code hostnameLabel}, then {@code assignPrivateDnsRecord} must be set to true.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("assignPrivateDnsRecord")
@@ -222,7 +222,7 @@ public class CreateVnicDetails {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -240,7 +240,7 @@ public class CreateVnicDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -249,7 +249,7 @@ public class CreateVnicDetails {
     /**
      * The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname
      * portion of the primary private IP's fully qualified domain name (FQDN)
-     * (for example, `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+     * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
      * Must be unique across all VNICs in the subnet and comply with
      * [RFC 952](https://tools.ietf.org/html/rfc952) and
      * [RFC 1123](https://tools.ietf.org/html/rfc1123).
@@ -261,14 +261,14 @@ public class CreateVnicDetails {
      * For more information, see
      * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * <p>
-     * When launching an instance, use this `hostnameLabel` instead
-     * of the deprecated `hostnameLabel` in
+     * When launching an instance, use this {@code hostnameLabel} instead
+     * of the deprecated {@code hostnameLabel} in
      * {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}.
      * If you provide both, the values must match.
      * <p>
-     * Example: `bminstance-1`
+     * Example: {@code bminstance-1}
      * <p>
-     * If you specify a `vlanId`, the `hostnameLabel` cannot be specified. VNICs on a VLAN
+     * If you specify a {@code vlanId}, the {@code hostnameLabel} cannot be specified. VNICs on a VLAN
      * can not be assigned a hostname. See {@link Vlan}.
      *
      **/
@@ -280,7 +280,7 @@ public class CreateVnicDetails {
      * information about NSGs, see
      * {@link NetworkSecurityGroup}.
      * <p>
-     * If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId`
+     * If a {@code vlanId} is specified, the {@code nsgIds} cannot be specified. The {@code vlanId}
      * indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs,
      * all VNICs in the VLAN belong to the NSGs that are associated with the VLAN.
      * See {@link Vlan}.
@@ -300,10 +300,10 @@ public class CreateVnicDetails {
      * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
      * <p>
      *
-     * If you specify a `vlanId`, the `privateIp` cannot be specified.
+     * If you specify a {@code vlanId}, the {@code privateIp} cannot be specified.
      * See {@link Vlan}.
      * <p>
-     * Example: `10.0.3.3`
+     * Example: {@code 10.0.3.3}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
@@ -311,16 +311,16 @@ public class CreateVnicDetails {
 
     /**
      * Whether the source/destination check is disabled on the VNIC.
-     * Defaults to `false`, which means the check is performed. For information
+     * Defaults to {@code false}, which means the check is performed. For information
      * about why you would skip the source/destination check, see
      * [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      * <p>
      *
-     * If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the
+     * If you specify a {@code vlanId}, the {@code skipSourceDestCheck} cannot be specified because the
      * source/destination check is always disabled for VNICs in a VLAN. See
      * {@link Vlan}.
      * <p>
-     * Example: `true`
+     * Example: {@code true}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("skipSourceDestCheck")
@@ -328,13 +328,13 @@ public class CreateVnicDetails {
 
     /**
      * The OCID of the subnet to create the VNIC in. When launching an instance,
-     * use this `subnetId` instead of the deprecated `subnetId` in
+     * use this {@code subnetId} instead of the deprecated {@code subnetId} in
      * {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}.
      * At least one of them is required; if you provide both, the values must match.
      * <p>
      * If you are an Oracle Cloud VMware Solution customer and creating a secondary
-     * VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`.
-     * If you provide both a `vlanId` and `subnetId`, the request fails.
+     * VNIC in a VLAN instead of a subnet, provide a {@code vlanId} instead of a {@code subnetId}.
+     * If you provide both a {@code vlanId} and {@code subnetId}, the request fails.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
@@ -345,8 +345,8 @@ public class CreateVnicDetails {
      * customer and creating a secondary VNIC in a VLAN. The value is the OCID of the VLAN.
      * See {@link Vlan}.
      * <p>
-     * Provide a `vlanId` instead of a `subnetId`. If you provide both a
-     * `vlanId` and `subnetId`, the request fails.
+     * Provide a {@code vlanId} instead of a {@code subnetId}. If you provide both a
+     * {@code vlanId} and {@code subnetId}, the request fails.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vlanId")

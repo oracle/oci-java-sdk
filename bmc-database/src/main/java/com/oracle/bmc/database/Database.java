@@ -1068,7 +1068,7 @@ public interface Database extends AutoCloseable {
                     EnableExternalPluggableDatabaseOperationsInsightsRequest request);
 
     /**
-     * Initiates a failover the specified Autonomous Database to a standby.
+     * Initiates a failover the specified Autonomous Database to a standby. To perform a failover to a standby located in a remote region, specify the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the remote standby using the `peerDbId` parameter.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2513,7 +2513,7 @@ public interface Database extends AutoCloseable {
                     SwitchoverAutonomousContainerDatabaseDataguardAssociationRequest request);
 
     /**
-     * Initiates a switchover of the specified Autonomous Database to the associated standby database. Applicable only to databases with Autonomous Data Guard enabled.
+     * Initiates a switchover of the specified Autonomous Database to the associated standby database. Applicable only to databases with Autonomous Data Guard enabled. To perform a switchover to a standby located in a remote region, specify the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the remote standby using the `peerDbId` parameter.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

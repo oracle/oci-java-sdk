@@ -137,7 +137,7 @@ public class ExternalBackupJob {
     String backupId;
 
     /**
-     * An indicator for the provisioning state of the resource. If `TRUE`, the resource is still being provisioned.
+     * An indicator for the provisioning state of the resource. If {@code TRUE}, the resource is still being provisioned.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("provisioning")
     Boolean provisioning;

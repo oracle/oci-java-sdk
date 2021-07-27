@@ -5,7 +5,7 @@
 package com.oracle.bmc.containerengine.model;
 
 /**
- * An image can be specified as the source of nodes when launching a node pool using the `nodeSourceDetails` object.
+ * An image can be specified as the source of nodes when launching a node pool using the {@code nodeSourceDetails} object.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

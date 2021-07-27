@@ -164,11 +164,11 @@ public class InstanceAgentCommandExecutionSummary {
     String instanceId;
     /**
      * The command delivery state.
-     *  * `VISIBLE` - The command is visible to the instance.
-     *  * `PENDING` - The command is pending acknowledgment from the instance.
-     *  * `ACKED` - The command has been received and acknowledged by the instance.
-     *  * `ACKED_CANCELED` - The canceled command has been received and acknowledged by the instance.
-     *  * `EXPIRED` - The instance has not requested for commands and the command's delivery has expired.
+     *  * {@code VISIBLE} - The command is visible to the instance.
+     *  * {@code PENDING} - The command is pending acknowledgment from the instance.
+     *  * {@code ACKED} - The command has been received and acknowledged by the instance.
+     *  * {@code ACKED_CANCELED} - The canceled command has been received and acknowledged by the instance.
+     *  * {@code EXPIRED} - The instance has not requested for commands and the command's delivery has expired.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -219,23 +219,23 @@ public class InstanceAgentCommandExecutionSummary {
     };
     /**
      * The command delivery state.
-     *  * `VISIBLE` - The command is visible to the instance.
-     *  * `PENDING` - The command is pending acknowledgment from the instance.
-     *  * `ACKED` - The command has been received and acknowledged by the instance.
-     *  * `ACKED_CANCELED` - The canceled command has been received and acknowledged by the instance.
-     *  * `EXPIRED` - The instance has not requested for commands and the command's delivery has expired.
+     *  * {@code VISIBLE} - The command is visible to the instance.
+     *  * {@code PENDING} - The command is pending acknowledgment from the instance.
+     *  * {@code ACKED} - The command has been received and acknowledged by the instance.
+     *  * {@code ACKED_CANCELED} - The canceled command has been received and acknowledged by the instance.
+     *  * {@code EXPIRED} - The instance has not requested for commands and the command's delivery has expired.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deliveryState")
     DeliveryState deliveryState;
     /**
      * The command execution lifecycle state.
-     * * `ACCEPTED` - The command has been accepted to run.
-     * * `IN_PROGRESS` - The command is in progress.
-     * * `SUCCEEDED` - The command was successfully executed.
-     * * `FAILED` - The command failed to execute.
-     * * `TIMED_OUT` - The command execution timed out.
-     * * `CANCELED` - The command execution was canceled.
+     * * {@code ACCEPTED} - The command has been accepted to run.
+     * * {@code IN_PROGRESS} - The command is in progress.
+     * * {@code SUCCEEDED} - The command was successfully executed.
+     * * {@code FAILED} - The command failed to execute.
+     * * {@code TIMED_OUT} - The command execution timed out.
+     * * {@code CANCELED} - The command execution was canceled.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -287,12 +287,12 @@ public class InstanceAgentCommandExecutionSummary {
     };
     /**
      * The command execution lifecycle state.
-     * * `ACCEPTED` - The command has been accepted to run.
-     * * `IN_PROGRESS` - The command is in progress.
-     * * `SUCCEEDED` - The command was successfully executed.
-     * * `FAILED` - The command failed to execute.
-     * * `TIMED_OUT` - The command execution timed out.
-     * * `CANCELED` - The command execution was canceled.
+     * * {@code ACCEPTED} - The command has been accepted to run.
+     * * {@code IN_PROGRESS} - The command is in progress.
+     * * {@code SUCCEEDED} - The command was successfully executed.
+     * * {@code FAILED} - The command failed to execute.
+     * * {@code TIMED_OUT} - The command execution timed out.
+     * * {@code CANCELED} - The command execution was canceled.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")

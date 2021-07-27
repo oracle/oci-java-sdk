@@ -398,7 +398,12 @@ public class OrdersAsyncClient implements OrdersAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ActivateOrderRequest, ActivateOrderResponse>,
                         java.util.concurrent.Future<ActivateOrderResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getActivateOrderDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

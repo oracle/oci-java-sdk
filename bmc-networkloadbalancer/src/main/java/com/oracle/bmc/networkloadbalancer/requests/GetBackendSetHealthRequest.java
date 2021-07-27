@@ -27,7 +27,7 @@ public class GetBackendSetHealthRequest extends com.oracle.bmc.requests.BmcReque
     /**
      * The name of the backend set for which to retrieve the health status.
      * <p>
-     * Example: `example_backend_set`
+     * Example: {@code example_backend_set}
      *
      */
     private String backendSetName;

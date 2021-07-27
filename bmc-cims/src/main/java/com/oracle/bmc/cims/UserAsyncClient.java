@@ -396,7 +396,12 @@ public class UserAsyncClient implements UserAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateUserRequest, CreateUserResponse>,
                         java.util.concurrent.Future<CreateUserResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateUserDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

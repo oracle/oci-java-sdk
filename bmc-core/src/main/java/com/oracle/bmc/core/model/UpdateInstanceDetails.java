@@ -210,7 +210,7 @@ public class UpdateInstanceDetails {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -220,7 +220,7 @@ public class UpdateInstanceDetails {
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
      * <p>
-     * Example: `My bare metal instance`
+     * Example: {@code My bare metal instance}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -230,7 +230,7 @@ public class UpdateInstanceDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -241,15 +241,15 @@ public class UpdateInstanceDetails {
 
     /**
      * Custom metadata key/value string pairs that you provide. Any set of key/value pairs
-     * provided here will completely replace the current set of key/value pairs in the `metadata`
+     * provided here will completely replace the current set of key/value pairs in the {@code metadata}
      * field on the instance.
      * <p>
-     * The \"user_data\" field and the \"ssh_authorized_keys\" field cannot be changed after an instance
+     * The "user_data" field and the "ssh_authorized_keys" field cannot be changed after an instance
      * has launched. Any request that updates, removes, or adds either of these fields will be
-     * rejected. You must provide the same values for \"user_data\" and \"ssh_authorized_keys\" that
+     * rejected. You must provide the same values for "user_data" and "ssh_authorized_keys" that
      * already exist on the instance.
      * <p>
-     * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of
+     * The combined size of the {@code metadata} and {@code extendedMetadata} objects can be a maximum of
      * 32,000 bytes.
      *
      **/
@@ -258,17 +258,17 @@ public class UpdateInstanceDetails {
 
     /**
      * Additional metadata key/value pairs that you provide. They serve the same purpose and
-     * functionality as fields in the `metadata` object.
+     * functionality as fields in the {@code metadata} object.
      * <p>
-     * They are distinguished from `metadata` fields in that these can be nested JSON objects
-     * (whereas `metadata` fields are string/string maps only).
+     * They are distinguished from {@code metadata} fields in that these can be nested JSON objects
+     * (whereas {@code metadata} fields are string/string maps only).
      * <p>
-     * The \"user_data\" field and the \"ssh_authorized_keys\" field cannot be changed after an instance
+     * The "user_data" field and the "ssh_authorized_keys" field cannot be changed after an instance
      * has launched. Any request that updates, removes, or adds either of these fields will be
-     * rejected. You must provide the same values for \"user_data\" and \"ssh_authorized_keys\" that
+     * rejected. You must provide the same values for "user_data" and "ssh_authorized_keys" that
      * already exist on the instance.
      * <p>
-     * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of
+     * The combined size of the {@code metadata} and {@code extendedMetadata} objects can be a maximum of
      * 32,000 bytes.
      *
      **/
@@ -290,7 +290,7 @@ public class UpdateInstanceDetails {
      * <p>
      * If the instance is running when you change the shape, the instance is rebooted.
      * <p>
-     * Example: `VM.Standard2.1`
+     * Example: {@code VM.Standard2.1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
@@ -313,7 +313,7 @@ public class UpdateInstanceDetails {
      * {@link #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation in the
      * Identity and Access Management Service API.
      * <p>
-     * Example: `FAULT-DOMAIN-1`
+     * Example: {@code FAULT-DOMAIN-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")

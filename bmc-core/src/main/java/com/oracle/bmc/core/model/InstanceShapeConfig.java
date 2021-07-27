@@ -190,12 +190,12 @@ public class InstanceShapeConfig {
     Float memoryInGBs;
     /**
      * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
-     * non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+     * non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
      * <p>
      * The following values are supported:
-     * - `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
-     * - `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
-     * - `BASELINE_1_1` - baseline usage is the entire OCPU. This represents a non-burstable instance.
+     * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+     * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+     * - {@code BASELINE_1_1} - baseline usage is the entire OCPU. This represents a non-burstable instance.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -244,12 +244,12 @@ public class InstanceShapeConfig {
     };
     /**
      * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
-     * non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+     * non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
      * <p>
      * The following values are supported:
-     * - `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
-     * - `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
-     * - `BASELINE_1_1` - baseline usage is the entire OCPU. This represents a non-burstable instance.
+     * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+     * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+     * - {@code BASELINE_1_1} - baseline usage is the entire OCPU. This represents a non-burstable instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("baselineOcpuUtilization")
@@ -286,7 +286,7 @@ public class InstanceShapeConfig {
     /**
      * A short description of the instance's graphics processing unit (GPU).
      * <p>
-     * If the instance does not have any GPUs, this field is `null`.
+     * If the instance does not have any GPUs, this field is {@code null}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gpuDescription")
@@ -302,7 +302,7 @@ public class InstanceShapeConfig {
     /**
      * The aggregate size of all local disks, in gigabytes.
      * <p>
-     * If the instance does not have any local disks, this field is `null`.
+     * If the instance does not have any local disks, this field is {@code null}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("localDisksTotalSizeInGBs")
@@ -311,7 +311,7 @@ public class InstanceShapeConfig {
     /**
      * A short description of the local disks available to this instance.
      * <p>
-     * If the instance does not have any local disks, this field is `null`.
+     * If the instance does not have any local disks, this field is {@code null}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("localDiskDescription")

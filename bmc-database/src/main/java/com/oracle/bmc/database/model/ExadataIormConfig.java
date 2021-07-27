@@ -151,14 +151,14 @@ public class ExadataIormConfig {
     LifecycleState lifecycleState;
 
     /**
-     * Additional information about the current `lifecycleState`.
+     * Additional information about the current {@code lifecycleState}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     String lifecycleDetails;
     /**
      * The current value for the IORM objective.
-     * The default is `AUTO`.
+     * The default is {@code AUTO}.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -209,7 +209,7 @@ public class ExadataIormConfig {
     };
     /**
      * The current value for the IORM objective.
-     * The default is `AUTO`.
+     * The default is {@code AUTO}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objective")

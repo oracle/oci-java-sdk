@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
+ * Credentials used to connect to the database. Currently only the {@code DETAILS} type is supported for creating MACS connector crendentials.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

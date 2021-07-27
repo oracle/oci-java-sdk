@@ -398,7 +398,12 @@ public class EsxiHostAsyncClient implements EsxiHostAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateEsxiHostRequest, CreateEsxiHostResponse>,
                         java.util.concurrent.Future<CreateEsxiHostResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateEsxiHostDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -552,7 +557,12 @@ public class EsxiHostAsyncClient implements EsxiHostAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateEsxiHostRequest, UpdateEsxiHostResponse>,
                         java.util.concurrent.Future<UpdateEsxiHostResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateEsxiHostDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

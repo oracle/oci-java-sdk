@@ -148,7 +148,7 @@ public class AppCatalogListingResourceVersion {
 
     /**
      * Date and time the listing resource version was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
-     * Example: `2018-03-20T12:32:53.532Z`
+     * Example: {@code 2018-03-20T12:32:53.532Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timePublished")
@@ -172,7 +172,7 @@ public class AppCatalogListingResourceVersion {
      * For information about Regions, see
      * [Regions](https://docs.cloud.oracle.com/#General/Concepts/regions.htm).
      * <p>
-     * Example: `[\"us-ashburn-1\", \"us-phoenix-1\"]`
+     * Example: {@code ["us-ashburn-1", "us-phoenix-1"]}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableRegions")
@@ -183,7 +183,7 @@ public class AppCatalogListingResourceVersion {
      * <p>
      * You may enumerate all available shapes by calling {@link #listShapes(ListShapesRequest) listShapes}.
      * <p>
-     * Example: `[\"VM.Standard1.1\", \"VM.Standard1.2\"]`
+     * Example: {@code ["VM.Standard1.1", "VM.Standard1.2"]}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compatibleShapes")

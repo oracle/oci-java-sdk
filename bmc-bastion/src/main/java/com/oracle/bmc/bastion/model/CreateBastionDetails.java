@@ -164,7 +164,7 @@ public class CreateBastionDetails {
     }
 
     /**
-     * The type of bastion. Use `standard`.
+     * The type of bastion. Use {@code standard}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bastionType")
@@ -189,14 +189,14 @@ public class CreateBastionDetails {
     String targetSubnetId;
 
     /**
-     * The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
+     * The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to {@code standard} bastions.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("phoneBookEntry")
     String phoneBookEntry;
 
     /**
-     * A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
+     * A list of IP addresses of the hosts that the bastion has access to. Not applicable to {@code standard} bastions.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("staticJumpHostIpAddresses")
@@ -216,7 +216,7 @@ public class CreateBastionDetails {
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -224,7 +224,7 @@ public class CreateBastionDetails {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

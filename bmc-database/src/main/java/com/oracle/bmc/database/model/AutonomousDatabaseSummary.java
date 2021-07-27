@@ -627,12 +627,57 @@ public class AutonomousDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("supportedRegionsToCloneTo")
+        private java.util.List<String> supportedRegionsToCloneTo;
+
+        public Builder supportedRegionsToCloneTo(java.util.List<String> supportedRegionsToCloneTo) {
+            this.supportedRegionsToCloneTo = supportedRegionsToCloneTo;
+            this.__explicitlySet__.add("supportedRegionsToCloneTo");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
         private java.util.List<CustomerContact> customerContacts;
 
         public Builder customerContacts(java.util.List<CustomerContact> customerContacts) {
             this.customerContacts = customerContacts;
             this.__explicitlySet__.add("customerContacts");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLocalDataGuardEnabled")
+        private java.util.Date timeLocalDataGuardEnabled;
+
+        public Builder timeLocalDataGuardEnabled(java.util.Date timeLocalDataGuardEnabled) {
+            this.timeLocalDataGuardEnabled = timeLocalDataGuardEnabled;
+            this.__explicitlySet__.add("timeLocalDataGuardEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataguardRegionType")
+        private DataguardRegionType dataguardRegionType;
+
+        public Builder dataguardRegionType(DataguardRegionType dataguardRegionType) {
+            this.dataguardRegionType = dataguardRegionType;
+            this.__explicitlySet__.add("dataguardRegionType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeDataGuardRoleChanged")
+        private java.util.Date timeDataGuardRoleChanged;
+
+        public Builder timeDataGuardRoleChanged(java.util.Date timeDataGuardRoleChanged) {
+            this.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
+            this.__explicitlySet__.add("timeDataGuardRoleChanged");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("peerDbIds")
+        private java.util.List<String> peerDbIds;
+
+        public Builder peerDbIds(java.util.List<String> peerDbIds) {
+            this.peerDbIds = peerDbIds;
+            this.__explicitlySet__.add("peerDbIds");
             return this;
         }
 
@@ -708,7 +753,12 @@ public class AutonomousDatabaseSummary {
                             availableUpgradeVersions,
                             keyStoreId,
                             keyStoreWalletName,
-                            customerContacts);
+                            supportedRegionsToCloneTo,
+                            customerContacts,
+                            timeLocalDataGuardEnabled,
+                            dataguardRegionType,
+                            timeDataGuardRoleChanged,
+                            peerDbIds);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -784,7 +834,12 @@ public class AutonomousDatabaseSummary {
                             .availableUpgradeVersions(o.getAvailableUpgradeVersions())
                             .keyStoreId(o.getKeyStoreId())
                             .keyStoreWalletName(o.getKeyStoreWalletName())
-                            .customerContacts(o.getCustomerContacts());
+                            .supportedRegionsToCloneTo(o.getSupportedRegionsToCloneTo())
+                            .customerContacts(o.getCustomerContacts())
+                            .timeLocalDataGuardEnabled(o.getTimeLocalDataGuardEnabled())
+                            .dataguardRegionType(o.getDataguardRegionType())
+                            .timeDataGuardRoleChanged(o.getTimeDataGuardRoleChanged())
+                            .peerDbIds(o.getPeerDbIds());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -950,7 +1005,7 @@ public class AutonomousDatabaseSummary {
     /**
      * The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      * <p>
-     **Note:** This parameter cannot be used with the `ocpuCount` parameter.
+     **Note:** This parameter cannot be used with the {@code ocpuCount} parameter.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
@@ -965,7 +1020,7 @@ public class AutonomousDatabaseSummary {
      * <p>
      * For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      * <p>
-     **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
+     **Note:** This parameter cannot be used with the {@code cpuCoreCount} parameter.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
@@ -1077,7 +1132,7 @@ public class AutonomousDatabaseSummary {
      * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
      * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
      * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the
-     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -1127,7 +1182,7 @@ public class AutonomousDatabaseSummary {
      * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
      * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
      * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the
-     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
@@ -1143,7 +1198,7 @@ public class AutonomousDatabaseSummary {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -1280,8 +1335,8 @@ public class AutonomousDatabaseSummary {
     /**
      * Indicates if the database-level access control is enabled.
      * If disabled, database access is defined by the network security rules.
-     * If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional,
-     *  if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console.
+     * If enabled, database access is restricted to the IP addresses defined by the rules specified with the {@code whitelistedIps} property. While specifying {@code whitelistedIps} rules is optional,
+     *  if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the {@code UpdateAutonomousDatabase} API operation or edit option in console.
      * When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
      * <p>
      * This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
@@ -1296,9 +1351,9 @@ public class AutonomousDatabaseSummary {
      * <p>
      * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
      * Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs.
-     * Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.<unique_id>\",\"ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1\",\"ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16\"]`
+     * Example: {@code ["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]}
      * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations.
-     * Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"1.1.2.25\"]`
+     * Example: {@code ["1.1.1.1","1.1.1.0/24","1.1.2.25"]}
      * <p>
      * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
      *
@@ -1308,8 +1363,8 @@ public class AutonomousDatabaseSummary {
 
     /**
      * This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled.
-     * It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby.
-     * It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
+     * It's value would be {@code TRUE} if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby.
+     * It's value would be {@code FALSE} if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("arePrimaryWhitelistedIpsUsed")
@@ -1321,9 +1376,9 @@ public class AutonomousDatabaseSummary {
      * <p>
      * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
      * Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs.
-     * Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.<unique_id>\",\"ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1\",\"ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16\"]`
+     * Example: {@code ["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]}
      * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations.
-     * Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"1.1.2.25\"]`
+     * Example: {@code ["1.1.1.1","1.1.1.0/24","1.1.2.25"]}
      * <p>
      * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
      *
@@ -1489,7 +1544,7 @@ public class AutonomousDatabaseSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfNextRefresh")
     java.util.Date timeOfNextRefresh;
     /**
-     * The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+     * The {@code DATABASE OPEN} mode. You can open the database in {@code READ_ONLY} or {@code READ_WRITE} mode.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum OpenMode {
@@ -1535,7 +1590,7 @@ public class AutonomousDatabaseSummary {
         }
     };
     /**
-     * The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+     * The {@code DATABASE OPEN} mode. You can open the database in {@code READ_ONLY} or {@code READ_WRITE} mode.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("openMode")
     OpenMode openMode;
@@ -1726,7 +1781,7 @@ public class AutonomousDatabaseSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("standbyDb")
     AutonomousDatabaseStandbySummary standbyDb;
     /**
-     * The Data Guard role of the Autonomous Container Database, if Autonomous Data Guard is enabled.
+     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -1773,7 +1828,7 @@ public class AutonomousDatabaseSummary {
         }
     };
     /**
-     * The Data Guard role of the Autonomous Container Database, if Autonomous Data Guard is enabled.
+     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
@@ -1798,10 +1853,85 @@ public class AutonomousDatabaseSummary {
     String keyStoreWalletName;
 
     /**
+     * The list of regions that support the creation of Autonomous Data Guard standby database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("supportedRegionsToCloneTo")
+    java.util.List<String> supportedRegionsToCloneTo;
+
+    /**
      * Customer Contacts.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
     java.util.List<CustomerContact> customerContacts;
+
+    /**
+     * The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLocalDataGuardEnabled")
+    java.util.Date timeLocalDataGuardEnabled;
+    /**
+     * The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the "primary" role is operating in a remote Data Guard standby region.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum DataguardRegionType {
+        PrimaryDgRegion("PRIMARY_DG_REGION"),
+        RemoteStandbyDgRegion("REMOTE_STANDBY_DG_REGION"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, DataguardRegionType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DataguardRegionType v : DataguardRegionType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DataguardRegionType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DataguardRegionType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DataguardRegionType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the "primary" role is operating in a remote Data Guard standby region.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataguardRegionType")
+    DataguardRegionType dataguardRegionType;
+
+    /**
+     * The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeDataGuardRoleChanged")
+    java.util.Date timeDataGuardRoleChanged;
+
+    /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("peerDbIds")
+    java.util.List<String> peerDbIds;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

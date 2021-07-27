@@ -170,7 +170,7 @@ public class KeySummary {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -187,7 +187,7 @@ public class KeySummary {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -201,7 +201,7 @@ public class KeySummary {
     /**
      * The key's current lifecycle state.
      * <p>
-     * Example: `ENABLED`
+     * Example: {@code ENABLED}
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -261,7 +261,7 @@ public class KeySummary {
     /**
      * The key's current lifecycle state.
      * <p>
-     * Example: `ENABLED`
+     * Example: {@code ENABLED}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
@@ -270,7 +270,7 @@ public class KeySummary {
     /**
      * The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * <p>
-     * Example: `2018-04-03T21:10:29.600Z`
+     * Example: {@code 2018-04-03T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -283,10 +283,10 @@ public class KeySummary {
     String vaultId;
     /**
      * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
-     * A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
-     * the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists
-     * on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,
-     * a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+     * A protection mode of {@code HSM} means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
+     * the HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server, protected by the vault's RSA wrapping key which persists
+     * on the HSM. All cryptographic operations that use a key with a protection mode of {@code SOFTWARE} are performed on the server. By default,
+     * a key's protection mode is set to {@code HSM}. You can't change a key's protection mode after the key is created or imported.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -334,10 +334,10 @@ public class KeySummary {
     };
     /**
      * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
-     * A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
-     * the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists
-     * on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,
-     * a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+     * A protection mode of {@code HSM} means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
+     * the HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server, protected by the vault's RSA wrapping key which persists
+     * on the HSM. All cryptographic operations that use a key with a protection mode of {@code SOFTWARE} are performed on the server. By default,
+     * a key's protection mode is set to {@code HSM}. You can't change a key's protection mode after the key is created or imported.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")

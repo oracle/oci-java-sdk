@@ -124,7 +124,7 @@ public class SSLConfigurationDetails {
     /**
      * The maximum depth for peer certificate chain verification.
      * <p>
-     * Example: `3`
+     * Example: {@code 3}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("verifyDepth")
@@ -133,7 +133,7 @@ public class SSLConfigurationDetails {
     /**
      * Whether the load balancer listener should verify peer certificates.
      * <p>
-     * Example: `true`
+     * Example: {@code true}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("verifyPeerCertificate")
@@ -144,7 +144,7 @@ public class SSLConfigurationDetails {
      * Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
      * Certificate bundle names cannot contain spaces. Avoid entering confidential information.
      * <p>
-     * Example: `example_certificate_bundle`
+     * Example: {@code example_certificate_bundle}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
@@ -171,10 +171,10 @@ public class SSLConfigurationDetails {
      *  The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
      * *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher
      *    suite.
-     * *  For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation
+     * *  For all existing load balancer listeners and backend sets that predate this feature, the {@code GET} operation
      *    displays a list of SSL protocols currently used by those resources.
      * <p>
-     * example: `[\"TLSv1.1\", \"TLSv1.2\"]`
+     * example: {@code ["TLSv1.1", "TLSv1.2"]}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocols")
@@ -183,7 +183,7 @@ public class SSLConfigurationDetails {
     /**
      * The name of the cipher suite to use for HTTPS or SSL connections.
      * <p>
-     * If this field is not specified, the default is `oci-default-ssl-cipher-suite-v1`.
+     * If this field is not specified, the default is {@code oci-default-ssl-cipher-suite-v1}.
      * <p>
      **Notes:**
      * <p>
@@ -192,20 +192,20 @@ public class SSLConfigurationDetails {
      * *  You must ensure compatibility between the ciphers configured in the cipher suite and the configured
      *    certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA
      *    certificates.
-     * *  If the cipher configuration is not modified after load balancer creation, the `GET` operation returns
-     *    `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners
+     * *  If the cipher configuration is not modified after load balancer creation, the {@code GET} operation returns
+     *    {@code oci-default-ssl-cipher-suite-v1} as the value of this field in the SSL configuration for existing listeners
      *    that predate this feature.
-     * *  If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET`
-     *    operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for
+     * *  If the cipher configuration was modified using Oracle operations after load balancer creation, the {@code GET}
+     *    operation returns {@code oci-customized-ssl-cipher-suite} as the value of this field in the SSL configuration for
      *    existing listeners that predate this feature.
-     * *  The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL
+     * *  The {@code GET} operation returns {@code oci-wider-compatible-ssl-cipher-suite-v1} as the value of this field in the SSL
      *    configuration for existing backend sets that predate this feature.
-     * *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field,
+     * *  If the {@code GET} operation on a listener returns {@code oci-customized-ssl-cipher-suite} as the value of this field,
      *    you must specify an appropriate predefined or custom cipher suite name when updating the resource.
-     * *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for
+     * *  The {@code oci-customized-ssl-cipher-suite} Oracle reserved cipher suite name is not accepted as valid input for
      *    this field.
      * <p>
-     * example: `example_cipher_suite`
+     * example: {@code example_cipher_suite}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cipherSuiteName")
@@ -215,7 +215,7 @@ public class SSLConfigurationDetails {
      * ciphers.
      * <p>
      **Note:** This configuration is applicable only when the load balancer is acting as an SSL/HTTPS server. This
-     *           field is ignored when the `SSLConfiguration` object is associated with a backend set.
+     *           field is ignored when the {@code SSLConfiguration} object is associated with a backend set.
      *
      **/
     public enum ServerOrderPreference {
@@ -255,7 +255,7 @@ public class SSLConfigurationDetails {
      * ciphers.
      * <p>
      **Note:** This configuration is applicable only when the load balancer is acting as an SSL/HTTPS server. This
-     *           field is ignored when the `SSLConfiguration` object is associated with a backend set.
+     *           field is ignored when the {@code SSLConfiguration} object is associated with a backend set.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serverOrderPreference")

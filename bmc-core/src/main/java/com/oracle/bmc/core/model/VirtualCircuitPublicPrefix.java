@@ -82,8 +82,8 @@ public class VirtualCircuitPublicPrefix {
     /**
      * Oracle must verify that the customer owns the public IP prefix before traffic
      * for that prefix can flow across the virtual circuit. Verification can take a
-     * few business days. `IN_PROGRESS` means Oracle is verifying the prefix. `COMPLETED`
-     * means verification succeeded. `FAILED` means verification failed and traffic for
+     * few business days. {@code IN_PROGRESS} means Oracle is verifying the prefix. {@code COMPLETED}
+     * means verification succeeded. {@code FAILED} means verification failed and traffic for
      * this prefix will not flow across the connection.
      *
      **/
@@ -134,8 +134,8 @@ public class VirtualCircuitPublicPrefix {
     /**
      * Oracle must verify that the customer owns the public IP prefix before traffic
      * for that prefix can flow across the virtual circuit. Verification can take a
-     * few business days. `IN_PROGRESS` means Oracle is verifying the prefix. `COMPLETED`
-     * means verification succeeded. `FAILED` means verification failed and traffic for
+     * few business days. {@code IN_PROGRESS} means Oracle is verifying the prefix. {@code COMPLETED}
+     * means verification succeeded. {@code FAILED} means verification failed and traffic for
      * this prefix will not flow across the connection.
      *
      **/

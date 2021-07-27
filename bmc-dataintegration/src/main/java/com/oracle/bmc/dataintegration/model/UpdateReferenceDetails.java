@@ -83,13 +83,13 @@ public class UpdateReferenceDetails {
     }
 
     /**
-     * A list of options such as `ignoreObjectOnError`.
+     * A list of options such as {@code ignoreObjectOnError}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("options")
     java.util.Map<String, String> options;
 
     /**
-     * The new target object to reference. This should be of type `DataAsset`. The child references can be of type `Connection`.
+     * The new target object to reference. This should be of type {@code DataAsset}. The child references can be of type {@code Connection}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetObject")
     Object targetObject;

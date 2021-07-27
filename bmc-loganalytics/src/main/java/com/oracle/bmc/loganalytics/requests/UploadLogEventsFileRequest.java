@@ -34,8 +34,8 @@ public class UploadLogEventsFileRequest
 
     /**
      * Log events data to be uploaded. The data could be uploaded with or without logSet information depending on whether logSet is enabled for the tenancy or not. Supported formats include
-     * 1. json file : logSet (if needed) should be sent as \"logSet\" query parameter
-     * 2. gzip file : logSet (if needed) should be sent as \"logSet\" query parameter
+     * 1. json file : logSet (if needed) should be sent as "logSet" query parameter
+     * 2. gzip file : logSet (if needed) should be sent as "logSet" query parameter
      * 3. zip file : containing multiple json files. LogSet information (if needed) should be appended to every filename in the zip.
      *    Supported filename format with logSet detail is &lt;filename&gt;_logSet=&lt;logset&gt;.json
      *

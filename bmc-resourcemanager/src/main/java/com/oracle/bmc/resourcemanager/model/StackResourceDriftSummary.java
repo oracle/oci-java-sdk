@@ -179,7 +179,7 @@ public class StackResourceDriftSummary {
     /**
      * The provider resource type.
      * Must be supported by the [Oracle Cloud Infrastructure provider](https://www.terraform.io/docs/providers/oci/index.html).
-     * Example: `oci_core_instance`
+     * Example: {@code oci_core_instance}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
@@ -246,7 +246,7 @@ public class StackResourceDriftSummary {
      * Actual values of properties that the stack defines for the indicated resource.
      * Each property and value is provided as a key-value pair.
      * The following example shows actual values for the resource's display name and server type:
-     * `{\"display_name\": \"tf-default-dhcp-options-new\", \"options.0.server_type\": \"VcnLocalPlusInternet\"}`
+     * {@code {"display_name": "tf-default-dhcp-options-new", "options.0.server_type": "VcnLocalPlusInternet"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actualProperties")
@@ -256,7 +256,7 @@ public class StackResourceDriftSummary {
      * Expected values of properties that the stack defines for the indicated resource.
      * Each property and value is provided as a key-value pair.
      * The following example shows expected (defined) values for the resource's display name and server type:
-     * `{\"display_name\": \"tf-default-dhcp-options\", \"options.0.server_type\": \"VcnLocalPlusInternet\"}`
+     * {@code {"display_name": "tf-default-dhcp-options", "options.0.server_type": "VcnLocalPlusInternet"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expectedProperties")
@@ -265,7 +265,7 @@ public class StackResourceDriftSummary {
     /**
      * The date and time when the drift detection was executed.
      * Format is defined by RFC3339.
-     * Example: `2020-01-25T21:10:29.600Z`
+     * Example: {@code 2020-01-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDriftChecked")

@@ -399,7 +399,12 @@ public class BastionAsyncClient implements BastionAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeBastionCompartmentRequest, ChangeBastionCompartmentResponse>,
                         java.util.concurrent.Future<ChangeBastionCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeBastionCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -438,7 +443,12 @@ public class BastionAsyncClient implements BastionAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateBastionRequest, CreateBastionResponse>,
                         java.util.concurrent.Future<CreateBastionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateBastionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -477,7 +487,12 @@ public class BastionAsyncClient implements BastionAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateSessionRequest, CreateSessionResponse>,
                         java.util.concurrent.Future<CreateSessionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSessionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -901,7 +916,12 @@ public class BastionAsyncClient implements BastionAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateBastionRequest, UpdateBastionResponse>,
                         java.util.concurrent.Future<UpdateBastionResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateBastionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -939,7 +959,12 @@ public class BastionAsyncClient implements BastionAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateSessionRequest, UpdateSessionResponse>,
                         java.util.concurrent.Future<UpdateSessionResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSessionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

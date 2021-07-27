@@ -351,10 +351,10 @@ public class CreateSddcDetails {
 
     /**
      * A prefix used in the name of each ESXi host and Compute instance in the SDDC.
-     * If this isn't set, the SDDC's `displayName` is used as the prefix.
+     * If this isn't set, the SDDC's {@code displayName} is used as the prefix.
      * <p>
-     * For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`,
-     * `mySDDC-2`, and so on.
+     * For example, if the value is {@code mySDDC}, the ESXi hosts are named {@code mySDDC-1},
+     * {@code mySDDC-2}, and so on.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceDisplayNamePrefix")
@@ -392,7 +392,7 @@ public class CreateSddcDetails {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX
-     * component of the VMware environment. This value is required only when `isHcxEnabled` is true.
+     * component of the VMware environment. This value is required only when {@code isHcxEnabled} is true.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hcxVlanId")
@@ -406,9 +406,9 @@ public class CreateSddcDetails {
     Boolean isHcxEnterpriseEnabled;
 
     /**
-     * One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for
+     * One or more public SSH keys to be included in the {@code ~/.ssh/authorized_keys} file for
      * the default user on each ESXi host. Use a newline character to separate multiple keys.
-     * The SSH keys must be in the format required for the `authorized_keys` file
+     * The SSH keys must be in the format required for the {@code authorized_keys} file
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshAuthorizedKeys")
@@ -508,7 +508,7 @@ public class CreateSddcDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -518,7 +518,7 @@ public class CreateSddcDetails {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

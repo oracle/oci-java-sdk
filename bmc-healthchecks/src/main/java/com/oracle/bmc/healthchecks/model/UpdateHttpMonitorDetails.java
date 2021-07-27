@@ -218,7 +218,7 @@ public class UpdateHttpMonitorDetails {
 
     /**
      * The probe timeout in seconds. Valid values: 10, 20, 30, and 60.
-     * The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
+     * The probe timeout must be less than or equal to {@code intervalInSeconds} for monitors.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
@@ -239,7 +239,7 @@ public class UpdateHttpMonitorDetails {
     /**
      * A dictionary of HTTP request headers.
      * <p>
-     *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
+     *Note:* Monitors and probes do not support the use of the {@code Authorization} HTTP header.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("headers")
@@ -269,7 +269,7 @@ public class UpdateHttpMonitorDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace.  For more information,
      * see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -278,7 +278,7 @@ public class UpdateHttpMonitorDetails {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

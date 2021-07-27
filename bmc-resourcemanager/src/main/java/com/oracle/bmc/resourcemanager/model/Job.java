@@ -331,7 +331,7 @@ public class Job {
     ApplyJobPlanResolution applyJobPlanResolution;
 
     /**
-     * Deprecated. Use the property `executionPlanJobId` in `jobOperationDetails` instead.
+     * Deprecated. Use the property {@code executionPlanJobId} in {@code jobOperationDetails} instead.
      * The plan job [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was used (if this was an apply job and was not auto-approved).
      *
      **/
@@ -341,7 +341,7 @@ public class Job {
     /**
      * The date and time when the job was created.
      * Format is defined by RFC3339.
-     * Example: `2020-01-25T21:10:29.600Z`
+     * Example: {@code 2020-01-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -350,7 +350,7 @@ public class Job {
     /**
      * The date and time when the job stopped running, irrespective of whether the job ran successfully.
      * Format is defined by RFC3339.
-     * Example: `2020-01-25T21:10:29.600Z`
+     * Example: {@code 2020-01-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
@@ -423,7 +423,7 @@ public class Job {
     /**
      * File path to the directory from which Terraform runs.
      * If not specified, the root directory is used.
-     * This parameter is ignored for the `configSourceType` value of `COMPARTMENT_CONFIG_SOURCE`.
+     * This parameter is ignored for the {@code configSourceType} value of {@code COMPARTMENT_CONFIG_SOURCE}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workingDirectory")
@@ -433,7 +433,7 @@ public class Job {
      * Terraform variables associated with this resource.
      * Maximum number of variables supported is 250.
      * The maximum size of each variable, including both name and value, is 4096 bytes.
-     * Example: `{\"CompartmentId\": \"compartment-id-value\"}`
+     * Example: {@code {"CompartmentId": "compartment-id-value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("variables")
@@ -445,7 +445,7 @@ public class Job {
     /**
      * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -454,7 +454,7 @@ public class Job {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

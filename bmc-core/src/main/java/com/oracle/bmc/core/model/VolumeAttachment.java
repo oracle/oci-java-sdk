@@ -56,7 +56,7 @@ public class VolumeAttachment {
     /**
      * The availability domain of an instance.
      * <p>
-     * Example: `Uocm:PHX-AD-1`
+     * Example: {@code Uocm:PHX-AD-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
@@ -78,7 +78,7 @@ public class VolumeAttachment {
      * A user-friendly name. Does not have to be unique, and it cannot be changed.
      * Avoid entering confidential information.
      * <p>
-     * Example: `My volume attachment`
+     * Example: {@code My volume attachment}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -168,7 +168,7 @@ public class VolumeAttachment {
     /**
      * The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

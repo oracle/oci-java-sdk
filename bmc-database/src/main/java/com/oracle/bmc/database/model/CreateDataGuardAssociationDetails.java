@@ -54,7 +54,7 @@ public class CreateDataGuardAssociationDetails {
     String databaseSoftwareImageId;
 
     /**
-     * A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
+     * A strong password for the {@code SYS}, {@code SYSTEM}, and {@code PDB Admin} users to apply during standby creation.
      * <p>
      * The password must contain no fewer than nine characters and include:
      * <p>
@@ -64,7 +64,7 @@ public class CreateDataGuardAssociationDetails {
      * <p>
      * At least two numeric characters.
      * <p>
-     * At least two special characters. Valid special characters include \"_\", \"#\", and \"-\" only.
+     * At least two special characters. Valid special characters include "_", "#", and "-" only.
      * <p>
      **The password MUST be the same as the primary admin password.**
      *
@@ -123,7 +123,7 @@ public class CreateDataGuardAssociationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
     ProtectionMode protectionMode;
     /**
-     * The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+     * The redo transport type to use for this Data Guard association.  Valid values depend on the specified {@code protectionMode}:
      * <p>
      * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
      * * MAXIMUM_PERFORMANCE - ASYNC
@@ -170,7 +170,7 @@ public class CreateDataGuardAssociationDetails {
         }
     };
     /**
-     * The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+     * The redo transport type to use for this Data Guard association.  Valid values depend on the specified {@code protectionMode}:
      * <p>
      * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
      * * MAXIMUM_PERFORMANCE - ASYNC

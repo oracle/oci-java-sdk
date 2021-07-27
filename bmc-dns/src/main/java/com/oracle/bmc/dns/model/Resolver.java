@@ -248,7 +248,7 @@ public class Resolver {
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      *
-     * **Example:** `{\"Department\": \"Finance\"}`
+     * **Example:** {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -259,7 +259,7 @@ public class Resolver {
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      *
-     * **Example:** `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * **Example:** {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -272,20 +272,20 @@ public class Resolver {
     String id;
 
     /**
-     * The date and time the resource was created in \"YYYY-MM-ddThh:mm:ssZ\" format
+     * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format
      * with a Z offset, as defined by RFC 3339.
      * <p>
-     **Example:** `2016-07-22T17:23:59:60Z`
+     **Example:** {@code 2016-07-22T17:23:59:60Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The date and time the resource was last updated in \"YYYY-MM-ddThh:mm:ssZ\"
+     * The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ"
      * format with a Z offset, as defined by RFC 3339.
      * <p>
-     **Example:** `2016-07-22T17:23:59:60Z`
+     **Example:** {@code 2016-07-22T17:23:59:60Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")

@@ -24,7 +24,7 @@ public class ListAlarmsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      * resources monitored by the metric that you are searching for. Use tenancyId to search in
      * the root compartment.
      * <p>
-     * Example: `ocid1.compartment.oc1..exampleuniqueID`
+     * Example: {@code ocid1.compartment.oc1..exampleuniqueID}
      *
      */
     private String compartmentId;
@@ -37,14 +37,14 @@ public class ListAlarmsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     private String opcRequestId;
 
     /**
-     * For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
      * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String page;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
+     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
      * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * <p>
      * Default: 1000
@@ -70,7 +70,7 @@ public class ListAlarmsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     /**
      * The field to use when sorting returned alarm definitions. Only one sorting level is provided.
      * <p>
-     * Example: `severity`
+     * Example: {@code severity}
      *
      */
     private SortBy sortBy;
@@ -78,7 +78,7 @@ public class ListAlarmsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     /**
      * The field to use when sorting returned alarm definitions. Only one sorting level is provided.
      * <p>
-     * Example: `severity`
+     * Example: {@code severity}
      *
      **/
     public enum SortBy {
@@ -116,7 +116,7 @@ public class ListAlarmsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     /**
      * The sort order to use when sorting returned alarm definitions. Ascending (ASC) or descending (DESC).
      * <p>
-     * Example: `ASC`
+     * Example: {@code ASC}
      *
      */
     private SortOrder sortOrder;
@@ -124,7 +124,7 @@ public class ListAlarmsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     /**
      * The sort order to use when sorting returned alarm definitions. Ascending (ASC) or descending (DESC).
      * <p>
-     * Example: `ASC`
+     * Example: {@code ASC}
      *
      **/
     public enum SortOrder {

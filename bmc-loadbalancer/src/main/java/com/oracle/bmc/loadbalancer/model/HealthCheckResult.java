@@ -104,7 +104,7 @@ public class HealthCheckResult {
      * The IP address of the health check status report provider. This identifier helps you differentiate same-subnet
      * load balancers that report health check status.
      * <p>
-     * Example: `10.0.0.7`
+     * Example: {@code 10.0.0.7}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceIpAddress")
@@ -113,7 +113,7 @@ public class HealthCheckResult {
     /**
      * The date and time the data was retrieved, in the format defined by RFC3339.
      * <p>
-     * Example: `2017-06-02T18:28:11+00:00`
+     * Example: {@code 2017-06-02T18:28:11+00:00}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")

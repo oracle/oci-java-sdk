@@ -88,7 +88,7 @@ public class AddHttpResponseHeaderAction extends HeaderManipulationAction {
     /**
      * A header field name that conforms to RFC 7230.
      * <p>
-     * Example: `example_header_name`
+     * Example: {@code example_header_name}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("header")
@@ -97,7 +97,7 @@ public class AddHttpResponseHeaderAction extends HeaderManipulationAction {
     /**
      * A header field value that conforms to RFC 7230.
      * <p>
-     * Example: `example_value`
+     * Example: {@code example_value}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")

@@ -5,7 +5,7 @@
 package com.oracle.bmc.optimizer.model;
 
 /**
- * A list of categories that match filter criteria, if any. Results contain `CategorySummary` objects.
+ * A list of categories that match filter criteria, if any. Results contain {@code CategorySummary} objects.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

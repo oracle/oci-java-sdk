@@ -32,7 +32,7 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     /**
      * The assigned erratum name. It's unique and not changeable.
      * <p>
-     * Example: `ELSA-2020-5804`
+     * Example: {@code ELSA-2020-5804}
      *
      */
     private String advisoryName;

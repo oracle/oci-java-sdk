@@ -20,12 +20,12 @@ import com.oracle.bmc.streaming.model.*;
 public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the compartment. Is exclusive with the `streamPoolId` parameter. One of them is required.
+     * The OCID of the compartment. Is exclusive with the {@code streamPoolId} parameter. One of them is required.
      */
     private String compartmentId;
 
     /**
-     * The OCID of the stream pool. Is exclusive with the `compartmentId` parameter. One of them is required.
+     * The OCID of the stream pool. Is exclusive with the {@code compartmentId} parameter. One of them is required.
      */
     private String streamPoolId;
 
@@ -52,13 +52,13 @@ public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String page;
 
     /**
-     * The field to sort by. You can provide no more than one sort order. By default, `TIMECREATED` sorts results in descending order and `NAME` sorts results in ascending order.
+     * The field to sort by. You can provide no more than one sort order. By default, {@code TIMECREATED} sorts results in descending order and {@code NAME} sorts results in ascending order.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can provide no more than one sort order. By default, `TIMECREATED` sorts results in descending order and `NAME` sorts results in ascending order.
+     * The field to sort by. You can provide no more than one sort order. By default, {@code TIMECREATED} sorts results in descending order and {@code NAME} sorts results in ascending order.
      *
      **/
     public enum SortBy {

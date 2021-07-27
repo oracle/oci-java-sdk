@@ -400,7 +400,12 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 BulkApplyRecommendationsRequest, BulkApplyRecommendationsResponse>,
                         java.util.concurrent.Future<BulkApplyRecommendationsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkApplyRecommendationsDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -439,7 +444,12 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateProfileRequest, CreateProfileResponse>,
                         java.util.concurrent.Future<CreateProfileResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateProfileDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1154,7 +1164,12 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateEnrollmentStatusRequest, UpdateEnrollmentStatusResponse>,
                         java.util.concurrent.Future<UpdateEnrollmentStatusResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateEnrollmentStatusDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1192,7 +1207,12 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateProfileRequest, UpdateProfileResponse>,
                         java.util.concurrent.Future<UpdateProfileResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateProfileDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1233,7 +1253,12 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateRecommendationRequest, UpdateRecommendationResponse>,
                         java.util.concurrent.Future<UpdateRecommendationResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateRecommendationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1274,7 +1299,12 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateResourceActionRequest, UpdateResourceActionResponse>,
                         java.util.concurrent.Future<UpdateResourceActionResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateResourceActionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

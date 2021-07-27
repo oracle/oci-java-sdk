@@ -25,16 +25,16 @@ public class GetZoneRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
     private String zoneNameOrId;
 
     /**
-     * The `If-None-Match` header field makes the request method conditional on
+     * The {@code If-None-Match} header field makes the request method conditional on
      * the absence of any current representation of the target resource, when
-     * the field-value is `*`, or having a selected representation with an
+     * the field-value is {@code *}, or having a selected representation with an
      * entity-tag that does not match any of those listed in the field-value.
      *
      */
     private String ifNoneMatch;
 
     /**
-     * The `If-Modified-Since` header field makes a GET or HEAD request method
+     * The {@code If-Modified-Since} header field makes a GET or HEAD request method
      * conditional on the selected representation's modification date being more
      * recent than the date provided in the field-value.  Transfer of the
      * selected representation's data is avoided if that data has not changed.

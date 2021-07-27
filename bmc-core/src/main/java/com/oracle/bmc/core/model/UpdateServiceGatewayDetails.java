@@ -120,10 +120,10 @@ public class UpdateServiceGatewayDetails {
     }
 
     /**
-     * Whether the service gateway blocks all traffic through it. The default is `false`. When
-     * this is `true`, traffic is not routed to any services, regardless of route rules.
+     * Whether the service gateway blocks all traffic through it. The default is {@code false}. When
+     * this is {@code true}, traffic is not routed to any services, regardless of route rules.
      * <p>
-     * Example: `true`
+     * Example: {@code true}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockTraffic")
@@ -133,7 +133,7 @@ public class UpdateServiceGatewayDetails {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -151,7 +151,7 @@ public class UpdateServiceGatewayDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -167,15 +167,15 @@ public class UpdateServiceGatewayDetails {
     String routeTableId;
 
     /**
-     * List of all the `Service` objects you want enabled on this service gateway. Sending an empty list
+     * List of all the {@code Service} objects you want enabled on this service gateway. Sending an empty list
      * means you want to disable all services. Omitting this parameter entirely keeps the
      * existing list of services intact.
      * <p>
-     * You can also enable or disable a particular `Service` by using
+     * You can also enable or disable a particular {@code Service} by using
      * {@link #attachServiceId(AttachServiceIdRequest) attachServiceId} or
      * {@link #detachServiceId(DetachServiceIdRequest) detachServiceId}.
      * <p>
-     * For each enabled `Service`, make sure there's a route rule with the `Service` object's `cidrBlock`
+     * For each enabled {@code Service}, make sure there's a route rule with the {@code Service} object's {@code cidrBlock}
      * as the rule's destination and the service gateway as the rule's target. See
      * {@link RouteTable}.
      *

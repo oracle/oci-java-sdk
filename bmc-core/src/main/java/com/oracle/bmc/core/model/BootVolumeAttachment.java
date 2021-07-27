@@ -169,7 +169,7 @@ public class BootVolumeAttachment {
     /**
      * The availability domain of an instance.
      * <p>
-     * Example: `Uocm:PHX-AD-1`
+     * Example: {@code Uocm:PHX-AD-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
@@ -191,7 +191,7 @@ public class BootVolumeAttachment {
      * A user-friendly name. Does not have to be unique, and it cannot be changed.
      * Avoid entering confidential information.
      * <p>
-     * Example: `My boot volume`
+     * Example: {@code My boot volume}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -265,7 +265,7 @@ public class BootVolumeAttachment {
     /**
      * The date and time the boot volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

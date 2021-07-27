@@ -108,20 +108,20 @@ public class BulkActionResource {
      * {@link #listBulkActionResourceTypes(ListBulkActionResourceTypesRequest) listBulkActionResourceTypes}.
      * <p>
      **Example**:
-     * The APIs to delete or move the `buckets` resource-type require `namespaceName` and `bucketName` to identify the resource, as
+     * The APIs to delete or move the {@code buckets} resource-type require {@code namespaceName} and {@code bucketName} to identify the resource, as
      * shown in the APIs, {@link #deleteBucket(DeleteBucketRequest) deleteBucket} and
      * {@link #updateBucket(UpdateBucketRequest) updateBucket}.
      * <p>
-     * To add a bucket for bulk actions, specify `namespaceName` and `bucketName` in
+     * To add a bucket for bulk actions, specify {@code namespaceName} and {@code bucketName} in
      * the metadata property as shown in this example
      * <p>
      * {
-     *       \"identifier\": \"<OCID_of_bucket>\"
-     *       \"entityType\": \"bucket\",
-     *       \"metadata\":
+     *       "identifier": "<OCID_of_bucket>"
+     *       "entityType": "bucket",
+     *       "metadata":
      *       {
-     *         \"namespaceName\": \"sampleNamespace\",
-     *         \"bucketName\": \"sampleBucket\"
+     *         "namespaceName": "sampleNamespace",
+     *         "bucketName": "sampleBucket"
      *       }
      *     }
      *

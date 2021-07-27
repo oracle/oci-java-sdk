@@ -184,7 +184,7 @@ public class CreateCrossConnectDetails {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -212,7 +212,7 @@ public class CreateCrossConnectDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -223,7 +223,7 @@ public class CreateCrossConnectDetails {
      * To get a list of the available locations, see
      * {@link #listCrossConnectLocations(ListCrossConnectLocationsRequest) listCrossConnectLocations}.
      * <p>
-     * Example: `CyrusOne, Chandler, AZ`
+     * Example: {@code CyrusOne, Chandler, AZ}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("locationName")
@@ -242,7 +242,7 @@ public class CreateCrossConnectDetails {
      * The port speed for this cross-connect. To get a list of the available port speeds, see
      * {@link #listCrossconnectPortSpeedShapes(ListCrossconnectPortSpeedShapesRequest) listCrossconnectPortSpeedShapes}.
      * <p>
-     * Example: `10 Gbps`
+     * Example: {@code 10 Gbps}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("portSpeedShapeName")

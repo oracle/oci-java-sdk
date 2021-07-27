@@ -19,7 +19,7 @@ public class ListEventsResponse {
 
     /**
      * For pagination of a list of audit events. When this header appears in the response,
-     * it means you received a partial list and there are more results. Include this value as the `page`
+     * it means you received a partial list and there are more results. Include this value as the {@code page}
      * parameter for the subsequent ListEvents request to get the next batch of events. For important
      * details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *

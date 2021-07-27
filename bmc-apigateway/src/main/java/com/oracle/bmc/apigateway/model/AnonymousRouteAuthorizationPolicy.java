@@ -5,7 +5,7 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * For a type of ANONYMOUS, an authenticated API must have the \"isAnonymousAccessAllowed\" property set to \"true\"
+ * For a type of ANONYMOUS, an authenticated API must have the "isAnonymousAccessAllowed" property set to "true"
  * in the authentication policy.
  *
  * <br/>

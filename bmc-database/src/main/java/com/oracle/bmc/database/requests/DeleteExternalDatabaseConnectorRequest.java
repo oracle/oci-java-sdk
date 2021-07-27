@@ -22,13 +22,13 @@ public class DeleteExternalDatabaseConnectorRequest
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * external database connector resource (`ExternalDatabaseConnectorId`).
+     * external database connector resource ({@code ExternalDatabaseConnectorId}).
      *
      */
     private String externalDatabaseConnectorId;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
      * will be updated or deleted only if the etag you provide matches the resource's current etag value.
      *

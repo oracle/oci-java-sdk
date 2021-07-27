@@ -190,13 +190,13 @@ public class StatementSummary {
     String indexName;
 
     /**
-     * True if the statement includes \"IF EXISTS.\"
+     * True if the statement includes "IF EXISTS."
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIfExists")
     Boolean isIfExists;
 
     /**
-     * True if the statement includes \"IF NOT EXISTS.\"
+     * True if the statement includes "IF NOT EXISTS."
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIfNotExists")
     Boolean isIfNotExists;

@@ -25,7 +25,7 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String reportType;
 
     /**
-     * Date, expressed in `YYYYMMDD` format, where `Y` represents the year, `M` represents the month, and `D` represents the day.
+     * Date, expressed in {@code YYYYMMDD} format, where {@code Y} represents the year, {@code M} represents the month, and {@code D} represents the day.
      */
     private java.util.Date date;
 
@@ -42,7 +42,7 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String opcRequestId;
 
     /**
-     * The value of the `opc-next-page` response header from the previous \"List\" call.
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
      */
     private String page;
 

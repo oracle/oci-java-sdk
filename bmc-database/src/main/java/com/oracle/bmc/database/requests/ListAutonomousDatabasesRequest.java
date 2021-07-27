@@ -41,7 +41,7 @@ public class ListAutonomousDatabasesRequest
     private String page;
 
     /**
-     * The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+     * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
      * <p>
      **Note:** If you do not include the availability domain filter, the resources are grouped by availability domain, then sorted.
      *
@@ -49,7 +49,7 @@ public class ListAutonomousDatabasesRequest
     private SortBy sortBy;
 
     /**
-     * The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+     * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
      * <p>
      **Note:** If you do not include the availability domain filter, the resources are grouped by availability domain, then sorted.
      *
@@ -87,12 +87,12 @@ public class ListAutonomousDatabasesRequest
         }
     };
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      **/
     public enum SortOrder {
         Asc("ASC"),
@@ -147,8 +147,8 @@ public class ListAutonomousDatabasesRequest
     private String dbVersion;
 
     /**
-     * Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources.
-     * A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
+     * Filter on the value of the resource's 'isFreeTier' property. A value of {@code true} returns only Always Free resources.
+     * A value of {@code false} excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
      *
      */
     private Boolean isFreeTier;
@@ -165,8 +165,8 @@ public class ListAutonomousDatabasesRequest
     private String opcRequestId;
 
     /**
-     * Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones.
-     * A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
+     * Filter on the value of the resource's 'isRefreshableClone' property. A value of {@code true} returns only refreshable clones.
+     * A value of {@code false} excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
      *
      */
     private Boolean isRefreshableClone;

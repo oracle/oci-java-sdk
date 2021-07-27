@@ -31,14 +31,14 @@ public class ListSecretBundleVersionsRequest
     private String opcRequestId;
 
     /**
-     * The maximum number of items to return in a paginated \"List\" call. For information about pagination, see
+     * The maximum number of items to return in a paginated "List" call. For information about pagination, see
      * [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
      *
      */
     private Integer limit;
 
     /**
-     * The value of the `opc-next-page` response header from the previous \"List\" call. For information about
+     * The value of the {@code opc-next-page} response header from the previous "List" call. For information about
      * pagination, see [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
      *
      */
@@ -46,14 +46,14 @@ public class ListSecretBundleVersionsRequest
 
     /**
      * The field to sort by. You can specify only one sort order. The default
-     * order for `VERSION_NUMBER` is ascending.
+     * order for {@code VERSION_NUMBER} is ascending.
      *
      */
     private SortBy sortBy;
 
     /**
      * The field to sort by. You can specify only one sort order. The default
-     * order for `VERSION_NUMBER` is ascending.
+     * order for {@code VERSION_NUMBER} is ascending.
      *
      **/
     public enum SortBy {
@@ -88,13 +88,13 @@ public class ListSecretBundleVersionsRequest
         }
     };
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      *
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      *
      **/
     public enum SortOrder {

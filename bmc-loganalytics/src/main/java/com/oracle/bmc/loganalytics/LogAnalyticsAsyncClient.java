@@ -401,7 +401,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 AddEntityAssociationRequest, AddEntityAssociationResponse>,
                         java.util.concurrent.Future<AddEntityAssociationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddEntityAssociationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -443,7 +448,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 AddSourceEventTypesRequest, AddSourceEventTypesResponse>,
                         java.util.concurrent.Future<AddSourceEventTypesResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddEventTypeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -491,7 +501,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 AppendLookupDataRequest, AppendLookupDataResponse>,
                         java.util.concurrent.Future<AppendLookupDataResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAppendLookupFileBody(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -534,7 +549,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 BatchGetBasicInfoRequest, BatchGetBasicInfoResponse>,
                         java.util.concurrent.Future<BatchGetBasicInfoResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBasicDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -622,7 +642,13 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                                 ChangeLogAnalyticsEmBridgeCompartmentRequest,
                                 ChangeLogAnalyticsEmBridgeCompartmentResponse>,
                         java.util.concurrent.Future<ChangeLogAnalyticsEmBridgeCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeLogAnalyticsEmBridgeCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -670,7 +696,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                                 ChangeLogAnalyticsEntityCompartmentRequest,
                                 ChangeLogAnalyticsEntityCompartmentResponse>,
                         java.util.concurrent.Future<ChangeLogAnalyticsEntityCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeLogAnalyticsEntityCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -718,7 +749,13 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                                 ChangeLogAnalyticsLogGroupCompartmentRequest,
                                 ChangeLogAnalyticsLogGroupCompartmentResponse>,
                         java.util.concurrent.Future<ChangeLogAnalyticsLogGroupCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeLogAnalyticsLogGroupCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -769,7 +806,13 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                                 ChangeLogAnalyticsObjectCollectionRuleCompartmentResponse>,
                         java.util.concurrent.Future<
                                 ChangeLogAnalyticsObjectCollectionRuleCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeLogAnalyticsObjectCollectionRuleCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -816,7 +859,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                                 ChangeScheduledTaskCompartmentRequest,
                                 ChangeScheduledTaskCompartmentResponse>,
                         java.util.concurrent.Future<ChangeScheduledTaskCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeScheduledTaskCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -896,7 +944,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                                 CreateLogAnalyticsEmBridgeRequest,
                                 CreateLogAnalyticsEmBridgeResponse>,
                         java.util.concurrent.Future<CreateLogAnalyticsEmBridgeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateLogAnalyticsEmBridgeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -938,7 +991,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateLogAnalyticsEntityRequest, CreateLogAnalyticsEntityResponse>,
                         java.util.concurrent.Future<CreateLogAnalyticsEntityResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateLogAnalyticsEntityDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -983,7 +1041,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                                 CreateLogAnalyticsEntityTypeRequest,
                                 CreateLogAnalyticsEntityTypeResponse>,
                         java.util.concurrent.Future<CreateLogAnalyticsEntityTypeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateLogAnalyticsEntityTypeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1028,7 +1091,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                                 CreateLogAnalyticsLogGroupRequest,
                                 CreateLogAnalyticsLogGroupResponse>,
                         java.util.concurrent.Future<CreateLogAnalyticsLogGroupResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateLogAnalyticsLogGroupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1074,7 +1142,13 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                                 CreateLogAnalyticsObjectCollectionRuleRequest,
                                 CreateLogAnalyticsObjectCollectionRuleResponse>,
                         java.util.concurrent.Future<CreateLogAnalyticsObjectCollectionRuleResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getCreateLogAnalyticsObjectCollectionRuleDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1117,7 +1191,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateScheduledTaskRequest, CreateScheduledTaskResponse>,
                         java.util.concurrent.Future<CreateScheduledTaskResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateScheduledTaskDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1157,7 +1236,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 DeleteAssociationsRequest, DeleteAssociationsResponse>,
                         java.util.concurrent.Future<DeleteAssociationsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDeleteLogAnalyticsAssociationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1812,7 +1896,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 DisableAutoAssociationRequest, DisableAutoAssociationResponse>,
                         java.util.concurrent.Future<DisableAutoAssociationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDisableAutoAssociationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1854,7 +1943,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 DisableSourceEventTypesRequest, DisableSourceEventTypesResponse>,
                         java.util.concurrent.Future<DisableSourceEventTypesResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDisableEventTypeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1935,7 +2029,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 EnableAutoAssociationRequest, EnableAutoAssociationResponse>,
                         java.util.concurrent.Future<EnableAutoAssociationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getEnableAutoAssociationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1977,7 +2076,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 EnableSourceEventTypesRequest, EnableSourceEventTypesResponse>,
                         java.util.concurrent.Future<EnableSourceEventTypesResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getEnableEventTypeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2019,7 +2123,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 EstimatePurgeDataSizeRequest, EstimatePurgeDataSizeResponse>,
                         java.util.concurrent.Future<EstimatePurgeDataSizeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getEstimatePurgeDataSizeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2060,7 +2169,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 EstimateRecallDataSizeRequest, EstimateRecallDataSizeResponse>,
                         java.util.concurrent.Future<EstimateRecallDataSizeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getEstimateRecallDataSizeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2101,7 +2215,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 EstimateReleaseDataSizeRequest, EstimateReleaseDataSizeResponse>,
                         java.util.concurrent.Future<EstimateReleaseDataSizeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getEstimateReleaseDataSizeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2149,7 +2268,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ExportCustomContentRequest, ExportCustomContentResponse>,
                         java.util.concurrent.Future<ExportCustomContentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getExportCustomContentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2194,7 +2318,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ExportQueryResultRequest, ExportQueryResultResponse>,
                         java.util.concurrent.Future<ExportQueryResultResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getExportDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2240,7 +2369,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                                 ExtractStructuredLogFieldPathsRequest,
                                 ExtractStructuredLogFieldPathsResponse>,
                         java.util.concurrent.Future<ExtractStructuredLogFieldPathsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getLoganParserDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2286,7 +2420,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                                 ExtractStructuredLogHeaderPathsRequest,
                                 ExtractStructuredLogHeaderPathsResponse>,
                         java.util.concurrent.Future<ExtractStructuredLogHeaderPathsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getLoganParserDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2321,7 +2460,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<FilterRequest, FilterResponse>,
                         java.util.concurrent.Future<FilterResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getFilterDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3565,7 +3709,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ImportCustomContentRequest, ImportCustomContentResponse>,
                         java.util.concurrent.Future<ImportCustomContentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getImportCustomContentFileBody(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5434,7 +5583,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ParseQueryRequest, ParseQueryResponse>,
                         java.util.concurrent.Future<ParseQueryResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getParseQueryDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5513,7 +5667,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 PurgeStorageDataRequest, PurgeStorageDataResponse>,
                         java.util.concurrent.Future<PurgeStorageDataResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getPurgeStorageDataDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5591,7 +5750,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<QueryRequest, QueryResponse>,
                         java.util.concurrent.Future<QueryResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getQueryDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5631,7 +5795,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 RecallArchivedDataRequest, RecallArchivedDataResponse>,
                         java.util.concurrent.Future<RecallArchivedDataResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRecallArchivedDataDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5679,7 +5848,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 RegisterLookupRequest, RegisterLookupResponse>,
                         java.util.concurrent.Future<RegisterLookupResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRegisterLookupContentFileBody(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5725,7 +5899,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ReleaseRecalledDataRequest, ReleaseRecalledDataResponse>,
                         java.util.concurrent.Future<ReleaseRecalledDataResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getReleaseRecalledDataDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5767,7 +5946,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 RemoveEntityAssociationsRequest, RemoveEntityAssociationsResponse>,
                         java.util.concurrent.Future<RemoveEntityAssociationsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveEntityAssociationsDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5809,7 +5993,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 RemoveSourceEventTypesRequest, RemoveSourceEventTypesResponse>,
                         java.util.concurrent.Future<RemoveSourceEventTypesResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveEventTypeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5920,7 +6109,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<SuggestRequest, SuggestResponse>,
                         java.util.concurrent.Future<SuggestResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSuggestDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5960,7 +6154,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 SuppressWarningRequest, SuppressWarningResponse>,
                         java.util.concurrent.Future<SuppressWarningResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getWarningReferenceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5998,7 +6197,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 TestParserRequest, TestParserResponse>,
                         java.util.concurrent.Future<TestParserResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getTestParserPayloadDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -6038,7 +6242,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UnsuppressWarningRequest, UnsuppressWarningResponse>,
                         java.util.concurrent.Future<UnsuppressWarningResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getWarningReferenceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -6082,7 +6291,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                                 UpdateLogAnalyticsEmBridgeRequest,
                                 UpdateLogAnalyticsEmBridgeResponse>,
                         java.util.concurrent.Future<UpdateLogAnalyticsEmBridgeResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateLogAnalyticsEmBridgeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -6123,7 +6337,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateLogAnalyticsEntityRequest, UpdateLogAnalyticsEntityResponse>,
                         java.util.concurrent.Future<UpdateLogAnalyticsEntityResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateLogAnalyticsEntityDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -6167,7 +6386,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                                 UpdateLogAnalyticsEntityTypeRequest,
                                 UpdateLogAnalyticsEntityTypeResponse>,
                         java.util.concurrent.Future<UpdateLogAnalyticsEntityTypeResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateLogAnalyticsEntityTypeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -6211,7 +6435,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                                 UpdateLogAnalyticsLogGroupRequest,
                                 UpdateLogAnalyticsLogGroupResponse>,
                         java.util.concurrent.Future<UpdateLogAnalyticsLogGroupResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateLogAnalyticsLogGroupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -6257,7 +6486,13 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                                 UpdateLogAnalyticsObjectCollectionRuleRequest,
                                 UpdateLogAnalyticsObjectCollectionRuleResponse>,
                         java.util.concurrent.Future<UpdateLogAnalyticsObjectCollectionRuleResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getUpdateLogAnalyticsObjectCollectionRuleDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -6297,7 +6532,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateLookupRequest, UpdateLookupResponse>,
                         java.util.concurrent.Future<UpdateLookupResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateLookupMetadataDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -6345,7 +6585,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateLookupDataRequest, UpdateLookupDataResponse>,
                         java.util.concurrent.Future<UpdateLookupDataResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateLookupFileBody(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -6390,7 +6635,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateScheduledTaskRequest, UpdateScheduledTaskResponse>,
                         java.util.concurrent.Future<UpdateScheduledTaskResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateScheduledTaskDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -6428,7 +6678,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateStorageRequest, UpdateStorageResponse>,
                         java.util.concurrent.Future<UpdateStorageResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateStorageDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -6482,7 +6737,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UploadLogEventsFileRequest, UploadLogEventsFileResponse>,
                         java.util.concurrent.Future<UploadLogEventsFileResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUploadLogEventsFileDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -6537,7 +6797,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UploadLogFileRequest, UploadLogFileResponse>,
                         java.util.concurrent.Future<UploadLogFileResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUploadLogFileBody(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -6581,7 +6846,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpsertAssociationsRequest, UpsertAssociationsResponse>,
                         java.util.concurrent.Future<UpsertAssociationsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpsertLogAnalyticsAssociationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -6620,7 +6890,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpsertFieldRequest, UpsertFieldResponse>,
                         java.util.concurrent.Future<UpsertFieldResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpsertLogAnalyticsFieldDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -6659,7 +6934,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpsertLabelRequest, UpsertLabelResponse>,
                         java.util.concurrent.Future<UpsertLabelResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpsertLogAnalyticsLabelDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -6698,7 +6978,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpsertParserRequest, UpsertParserResponse>,
                         java.util.concurrent.Future<UpsertParserResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpsertLogAnalyticsParserDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -6737,7 +7022,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpsertSourceRequest, UpsertSourceResponse>,
                         java.util.concurrent.Future<UpsertSourceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpsertLogAnalyticsSourceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -6782,7 +7072,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                                 ValidateAssociationParametersRequest,
                                 ValidateAssociationParametersResponse>,
                         java.util.concurrent.Future<ValidateAssociationParametersResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpsertLogAnalyticsAssociationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -6860,7 +7155,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ValidateSourceRequest, ValidateSourceResponse>,
                         java.util.concurrent.Future<ValidateSourceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpsertLogAnalyticsSourceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -6906,7 +7206,12 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                                 ValidateSourceExtendedFieldDetailsRequest,
                                 ValidateSourceExtendedFieldDetailsResponse>,
                         java.util.concurrent.Future<ValidateSourceExtendedFieldDetailsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getLogAnalyticsSource(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

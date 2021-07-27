@@ -35,13 +35,13 @@ public class GetConfirmSubscriptionRequest
      * The protocol used for the subscription.
      * <p>
      * Allowed values:
-     *   * `CUSTOM_HTTPS`
-     *   * `EMAIL`
-     *   * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
-     *   * `ORACLE_FUNCTIONS`
-     *   * `PAGERDUTY`
-     *   * `SLACK`
-     *   * `SMS`
+     *   * {@code CUSTOM_HTTPS}
+     *   * {@code EMAIL}
+     *   * {@code HTTPS} (deprecated; for PagerDuty endpoints, use {@code PAGERDUTY})
+     *   * {@code ORACLE_FUNCTIONS}
+     *   * {@code PAGERDUTY}
+     *   * {@code SLACK}
+     *   * {@code SMS}
      * <p>
      * For information about subscription protocols, see
      * [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).

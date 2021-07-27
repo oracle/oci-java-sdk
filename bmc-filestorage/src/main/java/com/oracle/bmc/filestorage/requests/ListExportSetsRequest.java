@@ -27,27 +27,27 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     /**
      * The name of the availability domain.
      * <p>
-     * Example: `Uocm:PHX-AD-1`
+     * Example: {@code Uocm:PHX-AD-1}
      *
      */
     private String availabilityDomain;
 
     /**
      * For list pagination. The maximum number of results per page,
-     * or items to return in a paginated \"List\" call.
+     * or items to return in a paginated "List" call.
      * 1 is the minimum, 1000 is the maximum.
      * <p>
      * For important details about how pagination works,
      * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * <p>
-     * Example: `500`
+     * Example: {@code 500}
      *
      */
     private Integer limit;
 
     /**
-     * For list pagination. The value of the `opc-next-page` response
-     * header from the previous \"List\" call.
+     * For list pagination. The value of the {@code opc-next-page} response
+     * header from the previous "List" call.
      * <p>
      * For important details about how pagination works,
      * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -58,7 +58,7 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     /**
      * A user-friendly name. It does not have to be unique, and it is changeable.
      * <p>
-     * Example: `My resource`
+     * Example: {@code My resource}
      *
      */
     private String displayName;

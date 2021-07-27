@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The object holds customer email contact for Oracle Autonomous Databases.
+ * Customer contact information that will be used by Oracle to provide notifications needed by database and infrastructure administrators.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -60,7 +60,7 @@ public class CustomerContact {
     }
 
     /**
-     * The email address of an Oracle Autonomous Database contact.
+     * The email address used by Oracle to send notifications regarding databases and infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("email")
     String email;

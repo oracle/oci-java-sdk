@@ -7,11 +7,11 @@ package com.oracle.bmc.core.model;
 /**
  * The destination details for the image export.
  * <p>
- * Set `destinationType` to `objectStorageTuple`
+ * Set {@code destinationType} to {@code objectStorageTuple}
  * and use {@link #exportImageViaObjectStorageTupleDetails(ExportImageViaObjectStorageTupleDetailsRequest) exportImageViaObjectStorageTupleDetails}
  * when specifying the namespace, bucket name, and object name.
  * <p>
- * Set `destinationType` to `objectStorageUri` and
+ * Set {@code destinationType} to {@code objectStorageUri} and
  * use {@link #exportImageViaObjectStorageUriDetails(ExportImageViaObjectStorageUriDetailsRequest) exportImageViaObjectStorageUriDetails}
  * when specifying the Object Storage URL.
  *
@@ -50,16 +50,16 @@ package com.oracle.bmc.core.model;
 public class ExportImageDetails {
 
     /**
-     * The format to export the image to. The default value is `OCI`.
+     * The format to export the image to. The default value is {@code OCI}.
      * <p>
      * The following image formats are available:
      * <p>
-     * - `OCI` - Oracle Cloud Infrastructure file with a QCOW2 image and Oracle Cloud Infrastructure metadata (.oci).
+     * - {@code OCI} - Oracle Cloud Infrastructure file with a QCOW2 image and Oracle Cloud Infrastructure metadata (.oci).
      * Use this format to export a custom image that you want to import into other tenancies or regions.
-     * - `QCOW2` - QEMU Copy On Write (.qcow2)
-     * - `VDI` - Virtual Disk Image (.vdi) for Oracle VM VirtualBox
-     * - `VHD` - Virtual Hard Disk (.vhd) for Hyper-V
-     * - `VMDK` - Virtual Machine Disk (.vmdk)
+     * - {@code QCOW2} - QEMU Copy On Write (.qcow2)
+     * - {@code VDI} - Virtual Disk Image (.vdi) for Oracle VM VirtualBox
+     * - {@code VHD} - Virtual Hard Disk (.vhd) for Hyper-V
+     * - {@code VMDK} - Virtual Machine Disk (.vmdk)
      *
      **/
     public enum ExportFormat {
@@ -98,16 +98,16 @@ public class ExportImageDetails {
         }
     };
     /**
-     * The format to export the image to. The default value is `OCI`.
+     * The format to export the image to. The default value is {@code OCI}.
      * <p>
      * The following image formats are available:
      * <p>
-     * - `OCI` - Oracle Cloud Infrastructure file with a QCOW2 image and Oracle Cloud Infrastructure metadata (.oci).
+     * - {@code OCI} - Oracle Cloud Infrastructure file with a QCOW2 image and Oracle Cloud Infrastructure metadata (.oci).
      * Use this format to export a custom image that you want to import into other tenancies or regions.
-     * - `QCOW2` - QEMU Copy On Write (.qcow2)
-     * - `VDI` - Virtual Disk Image (.vdi) for Oracle VM VirtualBox
-     * - `VHD` - Virtual Hard Disk (.vhd) for Hyper-V
-     * - `VMDK` - Virtual Machine Disk (.vmdk)
+     * - {@code QCOW2} - QEMU Copy On Write (.qcow2)
+     * - {@code VDI} - Virtual Disk Image (.vdi) for Oracle VM VirtualBox
+     * - {@code VHD} - Virtual Hard Disk (.vhd) for Hyper-V
+     * - {@code VMDK} - Virtual Machine Disk (.vmdk)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exportFormat")

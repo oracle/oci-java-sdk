@@ -194,15 +194,15 @@ public class TagDefaultSummary {
     String value;
 
     /**
-     * Date and time the `TagDefault` object was created, in the format defined by RFC3339.
+     * Date and time the {@code TagDefault} object was created, in the format defined by RFC3339.
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
     /**
-     * The tag default's current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
+     * The tag default's current state. After creating a {@code TagDefault}, make sure its {@code lifecycleState} is ACTIVE before using it.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -248,7 +248,7 @@ public class TagDefaultSummary {
         }
     };
     /**
-     * The tag default's current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
+     * The tag default's current state. After creating a {@code TagDefault}, make sure its {@code lifecycleState} is ACTIVE before using it.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
@@ -259,10 +259,10 @@ public class TagDefaultSummary {
      * the user creating the resource or another tag defualt). If no value is set, resource
      * creation is blocked.
      * <p>
-     * If the `isRequired` flag is set to \"true\", the value is set during resource creation.
-     * * If the `isRequired` flag is set to \"false\", the value you enter is set during resource creation.
+     * If the {@code isRequired} flag is set to "true", the value is set during resource creation.
+     * * If the {@code isRequired} flag is set to "false", the value you enter is set during resource creation.
      * <p>
-     * Example: `false`
+     * Example: {@code false}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRequired")

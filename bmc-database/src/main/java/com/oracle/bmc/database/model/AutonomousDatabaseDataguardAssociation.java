@@ -235,7 +235,7 @@ public class AutonomousDatabaseDataguardAssociation {
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
     String autonomousDatabaseId;
     /**
-     * The Data Guard role of the Autonomous Container Database, if Autonomous Data Guard is enabled.
+     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -282,7 +282,7 @@ public class AutonomousDatabaseDataguardAssociation {
         }
     };
     /**
-     * The Data Guard role of the Autonomous Container Database, if Autonomous Data Guard is enabled.
+     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
@@ -351,7 +351,7 @@ public class AutonomousDatabaseDataguardAssociation {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     String lifecycleDetails;
     /**
-     * The Data Guard role of the Autonomous Container Database, if Autonomous Data Guard is enabled.
+     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -399,7 +399,7 @@ public class AutonomousDatabaseDataguardAssociation {
         }
     };
     /**
-     * The Data Guard role of the Autonomous Container Database, if Autonomous Data Guard is enabled.
+     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerRole")
@@ -530,7 +530,7 @@ public class AutonomousDatabaseDataguardAssociation {
      * The lag time between updates to the primary database and application of the redo data on the standby database,
      * as computed by the reporting database.
      * <p>
-     * Example: `9 seconds`
+     * Example: {@code 9 seconds}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applyLag")
@@ -539,7 +539,7 @@ public class AutonomousDatabaseDataguardAssociation {
     /**
      * The rate at which redo logs are synced between the associated databases.
      * <p>
-     * Example: `180 Mb per second`
+     * Example: {@code 180 Mb per second}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applyRate")
@@ -549,7 +549,7 @@ public class AutonomousDatabaseDataguardAssociation {
      * The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database,
      * as computed by the reporting database.
      * <p>
-     * Example: `7 seconds`
+     * Example: {@code 7 seconds}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("transportLag")

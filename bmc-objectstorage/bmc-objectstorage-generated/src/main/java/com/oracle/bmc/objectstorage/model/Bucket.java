@@ -334,10 +334,10 @@ public class Bucket {
     String etag;
     /**
      * The type of public access enabled on this bucket.
-     * A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the
-     * bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the
-     * `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the
-     * bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
+     * A bucket is set to {@code NoPublicAccess} by default, which only allows an authenticated caller to access the
+     * bucket and its contents. When {@code ObjectRead} is enabled on the bucket, public access is allowed for the
+     * {@code GetObject}, {@code HeadObject}, and {@code ListObjects} operations. When {@code ObjectReadWithoutList} is enabled on the
+     * bucket, public access is allowed for the {@code GetObject} and {@code HeadObject} operations.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -386,19 +386,19 @@ public class Bucket {
     };
     /**
      * The type of public access enabled on this bucket.
-     * A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the
-     * bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the
-     * `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the
-     * bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
+     * A bucket is set to {@code NoPublicAccess} by default, which only allows an authenticated caller to access the
+     * bucket and its contents. When {@code ObjectRead} is enabled on the bucket, public access is allowed for the
+     * {@code GetObject}, {@code HeadObject}, and {@code ListObjects} operations. When {@code ObjectReadWithoutList} is enabled on the
+     * bucket, public access is allowed for the {@code GetObject} and {@code HeadObject} operations.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicAccessType")
     PublicAccessType publicAccessType;
     /**
-     * The storage tier type assigned to the bucket. A bucket is set to `Standard` tier by default, which means
-     * objects uploaded or copied to the bucket will be in the standard storage tier. When the `Archive` tier type
+     * The storage tier type assigned to the bucket. A bucket is set to {@code Standard} tier by default, which means
+     * objects uploaded or copied to the bucket will be in the standard storage tier. When the {@code Archive} tier type
      * is set explicitly for a bucket, objects uploaded or copied to the bucket will be stored in archive storage.
-     * The `storageTier` property is immutable after bucket is created.
+     * The {@code storageTier} property is immutable after bucket is created.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -445,18 +445,18 @@ public class Bucket {
         }
     };
     /**
-     * The storage tier type assigned to the bucket. A bucket is set to `Standard` tier by default, which means
-     * objects uploaded or copied to the bucket will be in the standard storage tier. When the `Archive` tier type
+     * The storage tier type assigned to the bucket. A bucket is set to {@code Standard} tier by default, which means
+     * objects uploaded or copied to the bucket will be in the standard storage tier. When the {@code Archive} tier type
      * is set explicitly for a bucket, objects uploaded or copied to the bucket will be stored in archive storage.
-     * The `storageTier` property is immutable after bucket is created.
+     * The {@code storageTier} property is immutable after bucket is created.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
     StorageTier storageTier;
 
     /**
-     * Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is
-     * set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information
+     * Whether or not events are emitted for object state changes in this bucket. By default, {@code objectEventsEnabled} is
+     * set to {@code false}. Set {@code objectEventsEnabled} to {@code true} to emit events for object state changes. For more information
      * about events, see [Overview of Events](https://docs.cloud.oracle.com/Content/Events/Concepts/eventsoverview.htm).
      *
      **/
@@ -466,7 +466,7 @@ public class Bucket {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -475,7 +475,7 @@ public class Bucket {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -512,7 +512,7 @@ public class Bucket {
     Long approximateSize;
 
     /**
-     * Whether or not this bucket is a replication source. By default, `replicationEnabled` is set to `false`. This will
+     * Whether or not this bucket is a replication source. By default, {@code replicationEnabled} is set to {@code false}. This will
      * be set to 'true' when you create a replication policy for the bucket.
      *
      **/
@@ -520,7 +520,7 @@ public class Bucket {
     Boolean replicationEnabled;
 
     /**
-     * Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will
+     * Whether or not this bucket is read only. By default, {@code isReadOnly} is set to {@code false}. This will
      * be set to 'true' when this bucket is configured as a destination in a replication policy.
      *
      **/
@@ -534,8 +534,8 @@ public class Bucket {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
     /**
-     * The versioning status on the bucket. A bucket is created with versioning `Disabled` by default.
-     * For versioning `Enabled`, objects are protected from overwrites and deletes, by maintaining their version history. When versioning is `Suspended`, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
+     * The versioning status on the bucket. A bucket is created with versioning {@code Disabled} by default.
+     * For versioning {@code Enabled}, objects are protected from overwrites and deletes, by maintaining their version history. When versioning is {@code Suspended}, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -583,15 +583,15 @@ public class Bucket {
         }
     };
     /**
-     * The versioning status on the bucket. A bucket is created with versioning `Disabled` by default.
-     * For versioning `Enabled`, objects are protected from overwrites and deletes, by maintaining their version history. When versioning is `Suspended`, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
+     * The versioning status on the bucket. A bucket is created with versioning {@code Disabled} by default.
+     * For versioning {@code Enabled}, objects are protected from overwrites and deletes, by maintaining their version history. When versioning is {@code Suspended}, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("versioning")
     Versioning versioning;
     /**
-     * The auto tiering status on the bucket. A bucket is created with auto tiering `Disabled` by default.
-     * For auto tiering `InfrequentAccess`, objects are transitioned automatically between the 'Standard'
+     * The auto tiering status on the bucket. A bucket is created with auto tiering {@code Disabled} by default.
+     * For auto tiering {@code InfrequentAccess}, objects are transitioned automatically between the 'Standard'
      * and 'InfrequentAccess' tiers based on the access pattern of the objects.
      *
      **/
@@ -639,8 +639,8 @@ public class Bucket {
         }
     };
     /**
-     * The auto tiering status on the bucket. A bucket is created with auto tiering `Disabled` by default.
-     * For auto tiering `InfrequentAccess`, objects are transitioned automatically between the 'Standard'
+     * The auto tiering status on the bucket. A bucket is created with auto tiering {@code Disabled} by default.
+     * For auto tiering {@code InfrequentAccess}, objects are transitioned automatically between the 'Standard'
      * and 'InfrequentAccess' tiers based on the access pattern of the objects.
      *
      **/

@@ -5,7 +5,7 @@
 package com.oracle.bmc.optimizer.model;
 
 /**
- * A list of work requests that match filter criteria, if any. Results contain `WorkRequest` objects.
+ * A list of work requests that match filter criteria, if any. Results contain {@code WorkRequest} objects.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

@@ -402,7 +402,12 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ApproveAccessRequestRequest, ApproveAccessRequestResponse>,
                         java.util.concurrent.Future<ApproveAccessRequestResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getApproveAccessRequestDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -566,7 +571,12 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 RejectAccessRequestRequest, RejectAccessRequestResponse>,
                         java.util.concurrent.Future<RejectAccessRequestResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRejectAccessRequestDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -608,7 +618,12 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 RevokeAccessRequestRequest, RevokeAccessRequestResponse>,
                         java.util.concurrent.Future<RevokeAccessRequestResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRevokeAccessRequestDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

@@ -119,13 +119,13 @@ public class UIPassword {
     /**
      * Date and time the password was created, in the format defined by RFC3339.
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
     /**
-     * The password's current state. After creating a password, make sure its `lifecycleState` changes from
+     * The password's current state. After creating a password, make sure its {@code lifecycleState} changes from
      * CREATING to ACTIVE before using it.
      *
      **/
@@ -176,7 +176,7 @@ public class UIPassword {
         }
     };
     /**
-     * The password's current state. After creating a password, make sure its `lifecycleState` changes from
+     * The password's current state. After creating a password, make sure its {@code lifecycleState} changes from
      * CREATING to ACTIVE before using it.
      *
      **/

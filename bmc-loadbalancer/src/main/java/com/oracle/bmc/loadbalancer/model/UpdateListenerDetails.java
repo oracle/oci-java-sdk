@@ -154,7 +154,7 @@ public class UpdateListenerDetails {
     /**
      * The name of the associated backend set.
      * <p>
-     * Example: `example_backend_set`
+     * Example: {@code example_backend_set}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultBackendSetName")
@@ -163,7 +163,7 @@ public class UpdateListenerDetails {
     /**
      * The communication port for the listener.
      * <p>
-     * Example: `80`
+     * Example: {@code 80}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
@@ -174,7 +174,7 @@ public class UpdateListenerDetails {
      * To get a list of valid protocols, use the {@link #listProtocols(ListProtocolsRequest) listProtocols}
      * operation.
      * <p>
-     * Example: `HTTP`
+     * Example: {@code HTTP}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
@@ -187,12 +187,12 @@ public class UpdateListenerDetails {
     java.util.List<String> hostnameNames;
 
     /**
-     * Deprecated. Please use `routingPolicies` instead.
+     * Deprecated. Please use {@code routingPolicies} instead.
      * <p>
      * The name of the set of path-based routing rules, {@link PathRouteSet},
      * applied to this listener's traffic.
      * <p>
-     * Example: `example_path_route_set`
+     * Example: {@code example_path_route_set}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pathRouteSetName")
@@ -201,7 +201,7 @@ public class UpdateListenerDetails {
     /**
      * The name of the routing policy applied to this listener's traffic.
      * <p>
-     * Example: `example_routing_policy`
+     * Example: {@code example_routing_policy}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routingPolicyName")
@@ -216,7 +216,7 @@ public class UpdateListenerDetails {
     /**
      * The names of the {@link RuleSet} to apply to the listener.
      * <p>
-     * Example: [\"example_rule_set\"]
+     * Example: ["example_rule_set"]
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleSetNames")

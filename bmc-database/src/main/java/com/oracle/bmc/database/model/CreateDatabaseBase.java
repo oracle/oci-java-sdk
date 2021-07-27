@@ -70,9 +70,9 @@ public class CreateDatabaseBase {
 
     /**
      * The source of the database:
-     * Use `NONE` for creating a new database.
-     * Use `DB_BACKUP` for creating a new database by restoring from a backup.
-     * The default is `NONE`.
+     * Use {@code NONE} for creating a new database.
+     * Use {@code DB_BACKUP} for creating a new database by restoring from a backup.
+     * The default is {@code NONE}.
      *
      **/
     public enum Source {

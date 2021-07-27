@@ -370,8 +370,8 @@ public class Folder {
      * A map of maps that contains the properties which are specific to the folder type. Each folder type
      * definition defines it's set of required and optional properties. The map keys are category names and the
      * values are maps of property name to property value. Every property is contained inside of a category. Most
-     * folders have required properties within the \"default\" category.
-     * Example: `{\"properties\": { \"default\": { \"key1\": \"value1\"}}}`
+     * folders have required properties within the "default" category.
+     * Example: {@code {"properties": { "default": { "key1": "value1"}}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
@@ -385,7 +385,7 @@ public class Folder {
 
     /**
      * The date and time the folder was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * Example: `2019-03-25T21:10:29.600Z`
+     * Example: {@code 2019-03-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

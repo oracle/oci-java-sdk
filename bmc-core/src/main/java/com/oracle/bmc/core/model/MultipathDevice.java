@@ -79,7 +79,7 @@ public class MultipathDevice {
     /**
      * The volume's iSCSI IP address.
      * <p>
-     * Example: `169.254.2.2`
+     * Example: {@code 169.254.2.2}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv4")
@@ -89,7 +89,7 @@ public class MultipathDevice {
      * The target volume's iSCSI Qualified Name in the format defined
      * by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).
      * <p>
-     * Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
+     * Example: {@code iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("iqn")
@@ -98,7 +98,7 @@ public class MultipathDevice {
     /**
      * The volume's iSCSI port, usually port 860 or 3260.
      * <p>
-     * Example: `3260`
+     * Example: {@code 3260}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")

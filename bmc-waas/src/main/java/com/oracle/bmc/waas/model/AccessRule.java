@@ -239,7 +239,7 @@ public class AccessRule {
     @com.fasterxml.jackson.annotation.JsonProperty("criteria")
     java.util.List<AccessRuleCriteria> criteria;
     /**
-     * The action to take when the access criteria are met for a rule. If unspecified, defaults to `ALLOW`.
+     * The action to take when the access criteria are met for a rule. If unspecified, defaults to {@code ALLOW}.
      * <p>
      * - **ALLOW:** Takes no action, just logs the request.
      * <p>
@@ -249,7 +249,7 @@ public class AccessRule {
      * <p>
      * - **BYPASS:** Bypasses some or all challenges.
      * <p>
-     * - **REDIRECT:** Redirects the request to the specified URL. These fields are required when `REDIRECT` is selected: `redirectUrl`, `redirectResponseCode`.
+     * - **REDIRECT:** Redirects the request to the specified URL. These fields are required when {@code REDIRECT} is selected: {@code redirectUrl}, {@code redirectResponseCode}.
      * <p>
      * - **SHOW_CAPTCHA:** Show a CAPTCHA Challenge page instead of the requested page.
      * <p>
@@ -303,7 +303,7 @@ public class AccessRule {
         }
     };
     /**
-     * The action to take when the access criteria are met for a rule. If unspecified, defaults to `ALLOW`.
+     * The action to take when the access criteria are met for a rule. If unspecified, defaults to {@code ALLOW}.
      * <p>
      * - **ALLOW:** Takes no action, just logs the request.
      * <p>
@@ -313,7 +313,7 @@ public class AccessRule {
      * <p>
      * - **BYPASS:** Bypasses some or all challenges.
      * <p>
-     * - **REDIRECT:** Redirects the request to the specified URL. These fields are required when `REDIRECT` is selected: `redirectUrl`, `redirectResponseCode`.
+     * - **REDIRECT:** Redirects the request to the specified URL. These fields are required when {@code REDIRECT} is selected: {@code redirectUrl}, {@code redirectResponseCode}.
      * <p>
      * - **SHOW_CAPTCHA:** Show a CAPTCHA Challenge page instead of the requested page.
      * <p>
@@ -322,7 +322,7 @@ public class AccessRule {
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     Action action;
     /**
-     * The method used to block requests if `action` is set to `BLOCK` and the access criteria are met. If unspecified, defaults to `SET_RESPONSE_CODE`.
+     * The method used to block requests if {@code action} is set to {@code BLOCK} and the access criteria are met. If unspecified, defaults to {@code SET_RESPONSE_CODE}.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum BlockAction {
@@ -368,31 +368,31 @@ public class AccessRule {
         }
     };
     /**
-     * The method used to block requests if `action` is set to `BLOCK` and the access criteria are met. If unspecified, defaults to `SET_RESPONSE_CODE`.
+     * The method used to block requests if {@code action} is set to {@code BLOCK} and the access criteria are met. If unspecified, defaults to {@code SET_RESPONSE_CODE}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockAction")
     BlockAction blockAction;
 
     /**
-     * The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the access criteria are met. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
+     * The response status code to return when {@code action} is set to {@code BLOCK}, {@code blockAction} is set to {@code SET_RESPONSE_CODE}, and the access criteria are met. If unspecified, defaults to {@code 403}. The list of available response codes: {@code 200}, {@code 201}, {@code 202}, {@code 204}, {@code 206}, {@code 300}, {@code 301}, {@code 302}, {@code 303}, {@code 304}, {@code 307}, {@code 400}, {@code 401}, {@code 403}, {@code 404}, {@code 405}, {@code 408}, {@code 409}, {@code 411}, {@code 412}, {@code 413}, {@code 414}, {@code 415}, {@code 416}, {@code 422}, {@code 444}, {@code 494}, {@code 495}, {@code 496}, {@code 497}, {@code 499}, {@code 500}, {@code 501}, {@code 502}, {@code 503}, {@code 504}, {@code 507}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockResponseCode")
     Integer blockResponseCode;
 
     /**
-     * The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access to the website is blocked.'
+     * The message to show on the error page when {@code action} is set to {@code BLOCK}, {@code blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met. If unspecified, defaults to 'Access to the website is blocked.'
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockErrorPageMessage")
     String blockErrorPageMessage;
 
     /**
-     * The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access rules'.
+     * The error code to show on the error page when {@code action} is set to {@code BLOCK}, {@code blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met. If unspecified, defaults to 'Access rules'.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockErrorPageCode")
     String blockErrorPageCode;
 
     /**
-     * The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access blocked by website owner. Please contact support.'
+     * The description text to show on the error page when {@code action} is set to {@code BLOCK}, {@code blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met. If unspecified, defaults to 'Access blocked by website owner. Please contact support.'
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockErrorPageDescription")
     String blockErrorPageDescription;
@@ -444,7 +444,7 @@ public class AccessRule {
         }
     };
     /**
-     * The list of challenges to bypass when `action` is set to `BYPASS`. If unspecified or empty, all challenges are bypassed.
+     * The list of challenges to bypass when {@code action} is set to {@code BYPASS}. If unspecified or empty, all challenges are bypassed.
      * <p>
      * - **JS_CHALLENGE:** Bypasses JavaScript Challenge.
      * <p>
@@ -458,12 +458,12 @@ public class AccessRule {
     java.util.List<BypassChallenges> bypassChallenges;
 
     /**
-     * The target to which the request should be redirected, represented as a URI reference. Required when `action` is `REDIRECT`.
+     * The target to which the request should be redirected, represented as a URI reference. Required when {@code action} is {@code REDIRECT}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("redirectUrl")
     String redirectUrl;
     /**
-     * The response status code to return when `action` is set to `REDIRECT`.
+     * The response status code to return when {@code action} is set to {@code REDIRECT}.
      * <p>
      * - **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
      * <p>
@@ -513,7 +513,7 @@ public class AccessRule {
         }
     };
     /**
-     * The response status code to return when `action` is set to `REDIRECT`.
+     * The response status code to return when {@code action} is set to {@code REDIRECT}.
      * <p>
      * - **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
      * <p>
@@ -523,31 +523,31 @@ public class AccessRule {
     RedirectResponseCode redirectResponseCode;
 
     /**
-     * The title used when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
+     * The title used when showing a CAPTCHA challenge when {@code action} is set to {@code SHOW_CAPTCHA} and the request is challenged.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("captchaTitle")
     String captchaTitle;
 
     /**
-     * The text to show in the header when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
+     * The text to show in the header when showing a CAPTCHA challenge when {@code action} is set to {@code SHOW_CAPTCHA} and the request is challenged.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("captchaHeader")
     String captchaHeader;
 
     /**
-     * The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
+     * The text to show in the footer when showing a CAPTCHA challenge when {@code action} is set to {@code SHOW_CAPTCHA} and the request is challenged.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("captchaFooter")
     String captchaFooter;
 
     /**
-     * The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
+     * The text to show on the label of the CAPTCHA challenge submit button when {@code action} is set to {@code SHOW_CAPTCHA} and the request is challenged.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("captchaSubmitLabel")
     String captchaSubmitLabel;
 
     /**
-     * An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of `action` value.
+     * An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of {@code action} value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responseHeaderManipulation")
     java.util.List<HeaderManipulationAction> responseHeaderManipulation;

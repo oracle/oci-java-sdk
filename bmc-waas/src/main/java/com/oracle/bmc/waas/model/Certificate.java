@@ -331,7 +331,7 @@ public class Certificate {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -341,7 +341,7 @@ public class Certificate {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -361,7 +361,7 @@ public class Certificate {
 
     /**
      * This indicates whether trust verification was disabled during the creation of SSL certificate.
-     * If `true` SSL certificate trust verification was disabled and this SSL certificate is most likely self-signed.
+     * If {@code true} SSL certificate trust verification was disabled and this SSL certificate is most likely self-signed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isTrustVerificationDisabled")

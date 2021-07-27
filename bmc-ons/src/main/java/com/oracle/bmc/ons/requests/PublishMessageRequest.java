@@ -44,7 +44,7 @@ public class PublishMessageRequest extends com.oracle.bmc.requests.BmcRequest<Me
      * Configure your receiving system to read the raw payload as JSON format.
      * <p>
      * Type of message body in the request.
-     * For `messageType` of JSON, a default key-value pair is required. Example: `{\"default\": \"Alarm breached\", \"Email\": \"Alarm breached: <url>\"}.`
+     * For {@code messageType} of JSON, a default key-value pair is required. Example: {@code {"default": "Alarm breached", "Email": "Alarm breached: <url>"}.}
      *
      */
     private MessageType messageType;
@@ -56,7 +56,7 @@ public class PublishMessageRequest extends com.oracle.bmc.requests.BmcRequest<Me
      * Configure your receiving system to read the raw payload as JSON format.
      * <p>
      * Type of message body in the request.
-     * For `messageType` of JSON, a default key-value pair is required. Example: `{\"default\": \"Alarm breached\", \"Email\": \"Alarm breached: <url>\"}.`
+     * For {@code messageType} of JSON, a default key-value pair is required. Example: {@code {"default": "Alarm breached", "Email": "Alarm breached: <url>"}.}
      *
      **/
     public enum MessageType {

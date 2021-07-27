@@ -397,7 +397,12 @@ public class QuotasAsyncClient implements QuotasAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateQuotaRequest, CreateQuotaResponse>,
                         java.util.concurrent.Future<CreateQuotaResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateQuotaDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -546,7 +551,12 @@ public class QuotasAsyncClient implements QuotasAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateQuotaRequest, UpdateQuotaResponse>,
                         java.util.concurrent.Future<UpdateQuotaResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateQuotaDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
