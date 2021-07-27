@@ -108,7 +108,7 @@ public class DatabaseFleetHealthMetrics {
     }
 
     /**
-     * The baseline date and time in UTC in ISO-8601 format, which is \"yyyy-MM-dd'T'hh:mm:ss.sss'Z'\".
+     * The baseline date and time in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
      * This is the date and time against which percentage change is calculated.
      *
      **/
@@ -116,7 +116,7 @@ public class DatabaseFleetHealthMetrics {
     String compareBaselineTime;
 
     /**
-     * The target date and time in UTC in ISO-8601 format, which is \"yyyy-MM-dd'T'hh:mm:ss.sss'Z'\".
+     * The target date and time in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
      * All the metrics are returned for the target date and time and the percentage change
      * is calculated against the baseline date and time.
      *

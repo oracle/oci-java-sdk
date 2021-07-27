@@ -47,9 +47,9 @@ public class InstanceAgentCommandSourceDetails {
     /**
      * The source type for the command. The following values are supported:
      * <p>
-     * - `TEXT` - uses a plain text command that is specified inline with the request.
-     * - `OBJECT_STORAGE_URI` - imports a command from an Object Storage URL.
-     * - `OBJECT_STORAGE_TUPLE` - imports a command from an Object Storage bucket.
+     * - {@code TEXT} - uses a plain text command that is specified inline with the request.
+     * - {@code OBJECT_STORAGE_URI} - imports a command from an Object Storage URL.
+     * - {@code OBJECT_STORAGE_TUPLE} - imports a command from an Object Storage bucket.
      * <p>
      * For background information about Object Storage buckets and URLs, see
      * [Overview of Object Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm).

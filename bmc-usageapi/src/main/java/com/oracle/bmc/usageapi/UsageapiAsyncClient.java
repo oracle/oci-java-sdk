@@ -377,6 +377,51 @@ public class UsageapiAsyncClient implements UsageapiAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCustomTableResponse> createCustomTable(
+            CreateCustomTableRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateCustomTableRequest, CreateCustomTableResponse>
+                    handler) {
+        LOG.trace("Called async createCustomTable");
+        final CreateCustomTableRequest interceptedRequest =
+                CreateCustomTableConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateCustomTableConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateCustomTableResponse>
+                transformer = CreateCustomTableConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<CreateCustomTableRequest, CreateCustomTableResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateCustomTableRequest, CreateCustomTableResponse>,
+                        java.util.concurrent.Future<CreateCustomTableResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateCustomTableDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateCustomTableRequest, CreateCustomTableResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateQueryResponse> createQuery(
             CreateQueryRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateQueryRequest, CreateQueryResponse>
@@ -397,12 +442,56 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateQueryRequest, CreateQueryResponse>,
                         java.util.concurrent.Future<CreateQueryResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateQueryDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateQueryRequest, CreateQueryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCustomTableResponse> deleteCustomTable(
+            DeleteCustomTableRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCustomTableRequest, DeleteCustomTableResponse>
+                    handler) {
+        LOG.trace("Called async deleteCustomTable");
+        final DeleteCustomTableRequest interceptedRequest =
+                DeleteCustomTableConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteCustomTableConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCustomTableResponse>
+                transformer = DeleteCustomTableConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<DeleteCustomTableRequest, DeleteCustomTableResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteCustomTableRequest, DeleteCustomTableResponse>,
+                        java.util.concurrent.Future<DeleteCustomTableResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteCustomTableRequest, DeleteCustomTableResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -454,6 +543,45 @@ public class UsageapiAsyncClient implements UsageapiAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetCustomTableResponse> getCustomTable(
+            GetCustomTableRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetCustomTableRequest, GetCustomTableResponse>
+                    handler) {
+        LOG.trace("Called async getCustomTable");
+        final GetCustomTableRequest interceptedRequest =
+                GetCustomTableConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCustomTableConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetCustomTableResponse>
+                transformer = GetCustomTableConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetCustomTableRequest, GetCustomTableResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCustomTableRequest, GetCustomTableResponse>,
+                        java.util.concurrent.Future<GetCustomTableResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCustomTableRequest, GetCustomTableResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetQueryResponse> getQuery(
             GetQueryRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetQueryRequest, GetQueryResponse>
@@ -477,6 +605,45 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetQueryRequest, GetQueryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCustomTablesResponse> listCustomTables(
+            ListCustomTablesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCustomTablesRequest, ListCustomTablesResponse>
+                    handler) {
+        LOG.trace("Called async listCustomTables");
+        final ListCustomTablesRequest interceptedRequest =
+                ListCustomTablesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCustomTablesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListCustomTablesResponse>
+                transformer = ListCustomTablesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListCustomTablesRequest, ListCustomTablesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCustomTablesRequest, ListCustomTablesResponse>,
+                        java.util.concurrent.Future<ListCustomTablesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCustomTablesRequest, ListCustomTablesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -596,12 +763,61 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 RequestSummarizedUsagesRequest, RequestSummarizedUsagesResponse>,
                         java.util.concurrent.Future<RequestSummarizedUsagesResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRequestSummarizedUsagesDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RequestSummarizedUsagesRequest, RequestSummarizedUsagesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCustomTableResponse> updateCustomTable(
+            UpdateCustomTableRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCustomTableRequest, UpdateCustomTableResponse>
+                    handler) {
+        LOG.trace("Called async updateCustomTable");
+        final UpdateCustomTableRequest interceptedRequest =
+                UpdateCustomTableConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCustomTableConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCustomTableResponse>
+                transformer = UpdateCustomTableConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<UpdateCustomTableRequest, UpdateCustomTableResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateCustomTableRequest, UpdateCustomTableResponse>,
+                        java.util.concurrent.Future<UpdateCustomTableResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCustomTableDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateCustomTableRequest, UpdateCustomTableResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -634,7 +850,12 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateQueryRequest, UpdateQueryResponse>,
                         java.util.concurrent.Future<UpdateQueryResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateQueryDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

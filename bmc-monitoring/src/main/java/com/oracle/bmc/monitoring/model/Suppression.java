@@ -92,7 +92,7 @@ public class Suppression {
      * Oracle recommends including tracking information for the event or associated work,
      * such as a ticket number.
      * <p>
-     * Example: `Planned outage due to change IT-1234.`
+     * Example: {@code Planned outage due to change IT-1234.}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
@@ -101,7 +101,7 @@ public class Suppression {
     /**
      * The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.
      * <p>
-     * Example: `2019-02-01T01:02:29.600Z`
+     * Example: {@code 2019-02-01T01:02:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeSuppressFrom")
@@ -110,7 +110,7 @@ public class Suppression {
     /**
      * The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.
      * <p>
-     * Example: `2019-02-01T02:02:29.600Z`
+     * Example: {@code 2019-02-01T02:02:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeSuppressUntil")

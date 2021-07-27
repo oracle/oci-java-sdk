@@ -522,7 +522,12 @@ public class AnnouncementAsyncClient implements AnnouncementAsync {
                                 UpdateAnnouncementUserStatusRequest,
                                 UpdateAnnouncementUserStatusResponse>,
                         java.util.concurrent.Future<UpdateAnnouncementUserStatusResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getStatusDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

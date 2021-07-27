@@ -170,7 +170,7 @@ public class WorkRequest {
     /**
      * The type of action the work request represents.
      * <p>
-     * Example: `CreateListener`
+     * Example: {@code CreateListener}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
@@ -254,7 +254,7 @@ public class WorkRequest {
     /**
      * The date and time the work request was created, in the format defined by RFC3339.
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
@@ -263,7 +263,7 @@ public class WorkRequest {
     /**
      * The date and time the work request was completed, in the format defined by RFC3339.
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")

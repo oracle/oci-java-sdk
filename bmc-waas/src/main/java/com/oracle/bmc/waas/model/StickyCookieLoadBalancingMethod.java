@@ -5,7 +5,7 @@
 package com.oracle.bmc.waas.model;
 
 /**
- * An object that represents the `sticky-cookie` load balancing method and its properties.
+ * An object that represents the {@code sticky-cookie} load balancing method and its properties.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

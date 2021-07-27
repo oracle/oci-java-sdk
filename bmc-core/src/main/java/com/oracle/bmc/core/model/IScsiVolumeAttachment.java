@@ -339,7 +339,7 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
     /**
      * The Challenge-Handshake-Authentication-Protocol (CHAP) secret
      * valid for the associated CHAP user name.
-     * (Also called the \"CHAP password\".)
+     * (Also called the "CHAP password".)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("chapSecret")
@@ -349,7 +349,7 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
      * The volume's system-generated Challenge-Handshake-Authentication-Protocol
      * (CHAP) user name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.
      * <p>
-     * Example: `ocid1.volume.oc1.phx.<unique_ID>`
+     * Example: {@code ocid1.volume.oc1.phx.<unique_ID>}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("chapUsername")
@@ -358,7 +358,7 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
     /**
      * The volume's iSCSI IP address.
      * <p>
-     * Example: `169.254.0.2`
+     * Example: {@code 169.254.0.2}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv4")
@@ -368,7 +368,7 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
      * The target volume's iSCSI Qualified Name in the format defined
      * by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).
      * <p>
-     * Example: `iqn.2015-12.us.oracle.com:<CHAP_username>`
+     * Example: {@code iqn.2015-12.us.oracle.com:<CHAP_username>}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("iqn")
@@ -377,7 +377,7 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
     /**
      * The volume's iSCSI port, usually port 860 or 3260.
      * <p>
-     * Example: `3260`
+     * Example: {@code 3260}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")

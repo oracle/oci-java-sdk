@@ -21,7 +21,7 @@ public class UpdateByoipRangeRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdateByoipRangeDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource containing the BYOIP CIDR block.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code ByoipRange} resource containing the BYOIP CIDR block.
      */
     private String byoipRangeId;
 
@@ -38,7 +38,7 @@ public class UpdateByoipRangeRequest
     private String opcRequestId;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
      * will be updated or deleted only if the etag you provide matches the resource's current etag value.
      *

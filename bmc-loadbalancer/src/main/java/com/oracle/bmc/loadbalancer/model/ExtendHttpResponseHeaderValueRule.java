@@ -16,7 +16,7 @@ package com.oracle.bmc.loadbalancer.model;
  *  The system does not support this rule for headers with multiple values.
  * <p>
  *  The system does not distinquish between underscore and dash characters in headers. That is, it treats
- *    `example_header_name` and `example-header-name` as identical.  If two such headers appear in a request, the system
+ *    {@code example_header_name} and {@code example-header-name} as identical.  If two such headers appear in a request, the system
  *    applies the action to the first header it finds. The affected header cannot be determined in advance. Oracle
  *    recommends that you do not rely on underscore or dash characters to uniquely distinguish header names.
  *
@@ -111,7 +111,7 @@ public class ExtendHttpResponseHeaderValueRule extends Rule {
     /**
      * A header name that conforms to RFC 7230.
      * <p>
-     * Example: `example_header_name`
+     * Example: {@code example_header_name}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("header")
@@ -120,10 +120,10 @@ public class ExtendHttpResponseHeaderValueRule extends Rule {
     /**
      * A string to prepend to the header value. The resulting header value must still conform to RFC 7230.
      * With the following exceptions:
-     * *  value cannot contain `$`
-     * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+     * *  value cannot contain {@code $}
+     * *  value cannot contain patterns like {@code {variable_name}}. They are reserved for future extensions. Currently, such values are invalid.
      * <p>
-     * Example: `example_prefix_value`
+     * Example: {@code example_prefix_value}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("prefix")
@@ -132,10 +132,10 @@ public class ExtendHttpResponseHeaderValueRule extends Rule {
     /**
      * A string to append to the header value. The resulting header value must still conform to RFC 7230.
      * With the following exceptions:
-     * *  value cannot contain `$`
-     * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+     * *  value cannot contain {@code $}
+     * *  value cannot contain patterns like {@code {variable_name}}. They are reserved for future extensions. Currently, such values are invalid.
      * <p>
-     * Example: `example_suffix_value`
+     * Example: {@code example_suffix_value}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("suffix")

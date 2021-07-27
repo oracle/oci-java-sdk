@@ -30,22 +30,22 @@ public class ListAddressListsRequest extends com.oracle.bmc.requests.BmcRequest<
     private String opcRequestId;
 
     /**
-     * The maximum number of items to return in a paginated call. If unspecified, defaults to `10`.
+     * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
      */
     private Integer limit;
 
     /**
-     * The value of the `opc-next-page` response header from the previous paginated call.
+     * The value of the {@code opc-next-page} response header from the previous paginated call.
      */
     private String page;
 
     /**
-     * The value by which address lists are sorted in a paginated 'List' call. If unspecified, defaults to `timeCreated`.
+     * The value by which address lists are sorted in a paginated 'List' call. If unspecified, defaults to {@code timeCreated}.
      */
     private SortBy sortBy;
 
     /**
-     * The value by which address lists are sorted in a paginated 'List' call. If unspecified, defaults to `timeCreated`.
+     * The value by which address lists are sorted in a paginated 'List' call. If unspecified, defaults to {@code timeCreated}.
      **/
     public enum SortBy {
         Id("id"),
@@ -81,12 +81,12 @@ public class ListAddressListsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
     /**
-     * The value of the sorting direction of resources in a paginated 'List' call. If unspecified, defaults to `DESC`.
+     * The value of the sorting direction of resources in a paginated 'List' call. If unspecified, defaults to {@code DESC}.
      */
     private SortOrder sortOrder;
 
     /**
-     * The value of the sorting direction of resources in a paginated 'List' call. If unspecified, defaults to `DESC`.
+     * The value of the sorting direction of resources in a paginated 'List' call. If unspecified, defaults to {@code DESC}.
      **/
     public enum SortOrder {
         Asc("ASC"),

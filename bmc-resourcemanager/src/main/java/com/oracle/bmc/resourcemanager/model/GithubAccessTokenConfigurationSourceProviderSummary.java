@@ -5,7 +5,7 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * Summary information for a configuration source provider of the type `GITHUB_ACCESS_TOKEN`.
+ * Summary information for a configuration source provider of the type {@code GITHUB_ACCESS_TOKEN}.
  * This type corresponds to a configuration source provider in GitHub that is authenticated with a personal access token.
  *
  * <br/>
@@ -186,7 +186,7 @@ public class GithubAccessTokenConfigurationSourceProviderSummary
 
     /**
      * The GitHub service endpoint.
-     * Example: `https://github.com/`
+     * Example: {@code https://github.com/}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("apiEndpoint")

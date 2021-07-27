@@ -125,7 +125,7 @@ public class Backend {
     /**
      * A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.
      * <p>
-     * Example: `10.0.0.3:8080`
+     * Example: {@code 10.0.0.3:8080}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -134,7 +134,7 @@ public class Backend {
     /**
      * The IP address of the backend server.
      * <p>
-     * Example: `10.0.0.3`
+     * Example: {@code 10.0.0.3}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
@@ -143,7 +143,7 @@ public class Backend {
     /**
      * The communication port for the backend server.
      * <p>
-     * Example: `8080`
+     * Example: {@code 8080}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
@@ -156,29 +156,29 @@ public class Backend {
      * For more information on load balancing policies, see
      * [How Load Balancing Policies Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
      * <p>
-     * Example: `3`
+     * Example: {@code 3}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("weight")
     Integer weight;
 
     /**
-     * Whether the load balancer should drain this server. Servers marked \"drain\" receive no new
+     * Whether the load balancer should drain this server. Servers marked "drain" receive no new
      * incoming traffic.
      * <p>
-     * Example: `false`
+     * Example: {@code false}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("drain")
     Boolean drain;
 
     /**
-     * Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress
-     * traffic to this backend server unless all other backend servers not marked as \"backup\" fail the health check policy.
+     * Whether the load balancer should treat this server as a backup unit. If {@code true}, the load balancer forwards no ingress
+     * traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
      * <p>
-     **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+     **Note:** You cannot add a backend server marked as {@code backup} to a backend set that uses the IP Hash policy.
      * <p>
-     * Example: `false`
+     * Example: {@code false}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backup")
@@ -188,7 +188,7 @@ public class Backend {
      * Whether the load balancer should treat this server as offline. Offline servers receive no incoming
      * traffic.
      * <p>
-     * Example: `false`
+     * Example: {@code false}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("offline")

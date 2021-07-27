@@ -34,7 +34,7 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
     /**
      * For list pagination. The value of the opc-next-page response header from the previous
-     * \"List\" call. For important details about how pagination works, see
+     * "List" call. For important details about how pagination works, see
      * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
@@ -43,7 +43,7 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     /**
      * A filter to return only rules that match the lifecycle state in this parameter.
      * <p>
-     * Example: `Creating`
+     * Example: {@code Creating}
      *
      */
     private Rule.LifecycleState lifecycleState;
@@ -52,7 +52,7 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      * A filter to return only rules with descriptions that match the displayName string
      * in this parameter.
      * <p>
-     * Example: `\"This rule sends a notification upon completion of DbaaS backup.\"`
+     * Example: {@code "This rule sends a notification upon completion of DbaaS backup."}
      *
      */
     private String displayName;
@@ -60,7 +60,7 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     /**
      * Specifies the attribute with which to sort the rules.
      * <p>
-     * Default: `timeCreated`
+     * Default: {@code timeCreated}
      * <p>
      * **TIME_CREATED:** Sorts by timeCreated.
      * * **DISPLAY_NAME:** Sorts by displayName.
@@ -72,7 +72,7 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     /**
      * Specifies the attribute with which to sort the rules.
      * <p>
-     * Default: `timeCreated`
+     * Default: {@code timeCreated}
      * <p>
      * **TIME_CREATED:** Sorts by timeCreated.
      * * **DISPLAY_NAME:** Sorts by displayName.

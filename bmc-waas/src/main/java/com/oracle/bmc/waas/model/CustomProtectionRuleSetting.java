@@ -87,7 +87,7 @@ public class CustomProtectionRuleSetting {
     String id;
     /**
      * The action to take when the custom protection rule is triggered.
-     * `DETECT` - Logs the request when the criteria of the custom protection rule are met. `BLOCK` - Blocks the request when the criteria of the custom protection rule are met.
+     * {@code DETECT} - Logs the request when the criteria of the custom protection rule are met. {@code BLOCK} - Blocks the request when the criteria of the custom protection rule are met.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Action {
@@ -134,7 +134,7 @@ public class CustomProtectionRuleSetting {
     };
     /**
      * The action to take when the custom protection rule is triggered.
-     * `DETECT` - Logs the request when the criteria of the custom protection rule are met. `BLOCK` - Blocks the request when the criteria of the custom protection rule are met.
+     * {@code DETECT} - Logs the request when the criteria of the custom protection rule are met. {@code BLOCK} - Blocks the request when the criteria of the custom protection rule are met.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     Action action;

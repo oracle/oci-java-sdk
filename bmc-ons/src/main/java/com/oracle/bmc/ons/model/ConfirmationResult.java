@@ -132,7 +132,7 @@ public class ConfirmationResult {
 
     /**
      * A locator that corresponds to the subscription protocol.
-     * For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol.
+     * For example, an email address for a subscription that uses the {@code EMAIL} protocol, or a URL for a subscription that uses an HTTP-based protocol.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpoint")

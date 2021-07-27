@@ -255,7 +255,7 @@ public class RecommendationSummary {
     Importance importance;
 
     /**
-     * An array of `ResourceCount` objects grouped by the status of the resource actions.
+     * An array of {@code ResourceCount} objects grouped by the status of the resource actions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceCounts")
     java.util.List<ResourceCount> resourceCounts;
@@ -281,7 +281,7 @@ public class RecommendationSummary {
     /**
      * The date and time that the recommendation entered its current status. The format is defined by RFC3339.
      * <p>
-     * For example, \"The status of the recommendation changed from `pending` to `current(ignored)` on this date and time.\"
+     * For example, "The status of the recommendation changed from {@code pending} to {@code current(ignored)} on this date and time."
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStatusBegin")
@@ -290,8 +290,8 @@ public class RecommendationSummary {
     /**
      * The date and time the current status will change. The format is defined by RFC3339.
      * <p>
-     * For example, \"The current `postponed` status of the recommendation will end and change to `pending` on this
-     * date and time.\"
+     * For example, "The current {@code postponed} status of the recommendation will end and change to {@code pending} on this
+     * date and time."
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStatusEnd")

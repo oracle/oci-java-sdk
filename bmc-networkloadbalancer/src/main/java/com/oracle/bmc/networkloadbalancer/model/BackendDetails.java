@@ -134,7 +134,7 @@ public class BackendDetails {
     /**
      * A read-only field showing the IP address/OCID and port that uniquely identify this backend server in the backend set.
      * <p>
-     * Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
+     * Example: {@code 10.0.0.3:8080}, or {@code ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443} or {@code 10.0.0.3:0}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -143,7 +143,7 @@ public class BackendDetails {
     /**
      * The IP address of the backend server.
      * <p>
-     * Example: `10.0.0.3`
+     * Example: {@code 10.0.0.3}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
@@ -151,7 +151,7 @@ public class BackendDetails {
 
     /**
      * The IP OCID/Instance OCID associated with the backend server.
-     * Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
+     * Example: {@code ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
@@ -160,7 +160,7 @@ public class BackendDetails {
     /**
      * The communication port for the backend server.
      * <p>
-     * Example: `8080`
+     * Example: {@code 8080}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
@@ -173,27 +173,27 @@ public class BackendDetails {
      * For more information about load balancing policies, see
      * [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
      * <p>
-     * Example: `3`
+     * Example: {@code 3}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("weight")
     Integer weight;
 
     /**
-     * Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress
-     * traffic to this backend server unless all other backend servers not marked as \"isBackup\" fail the health check policy.
+     * Whether the network load balancer should treat this server as a backup unit. If {@code true}, then the network load balancer forwards no ingress
+     * traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.
      * <p>
-     * Example: `false`
+     * Example: {@code false}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBackup")
     Boolean isBackup;
 
     /**
-     * Whether the network load balancer should drain this server. Servers marked \"isDrain\" receive no
+     * Whether the network load balancer should drain this server. Servers marked "isDrain" receive no
      * incoming traffic.
      * <p>
-     * Example: `false`
+     * Example: {@code false}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDrain")
@@ -203,7 +203,7 @@ public class BackendDetails {
      * Whether the network load balancer should treat this server as offline. Offline servers receive no incoming
      * traffic.
      * <p>
-     * Example: `false`
+     * Example: {@code false}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOffline")

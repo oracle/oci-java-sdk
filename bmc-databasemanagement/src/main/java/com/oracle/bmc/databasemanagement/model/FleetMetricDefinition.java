@@ -154,7 +154,7 @@ public class FleetMetricDefinition {
     String unit;
 
     /**
-     * The data point date and time in UTC in ISO-8601 format, which is \"yyyy-MM-dd'T'hh:mm:ss.sss'Z'\".
+     * The data point date and time in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     java.util.Date timestamp;

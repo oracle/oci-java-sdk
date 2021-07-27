@@ -448,7 +448,12 @@ public class ComputeInstanceAgentAsyncClient implements ComputeInstanceAgentAsyn
                                 CreateInstanceAgentCommandRequest,
                                 CreateInstanceAgentCommandResponse>,
                         java.util.concurrent.Future<CreateInstanceAgentCommandResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateInstanceAgentCommandDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

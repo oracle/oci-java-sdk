@@ -195,13 +195,13 @@ public class Group {
     /**
      * Date and time the group was created, in the format defined by RFC3339.
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
     /**
-     * The group's current state. After creating a group, make sure its `lifecycleState` changes from CREATING to
+     * The group's current state. After creating a group, make sure its {@code lifecycleState} changes from CREATING to
      * ACTIVE before using it.
      *
      **/
@@ -252,7 +252,7 @@ public class Group {
         }
     };
     /**
-     * The group's current state. After creating a group, make sure its `lifecycleState` changes from CREATING to
+     * The group's current state. After creating a group, make sure its {@code lifecycleState} changes from CREATING to
      * ACTIVE before using it.
      *
      **/
@@ -268,7 +268,7 @@ public class Group {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -277,7 +277,7 @@ public class Group {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

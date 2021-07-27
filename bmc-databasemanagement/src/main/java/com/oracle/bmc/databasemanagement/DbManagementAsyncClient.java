@@ -406,7 +406,13 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                 AddManagedDatabaseToManagedDatabaseGroupResponse>,
                         java.util.concurrent.Future<
                                 AddManagedDatabaseToManagedDatabaseGroupResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getAddManagedDatabaseToManagedDatabaseGroupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -449,7 +455,12 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeDatabaseParametersRequest, ChangeDatabaseParametersResponse>,
                         java.util.concurrent.Future<ChangeDatabaseParametersResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeDatabaseParametersDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -491,7 +502,12 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeJobCompartmentRequest, ChangeJobCompartmentResponse>,
                         java.util.concurrent.Future<ChangeJobCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeJobCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -538,7 +554,13 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                 ChangeManagedDatabaseGroupCompartmentRequest,
                                 ChangeManagedDatabaseGroupCompartmentResponse>,
                         java.util.concurrent.Future<ChangeManagedDatabaseGroupCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeManagedDatabaseGroupCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -576,7 +598,12 @@ public class DbManagementAsyncClient implements DbManagementAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<CreateJobRequest, CreateJobResponse>,
                         java.util.concurrent.Future<CreateJobResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateJobDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -621,7 +648,12 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                 CreateManagedDatabaseGroupRequest,
                                 CreateManagedDatabaseGroupResponse>,
                         java.util.concurrent.Future<CreateManagedDatabaseGroupResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateManagedDatabaseGroupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1499,7 +1531,13 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                 RemoveManagedDatabaseFromManagedDatabaseGroupResponse>,
                         java.util.concurrent.Future<
                                 RemoveManagedDatabaseFromManagedDatabaseGroupResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getRemoveManagedDatabaseFromManagedDatabaseGroupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1542,7 +1580,12 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ResetDatabaseParametersRequest, ResetDatabaseParametersResponse>,
                         java.util.concurrent.Future<ResetDatabaseParametersResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getResetDatabaseParametersDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1978,7 +2021,12 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                 UpdateManagedDatabaseGroupRequest,
                                 UpdateManagedDatabaseGroupResponse>,
                         java.util.concurrent.Future<UpdateManagedDatabaseGroupResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateManagedDatabaseGroupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

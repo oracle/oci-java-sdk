@@ -178,7 +178,7 @@ public class WorkRequestSummary {
     /**
      * The time the work request was accepted, in the format defined by RFC3339.
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
@@ -187,7 +187,7 @@ public class WorkRequestSummary {
     /**
      * The time the work request was started, in the format defined by RFC3339.
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
@@ -196,7 +196,7 @@ public class WorkRequestSummary {
     /**
      * The time the work request was finished, in the format defined by RFC3339.
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")

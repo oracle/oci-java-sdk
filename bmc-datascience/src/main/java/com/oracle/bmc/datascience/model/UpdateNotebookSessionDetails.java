@@ -5,8 +5,8 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * Details for updating a notebook session. `notebookSessionConfigurationDetails` can only be updated while the notebook session is in the `INACTIVE` state.
- * Changes to the `notebookSessionConfigurationDetails` take effect the next time the `ActivateNotebookSession` action is invoked on the notebook session resource.
+ * Details for updating a notebook session. {@code notebookSessionConfigurationDetails} can only be updated while the notebook session is in the {@code INACTIVE} state.
+ * Changes to the {@code notebookSessionConfigurationDetails} take effect the next time the {@code ActivateNotebookSession} action is invoked on the notebook session resource.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -103,7 +103,7 @@ public class UpdateNotebookSessionDetails {
 
     /**
      * A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-     * Example: `My NotebookSession`
+     * Example: {@code My NotebookSession}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -114,7 +114,7 @@ public class UpdateNotebookSessionDetails {
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -122,7 +122,7 @@ public class UpdateNotebookSessionDetails {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

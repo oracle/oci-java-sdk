@@ -400,7 +400,12 @@ public class EventsAsyncClient implements EventsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeRuleCompartmentRequest, ChangeRuleCompartmentResponse>,
                         java.util.concurrent.Future<ChangeRuleCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeRuleCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -438,7 +443,12 @@ public class EventsAsyncClient implements EventsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateRuleRequest, CreateRuleResponse>,
                         java.util.concurrent.Future<CreateRuleResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateRuleDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -583,7 +593,12 @@ public class EventsAsyncClient implements EventsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateRuleRequest, UpdateRuleResponse>,
                         java.util.concurrent.Future<UpdateRuleResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateRuleDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

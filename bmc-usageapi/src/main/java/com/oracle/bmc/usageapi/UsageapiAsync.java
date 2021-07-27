@@ -46,6 +46,23 @@ public interface UsageapiAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Returns the created custom table.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateCustomTableResponse> createCustomTable(
+            CreateCustomTableRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateCustomTableRequest, CreateCustomTableResponse>
+                    handler);
+
+    /**
      * Returns the created query.
      *
      *
@@ -59,6 +76,23 @@ public interface UsageapiAsync extends AutoCloseable {
     java.util.concurrent.Future<CreateQueryResponse> createQuery(
             CreateQueryRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateQueryRequest, CreateQueryResponse> handler);
+
+    /**
+     * Delete a saved custom table by the OCID.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteCustomTableResponse> deleteCustomTable(
+            DeleteCustomTableRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCustomTableRequest, DeleteCustomTableResponse>
+                    handler);
 
     /**
      * Delete a saved query by the OCID.
@@ -76,6 +110,22 @@ public interface UsageapiAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<DeleteQueryRequest, DeleteQueryResponse> handler);
 
     /**
+     * Returns the saved custom table.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCustomTableResponse> getCustomTable(
+            GetCustomTableRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetCustomTableRequest, GetCustomTableResponse>
+                    handler);
+
+    /**
      * Returns the saved query.
      *
      *
@@ -89,6 +139,22 @@ public interface UsageapiAsync extends AutoCloseable {
     java.util.concurrent.Future<GetQueryResponse> getQuery(
             GetQueryRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetQueryRequest, GetQueryResponse> handler);
+
+    /**
+     * Returns the saved custom table list.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCustomTablesResponse> listCustomTables(
+            ListCustomTablesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListCustomTablesRequest, ListCustomTablesResponse>
+                    handler);
 
     /**
      * Returns the saved query list.
@@ -139,6 +205,23 @@ public interface UsageapiAsync extends AutoCloseable {
             RequestSummarizedUsagesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             RequestSummarizedUsagesRequest, RequestSummarizedUsagesResponse>
+                    handler);
+
+    /**
+     * Update a saved custom table by table id.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateCustomTableResponse> updateCustomTable(
+            UpdateCustomTableRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCustomTableRequest, UpdateCustomTableResponse>
                     handler);
 
     /**

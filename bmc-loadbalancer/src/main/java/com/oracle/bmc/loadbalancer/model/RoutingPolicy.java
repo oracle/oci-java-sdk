@@ -85,13 +85,13 @@ public class RoutingPolicy {
     /**
      * The unique name for this list of routing rules. Avoid entering confidential information.
      * <p>
-     * Example: `example_routing_policy`
+     * Example: {@code example_routing_policy}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
     /**
-     * The version of the language in which `condition` of `rules` are composed.
+     * The version of the language in which {@code condition} of {@code rules} are composed.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -137,7 +137,7 @@ public class RoutingPolicy {
         }
     };
     /**
-     * The version of the language in which `condition` of `rules` are composed.
+     * The version of the language in which {@code condition} of {@code rules} are composed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("conditionLanguageVersion")

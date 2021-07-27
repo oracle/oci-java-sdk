@@ -5,7 +5,7 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+ * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")

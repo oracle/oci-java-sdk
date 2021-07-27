@@ -149,7 +149,7 @@ public class UpdateRuleDetails {
     /**
      * Whether or not this rule is currently enabled.
      * <p>
-     * Example: `true`
+     * Example: {@code true}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
@@ -160,7 +160,7 @@ public class UpdateRuleDetails {
      * important things to remember about filters:
      * <p>
      * Fields not mentioned in the condition are ignored. You can create a valid filter that matches
-     * all events with two curly brackets: `{}`
+     * all events with two curly brackets: {@code {}}
      * <p>
      * For more examples, see
      * [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
@@ -178,7 +178,7 @@ public class UpdateRuleDetails {
      * For examples of wildcard matching, see
      * [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
      * <p>
-     * Example: `\\\"eventType\\\": \\\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\\"`
+     * Example: {@code \\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("condition")
@@ -191,7 +191,7 @@ public class UpdateRuleDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -200,7 +200,7 @@ public class UpdateRuleDetails {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

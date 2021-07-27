@@ -5,8 +5,8 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Defines the `associatedWith` relationship between virtual network topology entities. An `AssociatedWith` relationship
- * is defined when there is no obvious `contains` relationship but entities are still related.
+ * Defines the {@code associatedWith} relationship between virtual network topology entities. An {@code AssociatedWith} relationship
+ * is defined when there is no obvious {@code contains} relationship but entities are still related.
  * For example, a DRG is associated with a VCN because a DRG is not managed by VCN but can be
  * attached to a VCN.
  *

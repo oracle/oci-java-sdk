@@ -303,7 +303,7 @@ public class DbSystemShapeSummary {
     String shapeFamily;
 
     /**
-     * Deprecated. Use `name` instead of `shape`.
+     * Deprecated. Use {@code name} instead of {@code shape}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     String shape;

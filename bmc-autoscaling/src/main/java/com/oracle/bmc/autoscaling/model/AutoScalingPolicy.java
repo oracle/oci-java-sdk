@@ -71,7 +71,7 @@ public class AutoScalingPolicy {
     /**
      * The date and time the autoscaling configuration was created, in the format defined by RFC3339.
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

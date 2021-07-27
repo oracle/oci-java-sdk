@@ -72,13 +72,13 @@ public class BackendHealth {
     /**
      * The general health status of the specified backend server as reported by the primary and standby load balancers.
      * <p>
-     *   **OK:** Both health checks returned `OK`.
+     *   **OK:** Both health checks returned {@code OK}.
      * <p>
-     *   **WARNING:** One health check returned `OK` and one did not.
+     *   **WARNING:** One health check returned {@code OK} and one did not.
      * <p>
-     *   **CRITICAL:** Neither health check returned `OK`.
+     *   **CRITICAL:** Neither health check returned {@code OK}.
      * <p>
-     *   **UNKNOWN:** One or both health checks returned `UNKNOWN`, or the system was unable to retrieve metrics at this time.
+     *   **UNKNOWN:** One or both health checks returned {@code UNKNOWN}, or the system was unable to retrieve metrics at this time.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -129,13 +129,13 @@ public class BackendHealth {
     /**
      * The general health status of the specified backend server as reported by the primary and standby load balancers.
      * <p>
-     *   **OK:** Both health checks returned `OK`.
+     *   **OK:** Both health checks returned {@code OK}.
      * <p>
-     *   **WARNING:** One health check returned `OK` and one did not.
+     *   **WARNING:** One health check returned {@code OK} and one did not.
      * <p>
-     *   **CRITICAL:** Neither health check returned `OK`.
+     *   **CRITICAL:** Neither health check returned {@code OK}.
      * <p>
-     *   **UNKNOWN:** One or both health checks returned `UNKNOWN`, or the system was unable to retrieve metrics at this time.
+     *   **UNKNOWN:** One or both health checks returned {@code UNKNOWN}, or the system was unable to retrieve metrics at this time.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")

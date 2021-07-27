@@ -109,27 +109,27 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      * Default is false.
      * When set to true, the hierarchy of compartments is traversed
      * and all compartments and subcompartments in the tenancy are
-     * returned depending on the the setting of `accessLevel`.
+     * returned depending on the the setting of {@code accessLevel}.
      *
      */
     private Boolean compartmentIdInSubtree;
 
     /**
-     * Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
-     * Setting this to `ACCESSIBLE` returns only those compartments for which the
+     * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
      * user has INSPECT permissions directly or indirectly (permissions can be on a
      * resource in a subcompartment).
-     * When set to `RESTRICTED` permissions are checked and no partial results are displayed.
+     * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
      *
      */
     private AccessLevel accessLevel;
 
     /**
-     * Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
-     * Setting this to `ACCESSIBLE` returns only those compartments for which the
+     * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
      * user has INSPECT permissions directly or indirectly (permissions can be on a
      * resource in a subcompartment).
-     * When set to `RESTRICTED` permissions are checked and no partial results are displayed.
+     * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
      *
      **/
     public enum AccessLevel {

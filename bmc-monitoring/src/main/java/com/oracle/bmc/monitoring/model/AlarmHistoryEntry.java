@@ -87,9 +87,9 @@ public class AlarmHistoryEntry {
     /**
      * Description for this alarm history entry. Avoid entering confidential information.
      * <p>
-     * Example 1 - alarm state history entry: `The alarm state is FIRING`
+     * Example 1 - alarm state history entry: {@code The alarm state is FIRING}
      * <p>
-     * Example 2 - alarm state transition history entry: `State transitioned from OK to Firing`
+     * Example 2 - alarm state transition history entry: {@code State transitioned from OK to Firing}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
@@ -98,7 +98,7 @@ public class AlarmHistoryEntry {
     /**
      * Timestamp for this alarm history entry. Format defined by RFC3339.
      * <p>
-     * Example: `2019-02-01T01:02:29.600Z`
+     * Example: {@code 2019-02-01T01:02:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
@@ -108,7 +108,7 @@ public class AlarmHistoryEntry {
      * Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing.
      * Available for state transition entries only. Note: A three-minute lag for this value accounts for any late-arriving metrics.
      * <p>
-     * Example: `2019-02-01T0:59:00.789Z`
+     * Example: {@code 2019-02-01T0:59:00.789Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestampTriggered")

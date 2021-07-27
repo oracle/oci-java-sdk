@@ -96,7 +96,7 @@ public class ListenerSummary {
     /**
      * A friendly name for the listener. It must be unique and it cannot be changed.
      * <p>
-     * Example: `example_listener`
+     * Example: {@code example_listener}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -105,7 +105,7 @@ public class ListenerSummary {
     /**
      * The name of the associated backend set.
      * <p>
-     * Example: `example_backend_set`
+     * Example: {@code example_backend_set}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultBackendSetName")
@@ -114,7 +114,7 @@ public class ListenerSummary {
     /**
      * The communication port for the listener.
      * <p>
-     * Example: `80`
+     * Example: {@code 80}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
@@ -127,7 +127,7 @@ public class ListenerSummary {
      * To get a list of valid protocols, use the {@link #listNetworkLoadBalancersProtocols(ListNetworkLoadBalancersProtocolsRequest) listNetworkLoadBalancersProtocols}
      * operation.
      * <p>
-     * Example: `TCP`
+     * Example: {@code TCP}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")

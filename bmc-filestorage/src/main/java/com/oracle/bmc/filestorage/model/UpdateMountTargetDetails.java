@@ -97,7 +97,7 @@ public class UpdateMountTargetDetails {
      * A user-friendly name. Does not have to be unique, and it is changeable.
      * Avoid entering confidential information.
      * <p>
-     * Example: `My mount target`
+     * Example: {@code My mount target}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -117,7 +117,7 @@ public class UpdateMountTargetDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair
      *  with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -126,7 +126,7 @@ public class UpdateMountTargetDetails {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

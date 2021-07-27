@@ -33,7 +33,7 @@ public class UpdateRoutingPolicyRequest
     /**
      * The name of the routing policy to update.
      * <p>
-     * Example: `example_routing_policy_name`
+     * Example: {@code example_routing_policy_name}
      *
      */
     private String routingPolicyName;

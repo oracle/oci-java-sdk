@@ -30,12 +30,12 @@ public class ListFlexComponentsRequest extends com.oracle.bmc.requests.BmcReques
     private String name;
 
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      **/
     public enum SortOrder {
         Asc("ASC"),
@@ -70,13 +70,13 @@ public class ListFlexComponentsRequest extends com.oracle.bmc.requests.BmcReques
         }
     };
     /**
-     * The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for NAME is ascending. The NAME sort order is case sensitive.
+     * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for NAME is ascending. The NAME sort order is case sensitive.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for NAME is ascending. The NAME sort order is case sensitive.
+     * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for NAME is ascending. The NAME sort order is case sensitive.
      *
      **/
     public enum SortBy {

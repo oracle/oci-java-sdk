@@ -86,8 +86,8 @@ public class UpdateLaunchOptions {
 
     /**
      * Emulation type for the boot volume.
-     * * `ISCSI` - ISCSI attached block storage device.
-     * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block
+     * * {@code ISCSI} - ISCSI attached block storage device.
+     * * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for boot volumes and remote block
      * storage volumes on platform images.
      * <p>
      * Before you change the boot volume attachment type, detach all block volumes and VNICs except for
@@ -134,8 +134,8 @@ public class UpdateLaunchOptions {
     };
     /**
      * Emulation type for the boot volume.
-     * * `ISCSI` - ISCSI attached block storage device.
-     * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block
+     * * {@code ISCSI} - ISCSI attached block storage device.
+     * * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for boot volumes and remote block
      * storage volumes on platform images.
      * <p>
      * Before you change the boot volume attachment type, detach all block volumes and VNICs except for
@@ -152,9 +152,9 @@ public class UpdateLaunchOptions {
     BootVolumeType bootVolumeType;
     /**
      * Emulation type for the physical network interface card (NIC).
-     * * `VFIO` - Direct attached Virtual Function network controller. This is the networking type
+     * * {@code VFIO} - Direct attached Virtual Function network controller. This is the networking type
      * when you launch an instance using hardware-assisted (SR-IOV) networking.
-     * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+     * * {@code PARAVIRTUALIZED} - VM instances launch with paravirtualized devices using VirtIO drivers.
      * <p>
      * Before you change the networking type, detach all VNICs and block volumes except for the primary
      * VNIC and the boot volume.
@@ -203,9 +203,9 @@ public class UpdateLaunchOptions {
     };
     /**
      * Emulation type for the physical network interface card (NIC).
-     * * `VFIO` - Direct attached Virtual Function network controller. This is the networking type
+     * * {@code VFIO} - Direct attached Virtual Function network controller. This is the networking type
      * when you launch an instance using hardware-assisted (SR-IOV) networking.
-     * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+     * * {@code PARAVIRTUALIZED} - VM instances launch with paravirtualized devices using VirtIO drivers.
      * <p>
      * Before you change the networking type, detach all VNICs and block volumes except for the primary
      * VNIC and the boot volume.
@@ -225,7 +225,7 @@ public class UpdateLaunchOptions {
 
     /**
      * Whether to enable in-transit encryption for the volume's paravirtualized attachment.
-     * To enable in-transit encryption for block volumes and boot volumes, this field must be set to `true`.
+     * To enable in-transit encryption for block volumes and boot volumes, this field must be set to {@code true}.
      * <p>
      * Data in transit is transferred over an internal and highly secure network. If you have specific
      * compliance requirements related to the encryption of the data while it is moving between the

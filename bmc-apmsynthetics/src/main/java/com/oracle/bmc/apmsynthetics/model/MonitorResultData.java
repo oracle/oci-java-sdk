@@ -117,7 +117,7 @@ public class MonitorResultData {
     /**
      * The time when the data was generated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
      * timestamp format.
-     * Example: `2020-02-13T22:47:12.613Z`
+     * Example: {@code 2020-02-13T22:47:12.613Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")

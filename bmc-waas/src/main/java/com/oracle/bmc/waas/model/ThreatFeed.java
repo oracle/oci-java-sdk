@@ -101,7 +101,7 @@ public class ThreatFeed {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
     /**
-     * The action to take when traffic is flagged as malicious by data from the threat intelligence feed. If unspecified, defaults to `OFF`.
+     * The action to take when traffic is flagged as malicious by data from the threat intelligence feed. If unspecified, defaults to {@code OFF}.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Action {
@@ -148,7 +148,7 @@ public class ThreatFeed {
         }
     };
     /**
-     * The action to take when traffic is flagged as malicious by data from the threat intelligence feed. If unspecified, defaults to `OFF`.
+     * The action to take when traffic is flagged as malicious by data from the threat intelligence feed. If unspecified, defaults to {@code OFF}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     Action action;

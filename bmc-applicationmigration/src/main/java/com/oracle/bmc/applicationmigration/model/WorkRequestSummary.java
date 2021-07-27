@@ -179,7 +179,7 @@ public class WorkRequestSummary {
     java.util.Date timeAccepted;
 
     /**
-     * The date and time the work request transitioned from `ACCEPTED` to `IN_PROGRESS`, in
+     * The date and time the work request transitioned from {@code ACCEPTED} to {@code IN_PROGRESS}, in
      * the format defined by RFC3339.
      *
      **/
@@ -187,7 +187,7 @@ public class WorkRequestSummary {
     java.util.Date timeStarted;
 
     /**
-     * The date and time the work request reached a terminal state, either `FAILED` or `SUCCEEDED`.
+     * The date and time the work request reached a terminal state, either {@code FAILED} or {@code SUCCEEDED}.
      * Format is defined by RFC3339.
      *
      **/

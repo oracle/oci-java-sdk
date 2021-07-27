@@ -8,7 +8,7 @@ package com.oracle.bmc.core.model;
  * An individual answer to a CPE device question.
  * <p>
  * The answers correlate to the questions that are specific to the CPE device type (see the
- * `parameters` attribute of {@link CpeDeviceShapeDetail}).
+ * {@code parameters} attribute of {@link CpeDeviceShapeDetail}).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -74,7 +74,7 @@ public class CpeDeviceConfigAnswer {
     }
 
     /**
-     * A string that identifies the question to be answered. See the `key` attribute in
+     * A string that identifies the question to be answered. See the {@code key} attribute in
      * {@link #cpeDeviceConfigQuestion(CpeDeviceConfigQuestionRequest) cpeDeviceConfigQuestion}.
      *
      **/

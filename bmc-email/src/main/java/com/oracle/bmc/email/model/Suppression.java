@@ -226,7 +226,7 @@ public class Suppression {
     Reason reason;
 
     /**
-     * The date and time the suppression was added in \"YYYY-MM-ddThh:mmZ\"
+     * The date and time the suppression was added in "YYYY-MM-ddThh:mmZ"
      * format with a Z offset, as defined by RFC 3339.
      *
      **/
@@ -235,7 +235,7 @@ public class Suppression {
 
     /**
      * The last date and time the suppression prevented submission
-     * in \"YYYY-MM-ddThh:mmZ\"
+     * in "YYYY-MM-ddThh:mmZ"
      * format with a Z offset, as defined by RFC 3339.
      *
      **/

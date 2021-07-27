@@ -24,7 +24,7 @@ public class UpdateExadataInfrastructureResponse {
     private String opcWorkRequestId;
 
     /**
-     * For optimistic concurrency control. See `if-match`.
+     * For optimistic concurrency control. See {@code if-match}.
      */
     private String etag;
 

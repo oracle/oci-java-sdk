@@ -27,7 +27,7 @@ public class GetBackendSetRequest extends com.oracle.bmc.requests.BmcRequest<jav
     /**
      * The name of the backend set to retrieve.
      * <p>
-     * Example: `example_backend_set`
+     * Example: {@code example_backend_set}
      *
      */
     private String backendSetName;

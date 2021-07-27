@@ -300,7 +300,7 @@ public class DeploymentBackup {
     String lifecycleDetails;
 
     /**
-     * The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfBackup")
@@ -339,14 +339,14 @@ public class DeploymentBackup {
     String objectName;
 
     /**
-     * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
@@ -354,7 +354,7 @@ public class DeploymentBackup {
 
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -362,7 +362,7 @@ public class DeploymentBackup {
 
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -370,7 +370,7 @@ public class DeploymentBackup {
 
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")

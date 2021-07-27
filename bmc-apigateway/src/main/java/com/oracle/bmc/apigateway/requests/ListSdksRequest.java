@@ -27,7 +27,7 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * <p>
-     * Example: `My new resource`
+     * Example: {@code My new resource}
      *
      */
     private String displayName;
@@ -35,7 +35,7 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     /**
      * A filter to return only resources that match the given lifecycle state.
      * <p>
-     * Example: `ACTIVE` or `DELETED`
+     * Example: {@code ACTIVE} or {@code DELETED}
      *
      */
     private Sdk.LifecycleState lifecycleState;
@@ -91,18 +91,18 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
     };
     /**
-     * The field to sort by. You can provide one sort order (`sortOrder`).
-     * Default order for `timeCreated` is descending. Default order for
-     * `displayName` is ascending. The `displayName` sort order is case
+     * The field to sort by. You can provide one sort order ({@code sortOrder}).
+     * Default order for {@code timeCreated} is descending. Default order for
+     * {@code displayName} is ascending. The {@code displayName} sort order is case
      * sensitive.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can provide one sort order (`sortOrder`).
-     * Default order for `timeCreated` is descending. Default order for
-     * `displayName` is ascending. The `displayName` sort order is case
+     * The field to sort by. You can provide one sort order ({@code sortOrder}).
+     * Default order for {@code timeCreated} is descending. Default order for
+     * {@code displayName} is ascending. The {@code displayName} sort order is case
      * sensitive.
      *
      **/

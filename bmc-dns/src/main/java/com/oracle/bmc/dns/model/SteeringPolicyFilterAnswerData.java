@@ -79,7 +79,7 @@ public class SteeringPolicyFilterAnswerData {
     String answerCondition;
 
     /**
-     * Keeps the answer only if the value is `true`.
+     * Keeps the answer only if the value is {@code true}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldKeep")
     Boolean shouldKeep;

@@ -30,12 +30,12 @@ public class ListProtectionRulesRequest extends com.oracle.bmc.requests.BmcReque
     private String opcRequestId;
 
     /**
-     * The maximum number of items to return in a paginated call. If unspecified, defaults to `10`.
+     * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
      */
     private Integer limit;
 
     /**
-     * The value of the `opc-next-page` response header from the previous paginated call.
+     * The value of the {@code opc-next-page} response header from the previous paginated call.
      */
     private String page;
 

@@ -35,7 +35,7 @@ public class UpdateHostnameRequest
     /**
      * The name of the hostname resource to update.
      * <p>
-     * Example: `example_hostname_001`
+     * Example: {@code example_hostname_001}
      *
      */
     private String name;

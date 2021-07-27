@@ -177,7 +177,7 @@ public class SuppressionSummary {
 
     /**
      * The date and time a recipient's email address was added to the
-     * suppression list, in \"YYYY-MM-ddThh:mmZ\" format with a Z offset, as
+     * suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
      * defined by RFC 3339.
      *
      **/

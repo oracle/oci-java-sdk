@@ -63,7 +63,7 @@ public class UpdateAutonomousDatabaseWalletDetails {
     }
 
     /**
-     * Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
+     * Indicates whether to rotate the wallet or not. If {@code false}, the wallet will not be rotated. The default is {@code false}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldRotate")
     Boolean shouldRotate;

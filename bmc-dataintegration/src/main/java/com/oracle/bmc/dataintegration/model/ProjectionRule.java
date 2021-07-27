@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Base type for how fields are projected. There are many different mechanisms for doing this such as by a name pattern, datatype and so on. See the `modelType` property for the types.
+ * Base type for how fields are projected. There are many different mechanisms for doing this such as by a name pattern, datatype and so on. See the {@code modelType} property for the types.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

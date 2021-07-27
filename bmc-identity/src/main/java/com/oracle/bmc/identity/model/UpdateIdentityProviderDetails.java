@@ -37,7 +37,7 @@ package com.oracle.bmc.identity.model;
 public class UpdateIdentityProviderDetails {
 
     /**
-     * The description you assign to the `IdentityProvider`. Does not have to
+     * The description you assign to the {@code IdentityProvider}. Does not have to
      * be unique, and it's changeable.
      *
      **/
@@ -47,7 +47,7 @@ public class UpdateIdentityProviderDetails {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -56,7 +56,7 @@ public class UpdateIdentityProviderDetails {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -65,7 +65,7 @@ public class UpdateIdentityProviderDetails {
     /**
      * The protocol used for federation.
      * <p>
-     * Example: `SAML2`
+     * Example: {@code SAML2}
      *
      **/
     public enum Protocol {

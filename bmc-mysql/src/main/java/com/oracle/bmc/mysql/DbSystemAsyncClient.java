@@ -400,7 +400,12 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 AddAnalyticsClusterRequest, AddAnalyticsClusterResponse>,
                         java.util.concurrent.Future<AddAnalyticsClusterResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddAnalyticsClusterDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -440,7 +445,12 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 AddHeatWaveClusterRequest, AddHeatWaveClusterResponse>,
                         java.util.concurrent.Future<AddHeatWaveClusterResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddHeatWaveClusterDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -480,7 +490,12 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateDbSystemRequest, CreateDbSystemResponse>,
                         java.util.concurrent.Future<CreateDbSystemResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDbSystemDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1027,7 +1042,12 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 RestartDbSystemRequest, RestartDbSystemResponse>,
                         java.util.concurrent.Future<RestartDbSystemResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRestartDbSystemDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1273,7 +1293,12 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 StopDbSystemRequest, StopDbSystemResponse>,
                         java.util.concurrent.Future<StopDbSystemResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getStopDbSystemDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1356,7 +1381,12 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateAnalyticsClusterRequest, UpdateAnalyticsClusterResponse>,
                         java.util.concurrent.Future<UpdateAnalyticsClusterResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateAnalyticsClusterDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1395,7 +1425,12 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateDbSystemRequest, UpdateDbSystemResponse>,
                         java.util.concurrent.Future<UpdateDbSystemResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDbSystemDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1436,7 +1471,12 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateHeatWaveClusterRequest, UpdateHeatWaveClusterResponse>,
                         java.util.concurrent.Future<UpdateHeatWaveClusterResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateHeatWaveClusterDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

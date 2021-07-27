@@ -188,7 +188,7 @@ public class DedicatedVmHostSummary {
     /**
      * The availability domain the dedicated VM host is running in.
      * <p>
-     * Example: `Uocm:PHX-AD-1`
+     * Example: {@code Uocm:PHX-AD-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
@@ -213,7 +213,7 @@ public class DedicatedVmHostSummary {
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
      * <p>
-     * Example: `My DVH`
+     * Example: {@code My DVH}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -227,7 +227,7 @@ public class DedicatedVmHostSummary {
      * <p>
      * To get a list of fault domains, use the ListFaultDomains operation in the Identity and Access Management Service API.
      * <p>
-     * Example: `FAULT-DOMAIN-1`
+     * Example: {@code FAULT-DOMAIN-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
@@ -300,7 +300,7 @@ public class DedicatedVmHostSummary {
     /**
      * The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

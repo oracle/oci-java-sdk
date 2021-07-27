@@ -184,7 +184,7 @@ public class AppCatalogSubscription {
 
     /**
      * Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
-     * Example: `2018-03-20T12:32:53.532Z`
+     * Example: {@code 2018-03-20T12:32:53.532Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

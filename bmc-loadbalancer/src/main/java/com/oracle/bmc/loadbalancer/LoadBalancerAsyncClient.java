@@ -403,7 +403,12 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                                 ChangeLoadBalancerCompartmentRequest,
                                 ChangeLoadBalancerCompartmentResponse>,
                         java.util.concurrent.Future<ChangeLoadBalancerCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeLoadBalancerCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -442,7 +447,12 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateBackendRequest, CreateBackendResponse>,
                         java.util.concurrent.Future<CreateBackendResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateBackendDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -482,7 +492,12 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateBackendSetRequest, CreateBackendSetResponse>,
                         java.util.concurrent.Future<CreateBackendSetResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateBackendSetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -522,7 +537,12 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateCertificateRequest, CreateCertificateResponse>,
                         java.util.concurrent.Future<CreateCertificateResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateCertificateDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -562,7 +582,12 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateHostnameRequest, CreateHostnameResponse>,
                         java.util.concurrent.Future<CreateHostnameResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateHostnameDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -602,7 +627,12 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateListenerRequest, CreateListenerResponse>,
                         java.util.concurrent.Future<CreateListenerResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateListenerDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -642,7 +672,12 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateLoadBalancerRequest, CreateLoadBalancerResponse>,
                         java.util.concurrent.Future<CreateLoadBalancerResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateLoadBalancerDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -682,7 +717,12 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreatePathRouteSetRequest, CreatePathRouteSetResponse>,
                         java.util.concurrent.Future<CreatePathRouteSetResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreatePathRouteSetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -724,7 +764,12 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateRoutingPolicyRequest, CreateRoutingPolicyResponse>,
                         java.util.concurrent.Future<CreateRoutingPolicyResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateRoutingPolicyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -762,7 +807,12 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateRuleSetRequest, CreateRuleSetResponse>,
                         java.util.concurrent.Future<CreateRuleSetResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateRuleSetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -804,7 +854,12 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateSSLCipherSuiteRequest, CreateSSLCipherSuiteResponse>,
                         java.util.concurrent.Future<CreateSSLCipherSuiteResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSSLCipherSuiteDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2324,7 +2379,12 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateBackendRequest, UpdateBackendResponse>,
                         java.util.concurrent.Future<UpdateBackendResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateBackendDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2364,7 +2424,12 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateBackendSetRequest, UpdateBackendSetResponse>,
                         java.util.concurrent.Future<UpdateBackendSetResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateBackendSetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2406,7 +2471,12 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateHealthCheckerRequest, UpdateHealthCheckerResponse>,
                         java.util.concurrent.Future<UpdateHealthCheckerResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getHealthChecker(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2445,7 +2515,12 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateHostnameRequest, UpdateHostnameResponse>,
                         java.util.concurrent.Future<UpdateHostnameResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateHostnameDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2485,7 +2560,12 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateListenerRequest, UpdateListenerResponse>,
                         java.util.concurrent.Future<UpdateListenerResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateListenerDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2525,7 +2605,12 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateLoadBalancerRequest, UpdateLoadBalancerResponse>,
                         java.util.concurrent.Future<UpdateLoadBalancerResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateLoadBalancerDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2567,7 +2652,12 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateLoadBalancerShapeRequest, UpdateLoadBalancerShapeResponse>,
                         java.util.concurrent.Future<UpdateLoadBalancerShapeResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateLoadBalancerShapeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2612,7 +2702,12 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                                 UpdateNetworkSecurityGroupsRequest,
                                 UpdateNetworkSecurityGroupsResponse>,
                         java.util.concurrent.Future<UpdateNetworkSecurityGroupsResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateNetworkSecurityGroupsDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2652,7 +2747,12 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdatePathRouteSetRequest, UpdatePathRouteSetResponse>,
                         java.util.concurrent.Future<UpdatePathRouteSetResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdatePathRouteSetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2694,7 +2794,12 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateRoutingPolicyRequest, UpdateRoutingPolicyResponse>,
                         java.util.concurrent.Future<UpdateRoutingPolicyResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateRoutingPolicyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2732,7 +2837,12 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateRuleSetRequest, UpdateRuleSetResponse>,
                         java.util.concurrent.Future<UpdateRuleSetResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateRuleSetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2774,7 +2884,12 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateSSLCipherSuiteRequest, UpdateSSLCipherSuiteResponse>,
                         java.util.concurrent.Future<UpdateSSLCipherSuiteResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSSLCipherSuiteDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

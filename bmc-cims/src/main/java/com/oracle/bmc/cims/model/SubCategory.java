@@ -74,7 +74,7 @@ public class SubCategory {
     String subCategoryKey;
 
     /**
-     * The name of the subcategory. For example, `Backup Count` or `Custom Image Count`.
+     * The name of the subcategory. For example, {@code Backup Count} or {@code Custom Image Count}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;

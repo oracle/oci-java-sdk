@@ -79,8 +79,8 @@ public class UpdateRecommendationDetails {
     /**
      * The date and time the current status will change. The format is defined by RFC3339.
      * <p>
-     * For example, \"The current `postponed` status of the recommendation will end and change to `pending` on this
-     * date and time.\"
+     * For example, "The current {@code postponed} status of the recommendation will end and change to {@code pending} on this
+     * date and time."
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStatusEnd")

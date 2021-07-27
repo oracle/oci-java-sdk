@@ -47,7 +47,7 @@ public class ListExternalPluggableDatabasesRequest
     private String page;
 
     /**
-     * The field to sort by. You can provide one sort order (`sortOrder`).
+     * The field to sort by. You can provide one sort order ({@code sortOrder}).
      * Default order for TIMECREATED is descending.
      * Default order for DISPLAYNAME is ascending.
      * The DISPLAYNAME sort order is case sensitive.
@@ -56,7 +56,7 @@ public class ListExternalPluggableDatabasesRequest
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can provide one sort order (`sortOrder`).
+     * The field to sort by. You can provide one sort order ({@code sortOrder}).
      * Default order for TIMECREATED is descending.
      * Default order for DISPLAYNAME is ascending.
      * The DISPLAYNAME sort order is case sensitive.
@@ -95,12 +95,12 @@ public class ListExternalPluggableDatabasesRequest
         }
     };
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      **/
     public enum SortOrder {
         Asc("ASC"),

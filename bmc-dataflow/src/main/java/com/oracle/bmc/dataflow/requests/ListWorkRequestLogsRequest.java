@@ -26,7 +26,7 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
     private String workRequestId;
 
     /**
-     * The maximum number of results to return in a paginated `List` call.
+     * The maximum number of results to return in a paginated {@code List} call.
      *
      */
     private Integer limit;
@@ -39,7 +39,7 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
     private String opcRequestId;
 
     /**
-     * The value of the `opc-next-page` or `opc-prev-page` response header from the last `List` call
+     * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from the last {@code List} call
      * to sent back to server for getting the next page of results.
      *
      */

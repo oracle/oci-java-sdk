@@ -404,7 +404,12 @@ public class OdaAsyncClient implements OdaAsync {
                                 ChangeOdaInstanceCompartmentRequest,
                                 ChangeOdaInstanceCompartmentResponse>,
                         java.util.concurrent.Future<ChangeOdaInstanceCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeOdaInstanceCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -444,7 +449,12 @@ public class OdaAsyncClient implements OdaAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateOdaInstanceRequest, CreateOdaInstanceResponse>,
                         java.util.concurrent.Future<CreateOdaInstanceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateOdaInstanceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -840,7 +850,12 @@ public class OdaAsyncClient implements OdaAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateOdaInstanceRequest, UpdateOdaInstanceResponse>,
                         java.util.concurrent.Future<UpdateOdaInstanceResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateOdaInstanceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

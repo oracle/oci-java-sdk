@@ -100,7 +100,7 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
      * on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
      * If the two hashes do not match, the log data is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
      * <p>
-     * \"The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)\"
+     * "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
      *
      */
     private String contentMd5;

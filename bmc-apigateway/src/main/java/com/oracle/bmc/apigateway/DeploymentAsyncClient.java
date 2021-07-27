@@ -403,7 +403,12 @@ public class DeploymentAsyncClient implements DeploymentAsync {
                                 ChangeDeploymentCompartmentRequest,
                                 ChangeDeploymentCompartmentResponse>,
                         java.util.concurrent.Future<ChangeDeploymentCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeDeploymentCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -443,7 +448,12 @@ public class DeploymentAsyncClient implements DeploymentAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateDeploymentRequest, CreateDeploymentResponse>,
                         java.util.concurrent.Future<CreateDeploymentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDeploymentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -598,7 +608,12 @@ public class DeploymentAsyncClient implements DeploymentAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateDeploymentRequest, UpdateDeploymentResponse>,
                         java.util.concurrent.Future<UpdateDeploymentResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDeploymentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

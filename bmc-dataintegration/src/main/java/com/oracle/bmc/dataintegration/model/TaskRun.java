@@ -531,7 +531,7 @@ public class TaskRun {
     Long bytesProcessed;
 
     /**
-     * Contains an error message if status is `ERROR`.
+     * Contains an error message if status is {@code ERROR}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     String errorMessage;

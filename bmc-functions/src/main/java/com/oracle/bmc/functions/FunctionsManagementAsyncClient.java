@@ -403,7 +403,12 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                                 ChangeApplicationCompartmentRequest,
                                 ChangeApplicationCompartmentResponse>,
                         java.util.concurrent.Future<ChangeApplicationCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeApplicationCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -442,7 +447,12 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateApplicationRequest, CreateApplicationResponse>,
                         java.util.concurrent.Future<CreateApplicationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateApplicationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -481,7 +491,12 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateFunctionRequest, CreateFunctionResponse>,
                         java.util.concurrent.Future<CreateFunctionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateFunctionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -752,7 +767,12 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateApplicationRequest, UpdateApplicationResponse>,
                         java.util.concurrent.Future<UpdateApplicationResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateApplicationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -791,7 +811,12 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateFunctionRequest, UpdateFunctionResponse>,
                         java.util.concurrent.Future<UpdateFunctionResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateFunctionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

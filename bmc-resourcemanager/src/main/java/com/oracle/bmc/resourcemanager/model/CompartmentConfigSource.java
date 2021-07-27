@@ -132,7 +132,7 @@ public class CompartmentConfigSource extends ConfigSource {
 
     /**
      * Filter for [services to use with Resource Discovery](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
-     * For example, \"database\" limits resource discovery to resource types within the Database service.
+     * For example, "database" limits resource discovery to resource types within the Database service.
      * The specified services must be in scope of the given compartment OCID (tenancy level for root compartment, compartment level otherwise).
      * If not specified, then all services at the scope of the given compartment OCID are used.
      *

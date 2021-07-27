@@ -402,7 +402,12 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateTransferApplianceRequest, CreateTransferApplianceResponse>,
                         java.util.concurrent.Future<CreateTransferApplianceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTransferApplianceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -449,7 +454,12 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
                                 CreateTransferApplianceAdminCredentialsResponse>,
                         java.util.concurrent.Future<
                                 CreateTransferApplianceAdminCredentialsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAdminPublicKey(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -713,7 +723,12 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateTransferApplianceRequest, UpdateTransferApplianceResponse>,
                         java.util.concurrent.Future<UpdateTransferApplianceResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTransferApplianceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

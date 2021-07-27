@@ -403,7 +403,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                                 AddImageShapeCompatibilityEntryRequest,
                                 AddImageShapeCompatibilityEntryResponse>,
                         java.util.concurrent.Future<AddImageShapeCompatibilityEntryResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddImageShapeCompatibilityEntryDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -444,7 +449,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 AttachBootVolumeRequest, AttachBootVolumeResponse>,
                         java.util.concurrent.Future<AttachBootVolumeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAttachBootVolumeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -482,7 +492,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 AttachVnicRequest, AttachVnicResponse>,
                         java.util.concurrent.Future<AttachVnicResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAttachVnicDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -521,7 +536,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 AttachVolumeRequest, AttachVolumeResponse>,
                         java.util.concurrent.Future<AttachVolumeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAttachVolumeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -563,7 +583,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CaptureConsoleHistoryRequest, CaptureConsoleHistoryResponse>,
                         java.util.concurrent.Future<CaptureConsoleHistoryResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCaptureConsoleHistoryDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -612,7 +637,13 @@ public class ComputeAsyncClient implements ComputeAsync {
                                 ChangeComputeCapacityReservationCompartmentResponse>,
                         java.util.concurrent.Future<
                                 ChangeComputeCapacityReservationCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeComputeCapacityReservationCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -662,7 +693,13 @@ public class ComputeAsyncClient implements ComputeAsync {
                                 ChangeComputeImageCapabilitySchemaCompartmentResponse>,
                         java.util.concurrent.Future<
                                 ChangeComputeImageCapabilitySchemaCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeComputeImageCapabilitySchemaCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -709,7 +746,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                                 ChangeDedicatedVmHostCompartmentRequest,
                                 ChangeDedicatedVmHostCompartmentResponse>,
                         java.util.concurrent.Future<ChangeDedicatedVmHostCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeDedicatedVmHostCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -752,7 +794,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeImageCompartmentRequest, ChangeImageCompartmentResponse>,
                         java.util.concurrent.Future<ChangeImageCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeImageCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -795,7 +842,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                                 ChangeInstanceCompartmentRequest,
                                 ChangeInstanceCompartmentResponse>,
                         java.util.concurrent.Future<ChangeInstanceCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeInstanceCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -840,7 +892,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                                 CreateAppCatalogSubscriptionRequest,
                                 CreateAppCatalogSubscriptionResponse>,
                         java.util.concurrent.Future<CreateAppCatalogSubscriptionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateAppCatalogSubscriptionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -886,7 +943,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                                 CreateComputeCapacityReservationRequest,
                                 CreateComputeCapacityReservationResponse>,
                         java.util.concurrent.Future<CreateComputeCapacityReservationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateComputeCapacityReservationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -933,7 +995,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                                 CreateComputeImageCapabilitySchemaRequest,
                                 CreateComputeImageCapabilitySchemaResponse>,
                         java.util.concurrent.Future<CreateComputeImageCapabilitySchemaResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateComputeImageCapabilitySchemaDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -976,7 +1043,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateDedicatedVmHostRequest, CreateDedicatedVmHostResponse>,
                         java.util.concurrent.Future<CreateDedicatedVmHostResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDedicatedVmHostDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1015,7 +1087,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateImageRequest, CreateImageResponse>,
                         java.util.concurrent.Future<CreateImageResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateImageDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1061,7 +1138,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                                 CreateInstanceConsoleConnectionRequest,
                                 CreateInstanceConsoleConnectionResponse>,
                         java.util.concurrent.Future<CreateInstanceConsoleConnectionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateInstanceConsoleConnectionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1517,7 +1599,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ExportImageRequest, ExportImageResponse>,
                         java.util.concurrent.Future<ExportImageResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getExportImageDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2367,7 +2454,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 LaunchInstanceRequest, LaunchInstanceResponse>,
                         java.util.concurrent.Future<LaunchInstanceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getLaunchInstanceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3498,7 +3590,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                                 UpdateComputeCapacityReservationRequest,
                                 UpdateComputeCapacityReservationResponse>,
                         java.util.concurrent.Future<UpdateComputeCapacityReservationResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateComputeCapacityReservationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3544,7 +3641,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                                 UpdateComputeImageCapabilitySchemaRequest,
                                 UpdateComputeImageCapabilitySchemaResponse>,
                         java.util.concurrent.Future<UpdateComputeImageCapabilitySchemaResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateComputeImageCapabilitySchemaDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3586,7 +3688,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateConsoleHistoryRequest, UpdateConsoleHistoryResponse>,
                         java.util.concurrent.Future<UpdateConsoleHistoryResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateConsoleHistoryDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3628,7 +3735,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateDedicatedVmHostRequest, UpdateDedicatedVmHostResponse>,
                         java.util.concurrent.Future<UpdateDedicatedVmHostResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDedicatedVmHostDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3667,7 +3779,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateImageRequest, UpdateImageResponse>,
                         java.util.concurrent.Future<UpdateImageResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateImageDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3707,7 +3824,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateInstanceRequest, UpdateInstanceResponse>,
                         java.util.concurrent.Future<UpdateInstanceResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateInstanceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3752,7 +3874,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                                 UpdateInstanceConsoleConnectionRequest,
                                 UpdateInstanceConsoleConnectionResponse>,
                         java.util.concurrent.Future<UpdateInstanceConsoleConnectionResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateInstanceConsoleConnectionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3794,7 +3921,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateVolumeAttachmentRequest, UpdateVolumeAttachmentResponse>,
                         java.util.concurrent.Future<UpdateVolumeAttachmentResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateVolumeAttachmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

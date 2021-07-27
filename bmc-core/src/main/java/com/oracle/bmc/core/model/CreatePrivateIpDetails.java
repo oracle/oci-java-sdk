@@ -134,7 +134,7 @@ public class CreatePrivateIpDetails {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -152,7 +152,7 @@ public class CreatePrivateIpDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -161,7 +161,7 @@ public class CreatePrivateIpDetails {
     /**
      * The hostname for the private IP. Used for DNS. The value
      * is the hostname portion of the private IP's fully qualified domain name (FQDN)
-     * (for example, `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+     * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
      * Must be unique across all VNICs in the subnet and comply with
      * [RFC 952](https://tools.ietf.org/html/rfc952) and
      * [RFC 1123](https://tools.ietf.org/html/rfc1123).
@@ -169,7 +169,7 @@ public class CreatePrivateIpDetails {
      * For more information, see
      * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * <p>
-     * Example: `bminstance-1`
+     * Example: {@code bminstance-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
@@ -180,7 +180,7 @@ public class CreatePrivateIpDetails {
      * the subnet's CIDR. If you don't specify a value, Oracle automatically
      * assigns a private IP address from the subnet.
      * <p>
-     * Example: `10.0.3.3`
+     * Example: {@code 10.0.3.3}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")

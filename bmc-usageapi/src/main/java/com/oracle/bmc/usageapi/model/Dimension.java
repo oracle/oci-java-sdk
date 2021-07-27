@@ -5,9 +5,9 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * The dimension used for filtering. Availabe dimensions are: \"service\", \"skuName\", \"skuPartNumber\", \"unit\", \"compartmentName\", \"compartmentPath\", \"compartmentId\", \"platform\", \"region\", \"logicalAd\", \"resourceId\", \"tenantId\", and \"tenantName\".
+ * The dimension used for filtering. Availabe dimensions are: "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", and "tenantName".
  * For example:
- * `[{value: \"COMPUTE\", key: \"service\"}]`
+ * {@code [{value: "COMPUTE", key: "service"}]}
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

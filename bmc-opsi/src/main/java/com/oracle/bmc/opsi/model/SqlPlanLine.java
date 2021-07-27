@@ -459,7 +459,7 @@ public class SqlPlanLine {
 
     /**
      * Version
-     * Example: `1`
+     * Example: {@code 1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
@@ -480,7 +480,7 @@ public class SqlPlanLine {
 
     /**
      * Collection time stamp
-     * Example: `\"2020-05-06T00:00:00.000Z\"`
+     * Example: {@code "2020-05-06T00:00:00.000Z"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
@@ -488,7 +488,7 @@ public class SqlPlanLine {
 
     /**
      * Operation
-     * Example: `\"SELECT STATEMENT\"`
+     * Example: {@code "SELECT STATEMENT"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
@@ -496,7 +496,7 @@ public class SqlPlanLine {
 
     /**
      * Remark
-     * Example: `\"\"`
+     * Example: {@code ""}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("remark")
@@ -504,7 +504,7 @@ public class SqlPlanLine {
 
     /**
      * Options
-     * Example: `\"RANGE SCAN\"`
+     * Example: {@code "RANGE SCAN"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("options")
@@ -512,7 +512,7 @@ public class SqlPlanLine {
 
     /**
      * Object Node
-     * Example: `\"Q4000\"`
+     * Example: {@code "Q4000"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectNode")
@@ -520,7 +520,7 @@ public class SqlPlanLine {
 
     /**
      * Object Owner
-     * Example: `\"TENANT_A#SCHEMA\"`
+     * Example: {@code "TENANT_A#SCHEMA"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectOwner")
@@ -528,7 +528,7 @@ public class SqlPlanLine {
 
     /**
      * Object Name
-     * Example: `\"PLAN_LINES_PK\"`
+     * Example: {@code "PLAN_LINES_PK"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
@@ -536,7 +536,7 @@ public class SqlPlanLine {
 
     /**
      * Object Alias
-     * Example: `\"PLAN_LINES@SEL$1\"`
+     * Example: {@code "PLAN_LINES@SEL$1"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectAlias")
@@ -544,7 +544,7 @@ public class SqlPlanLine {
 
     /**
      * Object Instance
-     * Example: `37472`
+     * Example: {@code 37472}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectInstance")
@@ -552,7 +552,7 @@ public class SqlPlanLine {
 
     /**
      * Object Type
-     * Example: `\"INDEX (UNIQUE)\"`
+     * Example: {@code "INDEX (UNIQUE)"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
@@ -560,7 +560,7 @@ public class SqlPlanLine {
 
     /**
      * Optimizer
-     * Example: `\"CLUSTER\"`
+     * Example: {@code "CLUSTER"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("optimizer")
@@ -568,7 +568,7 @@ public class SqlPlanLine {
 
     /**
      * Search Columns
-     * Example: `3`
+     * Example: {@code 3}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("searchColumns")
@@ -576,7 +576,7 @@ public class SqlPlanLine {
 
     /**
      * Identifier
-     * Example: `3`
+     * Example: {@code 3}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
@@ -584,7 +584,7 @@ public class SqlPlanLine {
 
     /**
      * Parent Identifier
-     * Example: `2`
+     * Example: {@code 2}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentIdentifier")
@@ -592,7 +592,7 @@ public class SqlPlanLine {
 
     /**
      * Depth
-     * Example: `3`
+     * Example: {@code 3}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("depth")
@@ -600,7 +600,7 @@ public class SqlPlanLine {
 
     /**
      * Position
-     * Example: `1`
+     * Example: {@code 1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("position")
@@ -608,7 +608,7 @@ public class SqlPlanLine {
 
     /**
      * Cost
-     * Example: `1`
+     * Example: {@code 1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cost")
@@ -616,7 +616,7 @@ public class SqlPlanLine {
 
     /**
      * Cardinality
-     * Example: `1`
+     * Example: {@code 1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cardinality")
@@ -624,7 +624,7 @@ public class SqlPlanLine {
 
     /**
      * Bytes
-     * Example: `150`
+     * Example: {@code 150}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bytes")
@@ -632,7 +632,7 @@ public class SqlPlanLine {
 
     /**
      * Other
-     * Example: ``
+     * Example:
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("other")
@@ -640,7 +640,7 @@ public class SqlPlanLine {
 
     /**
      * Other Tag
-     * Example: `\"PARALLEL_COMBINED_WITH_PARENT\"`
+     * Example: {@code "PARALLEL_COMBINED_WITH_PARENT"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("otherTag")
@@ -648,7 +648,7 @@ public class SqlPlanLine {
 
     /**
      * Partition start
-     * Example: `1`
+     * Example: {@code 1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partitionStart")
@@ -656,7 +656,7 @@ public class SqlPlanLine {
 
     /**
      * Partition stop
-     * Example: `2`
+     * Example: {@code 2}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partitionStop")
@@ -664,7 +664,7 @@ public class SqlPlanLine {
 
     /**
      * Partition identifier
-     * Example: `8`
+     * Example: {@code 8}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partitionIdentifier")
@@ -672,7 +672,7 @@ public class SqlPlanLine {
 
     /**
      * Distribution
-     * Example: `\"QC (RANDOM)\"`
+     * Example: {@code "QC (RANDOM)"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("distribution")
@@ -680,7 +680,7 @@ public class SqlPlanLine {
 
     /**
      * CPU cost
-     * Example: `7321`
+     * Example: {@code 7321}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCost")
@@ -688,7 +688,7 @@ public class SqlPlanLine {
 
     /**
      * IO cost
-     * Example: `1`
+     * Example: {@code 1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ioCost")
@@ -696,7 +696,7 @@ public class SqlPlanLine {
 
     /**
      * Time space
-     * Example: `15614000`
+     * Example: {@code 15614000}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tempSpace")
@@ -704,7 +704,7 @@ public class SqlPlanLine {
 
     /**
      * Access predicates
-     * Example: `\"\\\"RESOURCE_ID\\\"=:1 AND \\\"QUERY_ID\\\"=:2\"`
+     * Example: {@code "\\"RESOURCE_ID\\"=:1 AND \\"QUERY_ID\\"=:2"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessPredicates")
@@ -712,7 +712,7 @@ public class SqlPlanLine {
 
     /**
      * Filter predicates
-     * Example: `\"(INTERNAL_FUNCTION(\\\"J\\\".\\\"DATABASE_ROLE\\\") OR (\\\"J\\\".\\\"DATABASE_ROLE\\\" IS NULL AND SYS_CONTEXT('userenv','database_role')='PRIMARY'))\"`
+     * Example: {@code "(INTERNAL_FUNCTION(\\"J\\".\\"DATABASE_ROLE\\") OR (\\"J\\".\\"DATABASE_ROLE\\" IS NULL AND SYS_CONTEXT('userenv','database_role')='PRIMARY'))"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filterPredicates")
@@ -720,7 +720,7 @@ public class SqlPlanLine {
 
     /**
      * Projection
-     * Example: `\"COUNT(*)[22]\"`
+     * Example: {@code "COUNT(*)[22]"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projection")
@@ -728,7 +728,7 @@ public class SqlPlanLine {
 
     /**
      * Qblock Name
-     * Example: `\"SEL$1\"`
+     * Example: {@code "SEL$1"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("qblockName")
@@ -736,7 +736,7 @@ public class SqlPlanLine {
 
     /**
      * Total elapsed time
-     * Example: `1.2`
+     * Example: {@code 1.2}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("elapsedTimeInSec")
@@ -744,7 +744,7 @@ public class SqlPlanLine {
 
     /**
      * Other SQL
-     * Example: `\"<other_xml><info type=\\\"db_version\\\">18.0.0.0</info><info type=\\\"parse_schema\\\"><![CDATA[\\\"SYS\\\"]]></info><info type=\\\"plan_hash_full\\\">483892784</info><info type=\\\"plan_hash\\\">2709293936</info><info type=\\\"plan_hash_2\\\">483892784</info><outline_data><hint><![CDATA[IGNORE_OPTIM_EMBEDDED_HINTS]]></hint><hint><![CDATA[OPTIMIZER_FEATURES_ENABLE('18.1.0')]]></hint><hint><![CDATA[DB_VERSION('18.1.0')]]></hint><hint><![CDATA[OPT_PARAM('_b_tree_bitmap_plans' 'false')]]></hint><hint><![CDATA[OPT_PARAM('_optim_peek_user_binds' 'false')]]></hint><hint><![CDATA[OPT_PARAM('result_cache_mode' 'FORCE')]]></hint><hint><![CDATA[OPT_PARAM('_fix_control' '20648883:0 27745220:1 30001331:1 30142527:1 30539126:1')]]></hint><hint><![CDATA[OUTLINE_LEAF(@\\\"SEL$1\\\")]]></hint><hint><![CDATA[INDEX(@\\\"SEL$1\\\" \\\"USER$\\\"@\\\"SEL$1\\\" \\\"I_USER#\\\")]]></hint></outline_data></other_xml>\"`
+     * Example: {@code "<other_xml><info type=\\"db_version\\">18.0.0.0</info><info type=\\"parse_schema\\"><![CDATA[\\"SYS\\"]]></info><info type=\\"plan_hash_full\\">483892784</info><info type=\\"plan_hash\\">2709293936</info><info type=\\"plan_hash_2\\">483892784</info><outline_data><hint><![CDATA[IGNORE_OPTIM_EMBEDDED_HINTS]]></hint><hint><![CDATA[OPTIMIZER_FEATURES_ENABLE('18.1.0')]]></hint><hint><![CDATA[DB_VERSION('18.1.0')]]></hint><hint><![CDATA[OPT_PARAM('_b_tree_bitmap_plans' 'false')]]></hint><hint><![CDATA[OPT_PARAM('_optim_peek_user_binds' 'false')]]></hint><hint><![CDATA[OPT_PARAM('result_cache_mode' 'FORCE')]]></hint><hint><![CDATA[OPT_PARAM('_fix_control' '20648883:0 27745220:1 30001331:1 30142527:1 30539126:1')]]></hint><hint><![CDATA[OUTLINE_LEAF(@\\"SEL$1\\")]]></hint><hint><![CDATA[INDEX(@\\"SEL$1\\" \\"USER$\\"@\\"SEL$1\\" \\"I_USER#\\")]]></hint></outline_data></other_xml>"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("otherXML")

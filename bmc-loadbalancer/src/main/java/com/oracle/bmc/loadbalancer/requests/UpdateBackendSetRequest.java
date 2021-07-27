@@ -33,7 +33,7 @@ public class UpdateBackendSetRequest
     /**
      * The name of the backend set to update.
      * <p>
-     * Example: `example_backend_set`
+     * Example: {@code example_backend_set}
      *
      */
     private String backendSetName;

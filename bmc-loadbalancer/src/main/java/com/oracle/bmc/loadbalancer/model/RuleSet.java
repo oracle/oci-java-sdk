@@ -74,7 +74,7 @@ public class RuleSet {
      * The name for this set of rules. It must be unique and it cannot be changed. Avoid entering
      * confidential information.
      * <p>
-     * Example: `example_rule_set`
+     * Example: {@code example_rule_set}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")

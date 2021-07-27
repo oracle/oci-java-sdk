@@ -208,7 +208,7 @@ public class Vlan {
      * The VLAN's availability domain. This attribute will be null if this is a regional VLAN
      * rather than an AD-specific VLAN.
      * <p>
-     * Example: `Uocm:PHX-AD-1`
+     * Example: {@code Uocm:PHX-AD-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
@@ -218,7 +218,7 @@ public class Vlan {
      * The range of IPv4 addresses that will be used for layer 3 communication with
      * hosts outside the VLAN.
      * <p>
-     * Example: `192.168.1.0/24`
+     * Example: {@code 192.168.1.0/24}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
@@ -234,7 +234,7 @@ public class Vlan {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -252,7 +252,7 @@ public class Vlan {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -331,7 +331,7 @@ public class Vlan {
     /**
      * The IEEE 802.1Q VLAN tag of this VLAN.
      * <p>
-     * Example: `100`
+     * Example: {@code 100}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vlanTag")
@@ -346,7 +346,7 @@ public class Vlan {
     /**
      * The date and time the VLAN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

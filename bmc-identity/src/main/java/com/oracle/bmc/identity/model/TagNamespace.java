@@ -183,7 +183,7 @@ public class TagNamespace {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -192,7 +192,7 @@ public class TagNamespace {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -206,7 +206,7 @@ public class TagNamespace {
     @com.fasterxml.jackson.annotation.JsonProperty("isRetired")
     Boolean isRetired;
     /**
-     * The tagnamespace's current state. After creating a tagnamespace, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tagnamespace, make sure its `lifecycleState` is INACTIVE before using it.
+     * The tagnamespace's current state. After creating a tagnamespace, make sure its {@code lifecycleState} is ACTIVE before using it. After retiring a tagnamespace, make sure its {@code lifecycleState} is INACTIVE before using it.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -254,14 +254,14 @@ public class TagNamespace {
         }
     };
     /**
-     * The tagnamespace's current state. After creating a tagnamespace, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tagnamespace, make sure its `lifecycleState` is INACTIVE before using it.
+     * The tagnamespace's current state. After creating a tagnamespace, make sure its {@code lifecycleState} is ACTIVE before using it. After retiring a tagnamespace, make sure its {@code lifecycleState} is INACTIVE before using it.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
 
     /**
      * Date and time the tagNamespace was created, in the format defined by RFC3339.
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

@@ -179,7 +179,7 @@ public class CreateOnDemandHttpProbeDetails {
 
     /**
      * The probe timeout in seconds. Valid values: 10, 20, 30, and 60.
-     * The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
+     * The probe timeout must be less than or equal to {@code intervalInSeconds} for monitors.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
@@ -200,7 +200,7 @@ public class CreateOnDemandHttpProbeDetails {
     /**
      * A dictionary of HTTP request headers.
      * <p>
-     *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
+     *Note:* Monitors and probes do not support the use of the {@code Authorization} HTTP header.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("headers")

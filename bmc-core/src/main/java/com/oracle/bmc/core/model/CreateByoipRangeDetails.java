@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The information used to create a `ByoipRange` resource.
+ * The information used to create a {@code ByoipRange} resource.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -106,7 +106,7 @@ public class CreateByoipRangeDetails {
 
     /**
      * The BYOIP CIDR block. You can assign some or all of it to a public IP pool after it is validated.
-     * Example: `10.0.1.0/24`
+     * Example: {@code 10.0.1.0/24}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
@@ -123,7 +123,7 @@ public class CreateByoipRangeDetails {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -141,7 +141,7 @@ public class CreateByoipRangeDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")

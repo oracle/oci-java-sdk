@@ -10,10 +10,10 @@ package com.oracle.bmc.identity.model;
  * [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm). If you're new to policies, see
  * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
  * <p>
- * The word \"policy\" is used by people in different ways:
+ * The word "policy" is used by people in different ways:
  * <p>
  * An individual statement written in the policy language
- *   * A collection of statements in a single, named \"policy\" document (which has an Oracle Cloud ID (OCID) assigned to it)
+ *   * A collection of statements in a single, named "policy" document (which has an Oracle Cloud ID (OCID) assigned to it)
  *   * The overall body of policies your organization uses to control access to resources
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
@@ -224,13 +224,13 @@ public class Policy {
     /**
      * Date and time the policy was created, in the format defined by RFC3339.
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
     /**
-     * The policy's current state. After creating a policy, make sure its `lifecycleState` changes from CREATING to
+     * The policy's current state. After creating a policy, make sure its {@code lifecycleState} changes from CREATING to
      * ACTIVE before using it.
      *
      **/
@@ -281,7 +281,7 @@ public class Policy {
         }
     };
     /**
-     * The policy's current state. After creating a policy, make sure its `lifecycleState` changes from CREATING to
+     * The policy's current state. After creating a policy, make sure its {@code lifecycleState} changes from CREATING to
      * ACTIVE before using it.
      *
      **/
@@ -306,7 +306,7 @@ public class Policy {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -315,7 +315,7 @@ public class Policy {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

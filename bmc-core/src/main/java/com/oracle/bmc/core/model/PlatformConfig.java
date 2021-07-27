@@ -39,7 +39,7 @@ public class PlatformConfig {
 
     /**
      * The type of platform being configured. The only supported
-     * `type` is `AMD_MILAN_BM`.
+     * {@code type} is {@code AMD_MILAN_BM}.
      *
      **/
     @lombok.extern.slf4j.Slf4j

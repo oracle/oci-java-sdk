@@ -403,7 +403,12 @@ public class RedirectAsyncClient implements RedirectAsync {
                                 ChangeHttpRedirectCompartmentRequest,
                                 ChangeHttpRedirectCompartmentResponse>,
                         java.util.concurrent.Future<ChangeHttpRedirectCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeHttpRedirectCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -443,7 +448,12 @@ public class RedirectAsyncClient implements RedirectAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateHttpRedirectRequest, CreateHttpRedirectResponse>,
                         java.util.concurrent.Future<CreateHttpRedirectResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateHttpRedirectDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -601,7 +611,12 @@ public class RedirectAsyncClient implements RedirectAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateHttpRedirectRequest, UpdateHttpRedirectResponse>,
                         java.util.concurrent.Future<UpdateHttpRedirectResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateHttpRedirectDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

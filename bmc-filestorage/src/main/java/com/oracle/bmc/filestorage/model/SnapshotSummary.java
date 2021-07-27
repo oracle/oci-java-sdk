@@ -233,7 +233,7 @@ public class SnapshotSummary {
      * <p>
      * Avoid entering confidential information.
      * <p>
-     * Example: `Sunday`
+     * Example: {@code Sunday}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -243,7 +243,7 @@ public class SnapshotSummary {
      * The date and time the snapshot was created, expressed
      * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -251,8 +251,8 @@ public class SnapshotSummary {
 
     /**
      * An [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned.
-     * If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value.
-     * If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`.
+     * If this snapshot was not cloned, then the {@code provenanceId} is the same as the snapshot {@code id} value.
+     * If this snapshot was cloned, then the {@code provenanceId} value is the parent's {@code provenanceId}.
      * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
      *
      **/
@@ -277,7 +277,7 @@ public class SnapshotSummary {
      * Free-form tags for this resource. Each tag is a simple key-value pair
      *  with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -286,7 +286,7 @@ public class SnapshotSummary {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

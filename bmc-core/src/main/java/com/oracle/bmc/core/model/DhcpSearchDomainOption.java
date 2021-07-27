@@ -79,10 +79,10 @@ public class DhcpSearchDomainOption extends DhcpOption {
      * and [RFC 1123](https://tools.ietf.org/html/rfc1123). During a DNS query,
      * the OS will append this search domain name to the value being queried.
      * <p>
-     * If you set {@link DhcpDnsOption} to `VcnLocalPlusInternet`,
+     * If you set {@link DhcpDnsOption} to {@code VcnLocalPlusInternet},
      * and you assign a DNS label to the VCN during creation, the search domain name in the
      * VCN's default set of DHCP options is automatically set to the VCN domain
-     * (for example, `vcn1.oraclevcn.com`).
+     * (for example, {@code vcn1.oraclevcn.com}).
      * <p>
      * If you don't want to use a search domain name, omit this option from the
      * set of DHCP options. Do not include this option with an empty list

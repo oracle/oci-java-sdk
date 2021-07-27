@@ -5,7 +5,7 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * The supported work request `sort by` columns.
+ * The supported work request {@code sort by} columns.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")

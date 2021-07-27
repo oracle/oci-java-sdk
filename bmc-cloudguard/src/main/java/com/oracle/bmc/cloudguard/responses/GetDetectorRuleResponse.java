@@ -18,7 +18,7 @@ public class GetDetectorRuleResponse {
     private final int __httpStatusCode__;
 
     /**
-     * For optimistic concurrency control. See `if-match`.
+     * For optimistic concurrency control. See {@code if-match}.
      *
      */
     private String etag;
@@ -32,7 +32,7 @@ public class GetDetectorRuleResponse {
 
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. Include this value as the `page` parameter for the
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
      * subsequent GET request to get the next batch of items.
      *
      */

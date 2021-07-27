@@ -71,7 +71,7 @@ public class IdentityStripeDetails {
 
     /**
      * Name of the Identity Cloud Service instance in My Services to be used.
-     * Example: `secondstripe`
+     * Example: {@code secondstripe}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
@@ -79,7 +79,7 @@ public class IdentityStripeDetails {
 
     /**
      * Value of the Identity Cloud Service tenancy.
-     * Example: `idcs-8416ebdd0d674f84803f4193cce026e9`
+     * Example: {@code idcs-8416ebdd0d674f84803f4193cce026e9}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancy")

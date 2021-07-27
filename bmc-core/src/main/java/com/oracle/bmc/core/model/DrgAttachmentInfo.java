@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The `DrgAttachmentInfo` resource contains the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment.
+ * The {@code DrgAttachmentInfo} resource contains the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

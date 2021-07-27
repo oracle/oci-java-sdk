@@ -32,10 +32,10 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
     /**
      * The page at which to start retrieving results.
      * <p>
-     * You get this value from the `opc-next-page` header in a previous list request.
+     * You get this value from the {@code opc-next-page} header in a previous list request.
      * To retireve the first page, omit this query parameter.
      * <p>
-     * Example: `MToxMA==`
+     * Example: {@code MToxMA==}
      *
      */
     private String page;
@@ -46,17 +46,17 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
     private Integer limit;
 
     /**
-     * The field to sort by. You can specify only one sort order. If no value is specified, then the default is `TIMESTAMP`.
+     * The field to sort by. You can specify only one sort order. If no value is specified, then the default is {@code TIMESTAMP}.
      * <p>
-     * The default sort order for both `TIMESTAMP` and `MESSAGE` is ascending.
+     * The default sort order for both {@code TIMESTAMP} and {@code MESSAGE} is ascending.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can specify only one sort order. If no value is specified, then the default is `TIMESTAMP`.
+     * The field to sort by. You can specify only one sort order. If no value is specified, then the default is {@code TIMESTAMP}.
      * <p>
-     * The default sort order for both `TIMESTAMP` and `MESSAGE` is ascending.
+     * The default sort order for both {@code TIMESTAMP} and {@code MESSAGE} is ascending.
      *
      **/
     public enum SortBy {
@@ -92,12 +92,12 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
     /**
-     * Sort the results in this order, use either `ASC` (ascending) or `DESC` (descending).
+     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
      */
     private SortOrder sortOrder;
 
     /**
-     * Sort the results in this order, use either `ASC` (ascending) or `DESC` (descending).
+     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
      **/
     public enum SortOrder {
         Asc("ASC"),

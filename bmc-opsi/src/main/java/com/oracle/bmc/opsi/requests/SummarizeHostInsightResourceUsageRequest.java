@@ -104,14 +104,14 @@ public class SummarizeHostInsightResourceUsageRequest
         }
     };
     /**
-     * Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
+     * Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      */
     private java.util.List<String> id;
 
     /**
-     * For list pagination. The value of the `opc-next-page` response header from
-     * the previous \"List\" call. For important details about how pagination works,
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
      * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
      *
      */
@@ -129,6 +129,43 @@ public class SummarizeHostInsightResourceUsageRequest
      *
      */
     private String opcRequestId;
+
+    /**
+     * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
+     */
+    private java.util.List<String> definedTagEquals;
+
+    /**
+     * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+     * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+     *
+     */
+    private java.util.List<String> freeformTagEquals;
+
+    /**
+     * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+     * or "{namespace}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
+     */
+    private java.util.List<String> definedTagExists;
+
+    /**
+     * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+     * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for different tag names are interpreted as "AND".
+     *
+     */
+    private java.util.List<String> freeformTagExists;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -175,6 +212,10 @@ public class SummarizeHostInsightResourceUsageRequest
             page(o.getPage());
             percentile(o.getPercentile());
             opcRequestId(o.getOpcRequestId());
+            definedTagEquals(o.getDefinedTagEquals());
+            freeformTagEquals(o.getFreeformTagEquals());
+            definedTagExists(o.getDefinedTagExists());
+            freeformTagExists(o.getFreeformTagExists());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

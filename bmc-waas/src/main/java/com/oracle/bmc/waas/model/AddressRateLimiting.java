@@ -103,19 +103,19 @@ public class AddressRateLimiting {
     Boolean isEnabled;
 
     /**
-     * The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
+     * The number of allowed requests per second from one IP address. If unspecified, defaults to {@code 1}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedRatePerAddress")
     Integer allowedRatePerAddress;
 
     /**
-     * The maximum number of requests allowed to be queued before subsequent requests are dropped. If unspecified, defaults to `10`.
+     * The maximum number of requests allowed to be queued before subsequent requests are dropped. If unspecified, defaults to {@code 10}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxDelayedCountPerAddress")
     Integer maxDelayedCountPerAddress;
 
     /**
-     * The response status code returned when a request is blocked. If unspecified, defaults to `503`. The list of available response codes: `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
+     * The response status code returned when a request is blocked. If unspecified, defaults to {@code 503}. The list of available response codes: {@code 400}, {@code 401}, {@code 403}, {@code 404}, {@code 405}, {@code 408}, {@code 409}, {@code 411}, {@code 412}, {@code 413}, {@code 414}, {@code 415}, {@code 416}, {@code 422}, {@code 494}, {@code 495}, {@code 496}, {@code 497}, {@code 499}, {@code 500}, {@code 501}, {@code 502}, {@code 503}, {@code 504}, {@code 507}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockResponseCode")
     Integer blockResponseCode;

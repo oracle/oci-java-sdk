@@ -399,7 +399,12 @@ public class WaasAsyncClient implements WaasAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 AcceptRecommendationsRequest, AcceptRecommendationsResponse>,
                         java.util.concurrent.Future<AcceptRecommendationsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getProtectionRuleKeys(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -484,7 +489,12 @@ public class WaasAsyncClient implements WaasAsync {
                                 ChangeAddressListCompartmentRequest,
                                 ChangeAddressListCompartmentResponse>,
                         java.util.concurrent.Future<ChangeAddressListCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeAddressListCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -529,7 +539,12 @@ public class WaasAsyncClient implements WaasAsync {
                                 ChangeCertificateCompartmentRequest,
                                 ChangeCertificateCompartmentResponse>,
                         java.util.concurrent.Future<ChangeCertificateCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeCertificateCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -576,7 +591,13 @@ public class WaasAsyncClient implements WaasAsync {
                                 ChangeCustomProtectionRuleCompartmentRequest,
                                 ChangeCustomProtectionRuleCompartmentResponse>,
                         java.util.concurrent.Future<ChangeCustomProtectionRuleCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeCustomProtectionRuleCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -622,7 +643,12 @@ public class WaasAsyncClient implements WaasAsync {
                                 ChangeWaasPolicyCompartmentRequest,
                                 ChangeWaasPolicyCompartmentResponse>,
                         java.util.concurrent.Future<ChangeWaasPolicyCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeWaasPolicyCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -662,7 +688,12 @@ public class WaasAsyncClient implements WaasAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateAddressListRequest, CreateAddressListResponse>,
                         java.util.concurrent.Future<CreateAddressListResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateAddressListDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -702,7 +733,12 @@ public class WaasAsyncClient implements WaasAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateCertificateRequest, CreateCertificateResponse>,
                         java.util.concurrent.Future<CreateCertificateResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateCertificateDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -747,7 +783,12 @@ public class WaasAsyncClient implements WaasAsync {
                                 CreateCustomProtectionRuleRequest,
                                 CreateCustomProtectionRuleResponse>,
                         java.util.concurrent.Future<CreateCustomProtectionRuleResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateCustomProtectionRuleDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -787,7 +828,12 @@ public class WaasAsyncClient implements WaasAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateWaasPolicyRequest, CreateWaasPolicyResponse>,
                         java.util.concurrent.Future<CreateWaasPolicyResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateWaasPolicyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2266,7 +2312,12 @@ public class WaasAsyncClient implements WaasAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 PurgeCacheRequest, PurgeCacheResponse>,
                         java.util.concurrent.Future<PurgeCacheResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getPurgeCache(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2306,7 +2357,12 @@ public class WaasAsyncClient implements WaasAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateAccessRulesRequest, UpdateAccessRulesResponse>,
                         java.util.concurrent.Future<UpdateAccessRulesResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAccessRules(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2345,7 +2401,12 @@ public class WaasAsyncClient implements WaasAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateAddressListRequest, UpdateAddressListResponse>,
                         java.util.concurrent.Future<UpdateAddressListResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateAddressListDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2385,7 +2446,12 @@ public class WaasAsyncClient implements WaasAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateCachingRulesRequest, UpdateCachingRulesResponse>,
                         java.util.concurrent.Future<UpdateCachingRulesResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCachingRulesDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2425,7 +2491,12 @@ public class WaasAsyncClient implements WaasAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateCaptchasRequest, UpdateCaptchasResponse>,
                         java.util.concurrent.Future<UpdateCaptchasResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCaptchas(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2464,7 +2535,12 @@ public class WaasAsyncClient implements WaasAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateCertificateRequest, UpdateCertificateResponse>,
                         java.util.concurrent.Future<UpdateCertificateResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCertificateDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2509,7 +2585,12 @@ public class WaasAsyncClient implements WaasAsync {
                                 UpdateCustomProtectionRuleRequest,
                                 UpdateCustomProtectionRuleResponse>,
                         java.util.concurrent.Future<UpdateCustomProtectionRuleResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCustomProtectionRuleDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2555,7 +2636,12 @@ public class WaasAsyncClient implements WaasAsync {
                                 UpdateDeviceFingerprintChallengeRequest,
                                 UpdateDeviceFingerprintChallengeResponse>,
                         java.util.concurrent.Future<UpdateDeviceFingerprintChallengeResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDeviceFingerprintChallengeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2596,7 +2682,12 @@ public class WaasAsyncClient implements WaasAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateGoodBotsRequest, UpdateGoodBotsResponse>,
                         java.util.concurrent.Future<UpdateGoodBotsResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getGoodBots(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2642,7 +2733,12 @@ public class WaasAsyncClient implements WaasAsync {
                                 UpdateHumanInteractionChallengeRequest,
                                 UpdateHumanInteractionChallengeResponse>,
                         java.util.concurrent.Future<UpdateHumanInteractionChallengeResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateHumanInteractionChallengeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2683,7 +2779,12 @@ public class WaasAsyncClient implements WaasAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateJsChallengeRequest, UpdateJsChallengeResponse>,
                         java.util.concurrent.Future<UpdateJsChallengeResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateJsChallengeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2723,7 +2824,12 @@ public class WaasAsyncClient implements WaasAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdatePolicyConfigRequest, UpdatePolicyConfigResponse>,
                         java.util.concurrent.Future<UpdatePolicyConfigResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdatePolicyConfigDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2764,7 +2870,12 @@ public class WaasAsyncClient implements WaasAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateProtectionRulesRequest, UpdateProtectionRulesResponse>,
                         java.util.concurrent.Future<UpdateProtectionRulesResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getProtectionRules(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2806,7 +2917,12 @@ public class WaasAsyncClient implements WaasAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateProtectionSettingsRequest, UpdateProtectionSettingsResponse>,
                         java.util.concurrent.Future<UpdateProtectionSettingsResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateProtectionSettingsDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2845,7 +2961,12 @@ public class WaasAsyncClient implements WaasAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateThreatFeedsRequest, UpdateThreatFeedsResponse>,
                         java.util.concurrent.Future<UpdateThreatFeedsResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getThreatFeeds(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2885,7 +3006,12 @@ public class WaasAsyncClient implements WaasAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateWaasPolicyRequest, UpdateWaasPolicyResponse>,
                         java.util.concurrent.Future<UpdateWaasPolicyResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateWaasPolicyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2932,7 +3058,12 @@ public class WaasAsyncClient implements WaasAsync {
                                 UpdateWaasPolicyCustomProtectionRulesRequest,
                                 UpdateWaasPolicyCustomProtectionRulesResponse>,
                         java.util.concurrent.Future<UpdateWaasPolicyCustomProtectionRulesResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCustomProtectionRulesDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2978,7 +3109,12 @@ public class WaasAsyncClient implements WaasAsync {
                                 UpdateWafAddressRateLimitingRequest,
                                 UpdateWafAddressRateLimitingResponse>,
                         java.util.concurrent.Future<UpdateWafAddressRateLimitingResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateWafAddressRateLimitingDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3018,7 +3154,12 @@ public class WaasAsyncClient implements WaasAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateWafConfigRequest, UpdateWafConfigResponse>,
                         java.util.concurrent.Future<UpdateWafConfigResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateWafConfigDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3058,7 +3199,12 @@ public class WaasAsyncClient implements WaasAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateWhitelistsRequest, UpdateWhitelistsResponse>,
                         java.util.concurrent.Future<UpdateWhitelistsResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getWhitelists(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

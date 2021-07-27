@@ -8,11 +8,11 @@ package com.oracle.bmc.core.model;
  * The platform configuration requested for the instance.
  * <p>
  * If you provide the parameter, the instance is created with the platform configuration that you specify.
- * For any values that you omit, the instance uses the default configuration values for the `shape` that you
- * specify. If you don't provide the parameter, the default values for the `shape` are used.
+ * For any values that you omit, the instance uses the default configuration values for the {@code shape} that you
+ * specify. If you don't provide the parameter, the default values for the {@code shape} are used.
  * <p>
  * Each shape only supports certain configurable values. If the values that you provide are not valid for the
- * specified `shape`, an error is returned.
+ * specified {@code shape}, an error is returned.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -46,7 +46,7 @@ public class LaunchInstancePlatformConfig {
 
     /**
      * The type of platform being configured. The only supported
-     * `type` is `AMD_MILAN_BM`
+     * {@code type} is {@code AMD_MILAN_BM}
      *
      **/
     public enum Type {

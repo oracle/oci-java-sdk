@@ -36,7 +36,7 @@ public class ListAutonomousExadataInfrastructuresRequest
     private String page;
 
     /**
-     * The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+     * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
      * <p>
      **Note:** If you do not include the availability domain filter, the resources are grouped by availability domain, then sorted.
      *
@@ -44,7 +44,7 @@ public class ListAutonomousExadataInfrastructuresRequest
     private SortBy sortBy;
 
     /**
-     * The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+     * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
      * <p>
      **Note:** If you do not include the availability domain filter, the resources are grouped by availability domain, then sorted.
      *
@@ -82,12 +82,12 @@ public class ListAutonomousExadataInfrastructuresRequest
         }
     };
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      **/
     public enum SortOrder {
         Asc("ASC"),

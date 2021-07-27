@@ -72,7 +72,7 @@ public class UpdateRoutingPolicyDetails {
     }
 
     /**
-     * The version of the language in which `condition` of `rules` are composed.
+     * The version of the language in which {@code condition} of {@code rules} are composed.
      *
      **/
     public enum ConditionLanguageVersion {
@@ -107,7 +107,7 @@ public class UpdateRoutingPolicyDetails {
         }
     };
     /**
-     * The version of the language in which `condition` of `rules` are composed.
+     * The version of the language in which {@code condition} of {@code rules} are composed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("conditionLanguageVersion")

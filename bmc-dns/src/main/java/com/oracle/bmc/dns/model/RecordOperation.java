@@ -7,7 +7,7 @@ package com.oracle.bmc.dns.model;
 /**
  * An extension of the existing record resource, describing either a
  * precondition, an add, or a remove. Preconditions check all fields,
- * including read-only data like `recordHash` and `rrsetVersion`.
+ * including read-only data like {@code recordHash} and {@code rrsetVersion}.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -197,22 +197,22 @@ public class RecordOperation {
      * A description of how a record relates to a PATCH operation.
      * <p>
      *
-     * - `REQUIRE` indicates a precondition that record data **must** already exist.
-     * - `PROHIBIT` indicates a precondition that record data **must not** already exist.
-     * - `ADD` indicates that record data **must** exist after successful application.
-     * - `REMOVE` indicates that record data **must not** exist after successful application.
+     * - {@code REQUIRE} indicates a precondition that record data **must** already exist.
+     * - {@code PROHIBIT} indicates a precondition that record data **must not** already exist.
+     * - {@code ADD} indicates that record data **must** exist after successful application.
+     * - {@code REMOVE} indicates that record data **must not** exist after successful application.
      * <p>
      *
-     *   **Note:** `ADD` and `REMOVE` operations can succeed even if
+     *   **Note:** {@code ADD} and {@code REMOVE} operations can succeed even if
      *   they require no changes when applied, such as when the described
      *   records are already present or absent.
      * <p>
      *
-     *   **Note:** `ADD` and `REMOVE` operations can describe changes for
+     *   **Note:** {@code ADD} and {@code REMOVE} operations can describe changes for
      *   more than one record.
      * <p>
      *
-     *   **Example:** `{ \"domain\": \"www.example.com\", \"rtype\": \"AAAA\", \"ttl\": 60 }`
+     *   **Example:** {@code { "domain": "www.example.com", "rtype": "AAAA", "ttl": 60 }}
      *   specifies a new TTL for every record in the www.example.com AAAA RRSet.
      *
      **/
@@ -254,22 +254,22 @@ public class RecordOperation {
      * A description of how a record relates to a PATCH operation.
      * <p>
      *
-     * - `REQUIRE` indicates a precondition that record data **must** already exist.
-     * - `PROHIBIT` indicates a precondition that record data **must not** already exist.
-     * - `ADD` indicates that record data **must** exist after successful application.
-     * - `REMOVE` indicates that record data **must not** exist after successful application.
+     * - {@code REQUIRE} indicates a precondition that record data **must** already exist.
+     * - {@code PROHIBIT} indicates a precondition that record data **must not** already exist.
+     * - {@code ADD} indicates that record data **must** exist after successful application.
+     * - {@code REMOVE} indicates that record data **must not** exist after successful application.
      * <p>
      *
-     *   **Note:** `ADD` and `REMOVE` operations can succeed even if
+     *   **Note:** {@code ADD} and {@code REMOVE} operations can succeed even if
      *   they require no changes when applied, such as when the described
      *   records are already present or absent.
      * <p>
      *
-     *   **Note:** `ADD` and `REMOVE` operations can describe changes for
+     *   **Note:** {@code ADD} and {@code REMOVE} operations can describe changes for
      *   more than one record.
      * <p>
      *
-     *   **Example:** `{ \"domain\": \"www.example.com\", \"rtype\": \"AAAA\", \"ttl\": 60 }`
+     *   **Example:** {@code { "domain": "www.example.com", "rtype": "AAAA", "ttl": 60 }}
      *   specifies a new TTL for every record in the www.example.com AAAA RRSet.
      *
      **/

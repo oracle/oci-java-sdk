@@ -81,19 +81,19 @@ public class SqlInsightAggregation {
 
     /**
      * Insight text.
-     * For example `Degrading SQLs`, `Variant SQLs`,
-     *   `Inefficient SQLs`, `Improving SQLs`, `SQLs with Plan Changes`,
-     *   `Degrading SQLs have increasing IO Time above 50%`,
-     *   `Degrading SQLs are variant`,
-     *   `2 of the 2 variant SQLs have plan changes`,
-     *   `Inefficient SQLs have increasing CPU Time above 50%
+     * For example {@code Degrading SQLs}, {@code Variant SQLs},
+     *   {@code Inefficient SQLs}, {@code Improving SQLs}, {@code SQLs with Plan Changes},
+     *   {@code Degrading SQLs have increasing IO Time above 50%},
+     *   {@code Degrading SQLs are variant},
+     *   {@code 2 of the 2 variant SQLs have plan changes},
+     *   Inefficient SQLs have increasing CPU Time above 50%
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     String text;
 
     /**
-     * SQL counts for a given insight. For example insight text `2 of 10 SQLs have degrading response time` will have values as [2,10]\"
+     * SQL counts for a given insight. For example insight text {@code 2 of 10 SQLs have degrading response time} will have values as [2,10]"
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("values")

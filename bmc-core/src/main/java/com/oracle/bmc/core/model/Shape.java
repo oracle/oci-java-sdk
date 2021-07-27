@@ -369,7 +369,7 @@ public class Shape {
     /**
      * A short description of the graphics processing unit (GPU) available for this shape.
      * <p>
-     * If the shape does not have any GPUs, this field is `null`.
+     * If the shape does not have any GPUs, this field is {@code null}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gpuDescription")
@@ -385,7 +385,7 @@ public class Shape {
     /**
      * The aggregate size of the local disks available for this shape, in gigabytes.
      * <p>
-     * If the shape does not have any local disks, this field is `null`.
+     * If the shape does not have any local disks, this field is {@code null}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("localDisksTotalSizeInGBs")
@@ -394,7 +394,7 @@ public class Shape {
     /**
      * A short description of the local disks available for this shape.
      * <p>
-     * If the shape does not have any local disks, this field is `null`.
+     * If the shape does not have any local disks, this field is {@code null}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("localDiskDescription")

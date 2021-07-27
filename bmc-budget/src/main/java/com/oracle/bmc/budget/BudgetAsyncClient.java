@@ -398,7 +398,12 @@ public class BudgetAsyncClient implements BudgetAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateAlertRuleRequest, CreateAlertRuleResponse>,
                         java.util.concurrent.Future<CreateAlertRuleResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateAlertRuleDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -437,7 +442,12 @@ public class BudgetAsyncClient implements BudgetAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateBudgetRequest, CreateBudgetResponse>,
                         java.util.concurrent.Future<CreateBudgetResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateBudgetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -704,7 +714,12 @@ public class BudgetAsyncClient implements BudgetAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateAlertRuleRequest, UpdateAlertRuleResponse>,
                         java.util.concurrent.Future<UpdateAlertRuleResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateAlertRuleDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -742,7 +757,12 @@ public class BudgetAsyncClient implements BudgetAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateBudgetRequest, UpdateBudgetResponse>,
                         java.util.concurrent.Future<UpdateBudgetResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateBudgetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

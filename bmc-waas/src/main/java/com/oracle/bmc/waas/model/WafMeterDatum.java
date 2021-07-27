@@ -215,7 +215,7 @@ public class WafMeterDatum {
     Integer trafficInBytes;
 
     /**
-     * The tag slug for the specified `waasPolicyId`.
+     * The tag slug for the specified {@code waasPolicyId}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagSlug")
     byte[] tagSlug;

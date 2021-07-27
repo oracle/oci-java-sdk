@@ -282,7 +282,7 @@ public class WorkRequest {
     /**
      * The date and time when the work request was created.
      * Format is defined by RFC3339.
-     * Example: `2020-01-25T21:10:29.600Z`
+     * Example: {@code 2020-01-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
@@ -291,7 +291,7 @@ public class WorkRequest {
     /**
      * The date and time when the work request transitioned from ACCEPTED to IN_PROGRESS.
      * Format is defined by RFC3339.
-     * Example: `2020-01-25T21:10:29.600Z`
+     * Example: {@code 2020-01-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
@@ -300,7 +300,7 @@ public class WorkRequest {
     /**
      * The date and time when the work request reached a terminal state (FAILED or SUCCEEDED).
      * Format is defined by RFC3339.
-     * Example: `2020-01-25T21:10:29.600Z`
+     * Example: {@code 2020-01-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")

@@ -101,7 +101,7 @@ public class UpdateBackendSetDetails {
      * The network load balancer policy for the backend set. To get a list of available policies, use the
      * {@link #listNetworkLoadBalancersPolicies(ListNetworkLoadBalancersPoliciesRequest) listNetworkLoadBalancersPolicies} operation.
      * <p>
-     * Example: `FIVE_TUPLE`
+     * Example: {@code FIVE_TUPLE}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policy")

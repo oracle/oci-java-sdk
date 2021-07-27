@@ -119,7 +119,7 @@ public class DynectMigrationDetails {
     String password;
 
     /**
-     * A map of fully-qualified domain names (FQDNs) to an array of `MigrationReplacement` objects.
+     * A map of fully-qualified domain names (FQDNs) to an array of {@code MigrationReplacement} objects.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("httpRedirectReplacements")

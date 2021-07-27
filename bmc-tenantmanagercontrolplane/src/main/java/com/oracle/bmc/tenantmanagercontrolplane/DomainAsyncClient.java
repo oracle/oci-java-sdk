@@ -398,7 +398,12 @@ public class DomainAsyncClient implements DomainAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateDomainRequest, CreateDomainResponse>,
                         java.util.concurrent.Future<CreateDomainResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDomainDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -548,7 +553,12 @@ public class DomainAsyncClient implements DomainAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateDomainRequest, UpdateDomainResponse>,
                         java.util.concurrent.Future<UpdateDomainResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDomainDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

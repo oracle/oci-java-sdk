@@ -108,7 +108,7 @@ public class CreateEmailDomainDetails {
     /**
      * The name of the email domain in the Internet Domain Name System (DNS).
      * The email domain name must be unique in the region for this tenancy.
-     * Domain names limited to ASCII characters use alphanumeric, dash (\"-\"), and dot (\".\") characters.
+     * Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters.
      * The dash and dot are only allowed between alphanumeric characters.
      * For details, please see: https://tools.ietf.org/html/rfc5321#section-4.1.2
      * Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
@@ -136,7 +136,7 @@ public class CreateEmailDomainDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -146,7 +146,7 @@ public class CreateEmailDomainDetails {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

@@ -188,11 +188,11 @@ public class UpdateFolderDetails {
      * A map of maps that contains the properties which are specific to the folder type. Each folder type
      * definition defines it's set of required and optional properties. The map keys are category names and the
      * values are maps of property name to property value. Every property is contained inside of a category. Most
-     * folders have required properties within the \"default\" category. To determine the set of optional and
+     * folders have required properties within the "default" category. To determine the set of optional and
      * required properties for a folder type, a query can be done on '/types?type=folder' that returns a
      * collection of all folder types. The appropriate folder type, which includes definitions of all of
      * it's properties, can be identified from this collection.
-     * Example: `{\"properties\": { \"default\": { \"key1\": \"value1\"}}}`
+     * Example: {@code {"properties": { "default": { "key1": "value1"}}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")

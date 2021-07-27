@@ -5,7 +5,7 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * Description of `OdaServiceInstance` object.
+ * Description of {@code OdaServiceInstance} object.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -422,7 +422,7 @@ public class OdaInstance {
 
     /**
      * A message that describes the current state in more detail.
-     * For example, actionable information about an instance that's in the `FAILED` state.
+     * For example, actionable information about an instance that's in the {@code FAILED} state.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stateMessage")
@@ -430,7 +430,7 @@ public class OdaInstance {
 
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -438,7 +438,7 @@ public class OdaInstance {
 
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

@@ -33,25 +33,25 @@ public class ListPingProbeResultsRequest
     private String opcRequestId;
 
     /**
-     * The maximum number of items to return in a paginated \"List\" call.
+     * The maximum number of items to return in a paginated "List" call.
      *
      */
     private Integer limit;
 
     /**
-     * The value of the `opc-next-page` response header
-     * from the previous \"List\" call.
+     * The value of the {@code opc-next-page} response header
+     * from the previous "List" call.
      *
      */
     private String page;
 
     /**
-     * Returns results with a `startTime` equal to or greater than the specified value.
+     * Returns results with a {@code startTime} equal to or greater than the specified value.
      */
     private Double startTimeGreaterThanOrEqualTo;
 
     /**
-     * Returns results with a `startTime` equal to or less than the specified value.
+     * Returns results with a {@code startTime} equal to or less than the specified value.
      */
     private Double startTimeLessThanOrEqualTo;
 
@@ -96,7 +96,7 @@ public class ListPingProbeResultsRequest
         }
     };
     /**
-     * Filters results that match the `target`.
+     * Filters results that match the {@code target}.
      */
     private String target;
 

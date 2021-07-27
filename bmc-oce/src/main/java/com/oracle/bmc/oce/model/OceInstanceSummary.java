@@ -563,7 +563,7 @@ public class OceInstanceSummary {
 
     /**
      * SERVICE data.
-     * Example: `{\"service\": {\"IDCS\": \"value\"}}`
+     * Example: {@code {"service": {"IDCS": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("service")
@@ -571,7 +571,7 @@ public class OceInstanceSummary {
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -579,7 +579,7 @@ public class OceInstanceSummary {
 
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -587,7 +587,7 @@ public class OceInstanceSummary {
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")

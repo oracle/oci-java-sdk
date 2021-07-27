@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * A `ConfiguredType` represents a type that has built-in configuration to the type itself. An example is a `SSN` type whose basic type is `VARCHAR`, but the type itself also has a built-in configuration like length=10.
+ * A {@code ConfiguredType} represents a type that has built-in configuration to the type itself. An example is a {@code SSN} type whose basic type is {@code VARCHAR}, but the type itself also has a built-in configuration like length=10.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

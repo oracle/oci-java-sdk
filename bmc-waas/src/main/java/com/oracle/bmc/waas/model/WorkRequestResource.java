@@ -161,7 +161,7 @@ public class WorkRequestResource {
     String identifier;
 
     /**
-     * The URI path used while performing a `GET` to access the resource metadata.
+     * The URI path used while performing a {@code GET} to access the resource metadata.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
     String entityUri;

@@ -309,7 +309,7 @@ public class CreateScheduledJobDetails {
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -317,7 +317,7 @@ public class CreateScheduledJobDetails {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

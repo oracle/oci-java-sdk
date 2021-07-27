@@ -133,7 +133,7 @@ public class CreateFileSystemDetails {
     /**
      * The availability domain to create the file system in.
      * <p>
-     * Example: `Uocm:PHX-AD-1`
+     * Example: {@code Uocm:PHX-AD-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
@@ -149,7 +149,7 @@ public class CreateFileSystemDetails {
      * A user-friendly name. It does not have to be unique, and it is changeable.
      * Avoid entering confidential information.
      * <p>
-     * Example: `My file system`
+     * Example: {@code My file system}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -159,7 +159,7 @@ public class CreateFileSystemDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair
      *  with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -168,7 +168,7 @@ public class CreateFileSystemDetails {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

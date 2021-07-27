@@ -38,7 +38,7 @@ public class CreateJobDetails {
 
     /**
      * The name of the job. Valid characters are uppercase or lowercase letters,
-     * numbers, and \"_\". The name of the job cannot be modified. It must be unique
+     * numbers, and "_". The name of the job cannot be modified. It must be unique
      * in the compartment and must begin with an alphabetic character.
      *
      **/
@@ -82,7 +82,7 @@ public class CreateJobDetails {
     Job.ScheduleType scheduleType;
 
     /**
-     * The job timeout duration, which is expressed like \"1h 10m 15s\".
+     * The job timeout duration, which is expressed like "1h 10m 15s".
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeout")
     String timeout;

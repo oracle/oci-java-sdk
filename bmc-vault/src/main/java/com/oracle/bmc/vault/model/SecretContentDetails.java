@@ -42,11 +42,11 @@ public class SecretContentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
     /**
-     * The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version
-     * that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example,
-     * you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system.
-     * When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating
-     * a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
+     * The rotation state of the secret content. The default is {@code CURRENT}, meaning that the secret is currently in use. A secret version
+     * that you mark as {@code PENDING} is staged and available for use, but you don't yet want to rotate it into current, active use. For example,
+     * you might create or update a secret and mark its rotation state as {@code PENDING} if you haven't yet updated the secret on the target system.
+     * When creating a secret, only the value {@code CURRENT} is applicable, although the value {@code LATEST} is also automatically applied. When updating
+     * a secret, you can specify a version's rotation state as either {@code CURRENT} or {@code PENDING}.
      *
      **/
     public enum Stage {
@@ -82,11 +82,11 @@ public class SecretContentDetails {
         }
     };
     /**
-     * The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version
-     * that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example,
-     * you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system.
-     * When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating
-     * a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
+     * The rotation state of the secret content. The default is {@code CURRENT}, meaning that the secret is currently in use. A secret version
+     * that you mark as {@code PENDING} is staged and available for use, but you don't yet want to rotate it into current, active use. For example,
+     * you might create or update a secret and mark its rotation state as {@code PENDING} if you haven't yet updated the secret on the target system.
+     * When creating a secret, only the value {@code CURRENT} is applicable, although the value {@code LATEST} is also automatically applied. When updating
+     * a secret, you can specify a version's rotation state as either {@code CURRENT} or {@code PENDING}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stage")

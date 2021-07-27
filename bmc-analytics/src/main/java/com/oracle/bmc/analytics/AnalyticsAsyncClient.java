@@ -404,7 +404,12 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                                 ChangeAnalyticsInstanceCompartmentRequest,
                                 ChangeAnalyticsInstanceCompartmentResponse>,
                         java.util.concurrent.Future<ChangeAnalyticsInstanceCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -452,7 +457,13 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                                 ChangeAnalyticsInstanceNetworkEndpointRequest,
                                 ChangeAnalyticsInstanceNetworkEndpointResponse>,
                         java.util.concurrent.Future<ChangeAnalyticsInstanceNetworkEndpointResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeAnalyticsInstanceNetworkEndpointDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -495,7 +506,12 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateAnalyticsInstanceRequest, CreateAnalyticsInstanceResponse>,
                         java.util.concurrent.Future<CreateAnalyticsInstanceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateAnalyticsInstanceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -540,7 +556,12 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                                 CreatePrivateAccessChannelRequest,
                                 CreatePrivateAccessChannelResponse>,
                         java.util.concurrent.Future<CreatePrivateAccessChannelResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreatePrivateAccessChannelDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -580,7 +601,12 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateVanityUrlRequest, CreateVanityUrlResponse>,
                         java.util.concurrent.Future<CreateVanityUrlResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateVanityUrlDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1071,7 +1097,12 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ScaleAnalyticsInstanceRequest, ScaleAnalyticsInstanceResponse>,
                         java.util.concurrent.Future<ScaleAnalyticsInstanceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getScaleAnalyticsInstanceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1196,7 +1227,12 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateAnalyticsInstanceRequest, UpdateAnalyticsInstanceResponse>,
                         java.util.concurrent.Future<UpdateAnalyticsInstanceResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateAnalyticsInstanceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1241,7 +1277,12 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                                 UpdatePrivateAccessChannelRequest,
                                 UpdatePrivateAccessChannelResponse>,
                         java.util.concurrent.Future<UpdatePrivateAccessChannelResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdatePrivateAccessChannelDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1281,7 +1322,12 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateVanityUrlRequest, UpdateVanityUrlResponse>,
                         java.util.concurrent.Future<UpdateVanityUrlResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateVanityUrlDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

@@ -23,10 +23,10 @@ public class ListConfigurationSourceProvidersResponse {
     private String opcRequestId;
 
     /**
-     * Retrieves the next page of paginated list items. If the `opc-next-page`
+     * Retrieves the next page of paginated list items. If the {@code opc-next-page}
      * header appears in the response, additional pages of results remain.
-     * To receive the next page, include the header value in the `page` param.
-     * If the `opc-next-page` header does not appear in the response, there
+     * To receive the next page, include the header value in the {@code page} param.
+     * If the {@code opc-next-page} header does not appear in the response, there
      * are no more list items to get. For more information about list pagination,
      * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *

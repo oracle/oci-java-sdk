@@ -406,7 +406,12 @@ public class TransferApplianceEntitlementAsyncClient implements TransferApplianc
                                 CreateTransferApplianceEntitlementRequest,
                                 CreateTransferApplianceEntitlementResponse>,
                         java.util.concurrent.Future<CreateTransferApplianceEntitlementResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTransferApplianceEntitlementDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

@@ -7,11 +7,11 @@ package com.oracle.bmc.core.model;
 /**
  * The shape configuration requested for the instance. If provided, the instance will be updated
  * with the resources specified. In the case where some properties are missing,
- * the missing values will be set to the default for the provided `shape`.
+ * the missing values will be set to the default for the provided {@code shape}.
  * <p>
- * Each shape only supports certain configurable values. If the `shape` is provided
- * and the configuration values are invalid for that new `shape`, an error will be returned.
- * If no `shape` is provided and the configuration values are invalid for the instance's
+ * Each shape only supports certain configurable values. If the {@code shape} is provided
+ * and the configuration values are invalid for that new {@code shape}, an error will be returned.
+ * If no {@code shape} is provided and the configuration values are invalid for the instance's
  * existing shape, an error will be returned.
  *
  * <br/>
@@ -106,12 +106,12 @@ public class UpdateInstanceShapeConfigDetails {
     Float memoryInGBs;
     /**
      * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
-     * non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+     * non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
      * <p>
      * The following values are supported:
-     * - `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
-     * - `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
-     * - `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+     * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+     * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+     * - {@code BASELINE_1_1} - baseline usage is an entire OCPU. This represents a non-burstable instance.
      *
      **/
     public enum BaselineOcpuUtilization {
@@ -149,12 +149,12 @@ public class UpdateInstanceShapeConfigDetails {
     };
     /**
      * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
-     * non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+     * non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
      * <p>
      * The following values are supported:
-     * - `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
-     * - `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
-     * - `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+     * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+     * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+     * - {@code BASELINE_1_1} - baseline usage is an entire OCPU. This represents a non-burstable instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("baselineOcpuUtilization")

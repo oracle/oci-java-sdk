@@ -425,7 +425,7 @@ public class DataGuardAssociation {
      * The lag time between updates to the primary database and application of the redo data on the standby database,
      * as computed by the reporting database.
      * <p>
-     * Example: `9 seconds`
+     * Example: {@code 9 seconds}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applyLag")
@@ -434,7 +434,7 @@ public class DataGuardAssociation {
     /**
      * The rate at which redo logs are synced between the associated databases.
      * <p>
-     * Example: `180 Mb per second`
+     * Example: {@code 180 Mb per second}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applyRate")

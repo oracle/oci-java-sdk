@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Information about a `ByoipRange` resource.
+ * Information about a {@code ByoipRange} resource.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -159,7 +159,7 @@ public class ByoipRangeSummary {
     String cidrBlock;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the `ByoipRange` resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the {@code ByoipRange} resource.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -169,7 +169,7 @@ public class ByoipRangeSummary {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -187,20 +187,20 @@ public class ByoipRangeSummary {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code ByoipRange} resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The `ByoipRange` resource's current state.
+     * The {@code ByoipRange} resource's current state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     ByoipRange.LifecycleState lifecycleState;
@@ -212,9 +212,9 @@ public class ByoipRangeSummary {
     ByoipRange.LifecycleDetails lifecycleDetails;
 
     /**
-     * The date and time the `ByoipRange` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the {@code ByoipRange} resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

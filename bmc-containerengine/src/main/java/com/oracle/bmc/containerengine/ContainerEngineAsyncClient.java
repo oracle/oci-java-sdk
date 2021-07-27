@@ -402,7 +402,12 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                                 ClusterMigrateToNativeVcnRequest,
                                 ClusterMigrateToNativeVcnResponse>,
                         java.util.concurrent.Future<ClusterMigrateToNativeVcnResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getClusterMigrateToNativeVcnDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -441,7 +446,12 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateClusterRequest, CreateClusterResponse>,
                         java.util.concurrent.Future<CreateClusterResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateClusterDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -486,7 +496,12 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateKubeconfigRequest, CreateKubeconfigResponse>,
                         java.util.concurrent.Future<CreateKubeconfigResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateClusterKubeconfigContentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -526,7 +541,12 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateNodePoolRequest, CreateNodePoolResponse>,
                         java.util.concurrent.Future<CreateNodePoolResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateNodePoolDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1115,7 +1135,12 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateClusterRequest, UpdateClusterResponse>,
                         java.util.concurrent.Future<UpdateClusterResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateClusterDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1159,7 +1184,12 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                                 UpdateClusterEndpointConfigRequest,
                                 UpdateClusterEndpointConfigResponse>,
                         java.util.concurrent.Future<UpdateClusterEndpointConfigResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateClusterEndpointConfigDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1198,7 +1228,12 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateNodePoolRequest, UpdateNodePoolResponse>,
                         java.util.concurrent.Future<UpdateNodePoolResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateNodePoolDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

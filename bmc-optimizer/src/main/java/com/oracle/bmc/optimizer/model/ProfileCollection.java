@@ -5,7 +5,7 @@
 package com.oracle.bmc.optimizer.model;
 
 /**
- * A list of profiles that match filter criteria, if any. Results contain `ProfileSummary` objects.
+ * A list of profiles that match filter criteria, if any. Results contain {@code ProfileSummary} objects.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

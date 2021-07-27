@@ -212,7 +212,7 @@ public class CreateMultipartUploadDetails {
 
     /**
      * Arbitrary string keys and values for the user-defined metadata for the object.
-     * Keys must be in \"opc-meta-*\" format. Avoid entering confidential information.
+     * Keys must be in "opc-meta-*" format. Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")

@@ -27,7 +27,7 @@ public class GetRoutingPolicyRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * The name of the routing policy to retrieve.
      * <p>
-     * Example: `example_routing_policy`
+     * Example: {@code example_routing_policy}
      *
      */
     private String routingPolicyName;

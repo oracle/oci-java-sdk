@@ -175,7 +175,7 @@ public class PreauthenticatedRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     String objectName;
     /**
-     * Specifies whether a list operation is allowed on a PAR with accessType \"AnyObjectRead\" or \"AnyObjectReadWrite\".
+     * Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite".
      * Deny: Prevents the user from performing a list operation.
      * ListObjects: Authorizes the user to perform a list operation.
      *
@@ -224,7 +224,7 @@ public class PreauthenticatedRequest {
         }
     };
     /**
-     * Specifies whether a list operation is allowed on a PAR with accessType \"AnyObjectRead\" or \"AnyObjectReadWrite\".
+     * Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite".
      * Deny: Prevents the user from performing a list operation.
      * ListObjects: Authorizes the user to perform a list operation.
      *

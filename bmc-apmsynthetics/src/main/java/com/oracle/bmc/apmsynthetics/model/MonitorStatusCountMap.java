@@ -6,7 +6,7 @@ package com.oracle.bmc.apmsynthetics.model;
 
 /**
  * Details of the monitor count per state.
- * Example: `{ \"total\" : 5, \"enabled\" : 3 , \"disabled\" : 2, \"invalid\" : 0 }`
+ * Example: {@code { "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }}
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

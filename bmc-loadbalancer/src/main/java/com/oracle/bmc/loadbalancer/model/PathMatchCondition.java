@@ -86,24 +86,24 @@ public class PathMatchCondition extends RuleCondition {
     /**
      * The path string that the redirection rule applies to.
      * <p>
-     * Example: `/example`
+     * Example: {@code /example}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeValue")
     String attributeValue;
     /**
-     * A string that specifies how to compare the PathMatchCondition object's `attributeValue` string to the
+     * A string that specifies how to compare the PathMatchCondition object's {@code attributeValue} string to the
      * incoming URI.
      * <p>
-     *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the `attributeValue` string.
+     *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the {@code attributeValue} string.
      * <p>
-     *  **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the `attributeValue` string with the best,
+     *  **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the {@code attributeValue} string with the best,
      *    longest match of the beginning portion of the incoming URI path.
      * <p>
      *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the
-     *    `attributeValue` string.
+     *    {@code attributeValue} string.
      * <p>
-     *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue`
+     *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the {@code attributeValue}
      *    string.
      *
      **/
@@ -153,18 +153,18 @@ public class PathMatchCondition extends RuleCondition {
         }
     };
     /**
-     * A string that specifies how to compare the PathMatchCondition object's `attributeValue` string to the
+     * A string that specifies how to compare the PathMatchCondition object's {@code attributeValue} string to the
      * incoming URI.
      * <p>
-     *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the `attributeValue` string.
+     *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the {@code attributeValue} string.
      * <p>
-     *  **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the `attributeValue` string with the best,
+     *  **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the {@code attributeValue} string with the best,
      *    longest match of the beginning portion of the incoming URI path.
      * <p>
      *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the
-     *    `attributeValue` string.
+     *    {@code attributeValue} string.
      * <p>
-     *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue`
+     *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the {@code attributeValue}
      *    string.
      *
      **/

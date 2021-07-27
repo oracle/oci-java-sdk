@@ -27,7 +27,7 @@ public class ListSddcsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     /**
      * The name of the availability domain that the Compute instances are running in.
      * <p>
-     * Example: `Uocm:PHX-AD-1`
+     * Example: {@code Uocm:PHX-AD-1}
      *
      */
     private String computeAvailabilityDomain;
@@ -39,14 +39,14 @@ public class ListSddcsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a paginated
-     * \"List\" call. For important details about how pagination works, see
+     * "List" call. For important details about how pagination works, see
      * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private Integer limit;
 
     /**
-     * For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
      * call. For important details about how pagination works, see
      * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
@@ -54,33 +54,33 @@ public class ListSddcsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     private String page;
 
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
      * is case sensitive.
      *
      */
     private com.oracle.bmc.ocvp.model.SortOrders sortOrder;
 
     /**
-     * The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
      * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
      * sort order is case sensitive.
      * <p>
-     **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+     **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
      * optionally filter by availability domain if the scope of the resource type is within a
-     * single availability domain. If you call one of these \"List\" operations without specifying
+     * single availability domain. If you call one of these "List" operations without specifying
      * an availability domain, the resources are grouped by availability domain, then sorted.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
      * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
      * sort order is case sensitive.
      * <p>
-     **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+     **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
      * optionally filter by availability domain if the scope of the resource type is within a
-     * single availability domain. If you call one of these \"List\" operations without specifying
+     * single availability domain. If you call one of these "List" operations without specifying
      * an availability domain, the resources are grouped by availability domain, then sorted.
      *
      **/

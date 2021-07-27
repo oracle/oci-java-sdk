@@ -5,7 +5,7 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * The information about host to be analyzed.
+ * The information about the host to be analyzed.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -44,7 +44,7 @@ public class CreateHostInsightDetails {
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -52,7 +52,7 @@ public class CreateHostInsightDetails {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

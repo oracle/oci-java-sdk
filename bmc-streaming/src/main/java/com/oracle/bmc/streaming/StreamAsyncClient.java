@@ -403,7 +403,12 @@ public class StreamAsyncClient implements StreamAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateCursorRequest, CreateCursorResponse>,
                         java.util.concurrent.Future<CreateCursorResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateCursorDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -442,7 +447,12 @@ public class StreamAsyncClient implements StreamAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateGroupCursorRequest, CreateGroupCursorResponse>,
                         java.util.concurrent.Future<CreateGroupCursorResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateGroupCursorDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -558,7 +568,12 @@ public class StreamAsyncClient implements StreamAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 PutMessagesRequest, PutMessagesResponse>,
                         java.util.concurrent.Future<PutMessagesResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getPutMessagesDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -596,7 +611,12 @@ public class StreamAsyncClient implements StreamAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateGroupRequest, UpdateGroupResponse>,
                         java.util.concurrent.Future<UpdateGroupResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateGroupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

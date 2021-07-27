@@ -444,7 +444,13 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                                 ChangeConfigurationSourceProviderCompartmentResponse>,
                         java.util.concurrent.Future<
                                 ChangeConfigurationSourceProviderCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeConfigurationSourceProviderCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -487,7 +493,12 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeStackCompartmentRequest, ChangeStackCompartmentResponse>,
                         java.util.concurrent.Future<ChangeStackCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeStackCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -530,7 +541,12 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                                 ChangeTemplateCompartmentRequest,
                                 ChangeTemplateCompartmentResponse>,
                         java.util.concurrent.Future<ChangeTemplateCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeTemplateCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -576,7 +592,12 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                                 CreateConfigurationSourceProviderRequest,
                                 CreateConfigurationSourceProviderResponse>,
                         java.util.concurrent.Future<CreateConfigurationSourceProviderResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateConfigurationSourceProviderDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -614,7 +635,12 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<CreateJobRequest, CreateJobResponse>,
                         java.util.concurrent.Future<CreateJobResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateJobDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -653,7 +679,12 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateStackRequest, CreateStackResponse>,
                         java.util.concurrent.Future<CreateStackResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateStackDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -693,7 +724,12 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateTemplateRequest, CreateTemplateResponse>,
                         java.util.concurrent.Future<CreateTemplateResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTemplateDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -856,7 +892,12 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 DetectStackDriftRequest, DetectStackDriftResponse>,
                         java.util.concurrent.Future<DetectStackDriftResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDetectStackDriftDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1888,7 +1929,12 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                                 UpdateConfigurationSourceProviderRequest,
                                 UpdateConfigurationSourceProviderResponse>,
                         java.util.concurrent.Future<UpdateConfigurationSourceProviderResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateConfigurationSourceProviderDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1925,7 +1971,12 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<UpdateJobRequest, UpdateJobResponse>,
                         java.util.concurrent.Future<UpdateJobResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateJobDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1963,7 +2014,12 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateStackRequest, UpdateStackResponse>,
                         java.util.concurrent.Future<UpdateStackResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateStackDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2002,7 +2058,12 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateTemplateRequest, UpdateTemplateResponse>,
                         java.util.concurrent.Future<UpdateTemplateResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTemplateDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

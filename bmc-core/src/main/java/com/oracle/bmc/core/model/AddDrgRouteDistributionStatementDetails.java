@@ -92,7 +92,7 @@ public class AddDrgRouteDistributionStatementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("matchCriteria")
     java.util.List<DrgRouteDistributionMatchCriteria> matchCriteria;
     /**
-     * Accept: import/export the route \"as is\"
+     * Accept: import/export the route "as is"
      *
      **/
     public enum Action {
@@ -127,7 +127,7 @@ public class AddDrgRouteDistributionStatementDetails {
         }
     };
     /**
-     * Accept: import/export the route \"as is\"
+     * Accept: import/export the route "as is"
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")

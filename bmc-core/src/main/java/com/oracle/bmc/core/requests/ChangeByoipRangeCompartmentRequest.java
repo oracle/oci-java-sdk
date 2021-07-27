@@ -21,7 +21,7 @@ public class ChangeByoipRangeCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<ChangeByoipRangeCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource containing the BYOIP CIDR block.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code ByoipRange} resource containing the BYOIP CIDR block.
      */
     private String byoipRangeId;
 

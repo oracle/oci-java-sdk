@@ -214,9 +214,9 @@ public class CreateNetworkLoadBalancerDetails {
     /**
      * Whether the network load balancer has a virtual cloud network-local (private) IP address.
      * <p>
-     * If \"true\", then the service assigns a private IP address to the network load balancer.
+     * If "true", then the service assigns a private IP address to the network load balancer.
      * <p>
-     * If \"false\", then the service assigns a public IP address to the network load balancer.
+     * If "false", then the service assigns a public IP address to the network load balancer.
      * <p>
      * A public network load balancer is accessible from the internet, depending on the
      * [security list rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and
@@ -224,7 +224,7 @@ public class CreateNetworkLoadBalancerDetails {
      * see [How Network Load Balancing Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
      * This value is true by default.
      * <p>
-     * Example: `true`
+     * Example: {@code true}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
@@ -249,7 +249,7 @@ public class CreateNetworkLoadBalancerDetails {
      *  The network security rules of other resources can reference the network security groups associated with the network load balancer
      *    to ensure access.
      * <p>
-     * Example: [\"ocid1.nsg.oc1.phx.unique_ID\"]
+     * Example: ["ocid1.nsg.oc1.phx.unique_ID"]
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
@@ -269,7 +269,7 @@ public class CreateNetworkLoadBalancerDetails {
 
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -277,7 +277,7 @@ public class CreateNetworkLoadBalancerDetails {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

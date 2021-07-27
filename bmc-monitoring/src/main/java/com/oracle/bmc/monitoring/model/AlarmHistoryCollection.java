@@ -91,7 +91,7 @@ public class AlarmHistoryCollection {
     /**
      * Whether the alarm is enabled.
      * <p>
-     * Example: `true`
+     * Example: {@code true}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")

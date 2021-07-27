@@ -405,7 +405,12 @@ public class TransferPackageAsyncClient implements TransferPackageAsync {
                                 AttachDevicesToTransferPackageRequest,
                                 AttachDevicesToTransferPackageResponse>,
                         java.util.concurrent.Future<AttachDevicesToTransferPackageResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAttachDevicesDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -447,7 +452,12 @@ public class TransferPackageAsyncClient implements TransferPackageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateTransferPackageRequest, CreateTransferPackageResponse>,
                         java.util.concurrent.Future<CreateTransferPackageResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTransferPackageDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -533,7 +543,12 @@ public class TransferPackageAsyncClient implements TransferPackageAsync {
                                 DetachDevicesFromTransferPackageRequest,
                                 DetachDevicesFromTransferPackageResponse>,
                         java.util.concurrent.Future<DetachDevicesFromTransferPackageResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDetachDevicesDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -655,7 +670,12 @@ public class TransferPackageAsyncClient implements TransferPackageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateTransferPackageRequest, UpdateTransferPackageResponse>,
                         java.util.concurrent.Future<UpdateTransferPackageResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTransferPackageDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

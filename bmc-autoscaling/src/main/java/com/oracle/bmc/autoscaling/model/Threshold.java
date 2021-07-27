@@ -68,8 +68,8 @@ public class Threshold {
     }
 
     /**
-     * The comparison operator to use. Options are greater than (`GT`), greater than or equal to
-     * (`GTE`), less than (`LT`), and less than or equal to (`LTE`).
+     * The comparison operator to use. Options are greater than ({@code GT}), greater than or equal to
+     * ({@code GTE}), less than ({@code LT}), and less than or equal to ({@code LTE}).
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -118,8 +118,8 @@ public class Threshold {
         }
     };
     /**
-     * The comparison operator to use. Options are greater than (`GT`), greater than or equal to
-     * (`GTE`), less than (`LT`), and less than or equal to (`LTE`).
+     * The comparison operator to use. Options are greater than ({@code GT}), greater than or equal to
+     * ({@code GTE}), less than ({@code LT}), and less than or equal to ({@code LTE}).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operator")

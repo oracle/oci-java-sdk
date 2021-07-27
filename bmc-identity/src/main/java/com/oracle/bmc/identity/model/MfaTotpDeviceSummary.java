@@ -5,7 +5,7 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * As the name suggests, a `MfaTotpDeviceSummary` object contains information about a `MfaTotpDevice`.
+ * As the name suggests, a {@code MfaTotpDeviceSummary} object contains information about a {@code MfaTotpDevice}.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -143,9 +143,9 @@ public class MfaTotpDeviceSummary {
     String userId;
 
     /**
-     * Date and time the `MfaTotpDevice` object was created, in the format defined by RFC3339.
+     * Date and time the {@code MfaTotpDevice} object was created, in the format defined by RFC3339.
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -155,7 +155,7 @@ public class MfaTotpDeviceSummary {
      * Date and time when this MFA TOTP device will expire, in the format defined by RFC3339.
      * Null if it never expires.
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")

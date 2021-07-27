@@ -88,7 +88,7 @@ public class UpdateListenerDetails {
     /**
      * The name of the associated backend set.
      * <p>
-     * Example: `example_backend_set`
+     * Example: {@code example_backend_set}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultBackendSetName")
@@ -97,7 +97,7 @@ public class UpdateListenerDetails {
     /**
      * The communication port for the listener.
      * <p>
-     * Example: `80`
+     * Example: {@code 80}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
@@ -110,7 +110,7 @@ public class UpdateListenerDetails {
      * To get a list of valid protocols, use the {@link #listNetworkLoadBalancersProtocols(ListNetworkLoadBalancersProtocolsRequest) listNetworkLoadBalancersProtocols}
      * operation.
      * <p>
-     * Example: `TCP`
+     * Example: {@code TCP}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")

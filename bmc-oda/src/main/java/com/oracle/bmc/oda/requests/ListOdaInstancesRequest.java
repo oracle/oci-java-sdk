@@ -27,7 +27,7 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.
      * <p>
-     * Example: `My new resource`
+     * Example: {@code My new resource}
      *
      */
     private String displayName;
@@ -85,21 +85,21 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * The page at which to start retrieving results.
      * <p>
-     * You get this value from the `opc-next-page` header in a previous list request.
+     * You get this value from the {@code opc-next-page} header in a previous list request.
      * To retireve the first page, omit this query parameter.
      * <p>
-     * Example: `MToxMA==`
+     * Example: {@code MToxMA==}
      *
      */
     private String page;
 
     /**
-     * Sort the results in this order, use either `ASC` (ascending) or `DESC` (descending).
+     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
      */
     private SortOrder sortOrder;
 
     /**
-     * Sort the results in this order, use either `ASC` (ascending) or `DESC` (descending).
+     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
      **/
     public enum SortOrder {
         Asc("ASC"),
@@ -134,17 +134,17 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
     /**
-     * Sort on this field. You can specify one sort order only. The default sort field is `TIMECREATED`.
+     * Sort on this field. You can specify one sort order only. The default sort field is {@code TIMECREATED}.
      * <p>
-     * The default sort order for `TIMECREATED` is descending, and the default sort order for `DISPLAYNAME` is ascending.
+     * The default sort order for {@code TIMECREATED} is descending, and the default sort order for {@code DISPLAYNAME} is ascending.
      *
      */
     private SortBy sortBy;
 
     /**
-     * Sort on this field. You can specify one sort order only. The default sort field is `TIMECREATED`.
+     * Sort on this field. You can specify one sort order only. The default sort field is {@code TIMECREATED}.
      * <p>
-     * The default sort order for `TIMECREATED` is descending, and the default sort order for `DISPLAYNAME` is ascending.
+     * The default sort order for {@code TIMECREATED} is descending, and the default sort order for {@code DISPLAYNAME} is ascending.
      *
      **/
     public enum SortBy {

@@ -78,7 +78,7 @@ public class WorkRequestLogEntry {
     String message;
 
     /**
-     * The time the log message was written.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * The time the log message was written.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")

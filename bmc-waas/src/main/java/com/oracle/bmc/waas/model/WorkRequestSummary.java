@@ -194,7 +194,7 @@ public class WorkRequestSummary {
     java.util.Date timeAccepted;
 
     /**
-     * The date and time the work request moved from the `ACCEPTED` state to the `IN_PROGRESS` state, expressed in RFC 3339 timestamp format.
+     * The date and time the work request moved from the {@code ACCEPTED} state to the {@code IN_PROGRESS} state, expressed in RFC 3339 timestamp format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     java.util.Date timeStarted;

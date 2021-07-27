@@ -46,7 +46,7 @@ package com.oracle.bmc.resourcemanager.model;
 public class UpdateConfigSourceDetails {
 
     /**
-     * The path of the directory from which to run terraform. If not specified, the the root will be used. This parameter is ignored for the `configSourceType` value of `COMPARTMENT_CONFIG_SOURCE`.
+     * The path of the directory from which to run terraform. If not specified, the the root will be used. This parameter is ignored for the {@code configSourceType} value of {@code COMPARTMENT_CONFIG_SOURCE}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workingDirectory")
     String workingDirectory;

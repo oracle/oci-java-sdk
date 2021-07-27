@@ -295,7 +295,7 @@ public class Subnet {
      * The subnet's availability domain. This attribute will be null if this is a regional subnet
      * instead of an AD-specific subnet. Oracle recommends creating regional subnets.
      * <p>
-     * Example: `Uocm:PHX-AD-1`
+     * Example: {@code Uocm:PHX-AD-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
@@ -304,7 +304,7 @@ public class Subnet {
     /**
      * The subnet's CIDR block.
      * <p>
-     * Example: `10.0.1.0/24`
+     * Example: {@code 10.0.1.0/24}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
@@ -320,7 +320,7 @@ public class Subnet {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -344,7 +344,7 @@ public class Subnet {
     /**
      * A DNS label for the subnet, used in conjunction with the VNIC's hostname and
      * VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-     * within this subnet (for example, `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+     * within this subnet (for example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
      * Must be an alphanumeric string that begins with a letter and is unique within the VCN.
      * The value cannot be changed.
      * <p>
@@ -354,7 +354,7 @@ public class Subnet {
      * For more information, see
      * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * <p>
-     * Example: `subnet123`
+     * Example: {@code subnet123}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
@@ -364,7 +364,7 @@ public class Subnet {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -380,7 +380,7 @@ public class Subnet {
      * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's IP address space.
      * The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
-     * Example: `2001:0db8:0123:1111::/64`
+     * Example: {@code 2001:0db8:0123:1111::/64}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
@@ -389,7 +389,7 @@ public class Subnet {
     /**
      * For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.
      * <p>
-     * Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
+     * Example: {@code 2001:0db8:0123:1111:89ab:cdef:1234:5678}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6VirtualRouterIp")
@@ -452,17 +452,17 @@ public class Subnet {
     /**
      * Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
      * <p>
-     * For IPV4, `prohibitInternetIngress` behaves similarly to `prohibitPublicIpOnVnic`.
+     * For IPV4, {@code prohibitInternetIngress} behaves similarly to {@code prohibitPublicIpOnVnic}.
      * If it is set to false, VNICs created in this subnet will automatically be assigned public IP
-     * addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp`
+     * addresses unless specified otherwise during instance launch or VNIC creation (with the {@code assignPublicIp}
      * flag in {@link CreateVnicDetails}).
-     * If `prohibitInternetIngress` is set to true, VNICs created in this subnet cannot have public IP addresses
+     * If {@code prohibitInternetIngress} is set to true, VNICs created in this subnet cannot have public IP addresses
      * (that is, it's a privatesubnet).
      * <p>
-     * For IPv6, if `prohibitInternetIngress` is set to `true`, internet access is not allowed for any
+     * For IPv6, if {@code prohibitInternetIngress} is set to {@code true}, internet access is not allowed for any
      * IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
      * <p>
-     * Example: `true`
+     * Example: {@code true}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("prohibitInternetIngress")
@@ -473,13 +473,13 @@ public class Subnet {
      * Defaults to false, which means VNICs created in this subnet will
      * automatically be assigned public IP addresses unless specified
      * otherwise during instance launch or VNIC creation (with the
-     * `assignPublicIp` flag in
+     * {@code assignPublicIp} flag in
      * {@link CreateVnicDetails}).
-     * If `prohibitPublicIpOnVnic` is set to true, VNICs created in this
+     * If {@code prohibitPublicIpOnVnic} is set to true, VNICs created in this
      * subnet cannot have public IP addresses (that is, it's a private
      * subnet).
      * <p>
-     * Example: `true`
+     * Example: {@code true}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("prohibitPublicIpOnVnic")
@@ -502,12 +502,12 @@ public class Subnet {
 
     /**
      * The subnet's domain name, which consists of the subnet's DNS label,
-     * the VCN's DNS label, and the `oraclevcn.com` domain.
+     * the VCN's DNS label, and the {@code oraclevcn.com} domain.
      * <p>
      * For more information, see
      * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * <p>
-     * Example: `subnet123.vcn1.oraclevcn.com`
+     * Example: {@code subnet123.vcn1.oraclevcn.com}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetDomainName")
@@ -516,7 +516,7 @@ public class Subnet {
     /**
      * The date and time the subnet was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -531,7 +531,7 @@ public class Subnet {
     /**
      * The IP address of the virtual router.
      * <p>
-     * Example: `10.0.14.1`
+     * Example: {@code 10.0.14.1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("virtualRouterIp")
@@ -540,7 +540,7 @@ public class Subnet {
     /**
      * The MAC address of the virtual router.
      * <p>
-     * Example: `00:00:00:00:00:01`
+     * Example: {@code 00:00:00:00:00:01}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("virtualRouterMac")

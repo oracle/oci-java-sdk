@@ -401,7 +401,12 @@ public class NotificationControlPlaneAsyncClient implements NotificationControlP
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeTopicCompartmentRequest, ChangeTopicCompartmentResponse>,
                         java.util.concurrent.Future<ChangeTopicCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeTopicCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -440,7 +445,12 @@ public class NotificationControlPlaneAsyncClient implements NotificationControlP
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateTopicRequest, CreateTopicResponse>,
                         java.util.concurrent.Future<CreateTopicResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTopicDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -589,7 +599,12 @@ public class NotificationControlPlaneAsyncClient implements NotificationControlP
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateTopicRequest, UpdateTopicResponse>,
                         java.util.concurrent.Future<UpdateTopicResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getTopicAttributesDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

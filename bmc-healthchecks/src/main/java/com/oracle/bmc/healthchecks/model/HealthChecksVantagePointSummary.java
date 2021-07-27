@@ -138,7 +138,7 @@ public class HealthChecksVantagePointSummary {
      * multiple origin ASNs (MOAS routing), they are sorted by weight
      * (highest to lowest). Weight is determined by the total percentage of
      * peers observing the prefix originating from an ASN. Only present if
-     * `fields` includes `routing`. The field will be null if the address's
+     * {@code fields} includes {@code routing}. The field will be null if the address's
      * routing information is unknown.
      *
      **/

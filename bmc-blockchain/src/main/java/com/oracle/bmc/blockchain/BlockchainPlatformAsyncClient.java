@@ -406,7 +406,12 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
                                 ChangeBlockchainPlatformCompartmentRequest,
                                 ChangeBlockchainPlatformCompartmentResponse>,
                         java.util.concurrent.Future<ChangeBlockchainPlatformCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeBlockchainPlatformCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -449,7 +454,12 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateBlockchainPlatformRequest, CreateBlockchainPlatformResponse>,
                         java.util.concurrent.Future<CreateBlockchainPlatformResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateBlockchainPlatformDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -486,7 +496,12 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<CreateOsnRequest, CreateOsnResponse>,
                         java.util.concurrent.Future<CreateOsnResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateOsnDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -524,7 +539,12 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreatePeerRequest, CreatePeerResponse>,
                         java.util.concurrent.Future<CreatePeerResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreatePeerDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1107,7 +1127,12 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
                                 PreviewScaleBlockchainPlatformRequest,
                                 PreviewScaleBlockchainPlatformResponse>,
                         java.util.concurrent.Future<PreviewScaleBlockchainPlatformResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getScaleBlockchainPlatformDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1149,7 +1174,12 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ScaleBlockchainPlatformRequest, ScaleBlockchainPlatformResponse>,
                         java.util.concurrent.Future<ScaleBlockchainPlatformResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getScaleBlockchainPlatformDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1275,7 +1305,12 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateBlockchainPlatformRequest, UpdateBlockchainPlatformResponse>,
                         java.util.concurrent.Future<UpdateBlockchainPlatformResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateBlockchainPlatformDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1312,7 +1347,12 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<UpdateOsnRequest, UpdateOsnResponse>,
                         java.util.concurrent.Future<UpdateOsnResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateOsnDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1350,7 +1390,12 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdatePeerRequest, UpdatePeerResponse>,
                         java.util.concurrent.Future<UpdatePeerResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdatePeerDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

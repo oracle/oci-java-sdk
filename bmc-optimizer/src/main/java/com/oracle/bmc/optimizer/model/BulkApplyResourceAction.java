@@ -118,8 +118,8 @@ public class BulkApplyResourceAction {
     /**
      * The date and time the current status will change. The format is defined by RFC3339.
      * <p>
-     * For example, \"The current `postponed` status of the resource action will end and change to `pending` on this
-     * date and time.\"
+     * For example, "The current {@code postponed} status of the resource action will end and change to {@code pending} on this
+     * date and time."
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStatusEnd")
@@ -129,7 +129,7 @@ public class BulkApplyResourceAction {
      * Additional parameter key-value pairs defining the resource action.
      * For example:
      * <p>
-     * `{\"timeAmount\": 15, \"timeUnit\": \"seconds\"}`
+     * {@code {"timeAmount": 15, "timeUnit": "seconds"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")

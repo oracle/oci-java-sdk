@@ -403,7 +403,12 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                                 ChangeApplicationCompartmentRequest,
                                 ChangeApplicationCompartmentResponse>,
                         java.util.concurrent.Future<ChangeApplicationCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeApplicationCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -448,7 +453,12 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                                 ChangePrivateEndpointCompartmentRequest,
                                 ChangePrivateEndpointCompartmentResponse>,
                         java.util.concurrent.Future<ChangePrivateEndpointCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangePrivateEndpointCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -491,7 +501,12 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeRunCompartmentRequest, ChangeRunCompartmentResponse>,
                         java.util.concurrent.Future<ChangeRunCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeRunCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -531,7 +546,12 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateApplicationRequest, CreateApplicationResponse>,
                         java.util.concurrent.Future<CreateApplicationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateApplicationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -573,7 +593,12 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreatePrivateEndpointRequest, CreatePrivateEndpointResponse>,
                         java.util.concurrent.Future<CreatePrivateEndpointResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreatePrivateEndpointDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -610,7 +635,12 @@ public class DataFlowAsyncClient implements DataFlowAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<CreateRunRequest, CreateRunResponse>,
                         java.util.concurrent.Future<CreateRunResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateRunDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1233,7 +1263,12 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateApplicationRequest, UpdateApplicationResponse>,
                         java.util.concurrent.Future<UpdateApplicationResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateApplicationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1274,7 +1309,12 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdatePrivateEndpointRequest, UpdatePrivateEndpointResponse>,
                         java.util.concurrent.Future<UpdatePrivateEndpointResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdatePrivateEndpointDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1310,7 +1350,12 @@ public class DataFlowAsyncClient implements DataFlowAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<UpdateRunRequest, UpdateRunResponse>,
                         java.util.concurrent.Future<UpdateRunResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateRunDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

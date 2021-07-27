@@ -43,8 +43,8 @@ public class CreateIdentityProviderDetails {
     String compartmentId;
 
     /**
-     * The name you assign to the `IdentityProvider` during creation.
-     * The name must be unique across all `IdentityProvider` objects in the
+     * The name you assign to the {@code IdentityProvider} during creation.
+     * The name must be unique across all {@code IdentityProvider} objects in the
      * tenancy and cannot be changed.
      *
      **/
@@ -52,7 +52,7 @@ public class CreateIdentityProviderDetails {
     String name;
 
     /**
-     * The description you assign to the `IdentityProvider` during creation.
+     * The description you assign to the {@code IdentityProvider} during creation.
      * Does not have to be unique, and it's changeable.
      *
      **/
@@ -63,7 +63,7 @@ public class CreateIdentityProviderDetails {
      * Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft
      * Active Directory Federation Services (ADFS).
      * <p>
-     * Example: `IDCS`
+     * Example: {@code IDCS}
      *
      **/
     public enum ProductType {
@@ -103,7 +103,7 @@ public class CreateIdentityProviderDetails {
      * Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft
      * Active Directory Federation Services (ADFS).
      * <p>
-     * Example: `IDCS`
+     * Example: {@code IDCS}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("productType")
@@ -112,7 +112,7 @@ public class CreateIdentityProviderDetails {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -121,7 +121,7 @@ public class CreateIdentityProviderDetails {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -130,7 +130,7 @@ public class CreateIdentityProviderDetails {
     /**
      * The protocol used for federation.
      * <p>
-     * Example: `SAML2`
+     * Example: {@code SAML2}
      *
      **/
     public enum Protocol {

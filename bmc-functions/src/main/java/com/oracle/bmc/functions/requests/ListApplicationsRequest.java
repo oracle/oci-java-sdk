@@ -48,7 +48,7 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * A filter to return only applications that match the lifecycle state in this parameter.
-     * Example: `Creating`
+     * Example: {@code Creating}
      *
      */
     private Application.LifecycleState lifecycleState;
@@ -116,7 +116,7 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * Specifies the attribute with which to sort the rules.
      * <p>
-     * Default: `displayName`
+     * Default: {@code displayName}
      * <p>
      * **timeCreated:** Sorts by timeCreated.
      * * **displayName:** Sorts by displayName.
@@ -128,7 +128,7 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * Specifies the attribute with which to sort the rules.
      * <p>
-     * Default: `displayName`
+     * Default: {@code displayName}
      * <p>
      * **timeCreated:** Sorts by timeCreated.
      * * **displayName:** Sorts by displayName.

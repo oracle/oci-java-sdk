@@ -26,13 +26,13 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     private String compartmentId;
 
     /**
-     * The value of the `opc-next-page` response header from the previous \"List\" call.
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
      *
      */
     private String page;
 
     /**
-     * The maximum number of items to return in a paginated \"List\" call.
+     * The maximum number of items to return in a paginated "List" call.
      *
      */
     private Integer limit;
@@ -56,26 +56,26 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     private String name;
 
     /**
-     * The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
      * TIMECREATED is descending. Default order for NAME is ascending. The NAME
      * sort order is case sensitive.
      * <p>
-     **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+     **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
      * optionally filter by Availability Domain if the scope of the resource type is within a
-     * single Availability Domain. If you call one of these \"List\" operations without specifying
+     * single Availability Domain. If you call one of these "List" operations without specifying
      * an Availability Domain, the resources are grouped by Availability Domain, then sorted.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
      * TIMECREATED is descending. Default order for NAME is ascending. The NAME
      * sort order is case sensitive.
      * <p>
-     **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+     **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
      * optionally filter by Availability Domain if the scope of the resource type is within a
-     * single Availability Domain. If you call one of these \"List\" operations without specifying
+     * single Availability Domain. If you call one of these "List" operations without specifying
      * an Availability Domain, the resources are grouped by Availability Domain, then sorted.
      *
      **/
@@ -112,14 +112,14 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
     };
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`). The NAME sort order
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The NAME sort order
      * is case sensitive.
      *
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`). The NAME sort order
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The NAME sort order
      * is case sensitive.
      *
      **/

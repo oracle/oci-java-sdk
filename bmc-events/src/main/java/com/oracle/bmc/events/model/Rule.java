@@ -189,7 +189,7 @@ public class Rule {
      * A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering
      * confidential information.
      * <p>
-     * Example: `\"This rule sends a notification upon completion of DbaaS backup.\"`
+     * Example: {@code "This rule sends a notification upon completion of DbaaS backup."}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -266,7 +266,7 @@ public class Rule {
      * important things to remember about filters:
      * <p>
      * Fields not mentioned in the condition are ignored. You can create a valid filter that matches
-     * all events with two curly brackets: `{}`
+     * all events with two curly brackets: {@code {}}
      * <p>
      * For more examples, see
      * [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
@@ -284,7 +284,7 @@ public class Rule {
      * For examples of wildcard matching, see
      * [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
      * <p>
-     * Example: `\\\"eventType\\\": \\\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\\"`
+     * Example: {@code \\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("condition")
@@ -300,7 +300,7 @@ public class Rule {
     /**
      * Whether or not this rule is currently enabled.
      * <p>
-     * Example: `true`
+     * Example: {@code true}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
@@ -310,7 +310,7 @@ public class Rule {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -319,7 +319,7 @@ public class Rule {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -339,7 +339,7 @@ public class Rule {
      * The time this rule was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
      * timestamp format.
      * <p>
-     * Example: `2018-09-12T22:47:12.613Z`
+     * Example: {@code 2018-09-12T22:47:12.613Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

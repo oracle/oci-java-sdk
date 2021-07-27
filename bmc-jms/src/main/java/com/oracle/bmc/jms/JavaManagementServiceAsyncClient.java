@@ -402,7 +402,12 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeFleetCompartmentRequest, ChangeFleetCompartmentResponse>,
                         java.util.concurrent.Future<ChangeFleetCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeFleetCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -441,7 +446,12 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateFleetRequest, CreateFleetResponse>,
                         java.util.concurrent.Future<CreateFleetResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateFleetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -801,7 +811,12 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                                 RequestSummarizedApplicationUsageRequest,
                                 RequestSummarizedApplicationUsageResponse>,
                         java.util.concurrent.Future<RequestSummarizedApplicationUsageResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRequestSummarizedApplicationUsageDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -847,7 +862,12 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                                 RequestSummarizedInstallationUsageRequest,
                                 RequestSummarizedInstallationUsageResponse>,
                         java.util.concurrent.Future<RequestSummarizedInstallationUsageResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRequestSummarizedInstallationUsageDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -890,7 +910,12 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                                 RequestSummarizedJreUsageRequest,
                                 RequestSummarizedJreUsageResponse>,
                         java.util.concurrent.Future<RequestSummarizedJreUsageResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRequestSummarizedJreUsageDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -936,7 +961,13 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                                 RequestSummarizedManagedInstanceUsageRequest,
                                 RequestSummarizedManagedInstanceUsageResponse>,
                         java.util.concurrent.Future<RequestSummarizedManagedInstanceUsageResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getRequestSummarizedManagedInstanceUsageDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1144,7 +1175,12 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateFleetRequest, UpdateFleetResponse>,
                         java.util.concurrent.Future<UpdateFleetResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateFleetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1188,7 +1224,12 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                                 UpdateFleetAgentConfigurationRequest,
                                 UpdateFleetAgentConfigurationResponse>,
                         java.util.concurrent.Future<UpdateFleetAgentConfigurationResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateFleetAgentConfigurationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

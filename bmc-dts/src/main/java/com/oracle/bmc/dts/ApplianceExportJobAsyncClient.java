@@ -407,7 +407,12 @@ public class ApplianceExportJobAsyncClient implements ApplianceExportJobAsync {
                                 ChangeApplianceExportJobCompartmentRequest,
                                 ChangeApplianceExportJobCompartmentResponse>,
                         java.util.concurrent.Future<ChangeApplianceExportJobCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeApplianceExportJobCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -450,7 +455,12 @@ public class ApplianceExportJobAsyncClient implements ApplianceExportJobAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateApplianceExportJobRequest, CreateApplianceExportJobResponse>,
                         java.util.concurrent.Future<CreateApplianceExportJobResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateApplianceExportJobDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -614,7 +624,12 @@ public class ApplianceExportJobAsyncClient implements ApplianceExportJobAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateApplianceExportJobRequest, UpdateApplianceExportJobResponse>,
                         java.util.concurrent.Future<UpdateApplianceExportJobResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateApplianceExportJobDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

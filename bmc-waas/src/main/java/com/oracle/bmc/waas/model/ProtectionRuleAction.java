@@ -85,7 +85,7 @@ public class ProtectionRuleAction {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     String key;
     /**
-     * The action to apply to the protection rule. If unspecified, defaults to `OFF`.
+     * The action to apply to the protection rule. If unspecified, defaults to {@code OFF}.
      **/
     public enum Action {
         Off("OFF"),
@@ -121,13 +121,13 @@ public class ProtectionRuleAction {
         }
     };
     /**
-     * The action to apply to the protection rule. If unspecified, defaults to `OFF`.
+     * The action to apply to the protection rule. If unspecified, defaults to {@code OFF}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     Action action;
 
     /**
-     * The types of requests excluded from the protection rule action. If the requests matches the criteria in the `exclusions`, the protection rule action will not be executed.
+     * The types of requests excluded from the protection rule action. If the requests matches the criteria in the {@code exclusions}, the protection rule action will not be executed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exclusions")
     java.util.List<ProtectionRuleExclusion> exclusions;

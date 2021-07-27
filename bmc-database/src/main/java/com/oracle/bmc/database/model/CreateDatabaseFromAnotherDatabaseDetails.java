@@ -139,7 +139,7 @@ public class CreateDatabaseFromAnotherDatabaseDetails {
     String adminPassword;
 
     /**
-     * The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+     * The {@code DB_UNIQUE_NAME} of the Oracle Database being backed up.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
     String dbUniqueName;

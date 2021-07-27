@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Database software images are created by specifying a patch set, one-off patches and patches for the database home (listed by `ls inventory`).
+ * Database software images are created by specifying a patch set, one-off patches and patches for the database home (listed by {@code ls inventory}).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -451,7 +451,7 @@ public class DatabaseSoftwareImage {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")

@@ -225,7 +225,7 @@ public class SteeringPolicyAttachment {
     /**
      * The date and time the resource was created, expressed in RFC 3339 timestamp format.
      * <p>
-     **Example:** `2016-07-22T17:23:59:60Z`
+     **Example:** {@code 2016-07-22T17:23:59:60Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

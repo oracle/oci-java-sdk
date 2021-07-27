@@ -80,7 +80,7 @@ public class ConnectionConfiguration {
      * <p>
      * For more information, see [Connection Configuration](https://docs.cloud.oracle.com/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
      * <p>
-     * Example: `1200`
+     * Example: {@code 1200}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("idleTimeout")
@@ -89,7 +89,7 @@ public class ConnectionConfiguration {
     /**
      * The backend TCP Proxy Protocol version.
      * <p>
-     * Example: `1`
+     * Example: {@code 1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backendTcpProxyProtocolVersion")

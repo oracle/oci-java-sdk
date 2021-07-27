@@ -123,7 +123,7 @@ public class UpdateVlanDetails {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -141,7 +141,7 @@ public class UpdateVlanDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -169,7 +169,7 @@ public class UpdateVlanDetails {
      * <p>
      * - Must be valid.
      * - The CIDR block's IP range must be completely within one of the VCN's CIDR block ranges.
-     * - The old and new CIDR block ranges must use the same network address. Example: `10.0.0.0/25` and `10.0.0.0/24`.
+     * - The old and new CIDR block ranges must use the same network address. Example: {@code 10.0.0.0/25} and {@code 10.0.0.0/24}.
      * - Must contain all IP addresses in use in the old CIDR range.
      * - The new CIDR range's broadcast address (last IP address of CIDR range) must not be an IP address in use in the old CIDR range.
      * <p>

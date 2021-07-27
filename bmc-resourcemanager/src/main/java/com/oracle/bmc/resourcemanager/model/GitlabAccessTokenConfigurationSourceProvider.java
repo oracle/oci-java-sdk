@@ -5,7 +5,7 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * The properties that define a configuration source provider of the type `GITLAB_ACCESS_TOKEN`.
+ * The properties that define a configuration source provider of the type {@code GITLAB_ACCESS_TOKEN}.
  * This type corresponds to a configuration source provider in GitLab that is authenticated with a personal access token.
  *
  * <br/>
@@ -185,7 +185,7 @@ public class GitlabAccessTokenConfigurationSourceProvider extends ConfigurationS
 
     /**
      * The Git service endpoint.
-     * Example: `https://gitlab.com`
+     * Example: {@code https://gitlab.com}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("apiEndpoint")

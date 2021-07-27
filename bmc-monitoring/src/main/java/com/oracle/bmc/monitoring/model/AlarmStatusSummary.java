@@ -133,7 +133,7 @@ public class AlarmStatusSummary {
     /**
      * The configured name of the alarm.
      * <p>
-     * Example: `High CPU Utilization`
+     * Example: {@code High CPU Utilization}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -141,7 +141,7 @@ public class AlarmStatusSummary {
     /**
      * The configured severity of the alarm.
      * <p>
-     * Example: `CRITICAL`
+     * Example: {@code CRITICAL}
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -192,7 +192,7 @@ public class AlarmStatusSummary {
     /**
      * The configured severity of the alarm.
      * <p>
-     * Example: `CRITICAL`
+     * Example: {@code CRITICAL}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
@@ -201,7 +201,7 @@ public class AlarmStatusSummary {
     /**
      * Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing.
      * <p>
-     * Example: `2019-02-01T01:02:29.600Z`
+     * Example: {@code 2019-02-01T01:02:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestampTriggered")
@@ -209,7 +209,7 @@ public class AlarmStatusSummary {
     /**
      * The status of this alarm.
      * <p>
-     * Example: `FIRING`
+     * Example: {@code FIRING}
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -259,7 +259,7 @@ public class AlarmStatusSummary {
     /**
      * The status of this alarm.
      * <p>
-     * Example: `FIRING`
+     * Example: {@code FIRING}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")

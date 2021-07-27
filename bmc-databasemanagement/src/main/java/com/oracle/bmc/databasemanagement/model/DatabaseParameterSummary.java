@@ -372,7 +372,7 @@ public class DatabaseParameterSummary {
     String value;
 
     /**
-     * The parameter value in a user-friendly format. For example, if the `value` property shows the value 262144 for a big integer parameter, then the `displayValue` property will show the value 256K.
+     * The parameter value in a user-friendly format. For example, if the {@code value} property shows the value 262144 for a big integer parameter, then the {@code displayValue} property will show the value 256K.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayValue")
@@ -385,23 +385,23 @@ public class DatabaseParameterSummary {
     java.math.BigDecimal number;
 
     /**
-     * Indicates whether the parameter is set to the default value (`TRUE`) or the parameter value was specified in the parameter file (`FALSE`).
+     * Indicates whether the parameter is set to the default value ({@code TRUE}) or the parameter value was specified in the parameter file ({@code FALSE}).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     Boolean isDefault;
 
     /**
-     * Indicates whether the parameter can be changed with `ALTER SESSION` (`TRUE`) or not (`FALSE`)
+     * Indicates whether the parameter can be changed with {@code ALTER SESSION} ({@code TRUE}) or not ({@code FALSE})
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSessionModifiable")
     Boolean isSessionModifiable;
     /**
-     * Indicates whether the parameter can be changed with `ALTER SYSTEM` and when the change takes effect:
-     * - IMMEDIATE: Parameter can be changed with `ALTER SYSTEM` regardless of the type of parameter file used to start the instance. The change takes effect immediately.
-     * - DEFERRED: Parameter can be changed with `ALTER SYSTEM` regardless of the type of parameter file used to start the instance. The change takes effect in subsequent sessions.
-     * - FALSE: Parameter cannot be changed with `ALTER SYSTEM` unless a server parameter file was used to start the instance. The change takes effect in subsequent instances.
+     * Indicates whether the parameter can be changed with {@code ALTER SYSTEM} and when the change takes effect:
+     * - IMMEDIATE: Parameter can be changed with {@code ALTER SYSTEM} regardless of the type of parameter file used to start the instance. The change takes effect immediately.
+     * - DEFERRED: Parameter can be changed with {@code ALTER SYSTEM} regardless of the type of parameter file used to start the instance. The change takes effect in subsequent sessions.
+     * - FALSE: Parameter cannot be changed with {@code ALTER SYSTEM} unless a server parameter file was used to start the instance. The change takes effect in subsequent instances.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -449,30 +449,30 @@ public class DatabaseParameterSummary {
         }
     };
     /**
-     * Indicates whether the parameter can be changed with `ALTER SYSTEM` and when the change takes effect:
-     * - IMMEDIATE: Parameter can be changed with `ALTER SYSTEM` regardless of the type of parameter file used to start the instance. The change takes effect immediately.
-     * - DEFERRED: Parameter can be changed with `ALTER SYSTEM` regardless of the type of parameter file used to start the instance. The change takes effect in subsequent sessions.
-     * - FALSE: Parameter cannot be changed with `ALTER SYSTEM` unless a server parameter file was used to start the instance. The change takes effect in subsequent instances.
+     * Indicates whether the parameter can be changed with {@code ALTER SYSTEM} and when the change takes effect:
+     * - IMMEDIATE: Parameter can be changed with {@code ALTER SYSTEM} regardless of the type of parameter file used to start the instance. The change takes effect immediately.
+     * - DEFERRED: Parameter can be changed with {@code ALTER SYSTEM} regardless of the type of parameter file used to start the instance. The change takes effect in subsequent sessions.
+     * - FALSE: Parameter cannot be changed with {@code ALTER SYSTEM} unless a server parameter file was used to start the instance. The change takes effect in subsequent instances.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystemModifiable")
     IsSystemModifiable isSystemModifiable;
 
     /**
-     * Indicates whether the parameter can be modified on a per-PDB basis (`TRUE`) or not (`FALSE`). In a non-CDB, the value of this property is `null`.
+     * Indicates whether the parameter can be modified on a per-PDB basis ({@code TRUE}) or not ({@code FALSE}). In a non-CDB, the value of this property is {@code null}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPdbModifiable")
     Boolean isPdbModifiable;
 
     /**
-     * For parameters that can be changed with `ALTER SYSTEM`, indicates whether the value of the parameter can be different for every instance (`TRUE`) or whether the parameter must have the same value for all Real Application Clusters instances (`FALSE`). For other parameters, this is always `FALSE`.
+     * For parameters that can be changed with {@code ALTER SYSTEM}, indicates whether the value of the parameter can be different for every instance ({@code TRUE}) or whether the parameter must have the same value for all Real Application Clusters instances ({@code FALSE}). For other parameters, this is always {@code FALSE}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isInstanceModifiable")
     Boolean isInstanceModifiable;
     /**
-     * Indicates how the parameter was modified. If an `ALTER SYSTEM` was performed, the value will be `MODIFIED`.
+     * Indicates how the parameter was modified. If an {@code ALTER SYSTEM} was performed, the value will be {@code MODIFIED}.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -519,7 +519,7 @@ public class DatabaseParameterSummary {
         }
     };
     /**
-     * Indicates how the parameter was modified. If an `ALTER SYSTEM` was performed, the value will be `MODIFIED`.
+     * Indicates how the parameter was modified. If an {@code ALTER SYSTEM} was performed, the value will be {@code MODIFIED}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isModified")
@@ -532,13 +532,13 @@ public class DatabaseParameterSummary {
     Boolean isAdjusted;
 
     /**
-     * Indicates whether the parameter has been deprecated (`TRUE`) or not (`FALSE`).
+     * Indicates whether the parameter has been deprecated ({@code TRUE}) or not ({@code FALSE}).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDeprecated")
     Boolean isDeprecated;
 
     /**
-     * Indicates whether the parameter is a basic parameter (`TRUE`) or not (`FALSE`).
+     * Indicates whether the parameter is a basic parameter ({@code TRUE}) or not ({@code FALSE}).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBasic")
     Boolean isBasic;
@@ -565,9 +565,9 @@ public class DatabaseParameterSummary {
     /**
      * The ID of the database container to which the data pertains.
      * Possible values include:
-     * - `0`: This value is used for data that pertain to the entire CDB. This value is also used for data in non-CDBs.
-     * - `1`: This value is used for data that pertain to only the root container.
-     * - `n`: Where n is the applicable container ID for the data.
+     * - {@code 0}: This value is used for data that pertain to the entire CDB. This value is also used for data in non-CDBs.
+     * - {@code 1}: This value is used for data that pertain to only the root container.
+     * - {@code n}: Where n is the applicable container ID for the data.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("containerId")
@@ -580,11 +580,11 @@ public class DatabaseParameterSummary {
     String category;
     /**
      * Applicable in case of Oracle Real Application Clusters (Oracle RAC) databases.
-     * A `UNIQUE` parameter is one which is unique to each Oracle Real Application
-     * Clusters (Oracle RAC) instance. For example, the parameter `INSTANCE_NUMBER`
-     * must have different values in each instance. An `IDENTICAL` parameter must
+     * A {@code UNIQUE} parameter is one which is unique to each Oracle Real Application
+     * Clusters (Oracle RAC) instance. For example, the parameter {@code INSTANCE_NUMBER}
+     * must have different values in each instance. An {@code IDENTICAL} parameter must
      * have the same value for every instance. For example, the parameter
-     * `DB_BLOCK_SIZE` must have the same value in all instances.
+     * {@code DB_BLOCK_SIZE} must have the same value in all instances.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -633,11 +633,11 @@ public class DatabaseParameterSummary {
     };
     /**
      * Applicable in case of Oracle Real Application Clusters (Oracle RAC) databases.
-     * A `UNIQUE` parameter is one which is unique to each Oracle Real Application
-     * Clusters (Oracle RAC) instance. For example, the parameter `INSTANCE_NUMBER`
-     * must have different values in each instance. An `IDENTICAL` parameter must
+     * A {@code UNIQUE} parameter is one which is unique to each Oracle Real Application
+     * Clusters (Oracle RAC) instance. For example, the parameter {@code INSTANCE_NUMBER}
+     * must have different values in each instance. An {@code IDENTICAL} parameter must
      * have the same value for every instance. For example, the parameter
-     * `DB_BLOCK_SIZE` must have the same value in all instances.
+     * {@code DB_BLOCK_SIZE} must have the same value in all instances.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("constraint")
@@ -650,7 +650,7 @@ public class DatabaseParameterSummary {
     String sid;
 
     /**
-     * Indicates whether the parameter was specified in the server parameter file (`TRUE`) or not (`FALSE`). Applicable only when the parameter source is `SPFILE`.
+     * Indicates whether the parameter was specified in the server parameter file ({@code TRUE}) or not ({@code FALSE}). Applicable only when the parameter source is {@code SPFILE}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSpecified")

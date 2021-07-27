@@ -5,7 +5,7 @@
 package com.oracle.bmc.waas.model;
 
 /**
- * An object that represents the `ip-hash` load balancing method.
+ * An object that represents the {@code ip-hash} load balancing method.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

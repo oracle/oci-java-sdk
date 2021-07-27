@@ -5,7 +5,7 @@
 package com.oracle.bmc.sch.model;
 
 /**
- * `TRIM_HORIZON` cursor type. Sets the starting point for consuming the stream at the oldest available message in the stream. For more information about Streaming cursors, see [Using Cursors](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors).
+ * {@code TRIM_HORIZON} cursor type. Sets the starting point for consuming the stream at the oldest available message in the stream. For more information about Streaming cursors, see [Using Cursors](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

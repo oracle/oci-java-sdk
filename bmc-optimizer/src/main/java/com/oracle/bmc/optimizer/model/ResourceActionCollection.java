@@ -5,7 +5,7 @@
 package com.oracle.bmc.optimizer.model;
 
 /**
- * A list of resource actions that match filter criteria, if any. Results contain `ResourceActionSummary` objects.
+ * A list of resource actions that match filter criteria, if any. Results contain {@code ResourceActionSummary} objects.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

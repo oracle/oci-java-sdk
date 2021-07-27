@@ -77,7 +77,7 @@ public class CreatePathRouteSetDetails {
      * The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering
      * confidential information.
      * <p>
-     * Example: `example_path_route_set`
+     * Example: {@code example_path_route_set}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")

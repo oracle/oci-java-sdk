@@ -186,7 +186,7 @@ public class WafConfigDetails {
     }
 
     /**
-     * The access rules applied to the Web Application Firewall. Access rules allow custom content access policies to be defined and `ALLOW`, `DETECT`, or `BLOCK` actions to be taken on a request when specified criteria are met.
+     * The access rules applied to the Web Application Firewall. Access rules allow custom content access policies to be defined and {@code ALLOW}, {@code DETECT}, or {@code BLOCK} actions to be taken on a request when specified criteria are met.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessRules")
     java.util.List<AccessRule> accessRules;
@@ -222,7 +222,7 @@ public class WafConfigDetails {
     JsChallenge jsChallenge;
 
     /**
-     * The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but is not required upon updating the configuration.
+     * The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in {@code Origins}. Required when creating the {@code WafConfig} resource, but is not required upon updating the configuration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("origin")
     String origin;
@@ -240,8 +240,8 @@ public class WafConfigDetails {
     java.util.List<CustomProtectionRuleSetting> customProtectionRules;
 
     /**
-     * The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests.
-     * To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
+     * The map of origin groups and their keys used to associate origins to the {@code wafConfig}. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests.
+     * To add additional origins to your WAAS policy, update the {@code origins} field of a {@code UpdateWaasPolicy} request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("originGroups")
     java.util.List<String> originGroups;

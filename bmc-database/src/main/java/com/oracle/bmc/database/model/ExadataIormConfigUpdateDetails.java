@@ -73,7 +73,7 @@ public class ExadataIormConfigUpdateDetails {
 
     /**
      * Value for the IORM objective
-     * Default is \"Auto\"
+     * Default is "Auto"
      *
      **/
     public enum Objective {
@@ -113,7 +113,7 @@ public class ExadataIormConfigUpdateDetails {
     };
     /**
      * Value for the IORM objective
-     * Default is \"Auto\"
+     * Default is "Auto"
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objective")

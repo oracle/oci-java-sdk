@@ -28,14 +28,14 @@ public class ListHealthChecksVantagePointsRequest
     private String opcRequestId;
 
     /**
-     * The maximum number of items to return in a paginated \"List\" call.
+     * The maximum number of items to return in a paginated "List" call.
      *
      */
     private Integer limit;
 
     /**
-     * The value of the `opc-next-page` response header
-     * from the previous \"List\" call.
+     * The value of the {@code opc-next-page} response header
+     * from the previous "List" call.
      *
      */
     private String page;
@@ -121,12 +121,12 @@ public class ListHealthChecksVantagePointsRequest
         }
     };
     /**
-     * Filters results that exactly match the `name` field.
+     * Filters results that exactly match the {@code name} field.
      */
     private String name;
 
     /**
-     * Filters results that exactly match the `displayName` field.
+     * Filters results that exactly match the {@code displayName} field.
      */
     private String displayName;
 

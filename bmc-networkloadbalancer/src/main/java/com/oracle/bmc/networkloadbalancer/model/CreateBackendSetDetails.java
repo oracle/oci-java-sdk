@@ -114,7 +114,7 @@ public class CreateBackendSetDetails {
      * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot
      * contain spaces. Avoid entering confidential information.
      * <p>
-     * Example: `example_backend_set`
+     * Example: {@code example_backend_set}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -123,7 +123,7 @@ public class CreateBackendSetDetails {
     /**
      * The network load balancer policy for the backend set.
      * <p>
-     * Example: `FIVE_TUPLE``
+     * Example: {@code FIVE_TUPLE}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policy")

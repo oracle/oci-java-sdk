@@ -138,7 +138,7 @@ public class CreateContainerImageSignatureDetails {
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the container image.
      * <p>
-     * Example: `ocid1.containerimage.oc1..exampleuniqueID`
+     * Example: {@code ocid1.containerimage.oc1..exampleuniqueID}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
@@ -147,7 +147,7 @@ public class CreateContainerImageSignatureDetails {
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the kmsKeyId used to sign the container image.
      * <p>
-     * Example: `ocid1.key.oc1..exampleuniqueID`
+     * Example: {@code ocid1.key.oc1..exampleuniqueID}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
@@ -156,7 +156,7 @@ public class CreateContainerImageSignatureDetails {
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.
      * <p>
-     * Example: `ocid1.keyversion.oc1..exampleuniqueID`
+     * Example: {@code ocid1.keyversion.oc1..exampleuniqueID}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")

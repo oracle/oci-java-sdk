@@ -7,13 +7,13 @@ package com.oracle.bmc.loadbalancer.model;
 /**
  * An object that represents the action of returning a specified response code when the requested HTTP method is not in
  * the list of allowed methods for the listener. The load balancer does not forward a disallowed request to the back end
- * servers. The default response code is `405 Method Not Allowed`.
+ * servers. The default response code is {@code 405 Method Not Allowed}.
  * <p>
- * If you set the response code to `405` or leave it blank, the system adds an \"allow\" response header that contains a
- * list of the allowed methods for the listener. If you set the response code to anything other than `405` (or blank),
- * the system does not add the \"allow\" response header with a list of allowed methods.
+ * If you set the response code to {@code 405} or leave it blank, the system adds an "allow" response header that contains a
+ * list of the allowed methods for the listener. If you set the response code to anything other than {@code 405} (or blank),
+ * the system does not add the "allow" response header with a list of allowed methods.
  * <p>
- * This rule applies only to HTTP listeners. No more than one `ControlAccessUsingHttpMethodsRule` object can be present in
+ * This rule applies only to HTTP listeners. No more than one {@code ControlAccessUsingHttpMethodsRule} object can be present in
  * a given listener.
  *
  * <br/>
@@ -108,7 +108,7 @@ public class ControlAccessUsingHttpMethodsRule extends Rule {
      * The list of HTTP methods is extensible. If you need to configure custom HTTP methods, contact
      * [My Oracle Support](http://support.oracle.com/) to remove the restriction for your tenancy.
      * <p>
-     * Example: [\"GET\", \"PUT\", \"POST\", \"PROPFIND\"]
+     * Example: ["GET", "PUT", "POST", "PROPFIND"]
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedMethods")
@@ -117,7 +117,7 @@ public class ControlAccessUsingHttpMethodsRule extends Rule {
     /**
      * The HTTP status code to return when the requested HTTP method is not in the list of allowed methods.
      * The associated status line returned with the code is mapped from the standard HTTP specification. The
-     * default value is `405 (Method Not Allowed)`.
+     * default value is {@code 405 (Method Not Allowed)}.
      * <p>
      * Example: 403
      *

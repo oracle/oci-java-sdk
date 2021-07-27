@@ -13,15 +13,15 @@ package com.oracle.bmc.loadbalancer.model;
  * [Session Persistence](https://docs.cloud.oracle.com/Content/Balance/Reference/sessionpersistence.htm).
  * <p>
  * With application cookie stickiness, the load balancer enables session persistence only when the response from a backend
- * application server includes a `Set-cookie` header with the user-specified cookie name.
+ * application server includes a {@code Set-cookie} header with the user-specified cookie name.
  * <p>
  * To disable application cookie stickiness on a running load balancer, use the
- * {@link #updateBackendSet(UpdateBackendSetRequest) updateBackendSet} operation and specify `null` for the
- * `SessionPersistenceConfigurationDetails` object.
+ * {@link #updateBackendSet(UpdateBackendSetRequest) updateBackendSet} operation and specify {@code null} for the
+ * {@code SessionPersistenceConfigurationDetails} object.
  * <p>
- * Example: `SessionPersistenceConfigurationDetails: null`
+ * Example: {@code SessionPersistenceConfigurationDetails: null}
  * <p>
- **Note:** `SessionPersistenceConfigurationDetails` (application cookie stickiness) and `LBCookieSessionPersistenceConfigurationDetails`
+ **Note:** {@code SessionPersistenceConfigurationDetails} (application cookie stickiness) and {@code LBCookieSessionPersistenceConfigurationDetails}
  * (LB cookie stickiness) are mutually exclusive. An error results if you try to enable both types of session persistence.
  * <p>
  **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
@@ -95,7 +95,7 @@ public class SessionPersistenceConfigurationDetails {
      * The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify
      * that any cookie set by the backend causes the session to persist.
      * <p>
-     * Example: `example_cookie`
+     * Example: {@code example_cookie}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cookieName")
@@ -105,7 +105,7 @@ public class SessionPersistenceConfigurationDetails {
      * Whether the load balancer is prevented from directing traffic from a persistent session client to
      * a different backend server if the original server is unavailable. Defaults to false.
      * <p>
-     * Example: `false`
+     * Example: {@code false}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("disableFallback")

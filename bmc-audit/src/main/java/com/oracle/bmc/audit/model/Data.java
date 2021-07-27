@@ -5,7 +5,7 @@
 package com.oracle.bmc.audit.model;
 
 /**
- * The payload of the event. Information within `data` comes from the resource emitting the event.
+ * The payload of the event. Information within {@code data} comes from the resource emitting the event.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -218,7 +218,7 @@ public class Data {
     /**
      * Name of the API operation that generated this event.
      * <p>
-     * Example: `GetInstance`
+     * Example: {@code GetInstance}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventName")
@@ -237,7 +237,7 @@ public class Data {
      * This value can change, but the service logs the value that appeared at the time of the audit
      * event.
      * <p>
-     * Example: `CompartmentA`
+     * Example: {@code CompartmentA}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentName")
@@ -270,7 +270,7 @@ public class Data {
      * type, or namespace. Exists for cross-compatibility only. For more information,
      * see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -280,7 +280,7 @@ public class Data {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -305,9 +305,9 @@ public class Data {
      * <p>
      * -----
      *     {
-     *       \"imageId\": \"ocid1.image.oc1.phx.<unique_ID>\",
-     *       \"shape\": \"VM.Standard1.1\",
-     *       \"type\": \"CustomerVmi\"
+     *       "imageId": "ocid1.image.oc1.phx.<unique_ID>",
+     *       "shape": "VM.Standard1.1",
+     *       "type": "CustomerVmi"
      *     }
      *   -----
      *

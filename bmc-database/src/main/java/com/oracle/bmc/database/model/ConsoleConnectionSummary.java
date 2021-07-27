@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The `InstanceConsoleConnection` API provides you with console access to dbnode
+ * The {@code InstanceConsoleConnection} API provides you with console access to dbnode
  * enabling you to troubleshoot malfunctioning dbnode.
  *
  * <br/>

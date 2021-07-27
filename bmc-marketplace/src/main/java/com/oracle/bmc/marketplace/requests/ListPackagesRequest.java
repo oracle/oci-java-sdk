@@ -49,13 +49,13 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
     private Integer limit;
 
     /**
-     * The value of the `opc-next-page` response header from the previous \"List\" call.
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
      */
     private String page;
 
     /**
      * The field to use to sort listed results. You can only specify one field to sort by.
-     * `TIMERELEASED` displays results in descending order by default.
+     * {@code TIMERELEASED} displays results in descending order by default.
      * You can change your preference by specifying a different sort order.
      *
      */
@@ -63,7 +63,7 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * The field to use to sort listed results. You can only specify one field to sort by.
-     * `TIMERELEASED` displays results in descending order by default.
+     * {@code TIMERELEASED} displays results in descending order by default.
      * You can change your preference by specifying a different sort order.
      *
      **/
@@ -99,12 +99,12 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
     /**
-     * The sort order to use, either `ASC` or `DESC`.
+     * The sort order to use, either {@code ASC} or {@code DESC}.
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either `ASC` or `DESC`.
+     * The sort order to use, either {@code ASC} or {@code DESC}.
      **/
     public enum SortOrder {
         Asc("ASC"),

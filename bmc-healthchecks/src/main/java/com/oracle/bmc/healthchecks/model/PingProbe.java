@@ -215,7 +215,7 @@ public class PingProbe {
 
     /**
      * The probe timeout in seconds. Valid values: 10, 20, 30, and 60.
-     * The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
+     * The probe timeout must be less than or equal to {@code intervalInSeconds} for monitors.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")

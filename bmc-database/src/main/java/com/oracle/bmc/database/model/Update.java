@@ -326,7 +326,7 @@ public class Update {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     String lifecycleDetails;
     /**
-     * The current state of the maintenance update. Dependent on value of `lastAction`.
+     * The current state of the maintenance update. Dependent on value of {@code lastAction}.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -374,7 +374,7 @@ public class Update {
         }
     };
     /**
-     * The current state of the maintenance update. Dependent on value of `lastAction`.
+     * The current state of the maintenance update. Dependent on value of {@code lastAction}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;

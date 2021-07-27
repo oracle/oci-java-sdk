@@ -48,7 +48,7 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
     private Integer limit;
 
     /**
-     * The value of the `opc-next-page` response header from the previous \"List\" call.
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
      */
     private String page;
 
@@ -82,18 +82,18 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
     private java.util.List<com.oracle.bmc.servicecatalog.model.PricingTypeEnum> pricing;
 
     /**
-     * Indicates whether to show only featured resources. If this is set to `false` or is omitted, then all resources will be returned.
+     * Indicates whether to show only featured resources. If this is set to {@code false} or is omitted, then all resources will be returned.
      *
      */
     private Boolean isFeatured;
 
     /**
-     * The sort order to apply, either `ASC` or `DESC`. Default is `ASC`.
+     * The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}.
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to apply, either `ASC` or `DESC`. Default is `ASC`.
+     * The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}.
      **/
     public enum SortOrder {
         Asc("ASC"),

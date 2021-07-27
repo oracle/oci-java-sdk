@@ -136,13 +136,13 @@ public class Captcha {
     String url;
 
     /**
-     * The amount of time before the CAPTCHA expires, in seconds. If unspecified, defaults to `300`.
+     * The amount of time before the CAPTCHA expires, in seconds. If unspecified, defaults to {@code 300}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sessionExpirationInSeconds")
     Integer sessionExpirationInSeconds;
 
     /**
-     * The title used when displaying a CAPTCHA challenge. If unspecified, defaults to `Are you human?`
+     * The title used when displaying a CAPTCHA challenge. If unspecified, defaults to {@code Are you human?}
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("title")
     String title;
@@ -160,13 +160,13 @@ public class Captcha {
     String footerText;
 
     /**
-     * The text to show when incorrect CAPTCHA text is entered. If unspecified, defaults to `The CAPTCHA was incorrect. Try again.`
+     * The text to show when incorrect CAPTCHA text is entered. If unspecified, defaults to {@code The CAPTCHA was incorrect. Try again.}
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failureMessage")
     String failureMessage;
 
     /**
-     * The text to show on the label of the CAPTCHA challenge submit button. If unspecified, defaults to `Yes, I am human`.
+     * The text to show on the label of the CAPTCHA challenge submit button. If unspecified, defaults to {@code Yes, I am human}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("submitLabel")
     String submitLabel;

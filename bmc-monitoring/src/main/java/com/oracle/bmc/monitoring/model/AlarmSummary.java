@@ -217,7 +217,7 @@ public class AlarmSummary {
      * <p>
      * This name is sent as the title for notifications related to this alarm.
      * <p>
-     * Example: `High CPU Utilization`
+     * Example: {@code High CPU Utilization}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -241,7 +241,7 @@ public class AlarmSummary {
     /**
      * The source service or application emitting the metric that is evaluated by the alarm.
      * <p>
-     * Example: `oci_computeagent`
+     * Example: {@code oci_computeagent}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
@@ -252,8 +252,8 @@ public class AlarmSummary {
      * the Monitoring service interprets results for each returned time series as Boolean values,
      * where zero represents false and a non-zero value represents true. A true value means that the trigger
      * rule condition has been met. The query must specify a metric, statistic, interval, and trigger
-     * rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally
-     * specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+     * rule (threshold or absence). Supported values for interval: {@code 1m}-{@code 60m} (also {@code 1h}). You can optionally
+     * specify dimensions and grouping functions. Supported grouping functions: {@code grouping()}, {@code groupBy()}.
      * For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
      * For available dimensions, review the metric definition for the supported service.
      * See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
@@ -262,7 +262,7 @@ public class AlarmSummary {
      * <p>
      * -----
      * <p>
-     * CpuUtilization[1m]{availabilityDomain=\"cumS:PHX-AD-1\"}.groupBy(availabilityDomain).percentile(0.9) > 85
+     * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
      * <p>
      * -----
      * <p>
@@ -270,7 +270,7 @@ public class AlarmSummary {
      * <p>
      * -----
      * <p>
-     * CpuUtilization[1m]{availabilityDomain=\"cumS:PHX-AD-1\"}.absent()
+     * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
      * <p>
      * -----
      *
@@ -280,7 +280,7 @@ public class AlarmSummary {
     /**
      * The perceived severity of the alarm with regard to the affected system.
      * <p>
-     * Example: `CRITICAL`
+     * Example: {@code CRITICAL}
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -331,7 +331,7 @@ public class AlarmSummary {
     /**
      * The perceived severity of the alarm with regard to the affected system.
      * <p>
-     * Example: `CRITICAL`
+     * Example: {@code CRITICAL}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
@@ -357,7 +357,7 @@ public class AlarmSummary {
     /**
      * Whether the alarm is enabled.
      * <p>
-     * Example: `true`
+     * Example: {@code true}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
@@ -365,7 +365,7 @@ public class AlarmSummary {
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -373,7 +373,7 @@ public class AlarmSummary {
 
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -382,7 +382,7 @@ public class AlarmSummary {
     /**
      * The current lifecycle state of the alarm.
      * <p>
-     * Example: `DELETED`
+     * Example: {@code DELETED}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")

@@ -7,8 +7,8 @@ package com.oracle.bmc.loadbalancer.model;
 /**
  * The health status details for a backend set.
  * <p>
- * This object does not explicitly enumerate backend servers with a status of `OK`. However, they are included in the
- * `totalBackendCount` sum.
+ * This object does not explicitly enumerate backend servers with a status of {@code OK}. However, they are included in the
+ * {@code totalBackendCount} sum.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -112,14 +112,14 @@ public class BackendSetHealth {
     /**
      * Overall health status of the backend set.
      * <p>
-     *  **OK:** All backend servers in the backend set return a status of `OK`.
+     *  **OK:** All backend servers in the backend set return a status of {@code OK}.
      * <p>
-     *  **WARNING:** Half or more of the backend set's backend servers return a status of `OK` and at least one backend
-     * server returns a status of `WARNING`, `CRITICAL`, or `UNKNOWN`.
+     *  **WARNING:** Half or more of the backend set's backend servers return a status of {@code OK} and at least one backend
+     * server returns a status of {@code WARNING}, {@code CRITICAL}, or {@code UNKNOWN}.
      * <p>
-     *  **CRITICAL:** Fewer than half of the backend set's backend servers return a status of `OK`.
+     *  **CRITICAL:** Fewer than half of the backend set's backend servers return a status of {@code OK}.
      * <p>
-     *  **UNKNOWN:** More than half of the backend set's backend servers return a status of `UNKNOWN`, the system was
+     *  **UNKNOWN:** More than half of the backend set's backend servers return a status of {@code UNKNOWN}, the system was
      * unable to retrieve metrics, or the backend set does not have a listener attached.
      *
      **/
@@ -171,14 +171,14 @@ public class BackendSetHealth {
     /**
      * Overall health status of the backend set.
      * <p>
-     *  **OK:** All backend servers in the backend set return a status of `OK`.
+     *  **OK:** All backend servers in the backend set return a status of {@code OK}.
      * <p>
-     *  **WARNING:** Half or more of the backend set's backend servers return a status of `OK` and at least one backend
-     * server returns a status of `WARNING`, `CRITICAL`, or `UNKNOWN`.
+     *  **WARNING:** Half or more of the backend set's backend servers return a status of {@code OK} and at least one backend
+     * server returns a status of {@code WARNING}, {@code CRITICAL}, or {@code UNKNOWN}.
      * <p>
-     *  **CRITICAL:** Fewer than half of the backend set's backend servers return a status of `OK`.
+     *  **CRITICAL:** Fewer than half of the backend set's backend servers return a status of {@code OK}.
      * <p>
-     *  **UNKNOWN:** More than half of the backend set's backend servers return a status of `UNKNOWN`, the system was
+     *  **UNKNOWN:** More than half of the backend set's backend servers return a status of {@code UNKNOWN}, the system was
      * unable to retrieve metrics, or the backend set does not have a listener attached.
      *
      **/
@@ -186,30 +186,30 @@ public class BackendSetHealth {
     Status status;
 
     /**
-     * A list of backend servers that are currently in the `WARNING` health state. The list identifies each backend server by
+     * A list of backend servers that are currently in the {@code WARNING} health state. The list identifies each backend server by
      * IP address and port.
      * <p>
-     * Example: `10.0.0.3:8080`
+     * Example: {@code 10.0.0.3:8080}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("warningStateBackendNames")
     java.util.List<String> warningStateBackendNames;
 
     /**
-     * A list of backend servers that are currently in the `CRITICAL` health state. The list identifies each backend server by
+     * A list of backend servers that are currently in the {@code CRITICAL} health state. The list identifies each backend server by
      * IP address and port.
      * <p>
-     * Example: `10.0.0.4:8080`
+     * Example: {@code 10.0.0.4:8080}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("criticalStateBackendNames")
     java.util.List<String> criticalStateBackendNames;
 
     /**
-     * A list of backend servers that are currently in the `UNKNOWN` health state. The list identifies each backend server by
+     * A list of backend servers that are currently in the {@code UNKNOWN} health state. The list identifies each backend server by
      * IP address and port.
      * <p>
-     * Example: `10.0.0.5:8080`
+     * Example: {@code 10.0.0.5:8080}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unknownStateBackendNames")
@@ -218,7 +218,7 @@ public class BackendSetHealth {
     /**
      * The total number of backend servers in this backend set.
      * <p>
-     * Example: `7`
+     * Example: {@code 7}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalBackendCount")

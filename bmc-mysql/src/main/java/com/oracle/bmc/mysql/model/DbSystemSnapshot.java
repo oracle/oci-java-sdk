@@ -381,7 +381,7 @@ public class DbSystemSnapshot {
     /**
      * The hostname for the primary endpoint of the DB System. Used for DNS.
      * The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN)
-     * (for example, \"dbsystem-1\" in FQDN \"dbsystem-1.subnet123.vcn1.oraclevcn.com\").
+     * (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
      * Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
      *
      **/
@@ -392,7 +392,7 @@ public class DbSystemSnapshot {
      * The IP address the DB System is configured to listen on. A private
      * IP address of the primary endpoint of the DB System. Must be an
      * available IP address within the subnet's CIDR. This will be a
-     * \"dotted-quad\" style IPv4 address.
+     * "dotted-quad" style IPv4 address.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
@@ -431,7 +431,7 @@ public class DbSystemSnapshot {
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -439,7 +439,7 @@ public class DbSystemSnapshot {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

@@ -44,13 +44,13 @@ public class GetJobLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     private LogEntry.Level levelGreaterThanOrEqualTo;
 
     /**
-     * The sort order to use when sorting returned resources. Ascending (`ASC`) or descending (`DESC`).
+     * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending ({@code DESC}).
      *
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use when sorting returned resources. Ascending (`ASC`) or descending (`DESC`).
+     * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending ({@code DESC}).
      *
      **/
     public enum SortOrder {
@@ -86,14 +86,14 @@ public class GetJobLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
     /**
-     * The number of items returned in a paginated `List` call. For information about pagination, see
+     * The number of items returned in a paginated {@code List} call. For information about pagination, see
      * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private Integer limit;
 
     /**
-     * The value of the `opc-next-page` response header from the preceding `List` call.
+     * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
      * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
@@ -102,7 +102,7 @@ public class GetJobLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     /**
      * Time stamp specifying the lower time limit for which logs are returned in a query.
      * Format is defined by RFC3339.
-     * Example: `2020-01-01T12:00:00.000Z`
+     * Example: {@code 2020-01-01T12:00:00.000Z}
      *
      */
     private java.util.Date timestampGreaterThanOrEqualTo;
@@ -110,7 +110,7 @@ public class GetJobLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     /**
      * Time stamp specifying the upper time limit for which logs are returned in a query.
      * Format is defined by RFC3339.
-     * Example: `2020-02-01T12:00:00.000Z`
+     * Example: {@code 2020-02-01T12:00:00.000Z}
      *
      */
     private java.util.Date timestampLessThanOrEqualTo;

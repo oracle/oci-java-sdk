@@ -173,7 +173,7 @@ public class CreateClusterDetails {
 
     /**
      * The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
-     * When used, `kubernetesVersion` must be at least `v1.13.0`.
+     * When used, {@code kubernetesVersion} must be at least {@code v1.13.0}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")

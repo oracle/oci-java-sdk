@@ -341,8 +341,8 @@ public class ManagedDatabase {
     java.util.List<PdbStatusDetails> pdbStatus;
 
     /**
-     * The additional details specific to a type of database defined in `{\"key\": \"value\"}` format.
-     * Example: `{\"bar-key\": \"value\"}`
+     * The additional details specific to a type of database defined in {@code {"key": "value"}} format.
+     * Example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")

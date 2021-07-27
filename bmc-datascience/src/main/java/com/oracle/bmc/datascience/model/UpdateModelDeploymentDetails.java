@@ -5,9 +5,9 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * Details for updating a model deployment. You can update `modelDeploymentConfigurationDetails` and change `instanceShapeName` and `modelId` when the model deployment is in
- * the ACTIVE lifecycle state. The `bandwidthMbps` or `instanceCount` can only be updated while the model deployment is in the `INACTIVE` state. Changes to the `bandwidthMbps`
- * or `instanceCount` will take effect the next time the `ActivateModelDeployment` action is invoked on the model deployment resource.
+ * Details for updating a model deployment. You can update {@code modelDeploymentConfigurationDetails} and change {@code instanceShapeName} and {@code modelId} when the model deployment is in
+ * the ACTIVE lifecycle state. The {@code bandwidthMbps} or {@code instanceCount} can only be updated while the model deployment is in the {@code INACTIVE} state. Changes to the {@code bandwidthMbps}
+ * or {@code instanceCount} will take effect the next time the {@code ActivateModelDeployment} action is invoked on the model deployment resource.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -126,7 +126,7 @@ public class UpdateModelDeploymentDetails {
 
     /**
      * A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information.
-     * Example: `My ModelDeployment`
+     * Example: {@code My ModelDeployment}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -146,7 +146,7 @@ public class UpdateModelDeploymentDetails {
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -154,7 +154,7 @@ public class UpdateModelDeploymentDetails {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

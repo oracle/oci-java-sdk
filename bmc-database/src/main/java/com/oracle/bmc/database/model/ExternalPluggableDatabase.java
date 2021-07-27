@@ -314,7 +314,7 @@ public class ExternalPluggableDatabase {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -410,7 +410,7 @@ public class ExternalPluggableDatabase {
     java.util.Date timeCreated;
 
     /**
-     * The `DB_UNIQUE_NAME` of the external database.
+     * The {@code DB_UNIQUE_NAME} of the external database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
     String dbUniqueName;

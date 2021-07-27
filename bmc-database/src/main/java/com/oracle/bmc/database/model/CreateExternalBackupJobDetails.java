@@ -215,7 +215,7 @@ public class CreateExternalBackupJobDetails {
     String dbName;
 
     /**
-     * The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+     * The {@code DB_UNIQUE_NAME} of the Oracle Database being backed up.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
     String dbUniqueName;
@@ -227,7 +227,7 @@ public class CreateExternalBackupJobDetails {
     String pdbName;
 
     /**
-     * The `DBID` of the Oracle Database being backed up.
+     * The {@code DBID} of the Oracle Database being backed up.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalDatabaseIdentifier")
     Long externalDatabaseIdentifier;

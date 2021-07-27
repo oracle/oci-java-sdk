@@ -475,7 +475,12 @@ public class AuditAsyncClient implements AuditAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateConfigurationRequest, UpdateConfigurationResponse>,
                         java.util.concurrent.Future<UpdateConfigurationResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateConfigurationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

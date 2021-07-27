@@ -78,7 +78,7 @@ public class BulkActionResourceType {
 
     /**
      * List of metadata keys required to identify a specific resource. Some resource-types require information besides an OCID to identify
-     * a specific resource. For example, the resource-type `buckets` requires metadataKeys {@link #deleteBucket(DeleteBucketRequest) deleteBucket}.
+     * a specific resource. For example, the resource-type {@code buckets} requires metadataKeys {@link #deleteBucket(DeleteBucketRequest) deleteBucket}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadataKeys")

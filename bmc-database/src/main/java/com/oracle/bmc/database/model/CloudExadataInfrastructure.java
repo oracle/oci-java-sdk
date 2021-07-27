@@ -181,6 +181,15 @@ public class CloudExadataInfrastructure {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
+        private java.util.List<CustomerContact> customerContacts;
+
+        public Builder customerContacts(java.util.List<CustomerContact> customerContacts) {
+            this.customerContacts = customerContacts;
+            this.__explicitlySet__.add("customerContacts");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -203,7 +212,8 @@ public class CloudExadataInfrastructure {
                             lastMaintenanceRunId,
                             nextMaintenanceRunId,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            customerContacts);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -227,7 +237,8 @@ public class CloudExadataInfrastructure {
                             .lastMaintenanceRunId(o.getLastMaintenanceRunId())
                             .nextMaintenanceRunId(o.getNextMaintenanceRunId())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .customerContacts(o.getCustomerContacts());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -383,7 +394,7 @@ public class CloudExadataInfrastructure {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -396,6 +407,15 @@ public class CloudExadataInfrastructure {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * The list of customer email addresses that receive information from Oracle about the specified OCI Database service resource.
+     * Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.
+     * Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
+    java.util.List<CustomerContact> customerContacts;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

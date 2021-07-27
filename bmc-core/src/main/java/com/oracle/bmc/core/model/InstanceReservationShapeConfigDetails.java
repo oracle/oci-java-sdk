@@ -9,10 +9,10 @@ package com.oracle.bmc.core.model;
  * <p>
  * If the parameter is provided, the reservation is created with the resources that you specify. If some
  * properties are missing or the parameter is not provided, the reservation is created
- * with the default configuration values for the `shape` that you specify.
+ * with the default configuration values for the {@code shape} that you specify.
  * <p>
  * Each shape only supports certain configurable values. If the values that you provide are not valid for the
- * specified `shape`, an error is returned.
+ * specified {@code shape}, an error is returned.
  * <p>
  * For more information about customizing the resources that are allocated to flexible shapes,
  * see [Flexible Shapes](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible).

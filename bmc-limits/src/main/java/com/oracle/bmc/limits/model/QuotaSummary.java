@@ -170,13 +170,13 @@ public class QuotaSummary {
 
     /**
      * Date and time the quota was created, in the format defined by RFC 3339.
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
     /**
-     * The quota's current state. After creating a quota, make sure its `lifecycleState` is set to
+     * The quota's current state. After creating a quota, make sure its {@code lifecycleState} is set to
      * ACTIVE before using it.
      *
      **/
@@ -223,7 +223,7 @@ public class QuotaSummary {
         }
     };
     /**
-     * The quota's current state. After creating a quota, make sure its `lifecycleState` is set to
+     * The quota's current state. After creating a quota, make sure its {@code lifecycleState} is set to
      * ACTIVE before using it.
      *
      **/
@@ -233,7 +233,7 @@ public class QuotaSummary {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -242,7 +242,7 @@ public class QuotaSummary {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

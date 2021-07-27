@@ -51,7 +51,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Filter for items with timeCreated greater or equal to provided value.
-     * given `timeCreatedGreaterThanOrEqualTo` to the current time, in \"YYYY-MM-ddThh:mmZ\" format with a
+     * given {@code timeCreatedGreaterThanOrEqualTo} to the current time, in "YYYY-MM-ddThh:mmZ" format with a
      * Z offset, as defined by RFC 3339.
      *
      */

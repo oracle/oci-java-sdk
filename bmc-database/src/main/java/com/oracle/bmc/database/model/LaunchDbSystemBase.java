@@ -74,7 +74,7 @@ public class LaunchDbSystemBase {
      * {@link #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation in the
      * Identity and Access Management Service API.
      * <p>
-     * Example: `FAULT-DOMAIN-1`
+     * Example: {@code FAULT-DOMAIN-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomains")
@@ -254,7 +254,7 @@ public class LaunchDbSystemBase {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -278,8 +278,8 @@ public class LaunchDbSystemBase {
 
     /**
      * The source of the database:
-     * Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATABASE` for creating
-     * a new database from an existing database, including archive redo log data. The default is `NONE`.
+     * Use {@code NONE} for creating a new database. Use {@code DB_BACKUP} for creating a new database by restoring from a backup. Use {@code DATABASE} for creating
+     * a new database from an existing database, including archive redo log data. The default is {@code NONE}.
      *
      **/
     public enum Source {

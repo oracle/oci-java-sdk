@@ -402,7 +402,12 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                                 AddPackagesToSoftwareSourceRequest,
                                 AddPackagesToSoftwareSourceResponse>,
                         java.util.concurrent.Future<AddPackagesToSoftwareSourceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddPackagesToSoftwareSourceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -451,7 +456,13 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                                 AttachChildSoftwareSourceToManagedInstanceResponse>,
                         java.util.concurrent.Future<
                                 AttachChildSoftwareSourceToManagedInstanceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getAttachChildSoftwareSourceToManagedInstanceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -551,7 +562,13 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                                 AttachParentSoftwareSourceToManagedInstanceResponse>,
                         java.util.concurrent.Future<
                                 AttachParentSoftwareSourceToManagedInstanceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getAttachParentSoftwareSourceToManagedInstanceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -599,7 +616,13 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                                 ChangeManagedInstanceGroupCompartmentRequest,
                                 ChangeManagedInstanceGroupCompartmentResponse>,
                         java.util.concurrent.Future<ChangeManagedInstanceGroupCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeManagedInstanceGroupCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -645,7 +668,12 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                                 ChangeScheduledJobCompartmentRequest,
                                 ChangeScheduledJobCompartmentResponse>,
                         java.util.concurrent.Future<ChangeScheduledJobCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeScheduledJobCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -691,7 +719,12 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                                 ChangeSoftwareSourceCompartmentRequest,
                                 ChangeSoftwareSourceCompartmentResponse>,
                         java.util.concurrent.Future<ChangeSoftwareSourceCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeSoftwareSourceCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -737,7 +770,12 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                                 CreateManagedInstanceGroupRequest,
                                 CreateManagedInstanceGroupResponse>,
                         java.util.concurrent.Future<CreateManagedInstanceGroupResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateManagedInstanceGroupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -777,7 +815,12 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateScheduledJobRequest, CreateScheduledJobResponse>,
                         java.util.concurrent.Future<CreateScheduledJobResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateScheduledJobDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -819,7 +862,12 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateSoftwareSourceRequest, CreateSoftwareSourceResponse>,
                         java.util.concurrent.Future<CreateSoftwareSourceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSoftwareSourceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -992,7 +1040,13 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                                 DetachChildSoftwareSourceFromManagedInstanceResponse>,
                         java.util.concurrent.Future<
                                 DetachChildSoftwareSourceFromManagedInstanceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getDetachChildSoftwareSourceFromManagedInstanceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1092,7 +1146,13 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                                 DetachParentSoftwareSourceFromManagedInstanceResponse>,
                         java.util.concurrent.Future<
                                 DetachParentSoftwareSourceFromManagedInstanceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getDetachParentSoftwareSourceFromManagedInstanceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2518,7 +2578,12 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                                 RemovePackagesFromSoftwareSourceRequest,
                                 RemovePackagesFromSoftwareSourceResponse>,
                         java.util.concurrent.Future<RemovePackagesFromSoftwareSourceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemovePackagesFromSoftwareSourceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2689,7 +2754,12 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                                 UpdateManagedInstanceGroupRequest,
                                 UpdateManagedInstanceGroupResponse>,
                         java.util.concurrent.Future<UpdateManagedInstanceGroupResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateManagedInstanceGroupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2728,7 +2798,12 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateScheduledJobRequest, UpdateScheduledJobResponse>,
                         java.util.concurrent.Future<UpdateScheduledJobResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateScheduledJobDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2769,7 +2844,12 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateSoftwareSourceRequest, UpdateSoftwareSourceResponse>,
                         java.util.concurrent.Future<UpdateSoftwareSourceResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSoftwareSourceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

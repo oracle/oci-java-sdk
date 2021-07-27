@@ -485,7 +485,12 @@ public class VaultsAsyncClient implements VaultsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeSecretCompartmentRequest, ChangeSecretCompartmentResponse>,
                         java.util.concurrent.Future<ChangeSecretCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeSecretCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -524,7 +529,12 @@ public class VaultsAsyncClient implements VaultsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateSecretRequest, CreateSecretResponse>,
                         java.util.concurrent.Future<CreateSecretResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSecretDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -717,7 +727,12 @@ public class VaultsAsyncClient implements VaultsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ScheduleSecretDeletionRequest, ScheduleSecretDeletionResponse>,
                         java.util.concurrent.Future<ScheduleSecretDeletionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getScheduleSecretDeletionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -761,7 +776,12 @@ public class VaultsAsyncClient implements VaultsAsync {
                                 ScheduleSecretVersionDeletionRequest,
                                 ScheduleSecretVersionDeletionResponse>,
                         java.util.concurrent.Future<ScheduleSecretVersionDeletionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getScheduleSecretVersionDeletionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -799,7 +819,12 @@ public class VaultsAsyncClient implements VaultsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateSecretRequest, UpdateSecretResponse>,
                         java.util.concurrent.Future<UpdateSecretResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSecretDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

@@ -85,13 +85,13 @@ public class CronExecutionSchedule extends ExecutionSchedule {
     /**
      * A cron expression that represents the time at which to execute the autoscaling policy.
      * <p>
-     * Cron expressions have this format: `<second> <minute> <hour> <day of month> <month> <day of week> <year>`
+     * Cron expressions have this format: {@code <second> <minute> <hour> <day of month> <month> <day of week> <year>}
      * <p>
      * You can use special characters that are supported with the Quartz cron implementation.
      * <p>
-     * You must specify `0` as the value for seconds.
+     * You must specify {@code 0} as the value for seconds.
      * <p>
-     * Example: `0 15 10 ? * *`
+     * Example: {@code 0 15 10 ? * *}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expression")

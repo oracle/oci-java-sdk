@@ -8,7 +8,7 @@ package com.oracle.bmc.loadbalancer.model;
  * An object that represents the advance http header options that allow the setting of http header size and allow/disallow
  * invalid characters in the http headers.
  * For example httpLargeHeaderSizeInKB=32, the http header could have 4 buffers of 32KBs each
- * This rule applies only to HTTP listeners. No more than one `HttpHeaderRule` object can be present in
+ * This rule applies only to HTTP listeners. No more than one {@code HttpHeaderRule} object can be present in
  * a given listener.
  *
  * <br/>
@@ -91,8 +91,8 @@ public class HttpHeaderRule extends Rule {
     /**
      * Indicates whether or not invalid characters in client header fields will be allowed.
      * Valid names are composed of English letters, digits, hyphens and underscores.
-     * If \"true\", invalid characters are allowed in the HTTP header.
-     * If \"false\", invalid characters are not allowed in the HTTP header
+     * If "true", invalid characters are allowed in the HTTP header.
+     * If "false", invalid characters are not allowed in the HTTP header
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("areInvalidCharactersAllowed")

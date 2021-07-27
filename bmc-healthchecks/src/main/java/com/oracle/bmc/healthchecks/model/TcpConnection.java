@@ -103,14 +103,14 @@ public class TcpConnection {
     Integer port;
 
     /**
-     * Total connect duration, calculated using `connectEnd` minus `connectStart`.
+     * Total connect duration, calculated using {@code connectEnd} minus {@code connectStart}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectDuration")
     Double connectDuration;
 
     /**
      * The duration to secure the connection.  This value will be zero for
-     * insecure connections.  Calculated using `connectEnd` minus `secureConnectionStart`.
+     * insecure connections.  Calculated using {@code connectEnd} minus {@code secureConnectionStart}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("secureConnectDuration")

@@ -6,7 +6,7 @@ package com.oracle.bmc.core.model;
 
 /**
  * A *private IP* is a conceptual term that refers to an IPv4 private IP address and related properties.
- * The `privateIp` object is the API representation of a private IP.
+ * The {@code privateIp} object is the API representation of a private IP.
  * <p>
  **Note:** For information about IPv6 addresses, see {@link Ipv6}.
  * <p>
@@ -17,7 +17,7 @@ package com.oracle.bmc.core.model;
  * automatically deleted when the VNIC is terminated.
  * <p>
  * You can add *secondary private IPs* to a VNIC after it's created. For more
- * information, see the `privateIp` operations and also
+ * information, see the {@code privateIp} operations and also
  * [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
  * <p>
  **Note:** Only
@@ -31,9 +31,9 @@ package com.oracle.bmc.core.model;
  * {@link #attachVnic(AttachVnicRequest) attachVnic}. To update the hostname
  * for a primary private IP, you use {@link #updateVnic(UpdateVnicRequest) updateVnic}.
  * <p>
- * `PrivateIp` objects that are created for use with the Oracle Cloud VMware Solution are
+ * {@code PrivateIp} objects that are created for use with the Oracle Cloud VMware Solution are
  * assigned to a VLAN and not a VNIC in a subnet. See the
- * descriptions of the relevant attributes in the `PrivateIp` object. Also see
+ * descriptions of the relevant attributes in the {@code PrivateIp} object. Also see
  * {@link Vlan}.
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
@@ -232,7 +232,7 @@ public class PrivateIp {
      * The private IP's availability domain. This attribute will be null if this is a *secondary*
      * private IP assigned to a VNIC that is in a *regional* subnet.
      * <p>
-     * Example: `Uocm:PHX-AD-1`
+     * Example: {@code Uocm:PHX-AD-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
@@ -248,7 +248,7 @@ public class PrivateIp {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -266,7 +266,7 @@ public class PrivateIp {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -275,7 +275,7 @@ public class PrivateIp {
     /**
      * The hostname for the private IP. Used for DNS. The value is the hostname
      * portion of the private IP's fully qualified domain name (FQDN)
-     * (for example, `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+     * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
      * Must be unique across all VNICs in the subnet and comply with
      * [RFC 952](https://tools.ietf.org/html/rfc952) and
      * [RFC 1123](https://tools.ietf.org/html/rfc1123).
@@ -283,7 +283,7 @@ public class PrivateIp {
      * For more information, see
      * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * <p>
-     * Example: `bminstance-1`
+     * Example: {@code bminstance-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
@@ -296,14 +296,14 @@ public class PrivateIp {
     String id;
 
     /**
-     * The private IP address of the `privateIp` object. The address is within the CIDR
+     * The private IP address of the {@code privateIp} object. The address is within the CIDR
      * of the VNIC's subnet.
      * <p>
-     * However, if the `PrivateIp` object is being used with a VLAN as part of
+     * However, if the {@code PrivateIp} object is being used with a VLAN as part of
      * the Oracle Cloud VMware Solution, the address is from the range specified by the
-     * `cidrBlock` attribute for the VLAN. See {@link Vlan}.
+     * {@code cidrBlock} attribute for the VLAN. See {@link Vlan}.
      * <p>
-     * Example: `10.0.3.3`
+     * Example: {@code 10.0.3.3}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
@@ -313,15 +313,15 @@ public class PrivateIp {
      * Whether this private IP is the primary one on the VNIC. Primary private IPs
      * are unassigned and deleted automatically when the VNIC is terminated.
      * <p>
-     * Example: `true`
+     * Example: {@code true}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
     Boolean isPrimary;
 
     /**
-     * Applicable only if the `PrivateIp` object is being used with a VLAN as part of
-     * the Oracle Cloud VMware Solution. The `vlanId` is the OCID of the VLAN. See
+     * Applicable only if the {@code PrivateIp} object is being used with a VLAN as part of
+     * the Oracle Cloud VMware Solution. The {@code vlanId} is the OCID of the VLAN. See
      * {@link Vlan}.
      *
      **/
@@ -331,8 +331,8 @@ public class PrivateIp {
     /**
      * The OCID of the subnet the VNIC is in.
      * <p>
-     * However, if the `PrivateIp` object is being used with a VLAN as part of
-     * the Oracle Cloud VMware Solution, the `subnetId` is null.
+     * However, if the {@code PrivateIp} object is being used with a VLAN as part of
+     * the Oracle Cloud VMware Solution, the {@code subnetId} is null.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
@@ -341,7 +341,7 @@ public class PrivateIp {
     /**
      * The date and time the private IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -350,8 +350,8 @@ public class PrivateIp {
     /**
      * The OCID of the VNIC the private IP is assigned to. The VNIC and private IP
      * must be in the same subnet.
-     * However, if the `PrivateIp` object is being used with a VLAN as part of
-     * the Oracle Cloud VMware Solution, the `vnicId` is null.
+     * However, if the {@code PrivateIp} object is being used with a VLAN as part of
+     * the Oracle Cloud VMware Solution, the {@code vnicId} is null.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")

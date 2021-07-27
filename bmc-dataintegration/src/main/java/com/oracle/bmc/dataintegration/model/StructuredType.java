@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * A `StructuredType` object represents a data type that exists in a physical data asset object such as a table column, but is more complex. For example, an Oracle database `OBJECT` type. It can be composed of multiple `DataType` objects.
+ * A {@code StructuredType} object represents a data type that exists in a physical data asset object such as a table column, but is more complex. For example, an Oracle database {@code OBJECT} type. It can be composed of multiple {@code DataType} objects.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

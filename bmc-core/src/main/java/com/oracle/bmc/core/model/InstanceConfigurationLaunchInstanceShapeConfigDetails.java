@@ -10,10 +10,10 @@ package com.oracle.bmc.core.model;
  * If the parameter is provided, the instance is created
  * with the resources that you specify. If some properties are missing or
  * the entire parameter is not provided, the instance is created with the default
- * configuration values for the `shape` that you specify.
+ * configuration values for the {@code shape} that you specify.
  * <p>
  * Each shape only supports certain configurable values. If the values that you provide are not valid for the
- * specified `shape`, an error is returned.
+ * specified {@code shape}, an error is returned.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -107,12 +107,12 @@ public class InstanceConfigurationLaunchInstanceShapeConfigDetails {
     Float memoryInGBs;
     /**
      * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
-     * non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+     * non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
      * <p>
      * The following values are supported:
-     * - `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
-     * - `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
-     * - `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+     * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+     * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+     * - {@code BASELINE_1_1} - baseline usage is an entire OCPU. This represents a non-burstable instance.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -161,12 +161,12 @@ public class InstanceConfigurationLaunchInstanceShapeConfigDetails {
     };
     /**
      * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
-     * non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+     * non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
      * <p>
      * The following values are supported:
-     * - `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
-     * - `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
-     * - `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+     * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+     * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+     * - {@code BASELINE_1_1} - baseline usage is an entire OCPU. This represents a non-burstable instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("baselineOcpuUtilization")

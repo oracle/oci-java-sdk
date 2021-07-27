@@ -265,7 +265,7 @@ public class CreateLoadBalancerDetails {
      * A user-friendly name. It does not have to be unique, and it is changeable.
      * Avoid entering confidential information.
      * <p>
-     * Example: `example_load_balancer`
+     * Example: {@code example_load_balancer}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -276,14 +276,14 @@ public class CreateLoadBalancerDetails {
      * To get a list of available shapes, use the {@link #listShapes(ListShapesRequest) listShapes}
      * operation.
      * <p>
-     * Example: `100Mbps`
+     * Example: {@code 100Mbps}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     String shapeName;
 
     /**
-     * The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
+     * The configuration details to create load balancer using Flexible shape. This is required only if shapeName is {@code Flexible}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeDetails")
@@ -292,15 +292,15 @@ public class CreateLoadBalancerDetails {
     /**
      * Whether the load balancer has a VCN-local (private) IP address.
      * <p>
-     * If \"true\", the service assigns a private IP address to the load balancer.
+     * If "true", the service assigns a private IP address to the load balancer.
      * <p>
-     * If \"false\", the service assigns a public IP address to the load balancer.
+     * If "false", the service assigns a public IP address to the load balancer.
      * <p>
      * A public load balancer is accessible from the internet, depending on your VCN's
      * [security list rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm). For more information about public and
      * private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
      * <p>
-     * Example: `true`
+     * Example: {@code true}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
@@ -308,11 +308,11 @@ public class CreateLoadBalancerDetails {
     /**
      * Whether the load balancer has an IPv4 or IPv6 IP address.
      * <p>
-     * If \"IPV4\", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+     * If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
      * <p>
-     * If \"IPV6\", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+     * If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
      * <p>
-     * Example: \"ipMode\":\"IPV6\"
+     * Example: "ipMode":"IPV6"
      *
      **/
     public enum IpMode {
@@ -350,11 +350,11 @@ public class CreateLoadBalancerDetails {
     /**
      * Whether the load balancer has an IPv4 or IPv6 IP address.
      * <p>
-     * If \"IPV4\", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+     * If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
      * <p>
-     * If \"IPV6\", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+     * If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
      * <p>
-     * Example: \"ipMode\":\"IPV6\"
+     * Example: "ipMode":"IPV6"
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipMode")
@@ -388,7 +388,7 @@ public class CreateLoadBalancerDetails {
      *  The network security rules of other resources can reference the NSGs associated with the load balancer
      *    to ensure access.
      * <p>
-     * Example: `[\"ocid1.nsg.oc1.phx.unique_ID\"]`
+     * Example: {@code ["ocid1.nsg.oc1.phx.unique_ID"]}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
@@ -413,7 +413,7 @@ public class CreateLoadBalancerDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -423,7 +423,7 @@ public class CreateLoadBalancerDetails {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

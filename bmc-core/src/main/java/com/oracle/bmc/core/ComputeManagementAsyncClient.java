@@ -404,7 +404,12 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                                 AttachInstancePoolInstanceRequest,
                                 AttachInstancePoolInstanceResponse>,
                         java.util.concurrent.Future<AttachInstancePoolInstanceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAttachInstancePoolInstanceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -444,7 +449,12 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 AttachLoadBalancerRequest, AttachLoadBalancerResponse>,
                         java.util.concurrent.Future<AttachLoadBalancerResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAttachLoadBalancerDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -490,7 +500,12 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                                 ChangeClusterNetworkCompartmentRequest,
                                 ChangeClusterNetworkCompartmentResponse>,
                         java.util.concurrent.Future<ChangeClusterNetworkCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeClusterNetworkCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -538,7 +553,13 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                                 ChangeInstanceConfigurationCompartmentRequest,
                                 ChangeInstanceConfigurationCompartmentResponse>,
                         java.util.concurrent.Future<ChangeInstanceConfigurationCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeInstanceConfigurationCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -584,7 +605,12 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                                 ChangeInstancePoolCompartmentRequest,
                                 ChangeInstancePoolCompartmentResponse>,
                         java.util.concurrent.Future<ChangeInstancePoolCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeInstancePoolCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -626,7 +652,12 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateClusterNetworkRequest, CreateClusterNetworkResponse>,
                         java.util.concurrent.Future<CreateClusterNetworkResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateClusterNetworkDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -671,7 +702,12 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                                 CreateInstanceConfigurationRequest,
                                 CreateInstanceConfigurationResponse>,
                         java.util.concurrent.Future<CreateInstanceConfigurationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateInstanceConfiguration(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -711,7 +747,12 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateInstancePoolRequest, CreateInstancePoolResponse>,
                         java.util.concurrent.Future<CreateInstancePoolResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateInstancePoolDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -800,7 +841,12 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                                 DetachInstancePoolInstanceRequest,
                                 DetachInstancePoolInstanceResponse>,
                         java.util.concurrent.Future<DetachInstancePoolInstanceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDetachInstancePoolInstanceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -840,7 +886,12 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 DetachLoadBalancerRequest, DetachLoadBalancerResponse>,
                         java.util.concurrent.Future<DetachLoadBalancerResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDetachLoadBalancerDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1092,7 +1143,12 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                                 LaunchInstanceConfigurationRequest,
                                 LaunchInstanceConfigurationResponse>,
                         java.util.concurrent.Future<LaunchInstanceConfigurationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getInstanceConfiguration(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1588,7 +1644,12 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateClusterNetworkRequest, UpdateClusterNetworkResponse>,
                         java.util.concurrent.Future<UpdateClusterNetworkResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateClusterNetworkDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1633,7 +1694,12 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                                 UpdateInstanceConfigurationRequest,
                                 UpdateInstanceConfigurationResponse>,
                         java.util.concurrent.Future<UpdateInstanceConfigurationResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateInstanceConfigurationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1673,7 +1739,12 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateInstancePoolRequest, UpdateInstancePoolResponse>,
                         java.util.concurrent.Future<UpdateInstancePoolResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateInstancePoolDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

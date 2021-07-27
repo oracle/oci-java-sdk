@@ -140,8 +140,8 @@ public class CreateVcnDetails {
     }
 
     /**
-     * **Deprecated.** Do *not* set this value. Use `cidrBlocks` instead.
-     * Example: `10.0.0.0/16`
+     * **Deprecated.** Do *not* set this value. Use {@code cidrBlocks} instead.
+     * Example: {@code 10.0.0.0/16}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
@@ -153,7 +153,7 @@ public class CreateVcnDetails {
      * - They must not overlap with each other or with the on-premises network CIDR block.
      * - The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN.
      * <p>
-     **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
+     **Important:** Do *not* specify a value for {@code cidrBlock}. Use this parameter instead.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlocks")
@@ -169,7 +169,7 @@ public class CreateVcnDetails {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -186,7 +186,7 @@ public class CreateVcnDetails {
     /**
      * A DNS label for the VCN, used in conjunction with the VNIC's hostname and
      * subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-     * within this subnet (for example, `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+     * within this subnet (for example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
      * Not required to be unique, but it's a best practice to set unique DNS labels
      * for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter.
      * The value cannot be changed.
@@ -198,7 +198,7 @@ public class CreateVcnDetails {
      * For more information, see
      * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * <p>
-     * Example: `vcn1`
+     * Example: {@code vcn1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
@@ -208,18 +208,18 @@ public class CreateVcnDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
 
     /**
-     * Whether IPv6 is enabled for the VCN. Default is `false`.
+     * Whether IPv6 is enabled for the VCN. Default is {@code false}.
      * If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block.
      * For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
-     * Example: `true`
+     * Example: {@code true}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIpv6Enabled")

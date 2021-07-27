@@ -404,7 +404,12 @@ public class BdsAsyncClient implements BdsAsync {
                                 AddAutoScalingConfigurationRequest,
                                 AddAutoScalingConfigurationResponse>,
                         java.util.concurrent.Future<AddAutoScalingConfigurationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddAutoScalingConfigurationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -444,7 +449,12 @@ public class BdsAsyncClient implements BdsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 AddBlockStorageRequest, AddBlockStorageResponse>,
                         java.util.concurrent.Future<AddBlockStorageResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddBlockStorageDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -483,7 +493,12 @@ public class BdsAsyncClient implements BdsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 AddCloudSqlRequest, AddCloudSqlResponse>,
                         java.util.concurrent.Future<AddCloudSqlResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddCloudSqlDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -523,7 +538,12 @@ public class BdsAsyncClient implements BdsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 AddWorkerNodesRequest, AddWorkerNodesResponse>,
                         java.util.concurrent.Future<AddWorkerNodesResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddWorkerNodesDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -568,7 +588,12 @@ public class BdsAsyncClient implements BdsAsync {
                                 ChangeBdsInstanceCompartmentRequest,
                                 ChangeBdsInstanceCompartmentResponse>,
                         java.util.concurrent.Future<ChangeBdsInstanceCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeBdsInstanceCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -607,7 +632,12 @@ public class BdsAsyncClient implements BdsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeShapeRequest, ChangeShapeResponse>,
                         java.util.concurrent.Future<ChangeShapeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeShapeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -647,7 +677,12 @@ public class BdsAsyncClient implements BdsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateBdsInstanceRequest, CreateBdsInstanceResponse>,
                         java.util.concurrent.Future<CreateBdsInstanceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateBdsInstanceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1058,7 +1093,12 @@ public class BdsAsyncClient implements BdsAsync {
                                 RemoveAutoScalingConfigurationRequest,
                                 RemoveAutoScalingConfigurationResponse>,
                         java.util.concurrent.Future<RemoveAutoScalingConfigurationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveAutoScalingConfigurationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1098,7 +1138,12 @@ public class BdsAsyncClient implements BdsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 RemoveCloudSqlRequest, RemoveCloudSqlResponse>,
                         java.util.concurrent.Future<RemoveCloudSqlResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveCloudSqlDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1137,7 +1182,12 @@ public class BdsAsyncClient implements BdsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 RestartNodeRequest, RestartNodeResponse>,
                         java.util.concurrent.Future<RestartNodeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRestartNodeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1183,7 +1233,12 @@ public class BdsAsyncClient implements BdsAsync {
                                 UpdateAutoScalingConfigurationRequest,
                                 UpdateAutoScalingConfigurationResponse>,
                         java.util.concurrent.Future<UpdateAutoScalingConfigurationResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateAutoScalingConfigurationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1222,7 +1277,12 @@ public class BdsAsyncClient implements BdsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateBdsInstanceRequest, UpdateBdsInstanceResponse>,
                         java.util.concurrent.Future<UpdateBdsInstanceResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateBdsInstanceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

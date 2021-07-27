@@ -305,7 +305,7 @@ public class FunctionSummary {
     /**
      * The qualified name of the Docker image to use in the function, including the image tag.
      * The image should be in the OCI Registry that is in the same region as the function itself.
-     * Example: `phx.ocir.io/ten/functions/function:0.0.1`
+     * Example: {@code phx.ocir.io/ten/functions/function:0.0.1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("image")
@@ -314,7 +314,7 @@ public class FunctionSummary {
     /**
      * The image digest for the version of the image that will be pulled when invoking this function.
      * If no value is specified, the digest currently associated with the image in the OCI Registry will be used.
-     * Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+     * Example: {@code sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageDigest")
@@ -339,7 +339,7 @@ public class FunctionSummary {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -355,7 +355,7 @@ public class FunctionSummary {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -365,7 +365,7 @@ public class FunctionSummary {
      * The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
      * timestamp format.
      * <p>
-     * Example: `2018-09-12T22:47:12.613Z`
+     * Example: {@code 2018-09-12T22:47:12.613Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -375,7 +375,7 @@ public class FunctionSummary {
      * The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
      * timestamp format.
      * <p>
-     * Example: `2018-09-12T22:47:12.613Z`
+     * Example: {@code 2018-09-12T22:47:12.613Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")

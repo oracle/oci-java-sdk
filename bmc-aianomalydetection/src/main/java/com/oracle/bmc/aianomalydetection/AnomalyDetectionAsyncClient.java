@@ -445,7 +445,12 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
                                 ChangeAiPrivateEndpointCompartmentRequest,
                                 ChangeAiPrivateEndpointCompartmentResponse>,
                         java.util.concurrent.Future<ChangeAiPrivateEndpointCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeAiPrivateEndpointCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -491,7 +496,12 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
                                 ChangeDataAssetCompartmentRequest,
                                 ChangeDataAssetCompartmentResponse>,
                         java.util.concurrent.Future<ChangeDataAssetCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeDataAssetCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -533,7 +543,12 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeModelCompartmentRequest, ChangeModelCompartmentResponse>,
                         java.util.concurrent.Future<ChangeModelCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeModelCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -575,7 +590,12 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeProjectCompartmentRequest, ChangeProjectCompartmentResponse>,
                         java.util.concurrent.Future<ChangeProjectCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeProjectCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -617,7 +637,12 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateAiPrivateEndpointRequest, CreateAiPrivateEndpointResponse>,
                         java.util.concurrent.Future<CreateAiPrivateEndpointResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateAiPrivateEndpointDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -657,7 +682,12 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateDataAssetRequest, CreateDataAssetResponse>,
                         java.util.concurrent.Future<CreateDataAssetResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDataAssetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -696,7 +726,12 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateModelRequest, CreateModelResponse>,
                         java.util.concurrent.Future<CreateModelResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateModelDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -735,7 +770,12 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateProjectRequest, CreateProjectResponse>,
                         java.util.concurrent.Future<CreateProjectResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateProjectDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -931,7 +971,12 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 DetectAnomaliesRequest, DetectAnomaliesResponse>,
                         java.util.concurrent.Future<DetectAnomaliesResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDetectAnomaliesDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1439,7 +1484,12 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateAiPrivateEndpointRequest, UpdateAiPrivateEndpointResponse>,
                         java.util.concurrent.Future<UpdateAiPrivateEndpointResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateAiPrivateEndpointDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1478,7 +1528,12 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateDataAssetRequest, UpdateDataAssetResponse>,
                         java.util.concurrent.Future<UpdateDataAssetResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDataAssetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1516,7 +1571,12 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateModelRequest, UpdateModelResponse>,
                         java.util.concurrent.Future<UpdateModelResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateModelDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1554,7 +1614,12 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateProjectRequest, UpdateProjectResponse>,
                         java.util.concurrent.Future<UpdateProjectResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateProjectDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

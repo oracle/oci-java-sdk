@@ -79,7 +79,7 @@ public class SteeringPolicyWeightedAnswerData {
 
     /**
      * The weight assigned to the set of selected answers. Answers with a higher weight will be served
-     * more frequently. Answers can be given a value between `0` and `255`.
+     * more frequently. Answers can be given a value between {@code 0} and {@code 255}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")

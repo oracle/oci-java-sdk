@@ -101,7 +101,7 @@ public class UpdateNetworkLoadBalancerDetails {
      * The user-friendly display name for the network load balancer, which does not have to be unique and can be changed.
      * Avoid entering confidential information.
      * <p>
-     * Example: `example_network_load_balancer`
+     * Example: {@code example_network_load_balancer}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -119,7 +119,7 @@ public class UpdateNetworkLoadBalancerDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -129,7 +129,7 @@ public class UpdateNetworkLoadBalancerDetails {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

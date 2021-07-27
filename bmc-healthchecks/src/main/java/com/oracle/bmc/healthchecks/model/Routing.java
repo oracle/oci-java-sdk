@@ -90,7 +90,7 @@ public class Routing {
     }
 
     /**
-     * The registry label for `asn`, usually the name of the organization that
+     * The registry label for {@code asn}, usually the name of the organization that
      * owns the ASN. May be omitted or null.
      *
      **/
@@ -99,7 +99,7 @@ public class Routing {
 
     /**
      * The Autonomous System Number (ASN) identifying the organization
-     * responsible for routing packets to `prefix`.
+     * responsible for routing packets to {@code prefix}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("asn")
@@ -107,7 +107,7 @@ public class Routing {
 
     /**
      * An IP prefix (CIDR syntax) that is less specific than
-     * `address`, through which `address` is routed.
+     * {@code address}, through which {@code address} is routed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("prefix")
@@ -115,8 +115,8 @@ public class Routing {
 
     /**
      * An integer between 0 and 100 used to select between multiple
-     * origin ASNs when routing to `prefix`. Most prefixes have
-     * exactly one origin ASN, in which case `weight` will be 100.
+     * origin ASNs when routing to {@code prefix}. Most prefixes have
+     * exactly one origin ASN, in which case {@code weight} will be 100.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("weight")

@@ -69,7 +69,7 @@ public class ReservedIP {
      * <p>
      * Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
      * <p>
-     * Example: \"ocid1.publicip.oc1.phx.unique_ID\"
+     * Example: "ocid1.publicip.oc1.phx.unique_ID"
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")

@@ -35,21 +35,21 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
     private com.oracle.bmc.cloudguard.model.LifecycleState lifecycleState;
 
     /**
-     * Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
-     * Setting this to `ACCESSIBLE` returns only those compartments for which the
+     * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
      * user has INSPECT permissions directly or indirectly (permissions can be on a
      * resource in a subcompartment).
-     * When set to `RESTRICTED` permissions are checked and no partial results are displayed.
+     * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
      *
      */
     private AccessLevel accessLevel;
 
     /**
-     * Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
-     * Setting this to `ACCESSIBLE` returns only those compartments for which the
+     * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
      * user has INSPECT permissions directly or indirectly (permissions can be on a
      * resource in a subcompartment).
-     * When set to `RESTRICTED` permissions are checked and no partial results are displayed.
+     * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
      *
      **/
     public enum AccessLevel {

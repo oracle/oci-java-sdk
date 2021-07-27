@@ -80,19 +80,19 @@ public class SqlInventory {
     }
 
     /**
-     * Total number of sqls. Example `2000`
+     * Total number of sqls. Example {@code 2000}
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalSqls")
     Long totalSqls;
 
     /**
-     * Total number of Databases. Example `400`
+     * Total number of Databases. Example {@code 400}
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalDatabases")
     Integer totalDatabases;
 
     /**
-     * Total number of sqls analyzed by the query. Example `120`
+     * Total number of sqls analyzed by the query. Example {@code 120}
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlsAnalyzed")
     Long sqlsAnalyzed;

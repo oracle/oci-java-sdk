@@ -132,7 +132,7 @@ public class ExportSetSummary {
      * The availability domain the export set is in. May be unset
      * as a blank or NULL value.
      * <p>
-     * Example: `Uocm:PHX-AD-1`
+     * Example: {@code Uocm:PHX-AD-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
@@ -148,7 +148,7 @@ public class ExportSetSummary {
      * A user-friendly name. It does not have to be unique, and it is changeable.
      * Avoid entering confidential information.
      * <p>
-     * Example: `My export set`
+     * Example: {@code My export set}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -217,7 +217,7 @@ public class ExportSetSummary {
      * The date and time the export set was created, expressed
      * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

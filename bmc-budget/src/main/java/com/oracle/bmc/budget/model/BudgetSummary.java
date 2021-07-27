@@ -287,7 +287,7 @@ public class BudgetSummary {
 
     /**
      * This is DEPRECATED. For backwards compatability, the property will be populated when
-     * targetType is \"COMPARTMENT\" AND targets contains EXACT ONE target compartment ocid.
+     * targetType is "COMPARTMENT" AND targets contains EXACT ONE target compartment ocid.
      * For all other scenarios, this property will be left empty.
      *
      **/
@@ -335,8 +335,8 @@ public class BudgetSummary {
 
     /**
      * The list of targets on which the budget is applied.
-     *   If targetType is \"COMPARTMENT\", targets contains list of compartment OCIDs.
-     *   If targetType is \"TAG\", targets contains list of cost tracking tag identifiers in the form of \"{tagNamespace}.{tagKey}.{tagValue}\".
+     *   If targetType is "COMPARTMENT", targets contains list of compartment OCIDs.
+     *   If targetType is "TAG", targets contains list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}".
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targets")
@@ -394,7 +394,7 @@ public class BudgetSummary {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -404,7 +404,7 @@ public class BudgetSummary {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

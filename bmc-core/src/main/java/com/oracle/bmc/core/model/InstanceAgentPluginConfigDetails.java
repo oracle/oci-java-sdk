@@ -82,8 +82,8 @@ public class InstanceAgentPluginConfigDetails {
     /**
      * Whether the plugin should be enabled or disabled.
      * <p>
-     * To enable the monitoring and management plugins, the `isMonitoringDisabled` and
-     * `isManagementDisabled` attributes must also be set to false.
+     * To enable the monitoring and management plugins, the {@code isMonitoringDisabled} and
+     * {@code isManagementDisabled} attributes must also be set to false.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -132,8 +132,8 @@ public class InstanceAgentPluginConfigDetails {
     /**
      * Whether the plugin should be enabled or disabled.
      * <p>
-     * To enable the monitoring and management plugins, the `isMonitoringDisabled` and
-     * `isManagementDisabled` attributes must also be set to false.
+     * To enable the monitoring and management plugins, the {@code isMonitoringDisabled} and
+     * {@code isManagementDisabled} attributes must also be set to false.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("desiredState")

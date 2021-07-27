@@ -180,7 +180,7 @@ public class CreateFunctionDetails {
     /**
      * The qualified name of the Docker image to use in the function, including the image tag.
      * The image should be in the OCI Registry that is in the same region as the function itself.
-     * Example: `phx.ocir.io/ten/functions/function:0.0.1`
+     * Example: {@code phx.ocir.io/ten/functions/function:0.0.1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("image")
@@ -189,7 +189,7 @@ public class CreateFunctionDetails {
     /**
      * The image digest for the version of the image that will be pulled when invoking this function.
      * If no value is specified, the digest currently associated with the image in the OCI Registry will be used.
-     * Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+     * Example: {@code sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageDigest")
@@ -205,7 +205,7 @@ public class CreateFunctionDetails {
      * Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values.
      * Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.
      * <p>
-     * Example: `{\"MY_FUNCTION_CONFIG\": \"ConfVal\"}`
+     * Example: {@code {"MY_FUNCTION_CONFIG": "ConfVal"}}
      * <p>
      * The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
      *
@@ -226,7 +226,7 @@ public class CreateFunctionDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -235,7 +235,7 @@ public class CreateFunctionDetails {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

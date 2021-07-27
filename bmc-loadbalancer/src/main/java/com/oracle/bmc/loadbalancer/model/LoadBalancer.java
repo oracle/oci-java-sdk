@@ -318,7 +318,7 @@ public class LoadBalancer {
     /**
      * A user-friendly name. It does not have to be unique, and it is changeable.
      * <p>
-     * Example: `example_load_balancer`
+     * Example: {@code example_load_balancer}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -383,7 +383,7 @@ public class LoadBalancer {
     /**
      * The date and time the load balancer was created, in the format defined by RFC3339.
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -401,7 +401,7 @@ public class LoadBalancer {
      * To get a list of available shapes, use the {@link #listShapes(ListShapesRequest) listShapes}
      * operation.
      * <p>
-     * Example: `100Mbps`
+     * Example: {@code 100Mbps}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
@@ -413,15 +413,15 @@ public class LoadBalancer {
     /**
      * Whether the load balancer has a VCN-local (private) IP address.
      * <p>
-     * If \"true\", the service assigns a private IP address to the load balancer.
+     * If "true", the service assigns a private IP address to the load balancer.
      * <p>
-     * If \"false\", the service assigns a public IP address to the load balancer.
+     * If "false", the service assigns a public IP address to the load balancer.
      * <p>
      * A public load balancer is accessible from the internet, depending on your VCN's
      * [security list rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm). For more information about public and
      * private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
      * <p>
-     * Example: `true`
+     * Example: {@code true}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
@@ -446,7 +446,7 @@ public class LoadBalancer {
      *  The network security rules of other resources can reference the NSGs associated with the load balancer
      *    to ensure access.
      * <p>
-     * Example: [\"ocid1.nsg.oc1.phx.unique_ID\"]
+     * Example: ["ocid1.nsg.oc1.phx.unique_ID"]
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
@@ -474,7 +474,7 @@ public class LoadBalancer {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -484,7 +484,7 @@ public class LoadBalancer {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -495,7 +495,7 @@ public class LoadBalancer {
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * System tags can be viewed by users, but can only be created by the system.
      * <p>
-     * Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")

@@ -107,7 +107,7 @@ public class MonitoringTargetDetails extends TargetDetails {
     /**
      * The namespace of the metric.
      * <p>
-     * Example: `oci_computeagent`
+     * Example: {@code oci_computeagent}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricNamespace")
@@ -116,7 +116,7 @@ public class MonitoringTargetDetails extends TargetDetails {
     /**
      * The name of the metric.
      * <p>
-     * Example: `CpuUtilization`
+     * Example: {@code CpuUtilization}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metric")

@@ -237,7 +237,7 @@ public class CreateNodePoolDetails {
     java.util.Map<String, String> nodeMetadata;
 
     /**
-     * Deprecated. Use `nodeSourceDetails` instead.
+     * Deprecated. Use {@code nodeSourceDetails} instead.
      * If you specify values for both, this value is ignored.
      * The name of the image running on the nodes in the node pool.
      *

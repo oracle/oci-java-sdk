@@ -195,7 +195,7 @@ public class ApplicationSummary {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -211,7 +211,7 @@ public class ApplicationSummary {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -247,7 +247,7 @@ public class ApplicationSummary {
 
     /**
      * The username of the user who created the resource.  If the username of the owner does not exist,
-     * `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
+     * {@code null} will be returned and the caller should refer to the ownerPrincipalId value instead.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ownerUserName")
@@ -262,7 +262,7 @@ public class ApplicationSummary {
 
     /**
      * The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     * Example: `2018-04-03T21:10:29.600Z`
+     * Example: {@code 2018-04-03T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -270,7 +270,7 @@ public class ApplicationSummary {
 
     /**
      * The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     * Example: `2018-04-03T21:10:29.600Z`
+     * Example: {@code 2018-04-03T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")

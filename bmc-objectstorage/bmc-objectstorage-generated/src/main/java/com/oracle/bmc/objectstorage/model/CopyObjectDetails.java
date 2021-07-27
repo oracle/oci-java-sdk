@@ -201,7 +201,7 @@ public class CopyObjectDetails {
     String sourceVersionId;
 
     /**
-     * The destination region the object will be copied to, for example \"us-ashburn-1\".
+     * The destination region the object will be copied to, for example "us-ashburn-1".
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationRegion")
     String destinationRegion;
@@ -243,7 +243,7 @@ public class CopyObjectDetails {
 
     /**
      * Arbitrary string keys and values for the user-defined metadata for the object. Keys must be in
-     * \"opc-meta-*\" format. Avoid entering confidential information. Metadata key-value pairs entered
+     * "opc-meta-*" format. Avoid entering confidential information. Metadata key-value pairs entered
      * in this field are assigned to the destination object. If you enter no metadata values, the destination
      * object will inherit any existing metadata values associated with the source object.
      *

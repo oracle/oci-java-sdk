@@ -175,7 +175,7 @@ public class CreateChannelDetails {
 
     /**
      * Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -183,7 +183,7 @@ public class CreateChannelDetails {
 
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

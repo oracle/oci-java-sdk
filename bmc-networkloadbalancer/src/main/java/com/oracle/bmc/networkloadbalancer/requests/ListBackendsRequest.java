@@ -27,7 +27,7 @@ public class ListBackendsRequest extends com.oracle.bmc.requests.BmcRequest<java
     /**
      * The name of the backend set associated with the backend servers.
      * <p>
-     * Example: `example_backend_set`
+     * Example: {@code example_backend_set}
      *
      */
     private String backendSetName;
@@ -42,15 +42,15 @@ public class ListBackendsRequest extends com.oracle.bmc.requests.BmcRequest<java
     /**
      * The system returns the requested resource, with a 200 status, only if the resource has no etag
      * matching the one specified. If the condition fails for the GET and HEAD methods, then the system returns the
-     * HTTP status code `304 (Not Modified)`.
+     * HTTP status code {@code 304 (Not Modified)}.
      * <p>
-     * Example: `example-etag`
+     * Example: {@code example-etag}
      *
      */
     private String ifNoneMatch;
 
     /**
-     * For list pagination. The maximum number of results per page or items to return, in a paginated \"List\" call.
+     * For list pagination. The maximum number of results per page or items to return, in a paginated "List" call.
      * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
@@ -58,7 +58,7 @@ public class ListBackendsRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * The page token representing the page from which to start retrieving results.
-     * For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
      * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */

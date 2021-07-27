@@ -216,11 +216,11 @@ public class Script {
 
     /**
      * The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters.
-     * The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`.
+     * The format to set dynamic parameters is: {@code <ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>}.
      * Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false.
      * Examples:
-     * With mandatory param name : `<ORAP><ON>param name</ON></ORAP>`
-     * With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>`
+     * With mandatory param name : {@code <ORAP><ON>param name</ON></ORAP>}
+     * With parameter name and value : {@code <ORAP><ON>param name</ON><OV>param value</OV></ORAP>}
      * Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
      *
      **/
@@ -246,7 +246,7 @@ public class Script {
     String contentFileName;
 
     /**
-     * List of script parameters. Example: `[{\"scriptParameter\": {\"paramName\": \"userid\", \"paramValue\":\"testuser\", \"isSecret\": false}, \"isOverwritten\": false}]`
+     * List of script parameters. Example: {@code [{"scriptParameter": {"paramName": "userid", "paramValue":"testuser", "isSecret": false}, "isOverwritten": false}]}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
@@ -258,7 +258,7 @@ public class Script {
     /**
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
      * timestamp format.
-     * Example: `2020-02-12T22:47:12.613Z`
+     * Example: {@code 2020-02-12T22:47:12.613Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -267,7 +267,7 @@ public class Script {
     /**
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
      * timestamp format.
-     * Example: `2020-02-13T22:47:12.613Z`
+     * Example: {@code 2020-02-13T22:47:12.613Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
@@ -275,7 +275,7 @@ public class Script {
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -283,7 +283,7 @@ public class Script {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

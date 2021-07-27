@@ -279,29 +279,29 @@ public class VolumeBackupSchedule {
     @com.fasterxml.jackson.annotation.JsonProperty("period")
     Period period;
     /**
-     * Indicates how the offset is defined. If value is `STRUCTURED`,
-     * then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used
-     * and `offsetSeconds` will be ignored in requests and users should ignore its
+     * Indicates how the offset is defined. If value is {@code STRUCTURED},
+     * then {@code hourOfDay}, {@code dayOfWeek}, {@code dayOfMonth}, and {@code month} fields are used
+     * and {@code offsetSeconds} will be ignored in requests and users should ignore its
      * value from the responses.
      * <p>
-     * `hourOfDay` is applicable for periods `ONE_DAY`,
-     * `ONE_WEEK`, `ONE_MONTH` and `ONE_YEAR`.
+     * {@code hourOfDay} is applicable for periods {@code ONE_DAY},
+     * {@code ONE_WEEK}, {@code ONE_MONTH} and {@code ONE_YEAR}.
      * <p>
-     * `dayOfWeek` is applicable for period
-     * `ONE_WEEK`.
+     * {@code dayOfWeek} is applicable for period
+     * {@code ONE_WEEK}.
      * <p>
-     * `dayOfMonth` is applicable for periods `ONE_MONTH` and `ONE_YEAR`.
+     * {@code dayOfMonth} is applicable for periods {@code ONE_MONTH} and {@code ONE_YEAR}.
      * <p>
      * 'month' is applicable for period 'ONE_YEAR'.
      * <p>
      * They will be ignored in the requests for inapplicable periods.
      * <p>
-     * If value is `NUMERIC_SECONDS`, then `offsetSeconds`
+     * If value is {@code NUMERIC_SECONDS}, then {@code offsetSeconds}
      * will be used for both requests and responses and the structured fields will be
      * ignored in the requests and users should ignore their values from the responses.
      * <p>
-     * For clients using older versions of Apis and not sending `offsetType` in their
-     * requests, the behaviour is just like `NUMERIC_SECONDS`.
+     * For clients using older versions of Apis and not sending {@code offsetType} in their
+     * requests, the behaviour is just like {@code NUMERIC_SECONDS}.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -348,29 +348,29 @@ public class VolumeBackupSchedule {
         }
     };
     /**
-     * Indicates how the offset is defined. If value is `STRUCTURED`,
-     * then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used
-     * and `offsetSeconds` will be ignored in requests and users should ignore its
+     * Indicates how the offset is defined. If value is {@code STRUCTURED},
+     * then {@code hourOfDay}, {@code dayOfWeek}, {@code dayOfMonth}, and {@code month} fields are used
+     * and {@code offsetSeconds} will be ignored in requests and users should ignore its
      * value from the responses.
      * <p>
-     * `hourOfDay` is applicable for periods `ONE_DAY`,
-     * `ONE_WEEK`, `ONE_MONTH` and `ONE_YEAR`.
+     * {@code hourOfDay} is applicable for periods {@code ONE_DAY},
+     * {@code ONE_WEEK}, {@code ONE_MONTH} and {@code ONE_YEAR}.
      * <p>
-     * `dayOfWeek` is applicable for period
-     * `ONE_WEEK`.
+     * {@code dayOfWeek} is applicable for period
+     * {@code ONE_WEEK}.
      * <p>
-     * `dayOfMonth` is applicable for periods `ONE_MONTH` and `ONE_YEAR`.
+     * {@code dayOfMonth} is applicable for periods {@code ONE_MONTH} and {@code ONE_YEAR}.
      * <p>
      * 'month' is applicable for period 'ONE_YEAR'.
      * <p>
      * They will be ignored in the requests for inapplicable periods.
      * <p>
-     * If value is `NUMERIC_SECONDS`, then `offsetSeconds`
+     * If value is {@code NUMERIC_SECONDS}, then {@code offsetSeconds}
      * will be used for both requests and responses and the structured fields will be
      * ignored in the requests and users should ignore their values from the responses.
      * <p>
-     * For clients using older versions of Apis and not sending `offsetType` in their
-     * requests, the behaviour is just like `NUMERIC_SECONDS`.
+     * For clients using older versions of Apis and not sending {@code offsetType} in their
+     * requests, the behaviour is just like {@code NUMERIC_SECONDS}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("offsetType")

@@ -374,7 +374,7 @@ public class Instance {
     /**
      * The availability domain the instance is running in.
      * <p>
-     * Example: `Uocm:PHX-AD-1`
+     * Example: {@code Uocm:PHX-AD-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
@@ -406,7 +406,7 @@ public class Instance {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -416,7 +416,7 @@ public class Instance {
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
      * <p>
-     * Example: `My bare metal instance`
+     * Example: {@code My bare metal instance}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -424,9 +424,9 @@ public class Instance {
 
     /**
      * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality
-     * as fields in the `metadata` object.
+     * as fields in the {@code metadata} object.
      * <p>
-     * They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata`
+     * They are distinguished from {@code metadata} fields in that these can be nested JSON objects (whereas {@code metadata}
      * fields are string/string maps only).
      *
      **/
@@ -444,7 +444,7 @@ public class Instance {
      * <p>
      * If you do not specify the fault domain, the system selects one for you.
      * <p>
-     * Example: `FAULT-DOMAIN-1`
+     * Example: {@code FAULT-DOMAIN-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
@@ -454,7 +454,7 @@ public class Instance {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -467,7 +467,7 @@ public class Instance {
     String id;
 
     /**
-     * Deprecated. Use `sourceDetails` instead.
+     * Deprecated. Use {@code sourceDetails} instead.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
@@ -502,10 +502,10 @@ public class Instance {
     String ipxeScript;
     /**
      * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-     * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
-     * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
-     * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
-     * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+     * * {@code NATIVE} - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+     * * {@code EMULATED} - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+     * * {@code PARAVIRTUALIZED} - VM instances launch with paravirtualized devices using VirtIO drivers.
+     * * {@code CUSTOM} - VM instances launch with custom configuration settings specified in the {@code LaunchOptions} parameter.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -555,10 +555,10 @@ public class Instance {
     };
     /**
      * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-     * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
-     * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
-     * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
-     * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+     * * {@code NATIVE} - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+     * * {@code EMULATED} - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+     * * {@code PARAVIRTUALIZED} - VM instances launch with paravirtualized devices using VirtIO drivers.
+     * * {@code CUSTOM} - VM instances launch with custom configuration settings specified in the {@code LaunchOptions} parameter.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("launchMode")
@@ -643,10 +643,10 @@ public class Instance {
     /**
      * The region that contains the availability domain the instance is running in.
      * <p>
-     * For the us-phoenix-1 and us-ashburn-1 regions, `phx` and `iad` are returned, respectively.
+     * For the us-phoenix-1 and us-ashburn-1 regions, {@code phx} and {@code iad} are returned, respectively.
      * For all other regions, the full region name is returned.
      * <p>
-     * Examples: `phx`, `eu-frankfurt-1`
+     * Examples: {@code phx}, {@code eu-frankfurt-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
@@ -669,7 +669,7 @@ public class Instance {
 
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
@@ -678,7 +678,7 @@ public class Instance {
     /**
      * The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -691,7 +691,7 @@ public class Instance {
      * The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time.
      * Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state.
-     * Example: `2018-05-25T21:10:29.600Z`
+     * Example: {@code 2018-05-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceRebootDue")

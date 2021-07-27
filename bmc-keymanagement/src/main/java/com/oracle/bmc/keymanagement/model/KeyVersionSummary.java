@@ -160,7 +160,7 @@ public class KeyVersionSummary {
     /**
      * The key version's current lifecycle state.
      * <p>
-     * Example: `ENABLED`
+     * Example: {@code ENABLED}
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -217,7 +217,7 @@ public class KeyVersionSummary {
     /**
      * The key version's current lifecycle state.
      * <p>
-     * Example: `ENABLED`
+     * Example: {@code ENABLED}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
@@ -277,7 +277,7 @@ public class KeyVersionSummary {
     /**
      * The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * <p>
-     * Example: `2018-04-03T21:10:29.600Z`
+     * Example: {@code 2018-04-03T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -285,7 +285,7 @@ public class KeyVersionSummary {
 
     /**
      * An optional property to indicate when to delete the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     * Example: `2019-04-03T21:10:29.600Z`
+     * Example: {@code 2019-04-03T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")

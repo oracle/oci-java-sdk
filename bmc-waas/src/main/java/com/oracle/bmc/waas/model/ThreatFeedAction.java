@@ -73,7 +73,7 @@ public class ThreatFeedAction {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     String key;
     /**
-     * The selected action. If unspecified, defaults to `OFF`.
+     * The selected action. If unspecified, defaults to {@code OFF}.
      **/
     public enum Action {
         Off("OFF"),
@@ -109,7 +109,7 @@ public class ThreatFeedAction {
         }
     };
     /**
-     * The selected action. If unspecified, defaults to `OFF`.
+     * The selected action. If unspecified, defaults to {@code OFF}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     Action action;

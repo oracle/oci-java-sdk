@@ -27,7 +27,7 @@ public class ScanExternalContainerDatabasePluggableDatabasesRequest
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * external database connector resource (`ExternalDatabaseConnectorId`).
+     * external database connector resource ({@code ExternalDatabaseConnectorId}).
      *
      */
     private String externalDatabaseConnectorId;

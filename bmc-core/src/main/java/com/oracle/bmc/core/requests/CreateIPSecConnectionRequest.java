@@ -21,7 +21,7 @@ public class CreateIPSecConnectionRequest
         extends com.oracle.bmc.requests.BmcRequest<CreateIPSecConnectionDetails> {
 
     /**
-     * Details for creating an `IPSecConnection`.
+     * Details for creating an {@code IPSecConnection}.
      */
     private CreateIPSecConnectionDetails createIPSecConnectionDetails;
 

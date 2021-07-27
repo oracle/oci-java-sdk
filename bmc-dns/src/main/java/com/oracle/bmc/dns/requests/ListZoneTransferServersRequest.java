@@ -40,7 +40,7 @@ public class ListZoneTransferServersRequest
     private com.oracle.bmc.dns.model.Scope scope;
 
     /**
-     * The value of the `opc-next-page` response header from the previous \"List\" call.
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
      *
      */
     private String page;

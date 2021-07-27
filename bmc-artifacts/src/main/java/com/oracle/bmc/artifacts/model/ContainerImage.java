@@ -249,7 +249,7 @@ public class ContainerImage {
      * If there are no versions associated with the image, then last known version and digest are used instead.
      * If the last known version is unavailable, then 'unknown' is used instead of the version.
      * <p>
-     * Example: `ubuntu:latest` or `ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2`
+     * Example: {@code ubuntu:latest} or {@code ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -258,7 +258,7 @@ public class ContainerImage {
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the container image.
      * <p>
-     * Example: `ocid1.containerimage.oc1..exampleuniqueID`
+     * Example: {@code ocid1.containerimage.oc1..exampleuniqueID}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")

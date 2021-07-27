@@ -87,7 +87,7 @@ public class JsonWebTokenClaim {
 
     /**
      * The list of acceptable values for a given claim.
-     * If this value is \"null\" or empty and \"isRequired\" set to \"true\", then
+     * If this value is "null" or empty and "isRequired" set to "true", then
      * the presence of this claim in the JWT is validated.
      *
      **/
@@ -96,7 +96,7 @@ public class JsonWebTokenClaim {
 
     /**
      * Whether the claim is required to be present in the JWT or not. If set
-     * to \"false\", the claim values will be matched only if the claim is
+     * to "false", the claim values will be matched only if the claim is
      * present in the JWT.
      *
      **/

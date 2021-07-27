@@ -125,18 +125,18 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     };
     /**
      * For list pagination. The maximum number of results per page,
-     * or items to return in a paginated \"List\" call.
+     * or items to return in a paginated "List" call.
      * 1 is the minimum, 1000 is the maximum.
      * See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      * <p>
-     * Example: `500`
+     * Example: {@code 500}
      *
      */
     private Integer limit;
 
     /**
-     * For list pagination. The value of the `opc-next-page` response
-     * header from the previous \"List\" call.
+     * For list pagination. The value of the {@code opc-next-page} response
+     * header from the previous "List" call.
      * <p>
      * See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      *
@@ -144,13 +144,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     private String page;
 
     /**
-     * Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
+     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
      *
      */
     private SortOrder sortOrder;
 
     /**
-     * Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
+     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
      *
      **/
     public enum SortOrder {

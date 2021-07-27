@@ -570,7 +570,12 @@ public class RecipientInvitationAsyncClient implements RecipientInvitationAsync 
                                 UpdateRecipientInvitationRequest,
                                 UpdateRecipientInvitationResponse>,
                         java.util.concurrent.Future<UpdateRecipientInvitationResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateRecipientInvitationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

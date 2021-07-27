@@ -5,10 +5,10 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * The InnoDB shutdown mode. If the value is \"SLOW\", InnoDB does a slow
+ * The InnoDB shutdown mode. If the value is "SLOW", InnoDB does a slow
  * shutdown, a full purge and a change buffer merge before shutting
- * down. If the value is \"FAST\", InnoDB skips these operations at shutdown,
- * a process known as a fast shutdown. If the value is \"IMMEDIATE\", InnoDB
+ * down. If the value is "FAST", InnoDB skips these operations at shutdown,
+ * a process known as a fast shutdown. If the value is "IMMEDIATE", InnoDB
  * flushes its logs and shuts down cold, as if MySQL had crashed; no
  * committed transactions are lost, but the crash recovery operation makes
  * the next startup take longer.

@@ -406,7 +406,12 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                                 ChangeDatabaseInsightCompartmentRequest,
                                 ChangeDatabaseInsightCompartmentResponse>,
                         java.util.concurrent.Future<ChangeDatabaseInsightCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeDatabaseInsightCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -454,7 +459,13 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                                 ChangeEnterpriseManagerBridgeCompartmentResponse>,
                         java.util.concurrent.Future<
                                 ChangeEnterpriseManagerBridgeCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeEnterpriseManagerBridgeCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -500,7 +511,12 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                                 ChangeHostInsightCompartmentRequest,
                                 ChangeHostInsightCompartmentResponse>,
                         java.util.concurrent.Future<ChangeHostInsightCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeHostInsightCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -542,7 +558,12 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateDatabaseInsightRequest, CreateDatabaseInsightResponse>,
                         java.util.concurrent.Future<CreateDatabaseInsightResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDatabaseInsightDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -587,7 +608,12 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                                 CreateEnterpriseManagerBridgeRequest,
                                 CreateEnterpriseManagerBridgeResponse>,
                         java.util.concurrent.Future<CreateEnterpriseManagerBridgeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateEnterpriseManagerBridgeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -627,7 +653,12 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateHostInsightRequest, CreateHostInsightResponse>,
                         java.util.concurrent.Future<CreateHostInsightResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateHostInsightDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -875,7 +906,12 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 EnableDatabaseInsightRequest, EnableDatabaseInsightResponse>,
                         java.util.concurrent.Future<EnableDatabaseInsightResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getEnableDatabaseInsightDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -915,7 +951,12 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 EnableHostInsightRequest, EnableHostInsightResponse>,
                         java.util.concurrent.Future<EnableHostInsightResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getEnableHostInsightDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1121,7 +1162,12 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                                 IngestDatabaseConfigurationRequest,
                                 IngestDatabaseConfigurationResponse>,
                         java.util.concurrent.Future<IngestDatabaseConfigurationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getIngestDatabaseConfigurationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1163,7 +1209,12 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 IngestHostConfigurationRequest, IngestHostConfigurationResponse>,
                         java.util.concurrent.Future<IngestHostConfigurationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getIngestHostConfigurationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1203,7 +1254,12 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 IngestHostMetricsRequest, IngestHostMetricsResponse>,
                         java.util.concurrent.Future<IngestHostMetricsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getIngestHostMetricsDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1243,7 +1299,12 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 IngestSqlBucketRequest, IngestSqlBucketResponse>,
                         java.util.concurrent.Future<IngestSqlBucketResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getIngestSqlBucketDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1283,7 +1344,12 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 IngestSqlPlanLinesRequest, IngestSqlPlanLinesResponse>,
                         java.util.concurrent.Future<IngestSqlPlanLinesResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getIngestSqlPlanLinesDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1322,7 +1388,12 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 IngestSqlTextRequest, IngestSqlTextResponse>,
                         java.util.concurrent.Future<IngestSqlTextResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getIngestSqlTextDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2748,7 +2819,12 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateDatabaseInsightRequest, UpdateDatabaseInsightResponse>,
                         java.util.concurrent.Future<UpdateDatabaseInsightResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDatabaseInsightDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2792,7 +2868,12 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                                 UpdateEnterpriseManagerBridgeRequest,
                                 UpdateEnterpriseManagerBridgeResponse>,
                         java.util.concurrent.Future<UpdateEnterpriseManagerBridgeResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateEnterpriseManagerBridgeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2831,7 +2912,12 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateHostInsightRequest, UpdateHostInsightResponse>,
                         java.util.concurrent.Future<UpdateHostInsightResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateHostInsightDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

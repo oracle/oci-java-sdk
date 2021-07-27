@@ -78,7 +78,7 @@ public class CrossConnectLocation {
     /**
      * The name of the location.
      * <p>
-     * Example: `CyrusOne, Chandler, AZ`
+     * Example: {@code CyrusOne, Chandler, AZ}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")

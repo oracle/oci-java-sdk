@@ -244,7 +244,7 @@ public class Ticket {
     LifecycleState lifecycleState;
 
     /**
-     * Additional information about the current `lifecycleState`.
+     * Additional information about the current {@code lifecycleState}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     LifecycleDetails lifecycleDetails;

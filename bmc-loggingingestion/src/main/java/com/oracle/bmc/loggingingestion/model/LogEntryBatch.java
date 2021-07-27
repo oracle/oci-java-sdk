@@ -108,7 +108,7 @@ public class LogEntryBatch {
 
     /**
      * Source of the logs that generated the message. This could be the
-     * instance name, hostname, or the source used to read the event. For example, \"ServerA\".
+     * instance name, hostname, or the source used to read the event. For example, "ServerA".
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
@@ -125,7 +125,7 @@ public class LogEntryBatch {
     /**
      * This optional field is useful for specifying the specific sub-resource
      * or input file used to read the event.
-     * For example: \"/var/log/application.log\".
+     * For example: "/var/log/application.log".
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subject")

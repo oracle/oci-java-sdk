@@ -406,7 +406,13 @@ public class DashxApisAsyncClient implements DashxApisAsync {
                                 ChangeManagementDashboardsCompartmentRequest,
                                 ChangeManagementDashboardsCompartmentResponse>,
                         java.util.concurrent.Future<ChangeManagementDashboardsCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeManagementDashboardsCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -455,7 +461,13 @@ public class DashxApisAsyncClient implements DashxApisAsync {
                                 ChangeManagementSavedSearchesCompartmentResponse>,
                         java.util.concurrent.Future<
                                 ChangeManagementSavedSearchesCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeManagementSavedSearchesCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -499,7 +511,12 @@ public class DashxApisAsyncClient implements DashxApisAsync {
                                 CreateManagementDashboardRequest,
                                 CreateManagementDashboardResponse>,
                         java.util.concurrent.Future<CreateManagementDashboardResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateManagementDashboardDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -544,7 +561,12 @@ public class DashxApisAsyncClient implements DashxApisAsync {
                                 CreateManagementSavedSearchRequest,
                                 CreateManagementSavedSearchResponse>,
                         java.util.concurrent.Future<CreateManagementSavedSearchResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateManagementSavedSearchDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -794,7 +816,12 @@ public class DashxApisAsyncClient implements DashxApisAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ImportDashboardRequest, ImportDashboardResponse>,
                         java.util.concurrent.Future<ImportDashboardResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getManagementDashboardImportDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -922,7 +949,12 @@ public class DashxApisAsyncClient implements DashxApisAsync {
                                 UpdateManagementDashboardRequest,
                                 UpdateManagementDashboardResponse>,
                         java.util.concurrent.Future<UpdateManagementDashboardResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateManagementDashboardDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -967,7 +999,12 @@ public class DashxApisAsyncClient implements DashxApisAsync {
                                 UpdateManagementSavedSearchRequest,
                                 UpdateManagementSavedSearchResponse>,
                         java.util.concurrent.Future<UpdateManagementSavedSearchResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateManagementSavedSearchDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

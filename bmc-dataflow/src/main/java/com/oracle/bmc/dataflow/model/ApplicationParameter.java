@@ -73,7 +73,7 @@ public class ApplicationParameter {
     /**
      * The name of the parameter.  It must be a string of one or more word characters
      * (a-z, A-Z, 0-9, _).
-     * Examples: \"iterations\", \"input_file\"
+     * Examples: "iterations", "input_file"
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -81,7 +81,7 @@ public class ApplicationParameter {
 
     /**
      * The value of the parameter. It must be a string of 0 or more characters of any kind.
-     * Examples: \"\" (empty string), \"10\", \"mydata.xml\", \"${x}\"
+     * Examples: "" (empty string), "10", "mydata.xml", "${x}"
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")

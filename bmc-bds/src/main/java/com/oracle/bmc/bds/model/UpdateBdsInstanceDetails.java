@@ -91,7 +91,7 @@ public class UpdateBdsInstanceDetails {
 
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope.
-     * Exists for cross-compatibility only. For example, `{\"bar-key\": \"value\"}`
+     * Exists for cross-compatibility only. For example, {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -99,7 +99,7 @@ public class UpdateBdsInstanceDetails {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For example, `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * For example, {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

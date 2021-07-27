@@ -104,8 +104,8 @@ public class NodePoolOptions {
 
     /**
      * Deprecated. See sources.
-     * When creating a node pool using the `CreateNodePoolDetails` object, only image names contained in this
-     * property can be passed to the `nodeImageName` property.
+     * When creating a node pool using the {@code CreateNodePoolDetails} object, only image names contained in this
+     * property can be passed to the {@code nodeImageName} property.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("images")

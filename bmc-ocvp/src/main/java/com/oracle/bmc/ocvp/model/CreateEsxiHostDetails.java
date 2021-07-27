@@ -126,10 +126,10 @@ public class CreateEsxiHostDetails {
      * A descriptive name for the ESXi host. It's changeable.
      * Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
      * <p>
-     * If this attribute is not specified, the SDDC's `instanceDisplayNamePrefix` attribute is used
+     * If this attribute is not specified, the SDDC's {@code instanceDisplayNamePrefix} attribute is used
      * to name and incrementally number the ESXi host. For example, if you're creating the fourth
-     * ESXi host in the SDDC, and `instanceDisplayNamePrefix` is `MySDDC`, the host's display
-     * name is `MySDDC-4`.
+     * ESXi host in the SDDC, and {@code instanceDisplayNamePrefix} is {@code MySDDC}, the host's display
+     * name is {@code MySDDC-4}.
      * <p>
      * Avoid entering confidential information.
      *
@@ -160,7 +160,7 @@ public class CreateEsxiHostDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -170,7 +170,7 @@ public class CreateEsxiHostDetails {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

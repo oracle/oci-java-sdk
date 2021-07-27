@@ -264,7 +264,7 @@ public class CreateDatabaseRegistrationDetails {
 
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -272,7 +272,7 @@ public class CreateDatabaseRegistrationDetails {
 
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -349,7 +349,7 @@ public class CreateDatabaseRegistrationDetails {
     String vaultId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer \"Master\" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")

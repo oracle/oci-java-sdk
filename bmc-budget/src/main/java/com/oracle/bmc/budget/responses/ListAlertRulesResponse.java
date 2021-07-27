@@ -26,8 +26,8 @@ public class ListAlertRulesResponse {
     private String opcRequestId;
 
     /**
-     * For pagination of a list of `AlertRuleSummary`s. If this header appears in the response, then this
-     * is a partial list of AlertRuleSummaries. Include this value as the `page` parameter in a subsequent
+     * For pagination of a list of {@code AlertRuleSummary}s. If this header appears in the response, then this
+     * is a partial list of AlertRuleSummaries. Include this value as the {@code page} parameter in a subsequent
      * GET request to get the next batch of AlertRuleSummaries.
      *
      */

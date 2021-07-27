@@ -265,7 +265,7 @@ public class NetworkLoadBalancer {
     /**
      * A user-friendly name, which does not have to be unique, and can be changed.
      * <p>
-     * Example: `example_load_balancer`
+     * Example: {@code example_load_balancer}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -288,7 +288,7 @@ public class NetworkLoadBalancer {
     /**
      * The date and time the network load balancer was created, in the format defined by RFC3339.
      * <p>
-     * Example: `2020-05-01T21:10:29.600Z`
+     * Example: {@code 2020-05-01T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -297,7 +297,7 @@ public class NetworkLoadBalancer {
     /**
      * The time the network load balancer was updated. An RFC3339 formatted date-time string.
      * <p>
-     * Example: `2020-05-01T22:10:29.600Z`
+     * Example: {@code 2020-05-01T22:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
@@ -313,9 +313,9 @@ public class NetworkLoadBalancer {
     /**
      * Whether the network load balancer has a virtual cloud network-local (private) IP address.
      * <p>
-     * If \"true\", then the service assigns a private IP address to the network load balancer.
+     * If "true", then the service assigns a private IP address to the network load balancer.
      * <p>
-     * If \"false\", then the service assigns a public IP address to the network load balancer.
+     * If "false", then the service assigns a public IP address to the network load balancer.
      * <p>
      * A public network load balancer is accessible from the internet, depending the
      * [security list rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for your virtual cloudn network. For more information about public and
@@ -323,7 +323,7 @@ public class NetworkLoadBalancer {
      * see [How Network Load Balancing Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
      * This value is true by default.
      * <p>
-     * Example: `true`
+     * Example: {@code true}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
@@ -338,7 +338,7 @@ public class NetworkLoadBalancer {
     Boolean isPreserveSourceDestination;
 
     /**
-     * The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).\"
+     * The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)."
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     String subnetId;
@@ -356,7 +356,7 @@ public class NetworkLoadBalancer {
      *  The network security rules of other resources can reference the network security groups associated with the network load balancer
      *    to ensure access.
      * <p>
-     * Example: [\"ocid1.nsg.oc1.phx.unique_ID\"]
+     * Example: ["ocid1.nsg.oc1.phx.unique_ID"]
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
@@ -378,7 +378,7 @@ public class NetworkLoadBalancer {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -388,7 +388,7 @@ public class NetworkLoadBalancer {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -396,7 +396,7 @@ public class NetworkLoadBalancer {
 
     /**
      * Key-value pair representing system tags' keys and values scoped to a namespace.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")

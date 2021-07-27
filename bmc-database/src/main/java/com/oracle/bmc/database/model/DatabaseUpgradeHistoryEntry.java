@@ -251,9 +251,9 @@ public class DatabaseUpgradeHistoryEntry {
     Action action;
     /**
      * The source of the Oracle Database software to be used for the upgrade.
-     *  - Use `DB_HOME` to specify an existing Database Home to upgrade the database. The database is moved to the target Database Home and makes use of the Oracle Database software version of the target Database Home.
-     *  - Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
-     *  - Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
+     *  - Use {@code DB_HOME} to specify an existing Database Home to upgrade the database. The database is moved to the target Database Home and makes use of the Oracle Database software version of the target Database Home.
+     *  - Use {@code DB_VERSION} to specify a generally-available Oracle Database software version to upgrade the database.
+     *  - Use {@code DB_SOFTWARE_IMAGE} to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -302,9 +302,9 @@ public class DatabaseUpgradeHistoryEntry {
     };
     /**
      * The source of the Oracle Database software to be used for the upgrade.
-     *  - Use `DB_HOME` to specify an existing Database Home to upgrade the database. The database is moved to the target Database Home and makes use of the Oracle Database software version of the target Database Home.
-     *  - Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
-     *  - Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
+     *  - Use {@code DB_HOME} to specify an existing Database Home to upgrade the database. The database is moved to the target Database Home and makes use of the Oracle Database software version of the target Database Home.
+     *  - Use {@code DB_VERSION} to specify a generally-available Oracle Database software version to upgrade the database.
+     *  - Use {@code DB_SOFTWARE_IMAGE} to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
@@ -406,7 +406,7 @@ public class DatabaseUpgradeHistoryEntry {
 
     /**
      * Additional upgrade options supported by DBUA(Database Upgrade Assistant).
-     * Example: \"-upgradeTimezone false -keepEvents\"
+     * Example: "-upgradeTimezone false -keepEvents"
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("options")

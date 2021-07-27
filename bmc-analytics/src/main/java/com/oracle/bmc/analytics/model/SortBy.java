@@ -6,7 +6,7 @@ package com.oracle.bmc.analytics.model;
 
 /**
  * The field to sort by (one column only). Default sort order is
- * ascending exception of `timeCreated` column (descending).
+ * ascending exception of {@code timeCreated} column (descending).
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")

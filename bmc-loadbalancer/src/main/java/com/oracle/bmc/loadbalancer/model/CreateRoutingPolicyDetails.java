@@ -89,13 +89,13 @@ public class CreateRoutingPolicyDetails {
      * The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering
      * confidential information.
      * <p>
-     * Example: `example_routing_rules`
+     * Example: {@code example_routing_rules}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
     /**
-     * The version of the language in which `condition` of `rules` are composed.
+     * The version of the language in which {@code condition} of {@code rules} are composed.
      *
      **/
     public enum ConditionLanguageVersion {
@@ -130,7 +130,7 @@ public class CreateRoutingPolicyDetails {
         }
     };
     /**
-     * The version of the language in which `condition` of `rules` are composed.
+     * The version of the language in which {@code condition} of {@code rules} are composed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("conditionLanguageVersion")

@@ -322,7 +322,12 @@ public class KmsCryptoAsyncClient implements KmsCryptoAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<DecryptRequest, DecryptResponse>,
                         java.util.concurrent.Future<DecryptResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDecryptDataDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -357,7 +362,12 @@ public class KmsCryptoAsyncClient implements KmsCryptoAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<EncryptRequest, EncryptResponse>,
                         java.util.concurrent.Future<EncryptResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getEncryptDataDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -393,7 +403,12 @@ public class KmsCryptoAsyncClient implements KmsCryptoAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<ExportKeyRequest, ExportKeyResponse>,
                         java.util.concurrent.Future<ExportKeyResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getExportKeyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -435,7 +450,12 @@ public class KmsCryptoAsyncClient implements KmsCryptoAsync {
                                 GenerateDataEncryptionKeyRequest,
                                 GenerateDataEncryptionKeyResponse>,
                         java.util.concurrent.Future<GenerateDataEncryptionKeyResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getGenerateKeyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -469,7 +489,12 @@ public class KmsCryptoAsyncClient implements KmsCryptoAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<SignRequest, SignResponse>,
                         java.util.concurrent.Future<SignResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSignDataDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -503,7 +528,12 @@ public class KmsCryptoAsyncClient implements KmsCryptoAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<VerifyRequest, VerifyResponse>,
                         java.util.concurrent.Future<VerifyResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getVerifyDataDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

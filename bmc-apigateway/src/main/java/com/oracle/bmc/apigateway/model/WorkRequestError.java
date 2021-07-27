@@ -79,7 +79,7 @@ public class WorkRequestError {
 
     /**
      * A machine-usable code for the error that occured. See
-     * <a href=\"/Content/API/References/apierrors.htm\">API Errors</a>.
+     * <a href="/Content/API/References/apierrors.htm">API Errors</a>.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("code")

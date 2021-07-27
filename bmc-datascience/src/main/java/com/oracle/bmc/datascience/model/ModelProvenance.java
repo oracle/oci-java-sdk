@@ -126,7 +126,7 @@ public class ModelProvenance {
     String scriptDir;
 
     /**
-     * For model reproducibility purposes. Path to the python script or notebook in which the model was trained.\"
+     * For model reproducibility purposes. Path to the python script or notebook in which the model was trained."
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("trainingScript")

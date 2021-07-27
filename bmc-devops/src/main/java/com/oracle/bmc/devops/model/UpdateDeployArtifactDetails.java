@@ -159,13 +159,13 @@ public class UpdateDeployArtifactDetails {
     DeployArtifact.ArgumentSubstitutionMode argumentSubstitutionMode;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: `{\"bar-key\": \"value\"}`
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;

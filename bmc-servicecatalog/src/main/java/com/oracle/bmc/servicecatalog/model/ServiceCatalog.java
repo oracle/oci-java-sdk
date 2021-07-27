@@ -212,7 +212,7 @@ public class ServiceCatalog {
      * The date and time the service catalog was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
      * timestamp format.
      * <p>
-     * Example: `2021-05-26T21:10:29.600Z`
+     * Example: {@code 2021-05-26T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -222,7 +222,7 @@ public class ServiceCatalog {
      * The date and time the service catalog was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
      * timestamp format.
      * <p>
-     * Example: `2021-12-10T05:10:29.721Z`
+     * Example: {@code 2021-12-10T05:10:29.721Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
@@ -230,7 +230,7 @@ public class ServiceCatalog {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -238,7 +238,7 @@ public class ServiceCatalog {
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")

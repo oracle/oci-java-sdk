@@ -26,7 +26,7 @@ public class ListVaultReplicasRequest extends com.oracle.bmc.requests.BmcRequest
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
-     * resource, set the `if-match` parameter to the value of the etag from a
+     * resource, set the {@code if-match} parameter to the value of the etag from a
      * previous GET or POST response for that resource. The resource will be
      * updated or deleted only if the etag you provide matches the resource's
      * current etag value.
@@ -35,14 +35,14 @@ public class ListVaultReplicasRequest extends com.oracle.bmc.requests.BmcRequest
     private String ifMatch;
 
     /**
-     * The maximum number of items to return in a paginated \"List\" call.
+     * The maximum number of items to return in a paginated "List" call.
      *
      */
     private Integer limit;
 
     /**
-     * The value of the `opc-next-page` response header
-     * from the previous \"List\" call.
+     * The value of the {@code opc-next-page} response header
+     * from the previous "List" call.
      *
      */
     private String page;
@@ -68,7 +68,7 @@ public class ListVaultReplicasRequest extends com.oracle.bmc.requests.BmcRequest
 
     /**
      * The field to sort by. You can specify only one sort order. The default
-     * order for `TIMECREATED` is descending. The default order for `DISPLAYNAME`
+     * order for {@code TIMECREATED} is descending. The default order for {@code DISPLAYNAME}
      * is ascending.
      *
      */
@@ -76,7 +76,7 @@ public class ListVaultReplicasRequest extends com.oracle.bmc.requests.BmcRequest
 
     /**
      * The field to sort by. You can specify only one sort order. The default
-     * order for `TIMECREATED` is descending. The default order for `DISPLAYNAME`
+     * order for {@code TIMECREATED} is descending. The default order for {@code DISPLAYNAME}
      * is ascending.
      *
      **/
@@ -113,13 +113,13 @@ public class ListVaultReplicasRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      *
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      *
      **/
     public enum SortOrder {

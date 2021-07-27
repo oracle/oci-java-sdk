@@ -126,7 +126,7 @@ public class SentimentAspect {
 
     /**
      * Scores for each sentiment.
-     * Example: \"{\\\"positive\\\": 1.0, \\\"negative\\\": 0.0}\"
+     * Example: "{\\"positive\\": 1.0, \\"negative\\": 0.0}"
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scores")

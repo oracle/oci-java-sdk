@@ -5,10 +5,10 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Defines the `contains` relationship between virtual network topology entities. A `Contains` relationship
+ * Defines the {@code contains} relationship between virtual network topology entities. A {@code Contains} relationship
  * is defined when an entity fully owns, contains or manages another entity.
  * For example, a subnet is contained and managed in the scope of a VCN, therefore a VCN has a
- * `contains` relationship to a subnet.
+ * {@code contains} relationship to a subnet.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

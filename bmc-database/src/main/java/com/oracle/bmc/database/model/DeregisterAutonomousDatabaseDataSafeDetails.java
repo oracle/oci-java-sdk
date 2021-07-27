@@ -63,7 +63,7 @@ public class DeregisterAutonomousDatabaseDataSafeDetails {
     }
 
     /**
-     * The admin password provided during the creation of the database. This password is between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (\") or the username \"admin\", regardless of casing.
+     * The admin password provided during the creation of the database. This password is between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pdbAdminPassword")
     String pdbAdminPassword;

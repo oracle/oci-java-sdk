@@ -139,13 +139,13 @@ public class ObjectLifecycleRule {
     String name;
 
     /**
-     * The target of the object lifecycle policy rule. The values of target can be either \"objects\",
-     * \"multipart-uploads\" or \"previous-object-versions\".
-     * This field when declared as \"objects\" is used to specify ARCHIVE, INFREQUENT_ACCESS
+     * The target of the object lifecycle policy rule. The values of target can be either "objects",
+     * "multipart-uploads" or "previous-object-versions".
+     * This field when declared as "objects" is used to specify ARCHIVE, INFREQUENT_ACCESS
      * or DELETE rule for objects.
-     * This field when declared as \"previous-object-versions\" is used to specify ARCHIVE,
+     * This field when declared as "previous-object-versions" is used to specify ARCHIVE,
      * INFREQUENT_ACCESS or DELETE rule for previous versions of existing objects.
-     * This field when declared as \"multipart-uploads\" is used to specify the ABORT (only) rule for
+     * This field when declared as "multipart-uploads" is used to specify the ABORT (only) rule for
      * uncommitted multipart-uploads.
      *
      **/

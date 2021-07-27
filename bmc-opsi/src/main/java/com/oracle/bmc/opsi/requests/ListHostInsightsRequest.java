@@ -25,7 +25,7 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
     private String compartmentId;
 
     /**
-     * Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
+     * Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      */
     private java.util.List<String> id;
@@ -92,36 +92,36 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
     };
     /**
      * For list pagination. The maximum number of results per page, or items to
-     * return in a paginated \"List\" call.
+     * return in a paginated "List" call.
      * For important details about how pagination works, see
      * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-     * Example: `50`
+     * Example: {@code 50}
      *
      */
     private Integer limit;
 
     /**
-     * For list pagination. The value of the `opc-next-page` response header from
-     * the previous \"List\" call. For important details about how pagination works,
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
      * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String page;
 
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      *
      */
     private com.oracle.bmc.opsi.model.SortOrder sortOrder;
 
     /**
-     * Host insight list sort options. If `fields` parameter is selected, the `sortBy` parameter must be one of the fields specified.
+     * Host insight list sort options. If {@code fields} parameter is selected, the {@code sortBy} parameter must be one of the fields specified.
      *
      */
     private SortBy sortBy;
 
     /**
-     * Host insight list sort options. If `fields` parameter is selected, the `sortBy` parameter must be one of the fields specified.
+     * Host insight list sort options. If {@code fields} parameter is selected, the {@code sortBy} parameter must be one of the fields specified.
      *
      **/
     public enum SortBy {

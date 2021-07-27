@@ -11,14 +11,14 @@ package com.oracle.bmc.core.model;
  * <p>
  **Important:**  Each tunnel in an IPSec connection can use either static routing or BGP dynamic
  * routing (see the {@link IPSecConnectionTunnel} object's
- * `routing` attribute). Originally only static routing was supported and
+ * {@code routing} attribute). Originally only static routing was supported and
  * every IPSec connection was required to have at least one static route configured.
  * To maintain backward compatibility in the API when support for BPG dynamic routing was introduced,
  * the API accepts an empty list of static routes if you configure both of the IPSec tunnels to use
- * BGP dynamic routing. If you switch a tunnel's routing from `BGP` to `STATIC`, you must first
+ * BGP dynamic routing. If you switch a tunnel's routing from {@code BGP} to {@code STATIC}, you must first
  * ensure that the IPSec connection is configured with at least one valid CIDR block static route.
  * Oracle uses the IPSec connection's static routes when routing a tunnel's traffic *only*
- * if that tunnel's `routing` attribute = `STATIC`. Otherwise the static routes are ignored.
+ * if that tunnel's {@code routing} attribute = {@code STATIC}. Otherwise the static routes are ignored.
  * <p>
  * For more information about the workflow for setting up an IPSec connection, see
  * [IPSec VPN](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPsec.htm).
@@ -220,7 +220,7 @@ public class IPSecConnection {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -244,7 +244,7 @@ public class IPSecConnection {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -312,24 +312,24 @@ public class IPSecConnection {
     /**
      * Your identifier for your CPE device. Can be either an IP address or a hostname (specifically,
      * the fully qualified domain name (FQDN)). The type of identifier here must correspond
-     * to the value for `cpeLocalIdentifierType`.
+     * to the value for {@code cpeLocalIdentifierType}.
      * <p>
-     * If you don't provide a value when creating the IPSec connection, the `ipAddress` attribute
-     * for the {@link Cpe} object specified by `cpeId` is used as the `cpeLocalIdentifier`.
+     * If you don't provide a value when creating the IPSec connection, the {@code ipAddress} attribute
+     * for the {@link Cpe} object specified by {@code cpeId} is used as the {@code cpeLocalIdentifier}.
      * <p>
      * For information about why you'd provide this value, see
      * [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
      * <p>
-     * Example IP address: `10.0.3.3`
+     * Example IP address: {@code 10.0.3.3}
      * <p>
-     * Example hostname: `cpe.example.com`
+     * Example hostname: {@code cpe.example.com}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpeLocalIdentifier")
     String cpeLocalIdentifier;
     /**
      * The type of identifier for your CPE device. The value here must correspond to the value
-     * for `cpeLocalIdentifier`.
+     * for {@code cpeLocalIdentifier}.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -377,7 +377,7 @@ public class IPSecConnection {
     };
     /**
      * The type of identifier for your CPE device. The value here must correspond to the value
-     * for `cpeLocalIdentifier`.
+     * for {@code cpeLocalIdentifier}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpeLocalIdentifierType")
@@ -395,9 +395,9 @@ public class IPSecConnection {
      * The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial and government regions.
      * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
-     * Example: `10.0.1.0/24`
+     * Example: {@code 10.0.1.0/24}
      * <p>
-     * Example: `2001:db8::/32`
+     * Example: {@code 2001:db8::/32}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("staticRoutes")
@@ -406,7 +406,7 @@ public class IPSecConnection {
     /**
      * The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

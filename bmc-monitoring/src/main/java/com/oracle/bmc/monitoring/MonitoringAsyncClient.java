@@ -400,7 +400,12 @@ public class MonitoringAsyncClient implements MonitoringAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeAlarmCompartmentRequest, ChangeAlarmCompartmentResponse>,
                         java.util.concurrent.Future<ChangeAlarmCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeAlarmCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -439,7 +444,12 @@ public class MonitoringAsyncClient implements MonitoringAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateAlarmRequest, CreateAlarmResponse>,
                         java.util.concurrent.Future<CreateAlarmResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateAlarmDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -666,7 +676,12 @@ public class MonitoringAsyncClient implements MonitoringAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ListMetricsRequest, ListMetricsResponse>,
                         java.util.concurrent.Future<ListMetricsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getListMetricsDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -705,7 +720,12 @@ public class MonitoringAsyncClient implements MonitoringAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 PostMetricDataRequest, PostMetricDataResponse>,
                         java.util.concurrent.Future<PostMetricDataResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getPostMetricDataDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -787,7 +807,12 @@ public class MonitoringAsyncClient implements MonitoringAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 SummarizeMetricsDataRequest, SummarizeMetricsDataResponse>,
                         java.util.concurrent.Future<SummarizeMetricsDataResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSummarizeMetricsDataDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -825,7 +850,12 @@ public class MonitoringAsyncClient implements MonitoringAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateAlarmRequest, UpdateAlarmResponse>,
                         java.util.concurrent.Future<UpdateAlarmResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateAlarmDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

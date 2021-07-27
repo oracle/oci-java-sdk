@@ -404,7 +404,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 AddDrgRouteDistributionStatementsRequest,
                                 AddDrgRouteDistributionStatementsResponse>,
                         java.util.concurrent.Future<AddDrgRouteDistributionStatementsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddDrgRouteDistributionStatementsDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -445,7 +450,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 AddDrgRouteRulesRequest, AddDrgRouteRulesResponse>,
                         java.util.concurrent.Future<AddDrgRouteRulesResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddDrgRouteRulesDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -531,7 +541,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 AddNetworkSecurityGroupSecurityRulesRequest,
                                 AddNetworkSecurityGroupSecurityRulesResponse>,
                         java.util.concurrent.Future<AddNetworkSecurityGroupSecurityRulesResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddNetworkSecurityGroupSecurityRulesDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -574,7 +589,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 AddPublicIpPoolCapacityRequest, AddPublicIpPoolCapacityResponse>,
                         java.util.concurrent.Future<AddPublicIpPoolCapacityResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddPublicIpPoolCapacityDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -612,7 +632,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 AddVcnCidrRequest, AddVcnCidrResponse>,
                         java.util.concurrent.Future<AddVcnCidrResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddVcnCidrDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -692,7 +717,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 AttachServiceIdRequest, AttachServiceIdResponse>,
                         java.util.concurrent.Future<AttachServiceIdResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAttachServiceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -738,7 +768,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 BulkAddVirtualCircuitPublicPrefixesRequest,
                                 BulkAddVirtualCircuitPublicPrefixesResponse>,
                         java.util.concurrent.Future<BulkAddVirtualCircuitPublicPrefixesResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkAddVirtualCircuitPublicPrefixesDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -785,7 +820,13 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 BulkDeleteVirtualCircuitPublicPrefixesRequest,
                                 BulkDeleteVirtualCircuitPublicPrefixesResponse>,
                         java.util.concurrent.Future<BulkDeleteVirtualCircuitPublicPrefixesResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getBulkDeleteVirtualCircuitPublicPrefixesDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -831,7 +872,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 ChangeByoipRangeCompartmentRequest,
                                 ChangeByoipRangeCompartmentResponse>,
                         java.util.concurrent.Future<ChangeByoipRangeCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeByoipRangeCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -873,7 +919,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeCpeCompartmentRequest, ChangeCpeCompartmentResponse>,
                         java.util.concurrent.Future<ChangeCpeCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeCpeCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -918,7 +969,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 ChangeCrossConnectCompartmentRequest,
                                 ChangeCrossConnectCompartmentResponse>,
                         java.util.concurrent.Future<ChangeCrossConnectCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeCrossConnectCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -964,7 +1020,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 ChangeCrossConnectGroupCompartmentRequest,
                                 ChangeCrossConnectGroupCompartmentResponse>,
                         java.util.concurrent.Future<ChangeCrossConnectGroupCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeCrossConnectGroupCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1010,7 +1071,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 ChangeDhcpOptionsCompartmentRequest,
                                 ChangeDhcpOptionsCompartmentResponse>,
                         java.util.concurrent.Future<ChangeDhcpOptionsCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeDhcpOptionsCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1052,7 +1118,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeDrgCompartmentRequest, ChangeDrgCompartmentResponse>,
                         java.util.concurrent.Future<ChangeDrgCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeDrgCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1098,7 +1169,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 ChangeIPSecConnectionCompartmentRequest,
                                 ChangeIPSecConnectionCompartmentResponse>,
                         java.util.concurrent.Future<ChangeIPSecConnectionCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeIPSecConnectionCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1145,7 +1221,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 ChangeInternetGatewayCompartmentRequest,
                                 ChangeInternetGatewayCompartmentResponse>,
                         java.util.concurrent.Future<ChangeInternetGatewayCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeInternetGatewayCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1193,7 +1274,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 ChangeLocalPeeringGatewayCompartmentRequest,
                                 ChangeLocalPeeringGatewayCompartmentResponse>,
                         java.util.concurrent.Future<ChangeLocalPeeringGatewayCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeLocalPeeringGatewayCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1239,7 +1325,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 ChangeNatGatewayCompartmentRequest,
                                 ChangeNatGatewayCompartmentResponse>,
                         java.util.concurrent.Future<ChangeNatGatewayCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeNatGatewayCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1286,7 +1377,13 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 ChangeNetworkSecurityGroupCompartmentRequest,
                                 ChangeNetworkSecurityGroupCompartmentResponse>,
                         java.util.concurrent.Future<ChangeNetworkSecurityGroupCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeNetworkSecurityGroupCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1330,7 +1427,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 ChangePublicIpCompartmentRequest,
                                 ChangePublicIpCompartmentResponse>,
                         java.util.concurrent.Future<ChangePublicIpCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangePublicIpCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1375,7 +1477,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 ChangePublicIpPoolCompartmentRequest,
                                 ChangePublicIpPoolCompartmentResponse>,
                         java.util.concurrent.Future<ChangePublicIpPoolCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangePublicIpPoolCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1423,7 +1530,13 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 ChangeRemotePeeringConnectionCompartmentResponse>,
                         java.util.concurrent.Future<
                                 ChangeRemotePeeringConnectionCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeRemotePeeringConnectionCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1469,7 +1582,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 ChangeRouteTableCompartmentRequest,
                                 ChangeRouteTableCompartmentResponse>,
                         java.util.concurrent.Future<ChangeRouteTableCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeRouteTableCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1514,7 +1632,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 ChangeSecurityListCompartmentRequest,
                                 ChangeSecurityListCompartmentResponse>,
                         java.util.concurrent.Future<ChangeSecurityListCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeSecurityListCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1560,7 +1683,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 ChangeServiceGatewayCompartmentRequest,
                                 ChangeServiceGatewayCompartmentResponse>,
                         java.util.concurrent.Future<ChangeServiceGatewayCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeServiceGatewayCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1603,7 +1731,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeSubnetCompartmentRequest, ChangeSubnetCompartmentResponse>,
                         java.util.concurrent.Future<ChangeSubnetCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeSubnetCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1645,7 +1778,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeVcnCompartmentRequest, ChangeVcnCompartmentResponse>,
                         java.util.concurrent.Future<ChangeVcnCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeVcnCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1691,7 +1829,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 ChangeVirtualCircuitCompartmentRequest,
                                 ChangeVirtualCircuitCompartmentResponse>,
                         java.util.concurrent.Future<ChangeVirtualCircuitCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeVirtualCircuitCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1734,7 +1877,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeVlanCompartmentRequest, ChangeVlanCompartmentResponse>,
                         java.util.concurrent.Future<ChangeVlanCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeVlanCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1778,7 +1926,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 ConnectLocalPeeringGatewaysRequest,
                                 ConnectLocalPeeringGatewaysResponse>,
                         java.util.concurrent.Future<ConnectLocalPeeringGatewaysResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getConnectLocalPeeringGatewaysDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1823,7 +1976,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 ConnectRemotePeeringConnectionsRequest,
                                 ConnectRemotePeeringConnectionsResponse>,
                         java.util.concurrent.Future<ConnectRemotePeeringConnectionsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getConnectRemotePeeringConnectionsDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1864,7 +2022,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateByoipRangeRequest, CreateByoipRangeResponse>,
                         java.util.concurrent.Future<CreateByoipRangeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateByoipRangeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1901,7 +2064,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<CreateCpeRequest, CreateCpeResponse>,
                         java.util.concurrent.Future<CreateCpeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateCpeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1941,7 +2109,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateCrossConnectRequest, CreateCrossConnectResponse>,
                         java.util.concurrent.Future<CreateCrossConnectResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateCrossConnectDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1983,7 +2156,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateCrossConnectGroupRequest, CreateCrossConnectGroupResponse>,
                         java.util.concurrent.Future<CreateCrossConnectGroupResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateCrossConnectGroupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2023,7 +2201,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateDhcpOptionsRequest, CreateDhcpOptionsResponse>,
                         java.util.concurrent.Future<CreateDhcpOptionsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDhcpDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2060,7 +2243,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<CreateDrgRequest, CreateDrgResponse>,
                         java.util.concurrent.Future<CreateDrgResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDrgDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2102,7 +2290,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateDrgAttachmentRequest, CreateDrgAttachmentResponse>,
                         java.util.concurrent.Future<CreateDrgAttachmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDrgAttachmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2147,7 +2340,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 CreateDrgRouteDistributionRequest,
                                 CreateDrgRouteDistributionResponse>,
                         java.util.concurrent.Future<CreateDrgRouteDistributionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDrgRouteDistributionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2189,7 +2387,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateDrgRouteTableRequest, CreateDrgRouteTableResponse>,
                         java.util.concurrent.Future<CreateDrgRouteTableResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDrgRouteTableDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2231,7 +2434,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateIPSecConnectionRequest, CreateIPSecConnectionResponse>,
                         java.util.concurrent.Future<CreateIPSecConnectionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateIPSecConnectionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2273,7 +2481,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateInternetGatewayRequest, CreateInternetGatewayResponse>,
                         java.util.concurrent.Future<CreateInternetGatewayResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateInternetGatewayDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2311,7 +2524,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateIpv6Request, CreateIpv6Response>,
                         java.util.concurrent.Future<CreateIpv6Response>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateIpv6Details(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2354,7 +2572,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 CreateLocalPeeringGatewayRequest,
                                 CreateLocalPeeringGatewayResponse>,
                         java.util.concurrent.Future<CreateLocalPeeringGatewayResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateLocalPeeringGatewayDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2394,7 +2617,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateNatGatewayRequest, CreateNatGatewayResponse>,
                         java.util.concurrent.Future<CreateNatGatewayResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateNatGatewayDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2439,7 +2667,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 CreateNetworkSecurityGroupRequest,
                                 CreateNetworkSecurityGroupResponse>,
                         java.util.concurrent.Future<CreateNetworkSecurityGroupResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateNetworkSecurityGroupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2479,7 +2712,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreatePrivateIpRequest, CreatePrivateIpResponse>,
                         java.util.concurrent.Future<CreatePrivateIpResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreatePrivateIpDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2519,7 +2757,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreatePublicIpRequest, CreatePublicIpResponse>,
                         java.util.concurrent.Future<CreatePublicIpResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreatePublicIpDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2559,7 +2802,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreatePublicIpPoolRequest, CreatePublicIpPoolResponse>,
                         java.util.concurrent.Future<CreatePublicIpPoolResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreatePublicIpPoolDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2604,7 +2852,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 CreateRemotePeeringConnectionRequest,
                                 CreateRemotePeeringConnectionResponse>,
                         java.util.concurrent.Future<CreateRemotePeeringConnectionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateRemotePeeringConnectionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2644,7 +2897,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateRouteTableRequest, CreateRouteTableResponse>,
                         java.util.concurrent.Future<CreateRouteTableResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateRouteTableDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2684,7 +2942,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateSecurityListRequest, CreateSecurityListResponse>,
                         java.util.concurrent.Future<CreateSecurityListResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSecurityListDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2726,7 +2989,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateServiceGatewayRequest, CreateServiceGatewayResponse>,
                         java.util.concurrent.Future<CreateServiceGatewayResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateServiceGatewayDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2765,7 +3033,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateSubnetRequest, CreateSubnetResponse>,
                         java.util.concurrent.Future<CreateSubnetResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSubnetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2802,7 +3075,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<CreateVcnRequest, CreateVcnResponse>,
                         java.util.concurrent.Future<CreateVcnResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateVcnDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2844,7 +3122,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateVirtualCircuitRequest, CreateVirtualCircuitResponse>,
                         java.util.concurrent.Future<CreateVirtualCircuitResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateVirtualCircuitDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2882,7 +3165,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateVlanRequest, CreateVlanResponse>,
                         java.util.concurrent.Future<CreateVlanResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateVlanDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3953,7 +4241,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 DetachServiceIdRequest, DetachServiceIdResponse>,
                         java.util.concurrent.Future<DetachServiceIdResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDetachServiceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5263,7 +5556,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 GetPublicIpByIpAddressRequest, GetPublicIpByIpAddressResponse>,
                         java.util.concurrent.Future<GetPublicIpByIpAddressResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getGetPublicIpByIpAddressDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5304,7 +5602,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 GetPublicIpByPrivateIpIdRequest, GetPublicIpByPrivateIpIdResponse>,
                         java.util.concurrent.Future<GetPublicIpByPrivateIpIdResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getGetPublicIpByPrivateIpIdDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -7699,7 +8002,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ModifyVcnCidrRequest, ModifyVcnCidrResponse>,
                         java.util.concurrent.Future<ModifyVcnCidrResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getModifyVcnCidrDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -7745,7 +8053,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 RemoveDrgRouteDistributionStatementsRequest,
                                 RemoveDrgRouteDistributionStatementsResponse>,
                         java.util.concurrent.Future<RemoveDrgRouteDistributionStatementsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveDrgRouteDistributionStatementsDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -7787,7 +8100,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 RemoveDrgRouteRulesRequest, RemoveDrgRouteRulesResponse>,
                         java.util.concurrent.Future<RemoveDrgRouteRulesResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveDrgRouteRulesDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -7926,7 +8244,13 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 RemoveNetworkSecurityGroupSecurityRulesResponse>,
                         java.util.concurrent.Future<
                                 RemoveNetworkSecurityGroupSecurityRulesResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getRemoveNetworkSecurityGroupSecurityRulesDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -7972,7 +8296,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 RemovePublicIpPoolCapacityRequest,
                                 RemovePublicIpPoolCapacityResponse>,
                         java.util.concurrent.Future<RemovePublicIpPoolCapacityResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemovePublicIpPoolCapacityDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -8011,7 +8340,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 RemoveVcnCidrRequest, RemoveVcnCidrResponse>,
                         java.util.concurrent.Future<RemoveVcnCidrResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveVcnCidrDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -8050,7 +8384,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateByoipRangeRequest, UpdateByoipRangeResponse>,
                         java.util.concurrent.Future<UpdateByoipRangeResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateByoipRangeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -8086,7 +8425,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<UpdateCpeRequest, UpdateCpeResponse>,
                         java.util.concurrent.Future<UpdateCpeResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCpeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -8125,7 +8469,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateCrossConnectRequest, UpdateCrossConnectResponse>,
                         java.util.concurrent.Future<UpdateCrossConnectResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCrossConnectDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -8166,7 +8515,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateCrossConnectGroupRequest, UpdateCrossConnectGroupResponse>,
                         java.util.concurrent.Future<UpdateCrossConnectGroupResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCrossConnectGroupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -8205,7 +8559,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateDhcpOptionsRequest, UpdateDhcpOptionsResponse>,
                         java.util.concurrent.Future<UpdateDhcpOptionsResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDhcpDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -8241,7 +8600,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<UpdateDrgRequest, UpdateDrgResponse>,
                         java.util.concurrent.Future<UpdateDrgResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDrgDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -8282,7 +8646,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateDrgAttachmentRequest, UpdateDrgAttachmentResponse>,
                         java.util.concurrent.Future<UpdateDrgAttachmentResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDrgAttachmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -8326,7 +8695,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 UpdateDrgRouteDistributionRequest,
                                 UpdateDrgRouteDistributionResponse>,
                         java.util.concurrent.Future<UpdateDrgRouteDistributionResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDrgRouteDistributionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -8372,7 +8746,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 UpdateDrgRouteDistributionStatementsRequest,
                                 UpdateDrgRouteDistributionStatementsResponse>,
                         java.util.concurrent.Future<UpdateDrgRouteDistributionStatementsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDrgRouteDistributionStatementsDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -8414,7 +8793,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateDrgRouteRulesRequest, UpdateDrgRouteRulesResponse>,
                         java.util.concurrent.Future<UpdateDrgRouteRulesResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDrgRouteRulesDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -8455,7 +8839,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateDrgRouteTableRequest, UpdateDrgRouteTableResponse>,
                         java.util.concurrent.Future<UpdateDrgRouteTableResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDrgRouteTableDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -8496,7 +8885,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateIPSecConnectionRequest, UpdateIPSecConnectionResponse>,
                         java.util.concurrent.Future<UpdateIPSecConnectionResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateIPSecConnectionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -8540,7 +8934,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 UpdateIPSecConnectionTunnelRequest,
                                 UpdateIPSecConnectionTunnelResponse>,
                         java.util.concurrent.Future<UpdateIPSecConnectionTunnelResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateIPSecConnectionTunnelDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -8587,7 +8986,13 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 UpdateIPSecConnectionTunnelSharedSecretResponse>,
                         java.util.concurrent.Future<
                                 UpdateIPSecConnectionTunnelSharedSecretResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getUpdateIPSecConnectionTunnelSharedSecretDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -8629,7 +9034,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateInternetGatewayRequest, UpdateInternetGatewayResponse>,
                         java.util.concurrent.Future<UpdateInternetGatewayResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateInternetGatewayDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -8666,7 +9076,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateIpv6Request, UpdateIpv6Response>,
                         java.util.concurrent.Future<UpdateIpv6Response>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateIpv6Details(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -8708,7 +9123,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 UpdateLocalPeeringGatewayRequest,
                                 UpdateLocalPeeringGatewayResponse>,
                         java.util.concurrent.Future<UpdateLocalPeeringGatewayResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateLocalPeeringGatewayDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -8747,7 +9167,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateNatGatewayRequest, UpdateNatGatewayResponse>,
                         java.util.concurrent.Future<UpdateNatGatewayResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateNatGatewayDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -8791,7 +9216,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 UpdateNetworkSecurityGroupRequest,
                                 UpdateNetworkSecurityGroupResponse>,
                         java.util.concurrent.Future<UpdateNetworkSecurityGroupResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateNetworkSecurityGroupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -8838,7 +9268,13 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 UpdateNetworkSecurityGroupSecurityRulesResponse>,
                         java.util.concurrent.Future<
                                 UpdateNetworkSecurityGroupSecurityRulesResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getUpdateNetworkSecurityGroupSecurityRulesDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -8878,7 +9314,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdatePrivateIpRequest, UpdatePrivateIpResponse>,
                         java.util.concurrent.Future<UpdatePrivateIpResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdatePrivateIpDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -8917,7 +9358,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdatePublicIpRequest, UpdatePublicIpResponse>,
                         java.util.concurrent.Future<UpdatePublicIpResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdatePublicIpDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -8956,7 +9402,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdatePublicIpPoolRequest, UpdatePublicIpPoolResponse>,
                         java.util.concurrent.Future<UpdatePublicIpPoolResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdatePublicIpPoolDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -9000,7 +9451,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 UpdateRemotePeeringConnectionRequest,
                                 UpdateRemotePeeringConnectionResponse>,
                         java.util.concurrent.Future<UpdateRemotePeeringConnectionResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateRemotePeeringConnectionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -9039,7 +9495,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateRouteTableRequest, UpdateRouteTableResponse>,
                         java.util.concurrent.Future<UpdateRouteTableResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateRouteTableDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -9078,7 +9539,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateSecurityListRequest, UpdateSecurityListResponse>,
                         java.util.concurrent.Future<UpdateSecurityListResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSecurityListDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -9119,7 +9585,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateServiceGatewayRequest, UpdateServiceGatewayResponse>,
                         java.util.concurrent.Future<UpdateServiceGatewayResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateServiceGatewayDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -9157,7 +9628,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateSubnetRequest, UpdateSubnetResponse>,
                         java.util.concurrent.Future<UpdateSubnetResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSubnetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -9202,7 +9678,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                 UpdateTunnelCpeDeviceConfigRequest,
                                 UpdateTunnelCpeDeviceConfigResponse>,
                         java.util.concurrent.Future<UpdateTunnelCpeDeviceConfigResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTunnelCpeDeviceConfigDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -9238,7 +9719,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<UpdateVcnRequest, UpdateVcnResponse>,
                         java.util.concurrent.Future<UpdateVcnResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateVcnDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -9279,7 +9765,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateVirtualCircuitRequest, UpdateVirtualCircuitResponse>,
                         java.util.concurrent.Future<UpdateVirtualCircuitResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateVirtualCircuitDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -9316,7 +9807,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateVlanRequest, UpdateVlanResponse>,
                         java.util.concurrent.Future<UpdateVlanResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateVlanDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -9353,7 +9849,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateVnicRequest, UpdateVnicResponse>,
                         java.util.concurrent.Future<UpdateVnicResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateVnicDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

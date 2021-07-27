@@ -125,7 +125,7 @@ public class WrappingKey {
     /**
      * The key's current lifecycle state.
      * <p>
-     * Example: `ENABLED`
+     * Example: {@code ENABLED}
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -185,7 +185,7 @@ public class WrappingKey {
     /**
      * The key's current lifecycle state.
      * <p>
-     * Example: `ENABLED`
+     * Example: {@code ENABLED}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
@@ -201,7 +201,7 @@ public class WrappingKey {
     /**
      * The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * <p>
-     * Example: `2018-04-03T21:10:29.600Z`
+     * Example: {@code 2018-04-03T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

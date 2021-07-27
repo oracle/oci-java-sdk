@@ -6,7 +6,7 @@ package com.oracle.bmc.opsi.model;
 
 /**
  * The timestamp of the projected event and their corresponding resource value.
- * `highValue` and `lowValue` are the uncertainty bounds of the corresponding value.
+ * {@code highValue} and {@code lowValue} are the uncertainty bounds of the corresponding value.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

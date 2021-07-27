@@ -214,7 +214,7 @@ public class ZoneSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
     /**
-     * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
+     * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY} is only supported for GLOBAL zones.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -261,7 +261,7 @@ public class ZoneSummary {
         }
     };
     /**
-     * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
+     * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY} is only supported for GLOBAL zones.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("zoneType")
@@ -293,7 +293,7 @@ public class ZoneSummary {
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      *
-     * **Example:** `{\"Department\": \"Finance\"}`
+     * **Example:** {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -304,7 +304,7 @@ public class ZoneSummary {
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      *
-     * **Example:** `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * **Example:** {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -323,10 +323,10 @@ public class ZoneSummary {
     String id;
 
     /**
-     * The date and time the resource was created in \"YYYY-MM-ddThh:mm:ssZ\" format
+     * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format
      * with a Z offset, as defined by RFC 3339.
      * <p>
-     **Example:** `2016-07-22T17:23:59:60Z`
+     **Example:** {@code 2016-07-22T17:23:59:60Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

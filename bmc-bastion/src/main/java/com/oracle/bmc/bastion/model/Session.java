@@ -315,7 +315,7 @@ public class Session {
 
     /**
      * The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * Example: `2020-01-25T21:10:29.600Z`
+     * Example: {@code 2020-01-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -323,7 +323,7 @@ public class Session {
 
     /**
      * The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * Example: `2020-01-25T21:10:29.600Z`
+     * Example: {@code 2020-01-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")

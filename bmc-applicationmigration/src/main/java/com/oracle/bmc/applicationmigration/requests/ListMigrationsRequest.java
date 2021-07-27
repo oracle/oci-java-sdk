@@ -38,37 +38,37 @@ public class ListMigrationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     private String id;
 
     /**
-     * The number of items returned in a paginated `List` call. For information about pagination, see
+     * The number of items returned in a paginated {@code List} call. For information about pagination, see
      * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private Integer limit;
 
     /**
-     * The value of the `opc-next-page` response header from the preceding `List` call.
+     * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
      * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String page;
 
     /**
-     * The sort order, either `ASC` (ascending) or `DESC` (descending).
+     * The sort order, either {@code ASC} (ascending) or {@code DESC} (descending).
      *
      */
     private com.oracle.bmc.applicationmigration.model.SortOrders sortOrder;
 
     /**
      * Specifies the field on which to sort.
-     * By default, `TIMECREATED` is ordered descending.
-     * By default, `DISPLAYNAME` is ordered ascending. Note that you can sort only on one field.
+     * By default, {@code TIMECREATED} is ordered descending.
+     * By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only on one field.
      *
      */
     private SortBy sortBy;
 
     /**
      * Specifies the field on which to sort.
-     * By default, `TIMECREATED` is ordered descending.
-     * By default, `DISPLAYNAME` is ordered ascending. Note that you can sort only on one field.
+     * By default, {@code TIMECREATED} is ordered descending.
+     * By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only on one field.
      *
      **/
     public enum SortBy {

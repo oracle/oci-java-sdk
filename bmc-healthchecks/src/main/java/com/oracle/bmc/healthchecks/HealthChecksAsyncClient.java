@@ -404,7 +404,12 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                                 ChangeHttpMonitorCompartmentRequest,
                                 ChangeHttpMonitorCompartmentResponse>,
                         java.util.concurrent.Future<ChangeHttpMonitorCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeHttpMonitorCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -449,7 +454,12 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                                 ChangePingMonitorCompartmentRequest,
                                 ChangePingMonitorCompartmentResponse>,
                         java.util.concurrent.Future<ChangePingMonitorCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangePingMonitorCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -489,7 +499,12 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateHttpMonitorRequest, CreateHttpMonitorResponse>,
                         java.util.concurrent.Future<CreateHttpMonitorResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateHttpMonitorDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -530,7 +545,12 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateOnDemandHttpProbeRequest, CreateOnDemandHttpProbeResponse>,
                         java.util.concurrent.Future<CreateOnDemandHttpProbeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateOnDemandHttpProbeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -571,7 +591,12 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateOnDemandPingProbeRequest, CreateOnDemandPingProbeResponse>,
                         java.util.concurrent.Future<CreateOnDemandPingProbeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateOnDemandPingProbeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -611,7 +636,12 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreatePingMonitorRequest, CreatePingMonitorResponse>,
                         java.util.concurrent.Future<CreatePingMonitorResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreatePingMonitorDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1010,7 +1040,12 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateHttpMonitorRequest, UpdateHttpMonitorResponse>,
                         java.util.concurrent.Future<UpdateHttpMonitorResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateHttpMonitorDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1049,7 +1084,12 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdatePingMonitorRequest, UpdatePingMonitorResponse>,
                         java.util.concurrent.Future<UpdatePingMonitorResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdatePingMonitorDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

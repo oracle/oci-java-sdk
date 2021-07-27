@@ -18,7 +18,7 @@ public class UpdateOdaInstanceResponse {
     private final int __httpStatusCode__;
 
     /**
-     * For use in a PUT or DELETE `if-match` query parameter for optimistic concurrency control.
+     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
      */
     private String etag;
 

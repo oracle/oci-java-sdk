@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The results returned by a `ListByoipRange` operation.
+ * The results returned by a {@code ListByoipRange} operation.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,7 +61,7 @@ public class ByoipRangeCollection {
     }
 
     /**
-     * A list of `ByoipRange` resource summaries.
+     * A list of {@code ByoipRange} resource summaries.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<ByoipRangeSummary> items;

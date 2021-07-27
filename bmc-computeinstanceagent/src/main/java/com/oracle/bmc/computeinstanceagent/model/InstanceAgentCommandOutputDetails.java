@@ -47,9 +47,9 @@ public class InstanceAgentCommandOutputDetails {
     /**
      * The output type for the command. The following values are supported:
      * <p>
-     * - `TEXT` - the command output is returned as plain text.
-     * - `OBJECT_STORAGE_URI` - the command output is saved to an Object Storage URL.
-     * - `OBJECT_STORAGE_TUPLE` - the command output is saved to an Object Storage bucket.
+     * - {@code TEXT} - the command output is returned as plain text.
+     * - {@code OBJECT_STORAGE_URI} - the command output is saved to an Object Storage URL.
+     * - {@code OBJECT_STORAGE_TUPLE} - the command output is saved to an Object Storage bucket.
      * <p>
      * For background information about Object Storage buckets and URLs, see
      * [Overview of Object Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm).

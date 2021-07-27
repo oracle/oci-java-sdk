@@ -44,7 +44,7 @@ public class ListPrivateApplicationPackagesRequest
     private Integer limit;
 
     /**
-     * The value of the `opc-next-page` response header from the previous \"List\" call.
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
      */
     private String page;
 
@@ -57,7 +57,7 @@ public class ListPrivateApplicationPackagesRequest
 
     /**
      * The field to use to sort listed results. You can only specify one field to sort by.
-     * `TIMECREATED` displays results in descending order by default. You can change your
+     * {@code TIMECREATED} displays results in descending order by default. You can change your
      * preference by specifying a different sort order.
      *
      */
@@ -65,7 +65,7 @@ public class ListPrivateApplicationPackagesRequest
 
     /**
      * The field to use to sort listed results. You can only specify one field to sort by.
-     * `TIMECREATED` displays results in descending order by default. You can change your
+     * {@code TIMECREATED} displays results in descending order by default. You can change your
      * preference by specifying a different sort order.
      *
      **/
@@ -102,12 +102,12 @@ public class ListPrivateApplicationPackagesRequest
         }
     };
     /**
-     * The sort order to apply, either `ASC` or `DESC`. Default is `ASC`.
+     * The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}.
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to apply, either `ASC` or `DESC`. Default is `ASC`.
+     * The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}.
      **/
     public enum SortOrder {
         Asc("ASC"),

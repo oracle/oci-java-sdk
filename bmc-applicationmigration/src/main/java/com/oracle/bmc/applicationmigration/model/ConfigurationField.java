@@ -181,14 +181,14 @@ public class ConfigurationField {
     java.util.List<ResourceField> resourceList;
 
     /**
-     * Indicates whether or not the field is required (defaults to `true`).
+     * Indicates whether or not the field is required (defaults to {@code true}).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
     Boolean isRequired;
 
     /**
-     * Indicates whether or not the field may be modified (defaults to `true`).
+     * Indicates whether or not the field may be modified (defaults to {@code true}).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMutable")

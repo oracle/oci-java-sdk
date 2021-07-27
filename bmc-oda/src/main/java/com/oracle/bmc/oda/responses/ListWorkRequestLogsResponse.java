@@ -20,7 +20,7 @@ public class ListWorkRequestLogsResponse {
     /**
      * When you are paging through a list, if this header appears in the response,
      * then there might be additional items still to get. Include this value as the
-     * `page` query parameter for the subsequent GET request.
+     * {@code page} query parameter for the subsequent GET request.
      *
      */
     private String opcNextPage;

@@ -27,7 +27,7 @@ public class UpdateRuleSetRequest extends com.oracle.bmc.requests.BmcRequest<Upd
     /**
      * The name of the rule set to update.
      * <p>
-     * Example: `example_rule_set`
+     * Example: {@code example_rule_set}
      *
      */
     private String ruleSetName;

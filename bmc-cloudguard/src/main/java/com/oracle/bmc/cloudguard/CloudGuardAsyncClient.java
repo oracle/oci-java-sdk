@@ -405,7 +405,12 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                                 ChangeDetectorRecipeCompartmentRequest,
                                 ChangeDetectorRecipeCompartmentResponse>,
                         java.util.concurrent.Future<ChangeDetectorRecipeCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeDetectorRecipeCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -451,7 +456,12 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                                 ChangeManagedListCompartmentRequest,
                                 ChangeManagedListCompartmentResponse>,
                         java.util.concurrent.Future<ChangeManagedListCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeManagedListCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -497,7 +507,12 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                                 ChangeResponderRecipeCompartmentRequest,
                                 ChangeResponderRecipeCompartmentResponse>,
                         java.util.concurrent.Future<ChangeResponderRecipeCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeResponderRecipeCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -538,7 +553,12 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateDataMaskRuleRequest, CreateDataMaskRuleResponse>,
                         java.util.concurrent.Future<CreateDataMaskRuleResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDataMaskRuleDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -580,7 +600,12 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateDetectorRecipeRequest, CreateDetectorRecipeResponse>,
                         java.util.concurrent.Future<CreateDetectorRecipeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDetectorRecipeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -620,7 +645,12 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateManagedListRequest, CreateManagedListResponse>,
                         java.util.concurrent.Future<CreateManagedListResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateManagedListDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -662,7 +692,12 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateResponderRecipeRequest, CreateResponderRecipeResponse>,
                         java.util.concurrent.Future<CreateResponderRecipeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateResponderRecipeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -701,7 +736,12 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateTargetRequest, CreateTargetResponse>,
                         java.util.concurrent.Future<CreateTargetResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTargetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -746,7 +786,12 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                                 CreateTargetDetectorRecipeRequest,
                                 CreateTargetDetectorRecipeResponse>,
                         java.util.concurrent.Future<CreateTargetDetectorRecipeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAttachTargetDetectorRecipeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -791,7 +836,12 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                                 CreateTargetResponderRecipeRequest,
                                 CreateTargetResponderRecipeResponse>,
                         java.util.concurrent.Future<CreateTargetResponderRecipeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAttachTargetResponderRecipeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1122,7 +1172,12 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                                 ExecuteResponderExecutionRequest,
                                 ExecuteResponderExecutionResponse>,
                         java.util.concurrent.Future<ExecuteResponderExecutionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getExecuteResponderExecutionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3383,7 +3438,12 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                                 SkipBulkResponderExecutionRequest,
                                 SkipBulkResponderExecutionResponse>,
                         java.util.concurrent.Future<SkipBulkResponderExecutionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSkipBulkResponderExecutionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3465,7 +3525,12 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 TriggerResponderRequest, TriggerResponderResponse>,
                         java.util.concurrent.Future<TriggerResponderResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getTriggerResponderDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3506,7 +3571,12 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateBulkProblemStatusRequest, UpdateBulkProblemStatusResponse>,
                         java.util.concurrent.Future<UpdateBulkProblemStatusResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateBulkProblemStatusDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3548,7 +3618,12 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateConfigurationRequest, UpdateConfigurationResponse>,
                         java.util.concurrent.Future<UpdateConfigurationResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateConfigurationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3587,7 +3662,12 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateDataMaskRuleRequest, UpdateDataMaskRuleResponse>,
                         java.util.concurrent.Future<UpdateDataMaskRuleResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDataMaskRuleDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3629,7 +3709,12 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateDetectorRecipeRequest, UpdateDetectorRecipeResponse>,
                         java.util.concurrent.Future<UpdateDetectorRecipeResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDetectorRecipeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3674,7 +3759,12 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                                 UpdateDetectorRecipeDetectorRuleRequest,
                                 UpdateDetectorRecipeDetectorRuleResponse>,
                         java.util.concurrent.Future<UpdateDetectorRecipeDetectorRuleResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDetectorRecipeDetectorRuleDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3715,7 +3805,12 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateManagedListRequest, UpdateManagedListResponse>,
                         java.util.concurrent.Future<UpdateManagedListResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateManagedListDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3757,7 +3852,12 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateProblemStatusRequest, UpdateProblemStatusResponse>,
                         java.util.concurrent.Future<UpdateProblemStatusResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateProblemStatusDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3798,7 +3898,12 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateResponderRecipeRequest, UpdateResponderRecipeResponse>,
                         java.util.concurrent.Future<UpdateResponderRecipeResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateResponderRecipeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3843,7 +3948,12 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                                 UpdateResponderRecipeResponderRuleRequest,
                                 UpdateResponderRecipeResponderRuleResponse>,
                         java.util.concurrent.Future<UpdateResponderRecipeResponderRuleResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateResponderRecipeResponderRuleDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3882,7 +3992,12 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateTargetRequest, UpdateTargetResponse>,
                         java.util.concurrent.Future<UpdateTargetResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTargetDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3926,7 +4041,12 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                                 UpdateTargetDetectorRecipeRequest,
                                 UpdateTargetDetectorRecipeResponse>,
                         java.util.concurrent.Future<UpdateTargetDetectorRecipeResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTargetDetectorRecipeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3972,7 +4092,13 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                                 UpdateTargetDetectorRecipeDetectorRuleRequest,
                                 UpdateTargetDetectorRecipeDetectorRuleResponse>,
                         java.util.concurrent.Future<UpdateTargetDetectorRecipeDetectorRuleResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getUpdateTargetDetectorRecipeDetectorRuleDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4017,7 +4143,12 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                                 UpdateTargetResponderRecipeRequest,
                                 UpdateTargetResponderRecipeResponse>,
                         java.util.concurrent.Future<UpdateTargetResponderRecipeResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTargetResponderRecipeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4064,7 +4195,13 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                                 UpdateTargetResponderRecipeResponderRuleResponse>,
                         java.util.concurrent.Future<
                                 UpdateTargetResponderRecipeResponderRuleResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getUpdateTargetResponderRecipeResponderRuleDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

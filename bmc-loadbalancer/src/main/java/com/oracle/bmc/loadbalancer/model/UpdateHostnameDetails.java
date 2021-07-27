@@ -67,7 +67,7 @@ public class UpdateHostnameDetails {
      * The virtual hostname to update. For more information about virtual hostname string construction, see
      * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm#routing).
      * <p>
-     * Example: `app.example.com`
+     * Example: {@code app.example.com}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")

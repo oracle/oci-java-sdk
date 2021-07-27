@@ -9,8 +9,8 @@ package com.oracle.bmc.core.model;
  * {@link ServiceGateway}. In the User Guide topic
  * [Access to Oracle Services: Service Gateway](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/servicegateway.htm), the
  * term *service CIDR label* is used to refer to the string that represents the regional public
- * IP address ranges of the Oracle service or services covered by a given `Service` object. That
- * unique string is the value of the `Service` object's `cidrBlock` attribute.
+ * IP address ranges of the Oracle service or services covered by a given {@code Service} object. That
+ * unique string is the value of the {@code Service} object's {@code cidrBlock} attribute.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -97,40 +97,40 @@ public class Service {
 
     /**
      * A string that represents the regional public IP address ranges for the Oracle service or
-     * services covered by this `Service` object. Also known as the `Service` object's *service
+     * services covered by this {@code Service} object. Also known as the {@code Service} object's *service
      * CIDR label*.
      * <p>
      * When you set up a route rule to route traffic to the service gateway, use this value as the
      * rule's destination. See {@link RouteTable}. Also, when you set up
-     * a security list rule to cover traffic with the service gateway, use the `cidrBlock` value
+     * a security list rule to cover traffic with the service gateway, use the {@code cidrBlock} value
      * as the rule's destination (for an egress rule) or the source (for an ingress rule).
      * See {@link SecurityList}.
      * <p>
-     * Example: `oci-phx-objectstorage`
+     * Example: {@code oci-phx-objectstorage}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
     String cidrBlock;
 
     /**
-     * Description of the Oracle service or services covered by this `Service` object.
+     * Description of the Oracle service or services covered by this {@code Service} object.
      * <p>
-     * Example: `OCI PHX Object Storage`
+     * Example: {@code OCI PHX Object Storage}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * The `Service` object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The {@code Service} object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * Name of the `Service` object. This name can change and is not guaranteed to be unique.
+     * Name of the {@code Service} object. This name can change and is not guaranteed to be unique.
      * <p>
-     * Example: `OCI PHX Object Storage`
+     * Example: {@code OCI PHX Object Storage}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")

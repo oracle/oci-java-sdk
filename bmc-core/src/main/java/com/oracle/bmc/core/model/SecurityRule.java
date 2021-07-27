@@ -7,7 +7,7 @@ package com.oracle.bmc.core.model;
 /**
  * A security rule is one of the items in a {@link NetworkSecurityGroup}.
  * It is a virtual firewall rule for the VNICs in the network security group. A rule can be for
- * either inbound (`direction`= INGRESS) or outbound (`direction`= EGRESS) IP packets.
+ * either inbound ({@code direction}= INGRESS) or outbound ({@code direction}= EGRESS) IP packets.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -220,13 +220,13 @@ public class SecurityRule {
      * <p>
      * Allowed values:
      * <p>
-     * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`
+     * An IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}
      *     IPv6 addressing is supported for all commercial and government regions.
      *     See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
-     * The `cidrBlock` value for a {@link Service}, if you're
-     *     setting up a security rule for traffic destined for a particular `Service` through
-     *     a service gateway. For example: `oci-phx-objectstorage`.
+     * The {@code cidrBlock} value for a {@link Service}, if you're
+     *     setting up a security rule for traffic destined for a particular {@code Service} through
+     *     a service gateway. For example: {@code oci-phx-objectstorage}.
      * <p>
      * The OCID of a {@link NetworkSecurityGroup} in the same
      *     VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
@@ -236,17 +236,17 @@ public class SecurityRule {
     @com.fasterxml.jackson.annotation.JsonProperty("destination")
     String destination;
     /**
-     * Type of destination for the rule. Required if `direction` = `EGRESS`.
+     * Type of destination for the rule. Required if {@code direction} = {@code EGRESS}.
      * <p>
      * Allowed values:
      * <p>
-     * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+     * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
      * <p>
-     * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a
+     * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code cidrBlock} value for a
      *     {@link Service} (the rule is for traffic destined for a
-     *     particular `Service` through a service gateway).
+     *     particular {@code Service} through a service gateway).
      * <p>
-     * `NETWORK_SECURITY_GROUP`: If the rule's `destination` is the OCID of a
+     * {@code NETWORK_SECURITY_GROUP}: If the rule's {@code destination} is the OCID of a
      *     {@link NetworkSecurityGroup}.
      *
      **/
@@ -295,25 +295,25 @@ public class SecurityRule {
         }
     };
     /**
-     * Type of destination for the rule. Required if `direction` = `EGRESS`.
+     * Type of destination for the rule. Required if {@code direction} = {@code EGRESS}.
      * <p>
      * Allowed values:
      * <p>
-     * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+     * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
      * <p>
-     * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a
+     * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code cidrBlock} value for a
      *     {@link Service} (the rule is for traffic destined for a
-     *     particular `Service` through a service gateway).
+     *     particular {@code Service} through a service gateway).
      * <p>
-     * `NETWORK_SECURITY_GROUP`: If the rule's `destination` is the OCID of a
+     * {@code NETWORK_SECURITY_GROUP}: If the rule's {@code destination} is the OCID of a
      *     {@link NetworkSecurityGroup}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
     DestinationType destinationType;
     /**
-     * Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets,
-     * or `INGRESS` for rules to allow inbound IP packets.
+     * Direction of the security rule. Set to {@code EGRESS} for rules to allow outbound IP packets,
+     * or {@code INGRESS} for rules to allow inbound IP packets.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -360,8 +360,8 @@ public class SecurityRule {
         }
     };
     /**
-     * Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets,
-     * or `INGRESS` for rules to allow inbound IP packets.
+     * Direction of the security rule. Set to {@code EGRESS} for rules to allow outbound IP packets,
+     * or {@code INGRESS} for rules to allow inbound IP packets.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("direction")
@@ -374,7 +374,7 @@ public class SecurityRule {
      * An Oracle-assigned identifier for the security rule. You specify this ID when you want to
      * update or delete the rule.
      * <p>
-     * Example: `04ABEC`
+     * Example: {@code 04ABEC}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
@@ -392,19 +392,19 @@ public class SecurityRule {
     Boolean isStateless;
 
     /**
-     * Whether the rule is valid. The value is `True` when the rule is first created. If
-     * the rule's `source` or `destination` is a network security group, the value changes to
-     * `False` if that network security group is deleted.
+     * Whether the rule is valid. The value is {@code True} when the rule is first created. If
+     * the rule's {@code source} or {@code destination} is a network security group, the value changes to
+     * {@code False} if that network security group is deleted.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isValid")
     Boolean isValid;
 
     /**
-     * The transport protocol. Specify either `all` or an IPv4 protocol number as
+     * The transport protocol. Specify either {@code all} or an IPv4 protocol number as
      * defined in
      * [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml).
-     * Options are supported only for ICMP (\"1\"), TCP (\"6\"), UDP (\"17\"), and ICMPv6 (\"58\").
+     * Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
@@ -416,13 +416,13 @@ public class SecurityRule {
      * <p>
      * Allowed values:
      * <p>
-     * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`
+     * An IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}
      *     IPv6 addressing is supported for all commercial and government regions.
      *     See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
-     * The `cidrBlock` value for a {@link Service}, if you're
-     *     setting up a security rule for traffic coming from a particular `Service` through
-     *     a service gateway. For example: `oci-phx-objectstorage`.
+     * The {@code cidrBlock} value for a {@link Service}, if you're
+     *     setting up a security rule for traffic coming from a particular {@code Service} through
+     *     a service gateway. For example: {@code oci-phx-objectstorage}.
      * <p>
      * The OCID of a {@link NetworkSecurityGroup} in the same
      *     VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
@@ -432,15 +432,15 @@ public class SecurityRule {
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     String source;
     /**
-     * Type of source for the rule. Required if `direction` = `INGRESS`.
+     * Type of source for the rule. Required if {@code direction} = {@code INGRESS}.
      * <p>
-     * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+     * {@code CIDR_BLOCK}: If the rule's {@code source} is an IP address range in CIDR notation.
      * <p>
-     * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a
+     * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code source} is the {@code cidrBlock} value for a
      *     {@link Service} (the rule is for traffic coming from a
-     *     particular `Service` through a service gateway).
+     *     particular {@code Service} through a service gateway).
      * <p>
-     * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the OCID of a
+     * {@code NETWORK_SECURITY_GROUP}: If the rule's {@code source} is the OCID of a
      *     {@link NetworkSecurityGroup}.
      *
      **/
@@ -489,15 +489,15 @@ public class SecurityRule {
         }
     };
     /**
-     * Type of source for the rule. Required if `direction` = `INGRESS`.
+     * Type of source for the rule. Required if {@code direction} = {@code INGRESS}.
      * <p>
-     * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+     * {@code CIDR_BLOCK}: If the rule's {@code source} is an IP address range in CIDR notation.
      * <p>
-     * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a
+     * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code source} is the {@code cidrBlock} value for a
      *     {@link Service} (the rule is for traffic coming from a
-     *     particular `Service` through a service gateway).
+     *     particular {@code Service} through a service gateway).
      * <p>
-     * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the OCID of a
+     * {@code NETWORK_SECURITY_GROUP}: If the rule's {@code source} is the OCID of a
      *     {@link NetworkSecurityGroup}.
      *
      **/

@@ -34,7 +34,7 @@ public class UpdateSSLCipherSuiteRequest
     /**
      * The name of the SSL cipher suite to update.
      * <p>
-     * example: `example_cipher_suite`
+     * example: {@code example_cipher_suite}
      *
      */
     private String name;

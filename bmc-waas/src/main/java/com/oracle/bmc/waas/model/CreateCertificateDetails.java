@@ -150,7 +150,7 @@ public class CreateCertificateDetails {
      *
      * **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status.
      * If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate
-     * key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you
+     * key in the {@code certificateData} field after the leaf certificate issued by the SSL certificate provider. If you
      * are unsure if your certificate requires an intermediate certificate chain, see your certificate
      * provider's documentation.
      * <p>
@@ -168,7 +168,7 @@ public class CreateCertificateDetails {
     String privateKeyData;
 
     /**
-     * Set to `true` if the SSL certificate is self-signed.
+     * Set to {@code true} if the SSL certificate is self-signed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isTrustVerificationDisabled")
     Boolean isTrustVerificationDisabled;
@@ -177,7 +177,7 @@ public class CreateCertificateDetails {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -187,7 +187,7 @@ public class CreateCertificateDetails {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

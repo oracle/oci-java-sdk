@@ -52,7 +52,7 @@ public class ChangeLoadBalancerCompartmentRequest
      * previous GET or POST response for that resource. The resource is moved only if the ETag you
      * provide matches the resource's current ETag value.
      * <p>
-     * Example: `example-etag`
+     * Example: {@code example-etag}
      *
      */
     private String ifMatch;

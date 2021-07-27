@@ -26,7 +26,7 @@ public class ResetChannelRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
-     * resource, set the `If-Match` header to the value of the etag from a
+     * resource, set the {@code If-Match} header to the value of the etag from a
      * previous GET or POST response for that resource. The resource will be
      * updated or deleted only if the etag you provide matches the resource's
      * current etag value.

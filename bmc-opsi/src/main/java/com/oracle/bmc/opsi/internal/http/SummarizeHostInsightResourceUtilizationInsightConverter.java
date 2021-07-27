@@ -110,6 +110,42 @@ public class SummarizeHostInsightResourceUtilizationInsightConverter {
                                     request.getPage()));
         }
 
+        if (request.getDefinedTagEquals() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "definedTagEquals",
+                            request.getDefinedTagEquals(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getFreeformTagEquals() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "freeformTagEquals",
+                            request.getFreeformTagEquals(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getDefinedTagExists() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "definedTagExists",
+                            request.getDefinedTagExists(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getFreeformTagExists() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "freeformTagExists",
+                            request.getFreeformTagExists(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

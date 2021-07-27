@@ -98,7 +98,7 @@ public class BootVolumeReplicaInfo {
     /**
      * The availability domain of the boot volume replica.
      * <p>
-     * Example: `Uocm:PHX-AD-1`
+     * Example: {@code Uocm:PHX-AD-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")

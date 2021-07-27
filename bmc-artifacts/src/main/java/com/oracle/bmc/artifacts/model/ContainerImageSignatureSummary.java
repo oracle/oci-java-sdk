@@ -171,7 +171,7 @@ public class ContainerImageSignatureSummary {
     /**
      * The last 10 characters of the kmsKeyId, the last 10 characters of the kmsKeyVersionId, the signingAlgorithm, and the last 10 characters of the signatureId.
      * <p>
-     * Example: `wrmz22sixa::qdwyc2ptun::SHA_256_RSA_PKCS_PSS::2vwmobasva`
+     * Example: {@code wrmz22sixa::qdwyc2ptun::SHA_256_RSA_PKCS_PSS::2vwmobasva}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -180,7 +180,7 @@ public class ContainerImageSignatureSummary {
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the container image signature.
      * <p>
-     * Example: `ocid1.containerimagesignature.oc1..exampleuniqueID`
+     * Example: {@code ocid1.containerimagesignature.oc1..exampleuniqueID}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
@@ -189,7 +189,7 @@ public class ContainerImageSignatureSummary {
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the container image.
      * <p>
-     * Example: `ocid1.containerimage.oc1..exampleuniqueID`
+     * Example: {@code ocid1.containerimage.oc1..exampleuniqueID}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
@@ -198,7 +198,7 @@ public class ContainerImageSignatureSummary {
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the kmsKeyId used to sign the container image.
      * <p>
-     * Example: `ocid1.key.oc1..exampleuniqueID`
+     * Example: {@code ocid1.key.oc1..exampleuniqueID}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
@@ -207,7 +207,7 @@ public class ContainerImageSignatureSummary {
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.
      * <p>
-     * Example: `ocid1.keyversion.oc1..exampleuniqueID`
+     * Example: {@code ocid1.keyversion.oc1..exampleuniqueID}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")

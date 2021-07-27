@@ -50,16 +50,16 @@ public class ListTemplatesRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
     /**
      * The field to use when sorting returned resources.
-     * By default, `TIMECREATED` is ordered descending.
-     * By default, `DISPLAYNAME` is ordered ascending. Note that you can sort only on one field.
+     * By default, {@code TIMECREATED} is ordered descending.
+     * By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only on one field.
      *
      */
     private SortBy sortBy;
 
     /**
      * The field to use when sorting returned resources.
-     * By default, `TIMECREATED` is ordered descending.
-     * By default, `DISPLAYNAME` is ordered ascending. Note that you can sort only on one field.
+     * By default, {@code TIMECREATED} is ordered descending.
+     * By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only on one field.
      *
      **/
     public enum SortBy {
@@ -95,13 +95,13 @@ public class ListTemplatesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
     };
     /**
-     * The sort order to use when sorting returned resources. Ascending (`ASC`) or descending (`DESC`).
+     * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending ({@code DESC}).
      *
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use when sorting returned resources. Ascending (`ASC`) or descending (`DESC`).
+     * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending ({@code DESC}).
      *
      **/
     public enum SortOrder {
@@ -137,14 +137,14 @@ public class ListTemplatesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
     };
     /**
-     * The number of items returned in a paginated `List` call. For information about pagination, see
+     * The number of items returned in a paginated {@code List} call. For information about pagination, see
      * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private Integer limit;
 
     /**
-     * The value of the `opc-next-page` response header from the preceding `List` call.
+     * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
      * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */

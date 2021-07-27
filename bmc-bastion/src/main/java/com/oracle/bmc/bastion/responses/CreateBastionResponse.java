@@ -31,13 +31,13 @@ public class CreateBastionResponse {
     private String opcRequestId;
 
     /**
-     * this contains the full URI for the get request, e.g. \"https://iaas.us-phoenix-1.oraclecloud.com/20210331/bastions/<some-ocid>\"
+     * this contains the full URI for the get request, e.g. "https://iaas.us-phoenix-1.oraclecloud.com/20210331/bastions/<some-ocid>"
      *
      */
     private String location;
 
     /**
-     * For optimistic concurrency control. See `if-match`.
+     * For optimistic concurrency control. See {@code if-match}.
      *
      */
     private String etag;

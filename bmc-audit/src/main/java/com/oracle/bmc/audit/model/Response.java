@@ -103,7 +103,7 @@ public class Response {
     /**
      * The status code of the response.
      * <p>
-     * Example: `200`
+     * Example: {@code 200}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
@@ -113,7 +113,7 @@ public class Response {
      * The time of the response to the audited request, expressed in
      * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * <p>
-     * Example: `2019-09-18T00:10:59.278Z`
+     * Example: {@code 2019-09-18T00:10:59.278Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responseTime")
@@ -126,23 +126,23 @@ public class Response {
      * <p>
      * -----
      *     {
-     *       \"ETag\": [
-     *         \"<unique_ID>\"
+     *       "ETag": [
+     *         "<unique_ID>"
      *       ],
-     *       \"Connection\": [
-     *         \"close\"
+     *       "Connection": [
+     *         "close"
      *       ],
-     *       \"Content-Length\": [
-     *         \"1828\"
+     *       "Content-Length": [
+     *         "1828"
      *       ],
-     *       \"opc-request-id\": [
-     *         \"<unique_ID>\"
+     *       "opc-request-id": [
+     *         "<unique_ID>"
      *       ],
-     *       \"Date\": [
-     *         \"Wed, 18 Sep 2019 00:10:59 GMT\"
+     *       "Date": [
+     *         "Wed, 18 Sep 2019 00:10:59 GMT"
      *       ],
-     *       \"Content-Type\": [
-     *         \"application/json\"
+     *       "Content-Type": [
+     *         "application/json"
      *       ]
      *     }
      *   -----
@@ -159,8 +159,8 @@ public class Response {
      * <p>
      * -----
      *     {
-     *       \"resourceName\": \"my_instance\",
-     *       \"id\": \"ocid1.instance.oc1.phx.<unique_ID>\"
+     *       "resourceName": "my_instance",
+     *       "id": "ocid1.instance.oc1.phx.<unique_ID>"
      *     }
      *   -----
      *

@@ -398,7 +398,12 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateMonitorRequest, CreateMonitorResponse>,
                         java.util.concurrent.Future<CreateMonitorResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateMonitorDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -437,7 +442,12 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateScriptRequest, CreateScriptResponse>,
                         java.util.concurrent.Future<CreateScriptResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateScriptDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -780,7 +790,12 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateMonitorRequest, UpdateMonitorResponse>,
                         java.util.concurrent.Future<UpdateMonitorResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateMonitorDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -818,7 +833,12 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateScriptRequest, UpdateScriptResponse>,
                         java.util.concurrent.Future<UpdateScriptResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateScriptDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

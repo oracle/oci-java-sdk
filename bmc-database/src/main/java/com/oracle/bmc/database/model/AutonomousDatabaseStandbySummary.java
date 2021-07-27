@@ -54,13 +54,25 @@ public class AutonomousDatabaseStandbySummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeDataGuardRoleChanged")
+        private java.util.Date timeDataGuardRoleChanged;
+
+        public Builder timeDataGuardRoleChanged(java.util.Date timeDataGuardRoleChanged) {
+            this.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
+            this.__explicitlySet__.add("timeDataGuardRoleChanged");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutonomousDatabaseStandbySummary build() {
             AutonomousDatabaseStandbySummary __instance__ =
                     new AutonomousDatabaseStandbySummary(
-                            lagTimeInSeconds, lifecycleState, lifecycleDetails);
+                            lagTimeInSeconds,
+                            lifecycleState,
+                            lifecycleDetails,
+                            timeDataGuardRoleChanged);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -70,7 +82,8 @@ public class AutonomousDatabaseStandbySummary {
             Builder copiedBuilder =
                     lagTimeInSeconds(o.getLagTimeInSeconds())
                             .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails());
+                            .lifecycleDetails(o.getLifecycleDetails())
+                            .timeDataGuardRoleChanged(o.getTimeDataGuardRoleChanged());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -164,6 +177,12 @@ public class AutonomousDatabaseStandbySummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     String lifecycleDetails;
+
+    /**
+     * The date and time the Autonomous Data Guard role was switched for the standby Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeDataGuardRoleChanged")
+    java.util.Date timeDataGuardRoleChanged;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

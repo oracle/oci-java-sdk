@@ -190,7 +190,7 @@ public class VnicAttachment {
     /**
      * The availability domain of the instance.
      * <p>
-     * Example: `Uocm:PHX-AD-1`
+     * Example: {@code Uocm:PHX-AD-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
@@ -308,7 +308,7 @@ public class VnicAttachment {
     /**
      * The date and time the VNIC attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -319,10 +319,10 @@ public class VnicAttachment {
      * attachment process is complete.
      * <p>
      * However, if the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution,
-     * the `vlanTag` value is instead the value of the `vlanTag` attribute for the VLAN.
+     * the {@code vlanTag} value is instead the value of the {@code vlanTag} attribute for the VLAN.
      * See {@link Vlan}.
      * <p>
-     * Example: `0`
+     * Example: {@code 0}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vlanTag")

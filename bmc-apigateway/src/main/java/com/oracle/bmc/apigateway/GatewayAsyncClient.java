@@ -400,7 +400,12 @@ public class GatewayAsyncClient implements GatewayAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeGatewayCompartmentRequest, ChangeGatewayCompartmentResponse>,
                         java.util.concurrent.Future<ChangeGatewayCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeGatewayCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -439,7 +444,12 @@ public class GatewayAsyncClient implements GatewayAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateGatewayRequest, CreateGatewayResponse>,
                         java.util.concurrent.Future<CreateGatewayResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateGatewayDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -590,7 +600,12 @@ public class GatewayAsyncClient implements GatewayAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateGatewayRequest, UpdateGatewayResponse>,
                         java.util.concurrent.Future<UpdateGatewayResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateGatewayDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

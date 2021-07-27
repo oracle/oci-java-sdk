@@ -406,7 +406,12 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
                                 ChangeIntegrationInstanceCompartmentRequest,
                                 ChangeIntegrationInstanceCompartmentResponse>,
                         java.util.concurrent.Future<ChangeIntegrationInstanceCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeIntegrationInstanceCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -455,7 +460,13 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
                                 ChangeIntegrationInstanceNetworkEndpointResponse>,
                         java.util.concurrent.Future<
                                 ChangeIntegrationInstanceNetworkEndpointResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeIntegrationInstanceNetworkEndpointDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -499,7 +510,12 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
                                 CreateIntegrationInstanceRequest,
                                 CreateIntegrationInstanceResponse>,
                         java.util.concurrent.Future<CreateIntegrationInstanceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateIntegrationInstanceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -909,7 +925,12 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
                                 UpdateIntegrationInstanceRequest,
                                 UpdateIntegrationInstanceResponse>,
                         java.util.concurrent.Future<UpdateIntegrationInstanceResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateIntegrationInstanceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

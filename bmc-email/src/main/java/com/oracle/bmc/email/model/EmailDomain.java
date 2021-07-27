@@ -177,7 +177,7 @@ public class EmailDomain {
     /**
      * The name of the email domain in the Internet Domain Name System (DNS).
      * <p>
-     * Example: `example.net`
+     * Example: {@code example.net}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -276,9 +276,9 @@ public class EmailDomain {
 
     /**
      * The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
-     * timestamp format, \"YYYY-MM-ddThh:mmZ\".
+     * timestamp format, "YYYY-MM-ddThh:mmZ".
      * <p>
-     * Example: `2021-02-12T22:47:12.613Z`
+     * Example: {@code 2021-02-12T22:47:12.613Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -288,7 +288,7 @@ public class EmailDomain {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -298,7 +298,7 @@ public class EmailDomain {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -306,7 +306,7 @@ public class EmailDomain {
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")

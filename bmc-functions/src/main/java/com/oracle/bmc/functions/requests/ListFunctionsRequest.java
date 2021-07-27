@@ -48,7 +48,7 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
     /**
      * A filter to return only functions that match the lifecycle state in this parameter.
-     * Example: `Creating`
+     * Example: {@code Creating}
      *
      */
     private Function.LifecycleState lifecycleState;
@@ -116,7 +116,7 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     /**
      * Specifies the attribute with which to sort the rules.
      * <p>
-     * Default: `displayName`
+     * Default: {@code displayName}
      * <p>
      * **timeCreated:** Sorts by timeCreated.
      * * **displayName:** Sorts by displayName.
@@ -128,7 +128,7 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     /**
      * Specifies the attribute with which to sort the rules.
      * <p>
-     * Default: `displayName`
+     * Default: {@code displayName}
      * <p>
      * **timeCreated:** Sorts by timeCreated.
      * * **displayName:** Sorts by displayName.

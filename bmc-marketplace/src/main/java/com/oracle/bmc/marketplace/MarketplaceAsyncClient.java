@@ -403,7 +403,12 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                                 ChangePublicationCompartmentRequest,
                                 ChangePublicationCompartmentResponse>,
                         java.util.concurrent.Future<ChangePublicationCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangePublicationCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -445,7 +450,12 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateAcceptedAgreementRequest, CreateAcceptedAgreementResponse>,
                         java.util.concurrent.Future<CreateAcceptedAgreementResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateAcceptedAgreementDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -485,7 +495,12 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreatePublicationRequest, CreatePublicationResponse>,
                         java.util.concurrent.Future<CreatePublicationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreatePublicationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1264,7 +1279,12 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 SearchListingsRequest, SearchListingsResponse>,
                         java.util.concurrent.Future<SearchListingsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSearchListingsDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1306,7 +1326,12 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateAcceptedAgreementRequest, UpdateAcceptedAgreementResponse>,
                         java.util.concurrent.Future<UpdateAcceptedAgreementResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateAcceptedAgreementDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1346,7 +1371,12 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdatePublicationRequest, UpdatePublicationResponse>,
                         java.util.concurrent.Future<UpdatePublicationResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdatePublicationDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

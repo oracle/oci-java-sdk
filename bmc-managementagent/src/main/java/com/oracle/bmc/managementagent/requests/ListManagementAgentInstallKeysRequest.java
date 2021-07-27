@@ -31,7 +31,7 @@ public class ListManagementAgentInstallKeysRequest
     private Boolean compartmentIdInSubtree;
 
     /**
-     * Value of this is always \"ACCESSIBLE\" and any other value is not supported.
+     * Value of this is always "ACCESSIBLE" and any other value is not supported.
      */
     private String accessLevel;
 

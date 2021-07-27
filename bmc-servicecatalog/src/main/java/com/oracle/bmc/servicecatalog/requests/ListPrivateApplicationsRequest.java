@@ -44,20 +44,20 @@ public class ListPrivateApplicationsRequest
     private Integer limit;
 
     /**
-     * The value of the `opc-next-page` response header from the previous \"List\" call.
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
      */
     private String page;
 
     /**
      * The field to use to sort listed results. You can only specify one field to sort by.
-     * Default is `TIMECREATED`.
+     * Default is {@code TIMECREATED}.
      *
      */
     private SortBy sortBy;
 
     /**
      * The field to use to sort listed results. You can only specify one field to sort by.
-     * Default is `TIMECREATED`.
+     * Default is {@code TIMECREATED}.
      *
      **/
     public enum SortBy {
@@ -93,12 +93,12 @@ public class ListPrivateApplicationsRequest
         }
     };
     /**
-     * The sort order to apply, either `ASC` or `DESC`. Default is `ASC`.
+     * The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}.
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to apply, either `ASC` or `DESC`. Default is `ASC`.
+     * The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}.
      **/
     public enum SortOrder {
         Asc("ASC"),

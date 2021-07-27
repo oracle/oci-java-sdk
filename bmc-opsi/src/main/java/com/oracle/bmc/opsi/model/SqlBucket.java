@@ -173,7 +173,7 @@ public class SqlBucket {
 
     /**
      * Version
-     * Example: `1`
+     * Example: {@code 1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
@@ -187,7 +187,7 @@ public class SqlBucket {
 
     /**
      * Collection timestamp
-     * Example: `\"2020-03-31T00:00:00.000Z\"`
+     * Example: {@code "2020-03-31T00:00:00.000Z"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
@@ -208,7 +208,7 @@ public class SqlBucket {
 
     /**
      * SQL Bucket ID, examples <= 3 secs, 3-10 secs, 10-60 secs, 1-5 min, > 5 min
-     * Example: `\"<= 3 secs\"`
+     * Example: {@code "<= 3 secs"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketId")
@@ -216,7 +216,7 @@ public class SqlBucket {
 
     /**
      * Total number of executions
-     * Example: `60`
+     * Example: {@code 60}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionsCount")
@@ -224,7 +224,7 @@ public class SqlBucket {
 
     /**
      * Total CPU time
-     * Example: `1046`
+     * Example: {@code 1046}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuTimeInSec")
@@ -232,7 +232,7 @@ public class SqlBucket {
 
     /**
      * Total IO time
-     * Example: `5810`
+     * Example: {@code 5810}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ioTimeInSec")
@@ -240,7 +240,7 @@ public class SqlBucket {
 
     /**
      * Total other wait time
-     * Example: `24061`
+     * Example: {@code 24061}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("otherWaitTimeInSec")
@@ -248,7 +248,7 @@ public class SqlBucket {
 
     /**
      * Total time
-     * Example: `30917`
+     * Example: {@code 30917}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalTimeInSec")

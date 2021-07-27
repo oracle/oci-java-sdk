@@ -360,7 +360,7 @@ public class HttpProbeResultSummary {
     String vantagePointName;
 
     /**
-     * True if the probe did not complete before the configured `timeoutInSeconds` value.
+     * True if the probe did not complete before the configured {@code timeoutInSeconds} value.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isTimedOut")
@@ -377,11 +377,11 @@ public class HttpProbeResultSummary {
     Boolean isHealthy;
     /**
      * The category of error if an error occurs executing the probe.
-     * The `errorMessage` field provides a message with the error details.
+     * The {@code errorMessage} field provides a message with the error details.
      * * NONE - No error
      * * DNS - DNS errors
-     * * TRANSPORT - Transport-related errors, for example a \"TLS certificate expired\" error.
-     * * NETWORK - Network-related errors, for example a \"network unreachable\" error.
+     * * TRANSPORT - Transport-related errors, for example a "TLS certificate expired" error.
+     * * NETWORK - Network-related errors, for example a "network unreachable" error.
      * * SYSTEM - Internal system errors.
      *
      **/
@@ -433,11 +433,11 @@ public class HttpProbeResultSummary {
     };
     /**
      * The category of error if an error occurs executing the probe.
-     * The `errorMessage` field provides a message with the error details.
+     * The {@code errorMessage} field provides a message with the error details.
      * * NONE - No error
      * * DNS - DNS errors
-     * * TRANSPORT - Transport-related errors, for example a \"TLS certificate expired\" error.
-     * * NETWORK - Network-related errors, for example a \"network unreachable\" error.
+     * * TRANSPORT - Transport-related errors, for example a "TLS certificate expired" error.
+     * * NETWORK - Network-related errors, for example a "network unreachable" error.
      * * SYSTEM - Internal system errors.
      *
      **/

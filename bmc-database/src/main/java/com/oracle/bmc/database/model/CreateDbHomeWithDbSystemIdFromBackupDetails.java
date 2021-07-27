@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Note that a valid `dbSystemId` value must be supplied for the `CreateDbHomeWithDbSystemIdFromBackup` API operation to successfully complete.
+ * Note that a valid {@code dbSystemId} value must be supplied for the {@code CreateDbHomeWithDbSystemIdFromBackup} API operation to successfully complete.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

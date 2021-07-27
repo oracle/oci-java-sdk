@@ -78,9 +78,9 @@ public class SteeringPolicyPriorityAnswerData {
     String answerCondition;
 
     /**
-     * The rank assigned to the set of answers that match the expression in `answerCondition`.
+     * The rank assigned to the set of answers that match the expression in {@code answerCondition}.
      * Answers with the lowest values move to the beginning of the list without changing the
-     * relative order of those with the same value. Answers can be given a value between `0` and `255`.
+     * relative order of those with the same value. Answers can be given a value between {@code 0} and {@code 255}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")

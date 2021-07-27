@@ -24,7 +24,7 @@ public class ListMetricsRequest extends com.oracle.bmc.requests.BmcRequest<ListM
      * resources monitored by the metric that you are searching for. Use tenancyId to search in
      * the root compartment.
      * <p>
-     * Example: `ocid1.compartment.oc1..exampleuniqueID`
+     * Example: {@code ocid1.compartment.oc1..exampleuniqueID}
      *
      */
     private String compartmentId;
@@ -42,14 +42,14 @@ public class ListMetricsRequest extends com.oracle.bmc.requests.BmcRequest<ListM
     private String opcRequestId;
 
     /**
-     * For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
      * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String page;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
+     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
      * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * <p>
      * Default: 1000

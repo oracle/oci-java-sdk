@@ -22,8 +22,8 @@ public class DetectLanguageSentimentsRequest
 
     /**
      * The details to make sentiment detect call.
-     * Example: `{\"text\": \"If an emerging growth company, indicate by check mark if the registrant has elected not
-     *             to use the extended transition period for complying\"}`
+     * Example: {@code {"text": "If an emerging growth company, indicate by check mark if the registrant has elected not
+     *             to use the extended transition period for complying"}}
      *
      */
     private DetectLanguageSentimentsDetails detectLanguageSentimentsDetails;

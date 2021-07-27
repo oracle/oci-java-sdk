@@ -27,7 +27,7 @@ public class GetBackendRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     /**
      * The name of the backend set that includes the backend server.
      * <p>
-     * Example: `example_backend_set`
+     * Example: {@code example_backend_set}
      *
      */
     private String backendSetName;
@@ -35,7 +35,7 @@ public class GetBackendRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     /**
      * The name of the backend server to retrieve. This is specified as <ip>:<port>, or as <ip> <OCID>:<port>.
      * <p>
-     * Example: `10.0.0.3:8080` or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:8080`
+     * Example: {@code 10.0.0.3:8080} or {@code ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:8080}
      *
      */
     private String backendName;
@@ -50,9 +50,9 @@ public class GetBackendRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     /**
      * The system returns the requested resource, with a 200 status, only if the resource has no etag
      * matching the one specified. If the condition fails for the GET and HEAD methods, then the system returns the
-     * HTTP status code `304 (Not Modified)`.
+     * HTTP status code {@code 304 (Not Modified)}.
      * <p>
-     * Example: `example-etag`
+     * Example: {@code example-etag}
      *
      */
     private String ifNoneMatch;

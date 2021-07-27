@@ -64,7 +64,7 @@ public class DetectStackDriftDetails {
     /**
      * The list of resources in the specified stack to detect drift for. Each resource is identified by a resource address,
      * which is a case-insensitive string derived from the resource type and name specified in the stack's Terraform configuration plus an optional index.
-     * For example, the resource address for the fourth Compute instance with the name \"test_instance\" is oci_core_instance.test_instance[3].
+     * For example, the resource address for the fourth Compute instance with the name "test_instance" is oci_core_instance.test_instance[3].
      * For more details and examples of resource addresses, see the Terraform documentation at [Resource spec](https://www.terraform.io/docs/internals/resource-addressing.html#examples).
      *
      **/

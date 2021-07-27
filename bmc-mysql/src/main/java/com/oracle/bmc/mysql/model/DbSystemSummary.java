@@ -297,7 +297,7 @@ public class DbSystemSummary {
     DbSystemPlacement currentPlacement;
 
     /**
-     * DEPRECATED -- please use `isHeatWaveClusterAttached` instead.
+     * DEPRECATED -- please use {@code isHeatWaveClusterAttached} instead.
      * If the DB System has an Analytics Cluster attached.
      *
      **/
@@ -376,7 +376,7 @@ public class DbSystemSummary {
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -384,7 +384,7 @@ public class DbSystemSummary {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

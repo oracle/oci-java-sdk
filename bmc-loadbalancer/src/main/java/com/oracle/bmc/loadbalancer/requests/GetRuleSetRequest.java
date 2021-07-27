@@ -27,7 +27,7 @@ public class GetRuleSetRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     /**
      * The name of the rule set to retrieve.
      * <p>
-     * Example: `example_rule_set`
+     * Example: {@code example_rule_set}
      *
      */
     private String ruleSetName;

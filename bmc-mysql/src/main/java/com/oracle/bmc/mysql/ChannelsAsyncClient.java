@@ -397,7 +397,12 @@ public class ChannelsAsyncClient implements ChannelsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateChannelRequest, CreateChannelResponse>,
                         java.util.concurrent.Future<CreateChannelResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateChannelDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -627,7 +632,12 @@ public class ChannelsAsyncClient implements ChannelsAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateChannelRequest, UpdateChannelResponse>,
                         java.util.concurrent.Future<UpdateChannelResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateChannelDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

@@ -447,7 +447,12 @@ public class ServiceConnectorAsyncClient implements ServiceConnectorAsync {
                                 ChangeServiceConnectorCompartmentRequest,
                                 ChangeServiceConnectorCompartmentResponse>,
                         java.util.concurrent.Future<ChangeServiceConnectorCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeServiceConnectorCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -490,7 +495,12 @@ public class ServiceConnectorAsyncClient implements ServiceConnectorAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateServiceConnectorRequest, CreateServiceConnectorResponse>,
                         java.util.concurrent.Future<CreateServiceConnectorResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateServiceConnectorDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -859,7 +869,12 @@ public class ServiceConnectorAsyncClient implements ServiceConnectorAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateServiceConnectorRequest, UpdateServiceConnectorResponse>,
                         java.util.concurrent.Future<UpdateServiceConnectorResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateServiceConnectorDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

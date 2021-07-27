@@ -73,7 +73,7 @@ public class AggregatedDatapoint {
     /**
      * The date and time associated with the value of this data point. Format defined by RFC3339.
      * <p>
-     * Example: `2019-02-01T01:02:29.600Z`
+     * Example: {@code 2019-02-01T01:02:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
@@ -82,7 +82,7 @@ public class AggregatedDatapoint {
     /**
      * Numeric value of the metric.
      * <p>
-     * Example: `10.4`
+     * Example: {@code 10.4}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")

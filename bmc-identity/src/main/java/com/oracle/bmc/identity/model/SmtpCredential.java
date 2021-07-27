@@ -190,9 +190,9 @@ public class SmtpCredential {
     String description;
 
     /**
-     * Date and time the `SmtpCredential` object was created, in the format defined by RFC3339.
+     * Date and time the {@code SmtpCredential} object was created, in the format defined by RFC3339.
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -202,13 +202,13 @@ public class SmtpCredential {
      * Date and time when this credential will expire, in the format defined by RFC3339.
      * Null if it never expires.
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
     java.util.Date timeExpires;
     /**
-     * The credential's current state. After creating a SMTP credential, make sure its `lifecycleState` changes from
+     * The credential's current state. After creating a SMTP credential, make sure its {@code lifecycleState} changes from
      * CREATING to ACTIVE before using it.
      *
      **/
@@ -259,7 +259,7 @@ public class SmtpCredential {
         }
     };
     /**
-     * The credential's current state. After creating a SMTP credential, make sure its `lifecycleState` changes from
+     * The credential's current state. After creating a SMTP credential, make sure its {@code lifecycleState} changes from
      * CREATING to ACTIVE before using it.
      *
      **/

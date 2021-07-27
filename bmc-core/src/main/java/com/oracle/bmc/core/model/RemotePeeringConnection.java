@@ -215,7 +215,7 @@ public class RemotePeeringConnection {
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -239,7 +239,7 @@ public class RemotePeeringConnection {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -254,7 +254,7 @@ public class RemotePeeringConnection {
     /**
      * Whether the VCN at the other end of the peering is in a different tenancy.
      * <p>
-     * Example: `false`
+     * Example: {@code false}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCrossTenancyPeering")
@@ -323,7 +323,7 @@ public class RemotePeeringConnection {
     /**
      * If this RPC is peered, this value is the region that contains the other RPC.
      * <p>
-     * Example: `us-ashburn-1`
+     * Example: {@code us-ashburn-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerRegionName")
@@ -336,8 +336,8 @@ public class RemotePeeringConnection {
     @com.fasterxml.jackson.annotation.JsonProperty("peerTenancyId")
     String peerTenancyId;
     /**
-     * Whether the RPC is peered with another RPC. `NEW` means the RPC has not yet been
-     * peered. `PENDING` means the peering is being established. `REVOKED` means the
+     * Whether the RPC is peered with another RPC. {@code NEW} means the RPC has not yet been
+     * peered. {@code PENDING} means the peering is being established. {@code REVOKED} means the
      * RPC at the other end of the peering has been deleted.
      *
      **/
@@ -388,8 +388,8 @@ public class RemotePeeringConnection {
         }
     };
     /**
-     * Whether the RPC is peered with another RPC. `NEW` means the RPC has not yet been
-     * peered. `PENDING` means the peering is being established. `REVOKED` means the
+     * Whether the RPC is peered with another RPC. {@code NEW} means the RPC has not yet been
+     * peered. {@code PENDING} means the peering is being established. {@code REVOKED} means the
      * RPC at the other end of the peering has been deleted.
      *
      **/
@@ -399,7 +399,7 @@ public class RemotePeeringConnection {
     /**
      * The date and time the RPC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

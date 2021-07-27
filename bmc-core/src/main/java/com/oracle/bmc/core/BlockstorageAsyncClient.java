@@ -403,7 +403,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                                 ChangeBootVolumeBackupCompartmentRequest,
                                 ChangeBootVolumeBackupCompartmentResponse>,
                         java.util.concurrent.Future<ChangeBootVolumeBackupCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeBootVolumeBackupCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -448,7 +453,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                                 ChangeBootVolumeCompartmentRequest,
                                 ChangeBootVolumeCompartmentResponse>,
                         java.util.concurrent.Future<ChangeBootVolumeCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeBootVolumeCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -492,7 +502,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                                 ChangeVolumeBackupCompartmentRequest,
                                 ChangeVolumeBackupCompartmentResponse>,
                         java.util.concurrent.Future<ChangeVolumeBackupCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeVolumeBackupCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -533,7 +548,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ChangeVolumeCompartmentRequest, ChangeVolumeCompartmentResponse>,
                         java.util.concurrent.Future<ChangeVolumeCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeVolumeCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -578,7 +598,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                                 ChangeVolumeGroupBackupCompartmentRequest,
                                 ChangeVolumeGroupBackupCompartmentResponse>,
                         java.util.concurrent.Future<ChangeVolumeGroupBackupCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeVolumeGroupBackupCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -623,7 +648,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                                 ChangeVolumeGroupCompartmentRequest,
                                 ChangeVolumeGroupCompartmentResponse>,
                         java.util.concurrent.Future<ChangeVolumeGroupCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeVolumeGroupCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -665,7 +695,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CopyBootVolumeBackupRequest, CopyBootVolumeBackupResponse>,
                         java.util.concurrent.Future<CopyBootVolumeBackupResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCopyBootVolumeBackupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -705,7 +740,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CopyVolumeBackupRequest, CopyVolumeBackupResponse>,
                         java.util.concurrent.Future<CopyVolumeBackupResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCopyVolumeBackupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -745,7 +785,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateBootVolumeRequest, CreateBootVolumeResponse>,
                         java.util.concurrent.Future<CreateBootVolumeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateBootVolumeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -787,7 +832,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateBootVolumeBackupRequest, CreateBootVolumeBackupResponse>,
                         java.util.concurrent.Future<CreateBootVolumeBackupResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateBootVolumeBackupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -826,7 +876,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateVolumeRequest, CreateVolumeResponse>,
                         java.util.concurrent.Future<CreateVolumeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateVolumeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -866,7 +921,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateVolumeBackupRequest, CreateVolumeBackupResponse>,
                         java.util.concurrent.Future<CreateVolumeBackupResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateVolumeBackupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -908,7 +968,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateVolumeBackupPolicyRequest, CreateVolumeBackupPolicyResponse>,
                         java.util.concurrent.Future<CreateVolumeBackupPolicyResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateVolumeBackupPolicyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -953,7 +1018,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                                 CreateVolumeBackupPolicyAssignmentRequest,
                                 CreateVolumeBackupPolicyAssignmentResponse>,
                         java.util.concurrent.Future<CreateVolumeBackupPolicyAssignmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateVolumeBackupPolicyAssignmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -994,7 +1064,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateVolumeGroupRequest, CreateVolumeGroupResponse>,
                         java.util.concurrent.Future<CreateVolumeGroupResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateVolumeGroupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1036,7 +1111,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateVolumeGroupBackupRequest, CreateVolumeGroupBackupResponse>,
                         java.util.concurrent.Future<CreateVolumeGroupBackupResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateVolumeGroupBackupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2369,7 +2449,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateBootVolumeRequest, UpdateBootVolumeResponse>,
                         java.util.concurrent.Future<UpdateBootVolumeResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateBootVolumeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2410,7 +2495,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateBootVolumeBackupRequest, UpdateBootVolumeBackupResponse>,
                         java.util.concurrent.Future<UpdateBootVolumeBackupResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateBootVolumeBackupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2451,7 +2541,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateBootVolumeKmsKeyRequest, UpdateBootVolumeKmsKeyResponse>,
                         java.util.concurrent.Future<UpdateBootVolumeKmsKeyResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateBootVolumeKmsKeyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2489,7 +2584,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateVolumeRequest, UpdateVolumeResponse>,
                         java.util.concurrent.Future<UpdateVolumeResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateVolumeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2528,7 +2628,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateVolumeBackupRequest, UpdateVolumeBackupResponse>,
                         java.util.concurrent.Future<UpdateVolumeBackupResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateVolumeBackupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2570,7 +2675,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateVolumeBackupPolicyRequest, UpdateVolumeBackupPolicyResponse>,
                         java.util.concurrent.Future<UpdateVolumeBackupPolicyResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateVolumeBackupPolicyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2609,7 +2719,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateVolumeGroupRequest, UpdateVolumeGroupResponse>,
                         java.util.concurrent.Future<UpdateVolumeGroupResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateVolumeGroupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2650,7 +2765,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateVolumeGroupBackupRequest, UpdateVolumeGroupBackupResponse>,
                         java.util.concurrent.Future<UpdateVolumeGroupBackupResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateVolumeGroupBackupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2689,7 +2809,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateVolumeKmsKeyRequest, UpdateVolumeKmsKeyResponse>,
                         java.util.concurrent.Future<UpdateVolumeKmsKeyResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateVolumeKmsKeyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

@@ -9,7 +9,7 @@ package com.oracle.bmc.loadbalancer.model;
  * For more information on backend set configuration, see
  * [Managing Backend Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendsets.htm).
  * <p>
- **Note:** The `sessionPersistenceConfiguration` (application cookie stickiness) and `lbCookieSessionPersistenceConfiguration`
+ **Note:** The {@code sessionPersistenceConfiguration} (application cookie stickiness) and {@code lbCookieSessionPersistenceConfiguration}
  * (LB cookie stickiness) attributes are mutually exclusive. To avoid returning an error, configure only one of these two
  * attributes per backend set.
  *
@@ -134,7 +134,7 @@ public class BackendSetDetails {
      * The load balancer policy for the backend set. To get a list of available policies, use the
      * {@link #listPolicies(ListPoliciesRequest) listPolicies} operation.
      * <p>
-     * Example: `LEAST_CONNECTIONS`
+     * Example: {@code LEAST_CONNECTIONS}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policy")

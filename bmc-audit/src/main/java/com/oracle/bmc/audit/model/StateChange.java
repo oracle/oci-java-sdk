@@ -71,7 +71,7 @@ public class StateChange {
     /**
      * Provides the previous state of fields that may have changed during an operation. To determine
      * how the current operation changed a resource, compare the information in this attribute to
-     * `current`.
+     * {@code current}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("previous")
@@ -80,7 +80,7 @@ public class StateChange {
     /**
      * Provides the current state of fields that may have changed during an operation. To determine
      * how the current operation changed a resource, compare the information in this attribute to
-     * `previous`.
+     * {@code previous}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("current")

@@ -27,12 +27,12 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
     private String compartmentId;
 
     /**
-     * The maximum number of items to return in a paginated \"List\" call.
+     * The maximum number of items to return in a paginated "List" call.
      */
     private Integer limit;
 
     /**
-     * The value of the `opc-next-page` response header from the previous \"List\" call.
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
      */
     private String page;
 
@@ -133,13 +133,13 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
     /**
-     * The sort order to use. (Sorting by `announcementType` orders the announcements list according to importance.)
+     * The sort order to use. (Sorting by {@code announcementType} orders the announcements list according to importance.)
      *
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use. (Sorting by `announcementType` orders the announcements list according to importance.)
+     * The sort order to use. (Sorting by {@code announcementType} orders the announcements list according to importance.)
      *
      **/
     public enum SortOrder {
@@ -175,12 +175,12 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
     /**
-     * The boundary for the earliest `timeOneValue` date on announcements that you want to see.
+     * The boundary for the earliest {@code timeOneValue} date on announcements that you want to see.
      */
     private java.util.Date timeOneEarliestTime;
 
     /**
-     * The boundary for the latest `timeOneValue` date on announcements that you want to see.
+     * The boundary for the latest {@code timeOneValue} date on announcements that you want to see.
      */
     private java.util.Date timeOneLatestTime;
 

@@ -100,7 +100,7 @@ public class BackendSetDetails {
     /**
      * The network load balancer policy for the backend set.
      * <p>
-     * Example: `FIVE_TUPLE`
+     * Example: {@code FIVE_TUPLE}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policy")

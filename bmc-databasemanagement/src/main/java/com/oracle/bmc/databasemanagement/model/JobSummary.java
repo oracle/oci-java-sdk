@@ -265,7 +265,7 @@ public class JobSummary {
     Job.LifecycleState lifecycleState;
 
     /**
-     * The job timeout duration, which is expressed like \"1h 10m 15s\".
+     * The job timeout duration, which is expressed like "1h 10m 15s".
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeout")
     String timeout;

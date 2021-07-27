@@ -75,7 +75,7 @@ public class ShapeDetails {
      * Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress).
      * The values must be between 10 and the maximumBandwidthInMbps.
      * <p>
-     * Example: `150`
+     * Example: {@code 150}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minimumBandwidthInMbps")
@@ -88,7 +88,7 @@ public class ShapeDetails {
      * <p>
      * The values must be between minimumBandwidthInMbps and 8192 (8Gbps).
      * <p>
-     * Example: `1500`
+     * Example: {@code 1500}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maximumBandwidthInMbps")

@@ -99,7 +99,7 @@ public class NotebookSessionConfigurationDetails {
     }
 
     /**
-     * The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
+     * The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the {@code ListNotebookSessionShapes} endpoint.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")

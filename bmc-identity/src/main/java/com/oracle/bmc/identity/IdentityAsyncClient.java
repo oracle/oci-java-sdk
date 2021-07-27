@@ -399,7 +399,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 ActivateMfaTotpDeviceRequest, ActivateMfaTotpDeviceResponse>,
                         java.util.concurrent.Future<ActivateMfaTotpDeviceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getMfaTotpToken(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -439,7 +444,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 AddUserToGroupRequest, AddUserToGroupResponse>,
                         java.util.concurrent.Future<AddUserToGroupResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddUserToGroupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -522,7 +532,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 BulkDeleteResourcesRequest, BulkDeleteResourcesResponse>,
                         java.util.concurrent.Future<BulkDeleteResourcesResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkDeleteResourcesDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -562,7 +577,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 BulkDeleteTagsRequest, BulkDeleteTagsResponse>,
                         java.util.concurrent.Future<BulkDeleteTagsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkDeleteTagsDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -601,7 +621,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 BulkEditTagsRequest, BulkEditTagsResponse>,
                         java.util.concurrent.Future<BulkEditTagsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkEditTagsDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -641,7 +666,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 BulkMoveResourcesRequest, BulkMoveResourcesResponse>,
                         java.util.concurrent.Future<BulkMoveResourcesResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkMoveResourcesDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -729,7 +759,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                                 ChangeTagNamespaceCompartmentRequest,
                                 ChangeTagNamespaceCompartmentResponse>,
                         java.util.concurrent.Future<ChangeTagNamespaceCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeTagNamespaceCompartmentDetail(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -769,7 +804,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateAuthTokenRequest, CreateAuthTokenResponse>,
                         java.util.concurrent.Future<CreateAuthTokenResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateAuthTokenDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -809,7 +849,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateCompartmentRequest, CreateCompartmentResponse>,
                         java.util.concurrent.Future<CreateCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -851,7 +896,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateCustomerSecretKeyRequest, CreateCustomerSecretKeyResponse>,
                         java.util.concurrent.Future<CreateCustomerSecretKeyResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateCustomerSecretKeyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -891,7 +941,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateDynamicGroupRequest, CreateDynamicGroupResponse>,
                         java.util.concurrent.Future<CreateDynamicGroupResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDynamicGroupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -930,7 +985,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateGroupRequest, CreateGroupResponse>,
                         java.util.concurrent.Future<CreateGroupResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateGroupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -972,7 +1032,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateIdentityProviderRequest, CreateIdentityProviderResponse>,
                         java.util.concurrent.Future<CreateIdentityProviderResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateIdentityProviderDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1014,7 +1079,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateIdpGroupMappingRequest, CreateIdpGroupMappingResponse>,
                         java.util.concurrent.Future<CreateIdpGroupMappingResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateIdpGroupMappingDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1098,7 +1168,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateNetworkSourceRequest, CreateNetworkSourceResponse>,
                         java.util.concurrent.Future<CreateNetworkSourceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateNetworkSourceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1143,7 +1218,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                                 CreateOAuthClientCredentialRequest,
                                 CreateOAuthClientCredentialResponse>,
                         java.util.concurrent.Future<CreateOAuthClientCredentialResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateOAuth2ClientCredentialDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1224,7 +1304,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreatePolicyRequest, CreatePolicyResponse>,
                         java.util.concurrent.Future<CreatePolicyResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreatePolicyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1266,7 +1351,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateRegionSubscriptionRequest, CreateRegionSubscriptionResponse>,
                         java.util.concurrent.Future<CreateRegionSubscriptionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateRegionSubscriptionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1308,7 +1398,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateSmtpCredentialRequest, CreateSmtpCredentialResponse>,
                         java.util.concurrent.Future<CreateSmtpCredentialResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSmtpCredentialDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1350,7 +1445,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateSwiftPasswordRequest, CreateSwiftPasswordResponse>,
                         java.util.concurrent.Future<CreateSwiftPasswordResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSwiftPasswordDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1387,7 +1487,12 @@ public class IdentityAsyncClient implements IdentityAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<CreateTagRequest, CreateTagResponse>,
                         java.util.concurrent.Future<CreateTagResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTagDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1427,7 +1532,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateTagDefaultRequest, CreateTagDefaultResponse>,
                         java.util.concurrent.Future<CreateTagDefaultResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTagDefaultDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1467,7 +1577,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateTagNamespaceRequest, CreateTagNamespaceResponse>,
                         java.util.concurrent.Future<CreateTagNamespaceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTagNamespaceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -1505,7 +1620,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 CreateUserRequest, CreateUserResponse>,
                         java.util.concurrent.Future<CreateUserResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateUserDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4240,7 +4360,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 MoveCompartmentRequest, MoveCompartmentResponse>,
                         java.util.concurrent.Future<MoveCompartmentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getMoveCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4398,7 +4523,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateAuthTokenRequest, UpdateAuthTokenResponse>,
                         java.util.concurrent.Future<UpdateAuthTokenResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateAuthTokenDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4442,7 +4572,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                                 UpdateAuthenticationPolicyRequest,
                                 UpdateAuthenticationPolicyResponse>,
                         java.util.concurrent.Future<UpdateAuthenticationPolicyResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateAuthenticationPolicyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4481,7 +4616,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateCompartmentRequest, UpdateCompartmentResponse>,
                         java.util.concurrent.Future<UpdateCompartmentResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCompartmentDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4522,7 +4662,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateCustomerSecretKeyRequest, UpdateCustomerSecretKeyResponse>,
                         java.util.concurrent.Future<UpdateCustomerSecretKeyResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCustomerSecretKeyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4561,7 +4706,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateDynamicGroupRequest, UpdateDynamicGroupResponse>,
                         java.util.concurrent.Future<UpdateDynamicGroupResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDynamicGroupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4599,7 +4749,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateGroupRequest, UpdateGroupResponse>,
                         java.util.concurrent.Future<UpdateGroupResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateGroupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4640,7 +4795,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateIdentityProviderRequest, UpdateIdentityProviderResponse>,
                         java.util.concurrent.Future<UpdateIdentityProviderResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateIdentityProviderDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4681,7 +4841,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateIdpGroupMappingRequest, UpdateIdpGroupMappingResponse>,
                         java.util.concurrent.Future<UpdateIdpGroupMappingResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateIdpGroupMappingDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4722,7 +4887,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateNetworkSourceRequest, UpdateNetworkSourceResponse>,
                         java.util.concurrent.Future<UpdateNetworkSourceResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateNetworkSourceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4766,7 +4936,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                                 UpdateOAuthClientCredentialRequest,
                                 UpdateOAuthClientCredentialResponse>,
                         java.util.concurrent.Future<UpdateOAuthClientCredentialResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateOAuth2ClientCredentialDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4804,7 +4979,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdatePolicyRequest, UpdatePolicyResponse>,
                         java.util.concurrent.Future<UpdatePolicyResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdatePolicyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4845,7 +5025,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateSmtpCredentialRequest, UpdateSmtpCredentialResponse>,
                         java.util.concurrent.Future<UpdateSmtpCredentialResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSmtpCredentialDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4886,7 +5071,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateSwiftPasswordRequest, UpdateSwiftPasswordResponse>,
                         java.util.concurrent.Future<UpdateSwiftPasswordResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSwiftPasswordDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4922,7 +5112,12 @@ public class IdentityAsyncClient implements IdentityAsync {
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<UpdateTagRequest, UpdateTagResponse>,
                         java.util.concurrent.Future<UpdateTagResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTagDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -4961,7 +5156,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateTagDefaultRequest, UpdateTagDefaultResponse>,
                         java.util.concurrent.Future<UpdateTagDefaultResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTagDefaultDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5000,7 +5200,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateTagNamespaceRequest, UpdateTagNamespaceResponse>,
                         java.util.concurrent.Future<UpdateTagNamespaceResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTagNamespaceDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5037,7 +5242,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateUserRequest, UpdateUserResponse>,
                         java.util.concurrent.Future<UpdateUserResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateUserDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5078,7 +5288,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateUserCapabilitiesRequest, UpdateUserCapabilitiesResponse>,
                         java.util.concurrent.Future<UpdateUserCapabilitiesResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateUserCapabilitiesDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5117,7 +5332,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UpdateUserStateRequest, UpdateUserStateResponse>,
                         java.util.concurrent.Future<UpdateUserStateResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateStateDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -5156,7 +5376,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 UploadApiKeyRequest, UploadApiKeyResponse>,
                         java.util.concurrent.Future<UploadApiKeyResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateApiKeyDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

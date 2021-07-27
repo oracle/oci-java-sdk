@@ -26,7 +26,7 @@ public class MakeBucketWritableRequest extends com.oracle.bmc.requests.BmcReques
 
     /**
      * The name of the bucket. Avoid entering confidential information.
-     * Example: `my-new-bucket1`
+     * Example: {@code my-new-bucket1}
      *
      */
     private String bucketName;

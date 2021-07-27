@@ -26,13 +26,13 @@ public class QueryOldRequest extends com.oracle.bmc.requests.BmcRequest<QueryDet
     private String apmDomainId;
 
     /**
-     * Include spans that have a `spanStartTime` equal to or greater this value.
+     * Include spans that have a {@code spanStartTime} equal to or greater this value.
      *
      */
     private java.util.Date timeSpanStartedGreaterThanOrEqualTo;
 
     /**
-     * Include spans that have a `spanStartTime`less than this value.
+     * Include spans that have a {@code spanStartTime}less than this value.
      *
      */
     private java.util.Date timeSpanStartedLessThan;

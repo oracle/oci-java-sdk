@@ -33,13 +33,13 @@ public class ListRunLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String opcRequestId;
 
     /**
-     * The maximum number of results to return in a paginated \"List\" call.
+     * The maximum number of results to return in a paginated "List" call.
      *
      */
     private Integer limit;
 
     /**
-     * The value of the `opc-next-page` or `opc-prev-page` response header from the last `List` call
+     * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from the last {@code List} call
      * to sent back to server for getting the next page of results.
      *
      */

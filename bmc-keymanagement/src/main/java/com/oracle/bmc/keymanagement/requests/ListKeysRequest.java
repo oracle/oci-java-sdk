@@ -25,14 +25,14 @@ public class ListKeysRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     private String compartmentId;
 
     /**
-     * The maximum number of items to return in a paginated \"List\" call.
+     * The maximum number of items to return in a paginated "List" call.
      *
      */
     private Integer limit;
 
     /**
-     * The value of the `opc-next-page` response header
-     * from the previous \"List\" call.
+     * The value of the {@code opc-next-page} response header
+     * from the previous "List" call.
      *
      */
     private String page;
@@ -47,7 +47,7 @@ public class ListKeysRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
     /**
      * The field to sort by. You can specify only one sort order. The default
-     * order for `TIMECREATED` is descending. The default order for `DISPLAYNAME`
+     * order for {@code TIMECREATED} is descending. The default order for {@code DISPLAYNAME}
      * is ascending.
      *
      */
@@ -55,7 +55,7 @@ public class ListKeysRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
     /**
      * The field to sort by. You can specify only one sort order. The default
-     * order for `TIMECREATED` is descending. The default order for `DISPLAYNAME`
+     * order for {@code TIMECREATED} is descending. The default order for {@code DISPLAYNAME}
      * is ascending.
      *
      **/
@@ -92,13 +92,13 @@ public class ListKeysRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
     };
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      *
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      *
      **/
     public enum SortOrder {
@@ -135,20 +135,20 @@ public class ListKeysRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     };
     /**
      * A key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A
-     * protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are
-     * performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's
+     * protection mode of {@code HSM} means that the key persists on a hardware security module (HSM) and all cryptographic operations are
+     * performed inside the HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server, protected by the vault's
      * RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of
-     * `SOFTWARE` are performed on the server.
+     * {@code SOFTWARE} are performed on the server.
      *
      */
     private ProtectionMode protectionMode;
 
     /**
      * A key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A
-     * protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are
-     * performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's
+     * protection mode of {@code HSM} means that the key persists on a hardware security module (HSM) and all cryptographic operations are
+     * performed inside the HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server, protected by the vault's
      * RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of
-     * `SOFTWARE` are performed on the server.
+     * {@code SOFTWARE} are performed on the server.
      *
      **/
     public enum ProtectionMode {

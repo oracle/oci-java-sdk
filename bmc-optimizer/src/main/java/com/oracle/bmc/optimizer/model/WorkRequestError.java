@@ -91,7 +91,7 @@ public class WorkRequestError {
     String message;
 
     /**
-     * Date and time the error happened, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
+     * Date and time the error happened, in the format defined by RFC3339. Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")

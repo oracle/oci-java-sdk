@@ -56,7 +56,7 @@ public class BaseAnnouncementsPreferences {
 
     /**
      * A Boolean value to indicate whether the specified compartment chooses to not to receive informational announcements by email.
-     * (Manage preferences for receiving announcements by email by specifying the `preferenceType` attribute instead.)
+     * (Manage preferences for receiving announcements by email by specifying the {@code preferenceType} attribute instead.)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUnsubscribed")

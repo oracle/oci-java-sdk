@@ -18,9 +18,9 @@ public class CreateRuleResponse {
     private final int __httpStatusCode__;
 
     /**
-     * For optimistic concurrency control. Add this value to the `if-match` parameter
+     * For optimistic concurrency control. Add this value to the {@code if-match} parameter
      * in a PUT or DELETE operation. The resource will be updated only if the value you
-     * provide matches the `etag` on the resource.
+     * provide matches the {@code etag} on the resource.
      *
      */
     private String etag;

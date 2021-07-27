@@ -628,7 +628,7 @@ public class ConfigurationVariables {
     }
 
     /**
-     * (\"completion_type\")
+     * ("completion_type")
      **/
     @lombok.extern.slf4j.Slf4j
     public enum CompletionType {
@@ -675,12 +675,12 @@ public class ConfigurationVariables {
         }
     };
     /**
-     * (\"completion_type\")
+     * ("completion_type")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("completionType")
     CompletionType completionType;
     /**
-     * (\"default_authentication_plugin\")
+     * ("default_authentication_plugin")
      **/
     @lombok.extern.slf4j.Slf4j
     public enum DefaultAuthenticationPlugin {
@@ -727,12 +727,12 @@ public class ConfigurationVariables {
         }
     };
     /**
-     * (\"default_authentication_plugin\")
+     * ("default_authentication_plugin")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultAuthenticationPlugin")
     DefaultAuthenticationPlugin defaultAuthenticationPlugin;
     /**
-     * (\"transaction_isolation\")
+     * ("transaction_isolation")
      **/
     @lombok.extern.slf4j.Slf4j
     public enum TransactionIsolation {
@@ -781,31 +781,31 @@ public class ConfigurationVariables {
         }
     };
     /**
-     * (\"transaction_isolation\")
+     * ("transaction_isolation")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("transactionIsolation")
     TransactionIsolation transactionIsolation;
 
     /**
-     * (\"innodb_ft_server_stopword_table\")
+     * ("innodb_ft_server_stopword_table")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("innodbFtServerStopwordTable")
     String innodbFtServerStopwordTable;
 
     /**
-     * (\"mandatory_roles\")
+     * ("mandatory_roles")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mandatoryRoles")
     String mandatoryRoles;
 
     /**
-     * (\"autocommit\")
+     * ("autocommit")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autocommit")
     Boolean autocommit;
 
     /**
-     * (\"foreign_key_checks\")
+     * ("foreign_key_checks")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("foreignKeyChecks")
     Boolean foreignKeyChecks;
@@ -923,253 +923,253 @@ public class ConfigurationVariables {
     GroupReplicationConsistency groupReplicationConsistency;
 
     /**
-     * (\"innodb_ft_enable_stopword\")
+     * ("innodb_ft_enable_stopword")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("innodbFtEnableStopword")
     Boolean innodbFtEnableStopword;
 
     /**
-     * (\"local_infile\")
+     * ("local_infile")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("localInfile")
     Boolean localInfile;
 
     /**
-     * (\"mysql_firewall_mode\")
+     * ("mysql_firewall_mode")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlFirewallMode")
     Boolean mysqlFirewallMode;
 
     /**
-     * (\"mysqlx_enable_hello_notice\") DEPRECATED -- variable should not be settable and will be ignored
+     * ("mysqlx_enable_hello_notice") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxEnableHelloNotice")
     Boolean mysqlxEnableHelloNotice;
 
     /**
-     * (\"sql_require_primary_key\")
+     * ("sql_require_primary_key")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlRequirePrimaryKey")
     Boolean sqlRequirePrimaryKey;
 
     /**
-     * (\"sql_warnings\")
+     * ("sql_warnings")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlWarnings")
     Boolean sqlWarnings;
 
     /**
-     * (\"binlog_expire_logs_seconds\") DEPRECATED -- variable should not be settable and will be ignored
+     * ("binlog_expire_logs_seconds") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("binlogExpireLogsSeconds")
     Integer binlogExpireLogsSeconds;
 
     /**
-     * (\"innodb_buffer_pool_size\")
+     * ("innodb_buffer_pool_size")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("innodbBufferPoolSize")
     Long innodbBufferPoolSize;
 
     /**
-     * (\"innodb_ft_result_cache_limit\")
+     * ("innodb_ft_result_cache_limit")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("innodbFtResultCacheLimit")
     Integer innodbFtResultCacheLimit;
 
     /**
-     * (\"max_connections\")
+     * ("max_connections")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxConnections")
     Integer maxConnections;
 
     /**
-     * (\"max_prepared_stmt_count\")
+     * ("max_prepared_stmt_count")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxPreparedStmtCount")
     Integer maxPreparedStmtCount;
 
     /**
-     * (\"connect_timeout\")
+     * ("connect_timeout")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectTimeout")
     Integer connectTimeout;
 
     /**
-     * (\"cte_max_recursion_depth\")
+     * ("cte_max_recursion_depth")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cteMaxRecursionDepth")
     Integer cteMaxRecursionDepth;
 
     /**
-     * (\"generated_random_password_length\") DEPRECATED -- variable should not be settable and will be ignored
+     * ("generated_random_password_length") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("generatedRandomPasswordLength")
     Integer generatedRandomPasswordLength;
 
     /**
-     * (\"information_schema_stats_expiry\")
+     * ("information_schema_stats_expiry")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("informationSchemaStatsExpiry")
     Integer informationSchemaStatsExpiry;
 
     /**
-     * (\"innodb_buffer_pool_instances\")
+     * ("innodb_buffer_pool_instances")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("innodbBufferPoolInstances")
     Integer innodbBufferPoolInstances;
 
     /**
-     * (\"innodb_ft_max_token_size\")
+     * ("innodb_ft_max_token_size")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("innodbFtMaxTokenSize")
     Integer innodbFtMaxTokenSize;
 
     /**
-     * (\"innodb_ft_min_token_size\")
+     * ("innodb_ft_min_token_size")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("innodbFtMinTokenSize")
     Integer innodbFtMinTokenSize;
 
     /**
-     * (\"innodb_ft_num_word_optimize\")
+     * ("innodb_ft_num_word_optimize")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("innodbFtNumWordOptimize")
     Integer innodbFtNumWordOptimize;
 
     /**
-     * (\"innodb_lock_wait_timeout\")
+     * ("innodb_lock_wait_timeout")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("innodbLockWaitTimeout")
     Integer innodbLockWaitTimeout;
 
     /**
-     * (\"innodb_max_purge_lag\")
+     * ("innodb_max_purge_lag")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("innodbMaxPurgeLag")
     Integer innodbMaxPurgeLag;
 
     /**
-     * (\"innodb_max_purge_lag_delay\")
+     * ("innodb_max_purge_lag_delay")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("innodbMaxPurgeLagDelay")
     Integer innodbMaxPurgeLagDelay;
 
     /**
-     * (\"max_execution_time\")
+     * ("max_execution_time")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxExecutionTime")
     Integer maxExecutionTime;
 
     /**
-     * (\"mysqlx_connect_timeout\") DEPRECATED -- variable should not be settable and will be ignored
+     * ("mysqlx_connect_timeout") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxConnectTimeout")
     Integer mysqlxConnectTimeout;
 
     /**
-     * (\"mysqlx_document_id_unique_prefix\") DEPRECATED -- variable should not be settable and will be ignored
+     * ("mysqlx_document_id_unique_prefix") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxDocumentIdUniquePrefix")
     Integer mysqlxDocumentIdUniquePrefix;
 
     /**
-     * (\"mysqlx_idle_worker_thread_timeout\") DEPRECATED -- variable should not be settable and will be ignored
+     * ("mysqlx_idle_worker_thread_timeout") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxIdleWorkerThreadTimeout")
     Integer mysqlxIdleWorkerThreadTimeout;
 
     /**
-     * (\"mysqlx_interactive_timeout\") DEPRECATED -- variable should not be settable and will be ignored
+     * ("mysqlx_interactive_timeout") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxInteractiveTimeout")
     Integer mysqlxInteractiveTimeout;
 
     /**
-     * (\"mysqlx_max_allowed_packet\") DEPRECATED -- variable should not be settable and will be ignored
+     * ("mysqlx_max_allowed_packet") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxMaxAllowedPacket")
     Integer mysqlxMaxAllowedPacket;
 
     /**
-     * (\"mysqlx_min_worker_threads\") DEPRECATED -- variable should not be settable and will be ignored
+     * ("mysqlx_min_worker_threads") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxMinWorkerThreads")
     Integer mysqlxMinWorkerThreads;
 
     /**
-     * (\"mysqlx_read_timeout\") DEPRECATED -- variable should not be settable and will be ignored
+     * ("mysqlx_read_timeout") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxReadTimeout")
     Integer mysqlxReadTimeout;
 
     /**
-     * (\"mysqlx_wait_timeout\") DEPRECATED -- variable should not be settable and will be ignored
+     * ("mysqlx_wait_timeout") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxWaitTimeout")
     Integer mysqlxWaitTimeout;
 
     /**
-     * (\"mysqlx_write_timeout\") DEPRECATED -- variable should not be settable and will be ignored
+     * ("mysqlx_write_timeout") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxWriteTimeout")
     Integer mysqlxWriteTimeout;
 
     /**
-     * (\"parser_max_mem_size\")
+     * ("parser_max_mem_size")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserMaxMemSize")
     Integer parserMaxMemSize;
 
     /**
-     * (\"query_alloc_block_size\") DEPRECATED -- variable should not be settable and will be ignored
+     * ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryAllocBlockSize")
     Integer queryAllocBlockSize;
 
     /**
-     * (\"query_prealloc_size\") DEPRECATED -- variable should not be settable and will be ignored
+     * ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryPreallocSize")
     Integer queryPreallocSize;
 
     /**
-     * (\"sql_mode\")
+     * ("sql_mode")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlMode")
     String sqlMode;
 
     /**
-     * Set the default compression level for the deflate algorithm. (\"mysqlx_deflate_default_compression_level\")
+     * Set the default compression level for the deflate algorithm. ("mysqlx_deflate_default_compression_level")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxDeflateDefaultCompressionLevel")
     Integer mysqlxDeflateDefaultCompressionLevel;
 
     /**
-     * Limit the upper bound of accepted compression levels for the deflate algorithm. (\"mysqlx_deflate_max_client_compression_level\")
+     * Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlx_deflate_max_client_compression_level")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxDeflateMaxClientCompressionLevel")
     Integer mysqlxDeflateMaxClientCompressionLevel;
 
     /**
-     * Limit the upper bound of accepted compression levels for the lz4 algorithm. (\"mysqlx_lz4_max_client_compression_level\")
+     * Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlx_lz4_max_client_compression_level")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxLz4MaxClientCompressionLevel")
     Integer mysqlxLz4MaxClientCompressionLevel;
 
     /**
-     * Set the default compression level for the lz4 algorithm. (\"mysqlx_lz4_default_compression_level\")
+     * Set the default compression level for the lz4 algorithm. ("mysqlx_lz4_default_compression_level")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxLz4DefaultCompressionLevel")
     Integer mysqlxLz4DefaultCompressionLevel;
 
     /**
-     * Limit the upper bound of accepted compression levels for the zstd algorithm. (\"mysqlx_zstd_max_client_compression_level\")
+     * Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlx_zstd_max_client_compression_level")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxZstdMaxClientCompressionLevel")
     Integer mysqlxZstdMaxClientCompressionLevel;
 
     /**
-     * Set the default compression level for the zstd algorithm. (\"mysqlx_zstd_default_compression_level\")
+     * Set the default compression level for the zstd algorithm. ("mysqlx_zstd_default_compression_level")
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxZstdDefaultCompressionLevel")
     Integer mysqlxZstdDefaultCompressionLevel;
