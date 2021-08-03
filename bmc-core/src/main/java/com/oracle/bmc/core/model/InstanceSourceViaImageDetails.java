@@ -98,7 +98,7 @@ public class InstanceSourceViaImageDetails extends InstanceSourceDetails {
     }
 
     /**
-     * The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 16384 GB (16TB).
+     * The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 32,768 GB (32 TB).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeSizeInGBs")

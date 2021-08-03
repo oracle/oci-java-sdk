@@ -5,7 +5,7 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * Model deployments are interactive coding environments for data scientists.
+ * Model deployments are used by data scientists to perform predictions from the model hosted on an HTTP server.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

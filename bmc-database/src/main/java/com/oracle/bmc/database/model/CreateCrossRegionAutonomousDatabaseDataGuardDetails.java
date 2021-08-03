@@ -298,6 +298,16 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousMaintenanceScheduleType")
+        private AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
+
+        public Builder autonomousMaintenanceScheduleType(
+                AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType) {
+            this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
+            this.__explicitlySet__.add("autonomousMaintenanceScheduleType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
@@ -342,6 +352,7 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
                             definedTags,
                             dbVersion,
                             customerContacts,
+                            autonomousMaintenanceScheduleType,
                             sourceId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -380,6 +391,8 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
                             .definedTags(o.getDefinedTags())
                             .dbVersion(o.getDbVersion())
                             .customerContacts(o.getCustomerContacts())
+                            .autonomousMaintenanceScheduleType(
+                                    o.getAutonomousMaintenanceScheduleType())
                             .sourceId(o.getSourceId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -425,6 +438,7 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String dbVersion,
             java.util.List<CustomerContact> customerContacts,
+            AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             String sourceId) {
         super(
                 compartmentId,
@@ -455,7 +469,8 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
                 freeformTags,
                 definedTags,
                 dbVersion,
-                customerContacts);
+                customerContacts,
+                autonomousMaintenanceScheduleType);
         this.sourceId = sourceId;
     }
 

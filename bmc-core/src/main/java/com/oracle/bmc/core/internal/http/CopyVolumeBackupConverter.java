@@ -118,6 +118,42 @@ public class CopyVolumeBackupConverter {
                                                     String.class));
                                 }
 
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcWorkRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-work-request-id");
+                                if (opcWorkRequestIdHeader.isPresent()) {
+                                    builder.opcWorkRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-work-request-id",
+                                                    opcWorkRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        locationHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "location");
+                                if (locationHeader.isPresent()) {
+                                    builder.location(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "location",
+                                                    locationHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        contentLocationHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "content-location");
+                                if (contentLocationHeader.isPresent()) {
+                                    builder.contentLocation(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "content-location",
+                                                    contentLocationHeader.get().get(0),
+                                                    String.class));
+                                }
+
                                 com.oracle.bmc.core.responses.CopyVolumeBackupResponse
                                         responseWrapper = builder.build();
 

@@ -158,6 +158,18 @@ public interface Blockstorage extends AutoCloseable {
     CopyVolumeBackupResponse copyVolumeBackup(CopyVolumeBackupRequest request);
 
     /**
+     * Creates a volume group backup copy in specified region. For general information about volume group backups,
+     * see [Overview of Block Volume Service Backups](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumebackups.htm)
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CopyVolumeGroupBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CopyVolumeGroupBackup API.
+     */
+    CopyVolumeGroupBackupResponse copyVolumeGroupBackup(CopyVolumeGroupBackupRequest request);
+
+    /**
      * Creates a new boot volume in the specified compartment from an existing boot volume or a boot volume backup.
      * For general information about boot volumes, see [Boot Volumes](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/bootvolumes.htm).
      * You may optionally specify a *display name* for the volume, which is simply a friendly name or

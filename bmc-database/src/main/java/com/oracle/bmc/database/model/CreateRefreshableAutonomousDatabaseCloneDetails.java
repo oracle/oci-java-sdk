@@ -297,6 +297,16 @@ public class CreateRefreshableAutonomousDatabaseCloneDetails extends CreateAuton
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousMaintenanceScheduleType")
+        private AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
+
+        public Builder autonomousMaintenanceScheduleType(
+                AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType) {
+            this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
+            this.__explicitlySet__.add("autonomousMaintenanceScheduleType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
@@ -350,6 +360,7 @@ public class CreateRefreshableAutonomousDatabaseCloneDetails extends CreateAuton
                             definedTags,
                             dbVersion,
                             customerContacts,
+                            autonomousMaintenanceScheduleType,
                             sourceId,
                             refreshableMode);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -389,6 +400,8 @@ public class CreateRefreshableAutonomousDatabaseCloneDetails extends CreateAuton
                             .definedTags(o.getDefinedTags())
                             .dbVersion(o.getDbVersion())
                             .customerContacts(o.getCustomerContacts())
+                            .autonomousMaintenanceScheduleType(
+                                    o.getAutonomousMaintenanceScheduleType())
                             .sourceId(o.getSourceId())
                             .refreshableMode(o.getRefreshableMode());
 
@@ -435,6 +448,7 @@ public class CreateRefreshableAutonomousDatabaseCloneDetails extends CreateAuton
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String dbVersion,
             java.util.List<CustomerContact> customerContacts,
+            AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             String sourceId,
             RefreshableMode refreshableMode) {
         super(
@@ -466,7 +480,8 @@ public class CreateRefreshableAutonomousDatabaseCloneDetails extends CreateAuton
                 freeformTags,
                 definedTags,
                 dbVersion,
-                customerContacts);
+                customerContacts,
+                autonomousMaintenanceScheduleType);
         this.sourceId = sourceId;
         this.refreshableMode = refreshableMode;
     }

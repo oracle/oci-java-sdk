@@ -452,6 +452,40 @@ public class DbBackupsClient implements DbBackups {
     }
 
     @Override
+    public ChangeBackupCompartmentResponse changeBackupCompartment(
+            ChangeBackupCompartmentRequest request) {
+        LOG.trace("Called changeBackupCompartment");
+        final ChangeBackupCompartmentRequest interceptedRequest =
+                ChangeBackupCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeBackupCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeBackupCompartmentResponse>
+                transformer = ChangeBackupCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeBackupCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateBackupResponse createBackup(CreateBackupRequest request) {
         LOG.trace("Called createBackup");
         final CreateBackupRequest interceptedRequest =

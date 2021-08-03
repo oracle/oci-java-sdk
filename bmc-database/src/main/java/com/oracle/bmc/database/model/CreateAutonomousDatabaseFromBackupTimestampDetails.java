@@ -298,6 +298,16 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousMaintenanceScheduleType")
+        private AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
+
+        public Builder autonomousMaintenanceScheduleType(
+                AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType) {
+            this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
+            this.__explicitlySet__.add("autonomousMaintenanceScheduleType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
         private String autonomousDatabaseId;
 
@@ -360,6 +370,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                             definedTags,
                             dbVersion,
                             customerContacts,
+                            autonomousMaintenanceScheduleType,
                             autonomousDatabaseId,
                             timestamp,
                             cloneType);
@@ -400,6 +411,8 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                             .definedTags(o.getDefinedTags())
                             .dbVersion(o.getDbVersion())
                             .customerContacts(o.getCustomerContacts())
+                            .autonomousMaintenanceScheduleType(
+                                    o.getAutonomousMaintenanceScheduleType())
                             .autonomousDatabaseId(o.getAutonomousDatabaseId())
                             .timestamp(o.getTimestamp())
                             .cloneType(o.getCloneType());
@@ -447,6 +460,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String dbVersion,
             java.util.List<CustomerContact> customerContacts,
+            AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             String autonomousDatabaseId,
             java.util.Date timestamp,
             CloneType cloneType) {
@@ -479,7 +493,8 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                 freeformTags,
                 definedTags,
                 dbVersion,
-                customerContacts);
+                customerContacts,
+                autonomousMaintenanceScheduleType);
         this.autonomousDatabaseId = autonomousDatabaseId;
         this.timestamp = timestamp;
         this.cloneType = cloneType;

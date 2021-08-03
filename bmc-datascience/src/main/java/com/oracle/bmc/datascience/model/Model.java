@@ -115,6 +115,42 @@ public class Model {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customMetadataList")
+        private java.util.List<Metadata> customMetadataList;
+
+        public Builder customMetadataList(java.util.List<Metadata> customMetadataList) {
+            this.customMetadataList = customMetadataList;
+            this.__explicitlySet__.add("customMetadataList");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("definedMetadataList")
+        private java.util.List<Metadata> definedMetadataList;
+
+        public Builder definedMetadataList(java.util.List<Metadata> definedMetadataList) {
+            this.definedMetadataList = definedMetadataList;
+            this.__explicitlySet__.add("definedMetadataList");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("inputSchema")
+        private String inputSchema;
+
+        public Builder inputSchema(String inputSchema) {
+            this.inputSchema = inputSchema;
+            this.__explicitlySet__.add("inputSchema");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("outputSchema")
+        private String outputSchema;
+
+        public Builder outputSchema(String outputSchema) {
+            this.outputSchema = outputSchema;
+            this.__explicitlySet__.add("outputSchema");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -130,7 +166,11 @@ public class Model {
                             timeCreated,
                             createdBy,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            customMetadataList,
+                            definedMetadataList,
+                            inputSchema,
+                            outputSchema);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -147,7 +187,11 @@ public class Model {
                             .timeCreated(o.getTimeCreated())
                             .createdBy(o.getCreatedBy())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .customMetadataList(o.getCustomMetadataList())
+                            .definedMetadataList(o.getDefinedMetadataList())
+                            .inputSchema(o.getInputSchema())
+                            .outputSchema(o.getOutputSchema());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -226,6 +270,30 @@ public class Model {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * An array of custom metadata details for the model.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customMetadataList")
+    java.util.List<Metadata> customMetadataList;
+
+    /**
+     * An array of defined metadata details for the model.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedMetadataList")
+    java.util.List<Metadata> definedMetadataList;
+
+    /**
+     * Input schema file content in String format
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("inputSchema")
+    String inputSchema;
+
+    /**
+     * Output schema file content in String format
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("outputSchema")
+    String outputSchema;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

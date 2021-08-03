@@ -206,6 +206,15 @@ public class Run {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("metastoreId")
+        private String metastoreId;
+
+        public Builder metastoreId(String metastoreId) {
+            this.metastoreId = metastoreId;
+            this.__explicitlySet__.add("metastoreId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("numExecutors")
         private Integer numExecutors;
 
@@ -376,6 +385,7 @@ public class Run {
                             lifecycleDetails,
                             lifecycleState,
                             logsBucketUri,
+                            metastoreId,
                             numExecutors,
                             opcRequestId,
                             ownerPrincipalId,
@@ -419,6 +429,7 @@ public class Run {
                             .lifecycleDetails(o.getLifecycleDetails())
                             .lifecycleState(o.getLifecycleState())
                             .logsBucketUri(o.getLogsBucketUri())
+                            .metastoreId(o.getMetastoreId())
                             .numExecutors(o.getNumExecutors())
                             .opcRequestId(o.getOpcRequestId())
                             .ownerPrincipalId(o.getOwnerPrincipalId())
@@ -608,6 +619,13 @@ public class Run {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logsBucketUri")
     String logsBucketUri;
+
+    /**
+     * The OCID of OCI Hive Metastore.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("metastoreId")
+    String metastoreId;
 
     /**
      * The number of executor VMs requested.

@@ -297,6 +297,16 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousMaintenanceScheduleType")
+        private AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
+
+        public Builder autonomousMaintenanceScheduleType(
+                AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType) {
+            this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
+            this.__explicitlySet__.add("autonomousMaintenanceScheduleType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -331,7 +341,8 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                             freeformTags,
                             definedTags,
                             dbVersion,
-                            customerContacts);
+                            customerContacts,
+                            autonomousMaintenanceScheduleType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -368,7 +379,9 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .dbVersion(o.getDbVersion())
-                            .customerContacts(o.getCustomerContacts());
+                            .customerContacts(o.getCustomerContacts())
+                            .autonomousMaintenanceScheduleType(
+                                    o.getAutonomousMaintenanceScheduleType());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -412,7 +425,8 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String dbVersion,
-            java.util.List<CustomerContact> customerContacts) {
+            java.util.List<CustomerContact> customerContacts,
+            AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType) {
         super(
                 compartmentId,
                 dbName,
@@ -442,7 +456,8 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                 freeformTags,
                 definedTags,
                 dbVersion,
-                customerContacts);
+                customerContacts,
+                autonomousMaintenanceScheduleType);
     }
 
     @com.fasterxml.jackson.annotation.JsonIgnore

@@ -65,6 +65,42 @@ public class DbNodeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("hostIpId")
+        private String hostIpId;
+
+        public Builder hostIpId(String hostIpId) {
+            this.hostIpId = hostIpId;
+            this.__explicitlySet__.add("hostIpId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("backupIpId")
+        private String backupIpId;
+
+        public Builder backupIpId(String backupIpId) {
+            this.backupIpId = backupIpId;
+            this.__explicitlySet__.add("backupIpId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("vnic2Id")
+        private String vnic2Id;
+
+        public Builder vnic2Id(String vnic2Id) {
+            this.vnic2Id = vnic2Id;
+            this.__explicitlySet__.add("vnic2Id");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("backupVnic2Id")
+        private String backupVnic2Id;
+
+        public Builder backupVnic2Id(String backupVnic2Id) {
+            this.backupVnic2Id = backupVnic2Id;
+            this.__explicitlySet__.add("backupVnic2Id");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -156,6 +192,10 @@ public class DbNodeSummary {
                             dbSystemId,
                             vnicId,
                             backupVnicId,
+                            hostIpId,
+                            backupIpId,
+                            vnic2Id,
+                            backupVnic2Id,
                             lifecycleState,
                             hostname,
                             faultDomain,
@@ -176,6 +216,10 @@ public class DbNodeSummary {
                             .dbSystemId(o.getDbSystemId())
                             .vnicId(o.getVnicId())
                             .backupVnicId(o.getBackupVnicId())
+                            .hostIpId(o.getHostIpId())
+                            .backupIpId(o.getBackupIpId())
+                            .vnic2Id(o.getVnic2Id())
+                            .backupVnic2Id(o.getBackupVnic2Id())
                             .lifecycleState(o.getLifecycleState())
                             .hostname(o.getHostname())
                             .faultDomain(o.getFaultDomain())
@@ -221,6 +265,42 @@ public class DbNodeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupVnicId")
     String backupVnicId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node.
+     * <p>
+     **Note:** Applies only to Exadata Cloud Service.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hostIpId")
+    String hostIpId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node.
+     * <p>
+     **Note:** Applies only to Exadata Cloud Service.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("backupIpId")
+    String backupIpId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the second VNIC.
+     * <p>
+     **Note:** Applies only to Exadata Cloud Service.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vnic2Id")
+    String vnic2Id;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
+     * <p>
+     **Note:** Applies only to Exadata Cloud Service.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("backupVnic2Id")
+    String backupVnic2Id;
     /**
      * The current state of the database node.
      **/
