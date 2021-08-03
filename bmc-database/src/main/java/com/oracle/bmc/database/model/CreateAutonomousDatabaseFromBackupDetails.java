@@ -297,6 +297,16 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousMaintenanceScheduleType")
+        private AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
+
+        public Builder autonomousMaintenanceScheduleType(
+                AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType) {
+            this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
+            this.__explicitlySet__.add("autonomousMaintenanceScheduleType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseBackupId")
         private String autonomousDatabaseBackupId;
 
@@ -350,6 +360,7 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
                             definedTags,
                             dbVersion,
                             customerContacts,
+                            autonomousMaintenanceScheduleType,
                             autonomousDatabaseBackupId,
                             cloneType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -389,6 +400,8 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
                             .definedTags(o.getDefinedTags())
                             .dbVersion(o.getDbVersion())
                             .customerContacts(o.getCustomerContacts())
+                            .autonomousMaintenanceScheduleType(
+                                    o.getAutonomousMaintenanceScheduleType())
                             .autonomousDatabaseBackupId(o.getAutonomousDatabaseBackupId())
                             .cloneType(o.getCloneType());
 
@@ -435,6 +448,7 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String dbVersion,
             java.util.List<CustomerContact> customerContacts,
+            AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             String autonomousDatabaseBackupId,
             CloneType cloneType) {
         super(
@@ -466,7 +480,8 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
                 freeformTags,
                 definedTags,
                 dbVersion,
-                customerContacts);
+                customerContacts,
+                autonomousMaintenanceScheduleType);
         this.autonomousDatabaseBackupId = autonomousDatabaseBackupId;
         this.cloneType = cloneType;
     }

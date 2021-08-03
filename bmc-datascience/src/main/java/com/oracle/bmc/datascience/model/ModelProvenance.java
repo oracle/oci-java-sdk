@@ -69,13 +69,27 @@ public class ModelProvenance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("trainingId")
+        private String trainingId;
+
+        public Builder trainingId(String trainingId) {
+            this.trainingId = trainingId;
+            this.__explicitlySet__.add("trainingId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ModelProvenance build() {
             ModelProvenance __instance__ =
                     new ModelProvenance(
-                            repositoryUrl, gitBranch, gitCommit, scriptDir, trainingScript);
+                            repositoryUrl,
+                            gitBranch,
+                            gitCommit,
+                            scriptDir,
+                            trainingScript,
+                            trainingId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -87,7 +101,8 @@ public class ModelProvenance {
                             .gitBranch(o.getGitBranch())
                             .gitCommit(o.getGitCommit())
                             .scriptDir(o.getScriptDir())
-                            .trainingScript(o.getTrainingScript());
+                            .trainingScript(o.getTrainingScript())
+                            .trainingId(o.getTrainingId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -131,6 +146,12 @@ public class ModelProvenance {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("trainingScript")
     String trainingScript;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("trainingId")
+    String trainingId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

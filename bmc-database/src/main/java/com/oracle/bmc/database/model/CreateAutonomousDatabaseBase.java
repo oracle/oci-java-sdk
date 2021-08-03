@@ -400,6 +400,50 @@ public class CreateAutonomousDatabaseBase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
     java.util.List<CustomerContact> customerContacts;
+    /**
+     * The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database
+     * follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
+     *
+     **/
+    public enum AutonomousMaintenanceScheduleType {
+        Early("EARLY"),
+        Regular("REGULAR"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, AutonomousMaintenanceScheduleType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AutonomousMaintenanceScheduleType v : AutonomousMaintenanceScheduleType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        AutonomousMaintenanceScheduleType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AutonomousMaintenanceScheduleType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid AutonomousMaintenanceScheduleType: " + key);
+        }
+    };
+    /**
+     * The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database
+     * follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousMaintenanceScheduleType")
+    AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
 
     /**
      * The source of the database: Use {@code NONE} for creating a new Autonomous Database. Use {@code DATABASE} for creating a new Autonomous Database by cloning an existing Autonomous Database.

@@ -728,6 +728,40 @@ public class BlockstorageClient implements Blockstorage {
     }
 
     @Override
+    public CopyVolumeGroupBackupResponse copyVolumeGroupBackup(
+            CopyVolumeGroupBackupRequest request) {
+        LOG.trace("Called copyVolumeGroupBackup");
+        final CopyVolumeGroupBackupRequest interceptedRequest =
+                CopyVolumeGroupBackupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CopyVolumeGroupBackupConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CopyVolumeGroupBackupResponse>
+                transformer = CopyVolumeGroupBackupConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCopyVolumeGroupBackupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateBootVolumeResponse createBootVolume(CreateBootVolumeRequest request) {
         LOG.trace("Called createBootVolume");
         final CreateBootVolumeRequest interceptedRequest =

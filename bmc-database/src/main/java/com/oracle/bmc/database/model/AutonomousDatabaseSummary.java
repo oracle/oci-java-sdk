@@ -681,6 +681,16 @@ public class AutonomousDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousMaintenanceScheduleType")
+        private AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
+
+        public Builder autonomousMaintenanceScheduleType(
+                AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType) {
+            this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
+            this.__explicitlySet__.add("autonomousMaintenanceScheduleType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -758,7 +768,8 @@ public class AutonomousDatabaseSummary {
                             timeLocalDataGuardEnabled,
                             dataguardRegionType,
                             timeDataGuardRoleChanged,
-                            peerDbIds);
+                            peerDbIds,
+                            autonomousMaintenanceScheduleType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -839,7 +850,9 @@ public class AutonomousDatabaseSummary {
                             .timeLocalDataGuardEnabled(o.getTimeLocalDataGuardEnabled())
                             .dataguardRegionType(o.getDataguardRegionType())
                             .timeDataGuardRoleChanged(o.getTimeDataGuardRoleChanged())
-                            .peerDbIds(o.getPeerDbIds());
+                            .peerDbIds(o.getPeerDbIds())
+                            .autonomousMaintenanceScheduleType(
+                                    o.getAutonomousMaintenanceScheduleType());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -1932,6 +1945,61 @@ public class AutonomousDatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerDbIds")
     java.util.List<String> peerDbIds;
+    /**
+     * The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database
+     * follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum AutonomousMaintenanceScheduleType {
+        Early("EARLY"),
+        Regular("REGULAR"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, AutonomousMaintenanceScheduleType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AutonomousMaintenanceScheduleType v : AutonomousMaintenanceScheduleType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        AutonomousMaintenanceScheduleType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AutonomousMaintenanceScheduleType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AutonomousMaintenanceScheduleType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database
+     * follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousMaintenanceScheduleType")
+    AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

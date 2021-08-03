@@ -64,12 +64,36 @@ public class UpdateModelDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customMetadataList")
+        private java.util.List<Metadata> customMetadataList;
+
+        public Builder customMetadataList(java.util.List<Metadata> customMetadataList) {
+            this.customMetadataList = customMetadataList;
+            this.__explicitlySet__.add("customMetadataList");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("definedMetadataList")
+        private java.util.List<Metadata> definedMetadataList;
+
+        public Builder definedMetadataList(java.util.List<Metadata> definedMetadataList) {
+            this.definedMetadataList = definedMetadataList;
+            this.__explicitlySet__.add("definedMetadataList");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateModelDetails build() {
             UpdateModelDetails __instance__ =
-                    new UpdateModelDetails(displayName, description, freeformTags, definedTags);
+                    new UpdateModelDetails(
+                            displayName,
+                            description,
+                            freeformTags,
+                            definedTags,
+                            customMetadataList,
+                            definedMetadataList);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -80,7 +104,9 @@ public class UpdateModelDetails {
                     displayName(o.getDisplayName())
                             .description(o.getDescription())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .customMetadataList(o.getCustomMetadataList())
+                            .definedMetadataList(o.getDefinedMetadataList());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -123,6 +149,18 @@ public class UpdateModelDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * An array of custom metadata details for the model.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customMetadataList")
+    java.util.List<Metadata> customMetadataList;
+
+    /**
+     * An array of defined metadata details for the model.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedMetadataList")
+    java.util.List<Metadata> definedMetadataList;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -163,6 +163,15 @@ public class CreateApplicationDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("metastoreId")
+        private String metastoreId;
+
+        public Builder metastoreId(String metastoreId) {
+            this.metastoreId = metastoreId;
+            this.__explicitlySet__.add("metastoreId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("numExecutors")
         private Integer numExecutors;
 
@@ -229,6 +238,7 @@ public class CreateApplicationDetails {
                             freeformTags,
                             language,
                             logsBucketUri,
+                            metastoreId,
                             numExecutors,
                             parameters,
                             privateEndpointId,
@@ -256,6 +266,7 @@ public class CreateApplicationDetails {
                             .freeformTags(o.getFreeformTags())
                             .language(o.getLanguage())
                             .logsBucketUri(o.getLogsBucketUri())
+                            .metastoreId(o.getMetastoreId())
                             .numExecutors(o.getNumExecutors())
                             .parameters(o.getParameters())
                             .privateEndpointId(o.getPrivateEndpointId())
@@ -399,6 +410,13 @@ public class CreateApplicationDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logsBucketUri")
     String logsBucketUri;
+
+    /**
+     * The OCID of OCI Hive Metastore.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("metastoreId")
+    String metastoreId;
 
     /**
      * The number of executor VMs requested.

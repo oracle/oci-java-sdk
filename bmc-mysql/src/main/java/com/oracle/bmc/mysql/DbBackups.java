@@ -46,6 +46,18 @@ public interface DbBackups extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Moves a DB System Backup into a different compartment.
+     * When provided, If-Match is checked against ETag values of the Backup.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ChangeBackupCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeBackupCompartment API.
+     */
+    ChangeBackupCompartmentResponse changeBackupCompartment(ChangeBackupCompartmentRequest request);
+
+    /**
      * Create a backup of a DB System.
      *
      * @param request The request object containing the details to send

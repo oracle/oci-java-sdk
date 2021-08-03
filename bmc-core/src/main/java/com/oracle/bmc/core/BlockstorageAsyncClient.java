@@ -764,6 +764,53 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CopyVolumeGroupBackupResponse> copyVolumeGroupBackup(
+            CopyVolumeGroupBackupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CopyVolumeGroupBackupRequest, CopyVolumeGroupBackupResponse>
+                    handler) {
+        LOG.trace("Called async copyVolumeGroupBackup");
+        final CopyVolumeGroupBackupRequest interceptedRequest =
+                CopyVolumeGroupBackupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CopyVolumeGroupBackupConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CopyVolumeGroupBackupResponse>
+                transformer = CopyVolumeGroupBackupConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CopyVolumeGroupBackupRequest, CopyVolumeGroupBackupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CopyVolumeGroupBackupRequest, CopyVolumeGroupBackupResponse>,
+                        java.util.concurrent.Future<CopyVolumeGroupBackupResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCopyVolumeGroupBackupDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CopyVolumeGroupBackupRequest, CopyVolumeGroupBackupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateBootVolumeResponse> createBootVolume(
             CreateBootVolumeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

@@ -18,6 +18,7 @@ package com.oracle.bmc.dataflow.model;
  *   - executorShape
  *   - freeformTags
  *   - logsBucketUri
+ *   - metastoreId
  *   - numExecutors
  *   - parameters
  *   - sparkVersion
@@ -165,6 +166,15 @@ public class CreateRunDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("metastoreId")
+        private String metastoreId;
+
+        public Builder metastoreId(String metastoreId) {
+            this.metastoreId = metastoreId;
+            this.__explicitlySet__.add("metastoreId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("numExecutors")
         private Integer numExecutors;
 
@@ -219,6 +229,7 @@ public class CreateRunDetails {
                             executorShape,
                             freeformTags,
                             logsBucketUri,
+                            metastoreId,
                             numExecutors,
                             parameters,
                             sparkVersion,
@@ -242,6 +253,7 @@ public class CreateRunDetails {
                             .executorShape(o.getExecutorShape())
                             .freeformTags(o.getFreeformTags())
                             .logsBucketUri(o.getLogsBucketUri())
+                            .metastoreId(o.getMetastoreId())
                             .numExecutors(o.getNumExecutors())
                             .parameters(o.getParameters())
                             .sparkVersion(o.getSparkVersion())
@@ -362,6 +374,13 @@ public class CreateRunDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logsBucketUri")
     String logsBucketUri;
+
+    /**
+     * The OCID of OCI Hive Metastore.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("metastoreId")
+    String metastoreId;
 
     /**
      * The number of executor VMs requested.
