@@ -69,13 +69,15 @@ public class GetSubscriptionConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        Subscription>>
+                                                        com.oracle.bmc.ons.model.Subscription>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        Subscription.class);
+                                                        com.oracle.bmc.ons.model.Subscription
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Subscription> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.ons.model.Subscription>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

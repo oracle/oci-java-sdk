@@ -34,9 +34,9 @@ public class ListGiVersionsResponse {
     private String opcNextPage;
 
     /**
-     * A list of GiVersionSummary instances.
+     * A list of com.oracle.bmc.database.model.GiVersionSummary instances.
      */
-    private java.util.List<GiVersionSummary> items;
+    private java.util.List<com.oracle.bmc.database.model.GiVersionSummary> items;
 
     public static class Builder {
         /**

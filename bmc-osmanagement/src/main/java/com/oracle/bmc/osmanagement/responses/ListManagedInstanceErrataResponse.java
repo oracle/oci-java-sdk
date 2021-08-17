@@ -34,9 +34,9 @@ public class ListManagedInstanceErrataResponse {
     private String opcNextPage;
 
     /**
-     * A list of ErratumSummary instances.
+     * A list of com.oracle.bmc.osmanagement.model.ErratumSummary instances.
      */
-    private java.util.List<ErratumSummary> items;
+    private java.util.List<com.oracle.bmc.osmanagement.model.ErratumSummary> items;
 
     public static class Builder {
         /**

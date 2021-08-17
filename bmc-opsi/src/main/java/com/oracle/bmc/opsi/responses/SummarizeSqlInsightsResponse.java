@@ -35,7 +35,8 @@ public class SummarizeSqlInsightsResponse {
     /**
      * The returned SqlInsightAggregationCollection instance.
      */
-    private SqlInsightAggregationCollection sqlInsightAggregationCollection;
+    private com.oracle.bmc.opsi.model.SqlInsightAggregationCollection
+            sqlInsightAggregationCollection;
 
     public static class Builder {
         /**

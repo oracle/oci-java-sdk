@@ -33,7 +33,7 @@ public class GetEnterpriseManagerBridgeResponse {
     /**
      * The returned EnterpriseManagerBridge instance.
      */
-    private EnterpriseManagerBridge enterpriseManagerBridge;
+    private com.oracle.bmc.opsi.model.EnterpriseManagerBridge enterpriseManagerBridge;
 
     public static class Builder {
         /**

@@ -47,7 +47,7 @@ public class GetQueryResultResponse {
     /**
      * The returned QueryAggregation instance.
      */
-    private QueryAggregation queryAggregation;
+    private com.oracle.bmc.loganalytics.model.QueryAggregation queryAggregation;
 
     public static class Builder {
         /**

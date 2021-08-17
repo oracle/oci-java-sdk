@@ -33,7 +33,7 @@ public class ListPatternsResponse {
     /**
      * The returned PatternCollection instance.
      */
-    private PatternCollection patternCollection;
+    private com.oracle.bmc.datacatalog.model.PatternCollection patternCollection;
 
     public static class Builder {
         /**

@@ -74,13 +74,16 @@ public class CreateSmtpCredentialConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SmtpCredential>>
+                                                        com.oracle.bmc.identity.model
+                                                                .SmtpCredential>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SmtpCredential.class);
+                                                        com.oracle.bmc.identity.model.SmtpCredential
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<SmtpCredential> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.identity.model.SmtpCredential>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -66,12 +66,16 @@ public class GetTaggingWorkRequestConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        TaggingWorkRequest>>
+                                                        com.oracle.bmc.identity.model
+                                                                .TaggingWorkRequest>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        TaggingWorkRequest.class);
+                                                        com.oracle.bmc.identity.model
+                                                                        .TaggingWorkRequest
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<TaggingWorkRequest>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.identity.model.TaggingWorkRequest>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

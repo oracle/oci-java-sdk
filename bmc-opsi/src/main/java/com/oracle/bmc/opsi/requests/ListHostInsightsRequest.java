@@ -170,6 +170,112 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<String> id = null;
+
+        /**
+         * Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder id(java.util.List<String> id) {
+            this.id = id;
+            return this;
+        }
+
+        /**
+         * Singular setter. Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder id(String singularValue) {
+            return this.id(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status = null;
+
+        /**
+         * Resource Status
+         * @return this builder instance
+         */
+        public Builder status(java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status) {
+            this.status = status;
+            return this;
+        }
+
+        /**
+         * Singular setter. Resource Status
+         * @return this builder instance
+         */
+        public Builder status(ResourceStatus singularValue) {
+            return this.status(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<com.oracle.bmc.opsi.model.LifecycleState> lifecycleState = null;
+
+        /**
+         * Lifecycle states
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                java.util.List<com.oracle.bmc.opsi.model.LifecycleState> lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        /**
+         * Singular setter. Lifecycle states
+         * @return this builder instance
+         */
+        public Builder lifecycleState(LifecycleState singularValue) {
+            return this.lifecycleState(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> hostType = null;
+
+        /**
+         * Filter by one or more host types.
+         * Possible value is EXTERNAL-HOST.
+         *
+         * @return this builder instance
+         */
+        public Builder hostType(java.util.List<String> hostType) {
+            this.hostType = hostType;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter by one or more host types.
+         * Possible value is EXTERNAL-HOST.
+         *
+         * @return this builder instance
+         */
+        public Builder hostType(String singularValue) {
+            return this.hostType(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<PlatformType> platformType = null;
+
+        /**
+         * Filter by one or more platform types.
+         * Possible value is LINUX.
+         *
+         * @return this builder instance
+         */
+        public Builder platformType(java.util.List<PlatformType> platformType) {
+            this.platformType = platformType;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter by one or more platform types.
+         * Possible value is LINUX.
+         *
+         * @return this builder instance
+         */
+        public Builder platformType(PlatformType singularValue) {
+            return this.platformType(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

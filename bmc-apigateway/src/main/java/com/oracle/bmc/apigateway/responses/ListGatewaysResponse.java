@@ -46,7 +46,7 @@ public class ListGatewaysResponse {
     /**
      * The returned GatewayCollection instance.
      */
-    private GatewayCollection gatewayCollection;
+    private com.oracle.bmc.apigateway.model.GatewayCollection gatewayCollection;
 
     public static class Builder {
         /**

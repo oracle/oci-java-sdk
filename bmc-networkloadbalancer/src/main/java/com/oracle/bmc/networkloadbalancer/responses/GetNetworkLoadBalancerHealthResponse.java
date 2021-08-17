@@ -27,7 +27,8 @@ public class GetNetworkLoadBalancerHealthResponse {
     /**
      * The returned NetworkLoadBalancerHealth instance.
      */
-    private NetworkLoadBalancerHealth networkLoadBalancerHealth;
+    private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerHealth
+            networkLoadBalancerHealth;
 
     public static class Builder {
         /**

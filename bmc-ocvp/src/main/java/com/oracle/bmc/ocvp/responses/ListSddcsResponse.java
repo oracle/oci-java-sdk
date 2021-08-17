@@ -35,7 +35,7 @@ public class ListSddcsResponse {
     /**
      * The returned SddcCollection instance.
      */
-    private SddcCollection sddcCollection;
+    private com.oracle.bmc.ocvp.model.SddcCollection sddcCollection;
 
     public static class Builder {
         /**

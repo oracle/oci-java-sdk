@@ -147,13 +147,17 @@ public class ListLogAnalyticsEmBridgesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogAnalyticsEmBridgeCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogAnalyticsEmBridgeCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogAnalyticsEmBridgeCollection.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogAnalyticsEmBridgeCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                LogAnalyticsEmBridgeCollection>
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LogAnalyticsEmBridgeCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

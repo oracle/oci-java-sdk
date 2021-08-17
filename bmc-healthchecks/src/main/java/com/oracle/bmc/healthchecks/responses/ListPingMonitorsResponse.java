@@ -35,9 +35,9 @@ public class ListPingMonitorsResponse {
     private String opcNextPage;
 
     /**
-     * A list of PingMonitorSummary instances.
+     * A list of com.oracle.bmc.healthchecks.model.PingMonitorSummary instances.
      */
-    private java.util.List<PingMonitorSummary> items;
+    private java.util.List<com.oracle.bmc.healthchecks.model.PingMonitorSummary> items;
 
     public static class Builder {
         /**

@@ -85,12 +85,15 @@ public class UpdateResolverConverter {
                                         "Transform function invoked for com.oracle.bmc.dns.responses.UpdateResolverResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Resolver>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.dns.model.Resolver>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Resolver.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.dns.model.Resolver.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Resolver> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dns.model.Resolver>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

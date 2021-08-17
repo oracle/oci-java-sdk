@@ -85,12 +85,16 @@ public class CreateAttributeConverter {
                                         "Transform function invoked for com.oracle.bmc.datacatalog.responses.CreateAttributeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Attribute>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.datacatalog.model.Attribute>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Attribute.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.datacatalog.model.Attribute
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Attribute> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model.Attribute>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

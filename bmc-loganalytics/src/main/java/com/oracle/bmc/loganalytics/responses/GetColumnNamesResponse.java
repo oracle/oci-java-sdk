@@ -26,7 +26,7 @@ public class GetColumnNamesResponse {
     /**
      * The returned ColumnNameCollection instance.
      */
-    private ColumnNameCollection columnNameCollection;
+    private com.oracle.bmc.loganalytics.model.ColumnNameCollection columnNameCollection;
 
     public static class Builder {
         /**

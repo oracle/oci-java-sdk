@@ -71,12 +71,15 @@ public class GetBackupConverter {
                                         "Transform function invoked for com.oracle.bmc.mysql.responses.GetBackupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Backup>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.mysql.model.Backup>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Backup.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.mysql.model.Backup.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Backup> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.mysql.model.Backup>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

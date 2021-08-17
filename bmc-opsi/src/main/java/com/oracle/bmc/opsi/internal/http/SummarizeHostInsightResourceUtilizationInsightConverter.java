@@ -183,14 +183,17 @@ public class SummarizeHostInsightResourceUtilizationInsightConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SummarizeHostInsightResourceUtilizationInsightAggregation>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .SummarizeHostInsightResourceUtilizationInsightAggregation>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SummarizeHostInsightResourceUtilizationInsightAggregation
+                                                        com.oracle.bmc.opsi.model
+                                                                        .SummarizeHostInsightResourceUtilizationInsightAggregation
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                SummarizeHostInsightResourceUtilizationInsightAggregation>
+                                                com.oracle.bmc.opsi.model
+                                                        .SummarizeHostInsightResourceUtilizationInsightAggregation>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

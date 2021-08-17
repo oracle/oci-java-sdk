@@ -84,13 +84,17 @@ public class GetLogAnalyticsEmBridgeSummaryConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogAnalyticsEmBridgeSummaryReport>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogAnalyticsEmBridgeSummaryReport>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogAnalyticsEmBridgeSummaryReport.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogAnalyticsEmBridgeSummaryReport
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                LogAnalyticsEmBridgeSummaryReport>
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LogAnalyticsEmBridgeSummaryReport>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

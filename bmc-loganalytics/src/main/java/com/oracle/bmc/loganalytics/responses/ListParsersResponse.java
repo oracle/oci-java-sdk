@@ -42,7 +42,8 @@ public class ListParsersResponse {
     /**
      * The returned LogAnalyticsParserCollection instance.
      */
-    private LogAnalyticsParserCollection logAnalyticsParserCollection;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsParserCollection
+            logAnalyticsParserCollection;
 
     public static class Builder {
         /**

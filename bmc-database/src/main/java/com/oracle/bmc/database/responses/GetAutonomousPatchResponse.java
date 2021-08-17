@@ -32,7 +32,7 @@ public class GetAutonomousPatchResponse {
     /**
      * The returned AutonomousPatch instance.
      */
-    private AutonomousPatch autonomousPatch;
+    private com.oracle.bmc.database.model.AutonomousPatch autonomousPatch;
 
     public static class Builder {
         /**

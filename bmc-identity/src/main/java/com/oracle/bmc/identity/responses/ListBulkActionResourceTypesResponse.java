@@ -35,7 +35,8 @@ public class ListBulkActionResourceTypesResponse {
     /**
      * The returned BulkActionResourceTypeCollection instance.
      */
-    private BulkActionResourceTypeCollection bulkActionResourceTypeCollection;
+    private com.oracle.bmc.identity.model.BulkActionResourceTypeCollection
+            bulkActionResourceTypeCollection;
 
     public static class Builder {
         /**

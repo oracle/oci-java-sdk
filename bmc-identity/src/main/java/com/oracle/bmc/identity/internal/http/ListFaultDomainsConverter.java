@@ -74,14 +74,20 @@ public class ListFaultDomainsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<FaultDomain>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.identity.model
+                                                                        .FaultDomain>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<FaultDomain>>() {});
+                                                                java.util.List<
+                                                                        com.oracle.bmc.identity
+                                                                                .model
+                                                                                .FaultDomain>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<FaultDomain>>
+                                                java.util.List<
+                                                        com.oracle.bmc.identity.model.FaultDomain>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

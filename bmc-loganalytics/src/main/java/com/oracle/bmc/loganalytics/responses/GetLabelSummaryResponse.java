@@ -26,7 +26,7 @@ public class GetLabelSummaryResponse {
     /**
      * The returned LabelSummaryReport instance.
      */
-    private LabelSummaryReport labelSummaryReport;
+    private com.oracle.bmc.loganalytics.model.LabelSummaryReport labelSummaryReport;
 
     public static class Builder {
         /**

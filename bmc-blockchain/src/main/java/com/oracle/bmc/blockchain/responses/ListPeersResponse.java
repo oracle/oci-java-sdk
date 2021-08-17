@@ -35,7 +35,7 @@ public class ListPeersResponse {
     /**
      * The returned PeerCollection instance.
      */
-    private PeerCollection peerCollection;
+    private com.oracle.bmc.blockchain.model.PeerCollection peerCollection;
 
     public static class Builder {
         /**

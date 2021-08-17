@@ -33,9 +33,9 @@ public class ListConfigurationsResponse {
     private String opcNextPage;
 
     /**
-     * A list of ConfigurationSummary instances.
+     * A list of com.oracle.bmc.mysql.model.ConfigurationSummary instances.
      */
-    private java.util.List<ConfigurationSummary> items;
+    private java.util.List<com.oracle.bmc.mysql.model.ConfigurationSummary> items;
 
     public static class Builder {
         /**

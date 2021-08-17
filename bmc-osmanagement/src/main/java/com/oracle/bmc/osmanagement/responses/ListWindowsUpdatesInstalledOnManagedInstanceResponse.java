@@ -34,9 +34,9 @@ public class ListWindowsUpdatesInstalledOnManagedInstanceResponse {
     private String opcNextPage;
 
     /**
-     * A list of InstalledWindowsUpdateSummary instances.
+     * A list of com.oracle.bmc.osmanagement.model.InstalledWindowsUpdateSummary instances.
      */
-    private java.util.List<InstalledWindowsUpdateSummary> items;
+    private java.util.List<com.oracle.bmc.osmanagement.model.InstalledWindowsUpdateSummary> items;
 
     public static class Builder {
         /**

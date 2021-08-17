@@ -33,9 +33,9 @@ public class ListImagesResponse {
     private String opcRequestId;
 
     /**
-     * A list of Image instances.
+     * A list of com.oracle.bmc.core.model.Image instances.
      */
-    private java.util.List<Image> items;
+    private java.util.List<com.oracle.bmc.core.model.Image> items;
 
     public static class Builder {
         /**

@@ -971,6 +971,67 @@ public class ManagementAgentClient implements ManagementAgent {
     }
 
     @Override
+    public SummarizeManagementAgentCountsResponse summarizeManagementAgentCounts(
+            SummarizeManagementAgentCountsRequest request) {
+        LOG.trace("Called summarizeManagementAgentCounts");
+        final SummarizeManagementAgentCountsRequest interceptedRequest =
+                SummarizeManagementAgentCountsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeManagementAgentCountsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, SummarizeManagementAgentCountsResponse>
+                transformer = SummarizeManagementAgentCountsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizeManagementAgentPluginCountsResponse summarizeManagementAgentPluginCounts(
+            SummarizeManagementAgentPluginCountsRequest request) {
+        LOG.trace("Called summarizeManagementAgentPluginCounts");
+        final SummarizeManagementAgentPluginCountsRequest interceptedRequest =
+                SummarizeManagementAgentPluginCountsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeManagementAgentPluginCountsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, SummarizeManagementAgentPluginCountsResponse>
+                transformer = SummarizeManagementAgentPluginCountsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateManagementAgentResponse updateManagementAgent(
             UpdateManagementAgentRequest request) {
         LOG.trace("Called updateManagementAgent");

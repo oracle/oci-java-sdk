@@ -72,12 +72,15 @@ public class GetProtectionSettingsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ProtectionSettings>>
+                                                        com.oracle.bmc.waas.model
+                                                                .ProtectionSettings>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ProtectionSettings.class);
+                                                        com.oracle.bmc.waas.model.ProtectionSettings
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ProtectionSettings>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.waas.model.ProtectionSettings>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

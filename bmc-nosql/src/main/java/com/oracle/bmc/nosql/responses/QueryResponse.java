@@ -38,7 +38,7 @@ public class QueryResponse {
     /**
      * The returned QueryResultCollection instance.
      */
-    private QueryResultCollection queryResultCollection;
+    private com.oracle.bmc.nosql.model.QueryResultCollection queryResultCollection;
 
     public static class Builder {
         /**

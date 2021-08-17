@@ -33,9 +33,9 @@ public class ListNatGatewaysResponse {
     private String opcRequestId;
 
     /**
-     * A list of NatGateway instances.
+     * A list of com.oracle.bmc.core.model.NatGateway instances.
      */
-    private java.util.List<NatGateway> items;
+    private java.util.List<com.oracle.bmc.core.model.NatGateway> items;
 
     public static class Builder {
         /**

@@ -34,9 +34,9 @@ public class ListBudgetsResponse {
     private String opcNextPage;
 
     /**
-     * A list of BudgetSummary instances.
+     * A list of com.oracle.bmc.budget.model.BudgetSummary instances.
      */
-    private java.util.List<BudgetSummary> items;
+    private java.util.List<com.oracle.bmc.budget.model.BudgetSummary> items;
 
     public static class Builder {
         /**

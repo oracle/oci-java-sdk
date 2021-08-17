@@ -137,12 +137,17 @@ public class ListDataFlowsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DataFlowSummaryCollection>>
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .DataFlowSummaryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DataFlowSummaryCollection.class);
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .DataFlowSummaryCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DataFlowSummaryCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dataintegration.model
+                                                        .DataFlowSummaryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -42,7 +42,7 @@ public class ListAutoAssociationsResponse {
     /**
      * The returned AutoAssociationCollection instance.
      */
-    private AutoAssociationCollection autoAssociationCollection;
+    private com.oracle.bmc.loganalytics.model.AutoAssociationCollection autoAssociationCollection;
 
     public static class Builder {
         /**

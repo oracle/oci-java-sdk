@@ -70,12 +70,16 @@ public class GetCpeDeviceShapeConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        CpeDeviceShapeDetail>>
+                                                        com.oracle.bmc.core.model
+                                                                .CpeDeviceShapeDetail>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        CpeDeviceShapeDetail.class);
+                                                        com.oracle.bmc.core.model
+                                                                        .CpeDeviceShapeDetail
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<CpeDeviceShapeDetail>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.CpeDeviceShapeDetail>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

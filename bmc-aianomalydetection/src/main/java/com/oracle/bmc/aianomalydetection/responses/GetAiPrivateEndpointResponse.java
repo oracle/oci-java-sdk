@@ -33,7 +33,7 @@ public class GetAiPrivateEndpointResponse {
     /**
      * The returned AiPrivateEndpoint instance.
      */
-    private AiPrivateEndpoint aiPrivateEndpoint;
+    private com.oracle.bmc.aianomalydetection.model.AiPrivateEndpoint aiPrivateEndpoint;
 
     public static class Builder {
         /**

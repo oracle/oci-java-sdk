@@ -68,12 +68,16 @@ public class CreateProfileConverter {
                                         "Transform function invoked for com.oracle.bmc.optimizer.responses.CreateProfileResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Profile>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.optimizer.model.Profile>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Profile.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.optimizer.model.Profile
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Profile> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.optimizer.model.Profile>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

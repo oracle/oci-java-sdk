@@ -168,12 +168,16 @@ public class ListPatternsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        PatternCollection>>
+                                                        com.oracle.bmc.datacatalog.model
+                                                                .PatternCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        PatternCollection.class);
+                                                        com.oracle.bmc.datacatalog.model
+                                                                        .PatternCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<PatternCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model.PatternCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

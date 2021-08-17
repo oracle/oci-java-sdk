@@ -37,7 +37,7 @@ public class GetWorkRequestResponse {
     /**
      * The returned WorkRequest instance.
      */
-    private WorkRequest workRequest;
+    private com.oracle.bmc.containerengine.model.WorkRequest workRequest;
 
     public static class Builder {
         /**

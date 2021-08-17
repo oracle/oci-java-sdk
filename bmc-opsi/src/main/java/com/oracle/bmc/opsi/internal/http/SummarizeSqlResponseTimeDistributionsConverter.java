@@ -133,14 +133,17 @@ public class SummarizeSqlResponseTimeDistributionsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SqlResponseTimeDistributionAggregationCollection>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .SqlResponseTimeDistributionAggregationCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SqlResponseTimeDistributionAggregationCollection
+                                                        com.oracle.bmc.opsi.model
+                                                                        .SqlResponseTimeDistributionAggregationCollection
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                SqlResponseTimeDistributionAggregationCollection>
+                                                com.oracle.bmc.opsi.model
+                                                        .SqlResponseTimeDistributionAggregationCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

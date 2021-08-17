@@ -34,7 +34,8 @@ public class ListLogAnalyticsEmBridgesResponse {
     /**
      * The returned LogAnalyticsEmBridgeCollection instance.
      */
-    private LogAnalyticsEmBridgeCollection logAnalyticsEmBridgeCollection;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsEmBridgeCollection
+            logAnalyticsEmBridgeCollection;
 
     public static class Builder {
         /**

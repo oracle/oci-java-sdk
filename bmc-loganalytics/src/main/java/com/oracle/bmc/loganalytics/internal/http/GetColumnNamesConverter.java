@@ -83,12 +83,17 @@ public class GetColumnNamesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ColumnNameCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .ColumnNameCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ColumnNameCollection.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .ColumnNameCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ColumnNameCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model
+                                                        .ColumnNameCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

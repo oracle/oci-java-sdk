@@ -34,9 +34,9 @@ public class ListCloudVmClusterUpdateHistoryEntriesResponse {
     private String opcNextPage;
 
     /**
-     * A list of UpdateHistoryEntrySummary instances.
+     * A list of com.oracle.bmc.database.model.UpdateHistoryEntrySummary instances.
      */
-    private java.util.List<UpdateHistoryEntrySummary> items;
+    private java.util.List<com.oracle.bmc.database.model.UpdateHistoryEntrySummary> items;
 
     public static class Builder {
         /**

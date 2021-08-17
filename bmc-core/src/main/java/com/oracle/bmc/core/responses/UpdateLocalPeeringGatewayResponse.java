@@ -33,7 +33,7 @@ public class UpdateLocalPeeringGatewayResponse {
     /**
      * The returned LocalPeeringGateway instance.
      */
-    private LocalPeeringGateway localPeeringGateway;
+    private com.oracle.bmc.core.model.LocalPeeringGateway localPeeringGateway;
 
     public static class Builder {
         /**

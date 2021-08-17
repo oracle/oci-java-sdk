@@ -35,7 +35,7 @@ public class ListMigrationsResponse {
     /**
      * The returned MigrationCollection instance.
      */
-    private MigrationCollection migrationCollection;
+    private com.oracle.bmc.databasemigration.model.MigrationCollection migrationCollection;
 
     public static class Builder {
         /**

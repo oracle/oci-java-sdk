@@ -87,15 +87,20 @@ public class ListTaggingWorkRequestLogsConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                TaggingWorkRequestLogSummary>>>
+                                                                com.oracle.bmc.identity.model
+                                                                        .TaggingWorkRequestLogSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        TaggingWorkRequestLogSummary>>() {});
+                                                                        com.oracle.bmc.identity
+                                                                                .model
+                                                                                .TaggingWorkRequestLogSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<TaggingWorkRequestLogSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.identity.model
+                                                                .TaggingWorkRequestLogSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

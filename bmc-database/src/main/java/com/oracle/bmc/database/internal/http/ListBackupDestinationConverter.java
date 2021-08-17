@@ -95,15 +95,21 @@ public class ListBackupDestinationConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<BackupDestinationSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.database.model
+                                                                        .BackupDestinationSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        BackupDestinationSummary>>() {});
+                                                                        com.oracle.bmc.database
+                                                                                .model
+                                                                                .BackupDestinationSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<BackupDestinationSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.database.model
+                                                                .BackupDestinationSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

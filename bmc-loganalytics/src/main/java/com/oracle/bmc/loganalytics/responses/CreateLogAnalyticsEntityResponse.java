@@ -32,7 +32,7 @@ public class CreateLogAnalyticsEntityResponse {
     /**
      * The returned LogAnalyticsEntity instance.
      */
-    private LogAnalyticsEntity logAnalyticsEntity;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsEntity logAnalyticsEntity;
 
     public static class Builder {
         /**

@@ -67,12 +67,15 @@ public class GetCrossConnectStatusConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        CrossConnectStatus>>
+                                                        com.oracle.bmc.core.model
+                                                                .CrossConnectStatus>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        CrossConnectStatus.class);
+                                                        com.oracle.bmc.core.model.CrossConnectStatus
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<CrossConnectStatus>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.CrossConnectStatus>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

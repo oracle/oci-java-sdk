@@ -245,12 +245,17 @@ public class ListJobExecutionsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        JobExecutionCollection>>
+                                                        com.oracle.bmc.datacatalog.model
+                                                                .JobExecutionCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        JobExecutionCollection.class);
+                                                        com.oracle.bmc.datacatalog.model
+                                                                        .JobExecutionCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<JobExecutionCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model
+                                                        .JobExecutionCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

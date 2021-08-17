@@ -81,13 +81,17 @@ public class ListDrgsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<Drg>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.core.model.Drg>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<Drg>>() {});
+                                                                java.util.List<
+                                                                        com.oracle.bmc.core.model
+                                                                                .Drg>>() {});
 
-                                com.oracle.bmc.http.internal.WithHeaders<java.util.List<Drg>>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                java.util.List<com.oracle.bmc.core.model.Drg>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

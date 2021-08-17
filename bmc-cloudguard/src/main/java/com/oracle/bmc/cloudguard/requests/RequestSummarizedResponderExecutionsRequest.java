@@ -127,6 +127,79 @@ public class RequestSummarizedResponderExecutionsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<com.oracle.bmc.cloudguard.model.ResponderDimension>
+                responderExecutionsDimensions = null;
+
+        /**
+         * The possible attributes based on which the responder executions can be distinguished
+         * @return this builder instance
+         */
+        public Builder responderExecutionsDimensions(
+                java.util.List<com.oracle.bmc.cloudguard.model.ResponderDimension>
+                        responderExecutionsDimensions) {
+            this.responderExecutionsDimensions = responderExecutionsDimensions;
+            return this;
+        }
+
+        /**
+         * Singular setter. The possible attributes based on which the responder executions can be distinguished
+         * @return this builder instance
+         */
+        public Builder responderExecutionsDimensions(ResponderDimension singularValue) {
+            return this.responderExecutionsDimensions(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<com.oracle.bmc.cloudguard.model.ResponderType> responderTypeFilter =
+                null;
+
+        /**
+         * The possible filters for Responder Type Dimension to distinguish Responder Executions.
+         * If no values are passed, the metric for responder executions of all reponder types are returned
+         *
+         * @return this builder instance
+         */
+        public Builder responderTypeFilter(
+                java.util.List<com.oracle.bmc.cloudguard.model.ResponderType> responderTypeFilter) {
+            this.responderTypeFilter = responderTypeFilter;
+            return this;
+        }
+
+        /**
+         * Singular setter. The possible filters for Responder Type Dimension to distinguish Responder Executions.
+         * If no values are passed, the metric for responder executions of all reponder types are returned
+         *
+         * @return this builder instance
+         */
+        public Builder responderTypeFilter(ResponderType singularValue) {
+            return this.responderTypeFilter(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<com.oracle.bmc.cloudguard.model.ResponderExecutionStatus>
+                responderExecutionStatusFilter = null;
+
+        /**
+         * The possible filters for Responder Type Dimension to distinguish Responder Executions.
+         * If no values are passed, the metric for responder executions of all status are returned
+         *
+         * @return this builder instance
+         */
+        public Builder responderExecutionStatusFilter(
+                java.util.List<com.oracle.bmc.cloudguard.model.ResponderExecutionStatus>
+                        responderExecutionStatusFilter) {
+            this.responderExecutionStatusFilter = responderExecutionStatusFilter;
+            return this;
+        }
+
+        /**
+         * Singular setter. The possible filters for Responder Type Dimension to distinguish Responder Executions.
+         * If no values are passed, the metric for responder executions of all status are returned
+         *
+         * @return this builder instance
+         */
+        public Builder responderExecutionStatusFilter(ResponderExecutionStatus singularValue) {
+            return this.responderExecutionStatusFilter(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

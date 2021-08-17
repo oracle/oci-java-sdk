@@ -103,15 +103,20 @@ public class ListNetworkSecurityGroupVnicsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<NetworkSecurityGroupVnic>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.core.model
+                                                                        .NetworkSecurityGroupVnic>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        NetworkSecurityGroupVnic>>() {});
+                                                                        com.oracle.bmc.core.model
+                                                                                .NetworkSecurityGroupVnic>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<NetworkSecurityGroupVnic>>
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model
+                                                                .NetworkSecurityGroupVnic>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

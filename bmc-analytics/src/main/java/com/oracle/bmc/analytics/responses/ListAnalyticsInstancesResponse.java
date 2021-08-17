@@ -33,9 +33,9 @@ public class ListAnalyticsInstancesResponse {
     private String opcRequestId;
 
     /**
-     * A list of AnalyticsInstanceSummary instances.
+     * A list of com.oracle.bmc.analytics.model.AnalyticsInstanceSummary instances.
      */
-    private java.util.List<AnalyticsInstanceSummary> items;
+    private java.util.List<com.oracle.bmc.analytics.model.AnalyticsInstanceSummary> items;
 
     public static class Builder {
         /**

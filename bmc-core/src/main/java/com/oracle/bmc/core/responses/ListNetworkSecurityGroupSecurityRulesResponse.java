@@ -33,9 +33,9 @@ public class ListNetworkSecurityGroupSecurityRulesResponse {
     private String opcRequestId;
 
     /**
-     * A list of SecurityRule instances.
+     * A list of com.oracle.bmc.core.model.SecurityRule instances.
      */
-    private java.util.List<SecurityRule> items;
+    private java.util.List<com.oracle.bmc.core.model.SecurityRule> items;
 
     public static class Builder {
         /**

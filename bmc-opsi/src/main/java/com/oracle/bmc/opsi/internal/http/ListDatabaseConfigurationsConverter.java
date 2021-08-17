@@ -188,13 +188,17 @@ public class ListDatabaseConfigurationsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DatabaseConfigurationCollection>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .DatabaseConfigurationCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DatabaseConfigurationCollection.class);
+                                                        com.oracle.bmc.opsi.model
+                                                                        .DatabaseConfigurationCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                DatabaseConfigurationCollection>
+                                                com.oracle.bmc.opsi.model
+                                                        .DatabaseConfigurationCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

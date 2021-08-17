@@ -35,7 +35,8 @@ public class ListPublicVantagePointsResponse {
     /**
      * The returned PublicVantagePointCollection instance.
      */
-    private PublicVantagePointCollection publicVantagePointCollection;
+    private com.oracle.bmc.apmsynthetics.model.PublicVantagePointCollection
+            publicVantagePointCollection;
 
     public static class Builder {
         /**

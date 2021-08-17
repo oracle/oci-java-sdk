@@ -34,9 +34,9 @@ public class ListAvailablePackagesForManagedInstanceResponse {
     private String opcNextPage;
 
     /**
-     * A list of InstallablePackageSummary instances.
+     * A list of com.oracle.bmc.osmanagement.model.InstallablePackageSummary instances.
      */
-    private java.util.List<InstallablePackageSummary> items;
+    private java.util.List<com.oracle.bmc.osmanagement.model.InstallablePackageSummary> items;
 
     public static class Builder {
         /**

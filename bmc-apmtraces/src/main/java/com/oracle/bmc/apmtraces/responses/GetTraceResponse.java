@@ -27,7 +27,7 @@ public class GetTraceResponse {
     /**
      * The returned Trace instance.
      */
-    private Trace trace;
+    private com.oracle.bmc.apmtraces.model.Trace trace;
 
     public static class Builder {
         /**

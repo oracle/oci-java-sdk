@@ -70,13 +70,16 @@ public class CreateCertificateConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        Certificate>>
+                                                        com.oracle.bmc.apigateway.model
+                                                                .Certificate>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        Certificate.class);
+                                                        com.oracle.bmc.apigateway.model.Certificate
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Certificate> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.apigateway.model.Certificate>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -26,7 +26,7 @@ public class GetFieldsSummaryResponse {
     /**
      * The returned FieldSummaryReport instance.
      */
-    private FieldSummaryReport fieldSummaryReport;
+    private com.oracle.bmc.loganalytics.model.FieldSummaryReport fieldSummaryReport;
 
     public static class Builder {
         /**

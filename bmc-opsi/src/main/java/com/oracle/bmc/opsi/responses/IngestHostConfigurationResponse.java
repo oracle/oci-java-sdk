@@ -33,7 +33,8 @@ public class IngestHostConfigurationResponse {
     /**
      * The returned IngestHostConfigurationResponseDetails instance.
      */
-    private IngestHostConfigurationResponseDetails ingestHostConfigurationResponseDetails;
+    private com.oracle.bmc.opsi.model.IngestHostConfigurationResponseDetails
+            ingestHostConfigurationResponseDetails;
 
     public static class Builder {
         /**

@@ -26,7 +26,8 @@ public class EstimateReleaseDataSizeResponse {
     /**
      * The returned EstimateReleaseDataSizeResult instance.
      */
-    private EstimateReleaseDataSizeResult estimateReleaseDataSizeResult;
+    private com.oracle.bmc.loganalytics.model.EstimateReleaseDataSizeResult
+            estimateReleaseDataSizeResult;
 
     public static class Builder {
         /**

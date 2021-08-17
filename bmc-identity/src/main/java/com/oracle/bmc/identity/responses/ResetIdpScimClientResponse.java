@@ -27,7 +27,7 @@ public class ResetIdpScimClientResponse {
     /**
      * The returned ScimClientCredentials instance.
      */
-    private ScimClientCredentials scimClientCredentials;
+    private com.oracle.bmc.identity.model.ScimClientCredentials scimClientCredentials;
 
     public static class Builder {
         /**

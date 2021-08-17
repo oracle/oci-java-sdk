@@ -33,7 +33,7 @@ public class GetCountStatisticResponse {
     /**
      * The returned CountStatistic instance.
      */
-    private CountStatistic countStatistic;
+    private com.oracle.bmc.dataintegration.model.CountStatistic countStatistic;
 
     public static class Builder {
         /**

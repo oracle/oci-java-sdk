@@ -69,12 +69,16 @@ public class GetGatewayConverter {
                                         "Transform function invoked for com.oracle.bmc.apigateway.responses.GetGatewayResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Gateway>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.apigateway.model.Gateway>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Gateway.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.apigateway.model.Gateway
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Gateway> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.apigateway.model.Gateway>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

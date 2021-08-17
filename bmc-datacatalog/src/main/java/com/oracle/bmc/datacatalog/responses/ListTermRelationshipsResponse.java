@@ -33,7 +33,7 @@ public class ListTermRelationshipsResponse {
     /**
      * The returned TermRelationshipCollection instance.
      */
-    private TermRelationshipCollection termRelationshipCollection;
+    private com.oracle.bmc.datacatalog.model.TermRelationshipCollection termRelationshipCollection;
 
     public static class Builder {
         /**

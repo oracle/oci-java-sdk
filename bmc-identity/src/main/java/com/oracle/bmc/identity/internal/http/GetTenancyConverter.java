@@ -64,12 +64,16 @@ public class GetTenancyConverter {
                                         "Transform function invoked for com.oracle.bmc.identity.responses.GetTenancyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Tenancy>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.identity.model.Tenancy>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Tenancy.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.identity.model.Tenancy
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Tenancy> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.identity.model.Tenancy>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

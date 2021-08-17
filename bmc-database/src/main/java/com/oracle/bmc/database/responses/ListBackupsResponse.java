@@ -34,9 +34,9 @@ public class ListBackupsResponse {
     private String opcNextPage;
 
     /**
-     * A list of BackupSummary instances.
+     * A list of com.oracle.bmc.database.model.BackupSummary instances.
      */
-    private java.util.List<BackupSummary> items;
+    private java.util.List<com.oracle.bmc.database.model.BackupSummary> items;
 
     public static class Builder {
         /**

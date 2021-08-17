@@ -27,7 +27,7 @@ public class PutMessagesResponse {
     /**
      * The returned PutMessagesResult instance.
      */
-    private PutMessagesResult putMessagesResult;
+    private com.oracle.bmc.streaming.model.PutMessagesResult putMessagesResult;
 
     public static class Builder {
         /**

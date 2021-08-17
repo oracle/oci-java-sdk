@@ -122,12 +122,17 @@ public class ListServiceCatalogsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ServiceCatalogCollection>>
+                                                        com.oracle.bmc.servicecatalog.model
+                                                                .ServiceCatalogCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ServiceCatalogCollection.class);
+                                                        com.oracle.bmc.servicecatalog.model
+                                                                        .ServiceCatalogCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ServiceCatalogCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.servicecatalog.model
+                                                        .ServiceCatalogCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

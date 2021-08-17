@@ -122,15 +122,20 @@ public class ListBootVolumeReplicasConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<BootVolumeReplica>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.core.model
+                                                                        .BootVolumeReplica>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        BootVolumeReplica>>() {});
+                                                                        com.oracle.bmc.core.model
+                                                                                .BootVolumeReplica>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<BootVolumeReplica>>
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model
+                                                                .BootVolumeReplica>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

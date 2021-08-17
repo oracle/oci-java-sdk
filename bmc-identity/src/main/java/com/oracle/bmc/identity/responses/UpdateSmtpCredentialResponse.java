@@ -32,7 +32,7 @@ public class UpdateSmtpCredentialResponse {
     /**
      * The returned SmtpCredentialSummary instance.
      */
-    private SmtpCredentialSummary smtpCredentialSummary;
+    private com.oracle.bmc.identity.model.SmtpCredentialSummary smtpCredentialSummary;
 
     public static class Builder {
         /**

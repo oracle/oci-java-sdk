@@ -46,7 +46,7 @@ public class CreateComputeCapacityReservationResponse {
     /**
      * The returned ComputeCapacityReservation instance.
      */
-    private ComputeCapacityReservation computeCapacityReservation;
+    private com.oracle.bmc.core.model.ComputeCapacityReservation computeCapacityReservation;
 
     public static class Builder {
         /**

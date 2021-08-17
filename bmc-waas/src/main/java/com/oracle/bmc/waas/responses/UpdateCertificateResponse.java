@@ -30,7 +30,7 @@ public class UpdateCertificateResponse {
     /**
      * The returned Certificate instance.
      */
-    private Certificate certificate;
+    private com.oracle.bmc.waas.model.Certificate certificate;
 
     public static class Builder {
         /**

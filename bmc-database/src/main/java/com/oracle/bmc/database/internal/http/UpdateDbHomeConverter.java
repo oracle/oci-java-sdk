@@ -70,12 +70,15 @@ public class UpdateDbHomeConverter {
                                         "Transform function invoked for com.oracle.bmc.database.responses.UpdateDbHomeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<DbHome>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.database.model.DbHome>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(DbHome.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.database.model.DbHome.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DbHome> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.database.model.DbHome>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

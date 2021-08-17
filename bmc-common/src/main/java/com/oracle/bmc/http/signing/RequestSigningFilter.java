@@ -91,6 +91,6 @@ public class RequestSigningFilter extends AuthnClientFilter {
                 .getHeaders()
                 .putSingle(
                         HttpHeaders.USER_AGENT,
-                        ClientRuntime.getRuntime().getUserAgent() + "; RequestSigningFilter");
+                        ClientRuntime.getRuntime().getUserAgent() + " RequestSigningFilter");
     }
 }

@@ -136,12 +136,17 @@ public class ListDeployPipelinesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DeployPipelineCollection>>
+                                                        com.oracle.bmc.devops.model
+                                                                .DeployPipelineCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DeployPipelineCollection.class);
+                                                        com.oracle.bmc.devops.model
+                                                                        .DeployPipelineCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DeployPipelineCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.devops.model
+                                                        .DeployPipelineCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

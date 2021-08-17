@@ -30,7 +30,7 @@ public class GetTransferDeviceResponse {
     /**
      * The returned TransferDevice instance.
      */
-    private TransferDevice transferDevice;
+    private com.oracle.bmc.dts.model.TransferDevice transferDevice;
 
     public static class Builder {
         /**

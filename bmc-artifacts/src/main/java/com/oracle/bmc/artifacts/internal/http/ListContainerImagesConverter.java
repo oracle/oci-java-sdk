@@ -167,12 +167,17 @@ public class ListContainerImagesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ContainerImageCollection>>
+                                                        com.oracle.bmc.artifacts.model
+                                                                .ContainerImageCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ContainerImageCollection.class);
+                                                        com.oracle.bmc.artifacts.model
+                                                                        .ContainerImageCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ContainerImageCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.artifacts.model
+                                                        .ContainerImageCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

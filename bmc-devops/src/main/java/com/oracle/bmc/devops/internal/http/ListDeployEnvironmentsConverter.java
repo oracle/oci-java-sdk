@@ -136,13 +136,17 @@ public class ListDeployEnvironmentsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DeployEnvironmentCollection>>
+                                                        com.oracle.bmc.devops.model
+                                                                .DeployEnvironmentCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DeployEnvironmentCollection.class);
+                                                        com.oracle.bmc.devops.model
+                                                                        .DeployEnvironmentCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                DeployEnvironmentCollection>
+                                                com.oracle.bmc.devops.model
+                                                        .DeployEnvironmentCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

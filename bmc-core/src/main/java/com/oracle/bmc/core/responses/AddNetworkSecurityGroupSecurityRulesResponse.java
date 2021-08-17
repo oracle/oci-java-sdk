@@ -27,7 +27,8 @@ public class AddNetworkSecurityGroupSecurityRulesResponse {
     /**
      * The returned AddedNetworkSecurityGroupSecurityRules instance.
      */
-    private AddedNetworkSecurityGroupSecurityRules addedNetworkSecurityGroupSecurityRules;
+    private com.oracle.bmc.core.model.AddedNetworkSecurityGroupSecurityRules
+            addedNetworkSecurityGroupSecurityRules;
 
     public static class Builder {
         /**

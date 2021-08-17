@@ -33,7 +33,7 @@ public class GetListenerResponse {
     /**
      * The returned Listener instance.
      */
-    private Listener listener;
+    private com.oracle.bmc.networkloadbalancer.model.Listener listener;
 
     public static class Builder {
         /**

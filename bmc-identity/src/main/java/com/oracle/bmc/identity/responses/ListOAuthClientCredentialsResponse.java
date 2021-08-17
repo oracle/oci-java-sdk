@@ -33,9 +33,9 @@ public class ListOAuthClientCredentialsResponse {
     private String opcNextPage;
 
     /**
-     * A list of OAuth2ClientCredentialSummary instances.
+     * A list of com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary instances.
      */
-    private java.util.List<OAuth2ClientCredentialSummary> items;
+    private java.util.List<com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary> items;
 
     public static class Builder {
         /**

@@ -83,12 +83,16 @@ public class ListTransferPackagesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        MultipleTransferPackages>>
+                                                        com.oracle.bmc.dts.model
+                                                                .MultipleTransferPackages>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        MultipleTransferPackages.class);
+                                                        com.oracle.bmc.dts.model
+                                                                        .MultipleTransferPackages
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<MultipleTransferPackages>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dts.model.MultipleTransferPackages>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

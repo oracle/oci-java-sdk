@@ -63,12 +63,15 @@ public class GetSubnetConverter {
                                         "Transform function invoked for com.oracle.bmc.core.responses.GetSubnetResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Subnet>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.core.model.Subnet>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Subnet.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.core.model.Subnet.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Subnet> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.Subnet>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

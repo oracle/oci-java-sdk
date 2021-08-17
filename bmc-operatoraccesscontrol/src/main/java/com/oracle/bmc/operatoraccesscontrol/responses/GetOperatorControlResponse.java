@@ -33,7 +33,7 @@ public class GetOperatorControlResponse {
     /**
      * The returned OperatorControl instance.
      */
-    private OperatorControl operatorControl;
+    private com.oracle.bmc.operatoraccesscontrol.model.OperatorControl operatorControl;
 
     public static class Builder {
         /**

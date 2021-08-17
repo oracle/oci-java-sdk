@@ -33,7 +33,7 @@ public class GetResponderRuleResponse {
     /**
      * The returned ResponderRule instance.
      */
-    private ResponderRule responderRule;
+    private com.oracle.bmc.cloudguard.model.ResponderRule responderRule;
 
     public static class Builder {
         /**

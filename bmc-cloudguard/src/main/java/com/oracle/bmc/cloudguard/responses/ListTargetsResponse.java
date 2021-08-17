@@ -35,7 +35,7 @@ public class ListTargetsResponse {
     /**
      * The returned TargetCollection instance.
      */
-    private TargetCollection targetCollection;
+    private com.oracle.bmc.cloudguard.model.TargetCollection targetCollection;
 
     public static class Builder {
         /**

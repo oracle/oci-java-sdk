@@ -33,9 +33,9 @@ public class ListFastConnectProviderVirtualCircuitBandwidthShapesResponse {
     private String opcRequestId;
 
     /**
-     * A list of VirtualCircuitBandwidthShape instances.
+     * A list of com.oracle.bmc.core.model.VirtualCircuitBandwidthShape instances.
      */
-    private java.util.List<VirtualCircuitBandwidthShape> items;
+    private java.util.List<com.oracle.bmc.core.model.VirtualCircuitBandwidthShape> items;
 
     public static class Builder {
         /**

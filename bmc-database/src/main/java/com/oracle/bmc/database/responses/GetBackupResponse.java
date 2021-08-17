@@ -32,7 +32,7 @@ public class GetBackupResponse {
     /**
      * The returned Backup instance.
      */
-    private Backup backup;
+    private com.oracle.bmc.database.model.Backup backup;
 
     public static class Builder {
         /**

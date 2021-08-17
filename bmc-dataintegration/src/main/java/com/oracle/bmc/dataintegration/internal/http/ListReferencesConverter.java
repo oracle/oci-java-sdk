@@ -116,12 +116,17 @@ public class ListReferencesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ReferenceSummaryCollection>>
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .ReferenceSummaryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ReferenceSummaryCollection.class);
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .ReferenceSummaryCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ReferenceSummaryCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dataintegration.model
+                                                        .ReferenceSummaryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

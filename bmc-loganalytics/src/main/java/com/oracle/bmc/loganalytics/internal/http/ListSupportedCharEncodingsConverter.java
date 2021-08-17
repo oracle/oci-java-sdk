@@ -91,12 +91,17 @@ public class ListSupportedCharEncodingsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        CharEncodingCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .CharEncodingCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        CharEncodingCollection.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .CharEncodingCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<CharEncodingCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model
+                                                        .CharEncodingCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

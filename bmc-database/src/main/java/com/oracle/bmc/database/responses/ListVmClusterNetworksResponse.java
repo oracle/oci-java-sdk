@@ -34,9 +34,9 @@ public class ListVmClusterNetworksResponse {
     private String opcNextPage;
 
     /**
-     * A list of VmClusterNetworkSummary instances.
+     * A list of com.oracle.bmc.database.model.VmClusterNetworkSummary instances.
      */
-    private java.util.List<VmClusterNetworkSummary> items;
+    private java.util.List<com.oracle.bmc.database.model.VmClusterNetworkSummary> items;
 
     public static class Builder {
         /**

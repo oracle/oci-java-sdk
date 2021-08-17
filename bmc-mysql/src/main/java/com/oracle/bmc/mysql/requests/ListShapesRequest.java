@@ -92,6 +92,27 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<IsSupportedFor> isSupportedFor = null;
+
+        /**
+         * Return shapes that are supported by the service feature.
+         *
+         * @return this builder instance
+         */
+        public Builder isSupportedFor(java.util.List<IsSupportedFor> isSupportedFor) {
+            this.isSupportedFor = isSupportedFor;
+            return this;
+        }
+
+        /**
+         * Singular setter. Return shapes that are supported by the service feature.
+         *
+         * @return this builder instance
+         */
+        public Builder isSupportedFor(IsSupportedFor singularValue) {
+            return this.isSupportedFor(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

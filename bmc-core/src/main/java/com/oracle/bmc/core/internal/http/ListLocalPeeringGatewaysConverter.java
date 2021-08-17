@@ -91,15 +91,20 @@ public class ListLocalPeeringGatewaysConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<LocalPeeringGateway>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.core.model
+                                                                        .LocalPeeringGateway>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        LocalPeeringGateway>>() {});
+                                                                        com.oracle.bmc.core.model
+                                                                                .LocalPeeringGateway>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<LocalPeeringGateway>>
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model
+                                                                .LocalPeeringGateway>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

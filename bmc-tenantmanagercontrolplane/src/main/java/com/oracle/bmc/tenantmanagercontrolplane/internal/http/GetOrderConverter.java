@@ -72,12 +72,19 @@ public class GetOrderConverter {
                                         "Transform function invoked for com.oracle.bmc.tenantmanagercontrolplane.responses.GetOrderResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Order>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.tenantmanagercontrolplane
+                                                                .model.Order>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Order.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.tenantmanagercontrolplane
+                                                                        .model.Order
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Order> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.tenantmanagercontrolplane.model
+                                                        .Order>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

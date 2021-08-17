@@ -70,13 +70,15 @@ public class GetDeploymentConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        Deployment>>
+                                                        com.oracle.bmc.goldengate.model.Deployment>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        Deployment.class);
+                                                        com.oracle.bmc.goldengate.model.Deployment
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Deployment> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.goldengate.model.Deployment>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -45,7 +45,7 @@ public class ListProjectsResponse {
     /**
      * The returned ProjectSummaryCollection instance.
      */
-    private ProjectSummaryCollection projectSummaryCollection;
+    private com.oracle.bmc.dataintegration.model.ProjectSummaryCollection projectSummaryCollection;
 
     public static class Builder {
         /**

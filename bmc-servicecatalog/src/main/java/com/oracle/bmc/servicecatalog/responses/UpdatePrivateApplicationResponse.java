@@ -39,7 +39,7 @@ public class UpdatePrivateApplicationResponse {
     /**
      * The returned PrivateApplication instance.
      */
-    private PrivateApplication privateApplication;
+    private com.oracle.bmc.servicecatalog.model.PrivateApplication privateApplication;
 
     public static class Builder {
         /**

@@ -33,7 +33,7 @@ public class GetAttributeResponse {
     /**
      * The returned Attribute instance.
      */
-    private Attribute attribute;
+    private com.oracle.bmc.datacatalog.model.Attribute attribute;
 
     public static class Builder {
         /**

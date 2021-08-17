@@ -45,7 +45,8 @@ public class ListPublishedObjectsResponse {
     /**
      * The returned PublishedObjectSummaryCollection instance.
      */
-    private PublishedObjectSummaryCollection publishedObjectSummaryCollection;
+    private com.oracle.bmc.dataintegration.model.PublishedObjectSummaryCollection
+            publishedObjectSummaryCollection;
 
     public static class Builder {
         /**

@@ -39,7 +39,7 @@ public class CreateMigrationResponse {
     /**
      * The returned Migration instance.
      */
-    private Migration migration;
+    private com.oracle.bmc.databasemigration.model.Migration migration;
 
     public static class Builder {
         /**

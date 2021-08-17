@@ -82,12 +82,17 @@ public class UpdatePrivateApplicationConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        PrivateApplication>>
+                                                        com.oracle.bmc.servicecatalog.model
+                                                                .PrivateApplication>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        PrivateApplication.class);
+                                                        com.oracle.bmc.servicecatalog.model
+                                                                        .PrivateApplication
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<PrivateApplication>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.servicecatalog.model
+                                                        .PrivateApplication>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

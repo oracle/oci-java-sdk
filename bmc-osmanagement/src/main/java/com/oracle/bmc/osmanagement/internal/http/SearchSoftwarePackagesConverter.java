@@ -127,15 +127,20 @@ public class SearchSoftwarePackagesConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                SoftwarePackageSearchSummary>>>
+                                                                com.oracle.bmc.osmanagement.model
+                                                                        .SoftwarePackageSearchSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        SoftwarePackageSearchSummary>>() {});
+                                                                        com.oracle.bmc.osmanagement
+                                                                                .model
+                                                                                .SoftwarePackageSearchSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<SoftwarePackageSearchSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.osmanagement.model
+                                                                .SoftwarePackageSearchSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

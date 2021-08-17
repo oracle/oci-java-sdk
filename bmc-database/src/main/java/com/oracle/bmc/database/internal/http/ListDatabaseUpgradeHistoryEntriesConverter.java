@@ -124,15 +124,20 @@ public class ListDatabaseUpgradeHistoryEntriesConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                DatabaseUpgradeHistoryEntrySummary>>>
+                                                                com.oracle.bmc.database.model
+                                                                        .DatabaseUpgradeHistoryEntrySummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        DatabaseUpgradeHistoryEntrySummary>>() {});
+                                                                        com.oracle.bmc.database
+                                                                                .model
+                                                                                .DatabaseUpgradeHistoryEntrySummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<DatabaseUpgradeHistoryEntrySummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.database.model
+                                                                .DatabaseUpgradeHistoryEntrySummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

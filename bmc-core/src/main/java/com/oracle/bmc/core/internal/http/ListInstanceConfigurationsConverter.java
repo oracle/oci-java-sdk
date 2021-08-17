@@ -101,15 +101,19 @@ public class ListInstanceConfigurationsConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                InstanceConfigurationSummary>>>
+                                                                com.oracle.bmc.core.model
+                                                                        .InstanceConfigurationSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        InstanceConfigurationSummary>>() {});
+                                                                        com.oracle.bmc.core.model
+                                                                                .InstanceConfigurationSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<InstanceConfigurationSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model
+                                                                .InstanceConfigurationSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

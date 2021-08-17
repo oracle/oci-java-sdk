@@ -46,7 +46,7 @@ public class ListApisResponse {
     /**
      * The returned ApiCollection instance.
      */
-    private ApiCollection apiCollection;
+    private com.oracle.bmc.apigateway.model.ApiCollection apiCollection;
 
     public static class Builder {
         /**

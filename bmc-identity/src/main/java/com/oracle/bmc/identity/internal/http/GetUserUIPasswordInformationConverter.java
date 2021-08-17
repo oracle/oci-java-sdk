@@ -70,12 +70,16 @@ public class GetUserUIPasswordInformationConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        UIPasswordInformation>>
+                                                        com.oracle.bmc.identity.model
+                                                                .UIPasswordInformation>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        UIPasswordInformation.class);
+                                                        com.oracle.bmc.identity.model
+                                                                        .UIPasswordInformation
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<UIPasswordInformation>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.identity.model.UIPasswordInformation>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

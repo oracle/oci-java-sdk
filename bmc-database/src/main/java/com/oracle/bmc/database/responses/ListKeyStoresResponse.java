@@ -34,9 +34,9 @@ public class ListKeyStoresResponse {
     private String opcNextPage;
 
     /**
-     * A list of KeyStoreSummary instances.
+     * A list of com.oracle.bmc.database.model.KeyStoreSummary instances.
      */
-    private java.util.List<KeyStoreSummary> items;
+    private java.util.List<com.oracle.bmc.database.model.KeyStoreSummary> items;
 
     public static class Builder {
         /**

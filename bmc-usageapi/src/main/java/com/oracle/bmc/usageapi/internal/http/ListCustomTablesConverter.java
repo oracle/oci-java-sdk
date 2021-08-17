@@ -110,12 +110,16 @@ public class ListCustomTablesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        CustomTableCollection>>
+                                                        com.oracle.bmc.usageapi.model
+                                                                .CustomTableCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        CustomTableCollection.class);
+                                                        com.oracle.bmc.usageapi.model
+                                                                        .CustomTableCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<CustomTableCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.usageapi.model.CustomTableCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

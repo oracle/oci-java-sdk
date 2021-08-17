@@ -188,14 +188,17 @@ public class SummarizeHostInsightResourceUsageTrendConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SummarizeHostInsightResourceUsageTrendAggregationCollection>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .SummarizeHostInsightResourceUsageTrendAggregationCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SummarizeHostInsightResourceUsageTrendAggregationCollection
+                                                        com.oracle.bmc.opsi.model
+                                                                        .SummarizeHostInsightResourceUsageTrendAggregationCollection
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                SummarizeHostInsightResourceUsageTrendAggregationCollection>
+                                                com.oracle.bmc.opsi.model
+                                                        .SummarizeHostInsightResourceUsageTrendAggregationCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

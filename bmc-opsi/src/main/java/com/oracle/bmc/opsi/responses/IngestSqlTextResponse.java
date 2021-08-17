@@ -33,7 +33,7 @@ public class IngestSqlTextResponse {
     /**
      * The returned IngestSqlTextResponseDetails instance.
      */
-    private IngestSqlTextResponseDetails ingestSqlTextResponseDetails;
+    private com.oracle.bmc.opsi.model.IngestSqlTextResponseDetails ingestSqlTextResponseDetails;
 
     public static class Builder {
         /**

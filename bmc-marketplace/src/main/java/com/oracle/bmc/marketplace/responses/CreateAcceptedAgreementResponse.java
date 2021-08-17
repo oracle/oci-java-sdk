@@ -33,7 +33,7 @@ public class CreateAcceptedAgreementResponse {
     /**
      * The returned AcceptedAgreement instance.
      */
-    private AcceptedAgreement acceptedAgreement;
+    private com.oracle.bmc.marketplace.model.AcceptedAgreement acceptedAgreement;
 
     public static class Builder {
         /**

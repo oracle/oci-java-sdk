@@ -43,7 +43,7 @@ public class ListRoverNodesResponse {
     /**
      * The returned RoverNodeCollection instance.
      */
-    private RoverNodeCollection roverNodeCollection;
+    private com.oracle.bmc.rover.model.RoverNodeCollection roverNodeCollection;
 
     public static class Builder {
         /**

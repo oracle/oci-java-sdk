@@ -127,13 +127,17 @@ public class RequestSummarizedTrendProblemsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ProblemTrendAggregationCollection>>
+                                                        com.oracle.bmc.cloudguard.model
+                                                                .ProblemTrendAggregationCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ProblemTrendAggregationCollection.class);
+                                                        com.oracle.bmc.cloudguard.model
+                                                                        .ProblemTrendAggregationCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ProblemTrendAggregationCollection>
+                                                com.oracle.bmc.cloudguard.model
+                                                        .ProblemTrendAggregationCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

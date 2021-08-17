@@ -106,13 +106,17 @@ public class ListResponderActivitiesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ResponderActivityCollection>>
+                                                        com.oracle.bmc.cloudguard.model
+                                                                .ResponderActivityCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ResponderActivityCollection.class);
+                                                        com.oracle.bmc.cloudguard.model
+                                                                        .ResponderActivityCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ResponderActivityCollection>
+                                                com.oracle.bmc.cloudguard.model
+                                                        .ResponderActivityCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

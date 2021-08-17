@@ -33,7 +33,7 @@ public class UpdateEsxiHostResponse {
     /**
      * The returned EsxiHost instance.
      */
-    private EsxiHost esxiHost;
+    private com.oracle.bmc.ocvp.model.EsxiHost esxiHost;
 
     public static class Builder {
         /**

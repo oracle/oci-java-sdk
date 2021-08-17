@@ -32,7 +32,7 @@ public class EnableArchivingResponse {
     /**
      * The returned Success instance.
      */
-    private Success success;
+    private com.oracle.bmc.loganalytics.model.Success success;
 
     public static class Builder {
         /**

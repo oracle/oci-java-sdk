@@ -76,12 +76,16 @@ public class EnableArchivingConverter {
                                         "Transform function invoked for com.oracle.bmc.loganalytics.responses.EnableArchivingResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Success>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.loganalytics.model.Success>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Success.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.loganalytics.model.Success
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Success> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model.Success>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

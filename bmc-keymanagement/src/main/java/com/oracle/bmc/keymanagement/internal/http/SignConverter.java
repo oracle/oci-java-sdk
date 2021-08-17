@@ -64,13 +64,17 @@ public class SignConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SignedData>>
+                                                        com.oracle.bmc.keymanagement.model
+                                                                .SignedData>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SignedData.class);
+                                                        com.oracle.bmc.keymanagement.model
+                                                                        .SignedData
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<SignedData> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.keymanagement.model.SignedData>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

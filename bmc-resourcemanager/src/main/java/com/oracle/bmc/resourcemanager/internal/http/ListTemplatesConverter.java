@@ -128,12 +128,17 @@ public class ListTemplatesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        TemplateSummaryCollection>>
+                                                        com.oracle.bmc.resourcemanager.model
+                                                                .TemplateSummaryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        TemplateSummaryCollection.class);
+                                                        com.oracle.bmc.resourcemanager.model
+                                                                        .TemplateSummaryCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<TemplateSummaryCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.resourcemanager.model
+                                                        .TemplateSummaryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

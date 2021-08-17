@@ -38,7 +38,7 @@ public class CreateSoftwareSourceResponse {
     /**
      * The returned SoftwareSource instance.
      */
-    private SoftwareSource softwareSource;
+    private com.oracle.bmc.osmanagement.model.SoftwareSource softwareSource;
 
     public static class Builder {
         /**

@@ -103,14 +103,21 @@ public class ListVaultsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<VaultSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.keymanagement.model
+                                                                        .VaultSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<VaultSummary>>() {});
+                                                                java.util.List<
+                                                                        com.oracle.bmc.keymanagement
+                                                                                .model
+                                                                                .VaultSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<VaultSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.keymanagement.model
+                                                                .VaultSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

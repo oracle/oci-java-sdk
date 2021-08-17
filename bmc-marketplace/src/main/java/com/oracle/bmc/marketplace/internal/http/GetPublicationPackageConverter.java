@@ -77,12 +77,16 @@ public class GetPublicationPackageConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        PublicationPackage>>
+                                                        com.oracle.bmc.marketplace.model
+                                                                .PublicationPackage>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        PublicationPackage.class);
+                                                        com.oracle.bmc.marketplace.model
+                                                                        .PublicationPackage
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<PublicationPackage>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.marketplace.model.PublicationPackage>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

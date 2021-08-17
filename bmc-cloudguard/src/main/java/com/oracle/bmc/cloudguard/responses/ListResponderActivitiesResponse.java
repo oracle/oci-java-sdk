@@ -35,7 +35,7 @@ public class ListResponderActivitiesResponse {
     /**
      * The returned ResponderActivityCollection instance.
      */
-    private ResponderActivityCollection responderActivityCollection;
+    private com.oracle.bmc.cloudguard.model.ResponderActivityCollection responderActivityCollection;
 
     public static class Builder {
         /**

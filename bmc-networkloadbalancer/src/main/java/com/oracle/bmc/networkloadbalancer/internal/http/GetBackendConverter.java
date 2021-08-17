@@ -84,12 +84,18 @@ public class GetBackendConverter {
                                         "Transform function invoked for com.oracle.bmc.networkloadbalancer.responses.GetBackendResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Backend>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.networkloadbalancer.model
+                                                                .Backend>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Backend.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.networkloadbalancer.model
+                                                                        .Backend
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Backend> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.networkloadbalancer.model.Backend>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

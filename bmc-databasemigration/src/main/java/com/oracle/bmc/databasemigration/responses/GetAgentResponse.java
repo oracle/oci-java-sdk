@@ -33,7 +33,7 @@ public class GetAgentResponse {
     /**
      * The returned Agent instance.
      */
-    private Agent agent;
+    private com.oracle.bmc.databasemigration.model.Agent agent;
 
     public static class Builder {
         /**

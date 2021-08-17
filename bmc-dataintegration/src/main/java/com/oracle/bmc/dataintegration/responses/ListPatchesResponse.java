@@ -45,7 +45,7 @@ public class ListPatchesResponse {
     /**
      * The returned PatchSummaryCollection instance.
      */
-    private PatchSummaryCollection patchSummaryCollection;
+    private com.oracle.bmc.dataintegration.model.PatchSummaryCollection patchSummaryCollection;
 
     public static class Builder {
         /**

@@ -83,13 +83,17 @@ public class GetPackageConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ListingPackage>>
+                                                        com.oracle.bmc.marketplace.model
+                                                                .ListingPackage>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ListingPackage.class);
+                                                        com.oracle.bmc.marketplace.model
+                                                                        .ListingPackage
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ListingPackage> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.marketplace.model.ListingPackage>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

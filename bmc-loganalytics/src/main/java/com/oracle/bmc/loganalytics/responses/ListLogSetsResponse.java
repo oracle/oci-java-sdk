@@ -34,7 +34,7 @@ public class ListLogSetsResponse {
     /**
      * The returned LogSetCollection instance.
      */
-    private LogSetCollection logSetCollection;
+    private com.oracle.bmc.loganalytics.model.LogSetCollection logSetCollection;
 
     public static class Builder {
         /**

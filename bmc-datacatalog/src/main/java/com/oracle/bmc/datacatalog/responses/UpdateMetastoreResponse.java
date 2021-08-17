@@ -33,7 +33,7 @@ public class UpdateMetastoreResponse {
     /**
      * The returned Metastore instance.
      */
-    private Metastore metastore;
+    private com.oracle.bmc.datacatalog.model.Metastore metastore;
 
     public static class Builder {
         /**

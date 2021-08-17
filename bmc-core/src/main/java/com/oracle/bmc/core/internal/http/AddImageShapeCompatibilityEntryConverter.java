@@ -74,13 +74,17 @@ public class AddImageShapeCompatibilityEntryConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ImageShapeCompatibilityEntry>>
+                                                        com.oracle.bmc.core.model
+                                                                .ImageShapeCompatibilityEntry>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ImageShapeCompatibilityEntry.class);
+                                                        com.oracle.bmc.core.model
+                                                                        .ImageShapeCompatibilityEntry
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ImageShapeCompatibilityEntry>
+                                                com.oracle.bmc.core.model
+                                                        .ImageShapeCompatibilityEntry>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

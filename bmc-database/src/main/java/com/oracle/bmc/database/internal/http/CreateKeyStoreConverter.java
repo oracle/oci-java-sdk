@@ -68,12 +68,16 @@ public class CreateKeyStoreConverter {
                                         "Transform function invoked for com.oracle.bmc.database.responses.CreateKeyStoreResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<KeyStore>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.database.model.KeyStore>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(KeyStore.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.database.model.KeyStore
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<KeyStore> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.database.model.KeyStore>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

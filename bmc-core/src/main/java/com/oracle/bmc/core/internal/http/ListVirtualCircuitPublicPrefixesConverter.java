@@ -78,15 +78,20 @@ public class ListVirtualCircuitPublicPrefixesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<VirtualCircuitPublicPrefix>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.core.model
+                                                                        .VirtualCircuitPublicPrefix>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        VirtualCircuitPublicPrefix>>() {});
+                                                                        com.oracle.bmc.core.model
+                                                                                .VirtualCircuitPublicPrefix>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<VirtualCircuitPublicPrefix>>
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model
+                                                                .VirtualCircuitPublicPrefix>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

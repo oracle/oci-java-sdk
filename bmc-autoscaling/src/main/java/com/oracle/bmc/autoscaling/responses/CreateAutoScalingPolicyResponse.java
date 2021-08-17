@@ -32,7 +32,7 @@ public class CreateAutoScalingPolicyResponse {
     /**
      * The returned AutoScalingPolicy instance.
      */
-    private AutoScalingPolicy autoScalingPolicy;
+    private com.oracle.bmc.autoscaling.model.AutoScalingPolicy autoScalingPolicy;
 
     public static class Builder {
         /**

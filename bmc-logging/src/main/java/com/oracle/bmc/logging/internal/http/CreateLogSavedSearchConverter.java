@@ -71,13 +71,16 @@ public class CreateLogSavedSearchConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogSavedSearch>>
+                                                        com.oracle.bmc.logging.model
+                                                                .LogSavedSearch>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogSavedSearch.class);
+                                                        com.oracle.bmc.logging.model.LogSavedSearch
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<LogSavedSearch> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.logging.model.LogSavedSearch>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

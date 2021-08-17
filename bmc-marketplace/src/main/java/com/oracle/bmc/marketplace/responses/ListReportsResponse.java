@@ -35,7 +35,7 @@ public class ListReportsResponse {
     /**
      * The returned ReportCollection instance.
      */
-    private ReportCollection reportCollection;
+    private com.oracle.bmc.marketplace.model.ReportCollection reportCollection;
 
     public static class Builder {
         /**

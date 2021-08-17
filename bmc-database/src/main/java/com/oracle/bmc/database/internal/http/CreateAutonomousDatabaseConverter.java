@@ -73,12 +73,16 @@ public class CreateAutonomousDatabaseConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AutonomousDatabase>>
+                                                        com.oracle.bmc.database.model
+                                                                .AutonomousDatabase>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AutonomousDatabase.class);
+                                                        com.oracle.bmc.database.model
+                                                                        .AutonomousDatabase
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AutonomousDatabase>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.database.model.AutonomousDatabase>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

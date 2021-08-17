@@ -33,7 +33,8 @@ public class GetManagementAgentInstallKeyResponse {
     /**
      * The returned ManagementAgentInstallKey instance.
      */
-    private ManagementAgentInstallKey managementAgentInstallKey;
+    private com.oracle.bmc.managementagent.model.ManagementAgentInstallKey
+            managementAgentInstallKey;
 
     public static class Builder {
         /**

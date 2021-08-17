@@ -45,7 +45,8 @@ public class ListPipelineValidationsResponse {
     /**
      * The returned PipelineValidationSummaryCollection instance.
      */
-    private PipelineValidationSummaryCollection pipelineValidationSummaryCollection;
+    private com.oracle.bmc.dataintegration.model.PipelineValidationSummaryCollection
+            pipelineValidationSummaryCollection;
 
     public static class Builder {
         /**

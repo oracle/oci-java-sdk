@@ -39,7 +39,7 @@ public class CreateManagementSavedSearchResponse {
     /**
      * The returned ManagementSavedSearch instance.
      */
-    private ManagementSavedSearch managementSavedSearch;
+    private com.oracle.bmc.managementdashboard.model.ManagementSavedSearch managementSavedSearch;
 
     public static class Builder {
         /**

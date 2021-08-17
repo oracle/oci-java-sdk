@@ -64,6 +64,28 @@ public class UpdateWaasPolicyCustomProtectionRulesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<CustomProtectionRuleSetting> updateCustomProtectionRulesDetails =
+                null;
+
+        /**
+         *
+         * @return this builder instance
+         */
+        public Builder updateCustomProtectionRulesDetails(
+                java.util.List<CustomProtectionRuleSetting> updateCustomProtectionRulesDetails) {
+            this.updateCustomProtectionRulesDetails = updateCustomProtectionRulesDetails;
+            return this;
+        }
+
+        /**
+         * Singular setter.
+         * @return this builder instance
+         */
+        public Builder updateCustomProtectionRulesDetails(
+                CustomProtectionRuleSetting singularValue) {
+            return this.updateCustomProtectionRulesDetails(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

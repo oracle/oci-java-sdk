@@ -64,12 +64,15 @@ public class GetInstanceConverter {
                                         "Transform function invoked for com.oracle.bmc.core.responses.GetInstanceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Instance>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.core.model.Instance>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Instance.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.core.model.Instance.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Instance> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.Instance>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

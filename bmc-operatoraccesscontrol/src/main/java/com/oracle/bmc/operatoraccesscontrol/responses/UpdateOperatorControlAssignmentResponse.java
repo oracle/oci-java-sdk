@@ -33,7 +33,8 @@ public class UpdateOperatorControlAssignmentResponse {
     /**
      * The returned OperatorControlAssignment instance.
      */
-    private OperatorControlAssignment operatorControlAssignment;
+    private com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignment
+            operatorControlAssignment;
 
     public static class Builder {
         /**

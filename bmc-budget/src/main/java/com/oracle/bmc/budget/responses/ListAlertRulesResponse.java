@@ -34,9 +34,9 @@ public class ListAlertRulesResponse {
     private String opcNextPage;
 
     /**
-     * A list of AlertRuleSummary instances.
+     * A list of com.oracle.bmc.budget.model.AlertRuleSummary instances.
      */
-    private java.util.List<AlertRuleSummary> items;
+    private java.util.List<com.oracle.bmc.budget.model.AlertRuleSummary> items;
 
     public static class Builder {
         /**

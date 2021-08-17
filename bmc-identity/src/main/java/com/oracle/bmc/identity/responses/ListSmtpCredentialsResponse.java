@@ -33,9 +33,9 @@ public class ListSmtpCredentialsResponse {
     private String opcNextPage;
 
     /**
-     * A list of SmtpCredentialSummary instances.
+     * A list of com.oracle.bmc.identity.model.SmtpCredentialSummary instances.
      */
-    private java.util.List<SmtpCredentialSummary> items;
+    private java.util.List<com.oracle.bmc.identity.model.SmtpCredentialSummary> items;
 
     public static class Builder {
         /**

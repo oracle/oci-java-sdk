@@ -177,13 +177,17 @@ public class SummarizeInstallationUsageConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        InstallationUsageCollection>>
+                                                        com.oracle.bmc.jms.model
+                                                                .InstallationUsageCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        InstallationUsageCollection.class);
+                                                        com.oracle.bmc.jms.model
+                                                                        .InstallationUsageCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                InstallationUsageCollection>
+                                                com.oracle.bmc.jms.model
+                                                        .InstallationUsageCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

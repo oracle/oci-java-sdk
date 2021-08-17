@@ -67,12 +67,15 @@ public class CreateSecretConverter {
                                         "Transform function invoked for com.oracle.bmc.vault.responses.CreateSecretResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Secret>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.vault.model.Secret>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Secret.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.vault.model.Secret.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Secret> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.vault.model.Secret>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

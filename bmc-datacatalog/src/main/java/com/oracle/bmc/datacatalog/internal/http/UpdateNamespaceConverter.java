@@ -79,12 +79,16 @@ public class UpdateNamespaceConverter {
                                         "Transform function invoked for com.oracle.bmc.datacatalog.responses.UpdateNamespaceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Namespace>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.datacatalog.model.Namespace>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Namespace.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.datacatalog.model.Namespace
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Namespace> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model.Namespace>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

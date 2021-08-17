@@ -35,7 +35,8 @@ public class ListEnterpriseManagerBridgesResponse {
     /**
      * The returned EnterpriseManagerBridgeCollection instance.
      */
-    private EnterpriseManagerBridgeCollection enterpriseManagerBridgeCollection;
+    private com.oracle.bmc.opsi.model.EnterpriseManagerBridgeCollection
+            enterpriseManagerBridgeCollection;
 
     public static class Builder {
         /**

@@ -33,7 +33,7 @@ public class CreateDataMaskRuleResponse {
     /**
      * The returned DataMaskRule instance.
      */
-    private DataMaskRule dataMaskRule;
+    private com.oracle.bmc.cloudguard.model.DataMaskRule dataMaskRule;
 
     public static class Builder {
         /**

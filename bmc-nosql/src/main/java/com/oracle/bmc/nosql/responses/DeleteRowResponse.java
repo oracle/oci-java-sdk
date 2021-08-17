@@ -28,7 +28,7 @@ public class DeleteRowResponse {
     /**
      * The returned DeleteRowResult instance.
      */
-    private DeleteRowResult deleteRowResult;
+    private com.oracle.bmc.nosql.model.DeleteRowResult deleteRowResult;
 
     public static class Builder {
         /**

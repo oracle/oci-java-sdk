@@ -35,7 +35,7 @@ public class SummarizeAwrDbCpuUsagesResponse {
     /**
      * The returned AwrDbCpuUsageCollection instance.
      */
-    private AwrDbCpuUsageCollection awrDbCpuUsageCollection;
+    private com.oracle.bmc.databasemanagement.model.AwrDbCpuUsageCollection awrDbCpuUsageCollection;
 
     public static class Builder {
         /**

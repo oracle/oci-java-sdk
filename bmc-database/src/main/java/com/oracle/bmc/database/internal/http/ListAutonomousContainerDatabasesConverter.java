@@ -160,15 +160,20 @@ public class ListAutonomousContainerDatabasesConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                AutonomousContainerDatabaseSummary>>>
+                                                                com.oracle.bmc.database.model
+                                                                        .AutonomousContainerDatabaseSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        AutonomousContainerDatabaseSummary>>() {});
+                                                                        com.oracle.bmc.database
+                                                                                .model
+                                                                                .AutonomousContainerDatabaseSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<AutonomousContainerDatabaseSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.database.model
+                                                                .AutonomousContainerDatabaseSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

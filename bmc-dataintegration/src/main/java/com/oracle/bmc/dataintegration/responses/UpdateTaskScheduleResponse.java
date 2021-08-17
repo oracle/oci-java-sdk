@@ -33,7 +33,7 @@ public class UpdateTaskScheduleResponse {
     /**
      * The returned TaskSchedule instance.
      */
-    private TaskSchedule taskSchedule;
+    private com.oracle.bmc.dataintegration.model.TaskSchedule taskSchedule;
 
     public static class Builder {
         /**

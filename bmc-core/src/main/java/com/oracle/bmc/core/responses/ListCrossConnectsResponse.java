@@ -33,9 +33,9 @@ public class ListCrossConnectsResponse {
     private String opcRequestId;
 
     /**
-     * A list of CrossConnect instances.
+     * A list of com.oracle.bmc.core.model.CrossConnect instances.
      */
-    private java.util.List<CrossConnect> items;
+    private java.util.List<com.oracle.bmc.core.model.CrossConnect> items;
 
     public static class Builder {
         /**

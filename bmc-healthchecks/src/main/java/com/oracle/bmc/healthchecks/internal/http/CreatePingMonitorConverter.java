@@ -70,13 +70,17 @@ public class CreatePingMonitorConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        PingMonitor>>
+                                                        com.oracle.bmc.healthchecks.model
+                                                                .PingMonitor>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        PingMonitor.class);
+                                                        com.oracle.bmc.healthchecks.model
+                                                                        .PingMonitor
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<PingMonitor> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.healthchecks.model.PingMonitor>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

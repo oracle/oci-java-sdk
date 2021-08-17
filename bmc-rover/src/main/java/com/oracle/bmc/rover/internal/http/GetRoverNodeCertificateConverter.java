@@ -71,12 +71,16 @@ public class GetRoverNodeCertificateConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        RoverNodeCertificate>>
+                                                        com.oracle.bmc.rover.model
+                                                                .RoverNodeCertificate>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        RoverNodeCertificate.class);
+                                                        com.oracle.bmc.rover.model
+                                                                        .RoverNodeCertificate
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<RoverNodeCertificate>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.rover.model.RoverNodeCertificate>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

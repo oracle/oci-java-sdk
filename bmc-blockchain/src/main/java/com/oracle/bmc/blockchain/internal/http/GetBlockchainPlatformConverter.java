@@ -72,12 +72,16 @@ public class GetBlockchainPlatformConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        BlockchainPlatform>>
+                                                        com.oracle.bmc.blockchain.model
+                                                                .BlockchainPlatform>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        BlockchainPlatform.class);
+                                                        com.oracle.bmc.blockchain.model
+                                                                        .BlockchainPlatform
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<BlockchainPlatform>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.blockchain.model.BlockchainPlatform>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

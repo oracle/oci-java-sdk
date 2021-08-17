@@ -42,7 +42,7 @@ public class ListResourceActionsResponse {
     /**
      * The returned ResourceActionCollection instance.
      */
-    private ResourceActionCollection resourceActionCollection;
+    private com.oracle.bmc.optimizer.model.ResourceActionCollection resourceActionCollection;
 
     public static class Builder {
         /**

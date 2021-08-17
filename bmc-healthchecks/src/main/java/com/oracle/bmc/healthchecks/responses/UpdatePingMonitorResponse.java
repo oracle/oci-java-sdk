@@ -33,7 +33,7 @@ public class UpdatePingMonitorResponse {
     /**
      * The returned PingMonitor instance.
      */
-    private PingMonitor pingMonitor;
+    private com.oracle.bmc.healthchecks.model.PingMonitor pingMonitor;
 
     public static class Builder {
         /**

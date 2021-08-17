@@ -33,7 +33,7 @@ public class ListDataAssetTagsResponse {
     /**
      * The returned DataAssetTagCollection instance.
      */
-    private DataAssetTagCollection dataAssetTagCollection;
+    private com.oracle.bmc.datacatalog.model.DataAssetTagCollection dataAssetTagCollection;
 
     public static class Builder {
         /**

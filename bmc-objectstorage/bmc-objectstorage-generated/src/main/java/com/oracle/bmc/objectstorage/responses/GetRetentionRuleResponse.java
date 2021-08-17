@@ -42,7 +42,7 @@ public class GetRetentionRuleResponse {
     /**
      * The returned RetentionRule instance.
      */
-    private RetentionRule retentionRule;
+    private com.oracle.bmc.objectstorage.model.RetentionRule retentionRule;
 
     public static class Builder {
         /**

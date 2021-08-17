@@ -33,7 +33,7 @@ public class GetCatalogPrivateEndpointResponse {
     /**
      * The returned CatalogPrivateEndpoint instance.
      */
-    private CatalogPrivateEndpoint catalogPrivateEndpoint;
+    private com.oracle.bmc.datacatalog.model.CatalogPrivateEndpoint catalogPrivateEndpoint;
 
     public static class Builder {
         /**

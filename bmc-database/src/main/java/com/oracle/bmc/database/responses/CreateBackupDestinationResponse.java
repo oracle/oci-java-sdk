@@ -33,7 +33,7 @@ public class CreateBackupDestinationResponse {
     /**
      * The returned BackupDestination instance.
      */
-    private BackupDestination backupDestination;
+    private com.oracle.bmc.database.model.BackupDestination backupDestination;
 
     public static class Builder {
         /**

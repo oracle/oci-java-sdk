@@ -89,13 +89,17 @@ public class ImportCustomContentConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogAnalyticsImportCustomContent>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogAnalyticsImportCustomContent>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogAnalyticsImportCustomContent.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogAnalyticsImportCustomContent
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                LogAnalyticsImportCustomContent>
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LogAnalyticsImportCustomContent>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

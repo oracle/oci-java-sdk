@@ -33,7 +33,7 @@ public class GetRoverNodeResponse {
     /**
      * The returned RoverNode instance.
      */
-    private RoverNode roverNode;
+    private com.oracle.bmc.rover.model.RoverNode roverNode;
 
     public static class Builder {
         /**

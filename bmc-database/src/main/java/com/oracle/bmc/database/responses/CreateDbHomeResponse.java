@@ -38,7 +38,7 @@ public class CreateDbHomeResponse {
     /**
      * The returned DbHome instance.
      */
-    private DbHome dbHome;
+    private com.oracle.bmc.database.model.DbHome dbHome;
 
     public static class Builder {
         /**

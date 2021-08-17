@@ -33,7 +33,7 @@ public class GetPatternResponse {
     /**
      * The returned Pattern instance.
      */
-    private Pattern pattern;
+    private com.oracle.bmc.datacatalog.model.Pattern pattern;
 
     public static class Builder {
         /**

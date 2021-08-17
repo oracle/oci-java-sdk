@@ -33,9 +33,9 @@ public class ListBastionsResponse {
     private String opcNextPage;
 
     /**
-     * A list of BastionSummary instances.
+     * A list of com.oracle.bmc.bastion.model.BastionSummary instances.
      */
-    private java.util.List<BastionSummary> items;
+    private java.util.List<com.oracle.bmc.bastion.model.BastionSummary> items;
 
     public static class Builder {
         /**

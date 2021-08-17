@@ -27,7 +27,8 @@ public class GetThirdPartyPaidListingEligibilityResponse {
     /**
      * The returned ThirdPartyPaidListingEligibility instance.
      */
-    private ThirdPartyPaidListingEligibility thirdPartyPaidListingEligibility;
+    private com.oracle.bmc.marketplace.model.ThirdPartyPaidListingEligibility
+            thirdPartyPaidListingEligibility;
 
     public static class Builder {
         /**

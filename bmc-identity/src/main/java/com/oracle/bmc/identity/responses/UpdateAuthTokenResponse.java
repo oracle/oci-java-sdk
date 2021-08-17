@@ -32,7 +32,7 @@ public class UpdateAuthTokenResponse {
     /**
      * The returned AuthToken instance.
      */
-    private AuthToken authToken;
+    private com.oracle.bmc.identity.model.AuthToken authToken;
 
     public static class Builder {
         /**

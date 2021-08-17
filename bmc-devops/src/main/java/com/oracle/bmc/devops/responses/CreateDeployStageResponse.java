@@ -40,7 +40,7 @@ public class CreateDeployStageResponse {
     /**
      * The returned DeployStage instance.
      */
-    private DeployStage deployStage;
+    private com.oracle.bmc.devops.model.DeployStage deployStage;
 
     public static class Builder {
         /**

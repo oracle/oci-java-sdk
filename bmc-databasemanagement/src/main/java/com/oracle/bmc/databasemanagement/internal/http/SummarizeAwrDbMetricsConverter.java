@@ -172,12 +172,17 @@ public class SummarizeAwrDbMetricsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AwrDbMetricCollection>>
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                .AwrDbMetricCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AwrDbMetricCollection.class);
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                        .AwrDbMetricCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AwrDbMetricCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.databasemanagement.model
+                                                        .AwrDbMetricCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

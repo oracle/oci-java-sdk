@@ -33,7 +33,7 @@ public class GetConsoleHistoryResponse {
     /**
      * The returned ConsoleHistory instance.
      */
-    private ConsoleHistory consoleHistory;
+    private com.oracle.bmc.core.model.ConsoleHistory consoleHistory;
 
     public static class Builder {
         /**

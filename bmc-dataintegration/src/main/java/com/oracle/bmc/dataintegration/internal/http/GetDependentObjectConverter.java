@@ -83,13 +83,18 @@ public class GetDependentObjectConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DependentObject>>
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .DependentObject>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DependentObject.class);
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .DependentObject
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DependentObject> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dataintegration.model
+                                                        .DependentObject>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

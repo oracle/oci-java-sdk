@@ -34,9 +34,9 @@ public class ListDataGuardAssociationsResponse {
     private String opcNextPage;
 
     /**
-     * A list of DataGuardAssociationSummary instances.
+     * A list of com.oracle.bmc.database.model.DataGuardAssociationSummary instances.
      */
-    private java.util.List<DataGuardAssociationSummary> items;
+    private java.util.List<com.oracle.bmc.database.model.DataGuardAssociationSummary> items;
 
     public static class Builder {
         /**

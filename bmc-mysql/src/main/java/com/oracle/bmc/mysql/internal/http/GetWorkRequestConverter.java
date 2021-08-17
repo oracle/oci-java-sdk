@@ -74,13 +74,15 @@ public class GetWorkRequestConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        WorkRequest>>
+                                                        com.oracle.bmc.mysql.model.WorkRequest>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        WorkRequest.class);
+                                                        com.oracle.bmc.mysql.model.WorkRequest
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<WorkRequest> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.mysql.model.WorkRequest>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

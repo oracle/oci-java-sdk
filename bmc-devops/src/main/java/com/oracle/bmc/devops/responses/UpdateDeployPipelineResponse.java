@@ -40,7 +40,7 @@ public class UpdateDeployPipelineResponse {
     /**
      * The returned DeployPipeline instance.
      */
-    private DeployPipeline deployPipeline;
+    private com.oracle.bmc.devops.model.DeployPipeline deployPipeline;
 
     public static class Builder {
         /**

@@ -42,7 +42,7 @@ public class ListRecalledDataResponse {
     /**
      * The returned RecalledDataCollection instance.
      */
-    private RecalledDataCollection recalledDataCollection;
+    private com.oracle.bmc.loganalytics.model.RecalledDataCollection recalledDataCollection;
 
     public static class Builder {
         /**

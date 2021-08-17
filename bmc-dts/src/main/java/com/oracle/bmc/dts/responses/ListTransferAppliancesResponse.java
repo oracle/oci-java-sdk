@@ -25,7 +25,7 @@ public class ListTransferAppliancesResponse {
     /**
      * The returned MultipleTransferAppliances instance.
      */
-    private MultipleTransferAppliances multipleTransferAppliances;
+    private com.oracle.bmc.dts.model.MultipleTransferAppliances multipleTransferAppliances;
 
     public static class Builder {
         /**

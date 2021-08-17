@@ -30,7 +30,7 @@ public class GetPolicyConfigResponse {
     /**
      * The returned PolicyConfig instance.
      */
-    private PolicyConfig policyConfig;
+    private com.oracle.bmc.waas.model.PolicyConfig policyConfig;
 
     public static class Builder {
         /**

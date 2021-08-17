@@ -33,7 +33,7 @@ public class GetAnalyticsClusterResponse {
     /**
      * The returned AnalyticsCluster instance, or null if {@link #isNotModified()} is true.
      */
-    private AnalyticsCluster analyticsCluster;
+    private com.oracle.bmc.mysql.model.AnalyticsCluster analyticsCluster;
 
     /**
      * Flag to indicate whether or not the object was modified.  If this is true,

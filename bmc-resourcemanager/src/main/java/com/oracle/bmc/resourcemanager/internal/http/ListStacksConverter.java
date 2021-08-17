@@ -128,14 +128,22 @@ public class ListStacksConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<StackSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.resourcemanager.model
+                                                                        .StackSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<StackSummary>>() {});
+                                                                java.util.List<
+                                                                        com.oracle.bmc
+                                                                                .resourcemanager
+                                                                                .model
+                                                                                .StackSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<StackSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.resourcemanager.model
+                                                                .StackSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

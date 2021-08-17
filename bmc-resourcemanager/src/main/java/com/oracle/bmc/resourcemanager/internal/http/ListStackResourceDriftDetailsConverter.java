@@ -110,13 +110,17 @@ public class ListStackResourceDriftDetailsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        StackResourceDriftCollection>>
+                                                        com.oracle.bmc.resourcemanager.model
+                                                                .StackResourceDriftCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        StackResourceDriftCollection.class);
+                                                        com.oracle.bmc.resourcemanager.model
+                                                                        .StackResourceDriftCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                StackResourceDriftCollection>
+                                                com.oracle.bmc.resourcemanager.model
+                                                        .StackResourceDriftCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

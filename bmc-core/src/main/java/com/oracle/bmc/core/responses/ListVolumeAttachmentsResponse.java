@@ -33,9 +33,9 @@ public class ListVolumeAttachmentsResponse {
     private String opcRequestId;
 
     /**
-     * A list of VolumeAttachment instances.
+     * A list of com.oracle.bmc.core.model.VolumeAttachment instances.
      */
-    private java.util.List<VolumeAttachment> items;
+    private java.util.List<com.oracle.bmc.core.model.VolumeAttachment> items;
 
     public static class Builder {
         /**

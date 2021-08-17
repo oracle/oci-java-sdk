@@ -83,12 +83,16 @@ public class ListTransferDevicesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        MultipleTransferDevices>>
+                                                        com.oracle.bmc.dts.model
+                                                                .MultipleTransferDevices>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        MultipleTransferDevices.class);
+                                                        com.oracle.bmc.dts.model
+                                                                        .MultipleTransferDevices
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<MultipleTransferDevices>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dts.model.MultipleTransferDevices>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

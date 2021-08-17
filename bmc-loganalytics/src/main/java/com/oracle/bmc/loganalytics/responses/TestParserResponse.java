@@ -26,7 +26,7 @@ public class TestParserResponse {
     /**
      * The returned ParserTestResult instance.
      */
-    private ParserTestResult parserTestResult;
+    private com.oracle.bmc.loganalytics.model.ParserTestResult parserTestResult;
 
     public static class Builder {
         /**

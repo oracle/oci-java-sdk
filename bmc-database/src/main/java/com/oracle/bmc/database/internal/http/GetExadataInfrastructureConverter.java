@@ -73,12 +73,16 @@ public class GetExadataInfrastructureConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ExadataInfrastructure>>
+                                                        com.oracle.bmc.database.model
+                                                                .ExadataInfrastructure>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ExadataInfrastructure.class);
+                                                        com.oracle.bmc.database.model
+                                                                        .ExadataInfrastructure
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ExadataInfrastructure>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.database.model.ExadataInfrastructure>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

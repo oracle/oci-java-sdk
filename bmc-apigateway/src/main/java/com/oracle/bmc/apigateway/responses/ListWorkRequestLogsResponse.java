@@ -46,7 +46,7 @@ public class ListWorkRequestLogsResponse {
     /**
      * The returned WorkRequestLogCollection instance.
      */
-    private WorkRequestLogCollection workRequestLogCollection;
+    private com.oracle.bmc.apigateway.model.WorkRequestLogCollection workRequestLogCollection;
 
     public static class Builder {
         /**

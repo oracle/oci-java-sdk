@@ -34,9 +34,9 @@ public class ListCostTrackingTagsResponse {
     private String opcNextPage;
 
     /**
-     * A list of Tag instances.
+     * A list of com.oracle.bmc.identity.model.Tag instances.
      */
-    private java.util.List<Tag> items;
+    private java.util.List<com.oracle.bmc.identity.model.Tag> items;
 
     public static class Builder {
         /**

@@ -123,12 +123,17 @@ public class ListOperatorActionsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        OperatorActionCollection>>
+                                                        com.oracle.bmc.operatoraccesscontrol.model
+                                                                .OperatorActionCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        OperatorActionCollection.class);
+                                                        com.oracle.bmc.operatoraccesscontrol.model
+                                                                        .OperatorActionCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<OperatorActionCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.operatoraccesscontrol.model
+                                                        .OperatorActionCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

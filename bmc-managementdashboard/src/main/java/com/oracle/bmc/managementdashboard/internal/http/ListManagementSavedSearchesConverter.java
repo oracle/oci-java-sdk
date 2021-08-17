@@ -118,13 +118,17 @@ public class ListManagementSavedSearchesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ManagementSavedSearchCollection>>
+                                                        com.oracle.bmc.managementdashboard.model
+                                                                .ManagementSavedSearchCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ManagementSavedSearchCollection.class);
+                                                        com.oracle.bmc.managementdashboard.model
+                                                                        .ManagementSavedSearchCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ManagementSavedSearchCollection>
+                                                com.oracle.bmc.managementdashboard.model
+                                                        .ManagementSavedSearchCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -45,7 +45,8 @@ public class ListSchedulesResponse {
     /**
      * The returned ScheduleSummaryCollection instance.
      */
-    private ScheduleSummaryCollection scheduleSummaryCollection;
+    private com.oracle.bmc.dataintegration.model.ScheduleSummaryCollection
+            scheduleSummaryCollection;
 
     public static class Builder {
         /**

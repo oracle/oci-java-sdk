@@ -33,9 +33,9 @@ public class ListSwiftPasswordsResponse {
     private String opcNextPage;
 
     /**
-     * A list of SwiftPassword instances.
+     * A list of com.oracle.bmc.identity.model.SwiftPassword instances.
      */
-    private java.util.List<SwiftPassword> items;
+    private java.util.List<com.oracle.bmc.identity.model.SwiftPassword> items;
 
     public static class Builder {
         /**

@@ -33,7 +33,7 @@ public class UpdateSenderResponse {
     /**
      * The returned Sender instance.
      */
-    private Sender sender;
+    private com.oracle.bmc.email.model.Sender sender;
 
     public static class Builder {
         /**

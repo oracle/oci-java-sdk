@@ -66,13 +66,16 @@ public class GetNetworkSourceConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        NetworkSources>>
+                                                        com.oracle.bmc.identity.model
+                                                                .NetworkSources>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        NetworkSources.class);
+                                                        com.oracle.bmc.identity.model.NetworkSources
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<NetworkSources> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.identity.model.NetworkSources>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

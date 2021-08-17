@@ -79,12 +79,16 @@ public class UpdateBackupDestinationConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        BackupDestination>>
+                                                        com.oracle.bmc.database.model
+                                                                .BackupDestination>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        BackupDestination.class);
+                                                        com.oracle.bmc.database.model
+                                                                        .BackupDestination
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<BackupDestination>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.database.model.BackupDestination>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

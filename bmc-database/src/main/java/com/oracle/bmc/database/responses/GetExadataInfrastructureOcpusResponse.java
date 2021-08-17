@@ -27,7 +27,7 @@ public class GetExadataInfrastructureOcpusResponse {
     /**
      * The returned OCPUs instance.
      */
-    private OCPUs oCPUs;
+    private com.oracle.bmc.database.model.OCPUs oCPUs;
 
     public static class Builder {
         /**

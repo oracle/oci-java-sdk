@@ -45,7 +45,8 @@ public class ListConnectionValidationsResponse {
     /**
      * The returned ConnectionValidationSummaryCollection instance.
      */
-    private ConnectionValidationSummaryCollection connectionValidationSummaryCollection;
+    private com.oracle.bmc.dataintegration.model.ConnectionValidationSummaryCollection
+            connectionValidationSummaryCollection;
 
     public static class Builder {
         /**

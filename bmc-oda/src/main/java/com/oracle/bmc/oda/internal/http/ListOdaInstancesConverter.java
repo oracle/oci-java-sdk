@@ -119,15 +119,20 @@ public class ListOdaInstancesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<OdaInstanceSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.oda.model
+                                                                        .OdaInstanceSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        OdaInstanceSummary>>() {});
+                                                                        com.oracle.bmc.oda.model
+                                                                                .OdaInstanceSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<OdaInstanceSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.oda.model
+                                                                .OdaInstanceSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

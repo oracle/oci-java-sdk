@@ -192,12 +192,17 @@ public class ListCustomPropertiesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        CustomPropertyCollection>>
+                                                        com.oracle.bmc.datacatalog.model
+                                                                .CustomPropertyCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        CustomPropertyCollection.class);
+                                                        com.oracle.bmc.datacatalog.model
+                                                                        .CustomPropertyCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<CustomPropertyCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model
+                                                        .CustomPropertyCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

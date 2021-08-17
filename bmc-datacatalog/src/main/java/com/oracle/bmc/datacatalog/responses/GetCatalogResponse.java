@@ -33,7 +33,7 @@ public class GetCatalogResponse {
     /**
      * The returned Catalog instance.
      */
-    private Catalog catalog;
+    private com.oracle.bmc.datacatalog.model.Catalog catalog;
 
     public static class Builder {
         /**

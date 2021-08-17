@@ -34,9 +34,9 @@ public class ListAvailableSoftwareSourcesForManagedInstanceResponse {
     private String opcNextPage;
 
     /**
-     * A list of AvailableSoftwareSourceSummary instances.
+     * A list of com.oracle.bmc.osmanagement.model.AvailableSoftwareSourceSummary instances.
      */
-    private java.util.List<AvailableSoftwareSourceSummary> items;
+    private java.util.List<com.oracle.bmc.osmanagement.model.AvailableSoftwareSourceSummary> items;
 
     public static class Builder {
         /**

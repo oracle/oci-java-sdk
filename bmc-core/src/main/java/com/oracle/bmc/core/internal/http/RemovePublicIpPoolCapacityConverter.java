@@ -80,13 +80,15 @@ public class RemovePublicIpPoolCapacityConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        PublicIpPool>>
+                                                        com.oracle.bmc.core.model.PublicIpPool>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        PublicIpPool.class);
+                                                        com.oracle.bmc.core.model.PublicIpPool
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<PublicIpPool> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.PublicIpPool>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

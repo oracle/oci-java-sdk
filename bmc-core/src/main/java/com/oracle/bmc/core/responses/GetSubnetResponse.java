@@ -33,7 +33,7 @@ public class GetSubnetResponse {
     /**
      * The returned Subnet instance.
      */
-    private Subnet subnet;
+    private com.oracle.bmc.core.model.Subnet subnet;
 
     public static class Builder {
         /**

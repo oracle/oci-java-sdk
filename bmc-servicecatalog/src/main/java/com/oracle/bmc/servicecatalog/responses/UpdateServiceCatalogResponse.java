@@ -33,7 +33,7 @@ public class UpdateServiceCatalogResponse {
     /**
      * The returned ServiceCatalog instance.
      */
-    private ServiceCatalog serviceCatalog;
+    private com.oracle.bmc.servicecatalog.model.ServiceCatalog serviceCatalog;
 
     public static class Builder {
         /**

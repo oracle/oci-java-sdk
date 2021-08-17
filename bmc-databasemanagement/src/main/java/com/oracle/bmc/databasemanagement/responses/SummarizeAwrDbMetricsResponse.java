@@ -35,7 +35,7 @@ public class SummarizeAwrDbMetricsResponse {
     /**
      * The returned AwrDbMetricCollection instance.
      */
-    private AwrDbMetricCollection awrDbMetricCollection;
+    private com.oracle.bmc.databasemanagement.model.AwrDbMetricCollection awrDbMetricCollection;
 
     public static class Builder {
         /**

@@ -60,4 +60,11 @@ public class JavaRuntimeUtilsTest {
         JreVersion version = JavaRuntimeUtils.parse();
         assertEquals(JreVersion.Java_9, version);
     }
+
+    @Test
+    public void version_java11() {
+        System.setProperty("java.version", "11.0.11");
+        JreVersion version = JavaRuntimeUtils.parse();
+        assertEquals(JreVersion.Java_11, version);
+    }
 }

@@ -77,13 +77,15 @@ public class UpdateDeployPipelineConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DeployPipeline>>
+                                                        com.oracle.bmc.devops.model.DeployPipeline>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DeployPipeline.class);
+                                                        com.oracle.bmc.devops.model.DeployPipeline
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DeployPipeline> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.devops.model.DeployPipeline>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -73,6 +73,28 @@ public class SynchronousExportDataAssetRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<com.oracle.bmc.datacatalog.model.DataAssetImportExportTypeFilter>
+                exportType = null;
+
+        /**
+         * Type of export.
+         * @return this builder instance
+         */
+        public Builder exportType(
+                java.util.List<com.oracle.bmc.datacatalog.model.DataAssetImportExportTypeFilter>
+                        exportType) {
+            this.exportType = exportType;
+            return this;
+        }
+
+        /**
+         * Singular setter. Type of export.
+         * @return this builder instance
+         */
+        public Builder exportType(DataAssetImportExportTypeFilter singularValue) {
+            return this.exportType(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

@@ -33,7 +33,7 @@ public class GetBootVolumeAttachmentResponse {
     /**
      * The returned BootVolumeAttachment instance.
      */
-    private BootVolumeAttachment bootVolumeAttachment;
+    private com.oracle.bmc.core.model.BootVolumeAttachment bootVolumeAttachment;
 
     public static class Builder {
         /**

@@ -25,9 +25,9 @@ public class ListVersionsResponse {
     private String opcRequestId;
 
     /**
-     * A list of VersionSummary instances.
+     * A list of com.oracle.bmc.mysql.model.VersionSummary instances.
      */
-    private java.util.List<VersionSummary> items;
+    private java.util.List<com.oracle.bmc.mysql.model.VersionSummary> items;
 
     public static class Builder {
         /**

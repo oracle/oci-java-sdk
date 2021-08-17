@@ -27,7 +27,7 @@ public class GetWindowsUpdateResponse {
     /**
      * The returned WindowsUpdate instance.
      */
-    private WindowsUpdate windowsUpdate;
+    private com.oracle.bmc.osmanagement.model.WindowsUpdate windowsUpdate;
 
     public static class Builder {
         /**

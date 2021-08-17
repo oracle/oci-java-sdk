@@ -175,15 +175,20 @@ public class ListSteeringPoliciesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<SteeringPolicySummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.dns.model
+                                                                        .SteeringPolicySummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        SteeringPolicySummary>>() {});
+                                                                        com.oracle.bmc.dns.model
+                                                                                .SteeringPolicySummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<SteeringPolicySummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.dns.model
+                                                                .SteeringPolicySummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

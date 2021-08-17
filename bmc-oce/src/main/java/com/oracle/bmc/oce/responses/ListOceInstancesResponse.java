@@ -34,9 +34,9 @@ public class ListOceInstancesResponse {
     private String opcNextPage;
 
     /**
-     * A list of OceInstanceSummary instances.
+     * A list of com.oracle.bmc.oce.model.OceInstanceSummary instances.
      */
-    private java.util.List<OceInstanceSummary> items;
+    private java.util.List<com.oracle.bmc.oce.model.OceInstanceSummary> items;
 
     public static class Builder {
         /**

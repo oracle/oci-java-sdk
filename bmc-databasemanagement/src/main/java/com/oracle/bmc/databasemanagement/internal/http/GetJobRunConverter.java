@@ -69,12 +69,18 @@ public class GetJobRunConverter {
                                         "Transform function invoked for com.oracle.bmc.databasemanagement.responses.GetJobRunResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<JobRun>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                .JobRun>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(JobRun.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                        .JobRun
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<JobRun> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.databasemanagement.model.JobRun>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

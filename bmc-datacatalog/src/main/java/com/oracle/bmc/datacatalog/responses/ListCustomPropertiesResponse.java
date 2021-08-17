@@ -33,7 +33,7 @@ public class ListCustomPropertiesResponse {
     /**
      * The returned CustomPropertyCollection instance.
      */
-    private CustomPropertyCollection customPropertyCollection;
+    private com.oracle.bmc.datacatalog.model.CustomPropertyCollection customPropertyCollection;
 
     public static class Builder {
         /**

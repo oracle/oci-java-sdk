@@ -33,9 +33,9 @@ public class ListAvailabilityHistoriesResponse {
     private String opcNextPage;
 
     /**
-     * A list of AvailabilityHistorySummary instances.
+     * A list of com.oracle.bmc.managementagent.model.AvailabilityHistorySummary instances.
      */
-    private java.util.List<AvailabilityHistorySummary> items;
+    private java.util.List<com.oracle.bmc.managementagent.model.AvailabilityHistorySummary> items;
 
     public static class Builder {
         /**

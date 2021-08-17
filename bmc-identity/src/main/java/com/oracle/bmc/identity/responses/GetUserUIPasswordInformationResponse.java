@@ -32,7 +32,7 @@ public class GetUserUIPasswordInformationResponse {
     /**
      * The returned UIPasswordInformation instance.
      */
-    private UIPasswordInformation uIPasswordInformation;
+    private com.oracle.bmc.identity.model.UIPasswordInformation uIPasswordInformation;
 
     public static class Builder {
         /**

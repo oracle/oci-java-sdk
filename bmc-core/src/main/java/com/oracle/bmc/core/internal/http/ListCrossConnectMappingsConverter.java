@@ -71,13 +71,17 @@ public class ListCrossConnectMappingsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        CrossConnectMappingDetailsCollection>>
+                                                        com.oracle.bmc.core.model
+                                                                .CrossConnectMappingDetailsCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        CrossConnectMappingDetailsCollection.class);
+                                                        com.oracle.bmc.core.model
+                                                                        .CrossConnectMappingDetailsCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                CrossConnectMappingDetailsCollection>
+                                                com.oracle.bmc.core.model
+                                                        .CrossConnectMappingDetailsCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

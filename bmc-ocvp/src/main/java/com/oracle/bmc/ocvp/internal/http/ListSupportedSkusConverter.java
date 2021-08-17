@@ -87,13 +87,17 @@ public class ListSupportedSkusConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SupportedSkuSummaryCollection>>
+                                                        com.oracle.bmc.ocvp.model
+                                                                .SupportedSkuSummaryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SupportedSkuSummaryCollection.class);
+                                                        com.oracle.bmc.ocvp.model
+                                                                        .SupportedSkuSummaryCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                SupportedSkuSummaryCollection>
+                                                com.oracle.bmc.ocvp.model
+                                                        .SupportedSkuSummaryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

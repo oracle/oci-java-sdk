@@ -33,9 +33,9 @@ public class ListRouteTablesResponse {
     private String opcRequestId;
 
     /**
-     * A list of RouteTable instances.
+     * A list of com.oracle.bmc.core.model.RouteTable instances.
      */
-    private java.util.List<RouteTable> items;
+    private java.util.List<com.oracle.bmc.core.model.RouteTable> items;
 
     public static class Builder {
         /**

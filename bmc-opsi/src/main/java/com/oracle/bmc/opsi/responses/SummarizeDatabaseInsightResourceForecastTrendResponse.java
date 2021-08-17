@@ -35,7 +35,7 @@ public class SummarizeDatabaseInsightResourceForecastTrendResponse {
     /**
      * The returned SummarizeDatabaseInsightResourceForecastTrendAggregation instance.
      */
-    private SummarizeDatabaseInsightResourceForecastTrendAggregation
+    private com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation
             summarizeDatabaseInsightResourceForecastTrendAggregation;
 
     public static class Builder {

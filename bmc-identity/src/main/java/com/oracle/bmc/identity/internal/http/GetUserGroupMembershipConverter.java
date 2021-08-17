@@ -68,12 +68,16 @@ public class GetUserGroupMembershipConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        UserGroupMembership>>
+                                                        com.oracle.bmc.identity.model
+                                                                .UserGroupMembership>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        UserGroupMembership.class);
+                                                        com.oracle.bmc.identity.model
+                                                                        .UserGroupMembership
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<UserGroupMembership>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.identity.model.UserGroupMembership>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

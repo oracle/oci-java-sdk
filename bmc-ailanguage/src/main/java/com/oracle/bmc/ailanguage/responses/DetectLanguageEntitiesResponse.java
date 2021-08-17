@@ -27,7 +27,8 @@ public class DetectLanguageEntitiesResponse {
     /**
      * The returned DetectLanguageEntitiesResult instance.
      */
-    private DetectLanguageEntitiesResult detectLanguageEntitiesResult;
+    private com.oracle.bmc.ailanguage.model.DetectLanguageEntitiesResult
+            detectLanguageEntitiesResult;
 
     public static class Builder {
         /**

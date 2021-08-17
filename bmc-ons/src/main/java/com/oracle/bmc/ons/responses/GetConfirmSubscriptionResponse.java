@@ -33,7 +33,7 @@ public class GetConfirmSubscriptionResponse {
     /**
      * The returned ConfirmationResult instance.
      */
-    private ConfirmationResult confirmationResult;
+    private com.oracle.bmc.ons.model.ConfirmationResult confirmationResult;
 
     public static class Builder {
         /**

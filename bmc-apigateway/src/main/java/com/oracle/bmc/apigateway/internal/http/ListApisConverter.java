@@ -118,13 +118,17 @@ public class ListApisConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ApiCollection>>
+                                                        com.oracle.bmc.apigateway.model
+                                                                .ApiCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ApiCollection.class);
+                                                        com.oracle.bmc.apigateway.model
+                                                                        .ApiCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ApiCollection> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.apigateway.model.ApiCollection>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -68,15 +68,21 @@ public class ListRegionSubscriptionsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<RegionSubscription>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.identity.model
+                                                                        .RegionSubscription>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        RegionSubscription>>() {});
+                                                                        com.oracle.bmc.identity
+                                                                                .model
+                                                                                .RegionSubscription>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<RegionSubscription>>
+                                                java.util.List<
+                                                        com.oracle.bmc.identity.model
+                                                                .RegionSubscription>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

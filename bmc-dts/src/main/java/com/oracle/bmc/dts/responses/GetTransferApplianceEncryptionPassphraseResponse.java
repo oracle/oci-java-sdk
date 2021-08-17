@@ -30,7 +30,8 @@ public class GetTransferApplianceEncryptionPassphraseResponse {
     /**
      * The returned TransferApplianceEncryptionPassphrase instance.
      */
-    private TransferApplianceEncryptionPassphrase transferApplianceEncryptionPassphrase;
+    private com.oracle.bmc.dts.model.TransferApplianceEncryptionPassphrase
+            transferApplianceEncryptionPassphrase;
 
     public static class Builder {
         /**

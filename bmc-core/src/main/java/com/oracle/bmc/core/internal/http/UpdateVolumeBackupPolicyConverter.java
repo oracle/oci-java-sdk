@@ -81,12 +81,15 @@ public class UpdateVolumeBackupPolicyConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        VolumeBackupPolicy>>
+                                                        com.oracle.bmc.core.model
+                                                                .VolumeBackupPolicy>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        VolumeBackupPolicy.class);
+                                                        com.oracle.bmc.core.model.VolumeBackupPolicy
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<VolumeBackupPolicy>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.VolumeBackupPolicy>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

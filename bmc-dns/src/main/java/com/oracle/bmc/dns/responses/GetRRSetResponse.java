@@ -48,7 +48,7 @@ public class GetRRSetResponse {
     /**
      * The returned RRSet instance.
      */
-    private RRSet rRSet;
+    private com.oracle.bmc.dns.model.RRSet rRSet;
 
     public static class Builder {
         /**

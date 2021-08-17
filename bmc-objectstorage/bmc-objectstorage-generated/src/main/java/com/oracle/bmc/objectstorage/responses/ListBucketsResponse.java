@@ -43,9 +43,9 @@ public class ListBucketsResponse {
     private String opcNextPage;
 
     /**
-     * A list of BucketSummary instances.
+     * A list of com.oracle.bmc.objectstorage.model.BucketSummary instances.
      */
-    private java.util.List<BucketSummary> items;
+    private java.util.List<com.oracle.bmc.objectstorage.model.BucketSummary> items;
 
     public static class Builder {
         /**

@@ -33,7 +33,7 @@ public class GetBlockchainPlatformResponse {
     /**
      * The returned BlockchainPlatform instance.
      */
-    private BlockchainPlatform blockchainPlatform;
+    private com.oracle.bmc.blockchain.model.BlockchainPlatform blockchainPlatform;
 
     public static class Builder {
         /**

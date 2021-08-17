@@ -32,7 +32,7 @@ public class GetReplicationPolicyResponse {
     /**
      * The returned ReplicationPolicy instance.
      */
-    private ReplicationPolicy replicationPolicy;
+    private com.oracle.bmc.objectstorage.model.ReplicationPolicy replicationPolicy;
 
     public static class Builder {
         /**

@@ -111,12 +111,17 @@ public class ListProblemHistoriesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ProblemHistoryCollection>>
+                                                        com.oracle.bmc.cloudguard.model
+                                                                .ProblemHistoryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ProblemHistoryCollection.class);
+                                                        com.oracle.bmc.cloudguard.model
+                                                                        .ProblemHistoryCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ProblemHistoryCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.cloudguard.model
+                                                        .ProblemHistoryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -33,9 +33,9 @@ public class ListTransferJobsResponse {
     private String opcRequestId;
 
     /**
-     * A list of TransferJobSummary instances.
+     * A list of com.oracle.bmc.dts.model.TransferJobSummary instances.
      */
-    private java.util.List<TransferJobSummary> items;
+    private java.util.List<com.oracle.bmc.dts.model.TransferJobSummary> items;
 
     public static class Builder {
         /**

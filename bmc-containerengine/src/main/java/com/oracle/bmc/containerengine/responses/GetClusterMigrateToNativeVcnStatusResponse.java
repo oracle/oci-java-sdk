@@ -32,7 +32,8 @@ public class GetClusterMigrateToNativeVcnStatusResponse {
     /**
      * The returned ClusterMigrateToNativeVcnStatus instance.
      */
-    private ClusterMigrateToNativeVcnStatus clusterMigrateToNativeVcnStatus;
+    private com.oracle.bmc.containerengine.model.ClusterMigrateToNativeVcnStatus
+            clusterMigrateToNativeVcnStatus;
 
     public static class Builder {
         /**

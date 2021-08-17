@@ -35,7 +35,7 @@ public class ListAwrDbsResponse {
     /**
      * The returned AwrDbCollection instance.
      */
-    private AwrDbCollection awrDbCollection;
+    private com.oracle.bmc.databasemanagement.model.AwrDbCollection awrDbCollection;
 
     public static class Builder {
         /**

@@ -26,7 +26,7 @@ public class ListNamespacesResponse {
     /**
      * The returned NamespaceCollection instance.
      */
-    private NamespaceCollection namespaceCollection;
+    private com.oracle.bmc.loganalytics.model.NamespaceCollection namespaceCollection;
 
     public static class Builder {
         /**

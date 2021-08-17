@@ -80,12 +80,16 @@ public class UpdateAnalyticsInstanceConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AnalyticsInstance>>
+                                                        com.oracle.bmc.analytics.model
+                                                                .AnalyticsInstance>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AnalyticsInstance.class);
+                                                        com.oracle.bmc.analytics.model
+                                                                        .AnalyticsInstance
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AnalyticsInstance>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.analytics.model.AnalyticsInstance>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

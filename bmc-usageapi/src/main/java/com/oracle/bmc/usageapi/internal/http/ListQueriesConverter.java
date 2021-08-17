@@ -103,13 +103,17 @@ public class ListQueriesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        QueryCollection>>
+                                                        com.oracle.bmc.usageapi.model
+                                                                .QueryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        QueryCollection.class);
+                                                        com.oracle.bmc.usageapi.model
+                                                                        .QueryCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<QueryCollection> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.usageapi.model.QueryCollection>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

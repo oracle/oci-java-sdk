@@ -45,7 +45,8 @@ public class ListApplicationsResponse {
     /**
      * The returned ApplicationSummaryCollection instance.
      */
-    private ApplicationSummaryCollection applicationSummaryCollection;
+    private com.oracle.bmc.dataintegration.model.ApplicationSummaryCollection
+            applicationSummaryCollection;
 
     public static class Builder {
         /**

@@ -147,15 +147,19 @@ public class ListCustomProtectionRulesConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                CustomProtectionRuleSummary>>>
+                                                                com.oracle.bmc.waas.model
+                                                                        .CustomProtectionRuleSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        CustomProtectionRuleSummary>>() {});
+                                                                        com.oracle.bmc.waas.model
+                                                                                .CustomProtectionRuleSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<CustomProtectionRuleSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.waas.model
+                                                                .CustomProtectionRuleSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

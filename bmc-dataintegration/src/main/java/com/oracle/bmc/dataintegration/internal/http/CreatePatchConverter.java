@@ -80,12 +80,16 @@ public class CreatePatchConverter {
                                         "Transform function invoked for com.oracle.bmc.dataintegration.responses.CreatePatchResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Patch>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.dataintegration.model.Patch>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Patch.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.dataintegration.model.Patch
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Patch> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dataintegration.model.Patch>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

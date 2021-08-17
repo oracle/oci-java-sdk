@@ -27,7 +27,7 @@ public class GetRoutingPolicyResponse {
     /**
      * The returned RoutingPolicy instance.
      */
-    private RoutingPolicy routingPolicy;
+    private com.oracle.bmc.loadbalancer.model.RoutingPolicy routingPolicy;
 
     public static class Builder {
         /**

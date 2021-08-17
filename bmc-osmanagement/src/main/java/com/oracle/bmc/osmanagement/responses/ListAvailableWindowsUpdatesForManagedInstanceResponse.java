@@ -34,9 +34,9 @@ public class ListAvailableWindowsUpdatesForManagedInstanceResponse {
     private String opcNextPage;
 
     /**
-     * A list of AvailableWindowsUpdateSummary instances.
+     * A list of com.oracle.bmc.osmanagement.model.AvailableWindowsUpdateSummary instances.
      */
-    private java.util.List<AvailableWindowsUpdateSummary> items;
+    private java.util.List<com.oracle.bmc.osmanagement.model.AvailableWindowsUpdateSummary> items;
 
     public static class Builder {
         /**

@@ -87,15 +87,20 @@ public class ListDataGuardAssociationsConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                DataGuardAssociationSummary>>>
+                                                                com.oracle.bmc.database.model
+                                                                        .DataGuardAssociationSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        DataGuardAssociationSummary>>() {});
+                                                                        com.oracle.bmc.database
+                                                                                .model
+                                                                                .DataGuardAssociationSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<DataGuardAssociationSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.database.model
+                                                                .DataGuardAssociationSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

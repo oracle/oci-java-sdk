@@ -120,13 +120,17 @@ public class ListLogIncludedSearchesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogIncludedSearchSummaryCollection>>
+                                                        com.oracle.bmc.logging.model
+                                                                .LogIncludedSearchSummaryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogIncludedSearchSummaryCollection.class);
+                                                        com.oracle.bmc.logging.model
+                                                                        .LogIncludedSearchSummaryCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                LogIncludedSearchSummaryCollection>
+                                                com.oracle.bmc.logging.model
+                                                        .LogIncludedSearchSummaryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

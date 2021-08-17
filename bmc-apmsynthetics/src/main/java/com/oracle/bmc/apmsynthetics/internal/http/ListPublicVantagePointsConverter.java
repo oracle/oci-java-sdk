@@ -122,13 +122,17 @@ public class ListPublicVantagePointsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        PublicVantagePointCollection>>
+                                                        com.oracle.bmc.apmsynthetics.model
+                                                                .PublicVantagePointCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        PublicVantagePointCollection.class);
+                                                        com.oracle.bmc.apmsynthetics.model
+                                                                        .PublicVantagePointCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                PublicVantagePointCollection>
+                                                com.oracle.bmc.apmsynthetics.model
+                                                        .PublicVantagePointCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

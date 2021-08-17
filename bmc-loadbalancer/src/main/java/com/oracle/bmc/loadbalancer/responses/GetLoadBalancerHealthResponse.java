@@ -27,7 +27,7 @@ public class GetLoadBalancerHealthResponse {
     /**
      * The returned LoadBalancerHealth instance.
      */
-    private LoadBalancerHealth loadBalancerHealth;
+    private com.oracle.bmc.loadbalancer.model.LoadBalancerHealth loadBalancerHealth;
 
     public static class Builder {
         /**

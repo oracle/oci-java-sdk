@@ -70,12 +70,16 @@ public class GetStorageConverter {
                                         "Transform function invoked for com.oracle.bmc.loganalytics.responses.GetStorageResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Storage>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.loganalytics.model.Storage>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Storage.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.loganalytics.model.Storage
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Storage> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model.Storage>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

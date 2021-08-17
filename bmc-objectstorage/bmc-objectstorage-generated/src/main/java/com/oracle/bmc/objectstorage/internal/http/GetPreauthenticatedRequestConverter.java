@@ -84,13 +84,17 @@ public class GetPreauthenticatedRequestConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        PreauthenticatedRequestSummary>>
+                                                        com.oracle.bmc.objectstorage.model
+                                                                .PreauthenticatedRequestSummary>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        PreauthenticatedRequestSummary.class);
+                                                        com.oracle.bmc.objectstorage.model
+                                                                        .PreauthenticatedRequestSummary
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                PreauthenticatedRequestSummary>
+                                                com.oracle.bmc.objectstorage.model
+                                                        .PreauthenticatedRequestSummary>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

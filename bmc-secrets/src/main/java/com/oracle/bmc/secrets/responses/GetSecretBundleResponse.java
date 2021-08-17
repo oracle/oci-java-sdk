@@ -30,7 +30,7 @@ public class GetSecretBundleResponse {
     /**
      * The returned SecretBundle instance.
      */
-    private SecretBundle secretBundle;
+    private com.oracle.bmc.secrets.model.SecretBundle secretBundle;
 
     public static class Builder {
         /**

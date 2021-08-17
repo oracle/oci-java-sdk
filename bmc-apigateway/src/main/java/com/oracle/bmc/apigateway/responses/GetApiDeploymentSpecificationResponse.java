@@ -34,7 +34,7 @@ public class GetApiDeploymentSpecificationResponse {
     /**
      * The returned ApiSpecification instance.
      */
-    private ApiSpecification apiSpecification;
+    private com.oracle.bmc.apigateway.model.ApiSpecification apiSpecification;
 
     public static class Builder {
         /**

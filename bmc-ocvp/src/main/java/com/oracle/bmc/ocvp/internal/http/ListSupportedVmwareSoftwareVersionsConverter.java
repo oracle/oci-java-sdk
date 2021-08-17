@@ -91,14 +91,17 @@ public class ListSupportedVmwareSoftwareVersionsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SupportedVmwareSoftwareVersionCollection>>
+                                                        com.oracle.bmc.ocvp.model
+                                                                .SupportedVmwareSoftwareVersionCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SupportedVmwareSoftwareVersionCollection
+                                                        com.oracle.bmc.ocvp.model
+                                                                        .SupportedVmwareSoftwareVersionCollection
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                SupportedVmwareSoftwareVersionCollection>
+                                                com.oracle.bmc.ocvp.model
+                                                        .SupportedVmwareSoftwareVersionCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

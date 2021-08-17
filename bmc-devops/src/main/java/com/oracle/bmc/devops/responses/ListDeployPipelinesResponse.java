@@ -30,7 +30,7 @@ public class ListDeployPipelinesResponse {
     /**
      * The returned DeployPipelineCollection instance.
      */
-    private DeployPipelineCollection deployPipelineCollection;
+    private com.oracle.bmc.devops.model.DeployPipelineCollection deployPipelineCollection;
 
     public static class Builder {
         /**

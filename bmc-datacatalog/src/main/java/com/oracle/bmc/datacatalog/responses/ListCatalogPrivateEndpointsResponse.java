@@ -31,9 +31,9 @@ public class ListCatalogPrivateEndpointsResponse {
     private String opcNextPage;
 
     /**
-     * A list of CatalogPrivateEndpointSummary instances.
+     * A list of com.oracle.bmc.datacatalog.model.CatalogPrivateEndpointSummary instances.
      */
-    private java.util.List<CatalogPrivateEndpointSummary> items;
+    private java.util.List<com.oracle.bmc.datacatalog.model.CatalogPrivateEndpointSummary> items;
 
     public static class Builder {
         /**

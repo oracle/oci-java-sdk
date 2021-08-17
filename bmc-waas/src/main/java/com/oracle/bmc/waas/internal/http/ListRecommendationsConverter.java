@@ -96,15 +96,19 @@ public class ListRecommendationsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<Recommendation>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.waas.model
+                                                                        .Recommendation>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        Recommendation>>() {});
+                                                                        com.oracle.bmc.waas.model
+                                                                                .Recommendation>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<Recommendation>>
+                                                java.util.List<
+                                                        com.oracle.bmc.waas.model.Recommendation>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

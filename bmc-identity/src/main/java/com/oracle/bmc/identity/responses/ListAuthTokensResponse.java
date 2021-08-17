@@ -33,9 +33,9 @@ public class ListAuthTokensResponse {
     private String opcNextPage;
 
     /**
-     * A list of AuthToken instances.
+     * A list of com.oracle.bmc.identity.model.AuthToken instances.
      */
-    private java.util.List<AuthToken> items;
+    private java.util.List<com.oracle.bmc.identity.model.AuthToken> items;
 
     public static class Builder {
         /**

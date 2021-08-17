@@ -34,7 +34,7 @@ public class UpdateApplicationResponse {
     /**
      * The returned Application instance.
      */
-    private Application application;
+    private com.oracle.bmc.dataflow.model.Application application;
 
     public static class Builder {
         /**

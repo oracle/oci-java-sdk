@@ -33,7 +33,7 @@ public class GetBdsInstanceResponse {
     /**
      * The returned BdsInstance instance.
      */
-    private BdsInstance bdsInstance;
+    private com.oracle.bmc.bds.model.BdsInstance bdsInstance;
 
     public static class Builder {
         /**

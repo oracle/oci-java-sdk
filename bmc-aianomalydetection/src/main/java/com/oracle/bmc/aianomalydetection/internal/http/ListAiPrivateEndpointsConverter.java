@@ -131,13 +131,17 @@ public class ListAiPrivateEndpointsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AiPrivateEndpointCollection>>
+                                                        com.oracle.bmc.aianomalydetection.model
+                                                                .AiPrivateEndpointCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AiPrivateEndpointCollection.class);
+                                                        com.oracle.bmc.aianomalydetection.model
+                                                                        .AiPrivateEndpointCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                AiPrivateEndpointCollection>
+                                                com.oracle.bmc.aianomalydetection.model
+                                                        .AiPrivateEndpointCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

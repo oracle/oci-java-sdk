@@ -32,7 +32,7 @@ public class GetClusterResponse {
     /**
      * The returned Cluster instance.
      */
-    private Cluster cluster;
+    private com.oracle.bmc.containerengine.model.Cluster cluster;
 
     public static class Builder {
         /**

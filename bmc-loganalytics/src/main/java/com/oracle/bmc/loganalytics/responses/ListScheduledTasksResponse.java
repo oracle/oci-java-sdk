@@ -42,7 +42,7 @@ public class ListScheduledTasksResponse {
     /**
      * The returned ScheduledTaskCollection instance.
      */
-    private ScheduledTaskCollection scheduledTaskCollection;
+    private com.oracle.bmc.loganalytics.model.ScheduledTaskCollection scheduledTaskCollection;
 
     public static class Builder {
         /**

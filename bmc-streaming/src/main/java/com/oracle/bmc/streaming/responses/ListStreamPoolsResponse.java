@@ -35,9 +35,9 @@ public class ListStreamPoolsResponse {
     private String opcRequestId;
 
     /**
-     * A list of StreamPoolSummary instances.
+     * A list of com.oracle.bmc.streaming.model.StreamPoolSummary instances.
      */
-    private java.util.List<StreamPoolSummary> items;
+    private java.util.List<com.oracle.bmc.streaming.model.StreamPoolSummary> items;
 
     public static class Builder {
         /**

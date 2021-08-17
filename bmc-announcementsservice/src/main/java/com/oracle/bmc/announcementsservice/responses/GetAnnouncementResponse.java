@@ -25,7 +25,7 @@ public class GetAnnouncementResponse {
     /**
      * The returned Announcement instance.
      */
-    private Announcement announcement;
+    private com.oracle.bmc.announcementsservice.model.Announcement announcement;
 
     public static class Builder {
         /**

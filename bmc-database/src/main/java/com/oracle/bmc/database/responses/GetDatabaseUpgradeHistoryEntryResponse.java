@@ -27,7 +27,7 @@ public class GetDatabaseUpgradeHistoryEntryResponse {
     /**
      * The returned DatabaseUpgradeHistoryEntry instance.
      */
-    private DatabaseUpgradeHistoryEntry databaseUpgradeHistoryEntry;
+    private com.oracle.bmc.database.model.DatabaseUpgradeHistoryEntry databaseUpgradeHistoryEntry;
 
     public static class Builder {
         /**

@@ -33,9 +33,9 @@ public class ListCpeDeviceShapesResponse {
     private String opcRequestId;
 
     /**
-     * A list of CpeDeviceShapeSummary instances.
+     * A list of com.oracle.bmc.core.model.CpeDeviceShapeSummary instances.
      */
-    private java.util.List<CpeDeviceShapeSummary> items;
+    private java.util.List<com.oracle.bmc.core.model.CpeDeviceShapeSummary> items;
 
     public static class Builder {
         /**

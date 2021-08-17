@@ -80,12 +80,18 @@ public class GetListenerConverter {
                                         "Transform function invoked for com.oracle.bmc.networkloadbalancer.responses.GetListenerResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Listener>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.networkloadbalancer.model
+                                                                .Listener>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Listener.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.networkloadbalancer.model
+                                                                        .Listener
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Listener> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.networkloadbalancer.model.Listener>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

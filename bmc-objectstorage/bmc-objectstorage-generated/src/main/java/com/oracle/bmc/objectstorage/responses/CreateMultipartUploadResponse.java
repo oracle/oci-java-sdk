@@ -37,7 +37,7 @@ public class CreateMultipartUploadResponse {
     /**
      * The returned MultipartUpload instance.
      */
-    private MultipartUpload multipartUpload;
+    private com.oracle.bmc.objectstorage.model.MultipartUpload multipartUpload;
 
     public static class Builder {
         /**

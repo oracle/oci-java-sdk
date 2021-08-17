@@ -119,12 +119,16 @@ public class ListPublicIpPoolsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        PublicIpPoolCollection>>
+                                                        com.oracle.bmc.core.model
+                                                                .PublicIpPoolCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        PublicIpPoolCollection.class);
+                                                        com.oracle.bmc.core.model
+                                                                        .PublicIpPoolCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<PublicIpPoolCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.PublicIpPoolCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

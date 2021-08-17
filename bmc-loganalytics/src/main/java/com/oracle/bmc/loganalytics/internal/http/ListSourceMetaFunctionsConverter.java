@@ -106,13 +106,17 @@ public class ListSourceMetaFunctionsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogAnalyticsMetaFunctionCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogAnalyticsMetaFunctionCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogAnalyticsMetaFunctionCollection.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogAnalyticsMetaFunctionCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                LogAnalyticsMetaFunctionCollection>
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LogAnalyticsMetaFunctionCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

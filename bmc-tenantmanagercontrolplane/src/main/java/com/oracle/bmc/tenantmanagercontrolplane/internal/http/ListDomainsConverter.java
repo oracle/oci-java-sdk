@@ -138,12 +138,17 @@ public class ListDomainsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DomainCollection>>
+                                                        com.oracle.bmc.tenantmanagercontrolplane
+                                                                .model.DomainCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DomainCollection.class);
+                                                        com.oracle.bmc.tenantmanagercontrolplane
+                                                                        .model.DomainCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DomainCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.tenantmanagercontrolplane.model
+                                                        .DomainCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

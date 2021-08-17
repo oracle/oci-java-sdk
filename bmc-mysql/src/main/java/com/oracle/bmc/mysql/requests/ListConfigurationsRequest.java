@@ -198,6 +198,25 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<Type> type = null;
+
+        /**
+         * The requested Configuration types.
+         * @return this builder instance
+         */
+        public Builder type(java.util.List<Type> type) {
+            this.type = type;
+            return this;
+        }
+
+        /**
+         * Singular setter. The requested Configuration types.
+         * @return this builder instance
+         */
+        public Builder type(Type singularValue) {
+            return this.type(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

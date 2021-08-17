@@ -33,7 +33,7 @@ public class GetDrgAttachmentResponse {
     /**
      * The returned DrgAttachment instance.
      */
-    private DrgAttachment drgAttachment;
+    private com.oracle.bmc.core.model.DrgAttachment drgAttachment;
 
     public static class Builder {
         /**

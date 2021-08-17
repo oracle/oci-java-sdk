@@ -64,12 +64,15 @@ public class GetDbNodeConverter {
                                         "Transform function invoked for com.oracle.bmc.database.responses.GetDbNodeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<DbNode>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.database.model.DbNode>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(DbNode.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.database.model.DbNode.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DbNode> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.database.model.DbNode>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

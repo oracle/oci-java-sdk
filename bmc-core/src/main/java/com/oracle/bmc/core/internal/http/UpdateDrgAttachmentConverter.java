@@ -72,13 +72,15 @@ public class UpdateDrgAttachmentConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DrgAttachment>>
+                                                        com.oracle.bmc.core.model.DrgAttachment>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DrgAttachment.class);
+                                                        com.oracle.bmc.core.model.DrgAttachment
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DrgAttachment> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.DrgAttachment>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

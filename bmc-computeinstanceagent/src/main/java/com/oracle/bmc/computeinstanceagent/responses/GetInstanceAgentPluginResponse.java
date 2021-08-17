@@ -27,7 +27,7 @@ public class GetInstanceAgentPluginResponse {
     /**
      * The returned InstanceAgentPlugin instance.
      */
-    private InstanceAgentPlugin instanceAgentPlugin;
+    private com.oracle.bmc.computeinstanceagent.model.InstanceAgentPlugin instanceAgentPlugin;
 
     public static class Builder {
         /**

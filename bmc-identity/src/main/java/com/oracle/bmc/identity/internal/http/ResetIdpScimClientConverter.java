@@ -68,12 +68,16 @@ public class ResetIdpScimClientConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ScimClientCredentials>>
+                                                        com.oracle.bmc.identity.model
+                                                                .ScimClientCredentials>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ScimClientCredentials.class);
+                                                        com.oracle.bmc.identity.model
+                                                                        .ScimClientCredentials
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ScimClientCredentials>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.identity.model.ScimClientCredentials>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

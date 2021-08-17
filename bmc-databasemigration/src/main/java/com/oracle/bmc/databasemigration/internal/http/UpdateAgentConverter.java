@@ -78,12 +78,17 @@ public class UpdateAgentConverter {
                                         "Transform function invoked for com.oracle.bmc.databasemigration.responses.UpdateAgentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Agent>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.databasemigration.model
+                                                                .Agent>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Agent.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.databasemigration.model.Agent
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Agent> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.databasemigration.model.Agent>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

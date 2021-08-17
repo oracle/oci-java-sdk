@@ -33,7 +33,7 @@ public class GetFleetAgentConfigurationResponse {
     /**
      * The returned FleetAgentConfiguration instance.
      */
-    private FleetAgentConfiguration fleetAgentConfiguration;
+    private com.oracle.bmc.jms.model.FleetAgentConfiguration fleetAgentConfiguration;
 
     public static class Builder {
         /**

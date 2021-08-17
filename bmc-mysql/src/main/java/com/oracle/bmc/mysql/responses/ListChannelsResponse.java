@@ -33,9 +33,9 @@ public class ListChannelsResponse {
     private String opcNextPage;
 
     /**
-     * A list of ChannelSummary instances.
+     * A list of com.oracle.bmc.mysql.model.ChannelSummary instances.
      */
-    private java.util.List<ChannelSummary> items;
+    private java.util.List<com.oracle.bmc.mysql.model.ChannelSummary> items;
 
     public static class Builder {
         /**

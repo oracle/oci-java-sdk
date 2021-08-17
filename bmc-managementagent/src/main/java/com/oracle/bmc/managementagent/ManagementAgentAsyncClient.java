@@ -1112,6 +1112,98 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<SummarizeManagementAgentCountsResponse>
+            summarizeManagementAgentCounts(
+                    SummarizeManagementAgentCountsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeManagementAgentCountsRequest,
+                                    SummarizeManagementAgentCountsResponse>
+                            handler) {
+        LOG.trace("Called async summarizeManagementAgentCounts");
+        final SummarizeManagementAgentCountsRequest interceptedRequest =
+                SummarizeManagementAgentCountsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeManagementAgentCountsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, SummarizeManagementAgentCountsResponse>
+                transformer = SummarizeManagementAgentCountsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeManagementAgentCountsRequest,
+                        SummarizeManagementAgentCountsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeManagementAgentCountsRequest,
+                                SummarizeManagementAgentCountsResponse>,
+                        java.util.concurrent.Future<SummarizeManagementAgentCountsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeManagementAgentCountsRequest, SummarizeManagementAgentCountsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeManagementAgentPluginCountsResponse>
+            summarizeManagementAgentPluginCounts(
+                    SummarizeManagementAgentPluginCountsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeManagementAgentPluginCountsRequest,
+                                    SummarizeManagementAgentPluginCountsResponse>
+                            handler) {
+        LOG.trace("Called async summarizeManagementAgentPluginCounts");
+        final SummarizeManagementAgentPluginCountsRequest interceptedRequest =
+                SummarizeManagementAgentPluginCountsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeManagementAgentPluginCountsConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, SummarizeManagementAgentPluginCountsResponse>
+                transformer = SummarizeManagementAgentPluginCountsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeManagementAgentPluginCountsRequest,
+                        SummarizeManagementAgentPluginCountsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeManagementAgentPluginCountsRequest,
+                                SummarizeManagementAgentPluginCountsResponse>,
+                        java.util.concurrent.Future<SummarizeManagementAgentPluginCountsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeManagementAgentPluginCountsRequest,
+                    SummarizeManagementAgentPluginCountsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateManagementAgentResponse> updateManagementAgent(
             UpdateManagementAgentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

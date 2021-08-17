@@ -33,9 +33,9 @@ public class ListTaxesResponse {
     private String opcNextPage;
 
     /**
-     * A list of TaxSummary instances.
+     * A list of com.oracle.bmc.marketplace.model.TaxSummary instances.
      */
-    private java.util.List<TaxSummary> items;
+    private java.util.List<com.oracle.bmc.marketplace.model.TaxSummary> items;
 
     public static class Builder {
         /**

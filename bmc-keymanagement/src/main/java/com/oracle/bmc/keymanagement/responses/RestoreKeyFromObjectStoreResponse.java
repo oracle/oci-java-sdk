@@ -39,7 +39,7 @@ public class RestoreKeyFromObjectStoreResponse {
     /**
      * The returned Key instance.
      */
-    private Key key;
+    private com.oracle.bmc.keymanagement.model.Key key;
 
     public static class Builder {
         /**

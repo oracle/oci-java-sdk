@@ -86,13 +86,17 @@ public class GetTargetDetectorRecipeDetectorRuleConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        TargetDetectorRecipeDetectorRule>>
+                                                        com.oracle.bmc.cloudguard.model
+                                                                .TargetDetectorRecipeDetectorRule>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        TargetDetectorRecipeDetectorRule.class);
+                                                        com.oracle.bmc.cloudguard.model
+                                                                        .TargetDetectorRecipeDetectorRule
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                TargetDetectorRecipeDetectorRule>
+                                                com.oracle.bmc.cloudguard.model
+                                                        .TargetDetectorRecipeDetectorRule>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

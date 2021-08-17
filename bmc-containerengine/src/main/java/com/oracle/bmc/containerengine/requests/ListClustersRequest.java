@@ -110,6 +110,28 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<com.oracle.bmc.containerengine.model.ClusterLifecycleState>
+                lifecycleState = null;
+
+        /**
+         * A cluster lifecycle state to filter on. Can have multiple parameters of this name.
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                java.util.List<com.oracle.bmc.containerengine.model.ClusterLifecycleState>
+                        lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        /**
+         * Singular setter. A cluster lifecycle state to filter on. Can have multiple parameters of this name.
+         * @return this builder instance
+         */
+        public Builder lifecycleState(ClusterLifecycleState singularValue) {
+            return this.lifecycleState(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

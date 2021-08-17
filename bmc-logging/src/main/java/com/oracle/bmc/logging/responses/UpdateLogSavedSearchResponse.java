@@ -33,7 +33,7 @@ public class UpdateLogSavedSearchResponse {
     /**
      * The returned LogSavedSearch instance.
      */
-    private LogSavedSearch logSavedSearch;
+    private com.oracle.bmc.logging.model.LogSavedSearch logSavedSearch;
 
     public static class Builder {
         /**

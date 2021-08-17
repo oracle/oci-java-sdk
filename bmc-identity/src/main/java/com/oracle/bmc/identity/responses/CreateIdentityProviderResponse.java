@@ -32,7 +32,7 @@ public class CreateIdentityProviderResponse {
     /**
      * The returned IdentityProvider instance.
      */
-    private IdentityProvider identityProvider;
+    private com.oracle.bmc.identity.model.IdentityProvider identityProvider;
 
     public static class Builder {
         /**

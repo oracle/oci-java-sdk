@@ -69,12 +69,18 @@ public class GetTemplateConverter {
                                         "Transform function invoked for com.oracle.bmc.resourcemanager.responses.GetTemplateResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Template>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.resourcemanager.model
+                                                                .Template>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Template.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.resourcemanager.model
+                                                                        .Template
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Template> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.resourcemanager.model.Template>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

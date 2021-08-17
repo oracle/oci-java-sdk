@@ -70,13 +70,15 @@ public class CreateEmailDomainConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        EmailDomain>>
+                                                        com.oracle.bmc.email.model.EmailDomain>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        EmailDomain.class);
+                                                        com.oracle.bmc.email.model.EmailDomain
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<EmailDomain> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.email.model.EmailDomain>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

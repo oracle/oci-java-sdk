@@ -30,7 +30,7 @@ public class GetHttpRedirectResponse {
     /**
      * The returned HttpRedirect instance.
      */
-    private HttpRedirect httpRedirect;
+    private com.oracle.bmc.waas.model.HttpRedirect httpRedirect;
 
     public static class Builder {
         /**

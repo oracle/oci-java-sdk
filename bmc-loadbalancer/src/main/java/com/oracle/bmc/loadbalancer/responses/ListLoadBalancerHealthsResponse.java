@@ -32,9 +32,9 @@ public class ListLoadBalancerHealthsResponse {
     private String opcRequestId;
 
     /**
-     * A list of LoadBalancerHealthSummary instances.
+     * A list of com.oracle.bmc.loadbalancer.model.LoadBalancerHealthSummary instances.
      */
-    private java.util.List<LoadBalancerHealthSummary> items;
+    private java.util.List<com.oracle.bmc.loadbalancer.model.LoadBalancerHealthSummary> items;
 
     public static class Builder {
         /**

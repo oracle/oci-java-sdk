@@ -33,7 +33,7 @@ public class UpdatePublicIpResponse {
     /**
      * The returned PublicIp instance.
      */
-    private PublicIp publicIp;
+    private com.oracle.bmc.core.model.PublicIp publicIp;
 
     public static class Builder {
         /**

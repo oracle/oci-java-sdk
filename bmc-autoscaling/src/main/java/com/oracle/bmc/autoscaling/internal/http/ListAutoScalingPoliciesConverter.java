@@ -116,15 +116,21 @@ public class ListAutoScalingPoliciesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<AutoScalingPolicySummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.autoscaling.model
+                                                                        .AutoScalingPolicySummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        AutoScalingPolicySummary>>() {});
+                                                                        com.oracle.bmc.autoscaling
+                                                                                .model
+                                                                                .AutoScalingPolicySummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<AutoScalingPolicySummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.autoscaling.model
+                                                                .AutoScalingPolicySummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

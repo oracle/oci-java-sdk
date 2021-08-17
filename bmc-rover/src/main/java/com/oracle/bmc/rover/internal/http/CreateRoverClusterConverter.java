@@ -70,13 +70,15 @@ public class CreateRoverClusterConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        RoverCluster>>
+                                                        com.oracle.bmc.rover.model.RoverCluster>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        RoverCluster.class);
+                                                        com.oracle.bmc.rover.model.RoverCluster
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<RoverCluster> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.rover.model.RoverCluster>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

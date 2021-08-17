@@ -27,7 +27,8 @@ public class DetectLanguageKeyPhrasesResponse {
     /**
      * The returned DetectLanguageKeyPhrasesResult instance.
      */
-    private DetectLanguageKeyPhrasesResult detectLanguageKeyPhrasesResult;
+    private com.oracle.bmc.ailanguage.model.DetectLanguageKeyPhrasesResult
+            detectLanguageKeyPhrasesResult;
 
     public static class Builder {
         /**

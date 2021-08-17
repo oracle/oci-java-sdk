@@ -25,9 +25,9 @@ public class ListVirtualCircuitPublicPrefixesResponse {
     private String opcRequestId;
 
     /**
-     * A list of VirtualCircuitPublicPrefix instances.
+     * A list of com.oracle.bmc.core.model.VirtualCircuitPublicPrefix instances.
      */
-    private java.util.List<VirtualCircuitPublicPrefix> items;
+    private java.util.List<com.oracle.bmc.core.model.VirtualCircuitPublicPrefix> items;
 
     public static class Builder {
         /**

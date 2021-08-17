@@ -170,12 +170,17 @@ public class ListFolderTagsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        FolderTagCollection>>
+                                                        com.oracle.bmc.datacatalog.model
+                                                                .FolderTagCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        FolderTagCollection.class);
+                                                        com.oracle.bmc.datacatalog.model
+                                                                        .FolderTagCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<FolderTagCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model
+                                                        .FolderTagCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

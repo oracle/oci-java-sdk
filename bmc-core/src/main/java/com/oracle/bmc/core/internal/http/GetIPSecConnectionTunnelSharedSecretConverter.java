@@ -76,13 +76,17 @@ public class GetIPSecConnectionTunnelSharedSecretConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        IPSecConnectionTunnelSharedSecret>>
+                                                        com.oracle.bmc.core.model
+                                                                .IPSecConnectionTunnelSharedSecret>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        IPSecConnectionTunnelSharedSecret.class);
+                                                        com.oracle.bmc.core.model
+                                                                        .IPSecConnectionTunnelSharedSecret
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                IPSecConnectionTunnelSharedSecret>
+                                                com.oracle.bmc.core.model
+                                                        .IPSecConnectionTunnelSharedSecret>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

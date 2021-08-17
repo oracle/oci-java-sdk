@@ -26,7 +26,7 @@ public class GetLogAnalyticsLogGroupsSummaryResponse {
     /**
      * The returned LogGroupSummaryReport instance.
      */
-    private LogGroupSummaryReport logGroupSummaryReport;
+    private com.oracle.bmc.loganalytics.model.LogGroupSummaryReport logGroupSummaryReport;
 
     public static class Builder {
         /**

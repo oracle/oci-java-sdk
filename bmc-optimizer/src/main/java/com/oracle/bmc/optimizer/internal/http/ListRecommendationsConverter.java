@@ -141,12 +141,17 @@ public class ListRecommendationsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        RecommendationCollection>>
+                                                        com.oracle.bmc.optimizer.model
+                                                                .RecommendationCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        RecommendationCollection.class);
+                                                        com.oracle.bmc.optimizer.model
+                                                                        .RecommendationCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<RecommendationCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.optimizer.model
+                                                        .RecommendationCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

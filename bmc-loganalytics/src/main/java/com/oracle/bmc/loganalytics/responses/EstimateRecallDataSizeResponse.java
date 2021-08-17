@@ -26,7 +26,8 @@ public class EstimateRecallDataSizeResponse {
     /**
      * The returned EstimateRecallDataSizeResult instance.
      */
-    private EstimateRecallDataSizeResult estimateRecallDataSizeResult;
+    private com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult
+            estimateRecallDataSizeResult;
 
     public static class Builder {
         /**

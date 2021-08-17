@@ -35,7 +35,7 @@ public class ListAwrDbSnapshotsResponse {
     /**
      * The returned AwrDbSnapshotCollection instance.
      */
-    private AwrDbSnapshotCollection awrDbSnapshotCollection;
+    private com.oracle.bmc.databasemanagement.model.AwrDbSnapshotCollection awrDbSnapshotCollection;
 
     public static class Builder {
         /**

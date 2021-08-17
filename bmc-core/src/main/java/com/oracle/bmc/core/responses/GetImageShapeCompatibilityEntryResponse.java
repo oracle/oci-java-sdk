@@ -27,7 +27,7 @@ public class GetImageShapeCompatibilityEntryResponse {
     /**
      * The returned ImageShapeCompatibilityEntry instance.
      */
-    private ImageShapeCompatibilityEntry imageShapeCompatibilityEntry;
+    private com.oracle.bmc.core.model.ImageShapeCompatibilityEntry imageShapeCompatibilityEntry;
 
     public static class Builder {
         /**

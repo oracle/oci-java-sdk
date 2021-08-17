@@ -94,13 +94,17 @@ public class ListAccessRequestHistoriesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AccessRequestHistoryCollection>>
+                                                        com.oracle.bmc.operatoraccesscontrol.model
+                                                                .AccessRequestHistoryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AccessRequestHistoryCollection.class);
+                                                        com.oracle.bmc.operatoraccesscontrol.model
+                                                                        .AccessRequestHistoryCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                AccessRequestHistoryCollection>
+                                                com.oracle.bmc.operatoraccesscontrol.model
+                                                        .AccessRequestHistoryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

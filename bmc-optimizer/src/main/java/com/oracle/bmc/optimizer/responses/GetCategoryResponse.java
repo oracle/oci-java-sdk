@@ -27,7 +27,7 @@ public class GetCategoryResponse {
     /**
      * The returned Category instance.
      */
-    private Category category;
+    private com.oracle.bmc.optimizer.model.Category category;
 
     public static class Builder {
         /**

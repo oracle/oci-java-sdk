@@ -34,7 +34,7 @@ public class UpdateRowResponse {
     /**
      * The returned UpdateRowResult instance.
      */
-    private UpdateRowResult updateRowResult;
+    private com.oracle.bmc.nosql.model.UpdateRowResult updateRowResult;
 
     public static class Builder {
         /**

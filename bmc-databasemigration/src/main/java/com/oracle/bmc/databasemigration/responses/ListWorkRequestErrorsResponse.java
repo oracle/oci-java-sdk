@@ -35,7 +35,8 @@ public class ListWorkRequestErrorsResponse {
     /**
      * The returned WorkRequestErrorCollection instance.
      */
-    private WorkRequestErrorCollection workRequestErrorCollection;
+    private com.oracle.bmc.databasemigration.model.WorkRequestErrorCollection
+            workRequestErrorCollection;
 
     public static class Builder {
         /**

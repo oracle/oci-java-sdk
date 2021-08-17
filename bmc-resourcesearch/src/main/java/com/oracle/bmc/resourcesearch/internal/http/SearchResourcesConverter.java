@@ -89,12 +89,17 @@ public class SearchResourcesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ResourceSummaryCollection>>
+                                                        com.oracle.bmc.resourcesearch.model
+                                                                .ResourceSummaryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ResourceSummaryCollection.class);
+                                                        com.oracle.bmc.resourcesearch.model
+                                                                        .ResourceSummaryCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ResourceSummaryCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.resourcesearch.model
+                                                        .ResourceSummaryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

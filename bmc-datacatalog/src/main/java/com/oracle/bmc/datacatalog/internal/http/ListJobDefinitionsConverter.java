@@ -216,12 +216,17 @@ public class ListJobDefinitionsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        JobDefinitionCollection>>
+                                                        com.oracle.bmc.datacatalog.model
+                                                                .JobDefinitionCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        JobDefinitionCollection.class);
+                                                        com.oracle.bmc.datacatalog.model
+                                                                        .JobDefinitionCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<JobDefinitionCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model
+                                                        .JobDefinitionCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

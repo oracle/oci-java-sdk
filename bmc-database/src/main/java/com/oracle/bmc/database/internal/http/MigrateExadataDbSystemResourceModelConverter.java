@@ -85,12 +85,17 @@ public class MigrateExadataDbSystemResourceModelConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ExadataDbSystemMigration>>
+                                                        com.oracle.bmc.database.model
+                                                                .ExadataDbSystemMigration>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ExadataDbSystemMigration.class);
+                                                        com.oracle.bmc.database.model
+                                                                        .ExadataDbSystemMigration
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ExadataDbSystemMigration>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.database.model
+                                                        .ExadataDbSystemMigration>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

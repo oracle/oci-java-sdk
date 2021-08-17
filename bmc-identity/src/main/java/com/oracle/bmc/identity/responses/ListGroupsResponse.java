@@ -33,9 +33,9 @@ public class ListGroupsResponse {
     private String opcNextPage;
 
     /**
-     * A list of Group instances.
+     * A list of com.oracle.bmc.identity.model.Group instances.
      */
-    private java.util.List<Group> items;
+    private java.util.List<com.oracle.bmc.identity.model.Group> items;
 
     public static class Builder {
         /**

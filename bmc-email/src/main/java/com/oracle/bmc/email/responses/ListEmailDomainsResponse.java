@@ -34,7 +34,7 @@ public class ListEmailDomainsResponse {
     /**
      * The returned EmailDomainCollection instance.
      */
-    private EmailDomainCollection emailDomainCollection;
+    private com.oracle.bmc.email.model.EmailDomainCollection emailDomainCollection;
 
     public static class Builder {
         /**

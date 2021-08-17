@@ -36,7 +36,8 @@ public class ListConfigurationSourceProvidersResponse {
     /**
      * The returned ConfigurationSourceProviderCollection instance.
      */
-    private ConfigurationSourceProviderCollection configurationSourceProviderCollection;
+    private com.oracle.bmc.resourcemanager.model.ConfigurationSourceProviderCollection
+            configurationSourceProviderCollection;
 
     public static class Builder {
         /**

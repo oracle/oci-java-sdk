@@ -27,7 +27,8 @@ public class GetAnalyticsClusterMemoryEstimateResponse {
     /**
      * The returned AnalyticsClusterMemoryEstimate instance.
      */
-    private AnalyticsClusterMemoryEstimate analyticsClusterMemoryEstimate;
+    private com.oracle.bmc.mysql.model.AnalyticsClusterMemoryEstimate
+            analyticsClusterMemoryEstimate;
 
     public static class Builder {
         /**

@@ -25,9 +25,9 @@ public class UpdateDrgRouteDistributionStatementsResponse {
     private String opcRequestId;
 
     /**
-     * A list of DrgRouteDistributionStatement instances.
+     * A list of com.oracle.bmc.core.model.DrgRouteDistributionStatement instances.
      */
-    private java.util.List<DrgRouteDistributionStatement> items;
+    private java.util.List<com.oracle.bmc.core.model.DrgRouteDistributionStatement> items;
 
     public static class Builder {
         /**

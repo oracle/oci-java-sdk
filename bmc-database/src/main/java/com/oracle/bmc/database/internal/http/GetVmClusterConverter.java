@@ -69,12 +69,16 @@ public class GetVmClusterConverter {
                                         "Transform function invoked for com.oracle.bmc.database.responses.GetVmClusterResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<VmCluster>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.database.model.VmCluster>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(VmCluster.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.database.model.VmCluster
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<VmCluster> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.database.model.VmCluster>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

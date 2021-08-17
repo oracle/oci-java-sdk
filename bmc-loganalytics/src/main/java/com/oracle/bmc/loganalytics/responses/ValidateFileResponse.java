@@ -26,7 +26,7 @@ public class ValidateFileResponse {
     /**
      * The returned FileValidationResponse instance.
      */
-    private FileValidationResponse fileValidationResponse;
+    private com.oracle.bmc.loganalytics.model.FileValidationResponse fileValidationResponse;
 
     public static class Builder {
         /**

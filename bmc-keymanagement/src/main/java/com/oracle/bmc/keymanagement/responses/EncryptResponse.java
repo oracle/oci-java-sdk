@@ -27,7 +27,7 @@ public class EncryptResponse {
     /**
      * The returned EncryptedData instance.
      */
-    private EncryptedData encryptedData;
+    private com.oracle.bmc.keymanagement.model.EncryptedData encryptedData;
 
     public static class Builder {
         /**

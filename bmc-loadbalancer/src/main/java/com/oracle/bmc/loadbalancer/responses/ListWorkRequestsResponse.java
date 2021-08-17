@@ -32,9 +32,9 @@ public class ListWorkRequestsResponse {
     private String opcRequestId;
 
     /**
-     * A list of WorkRequest instances.
+     * A list of com.oracle.bmc.loadbalancer.model.WorkRequest instances.
      */
-    private java.util.List<WorkRequest> items;
+    private java.util.List<com.oracle.bmc.loadbalancer.model.WorkRequest> items;
 
     public static class Builder {
         /**

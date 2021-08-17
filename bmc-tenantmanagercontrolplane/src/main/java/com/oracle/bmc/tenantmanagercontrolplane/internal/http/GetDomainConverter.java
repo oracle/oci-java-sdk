@@ -72,12 +72,19 @@ public class GetDomainConverter {
                                         "Transform function invoked for com.oracle.bmc.tenantmanagercontrolplane.responses.GetDomainResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Domain>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.tenantmanagercontrolplane
+                                                                .model.Domain>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Domain.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.tenantmanagercontrolplane
+                                                                        .model.Domain
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Domain> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.tenantmanagercontrolplane.model
+                                                        .Domain>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

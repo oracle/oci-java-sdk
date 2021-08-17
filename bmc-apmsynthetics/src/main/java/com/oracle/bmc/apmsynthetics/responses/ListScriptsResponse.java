@@ -35,7 +35,7 @@ public class ListScriptsResponse {
     /**
      * The returned ScriptCollection instance.
      */
-    private ScriptCollection scriptCollection;
+    private com.oracle.bmc.apmsynthetics.model.ScriptCollection scriptCollection;
 
     public static class Builder {
         /**

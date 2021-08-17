@@ -38,7 +38,7 @@ public class UpdateAutonomousVmClusterResponse {
     /**
      * The returned AutonomousVmCluster instance.
      */
-    private AutonomousVmCluster autonomousVmCluster;
+    private com.oracle.bmc.database.model.AutonomousVmCluster autonomousVmCluster;
 
     public static class Builder {
         /**

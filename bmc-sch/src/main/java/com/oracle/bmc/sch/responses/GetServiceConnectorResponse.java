@@ -33,7 +33,7 @@ public class GetServiceConnectorResponse {
     /**
      * The returned ServiceConnector instance.
      */
-    private ServiceConnector serviceConnector;
+    private com.oracle.bmc.sch.model.ServiceConnector serviceConnector;
 
     public static class Builder {
         /**

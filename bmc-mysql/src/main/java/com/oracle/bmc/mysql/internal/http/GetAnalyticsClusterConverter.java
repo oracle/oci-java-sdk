@@ -75,12 +75,15 @@ public class GetAnalyticsClusterConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AnalyticsCluster>>
+                                                        com.oracle.bmc.mysql.model
+                                                                .AnalyticsCluster>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AnalyticsCluster.class);
+                                                        com.oracle.bmc.mysql.model.AnalyticsCluster
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AnalyticsCluster>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.mysql.model.AnalyticsCluster>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

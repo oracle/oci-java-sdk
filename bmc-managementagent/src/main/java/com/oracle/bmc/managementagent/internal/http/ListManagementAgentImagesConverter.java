@@ -128,15 +128,21 @@ public class ListManagementAgentImagesConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                ManagementAgentImageSummary>>>
+                                                                com.oracle.bmc.managementagent.model
+                                                                        .ManagementAgentImageSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        ManagementAgentImageSummary>>() {});
+                                                                        com.oracle.bmc
+                                                                                .managementagent
+                                                                                .model
+                                                                                .ManagementAgentImageSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<ManagementAgentImageSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.managementagent.model
+                                                                .ManagementAgentImageSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

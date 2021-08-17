@@ -33,9 +33,9 @@ public class ListAppCatalogListingResourceVersionsResponse {
     private String opcRequestId;
 
     /**
-     * A list of AppCatalogListingResourceVersionSummary instances.
+     * A list of com.oracle.bmc.core.model.AppCatalogListingResourceVersionSummary instances.
      */
-    private java.util.List<AppCatalogListingResourceVersionSummary> items;
+    private java.util.List<com.oracle.bmc.core.model.AppCatalogListingResourceVersionSummary> items;
 
     public static class Builder {
         /**

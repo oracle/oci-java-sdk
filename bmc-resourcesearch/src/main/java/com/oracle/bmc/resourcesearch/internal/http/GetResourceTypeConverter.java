@@ -70,13 +70,17 @@ public class GetResourceTypeConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ResourceType>>
+                                                        com.oracle.bmc.resourcesearch.model
+                                                                .ResourceType>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ResourceType.class);
+                                                        com.oracle.bmc.resourcesearch.model
+                                                                        .ResourceType
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ResourceType> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.resourcesearch.model.ResourceType>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

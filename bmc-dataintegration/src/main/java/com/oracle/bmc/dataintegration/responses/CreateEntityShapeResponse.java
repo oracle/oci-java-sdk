@@ -27,7 +27,7 @@ public class CreateEntityShapeResponse {
     /**
      * The returned EntityShape instance.
      */
-    private EntityShape entityShape;
+    private com.oracle.bmc.dataintegration.model.EntityShape entityShape;
 
     public static class Builder {
         /**

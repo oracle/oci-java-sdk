@@ -27,7 +27,7 @@ public class SummarizeHostInsightResourceUtilizationInsightResponse {
     /**
      * The returned SummarizeHostInsightResourceUtilizationInsightAggregation instance.
      */
-    private SummarizeHostInsightResourceUtilizationInsightAggregation
+    private com.oracle.bmc.opsi.model.SummarizeHostInsightResourceUtilizationInsightAggregation
             summarizeHostInsightResourceUtilizationInsightAggregation;
 
     public static class Builder {

@@ -156,13 +156,17 @@ public class ListDataEntitiesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DataEntitySummaryCollection>>
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .DataEntitySummaryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DataEntitySummaryCollection.class);
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .DataEntitySummaryCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                DataEntitySummaryCollection>
+                                                com.oracle.bmc.dataintegration.model
+                                                        .DataEntitySummaryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

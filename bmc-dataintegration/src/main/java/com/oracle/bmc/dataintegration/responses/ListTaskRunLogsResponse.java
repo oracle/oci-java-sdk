@@ -43,9 +43,9 @@ public class ListTaskRunLogsResponse {
     private Integer opcTotalItems;
 
     /**
-     * A list of TaskRunLogSummary instances.
+     * A list of com.oracle.bmc.dataintegration.model.TaskRunLogSummary instances.
      */
-    private java.util.List<TaskRunLogSummary> items;
+    private java.util.List<com.oracle.bmc.dataintegration.model.TaskRunLogSummary> items;
 
     public static class Builder {
         /**

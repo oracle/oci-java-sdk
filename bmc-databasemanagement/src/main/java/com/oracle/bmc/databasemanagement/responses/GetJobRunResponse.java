@@ -27,7 +27,7 @@ public class GetJobRunResponse {
     /**
      * The returned JobRun instance.
      */
-    private JobRun jobRun;
+    private com.oracle.bmc.databasemanagement.model.JobRun jobRun;
 
     public static class Builder {
         /**

@@ -28,9 +28,9 @@ public class ListWaasPoliciesResponse {
     private String opcRequestId;
 
     /**
-     * A list of WaasPolicySummary instances.
+     * A list of com.oracle.bmc.waas.model.WaasPolicySummary instances.
      */
-    private java.util.List<WaasPolicySummary> items;
+    private java.util.List<com.oracle.bmc.waas.model.WaasPolicySummary> items;
 
     public static class Builder {
         /**

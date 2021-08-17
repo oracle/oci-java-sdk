@@ -27,7 +27,7 @@ public class GetBackendSetResponse {
     /**
      * The returned BackendSet instance.
      */
-    private BackendSet backendSet;
+    private com.oracle.bmc.loadbalancer.model.BackendSet backendSet;
 
     public static class Builder {
         /**

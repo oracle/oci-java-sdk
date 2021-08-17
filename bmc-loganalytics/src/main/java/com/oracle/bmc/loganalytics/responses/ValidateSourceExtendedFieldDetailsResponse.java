@@ -26,7 +26,8 @@ public class ValidateSourceExtendedFieldDetailsResponse {
     /**
      * The returned ExtendedFieldsValidationResult instance.
      */
-    private ExtendedFieldsValidationResult extendedFieldsValidationResult;
+    private com.oracle.bmc.loganalytics.model.ExtendedFieldsValidationResult
+            extendedFieldsValidationResult;
 
     public static class Builder {
         /**

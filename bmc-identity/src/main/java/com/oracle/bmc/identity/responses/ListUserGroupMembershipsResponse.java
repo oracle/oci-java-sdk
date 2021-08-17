@@ -33,9 +33,9 @@ public class ListUserGroupMembershipsResponse {
     private String opcNextPage;
 
     /**
-     * A list of UserGroupMembership instances.
+     * A list of com.oracle.bmc.identity.model.UserGroupMembership instances.
      */
-    private java.util.List<UserGroupMembership> items;
+    private java.util.List<com.oracle.bmc.identity.model.UserGroupMembership> items;
 
     public static class Builder {
         /**

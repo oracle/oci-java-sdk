@@ -27,7 +27,8 @@ public class DetectLanguageSentimentsResponse {
     /**
      * The returned DetectLanguageSentimentsResult instance.
      */
-    private DetectLanguageSentimentsResult detectLanguageSentimentsResult;
+    private com.oracle.bmc.ailanguage.model.DetectLanguageSentimentsResult
+            detectLanguageSentimentsResult;
 
     public static class Builder {
         /**

@@ -33,9 +33,9 @@ public class ListNetworkSourcesResponse {
     private String opcNextPage;
 
     /**
-     * A list of NetworkSourcesSummary instances.
+     * A list of com.oracle.bmc.identity.model.NetworkSourcesSummary instances.
      */
-    private java.util.List<NetworkSourcesSummary> items;
+    private java.util.List<com.oracle.bmc.identity.model.NetworkSourcesSummary> items;
 
     public static class Builder {
         /**

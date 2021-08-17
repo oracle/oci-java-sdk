@@ -33,9 +33,10 @@ public class ListInstanceAgentCommandsResponse {
     private String opcRequestId;
 
     /**
-     * A list of InstanceAgentCommandSummary instances.
+     * A list of com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandSummary instances.
      */
-    private java.util.List<InstanceAgentCommandSummary> items;
+    private java.util.List<com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandSummary>
+            items;
 
     public static class Builder {
         /**

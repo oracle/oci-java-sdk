@@ -73,6 +73,29 @@ public class DeleteRowRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<String> key = null;
+
+        /**
+         * An array of strings, each of the format "column-name:value",
+         * representing the primary key of the row.
+         *
+         * @return this builder instance
+         */
+        public Builder key(java.util.List<String> key) {
+            this.key = key;
+            return this;
+        }
+
+        /**
+         * Singular setter. An array of strings, each of the format "column-name:value",
+         * representing the primary key of the row.
+         *
+         * @return this builder instance
+         */
+        public Builder key(String singularValue) {
+            return this.key(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

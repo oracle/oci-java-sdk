@@ -33,7 +33,7 @@ public class ListGlossariesResponse {
     /**
      * The returned GlossaryCollection instance.
      */
-    private GlossaryCollection glossaryCollection;
+    private com.oracle.bmc.datacatalog.model.GlossaryCollection glossaryCollection;
 
     public static class Builder {
         /**

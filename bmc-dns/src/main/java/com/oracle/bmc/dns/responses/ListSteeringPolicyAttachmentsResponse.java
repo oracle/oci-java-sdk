@@ -38,9 +38,9 @@ public class ListSteeringPolicyAttachmentsResponse {
     private String opcRequestId;
 
     /**
-     * A list of SteeringPolicyAttachmentSummary instances.
+     * A list of com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary instances.
      */
-    private java.util.List<SteeringPolicyAttachmentSummary> items;
+    private java.util.List<com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary> items;
 
     public static class Builder {
         /**

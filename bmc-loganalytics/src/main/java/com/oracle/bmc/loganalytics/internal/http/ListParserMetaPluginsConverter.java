@@ -106,14 +106,17 @@ public class ListParserMetaPluginsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogAnalyticsParserMetaPluginCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogAnalyticsParserMetaPluginCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogAnalyticsParserMetaPluginCollection
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogAnalyticsParserMetaPluginCollection
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                LogAnalyticsParserMetaPluginCollection>
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LogAnalyticsParserMetaPluginCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

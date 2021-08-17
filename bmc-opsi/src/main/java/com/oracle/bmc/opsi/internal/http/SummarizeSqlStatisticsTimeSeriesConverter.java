@@ -179,14 +179,17 @@ public class SummarizeSqlStatisticsTimeSeriesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SqlStatisticsTimeSeriesAggregationCollection>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .SqlStatisticsTimeSeriesAggregationCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SqlStatisticsTimeSeriesAggregationCollection
+                                                        com.oracle.bmc.opsi.model
+                                                                        .SqlStatisticsTimeSeriesAggregationCollection
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                SqlStatisticsTimeSeriesAggregationCollection>
+                                                com.oracle.bmc.opsi.model
+                                                        .SqlStatisticsTimeSeriesAggregationCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

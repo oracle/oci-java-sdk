@@ -32,7 +32,7 @@ public class GetCompartmentResponse {
     /**
      * The returned Compartment instance.
      */
-    private Compartment compartment;
+    private com.oracle.bmc.identity.model.Compartment compartment;
 
     public static class Builder {
         /**

@@ -33,7 +33,7 @@ public class GetBlockVolumeReplicaResponse {
     /**
      * The returned BlockVolumeReplica instance.
      */
-    private BlockVolumeReplica blockVolumeReplica;
+    private com.oracle.bmc.core.model.BlockVolumeReplica blockVolumeReplica;
 
     public static class Builder {
         /**

@@ -33,9 +33,9 @@ public class ListUsersResponse {
     private String opcNextPage;
 
     /**
-     * A list of User instances.
+     * A list of com.oracle.bmc.identity.model.User instances.
      */
-    private java.util.List<User> items;
+    private java.util.List<com.oracle.bmc.identity.model.User> items;
 
     public static class Builder {
         /**

@@ -75,13 +75,17 @@ public class GetAppCatalogListingResourceVersionConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AppCatalogListingResourceVersion>>
+                                                        com.oracle.bmc.core.model
+                                                                .AppCatalogListingResourceVersion>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AppCatalogListingResourceVersion.class);
+                                                        com.oracle.bmc.core.model
+                                                                        .AppCatalogListingResourceVersion
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                AppCatalogListingResourceVersion>
+                                                com.oracle.bmc.core.model
+                                                        .AppCatalogListingResourceVersion>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

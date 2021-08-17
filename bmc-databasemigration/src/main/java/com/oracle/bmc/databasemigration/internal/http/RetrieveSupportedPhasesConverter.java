@@ -76,12 +76,17 @@ public class RetrieveSupportedPhasesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        MigrationPhaseCollection>>
+                                                        com.oracle.bmc.databasemigration.model
+                                                                .MigrationPhaseCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        MigrationPhaseCollection.class);
+                                                        com.oracle.bmc.databasemigration.model
+                                                                        .MigrationPhaseCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<MigrationPhaseCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.databasemigration.model
+                                                        .MigrationPhaseCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -75,12 +75,15 @@ public class GetExadataInfrastructureOcpusConverter {
                                         "Transform function invoked for com.oracle.bmc.database.responses.GetExadataInfrastructureOcpusResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<OCPUs>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.database.model.OCPUs>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(OCPUs.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.database.model.OCPUs.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<OCPUs> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.database.model.OCPUs>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

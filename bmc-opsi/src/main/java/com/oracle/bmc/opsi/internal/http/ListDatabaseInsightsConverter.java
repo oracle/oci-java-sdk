@@ -166,12 +166,17 @@ public class ListDatabaseInsightsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DatabaseInsightsCollection>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .DatabaseInsightsCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DatabaseInsightsCollection.class);
+                                                        com.oracle.bmc.opsi.model
+                                                                        .DatabaseInsightsCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DatabaseInsightsCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.opsi.model
+                                                        .DatabaseInsightsCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

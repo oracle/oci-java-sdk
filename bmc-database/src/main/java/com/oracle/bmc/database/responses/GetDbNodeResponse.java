@@ -32,7 +32,7 @@ public class GetDbNodeResponse {
     /**
      * The returned DbNode instance.
      */
-    private DbNode dbNode;
+    private com.oracle.bmc.database.model.DbNode dbNode;
 
     public static class Builder {
         /**

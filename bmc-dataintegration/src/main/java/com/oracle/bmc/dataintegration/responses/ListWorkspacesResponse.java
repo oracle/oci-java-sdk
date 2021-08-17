@@ -31,9 +31,9 @@ public class ListWorkspacesResponse {
     private String opcNextPage;
 
     /**
-     * A list of WorkspaceSummary instances.
+     * A list of com.oracle.bmc.dataintegration.model.WorkspaceSummary instances.
      */
-    private java.util.List<WorkspaceSummary> items;
+    private java.util.List<com.oracle.bmc.dataintegration.model.WorkspaceSummary> items;
 
     public static class Builder {
         /**

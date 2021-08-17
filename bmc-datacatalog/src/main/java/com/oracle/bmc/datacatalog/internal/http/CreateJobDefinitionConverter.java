@@ -78,13 +78,17 @@ public class CreateJobDefinitionConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        JobDefinition>>
+                                                        com.oracle.bmc.datacatalog.model
+                                                                .JobDefinition>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        JobDefinition.class);
+                                                        com.oracle.bmc.datacatalog.model
+                                                                        .JobDefinition
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<JobDefinition> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model.JobDefinition>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

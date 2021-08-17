@@ -74,12 +74,16 @@ public class UpdateCatalogConverter {
                                         "Transform function invoked for com.oracle.bmc.datacatalog.responses.UpdateCatalogResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Catalog>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.datacatalog.model.Catalog>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Catalog.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.datacatalog.model.Catalog
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Catalog> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model.Catalog>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

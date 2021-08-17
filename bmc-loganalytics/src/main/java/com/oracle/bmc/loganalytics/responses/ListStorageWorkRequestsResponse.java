@@ -42,7 +42,8 @@ public class ListStorageWorkRequestsResponse {
     /**
      * The returned StorageWorkRequestCollection instance.
      */
-    private StorageWorkRequestCollection storageWorkRequestCollection;
+    private com.oracle.bmc.loganalytics.model.StorageWorkRequestCollection
+            storageWorkRequestCollection;
 
     public static class Builder {
         /**

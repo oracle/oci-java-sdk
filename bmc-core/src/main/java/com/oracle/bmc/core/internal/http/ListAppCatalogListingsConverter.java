@@ -108,15 +108,20 @@ public class ListAppCatalogListingsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<AppCatalogListingSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.core.model
+                                                                        .AppCatalogListingSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        AppCatalogListingSummary>>() {});
+                                                                        com.oracle.bmc.core.model
+                                                                                .AppCatalogListingSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<AppCatalogListingSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model
+                                                                .AppCatalogListingSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

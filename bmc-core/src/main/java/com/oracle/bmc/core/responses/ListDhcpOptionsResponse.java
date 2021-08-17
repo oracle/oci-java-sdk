@@ -33,9 +33,9 @@ public class ListDhcpOptionsResponse {
     private String opcRequestId;
 
     /**
-     * A list of DhcpOptions instances.
+     * A list of com.oracle.bmc.core.model.DhcpOptions instances.
      */
-    private java.util.List<DhcpOptions> items;
+    private java.util.List<com.oracle.bmc.core.model.DhcpOptions> items;
 
     public static class Builder {
         /**

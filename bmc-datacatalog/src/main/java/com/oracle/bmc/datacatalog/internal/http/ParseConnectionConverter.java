@@ -90,15 +90,21 @@ public class ParseConnectionConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<ConnectionAliasSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.datacatalog.model
+                                                                        .ConnectionAliasSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        ConnectionAliasSummary>>() {});
+                                                                        com.oracle.bmc.datacatalog
+                                                                                .model
+                                                                                .ConnectionAliasSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<ConnectionAliasSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.datacatalog.model
+                                                                .ConnectionAliasSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -35,7 +35,7 @@ public class SummarizeInstallationUsageResponse {
     /**
      * The returned InstallationUsageCollection instance.
      */
-    private InstallationUsageCollection installationUsageCollection;
+    private com.oracle.bmc.jms.model.InstallationUsageCollection installationUsageCollection;
 
     public static class Builder {
         /**

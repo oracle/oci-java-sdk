@@ -38,7 +38,7 @@ public class CreateDatabaseSoftwareImageResponse {
     /**
      * The returned DatabaseSoftwareImage instance.
      */
-    private DatabaseSoftwareImage databaseSoftwareImage;
+    private com.oracle.bmc.database.model.DatabaseSoftwareImage databaseSoftwareImage;
 
     public static class Builder {
         /**

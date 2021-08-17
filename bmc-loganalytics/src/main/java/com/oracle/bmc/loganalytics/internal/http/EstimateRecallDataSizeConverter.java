@@ -79,13 +79,17 @@ public class EstimateRecallDataSizeConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        EstimateRecallDataSizeResult>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .EstimateRecallDataSizeResult>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        EstimateRecallDataSizeResult.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .EstimateRecallDataSizeResult
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                EstimateRecallDataSizeResult>
+                                                com.oracle.bmc.loganalytics.model
+                                                        .EstimateRecallDataSizeResult>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

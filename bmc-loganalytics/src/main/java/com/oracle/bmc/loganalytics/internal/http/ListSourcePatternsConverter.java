@@ -117,13 +117,17 @@ public class ListSourcePatternsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogAnalyticsSourcePatternCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogAnalyticsSourcePatternCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogAnalyticsSourcePatternCollection.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogAnalyticsSourcePatternCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                LogAnalyticsSourcePatternCollection>
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LogAnalyticsSourcePatternCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

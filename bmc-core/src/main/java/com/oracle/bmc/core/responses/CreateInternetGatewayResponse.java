@@ -33,7 +33,7 @@ public class CreateInternetGatewayResponse {
     /**
      * The returned InternetGateway instance.
      */
-    private InternetGateway internetGateway;
+    private com.oracle.bmc.core.model.InternetGateway internetGateway;
 
     public static class Builder {
         /**

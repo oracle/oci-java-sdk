@@ -65,13 +65,17 @@ public class PostMetricDataConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        PostMetricDataResponseDetails>>
+                                                        com.oracle.bmc.monitoring.model
+                                                                .PostMetricDataResponseDetails>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        PostMetricDataResponseDetails.class);
+                                                        com.oracle.bmc.monitoring.model
+                                                                        .PostMetricDataResponseDetails
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                PostMetricDataResponseDetails>
+                                                com.oracle.bmc.monitoring.model
+                                                        .PostMetricDataResponseDetails>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

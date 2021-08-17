@@ -33,9 +33,9 @@ public class SearchListingsResponse {
     private String opcNextPage;
 
     /**
-     * A list of ListingSummary instances.
+     * A list of com.oracle.bmc.marketplace.model.ListingSummary instances.
      */
-    private java.util.List<ListingSummary> items;
+    private java.util.List<com.oracle.bmc.marketplace.model.ListingSummary> items;
 
     public static class Builder {
         /**

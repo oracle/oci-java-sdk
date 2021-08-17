@@ -27,7 +27,8 @@ public class GetDatabaseFleetHealthMetricsResponse {
     /**
      * The returned DatabaseFleetHealthMetrics instance.
      */
-    private DatabaseFleetHealthMetrics databaseFleetHealthMetrics;
+    private com.oracle.bmc.databasemanagement.model.DatabaseFleetHealthMetrics
+            databaseFleetHealthMetrics;
 
     public static class Builder {
         /**

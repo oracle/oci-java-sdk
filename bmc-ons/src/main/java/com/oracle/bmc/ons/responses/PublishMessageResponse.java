@@ -27,7 +27,7 @@ public class PublishMessageResponse {
     /**
      * The returned PublishResult instance.
      */
-    private PublishResult publishResult;
+    private com.oracle.bmc.ons.model.PublishResult publishResult;
 
     public static class Builder {
         /**

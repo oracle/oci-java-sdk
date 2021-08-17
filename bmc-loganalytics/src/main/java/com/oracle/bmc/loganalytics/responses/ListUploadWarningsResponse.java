@@ -34,7 +34,7 @@ public class ListUploadWarningsResponse {
     /**
      * The returned UploadWarningCollection instance.
      */
-    private UploadWarningCollection uploadWarningCollection;
+    private com.oracle.bmc.loganalytics.model.UploadWarningCollection uploadWarningCollection;
 
     public static class Builder {
         /**

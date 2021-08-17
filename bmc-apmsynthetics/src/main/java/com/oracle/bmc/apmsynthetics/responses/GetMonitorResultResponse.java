@@ -27,7 +27,7 @@ public class GetMonitorResultResponse {
     /**
      * The returned MonitorResult instance.
      */
-    private MonitorResult monitorResult;
+    private com.oracle.bmc.apmsynthetics.model.MonitorResult monitorResult;
 
     public static class Builder {
         /**

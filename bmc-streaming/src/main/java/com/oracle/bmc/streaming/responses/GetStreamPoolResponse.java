@@ -32,7 +32,7 @@ public class GetStreamPoolResponse {
     /**
      * The returned StreamPool instance.
      */
-    private StreamPool streamPool;
+    private com.oracle.bmc.streaming.model.StreamPool streamPool;
 
     public static class Builder {
         /**

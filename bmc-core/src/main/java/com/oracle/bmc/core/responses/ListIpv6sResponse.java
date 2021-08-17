@@ -33,9 +33,9 @@ public class ListIpv6sResponse {
     private String opcRequestId;
 
     /**
-     * A list of Ipv6 instances.
+     * A list of com.oracle.bmc.core.model.Ipv6 instances.
      */
-    private java.util.List<Ipv6> items;
+    private java.util.List<com.oracle.bmc.core.model.Ipv6> items;
 
     public static class Builder {
         /**

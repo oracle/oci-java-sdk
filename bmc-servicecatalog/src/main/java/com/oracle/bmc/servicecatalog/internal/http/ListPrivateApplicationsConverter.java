@@ -122,13 +122,17 @@ public class ListPrivateApplicationsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        PrivateApplicationCollection>>
+                                                        com.oracle.bmc.servicecatalog.model
+                                                                .PrivateApplicationCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        PrivateApplicationCollection.class);
+                                                        com.oracle.bmc.servicecatalog.model
+                                                                        .PrivateApplicationCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                PrivateApplicationCollection>
+                                                com.oracle.bmc.servicecatalog.model
+                                                        .PrivateApplicationCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -32,7 +32,7 @@ public class GetLogAnalyticsLogGroupResponse {
     /**
      * The returned LogAnalyticsLogGroup instance.
      */
-    private LogAnalyticsLogGroup logAnalyticsLogGroup;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsLogGroup logAnalyticsLogGroup;
 
     public static class Builder {
         /**

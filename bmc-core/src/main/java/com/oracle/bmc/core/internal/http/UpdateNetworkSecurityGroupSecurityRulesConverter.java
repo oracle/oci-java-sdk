@@ -77,14 +77,17 @@ public class UpdateNetworkSecurityGroupSecurityRulesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        UpdatedNetworkSecurityGroupSecurityRules>>
+                                                        com.oracle.bmc.core.model
+                                                                .UpdatedNetworkSecurityGroupSecurityRules>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        UpdatedNetworkSecurityGroupSecurityRules
+                                                        com.oracle.bmc.core.model
+                                                                        .UpdatedNetworkSecurityGroupSecurityRules
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                UpdatedNetworkSecurityGroupSecurityRules>
+                                                com.oracle.bmc.core.model
+                                                        .UpdatedNetworkSecurityGroupSecurityRules>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

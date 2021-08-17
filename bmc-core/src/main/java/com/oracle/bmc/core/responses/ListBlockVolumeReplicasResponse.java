@@ -33,9 +33,9 @@ public class ListBlockVolumeReplicasResponse {
     private String opcRequestId;
 
     /**
-     * A list of BlockVolumeReplica instances.
+     * A list of com.oracle.bmc.core.model.BlockVolumeReplica instances.
      */
-    private java.util.List<BlockVolumeReplica> items;
+    private java.util.List<com.oracle.bmc.core.model.BlockVolumeReplica> items;
 
     public static class Builder {
         /**

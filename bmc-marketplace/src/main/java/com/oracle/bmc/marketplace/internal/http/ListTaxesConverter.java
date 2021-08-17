@@ -79,13 +79,21 @@ public class ListTaxesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<TaxSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.marketplace.model
+                                                                        .TaxSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<TaxSummary>>() {});
+                                                                java.util.List<
+                                                                        com.oracle.bmc.marketplace
+                                                                                .model
+                                                                                .TaxSummary>>() {});
 
-                                com.oracle.bmc.http.internal.WithHeaders<java.util.List<TaxSummary>>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                java.util.List<
+                                                        com.oracle.bmc.marketplace.model
+                                                                .TaxSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

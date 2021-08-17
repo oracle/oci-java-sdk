@@ -178,13 +178,17 @@ public class ListContainerImageSignaturesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ContainerImageSignatureCollection>>
+                                                        com.oracle.bmc.artifacts.model
+                                                                .ContainerImageSignatureCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ContainerImageSignatureCollection.class);
+                                                        com.oracle.bmc.artifacts.model
+                                                                        .ContainerImageSignatureCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ContainerImageSignatureCollection>
+                                                com.oracle.bmc.artifacts.model
+                                                        .ContainerImageSignatureCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

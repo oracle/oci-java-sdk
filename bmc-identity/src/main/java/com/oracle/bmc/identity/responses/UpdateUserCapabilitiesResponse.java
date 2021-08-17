@@ -32,7 +32,7 @@ public class UpdateUserCapabilitiesResponse {
     /**
      * The returned User instance.
      */
-    private User user;
+    private com.oracle.bmc.identity.model.User user;
 
     public static class Builder {
         /**

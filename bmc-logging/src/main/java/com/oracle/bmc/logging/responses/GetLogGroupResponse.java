@@ -33,7 +33,7 @@ public class GetLogGroupResponse {
     /**
      * The returned LogGroup instance.
      */
-    private LogGroup logGroup;
+    private com.oracle.bmc.logging.model.LogGroup logGroup;
 
     public static class Builder {
         /**

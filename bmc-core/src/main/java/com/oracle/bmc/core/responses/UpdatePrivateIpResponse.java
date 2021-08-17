@@ -33,7 +33,7 @@ public class UpdatePrivateIpResponse {
     /**
      * The returned PrivateIp instance.
      */
-    private PrivateIp privateIp;
+    private com.oracle.bmc.core.model.PrivateIp privateIp;
 
     public static class Builder {
         /**

@@ -42,7 +42,7 @@ public class ListProfilesResponse {
     /**
      * The returned ProfileCollection instance.
      */
-    private ProfileCollection profileCollection;
+    private com.oracle.bmc.optimizer.model.ProfileCollection profileCollection;
 
     public static class Builder {
         /**

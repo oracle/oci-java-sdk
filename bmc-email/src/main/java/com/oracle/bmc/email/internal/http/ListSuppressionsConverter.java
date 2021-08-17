@@ -127,15 +127,20 @@ public class ListSuppressionsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<SuppressionSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.email.model
+                                                                        .SuppressionSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        SuppressionSummary>>() {});
+                                                                        com.oracle.bmc.email.model
+                                                                                .SuppressionSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<SuppressionSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.email.model
+                                                                .SuppressionSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

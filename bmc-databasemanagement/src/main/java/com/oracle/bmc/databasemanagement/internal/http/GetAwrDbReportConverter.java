@@ -147,13 +147,17 @@ public class GetAwrDbReportConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AwrDbReport>>
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                .AwrDbReport>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AwrDbReport.class);
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                        .AwrDbReport
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AwrDbReport> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.databasemanagement.model.AwrDbReport>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

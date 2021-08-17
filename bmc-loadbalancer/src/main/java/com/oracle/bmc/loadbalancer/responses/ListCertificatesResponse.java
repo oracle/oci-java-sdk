@@ -25,9 +25,9 @@ public class ListCertificatesResponse {
     private String opcRequestId;
 
     /**
-     * A list of Certificate instances.
+     * A list of com.oracle.bmc.loadbalancer.model.Certificate instances.
      */
-    private java.util.List<Certificate> items;
+    private java.util.List<com.oracle.bmc.loadbalancer.model.Certificate> items;
 
     public static class Builder {
         /**

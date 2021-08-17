@@ -33,7 +33,8 @@ public class ExportDashboardResponse {
     /**
      * The returned ManagementDashboardExportDetails instance.
      */
-    private ManagementDashboardExportDetails managementDashboardExportDetails;
+    private com.oracle.bmc.managementdashboard.model.ManagementDashboardExportDetails
+            managementDashboardExportDetails;
 
     public static class Builder {
         /**

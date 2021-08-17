@@ -69,12 +69,18 @@ public class GetApmDomainConverter {
                                         "Transform function invoked for com.oracle.bmc.apmcontrolplane.responses.GetApmDomainResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<ApmDomain>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.apmcontrolplane.model
+                                                                .ApmDomain>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(ApmDomain.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.apmcontrolplane.model
+                                                                        .ApmDomain
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ApmDomain> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.apmcontrolplane.model.ApmDomain>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -32,7 +32,7 @@ public class UploadApiKeyResponse {
     /**
      * The returned ApiKey instance.
      */
-    private ApiKey apiKey;
+    private com.oracle.bmc.identity.model.ApiKey apiKey;
 
     public static class Builder {
         /**

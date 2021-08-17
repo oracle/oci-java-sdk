@@ -28,9 +28,9 @@ public class ListCustomProtectionRulesResponse {
     private String opcRequestId;
 
     /**
-     * A list of CustomProtectionRuleSummary instances.
+     * A list of com.oracle.bmc.waas.model.CustomProtectionRuleSummary instances.
      */
-    private java.util.List<CustomProtectionRuleSummary> items;
+    private java.util.List<com.oracle.bmc.waas.model.CustomProtectionRuleSummary> items;
 
     public static class Builder {
         /**

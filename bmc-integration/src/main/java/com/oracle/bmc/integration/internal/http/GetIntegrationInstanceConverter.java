@@ -74,12 +74,17 @@ public class GetIntegrationInstanceConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        IntegrationInstance>>
+                                                        com.oracle.bmc.integration.model
+                                                                .IntegrationInstance>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        IntegrationInstance.class);
+                                                        com.oracle.bmc.integration.model
+                                                                        .IntegrationInstance
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<IntegrationInstance>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.integration.model
+                                                        .IntegrationInstance>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

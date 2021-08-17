@@ -42,7 +42,8 @@ public class ListMetaSourceTypesResponse {
     /**
      * The returned LogAnalyticsMetaSourceTypeCollection instance.
      */
-    private LogAnalyticsMetaSourceTypeCollection logAnalyticsMetaSourceTypeCollection;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsMetaSourceTypeCollection
+            logAnalyticsMetaSourceTypeCollection;
 
     public static class Builder {
         /**

@@ -120,7 +120,7 @@ public class CircuitBreakerExample {
 
         // Create Clients using above ClientConfiguration
         IdentityClient identityClient = new IdentityClient(provider, clientConfiguration);
-        ObjectStorage client = new ObjectStorageClient(provider);
+        ObjectStorage client = new ObjectStorageClient(provider, clientConfiguration);
         identityClient.setRegion(Region.US_PHOENIX_1);
         client.setRegion(Region.US_PHOENIX_1);
 

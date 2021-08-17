@@ -77,13 +77,17 @@ public class GetInstancePoolLoadBalancerAttachmentConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        InstancePoolLoadBalancerAttachment>>
+                                                        com.oracle.bmc.core.model
+                                                                .InstancePoolLoadBalancerAttachment>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        InstancePoolLoadBalancerAttachment.class);
+                                                        com.oracle.bmc.core.model
+                                                                        .InstancePoolLoadBalancerAttachment
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                InstancePoolLoadBalancerAttachment>
+                                                com.oracle.bmc.core.model
+                                                        .InstancePoolLoadBalancerAttachment>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

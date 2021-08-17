@@ -132,12 +132,15 @@ public class GetRRSetConverter {
                                         "Transform function invoked for com.oracle.bmc.dns.responses.GetRRSetResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<RRSet>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.dns.model.RRSet>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(RRSet.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.dns.model.RRSet.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<RRSet> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dns.model.RRSet>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

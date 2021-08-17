@@ -42,7 +42,7 @@ public class ListHistoriesResponse {
     /**
      * The returned HistoryCollection instance.
      */
-    private HistoryCollection historyCollection;
+    private com.oracle.bmc.optimizer.model.HistoryCollection historyCollection;
 
     public static class Builder {
         /**

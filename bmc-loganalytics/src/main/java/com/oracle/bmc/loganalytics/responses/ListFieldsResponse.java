@@ -42,7 +42,8 @@ public class ListFieldsResponse {
     /**
      * The returned LogAnalyticsFieldCollection instance.
      */
-    private LogAnalyticsFieldCollection logAnalyticsFieldCollection;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsFieldCollection
+            logAnalyticsFieldCollection;
 
     public static class Builder {
         /**

@@ -78,13 +78,17 @@ public class GetThirdPartyPaidListingEligibilityConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ThirdPartyPaidListingEligibility>>
+                                                        com.oracle.bmc.marketplace.model
+                                                                .ThirdPartyPaidListingEligibility>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ThirdPartyPaidListingEligibility.class);
+                                                        com.oracle.bmc.marketplace.model
+                                                                        .ThirdPartyPaidListingEligibility
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ThirdPartyPaidListingEligibility>
+                                                com.oracle.bmc.marketplace.model
+                                                        .ThirdPartyPaidListingEligibility>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

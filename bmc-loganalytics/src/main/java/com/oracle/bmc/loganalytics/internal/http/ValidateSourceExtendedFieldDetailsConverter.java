@@ -85,13 +85,17 @@ public class ValidateSourceExtendedFieldDetailsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ExtendedFieldsValidationResult>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .ExtendedFieldsValidationResult>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ExtendedFieldsValidationResult.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .ExtendedFieldsValidationResult
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ExtendedFieldsValidationResult>
+                                                com.oracle.bmc.loganalytics.model
+                                                        .ExtendedFieldsValidationResult>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

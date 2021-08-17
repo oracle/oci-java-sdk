@@ -26,7 +26,7 @@ public class ParseQueryResponse {
     /**
      * The returned ParseQueryOutput instance.
      */
-    private ParseQueryOutput parseQueryOutput;
+    private com.oracle.bmc.loganalytics.model.ParseQueryOutput parseQueryOutput;
 
     public static class Builder {
         /**

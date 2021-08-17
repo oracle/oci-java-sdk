@@ -82,13 +82,17 @@ public class GetBackendSetConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        BackendSet>>
+                                                        com.oracle.bmc.networkloadbalancer.model
+                                                                .BackendSet>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        BackendSet.class);
+                                                        com.oracle.bmc.networkloadbalancer.model
+                                                                        .BackendSet
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<BackendSet> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.networkloadbalancer.model.BackendSet>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

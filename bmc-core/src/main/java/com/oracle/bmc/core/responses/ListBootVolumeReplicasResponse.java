@@ -33,9 +33,9 @@ public class ListBootVolumeReplicasResponse {
     private String opcRequestId;
 
     /**
-     * A list of BootVolumeReplica instances.
+     * A list of com.oracle.bmc.core.model.BootVolumeReplica instances.
      */
-    private java.util.List<BootVolumeReplica> items;
+    private java.util.List<com.oracle.bmc.core.model.BootVolumeReplica> items;
 
     public static class Builder {
         /**

@@ -42,7 +42,7 @@ public class ListPrivateEndpointsResponse {
     /**
      * The returned PrivateEndpointCollection instance.
      */
-    private PrivateEndpointCollection privateEndpointCollection;
+    private com.oracle.bmc.dataflow.model.PrivateEndpointCollection privateEndpointCollection;
 
     public static class Builder {
         /**

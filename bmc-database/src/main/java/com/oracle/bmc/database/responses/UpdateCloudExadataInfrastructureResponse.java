@@ -38,7 +38,7 @@ public class UpdateCloudExadataInfrastructureResponse {
     /**
      * The returned CloudExadataInfrastructure instance.
      */
-    private CloudExadataInfrastructure cloudExadataInfrastructure;
+    private com.oracle.bmc.database.model.CloudExadataInfrastructure cloudExadataInfrastructure;
 
     public static class Builder {
         /**

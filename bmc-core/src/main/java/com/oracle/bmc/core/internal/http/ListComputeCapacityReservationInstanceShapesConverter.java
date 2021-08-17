@@ -129,16 +129,19 @@ public class ListComputeCapacityReservationInstanceShapesConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                ComputeCapacityReservationInstanceShapeSummary>>>
+                                                                com.oracle.bmc.core.model
+                                                                        .ComputeCapacityReservationInstanceShapeSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        ComputeCapacityReservationInstanceShapeSummary>>() {});
+                                                                        com.oracle.bmc.core.model
+                                                                                .ComputeCapacityReservationInstanceShapeSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 java.util.List<
-                                                        ComputeCapacityReservationInstanceShapeSummary>>
+                                                        com.oracle.bmc.core.model
+                                                                .ComputeCapacityReservationInstanceShapeSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

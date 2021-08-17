@@ -33,9 +33,9 @@ public class ListInstanceagentAvailablePluginsResponse {
     private String opcNextPage;
 
     /**
-     * A list of AvailablePluginSummary instances.
+     * A list of com.oracle.bmc.computeinstanceagent.model.AvailablePluginSummary instances.
      */
-    private java.util.List<AvailablePluginSummary> items;
+    private java.util.List<com.oracle.bmc.computeinstanceagent.model.AvailablePluginSummary> items;
 
     public static class Builder {
         /**

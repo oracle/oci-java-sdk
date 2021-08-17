@@ -75,13 +75,15 @@ public class PublishMessageConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        PublishResult>>
+                                                        com.oracle.bmc.ons.model.PublishResult>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        PublishResult.class);
+                                                        com.oracle.bmc.ons.model.PublishResult
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<PublishResult> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.ons.model.PublishResult>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

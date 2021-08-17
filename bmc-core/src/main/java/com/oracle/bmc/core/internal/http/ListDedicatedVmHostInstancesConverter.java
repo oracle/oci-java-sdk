@@ -121,15 +121,19 @@ public class ListDedicatedVmHostInstancesConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                DedicatedVmHostInstanceSummary>>>
+                                                                com.oracle.bmc.core.model
+                                                                        .DedicatedVmHostInstanceSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        DedicatedVmHostInstanceSummary>>() {});
+                                                                        com.oracle.bmc.core.model
+                                                                                .DedicatedVmHostInstanceSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<DedicatedVmHostInstanceSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model
+                                                                .DedicatedVmHostInstanceSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

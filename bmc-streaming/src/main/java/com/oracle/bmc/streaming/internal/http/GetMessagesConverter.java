@@ -86,13 +86,20 @@ public class GetMessagesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<Message>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.streaming.model
+                                                                        .Message>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<Message>>() {});
+                                                                java.util.List<
+                                                                        com.oracle.bmc.streaming
+                                                                                .model
+                                                                                .Message>>() {});
 
-                                com.oracle.bmc.http.internal.WithHeaders<java.util.List<Message>>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                java.util.List<
+                                                        com.oracle.bmc.streaming.model.Message>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

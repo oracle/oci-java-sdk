@@ -27,7 +27,8 @@ public class GetInstancePoolLoadBalancerAttachmentResponse {
     /**
      * The returned InstancePoolLoadBalancerAttachment instance.
      */
-    private InstancePoolLoadBalancerAttachment instancePoolLoadBalancerAttachment;
+    private com.oracle.bmc.core.model.InstancePoolLoadBalancerAttachment
+            instancePoolLoadBalancerAttachment;
 
     public static class Builder {
         /**

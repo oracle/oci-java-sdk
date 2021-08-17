@@ -75,12 +75,16 @@ public class GetDbHomePatchHistoryEntryConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        PatchHistoryEntry>>
+                                                        com.oracle.bmc.database.model
+                                                                .PatchHistoryEntry>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        PatchHistoryEntry.class);
+                                                        com.oracle.bmc.database.model
+                                                                        .PatchHistoryEntry
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<PatchHistoryEntry>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.database.model.PatchHistoryEntry>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

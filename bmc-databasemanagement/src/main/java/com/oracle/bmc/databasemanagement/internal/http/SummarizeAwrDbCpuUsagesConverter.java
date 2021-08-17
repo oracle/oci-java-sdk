@@ -172,12 +172,17 @@ public class SummarizeAwrDbCpuUsagesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AwrDbCpuUsageCollection>>
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                .AwrDbCpuUsageCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AwrDbCpuUsageCollection.class);
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                        .AwrDbCpuUsageCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AwrDbCpuUsageCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.databasemanagement.model
+                                                        .AwrDbCpuUsageCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

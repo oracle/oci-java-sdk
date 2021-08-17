@@ -88,13 +88,17 @@ public class DetectLanguageEntitiesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DetectLanguageEntitiesResult>>
+                                                        com.oracle.bmc.ailanguage.model
+                                                                .DetectLanguageEntitiesResult>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DetectLanguageEntitiesResult.class);
+                                                        com.oracle.bmc.ailanguage.model
+                                                                        .DetectLanguageEntitiesResult
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                DetectLanguageEntitiesResult>
+                                                com.oracle.bmc.ailanguage.model
+                                                        .DetectLanguageEntitiesResult>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

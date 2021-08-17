@@ -67,12 +67,15 @@ public class CreateQuotaConverter {
                                         "Transform function invoked for com.oracle.bmc.limits.responses.CreateQuotaResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Quota>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.limits.model.Quota>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Quota.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.limits.model.Quota.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Quota> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.limits.model.Quota>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

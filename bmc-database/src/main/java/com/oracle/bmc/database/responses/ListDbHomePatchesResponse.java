@@ -34,9 +34,9 @@ public class ListDbHomePatchesResponse {
     private String opcNextPage;
 
     /**
-     * A list of PatchSummary instances.
+     * A list of com.oracle.bmc.database.model.PatchSummary instances.
      */
-    private java.util.List<PatchSummary> items;
+    private java.util.List<com.oracle.bmc.database.model.PatchSummary> items;
 
     public static class Builder {
         /**

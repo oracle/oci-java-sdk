@@ -38,7 +38,7 @@ public class UpdateAutonomousContainerDatabaseResponse {
     /**
      * The returned AutonomousContainerDatabase instance.
      */
-    private AutonomousContainerDatabase autonomousContainerDatabase;
+    private com.oracle.bmc.database.model.AutonomousContainerDatabase autonomousContainerDatabase;
 
     public static class Builder {
         /**

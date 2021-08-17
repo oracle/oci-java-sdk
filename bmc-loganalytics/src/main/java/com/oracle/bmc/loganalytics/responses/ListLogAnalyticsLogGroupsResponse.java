@@ -42,7 +42,8 @@ public class ListLogAnalyticsLogGroupsResponse {
     /**
      * The returned LogAnalyticsLogGroupSummaryCollection instance.
      */
-    private LogAnalyticsLogGroupSummaryCollection logAnalyticsLogGroupSummaryCollection;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsLogGroupSummaryCollection
+            logAnalyticsLogGroupSummaryCollection;
 
     public static class Builder {
         /**

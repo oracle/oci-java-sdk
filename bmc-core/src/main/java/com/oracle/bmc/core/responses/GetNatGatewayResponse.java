@@ -33,7 +33,7 @@ public class GetNatGatewayResponse {
     /**
      * The returned NatGateway instance.
      */
-    private NatGateway natGateway;
+    private com.oracle.bmc.core.model.NatGateway natGateway;
 
     public static class Builder {
         /**

@@ -95,15 +95,22 @@ public class ListAnnouncementsPreferencesConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                AnnouncementsPreferencesSummary>>>
+                                                                com.oracle.bmc.announcementsservice
+                                                                        .model
+                                                                        .AnnouncementsPreferencesSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        AnnouncementsPreferencesSummary>>() {});
+                                                                        com.oracle.bmc
+                                                                                .announcementsservice
+                                                                                .model
+                                                                                .AnnouncementsPreferencesSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<AnnouncementsPreferencesSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.announcementsservice.model
+                                                                .AnnouncementsPreferencesSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

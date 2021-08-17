@@ -33,7 +33,7 @@ public class UpdateBudgetResponse {
     /**
      * The returned Budget instance.
      */
-    private Budget budget;
+    private com.oracle.bmc.budget.model.Budget budget;
 
     public static class Builder {
         /**

@@ -94,14 +94,17 @@ public class ListImportableEnterpriseManagerEntitiesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ImportableEnterpriseManagerEntityCollection>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .ImportableEnterpriseManagerEntityCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ImportableEnterpriseManagerEntityCollection
+                                                        com.oracle.bmc.opsi.model
+                                                                        .ImportableEnterpriseManagerEntityCollection
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ImportableEnterpriseManagerEntityCollection>
+                                                com.oracle.bmc.opsi.model
+                                                        .ImportableEnterpriseManagerEntityCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

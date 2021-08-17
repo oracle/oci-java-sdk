@@ -71,13 +71,15 @@ public class GetPolicyConfigConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        PolicyConfig>>
+                                                        com.oracle.bmc.waas.model.PolicyConfig>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        PolicyConfig.class);
+                                                        com.oracle.bmc.waas.model.PolicyConfig
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<PolicyConfig> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.waas.model.PolicyConfig>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

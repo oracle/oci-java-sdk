@@ -33,7 +33,7 @@ public class CreateAppCatalogSubscriptionResponse {
     /**
      * The returned AppCatalogSubscription instance.
      */
-    private AppCatalogSubscription appCatalogSubscription;
+    private com.oracle.bmc.core.model.AppCatalogSubscription appCatalogSubscription;
 
     public static class Builder {
         /**

@@ -33,7 +33,8 @@ public class GetExternalPublicationValidationResponse {
     /**
      * The returned ExternalPublicationValidation instance.
      */
-    private ExternalPublicationValidation externalPublicationValidation;
+    private com.oracle.bmc.dataintegration.model.ExternalPublicationValidation
+            externalPublicationValidation;
 
     public static class Builder {
         /**

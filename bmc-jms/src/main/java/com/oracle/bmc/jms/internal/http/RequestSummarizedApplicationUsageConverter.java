@@ -94,12 +94,16 @@ public class RequestSummarizedApplicationUsageConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ApplicationUsageCollection>>
+                                                        com.oracle.bmc.jms.model
+                                                                .ApplicationUsageCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ApplicationUsageCollection.class);
+                                                        com.oracle.bmc.jms.model
+                                                                        .ApplicationUsageCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ApplicationUsageCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.jms.model.ApplicationUsageCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

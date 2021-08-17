@@ -158,12 +158,16 @@ public class ListHistoriesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        HistoryCollection>>
+                                                        com.oracle.bmc.optimizer.model
+                                                                .HistoryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        HistoryCollection.class);
+                                                        com.oracle.bmc.optimizer.model
+                                                                        .HistoryCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<HistoryCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.optimizer.model.HistoryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -126,12 +126,16 @@ public class ListCategoriesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        CategoryCollection>>
+                                                        com.oracle.bmc.optimizer.model
+                                                                .CategoryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        CategoryCollection.class);
+                                                        com.oracle.bmc.optimizer.model
+                                                                        .CategoryCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<CategoryCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.optimizer.model.CategoryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -56,6 +56,28 @@ public class RecommendationsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<com.oracle.bmc.datacatalog.model.RecommendationType>
+                recommendationType = null;
+
+        /**
+         * A filter used to return only recommendations of the specified type.
+         * @return this builder instance
+         */
+        public Builder recommendationType(
+                java.util.List<com.oracle.bmc.datacatalog.model.RecommendationType>
+                        recommendationType) {
+            this.recommendationType = recommendationType;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter used to return only recommendations of the specified type.
+         * @return this builder instance
+         */
+        public Builder recommendationType(RecommendationType singularValue) {
+            return this.recommendationType(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

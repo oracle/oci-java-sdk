@@ -39,9 +39,9 @@ public class ListQuickPicksResponse {
     private String opcNextPage;
 
     /**
-     * A list of QuickPickSummary instances.
+     * A list of com.oracle.bmc.apmtraces.model.QuickPickSummary instances.
      */
-    private java.util.List<QuickPickSummary> items;
+    private java.util.List<com.oracle.bmc.apmtraces.model.QuickPickSummary> items;
 
     public static class Builder {
         /**

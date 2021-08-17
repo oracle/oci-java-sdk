@@ -134,14 +134,17 @@ public class SummarizeSqlStatisticsTimeSeriesByPlanConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SqlStatisticsTimeSeriesByPlanAggregationCollection>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .SqlStatisticsTimeSeriesByPlanAggregationCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SqlStatisticsTimeSeriesByPlanAggregationCollection
+                                                        com.oracle.bmc.opsi.model
+                                                                        .SqlStatisticsTimeSeriesByPlanAggregationCollection
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                SqlStatisticsTimeSeriesByPlanAggregationCollection>
+                                                com.oracle.bmc.opsi.model
+                                                        .SqlStatisticsTimeSeriesByPlanAggregationCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

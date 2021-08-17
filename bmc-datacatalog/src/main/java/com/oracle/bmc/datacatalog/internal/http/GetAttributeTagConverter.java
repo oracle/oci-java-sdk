@@ -99,13 +99,17 @@ public class GetAttributeTagConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AttributeTag>>
+                                                        com.oracle.bmc.datacatalog.model
+                                                                .AttributeTag>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AttributeTag.class);
+                                                        com.oracle.bmc.datacatalog.model
+                                                                        .AttributeTag
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AttributeTag> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model.AttributeTag>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

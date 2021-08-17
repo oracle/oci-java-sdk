@@ -74,12 +74,16 @@ public class GetDataSafeConfigurationConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DataSafeConfiguration>>
+                                                        com.oracle.bmc.datasafe.model
+                                                                .DataSafeConfiguration>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DataSafeConfiguration.class);
+                                                        com.oracle.bmc.datasafe.model
+                                                                        .DataSafeConfiguration
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DataSafeConfiguration>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datasafe.model.DataSafeConfiguration>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

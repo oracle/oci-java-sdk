@@ -32,9 +32,9 @@ public class ListSubscriptionsResponse {
     private String opcRequestId;
 
     /**
-     * A list of SubscriptionSummary instances.
+     * A list of com.oracle.bmc.ons.model.SubscriptionSummary instances.
      */
-    private java.util.List<SubscriptionSummary> items;
+    private java.util.List<com.oracle.bmc.ons.model.SubscriptionSummary> items;
 
     public static class Builder {
         /**

@@ -38,9 +38,9 @@ public class ListTargetDatabasesResponse {
     private String opcPrevPage;
 
     /**
-     * A list of TargetDatabaseSummary instances.
+     * A list of com.oracle.bmc.datasafe.model.TargetDatabaseSummary instances.
      */
-    private java.util.List<TargetDatabaseSummary> items;
+    private java.util.List<com.oracle.bmc.datasafe.model.TargetDatabaseSummary> items;
 
     public static class Builder {
         /**

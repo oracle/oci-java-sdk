@@ -33,7 +33,7 @@ public class UpdateByoipRangeResponse {
     /**
      * The returned ByoipRange instance.
      */
-    private ByoipRange byoipRange;
+    private com.oracle.bmc.core.model.ByoipRange byoipRange;
 
     public static class Builder {
         /**

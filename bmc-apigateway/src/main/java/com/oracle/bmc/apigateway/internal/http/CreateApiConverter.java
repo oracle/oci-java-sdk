@@ -68,11 +68,15 @@ public class CreateApiConverter {
                                         "Transform function invoked for com.oracle.bmc.apigateway.responses.CreateApiResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Api>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create(Api.class);
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.apigateway.model.Api>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.apigateway.model.Api.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Api> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.apigateway.model.Api>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

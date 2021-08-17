@@ -33,7 +33,7 @@ public class GetLinkResponse {
     /**
      * The returned Link instance.
      */
-    private Link link;
+    private com.oracle.bmc.tenantmanagercontrolplane.model.Link link;
 
     public static class Builder {
         /**

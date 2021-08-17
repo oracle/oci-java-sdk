@@ -108,12 +108,16 @@ public class QueryOldConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        QueryResultResponse>>
+                                                        com.oracle.bmc.apmtraces.model
+                                                                .QueryResultResponse>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        QueryResultResponse.class);
+                                                        com.oracle.bmc.apmtraces.model
+                                                                        .QueryResultResponse
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<QueryResultResponse>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.apmtraces.model.QueryResultResponse>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

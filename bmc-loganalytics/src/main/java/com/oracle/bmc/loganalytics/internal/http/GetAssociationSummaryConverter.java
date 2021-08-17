@@ -81,12 +81,17 @@ public class GetAssociationSummaryConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AssociationSummaryReport>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .AssociationSummaryReport>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AssociationSummaryReport.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .AssociationSummaryReport
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AssociationSummaryReport>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model
+                                                        .AssociationSummaryReport>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -86,12 +86,15 @@ public class ValidateUserConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ValidationResponse>>
+                                                        com.oracle.bmc.cims.model
+                                                                .ValidationResponse>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ValidationResponse.class);
+                                                        com.oracle.bmc.cims.model.ValidationResponse
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ValidationResponse>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.cims.model.ValidationResponse>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

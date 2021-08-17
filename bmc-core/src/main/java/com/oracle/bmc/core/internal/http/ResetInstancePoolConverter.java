@@ -76,13 +76,15 @@ public class ResetInstancePoolConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        InstancePool>>
+                                                        com.oracle.bmc.core.model.InstancePool>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        InstancePool.class);
+                                                        com.oracle.bmc.core.model.InstancePool
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<InstancePool> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.InstancePool>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -609,6 +609,124 @@ public class OperationsInsightsPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listImportableAgentEntities operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListImportableAgentEntitiesResponse>
+            listImportableAgentEntitiesResponseIterator(
+                    final ListImportableAgentEntitiesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListImportableAgentEntitiesRequest.Builder, ListImportableAgentEntitiesRequest,
+                ListImportableAgentEntitiesResponse>(
+                new com.google.common.base.Supplier<ListImportableAgentEntitiesRequest.Builder>() {
+                    @Override
+                    public ListImportableAgentEntitiesRequest.Builder get() {
+                        return ListImportableAgentEntitiesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListImportableAgentEntitiesResponse, String>() {
+                    @Override
+                    public String apply(ListImportableAgentEntitiesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListImportableAgentEntitiesRequest.Builder>,
+                        ListImportableAgentEntitiesRequest>() {
+                    @Override
+                    public ListImportableAgentEntitiesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListImportableAgentEntitiesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListImportableAgentEntitiesRequest, ListImportableAgentEntitiesResponse>() {
+                    @Override
+                    public ListImportableAgentEntitiesResponse apply(
+                            ListImportableAgentEntitiesRequest request) {
+                        return client.listImportableAgentEntities(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.opsi.model.ImportableAgentEntitySummary} objects
+     * contained in responses from the listImportableAgentEntities operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.opsi.model.ImportableAgentEntitySummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.opsi.model.ImportableAgentEntitySummary>
+            listImportableAgentEntitiesRecordIterator(
+                    final ListImportableAgentEntitiesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListImportableAgentEntitiesRequest.Builder, ListImportableAgentEntitiesRequest,
+                ListImportableAgentEntitiesResponse,
+                com.oracle.bmc.opsi.model.ImportableAgentEntitySummary>(
+                new com.google.common.base.Supplier<ListImportableAgentEntitiesRequest.Builder>() {
+                    @Override
+                    public ListImportableAgentEntitiesRequest.Builder get() {
+                        return ListImportableAgentEntitiesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListImportableAgentEntitiesResponse, String>() {
+                    @Override
+                    public String apply(ListImportableAgentEntitiesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListImportableAgentEntitiesRequest.Builder>,
+                        ListImportableAgentEntitiesRequest>() {
+                    @Override
+                    public ListImportableAgentEntitiesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListImportableAgentEntitiesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListImportableAgentEntitiesRequest, ListImportableAgentEntitiesResponse>() {
+                    @Override
+                    public ListImportableAgentEntitiesResponse apply(
+                            ListImportableAgentEntitiesRequest request) {
+                        return client.listImportableAgentEntities(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListImportableAgentEntitiesResponse,
+                        java.util.List<com.oracle.bmc.opsi.model.ImportableAgentEntitySummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.opsi.model.ImportableAgentEntitySummary>
+                            apply(ListImportableAgentEntitiesResponse response) {
+                        return response.getImportableAgentEntitySummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listImportableEnterpriseManagerEntities operation. This iterable
      * will fetch more data from the server as needed.
      *

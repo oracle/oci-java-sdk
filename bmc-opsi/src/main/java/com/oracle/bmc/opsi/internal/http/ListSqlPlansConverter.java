@@ -109,12 +109,15 @@ public class ListSqlPlansConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SqlPlanCollection>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .SqlPlanCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SqlPlanCollection.class);
+                                                        com.oracle.bmc.opsi.model.SqlPlanCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<SqlPlanCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.opsi.model.SqlPlanCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

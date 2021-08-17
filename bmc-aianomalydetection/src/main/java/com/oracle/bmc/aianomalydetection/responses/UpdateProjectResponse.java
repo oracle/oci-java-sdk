@@ -33,7 +33,7 @@ public class UpdateProjectResponse {
     /**
      * The returned Project instance.
      */
-    private Project project;
+    private com.oracle.bmc.aianomalydetection.model.Project project;
 
     public static class Builder {
         /**

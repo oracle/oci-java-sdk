@@ -33,7 +33,7 @@ public class GetMigrationResponse {
     /**
      * The returned Migration instance.
      */
-    private Migration migration;
+    private com.oracle.bmc.applicationmigration.model.Migration migration;
 
     public static class Builder {
         /**

@@ -79,12 +79,16 @@ public class GetAutoScalingPolicyConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AutoScalingPolicy>>
+                                                        com.oracle.bmc.autoscaling.model
+                                                                .AutoScalingPolicy>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AutoScalingPolicy.class);
+                                                        com.oracle.bmc.autoscaling.model
+                                                                        .AutoScalingPolicy
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AutoScalingPolicy>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.autoscaling.model.AutoScalingPolicy>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

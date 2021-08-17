@@ -68,15 +68,21 @@ public class ListCustomerSecretKeysConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<CustomerSecretKeySummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.identity.model
+                                                                        .CustomerSecretKeySummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        CustomerSecretKeySummary>>() {});
+                                                                        com.oracle.bmc.identity
+                                                                                .model
+                                                                                .CustomerSecretKeySummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<CustomerSecretKeySummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.identity.model
+                                                                .CustomerSecretKeySummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

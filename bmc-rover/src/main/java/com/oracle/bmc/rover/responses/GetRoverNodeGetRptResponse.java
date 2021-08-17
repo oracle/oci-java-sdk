@@ -33,7 +33,7 @@ public class GetRoverNodeGetRptResponse {
     /**
      * The returned RoverNodeGetRpt instance.
      */
-    private RoverNodeGetRpt roverNodeGetRpt;
+    private com.oracle.bmc.rover.model.RoverNodeGetRpt roverNodeGetRpt;
 
     public static class Builder {
         /**

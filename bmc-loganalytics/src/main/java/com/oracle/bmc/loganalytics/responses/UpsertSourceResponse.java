@@ -32,7 +32,7 @@ public class UpsertSourceResponse {
     /**
      * The returned LogAnalyticsSource instance.
      */
-    private LogAnalyticsSource logAnalyticsSource;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsSource logAnalyticsSource;
 
     public static class Builder {
         /**

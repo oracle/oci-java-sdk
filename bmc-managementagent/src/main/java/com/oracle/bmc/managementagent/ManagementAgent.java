@@ -234,6 +234,32 @@ public interface ManagementAgent extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
+     * Gets count of the inventory of agents for a given compartment id, group by, and isPluginDeployed parameters.
+     * Supported groupBy parameters: availabilityStatus, platformType, version
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/SummarizeManagementAgentCountsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeManagementAgentCounts API.
+     */
+    SummarizeManagementAgentCountsResponse summarizeManagementAgentCounts(
+            SummarizeManagementAgentCountsRequest request);
+
+    /**
+     * Gets count of the inventory of management agent plugins for a given compartment id and group by parameter.
+     * Supported groupBy parameter: pluginName
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/SummarizeManagementAgentPluginCountsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeManagementAgentPluginCounts API.
+     */
+    SummarizeManagementAgentPluginCountsResponse summarizeManagementAgentPluginCounts(
+            SummarizeManagementAgentPluginCountsRequest request);
+
+    /**
      * API to update the console managed properties of the Management Agent.
      *
      * @param request The request object containing the details to send

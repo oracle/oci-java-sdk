@@ -34,9 +34,9 @@ public class ListDbSystemPatchHistoryEntriesResponse {
     private String opcNextPage;
 
     /**
-     * A list of PatchHistoryEntrySummary instances.
+     * A list of com.oracle.bmc.database.model.PatchHistoryEntrySummary instances.
      */
-    private java.util.List<PatchHistoryEntrySummary> items;
+    private java.util.List<com.oracle.bmc.database.model.PatchHistoryEntrySummary> items;
 
     public static class Builder {
         /**

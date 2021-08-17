@@ -25,9 +25,9 @@ public class ListListenerRulesResponse {
     private String opcRequestId;
 
     /**
-     * A list of ListenerRuleSummary instances.
+     * A list of com.oracle.bmc.loadbalancer.model.ListenerRuleSummary instances.
      */
-    private java.util.List<ListenerRuleSummary> items;
+    private java.util.List<com.oracle.bmc.loadbalancer.model.ListenerRuleSummary> items;
 
     public static class Builder {
         /**

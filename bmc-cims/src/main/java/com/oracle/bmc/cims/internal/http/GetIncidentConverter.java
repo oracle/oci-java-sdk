@@ -83,12 +83,15 @@ public class GetIncidentConverter {
                                         "Transform function invoked for com.oracle.bmc.cims.responses.GetIncidentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Incident>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.cims.model.Incident>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Incident.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.cims.model.Incident.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Incident> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.cims.model.Incident>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

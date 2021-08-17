@@ -72,11 +72,15 @@ public class GetLogConverter {
                                         "Transform function invoked for com.oracle.bmc.logging.responses.GetLogResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Log>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create(Log.class);
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.logging.model.Log>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.logging.model.Log.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Log> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.logging.model.Log>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

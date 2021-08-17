@@ -104,15 +104,19 @@ public class ListDedicatedVmHostShapesConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                DedicatedVmHostShapeSummary>>>
+                                                                com.oracle.bmc.core.model
+                                                                        .DedicatedVmHostShapeSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        DedicatedVmHostShapeSummary>>() {});
+                                                                        com.oracle.bmc.core.model
+                                                                                .DedicatedVmHostShapeSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<DedicatedVmHostShapeSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model
+                                                                .DedicatedVmHostShapeSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

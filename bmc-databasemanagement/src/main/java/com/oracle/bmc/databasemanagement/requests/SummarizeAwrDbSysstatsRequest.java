@@ -150,6 +150,25 @@ public class SummarizeAwrDbSysstatsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<String> name = null;
+
+        /**
+         * The required multiple value query parameter to filter the entity name.
+         * @return this builder instance
+         */
+        public Builder name(java.util.List<String> name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
+         * Singular setter. The required multiple value query parameter to filter the entity name.
+         * @return this builder instance
+         */
+        public Builder name(String singularValue) {
+            return this.name(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

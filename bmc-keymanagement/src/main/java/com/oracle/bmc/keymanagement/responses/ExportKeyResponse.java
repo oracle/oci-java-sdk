@@ -27,7 +27,7 @@ public class ExportKeyResponse {
     /**
      * The returned ExportedKeyData instance.
      */
-    private ExportedKeyData exportedKeyData;
+    private com.oracle.bmc.keymanagement.model.ExportedKeyData exportedKeyData;
 
     public static class Builder {
         /**

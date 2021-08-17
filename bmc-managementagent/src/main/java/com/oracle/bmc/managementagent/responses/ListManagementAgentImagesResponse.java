@@ -33,9 +33,9 @@ public class ListManagementAgentImagesResponse {
     private String opcNextPage;
 
     /**
-     * A list of ManagementAgentImageSummary instances.
+     * A list of com.oracle.bmc.managementagent.model.ManagementAgentImageSummary instances.
      */
-    private java.util.List<ManagementAgentImageSummary> items;
+    private java.util.List<com.oracle.bmc.managementagent.model.ManagementAgentImageSummary> items;
 
     public static class Builder {
         /**

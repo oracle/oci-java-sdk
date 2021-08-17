@@ -33,7 +33,7 @@ public class GetVcnTopologyResponse {
     /**
      * The returned VcnTopology instance.
      */
-    private VcnTopology vcnTopology;
+    private com.oracle.bmc.core.model.VcnTopology vcnTopology;
 
     public static class Builder {
         /**

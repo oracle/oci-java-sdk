@@ -33,9 +33,9 @@ public class ListVolumeGroupBackupsResponse {
     private String opcRequestId;
 
     /**
-     * A list of VolumeGroupBackup instances.
+     * A list of com.oracle.bmc.core.model.VolumeGroupBackup instances.
      */
-    private java.util.List<VolumeGroupBackup> items;
+    private java.util.List<com.oracle.bmc.core.model.VolumeGroupBackup> items;
 
     public static class Builder {
         /**

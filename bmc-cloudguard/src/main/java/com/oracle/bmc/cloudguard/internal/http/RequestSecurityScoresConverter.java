@@ -88,13 +88,17 @@ public class RequestSecurityScoresConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SecurityScoreAggregationCollection>>
+                                                        com.oracle.bmc.cloudguard.model
+                                                                .SecurityScoreAggregationCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SecurityScoreAggregationCollection.class);
+                                                        com.oracle.bmc.cloudguard.model
+                                                                        .SecurityScoreAggregationCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                SecurityScoreAggregationCollection>
+                                                com.oracle.bmc.cloudguard.model
+                                                        .SecurityScoreAggregationCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

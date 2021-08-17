@@ -139,15 +139,21 @@ public class ListMaintenanceRunsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<MaintenanceRunSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.database.model
+                                                                        .MaintenanceRunSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        MaintenanceRunSummary>>() {});
+                                                                        com.oracle.bmc.database
+                                                                                .model
+                                                                                .MaintenanceRunSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<MaintenanceRunSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.database.model
+                                                                .MaintenanceRunSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

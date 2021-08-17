@@ -35,7 +35,8 @@ public class ListJobOutputsResponse {
     /**
      * The returned JobOutputSummaryCollection instance.
      */
-    private JobOutputSummaryCollection jobOutputSummaryCollection;
+    private com.oracle.bmc.databasemigration.model.JobOutputSummaryCollection
+            jobOutputSummaryCollection;
 
     public static class Builder {
         /**

@@ -33,9 +33,9 @@ public class ListMfaTotpDevicesResponse {
     private String opcNextPage;
 
     /**
-     * A list of MfaTotpDeviceSummary instances.
+     * A list of com.oracle.bmc.identity.model.MfaTotpDeviceSummary instances.
      */
-    private java.util.List<MfaTotpDeviceSummary> items;
+    private java.util.List<com.oracle.bmc.identity.model.MfaTotpDeviceSummary> items;
 
     public static class Builder {
         /**

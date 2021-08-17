@@ -51,7 +51,8 @@ public class ListReferencesResponse {
     /**
      * The returned ReferenceSummaryCollection instance.
      */
-    private ReferenceSummaryCollection referenceSummaryCollection;
+    private com.oracle.bmc.dataintegration.model.ReferenceSummaryCollection
+            referenceSummaryCollection;
 
     public static class Builder {
         /**

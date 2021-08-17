@@ -33,9 +33,9 @@ public class ListInternetGatewaysResponse {
     private String opcRequestId;
 
     /**
-     * A list of InternetGateway instances.
+     * A list of com.oracle.bmc.core.model.InternetGateway instances.
      */
-    private java.util.List<InternetGateway> items;
+    private java.util.List<com.oracle.bmc.core.model.InternetGateway> items;
 
     public static class Builder {
         /**

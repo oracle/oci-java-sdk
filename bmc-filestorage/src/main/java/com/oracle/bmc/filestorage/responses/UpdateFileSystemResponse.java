@@ -33,7 +33,7 @@ public class UpdateFileSystemResponse {
     /**
      * The returned FileSystem instance.
      */
-    private FileSystem fileSystem;
+    private com.oracle.bmc.filestorage.model.FileSystem fileSystem;
 
     public static class Builder {
         /**

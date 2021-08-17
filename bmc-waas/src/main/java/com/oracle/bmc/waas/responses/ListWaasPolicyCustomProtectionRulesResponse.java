@@ -33,9 +33,9 @@ public class ListWaasPolicyCustomProtectionRulesResponse {
     private String opcRequestId;
 
     /**
-     * A list of WaasPolicyCustomProtectionRuleSummary instances.
+     * A list of com.oracle.bmc.waas.model.WaasPolicyCustomProtectionRuleSummary instances.
      */
-    private java.util.List<WaasPolicyCustomProtectionRuleSummary> items;
+    private java.util.List<com.oracle.bmc.waas.model.WaasPolicyCustomProtectionRuleSummary> items;
 
     public static class Builder {
         /**

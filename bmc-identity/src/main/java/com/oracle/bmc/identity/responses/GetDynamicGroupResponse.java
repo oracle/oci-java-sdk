@@ -32,7 +32,7 @@ public class GetDynamicGroupResponse {
     /**
      * The returned DynamicGroup instance.
      */
-    private DynamicGroup dynamicGroup;
+    private com.oracle.bmc.identity.model.DynamicGroup dynamicGroup;
 
     public static class Builder {
         /**

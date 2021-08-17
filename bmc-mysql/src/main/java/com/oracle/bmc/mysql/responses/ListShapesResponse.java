@@ -25,9 +25,9 @@ public class ListShapesResponse {
     private String opcRequestId;
 
     /**
-     * A list of ShapeSummary instances.
+     * A list of com.oracle.bmc.mysql.model.ShapeSummary instances.
      */
-    private java.util.List<ShapeSummary> items;
+    private java.util.List<com.oracle.bmc.mysql.model.ShapeSummary> items;
 
     public static class Builder {
         /**

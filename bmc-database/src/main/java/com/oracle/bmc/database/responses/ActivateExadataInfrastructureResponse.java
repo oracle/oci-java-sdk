@@ -38,7 +38,7 @@ public class ActivateExadataInfrastructureResponse {
     /**
      * The returned ExadataInfrastructure instance.
      */
-    private ExadataInfrastructure exadataInfrastructure;
+    private com.oracle.bmc.database.model.ExadataInfrastructure exadataInfrastructure;
 
     public static class Builder {
         /**

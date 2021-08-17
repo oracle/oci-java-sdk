@@ -33,7 +33,7 @@ public class GetHostInsightResponse {
     /**
      * The returned HostInsight instance.
      */
-    private HostInsight hostInsight;
+    private com.oracle.bmc.opsi.model.HostInsight hostInsight;
 
     public static class Builder {
         /**

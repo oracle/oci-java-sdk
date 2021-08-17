@@ -142,14 +142,17 @@ public class ListExternalPublicationValidationsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ExternalPublicationValidationSummaryCollection>>
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .ExternalPublicationValidationSummaryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ExternalPublicationValidationSummaryCollection
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .ExternalPublicationValidationSummaryCollection
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ExternalPublicationValidationSummaryCollection>
+                                                com.oracle.bmc.dataintegration.model
+                                                        .ExternalPublicationValidationSummaryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

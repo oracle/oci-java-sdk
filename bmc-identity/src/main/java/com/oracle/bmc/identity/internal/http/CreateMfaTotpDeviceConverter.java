@@ -71,13 +71,16 @@ public class CreateMfaTotpDeviceConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        MfaTotpDevice>>
+                                                        com.oracle.bmc.identity.model
+                                                                .MfaTotpDevice>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        MfaTotpDevice.class);
+                                                        com.oracle.bmc.identity.model.MfaTotpDevice
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<MfaTotpDevice> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.identity.model.MfaTotpDevice>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

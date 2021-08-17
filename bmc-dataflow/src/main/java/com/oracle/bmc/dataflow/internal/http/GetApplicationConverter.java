@@ -70,13 +70,15 @@ public class GetApplicationConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        Application>>
+                                                        com.oracle.bmc.dataflow.model.Application>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        Application.class);
+                                                        com.oracle.bmc.dataflow.model.Application
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Application> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dataflow.model.Application>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

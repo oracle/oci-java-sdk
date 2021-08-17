@@ -33,7 +33,7 @@ public class GetModelProvenanceResponse {
     /**
      * The returned ModelProvenance instance.
      */
-    private ModelProvenance modelProvenance;
+    private com.oracle.bmc.datascience.model.ModelProvenance modelProvenance;
 
     public static class Builder {
         /**

@@ -32,7 +32,7 @@ public class UpdateCustomerSecretKeyResponse {
     /**
      * The returned CustomerSecretKeySummary instance.
      */
-    private CustomerSecretKeySummary customerSecretKeySummary;
+    private com.oracle.bmc.identity.model.CustomerSecretKeySummary customerSecretKeySummary;
 
     public static class Builder {
         /**

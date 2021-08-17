@@ -149,12 +149,16 @@ public class ListSqlSearchesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SqlSearchCollection>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .SqlSearchCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SqlSearchCollection.class);
+                                                        com.oracle.bmc.opsi.model
+                                                                        .SqlSearchCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<SqlSearchCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.opsi.model.SqlSearchCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

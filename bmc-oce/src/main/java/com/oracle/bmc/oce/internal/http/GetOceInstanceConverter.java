@@ -69,13 +69,14 @@ public class GetOceInstanceConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        OceInstance>>
+                                                        com.oracle.bmc.oce.model.OceInstance>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        OceInstance.class);
+                                                        com.oracle.bmc.oce.model.OceInstance.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<OceInstance> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.oce.model.OceInstance>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

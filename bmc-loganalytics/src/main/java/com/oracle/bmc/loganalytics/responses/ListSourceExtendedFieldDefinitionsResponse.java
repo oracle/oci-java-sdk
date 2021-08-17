@@ -42,7 +42,7 @@ public class ListSourceExtendedFieldDefinitionsResponse {
     /**
      * The returned LogAnalyticsSourceExtendedFieldDefinitionCollection instance.
      */
-    private LogAnalyticsSourceExtendedFieldDefinitionCollection
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsSourceExtendedFieldDefinitionCollection
             logAnalyticsSourceExtendedFieldDefinitionCollection;
 
     public static class Builder {

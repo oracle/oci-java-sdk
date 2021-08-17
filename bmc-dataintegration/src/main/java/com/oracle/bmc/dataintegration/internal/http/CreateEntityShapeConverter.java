@@ -93,13 +93,17 @@ public class CreateEntityShapeConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        EntityShape>>
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .EntityShape>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        EntityShape.class);
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .EntityShape
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<EntityShape> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dataintegration.model.EntityShape>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

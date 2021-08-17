@@ -45,7 +45,7 @@ public class ListSchemasResponse {
     /**
      * The returned SchemaSummaryCollection instance.
      */
-    private SchemaSummaryCollection schemaSummaryCollection;
+    private com.oracle.bmc.dataintegration.model.SchemaSummaryCollection schemaSummaryCollection;
 
     public static class Builder {
         /**

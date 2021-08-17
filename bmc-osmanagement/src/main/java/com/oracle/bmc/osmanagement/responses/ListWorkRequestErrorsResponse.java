@@ -41,9 +41,9 @@ public class ListWorkRequestErrorsResponse {
     private Float retryAfter;
 
     /**
-     * A list of WorkRequestError instances.
+     * A list of com.oracle.bmc.osmanagement.model.WorkRequestError instances.
      */
-    private java.util.List<WorkRequestError> items;
+    private java.util.List<com.oracle.bmc.osmanagement.model.WorkRequestError> items;
 
     public static class Builder {
         /**

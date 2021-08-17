@@ -33,9 +33,9 @@ public class ListWorkRequestsResponse {
     private String opcNextPage;
 
     /**
-     * A list of WorkRequest instances.
+     * A list of com.oracle.bmc.bds.model.WorkRequest instances.
      */
-    private java.util.List<WorkRequest> items;
+    private java.util.List<com.oracle.bmc.bds.model.WorkRequest> items;
 
     public static class Builder {
         /**

@@ -93,6 +93,44 @@ public class ListProtectionRulesRequest extends com.oracle.bmc.requests.BmcReque
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<String> modSecurityRuleId = null;
+
+        /**
+         * Filter rules using a list of ModSecurity rule IDs.
+         * @return this builder instance
+         */
+        public Builder modSecurityRuleId(java.util.List<String> modSecurityRuleId) {
+            this.modSecurityRuleId = modSecurityRuleId;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter rules using a list of ModSecurity rule IDs.
+         * @return this builder instance
+         */
+        public Builder modSecurityRuleId(String singularValue) {
+            return this.modSecurityRuleId(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<Action> action = null;
+
+        /**
+         * Filter rules using a list of actions.
+         * @return this builder instance
+         */
+        public Builder action(java.util.List<Action> action) {
+            this.action = action;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter rules using a list of actions.
+         * @return this builder instance
+         */
+        public Builder action(Action singularValue) {
+            return this.action(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

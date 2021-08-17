@@ -33,7 +33,7 @@ public class UpdateConfigurationResponse {
     /**
      * The returned Configuration instance.
      */
-    private Configuration configuration;
+    private com.oracle.bmc.mysql.model.Configuration configuration;
 
     public static class Builder {
         /**

@@ -131,13 +131,17 @@ public class ListEnterpriseManagerBridgesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        EnterpriseManagerBridgeCollection>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .EnterpriseManagerBridgeCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        EnterpriseManagerBridgeCollection.class);
+                                                        com.oracle.bmc.opsi.model
+                                                                        .EnterpriseManagerBridgeCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                EnterpriseManagerBridgeCollection>
+                                                com.oracle.bmc.opsi.model
+                                                        .EnterpriseManagerBridgeCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

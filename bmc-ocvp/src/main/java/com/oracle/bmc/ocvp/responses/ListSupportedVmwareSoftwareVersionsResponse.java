@@ -35,7 +35,8 @@ public class ListSupportedVmwareSoftwareVersionsResponse {
     /**
      * The returned SupportedVmwareSoftwareVersionCollection instance.
      */
-    private SupportedVmwareSoftwareVersionCollection supportedVmwareSoftwareVersionCollection;
+    private com.oracle.bmc.ocvp.model.SupportedVmwareSoftwareVersionCollection
+            supportedVmwareSoftwareVersionCollection;
 
     public static class Builder {
         /**

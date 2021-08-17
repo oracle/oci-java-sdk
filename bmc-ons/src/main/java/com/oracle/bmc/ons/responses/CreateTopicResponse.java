@@ -33,7 +33,7 @@ public class CreateTopicResponse {
     /**
      * The returned NotificationTopic instance.
      */
-    private NotificationTopic notificationTopic;
+    private com.oracle.bmc.ons.model.NotificationTopic notificationTopic;
 
     public static class Builder {
         /**

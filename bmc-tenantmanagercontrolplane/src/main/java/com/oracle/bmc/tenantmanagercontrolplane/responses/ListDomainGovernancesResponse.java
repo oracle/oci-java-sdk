@@ -35,7 +35,8 @@ public class ListDomainGovernancesResponse {
     /**
      * The returned DomainGovernanceCollection instance.
      */
-    private DomainGovernanceCollection domainGovernanceCollection;
+    private com.oracle.bmc.tenantmanagercontrolplane.model.DomainGovernanceCollection
+            domainGovernanceCollection;
 
     public static class Builder {
         /**

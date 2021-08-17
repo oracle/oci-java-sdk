@@ -262,6 +262,310 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<String> accessRuleKey = null;
+
+        /**
+         * Filters logs by access rule key.
+         * @return this builder instance
+         */
+        public Builder accessRuleKey(java.util.List<String> accessRuleKey) {
+            this.accessRuleKey = accessRuleKey;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filters logs by access rule key.
+         * @return this builder instance
+         */
+        public Builder accessRuleKey(String singularValue) {
+            return this.accessRuleKey(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<Action> action = null;
+
+        /**
+         * Filters logs by Web Application Firewall action.
+         * @return this builder instance
+         */
+        public Builder action(java.util.List<Action> action) {
+            this.action = action;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filters logs by Web Application Firewall action.
+         * @return this builder instance
+         */
+        public Builder action(Action singularValue) {
+            return this.action(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> clientAddress = null;
+
+        /**
+         * Filters logs by client IP address.
+         * @return this builder instance
+         */
+        public Builder clientAddress(java.util.List<String> clientAddress) {
+            this.clientAddress = clientAddress;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filters logs by client IP address.
+         * @return this builder instance
+         */
+        public Builder clientAddress(String singularValue) {
+            return this.clientAddress(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> countryCode = null;
+
+        /**
+         * Filters logs by country code. Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
+         * @return this builder instance
+         */
+        public Builder countryCode(java.util.List<String> countryCode) {
+            this.countryCode = countryCode;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filters logs by country code. Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
+         * @return this builder instance
+         */
+        public Builder countryCode(String singularValue) {
+            return this.countryCode(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> countryName = null;
+
+        /**
+         * Filter logs by country name.
+         * @return this builder instance
+         */
+        public Builder countryName(java.util.List<String> countryName) {
+            this.countryName = countryName;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter logs by country name.
+         * @return this builder instance
+         */
+        public Builder countryName(String singularValue) {
+            return this.countryName(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> fingerprint = null;
+
+        /**
+         * Filter logs by device fingerprint.
+         * @return this builder instance
+         */
+        public Builder fingerprint(java.util.List<String> fingerprint) {
+            this.fingerprint = fingerprint;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter logs by device fingerprint.
+         * @return this builder instance
+         */
+        public Builder fingerprint(String singularValue) {
+            return this.fingerprint(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<HttpMethod> httpMethod = null;
+
+        /**
+         * Filter logs by HTTP method.
+         * @return this builder instance
+         */
+        public Builder httpMethod(java.util.List<HttpMethod> httpMethod) {
+            this.httpMethod = httpMethod;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter logs by HTTP method.
+         * @return this builder instance
+         */
+        public Builder httpMethod(HttpMethod singularValue) {
+            return this.httpMethod(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> incidentKey = null;
+
+        /**
+         * Filter logs by incident key.
+         * @return this builder instance
+         */
+        public Builder incidentKey(java.util.List<String> incidentKey) {
+            this.incidentKey = incidentKey;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter logs by incident key.
+         * @return this builder instance
+         */
+        public Builder incidentKey(String singularValue) {
+            return this.incidentKey(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<LogType> logType = null;
+
+        /**
+         * Filter by log type. For more information about WAF logs, see [Logs](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
+         * @return this builder instance
+         */
+        public Builder logType(java.util.List<LogType> logType) {
+            this.logType = logType;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter by log type. For more information about WAF logs, see [Logs](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
+         * @return this builder instance
+         */
+        public Builder logType(LogType singularValue) {
+            return this.logType(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> originAddress = null;
+
+        /**
+         * Filter by origin IP address.
+         * @return this builder instance
+         */
+        public Builder originAddress(java.util.List<String> originAddress) {
+            this.originAddress = originAddress;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter by origin IP address.
+         * @return this builder instance
+         */
+        public Builder originAddress(String singularValue) {
+            return this.originAddress(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> referrer = null;
+
+        /**
+         * Filter by referrer.
+         * @return this builder instance
+         */
+        public Builder referrer(java.util.List<String> referrer) {
+            this.referrer = referrer;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter by referrer.
+         * @return this builder instance
+         */
+        public Builder referrer(String singularValue) {
+            return this.referrer(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> requestUrl = null;
+
+        /**
+         * Filter by request URL.
+         * @return this builder instance
+         */
+        public Builder requestUrl(java.util.List<String> requestUrl) {
+            this.requestUrl = requestUrl;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter by request URL.
+         * @return this builder instance
+         */
+        public Builder requestUrl(String singularValue) {
+            return this.requestUrl(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<Integer> responseCode = null;
+
+        /**
+         * Filter by response code.
+         * @return this builder instance
+         */
+        public Builder responseCode(java.util.List<Integer> responseCode) {
+            this.responseCode = responseCode;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter by response code.
+         * @return this builder instance
+         */
+        public Builder responseCode(Integer singularValue) {
+            return this.responseCode(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> threatFeedKey = null;
+
+        /**
+         * Filter by threat feed key.
+         * @return this builder instance
+         */
+        public Builder threatFeedKey(java.util.List<String> threatFeedKey) {
+            this.threatFeedKey = threatFeedKey;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter by threat feed key.
+         * @return this builder instance
+         */
+        public Builder threatFeedKey(String singularValue) {
+            return this.threatFeedKey(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> userAgent = null;
+
+        /**
+         * Filter by user agent.
+         * @return this builder instance
+         */
+        public Builder userAgent(java.util.List<String> userAgent) {
+            this.userAgent = userAgent;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter by user agent.
+         * @return this builder instance
+         */
+        public Builder userAgent(String singularValue) {
+            return this.userAgent(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> protectionRuleKey = null;
+
+        /**
+         * Filter by protection rule key.
+         * @return this builder instance
+         */
+        public Builder protectionRuleKey(java.util.List<String> protectionRuleKey) {
+            this.protectionRuleKey = protectionRuleKey;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter by protection rule key.
+         * @return this builder instance
+         */
+        public Builder protectionRuleKey(String singularValue) {
+            return this.protectionRuleKey(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

@@ -33,7 +33,7 @@ public class GetPeerResponse {
     /**
      * The returned Peer instance.
      */
-    private Peer peer;
+    private com.oracle.bmc.blockchain.model.Peer peer;
 
     public static class Builder {
         /**

@@ -181,6 +181,29 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<PlatformType> platformType = null;
+
+        /**
+         * Filter by one or more platform types.
+         * Possible value is LINUX.
+         *
+         * @return this builder instance
+         */
+        public Builder platformType(java.util.List<PlatformType> platformType) {
+            this.platformType = platformType;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter by one or more platform types.
+         * Possible value is LINUX.
+         *
+         * @return this builder instance
+         */
+        public Builder platformType(PlatformType singularValue) {
+            return this.platformType(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

@@ -30,7 +30,7 @@ public class CreateTransferApplianceEntitlementResponse {
     /**
      * The returned TransferApplianceEntitlement instance.
      */
-    private TransferApplianceEntitlement transferApplianceEntitlement;
+    private com.oracle.bmc.dts.model.TransferApplianceEntitlement transferApplianceEntitlement;
 
     public static class Builder {
         /**

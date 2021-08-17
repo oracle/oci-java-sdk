@@ -33,9 +33,9 @@ public class ListApiKeysResponse {
     private String opcNextPage;
 
     /**
-     * A list of ApiKey instances.
+     * A list of com.oracle.bmc.identity.model.ApiKey instances.
      */
-    private java.util.List<ApiKey> items;
+    private java.util.List<com.oracle.bmc.identity.model.ApiKey> items;
 
     public static class Builder {
         /**

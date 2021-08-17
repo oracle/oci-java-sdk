@@ -76,12 +76,16 @@ public class GetTunnelCpeDeviceConfigConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        TunnelCpeDeviceConfig>>
+                                                        com.oracle.bmc.core.model
+                                                                .TunnelCpeDeviceConfig>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        TunnelCpeDeviceConfig.class);
+                                                        com.oracle.bmc.core.model
+                                                                        .TunnelCpeDeviceConfig
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<TunnelCpeDeviceConfig>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.TunnelCpeDeviceConfig>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

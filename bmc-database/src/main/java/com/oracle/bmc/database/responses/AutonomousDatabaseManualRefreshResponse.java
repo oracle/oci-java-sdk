@@ -38,7 +38,7 @@ public class AutonomousDatabaseManualRefreshResponse {
     /**
      * The returned AutonomousDatabase instance.
      */
-    private AutonomousDatabase autonomousDatabase;
+    private com.oracle.bmc.database.model.AutonomousDatabase autonomousDatabase;
 
     public static class Builder {
         /**

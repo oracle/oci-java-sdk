@@ -73,13 +73,17 @@ public class DetectLanguageSentimentsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DetectLanguageSentimentsResult>>
+                                                        com.oracle.bmc.ailanguage.model
+                                                                .DetectLanguageSentimentsResult>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DetectLanguageSentimentsResult.class);
+                                                        com.oracle.bmc.ailanguage.model
+                                                                        .DetectLanguageSentimentsResult
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                DetectLanguageSentimentsResult>
+                                                com.oracle.bmc.ailanguage.model
+                                                        .DetectLanguageSentimentsResult>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

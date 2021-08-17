@@ -33,7 +33,7 @@ public class UpdateExternalPublicationResponse {
     /**
      * The returned ExternalPublication instance.
      */
-    private ExternalPublication externalPublication;
+    private com.oracle.bmc.dataintegration.model.ExternalPublication externalPublication;
 
     public static class Builder {
         /**

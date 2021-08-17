@@ -25,7 +25,7 @@ public class ValidateUserResponse {
     /**
      * The returned ValidationResponse instance.
      */
-    private ValidationResponse validationResponse;
+    private com.oracle.bmc.cims.model.ValidationResponse validationResponse;
 
     public static class Builder {
         /**

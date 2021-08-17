@@ -65,13 +65,17 @@ public class EncryptConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        EncryptedData>>
+                                                        com.oracle.bmc.keymanagement.model
+                                                                .EncryptedData>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        EncryptedData.class);
+                                                        com.oracle.bmc.keymanagement.model
+                                                                        .EncryptedData
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<EncryptedData> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.keymanagement.model.EncryptedData>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

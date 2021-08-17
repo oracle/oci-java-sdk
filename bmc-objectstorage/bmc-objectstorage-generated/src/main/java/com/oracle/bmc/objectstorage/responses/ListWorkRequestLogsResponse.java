@@ -43,9 +43,9 @@ public class ListWorkRequestLogsResponse {
     private String opcNextPage;
 
     /**
-     * A list of WorkRequestLogEntry instances.
+     * A list of com.oracle.bmc.objectstorage.model.WorkRequestLogEntry instances.
      */
-    private java.util.List<WorkRequestLogEntry> items;
+    private java.util.List<com.oracle.bmc.objectstorage.model.WorkRequestLogEntry> items;
 
     public static class Builder {
         /**

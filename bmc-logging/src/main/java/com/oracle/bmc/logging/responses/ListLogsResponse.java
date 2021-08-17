@@ -41,9 +41,9 @@ public class ListLogsResponse {
     private String opcRequestId;
 
     /**
-     * A list of LogSummary instances.
+     * A list of com.oracle.bmc.logging.model.LogSummary instances.
      */
-    private java.util.List<LogSummary> items;
+    private java.util.List<com.oracle.bmc.logging.model.LogSummary> items;
 
     public static class Builder {
         /**

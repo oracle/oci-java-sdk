@@ -75,12 +75,17 @@ public class ListTerraformVersionsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        TerraformVersionCollection>>
+                                                        com.oracle.bmc.resourcemanager.model
+                                                                .TerraformVersionCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        TerraformVersionCollection.class);
+                                                        com.oracle.bmc.resourcemanager.model
+                                                                        .TerraformVersionCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<TerraformVersionCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.resourcemanager.model
+                                                        .TerraformVersionCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

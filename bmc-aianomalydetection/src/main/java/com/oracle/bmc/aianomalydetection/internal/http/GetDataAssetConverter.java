@@ -70,12 +70,18 @@ public class GetDataAssetConverter {
                                         "Transform function invoked for com.oracle.bmc.aianomalydetection.responses.GetDataAssetResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<DataAsset>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.aianomalydetection.model
+                                                                .DataAsset>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(DataAsset.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.aianomalydetection.model
+                                                                        .DataAsset
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DataAsset> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.aianomalydetection.model.DataAsset>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

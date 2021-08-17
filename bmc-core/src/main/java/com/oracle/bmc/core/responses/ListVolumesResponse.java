@@ -33,9 +33,9 @@ public class ListVolumesResponse {
     private String opcRequestId;
 
     /**
-     * A list of Volume instances.
+     * A list of com.oracle.bmc.core.model.Volume instances.
      */
-    private java.util.List<Volume> items;
+    private java.util.List<com.oracle.bmc.core.model.Volume> items;
 
     public static class Builder {
         /**

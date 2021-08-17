@@ -27,7 +27,8 @@ public class ResetDatabaseParametersResponse {
     /**
      * The returned UpdateDatabaseParametersResult instance.
      */
-    private UpdateDatabaseParametersResult updateDatabaseParametersResult;
+    private com.oracle.bmc.databasemanagement.model.UpdateDatabaseParametersResult
+            updateDatabaseParametersResult;
 
     public static class Builder {
         /**

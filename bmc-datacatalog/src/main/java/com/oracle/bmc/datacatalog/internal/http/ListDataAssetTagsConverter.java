@@ -165,12 +165,17 @@ public class ListDataAssetTagsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DataAssetTagCollection>>
+                                                        com.oracle.bmc.datacatalog.model
+                                                                .DataAssetTagCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DataAssetTagCollection.class);
+                                                        com.oracle.bmc.datacatalog.model
+                                                                        .DataAssetTagCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DataAssetTagCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model
+                                                        .DataAssetTagCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

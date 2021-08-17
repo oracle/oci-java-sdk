@@ -202,13 +202,17 @@ public class ListRulesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        RuleCollection>>
+                                                        com.oracle.bmc.datacatalog.model
+                                                                .RuleCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        RuleCollection.class);
+                                                        com.oracle.bmc.datacatalog.model
+                                                                        .RuleCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<RuleCollection> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model.RuleCollection>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

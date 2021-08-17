@@ -40,7 +40,7 @@ public class UpdateDeployArtifactResponse {
     /**
      * The returned DeployArtifact instance.
      */
-    private DeployArtifact deployArtifact;
+    private com.oracle.bmc.devops.model.DeployArtifact deployArtifact;
 
     public static class Builder {
         /**

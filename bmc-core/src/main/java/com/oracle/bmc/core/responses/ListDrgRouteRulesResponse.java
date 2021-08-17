@@ -33,9 +33,9 @@ public class ListDrgRouteRulesResponse {
     private String opcRequestId;
 
     /**
-     * A list of DrgRouteRule instances.
+     * A list of com.oracle.bmc.core.model.DrgRouteRule instances.
      */
-    private java.util.List<DrgRouteRule> items;
+    private java.util.List<com.oracle.bmc.core.model.DrgRouteRule> items;
 
     public static class Builder {
         /**

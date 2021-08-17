@@ -63,6 +63,25 @@ public class UpdateCaptchasRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<Captcha> captchas = null;
+
+        /**
+         * A list of CAPTCHA details.
+         * @return this builder instance
+         */
+        public Builder captchas(java.util.List<Captcha> captchas) {
+            this.captchas = captchas;
+            return this;
+        }
+
+        /**
+         * Singular setter. A list of CAPTCHA details.
+         * @return this builder instance
+         */
+        public Builder captchas(Captcha singularValue) {
+            return this.captchas(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

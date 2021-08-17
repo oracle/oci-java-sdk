@@ -35,7 +35,8 @@ public class ListManagedDatabasesResponse {
     /**
      * The returned ManagedDatabaseCollection instance.
      */
-    private ManagedDatabaseCollection managedDatabaseCollection;
+    private com.oracle.bmc.databasemanagement.model.ManagedDatabaseCollection
+            managedDatabaseCollection;
 
     public static class Builder {
         /**

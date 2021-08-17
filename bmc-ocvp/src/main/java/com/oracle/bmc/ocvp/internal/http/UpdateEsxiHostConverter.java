@@ -73,12 +73,15 @@ public class UpdateEsxiHostConverter {
                                         "Transform function invoked for com.oracle.bmc.ocvp.responses.UpdateEsxiHostResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<EsxiHost>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.ocvp.model.EsxiHost>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(EsxiHost.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.ocvp.model.EsxiHost.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<EsxiHost> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.ocvp.model.EsxiHost>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -27,7 +27,7 @@ public class GetLaunchEligibilityResponse {
     /**
      * The returned LaunchEligibility instance.
      */
-    private LaunchEligibility launchEligibility;
+    private com.oracle.bmc.marketplace.model.LaunchEligibility launchEligibility;
 
     public static class Builder {
         /**

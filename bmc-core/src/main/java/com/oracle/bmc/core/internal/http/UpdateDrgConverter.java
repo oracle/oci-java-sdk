@@ -68,11 +68,15 @@ public class UpdateDrgConverter {
                                         "Transform function invoked for com.oracle.bmc.core.responses.UpdateDrgResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Drg>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create(Drg.class);
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.core.model.Drg>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.core.model.Drg.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Drg> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.Drg>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -33,7 +33,7 @@ public class GetMountTargetResponse {
     /**
      * The returned MountTarget instance.
      */
-    private MountTarget mountTarget;
+    private com.oracle.bmc.filestorage.model.MountTarget mountTarget;
 
     public static class Builder {
         /**

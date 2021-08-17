@@ -30,7 +30,7 @@ public class CreateCustomProtectionRuleResponse {
     /**
      * The returned CustomProtectionRule instance.
      */
-    private CustomProtectionRule customProtectionRule;
+    private com.oracle.bmc.waas.model.CustomProtectionRule customProtectionRule;
 
     public static class Builder {
         /**

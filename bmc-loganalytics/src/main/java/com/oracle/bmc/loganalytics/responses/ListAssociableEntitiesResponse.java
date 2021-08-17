@@ -42,7 +42,7 @@ public class ListAssociableEntitiesResponse {
     /**
      * The returned AssociableEntityCollection instance.
      */
-    private AssociableEntityCollection associableEntityCollection;
+    private com.oracle.bmc.loganalytics.model.AssociableEntityCollection associableEntityCollection;
 
     public static class Builder {
         /**

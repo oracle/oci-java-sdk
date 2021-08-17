@@ -115,13 +115,18 @@ public class ListLinksConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LinkCollection>>
+                                                        com.oracle.bmc.tenantmanagercontrolplane
+                                                                .model.LinkCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LinkCollection.class);
+                                                        com.oracle.bmc.tenantmanagercontrolplane
+                                                                        .model.LinkCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<LinkCollection> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.tenantmanagercontrolplane.model
+                                                        .LinkCollection>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

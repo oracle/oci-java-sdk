@@ -38,7 +38,7 @@ public class CreateAutonomousDatabaseBackupResponse {
     /**
      * The returned AutonomousDatabaseBackup instance.
      */
-    private AutonomousDatabaseBackup autonomousDatabaseBackup;
+    private com.oracle.bmc.database.model.AutonomousDatabaseBackup autonomousDatabaseBackup;
 
     public static class Builder {
         /**

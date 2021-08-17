@@ -74,13 +74,17 @@ public class SuggestConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SuggestOutput>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .SuggestOutput>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SuggestOutput.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .SuggestOutput
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<SuggestOutput> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model.SuggestOutput>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -75,12 +75,18 @@ public class UpdateWorkspaceConverter {
                                         "Transform function invoked for com.oracle.bmc.dataintegration.responses.UpdateWorkspaceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Workspace>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .Workspace>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Workspace.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .Workspace
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Workspace> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dataintegration.model.Workspace>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

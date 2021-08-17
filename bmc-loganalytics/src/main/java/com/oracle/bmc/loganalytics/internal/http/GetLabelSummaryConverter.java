@@ -71,12 +71,17 @@ public class GetLabelSummaryConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LabelSummaryReport>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LabelSummaryReport>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LabelSummaryReport.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LabelSummaryReport
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<LabelSummaryReport>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LabelSummaryReport>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

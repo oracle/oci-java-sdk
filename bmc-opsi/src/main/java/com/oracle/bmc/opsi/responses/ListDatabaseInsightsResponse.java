@@ -41,7 +41,7 @@ public class ListDatabaseInsightsResponse {
     /**
      * The returned DatabaseInsightsCollection instance.
      */
-    private DatabaseInsightsCollection databaseInsightsCollection;
+    private com.oracle.bmc.opsi.model.DatabaseInsightsCollection databaseInsightsCollection;
 
     public static class Builder {
         /**

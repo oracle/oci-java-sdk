@@ -72,12 +72,16 @@ public class PutMessagesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        PutMessagesResult>>
+                                                        com.oracle.bmc.streaming.model
+                                                                .PutMessagesResult>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        PutMessagesResult.class);
+                                                        com.oracle.bmc.streaming.model
+                                                                        .PutMessagesResult
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<PutMessagesResult>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.streaming.model.PutMessagesResult>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -98,12 +98,17 @@ public class ImportDataAssetConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ImportDataAssetJobResult>>
+                                                        com.oracle.bmc.datacatalog.model
+                                                                .ImportDataAssetJobResult>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ImportDataAssetJobResult.class);
+                                                        com.oracle.bmc.datacatalog.model
+                                                                        .ImportDataAssetJobResult
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ImportDataAssetJobResult>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model
+                                                        .ImportDataAssetJobResult>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

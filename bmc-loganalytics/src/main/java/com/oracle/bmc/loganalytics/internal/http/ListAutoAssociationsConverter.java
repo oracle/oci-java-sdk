@@ -110,12 +110,17 @@ public class ListAutoAssociationsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AutoAssociationCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .AutoAssociationCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AutoAssociationCollection.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .AutoAssociationCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AutoAssociationCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model
+                                                        .AutoAssociationCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

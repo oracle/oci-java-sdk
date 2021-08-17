@@ -35,7 +35,8 @@ public class RequestSummarizedActivityProblemsResponse {
     /**
      * The returned ActivityProblemAggregationCollection instance.
      */
-    private ActivityProblemAggregationCollection activityProblemAggregationCollection;
+    private com.oracle.bmc.cloudguard.model.ActivityProblemAggregationCollection
+            activityProblemAggregationCollection;
 
     public static class Builder {
         /**

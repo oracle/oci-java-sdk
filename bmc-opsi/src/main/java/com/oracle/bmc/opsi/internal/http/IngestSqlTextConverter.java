@@ -100,13 +100,17 @@ public class IngestSqlTextConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        IngestSqlTextResponseDetails>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .IngestSqlTextResponseDetails>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        IngestSqlTextResponseDetails.class);
+                                                        com.oracle.bmc.opsi.model
+                                                                        .IngestSqlTextResponseDetails
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                IngestSqlTextResponseDetails>
+                                                com.oracle.bmc.opsi.model
+                                                        .IngestSqlTextResponseDetails>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

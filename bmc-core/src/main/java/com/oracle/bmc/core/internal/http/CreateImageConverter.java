@@ -63,12 +63,15 @@ public class CreateImageConverter {
                                         "Transform function invoked for com.oracle.bmc.core.responses.CreateImageResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Image>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.core.model.Image>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Image.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.core.model.Image.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Image> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.Image>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -34,9 +34,9 @@ public class ListKeyVersionsResponse {
     private String opcRequestId;
 
     /**
-     * A list of KeyVersionSummary instances.
+     * A list of com.oracle.bmc.keymanagement.model.KeyVersionSummary instances.
      */
-    private java.util.List<KeyVersionSummary> items;
+    private java.util.List<com.oracle.bmc.keymanagement.model.KeyVersionSummary> items;
 
     public static class Builder {
         /**

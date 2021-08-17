@@ -134,15 +134,20 @@ public class ListLimitValuesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<LimitValueSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.limits.model
+                                                                        .LimitValueSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        LimitValueSummary>>() {});
+                                                                        com.oracle.bmc.limits.model
+                                                                                .LimitValueSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<LimitValueSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.limits.model
+                                                                .LimitValueSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

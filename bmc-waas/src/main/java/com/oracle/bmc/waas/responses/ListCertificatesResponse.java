@@ -28,9 +28,9 @@ public class ListCertificatesResponse {
     private String opcRequestId;
 
     /**
-     * A list of CertificateSummary instances.
+     * A list of com.oracle.bmc.waas.model.CertificateSummary instances.
      */
-    private java.util.List<CertificateSummary> items;
+    private java.util.List<com.oracle.bmc.waas.model.CertificateSummary> items;
 
     public static class Builder {
         /**

@@ -41,9 +41,9 @@ public class ListWorkRequestsResponse {
     private String opcRequestId;
 
     /**
-     * A list of WorkRequestSummary instances.
+     * A list of com.oracle.bmc.logging.model.WorkRequestSummary instances.
      */
-    private java.util.List<WorkRequestSummary> items;
+    private java.util.List<com.oracle.bmc.logging.model.WorkRequestSummary> items;
 
     public static class Builder {
         /**

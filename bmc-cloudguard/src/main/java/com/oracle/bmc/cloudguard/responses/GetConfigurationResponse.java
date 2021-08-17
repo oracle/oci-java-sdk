@@ -38,7 +38,7 @@ public class GetConfigurationResponse {
     /**
      * The returned Configuration instance.
      */
-    private Configuration configuration;
+    private com.oracle.bmc.cloudguard.model.Configuration configuration;
 
     public static class Builder {
         /**

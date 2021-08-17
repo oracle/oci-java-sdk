@@ -135,12 +135,16 @@ public class ListAggregatedPhysicalEntitiesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        EntityCollection>>
+                                                        com.oracle.bmc.datacatalog.model
+                                                                .EntityCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        EntityCollection.class);
+                                                        com.oracle.bmc.datacatalog.model
+                                                                        .EntityCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<EntityCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model.EntityCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

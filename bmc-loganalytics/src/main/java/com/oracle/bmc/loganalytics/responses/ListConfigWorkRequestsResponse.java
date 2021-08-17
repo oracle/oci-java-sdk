@@ -42,7 +42,8 @@ public class ListConfigWorkRequestsResponse {
     /**
      * The returned LogAnalyticsConfigWorkRequestCollection instance.
      */
-    private LogAnalyticsConfigWorkRequestCollection logAnalyticsConfigWorkRequestCollection;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsConfigWorkRequestCollection
+            logAnalyticsConfigWorkRequestCollection;
 
     public static class Builder {
         /**

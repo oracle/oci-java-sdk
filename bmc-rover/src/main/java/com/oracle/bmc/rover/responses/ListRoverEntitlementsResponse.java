@@ -41,7 +41,7 @@ public class ListRoverEntitlementsResponse {
     /**
      * The returned RoverEntitlementCollection instance.
      */
-    private RoverEntitlementCollection roverEntitlementCollection;
+    private com.oracle.bmc.rover.model.RoverEntitlementCollection roverEntitlementCollection;
 
     public static class Builder {
         /**

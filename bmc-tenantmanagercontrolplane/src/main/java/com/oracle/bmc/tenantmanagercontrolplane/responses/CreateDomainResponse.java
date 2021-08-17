@@ -39,7 +39,7 @@ public class CreateDomainResponse {
     /**
      * The returned Domain instance.
      */
-    private Domain domain;
+    private com.oracle.bmc.tenantmanagercontrolplane.model.Domain domain;
 
     public static class Builder {
         /**

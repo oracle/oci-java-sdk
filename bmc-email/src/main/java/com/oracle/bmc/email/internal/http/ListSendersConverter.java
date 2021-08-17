@@ -126,15 +126,19 @@ public class ListSendersConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<SenderSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.email.model
+                                                                        .SenderSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        SenderSummary>>() {});
+                                                                        com.oracle.bmc.email.model
+                                                                                .SenderSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<SenderSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.email.model.SenderSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

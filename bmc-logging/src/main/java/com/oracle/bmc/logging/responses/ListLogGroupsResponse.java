@@ -41,9 +41,9 @@ public class ListLogGroupsResponse {
     private String opcRequestId;
 
     /**
-     * A list of LogGroupSummary instances.
+     * A list of com.oracle.bmc.logging.model.LogGroupSummary instances.
      */
-    private java.util.List<LogGroupSummary> items;
+    private java.util.List<com.oracle.bmc.logging.model.LogGroupSummary> items;
 
     public static class Builder {
         /**

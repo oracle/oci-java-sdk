@@ -25,7 +25,8 @@ public class ListTemplateCategoriesResponse {
     /**
      * The returned TemplateCategorySummaryCollection instance.
      */
-    private TemplateCategorySummaryCollection templateCategorySummaryCollection;
+    private com.oracle.bmc.resourcemanager.model.TemplateCategorySummaryCollection
+            templateCategorySummaryCollection;
 
     public static class Builder {
         /**

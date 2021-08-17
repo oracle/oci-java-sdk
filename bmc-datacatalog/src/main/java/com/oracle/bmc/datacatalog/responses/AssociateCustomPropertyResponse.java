@@ -33,7 +33,7 @@ public class AssociateCustomPropertyResponse {
     /**
      * The returned Type instance.
      */
-    private Type type;
+    private com.oracle.bmc.datacatalog.model.Type type;
 
     public static class Builder {
         /**

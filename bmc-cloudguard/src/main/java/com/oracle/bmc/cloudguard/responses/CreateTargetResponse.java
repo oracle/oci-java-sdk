@@ -33,7 +33,7 @@ public class CreateTargetResponse {
     /**
      * The returned Target instance.
      */
-    private Target target;
+    private com.oracle.bmc.cloudguard.model.Target target;
 
     public static class Builder {
         /**

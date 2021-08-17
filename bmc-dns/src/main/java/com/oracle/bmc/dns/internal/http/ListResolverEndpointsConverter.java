@@ -127,15 +127,20 @@ public class ListResolverEndpointsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<ResolverEndpointSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.dns.model
+                                                                        .ResolverEndpointSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        ResolverEndpointSummary>>() {});
+                                                                        com.oracle.bmc.dns.model
+                                                                                .ResolverEndpointSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<ResolverEndpointSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.dns.model
+                                                                .ResolverEndpointSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

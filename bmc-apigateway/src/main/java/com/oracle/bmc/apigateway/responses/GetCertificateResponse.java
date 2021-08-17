@@ -34,7 +34,7 @@ public class GetCertificateResponse {
     /**
      * The returned Certificate instance.
      */
-    private Certificate certificate;
+    private com.oracle.bmc.apigateway.model.Certificate certificate;
 
     public static class Builder {
         /**

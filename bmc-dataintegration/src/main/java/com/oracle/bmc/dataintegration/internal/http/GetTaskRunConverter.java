@@ -79,12 +79,17 @@ public class GetTaskRunConverter {
                                         "Transform function invoked for com.oracle.bmc.dataintegration.responses.GetTaskRunResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<TaskRun>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .TaskRun>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(TaskRun.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.dataintegration.model.TaskRun
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<TaskRun> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dataintegration.model.TaskRun>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

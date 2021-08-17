@@ -42,7 +42,8 @@ public class ListSourcePatternsResponse {
     /**
      * The returned LogAnalyticsSourcePatternCollection instance.
      */
-    private LogAnalyticsSourcePatternCollection logAnalyticsSourcePatternCollection;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsSourcePatternCollection
+            logAnalyticsSourcePatternCollection;
 
     public static class Builder {
         /**

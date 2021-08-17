@@ -33,9 +33,9 @@ public class ListZoneTransferServersResponse {
     private String opcNextPage;
 
     /**
-     * A list of ZoneTransferServer instances.
+     * A list of com.oracle.bmc.dns.model.ZoneTransferServer instances.
      */
-    private java.util.List<ZoneTransferServer> items;
+    private java.util.List<com.oracle.bmc.dns.model.ZoneTransferServer> items;
 
     public static class Builder {
         /**

@@ -97,12 +97,16 @@ public class RestoreVaultFromFileConverter {
                                         "Transform function invoked for com.oracle.bmc.keymanagement.responses.RestoreVaultFromFileResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Vault>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.keymanagement.model.Vault>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Vault.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.keymanagement.model.Vault
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Vault> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.keymanagement.model.Vault>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

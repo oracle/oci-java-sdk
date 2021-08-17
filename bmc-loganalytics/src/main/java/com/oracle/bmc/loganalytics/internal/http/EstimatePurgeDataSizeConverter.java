@@ -87,13 +87,17 @@ public class EstimatePurgeDataSizeConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        EstimatePurgeDataSizeResult>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .EstimatePurgeDataSizeResult>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        EstimatePurgeDataSizeResult.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .EstimatePurgeDataSizeResult
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                EstimatePurgeDataSizeResult>
+                                                com.oracle.bmc.loganalytics.model
+                                                        .EstimatePurgeDataSizeResult>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

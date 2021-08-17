@@ -27,7 +27,7 @@ public class GetAgreementResponse {
     /**
      * The returned Agreement instance.
      */
-    private Agreement agreement;
+    private com.oracle.bmc.marketplace.model.Agreement agreement;
 
     public static class Builder {
         /**

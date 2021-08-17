@@ -27,7 +27,7 @@ public class UpdateTagNamespaceResponse {
     /**
      * The returned TagNamespace instance.
      */
-    private TagNamespace tagNamespace;
+    private com.oracle.bmc.identity.model.TagNamespace tagNamespace;
 
     public static class Builder {
         /**

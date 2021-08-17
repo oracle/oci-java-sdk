@@ -140,13 +140,17 @@ public class ListPipelineValidationsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        PipelineValidationSummaryCollection>>
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .PipelineValidationSummaryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        PipelineValidationSummaryCollection.class);
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .PipelineValidationSummaryCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                PipelineValidationSummaryCollection>
+                                                com.oracle.bmc.dataintegration.model
+                                                        .PipelineValidationSummaryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

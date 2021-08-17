@@ -32,7 +32,7 @@ public class GetNamespaceResponse {
     /**
      * The returned Namespace instance.
      */
-    private Namespace namespace;
+    private com.oracle.bmc.loganalytics.model.Namespace namespace;
 
     public static class Builder {
         /**

@@ -72,11 +72,15 @@ public class UpdateSddcConverter {
                                         "Transform function invoked for com.oracle.bmc.ocvp.responses.UpdateSddcResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Sddc>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create(Sddc.class);
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.ocvp.model.Sddc>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.ocvp.model.Sddc.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Sddc> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.ocvp.model.Sddc>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

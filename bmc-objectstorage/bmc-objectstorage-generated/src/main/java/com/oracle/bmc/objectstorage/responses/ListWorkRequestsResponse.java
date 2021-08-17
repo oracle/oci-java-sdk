@@ -43,9 +43,9 @@ public class ListWorkRequestsResponse {
     private String opcClientRequestId;
 
     /**
-     * A list of WorkRequestSummary instances.
+     * A list of com.oracle.bmc.objectstorage.model.WorkRequestSummary instances.
      */
-    private java.util.List<WorkRequestSummary> items;
+    private java.util.List<com.oracle.bmc.objectstorage.model.WorkRequestSummary> items;
 
     public static class Builder {
         /**

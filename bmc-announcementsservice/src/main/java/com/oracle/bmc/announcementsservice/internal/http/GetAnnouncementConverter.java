@@ -73,13 +73,18 @@ public class GetAnnouncementConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        Announcement>>
+                                                        com.oracle.bmc.announcementsservice.model
+                                                                .Announcement>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        Announcement.class);
+                                                        com.oracle.bmc.announcementsservice.model
+                                                                        .Announcement
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Announcement> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.announcementsservice.model
+                                                        .Announcement>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

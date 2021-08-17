@@ -136,12 +136,17 @@ public class ListDeployArtifactsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DeployArtifactCollection>>
+                                                        com.oracle.bmc.devops.model
+                                                                .DeployArtifactCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DeployArtifactCollection.class);
+                                                        com.oracle.bmc.devops.model
+                                                                        .DeployArtifactCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DeployArtifactCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.devops.model
+                                                        .DeployArtifactCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

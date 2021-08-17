@@ -75,13 +75,17 @@ public class GetApiValidationsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ApiValidations>>
+                                                        com.oracle.bmc.apigateway.model
+                                                                .ApiValidations>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ApiValidations.class);
+                                                        com.oracle.bmc.apigateway.model
+                                                                        .ApiValidations
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ApiValidations> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.apigateway.model.ApiValidations>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

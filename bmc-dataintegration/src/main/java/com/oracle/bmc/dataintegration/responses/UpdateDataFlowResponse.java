@@ -33,7 +33,7 @@ public class UpdateDataFlowResponse {
     /**
      * The returned DataFlow instance.
      */
-    private DataFlow dataFlow;
+    private com.oracle.bmc.dataintegration.model.DataFlow dataFlow;
 
     public static class Builder {
         /**

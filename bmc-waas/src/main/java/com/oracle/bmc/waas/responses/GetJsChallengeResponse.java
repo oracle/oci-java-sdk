@@ -30,7 +30,7 @@ public class GetJsChallengeResponse {
     /**
      * The returned JsChallenge instance.
      */
-    private JsChallenge jsChallenge;
+    private com.oracle.bmc.waas.model.JsChallenge jsChallenge;
 
     public static class Builder {
         /**

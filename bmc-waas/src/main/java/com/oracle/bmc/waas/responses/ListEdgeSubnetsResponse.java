@@ -28,9 +28,9 @@ public class ListEdgeSubnetsResponse {
     private String opcRequestId;
 
     /**
-     * A list of EdgeSubnet instances.
+     * A list of com.oracle.bmc.waas.model.EdgeSubnet instances.
      */
-    private java.util.List<EdgeSubnet> items;
+    private java.util.List<com.oracle.bmc.waas.model.EdgeSubnet> items;
 
     public static class Builder {
         /**

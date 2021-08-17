@@ -28,9 +28,9 @@ public class ListHttpRedirectsResponse {
     private String opcRequestId;
 
     /**
-     * A list of HttpRedirectSummary instances.
+     * A list of com.oracle.bmc.waas.model.HttpRedirectSummary instances.
      */
-    private java.util.List<HttpRedirectSummary> items;
+    private java.util.List<com.oracle.bmc.waas.model.HttpRedirectSummary> items;
 
     public static class Builder {
         /**

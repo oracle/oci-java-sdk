@@ -104,12 +104,17 @@ public class ListImpactedResourcesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ImpactedResourceCollection>>
+                                                        com.oracle.bmc.cloudguard.model
+                                                                .ImpactedResourceCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ImpactedResourceCollection.class);
+                                                        com.oracle.bmc.cloudguard.model
+                                                                        .ImpactedResourceCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ImpactedResourceCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.cloudguard.model
+                                                        .ImpactedResourceCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

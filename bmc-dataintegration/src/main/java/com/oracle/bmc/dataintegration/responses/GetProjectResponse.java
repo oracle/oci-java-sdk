@@ -33,7 +33,7 @@ public class GetProjectResponse {
     /**
      * The returned Project instance.
      */
-    private Project project;
+    private com.oracle.bmc.dataintegration.model.Project project;
 
     public static class Builder {
         /**

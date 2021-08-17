@@ -74,12 +74,17 @@ public class GetLoadBalancerHealthConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LoadBalancerHealth>>
+                                                        com.oracle.bmc.loadbalancer.model
+                                                                .LoadBalancerHealth>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LoadBalancerHealth.class);
+                                                        com.oracle.bmc.loadbalancer.model
+                                                                        .LoadBalancerHealth
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<LoadBalancerHealth>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loadbalancer.model
+                                                        .LoadBalancerHealth>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

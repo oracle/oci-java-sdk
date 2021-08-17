@@ -44,7 +44,7 @@ public class ListRetentionRulesResponse {
     /**
      * The returned RetentionRuleCollection instance.
      */
-    private RetentionRuleCollection retentionRuleCollection;
+    private com.oracle.bmc.objectstorage.model.RetentionRuleCollection retentionRuleCollection;
 
     public static class Builder {
         /**

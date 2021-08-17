@@ -71,13 +71,15 @@ public class GetJsChallengeConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        JsChallenge>>
+                                                        com.oracle.bmc.waas.model.JsChallenge>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        JsChallenge.class);
+                                                        com.oracle.bmc.waas.model.JsChallenge
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<JsChallenge> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.waas.model.JsChallenge>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

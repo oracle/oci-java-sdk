@@ -173,13 +173,17 @@ public class ListTermsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        TermCollection>>
+                                                        com.oracle.bmc.datacatalog.model
+                                                                .TermCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        TermCollection.class);
+                                                        com.oracle.bmc.datacatalog.model
+                                                                        .TermCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<TermCollection> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model.TermCollection>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

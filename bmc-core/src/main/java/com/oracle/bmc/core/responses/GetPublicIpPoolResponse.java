@@ -33,7 +33,7 @@ public class GetPublicIpPoolResponse {
     /**
      * The returned PublicIpPool instance.
      */
-    private PublicIpPool publicIpPool;
+    private com.oracle.bmc.core.model.PublicIpPool publicIpPool;
 
     public static class Builder {
         /**

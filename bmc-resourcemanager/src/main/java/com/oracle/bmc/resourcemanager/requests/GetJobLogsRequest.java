@@ -122,6 +122,27 @@ public class GetJobLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<LogEntry.Type> type = null;
+
+        /**
+         * A filter that returns only logs of a specified type.
+         *
+         * @return this builder instance
+         */
+        public Builder type(java.util.List<LogEntry.Type> type) {
+            this.type = type;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter that returns only logs of a specified type.
+         *
+         * @return this builder instance
+         */
+        public Builder type(LogEntry.Type singularValue) {
+            return this.type(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

@@ -32,7 +32,7 @@ public class GetFieldResponse {
     /**
      * The returned LogAnalyticsField instance.
      */
-    private LogAnalyticsField logAnalyticsField;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsField logAnalyticsField;
 
     public static class Builder {
         /**

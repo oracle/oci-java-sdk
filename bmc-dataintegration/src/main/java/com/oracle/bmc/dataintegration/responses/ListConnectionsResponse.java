@@ -45,7 +45,8 @@ public class ListConnectionsResponse {
     /**
      * The returned ConnectionSummaryCollection instance.
      */
-    private ConnectionSummaryCollection connectionSummaryCollection;
+    private com.oracle.bmc.dataintegration.model.ConnectionSummaryCollection
+            connectionSummaryCollection;
 
     public static class Builder {
         /**

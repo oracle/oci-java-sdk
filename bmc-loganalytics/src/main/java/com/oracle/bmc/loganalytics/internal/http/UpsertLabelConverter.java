@@ -84,12 +84,16 @@ public class UpsertLabelConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogAnalyticsLabel>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogAnalyticsLabel>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogAnalyticsLabel.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogAnalyticsLabel
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<LogAnalyticsLabel>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model.LogAnalyticsLabel>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

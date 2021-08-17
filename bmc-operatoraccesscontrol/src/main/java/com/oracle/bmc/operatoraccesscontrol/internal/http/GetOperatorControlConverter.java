@@ -74,13 +74,18 @@ public class GetOperatorControlConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        OperatorControl>>
+                                                        com.oracle.bmc.operatoraccesscontrol.model
+                                                                .OperatorControl>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        OperatorControl.class);
+                                                        com.oracle.bmc.operatoraccesscontrol.model
+                                                                        .OperatorControl
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<OperatorControl> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.operatoraccesscontrol.model
+                                                        .OperatorControl>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -33,7 +33,7 @@ public class CreateSubscriptionResponse {
     /**
      * The returned Subscription instance.
      */
-    private Subscription subscription;
+    private com.oracle.bmc.ons.model.Subscription subscription;
 
     public static class Builder {
         /**

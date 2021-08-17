@@ -35,9 +35,9 @@ public class ListHttpProbeResultsResponse {
     private String opcNextPage;
 
     /**
-     * A list of HttpProbeResultSummary instances.
+     * A list of com.oracle.bmc.healthchecks.model.HttpProbeResultSummary instances.
      */
-    private java.util.List<HttpProbeResultSummary> items;
+    private java.util.List<com.oracle.bmc.healthchecks.model.HttpProbeResultSummary> items;
 
     public static class Builder {
         /**

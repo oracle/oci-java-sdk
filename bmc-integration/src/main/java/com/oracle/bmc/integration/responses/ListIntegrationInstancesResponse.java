@@ -38,9 +38,9 @@ public class ListIntegrationInstancesResponse {
     private String opcPreviousPage;
 
     /**
-     * A list of IntegrationInstanceSummary instances.
+     * A list of com.oracle.bmc.integration.model.IntegrationInstanceSummary instances.
      */
-    private java.util.List<IntegrationInstanceSummary> items;
+    private java.util.List<com.oracle.bmc.integration.model.IntegrationInstanceSummary> items;
 
     public static class Builder {
         /**

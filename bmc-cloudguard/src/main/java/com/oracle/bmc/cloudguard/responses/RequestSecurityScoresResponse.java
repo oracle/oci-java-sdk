@@ -35,7 +35,8 @@ public class RequestSecurityScoresResponse {
     /**
      * The returned SecurityScoreAggregationCollection instance.
      */
-    private SecurityScoreAggregationCollection securityScoreAggregationCollection;
+    private com.oracle.bmc.cloudguard.model.SecurityScoreAggregationCollection
+            securityScoreAggregationCollection;
 
     public static class Builder {
         /**

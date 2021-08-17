@@ -151,12 +151,17 @@ public class ListJobRunsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        JobRunCollection>>
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                .JobRunCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        JobRunCollection.class);
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                        .JobRunCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<JobRunCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.databasemanagement.model
+                                                        .JobRunCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

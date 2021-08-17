@@ -35,7 +35,8 @@ public class ListManagementSavedSearchesResponse {
     /**
      * The returned ManagementSavedSearchCollection instance.
      */
-    private ManagementSavedSearchCollection managementSavedSearchCollection;
+    private com.oracle.bmc.managementdashboard.model.ManagementSavedSearchCollection
+            managementSavedSearchCollection;
 
     public static class Builder {
         /**

@@ -91,12 +91,17 @@ public class ExtractStructuredLogFieldPathsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ExtractLogFieldResults>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .ExtractLogFieldResults>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ExtractLogFieldResults.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .ExtractLogFieldResults
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ExtractLogFieldResults>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model
+                                                        .ExtractLogFieldResults>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -136,15 +136,21 @@ public class ListExportsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<ExportSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.filestorage.model
+                                                                        .ExportSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        ExportSummary>>() {});
+                                                                        com.oracle.bmc.filestorage
+                                                                                .model
+                                                                                .ExportSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<ExportSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.filestorage.model
+                                                                .ExportSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

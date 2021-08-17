@@ -46,7 +46,7 @@ public class ListSdkLanguageTypesResponse {
     /**
      * The returned SdkLanguageTypeCollection instance.
      */
-    private SdkLanguageTypeCollection sdkLanguageTypeCollection;
+    private com.oracle.bmc.apigateway.model.SdkLanguageTypeCollection sdkLanguageTypeCollection;
 
     public static class Builder {
         /**

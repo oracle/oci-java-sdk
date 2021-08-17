@@ -72,12 +72,16 @@ public class GetRoverNodeEncryptionKeyConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        RoverNodeEncryptionKey>>
+                                                        com.oracle.bmc.rover.model
+                                                                .RoverNodeEncryptionKey>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        RoverNodeEncryptionKey.class);
+                                                        com.oracle.bmc.rover.model
+                                                                        .RoverNodeEncryptionKey
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<RoverNodeEncryptionKey>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.rover.model.RoverNodeEncryptionKey>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

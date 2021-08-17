@@ -93,15 +93,19 @@ public class ListFastConnectProviderVirtualCircuitBandwidthShapesConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                VirtualCircuitBandwidthShape>>>
+                                                                com.oracle.bmc.core.model
+                                                                        .VirtualCircuitBandwidthShape>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        VirtualCircuitBandwidthShape>>() {});
+                                                                        com.oracle.bmc.core.model
+                                                                                .VirtualCircuitBandwidthShape>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<VirtualCircuitBandwidthShape>>
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model
+                                                                .VirtualCircuitBandwidthShape>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

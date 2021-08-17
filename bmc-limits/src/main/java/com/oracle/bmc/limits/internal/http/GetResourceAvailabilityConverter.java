@@ -92,12 +92,16 @@ public class GetResourceAvailabilityConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ResourceAvailability>>
+                                                        com.oracle.bmc.limits.model
+                                                                .ResourceAvailability>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ResourceAvailability.class);
+                                                        com.oracle.bmc.limits.model
+                                                                        .ResourceAvailability
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ResourceAvailability>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.limits.model.ResourceAvailability>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

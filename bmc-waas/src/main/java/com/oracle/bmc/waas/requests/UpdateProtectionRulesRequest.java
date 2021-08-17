@@ -57,6 +57,25 @@ public class UpdateProtectionRulesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<ProtectionRuleAction> protectionRules = null;
+
+        /**
+         *
+         * @return this builder instance
+         */
+        public Builder protectionRules(java.util.List<ProtectionRuleAction> protectionRules) {
+            this.protectionRules = protectionRules;
+            return this;
+        }
+
+        /**
+         * Singular setter.
+         * @return this builder instance
+         */
+        public Builder protectionRules(ProtectionRuleAction singularValue) {
+            return this.protectionRules(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

@@ -27,7 +27,7 @@ public class GetResourceAvailabilityResponse {
     /**
      * The returned ResourceAvailability instance.
      */
-    private ResourceAvailability resourceAvailability;
+    private com.oracle.bmc.limits.model.ResourceAvailability resourceAvailability;
 
     public static class Builder {
         /**

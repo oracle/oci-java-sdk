@@ -93,12 +93,16 @@ public class GetFolderTagConverter {
                                         "Transform function invoked for com.oracle.bmc.datacatalog.responses.GetFolderTagResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<FolderTag>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.datacatalog.model.FolderTag>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(FolderTag.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.datacatalog.model.FolderTag
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<FolderTag> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model.FolderTag>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

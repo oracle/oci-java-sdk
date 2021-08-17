@@ -71,12 +71,15 @@ public class UploadApiKeyConverter {
                                         "Transform function invoked for com.oracle.bmc.identity.responses.UploadApiKeyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<ApiKey>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.identity.model.ApiKey>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(ApiKey.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.identity.model.ApiKey.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ApiKey> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.identity.model.ApiKey>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

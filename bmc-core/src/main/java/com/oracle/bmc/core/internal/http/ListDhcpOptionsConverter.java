@@ -123,14 +123,19 @@ public class ListDhcpOptionsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<DhcpOptions>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.core.model
+                                                                        .DhcpOptions>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<DhcpOptions>>() {});
+                                                                java.util.List<
+                                                                        com.oracle.bmc.core.model
+                                                                                .DhcpOptions>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<DhcpOptions>>
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model.DhcpOptions>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

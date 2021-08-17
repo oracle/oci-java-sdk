@@ -70,13 +70,15 @@ public class CreateTagDefaultConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        TagDefault>>
+                                                        com.oracle.bmc.identity.model.TagDefault>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        TagDefault.class);
+                                                        com.oracle.bmc.identity.model.TagDefault
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<TagDefault> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.identity.model.TagDefault>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

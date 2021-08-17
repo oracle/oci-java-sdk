@@ -35,7 +35,7 @@ public class RequestSummarizedTrendResponderExecutionsResponse {
     /**
      * The returned ResponderExecutionTrendAggregationCollection instance.
      */
-    private ResponderExecutionTrendAggregationCollection
+    private com.oracle.bmc.cloudguard.model.ResponderExecutionTrendAggregationCollection
             responderExecutionTrendAggregationCollection;
 
     public static class Builder {

@@ -38,7 +38,7 @@ public class UpdateCloudVmClusterResponse {
     /**
      * The returned CloudVmCluster instance.
      */
-    private CloudVmCluster cloudVmCluster;
+    private com.oracle.bmc.database.model.CloudVmCluster cloudVmCluster;
 
     public static class Builder {
         /**

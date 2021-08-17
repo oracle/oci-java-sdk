@@ -81,13 +81,17 @@ public class ProcessRecommendationConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ProcessRecommendationDetails>>
+                                                        com.oracle.bmc.datacatalog.model
+                                                                .ProcessRecommendationDetails>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ProcessRecommendationDetails.class);
+                                                        com.oracle.bmc.datacatalog.model
+                                                                        .ProcessRecommendationDetails
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ProcessRecommendationDetails>
+                                                com.oracle.bmc.datacatalog.model
+                                                        .ProcessRecommendationDetails>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -41,9 +41,9 @@ public class ListServicesResponse {
     private String opcPreviousPage;
 
     /**
-     * A list of ServiceSummary instances.
+     * A list of com.oracle.bmc.logging.model.ServiceSummary instances.
      */
-    private java.util.List<ServiceSummary> items;
+    private java.util.List<com.oracle.bmc.logging.model.ServiceSummary> items;
 
     public static class Builder {
         /**

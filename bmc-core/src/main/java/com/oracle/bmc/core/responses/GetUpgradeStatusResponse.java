@@ -27,7 +27,7 @@ public class GetUpgradeStatusResponse {
     /**
      * The returned UpgradeStatus instance.
      */
-    private UpgradeStatus upgradeStatus;
+    private com.oracle.bmc.core.model.UpgradeStatus upgradeStatus;
 
     public static class Builder {
         /**

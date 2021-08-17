@@ -34,9 +34,9 @@ public class ListDbHomesResponse {
     private String opcNextPage;
 
     /**
-     * A list of DbHomeSummary instances.
+     * A list of com.oracle.bmc.database.model.DbHomeSummary instances.
      */
-    private java.util.List<DbHomeSummary> items;
+    private java.util.List<com.oracle.bmc.database.model.DbHomeSummary> items;
 
     public static class Builder {
         /**

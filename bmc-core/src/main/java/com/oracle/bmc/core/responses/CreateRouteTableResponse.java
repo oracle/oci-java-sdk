@@ -33,7 +33,7 @@ public class CreateRouteTableResponse {
     /**
      * The returned RouteTable instance.
      */
-    private RouteTable routeTable;
+    private com.oracle.bmc.core.model.RouteTable routeTable;
 
     public static class Builder {
         /**

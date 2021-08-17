@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.4.0 - 2021-08-17
+### Added
+- Support for getting management agent hosts which are eligible to create Operations Insights host resources on, in the Operations Insights service
+- Support for getting summarized agent counts and summarized plugin counts in the Management Agent Cloud service
+
+### Breaking Changes
+- Class `com.oracle.bmc.managementagent.model.WorkSubmissionKey` has been removed in the Management Agent service
+- Return type of method `public com.oracle.bmc.managementagent.model.PlatformTypes getPlatformType()` has been changed to `java.util.List` in the Management Agent service
+- Return type of method `public java.lang.String getPluginName()` has been changed to `java.util.List` in the Management Agent service
+- Return type of method `public java.lang.String getVersion()` has been changed to `java.util.List` in the Management Agent service
+
 ## 2.3.2 - 2021-08-03
 ### Added
 - Support for manually copying volume group backups across regions in the Block Volume service

@@ -33,7 +33,7 @@ public class GetConditionMetadataTypeResponse {
     /**
      * The returned ConditionMetadataType instance.
      */
-    private ConditionMetadataType conditionMetadataType;
+    private com.oracle.bmc.cloudguard.model.ConditionMetadataType conditionMetadataType;
 
     public static class Builder {
         /**

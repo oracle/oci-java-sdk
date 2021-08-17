@@ -84,15 +84,20 @@ public class ListIPSecConnectionTunnelsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<IPSecConnectionTunnel>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.core.model
+                                                                        .IPSecConnectionTunnel>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        IPSecConnectionTunnel>>() {});
+                                                                        com.oracle.bmc.core.model
+                                                                                .IPSecConnectionTunnel>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<IPSecConnectionTunnel>>
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model
+                                                                .IPSecConnectionTunnel>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

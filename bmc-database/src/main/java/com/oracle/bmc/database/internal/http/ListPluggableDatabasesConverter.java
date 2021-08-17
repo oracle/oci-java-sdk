@@ -125,15 +125,21 @@ public class ListPluggableDatabasesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<PluggableDatabaseSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.database.model
+                                                                        .PluggableDatabaseSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        PluggableDatabaseSummary>>() {});
+                                                                        com.oracle.bmc.database
+                                                                                .model
+                                                                                .PluggableDatabaseSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<PluggableDatabaseSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.database.model
+                                                                .PluggableDatabaseSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

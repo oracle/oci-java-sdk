@@ -122,15 +122,21 @@ public class ListIdentityProvidersConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<IdentityProvider>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.identity.model
+                                                                        .IdentityProvider>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        IdentityProvider>>() {});
+                                                                        com.oracle.bmc.identity
+                                                                                .model
+                                                                                .IdentityProvider>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<IdentityProvider>>
+                                                java.util.List<
+                                                        com.oracle.bmc.identity.model
+                                                                .IdentityProvider>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -36,7 +36,8 @@ public class ListStackResourceDriftDetailsResponse {
     /**
      * The returned StackResourceDriftCollection instance.
      */
-    private StackResourceDriftCollection stackResourceDriftCollection;
+    private com.oracle.bmc.resourcemanager.model.StackResourceDriftCollection
+            stackResourceDriftCollection;
 
     public static class Builder {
         /**

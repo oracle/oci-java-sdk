@@ -32,7 +32,7 @@ public class UpdateNamespaceMetadataResponse {
     /**
      * The returned NamespaceMetadata instance.
      */
-    private NamespaceMetadata namespaceMetadata;
+    private com.oracle.bmc.objectstorage.model.NamespaceMetadata namespaceMetadata;
 
     public static class Builder {
         /**

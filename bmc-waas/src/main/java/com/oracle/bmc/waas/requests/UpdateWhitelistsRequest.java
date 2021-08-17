@@ -63,6 +63,25 @@ public class UpdateWhitelistsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<Whitelist> whitelists = null;
+
+        /**
+         *
+         * @return this builder instance
+         */
+        public Builder whitelists(java.util.List<Whitelist> whitelists) {
+            this.whitelists = whitelists;
+            return this;
+        }
+
+        /**
+         * Singular setter.
+         * @return this builder instance
+         */
+        public Builder whitelists(Whitelist singularValue) {
+            return this.whitelists(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

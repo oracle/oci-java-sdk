@@ -69,12 +69,17 @@ public class CreateOnDemandPingProbeConverter {
                                         "Transform function invoked for com.oracle.bmc.healthchecks.responses.CreateOnDemandPingProbeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<PingProbe>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.healthchecks.model
+                                                                .PingProbe>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(PingProbe.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.healthchecks.model.PingProbe
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<PingProbe> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.healthchecks.model.PingProbe>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

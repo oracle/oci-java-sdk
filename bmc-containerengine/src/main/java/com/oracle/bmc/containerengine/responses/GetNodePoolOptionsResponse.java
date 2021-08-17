@@ -27,7 +27,7 @@ public class GetNodePoolOptionsResponse {
     /**
      * The returned NodePoolOptions instance.
      */
-    private NodePoolOptions nodePoolOptions;
+    private com.oracle.bmc.containerengine.model.NodePoolOptions nodePoolOptions;
 
     public static class Builder {
         /**

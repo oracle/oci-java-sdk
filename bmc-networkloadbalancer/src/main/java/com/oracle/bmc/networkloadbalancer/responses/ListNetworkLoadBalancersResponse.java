@@ -35,7 +35,8 @@ public class ListNetworkLoadBalancersResponse {
     /**
      * The returned NetworkLoadBalancerCollection instance.
      */
-    private NetworkLoadBalancerCollection networkLoadBalancerCollection;
+    private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerCollection
+            networkLoadBalancerCollection;
 
     public static class Builder {
         /**

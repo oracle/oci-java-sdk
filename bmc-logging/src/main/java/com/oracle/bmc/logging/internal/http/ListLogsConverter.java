@@ -142,13 +142,19 @@ public class ListLogsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<LogSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.logging.model
+                                                                        .LogSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<LogSummary>>() {});
+                                                                java.util.List<
+                                                                        com.oracle.bmc.logging.model
+                                                                                .LogSummary>>() {});
 
-                                com.oracle.bmc.http.internal.WithHeaders<java.util.List<LogSummary>>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                java.util.List<
+                                                        com.oracle.bmc.logging.model.LogSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -83,14 +83,20 @@ public class ListDbHomePatchesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<PatchSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.database.model
+                                                                        .PatchSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<PatchSummary>>() {});
+                                                                java.util.List<
+                                                                        com.oracle.bmc.database
+                                                                                .model
+                                                                                .PatchSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<PatchSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.database.model.PatchSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

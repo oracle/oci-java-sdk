@@ -32,7 +32,7 @@ public class UpdateAuthenticationPolicyResponse {
     /**
      * The returned AuthenticationPolicy instance.
      */
-    private AuthenticationPolicy authenticationPolicy;
+    private com.oracle.bmc.identity.model.AuthenticationPolicy authenticationPolicy;
 
     public static class Builder {
         /**

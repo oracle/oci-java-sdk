@@ -83,12 +83,17 @@ public class GetLogAnalyticsLogGroupsSummaryConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogGroupSummaryReport>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogGroupSummaryReport>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogGroupSummaryReport.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogGroupSummaryReport
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<LogGroupSummaryReport>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LogGroupSummaryReport>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

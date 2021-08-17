@@ -27,7 +27,8 @@ public class DetectLanguageTextClassificationResponse {
     /**
      * The returned DetectLanguageTextClassificationResult instance.
      */
-    private DetectLanguageTextClassificationResult detectLanguageTextClassificationResult;
+    private com.oracle.bmc.ailanguage.model.DetectLanguageTextClassificationResult
+            detectLanguageTextClassificationResult;
 
     public static class Builder {
         /**

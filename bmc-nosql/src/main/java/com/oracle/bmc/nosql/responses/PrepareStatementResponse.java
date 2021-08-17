@@ -28,7 +28,7 @@ public class PrepareStatementResponse {
     /**
      * The returned PreparedStatement instance.
      */
-    private PreparedStatement preparedStatement;
+    private com.oracle.bmc.nosql.model.PreparedStatement preparedStatement;
 
     public static class Builder {
         /**

@@ -32,7 +32,7 @@ public class UpdateSwiftPasswordResponse {
     /**
      * The returned SwiftPassword instance.
      */
-    private SwiftPassword swiftPassword;
+    private com.oracle.bmc.identity.model.SwiftPassword swiftPassword;
 
     public static class Builder {
         /**

@@ -79,13 +79,17 @@ public class GetComputeImageCapabilitySchemaConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ComputeImageCapabilitySchema>>
+                                                        com.oracle.bmc.core.model
+                                                                .ComputeImageCapabilitySchema>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ComputeImageCapabilitySchema.class);
+                                                        com.oracle.bmc.core.model
+                                                                        .ComputeImageCapabilitySchema
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ComputeImageCapabilitySchema>
+                                                com.oracle.bmc.core.model
+                                                        .ComputeImageCapabilitySchema>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -33,7 +33,7 @@ public class ListTypesResponse {
     /**
      * The returned TypeCollection instance.
      */
-    private TypeCollection typeCollection;
+    private com.oracle.bmc.datacatalog.model.TypeCollection typeCollection;
 
     public static class Builder {
         /**

@@ -36,9 +36,9 @@ public class ListHealthChecksVantagePointsResponse {
     private String opcNextPage;
 
     /**
-     * A list of HealthChecksVantagePointSummary instances.
+     * A list of com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary instances.
      */
-    private java.util.List<HealthChecksVantagePointSummary> items;
+    private java.util.List<com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary> items;
 
     public static class Builder {
         /**

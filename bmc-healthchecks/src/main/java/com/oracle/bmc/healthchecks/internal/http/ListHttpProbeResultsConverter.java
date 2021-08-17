@@ -121,15 +121,21 @@ public class ListHttpProbeResultsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<HttpProbeResultSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.healthchecks.model
+                                                                        .HttpProbeResultSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        HttpProbeResultSummary>>() {});
+                                                                        com.oracle.bmc.healthchecks
+                                                                                .model
+                                                                                .HttpProbeResultSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<HttpProbeResultSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.healthchecks.model
+                                                                .HttpProbeResultSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

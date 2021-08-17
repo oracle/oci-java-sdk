@@ -126,15 +126,19 @@ public class ListSecretsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<SecretSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.vault.model
+                                                                        .SecretSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        SecretSummary>>() {});
+                                                                        com.oracle.bmc.vault.model
+                                                                                .SecretSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<SecretSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.vault.model.SecretSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

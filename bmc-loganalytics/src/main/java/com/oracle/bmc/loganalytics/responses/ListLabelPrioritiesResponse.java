@@ -42,7 +42,7 @@ public class ListLabelPrioritiesResponse {
     /**
      * The returned LabelPriorityCollection instance.
      */
-    private LabelPriorityCollection labelPriorityCollection;
+    private com.oracle.bmc.loganalytics.model.LabelPriorityCollection labelPriorityCollection;
 
     public static class Builder {
         /**

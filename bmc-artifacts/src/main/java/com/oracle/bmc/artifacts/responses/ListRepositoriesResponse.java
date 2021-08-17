@@ -35,7 +35,7 @@ public class ListRepositoriesResponse {
     /**
      * The returned RepositoryCollection instance.
      */
-    private RepositoryCollection repositoryCollection;
+    private com.oracle.bmc.artifacts.model.RepositoryCollection repositoryCollection;
 
     public static class Builder {
         /**

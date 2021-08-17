@@ -38,7 +38,7 @@ public class ListTablesResponse {
     /**
      * The returned TableCollection instance.
      */
-    private TableCollection tableCollection;
+    private com.oracle.bmc.nosql.model.TableCollection tableCollection;
 
     public static class Builder {
         /**

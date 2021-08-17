@@ -74,12 +74,16 @@ public class CreateEnterpriseManagerBridgeConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        EnterpriseManagerBridge>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .EnterpriseManagerBridge>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        EnterpriseManagerBridge.class);
+                                                        com.oracle.bmc.opsi.model
+                                                                        .EnterpriseManagerBridge
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<EnterpriseManagerBridge>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.opsi.model.EnterpriseManagerBridge>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

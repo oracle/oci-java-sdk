@@ -30,7 +30,7 @@ public class CreateTemplateResponse {
     /**
      * The returned Template instance.
      */
-    private Template template;
+    private com.oracle.bmc.resourcemanager.model.Template template;
 
     public static class Builder {
         /**

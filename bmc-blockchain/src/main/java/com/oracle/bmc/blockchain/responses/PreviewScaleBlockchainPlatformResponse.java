@@ -33,7 +33,8 @@ public class PreviewScaleBlockchainPlatformResponse {
     /**
      * The returned ScaledBlockchainPlatformPreview instance.
      */
-    private ScaledBlockchainPlatformPreview scaledBlockchainPlatformPreview;
+    private com.oracle.bmc.blockchain.model.ScaledBlockchainPlatformPreview
+            scaledBlockchainPlatformPreview;
 
     public static class Builder {
         /**

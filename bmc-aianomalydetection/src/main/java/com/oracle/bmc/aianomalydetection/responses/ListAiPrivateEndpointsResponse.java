@@ -35,7 +35,8 @@ public class ListAiPrivateEndpointsResponse {
     /**
      * The returned AiPrivateEndpointCollection instance.
      */
-    private AiPrivateEndpointCollection aiPrivateEndpointCollection;
+    private com.oracle.bmc.aianomalydetection.model.AiPrivateEndpointCollection
+            aiPrivateEndpointCollection;
 
     public static class Builder {
         /**

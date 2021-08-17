@@ -28,7 +28,7 @@ public class SummarizeStatementResponse {
     /**
      * The returned StatementSummary instance.
      */
-    private StatementSummary statementSummary;
+    private com.oracle.bmc.nosql.model.StatementSummary statementSummary;
 
     public static class Builder {
         /**

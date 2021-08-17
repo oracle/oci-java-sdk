@@ -68,12 +68,16 @@ public class CreateInstanceConfigurationConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        InstanceConfiguration>>
+                                                        com.oracle.bmc.core.model
+                                                                .InstanceConfiguration>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        InstanceConfiguration.class);
+                                                        com.oracle.bmc.core.model
+                                                                        .InstanceConfiguration
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<InstanceConfiguration>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.InstanceConfiguration>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

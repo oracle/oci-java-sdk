@@ -26,7 +26,8 @@ public class ImportCustomContentResponse {
     /**
      * The returned LogAnalyticsImportCustomContent instance.
      */
-    private LogAnalyticsImportCustomContent logAnalyticsImportCustomContent;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsImportCustomContent
+            logAnalyticsImportCustomContent;
 
     public static class Builder {
         /**

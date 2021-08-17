@@ -35,7 +35,8 @@ public class ListTargetDetectorRecipesResponse {
     /**
      * The returned TargetDetectorRecipeCollection instance.
      */
-    private TargetDetectorRecipeCollection targetDetectorRecipeCollection;
+    private com.oracle.bmc.cloudguard.model.TargetDetectorRecipeCollection
+            targetDetectorRecipeCollection;
 
     public static class Builder {
         /**

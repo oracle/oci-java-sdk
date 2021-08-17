@@ -103,15 +103,21 @@ public class ListVmClusterUpdatesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<VmClusterUpdateSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.database.model
+                                                                        .VmClusterUpdateSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        VmClusterUpdateSummary>>() {});
+                                                                        com.oracle.bmc.database
+                                                                                .model
+                                                                                .VmClusterUpdateSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<VmClusterUpdateSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.database.model
+                                                                .VmClusterUpdateSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

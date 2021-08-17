@@ -35,7 +35,7 @@ public class SummarizeSqlStatisticsTimeSeriesByPlanResponse {
     /**
      * The returned SqlStatisticsTimeSeriesByPlanAggregationCollection instance.
      */
-    private SqlStatisticsTimeSeriesByPlanAggregationCollection
+    private com.oracle.bmc.opsi.model.SqlStatisticsTimeSeriesByPlanAggregationCollection
             sqlStatisticsTimeSeriesByPlanAggregationCollection;
 
     public static class Builder {

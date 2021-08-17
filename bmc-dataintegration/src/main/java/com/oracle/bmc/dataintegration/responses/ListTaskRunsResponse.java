@@ -45,7 +45,7 @@ public class ListTaskRunsResponse {
     /**
      * The returned TaskRunSummaryCollection instance.
      */
-    private TaskRunSummaryCollection taskRunSummaryCollection;
+    private com.oracle.bmc.dataintegration.model.TaskRunSummaryCollection taskRunSummaryCollection;
 
     public static class Builder {
         /**

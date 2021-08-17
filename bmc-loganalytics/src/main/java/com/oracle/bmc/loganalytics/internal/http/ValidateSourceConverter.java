@@ -104,12 +104,17 @@ public class ValidateSourceConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SourceValidateResults>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .SourceValidateResults>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SourceValidateResults.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .SourceValidateResults
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<SourceValidateResults>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model
+                                                        .SourceValidateResults>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

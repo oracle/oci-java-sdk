@@ -72,13 +72,17 @@ public class GetVaultUsageConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        VaultUsage>>
+                                                        com.oracle.bmc.keymanagement.model
+                                                                .VaultUsage>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        VaultUsage.class);
+                                                        com.oracle.bmc.keymanagement.model
+                                                                        .VaultUsage
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<VaultUsage> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.keymanagement.model.VaultUsage>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

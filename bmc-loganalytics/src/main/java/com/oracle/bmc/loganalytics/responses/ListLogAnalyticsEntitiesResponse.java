@@ -34,7 +34,8 @@ public class ListLogAnalyticsEntitiesResponse {
     /**
      * The returned LogAnalyticsEntityCollection instance.
      */
-    private LogAnalyticsEntityCollection logAnalyticsEntityCollection;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsEntityCollection
+            logAnalyticsEntityCollection;
 
     public static class Builder {
         /**

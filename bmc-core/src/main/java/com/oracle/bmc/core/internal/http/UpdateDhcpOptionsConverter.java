@@ -71,13 +71,15 @@ public class UpdateDhcpOptionsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DhcpOptions>>
+                                                        com.oracle.bmc.core.model.DhcpOptions>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DhcpOptions.class);
+                                                        com.oracle.bmc.core.model.DhcpOptions
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DhcpOptions> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.DhcpOptions>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

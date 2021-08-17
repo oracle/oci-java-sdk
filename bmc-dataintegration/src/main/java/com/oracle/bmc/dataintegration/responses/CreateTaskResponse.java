@@ -33,7 +33,7 @@ public class CreateTaskResponse {
     /**
      * The returned Task instance.
      */
-    private Task task;
+    private com.oracle.bmc.dataintegration.model.Task task;
 
     public static class Builder {
         /**

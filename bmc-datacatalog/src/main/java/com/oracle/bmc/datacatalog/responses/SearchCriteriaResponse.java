@@ -33,7 +33,7 @@ public class SearchCriteriaResponse {
     /**
      * The returned SearchResultCollection instance.
      */
-    private SearchResultCollection searchResultCollection;
+    private com.oracle.bmc.datacatalog.model.SearchResultCollection searchResultCollection;
 
     public static class Builder {
         /**

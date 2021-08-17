@@ -76,12 +76,15 @@ public class GetStatusConverter {
                                         "Transform function invoked for com.oracle.bmc.cims.responses.GetStatusResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Status>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.cims.model.Status>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Status.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.cims.model.Status.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Status> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.cims.model.Status>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

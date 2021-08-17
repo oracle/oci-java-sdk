@@ -132,13 +132,17 @@ public class ListObjectsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ListObjects>>
+                                                        com.oracle.bmc.objectstorage.model
+                                                                .ListObjects>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ListObjects.class);
+                                                        com.oracle.bmc.objectstorage.model
+                                                                        .ListObjects
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ListObjects> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.objectstorage.model.ListObjects>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

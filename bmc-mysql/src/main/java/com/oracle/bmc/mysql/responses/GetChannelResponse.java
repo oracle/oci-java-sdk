@@ -33,7 +33,7 @@ public class GetChannelResponse {
     /**
      * The returned Channel instance, or null if {@link #isNotModified()} is true.
      */
-    private Channel channel;
+    private com.oracle.bmc.mysql.model.Channel channel;
 
     /**
      * Flag to indicate whether or not the object was modified.  If this is true,

@@ -34,9 +34,9 @@ public class ListDatabaseSoftwareImagesResponse {
     private String opcNextPage;
 
     /**
-     * A list of DatabaseSoftwareImageSummary instances.
+     * A list of com.oracle.bmc.database.model.DatabaseSoftwareImageSummary instances.
      */
-    private java.util.List<DatabaseSoftwareImageSummary> items;
+    private java.util.List<com.oracle.bmc.database.model.DatabaseSoftwareImageSummary> items;
 
     public static class Builder {
         /**

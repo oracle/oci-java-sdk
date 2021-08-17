@@ -119,15 +119,21 @@ public class ListCatalogsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<CatalogSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.datacatalog.model
+                                                                        .CatalogSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        CatalogSummary>>() {});
+                                                                        com.oracle.bmc.datacatalog
+                                                                                .model
+                                                                                .CatalogSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<CatalogSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.datacatalog.model
+                                                                .CatalogSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

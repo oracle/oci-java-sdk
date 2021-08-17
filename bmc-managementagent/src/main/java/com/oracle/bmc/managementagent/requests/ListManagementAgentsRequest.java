@@ -21,19 +21,19 @@ public class ListManagementAgentsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The ID of the compartment from which the Management Agents to be listed.
+     * The OCID of the compartment to which a request will be scoped.
      */
     private String compartmentId;
 
     /**
-     * Filter to return only Management Agents having the particular Plugin installed.
+     * Filter to return only Management Agents having the particular Plugin installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed.
      */
-    private String pluginName;
+    private java.util.List<String> pluginName;
 
     /**
      * Filter to return only Management Agents having the particular agent version.
      */
-    private String version;
+    private java.util.List<String> version;
 
     /**
      * Filter to return only Management Agents having the particular display name.
@@ -46,9 +46,24 @@ public class ListManagementAgentsRequest
     private com.oracle.bmc.managementagent.model.LifecycleStates lifecycleState;
 
     /**
-     * Filter to return only Management Agents having the particular platform type.
+     * Filter to return only Management Agents in the particular availability status.
      */
-    private com.oracle.bmc.managementagent.model.PlatformTypes platformType;
+    private com.oracle.bmc.managementagent.model.AvailabilityStatus availabilityStatus;
+
+    /**
+     * Filter to return only Management Agents having the particular agent host id.
+     */
+    private String hostId;
+
+    /**
+     * Filter to return only results having the particular platform type.
+     */
+    private java.util.List<com.oracle.bmc.managementagent.model.PlatformTypes> platformType;
+
+    /**
+     * true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
+     */
+    private Boolean isCustomerDeployed;
 
     /**
      * The maximum number of items to return.
@@ -113,6 +128,11 @@ public class ListManagementAgentsRequest
     public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
+        Host("host"),
+        AvailabilityStatus("availabilityStatus"),
+        PlatformType("platformType"),
+        PluginDisplayNames("pluginDisplayNames"),
+        Version("version"),
         ;
 
         private final String value;
@@ -154,6 +174,65 @@ public class ListManagementAgentsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<String> pluginName = null;
+
+        /**
+         * Filter to return only Management Agents having the particular Plugin installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed.
+         * @return this builder instance
+         */
+        public Builder pluginName(java.util.List<String> pluginName) {
+            this.pluginName = pluginName;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter to return only Management Agents having the particular Plugin installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed.
+         * @return this builder instance
+         */
+        public Builder pluginName(String singularValue) {
+            return this.pluginName(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> version = null;
+
+        /**
+         * Filter to return only Management Agents having the particular agent version.
+         * @return this builder instance
+         */
+        public Builder version(java.util.List<String> version) {
+            this.version = version;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter to return only Management Agents having the particular agent version.
+         * @return this builder instance
+         */
+        public Builder version(String singularValue) {
+            return this.version(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<com.oracle.bmc.managementagent.model.PlatformTypes> platformType =
+                null;
+
+        /**
+         * Filter to return only results having the particular platform type.
+         * @return this builder instance
+         */
+        public Builder platformType(
+                java.util.List<com.oracle.bmc.managementagent.model.PlatformTypes> platformType) {
+            this.platformType = platformType;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter to return only results having the particular platform type.
+         * @return this builder instance
+         */
+        public Builder platformType(PlatformTypes singularValue) {
+            return this.platformType(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
@@ -187,7 +266,10 @@ public class ListManagementAgentsRequest
             version(o.getVersion());
             displayName(o.getDisplayName());
             lifecycleState(o.getLifecycleState());
+            availabilityStatus(o.getAvailabilityStatus());
+            hostId(o.getHostId());
             platformType(o.getPlatformType());
+            isCustomerDeployed(o.getIsCustomerDeployed());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());

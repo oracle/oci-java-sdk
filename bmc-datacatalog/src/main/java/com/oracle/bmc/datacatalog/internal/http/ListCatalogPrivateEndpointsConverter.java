@@ -124,15 +124,20 @@ public class ListCatalogPrivateEndpointsConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                CatalogPrivateEndpointSummary>>>
+                                                                com.oracle.bmc.datacatalog.model
+                                                                        .CatalogPrivateEndpointSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        CatalogPrivateEndpointSummary>>() {});
+                                                                        com.oracle.bmc.datacatalog
+                                                                                .model
+                                                                                .CatalogPrivateEndpointSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<CatalogPrivateEndpointSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.datacatalog.model
+                                                                .CatalogPrivateEndpointSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

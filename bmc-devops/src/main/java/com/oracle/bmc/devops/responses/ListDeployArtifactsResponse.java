@@ -30,7 +30,7 @@ public class ListDeployArtifactsResponse {
     /**
      * The returned DeployArtifactCollection instance.
      */
-    private DeployArtifactCollection deployArtifactCollection;
+    private com.oracle.bmc.devops.model.DeployArtifactCollection deployArtifactCollection;
 
     public static class Builder {
         /**

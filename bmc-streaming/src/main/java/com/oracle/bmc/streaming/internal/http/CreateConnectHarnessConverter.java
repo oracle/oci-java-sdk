@@ -71,13 +71,17 @@ public class CreateConnectHarnessConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ConnectHarness>>
+                                                        com.oracle.bmc.streaming.model
+                                                                .ConnectHarness>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ConnectHarness.class);
+                                                        com.oracle.bmc.streaming.model
+                                                                        .ConnectHarness
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ConnectHarness> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.streaming.model.ConnectHarness>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

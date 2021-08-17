@@ -46,7 +46,7 @@ public class CreateNotebookSessionResponse {
     /**
      * The returned NotebookSession instance.
      */
-    private NotebookSession notebookSession;
+    private com.oracle.bmc.datascience.model.NotebookSession notebookSession;
 
     public static class Builder {
         /**

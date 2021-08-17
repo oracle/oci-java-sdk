@@ -33,7 +33,7 @@ public class GetResponderExecutionResponse {
     /**
      * The returned ResponderExecution instance.
      */
-    private ResponderExecution responderExecution;
+    private com.oracle.bmc.cloudguard.model.ResponderExecution responderExecution;
 
     public static class Builder {
         /**

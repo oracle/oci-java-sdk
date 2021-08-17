@@ -33,7 +33,7 @@ public class GetRecommendationResponse {
     /**
      * The returned Recommendation instance.
      */
-    private Recommendation recommendation;
+    private com.oracle.bmc.optimizer.model.Recommendation recommendation;
 
     public static class Builder {
         /**

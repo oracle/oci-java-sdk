@@ -120,6 +120,26 @@ public class ListEnterpriseManagerBridgesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<com.oracle.bmc.opsi.model.LifecycleState> lifecycleState = null;
+
+        /**
+         * Lifecycle states
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                java.util.List<com.oracle.bmc.opsi.model.LifecycleState> lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        /**
+         * Singular setter. Lifecycle states
+         * @return this builder instance
+         */
+        public Builder lifecycleState(LifecycleState singularValue) {
+            return this.lifecycleState(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

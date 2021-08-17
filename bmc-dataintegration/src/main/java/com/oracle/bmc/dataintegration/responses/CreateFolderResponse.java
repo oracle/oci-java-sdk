@@ -33,7 +33,7 @@ public class CreateFolderResponse {
     /**
      * The returned Folder instance.
      */
-    private Folder folder;
+    private com.oracle.bmc.dataintegration.model.Folder folder;
 
     public static class Builder {
         /**

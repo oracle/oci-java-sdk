@@ -33,7 +33,7 @@ public class GetDataAssetResponse {
     /**
      * The returned DataAsset instance.
      */
-    private DataAsset dataAsset;
+    private com.oracle.bmc.dataintegration.model.DataAsset dataAsset;
 
     public static class Builder {
         /**

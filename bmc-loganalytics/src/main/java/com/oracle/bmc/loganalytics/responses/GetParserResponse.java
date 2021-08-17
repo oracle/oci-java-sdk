@@ -32,7 +32,7 @@ public class GetParserResponse {
     /**
      * The returned LogAnalyticsParser instance.
      */
-    private LogAnalyticsParser logAnalyticsParser;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsParser logAnalyticsParser;
 
     public static class Builder {
         /**

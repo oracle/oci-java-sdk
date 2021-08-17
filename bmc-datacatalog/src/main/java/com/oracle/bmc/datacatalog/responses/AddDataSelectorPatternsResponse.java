@@ -33,7 +33,7 @@ public class AddDataSelectorPatternsResponse {
     /**
      * The returned DataAsset instance.
      */
-    private DataAsset dataAsset;
+    private com.oracle.bmc.datacatalog.model.DataAsset dataAsset;
 
     public static class Builder {
         /**

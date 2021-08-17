@@ -33,9 +33,9 @@ public class ListClusterNetworksResponse {
     private String opcRequestId;
 
     /**
-     * A list of ClusterNetworkSummary instances.
+     * A list of com.oracle.bmc.core.model.ClusterNetworkSummary instances.
      */
-    private java.util.List<ClusterNetworkSummary> items;
+    private java.util.List<com.oracle.bmc.core.model.ClusterNetworkSummary> items;
 
     public static class Builder {
         /**

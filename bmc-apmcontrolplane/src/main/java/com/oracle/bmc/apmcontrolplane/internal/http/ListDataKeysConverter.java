@@ -79,15 +79,22 @@ public class ListDataKeysConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<DataKeySummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.apmcontrolplane.model
+                                                                        .DataKeySummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        DataKeySummary>>() {});
+                                                                        com.oracle.bmc
+                                                                                .apmcontrolplane
+                                                                                .model
+                                                                                .DataKeySummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<DataKeySummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.apmcontrolplane.model
+                                                                .DataKeySummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

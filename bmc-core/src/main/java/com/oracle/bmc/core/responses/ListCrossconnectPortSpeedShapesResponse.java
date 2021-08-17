@@ -33,9 +33,9 @@ public class ListCrossconnectPortSpeedShapesResponse {
     private String opcRequestId;
 
     /**
-     * A list of CrossConnectPortSpeedShape instances.
+     * A list of com.oracle.bmc.core.model.CrossConnectPortSpeedShape instances.
      */
-    private java.util.List<CrossConnectPortSpeedShape> items;
+    private java.util.List<com.oracle.bmc.core.model.CrossConnectPortSpeedShape> items;
 
     public static class Builder {
         /**

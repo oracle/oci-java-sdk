@@ -121,12 +121,17 @@ public class ListConnectionsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ConnectionCollection>>
+                                                        com.oracle.bmc.databasemigration.model
+                                                                .ConnectionCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ConnectionCollection.class);
+                                                        com.oracle.bmc.databasemigration.model
+                                                                        .ConnectionCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ConnectionCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.databasemigration.model
+                                                        .ConnectionCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

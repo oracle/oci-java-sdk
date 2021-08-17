@@ -32,7 +32,7 @@ public class GetDatabaseResponse {
     /**
      * The returned Database instance.
      */
-    private Database database;
+    private com.oracle.bmc.database.model.Database database;
 
     public static class Builder {
         /**

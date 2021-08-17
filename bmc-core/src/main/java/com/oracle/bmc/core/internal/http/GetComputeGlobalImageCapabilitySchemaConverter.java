@@ -72,13 +72,17 @@ public class GetComputeGlobalImageCapabilitySchemaConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ComputeGlobalImageCapabilitySchema>>
+                                                        com.oracle.bmc.core.model
+                                                                .ComputeGlobalImageCapabilitySchema>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ComputeGlobalImageCapabilitySchema.class);
+                                                        com.oracle.bmc.core.model
+                                                                        .ComputeGlobalImageCapabilitySchema
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ComputeGlobalImageCapabilitySchema>
+                                                com.oracle.bmc.core.model
+                                                        .ComputeGlobalImageCapabilitySchema>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

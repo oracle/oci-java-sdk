@@ -31,9 +31,9 @@ public class ListCatalogsResponse {
     private String opcNextPage;
 
     /**
-     * A list of CatalogSummary instances.
+     * A list of com.oracle.bmc.datacatalog.model.CatalogSummary instances.
      */
-    private java.util.List<CatalogSummary> items;
+    private java.util.List<com.oracle.bmc.datacatalog.model.CatalogSummary> items;
 
     public static class Builder {
         /**

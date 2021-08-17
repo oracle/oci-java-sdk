@@ -69,12 +69,18 @@ public class GetNodePoolConverter {
                                         "Transform function invoked for com.oracle.bmc.containerengine.responses.GetNodePoolResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<NodePool>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.containerengine.model
+                                                                .NodePool>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(NodePool.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.containerengine.model
+                                                                        .NodePool
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<NodePool> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.containerengine.model.NodePool>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

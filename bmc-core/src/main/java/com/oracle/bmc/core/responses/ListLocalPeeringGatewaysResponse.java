@@ -33,9 +33,9 @@ public class ListLocalPeeringGatewaysResponse {
     private String opcRequestId;
 
     /**
-     * A list of LocalPeeringGateway instances.
+     * A list of com.oracle.bmc.core.model.LocalPeeringGateway instances.
      */
-    private java.util.List<LocalPeeringGateway> items;
+    private java.util.List<com.oracle.bmc.core.model.LocalPeeringGateway> items;
 
     public static class Builder {
         /**

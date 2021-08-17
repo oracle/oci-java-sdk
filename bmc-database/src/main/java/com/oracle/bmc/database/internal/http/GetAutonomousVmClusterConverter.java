@@ -72,12 +72,16 @@ public class GetAutonomousVmClusterConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AutonomousVmCluster>>
+                                                        com.oracle.bmc.database.model
+                                                                .AutonomousVmCluster>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AutonomousVmCluster.class);
+                                                        com.oracle.bmc.database.model
+                                                                        .AutonomousVmCluster
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AutonomousVmCluster>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.database.model.AutonomousVmCluster>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

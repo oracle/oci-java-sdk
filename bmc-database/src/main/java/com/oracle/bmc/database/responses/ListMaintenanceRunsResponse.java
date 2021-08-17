@@ -34,9 +34,9 @@ public class ListMaintenanceRunsResponse {
     private String opcNextPage;
 
     /**
-     * A list of MaintenanceRunSummary instances.
+     * A list of com.oracle.bmc.database.model.MaintenanceRunSummary instances.
      */
-    private java.util.List<MaintenanceRunSummary> items;
+    private java.util.List<com.oracle.bmc.database.model.MaintenanceRunSummary> items;
 
     public static class Builder {
         /**

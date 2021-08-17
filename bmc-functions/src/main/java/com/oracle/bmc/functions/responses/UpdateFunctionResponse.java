@@ -35,7 +35,7 @@ public class UpdateFunctionResponse {
     /**
      * The returned Function instance.
      */
-    private Function function;
+    private com.oracle.bmc.functions.model.Function function;
 
     public static class Builder {
         /**

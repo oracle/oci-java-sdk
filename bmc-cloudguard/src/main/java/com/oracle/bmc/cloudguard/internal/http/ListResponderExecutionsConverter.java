@@ -203,13 +203,17 @@ public class ListResponderExecutionsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ResponderExecutionCollection>>
+                                                        com.oracle.bmc.cloudguard.model
+                                                                .ResponderExecutionCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ResponderExecutionCollection.class);
+                                                        com.oracle.bmc.cloudguard.model
+                                                                        .ResponderExecutionCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ResponderExecutionCollection>
+                                                com.oracle.bmc.cloudguard.model
+                                                        .ResponderExecutionCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -30,7 +30,7 @@ public class GetDeviceFingerprintChallengeResponse {
     /**
      * The returned DeviceFingerprintChallenge instance.
      */
-    private DeviceFingerprintChallenge deviceFingerprintChallenge;
+    private com.oracle.bmc.waas.model.DeviceFingerprintChallenge deviceFingerprintChallenge;
 
     public static class Builder {
         /**

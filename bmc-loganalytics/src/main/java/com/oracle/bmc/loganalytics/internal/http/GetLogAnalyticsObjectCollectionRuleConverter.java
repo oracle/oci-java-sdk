@@ -84,13 +84,17 @@ public class GetLogAnalyticsObjectCollectionRuleConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogAnalyticsObjectCollectionRule>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogAnalyticsObjectCollectionRule>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogAnalyticsObjectCollectionRule.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogAnalyticsObjectCollectionRule
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                LogAnalyticsObjectCollectionRule>
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LogAnalyticsObjectCollectionRule>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

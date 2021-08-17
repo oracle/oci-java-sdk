@@ -33,7 +33,7 @@ public class UpdateEnrollmentStatusResponse {
     /**
      * The returned EnrollmentStatus instance.
      */
-    private EnrollmentStatus enrollmentStatus;
+    private com.oracle.bmc.optimizer.model.EnrollmentStatus enrollmentStatus;
 
     public static class Builder {
         /**

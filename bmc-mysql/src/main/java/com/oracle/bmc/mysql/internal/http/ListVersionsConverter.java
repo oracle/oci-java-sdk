@@ -70,15 +70,19 @@ public class ListVersionsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<VersionSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.mysql.model
+                                                                        .VersionSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        VersionSummary>>() {});
+                                                                        com.oracle.bmc.mysql.model
+                                                                                .VersionSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<VersionSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.mysql.model.VersionSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

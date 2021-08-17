@@ -75,12 +75,17 @@ public class CreateManagedInstanceGroupConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ManagedInstanceGroup>>
+                                                        com.oracle.bmc.osmanagement.model
+                                                                .ManagedInstanceGroup>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ManagedInstanceGroup.class);
+                                                        com.oracle.bmc.osmanagement.model
+                                                                        .ManagedInstanceGroup
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ManagedInstanceGroup>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.osmanagement.model
+                                                        .ManagedInstanceGroup>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

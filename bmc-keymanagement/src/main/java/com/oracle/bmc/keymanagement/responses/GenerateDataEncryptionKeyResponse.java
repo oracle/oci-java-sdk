@@ -27,7 +27,7 @@ public class GenerateDataEncryptionKeyResponse {
     /**
      * The returned GeneratedKey instance.
      */
-    private GeneratedKey generatedKey;
+    private com.oracle.bmc.keymanagement.model.GeneratedKey generatedKey;
 
     public static class Builder {
         /**

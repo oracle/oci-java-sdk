@@ -113,15 +113,21 @@ public class ListWindowsUpdatesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<WindowsUpdateSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.osmanagement.model
+                                                                        .WindowsUpdateSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        WindowsUpdateSummary>>() {});
+                                                                        com.oracle.bmc.osmanagement
+                                                                                .model
+                                                                                .WindowsUpdateSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<WindowsUpdateSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.osmanagement.model
+                                                                .WindowsUpdateSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -96,12 +96,16 @@ public class GetFolderConverter {
                                         "Transform function invoked for com.oracle.bmc.datacatalog.responses.GetFolderResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Folder>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.datacatalog.model.Folder>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Folder.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.datacatalog.model.Folder
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Folder> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model.Folder>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

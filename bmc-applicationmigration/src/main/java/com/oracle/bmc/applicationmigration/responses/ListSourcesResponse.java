@@ -33,9 +33,9 @@ public class ListSourcesResponse {
     private String opcNextPage;
 
     /**
-     * A list of SourceSummary instances.
+     * A list of com.oracle.bmc.applicationmigration.model.SourceSummary instances.
      */
-    private java.util.List<SourceSummary> items;
+    private java.util.List<com.oracle.bmc.applicationmigration.model.SourceSummary> items;
 
     public static class Builder {
         /**

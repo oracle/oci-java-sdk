@@ -35,7 +35,8 @@ public class ListPrivateApplicationPackagesResponse {
     /**
      * The returned PrivateApplicationPackageCollection instance.
      */
-    private PrivateApplicationPackageCollection privateApplicationPackageCollection;
+    private com.oracle.bmc.servicecatalog.model.PrivateApplicationPackageCollection
+            privateApplicationPackageCollection;
 
     public static class Builder {
         /**

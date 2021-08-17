@@ -125,13 +125,15 @@ public class ListDkimsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DkimCollection>>
+                                                        com.oracle.bmc.email.model.DkimCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DkimCollection.class);
+                                                        com.oracle.bmc.email.model.DkimCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DkimCollection> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.email.model.DkimCollection>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

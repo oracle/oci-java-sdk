@@ -127,13 +127,18 @@ public class ListModelsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ModelCollection>>
+                                                        com.oracle.bmc.aianomalydetection.model
+                                                                .ModelCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ModelCollection.class);
+                                                        com.oracle.bmc.aianomalydetection.model
+                                                                        .ModelCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ModelCollection> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.aianomalydetection.model
+                                                        .ModelCollection>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

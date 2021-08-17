@@ -111,6 +111,27 @@ public class RequestSummarizedProblemsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<com.oracle.bmc.cloudguard.model.ProblemDimension> listDimensions =
+                null;
+
+        /**
+         * The possible attributes based on which the problems can be distinguished.
+         * @return this builder instance
+         */
+        public Builder listDimensions(
+                java.util.List<com.oracle.bmc.cloudguard.model.ProblemDimension> listDimensions) {
+            this.listDimensions = listDimensions;
+            return this;
+        }
+
+        /**
+         * Singular setter. The possible attributes based on which the problems can be distinguished.
+         * @return this builder instance
+         */
+        public Builder listDimensions(ProblemDimension singularValue) {
+            return this.listDimensions(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

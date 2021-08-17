@@ -75,12 +75,17 @@ public class RequestSummarizedConfigurationsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ConfigurationAggregation>>
+                                                        com.oracle.bmc.usageapi.model
+                                                                .ConfigurationAggregation>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ConfigurationAggregation.class);
+                                                        com.oracle.bmc.usageapi.model
+                                                                        .ConfigurationAggregation
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ConfigurationAggregation>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.usageapi.model
+                                                        .ConfigurationAggregation>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

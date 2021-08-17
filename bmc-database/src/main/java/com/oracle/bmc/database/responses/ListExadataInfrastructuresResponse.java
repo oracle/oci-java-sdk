@@ -34,9 +34,9 @@ public class ListExadataInfrastructuresResponse {
     private String opcNextPage;
 
     /**
-     * A list of ExadataInfrastructureSummary instances.
+     * A list of com.oracle.bmc.database.model.ExadataInfrastructureSummary instances.
      */
-    private java.util.List<ExadataInfrastructureSummary> items;
+    private java.util.List<com.oracle.bmc.database.model.ExadataInfrastructureSummary> items;
 
     public static class Builder {
         /**

@@ -45,9 +45,9 @@ public class ListSendersResponse {
     private Integer opcTotalItems;
 
     /**
-     * A list of SenderSummary instances.
+     * A list of com.oracle.bmc.email.model.SenderSummary instances.
      */
-    private java.util.List<SenderSummary> items;
+    private java.util.List<com.oracle.bmc.email.model.SenderSummary> items;
 
     public static class Builder {
         /**

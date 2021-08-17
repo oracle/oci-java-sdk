@@ -84,12 +84,17 @@ public class UpdateDomainGovernanceConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DomainGovernance>>
+                                                        com.oracle.bmc.tenantmanagercontrolplane
+                                                                .model.DomainGovernance>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DomainGovernance.class);
+                                                        com.oracle.bmc.tenantmanagercontrolplane
+                                                                        .model.DomainGovernance
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DomainGovernance>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.tenantmanagercontrolplane.model
+                                                        .DomainGovernance>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -69,12 +69,16 @@ public class GetMetastoreConverter {
                                         "Transform function invoked for com.oracle.bmc.datacatalog.responses.GetMetastoreResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Metastore>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.datacatalog.model.Metastore>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Metastore.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.datacatalog.model.Metastore
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Metastore> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model.Metastore>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

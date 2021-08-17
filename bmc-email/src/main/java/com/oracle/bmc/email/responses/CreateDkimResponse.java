@@ -51,7 +51,7 @@ public class CreateDkimResponse {
     /**
      * The returned Dkim instance.
      */
-    private Dkim dkim;
+    private com.oracle.bmc.email.model.Dkim dkim;
 
     public static class Builder {
         /**

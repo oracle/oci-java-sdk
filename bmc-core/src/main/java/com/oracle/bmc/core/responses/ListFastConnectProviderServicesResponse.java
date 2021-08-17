@@ -33,9 +33,9 @@ public class ListFastConnectProviderServicesResponse {
     private String opcRequestId;
 
     /**
-     * A list of FastConnectProviderService instances.
+     * A list of com.oracle.bmc.core.model.FastConnectProviderService instances.
      */
-    private java.util.List<FastConnectProviderService> items;
+    private java.util.List<com.oracle.bmc.core.model.FastConnectProviderService> items;
 
     public static class Builder {
         /**

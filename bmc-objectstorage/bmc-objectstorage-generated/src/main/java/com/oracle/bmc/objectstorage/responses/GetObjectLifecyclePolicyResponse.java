@@ -37,7 +37,7 @@ public class GetObjectLifecyclePolicyResponse {
     /**
      * The returned ObjectLifecyclePolicy instance.
      */
-    private ObjectLifecyclePolicy objectLifecyclePolicy;
+    private com.oracle.bmc.objectstorage.model.ObjectLifecyclePolicy objectLifecyclePolicy;
 
     public static class Builder {
         /**

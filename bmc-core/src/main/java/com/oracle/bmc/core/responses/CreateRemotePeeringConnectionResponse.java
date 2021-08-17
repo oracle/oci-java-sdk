@@ -33,7 +33,7 @@ public class CreateRemotePeeringConnectionResponse {
     /**
      * The returned RemotePeeringConnection instance.
      */
-    private RemotePeeringConnection remotePeeringConnection;
+    private com.oracle.bmc.core.model.RemotePeeringConnection remotePeeringConnection;
 
     public static class Builder {
         /**

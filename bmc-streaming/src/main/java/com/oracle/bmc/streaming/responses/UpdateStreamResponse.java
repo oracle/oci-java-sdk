@@ -32,7 +32,7 @@ public class UpdateStreamResponse {
     /**
      * The returned Stream instance.
      */
-    private Stream stream;
+    private com.oracle.bmc.streaming.model.Stream stream;
 
     public static class Builder {
         /**

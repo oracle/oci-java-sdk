@@ -71,11 +71,18 @@ public class GetLinkConverter {
                                         "Transform function invoked for com.oracle.bmc.tenantmanagercontrolplane.responses.GetLinkResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Link>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create(Link.class);
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.tenantmanagercontrolplane
+                                                                .model.Link>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.tenantmanagercontrolplane
+                                                                        .model.Link
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Link> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.tenantmanagercontrolplane.model.Link>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

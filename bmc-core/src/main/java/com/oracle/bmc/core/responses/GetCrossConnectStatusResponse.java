@@ -27,7 +27,7 @@ public class GetCrossConnectStatusResponse {
     /**
      * The returned CrossConnectStatus instance.
      */
-    private CrossConnectStatus crossConnectStatus;
+    private com.oracle.bmc.core.model.CrossConnectStatus crossConnectStatus;
 
     public static class Builder {
         /**

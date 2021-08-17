@@ -30,7 +30,7 @@ public class ListProjectsResponse {
     /**
      * The returned ProjectCollection instance.
      */
-    private ProjectCollection projectCollection;
+    private com.oracle.bmc.devops.model.ProjectCollection projectCollection;
 
     public static class Builder {
         /**

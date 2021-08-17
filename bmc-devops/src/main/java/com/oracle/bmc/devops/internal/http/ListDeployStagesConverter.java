@@ -136,12 +136,16 @@ public class ListDeployStagesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DeployStageCollection>>
+                                                        com.oracle.bmc.devops.model
+                                                                .DeployStageCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DeployStageCollection.class);
+                                                        com.oracle.bmc.devops.model
+                                                                        .DeployStageCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DeployStageCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.devops.model.DeployStageCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

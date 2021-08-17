@@ -33,9 +33,9 @@ public class ListImageShapeCompatibilityEntriesResponse {
     private String opcRequestId;
 
     /**
-     * A list of ImageShapeCompatibilitySummary instances.
+     * A list of com.oracle.bmc.core.model.ImageShapeCompatibilitySummary instances.
      */
-    private java.util.List<ImageShapeCompatibilitySummary> items;
+    private java.util.List<com.oracle.bmc.core.model.ImageShapeCompatibilitySummary> items;
 
     public static class Builder {
         /**

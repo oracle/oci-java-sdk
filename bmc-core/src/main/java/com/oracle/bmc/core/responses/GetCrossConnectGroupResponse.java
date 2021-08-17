@@ -33,7 +33,7 @@ public class GetCrossConnectGroupResponse {
     /**
      * The returned CrossConnectGroup instance.
      */
-    private CrossConnectGroup crossConnectGroup;
+    private com.oracle.bmc.core.model.CrossConnectGroup crossConnectGroup;
 
     public static class Builder {
         /**

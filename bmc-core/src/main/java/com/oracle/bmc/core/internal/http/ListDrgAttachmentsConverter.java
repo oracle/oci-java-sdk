@@ -155,15 +155,19 @@ public class ListDrgAttachmentsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<DrgAttachment>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.core.model
+                                                                        .DrgAttachment>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        DrgAttachment>>() {});
+                                                                        com.oracle.bmc.core.model
+                                                                                .DrgAttachment>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<DrgAttachment>>
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model.DrgAttachment>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -106,12 +106,17 @@ public class ListBackendsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        BackendCollection>>
+                                                        com.oracle.bmc.networkloadbalancer.model
+                                                                .BackendCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        BackendCollection.class);
+                                                        com.oracle.bmc.networkloadbalancer.model
+                                                                        .BackendCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<BackendCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.networkloadbalancer.model
+                                                        .BackendCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -35,9 +35,9 @@ public class ListStreamsResponse {
     private String opcRequestId;
 
     /**
-     * A list of StreamSummary instances.
+     * A list of com.oracle.bmc.streaming.model.StreamSummary instances.
      */
-    private java.util.List<StreamSummary> items;
+    private java.util.List<com.oracle.bmc.streaming.model.StreamSummary> items;
 
     public static class Builder {
         /**

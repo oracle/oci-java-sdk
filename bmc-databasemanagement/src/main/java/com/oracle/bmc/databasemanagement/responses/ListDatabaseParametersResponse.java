@@ -27,7 +27,8 @@ public class ListDatabaseParametersResponse {
     /**
      * The returned DatabaseParametersCollection instance.
      */
-    private DatabaseParametersCollection databaseParametersCollection;
+    private com.oracle.bmc.databasemanagement.model.DatabaseParametersCollection
+            databaseParametersCollection;
 
     public static class Builder {
         /**

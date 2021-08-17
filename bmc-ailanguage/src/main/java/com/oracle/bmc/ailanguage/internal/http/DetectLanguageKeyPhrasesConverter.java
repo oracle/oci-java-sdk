@@ -73,13 +73,17 @@ public class DetectLanguageKeyPhrasesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DetectLanguageKeyPhrasesResult>>
+                                                        com.oracle.bmc.ailanguage.model
+                                                                .DetectLanguageKeyPhrasesResult>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DetectLanguageKeyPhrasesResult.class);
+                                                        com.oracle.bmc.ailanguage.model
+                                                                        .DetectLanguageKeyPhrasesResult
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                DetectLanguageKeyPhrasesResult>
+                                                com.oracle.bmc.ailanguage.model
+                                                        .DetectLanguageKeyPhrasesResult>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

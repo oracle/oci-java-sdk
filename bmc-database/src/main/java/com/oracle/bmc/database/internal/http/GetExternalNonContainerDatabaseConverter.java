@@ -76,13 +76,17 @@ public class GetExternalNonContainerDatabaseConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ExternalNonContainerDatabase>>
+                                                        com.oracle.bmc.database.model
+                                                                .ExternalNonContainerDatabase>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ExternalNonContainerDatabase.class);
+                                                        com.oracle.bmc.database.model
+                                                                        .ExternalNonContainerDatabase
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ExternalNonContainerDatabase>
+                                                com.oracle.bmc.database.model
+                                                        .ExternalNonContainerDatabase>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

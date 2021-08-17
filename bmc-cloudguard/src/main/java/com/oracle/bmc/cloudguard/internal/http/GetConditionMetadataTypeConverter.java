@@ -91,12 +91,17 @@ public class GetConditionMetadataTypeConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ConditionMetadataType>>
+                                                        com.oracle.bmc.cloudguard.model
+                                                                .ConditionMetadataType>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ConditionMetadataType.class);
+                                                        com.oracle.bmc.cloudguard.model
+                                                                        .ConditionMetadataType
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ConditionMetadataType>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.cloudguard.model
+                                                        .ConditionMetadataType>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

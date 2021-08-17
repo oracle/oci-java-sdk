@@ -32,9 +32,9 @@ public class ListClustersResponse {
     private String opcRequestId;
 
     /**
-     * A list of ClusterSummary instances.
+     * A list of com.oracle.bmc.containerengine.model.ClusterSummary instances.
      */
-    private java.util.List<ClusterSummary> items;
+    private java.util.List<com.oracle.bmc.containerengine.model.ClusterSummary> items;
 
     public static class Builder {
         /**

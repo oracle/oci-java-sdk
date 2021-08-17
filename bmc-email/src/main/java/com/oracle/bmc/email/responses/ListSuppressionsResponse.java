@@ -39,9 +39,9 @@ public class ListSuppressionsResponse {
     private String opcPrevPage;
 
     /**
-     * A list of SuppressionSummary instances.
+     * A list of com.oracle.bmc.email.model.SuppressionSummary instances.
      */
-    private java.util.List<SuppressionSummary> items;
+    private java.util.List<com.oracle.bmc.email.model.SuppressionSummary> items;
 
     public static class Builder {
         /**

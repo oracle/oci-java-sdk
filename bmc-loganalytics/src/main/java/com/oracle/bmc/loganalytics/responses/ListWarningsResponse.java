@@ -42,7 +42,8 @@ public class ListWarningsResponse {
     /**
      * The returned LogAnalyticsWarningCollection instance.
      */
-    private LogAnalyticsWarningCollection logAnalyticsWarningCollection;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsWarningCollection
+            logAnalyticsWarningCollection;
 
     public static class Builder {
         /**

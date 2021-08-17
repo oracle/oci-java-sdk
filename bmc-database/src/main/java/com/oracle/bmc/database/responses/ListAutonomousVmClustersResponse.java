@@ -34,9 +34,9 @@ public class ListAutonomousVmClustersResponse {
     private String opcNextPage;
 
     /**
-     * A list of AutonomousVmClusterSummary instances.
+     * A list of com.oracle.bmc.database.model.AutonomousVmClusterSummary instances.
      */
-    private java.util.List<AutonomousVmClusterSummary> items;
+    private java.util.List<com.oracle.bmc.database.model.AutonomousVmClusterSummary> items;
 
     public static class Builder {
         /**

@@ -75,12 +75,17 @@ public class CreateCloudExadataInfrastructureConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        CloudExadataInfrastructure>>
+                                                        com.oracle.bmc.database.model
+                                                                .CloudExadataInfrastructure>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        CloudExadataInfrastructure.class);
+                                                        com.oracle.bmc.database.model
+                                                                        .CloudExadataInfrastructure
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<CloudExadataInfrastructure>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.database.model
+                                                        .CloudExadataInfrastructure>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

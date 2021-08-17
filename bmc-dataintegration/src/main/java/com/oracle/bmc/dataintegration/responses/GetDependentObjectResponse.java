@@ -33,7 +33,7 @@ public class GetDependentObjectResponse {
     /**
      * The returned DependentObject instance.
      */
-    private DependentObject dependentObject;
+    private com.oracle.bmc.dataintegration.model.DependentObject dependentObject;
 
     public static class Builder {
         /**

@@ -90,13 +90,17 @@ public class ListWorkRequestLogsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        WorkRequestLogEntryCollection>>
+                                                        com.oracle.bmc.aianomalydetection.model
+                                                                .WorkRequestLogEntryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        WorkRequestLogEntryCollection.class);
+                                                        com.oracle.bmc.aianomalydetection.model
+                                                                        .WorkRequestLogEntryCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                WorkRequestLogEntryCollection>
+                                                com.oracle.bmc.aianomalydetection.model
+                                                        .WorkRequestLogEntryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

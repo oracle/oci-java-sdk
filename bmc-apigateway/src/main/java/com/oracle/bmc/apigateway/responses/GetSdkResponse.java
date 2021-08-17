@@ -34,7 +34,7 @@ public class GetSdkResponse {
     /**
      * The returned Sdk instance.
      */
-    private Sdk sdk;
+    private com.oracle.bmc.apigateway.model.Sdk sdk;
 
     public static class Builder {
         /**

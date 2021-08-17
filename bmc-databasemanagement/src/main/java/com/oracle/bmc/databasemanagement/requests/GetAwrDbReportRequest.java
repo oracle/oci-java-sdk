@@ -167,6 +167,25 @@ public class GetAwrDbReportRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<Integer> instNums = null;
+
+        /**
+         * The optional multiple value query parameter to filter the database instance numbers.
+         * @return this builder instance
+         */
+        public Builder instNums(java.util.List<Integer> instNums) {
+            this.instNums = instNums;
+            return this;
+        }
+
+        /**
+         * Singular setter. The optional multiple value query parameter to filter the database instance numbers.
+         * @return this builder instance
+         */
+        public Builder instNums(Integer singularValue) {
+            return this.instNums(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

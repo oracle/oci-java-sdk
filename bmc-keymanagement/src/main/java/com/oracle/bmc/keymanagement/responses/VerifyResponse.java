@@ -27,7 +27,7 @@ public class VerifyResponse {
     /**
      * The returned VerifiedData instance.
      */
-    private VerifiedData verifiedData;
+    private com.oracle.bmc.keymanagement.model.VerifiedData verifiedData;
 
     public static class Builder {
         /**

@@ -26,7 +26,7 @@ public class FilterResponse {
     /**
      * The returned FilterOutput instance.
      */
-    private FilterOutput filterOutput;
+    private com.oracle.bmc.loganalytics.model.FilterOutput filterOutput;
 
     public static class Builder {
         /**

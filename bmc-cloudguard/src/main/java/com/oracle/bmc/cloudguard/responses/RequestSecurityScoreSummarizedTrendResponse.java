@@ -35,7 +35,8 @@ public class RequestSecurityScoreSummarizedTrendResponse {
     /**
      * The returned SecurityScoreTrendAggregationCollection instance.
      */
-    private SecurityScoreTrendAggregationCollection securityScoreTrendAggregationCollection;
+    private com.oracle.bmc.cloudguard.model.SecurityScoreTrendAggregationCollection
+            securityScoreTrendAggregationCollection;
 
     public static class Builder {
         /**

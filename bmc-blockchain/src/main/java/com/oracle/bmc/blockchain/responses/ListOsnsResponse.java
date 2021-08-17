@@ -35,7 +35,7 @@ public class ListOsnsResponse {
     /**
      * The returned OsnCollection instance.
      */
-    private OsnCollection osnCollection;
+    private com.oracle.bmc.blockchain.model.OsnCollection osnCollection;
 
     public static class Builder {
         /**

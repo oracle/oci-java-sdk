@@ -99,11 +99,15 @@ public class GetZoneConverter {
                                         "Transform function invoked for com.oracle.bmc.dns.responses.GetZoneResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Zone>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create(Zone.class);
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.dns.model.Zone>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.dns.model.Zone.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Zone> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dns.model.Zone>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

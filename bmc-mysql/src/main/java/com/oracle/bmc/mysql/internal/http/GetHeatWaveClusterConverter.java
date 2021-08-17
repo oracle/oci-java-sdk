@@ -75,13 +75,15 @@ public class GetHeatWaveClusterConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        HeatWaveCluster>>
+                                                        com.oracle.bmc.mysql.model.HeatWaveCluster>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        HeatWaveCluster.class);
+                                                        com.oracle.bmc.mysql.model.HeatWaveCluster
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<HeatWaveCluster> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.mysql.model.HeatWaveCluster>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

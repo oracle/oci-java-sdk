@@ -33,9 +33,9 @@ public class ListVnicAttachmentsResponse {
     private String opcRequestId;
 
     /**
-     * A list of VnicAttachment instances.
+     * A list of com.oracle.bmc.core.model.VnicAttachment instances.
      */
-    private java.util.List<VnicAttachment> items;
+    private java.util.List<com.oracle.bmc.core.model.VnicAttachment> items;
 
     public static class Builder {
         /**

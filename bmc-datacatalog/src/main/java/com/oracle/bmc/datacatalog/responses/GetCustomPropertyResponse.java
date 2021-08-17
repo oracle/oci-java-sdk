@@ -33,7 +33,7 @@ public class GetCustomPropertyResponse {
     /**
      * The returned CustomProperty instance.
      */
-    private CustomProperty customProperty;
+    private com.oracle.bmc.datacatalog.model.CustomProperty customProperty;
 
     public static class Builder {
         /**

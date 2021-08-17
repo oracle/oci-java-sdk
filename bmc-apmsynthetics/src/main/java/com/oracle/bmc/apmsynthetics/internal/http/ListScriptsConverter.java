@@ -119,12 +119,16 @@ public class ListScriptsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ScriptCollection>>
+                                                        com.oracle.bmc.apmsynthetics.model
+                                                                .ScriptCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ScriptCollection.class);
+                                                        com.oracle.bmc.apmsynthetics.model
+                                                                        .ScriptCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ScriptCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.apmsynthetics.model.ScriptCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

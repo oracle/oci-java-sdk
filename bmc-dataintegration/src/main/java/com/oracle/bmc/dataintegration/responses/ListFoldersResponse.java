@@ -45,7 +45,7 @@ public class ListFoldersResponse {
     /**
      * The returned FolderSummaryCollection instance.
      */
-    private FolderSummaryCollection folderSummaryCollection;
+    private com.oracle.bmc.dataintegration.model.FolderSummaryCollection folderSummaryCollection;
 
     public static class Builder {
         /**

@@ -33,7 +33,7 @@ public class UpdateCrossConnectResponse {
     /**
      * The returned CrossConnect instance.
      */
-    private CrossConnect crossConnect;
+    private com.oracle.bmc.core.model.CrossConnect crossConnect;
 
     public static class Builder {
         /**

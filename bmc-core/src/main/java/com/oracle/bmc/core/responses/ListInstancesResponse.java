@@ -33,9 +33,9 @@ public class ListInstancesResponse {
     private String opcRequestId;
 
     /**
-     * A list of Instance instances.
+     * A list of com.oracle.bmc.core.model.Instance instances.
      */
-    private java.util.List<Instance> items;
+    private java.util.List<com.oracle.bmc.core.model.Instance> items;
 
     public static class Builder {
         /**

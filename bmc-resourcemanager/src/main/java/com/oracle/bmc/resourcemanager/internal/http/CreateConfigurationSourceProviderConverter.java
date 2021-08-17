@@ -78,13 +78,17 @@ public class CreateConfigurationSourceProviderConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ConfigurationSourceProvider>>
+                                                        com.oracle.bmc.resourcemanager.model
+                                                                .ConfigurationSourceProvider>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ConfigurationSourceProvider.class);
+                                                        com.oracle.bmc.resourcemanager.model
+                                                                        .ConfigurationSourceProvider
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ConfigurationSourceProvider>
+                                                com.oracle.bmc.resourcemanager.model
+                                                        .ConfigurationSourceProvider>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

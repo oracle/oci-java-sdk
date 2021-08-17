@@ -82,12 +82,17 @@ public class ValidatePatternConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ValidatePatternResult>>
+                                                        com.oracle.bmc.datacatalog.model
+                                                                .ValidatePatternResult>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ValidatePatternResult.class);
+                                                        com.oracle.bmc.datacatalog.model
+                                                                        .ValidatePatternResult
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ValidatePatternResult>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model
+                                                        .ValidatePatternResult>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

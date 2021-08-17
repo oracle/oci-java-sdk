@@ -33,7 +33,7 @@ public class UpdateTaskRunResponse {
     /**
      * The returned TaskRunDetails instance.
      */
-    private TaskRunDetails taskRunDetails;
+    private com.oracle.bmc.dataintegration.model.TaskRunDetails taskRunDetails;
 
     public static class Builder {
         /**

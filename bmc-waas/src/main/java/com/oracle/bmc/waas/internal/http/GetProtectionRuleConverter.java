@@ -76,13 +76,15 @@ public class GetProtectionRuleConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ProtectionRule>>
+                                                        com.oracle.bmc.waas.model.ProtectionRule>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ProtectionRule.class);
+                                                        com.oracle.bmc.waas.model.ProtectionRule
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ProtectionRule> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.waas.model.ProtectionRule>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

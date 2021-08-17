@@ -96,16 +96,20 @@ public class ListAutonomousContainerDatabaseDataguardAssociationsConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                AutonomousContainerDatabaseDataguardAssociation>>>
+                                                                com.oracle.bmc.database.model
+                                                                        .AutonomousContainerDatabaseDataguardAssociation>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        AutonomousContainerDatabaseDataguardAssociation>>() {});
+                                                                        com.oracle.bmc.database
+                                                                                .model
+                                                                                .AutonomousContainerDatabaseDataguardAssociation>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 java.util.List<
-                                                        AutonomousContainerDatabaseDataguardAssociation>>
+                                                        com.oracle.bmc.database.model
+                                                                .AutonomousContainerDatabaseDataguardAssociation>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

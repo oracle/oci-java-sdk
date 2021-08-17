@@ -30,7 +30,7 @@ public class ListDeployEnvironmentsResponse {
     /**
      * The returned DeployEnvironmentCollection instance.
      */
-    private DeployEnvironmentCollection deployEnvironmentCollection;
+    private com.oracle.bmc.devops.model.DeployEnvironmentCollection deployEnvironmentCollection;
 
     public static class Builder {
         /**

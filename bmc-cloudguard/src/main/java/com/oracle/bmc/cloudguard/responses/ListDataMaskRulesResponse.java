@@ -35,7 +35,7 @@ public class ListDataMaskRulesResponse {
     /**
      * The returned DataMaskRuleCollection instance.
      */
-    private DataMaskRuleCollection dataMaskRuleCollection;
+    private com.oracle.bmc.cloudguard.model.DataMaskRuleCollection dataMaskRuleCollection;
 
     public static class Builder {
         /**

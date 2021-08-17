@@ -25,7 +25,7 @@ public class ListShippingVendorsResponse {
     /**
      * The returned ShippingVendors instance.
      */
-    private ShippingVendors shippingVendors;
+    private com.oracle.bmc.dts.model.ShippingVendors shippingVendors;
 
     public static class Builder {
         /**

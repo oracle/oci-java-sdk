@@ -62,13 +62,22 @@ public class ManagementAgentPluginDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
+        private Boolean isEnabled;
+
+        public Builder isEnabled(Boolean isEnabled) {
+            this.isEnabled = isEnabled;
+            this.__explicitlySet__.add("isEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ManagementAgentPluginDetails build() {
             ManagementAgentPluginDetails __instance__ =
                     new ManagementAgentPluginDetails(
-                            pluginId, pluginName, pluginDisplayName, pluginVersion);
+                            pluginId, pluginName, pluginDisplayName, pluginVersion, isEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -79,7 +88,8 @@ public class ManagementAgentPluginDetails {
                     pluginId(o.getPluginId())
                             .pluginName(o.getPluginName())
                             .pluginDisplayName(o.getPluginDisplayName())
-                            .pluginVersion(o.getPluginVersion());
+                            .pluginVersion(o.getPluginVersion())
+                            .isEnabled(o.getIsEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -116,6 +126,12 @@ public class ManagementAgentPluginDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pluginVersion")
     String pluginVersion;
+
+    /**
+     * flag indicating whether the plugin is in enabled mode or disabled mode.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
+    Boolean isEnabled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

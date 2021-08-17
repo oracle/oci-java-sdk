@@ -33,9 +33,9 @@ public class ListOdaInstancesResponse {
     private String opcNextPage;
 
     /**
-     * A list of OdaInstanceSummary instances.
+     * A list of com.oracle.bmc.oda.model.OdaInstanceSummary instances.
      */
-    private java.util.List<OdaInstanceSummary> items;
+    private java.util.List<com.oracle.bmc.oda.model.OdaInstanceSummary> items;
 
     public static class Builder {
         /**

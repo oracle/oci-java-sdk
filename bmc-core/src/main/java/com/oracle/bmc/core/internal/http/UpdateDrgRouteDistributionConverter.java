@@ -75,12 +75,16 @@ public class UpdateDrgRouteDistributionConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DrgRouteDistribution>>
+                                                        com.oracle.bmc.core.model
+                                                                .DrgRouteDistribution>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DrgRouteDistribution.class);
+                                                        com.oracle.bmc.core.model
+                                                                        .DrgRouteDistribution
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DrgRouteDistribution>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.DrgRouteDistribution>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -35,7 +35,8 @@ public class ListImportableEnterpriseManagerEntitiesResponse {
     /**
      * The returned ImportableEnterpriseManagerEntityCollection instance.
      */
-    private ImportableEnterpriseManagerEntityCollection importableEnterpriseManagerEntityCollection;
+    private com.oracle.bmc.opsi.model.ImportableEnterpriseManagerEntityCollection
+            importableEnterpriseManagerEntityCollection;
 
     public static class Builder {
         /**

@@ -33,9 +33,9 @@ public class ListCpesResponse {
     private String opcRequestId;
 
     /**
-     * A list of Cpe instances.
+     * A list of com.oracle.bmc.core.model.Cpe instances.
      */
-    private java.util.List<Cpe> items;
+    private java.util.List<com.oracle.bmc.core.model.Cpe> items;
 
     public static class Builder {
         /**

@@ -37,9 +37,9 @@ public class ListProjectsResponse {
     private String opcRequestId;
 
     /**
-     * A list of ProjectSummary instances.
+     * A list of com.oracle.bmc.datascience.model.ProjectSummary instances.
      */
-    private java.util.List<ProjectSummary> items;
+    private java.util.List<com.oracle.bmc.datascience.model.ProjectSummary> items;
 
     public static class Builder {
         /**

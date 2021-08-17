@@ -79,12 +79,17 @@ public class UpdateFolderConverter {
                                         "Transform function invoked for com.oracle.bmc.dataintegration.responses.UpdateFolderResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Folder>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .Folder>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Folder.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.dataintegration.model.Folder
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Folder> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dataintegration.model.Folder>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

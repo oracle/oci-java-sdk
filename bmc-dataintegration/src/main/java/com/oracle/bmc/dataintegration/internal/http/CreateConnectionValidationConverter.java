@@ -82,12 +82,17 @@ public class CreateConnectionValidationConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ConnectionValidation>>
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .ConnectionValidation>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ConnectionValidation.class);
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .ConnectionValidation
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ConnectionValidation>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dataintegration.model
+                                                        .ConnectionValidation>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

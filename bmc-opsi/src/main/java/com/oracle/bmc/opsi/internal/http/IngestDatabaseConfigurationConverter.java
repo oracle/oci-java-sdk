@@ -96,14 +96,17 @@ public class IngestDatabaseConfigurationConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        IngestDatabaseConfigurationResponseDetails>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .IngestDatabaseConfigurationResponseDetails>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        IngestDatabaseConfigurationResponseDetails
+                                                        com.oracle.bmc.opsi.model
+                                                                        .IngestDatabaseConfigurationResponseDetails
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                IngestDatabaseConfigurationResponseDetails>
+                                                com.oracle.bmc.opsi.model
+                                                        .IngestDatabaseConfigurationResponseDetails>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

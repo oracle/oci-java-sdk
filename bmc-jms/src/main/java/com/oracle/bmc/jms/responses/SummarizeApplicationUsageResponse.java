@@ -35,7 +35,7 @@ public class SummarizeApplicationUsageResponse {
     /**
      * The returned ApplicationUsageCollection instance.
      */
-    private ApplicationUsageCollection applicationUsageCollection;
+    private com.oracle.bmc.jms.model.ApplicationUsageCollection applicationUsageCollection;
 
     public static class Builder {
         /**

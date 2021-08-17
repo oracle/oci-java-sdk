@@ -242,6 +242,25 @@ public class ListResponderExecutionsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<String> responderRuleIds = null;
+
+        /**
+         * Responder Rule Ids filter for the Responder Executions.
+         * @return this builder instance
+         */
+        public Builder responderRuleIds(java.util.List<String> responderRuleIds) {
+            this.responderRuleIds = responderRuleIds;
+            return this;
+        }
+
+        /**
+         * Singular setter. Responder Rule Ids filter for the Responder Executions.
+         * @return this builder instance
+         */
+        public Builder responderRuleIds(String singularValue) {
+            return this.responderRuleIds(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

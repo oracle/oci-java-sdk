@@ -153,13 +153,17 @@ public class ListTaskSchedulesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        TaskScheduleSummaryCollection>>
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .TaskScheduleSummaryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        TaskScheduleSummaryCollection.class);
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .TaskScheduleSummaryCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                TaskScheduleSummaryCollection>
+                                                com.oracle.bmc.dataintegration.model
+                                                        .TaskScheduleSummaryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

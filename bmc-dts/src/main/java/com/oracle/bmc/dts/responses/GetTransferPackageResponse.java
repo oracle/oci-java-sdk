@@ -30,7 +30,7 @@ public class GetTransferPackageResponse {
     /**
      * The returned TransferPackage instance.
      */
-    private TransferPackage transferPackage;
+    private com.oracle.bmc.dts.model.TransferPackage transferPackage;
 
     public static class Builder {
         /**

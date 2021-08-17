@@ -33,7 +33,7 @@ public class GetManagedDatabaseGroupResponse {
     /**
      * The returned ManagedDatabaseGroup instance.
      */
-    private ManagedDatabaseGroup managedDatabaseGroup;
+    private com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroup managedDatabaseGroup;
 
     public static class Builder {
         /**

@@ -30,7 +30,7 @@ public class CreateDeploymentResponse {
     /**
      * The returned Deployment instance.
      */
-    private Deployment deployment;
+    private com.oracle.bmc.devops.model.Deployment deployment;
 
     public static class Builder {
         /**

@@ -35,7 +35,7 @@ public class ListDataAssetsResponse {
     /**
      * The returned DataAssetCollection instance.
      */
-    private DataAssetCollection dataAssetCollection;
+    private com.oracle.bmc.aianomalydetection.model.DataAssetCollection dataAssetCollection;
 
     public static class Builder {
         /**

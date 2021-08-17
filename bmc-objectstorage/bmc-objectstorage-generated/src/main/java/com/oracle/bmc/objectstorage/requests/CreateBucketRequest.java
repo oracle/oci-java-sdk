@@ -44,11 +44,6 @@ public class CreateBucketRequest extends com.oracle.bmc.requests.BmcRequest<Crea
         return createBucketDetails;
     }
 
-    @Override
-    public boolean supportsExpect100Continue() {
-        return true;
-    }
-
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateBucketRequest, CreateBucketDetails> {

@@ -70,13 +70,15 @@ public class GetDeployStageConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DeployStage>>
+                                                        com.oracle.bmc.devops.model.DeployStage>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DeployStage.class);
+                                                        com.oracle.bmc.devops.model.DeployStage
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DeployStage> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.devops.model.DeployStage>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

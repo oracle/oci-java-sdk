@@ -32,9 +32,9 @@ public class ListRoutingPoliciesResponse {
     private String opcNextPage;
 
     /**
-     * A list of RoutingPolicy instances.
+     * A list of com.oracle.bmc.loadbalancer.model.RoutingPolicy instances.
      */
-    private java.util.List<RoutingPolicy> items;
+    private java.util.List<com.oracle.bmc.loadbalancer.model.RoutingPolicy> items;
 
     public static class Builder {
         /**

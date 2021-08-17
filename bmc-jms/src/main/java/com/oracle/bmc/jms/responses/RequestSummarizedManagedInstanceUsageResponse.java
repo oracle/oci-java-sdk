@@ -35,7 +35,7 @@ public class RequestSummarizedManagedInstanceUsageResponse {
     /**
      * The returned ManagedInstanceUsageCollection instance.
      */
-    private ManagedInstanceUsageCollection managedInstanceUsageCollection;
+    private com.oracle.bmc.jms.model.ManagedInstanceUsageCollection managedInstanceUsageCollection;
 
     public static class Builder {
         /**

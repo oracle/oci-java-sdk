@@ -39,7 +39,7 @@ public class ListUploadsResponse {
     /**
      * The returned UploadCollection instance.
      */
-    private UploadCollection uploadCollection;
+    private com.oracle.bmc.loganalytics.model.UploadCollection uploadCollection;
 
     public static class Builder {
         /**

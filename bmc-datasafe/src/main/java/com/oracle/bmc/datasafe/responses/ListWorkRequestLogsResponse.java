@@ -30,9 +30,9 @@ public class ListWorkRequestLogsResponse {
     private String opcNextPage;
 
     /**
-     * A list of WorkRequestLogEntry instances.
+     * A list of com.oracle.bmc.datasafe.model.WorkRequestLogEntry instances.
      */
-    private java.util.List<WorkRequestLogEntry> items;
+    private java.util.List<com.oracle.bmc.datasafe.model.WorkRequestLogEntry> items;
 
     public static class Builder {
         /**

@@ -27,7 +27,7 @@ public class GetFastConnectProviderServiceKeyResponse {
     /**
      * The returned FastConnectProviderServiceKey instance.
      */
-    private FastConnectProviderServiceKey fastConnectProviderServiceKey;
+    private com.oracle.bmc.core.model.FastConnectProviderServiceKey fastConnectProviderServiceKey;
 
     public static class Builder {
         /**

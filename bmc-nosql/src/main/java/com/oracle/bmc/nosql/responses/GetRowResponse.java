@@ -34,7 +34,7 @@ public class GetRowResponse {
     /**
      * The returned Row instance.
      */
-    private Row row;
+    private com.oracle.bmc.nosql.model.Row row;
 
     public static class Builder {
         /**

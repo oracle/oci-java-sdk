@@ -69,12 +69,16 @@ public class GetExportSetConverter {
                                         "Transform function invoked for com.oracle.bmc.filestorage.responses.GetExportSetResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<ExportSet>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.filestorage.model.ExportSet>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(ExportSet.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.filestorage.model.ExportSet
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ExportSet> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.filestorage.model.ExportSet>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -105,16 +105,20 @@ public class ListAutonomousExadataInfrastructureShapesConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                AutonomousExadataInfrastructureShapeSummary>>>
+                                                                com.oracle.bmc.database.model
+                                                                        .AutonomousExadataInfrastructureShapeSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        AutonomousExadataInfrastructureShapeSummary>>() {});
+                                                                        com.oracle.bmc.database
+                                                                                .model
+                                                                                .AutonomousExadataInfrastructureShapeSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 java.util.List<
-                                                        AutonomousExadataInfrastructureShapeSummary>>
+                                                        com.oracle.bmc.database.model
+                                                                .AutonomousExadataInfrastructureShapeSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

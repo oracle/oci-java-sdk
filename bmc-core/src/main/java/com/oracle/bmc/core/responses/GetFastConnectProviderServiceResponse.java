@@ -27,7 +27,7 @@ public class GetFastConnectProviderServiceResponse {
     /**
      * The returned FastConnectProviderService instance.
      */
-    private FastConnectProviderService fastConnectProviderService;
+    private com.oracle.bmc.core.model.FastConnectProviderService fastConnectProviderService;
 
     public static class Builder {
         /**

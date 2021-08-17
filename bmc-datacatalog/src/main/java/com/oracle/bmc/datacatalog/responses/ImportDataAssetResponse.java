@@ -27,7 +27,7 @@ public class ImportDataAssetResponse {
     /**
      * The returned ImportDataAssetJobResult instance.
      */
-    private ImportDataAssetJobResult importDataAssetJobResult;
+    private com.oracle.bmc.datacatalog.model.ImportDataAssetJobResult importDataAssetJobResult;
 
     public static class Builder {
         /**

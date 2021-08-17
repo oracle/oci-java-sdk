@@ -33,7 +33,7 @@ public class UpdateAlarmResponse {
     /**
      * The returned Alarm instance.
      */
-    private Alarm alarm;
+    private com.oracle.bmc.monitoring.model.Alarm alarm;
 
     public static class Builder {
         /**

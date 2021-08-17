@@ -26,7 +26,7 @@ public class GetLookupSummaryResponse {
     /**
      * The returned LookupSummaryReport instance.
      */
-    private LookupSummaryReport lookupSummaryReport;
+    private com.oracle.bmc.loganalytics.model.LookupSummaryReport lookupSummaryReport;
 
     public static class Builder {
         /**

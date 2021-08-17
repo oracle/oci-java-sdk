@@ -33,7 +33,7 @@ public class GetHealthCheckerResponse {
     /**
      * The returned HealthChecker instance.
      */
-    private HealthChecker healthChecker;
+    private com.oracle.bmc.networkloadbalancer.model.HealthChecker healthChecker;
 
     public static class Builder {
         /**

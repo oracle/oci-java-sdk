@@ -66,13 +66,15 @@ public class GetVolumeBackupConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        VolumeBackup>>
+                                                        com.oracle.bmc.core.model.VolumeBackup>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        VolumeBackup.class);
+                                                        com.oracle.bmc.core.model.VolumeBackup
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<VolumeBackup> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.VolumeBackup>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

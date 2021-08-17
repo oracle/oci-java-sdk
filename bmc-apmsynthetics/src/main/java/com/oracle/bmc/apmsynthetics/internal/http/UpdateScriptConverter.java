@@ -81,12 +81,16 @@ public class UpdateScriptConverter {
                                         "Transform function invoked for com.oracle.bmc.apmsynthetics.responses.UpdateScriptResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Script>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.apmsynthetics.model.Script>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Script.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.apmsynthetics.model.Script
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Script> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.apmsynthetics.model.Script>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

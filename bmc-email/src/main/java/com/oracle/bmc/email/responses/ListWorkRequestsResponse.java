@@ -34,7 +34,7 @@ public class ListWorkRequestsResponse {
     /**
      * The returned WorkRequestSummaryCollection instance.
      */
-    private WorkRequestSummaryCollection workRequestSummaryCollection;
+    private com.oracle.bmc.email.model.WorkRequestSummaryCollection workRequestSummaryCollection;
 
     public static class Builder {
         /**

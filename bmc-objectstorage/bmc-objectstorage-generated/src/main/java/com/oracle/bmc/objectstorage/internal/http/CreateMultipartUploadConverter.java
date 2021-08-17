@@ -102,13 +102,17 @@ public class CreateMultipartUploadConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        MultipartUpload>>
+                                                        com.oracle.bmc.objectstorage.model
+                                                                .MultipartUpload>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        MultipartUpload.class);
+                                                        com.oracle.bmc.objectstorage.model
+                                                                        .MultipartUpload
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<MultipartUpload> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.objectstorage.model.MultipartUpload>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

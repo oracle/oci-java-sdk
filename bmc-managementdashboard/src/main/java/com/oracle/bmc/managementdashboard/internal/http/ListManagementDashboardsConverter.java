@@ -116,13 +116,17 @@ public class ListManagementDashboardsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ManagementDashboardCollection>>
+                                                        com.oracle.bmc.managementdashboard.model
+                                                                .ManagementDashboardCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ManagementDashboardCollection.class);
+                                                        com.oracle.bmc.managementdashboard.model
+                                                                        .ManagementDashboardCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ManagementDashboardCollection>
+                                                com.oracle.bmc.managementdashboard.model
+                                                        .ManagementDashboardCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -27,7 +27,7 @@ public class ListAggregatedPhysicalEntitiesResponse {
     /**
      * The returned EntityCollection instance.
      */
-    private EntityCollection entityCollection;
+    private com.oracle.bmc.datacatalog.model.EntityCollection entityCollection;
 
     public static class Builder {
         /**

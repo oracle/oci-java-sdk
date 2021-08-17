@@ -34,7 +34,7 @@ public class GetApiResponse {
     /**
      * The returned Api instance.
      */
-    private Api api;
+    private com.oracle.bmc.apigateway.model.Api api;
 
     public static class Builder {
         /**

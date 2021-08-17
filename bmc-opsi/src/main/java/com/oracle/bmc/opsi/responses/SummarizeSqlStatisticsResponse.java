@@ -35,7 +35,8 @@ public class SummarizeSqlStatisticsResponse {
     /**
      * The returned SqlStatisticAggregationCollection instance.
      */
-    private SqlStatisticAggregationCollection sqlStatisticAggregationCollection;
+    private com.oracle.bmc.opsi.model.SqlStatisticAggregationCollection
+            sqlStatisticAggregationCollection;
 
     public static class Builder {
         /**

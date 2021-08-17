@@ -39,7 +39,7 @@ public class AddHeatWaveClusterResponse {
     /**
      * The returned HeatWaveCluster instance.
      */
-    private HeatWaveCluster heatWaveCluster;
+    private com.oracle.bmc.mysql.model.HeatWaveCluster heatWaveCluster;
 
     public static class Builder {
         /**

@@ -69,12 +69,16 @@ public class GetModelConverter {
                                         "Transform function invoked for com.oracle.bmc.datascience.responses.GetModelResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Model>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.datascience.model.Model>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Model.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.datascience.model.Model
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Model> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datascience.model.Model>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

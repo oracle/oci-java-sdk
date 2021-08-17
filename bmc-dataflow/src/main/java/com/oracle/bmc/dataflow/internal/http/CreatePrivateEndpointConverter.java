@@ -71,13 +71,17 @@ public class CreatePrivateEndpointConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        PrivateEndpoint>>
+                                                        com.oracle.bmc.dataflow.model
+                                                                .PrivateEndpoint>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        PrivateEndpoint.class);
+                                                        com.oracle.bmc.dataflow.model
+                                                                        .PrivateEndpoint
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<PrivateEndpoint> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dataflow.model.PrivateEndpoint>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

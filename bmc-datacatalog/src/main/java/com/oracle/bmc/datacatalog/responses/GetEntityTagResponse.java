@@ -33,7 +33,7 @@ public class GetEntityTagResponse {
     /**
      * The returned EntityTag instance.
      */
-    private EntityTag entityTag;
+    private com.oracle.bmc.datacatalog.model.EntityTag entityTag;
 
     public static class Builder {
         /**

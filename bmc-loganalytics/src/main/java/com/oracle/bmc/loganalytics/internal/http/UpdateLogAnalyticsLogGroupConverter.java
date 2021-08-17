@@ -87,12 +87,17 @@ public class UpdateLogAnalyticsLogGroupConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogAnalyticsLogGroup>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogAnalyticsLogGroup>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogAnalyticsLogGroup.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogAnalyticsLogGroup
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<LogAnalyticsLogGroup>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LogAnalyticsLogGroup>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

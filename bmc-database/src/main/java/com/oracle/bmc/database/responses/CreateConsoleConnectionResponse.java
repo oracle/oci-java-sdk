@@ -32,7 +32,7 @@ public class CreateConsoleConnectionResponse {
     /**
      * The returned ConsoleConnection instance.
      */
-    private ConsoleConnection consoleConnection;
+    private com.oracle.bmc.database.model.ConsoleConnection consoleConnection;
 
     public static class Builder {
         /**

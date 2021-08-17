@@ -34,9 +34,11 @@ public class ListAutonomousContainerDatabaseDataguardAssociationsResponse {
     private String opcNextPage;
 
     /**
-     * A list of AutonomousContainerDatabaseDataguardAssociation instances.
+     * A list of com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation instances.
      */
-    private java.util.List<AutonomousContainerDatabaseDataguardAssociation> items;
+    private java.util.List<
+                    com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation>
+            items;
 
     public static class Builder {
         /**

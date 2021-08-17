@@ -70,13 +70,15 @@ public class GetDatabaseInsightConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DatabaseInsight>>
+                                                        com.oracle.bmc.opsi.model.DatabaseInsight>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DatabaseInsight.class);
+                                                        com.oracle.bmc.opsi.model.DatabaseInsight
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DatabaseInsight> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.opsi.model.DatabaseInsight>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

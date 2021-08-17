@@ -82,12 +82,16 @@ public class UpdateCloudVmClusterIormConfigConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ExadataIormConfig>>
+                                                        com.oracle.bmc.database.model
+                                                                .ExadataIormConfig>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ExadataIormConfig.class);
+                                                        com.oracle.bmc.database.model
+                                                                        .ExadataIormConfig
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ExadataIormConfig>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.database.model.ExadataIormConfig>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

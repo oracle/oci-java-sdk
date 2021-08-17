@@ -27,7 +27,7 @@ public class GetOrderResponse {
     /**
      * The returned Order instance.
      */
-    private Order order;
+    private com.oracle.bmc.tenantmanagercontrolplane.model.Order order;
 
     public static class Builder {
         /**

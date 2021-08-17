@@ -28,9 +28,9 @@ public class ListWafRequestsResponse {
     private String opcNextPage;
 
     /**
-     * A list of WafRequest instances.
+     * A list of com.oracle.bmc.waas.model.WafRequest instances.
      */
-    private java.util.List<WafRequest> items;
+    private java.util.List<com.oracle.bmc.waas.model.WafRequest> items;
 
     public static class Builder {
         /**

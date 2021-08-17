@@ -68,15 +68,21 @@ public class ListAvailabilityDomainsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<AvailabilityDomain>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.identity.model
+                                                                        .AvailabilityDomain>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        AvailabilityDomain>>() {});
+                                                                        com.oracle.bmc.identity
+                                                                                .model
+                                                                                .AvailabilityDomain>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<AvailabilityDomain>>
+                                                java.util.List<
+                                                        com.oracle.bmc.identity.model
+                                                                .AvailabilityDomain>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

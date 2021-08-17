@@ -35,7 +35,8 @@ public class SummarizeAwrDbWaitEventsResponse {
     /**
      * The returned AwrDbWaitEventCollection instance.
      */
-    private AwrDbWaitEventCollection awrDbWaitEventCollection;
+    private com.oracle.bmc.databasemanagement.model.AwrDbWaitEventCollection
+            awrDbWaitEventCollection;
 
     public static class Builder {
         /**

@@ -35,7 +35,7 @@ public class ListMonitorsResponse {
     /**
      * The returned MonitorCollection instance.
      */
-    private MonitorCollection monitorCollection;
+    private com.oracle.bmc.apmsynthetics.model.MonitorCollection monitorCollection;
 
     public static class Builder {
         /**

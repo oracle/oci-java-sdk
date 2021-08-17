@@ -89,12 +89,17 @@ public class GetClusterCacheMetricConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ClusterCacheMetric>>
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                .ClusterCacheMetric>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ClusterCacheMetric.class);
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                        .ClusterCacheMetric
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ClusterCacheMetric>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.databasemanagement.model
+                                                        .ClusterCacheMetric>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

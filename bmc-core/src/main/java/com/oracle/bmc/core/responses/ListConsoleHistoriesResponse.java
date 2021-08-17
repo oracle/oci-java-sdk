@@ -33,9 +33,9 @@ public class ListConsoleHistoriesResponse {
     private String opcRequestId;
 
     /**
-     * A list of ConsoleHistory instances.
+     * A list of com.oracle.bmc.core.model.ConsoleHistory instances.
      */
-    private java.util.List<ConsoleHistory> items;
+    private java.util.List<com.oracle.bmc.core.model.ConsoleHistory> items;
 
     public static class Builder {
         /**

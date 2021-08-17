@@ -45,7 +45,7 @@ public class ListExternalPublicationValidationsResponse {
     /**
      * The returned ExternalPublicationValidationSummaryCollection instance.
      */
-    private ExternalPublicationValidationSummaryCollection
+    private com.oracle.bmc.dataintegration.model.ExternalPublicationValidationSummaryCollection
             externalPublicationValidationSummaryCollection;
 
     public static class Builder {

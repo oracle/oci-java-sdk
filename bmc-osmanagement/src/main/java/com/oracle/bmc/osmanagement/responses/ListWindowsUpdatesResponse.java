@@ -34,9 +34,9 @@ public class ListWindowsUpdatesResponse {
     private String opcNextPage;
 
     /**
-     * A list of WindowsUpdateSummary instances.
+     * A list of com.oracle.bmc.osmanagement.model.WindowsUpdateSummary instances.
      */
-    private java.util.List<WindowsUpdateSummary> items;
+    private java.util.List<com.oracle.bmc.osmanagement.model.WindowsUpdateSummary> items;
 
     public static class Builder {
         /**

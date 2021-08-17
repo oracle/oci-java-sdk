@@ -34,9 +34,9 @@ public class ListDatabaseUpgradeHistoryEntriesResponse {
     private String opcNextPage;
 
     /**
-     * A list of DatabaseUpgradeHistoryEntrySummary instances.
+     * A list of com.oracle.bmc.database.model.DatabaseUpgradeHistoryEntrySummary instances.
      */
-    private java.util.List<DatabaseUpgradeHistoryEntrySummary> items;
+    private java.util.List<com.oracle.bmc.database.model.DatabaseUpgradeHistoryEntrySummary> items;
 
     public static class Builder {
         /**

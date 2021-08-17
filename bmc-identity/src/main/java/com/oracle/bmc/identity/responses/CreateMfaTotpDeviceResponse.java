@@ -32,7 +32,7 @@ public class CreateMfaTotpDeviceResponse {
     /**
      * The returned MfaTotpDevice instance.
      */
-    private MfaTotpDevice mfaTotpDevice;
+    private com.oracle.bmc.identity.model.MfaTotpDevice mfaTotpDevice;
 
     public static class Builder {
         /**

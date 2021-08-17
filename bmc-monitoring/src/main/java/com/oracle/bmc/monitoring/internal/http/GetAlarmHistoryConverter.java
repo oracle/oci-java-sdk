@@ -111,12 +111,17 @@ public class GetAlarmHistoryConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AlarmHistoryCollection>>
+                                                        com.oracle.bmc.monitoring.model
+                                                                .AlarmHistoryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AlarmHistoryCollection.class);
+                                                        com.oracle.bmc.monitoring.model
+                                                                        .AlarmHistoryCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AlarmHistoryCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.monitoring.model
+                                                        .AlarmHistoryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

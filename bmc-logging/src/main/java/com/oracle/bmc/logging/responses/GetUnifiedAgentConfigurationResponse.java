@@ -33,7 +33,7 @@ public class GetUnifiedAgentConfigurationResponse {
     /**
      * The returned UnifiedAgentConfiguration instance.
      */
-    private UnifiedAgentConfiguration unifiedAgentConfiguration;
+    private com.oracle.bmc.logging.model.UnifiedAgentConfiguration unifiedAgentConfiguration;
 
     public static class Builder {
         /**

@@ -33,7 +33,7 @@ public class GetRecipientInvitationResponse {
     /**
      * The returned RecipientInvitation instance.
      */
-    private RecipientInvitation recipientInvitation;
+    private com.oracle.bmc.tenantmanagercontrolplane.model.RecipientInvitation recipientInvitation;
 
     public static class Builder {
         /**

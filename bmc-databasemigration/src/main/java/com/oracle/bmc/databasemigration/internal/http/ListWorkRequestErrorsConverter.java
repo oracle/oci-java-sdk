@@ -115,12 +115,17 @@ public class ListWorkRequestErrorsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        WorkRequestErrorCollection>>
+                                                        com.oracle.bmc.databasemigration.model
+                                                                .WorkRequestErrorCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        WorkRequestErrorCollection.class);
+                                                        com.oracle.bmc.databasemigration.model
+                                                                        .WorkRequestErrorCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<WorkRequestErrorCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.databasemigration.model
+                                                        .WorkRequestErrorCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

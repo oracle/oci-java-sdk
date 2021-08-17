@@ -5,7 +5,7 @@
 package com.oracle.bmc.managementagent.model;
 
 /**
- * Work Submission Identifier
+ * The summary of Management Agent count items
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -18,35 +18,36 @@ package com.oracle.bmc.managementagent.model;
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = WorkSubmissionKey.Builder.class
+    builder = ManagementAgentAggregationCollection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 @lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class WorkSubmissionKey {
+public class ManagementAgentAggregationCollection {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("workSubmissionKey")
-        private String workSubmissionKey;
+        @com.fasterxml.jackson.annotation.JsonProperty("items")
+        private java.util.List<ManagementAgentAggregation> items;
 
-        public Builder workSubmissionKey(String workSubmissionKey) {
-            this.workSubmissionKey = workSubmissionKey;
-            this.__explicitlySet__.add("workSubmissionKey");
+        public Builder items(java.util.List<ManagementAgentAggregation> items) {
+            this.items = items;
+            this.__explicitlySet__.add("items");
             return this;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public WorkSubmissionKey build() {
-            WorkSubmissionKey __instance__ = new WorkSubmissionKey(workSubmissionKey);
+        public ManagementAgentAggregationCollection build() {
+            ManagementAgentAggregationCollection __instance__ =
+                    new ManagementAgentAggregationCollection(items);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WorkSubmissionKey o) {
-            Builder copiedBuilder = workSubmissionKey(o.getWorkSubmissionKey());
+        public Builder copy(ManagementAgentAggregationCollection o) {
+            Builder copiedBuilder = items(o.getItems());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -61,10 +62,10 @@ public class WorkSubmissionKey {
     }
 
     /**
-     * Work Submission Identifier
+     * List in which each item describes an aggregation of Managment Agents
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("workSubmissionKey")
-    String workSubmissionKey;
+    @com.fasterxml.jackson.annotation.JsonProperty("items")
+    java.util.List<ManagementAgentAggregation> items;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

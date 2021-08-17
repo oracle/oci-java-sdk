@@ -135,15 +135,21 @@ public class ListApplicationsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<ApplicationSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.dataflow.model
+                                                                        .ApplicationSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        ApplicationSummary>>() {});
+                                                                        com.oracle.bmc.dataflow
+                                                                                .model
+                                                                                .ApplicationSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<ApplicationSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.dataflow.model
+                                                                .ApplicationSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

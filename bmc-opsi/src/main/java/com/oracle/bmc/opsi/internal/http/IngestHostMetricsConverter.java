@@ -85,13 +85,17 @@ public class IngestHostMetricsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        IngestHostMetricsResponseDetails>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .IngestHostMetricsResponseDetails>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        IngestHostMetricsResponseDetails.class);
+                                                        com.oracle.bmc.opsi.model
+                                                                        .IngestHostMetricsResponseDetails
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                IngestHostMetricsResponseDetails>
+                                                com.oracle.bmc.opsi.model
+                                                        .IngestHostMetricsResponseDetails>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

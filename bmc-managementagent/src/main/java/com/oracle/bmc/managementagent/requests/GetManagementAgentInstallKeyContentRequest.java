@@ -42,6 +42,25 @@ public class GetManagementAgentInstallKeyContentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<String> pluginName = null;
+
+        /**
+         * Filter to return input plugin names uncommented in the output.
+         * @return this builder instance
+         */
+        public Builder pluginName(java.util.List<String> pluginName) {
+            this.pluginName = pluginName;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter to return input plugin names uncommented in the output.
+         * @return this builder instance
+         */
+        public Builder pluginName(String singularValue) {
+            return this.pluginName(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

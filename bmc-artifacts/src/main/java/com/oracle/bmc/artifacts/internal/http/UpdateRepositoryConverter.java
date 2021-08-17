@@ -76,13 +76,15 @@ public class UpdateRepositoryConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        Repository>>
+                                                        com.oracle.bmc.artifacts.model.Repository>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        Repository.class);
+                                                        com.oracle.bmc.artifacts.model.Repository
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Repository> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.artifacts.model.Repository>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

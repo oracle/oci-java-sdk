@@ -95,15 +95,21 @@ public class ListReplicationPoliciesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<ReplicationPolicySummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.objectstorage.model
+                                                                        .ReplicationPolicySummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        ReplicationPolicySummary>>() {});
+                                                                        com.oracle.bmc.objectstorage
+                                                                                .model
+                                                                                .ReplicationPolicySummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<ReplicationPolicySummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.objectstorage.model
+                                                                .ReplicationPolicySummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

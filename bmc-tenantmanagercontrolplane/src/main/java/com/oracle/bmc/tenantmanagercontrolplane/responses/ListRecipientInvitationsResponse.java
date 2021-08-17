@@ -35,7 +35,8 @@ public class ListRecipientInvitationsResponse {
     /**
      * The returned RecipientInvitationCollection instance.
      */
-    private RecipientInvitationCollection recipientInvitationCollection;
+    private com.oracle.bmc.tenantmanagercontrolplane.model.RecipientInvitationCollection
+            recipientInvitationCollection;
 
     public static class Builder {
         /**

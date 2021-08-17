@@ -34,9 +34,9 @@ public class ListConsoleConnectionsResponse {
     private String opcNextPage;
 
     /**
-     * A list of ConsoleConnectionSummary instances.
+     * A list of com.oracle.bmc.database.model.ConsoleConnectionSummary instances.
      */
-    private java.util.List<ConsoleConnectionSummary> items;
+    private java.util.List<com.oracle.bmc.database.model.ConsoleConnectionSummary> items;
 
     public static class Builder {
         /**

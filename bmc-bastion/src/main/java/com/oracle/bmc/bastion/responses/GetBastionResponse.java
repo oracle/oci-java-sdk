@@ -33,7 +33,7 @@ public class GetBastionResponse {
     /**
      * The returned Bastion instance.
      */
-    private Bastion bastion;
+    private com.oracle.bmc.bastion.model.Bastion bastion;
 
     public static class Builder {
         /**

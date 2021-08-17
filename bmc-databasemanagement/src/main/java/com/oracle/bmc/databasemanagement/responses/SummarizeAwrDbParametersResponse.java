@@ -35,7 +35,8 @@ public class SummarizeAwrDbParametersResponse {
     /**
      * The returned AwrDbParameterCollection instance.
      */
-    private AwrDbParameterCollection awrDbParameterCollection;
+    private com.oracle.bmc.databasemanagement.model.AwrDbParameterCollection
+            awrDbParameterCollection;
 
     public static class Builder {
         /**

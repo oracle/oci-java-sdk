@@ -74,12 +74,15 @@ public class UpdateSessionConverter {
                                         "Transform function invoked for com.oracle.bmc.bastion.responses.UpdateSessionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Session>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.bastion.model.Session>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Session.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.bastion.model.Session.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Session> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.bastion.model.Session>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

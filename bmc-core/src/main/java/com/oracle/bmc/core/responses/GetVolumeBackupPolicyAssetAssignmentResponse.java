@@ -33,9 +33,9 @@ public class GetVolumeBackupPolicyAssetAssignmentResponse {
     private String opcRequestId;
 
     /**
-     * A list of VolumeBackupPolicyAssignment instances.
+     * A list of com.oracle.bmc.core.model.VolumeBackupPolicyAssignment instances.
      */
-    private java.util.List<VolumeBackupPolicyAssignment> items;
+    private java.util.List<com.oracle.bmc.core.model.VolumeBackupPolicyAssignment> items;
 
     public static class Builder {
         /**

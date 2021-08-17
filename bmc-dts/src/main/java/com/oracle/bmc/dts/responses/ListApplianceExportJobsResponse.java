@@ -33,9 +33,9 @@ public class ListApplianceExportJobsResponse {
     private String opcRequestId;
 
     /**
-     * A list of ApplianceExportJobSummary instances.
+     * A list of com.oracle.bmc.dts.model.ApplianceExportJobSummary instances.
      */
-    private java.util.List<ApplianceExportJobSummary> items;
+    private java.util.List<com.oracle.bmc.dts.model.ApplianceExportJobSummary> items;
 
     public static class Builder {
         /**

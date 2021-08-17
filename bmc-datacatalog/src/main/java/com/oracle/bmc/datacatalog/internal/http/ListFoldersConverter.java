@@ -229,12 +229,16 @@ public class ListFoldersConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        FolderCollection>>
+                                                        com.oracle.bmc.datacatalog.model
+                                                                .FolderCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        FolderCollection.class);
+                                                        com.oracle.bmc.datacatalog.model
+                                                                        .FolderCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<FolderCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model.FolderCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

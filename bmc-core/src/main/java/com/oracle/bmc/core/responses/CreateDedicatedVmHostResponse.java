@@ -40,7 +40,7 @@ public class CreateDedicatedVmHostResponse {
     /**
      * The returned DedicatedVmHost instance.
      */
-    private DedicatedVmHost dedicatedVmHost;
+    private com.oracle.bmc.core.model.DedicatedVmHost dedicatedVmHost;
 
     public static class Builder {
         /**

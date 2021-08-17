@@ -33,7 +33,7 @@ public class GetApmDomainResponse {
     /**
      * The returned ApmDomain instance.
      */
-    private ApmDomain apmDomain;
+    private com.oracle.bmc.apmcontrolplane.model.ApmDomain apmDomain;
 
     public static class Builder {
         /**

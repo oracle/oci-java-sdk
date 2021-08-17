@@ -33,7 +33,7 @@ public class GetNetworkLoadBalancerResponse {
     /**
      * The returned NetworkLoadBalancer instance.
      */
-    private NetworkLoadBalancer networkLoadBalancer;
+    private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancer networkLoadBalancer;
 
     public static class Builder {
         /**

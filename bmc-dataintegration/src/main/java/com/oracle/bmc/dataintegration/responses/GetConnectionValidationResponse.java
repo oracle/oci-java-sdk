@@ -33,7 +33,7 @@ public class GetConnectionValidationResponse {
     /**
      * The returned ConnectionValidation instance.
      */
-    private ConnectionValidation connectionValidation;
+    private com.oracle.bmc.dataintegration.model.ConnectionValidation connectionValidation;
 
     public static class Builder {
         /**

@@ -43,9 +43,9 @@ public class ListPreauthenticatedRequestsResponse {
     private String opcNextPage;
 
     /**
-     * A list of PreauthenticatedRequestSummary instances.
+     * A list of com.oracle.bmc.objectstorage.model.PreauthenticatedRequestSummary instances.
      */
-    private java.util.List<PreauthenticatedRequestSummary> items;
+    private java.util.List<com.oracle.bmc.objectstorage.model.PreauthenticatedRequestSummary> items;
 
     public static class Builder {
         /**

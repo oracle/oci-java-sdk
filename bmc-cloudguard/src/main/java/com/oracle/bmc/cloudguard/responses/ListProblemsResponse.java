@@ -35,7 +35,7 @@ public class ListProblemsResponse {
     /**
      * The returned ProblemCollection instance.
      */
-    private ProblemCollection problemCollection;
+    private com.oracle.bmc.cloudguard.model.ProblemCollection problemCollection;
 
     public static class Builder {
         /**

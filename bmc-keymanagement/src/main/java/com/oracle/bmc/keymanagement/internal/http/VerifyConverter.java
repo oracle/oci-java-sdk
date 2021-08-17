@@ -65,13 +65,17 @@ public class VerifyConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        VerifiedData>>
+                                                        com.oracle.bmc.keymanagement.model
+                                                                .VerifiedData>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        VerifiedData.class);
+                                                        com.oracle.bmc.keymanagement.model
+                                                                        .VerifiedData
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<VerifiedData> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.keymanagement.model.VerifiedData>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

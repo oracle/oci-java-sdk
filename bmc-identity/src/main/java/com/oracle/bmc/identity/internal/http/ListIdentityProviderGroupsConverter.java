@@ -103,15 +103,20 @@ public class ListIdentityProviderGroupsConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                IdentityProviderGroupSummary>>>
+                                                                com.oracle.bmc.identity.model
+                                                                        .IdentityProviderGroupSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        IdentityProviderGroupSummary>>() {});
+                                                                        com.oracle.bmc.identity
+                                                                                .model
+                                                                                .IdentityProviderGroupSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<IdentityProviderGroupSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.identity.model
+                                                                .IdentityProviderGroupSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

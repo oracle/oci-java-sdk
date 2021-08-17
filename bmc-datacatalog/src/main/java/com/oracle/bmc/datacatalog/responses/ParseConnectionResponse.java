@@ -31,9 +31,9 @@ public class ParseConnectionResponse {
     private String opcRequestId;
 
     /**
-     * A list of ConnectionAliasSummary instances.
+     * A list of com.oracle.bmc.datacatalog.model.ConnectionAliasSummary instances.
      */
-    private java.util.List<ConnectionAliasSummary> items;
+    private java.util.List<com.oracle.bmc.datacatalog.model.ConnectionAliasSummary> items;
 
     public static class Builder {
         /**

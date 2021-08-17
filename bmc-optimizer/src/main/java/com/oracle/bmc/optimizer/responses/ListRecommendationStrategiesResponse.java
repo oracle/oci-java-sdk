@@ -42,7 +42,8 @@ public class ListRecommendationStrategiesResponse {
     /**
      * The returned RecommendationStrategyCollection instance.
      */
-    private RecommendationStrategyCollection recommendationStrategyCollection;
+    private com.oracle.bmc.optimizer.model.RecommendationStrategyCollection
+            recommendationStrategyCollection;
 
     public static class Builder {
         /**

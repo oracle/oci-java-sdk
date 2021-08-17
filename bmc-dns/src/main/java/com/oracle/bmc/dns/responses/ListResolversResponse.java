@@ -33,9 +33,9 @@ public class ListResolversResponse {
     private String opcNextPage;
 
     /**
-     * A list of ResolverSummary instances.
+     * A list of com.oracle.bmc.dns.model.ResolverSummary instances.
      */
-    private java.util.List<ResolverSummary> items;
+    private java.util.List<com.oracle.bmc.dns.model.ResolverSummary> items;
 
     public static class Builder {
         /**

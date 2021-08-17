@@ -79,12 +79,16 @@ public class QueryConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        QueryResultCollection>>
+                                                        com.oracle.bmc.nosql.model
+                                                                .QueryResultCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        QueryResultCollection.class);
+                                                        com.oracle.bmc.nosql.model
+                                                                        .QueryResultCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<QueryResultCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.nosql.model.QueryResultCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

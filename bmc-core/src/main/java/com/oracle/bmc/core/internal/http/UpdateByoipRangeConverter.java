@@ -76,13 +76,14 @@ public class UpdateByoipRangeConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ByoipRange>>
+                                                        com.oracle.bmc.core.model.ByoipRange>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ByoipRange.class);
+                                                        com.oracle.bmc.core.model.ByoipRange.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ByoipRange> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.ByoipRange>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -33,7 +33,7 @@ public class GetTaggingWorkRequestResponse {
     /**
      * The returned TaggingWorkRequest instance.
      */
-    private TaggingWorkRequest taggingWorkRequest;
+    private com.oracle.bmc.identity.model.TaggingWorkRequest taggingWorkRequest;
 
     public static class Builder {
         /**

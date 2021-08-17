@@ -102,12 +102,17 @@ public class ListListenersConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ListenerCollection>>
+                                                        com.oracle.bmc.networkloadbalancer.model
+                                                                .ListenerCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ListenerCollection.class);
+                                                        com.oracle.bmc.networkloadbalancer.model
+                                                                        .ListenerCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ListenerCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.networkloadbalancer.model
+                                                        .ListenerCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

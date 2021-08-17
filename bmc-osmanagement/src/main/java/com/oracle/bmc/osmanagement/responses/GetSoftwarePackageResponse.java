@@ -27,7 +27,7 @@ public class GetSoftwarePackageResponse {
     /**
      * The returned SoftwarePackage instance.
      */
-    private SoftwarePackage softwarePackage;
+    private com.oracle.bmc.osmanagement.model.SoftwarePackage softwarePackage;
 
     public static class Builder {
         /**

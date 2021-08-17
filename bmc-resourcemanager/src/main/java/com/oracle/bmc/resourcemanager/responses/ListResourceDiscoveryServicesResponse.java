@@ -27,7 +27,8 @@ public class ListResourceDiscoveryServicesResponse {
     /**
      * The returned ResourceDiscoveryServiceCollection instance.
      */
-    private ResourceDiscoveryServiceCollection resourceDiscoveryServiceCollection;
+    private com.oracle.bmc.resourcemanager.model.ResourceDiscoveryServiceCollection
+            resourceDiscoveryServiceCollection;
 
     public static class Builder {
         /**

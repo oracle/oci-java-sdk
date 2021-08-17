@@ -33,7 +33,7 @@ public class GetClusterNetworkResponse {
     /**
      * The returned ClusterNetwork instance.
      */
-    private ClusterNetwork clusterNetwork;
+    private com.oracle.bmc.core.model.ClusterNetwork clusterNetwork;
 
     public static class Builder {
         /**

@@ -35,7 +35,7 @@ public class ListSqlTextsResponse {
     /**
      * The returned SqlTextCollection instance.
      */
-    private SqlTextCollection sqlTextCollection;
+    private com.oracle.bmc.opsi.model.SqlTextCollection sqlTextCollection;
 
     public static class Builder {
         /**

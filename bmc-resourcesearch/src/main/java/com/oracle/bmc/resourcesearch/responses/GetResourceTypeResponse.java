@@ -27,7 +27,7 @@ public class GetResourceTypeResponse {
     /**
      * The returned ResourceType instance.
      */
-    private ResourceType resourceType;
+    private com.oracle.bmc.resourcesearch.model.ResourceType resourceType;
 
     public static class Builder {
         /**

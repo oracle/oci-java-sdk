@@ -35,7 +35,7 @@ public class SummarizeDatabaseInsightResourceUtilizationInsightResponse {
     /**
      * The returned SummarizeDatabaseInsightResourceUtilizationInsightAggregation instance.
      */
-    private SummarizeDatabaseInsightResourceUtilizationInsightAggregation
+    private com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceUtilizationInsightAggregation
             summarizeDatabaseInsightResourceUtilizationInsightAggregation;
 
     public static class Builder {

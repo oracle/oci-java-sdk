@@ -32,7 +32,7 @@ public class ActivateMfaTotpDeviceResponse {
     /**
      * The returned MfaTotpDeviceSummary instance.
      */
-    private MfaTotpDeviceSummary mfaTotpDeviceSummary;
+    private com.oracle.bmc.identity.model.MfaTotpDeviceSummary mfaTotpDeviceSummary;
 
     public static class Builder {
         /**

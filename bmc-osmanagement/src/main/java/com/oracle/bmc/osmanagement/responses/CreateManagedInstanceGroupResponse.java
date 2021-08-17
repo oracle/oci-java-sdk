@@ -38,7 +38,7 @@ public class CreateManagedInstanceGroupResponse {
     /**
      * The returned ManagedInstanceGroup instance.
      */
-    private ManagedInstanceGroup managedInstanceGroup;
+    private com.oracle.bmc.osmanagement.model.ManagedInstanceGroup managedInstanceGroup;
 
     public static class Builder {
         /**

@@ -34,9 +34,9 @@ public class ListExternalContainerDatabasesResponse {
     private String opcNextPage;
 
     /**
-     * A list of ExternalContainerDatabaseSummary instances.
+     * A list of com.oracle.bmc.database.model.ExternalContainerDatabaseSummary instances.
      */
-    private java.util.List<ExternalContainerDatabaseSummary> items;
+    private java.util.List<com.oracle.bmc.database.model.ExternalContainerDatabaseSummary> items;
 
     public static class Builder {
         /**

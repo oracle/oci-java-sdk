@@ -25,7 +25,7 @@ public class UpdateIncidentResponse {
     /**
      * The returned Incident instance.
      */
-    private Incident incident;
+    private com.oracle.bmc.cims.model.Incident incident;
 
     public static class Builder {
         /**

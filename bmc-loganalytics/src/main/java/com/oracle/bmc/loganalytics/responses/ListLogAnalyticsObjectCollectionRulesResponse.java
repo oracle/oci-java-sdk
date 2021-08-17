@@ -34,7 +34,8 @@ public class ListLogAnalyticsObjectCollectionRulesResponse {
     /**
      * The returned LogAnalyticsObjectCollectionRuleCollection instance.
      */
-    private LogAnalyticsObjectCollectionRuleCollection logAnalyticsObjectCollectionRuleCollection;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsObjectCollectionRuleCollection
+            logAnalyticsObjectCollectionRuleCollection;
 
     public static class Builder {
         /**

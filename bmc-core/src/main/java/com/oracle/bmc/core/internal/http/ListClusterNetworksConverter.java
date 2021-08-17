@@ -115,15 +115,20 @@ public class ListClusterNetworksConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<ClusterNetworkSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.core.model
+                                                                        .ClusterNetworkSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        ClusterNetworkSummary>>() {});
+                                                                        com.oracle.bmc.core.model
+                                                                                .ClusterNetworkSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<ClusterNetworkSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model
+                                                                .ClusterNetworkSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

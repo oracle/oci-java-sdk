@@ -80,13 +80,17 @@ public class GetDatabaseUpgradeHistoryEntryConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DatabaseUpgradeHistoryEntry>>
+                                                        com.oracle.bmc.database.model
+                                                                .DatabaseUpgradeHistoryEntry>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DatabaseUpgradeHistoryEntry.class);
+                                                        com.oracle.bmc.database.model
+                                                                        .DatabaseUpgradeHistoryEntry
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                DatabaseUpgradeHistoryEntry>
+                                                com.oracle.bmc.database.model
+                                                        .DatabaseUpgradeHistoryEntry>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

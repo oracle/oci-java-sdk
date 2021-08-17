@@ -71,14 +71,21 @@ public class ListPathRouteSetsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<PathRouteSet>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.loadbalancer.model
+                                                                        .PathRouteSet>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<PathRouteSet>>() {});
+                                                                java.util.List<
+                                                                        com.oracle.bmc.loadbalancer
+                                                                                .model
+                                                                                .PathRouteSet>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<PathRouteSet>>
+                                                java.util.List<
+                                                        com.oracle.bmc.loadbalancer.model
+                                                                .PathRouteSet>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

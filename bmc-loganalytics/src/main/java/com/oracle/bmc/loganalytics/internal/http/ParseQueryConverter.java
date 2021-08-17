@@ -74,12 +74,16 @@ public class ParseQueryConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ParseQueryOutput>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .ParseQueryOutput>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ParseQueryOutput.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .ParseQueryOutput
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ParseQueryOutput>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model.ParseQueryOutput>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

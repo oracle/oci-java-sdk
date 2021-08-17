@@ -33,7 +33,7 @@ public class GetLogResponse {
     /**
      * The returned Log instance.
      */
-    private Log log;
+    private com.oracle.bmc.logging.model.Log log;
 
     public static class Builder {
         /**

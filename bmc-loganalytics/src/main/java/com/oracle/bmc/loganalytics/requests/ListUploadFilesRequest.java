@@ -190,6 +190,25 @@ public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<Status> status = null;
+
+        /**
+         * Upload File processing state.
+         * @return this builder instance
+         */
+        public Builder status(java.util.List<Status> status) {
+            this.status = status;
+            return this;
+        }
+
+        /**
+         * Singular setter. Upload File processing state.
+         * @return this builder instance
+         */
+        public Builder status(Status singularValue) {
+            return this.status(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

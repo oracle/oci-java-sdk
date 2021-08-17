@@ -28,9 +28,9 @@ public class ListIncidentResourceTypesResponse {
     private String opcNextPage;
 
     /**
-     * A list of IncidentResourceType instances.
+     * A list of com.oracle.bmc.cims.model.IncidentResourceType instances.
      */
-    private java.util.List<IncidentResourceType> items;
+    private java.util.List<com.oracle.bmc.cims.model.IncidentResourceType> items;
 
     public static class Builder {
         /**

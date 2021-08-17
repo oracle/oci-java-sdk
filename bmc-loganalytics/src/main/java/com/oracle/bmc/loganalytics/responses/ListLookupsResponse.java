@@ -42,7 +42,8 @@ public class ListLookupsResponse {
     /**
      * The returned LogAnalyticsLookupCollection instance.
      */
-    private LogAnalyticsLookupCollection logAnalyticsLookupCollection;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsLookupCollection
+            logAnalyticsLookupCollection;
 
     public static class Builder {
         /**

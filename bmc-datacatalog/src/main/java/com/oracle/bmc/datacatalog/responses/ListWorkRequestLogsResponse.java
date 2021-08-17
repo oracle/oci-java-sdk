@@ -31,9 +31,9 @@ public class ListWorkRequestLogsResponse {
     private String opcRequestId;
 
     /**
-     * A list of WorkRequestLog instances.
+     * A list of com.oracle.bmc.datacatalog.model.WorkRequestLog instances.
      */
-    private java.util.List<WorkRequestLog> items;
+    private java.util.List<com.oracle.bmc.datacatalog.model.WorkRequestLog> items;
 
     public static class Builder {
         /**

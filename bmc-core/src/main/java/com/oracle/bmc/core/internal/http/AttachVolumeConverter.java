@@ -64,12 +64,14 @@ public class AttachVolumeConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        VolumeAttachment>>
+                                                        com.oracle.bmc.core.model.VolumeAttachment>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        VolumeAttachment.class);
+                                                        com.oracle.bmc.core.model.VolumeAttachment
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<VolumeAttachment>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.VolumeAttachment>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

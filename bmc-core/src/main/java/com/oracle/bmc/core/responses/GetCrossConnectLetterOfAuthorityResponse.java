@@ -27,7 +27,7 @@ public class GetCrossConnectLetterOfAuthorityResponse {
     /**
      * The returned LetterOfAuthority instance.
      */
-    private LetterOfAuthority letterOfAuthority;
+    private com.oracle.bmc.core.model.LetterOfAuthority letterOfAuthority;
 
     public static class Builder {
         /**

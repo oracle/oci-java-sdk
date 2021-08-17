@@ -33,7 +33,7 @@ public class GetPipelineValidationResponse {
     /**
      * The returned PipelineValidation instance.
      */
-    private PipelineValidation pipelineValidation;
+    private com.oracle.bmc.dataintegration.model.PipelineValidation pipelineValidation;
 
     public static class Builder {
         /**

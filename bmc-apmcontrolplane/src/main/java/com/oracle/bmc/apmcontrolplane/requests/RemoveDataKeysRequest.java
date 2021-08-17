@@ -62,6 +62,26 @@ public class RemoveDataKeysRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<RemoveDataKeyDetails> removeDataKeysListDetails = null;
+
+        /**
+         * List of Data Keys to be removed.
+         * @return this builder instance
+         */
+        public Builder removeDataKeysListDetails(
+                java.util.List<RemoveDataKeyDetails> removeDataKeysListDetails) {
+            this.removeDataKeysListDetails = removeDataKeysListDetails;
+            return this;
+        }
+
+        /**
+         * Singular setter. List of Data Keys to be removed.
+         * @return this builder instance
+         */
+        public Builder removeDataKeysListDetails(RemoveDataKeyDetails singularValue) {
+            return this.removeDataKeysListDetails(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

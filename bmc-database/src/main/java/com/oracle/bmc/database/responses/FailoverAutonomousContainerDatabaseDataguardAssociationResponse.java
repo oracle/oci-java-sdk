@@ -38,7 +38,7 @@ public class FailoverAutonomousContainerDatabaseDataguardAssociationResponse {
     /**
      * The returned AutonomousContainerDatabaseDataguardAssociation instance.
      */
-    private AutonomousContainerDatabaseDataguardAssociation
+    private com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation
             autonomousContainerDatabaseDataguardAssociation;
 
     public static class Builder {

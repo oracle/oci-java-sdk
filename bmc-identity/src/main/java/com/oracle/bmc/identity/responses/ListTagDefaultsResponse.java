@@ -33,9 +33,9 @@ public class ListTagDefaultsResponse {
     private String opcNextPage;
 
     /**
-     * A list of TagDefaultSummary instances.
+     * A list of com.oracle.bmc.identity.model.TagDefaultSummary instances.
      */
-    private java.util.List<TagDefaultSummary> items;
+    private java.util.List<com.oracle.bmc.identity.model.TagDefaultSummary> items;
 
     public static class Builder {
         /**

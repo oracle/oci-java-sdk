@@ -34,9 +34,9 @@ public class ListSecretVersionsResponse {
     private String opcRequestId;
 
     /**
-     * A list of SecretVersionSummary instances.
+     * A list of com.oracle.bmc.vault.model.SecretVersionSummary instances.
      */
-    private java.util.List<SecretVersionSummary> items;
+    private java.util.List<com.oracle.bmc.vault.model.SecretVersionSummary> items;
 
     public static class Builder {
         /**

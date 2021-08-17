@@ -34,9 +34,9 @@ public class ListUpcomingScheduledJobsResponse {
     private String opcNextPage;
 
     /**
-     * A list of ScheduledJobSummary instances.
+     * A list of com.oracle.bmc.osmanagement.model.ScheduledJobSummary instances.
      */
-    private java.util.List<ScheduledJobSummary> items;
+    private java.util.List<com.oracle.bmc.osmanagement.model.ScheduledJobSummary> items;
 
     public static class Builder {
         /**

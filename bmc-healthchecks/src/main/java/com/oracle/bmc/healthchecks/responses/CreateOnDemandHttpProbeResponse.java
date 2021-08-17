@@ -33,7 +33,7 @@ public class CreateOnDemandHttpProbeResponse {
     /**
      * The returned HttpProbe instance.
      */
-    private HttpProbe httpProbe;
+    private com.oracle.bmc.healthchecks.model.HttpProbe httpProbe;
 
     public static class Builder {
         /**

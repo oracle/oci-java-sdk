@@ -69,13 +69,15 @@ public class GetHostInsightConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        HostInsight>>
+                                                        com.oracle.bmc.opsi.model.HostInsight>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        HostInsight.class);
+                                                        com.oracle.bmc.opsi.model.HostInsight
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<HostInsight> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.opsi.model.HostInsight>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
