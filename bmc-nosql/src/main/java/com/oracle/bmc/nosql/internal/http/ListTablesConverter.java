@@ -118,13 +118,15 @@ public class ListTablesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        TableCollection>>
+                                                        com.oracle.bmc.nosql.model.TableCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        TableCollection.class);
+                                                        com.oracle.bmc.nosql.model.TableCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<TableCollection> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.nosql.model.TableCollection>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

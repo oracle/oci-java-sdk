@@ -40,7 +40,7 @@ public class UpdateProjectResponse {
     /**
      * The returned Project instance.
      */
-    private Project project;
+    private com.oracle.bmc.devops.model.Project project;
 
     public static class Builder {
         /**

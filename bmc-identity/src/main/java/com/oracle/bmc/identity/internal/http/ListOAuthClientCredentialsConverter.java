@@ -95,15 +95,20 @@ public class ListOAuthClientCredentialsConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                OAuth2ClientCredentialSummary>>>
+                                                                com.oracle.bmc.identity.model
+                                                                        .OAuth2ClientCredentialSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        OAuth2ClientCredentialSummary>>() {});
+                                                                        com.oracle.bmc.identity
+                                                                                .model
+                                                                                .OAuth2ClientCredentialSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<OAuth2ClientCredentialSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.identity.model
+                                                                .OAuth2ClientCredentialSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

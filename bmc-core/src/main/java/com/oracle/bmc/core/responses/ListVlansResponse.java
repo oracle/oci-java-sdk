@@ -33,9 +33,9 @@ public class ListVlansResponse {
     private String opcRequestId;
 
     /**
-     * A list of Vlan instances.
+     * A list of com.oracle.bmc.core.model.Vlan instances.
      */
-    private java.util.List<Vlan> items;
+    private java.util.List<com.oracle.bmc.core.model.Vlan> items;
 
     public static class Builder {
         /**

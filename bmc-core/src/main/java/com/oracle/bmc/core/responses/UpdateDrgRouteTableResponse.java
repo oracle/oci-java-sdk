@@ -33,7 +33,7 @@ public class UpdateDrgRouteTableResponse {
     /**
      * The returned DrgRouteTable instance.
      */
-    private DrgRouteTable drgRouteTable;
+    private com.oracle.bmc.core.model.DrgRouteTable drgRouteTable;
 
     public static class Builder {
         /**

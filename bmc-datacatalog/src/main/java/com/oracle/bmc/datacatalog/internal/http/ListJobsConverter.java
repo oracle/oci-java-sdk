@@ -248,13 +248,17 @@ public class ListJobsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        JobCollection>>
+                                                        com.oracle.bmc.datacatalog.model
+                                                                .JobCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        JobCollection.class);
+                                                        com.oracle.bmc.datacatalog.model
+                                                                        .JobCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<JobCollection> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model.JobCollection>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

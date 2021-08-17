@@ -33,7 +33,7 @@ public class CreateJobDefinitionResponse {
     /**
      * The returned JobDefinition instance.
      */
-    private JobDefinition jobDefinition;
+    private com.oracle.bmc.datacatalog.model.JobDefinition jobDefinition;
 
     public static class Builder {
         /**

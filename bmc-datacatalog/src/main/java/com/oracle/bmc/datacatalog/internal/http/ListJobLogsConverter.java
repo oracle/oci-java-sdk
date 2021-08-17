@@ -170,12 +170,16 @@ public class ListJobLogsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        JobLogCollection>>
+                                                        com.oracle.bmc.datacatalog.model
+                                                                .JobLogCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        JobLogCollection.class);
+                                                        com.oracle.bmc.datacatalog.model
+                                                                        .JobLogCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<JobLogCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model.JobLogCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

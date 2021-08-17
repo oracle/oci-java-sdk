@@ -229,6 +229,131 @@ public class ListDatabaseInsightsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<String> id = null;
+
+        /**
+         * Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder id(java.util.List<String> id) {
+            this.id = id;
+            return this;
+        }
+
+        /**
+         * Singular setter. Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder id(String singularValue) {
+            return this.id(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status = null;
+
+        /**
+         * Resource Status
+         * @return this builder instance
+         */
+        public Builder status(java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status) {
+            this.status = status;
+            return this;
+        }
+
+        /**
+         * Singular setter. Resource Status
+         * @return this builder instance
+         */
+        public Builder status(ResourceStatus singularValue) {
+            return this.status(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<com.oracle.bmc.opsi.model.LifecycleState> lifecycleState = null;
+
+        /**
+         * Lifecycle states
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                java.util.List<com.oracle.bmc.opsi.model.LifecycleState> lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        /**
+         * Singular setter. Lifecycle states
+         * @return this builder instance
+         */
+        public Builder lifecycleState(LifecycleState singularValue) {
+            return this.lifecycleState(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<DatabaseType> databaseType = null;
+
+        /**
+         * Filter by one or more database type.
+         * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
+         *
+         * @return this builder instance
+         */
+        public Builder databaseType(java.util.List<DatabaseType> databaseType) {
+            this.databaseType = databaseType;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter by one or more database type.
+         * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
+         *
+         * @return this builder instance
+         */
+        public Builder databaseType(DatabaseType singularValue) {
+            return this.databaseType(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> databaseId = null;
+
+        /**
+         * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
+         *
+         * @return this builder instance
+         */
+        public Builder databaseId(java.util.List<String> databaseId) {
+            this.databaseId = databaseId;
+            return this;
+        }
+
+        /**
+         * Singular setter. Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
+         *
+         * @return this builder instance
+         */
+        public Builder databaseId(String singularValue) {
+            return this.databaseId(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<Fields> fields = null;
+
+        /**
+         * Specifies the fields to return in a database summary response. By default all fields are returned if omitted.
+         *
+         * @return this builder instance
+         */
+        public Builder fields(java.util.List<Fields> fields) {
+            this.fields = fields;
+            return this;
+        }
+
+        /**
+         * Singular setter. Specifies the fields to return in a database summary response. By default all fields are returned if omitted.
+         *
+         * @return this builder instance
+         */
+        public Builder fields(Fields singularValue) {
+            return this.fields(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

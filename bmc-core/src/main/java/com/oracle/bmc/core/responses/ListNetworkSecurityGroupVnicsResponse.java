@@ -33,9 +33,9 @@ public class ListNetworkSecurityGroupVnicsResponse {
     private String opcRequestId;
 
     /**
-     * A list of NetworkSecurityGroupVnic instances.
+     * A list of com.oracle.bmc.core.model.NetworkSecurityGroupVnic instances.
      */
-    private java.util.List<NetworkSecurityGroupVnic> items;
+    private java.util.List<com.oracle.bmc.core.model.NetworkSecurityGroupVnic> items;
 
     public static class Builder {
         /**

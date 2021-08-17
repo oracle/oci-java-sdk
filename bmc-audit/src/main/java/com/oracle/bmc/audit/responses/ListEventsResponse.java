@@ -34,9 +34,9 @@ public class ListEventsResponse {
     private String opcRequestId;
 
     /**
-     * A list of AuditEvent instances.
+     * A list of com.oracle.bmc.audit.model.AuditEvent instances.
      */
-    private java.util.List<AuditEvent> items;
+    private java.util.List<com.oracle.bmc.audit.model.AuditEvent> items;
 
     public static class Builder {
         /**

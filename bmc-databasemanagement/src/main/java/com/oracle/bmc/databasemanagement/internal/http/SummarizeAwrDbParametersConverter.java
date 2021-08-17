@@ -206,12 +206,17 @@ public class SummarizeAwrDbParametersConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AwrDbParameterCollection>>
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                .AwrDbParameterCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AwrDbParameterCollection.class);
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                        .AwrDbParameterCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AwrDbParameterCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.databasemanagement.model
+                                                        .AwrDbParameterCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

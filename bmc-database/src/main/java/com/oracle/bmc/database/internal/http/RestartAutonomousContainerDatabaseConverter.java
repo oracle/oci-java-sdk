@@ -83,13 +83,17 @@ public class RestartAutonomousContainerDatabaseConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AutonomousContainerDatabase>>
+                                                        com.oracle.bmc.database.model
+                                                                .AutonomousContainerDatabase>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AutonomousContainerDatabase.class);
+                                                        com.oracle.bmc.database.model
+                                                                        .AutonomousContainerDatabase
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                AutonomousContainerDatabase>
+                                                com.oracle.bmc.database.model
+                                                        .AutonomousContainerDatabase>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -39,7 +39,7 @@ public class CreateManagementDashboardResponse {
     /**
      * The returned ManagementDashboard instance.
      */
-    private ManagementDashboard managementDashboard;
+    private com.oracle.bmc.managementdashboard.model.ManagementDashboard managementDashboard;
 
     public static class Builder {
         /**

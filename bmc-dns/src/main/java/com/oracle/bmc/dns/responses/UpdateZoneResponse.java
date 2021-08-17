@@ -42,7 +42,7 @@ public class UpdateZoneResponse {
     /**
      * The returned Zone instance.
      */
-    private Zone zone;
+    private com.oracle.bmc.dns.model.Zone zone;
 
     public static class Builder {
         /**

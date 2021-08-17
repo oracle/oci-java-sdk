@@ -87,12 +87,16 @@ public class GetAgreementConverter {
                                         "Transform function invoked for com.oracle.bmc.marketplace.responses.GetAgreementResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Agreement>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.marketplace.model.Agreement>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Agreement.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.marketplace.model.Agreement
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Agreement> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.marketplace.model.Agreement>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

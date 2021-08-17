@@ -27,7 +27,7 @@ public class DetectAnomaliesResponse {
     /**
      * The returned AnomalyDetectResult instance.
      */
-    private AnomalyDetectResult anomalyDetectResult;
+    private com.oracle.bmc.aianomalydetection.model.AnomalyDetectResult anomalyDetectResult;
 
     public static class Builder {
         /**

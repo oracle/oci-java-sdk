@@ -68,12 +68,16 @@ public class GetLogGroupConverter {
                                         "Transform function invoked for com.oracle.bmc.logging.responses.GetLogGroupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<LogGroup>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.logging.model.LogGroup>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(LogGroup.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.logging.model.LogGroup
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<LogGroup> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.logging.model.LogGroup>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

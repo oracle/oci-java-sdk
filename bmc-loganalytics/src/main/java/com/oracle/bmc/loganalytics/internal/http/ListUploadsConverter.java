@@ -127,12 +127,16 @@ public class ListUploadsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        UploadCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .UploadCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        UploadCollection.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .UploadCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<UploadCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model.UploadCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

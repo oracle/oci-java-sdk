@@ -71,12 +71,14 @@ public class CreateTransferApplianceConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        TransferAppliance>>
+                                                        com.oracle.bmc.dts.model.TransferAppliance>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        TransferAppliance.class);
+                                                        com.oracle.bmc.dts.model.TransferAppliance
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<TransferAppliance>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dts.model.TransferAppliance>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

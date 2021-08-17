@@ -32,7 +32,7 @@ public class GetReplicationStatusResponse {
     /**
      * The returned ReplicationStatusDetails instance.
      */
-    private ReplicationStatusDetails replicationStatusDetails;
+    private com.oracle.bmc.keymanagement.model.ReplicationStatusDetails replicationStatusDetails;
 
     public static class Builder {
         /**

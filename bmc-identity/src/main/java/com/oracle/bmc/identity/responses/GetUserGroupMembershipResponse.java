@@ -32,7 +32,7 @@ public class GetUserGroupMembershipResponse {
     /**
      * The returned UserGroupMembership instance.
      */
-    private UserGroupMembership userGroupMembership;
+    private com.oracle.bmc.identity.model.UserGroupMembership userGroupMembership;
 
     public static class Builder {
         /**

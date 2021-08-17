@@ -30,7 +30,7 @@ public class CreateRoverEntitlementResponse {
     /**
      * The returned RoverEntitlement instance.
      */
-    private RoverEntitlement roverEntitlement;
+    private com.oracle.bmc.rover.model.RoverEntitlement roverEntitlement;
 
     public static class Builder {
         /**

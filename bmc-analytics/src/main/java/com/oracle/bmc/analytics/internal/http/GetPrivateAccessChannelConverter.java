@@ -79,12 +79,16 @@ public class GetPrivateAccessChannelConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        PrivateAccessChannel>>
+                                                        com.oracle.bmc.analytics.model
+                                                                .PrivateAccessChannel>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        PrivateAccessChannel.class);
+                                                        com.oracle.bmc.analytics.model
+                                                                        .PrivateAccessChannel
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<PrivateAccessChannel>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.analytics.model.PrivateAccessChannel>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -119,12 +119,16 @@ public class ListByoipRangesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ByoipRangeCollection>>
+                                                        com.oracle.bmc.core.model
+                                                                .ByoipRangeCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ByoipRangeCollection.class);
+                                                        com.oracle.bmc.core.model
+                                                                        .ByoipRangeCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ByoipRangeCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.ByoipRangeCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

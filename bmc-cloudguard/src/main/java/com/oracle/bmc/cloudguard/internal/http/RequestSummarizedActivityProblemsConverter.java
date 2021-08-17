@@ -120,13 +120,17 @@ public class RequestSummarizedActivityProblemsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ActivityProblemAggregationCollection>>
+                                                        com.oracle.bmc.cloudguard.model
+                                                                .ActivityProblemAggregationCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ActivityProblemAggregationCollection.class);
+                                                        com.oracle.bmc.cloudguard.model
+                                                                        .ActivityProblemAggregationCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ActivityProblemAggregationCollection>
+                                                com.oracle.bmc.cloudguard.model
+                                                        .ActivityProblemAggregationCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

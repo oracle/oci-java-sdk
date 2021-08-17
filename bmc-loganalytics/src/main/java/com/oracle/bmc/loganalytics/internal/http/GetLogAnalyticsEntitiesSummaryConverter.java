@@ -84,13 +84,17 @@ public class GetLogAnalyticsEntitiesSummaryConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogAnalyticsEntitySummaryReport>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogAnalyticsEntitySummaryReport>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogAnalyticsEntitySummaryReport.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogAnalyticsEntitySummaryReport
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                LogAnalyticsEntitySummaryReport>
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LogAnalyticsEntitySummaryReport>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

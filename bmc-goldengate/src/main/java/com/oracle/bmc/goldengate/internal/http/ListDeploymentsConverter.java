@@ -119,12 +119,17 @@ public class ListDeploymentsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DeploymentCollection>>
+                                                        com.oracle.bmc.goldengate.model
+                                                                .DeploymentCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DeploymentCollection.class);
+                                                        com.oracle.bmc.goldengate.model
+                                                                        .DeploymentCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DeploymentCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.goldengate.model
+                                                        .DeploymentCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

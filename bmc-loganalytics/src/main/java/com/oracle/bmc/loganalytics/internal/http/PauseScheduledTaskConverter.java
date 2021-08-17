@@ -82,13 +82,17 @@ public class PauseScheduledTaskConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ScheduledTask>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .ScheduledTask>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ScheduledTask.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .ScheduledTask
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ScheduledTask> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model.ScheduledTask>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -35,7 +35,7 @@ public class ListJobRunsResponse {
     /**
      * The returned JobRunCollection instance.
      */
-    private JobRunCollection jobRunCollection;
+    private com.oracle.bmc.databasemanagement.model.JobRunCollection jobRunCollection;
 
     public static class Builder {
         /**

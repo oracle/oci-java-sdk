@@ -168,12 +168,16 @@ public class ListGlossariesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        GlossaryCollection>>
+                                                        com.oracle.bmc.datacatalog.model
+                                                                .GlossaryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        GlossaryCollection.class);
+                                                        com.oracle.bmc.datacatalog.model
+                                                                        .GlossaryCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<GlossaryCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model.GlossaryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

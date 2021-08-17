@@ -82,13 +82,17 @@ public class CreateDataAssetTagConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DataAssetTag>>
+                                                        com.oracle.bmc.datacatalog.model
+                                                                .DataAssetTag>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DataAssetTag.class);
+                                                        com.oracle.bmc.datacatalog.model
+                                                                        .DataAssetTag
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DataAssetTag> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model.DataAssetTag>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

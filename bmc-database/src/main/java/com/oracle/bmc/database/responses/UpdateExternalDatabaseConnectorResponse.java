@@ -38,7 +38,7 @@ public class UpdateExternalDatabaseConnectorResponse {
     /**
      * The returned ExternalDatabaseConnector instance.
      */
-    private ExternalDatabaseConnector externalDatabaseConnector;
+    private com.oracle.bmc.database.model.ExternalDatabaseConnector externalDatabaseConnector;
 
     public static class Builder {
         /**

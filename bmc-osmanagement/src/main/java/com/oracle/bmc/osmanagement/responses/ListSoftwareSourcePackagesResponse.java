@@ -34,9 +34,9 @@ public class ListSoftwareSourcePackagesResponse {
     private String opcNextPage;
 
     /**
-     * A list of SoftwarePackageSummary instances.
+     * A list of com.oracle.bmc.osmanagement.model.SoftwarePackageSummary instances.
      */
-    private java.util.List<SoftwarePackageSummary> items;
+    private java.util.List<com.oracle.bmc.osmanagement.model.SoftwarePackageSummary> items;
 
     public static class Builder {
         /**

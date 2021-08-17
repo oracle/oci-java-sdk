@@ -78,12 +78,16 @@ public class UpdateDeployEnvironmentConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DeployEnvironment>>
+                                                        com.oracle.bmc.devops.model
+                                                                .DeployEnvironment>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DeployEnvironment.class);
+                                                        com.oracle.bmc.devops.model
+                                                                        .DeployEnvironment
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DeployEnvironment>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.devops.model.DeployEnvironment>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

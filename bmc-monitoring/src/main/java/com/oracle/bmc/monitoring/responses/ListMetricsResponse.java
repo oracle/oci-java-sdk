@@ -32,9 +32,9 @@ public class ListMetricsResponse {
     private String opcRequestId;
 
     /**
-     * A list of Metric instances.
+     * A list of com.oracle.bmc.monitoring.model.Metric instances.
      */
-    private java.util.List<Metric> items;
+    private java.util.List<com.oracle.bmc.monitoring.model.Metric> items;
 
     public static class Builder {
         /**

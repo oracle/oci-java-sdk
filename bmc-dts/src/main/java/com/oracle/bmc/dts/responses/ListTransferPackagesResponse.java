@@ -25,7 +25,7 @@ public class ListTransferPackagesResponse {
     /**
      * The returned MultipleTransferPackages instance.
      */
-    private MultipleTransferPackages multipleTransferPackages;
+    private com.oracle.bmc.dts.model.MultipleTransferPackages multipleTransferPackages;
 
     public static class Builder {
         /**

@@ -131,14 +131,20 @@ public class ListCompartmentsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<Compartment>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.identity.model
+                                                                        .Compartment>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<Compartment>>() {});
+                                                                java.util.List<
+                                                                        com.oracle.bmc.identity
+                                                                                .model
+                                                                                .Compartment>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<Compartment>>
+                                                java.util.List<
+                                                        com.oracle.bmc.identity.model.Compartment>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

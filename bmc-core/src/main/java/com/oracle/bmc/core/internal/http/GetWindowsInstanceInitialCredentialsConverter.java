@@ -71,12 +71,16 @@ public class GetWindowsInstanceInitialCredentialsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        InstanceCredentials>>
+                                                        com.oracle.bmc.core.model
+                                                                .InstanceCredentials>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        InstanceCredentials.class);
+                                                        com.oracle.bmc.core.model
+                                                                        .InstanceCredentials
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<InstanceCredentials>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.InstanceCredentials>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

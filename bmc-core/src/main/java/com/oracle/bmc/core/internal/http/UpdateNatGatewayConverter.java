@@ -72,13 +72,14 @@ public class UpdateNatGatewayConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        NatGateway>>
+                                                        com.oracle.bmc.core.model.NatGateway>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        NatGateway.class);
+                                                        com.oracle.bmc.core.model.NatGateway.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<NatGateway> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.NatGateway>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

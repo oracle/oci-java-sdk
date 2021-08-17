@@ -116,15 +116,20 @@ public class ListAutoScalingConfigurationsConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                AutoScalingConfigurationSummary>>>
+                                                                com.oracle.bmc.autoscaling.model
+                                                                        .AutoScalingConfigurationSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        AutoScalingConfigurationSummary>>() {});
+                                                                        com.oracle.bmc.autoscaling
+                                                                                .model
+                                                                                .AutoScalingConfigurationSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<AutoScalingConfigurationSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.autoscaling.model
+                                                                .AutoScalingConfigurationSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

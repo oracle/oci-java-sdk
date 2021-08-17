@@ -83,12 +83,17 @@ public class UpdateExternalPluggableDatabaseConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ExternalPluggableDatabase>>
+                                                        com.oracle.bmc.database.model
+                                                                .ExternalPluggableDatabase>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ExternalPluggableDatabase.class);
+                                                        com.oracle.bmc.database.model
+                                                                        .ExternalPluggableDatabase
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ExternalPluggableDatabase>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.database.model
+                                                        .ExternalPluggableDatabase>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

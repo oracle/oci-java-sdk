@@ -33,7 +33,7 @@ public class GetSddcResponse {
     /**
      * The returned Sddc instance.
      */
-    private Sddc sddc;
+    private com.oracle.bmc.ocvp.model.Sddc sddc;
 
     public static class Builder {
         /**

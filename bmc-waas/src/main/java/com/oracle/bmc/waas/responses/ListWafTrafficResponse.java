@@ -28,9 +28,9 @@ public class ListWafTrafficResponse {
     private String opcNextPage;
 
     /**
-     * A list of WafTrafficDatum instances.
+     * A list of com.oracle.bmc.waas.model.WafTrafficDatum instances.
      */
-    private java.util.List<WafTrafficDatum> items;
+    private java.util.List<com.oracle.bmc.waas.model.WafTrafficDatum> items;
 
     public static class Builder {
         /**

@@ -94,12 +94,16 @@ public class UpdateSteeringPolicyAttachmentConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SteeringPolicyAttachment>>
+                                                        com.oracle.bmc.dns.model
+                                                                .SteeringPolicyAttachment>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SteeringPolicyAttachment.class);
+                                                        com.oracle.bmc.dns.model
+                                                                        .SteeringPolicyAttachment
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<SteeringPolicyAttachment>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dns.model.SteeringPolicyAttachment>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

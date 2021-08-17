@@ -21,7 +21,7 @@ public class ListManagementAgentPluginsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The ID of the compartment from which the Management Agents to be listed.
+     * The OCID of the compartment to which a request will be scoped.
      */
     private String compartmentId;
 
@@ -131,12 +131,38 @@ public class ListManagementAgentPluginsRequest
      */
     private com.oracle.bmc.managementagent.model.LifecycleStates lifecycleState;
 
+    /**
+     * Filter to return only results having the particular platform type.
+     */
+    private java.util.List<com.oracle.bmc.managementagent.model.PlatformTypes> platformType;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListManagementAgentPluginsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private java.util.List<com.oracle.bmc.managementagent.model.PlatformTypes> platformType =
+                null;
+
+        /**
+         * Filter to return only results having the particular platform type.
+         * @return this builder instance
+         */
+        public Builder platformType(
+                java.util.List<com.oracle.bmc.managementagent.model.PlatformTypes> platformType) {
+            this.platformType = platformType;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter to return only results having the particular platform type.
+         * @return this builder instance
+         */
+        public Builder platformType(PlatformTypes singularValue) {
+            return this.platformType(java.util.Arrays.asList(singularValue));
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -174,6 +200,7 @@ public class ListManagementAgentPluginsRequest
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
             lifecycleState(o.getLifecycleState());
+            platformType(o.getPlatformType());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

@@ -1343,6 +1343,36 @@ public class OperationsInsightsClient implements OperationsInsights {
     }
 
     @Override
+    public ListImportableAgentEntitiesResponse listImportableAgentEntities(
+            ListImportableAgentEntitiesRequest request) {
+        LOG.trace("Called listImportableAgentEntities");
+        final ListImportableAgentEntitiesRequest interceptedRequest =
+                ListImportableAgentEntitiesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListImportableAgentEntitiesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListImportableAgentEntitiesResponse>
+                transformer = ListImportableAgentEntitiesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListImportableEnterpriseManagerEntitiesResponse listImportableEnterpriseManagerEntities(
             ListImportableEnterpriseManagerEntitiesRequest request) {
         LOG.trace("Called listImportableEnterpriseManagerEntities");

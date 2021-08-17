@@ -70,12 +70,16 @@ public class GetDeploymentBackupConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DeploymentBackup>>
+                                                        com.oracle.bmc.goldengate.model
+                                                                .DeploymentBackup>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DeploymentBackup.class);
+                                                        com.oracle.bmc.goldengate.model
+                                                                        .DeploymentBackup
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DeploymentBackup>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.goldengate.model.DeploymentBackup>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

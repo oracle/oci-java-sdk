@@ -105,13 +105,15 @@ public class DeleteRowConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DeleteRowResult>>
+                                                        com.oracle.bmc.nosql.model.DeleteRowResult>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DeleteRowResult.class);
+                                                        com.oracle.bmc.nosql.model.DeleteRowResult
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DeleteRowResult> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.nosql.model.DeleteRowResult>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

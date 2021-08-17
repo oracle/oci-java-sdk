@@ -27,7 +27,7 @@ public class GetSSLCipherSuiteResponse {
     /**
      * The returned SSLCipherSuite instance.
      */
-    private SSLCipherSuite sSLCipherSuite;
+    private com.oracle.bmc.loadbalancer.model.SSLCipherSuite sSLCipherSuite;
 
     public static class Builder {
         /**

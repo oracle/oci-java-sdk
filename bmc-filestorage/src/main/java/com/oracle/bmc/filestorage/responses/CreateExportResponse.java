@@ -33,7 +33,7 @@ public class CreateExportResponse {
     /**
      * The returned Export instance.
      */
-    private Export export;
+    private com.oracle.bmc.filestorage.model.Export export;
 
     public static class Builder {
         /**

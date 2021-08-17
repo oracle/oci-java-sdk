@@ -32,9 +32,9 @@ public class ListSecretBundleVersionsResponse {
     private String opcNextPage;
 
     /**
-     * A list of SecretBundleVersionSummary instances.
+     * A list of com.oracle.bmc.secrets.model.SecretBundleVersionSummary instances.
      */
-    private java.util.List<SecretBundleVersionSummary> items;
+    private java.util.List<com.oracle.bmc.secrets.model.SecretBundleVersionSummary> items;
 
     public static class Builder {
         /**

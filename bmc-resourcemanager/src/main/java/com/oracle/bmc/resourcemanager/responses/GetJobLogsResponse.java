@@ -34,9 +34,9 @@ public class GetJobLogsResponse {
     private String opcNextPage;
 
     /**
-     * A list of LogEntry instances.
+     * A list of com.oracle.bmc.resourcemanager.model.LogEntry instances.
      */
-    private java.util.List<LogEntry> items;
+    private java.util.List<com.oracle.bmc.resourcemanager.model.LogEntry> items;
 
     public static class Builder {
         /**

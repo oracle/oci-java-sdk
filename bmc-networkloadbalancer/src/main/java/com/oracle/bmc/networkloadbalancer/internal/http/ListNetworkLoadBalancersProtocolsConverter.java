@@ -97,14 +97,17 @@ public class ListNetworkLoadBalancersProtocolsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        NetworkLoadBalancersProtocolCollection>>
+                                                        com.oracle.bmc.networkloadbalancer.model
+                                                                .NetworkLoadBalancersProtocolCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        NetworkLoadBalancersProtocolCollection
+                                                        com.oracle.bmc.networkloadbalancer.model
+                                                                        .NetworkLoadBalancersProtocolCollection
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                NetworkLoadBalancersProtocolCollection>
+                                                com.oracle.bmc.networkloadbalancer.model
+                                                        .NetworkLoadBalancersProtocolCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

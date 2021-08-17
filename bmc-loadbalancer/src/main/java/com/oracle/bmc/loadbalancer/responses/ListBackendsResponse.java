@@ -25,9 +25,9 @@ public class ListBackendsResponse {
     private String opcRequestId;
 
     /**
-     * A list of Backend instances.
+     * A list of com.oracle.bmc.loadbalancer.model.Backend instances.
      */
-    private java.util.List<Backend> items;
+    private java.util.List<com.oracle.bmc.loadbalancer.model.Backend> items;
 
     public static class Builder {
         /**

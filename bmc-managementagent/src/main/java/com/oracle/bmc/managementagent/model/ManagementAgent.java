@@ -96,6 +96,15 @@ public class ManagementAgent {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("hostId")
+        private String hostId;
+
+        public Builder hostId(String hostId) {
+            this.hostId = hostId;
+            this.__explicitlySet__.add("hostId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("installPath")
         private String installPath;
 
@@ -186,6 +195,15 @@ public class ManagementAgent {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isCustomerDeployed")
+        private Boolean isCustomerDeployed;
+
+        public Builder isCustomerDeployed(Boolean isCustomerDeployed) {
+            this.isCustomerDeployed = isCustomerDeployed;
+            this.__explicitlySet__.add("isCustomerDeployed");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -219,6 +237,7 @@ public class ManagementAgent {
                             platformVersion,
                             version,
                             host,
+                            hostId,
                             installPath,
                             pluginList,
                             compartmentId,
@@ -229,6 +248,7 @@ public class ManagementAgent {
                             availabilityStatus,
                             lifecycleState,
                             lifecycleDetails,
+                            isCustomerDeployed,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -246,6 +266,7 @@ public class ManagementAgent {
                             .platformVersion(o.getPlatformVersion())
                             .version(o.getVersion())
                             .host(o.getHost())
+                            .hostId(o.getHostId())
                             .installPath(o.getInstallPath())
                             .pluginList(o.getPluginList())
                             .compartmentId(o.getCompartmentId())
@@ -256,6 +277,7 @@ public class ManagementAgent {
                             .availabilityStatus(o.getAvailabilityStatus())
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails())
+                            .isCustomerDeployed(o.getIsCustomerDeployed())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -320,6 +342,12 @@ public class ManagementAgent {
     String host;
 
     /**
+     * Host resource ocid
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hostId")
+    String hostId;
+
+    /**
      * Path where Management Agent is installed
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("installPath")
@@ -338,7 +366,7 @@ public class ManagementAgent {
     String compartmentId;
 
     /**
-     * true if the agent can be upgraded automatically; false if it must be upgraded manually. true is currently unsupported.
+     * true if the agent can be upgraded automatically; false if it must be upgraded manually.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAgentAutoUpgradable")
     Boolean isAgentAutoUpgradable;
@@ -378,6 +406,12 @@ public class ManagementAgent {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     String lifecycleDetails;
+
+    /**
+     * true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isCustomerDeployed")
+    Boolean isCustomerDeployed;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.

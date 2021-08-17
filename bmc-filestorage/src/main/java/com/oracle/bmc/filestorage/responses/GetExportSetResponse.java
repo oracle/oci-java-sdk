@@ -33,7 +33,7 @@ public class GetExportSetResponse {
     /**
      * The returned ExportSet instance.
      */
-    private ExportSet exportSet;
+    private com.oracle.bmc.filestorage.model.ExportSet exportSet;
 
     public static class Builder {
         /**

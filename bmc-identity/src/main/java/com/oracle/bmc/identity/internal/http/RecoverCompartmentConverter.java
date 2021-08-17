@@ -76,13 +76,15 @@ public class RecoverCompartmentConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        Compartment>>
+                                                        com.oracle.bmc.identity.model.Compartment>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        Compartment.class);
+                                                        com.oracle.bmc.identity.model.Compartment
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Compartment> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.identity.model.Compartment>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

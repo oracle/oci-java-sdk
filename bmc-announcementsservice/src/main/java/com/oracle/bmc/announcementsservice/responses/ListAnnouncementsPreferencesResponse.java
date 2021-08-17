@@ -28,9 +28,11 @@ public class ListAnnouncementsPreferencesResponse {
     private String opcRequestId;
 
     /**
-     * A list of AnnouncementsPreferencesSummary instances.
+     * A list of com.oracle.bmc.announcementsservice.model.AnnouncementsPreferencesSummary instances.
      */
-    private java.util.List<AnnouncementsPreferencesSummary> items;
+    private java.util.List<
+                    com.oracle.bmc.announcementsservice.model.AnnouncementsPreferencesSummary>
+            items;
 
     public static class Builder {
         /**

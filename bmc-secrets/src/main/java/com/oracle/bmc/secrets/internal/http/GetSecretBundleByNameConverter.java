@@ -106,13 +106,15 @@ public class GetSecretBundleByNameConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SecretBundle>>
+                                                        com.oracle.bmc.secrets.model.SecretBundle>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SecretBundle.class);
+                                                        com.oracle.bmc.secrets.model.SecretBundle
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<SecretBundle> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.secrets.model.SecretBundle>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

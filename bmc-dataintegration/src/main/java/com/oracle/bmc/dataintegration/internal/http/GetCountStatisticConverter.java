@@ -77,13 +77,17 @@ public class GetCountStatisticConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        CountStatistic>>
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .CountStatistic>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        CountStatistic.class);
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .CountStatistic
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<CountStatistic> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dataintegration.model.CountStatistic>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

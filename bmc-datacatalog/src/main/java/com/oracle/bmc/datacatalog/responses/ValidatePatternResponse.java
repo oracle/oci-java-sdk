@@ -27,7 +27,7 @@ public class ValidatePatternResponse {
     /**
      * The returned ValidatePatternResult instance.
      */
-    private ValidatePatternResult validatePatternResult;
+    private com.oracle.bmc.datacatalog.model.ValidatePatternResult validatePatternResult;
 
     public static class Builder {
         /**

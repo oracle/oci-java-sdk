@@ -32,7 +32,7 @@ public class CreateQuotaResponse {
     /**
      * The returned Quota instance.
      */
-    private Quota quota;
+    private com.oracle.bmc.limits.model.Quota quota;
 
     public static class Builder {
         /**

@@ -74,12 +74,17 @@ public class CreateDatabaseRegistrationConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DatabaseRegistration>>
+                                                        com.oracle.bmc.goldengate.model
+                                                                .DatabaseRegistration>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DatabaseRegistration.class);
+                                                        com.oracle.bmc.goldengate.model
+                                                                        .DatabaseRegistration
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DatabaseRegistration>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.goldengate.model
+                                                        .DatabaseRegistration>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

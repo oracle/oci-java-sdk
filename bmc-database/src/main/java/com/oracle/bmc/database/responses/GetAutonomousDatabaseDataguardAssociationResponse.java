@@ -32,7 +32,8 @@ public class GetAutonomousDatabaseDataguardAssociationResponse {
     /**
      * The returned AutonomousDatabaseDataguardAssociation instance.
      */
-    private AutonomousDatabaseDataguardAssociation autonomousDatabaseDataguardAssociation;
+    private com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation
+            autonomousDatabaseDataguardAssociation;
 
     public static class Builder {
         /**

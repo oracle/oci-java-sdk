@@ -33,7 +33,7 @@ public class GetProblemResponse {
     /**
      * The returned Problem instance.
      */
-    private Problem problem;
+    private com.oracle.bmc.cloudguard.model.Problem problem;
 
     public static class Builder {
         /**

@@ -80,13 +80,17 @@ public class GetVmClusterUpdateHistoryEntryConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        VmClusterUpdateHistoryEntry>>
+                                                        com.oracle.bmc.database.model
+                                                                .VmClusterUpdateHistoryEntry>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        VmClusterUpdateHistoryEntry.class);
+                                                        com.oracle.bmc.database.model
+                                                                        .VmClusterUpdateHistoryEntry
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                VmClusterUpdateHistoryEntry>
+                                                com.oracle.bmc.database.model
+                                                        .VmClusterUpdateHistoryEntry>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -87,13 +87,17 @@ public class ListByoipAllocatedRangesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ByoipAllocatedRangeCollection>>
+                                                        com.oracle.bmc.core.model
+                                                                .ByoipAllocatedRangeCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ByoipAllocatedRangeCollection.class);
+                                                        com.oracle.bmc.core.model
+                                                                        .ByoipAllocatedRangeCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ByoipAllocatedRangeCollection>
+                                                com.oracle.bmc.core.model
+                                                        .ByoipAllocatedRangeCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

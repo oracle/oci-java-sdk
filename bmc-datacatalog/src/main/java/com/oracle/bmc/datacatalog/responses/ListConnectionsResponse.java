@@ -33,7 +33,7 @@ public class ListConnectionsResponse {
     /**
      * The returned ConnectionCollection instance.
      */
-    private ConnectionCollection connectionCollection;
+    private com.oracle.bmc.datacatalog.model.ConnectionCollection connectionCollection;
 
     public static class Builder {
         /**

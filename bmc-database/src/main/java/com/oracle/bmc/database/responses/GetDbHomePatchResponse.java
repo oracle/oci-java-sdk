@@ -27,7 +27,7 @@ public class GetDbHomePatchResponse {
     /**
      * The returned Patch instance.
      */
-    private Patch patch;
+    private com.oracle.bmc.database.model.Patch patch;
 
     public static class Builder {
         /**

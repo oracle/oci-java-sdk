@@ -38,7 +38,7 @@ public class ListIndexesResponse {
     /**
      * The returned IndexCollection instance.
      */
-    private IndexCollection indexCollection;
+    private com.oracle.bmc.nosql.model.IndexCollection indexCollection;
 
     public static class Builder {
         /**

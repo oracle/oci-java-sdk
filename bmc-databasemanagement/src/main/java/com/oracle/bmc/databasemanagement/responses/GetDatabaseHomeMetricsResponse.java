@@ -27,7 +27,7 @@ public class GetDatabaseHomeMetricsResponse {
     /**
      * The returned DatabaseHomeMetrics instance.
      */
-    private DatabaseHomeMetrics databaseHomeMetrics;
+    private com.oracle.bmc.databasemanagement.model.DatabaseHomeMetrics databaseHomeMetrics;
 
     public static class Builder {
         /**

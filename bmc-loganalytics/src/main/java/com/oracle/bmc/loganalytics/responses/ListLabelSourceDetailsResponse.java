@@ -42,7 +42,7 @@ public class ListLabelSourceDetailsResponse {
     /**
      * The returned LabelSourceCollection instance.
      */
-    private LabelSourceCollection labelSourceCollection;
+    private com.oracle.bmc.loganalytics.model.LabelSourceCollection labelSourceCollection;
 
     public static class Builder {
         /**

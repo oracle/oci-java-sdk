@@ -33,9 +33,9 @@ public class ListCategoriesResponse {
     private String opcNextPage;
 
     /**
-     * A list of CategorySummary instances.
+     * A list of com.oracle.bmc.marketplace.model.CategorySummary instances.
      */
-    private java.util.List<CategorySummary> items;
+    private java.util.List<com.oracle.bmc.marketplace.model.CategorySummary> items;
 
     public static class Builder {
         /**

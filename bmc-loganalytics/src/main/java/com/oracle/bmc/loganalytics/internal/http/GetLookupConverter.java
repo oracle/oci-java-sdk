@@ -75,12 +75,17 @@ public class GetLookupConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogAnalyticsLookup>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogAnalyticsLookup>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogAnalyticsLookup.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogAnalyticsLookup
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<LogAnalyticsLookup>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LogAnalyticsLookup>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

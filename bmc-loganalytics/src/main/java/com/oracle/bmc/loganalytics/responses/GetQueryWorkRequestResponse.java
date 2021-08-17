@@ -37,7 +37,7 @@ public class GetQueryWorkRequestResponse {
     /**
      * The returned QueryWorkRequest instance.
      */
-    private QueryWorkRequest queryWorkRequest;
+    private com.oracle.bmc.loganalytics.model.QueryWorkRequest queryWorkRequest;
 
     public static class Builder {
         /**

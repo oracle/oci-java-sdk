@@ -32,7 +32,7 @@ public class UpdateKeyStoreResponse {
     /**
      * The returned KeyStore instance.
      */
-    private KeyStore keyStore;
+    private com.oracle.bmc.database.model.KeyStore keyStore;
 
     public static class Builder {
         /**

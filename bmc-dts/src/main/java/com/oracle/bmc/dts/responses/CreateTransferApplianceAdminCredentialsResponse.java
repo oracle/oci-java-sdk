@@ -30,7 +30,7 @@ public class CreateTransferApplianceAdminCredentialsResponse {
     /**
      * The returned TransferApplianceCertificate instance.
      */
-    private TransferApplianceCertificate transferApplianceCertificate;
+    private com.oracle.bmc.dts.model.TransferApplianceCertificate transferApplianceCertificate;
 
     public static class Builder {
         /**

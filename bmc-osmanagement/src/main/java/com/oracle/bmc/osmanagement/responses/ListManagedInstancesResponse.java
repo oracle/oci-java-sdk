@@ -34,9 +34,9 @@ public class ListManagedInstancesResponse {
     private String opcNextPage;
 
     /**
-     * A list of ManagedInstanceSummary instances.
+     * A list of com.oracle.bmc.osmanagement.model.ManagedInstanceSummary instances.
      */
-    private java.util.List<ManagedInstanceSummary> items;
+    private java.util.List<com.oracle.bmc.osmanagement.model.ManagedInstanceSummary> items;
 
     public static class Builder {
         /**

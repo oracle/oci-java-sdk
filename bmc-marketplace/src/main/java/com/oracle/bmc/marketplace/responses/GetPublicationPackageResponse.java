@@ -33,7 +33,7 @@ public class GetPublicationPackageResponse {
     /**
      * The returned PublicationPackage instance.
      */
-    private PublicationPackage publicationPackage;
+    private com.oracle.bmc.marketplace.model.PublicationPackage publicationPackage;
 
     public static class Builder {
         /**

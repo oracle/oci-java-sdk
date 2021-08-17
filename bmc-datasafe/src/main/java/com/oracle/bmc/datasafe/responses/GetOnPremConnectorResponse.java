@@ -32,7 +32,7 @@ public class GetOnPremConnectorResponse {
     /**
      * The returned OnPremConnector instance.
      */
-    private OnPremConnector onPremConnector;
+    private com.oracle.bmc.datasafe.model.OnPremConnector onPremConnector;
 
     public static class Builder {
         /**

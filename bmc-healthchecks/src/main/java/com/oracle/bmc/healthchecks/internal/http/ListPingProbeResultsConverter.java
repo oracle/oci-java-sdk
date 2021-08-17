@@ -121,15 +121,21 @@ public class ListPingProbeResultsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<PingProbeResultSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.healthchecks.model
+                                                                        .PingProbeResultSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        PingProbeResultSummary>>() {});
+                                                                        com.oracle.bmc.healthchecks
+                                                                                .model
+                                                                                .PingProbeResultSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<PingProbeResultSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.healthchecks.model
+                                                                .PingProbeResultSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -26,7 +26,8 @@ public class GetLogAnalyticsEntitiesSummaryResponse {
     /**
      * The returned LogAnalyticsEntitySummaryReport instance.
      */
-    private LogAnalyticsEntitySummaryReport logAnalyticsEntitySummaryReport;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsEntitySummaryReport
+            logAnalyticsEntitySummaryReport;
 
     public static class Builder {
         /**

@@ -131,15 +131,21 @@ public class ListDatabasesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<DatabaseSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.database.model
+                                                                        .DatabaseSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        DatabaseSummary>>() {});
+                                                                        com.oracle.bmc.database
+                                                                                .model
+                                                                                .DatabaseSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<DatabaseSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.database.model
+                                                                .DatabaseSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

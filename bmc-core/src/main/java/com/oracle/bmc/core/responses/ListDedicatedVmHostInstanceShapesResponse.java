@@ -33,9 +33,9 @@ public class ListDedicatedVmHostInstanceShapesResponse {
     private String opcRequestId;
 
     /**
-     * A list of DedicatedVmHostInstanceShapeSummary instances.
+     * A list of com.oracle.bmc.core.model.DedicatedVmHostInstanceShapeSummary instances.
      */
-    private java.util.List<DedicatedVmHostInstanceShapeSummary> items;
+    private java.util.List<com.oracle.bmc.core.model.DedicatedVmHostInstanceShapeSummary> items;
 
     public static class Builder {
         /**

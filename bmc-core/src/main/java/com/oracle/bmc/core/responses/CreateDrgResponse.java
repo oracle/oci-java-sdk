@@ -33,7 +33,7 @@ public class CreateDrgResponse {
     /**
      * The returned Drg instance.
      */
-    private Drg drg;
+    private com.oracle.bmc.core.model.Drg drg;
 
     public static class Builder {
         /**

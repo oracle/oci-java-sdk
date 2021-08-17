@@ -33,7 +33,7 @@ public class UpdateSessionResponse {
     /**
      * The returned Session instance.
      */
-    private Session session;
+    private com.oracle.bmc.bastion.model.Session session;
 
     public static class Builder {
         /**

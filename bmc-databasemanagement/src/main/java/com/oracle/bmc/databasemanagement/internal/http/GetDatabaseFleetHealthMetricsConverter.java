@@ -133,12 +133,17 @@ public class GetDatabaseFleetHealthMetricsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DatabaseFleetHealthMetrics>>
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                .DatabaseFleetHealthMetrics>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DatabaseFleetHealthMetrics.class);
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                        .DatabaseFleetHealthMetrics
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DatabaseFleetHealthMetrics>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.databasemanagement.model
+                                                        .DatabaseFleetHealthMetrics>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

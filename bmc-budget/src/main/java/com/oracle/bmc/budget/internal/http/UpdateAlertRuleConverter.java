@@ -79,12 +79,16 @@ public class UpdateAlertRuleConverter {
                                         "Transform function invoked for com.oracle.bmc.budget.responses.UpdateAlertRuleResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<AlertRule>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.budget.model.AlertRule>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(AlertRule.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.budget.model.AlertRule
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AlertRule> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.budget.model.AlertRule>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

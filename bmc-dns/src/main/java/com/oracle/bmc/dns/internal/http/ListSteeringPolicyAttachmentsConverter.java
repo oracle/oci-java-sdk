@@ -186,15 +186,19 @@ public class ListSteeringPolicyAttachmentsConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                SteeringPolicyAttachmentSummary>>>
+                                                                com.oracle.bmc.dns.model
+                                                                        .SteeringPolicyAttachmentSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        SteeringPolicyAttachmentSummary>>() {});
+                                                                        com.oracle.bmc.dns.model
+                                                                                .SteeringPolicyAttachmentSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<SteeringPolicyAttachmentSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.dns.model
+                                                                .SteeringPolicyAttachmentSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -33,7 +33,8 @@ public class ProcessRecommendationResponse {
     /**
      * The returned ProcessRecommendationDetails instance.
      */
-    private ProcessRecommendationDetails processRecommendationDetails;
+    private com.oracle.bmc.datacatalog.model.ProcessRecommendationDetails
+            processRecommendationDetails;
 
     public static class Builder {
         /**

@@ -33,9 +33,11 @@ public class ListComputeGlobalImageCapabilitySchemaVersionsResponse {
     private String opcRequestId;
 
     /**
-     * A list of ComputeGlobalImageCapabilitySchemaVersionSummary instances.
+     * A list of com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersionSummary instances.
      */
-    private java.util.List<ComputeGlobalImageCapabilitySchemaVersionSummary> items;
+    private java.util.List<
+                    com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersionSummary>
+            items;
 
     public static class Builder {
         /**

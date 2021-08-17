@@ -52,11 +52,6 @@ public class CreatePreauthenticatedRequestRequest
         return createPreauthenticatedRequestDetails;
     }
 
-    @Override
-    public boolean supportsExpect100Continue() {
-        return true;
-    }
-
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreatePreauthenticatedRequestRequest, CreatePreauthenticatedRequestDetails> {

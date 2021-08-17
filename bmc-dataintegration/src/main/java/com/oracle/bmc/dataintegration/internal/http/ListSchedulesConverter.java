@@ -143,12 +143,17 @@ public class ListSchedulesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ScheduleSummaryCollection>>
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .ScheduleSummaryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ScheduleSummaryCollection.class);
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .ScheduleSummaryCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ScheduleSummaryCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dataintegration.model
+                                                        .ScheduleSummaryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -49,7 +49,7 @@ public class CreateDeploymentResponse {
     /**
      * The returned Deployment instance.
      */
-    private Deployment deployment;
+    private com.oracle.bmc.apigateway.model.Deployment deployment;
 
     public static class Builder {
         /**

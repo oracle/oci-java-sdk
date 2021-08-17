@@ -79,12 +79,18 @@ public class UpdateDataFlowConverter {
                                         "Transform function invoked for com.oracle.bmc.dataintegration.responses.UpdateDataFlowResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<DataFlow>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .DataFlow>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(DataFlow.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .DataFlow
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DataFlow> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dataintegration.model.DataFlow>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

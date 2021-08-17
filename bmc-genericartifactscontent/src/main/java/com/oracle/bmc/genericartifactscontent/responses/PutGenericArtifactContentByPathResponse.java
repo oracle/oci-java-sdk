@@ -33,7 +33,7 @@ public class PutGenericArtifactContentByPathResponse {
     /**
      * The returned GenericArtifact instance.
      */
-    private GenericArtifact genericArtifact;
+    private com.oracle.bmc.genericartifactscontent.model.GenericArtifact genericArtifact;
 
     public static class Builder {
         /**

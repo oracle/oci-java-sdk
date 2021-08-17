@@ -35,7 +35,7 @@ public class ListByoipRangesResponse {
     /**
      * The returned ByoipRangeCollection instance.
      */
-    private ByoipRangeCollection byoipRangeCollection;
+    private com.oracle.bmc.core.model.ByoipRangeCollection byoipRangeCollection;
 
     public static class Builder {
         /**

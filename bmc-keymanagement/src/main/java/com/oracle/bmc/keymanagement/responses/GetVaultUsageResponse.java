@@ -27,7 +27,7 @@ public class GetVaultUsageResponse {
     /**
      * The returned VaultUsage instance.
      */
-    private VaultUsage vaultUsage;
+    private com.oracle.bmc.keymanagement.model.VaultUsage vaultUsage;
 
     public static class Builder {
         /**

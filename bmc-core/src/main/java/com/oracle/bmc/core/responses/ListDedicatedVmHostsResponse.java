@@ -33,9 +33,9 @@ public class ListDedicatedVmHostsResponse {
     private String opcRequestId;
 
     /**
-     * A list of DedicatedVmHostSummary instances.
+     * A list of com.oracle.bmc.core.model.DedicatedVmHostSummary instances.
      */
-    private java.util.List<DedicatedVmHostSummary> items;
+    private java.util.List<com.oracle.bmc.core.model.DedicatedVmHostSummary> items;
 
     public static class Builder {
         /**

@@ -86,14 +86,17 @@ public class GetAutonomousContainerDatabaseDataguardAssociationConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AutonomousContainerDatabaseDataguardAssociation>>
+                                                        com.oracle.bmc.database.model
+                                                                .AutonomousContainerDatabaseDataguardAssociation>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AutonomousContainerDatabaseDataguardAssociation
+                                                        com.oracle.bmc.database.model
+                                                                        .AutonomousContainerDatabaseDataguardAssociation
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                AutonomousContainerDatabaseDataguardAssociation>
+                                                com.oracle.bmc.database.model
+                                                        .AutonomousContainerDatabaseDataguardAssociation>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

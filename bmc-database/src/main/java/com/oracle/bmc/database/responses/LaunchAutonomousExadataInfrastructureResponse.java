@@ -38,7 +38,8 @@ public class LaunchAutonomousExadataInfrastructureResponse {
     /**
      * The returned AutonomousExadataInfrastructure instance.
      */
-    private AutonomousExadataInfrastructure autonomousExadataInfrastructure;
+    private com.oracle.bmc.database.model.AutonomousExadataInfrastructure
+            autonomousExadataInfrastructure;
 
     public static class Builder {
         /**

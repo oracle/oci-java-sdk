@@ -83,12 +83,16 @@ public class GetPatternConverter {
                                         "Transform function invoked for com.oracle.bmc.datacatalog.responses.GetPatternResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Pattern>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.datacatalog.model.Pattern>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Pattern.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.datacatalog.model.Pattern
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Pattern> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model.Pattern>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

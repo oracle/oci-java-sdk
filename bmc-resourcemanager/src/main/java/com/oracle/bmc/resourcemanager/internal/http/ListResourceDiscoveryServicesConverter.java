@@ -77,13 +77,17 @@ public class ListResourceDiscoveryServicesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ResourceDiscoveryServiceCollection>>
+                                                        com.oracle.bmc.resourcemanager.model
+                                                                .ResourceDiscoveryServiceCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ResourceDiscoveryServiceCollection.class);
+                                                        com.oracle.bmc.resourcemanager.model
+                                                                        .ResourceDiscoveryServiceCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ResourceDiscoveryServiceCollection>
+                                                com.oracle.bmc.resourcemanager.model
+                                                        .ResourceDiscoveryServiceCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

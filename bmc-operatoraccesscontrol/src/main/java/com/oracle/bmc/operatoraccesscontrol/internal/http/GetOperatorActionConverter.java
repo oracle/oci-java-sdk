@@ -74,13 +74,18 @@ public class GetOperatorActionConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        OperatorAction>>
+                                                        com.oracle.bmc.operatoraccesscontrol.model
+                                                                .OperatorAction>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        OperatorAction.class);
+                                                        com.oracle.bmc.operatoraccesscontrol.model
+                                                                        .OperatorAction
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<OperatorAction> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.operatoraccesscontrol.model
+                                                        .OperatorAction>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

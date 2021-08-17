@@ -79,13 +79,17 @@ public class ListBulkEditTagsResourceTypesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        BulkEditTagsResourceTypeCollection>>
+                                                        com.oracle.bmc.identity.model
+                                                                .BulkEditTagsResourceTypeCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        BulkEditTagsResourceTypeCollection.class);
+                                                        com.oracle.bmc.identity.model
+                                                                        .BulkEditTagsResourceTypeCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                BulkEditTagsResourceTypeCollection>
+                                                com.oracle.bmc.identity.model
+                                                        .BulkEditTagsResourceTypeCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

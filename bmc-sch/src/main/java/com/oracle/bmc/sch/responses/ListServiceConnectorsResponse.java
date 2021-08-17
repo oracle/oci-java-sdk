@@ -45,7 +45,7 @@ public class ListServiceConnectorsResponse {
     /**
      * The returned ServiceConnectorCollection instance.
      */
-    private ServiceConnectorCollection serviceConnectorCollection;
+    private com.oracle.bmc.sch.model.ServiceConnectorCollection serviceConnectorCollection;
 
     public static class Builder {
         /**

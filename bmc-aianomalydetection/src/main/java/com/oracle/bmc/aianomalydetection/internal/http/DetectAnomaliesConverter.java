@@ -76,12 +76,17 @@ public class DetectAnomaliesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AnomalyDetectResult>>
+                                                        com.oracle.bmc.aianomalydetection.model
+                                                                .AnomalyDetectResult>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AnomalyDetectResult.class);
+                                                        com.oracle.bmc.aianomalydetection.model
+                                                                        .AnomalyDetectResult
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AnomalyDetectResult>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.aianomalydetection.model
+                                                        .AnomalyDetectResult>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

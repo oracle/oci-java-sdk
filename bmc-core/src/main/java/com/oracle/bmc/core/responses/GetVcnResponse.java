@@ -33,7 +33,7 @@ public class GetVcnResponse {
     /**
      * The returned Vcn instance.
      */
-    private Vcn vcn;
+    private com.oracle.bmc.core.model.Vcn vcn;
 
     public static class Builder {
         /**

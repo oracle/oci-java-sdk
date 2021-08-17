@@ -35,7 +35,7 @@ public class ListQueriesResponse {
     /**
      * The returned QueryCollection instance.
      */
-    private QueryCollection queryCollection;
+    private com.oracle.bmc.usageapi.model.QueryCollection queryCollection;
 
     public static class Builder {
         /**

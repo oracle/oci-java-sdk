@@ -150,15 +150,21 @@ public class ListFileSystemsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<FileSystemSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.filestorage.model
+                                                                        .FileSystemSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        FileSystemSummary>>() {});
+                                                                        com.oracle.bmc.filestorage
+                                                                                .model
+                                                                                .FileSystemSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<FileSystemSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.filestorage.model
+                                                                .FileSystemSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

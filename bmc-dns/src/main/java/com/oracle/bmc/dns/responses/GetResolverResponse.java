@@ -35,7 +35,7 @@ public class GetResolverResponse {
     /**
      * The returned Resolver instance, or null if {@link #isNotModified()} is true.
      */
-    private Resolver resolver;
+    private com.oracle.bmc.dns.model.Resolver resolver;
 
     /**
      * Flag to indicate whether or not the object was modified.  If this is true,

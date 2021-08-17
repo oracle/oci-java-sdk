@@ -63,6 +63,25 @@ public class UpdateGoodBotsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<GoodBot> goodBots = null;
+
+        /**
+         *
+         * @return this builder instance
+         */
+        public Builder goodBots(java.util.List<GoodBot> goodBots) {
+            this.goodBots = goodBots;
+            return this;
+        }
+
+        /**
+         * Singular setter.
+         * @return this builder instance
+         */
+        public Builder goodBots(GoodBot singularValue) {
+            return this.goodBots(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

@@ -27,7 +27,7 @@ public class DecryptResponse {
     /**
      * The returned DecryptedData instance.
      */
-    private DecryptedData decryptedData;
+    private com.oracle.bmc.keymanagement.model.DecryptedData decryptedData;
 
     public static class Builder {
         /**

@@ -57,6 +57,25 @@ public class UpdateThreatFeedsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<ThreatFeedAction> threatFeeds = null;
+
+        /**
+         * A list of threat feeds for which to update the actions.
+         * @return this builder instance
+         */
+        public Builder threatFeeds(java.util.List<ThreatFeedAction> threatFeeds) {
+            this.threatFeeds = threatFeeds;
+            return this;
+        }
+
+        /**
+         * Singular setter. A list of threat feeds for which to update the actions.
+         * @return this builder instance
+         */
+        public Builder threatFeeds(ThreatFeedAction singularValue) {
+            return this.threatFeeds(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

@@ -48,7 +48,7 @@ public class UpdateDomainRecordsResponse {
     /**
      * The returned RecordCollection instance.
      */
-    private RecordCollection recordCollection;
+    private com.oracle.bmc.dns.model.RecordCollection recordCollection;
 
     public static class Builder {
         /**

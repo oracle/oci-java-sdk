@@ -32,7 +32,7 @@ public class CreateKeyVersionResponse {
     /**
      * The returned KeyVersion instance.
      */
-    private KeyVersion keyVersion;
+    private com.oracle.bmc.keymanagement.model.KeyVersion keyVersion;
 
     public static class Builder {
         /**

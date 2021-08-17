@@ -33,7 +33,8 @@ public class GetInstanceAgentCommandExecutionResponse {
     /**
      * The returned InstanceAgentCommandExecution instance.
      */
-    private InstanceAgentCommandExecution instanceAgentCommandExecution;
+    private com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandExecution
+            instanceAgentCommandExecution;
 
     public static class Builder {
         /**

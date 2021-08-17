@@ -62,6 +62,26 @@ public class GenerateDataKeysRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<GenerateDataKeyDetails> generateDataKeysListDetails = null;
+
+        /**
+         * List of new Data Keys to be generated.
+         * @return this builder instance
+         */
+        public Builder generateDataKeysListDetails(
+                java.util.List<GenerateDataKeyDetails> generateDataKeysListDetails) {
+            this.generateDataKeysListDetails = generateDataKeysListDetails;
+            return this;
+        }
+
+        /**
+         * Singular setter. List of new Data Keys to be generated.
+         * @return this builder instance
+         */
+        public Builder generateDataKeysListDetails(GenerateDataKeyDetails singularValue) {
+            return this.generateDataKeysListDetails(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

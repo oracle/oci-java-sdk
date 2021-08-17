@@ -78,14 +78,17 @@ public class GetTransferApplianceEncryptionPassphraseConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        TransferApplianceEncryptionPassphrase>>
+                                                        com.oracle.bmc.dts.model
+                                                                .TransferApplianceEncryptionPassphrase>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        TransferApplianceEncryptionPassphrase
+                                                        com.oracle.bmc.dts.model
+                                                                        .TransferApplianceEncryptionPassphrase
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                TransferApplianceEncryptionPassphrase>
+                                                com.oracle.bmc.dts.model
+                                                        .TransferApplianceEncryptionPassphrase>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

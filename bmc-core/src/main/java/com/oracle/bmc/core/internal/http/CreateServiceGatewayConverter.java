@@ -67,13 +67,15 @@ public class CreateServiceGatewayConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ServiceGateway>>
+                                                        com.oracle.bmc.core.model.ServiceGateway>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ServiceGateway.class);
+                                                        com.oracle.bmc.core.model.ServiceGateway
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ServiceGateway> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.ServiceGateway>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

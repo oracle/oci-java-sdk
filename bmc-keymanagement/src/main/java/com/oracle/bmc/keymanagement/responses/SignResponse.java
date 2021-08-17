@@ -27,7 +27,7 @@ public class SignResponse {
     /**
      * The returned SignedData instance.
      */
-    private SignedData signedData;
+    private com.oracle.bmc.keymanagement.model.SignedData signedData;
 
     public static class Builder {
         /**

@@ -74,12 +74,16 @@ public class GetHostnameConverter {
                                         "Transform function invoked for com.oracle.bmc.loadbalancer.responses.GetHostnameResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Hostname>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.loadbalancer.model.Hostname>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Hostname.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.loadbalancer.model.Hostname
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Hostname> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loadbalancer.model.Hostname>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

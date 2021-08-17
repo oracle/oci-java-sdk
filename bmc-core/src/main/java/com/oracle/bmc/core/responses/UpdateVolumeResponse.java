@@ -33,7 +33,7 @@ public class UpdateVolumeResponse {
     /**
      * The returned Volume instance.
      */
-    private Volume volume;
+    private com.oracle.bmc.core.model.Volume volume;
 
     public static class Builder {
         /**

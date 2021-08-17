@@ -33,7 +33,7 @@ public class UpdateVnicResponse {
     /**
      * The returned Vnic instance.
      */
-    private Vnic vnic;
+    private com.oracle.bmc.core.model.Vnic vnic;
 
     public static class Builder {
         /**

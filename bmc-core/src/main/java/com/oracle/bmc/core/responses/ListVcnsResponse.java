@@ -33,9 +33,9 @@ public class ListVcnsResponse {
     private String opcRequestId;
 
     /**
-     * A list of Vcn instances.
+     * A list of com.oracle.bmc.core.model.Vcn instances.
      */
-    private java.util.List<Vcn> items;
+    private java.util.List<com.oracle.bmc.core.model.Vcn> items;
 
     public static class Builder {
         /**

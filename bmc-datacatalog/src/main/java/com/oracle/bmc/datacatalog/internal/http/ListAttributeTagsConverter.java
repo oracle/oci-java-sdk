@@ -175,12 +175,17 @@ public class ListAttributeTagsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AttributeTagCollection>>
+                                                        com.oracle.bmc.datacatalog.model
+                                                                .AttributeTagCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AttributeTagCollection.class);
+                                                        com.oracle.bmc.datacatalog.model
+                                                                        .AttributeTagCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AttributeTagCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model
+                                                        .AttributeTagCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

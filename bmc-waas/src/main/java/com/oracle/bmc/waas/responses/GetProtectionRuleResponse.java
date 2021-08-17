@@ -30,7 +30,7 @@ public class GetProtectionRuleResponse {
     /**
      * The returned ProtectionRule instance.
      */
-    private ProtectionRule protectionRule;
+    private com.oracle.bmc.waas.model.ProtectionRule protectionRule;
 
     public static class Builder {
         /**

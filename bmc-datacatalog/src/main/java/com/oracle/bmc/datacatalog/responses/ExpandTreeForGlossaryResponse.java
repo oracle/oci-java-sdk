@@ -31,9 +31,9 @@ public class ExpandTreeForGlossaryResponse {
     private String opcRequestId;
 
     /**
-     * A list of GlossaryTreeElement instances.
+     * A list of com.oracle.bmc.datacatalog.model.GlossaryTreeElement instances.
      */
-    private java.util.List<GlossaryTreeElement> items;
+    private java.util.List<com.oracle.bmc.datacatalog.model.GlossaryTreeElement> items;
 
     public static class Builder {
         /**

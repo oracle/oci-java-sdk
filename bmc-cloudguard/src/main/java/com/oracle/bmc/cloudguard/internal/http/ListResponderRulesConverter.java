@@ -119,12 +119,17 @@ public class ListResponderRulesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ResponderRuleCollection>>
+                                                        com.oracle.bmc.cloudguard.model
+                                                                .ResponderRuleCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ResponderRuleCollection.class);
+                                                        com.oracle.bmc.cloudguard.model
+                                                                        .ResponderRuleCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ResponderRuleCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.cloudguard.model
+                                                        .ResponderRuleCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

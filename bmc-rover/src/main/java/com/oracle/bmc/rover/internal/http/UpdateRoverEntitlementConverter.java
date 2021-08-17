@@ -77,12 +77,15 @@ public class UpdateRoverEntitlementConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        RoverEntitlement>>
+                                                        com.oracle.bmc.rover.model
+                                                                .RoverEntitlement>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        RoverEntitlement.class);
+                                                        com.oracle.bmc.rover.model.RoverEntitlement
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<RoverEntitlement>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.rover.model.RoverEntitlement>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

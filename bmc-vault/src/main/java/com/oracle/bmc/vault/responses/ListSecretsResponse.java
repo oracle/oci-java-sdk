@@ -34,9 +34,9 @@ public class ListSecretsResponse {
     private String opcRequestId;
 
     /**
-     * A list of SecretSummary instances.
+     * A list of com.oracle.bmc.vault.model.SecretSummary instances.
      */
-    private java.util.List<SecretSummary> items;
+    private java.util.List<com.oracle.bmc.vault.model.SecretSummary> items;
 
     public static class Builder {
         /**

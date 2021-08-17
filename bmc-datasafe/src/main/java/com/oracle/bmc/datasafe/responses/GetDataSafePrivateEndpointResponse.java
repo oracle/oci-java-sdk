@@ -32,7 +32,7 @@ public class GetDataSafePrivateEndpointResponse {
     /**
      * The returned DataSafePrivateEndpoint instance.
      */
-    private DataSafePrivateEndpoint dataSafePrivateEndpoint;
+    private com.oracle.bmc.datasafe.model.DataSafePrivateEndpoint dataSafePrivateEndpoint;
 
     public static class Builder {
         /**

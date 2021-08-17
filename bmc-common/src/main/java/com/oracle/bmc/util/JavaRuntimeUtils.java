@@ -35,6 +35,8 @@ public class JavaRuntimeUtils {
         Java_8,
         /** Java 9 */
         Java_9,
+        /** Java 11 */
+        Java_11,
         /** Unknown version, may not be supported. */
         Unknown;
     }
@@ -81,6 +83,8 @@ public class JavaRuntimeUtils {
                 int majorVersion = Integer.parseInt(matcher.group(1));
                 if (majorVersion == 9) {
                     version = JreVersion.Java_9;
+                } else if (majorVersion == 11) {
+                    version = JreVersion.Java_11;
                 }
             }
         }

@@ -26,7 +26,8 @@ public class GetLogAnalyticsEmBridgeSummaryResponse {
     /**
      * The returned LogAnalyticsEmBridgeSummaryReport instance.
      */
-    private LogAnalyticsEmBridgeSummaryReport logAnalyticsEmBridgeSummaryReport;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsEmBridgeSummaryReport
+            logAnalyticsEmBridgeSummaryReport;
 
     public static class Builder {
         /**

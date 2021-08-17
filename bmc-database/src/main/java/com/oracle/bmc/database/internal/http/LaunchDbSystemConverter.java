@@ -64,12 +64,16 @@ public class LaunchDbSystemConverter {
                                         "Transform function invoked for com.oracle.bmc.database.responses.LaunchDbSystemResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<DbSystem>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.database.model.DbSystem>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(DbSystem.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.database.model.DbSystem
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DbSystem> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.database.model.DbSystem>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

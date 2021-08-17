@@ -33,7 +33,8 @@ public class IngestHostMetricsResponse {
     /**
      * The returned IngestHostMetricsResponseDetails instance.
      */
-    private IngestHostMetricsResponseDetails ingestHostMetricsResponseDetails;
+    private com.oracle.bmc.opsi.model.IngestHostMetricsResponseDetails
+            ingestHostMetricsResponseDetails;
 
     public static class Builder {
         /**

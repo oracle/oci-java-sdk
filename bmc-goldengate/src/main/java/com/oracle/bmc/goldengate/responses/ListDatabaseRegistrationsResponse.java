@@ -32,7 +32,8 @@ public class ListDatabaseRegistrationsResponse {
     /**
      * The returned DatabaseRegistrationCollection instance.
      */
-    private DatabaseRegistrationCollection databaseRegistrationCollection;
+    private com.oracle.bmc.goldengate.model.DatabaseRegistrationCollection
+            databaseRegistrationCollection;
 
     public static class Builder {
         /**

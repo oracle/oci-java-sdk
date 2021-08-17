@@ -92,13 +92,19 @@ public class ListEventsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<AuditEvent>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.audit.model
+                                                                        .AuditEvent>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<AuditEvent>>() {});
+                                                                java.util.List<
+                                                                        com.oracle.bmc.audit.model
+                                                                                .AuditEvent>>() {});
 
-                                com.oracle.bmc.http.internal.WithHeaders<java.util.List<AuditEvent>>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                java.util.List<
+                                                        com.oracle.bmc.audit.model.AuditEvent>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

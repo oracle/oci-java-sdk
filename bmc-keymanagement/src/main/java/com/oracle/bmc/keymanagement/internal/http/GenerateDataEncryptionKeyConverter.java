@@ -69,13 +69,17 @@ public class GenerateDataEncryptionKeyConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        GeneratedKey>>
+                                                        com.oracle.bmc.keymanagement.model
+                                                                .GeneratedKey>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        GeneratedKey.class);
+                                                        com.oracle.bmc.keymanagement.model
+                                                                        .GeneratedKey
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<GeneratedKey> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.keymanagement.model.GeneratedKey>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

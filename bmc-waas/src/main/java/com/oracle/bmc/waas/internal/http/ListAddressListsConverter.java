@@ -146,15 +146,20 @@ public class ListAddressListsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<AddressListSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.waas.model
+                                                                        .AddressListSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        AddressListSummary>>() {});
+                                                                        com.oracle.bmc.waas.model
+                                                                                .AddressListSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<AddressListSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.waas.model
+                                                                .AddressListSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

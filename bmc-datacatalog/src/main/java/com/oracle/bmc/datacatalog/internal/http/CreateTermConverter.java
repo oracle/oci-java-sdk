@@ -80,11 +80,16 @@ public class CreateTermConverter {
                                         "Transform function invoked for com.oracle.bmc.datacatalog.responses.CreateTermResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Term>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create(Term.class);
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.datacatalog.model.Term>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.datacatalog.model.Term
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Term> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model.Term>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

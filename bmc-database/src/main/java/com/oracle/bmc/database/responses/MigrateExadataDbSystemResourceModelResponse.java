@@ -38,7 +38,7 @@ public class MigrateExadataDbSystemResourceModelResponse {
     /**
      * The returned ExadataDbSystemMigration instance.
      */
-    private ExadataDbSystemMigration exadataDbSystemMigration;
+    private com.oracle.bmc.database.model.ExadataDbSystemMigration exadataDbSystemMigration;
 
     public static class Builder {
         /**

@@ -30,7 +30,7 @@ public class GetApplianceExportJobResponse {
     /**
      * The returned ApplianceExportJob instance.
      */
-    private ApplianceExportJob applianceExportJob;
+    private com.oracle.bmc.dts.model.ApplianceExportJob applianceExportJob;
 
     public static class Builder {
         /**

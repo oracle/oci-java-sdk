@@ -67,12 +67,15 @@ public class GetBlockVolumeReplicaConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        BlockVolumeReplica>>
+                                                        com.oracle.bmc.core.model
+                                                                .BlockVolumeReplica>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        BlockVolumeReplica.class);
+                                                        com.oracle.bmc.core.model.BlockVolumeReplica
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<BlockVolumeReplica>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.BlockVolumeReplica>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

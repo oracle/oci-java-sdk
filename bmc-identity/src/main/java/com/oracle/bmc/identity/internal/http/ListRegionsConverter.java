@@ -60,13 +60,20 @@ public class ListRegionsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<Region>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.identity.model
+                                                                        .Region>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<Region>>() {});
+                                                                java.util.List<
+                                                                        com.oracle.bmc.identity
+                                                                                .model
+                                                                                .Region>>() {});
 
-                                com.oracle.bmc.http.internal.WithHeaders<java.util.List<Region>>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                java.util.List<
+                                                        com.oracle.bmc.identity.model.Region>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

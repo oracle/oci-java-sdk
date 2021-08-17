@@ -124,15 +124,20 @@ public class ListExternalNonContainerDatabasesConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                ExternalNonContainerDatabaseSummary>>>
+                                                                com.oracle.bmc.database.model
+                                                                        .ExternalNonContainerDatabaseSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        ExternalNonContainerDatabaseSummary>>() {});
+                                                                        com.oracle.bmc.database
+                                                                                .model
+                                                                                .ExternalNonContainerDatabaseSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<ExternalNonContainerDatabaseSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.database.model
+                                                                .ExternalNonContainerDatabaseSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

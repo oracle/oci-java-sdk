@@ -75,13 +75,17 @@ public class GetPathRouteSetConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        PathRouteSet>>
+                                                        com.oracle.bmc.loadbalancer.model
+                                                                .PathRouteSet>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        PathRouteSet.class);
+                                                        com.oracle.bmc.loadbalancer.model
+                                                                        .PathRouteSet
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<PathRouteSet> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loadbalancer.model.PathRouteSet>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

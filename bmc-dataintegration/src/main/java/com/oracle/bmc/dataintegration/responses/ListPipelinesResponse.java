@@ -45,7 +45,8 @@ public class ListPipelinesResponse {
     /**
      * The returned PipelineSummaryCollection instance.
      */
-    private PipelineSummaryCollection pipelineSummaryCollection;
+    private com.oracle.bmc.dataintegration.model.PipelineSummaryCollection
+            pipelineSummaryCollection;
 
     public static class Builder {
         /**

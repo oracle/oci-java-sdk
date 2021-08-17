@@ -79,13 +79,17 @@ public class GetClusterMigrateToNativeVcnStatusConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ClusterMigrateToNativeVcnStatus>>
+                                                        com.oracle.bmc.containerengine.model
+                                                                .ClusterMigrateToNativeVcnStatus>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ClusterMigrateToNativeVcnStatus.class);
+                                                        com.oracle.bmc.containerengine.model
+                                                                        .ClusterMigrateToNativeVcnStatus
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ClusterMigrateToNativeVcnStatus>
+                                                com.oracle.bmc.containerengine.model
+                                                        .ClusterMigrateToNativeVcnStatus>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

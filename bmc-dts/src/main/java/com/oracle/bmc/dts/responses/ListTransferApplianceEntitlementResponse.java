@@ -23,9 +23,9 @@ public class ListTransferApplianceEntitlementResponse {
     private String opcRequestId;
 
     /**
-     * A list of TransferApplianceEntitlementSummary instances.
+     * A list of com.oracle.bmc.dts.model.TransferApplianceEntitlementSummary instances.
      */
-    private java.util.List<TransferApplianceEntitlementSummary> items;
+    private java.util.List<com.oracle.bmc.dts.model.TransferApplianceEntitlementSummary> items;
 
     public static class Builder {
         /**

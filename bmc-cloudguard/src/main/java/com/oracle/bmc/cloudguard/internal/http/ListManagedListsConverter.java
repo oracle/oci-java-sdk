@@ -151,12 +151,17 @@ public class ListManagedListsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ManagedListCollection>>
+                                                        com.oracle.bmc.cloudguard.model
+                                                                .ManagedListCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ManagedListCollection.class);
+                                                        com.oracle.bmc.cloudguard.model
+                                                                        .ManagedListCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ManagedListCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.cloudguard.model
+                                                        .ManagedListCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

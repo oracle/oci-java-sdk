@@ -33,9 +33,9 @@ public class ListShapesResponse {
     private String opcRequestId;
 
     /**
-     * A list of Shape instances.
+     * A list of com.oracle.bmc.core.model.Shape instances.
      */
-    private java.util.List<Shape> items;
+    private java.util.List<com.oracle.bmc.core.model.Shape> items;
 
     public static class Builder {
         /**

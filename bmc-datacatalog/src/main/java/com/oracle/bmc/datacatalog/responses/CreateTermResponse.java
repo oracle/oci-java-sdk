@@ -33,7 +33,7 @@ public class CreateTermResponse {
     /**
      * The returned Term instance.
      */
-    private Term term;
+    private com.oracle.bmc.datacatalog.model.Term term;
 
     public static class Builder {
         /**

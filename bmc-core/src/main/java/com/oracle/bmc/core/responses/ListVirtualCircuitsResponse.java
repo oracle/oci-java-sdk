@@ -33,9 +33,9 @@ public class ListVirtualCircuitsResponse {
     private String opcRequestId;
 
     /**
-     * A list of VirtualCircuit instances.
+     * A list of com.oracle.bmc.core.model.VirtualCircuit instances.
      */
-    private java.util.List<VirtualCircuit> items;
+    private java.util.List<com.oracle.bmc.core.model.VirtualCircuit> items;
 
     public static class Builder {
         /**

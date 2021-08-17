@@ -35,7 +35,8 @@ public class RequestRiskScoresResponse {
     /**
      * The returned RiskScoreAggregationCollection instance.
      */
-    private RiskScoreAggregationCollection riskScoreAggregationCollection;
+    private com.oracle.bmc.cloudguard.model.RiskScoreAggregationCollection
+            riskScoreAggregationCollection;
 
     public static class Builder {
         /**

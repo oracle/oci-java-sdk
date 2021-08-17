@@ -123,12 +123,17 @@ public class ListAccessRequestsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AccessRequestCollection>>
+                                                        com.oracle.bmc.operatoraccesscontrol.model
+                                                                .AccessRequestCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AccessRequestCollection.class);
+                                                        com.oracle.bmc.operatoraccesscontrol.model
+                                                                        .AccessRequestCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AccessRequestCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.operatoraccesscontrol.model
+                                                        .AccessRequestCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

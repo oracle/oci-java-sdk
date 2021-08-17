@@ -33,9 +33,9 @@ public class ListPublicIpsResponse {
     private String opcRequestId;
 
     /**
-     * A list of PublicIp instances.
+     * A list of com.oracle.bmc.core.model.PublicIp instances.
      */
-    private java.util.List<PublicIp> items;
+    private java.util.List<com.oracle.bmc.core.model.PublicIp> items;
 
     public static class Builder {
         /**

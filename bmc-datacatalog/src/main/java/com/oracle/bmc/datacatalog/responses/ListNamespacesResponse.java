@@ -33,7 +33,7 @@ public class ListNamespacesResponse {
     /**
      * The returned NamespaceCollection instance.
      */
-    private NamespaceCollection namespaceCollection;
+    private com.oracle.bmc.datacatalog.model.NamespaceCollection namespaceCollection;
 
     public static class Builder {
         /**

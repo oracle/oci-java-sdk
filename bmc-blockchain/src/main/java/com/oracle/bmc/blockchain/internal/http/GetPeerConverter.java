@@ -74,11 +74,15 @@ public class GetPeerConverter {
                                         "Transform function invoked for com.oracle.bmc.blockchain.responses.GetPeerResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Peer>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create(Peer.class);
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.blockchain.model.Peer>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.blockchain.model.Peer.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Peer> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.blockchain.model.Peer>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

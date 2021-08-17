@@ -39,7 +39,7 @@ public class CreateSourceResponse {
     /**
      * The returned Source instance.
      */
-    private Source source;
+    private com.oracle.bmc.applicationmigration.model.Source source;
 
     public static class Builder {
         /**

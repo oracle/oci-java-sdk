@@ -66,12 +66,14 @@ public class GetBootVolumeBackupConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        BootVolumeBackup>>
+                                                        com.oracle.bmc.core.model.BootVolumeBackup>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        BootVolumeBackup.class);
+                                                        com.oracle.bmc.core.model.BootVolumeBackup
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<BootVolumeBackup>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.BootVolumeBackup>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -27,7 +27,8 @@ public class ListTerraformVersionsResponse {
     /**
      * The returned TerraformVersionCollection instance.
      */
-    private TerraformVersionCollection terraformVersionCollection;
+    private com.oracle.bmc.resourcemanager.model.TerraformVersionCollection
+            terraformVersionCollection;
 
     public static class Builder {
         /**

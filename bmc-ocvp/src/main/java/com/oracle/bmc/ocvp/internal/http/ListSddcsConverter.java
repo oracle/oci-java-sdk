@@ -125,13 +125,15 @@ public class ListSddcsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SddcCollection>>
+                                                        com.oracle.bmc.ocvp.model.SddcCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SddcCollection.class);
+                                                        com.oracle.bmc.ocvp.model.SddcCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<SddcCollection> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.ocvp.model.SddcCollection>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

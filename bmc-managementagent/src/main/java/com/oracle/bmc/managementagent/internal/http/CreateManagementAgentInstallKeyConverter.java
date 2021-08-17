@@ -78,12 +78,17 @@ public class CreateManagementAgentInstallKeyConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ManagementAgentInstallKey>>
+                                                        com.oracle.bmc.managementagent.model
+                                                                .ManagementAgentInstallKey>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ManagementAgentInstallKey.class);
+                                                        com.oracle.bmc.managementagent.model
+                                                                        .ManagementAgentInstallKey
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ManagementAgentInstallKey>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.managementagent.model
+                                                        .ManagementAgentInstallKey>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

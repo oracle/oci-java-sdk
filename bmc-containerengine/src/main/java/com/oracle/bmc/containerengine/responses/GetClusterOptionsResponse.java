@@ -27,7 +27,7 @@ public class GetClusterOptionsResponse {
     /**
      * The returned ClusterOptions instance.
      */
-    private ClusterOptions clusterOptions;
+    private com.oracle.bmc.containerengine.model.ClusterOptions clusterOptions;
 
     public static class Builder {
         /**

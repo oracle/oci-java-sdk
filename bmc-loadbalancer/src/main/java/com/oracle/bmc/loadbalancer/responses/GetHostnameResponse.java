@@ -27,7 +27,7 @@ public class GetHostnameResponse {
     /**
      * The returned Hostname instance.
      */
-    private Hostname hostname;
+    private com.oracle.bmc.loadbalancer.model.Hostname hostname;
 
     public static class Builder {
         /**

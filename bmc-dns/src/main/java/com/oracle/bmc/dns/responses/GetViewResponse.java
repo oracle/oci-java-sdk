@@ -35,7 +35,7 @@ public class GetViewResponse {
     /**
      * The returned View instance, or null if {@link #isNotModified()} is true.
      */
-    private View view;
+    private com.oracle.bmc.dns.model.View view;
 
     /**
      * Flag to indicate whether or not the object was modified.  If this is true,

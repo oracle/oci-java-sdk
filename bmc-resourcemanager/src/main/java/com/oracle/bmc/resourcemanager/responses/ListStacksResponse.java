@@ -34,9 +34,9 @@ public class ListStacksResponse {
     private String opcNextPage;
 
     /**
-     * A list of StackSummary instances.
+     * A list of com.oracle.bmc.resourcemanager.model.StackSummary instances.
      */
-    private java.util.List<StackSummary> items;
+    private java.util.List<com.oracle.bmc.resourcemanager.model.StackSummary> items;
 
     public static class Builder {
         /**

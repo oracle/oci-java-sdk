@@ -107,12 +107,30 @@ public class ManagementAgentSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+        private java.util.Date timeUpdated;
+
+        public Builder timeUpdated(java.util.Date timeUpdated) {
+            this.timeUpdated = timeUpdated;
+            this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("hostId")
+        private String hostId;
+
+        public Builder hostId(String hostId) {
+            this.hostId = hostId;
+            this.__explicitlySet__.add("hostId");
             return this;
         }
 
@@ -170,6 +188,15 @@ public class ManagementAgentSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isCustomerDeployed")
+        private Boolean isCustomerDeployed;
+
+        public Builder isCustomerDeployed(Boolean isCustomerDeployed) {
+            this.isCustomerDeployed = isCustomerDeployed;
+            this.__explicitlySet__.add("isCustomerDeployed");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -204,13 +231,16 @@ public class ManagementAgentSummary {
                             version,
                             isAgentAutoUpgradable,
                             timeCreated,
+                            timeUpdated,
                             host,
+                            hostId,
                             pluginList,
                             compartmentId,
                             timeLastHeartbeat,
                             availabilityStatus,
                             lifecycleState,
                             lifecycleDetails,
+                            isCustomerDeployed,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -229,13 +259,16 @@ public class ManagementAgentSummary {
                             .version(o.getVersion())
                             .isAgentAutoUpgradable(o.getIsAgentAutoUpgradable())
                             .timeCreated(o.getTimeCreated())
+                            .timeUpdated(o.getTimeUpdated())
                             .host(o.getHost())
+                            .hostId(o.getHostId())
                             .pluginList(o.getPluginList())
                             .compartmentId(o.getCompartmentId())
                             .timeLastHeartbeat(o.getTimeLastHeartbeat())
                             .availabilityStatus(o.getAvailabilityStatus())
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails())
+                            .isCustomerDeployed(o.getIsCustomerDeployed())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -294,7 +327,7 @@ public class ManagementAgentSummary {
     String version;
 
     /**
-     * true if the agent can be upgraded automatically; false if it must be upgraded manually. true is currently unsupported.
+     * true if the agent can be upgraded automatically; false if it must be upgraded manually.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAgentAutoUpgradable")
     Boolean isAgentAutoUpgradable;
@@ -306,10 +339,22 @@ public class ManagementAgentSummary {
     java.util.Date timeCreated;
 
     /**
+     * The time the Management Agent was last updated. An RFC3339 formatted datetime string
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+    java.util.Date timeUpdated;
+
+    /**
      * Management Agent host machine name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     String host;
+
+    /**
+     * Host resource ocid
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hostId")
+    String hostId;
 
     /**
      * list of managementAgentPlugins associated with the agent
@@ -346,6 +391,12 @@ public class ManagementAgentSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     String lifecycleDetails;
+
+    /**
+     * true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isCustomerDeployed")
+    Boolean isCustomerDeployed;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.

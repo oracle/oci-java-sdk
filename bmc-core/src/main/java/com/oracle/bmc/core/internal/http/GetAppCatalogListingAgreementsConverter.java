@@ -75,14 +75,17 @@ public class GetAppCatalogListingAgreementsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AppCatalogListingResourceVersionAgreements>>
+                                                        com.oracle.bmc.core.model
+                                                                .AppCatalogListingResourceVersionAgreements>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AppCatalogListingResourceVersionAgreements
+                                                        com.oracle.bmc.core.model
+                                                                        .AppCatalogListingResourceVersionAgreements
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                AppCatalogListingResourceVersionAgreements>
+                                                com.oracle.bmc.core.model
+                                                        .AppCatalogListingResourceVersionAgreements>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

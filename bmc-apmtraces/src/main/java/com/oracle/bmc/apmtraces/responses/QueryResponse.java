@@ -41,7 +41,7 @@ public class QueryResponse {
     /**
      * The returned QueryResultResponse instance.
      */
-    private QueryResultResponse queryResultResponse;
+    private com.oracle.bmc.apmtraces.model.QueryResultResponse queryResultResponse;
 
     public static class Builder {
         /**

@@ -72,12 +72,16 @@ public class GetWafAddressRateLimitingConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AddressRateLimiting>>
+                                                        com.oracle.bmc.waas.model
+                                                                .AddressRateLimiting>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AddressRateLimiting.class);
+                                                        com.oracle.bmc.waas.model
+                                                                        .AddressRateLimiting
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AddressRateLimiting>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.waas.model.AddressRateLimiting>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

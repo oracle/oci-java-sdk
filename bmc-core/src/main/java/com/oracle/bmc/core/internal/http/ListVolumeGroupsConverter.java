@@ -123,14 +123,19 @@ public class ListVolumeGroupsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<VolumeGroup>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.core.model
+                                                                        .VolumeGroup>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<VolumeGroup>>() {});
+                                                                java.util.List<
+                                                                        com.oracle.bmc.core.model
+                                                                                .VolumeGroup>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<VolumeGroup>>
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model.VolumeGroup>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

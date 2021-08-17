@@ -79,12 +79,17 @@ public class GetNetworkLoadBalancerHealthConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        NetworkLoadBalancerHealth>>
+                                                        com.oracle.bmc.networkloadbalancer.model
+                                                                .NetworkLoadBalancerHealth>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        NetworkLoadBalancerHealth.class);
+                                                        com.oracle.bmc.networkloadbalancer.model
+                                                                        .NetworkLoadBalancerHealth
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<NetworkLoadBalancerHealth>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.networkloadbalancer.model
+                                                        .NetworkLoadBalancerHealth>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

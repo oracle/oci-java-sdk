@@ -33,7 +33,7 @@ public class ListFolderTagsResponse {
     /**
      * The returned FolderTagCollection instance.
      */
-    private FolderTagCollection folderTagCollection;
+    private com.oracle.bmc.datacatalog.model.FolderTagCollection folderTagCollection;
 
     public static class Builder {
         /**

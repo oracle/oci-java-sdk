@@ -32,7 +32,7 @@ public class GenerateRecommendedVmClusterNetworkResponse {
     /**
      * The returned VmClusterNetworkDetails instance.
      */
-    private VmClusterNetworkDetails vmClusterNetworkDetails;
+    private com.oracle.bmc.database.model.VmClusterNetworkDetails vmClusterNetworkDetails;
 
     public static class Builder {
         /**

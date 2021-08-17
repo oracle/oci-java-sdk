@@ -160,12 +160,17 @@ public class ListTaskRunsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        TaskRunSummaryCollection>>
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .TaskRunSummaryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        TaskRunSummaryCollection.class);
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .TaskRunSummaryCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<TaskRunSummaryCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dataintegration.model
+                                                        .TaskRunSummaryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

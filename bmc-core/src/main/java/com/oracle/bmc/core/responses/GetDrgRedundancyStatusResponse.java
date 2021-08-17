@@ -27,7 +27,7 @@ public class GetDrgRedundancyStatusResponse {
     /**
      * The returned DrgRedundancyStatus instance.
      */
-    private DrgRedundancyStatus drgRedundancyStatus;
+    private com.oracle.bmc.core.model.DrgRedundancyStatus drgRedundancyStatus;
 
     public static class Builder {
         /**

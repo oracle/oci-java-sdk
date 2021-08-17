@@ -32,7 +32,7 @@ public class CreateCustomerSecretKeyResponse {
     /**
      * The returned CustomerSecretKey instance.
      */
-    private CustomerSecretKey customerSecretKey;
+    private com.oracle.bmc.identity.model.CustomerSecretKey customerSecretKey;
 
     public static class Builder {
         /**

@@ -27,7 +27,7 @@ public class GetManagedDatabaseResponse {
     /**
      * The returned ManagedDatabase instance.
      */
-    private ManagedDatabase managedDatabase;
+    private com.oracle.bmc.databasemanagement.model.ManagedDatabase managedDatabase;
 
     public static class Builder {
         /**

@@ -33,9 +33,9 @@ public class ListInstancePoolsResponse {
     private String opcRequestId;
 
     /**
-     * A list of InstancePoolSummary instances.
+     * A list of com.oracle.bmc.core.model.InstancePoolSummary instances.
      */
-    private java.util.List<InstancePoolSummary> items;
+    private java.util.List<com.oracle.bmc.core.model.InstancePoolSummary> items;
 
     public static class Builder {
         /**

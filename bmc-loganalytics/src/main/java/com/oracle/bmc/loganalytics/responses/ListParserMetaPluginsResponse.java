@@ -42,7 +42,8 @@ public class ListParserMetaPluginsResponse {
     /**
      * The returned LogAnalyticsParserMetaPluginCollection instance.
      */
-    private LogAnalyticsParserMetaPluginCollection logAnalyticsParserMetaPluginCollection;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsParserMetaPluginCollection
+            logAnalyticsParserMetaPluginCollection;
 
     public static class Builder {
         /**

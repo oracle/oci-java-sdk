@@ -40,9 +40,9 @@ public class ListRunsResponse {
     private String opcRequestId;
 
     /**
-     * A list of RunSummary instances.
+     * A list of com.oracle.bmc.dataflow.model.RunSummary instances.
      */
-    private java.util.List<RunSummary> items;
+    private java.util.List<com.oracle.bmc.dataflow.model.RunSummary> items;
 
     public static class Builder {
         /**

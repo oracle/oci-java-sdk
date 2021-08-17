@@ -71,12 +71,16 @@ public class GetDrgRedundancyStatusConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DrgRedundancyStatus>>
+                                                        com.oracle.bmc.core.model
+                                                                .DrgRedundancyStatus>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DrgRedundancyStatus.class);
+                                                        com.oracle.bmc.core.model
+                                                                        .DrgRedundancyStatus
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DrgRedundancyStatus>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.DrgRedundancyStatus>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

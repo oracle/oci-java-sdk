@@ -33,9 +33,9 @@ public class ListDrgAttachmentsResponse {
     private String opcRequestId;
 
     /**
-     * A list of DrgAttachment instances.
+     * A list of com.oracle.bmc.core.model.DrgAttachment instances.
      */
-    private java.util.List<DrgAttachment> items;
+    private java.util.List<com.oracle.bmc.core.model.DrgAttachment> items;
 
     public static class Builder {
         /**

@@ -34,7 +34,7 @@ public class ListDkimsResponse {
     /**
      * The returned DkimCollection instance.
      */
-    private DkimCollection dkimCollection;
+    private com.oracle.bmc.email.model.DkimCollection dkimCollection;
 
     public static class Builder {
         /**

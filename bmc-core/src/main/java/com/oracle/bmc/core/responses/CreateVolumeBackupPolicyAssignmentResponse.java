@@ -33,7 +33,7 @@ public class CreateVolumeBackupPolicyAssignmentResponse {
     /**
      * The returned VolumeBackupPolicyAssignment instance.
      */
-    private VolumeBackupPolicyAssignment volumeBackupPolicyAssignment;
+    private com.oracle.bmc.core.model.VolumeBackupPolicyAssignment volumeBackupPolicyAssignment;
 
     public static class Builder {
         /**

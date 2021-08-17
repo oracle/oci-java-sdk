@@ -33,7 +33,7 @@ public class CreateDataAssetTagResponse {
     /**
      * The returned DataAssetTag instance.
      */
-    private DataAssetTag dataAssetTag;
+    private com.oracle.bmc.datacatalog.model.DataAssetTag dataAssetTag;
 
     public static class Builder {
         /**

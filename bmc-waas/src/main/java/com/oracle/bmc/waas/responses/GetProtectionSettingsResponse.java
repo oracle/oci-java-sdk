@@ -30,7 +30,7 @@ public class GetProtectionSettingsResponse {
     /**
      * The returned ProtectionSettings instance.
      */
-    private ProtectionSettings protectionSettings;
+    private com.oracle.bmc.waas.model.ProtectionSettings protectionSettings;
 
     public static class Builder {
         /**

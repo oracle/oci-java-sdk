@@ -33,9 +33,9 @@ public class ListRecommendationsResponse {
     private String opcRequestId;
 
     /**
-     * A list of Recommendation instances.
+     * A list of com.oracle.bmc.waas.model.Recommendation instances.
      */
-    private java.util.List<Recommendation> items;
+    private java.util.List<com.oracle.bmc.waas.model.Recommendation> items;
 
     public static class Builder {
         /**

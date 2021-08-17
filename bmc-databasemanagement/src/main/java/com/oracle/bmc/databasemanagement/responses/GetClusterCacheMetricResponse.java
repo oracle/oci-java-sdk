@@ -27,7 +27,7 @@ public class GetClusterCacheMetricResponse {
     /**
      * The returned ClusterCacheMetric instance.
      */
-    private ClusterCacheMetric clusterCacheMetric;
+    private com.oracle.bmc.databasemanagement.model.ClusterCacheMetric clusterCacheMetric;
 
     public static class Builder {
         /**

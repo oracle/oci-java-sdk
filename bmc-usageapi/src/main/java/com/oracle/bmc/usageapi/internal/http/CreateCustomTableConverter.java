@@ -70,13 +70,15 @@ public class CreateCustomTableConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        CustomTable>>
+                                                        com.oracle.bmc.usageapi.model.CustomTable>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        CustomTable.class);
+                                                        com.oracle.bmc.usageapi.model.CustomTable
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<CustomTable> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.usageapi.model.CustomTable>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

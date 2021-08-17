@@ -32,9 +32,9 @@ public class ListAutoScalingPoliciesResponse {
     private String opcRequestId;
 
     /**
-     * A list of AutoScalingPolicySummary instances.
+     * A list of com.oracle.bmc.autoscaling.model.AutoScalingPolicySummary instances.
      */
-    private java.util.List<AutoScalingPolicySummary> items;
+    private java.util.List<com.oracle.bmc.autoscaling.model.AutoScalingPolicySummary> items;
 
     public static class Builder {
         /**

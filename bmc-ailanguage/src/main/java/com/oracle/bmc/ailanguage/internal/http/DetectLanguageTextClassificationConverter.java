@@ -75,14 +75,17 @@ public class DetectLanguageTextClassificationConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DetectLanguageTextClassificationResult>>
+                                                        com.oracle.bmc.ailanguage.model
+                                                                .DetectLanguageTextClassificationResult>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DetectLanguageTextClassificationResult
+                                                        com.oracle.bmc.ailanguage.model
+                                                                        .DetectLanguageTextClassificationResult
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                DetectLanguageTextClassificationResult>
+                                                com.oracle.bmc.ailanguage.model
+                                                        .DetectLanguageTextClassificationResult>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

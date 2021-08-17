@@ -33,7 +33,7 @@ public class GetBootVolumeKmsKeyResponse {
     /**
      * The returned BootVolumeKmsKey instance.
      */
-    private BootVolumeKmsKey bootVolumeKmsKey;
+    private com.oracle.bmc.core.model.BootVolumeKmsKey bootVolumeKmsKey;
 
     public static class Builder {
         /**

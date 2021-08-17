@@ -40,9 +40,9 @@ public class ListApplicationsResponse {
     private String opcRequestId;
 
     /**
-     * A list of ApplicationSummary instances.
+     * A list of com.oracle.bmc.dataflow.model.ApplicationSummary instances.
      */
-    private java.util.List<ApplicationSummary> items;
+    private java.util.List<com.oracle.bmc.dataflow.model.ApplicationSummary> items;
 
     public static class Builder {
         /**

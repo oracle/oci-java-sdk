@@ -35,7 +35,7 @@ public class ListModelsResponse {
     /**
      * The returned ModelCollection instance.
      */
-    private ModelCollection modelCollection;
+    private com.oracle.bmc.aianomalydetection.model.ModelCollection modelCollection;
 
     public static class Builder {
         /**

@@ -74,12 +74,16 @@ public class UpdateExportConverter {
                                         "Transform function invoked for com.oracle.bmc.filestorage.responses.UpdateExportResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Export>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.filestorage.model.Export>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Export.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.filestorage.model.Export
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Export> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.filestorage.model.Export>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -25,9 +25,9 @@ public class ListRuleSetsResponse {
     private String opcRequestId;
 
     /**
-     * A list of RuleSet instances.
+     * A list of com.oracle.bmc.loadbalancer.model.RuleSet instances.
      */
-    private java.util.List<RuleSet> items;
+    private java.util.List<com.oracle.bmc.loadbalancer.model.RuleSet> items;
 
     public static class Builder {
         /**

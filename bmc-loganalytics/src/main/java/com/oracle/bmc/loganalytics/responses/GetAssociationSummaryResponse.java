@@ -26,7 +26,7 @@ public class GetAssociationSummaryResponse {
     /**
      * The returned AssociationSummaryReport instance.
      */
-    private AssociationSummaryReport associationSummaryReport;
+    private com.oracle.bmc.loganalytics.model.AssociationSummaryReport associationSummaryReport;
 
     public static class Builder {
         /**

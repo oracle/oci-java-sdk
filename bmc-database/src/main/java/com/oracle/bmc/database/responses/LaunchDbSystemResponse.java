@@ -38,7 +38,7 @@ public class LaunchDbSystemResponse {
     /**
      * The returned DbSystem instance.
      */
-    private DbSystem dbSystem;
+    private com.oracle.bmc.database.model.DbSystem dbSystem;
 
     public static class Builder {
         /**

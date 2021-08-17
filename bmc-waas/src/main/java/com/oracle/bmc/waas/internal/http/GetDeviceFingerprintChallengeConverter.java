@@ -75,12 +75,17 @@ public class GetDeviceFingerprintChallengeConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DeviceFingerprintChallenge>>
+                                                        com.oracle.bmc.waas.model
+                                                                .DeviceFingerprintChallenge>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DeviceFingerprintChallenge.class);
+                                                        com.oracle.bmc.waas.model
+                                                                        .DeviceFingerprintChallenge
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DeviceFingerprintChallenge>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.waas.model
+                                                        .DeviceFingerprintChallenge>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

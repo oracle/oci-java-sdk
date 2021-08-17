@@ -127,12 +127,16 @@ public class ListEmailDomainsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        EmailDomainCollection>>
+                                                        com.oracle.bmc.email.model
+                                                                .EmailDomainCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        EmailDomainCollection.class);
+                                                        com.oracle.bmc.email.model
+                                                                        .EmailDomainCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<EmailDomainCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.email.model.EmailDomainCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

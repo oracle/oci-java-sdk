@@ -136,15 +136,21 @@ public class ListAnalyticsInstancesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<AnalyticsInstanceSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.analytics.model
+                                                                        .AnalyticsInstanceSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        AnalyticsInstanceSummary>>() {});
+                                                                        com.oracle.bmc.analytics
+                                                                                .model
+                                                                                .AnalyticsInstanceSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<AnalyticsInstanceSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.analytics.model
+                                                                .AnalyticsInstanceSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -69,12 +69,17 @@ public class GetFastConnectProviderServiceConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        FastConnectProviderService>>
+                                                        com.oracle.bmc.core.model
+                                                                .FastConnectProviderService>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        FastConnectProviderService.class);
+                                                        com.oracle.bmc.core.model
+                                                                        .FastConnectProviderService
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<FastConnectProviderService>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model
+                                                        .FastConnectProviderService>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

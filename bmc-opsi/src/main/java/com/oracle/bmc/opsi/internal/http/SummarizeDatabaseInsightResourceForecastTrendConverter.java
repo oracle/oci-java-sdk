@@ -249,14 +249,17 @@ public class SummarizeDatabaseInsightResourceForecastTrendConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SummarizeDatabaseInsightResourceForecastTrendAggregation>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .SummarizeDatabaseInsightResourceForecastTrendAggregation>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SummarizeDatabaseInsightResourceForecastTrendAggregation
+                                                        com.oracle.bmc.opsi.model
+                                                                        .SummarizeDatabaseInsightResourceForecastTrendAggregation
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                SummarizeDatabaseInsightResourceForecastTrendAggregation>
+                                                com.oracle.bmc.opsi.model
+                                                        .SummarizeDatabaseInsightResourceForecastTrendAggregation>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

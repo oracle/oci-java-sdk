@@ -33,7 +33,7 @@ public class GetResponderRecipeResponse {
     /**
      * The returned ResponderRecipe instance.
      */
-    private ResponderRecipe responderRecipe;
+    private com.oracle.bmc.cloudguard.model.ResponderRecipe responderRecipe;
 
     public static class Builder {
         /**

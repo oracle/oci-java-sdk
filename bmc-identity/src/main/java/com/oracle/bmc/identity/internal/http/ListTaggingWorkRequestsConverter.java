@@ -92,15 +92,21 @@ public class ListTaggingWorkRequestsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<TaggingWorkRequestSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.identity.model
+                                                                        .TaggingWorkRequestSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        TaggingWorkRequestSummary>>() {});
+                                                                        com.oracle.bmc.identity
+                                                                                .model
+                                                                                .TaggingWorkRequestSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<TaggingWorkRequestSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.identity.model
+                                                                .TaggingWorkRequestSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

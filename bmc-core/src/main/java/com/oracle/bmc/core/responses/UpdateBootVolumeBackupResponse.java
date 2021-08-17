@@ -26,7 +26,7 @@ public class UpdateBootVolumeBackupResponse {
     /**
      * The returned BootVolumeBackup instance.
      */
-    private BootVolumeBackup bootVolumeBackup;
+    private com.oracle.bmc.core.model.BootVolumeBackup bootVolumeBackup;
 
     public static class Builder {
         /**

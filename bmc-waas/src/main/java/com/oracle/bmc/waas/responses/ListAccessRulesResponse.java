@@ -33,9 +33,9 @@ public class ListAccessRulesResponse {
     private String opcRequestId;
 
     /**
-     * A list of AccessRule instances.
+     * A list of com.oracle.bmc.waas.model.AccessRule instances.
      */
-    private java.util.List<AccessRule> items;
+    private java.util.List<com.oracle.bmc.waas.model.AccessRule> items;
 
     public static class Builder {
         /**

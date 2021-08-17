@@ -34,9 +34,9 @@ public class ListJobsResponse {
     private String opcNextPage;
 
     /**
-     * A list of JobSummary instances.
+     * A list of com.oracle.bmc.resourcemanager.model.JobSummary instances.
      */
-    private java.util.List<JobSummary> items;
+    private java.util.List<com.oracle.bmc.resourcemanager.model.JobSummary> items;
 
     public static class Builder {
         /**

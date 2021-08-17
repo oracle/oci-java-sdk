@@ -70,13 +70,14 @@ public class CreateOdaInstanceConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        OdaInstance>>
+                                                        com.oracle.bmc.oda.model.OdaInstance>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        OdaInstance.class);
+                                                        com.oracle.bmc.oda.model.OdaInstance.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<OdaInstance> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.oda.model.OdaInstance>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

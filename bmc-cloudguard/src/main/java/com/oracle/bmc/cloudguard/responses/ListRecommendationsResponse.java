@@ -35,7 +35,8 @@ public class ListRecommendationsResponse {
     /**
      * The returned RecommendationSummaryCollection instance.
      */
-    private RecommendationSummaryCollection recommendationSummaryCollection;
+    private com.oracle.bmc.cloudguard.model.RecommendationSummaryCollection
+            recommendationSummaryCollection;
 
     public static class Builder {
         /**

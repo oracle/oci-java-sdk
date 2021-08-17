@@ -73,13 +73,16 @@ public class CreateSwiftPasswordConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SwiftPassword>>
+                                                        com.oracle.bmc.identity.model
+                                                                .SwiftPassword>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SwiftPassword.class);
+                                                        com.oracle.bmc.identity.model.SwiftPassword
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<SwiftPassword> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.identity.model.SwiftPassword>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

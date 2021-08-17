@@ -28,9 +28,9 @@ public class ListIncidentsResponse {
     private String opcNextPage;
 
     /**
-     * A list of IncidentSummary instances.
+     * A list of com.oracle.bmc.cims.model.IncidentSummary instances.
      */
-    private java.util.List<IncidentSummary> items;
+    private java.util.List<com.oracle.bmc.cims.model.IncidentSummary> items;
 
     public static class Builder {
         /**

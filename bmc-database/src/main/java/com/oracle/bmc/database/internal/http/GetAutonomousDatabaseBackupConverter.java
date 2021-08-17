@@ -75,12 +75,17 @@ public class GetAutonomousDatabaseBackupConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AutonomousDatabaseBackup>>
+                                                        com.oracle.bmc.database.model
+                                                                .AutonomousDatabaseBackup>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AutonomousDatabaseBackup.class);
+                                                        com.oracle.bmc.database.model
+                                                                        .AutonomousDatabaseBackup
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AutonomousDatabaseBackup>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.database.model
+                                                        .AutonomousDatabaseBackup>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

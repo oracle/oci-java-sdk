@@ -79,13 +79,17 @@ public class EstimateReleaseDataSizeConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        EstimateReleaseDataSizeResult>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .EstimateReleaseDataSizeResult>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        EstimateReleaseDataSizeResult.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .EstimateReleaseDataSizeResult
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                EstimateReleaseDataSizeResult>
+                                                com.oracle.bmc.loganalytics.model
+                                                        .EstimateReleaseDataSizeResult>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

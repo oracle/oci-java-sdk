@@ -33,9 +33,9 @@ public class ListLimitValuesResponse {
     private String opcRequestId;
 
     /**
-     * A list of LimitValueSummary instances.
+     * A list of com.oracle.bmc.limits.model.LimitValueSummary instances.
      */
-    private java.util.List<LimitValueSummary> items;
+    private java.util.List<com.oracle.bmc.limits.model.LimitValueSummary> items;
 
     public static class Builder {
         /**

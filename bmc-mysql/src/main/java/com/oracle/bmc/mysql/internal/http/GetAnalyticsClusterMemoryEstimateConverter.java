@@ -75,13 +75,17 @@ public class GetAnalyticsClusterMemoryEstimateConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AnalyticsClusterMemoryEstimate>>
+                                                        com.oracle.bmc.mysql.model
+                                                                .AnalyticsClusterMemoryEstimate>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AnalyticsClusterMemoryEstimate.class);
+                                                        com.oracle.bmc.mysql.model
+                                                                        .AnalyticsClusterMemoryEstimate
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                AnalyticsClusterMemoryEstimate>
+                                                com.oracle.bmc.mysql.model
+                                                        .AnalyticsClusterMemoryEstimate>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

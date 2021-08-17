@@ -75,12 +75,17 @@ public class GetAutonomousDatabaseWalletConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AutonomousDatabaseWallet>>
+                                                        com.oracle.bmc.database.model
+                                                                .AutonomousDatabaseWallet>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AutonomousDatabaseWallet.class);
+                                                        com.oracle.bmc.database.model
+                                                                        .AutonomousDatabaseWallet
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AutonomousDatabaseWallet>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.database.model
+                                                        .AutonomousDatabaseWallet>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

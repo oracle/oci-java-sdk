@@ -37,7 +37,7 @@ public class GetBucketResponse {
     /**
      * The returned Bucket instance, or null if {@link #isNotModified()} is true.
      */
-    private Bucket bucket;
+    private com.oracle.bmc.objectstorage.model.Bucket bucket;
 
     /**
      * Flag to indicate whether or not the object was modified.  If this is true,

@@ -27,7 +27,8 @@ public class RetrieveSupportedPhasesResponse {
     /**
      * The returned MigrationPhaseCollection instance.
      */
-    private MigrationPhaseCollection migrationPhaseCollection;
+    private com.oracle.bmc.databasemigration.model.MigrationPhaseCollection
+            migrationPhaseCollection;
 
     public static class Builder {
         /**

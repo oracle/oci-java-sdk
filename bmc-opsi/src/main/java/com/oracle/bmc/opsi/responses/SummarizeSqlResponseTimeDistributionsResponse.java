@@ -35,7 +35,7 @@ public class SummarizeSqlResponseTimeDistributionsResponse {
     /**
      * The returned SqlResponseTimeDistributionAggregationCollection instance.
      */
-    private SqlResponseTimeDistributionAggregationCollection
+    private com.oracle.bmc.opsi.model.SqlResponseTimeDistributionAggregationCollection
             sqlResponseTimeDistributionAggregationCollection;
 
     public static class Builder {

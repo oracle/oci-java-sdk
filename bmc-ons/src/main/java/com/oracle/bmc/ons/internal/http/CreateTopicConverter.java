@@ -67,12 +67,14 @@ public class CreateTopicConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        NotificationTopic>>
+                                                        com.oracle.bmc.ons.model.NotificationTopic>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        NotificationTopic.class);
+                                                        com.oracle.bmc.ons.model.NotificationTopic
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<NotificationTopic>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.ons.model.NotificationTopic>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

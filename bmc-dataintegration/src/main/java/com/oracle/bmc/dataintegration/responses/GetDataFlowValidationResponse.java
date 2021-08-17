@@ -33,7 +33,7 @@ public class GetDataFlowValidationResponse {
     /**
      * The returned DataFlowValidation instance.
      */
-    private DataFlowValidation dataFlowValidation;
+    private com.oracle.bmc.dataintegration.model.DataFlowValidation dataFlowValidation;
 
     public static class Builder {
         /**

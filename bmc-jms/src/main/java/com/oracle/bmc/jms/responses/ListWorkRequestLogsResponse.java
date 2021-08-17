@@ -35,7 +35,7 @@ public class ListWorkRequestLogsResponse {
     /**
      * The returned WorkRequestLogEntryCollection instance.
      */
-    private WorkRequestLogEntryCollection workRequestLogEntryCollection;
+    private com.oracle.bmc.jms.model.WorkRequestLogEntryCollection workRequestLogEntryCollection;
 
     public static class Builder {
         /**

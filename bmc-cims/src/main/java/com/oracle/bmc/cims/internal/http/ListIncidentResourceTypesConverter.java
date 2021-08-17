@@ -132,15 +132,20 @@ public class ListIncidentResourceTypesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<IncidentResourceType>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.cims.model
+                                                                        .IncidentResourceType>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        IncidentResourceType>>() {});
+                                                                        com.oracle.bmc.cims.model
+                                                                                .IncidentResourceType>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<IncidentResourceType>>
+                                                java.util.List<
+                                                        com.oracle.bmc.cims.model
+                                                                .IncidentResourceType>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

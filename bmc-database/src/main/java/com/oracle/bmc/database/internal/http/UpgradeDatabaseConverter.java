@@ -76,12 +76,16 @@ public class UpgradeDatabaseConverter {
                                         "Transform function invoked for com.oracle.bmc.database.responses.UpgradeDatabaseResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Database>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.database.model.Database>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Database.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.database.model.Database
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Database> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.database.model.Database>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -33,7 +33,7 @@ public class UpdateTunnelCpeDeviceConfigResponse {
     /**
      * The returned TunnelCpeDeviceConfig instance.
      */
-    private TunnelCpeDeviceConfig tunnelCpeDeviceConfig;
+    private com.oracle.bmc.core.model.TunnelCpeDeviceConfig tunnelCpeDeviceConfig;
 
     public static class Builder {
         /**

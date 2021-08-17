@@ -115,15 +115,20 @@ public class ListInstancePoolsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<InstancePoolSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.core.model
+                                                                        .InstancePoolSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        InstancePoolSummary>>() {});
+                                                                        com.oracle.bmc.core.model
+                                                                                .InstancePoolSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<InstancePoolSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model
+                                                                .InstancePoolSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

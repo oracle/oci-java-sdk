@@ -32,7 +32,7 @@ public class UpdateOdaInstanceResponse {
     /**
      * The returned OdaInstance instance.
      */
-    private OdaInstance odaInstance;
+    private com.oracle.bmc.oda.model.OdaInstance odaInstance;
 
     public static class Builder {
         /**

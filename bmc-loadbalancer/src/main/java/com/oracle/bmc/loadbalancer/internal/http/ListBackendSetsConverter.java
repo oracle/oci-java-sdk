@@ -71,13 +71,21 @@ public class ListBackendSetsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<BackendSet>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.loadbalancer.model
+                                                                        .BackendSet>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<BackendSet>>() {});
+                                                                java.util.List<
+                                                                        com.oracle.bmc.loadbalancer
+                                                                                .model
+                                                                                .BackendSet>>() {});
 
-                                com.oracle.bmc.http.internal.WithHeaders<java.util.List<BackendSet>>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                java.util.List<
+                                                        com.oracle.bmc.loadbalancer.model
+                                                                .BackendSet>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

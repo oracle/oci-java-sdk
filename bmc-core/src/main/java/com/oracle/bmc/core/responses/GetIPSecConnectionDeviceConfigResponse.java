@@ -33,7 +33,7 @@ public class GetIPSecConnectionDeviceConfigResponse {
     /**
      * The returned IPSecConnectionDeviceConfig instance.
      */
-    private IPSecConnectionDeviceConfig iPSecConnectionDeviceConfig;
+    private com.oracle.bmc.core.model.IPSecConnectionDeviceConfig iPSecConnectionDeviceConfig;
 
     public static class Builder {
         /**

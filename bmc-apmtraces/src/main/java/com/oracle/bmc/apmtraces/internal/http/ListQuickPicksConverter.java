@@ -87,15 +87,21 @@ public class ListQuickPicksConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<QuickPickSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.apmtraces.model
+                                                                        .QuickPickSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        QuickPickSummary>>() {});
+                                                                        com.oracle.bmc.apmtraces
+                                                                                .model
+                                                                                .QuickPickSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<QuickPickSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.apmtraces.model
+                                                                .QuickPickSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

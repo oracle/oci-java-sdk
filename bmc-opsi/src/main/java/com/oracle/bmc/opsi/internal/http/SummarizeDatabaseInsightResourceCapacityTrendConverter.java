@@ -233,14 +233,17 @@ public class SummarizeDatabaseInsightResourceCapacityTrendConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection
+                                                        com.oracle.bmc.opsi.model
+                                                                        .SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection>
+                                                com.oracle.bmc.opsi.model
+                                                        .SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

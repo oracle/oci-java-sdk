@@ -27,7 +27,8 @@ public class PostMetricDataResponse {
     /**
      * The returned PostMetricDataResponseDetails instance.
      */
-    private PostMetricDataResponseDetails postMetricDataResponseDetails;
+    private com.oracle.bmc.monitoring.model.PostMetricDataResponseDetails
+            postMetricDataResponseDetails;
 
     public static class Builder {
         /**

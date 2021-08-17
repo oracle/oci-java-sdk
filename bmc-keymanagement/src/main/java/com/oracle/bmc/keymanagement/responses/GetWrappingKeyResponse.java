@@ -32,7 +32,7 @@ public class GetWrappingKeyResponse {
     /**
      * The returned WrappingKey instance.
      */
-    private WrappingKey wrappingKey;
+    private com.oracle.bmc.keymanagement.model.WrappingKey wrappingKey;
 
     public static class Builder {
         /**

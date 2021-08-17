@@ -25,7 +25,8 @@ public class GetAnnouncementsPreferenceResponse {
     /**
      * The returned AnnouncementsPreferences instance.
      */
-    private AnnouncementsPreferences announcementsPreferences;
+    private com.oracle.bmc.announcementsservice.model.AnnouncementsPreferences
+            announcementsPreferences;
 
     public static class Builder {
         /**

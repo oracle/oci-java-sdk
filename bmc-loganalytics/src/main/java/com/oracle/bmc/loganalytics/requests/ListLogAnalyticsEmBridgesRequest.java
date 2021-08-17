@@ -167,6 +167,57 @@ public class ListLogAnalyticsEmBridgesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<com.oracle.bmc.loganalytics.model.EmBridgeLifecycleStates>
+                lifecycleState = null;
+
+        /**
+         * A filter to return only log analytics enterprise manager bridges matching all the lifecycle states specified for this parameter.
+         *
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                java.util.List<com.oracle.bmc.loganalytics.model.EmBridgeLifecycleStates>
+                        lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return only log analytics enterprise manager bridges matching all the lifecycle states specified for this parameter.
+         *
+         * @return this builder instance
+         */
+        public Builder lifecycleState(EmBridgeLifecycleStates singularValue) {
+            return this.lifecycleState(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<
+                        com.oracle.bmc.loganalytics.model.EmBridgeLatestImportProcessingStatus>
+                importStatus = null;
+
+        /**
+         * Filter by the processing status of the latest upload from enterprise manager.
+         *
+         * @return this builder instance
+         */
+        public Builder importStatus(
+                java.util.List<
+                                com.oracle.bmc.loganalytics.model
+                                        .EmBridgeLatestImportProcessingStatus>
+                        importStatus) {
+            this.importStatus = importStatus;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter by the processing status of the latest upload from enterprise manager.
+         *
+         * @return this builder instance
+         */
+        public Builder importStatus(EmBridgeLatestImportProcessingStatus singularValue) {
+            return this.importStatus(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

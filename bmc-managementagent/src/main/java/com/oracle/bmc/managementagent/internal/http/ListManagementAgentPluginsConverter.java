@@ -88,6 +88,15 @@ public class ListManagementAgentPluginsConverter {
                                     request.getLifecycleState().getValue()));
         }
 
+        if (request.getPlatformType() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "platformType",
+                            request.getPlatformType(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
@@ -124,15 +133,21 @@ public class ListManagementAgentPluginsConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                ManagementAgentPluginSummary>>>
+                                                                com.oracle.bmc.managementagent.model
+                                                                        .ManagementAgentPluginSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        ManagementAgentPluginSummary>>() {});
+                                                                        com.oracle.bmc
+                                                                                .managementagent
+                                                                                .model
+                                                                                .ManagementAgentPluginSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<ManagementAgentPluginSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.managementagent.model
+                                                                .ManagementAgentPluginSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

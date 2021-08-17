@@ -27,7 +27,7 @@ public class GetWindowsInstanceInitialCredentialsResponse {
     /**
      * The returned InstanceCredentials instance.
      */
-    private InstanceCredentials instanceCredentials;
+    private com.oracle.bmc.core.model.InstanceCredentials instanceCredentials;
 
     public static class Builder {
         /**

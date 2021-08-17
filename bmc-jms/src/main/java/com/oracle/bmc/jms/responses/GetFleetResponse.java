@@ -33,7 +33,7 @@ public class GetFleetResponse {
     /**
      * The returned Fleet instance.
      */
-    private Fleet fleet;
+    private com.oracle.bmc.jms.model.Fleet fleet;
 
     public static class Builder {
         /**

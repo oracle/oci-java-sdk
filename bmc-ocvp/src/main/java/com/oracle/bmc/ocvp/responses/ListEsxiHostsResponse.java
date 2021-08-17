@@ -35,7 +35,7 @@ public class ListEsxiHostsResponse {
     /**
      * The returned EsxiHostCollection instance.
      */
-    private EsxiHostCollection esxiHostCollection;
+    private com.oracle.bmc.ocvp.model.EsxiHostCollection esxiHostCollection;
 
     public static class Builder {
         /**

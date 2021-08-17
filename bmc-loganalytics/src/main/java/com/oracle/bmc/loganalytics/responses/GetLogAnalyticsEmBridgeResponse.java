@@ -32,7 +32,7 @@ public class GetLogAnalyticsEmBridgeResponse {
     /**
      * The returned LogAnalyticsEmBridge instance.
      */
-    private LogAnalyticsEmBridge logAnalyticsEmBridge;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsEmBridge logAnalyticsEmBridge;
 
     public static class Builder {
         /**

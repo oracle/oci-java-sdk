@@ -61,13 +61,17 @@ public class ExportKeyConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ExportedKeyData>>
+                                                        com.oracle.bmc.keymanagement.model
+                                                                .ExportedKeyData>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ExportedKeyData.class);
+                                                        com.oracle.bmc.keymanagement.model
+                                                                        .ExportedKeyData
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ExportedKeyData> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.keymanagement.model.ExportedKeyData>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

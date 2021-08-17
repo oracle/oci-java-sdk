@@ -73,13 +73,17 @@ public class CreateModelDeploymentConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ModelDeployment>>
+                                                        com.oracle.bmc.datascience.model
+                                                                .ModelDeployment>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ModelDeployment.class);
+                                                        com.oracle.bmc.datascience.model
+                                                                        .ModelDeployment
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ModelDeployment> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datascience.model.ModelDeployment>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -74,12 +74,14 @@ public class CreateTransferDeviceConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        NewTransferDevice>>
+                                                        com.oracle.bmc.dts.model.NewTransferDevice>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        NewTransferDevice.class);
+                                                        com.oracle.bmc.dts.model.NewTransferDevice
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<NewTransferDevice>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dts.model.NewTransferDevice>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -150,6 +150,25 @@ public class ListDataFlowValidationsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<String> fields = null;
+
+        /**
+         * Specifies the fields to get for an object.
+         * @return this builder instance
+         */
+        public Builder fields(java.util.List<String> fields) {
+            this.fields = fields;
+            return this;
+        }
+
+        /**
+         * Singular setter. Specifies the fields to get for an object.
+         * @return this builder instance
+         */
+        public Builder fields(String singularValue) {
+            return this.fields(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

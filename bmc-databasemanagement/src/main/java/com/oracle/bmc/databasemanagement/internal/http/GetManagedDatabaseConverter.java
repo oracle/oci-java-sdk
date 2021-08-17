@@ -73,13 +73,18 @@ public class GetManagedDatabaseConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ManagedDatabase>>
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                .ManagedDatabase>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ManagedDatabase.class);
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                        .ManagedDatabase
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ManagedDatabase> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.databasemanagement.model
+                                                        .ManagedDatabase>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -34,9 +34,9 @@ public class ListAutonomousDbPreviewVersionsResponse {
     private String opcNextPage;
 
     /**
-     * A list of AutonomousDbPreviewVersionSummary instances.
+     * A list of com.oracle.bmc.database.model.AutonomousDbPreviewVersionSummary instances.
      */
-    private java.util.List<AutonomousDbPreviewVersionSummary> items;
+    private java.util.List<com.oracle.bmc.database.model.AutonomousDbPreviewVersionSummary> items;
 
     public static class Builder {
         /**

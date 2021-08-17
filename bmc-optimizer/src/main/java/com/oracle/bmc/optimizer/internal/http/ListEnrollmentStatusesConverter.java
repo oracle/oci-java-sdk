@@ -120,12 +120,17 @@ public class ListEnrollmentStatusesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        EnrollmentStatusCollection>>
+                                                        com.oracle.bmc.optimizer.model
+                                                                .EnrollmentStatusCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        EnrollmentStatusCollection.class);
+                                                        com.oracle.bmc.optimizer.model
+                                                                        .EnrollmentStatusCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<EnrollmentStatusCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.optimizer.model
+                                                        .EnrollmentStatusCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

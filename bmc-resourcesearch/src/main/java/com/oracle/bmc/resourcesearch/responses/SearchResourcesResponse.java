@@ -32,7 +32,7 @@ public class SearchResourcesResponse {
     /**
      * The returned ResourceSummaryCollection instance.
      */
-    private ResourceSummaryCollection resourceSummaryCollection;
+    private com.oracle.bmc.resourcesearch.model.ResourceSummaryCollection resourceSummaryCollection;
 
     public static class Builder {
         /**

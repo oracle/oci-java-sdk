@@ -32,7 +32,8 @@ public class GetLogAnalyticsObjectCollectionRuleResponse {
     /**
      * The returned LogAnalyticsObjectCollectionRule instance.
      */
-    private LogAnalyticsObjectCollectionRule logAnalyticsObjectCollectionRule;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsObjectCollectionRule
+            logAnalyticsObjectCollectionRule;
 
     public static class Builder {
         /**

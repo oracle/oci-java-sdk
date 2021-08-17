@@ -33,9 +33,9 @@ public class ListLimitDefinitionsResponse {
     private String opcRequestId;
 
     /**
-     * A list of LimitDefinitionSummary instances.
+     * A list of com.oracle.bmc.limits.model.LimitDefinitionSummary instances.
      */
-    private java.util.List<LimitDefinitionSummary> items;
+    private java.util.List<com.oracle.bmc.limits.model.LimitDefinitionSummary> items;
 
     public static class Builder {
         /**

@@ -190,13 +190,17 @@ public class ListWarningsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogAnalyticsWarningCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogAnalyticsWarningCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogAnalyticsWarningCollection.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogAnalyticsWarningCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                LogAnalyticsWarningCollection>
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LogAnalyticsWarningCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

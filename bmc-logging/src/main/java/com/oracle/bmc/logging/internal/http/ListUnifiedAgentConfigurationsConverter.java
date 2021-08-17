@@ -146,13 +146,17 @@ public class ListUnifiedAgentConfigurationsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        UnifiedAgentConfigurationCollection>>
+                                                        com.oracle.bmc.logging.model
+                                                                .UnifiedAgentConfigurationCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        UnifiedAgentConfigurationCollection.class);
+                                                        com.oracle.bmc.logging.model
+                                                                        .UnifiedAgentConfigurationCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                UnifiedAgentConfigurationCollection>
+                                                com.oracle.bmc.logging.model
+                                                        .UnifiedAgentConfigurationCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

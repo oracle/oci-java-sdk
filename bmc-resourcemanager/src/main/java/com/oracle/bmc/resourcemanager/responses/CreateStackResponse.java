@@ -35,7 +35,7 @@ public class CreateStackResponse {
     /**
      * The returned Stack instance.
      */
-    private Stack stack;
+    private com.oracle.bmc.resourcemanager.model.Stack stack;
 
     public static class Builder {
         /**

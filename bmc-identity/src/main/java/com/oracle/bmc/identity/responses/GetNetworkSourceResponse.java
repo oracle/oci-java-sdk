@@ -32,7 +32,7 @@ public class GetNetworkSourceResponse {
     /**
      * The returned NetworkSources instance.
      */
-    private NetworkSources networkSources;
+    private com.oracle.bmc.identity.model.NetworkSources networkSources;
 
     public static class Builder {
         /**

@@ -42,7 +42,7 @@ public class ListCategoriesResponse {
     /**
      * The returned CategoryCollection instance.
      */
-    private CategoryCollection categoryCollection;
+    private com.oracle.bmc.optimizer.model.CategoryCollection categoryCollection;
 
     public static class Builder {
         /**

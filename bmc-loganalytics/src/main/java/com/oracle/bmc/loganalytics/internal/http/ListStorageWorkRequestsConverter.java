@@ -161,13 +161,17 @@ public class ListStorageWorkRequestsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        StorageWorkRequestCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .StorageWorkRequestCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        StorageWorkRequestCollection.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .StorageWorkRequestCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                StorageWorkRequestCollection>
+                                                com.oracle.bmc.loganalytics.model
+                                                        .StorageWorkRequestCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

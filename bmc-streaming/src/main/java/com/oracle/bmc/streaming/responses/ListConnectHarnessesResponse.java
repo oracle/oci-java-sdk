@@ -35,9 +35,9 @@ public class ListConnectHarnessesResponse {
     private String opcRequestId;
 
     /**
-     * A list of ConnectHarnessSummary instances.
+     * A list of com.oracle.bmc.streaming.model.ConnectHarnessSummary instances.
      */
-    private java.util.List<ConnectHarnessSummary> items;
+    private java.util.List<com.oracle.bmc.streaming.model.ConnectHarnessSummary> items;
 
     public static class Builder {
         /**

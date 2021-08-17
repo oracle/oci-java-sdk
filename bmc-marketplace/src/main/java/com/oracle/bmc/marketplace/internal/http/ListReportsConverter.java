@@ -93,12 +93,16 @@ public class ListReportsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ReportCollection>>
+                                                        com.oracle.bmc.marketplace.model
+                                                                .ReportCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ReportCollection.class);
+                                                        com.oracle.bmc.marketplace.model
+                                                                        .ReportCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ReportCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.marketplace.model.ReportCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

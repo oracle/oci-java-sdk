@@ -80,13 +80,17 @@ public class GetClusterOptionsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ClusterOptions>>
+                                                        com.oracle.bmc.containerengine.model
+                                                                .ClusterOptions>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ClusterOptions.class);
+                                                        com.oracle.bmc.containerengine.model
+                                                                        .ClusterOptions
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ClusterOptions> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.containerengine.model.ClusterOptions>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -33,7 +33,7 @@ public class CreateModelResponse {
     /**
      * The returned Model instance.
      */
-    private Model model;
+    private com.oracle.bmc.datascience.model.Model model;
 
     public static class Builder {
         /**

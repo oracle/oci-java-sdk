@@ -34,9 +34,9 @@ public class ListAutonomousDatabaseClonesResponse {
     private String opcNextPage;
 
     /**
-     * A list of AutonomousDatabaseSummary instances.
+     * A list of com.oracle.bmc.database.model.AutonomousDatabaseSummary instances.
      */
-    private java.util.List<AutonomousDatabaseSummary> items;
+    private java.util.List<com.oracle.bmc.database.model.AutonomousDatabaseSummary> items;
 
     public static class Builder {
         /**

@@ -35,7 +35,7 @@ public class GetSteeringPolicyResponse {
     /**
      * The returned SteeringPolicy instance, or null if {@link #isNotModified()} is true.
      */
-    private SteeringPolicy steeringPolicy;
+    private com.oracle.bmc.dns.model.SteeringPolicy steeringPolicy;
 
     /**
      * Flag to indicate whether or not the object was modified.  If this is true,

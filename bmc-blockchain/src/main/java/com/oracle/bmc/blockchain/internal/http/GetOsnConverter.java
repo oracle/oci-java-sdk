@@ -74,11 +74,15 @@ public class GetOsnConverter {
                                         "Transform function invoked for com.oracle.bmc.blockchain.responses.GetOsnResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Osn>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create(Osn.class);
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.blockchain.model.Osn>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.blockchain.model.Osn.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Osn> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.blockchain.model.Osn>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

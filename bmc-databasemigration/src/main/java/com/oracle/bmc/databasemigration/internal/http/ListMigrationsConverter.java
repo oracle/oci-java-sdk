@@ -128,12 +128,17 @@ public class ListMigrationsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        MigrationCollection>>
+                                                        com.oracle.bmc.databasemigration.model
+                                                                .MigrationCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        MigrationCollection.class);
+                                                        com.oracle.bmc.databasemigration.model
+                                                                        .MigrationCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<MigrationCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.databasemigration.model
+                                                        .MigrationCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

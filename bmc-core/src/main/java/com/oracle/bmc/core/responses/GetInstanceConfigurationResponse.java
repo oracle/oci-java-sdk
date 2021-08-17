@@ -33,7 +33,7 @@ public class GetInstanceConfigurationResponse {
     /**
      * The returned InstanceConfiguration instance.
      */
-    private InstanceConfiguration instanceConfiguration;
+    private com.oracle.bmc.core.model.InstanceConfiguration instanceConfiguration;
 
     public static class Builder {
         /**

@@ -33,9 +33,9 @@ public class ListAvailabilityDomainsResponse {
     private String opcNextPage;
 
     /**
-     * A list of AvailabilityDomain instances.
+     * A list of com.oracle.bmc.identity.model.AvailabilityDomain instances.
      */
-    private java.util.List<AvailabilityDomain> items;
+    private java.util.List<com.oracle.bmc.identity.model.AvailabilityDomain> items;
 
     public static class Builder {
         /**

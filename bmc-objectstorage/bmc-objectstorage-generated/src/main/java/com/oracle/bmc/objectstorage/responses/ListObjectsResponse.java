@@ -32,7 +32,7 @@ public class ListObjectsResponse {
     /**
      * The returned ListObjects instance.
      */
-    private ListObjects listObjects;
+    private com.oracle.bmc.objectstorage.model.ListObjects listObjects;
 
     public static class Builder {
         /**

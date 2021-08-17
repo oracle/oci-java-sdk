@@ -124,13 +124,17 @@ public class ListNetworkLoadBalancersConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        NetworkLoadBalancerCollection>>
+                                                        com.oracle.bmc.networkloadbalancer.model
+                                                                .NetworkLoadBalancerCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        NetworkLoadBalancerCollection.class);
+                                                        com.oracle.bmc.networkloadbalancer.model
+                                                                        .NetworkLoadBalancerCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                NetworkLoadBalancerCollection>
+                                                com.oracle.bmc.networkloadbalancer.model
+                                                        .NetworkLoadBalancerCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

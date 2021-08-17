@@ -33,7 +33,7 @@ public class GetImageResponse {
     /**
      * The returned Image instance.
      */
-    private Image image;
+    private com.oracle.bmc.core.model.Image image;
 
     public static class Builder {
         /**

@@ -89,13 +89,17 @@ public class ListBulkActionResourceTypesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        BulkActionResourceTypeCollection>>
+                                                        com.oracle.bmc.identity.model
+                                                                .BulkActionResourceTypeCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        BulkActionResourceTypeCollection.class);
+                                                        com.oracle.bmc.identity.model
+                                                                        .BulkActionResourceTypeCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                BulkActionResourceTypeCollection>
+                                                com.oracle.bmc.identity.model
+                                                        .BulkActionResourceTypeCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

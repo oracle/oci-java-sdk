@@ -81,12 +81,17 @@ public class GetBackendSetHealthConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        BackendSetHealth>>
+                                                        com.oracle.bmc.networkloadbalancer.model
+                                                                .BackendSetHealth>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        BackendSetHealth.class);
+                                                        com.oracle.bmc.networkloadbalancer.model
+                                                                        .BackendSetHealth
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<BackendSetHealth>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.networkloadbalancer.model
+                                                        .BackendSetHealth>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -33,7 +33,7 @@ public class ListRulesResponse {
     /**
      * The returned RuleCollection instance.
      */
-    private RuleCollection ruleCollection;
+    private com.oracle.bmc.datacatalog.model.RuleCollection ruleCollection;
 
     public static class Builder {
         /**

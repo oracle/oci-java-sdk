@@ -33,9 +33,9 @@ public class ListMigrationsResponse {
     private String opcNextPage;
 
     /**
-     * A list of MigrationSummary instances.
+     * A list of com.oracle.bmc.applicationmigration.model.MigrationSummary instances.
      */
-    private java.util.List<MigrationSummary> items;
+    private java.util.List<com.oracle.bmc.applicationmigration.model.MigrationSummary> items;
 
     public static class Builder {
         /**

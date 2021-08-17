@@ -26,7 +26,7 @@ public class GetSourceSummaryResponse {
     /**
      * The returned SourceSummaryReport instance.
      */
-    private SourceSummaryReport sourceSummaryReport;
+    private com.oracle.bmc.loganalytics.model.SourceSummaryReport sourceSummaryReport;
 
     public static class Builder {
         /**

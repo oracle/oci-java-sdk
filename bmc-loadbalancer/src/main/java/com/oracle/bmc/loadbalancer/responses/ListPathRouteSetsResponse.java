@@ -25,9 +25,9 @@ public class ListPathRouteSetsResponse {
     private String opcRequestId;
 
     /**
-     * A list of PathRouteSet instances.
+     * A list of com.oracle.bmc.loadbalancer.model.PathRouteSet instances.
      */
-    private java.util.List<PathRouteSet> items;
+    private java.util.List<com.oracle.bmc.loadbalancer.model.PathRouteSet> items;
 
     public static class Builder {
         /**

@@ -96,13 +96,19 @@ public class ListEdgeSubnetsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<EdgeSubnet>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.waas.model
+                                                                        .EdgeSubnet>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<EdgeSubnet>>() {});
+                                                                java.util.List<
+                                                                        com.oracle.bmc.waas.model
+                                                                                .EdgeSubnet>>() {});
 
-                                com.oracle.bmc.http.internal.WithHeaders<java.util.List<EdgeSubnet>>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                java.util.List<
+                                                        com.oracle.bmc.waas.model.EdgeSubnet>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -142,12 +142,17 @@ public class ListScheduledTasksConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ScheduledTaskCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .ScheduledTaskCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ScheduledTaskCollection.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .ScheduledTaskCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ScheduledTaskCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model
+                                                        .ScheduledTaskCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

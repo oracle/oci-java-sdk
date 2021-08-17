@@ -87,15 +87,21 @@ public class ListProtocolsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<LoadBalancerProtocol>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.loadbalancer.model
+                                                                        .LoadBalancerProtocol>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        LoadBalancerProtocol>>() {});
+                                                                        com.oracle.bmc.loadbalancer
+                                                                                .model
+                                                                                .LoadBalancerProtocol>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<LoadBalancerProtocol>>
+                                                java.util.List<
+                                                        com.oracle.bmc.loadbalancer.model
+                                                                .LoadBalancerProtocol>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

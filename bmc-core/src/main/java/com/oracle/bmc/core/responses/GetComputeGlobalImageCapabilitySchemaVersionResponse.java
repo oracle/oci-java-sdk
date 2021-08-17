@@ -33,7 +33,8 @@ public class GetComputeGlobalImageCapabilitySchemaVersionResponse {
     /**
      * The returned ComputeGlobalImageCapabilitySchemaVersion instance.
      */
-    private ComputeGlobalImageCapabilitySchemaVersion computeGlobalImageCapabilitySchemaVersion;
+    private com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersion
+            computeGlobalImageCapabilitySchemaVersion;
 
     public static class Builder {
         /**

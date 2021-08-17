@@ -33,7 +33,7 @@ public class GetBootVolumeResponse {
     /**
      * The returned BootVolume instance.
      */
-    private BootVolume bootVolume;
+    private com.oracle.bmc.core.model.BootVolume bootVolume;
 
     public static class Builder {
         /**

@@ -63,12 +63,15 @@ public class CreateVolumeConverter {
                                         "Transform function invoked for com.oracle.bmc.core.responses.CreateVolumeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Volume>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.core.model.Volume>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Volume.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.core.model.Volume.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Volume> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.Volume>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -34,7 +34,7 @@ public class GetGatewayResponse {
     /**
      * The returned Gateway instance.
      */
-    private Gateway gateway;
+    private com.oracle.bmc.apigateway.model.Gateway gateway;
 
     public static class Builder {
         /**

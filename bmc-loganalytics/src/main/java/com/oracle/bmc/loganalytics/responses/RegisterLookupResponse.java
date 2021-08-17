@@ -32,7 +32,7 @@ public class RegisterLookupResponse {
     /**
      * The returned LogAnalyticsLookup instance.
      */
-    private LogAnalyticsLookup logAnalyticsLookup;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsLookup logAnalyticsLookup;
 
     public static class Builder {
         /**

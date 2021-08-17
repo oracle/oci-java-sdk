@@ -39,7 +39,7 @@ public class ListSupportedTimezonesResponse {
     /**
      * The returned TimezoneCollection instance.
      */
-    private TimezoneCollection timezoneCollection;
+    private com.oracle.bmc.loganalytics.model.TimezoneCollection timezoneCollection;
 
     public static class Builder {
         /**

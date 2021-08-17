@@ -149,13 +149,17 @@ public class ListHostInsightsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        HostInsightSummaryCollection>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .HostInsightSummaryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        HostInsightSummaryCollection.class);
+                                                        com.oracle.bmc.opsi.model
+                                                                        .HostInsightSummaryCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                HostInsightSummaryCollection>
+                                                com.oracle.bmc.opsi.model
+                                                        .HostInsightSummaryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

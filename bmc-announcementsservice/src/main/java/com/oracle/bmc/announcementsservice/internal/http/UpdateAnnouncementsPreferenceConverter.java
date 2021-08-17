@@ -85,13 +85,17 @@ public class UpdateAnnouncementsPreferenceConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AnnouncementsPreferencesSummary>>
+                                                        com.oracle.bmc.announcementsservice.model
+                                                                .AnnouncementsPreferencesSummary>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AnnouncementsPreferencesSummary.class);
+                                                        com.oracle.bmc.announcementsservice.model
+                                                                        .AnnouncementsPreferencesSummary
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                AnnouncementsPreferencesSummary>
+                                                com.oracle.bmc.announcementsservice.model
+                                                        .AnnouncementsPreferencesSummary>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

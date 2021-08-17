@@ -42,7 +42,7 @@ public class ListQueryWorkRequestsResponse {
     /**
      * The returned QueryWorkRequestCollection instance.
      */
-    private QueryWorkRequestCollection queryWorkRequestCollection;
+    private com.oracle.bmc.loganalytics.model.QueryWorkRequestCollection queryWorkRequestCollection;
 
     public static class Builder {
         /**

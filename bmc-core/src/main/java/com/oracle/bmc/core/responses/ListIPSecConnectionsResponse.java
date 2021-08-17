@@ -33,9 +33,9 @@ public class ListIPSecConnectionsResponse {
     private String opcRequestId;
 
     /**
-     * A list of IPSecConnection instances.
+     * A list of com.oracle.bmc.core.model.IPSecConnection instances.
      */
-    private java.util.List<IPSecConnection> items;
+    private java.util.List<com.oracle.bmc.core.model.IPSecConnection> items;
 
     public static class Builder {
         /**

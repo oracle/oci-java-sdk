@@ -66,13 +66,15 @@ public class GetClusterNetworkConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ClusterNetwork>>
+                                                        com.oracle.bmc.core.model.ClusterNetwork>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ClusterNetwork.class);
+                                                        com.oracle.bmc.core.model.ClusterNetwork
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ClusterNetwork> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.ClusterNetwork>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

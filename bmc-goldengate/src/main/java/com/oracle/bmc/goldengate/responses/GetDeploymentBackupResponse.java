@@ -32,7 +32,7 @@ public class GetDeploymentBackupResponse {
     /**
      * The returned DeploymentBackup instance.
      */
-    private DeploymentBackup deploymentBackup;
+    private com.oracle.bmc.goldengate.model.DeploymentBackup deploymentBackup;
 
     public static class Builder {
         /**

@@ -33,7 +33,7 @@ public class GetProfileResponse {
     /**
      * The returned Profile instance.
      */
-    private Profile profile;
+    private com.oracle.bmc.optimizer.model.Profile profile;
 
     public static class Builder {
         /**

@@ -70,12 +70,16 @@ public class GetInstanceConsoleConnectionConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        InstanceConsoleConnection>>
+                                                        com.oracle.bmc.core.model
+                                                                .InstanceConsoleConnection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        InstanceConsoleConnection.class);
+                                                        com.oracle.bmc.core.model
+                                                                        .InstanceConsoleConnection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<InstanceConsoleConnection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.InstanceConsoleConnection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

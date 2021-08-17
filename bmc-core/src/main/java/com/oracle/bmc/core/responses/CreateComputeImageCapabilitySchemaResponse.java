@@ -33,7 +33,7 @@ public class CreateComputeImageCapabilitySchemaResponse {
     /**
      * The returned ComputeImageCapabilitySchema instance.
      */
-    private ComputeImageCapabilitySchema computeImageCapabilitySchema;
+    private com.oracle.bmc.core.model.ComputeImageCapabilitySchema computeImageCapabilitySchema;
 
     public static class Builder {
         /**

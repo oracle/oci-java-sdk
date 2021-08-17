@@ -33,9 +33,9 @@ public class ListRulesResponse {
     private String opcRequestId;
 
     /**
-     * A list of RuleSummary instances.
+     * A list of com.oracle.bmc.events.model.RuleSummary instances.
      */
-    private java.util.List<RuleSummary> items;
+    private java.util.List<com.oracle.bmc.events.model.RuleSummary> items;
 
     public static class Builder {
         /**

@@ -35,7 +35,7 @@ public class ListTablespacesResponse {
     /**
      * The returned TablespaceCollection instance.
      */
-    private TablespaceCollection tablespaceCollection;
+    private com.oracle.bmc.databasemanagement.model.TablespaceCollection tablespaceCollection;
 
     public static class Builder {
         /**

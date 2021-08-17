@@ -115,13 +115,17 @@ public class ListDatabaseParametersConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DatabaseParametersCollection>>
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                .DatabaseParametersCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DatabaseParametersCollection.class);
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                        .DatabaseParametersCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                DatabaseParametersCollection>
+                                                com.oracle.bmc.databasemanagement.model
+                                                        .DatabaseParametersCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -33,7 +33,7 @@ public class UpdateGlossaryResponse {
     /**
      * The returned Glossary instance.
      */
-    private Glossary glossary;
+    private com.oracle.bmc.datacatalog.model.Glossary glossary;
 
     public static class Builder {
         /**

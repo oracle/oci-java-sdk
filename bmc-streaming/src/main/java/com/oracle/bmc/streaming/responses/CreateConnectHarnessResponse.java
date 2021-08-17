@@ -32,7 +32,7 @@ public class CreateConnectHarnessResponse {
     /**
      * The returned ConnectHarness instance.
      */
-    private ConnectHarness connectHarness;
+    private com.oracle.bmc.streaming.model.ConnectHarness connectHarness;
 
     public static class Builder {
         /**

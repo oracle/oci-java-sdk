@@ -33,7 +33,7 @@ public class GetReferenceResponse {
     /**
      * The returned Reference instance.
      */
-    private Reference reference;
+    private com.oracle.bmc.dataintegration.model.Reference reference;
 
     public static class Builder {
         /**

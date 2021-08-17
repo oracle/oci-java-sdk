@@ -30,9 +30,9 @@ public class ListDataSafePrivateEndpointsResponse {
     private String opcNextPage;
 
     /**
-     * A list of DataSafePrivateEndpointSummary instances.
+     * A list of com.oracle.bmc.datasafe.model.DataSafePrivateEndpointSummary instances.
      */
-    private java.util.List<DataSafePrivateEndpointSummary> items;
+    private java.util.List<com.oracle.bmc.datasafe.model.DataSafePrivateEndpointSummary> items;
 
     public static class Builder {
         /**

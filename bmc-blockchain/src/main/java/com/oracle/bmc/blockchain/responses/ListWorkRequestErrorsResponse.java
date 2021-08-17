@@ -35,7 +35,7 @@ public class ListWorkRequestErrorsResponse {
     /**
      * The returned WorkRequestErrorCollection instance.
      */
-    private WorkRequestErrorCollection workRequestErrorCollection;
+    private com.oracle.bmc.blockchain.model.WorkRequestErrorCollection workRequestErrorCollection;
 
     public static class Builder {
         /**

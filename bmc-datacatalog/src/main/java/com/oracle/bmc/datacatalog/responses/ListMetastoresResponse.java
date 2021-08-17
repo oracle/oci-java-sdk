@@ -31,9 +31,9 @@ public class ListMetastoresResponse {
     private String opcNextPage;
 
     /**
-     * A list of MetastoreSummary instances.
+     * A list of com.oracle.bmc.datacatalog.model.MetastoreSummary instances.
      */
-    private java.util.List<MetastoreSummary> items;
+    private java.util.List<com.oracle.bmc.datacatalog.model.MetastoreSummary> items;
 
     public static class Builder {
         /**

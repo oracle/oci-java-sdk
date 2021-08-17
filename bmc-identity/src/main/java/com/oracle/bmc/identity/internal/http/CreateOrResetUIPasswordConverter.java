@@ -72,13 +72,15 @@ public class CreateOrResetUIPasswordConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        UIPassword>>
+                                                        com.oracle.bmc.identity.model.UIPassword>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        UIPassword.class);
+                                                        com.oracle.bmc.identity.model.UIPassword
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<UIPassword> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.identity.model.UIPassword>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

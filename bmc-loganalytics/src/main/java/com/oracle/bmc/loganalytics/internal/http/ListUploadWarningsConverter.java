@@ -93,12 +93,17 @@ public class ListUploadWarningsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        UploadWarningCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .UploadWarningCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        UploadWarningCollection.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .UploadWarningCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<UploadWarningCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model
+                                                        .UploadWarningCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

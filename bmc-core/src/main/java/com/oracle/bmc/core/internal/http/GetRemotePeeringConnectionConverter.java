@@ -69,12 +69,16 @@ public class GetRemotePeeringConnectionConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        RemotePeeringConnection>>
+                                                        com.oracle.bmc.core.model
+                                                                .RemotePeeringConnection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        RemotePeeringConnection.class);
+                                                        com.oracle.bmc.core.model
+                                                                        .RemotePeeringConnection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<RemotePeeringConnection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.RemotePeeringConnection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

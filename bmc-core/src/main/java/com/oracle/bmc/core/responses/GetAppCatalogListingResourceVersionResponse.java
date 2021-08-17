@@ -33,7 +33,8 @@ public class GetAppCatalogListingResourceVersionResponse {
     /**
      * The returned AppCatalogListingResourceVersion instance.
      */
-    private AppCatalogListingResourceVersion appCatalogListingResourceVersion;
+    private com.oracle.bmc.core.model.AppCatalogListingResourceVersion
+            appCatalogListingResourceVersion;
 
     public static class Builder {
         /**

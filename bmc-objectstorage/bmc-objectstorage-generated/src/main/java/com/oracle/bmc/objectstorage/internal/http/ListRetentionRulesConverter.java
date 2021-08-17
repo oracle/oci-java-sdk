@@ -81,12 +81,17 @@ public class ListRetentionRulesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        RetentionRuleCollection>>
+                                                        com.oracle.bmc.objectstorage.model
+                                                                .RetentionRuleCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        RetentionRuleCollection.class);
+                                                        com.oracle.bmc.objectstorage.model
+                                                                        .RetentionRuleCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<RetentionRuleCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.objectstorage.model
+                                                        .RetentionRuleCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

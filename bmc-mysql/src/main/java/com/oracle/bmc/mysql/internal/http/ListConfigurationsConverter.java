@@ -144,15 +144,20 @@ public class ListConfigurationsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<ConfigurationSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.mysql.model
+                                                                        .ConfigurationSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        ConfigurationSummary>>() {});
+                                                                        com.oracle.bmc.mysql.model
+                                                                                .ConfigurationSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<ConfigurationSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.mysql.model
+                                                                .ConfigurationSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

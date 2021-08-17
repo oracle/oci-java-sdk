@@ -157,6 +157,25 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<String> status = null;
+
+        /**
+         * A work request status to filter on. Can have multiple parameters of this name.
+         * @return this builder instance
+         */
+        public Builder status(java.util.List<String> status) {
+            this.status = status;
+            return this;
+        }
+
+        /**
+         * Singular setter. A work request status to filter on. Can have multiple parameters of this name.
+         * @return this builder instance
+         */
+        public Builder status(String singularValue) {
+            return this.status(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

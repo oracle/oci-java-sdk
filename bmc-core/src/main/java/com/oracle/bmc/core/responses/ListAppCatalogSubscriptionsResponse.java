@@ -33,9 +33,9 @@ public class ListAppCatalogSubscriptionsResponse {
     private String opcRequestId;
 
     /**
-     * A list of AppCatalogSubscriptionSummary instances.
+     * A list of com.oracle.bmc.core.model.AppCatalogSubscriptionSummary instances.
      */
-    private java.util.List<AppCatalogSubscriptionSummary> items;
+    private java.util.List<com.oracle.bmc.core.model.AppCatalogSubscriptionSummary> items;
 
     public static class Builder {
         /**

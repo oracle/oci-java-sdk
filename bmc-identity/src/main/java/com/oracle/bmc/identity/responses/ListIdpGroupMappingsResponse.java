@@ -33,9 +33,9 @@ public class ListIdpGroupMappingsResponse {
     private String opcNextPage;
 
     /**
-     * A list of IdpGroupMapping instances.
+     * A list of com.oracle.bmc.identity.model.IdpGroupMapping instances.
      */
-    private java.util.List<IdpGroupMapping> items;
+    private java.util.List<com.oracle.bmc.identity.model.IdpGroupMapping> items;
 
     public static class Builder {
         /**

@@ -70,13 +70,17 @@ public class GetOnPremConnectorConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        OnPremConnector>>
+                                                        com.oracle.bmc.datasafe.model
+                                                                .OnPremConnector>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        OnPremConnector.class);
+                                                        com.oracle.bmc.datasafe.model
+                                                                        .OnPremConnector
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<OnPremConnector> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datasafe.model.OnPremConnector>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

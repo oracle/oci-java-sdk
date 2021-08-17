@@ -101,13 +101,15 @@ public class GetVcnTopologyConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        VcnTopology>>
+                                                        com.oracle.bmc.core.model.VcnTopology>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        VcnTopology.class);
+                                                        com.oracle.bmc.core.model.VcnTopology
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<VcnTopology> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.VcnTopology>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -35,7 +35,8 @@ public class ListOperatorControlAssignmentsResponse {
     /**
      * The returned OperatorControlAssignmentCollection instance.
      */
-    private OperatorControlAssignmentCollection operatorControlAssignmentCollection;
+    private com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignmentCollection
+            operatorControlAssignmentCollection;
 
     public static class Builder {
         /**

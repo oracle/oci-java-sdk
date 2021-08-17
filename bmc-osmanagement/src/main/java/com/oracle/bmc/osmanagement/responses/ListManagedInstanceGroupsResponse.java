@@ -34,9 +34,9 @@ public class ListManagedInstanceGroupsResponse {
     private String opcNextPage;
 
     /**
-     * A list of ManagedInstanceGroupSummary instances.
+     * A list of com.oracle.bmc.osmanagement.model.ManagedInstanceGroupSummary instances.
      */
-    private java.util.List<ManagedInstanceGroupSummary> items;
+    private java.util.List<com.oracle.bmc.osmanagement.model.ManagedInstanceGroupSummary> items;
 
     public static class Builder {
         /**

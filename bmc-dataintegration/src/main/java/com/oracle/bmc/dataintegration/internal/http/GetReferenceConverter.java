@@ -79,12 +79,18 @@ public class GetReferenceConverter {
                                         "Transform function invoked for com.oracle.bmc.dataintegration.responses.GetReferenceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Reference>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .Reference>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Reference.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .Reference
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Reference> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dataintegration.model.Reference>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -25,7 +25,7 @@ public class ListTransferDevicesResponse {
     /**
      * The returned MultipleTransferDevices instance.
      */
-    private MultipleTransferDevices multipleTransferDevices;
+    private com.oracle.bmc.dts.model.MultipleTransferDevices multipleTransferDevices;
 
     public static class Builder {
         /**

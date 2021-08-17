@@ -79,12 +79,17 @@ public class GetSchemaConverter {
                                         "Transform function invoked for com.oracle.bmc.dataintegration.responses.GetSchemaResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Schema>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .Schema>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Schema.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.dataintegration.model.Schema
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Schema> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dataintegration.model.Schema>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

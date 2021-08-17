@@ -73,12 +73,16 @@ public class GetVcnDnsResolverAssociationConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        VcnDnsResolverAssociation>>
+                                                        com.oracle.bmc.core.model
+                                                                .VcnDnsResolverAssociation>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        VcnDnsResolverAssociation.class);
+                                                        com.oracle.bmc.core.model
+                                                                        .VcnDnsResolverAssociation
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<VcnDnsResolverAssociation>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.VcnDnsResolverAssociation>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -169,12 +169,15 @@ public class SummarizeJreUsageConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        JreUsageCollection>>
+                                                        com.oracle.bmc.jms.model
+                                                                .JreUsageCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        JreUsageCollection.class);
+                                                        com.oracle.bmc.jms.model.JreUsageCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<JreUsageCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.jms.model.JreUsageCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

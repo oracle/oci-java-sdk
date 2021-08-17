@@ -30,7 +30,7 @@ public class CreateTransferDeviceResponse {
     /**
      * The returned NewTransferDevice instance.
      */
-    private NewTransferDevice newTransferDevice;
+    private com.oracle.bmc.dts.model.NewTransferDevice newTransferDevice;
 
     public static class Builder {
         /**

@@ -33,7 +33,7 @@ public class UpdateInstanceConsoleConnectionResponse {
     /**
      * The returned InstanceConsoleConnection instance.
      */
-    private InstanceConsoleConnection instanceConsoleConnection;
+    private com.oracle.bmc.core.model.InstanceConsoleConnection instanceConsoleConnection;
 
     public static class Builder {
         /**

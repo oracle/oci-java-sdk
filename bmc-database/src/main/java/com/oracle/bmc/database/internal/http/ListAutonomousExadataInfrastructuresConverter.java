@@ -129,16 +129,20 @@ public class ListAutonomousExadataInfrastructuresConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                AutonomousExadataInfrastructureSummary>>>
+                                                                com.oracle.bmc.database.model
+                                                                        .AutonomousExadataInfrastructureSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        AutonomousExadataInfrastructureSummary>>() {});
+                                                                        com.oracle.bmc.database
+                                                                                .model
+                                                                                .AutonomousExadataInfrastructureSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 java.util.List<
-                                                        AutonomousExadataInfrastructureSummary>>
+                                                        com.oracle.bmc.database.model
+                                                                .AutonomousExadataInfrastructureSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

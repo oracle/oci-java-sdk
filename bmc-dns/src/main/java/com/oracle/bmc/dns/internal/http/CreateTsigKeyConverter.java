@@ -71,12 +71,15 @@ public class CreateTsigKeyConverter {
                                         "Transform function invoked for com.oracle.bmc.dns.responses.CreateTsigKeyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<TsigKey>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.dns.model.TsigKey>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(TsigKey.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.dns.model.TsigKey.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<TsigKey> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dns.model.TsigKey>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

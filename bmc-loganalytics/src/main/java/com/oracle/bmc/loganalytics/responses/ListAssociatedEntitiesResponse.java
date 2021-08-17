@@ -42,7 +42,8 @@ public class ListAssociatedEntitiesResponse {
     /**
      * The returned LogAnalyticsAssociatedEntityCollection instance.
      */
-    private LogAnalyticsAssociatedEntityCollection logAnalyticsAssociatedEntityCollection;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsAssociatedEntityCollection
+            logAnalyticsAssociatedEntityCollection;
 
     public static class Builder {
         /**

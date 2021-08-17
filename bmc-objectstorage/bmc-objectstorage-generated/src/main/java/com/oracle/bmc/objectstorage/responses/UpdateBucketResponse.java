@@ -37,7 +37,7 @@ public class UpdateBucketResponse {
     /**
      * The returned Bucket instance.
      */
-    private Bucket bucket;
+    private com.oracle.bmc.objectstorage.model.Bucket bucket;
 
     public static class Builder {
         /**

@@ -35,7 +35,7 @@ public class ListResourceTypesResponse {
     /**
      * The returned ResourceTypeCollection instance.
      */
-    private ResourceTypeCollection resourceTypeCollection;
+    private com.oracle.bmc.cloudguard.model.ResourceTypeCollection resourceTypeCollection;
 
     public static class Builder {
         /**

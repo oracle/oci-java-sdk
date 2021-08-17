@@ -46,7 +46,7 @@ public class ListCertificatesResponse {
     /**
      * The returned CertificateCollection instance.
      */
-    private CertificateCollection certificateCollection;
+    private com.oracle.bmc.apigateway.model.CertificateCollection certificateCollection;
 
     public static class Builder {
         /**

@@ -100,11 +100,15 @@ public class GetRowConverter {
                                         "Transform function invoked for com.oracle.bmc.nosql.responses.GetRowResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Row>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create(Row.class);
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.nosql.model.Row>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.nosql.model.Row.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Row> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.nosql.model.Row>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

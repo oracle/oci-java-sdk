@@ -64,12 +64,15 @@ public class GetPublicIpConverter {
                                         "Transform function invoked for com.oracle.bmc.core.responses.GetPublicIpResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<PublicIp>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.core.model.PublicIp>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(PublicIp.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.core.model.PublicIp.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<PublicIp> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.PublicIp>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

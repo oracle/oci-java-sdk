@@ -75,12 +75,16 @@ public class CreateConsoleConnectionConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ConsoleConnection>>
+                                                        com.oracle.bmc.database.model
+                                                                .ConsoleConnection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ConsoleConnection.class);
+                                                        com.oracle.bmc.database.model
+                                                                        .ConsoleConnection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ConsoleConnection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.database.model.ConsoleConnection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -33,7 +33,7 @@ public class GetRepositoryResponse {
     /**
      * The returned Repository instance.
      */
-    private Repository repository;
+    private com.oracle.bmc.artifacts.model.Repository repository;
 
     public static class Builder {
         /**

@@ -94,15 +94,20 @@ public class ListInstanceConsoleConnectionsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<InstanceConsoleConnection>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.core.model
+                                                                        .InstanceConsoleConnection>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        InstanceConsoleConnection>>() {});
+                                                                        com.oracle.bmc.core.model
+                                                                                .InstanceConsoleConnection>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<InstanceConsoleConnection>>
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model
+                                                                .InstanceConsoleConnection>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

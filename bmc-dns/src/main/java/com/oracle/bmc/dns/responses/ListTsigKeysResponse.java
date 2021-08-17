@@ -33,9 +33,9 @@ public class ListTsigKeysResponse {
     private String opcRequestId;
 
     /**
-     * A list of TsigKeySummary instances.
+     * A list of com.oracle.bmc.dns.model.TsigKeySummary instances.
      */
-    private java.util.List<TsigKeySummary> items;
+    private java.util.List<com.oracle.bmc.dns.model.TsigKeySummary> items;
 
     public static class Builder {
         /**

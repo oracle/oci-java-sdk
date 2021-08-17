@@ -79,13 +79,17 @@ public class GetResponderRecipeResponderRuleConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ResponderRecipeResponderRule>>
+                                                        com.oracle.bmc.cloudguard.model
+                                                                .ResponderRecipeResponderRule>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ResponderRecipeResponderRule.class);
+                                                        com.oracle.bmc.cloudguard.model
+                                                                        .ResponderRecipeResponderRule
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ResponderRecipeResponderRule>
+                                                com.oracle.bmc.cloudguard.model
+                                                        .ResponderRecipeResponderRule>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

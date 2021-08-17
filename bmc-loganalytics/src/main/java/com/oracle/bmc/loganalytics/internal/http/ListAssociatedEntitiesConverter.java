@@ -137,14 +137,17 @@ public class ListAssociatedEntitiesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogAnalyticsAssociatedEntityCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogAnalyticsAssociatedEntityCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogAnalyticsAssociatedEntityCollection
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogAnalyticsAssociatedEntityCollection
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                LogAnalyticsAssociatedEntityCollection>
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LogAnalyticsAssociatedEntityCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

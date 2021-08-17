@@ -239,6 +239,25 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<String> detectorRuleIdList = null;
+
+        /**
+         * Comma seperated list of detector rule ids to be passed in to match against Problems.
+         * @return this builder instance
+         */
+        public Builder detectorRuleIdList(java.util.List<String> detectorRuleIdList) {
+            this.detectorRuleIdList = detectorRuleIdList;
+            return this;
+        }
+
+        /**
+         * Singular setter. Comma seperated list of detector rule ids to be passed in to match against Problems.
+         * @return this builder instance
+         */
+        public Builder detectorRuleIdList(String singularValue) {
+            return this.detectorRuleIdList(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

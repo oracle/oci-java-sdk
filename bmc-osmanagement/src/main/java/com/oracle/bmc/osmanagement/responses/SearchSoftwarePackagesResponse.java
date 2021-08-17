@@ -34,9 +34,9 @@ public class SearchSoftwarePackagesResponse {
     private String opcNextPage;
 
     /**
-     * A list of SoftwarePackageSearchSummary instances.
+     * A list of com.oracle.bmc.osmanagement.model.SoftwarePackageSearchSummary instances.
      */
-    private java.util.List<SoftwarePackageSearchSummary> items;
+    private java.util.List<com.oracle.bmc.osmanagement.model.SoftwarePackageSearchSummary> items;
 
     public static class Builder {
         /**

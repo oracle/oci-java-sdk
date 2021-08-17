@@ -35,7 +35,8 @@ public class ListConditionMetadataTypesResponse {
     /**
      * The returned ConditionMetadataTypeCollection instance.
      */
-    private ConditionMetadataTypeCollection conditionMetadataTypeCollection;
+    private com.oracle.bmc.cloudguard.model.ConditionMetadataTypeCollection
+            conditionMetadataTypeCollection;
 
     public static class Builder {
         /**

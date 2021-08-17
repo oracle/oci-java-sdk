@@ -33,7 +33,7 @@ public class GetResourceActionResponse {
     /**
      * The returned ResourceAction instance.
      */
-    private ResourceAction resourceAction;
+    private com.oracle.bmc.optimizer.model.ResourceAction resourceAction;
 
     public static class Builder {
         /**

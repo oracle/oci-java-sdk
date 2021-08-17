@@ -123,15 +123,19 @@ public class ListDrgRouteTablesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<DrgRouteTable>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.core.model
+                                                                        .DrgRouteTable>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        DrgRouteTable>>() {});
+                                                                        com.oracle.bmc.core.model
+                                                                                .DrgRouteTable>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<DrgRouteTable>>
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model.DrgRouteTable>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

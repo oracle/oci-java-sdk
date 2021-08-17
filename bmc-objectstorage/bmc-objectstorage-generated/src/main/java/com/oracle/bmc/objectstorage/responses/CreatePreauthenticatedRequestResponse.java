@@ -32,7 +32,7 @@ public class CreatePreauthenticatedRequestResponse {
     /**
      * The returned PreauthenticatedRequest instance.
      */
-    private PreauthenticatedRequest preauthenticatedRequest;
+    private com.oracle.bmc.objectstorage.model.PreauthenticatedRequest preauthenticatedRequest;
 
     public static class Builder {
         /**

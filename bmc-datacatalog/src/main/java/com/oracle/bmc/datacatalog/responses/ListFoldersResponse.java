@@ -33,7 +33,7 @@ public class ListFoldersResponse {
     /**
      * The returned FolderCollection instance.
      */
-    private FolderCollection folderCollection;
+    private com.oracle.bmc.datacatalog.model.FolderCollection folderCollection;
 
     public static class Builder {
         /**

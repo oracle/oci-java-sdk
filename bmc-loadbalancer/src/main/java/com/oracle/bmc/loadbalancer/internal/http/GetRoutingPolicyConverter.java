@@ -75,13 +75,17 @@ public class GetRoutingPolicyConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        RoutingPolicy>>
+                                                        com.oracle.bmc.loadbalancer.model
+                                                                .RoutingPolicy>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        RoutingPolicy.class);
+                                                        com.oracle.bmc.loadbalancer.model
+                                                                        .RoutingPolicy
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<RoutingPolicy> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loadbalancer.model.RoutingPolicy>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

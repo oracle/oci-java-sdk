@@ -109,15 +109,19 @@ public class ListAppCatalogSubscriptionsConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                AppCatalogSubscriptionSummary>>>
+                                                                com.oracle.bmc.core.model
+                                                                        .AppCatalogSubscriptionSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        AppCatalogSubscriptionSummary>>() {});
+                                                                        com.oracle.bmc.core.model
+                                                                                .AppCatalogSubscriptionSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<AppCatalogSubscriptionSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model
+                                                                .AppCatalogSubscriptionSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -91,15 +91,20 @@ public class ListNotebookSessionShapesConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                NotebookSessionShapeSummary>>>
+                                                                com.oracle.bmc.datascience.model
+                                                                        .NotebookSessionShapeSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        NotebookSessionShapeSummary>>() {});
+                                                                        com.oracle.bmc.datascience
+                                                                                .model
+                                                                                .NotebookSessionShapeSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<NotebookSessionShapeSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.datascience.model
+                                                                .NotebookSessionShapeSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

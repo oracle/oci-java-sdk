@@ -34,9 +34,9 @@ public class ListAvailableUpdatesForManagedInstanceResponse {
     private String opcNextPage;
 
     /**
-     * A list of AvailableUpdateSummary instances.
+     * A list of com.oracle.bmc.osmanagement.model.AvailableUpdateSummary instances.
      */
-    private java.util.List<AvailableUpdateSummary> items;
+    private java.util.List<com.oracle.bmc.osmanagement.model.AvailableUpdateSummary> items;
 
     public static class Builder {
         /**

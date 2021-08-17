@@ -32,7 +32,7 @@ public class GetSecretResponse {
     /**
      * The returned Secret instance.
      */
-    private Secret secret;
+    private com.oracle.bmc.vault.model.Secret secret;
 
     public static class Builder {
         /**

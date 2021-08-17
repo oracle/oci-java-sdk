@@ -84,12 +84,16 @@ public class UpdateEntityConverter {
                                         "Transform function invoked for com.oracle.bmc.datacatalog.responses.UpdateEntityResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Entity>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.datacatalog.model.Entity>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Entity.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.datacatalog.model.Entity
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Entity> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model.Entity>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -27,7 +27,7 @@ public class RecommendationsResponse {
     /**
      * The returned RecommendationCollection instance.
      */
-    private RecommendationCollection recommendationCollection;
+    private com.oracle.bmc.datacatalog.model.RecommendationCollection recommendationCollection;
 
     public static class Builder {
         /**

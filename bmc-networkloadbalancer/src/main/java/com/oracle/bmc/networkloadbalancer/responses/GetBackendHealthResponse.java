@@ -27,7 +27,7 @@ public class GetBackendHealthResponse {
     /**
      * The returned BackendHealth instance.
      */
-    private BackendHealth backendHealth;
+    private com.oracle.bmc.networkloadbalancer.model.BackendHealth backendHealth;
 
     public static class Builder {
         /**

@@ -71,14 +71,21 @@ public class ListCertificatesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<Certificate>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.loadbalancer.model
+                                                                        .Certificate>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<Certificate>>() {});
+                                                                java.util.List<
+                                                                        com.oracle.bmc.loadbalancer
+                                                                                .model
+                                                                                .Certificate>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<Certificate>>
+                                                java.util.List<
+                                                        com.oracle.bmc.loadbalancer.model
+                                                                .Certificate>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

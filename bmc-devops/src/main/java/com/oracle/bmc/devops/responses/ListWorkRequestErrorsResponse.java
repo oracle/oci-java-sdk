@@ -30,7 +30,7 @@ public class ListWorkRequestErrorsResponse {
     /**
      * The returned WorkRequestErrorCollection instance.
      */
-    private WorkRequestErrorCollection workRequestErrorCollection;
+    private com.oracle.bmc.devops.model.WorkRequestErrorCollection workRequestErrorCollection;
 
     public static class Builder {
         /**

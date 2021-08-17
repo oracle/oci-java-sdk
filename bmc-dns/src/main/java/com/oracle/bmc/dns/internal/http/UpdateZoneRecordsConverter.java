@@ -105,12 +105,14 @@ public class UpdateZoneRecordsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        RecordCollection>>
+                                                        com.oracle.bmc.dns.model.RecordCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        RecordCollection.class);
+                                                        com.oracle.bmc.dns.model.RecordCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<RecordCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dns.model.RecordCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

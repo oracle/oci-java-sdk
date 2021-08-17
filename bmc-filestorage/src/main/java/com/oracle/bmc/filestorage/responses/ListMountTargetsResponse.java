@@ -36,9 +36,9 @@ public class ListMountTargetsResponse {
     private String opcRequestId;
 
     /**
-     * A list of MountTargetSummary instances.
+     * A list of com.oracle.bmc.filestorage.model.MountTargetSummary instances.
      */
-    private java.util.List<MountTargetSummary> items;
+    private java.util.List<com.oracle.bmc.filestorage.model.MountTargetSummary> items;
 
     public static class Builder {
         /**

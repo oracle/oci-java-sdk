@@ -46,7 +46,7 @@ public class CreateModelDeploymentResponse {
     /**
      * The returned ModelDeployment instance.
      */
-    private ModelDeployment modelDeployment;
+    private com.oracle.bmc.datascience.model.ModelDeployment modelDeployment;
 
     public static class Builder {
         /**

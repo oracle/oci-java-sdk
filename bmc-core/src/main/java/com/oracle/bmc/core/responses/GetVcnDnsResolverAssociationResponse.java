@@ -33,7 +33,7 @@ public class GetVcnDnsResolverAssociationResponse {
     /**
      * The returned VcnDnsResolverAssociation instance.
      */
-    private VcnDnsResolverAssociation vcnDnsResolverAssociation;
+    private com.oracle.bmc.core.model.VcnDnsResolverAssociation vcnDnsResolverAssociation;
 
     public static class Builder {
         /**

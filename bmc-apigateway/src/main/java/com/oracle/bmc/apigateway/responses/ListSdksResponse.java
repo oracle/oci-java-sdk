@@ -46,7 +46,7 @@ public class ListSdksResponse {
     /**
      * The returned SdkCollection instance.
      */
-    private SdkCollection sdkCollection;
+    private com.oracle.bmc.apigateway.model.SdkCollection sdkCollection;
 
     public static class Builder {
         /**

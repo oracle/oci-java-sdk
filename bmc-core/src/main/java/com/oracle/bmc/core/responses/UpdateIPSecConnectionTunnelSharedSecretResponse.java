@@ -33,7 +33,8 @@ public class UpdateIPSecConnectionTunnelSharedSecretResponse {
     /**
      * The returned IPSecConnectionTunnelSharedSecret instance.
      */
-    private IPSecConnectionTunnelSharedSecret iPSecConnectionTunnelSharedSecret;
+    private com.oracle.bmc.core.model.IPSecConnectionTunnelSharedSecret
+            iPSecConnectionTunnelSharedSecret;
 
     public static class Builder {
         /**

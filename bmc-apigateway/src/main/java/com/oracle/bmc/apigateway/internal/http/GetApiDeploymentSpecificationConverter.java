@@ -79,12 +79,16 @@ public class GetApiDeploymentSpecificationConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ApiSpecification>>
+                                                        com.oracle.bmc.apigateway.model
+                                                                .ApiSpecification>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ApiSpecification.class);
+                                                        com.oracle.bmc.apigateway.model
+                                                                        .ApiSpecification
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ApiSpecification>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.apigateway.model.ApiSpecification>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -74,12 +74,16 @@ public class UpdateTargetConverter {
                                         "Transform function invoked for com.oracle.bmc.cloudguard.responses.UpdateTargetResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Target>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.cloudguard.model.Target>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Target.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.cloudguard.model.Target
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Target> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.cloudguard.model.Target>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -30,7 +30,7 @@ public class GetWaasPolicyResponse {
     /**
      * The returned WaasPolicy instance.
      */
-    private WaasPolicy waasPolicy;
+    private com.oracle.bmc.waas.model.WaasPolicy waasPolicy;
 
     public static class Builder {
         /**

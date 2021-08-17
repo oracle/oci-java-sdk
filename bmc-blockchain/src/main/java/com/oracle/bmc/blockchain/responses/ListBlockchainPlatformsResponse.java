@@ -35,7 +35,8 @@ public class ListBlockchainPlatformsResponse {
     /**
      * The returned BlockchainPlatformCollection instance.
      */
-    private BlockchainPlatformCollection blockchainPlatformCollection;
+    private com.oracle.bmc.blockchain.model.BlockchainPlatformCollection
+            blockchainPlatformCollection;
 
     public static class Builder {
         /**

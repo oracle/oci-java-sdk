@@ -36,9 +36,9 @@ public class ListFileSystemsResponse {
     private String opcRequestId;
 
     /**
-     * A list of FileSystemSummary instances.
+     * A list of com.oracle.bmc.filestorage.model.FileSystemSummary instances.
      */
-    private java.util.List<FileSystemSummary> items;
+    private java.util.List<com.oracle.bmc.filestorage.model.FileSystemSummary> items;
 
     public static class Builder {
         /**

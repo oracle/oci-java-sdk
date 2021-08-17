@@ -140,13 +140,17 @@ public class ListDataFlowValidationsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DataFlowValidationSummaryCollection>>
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .DataFlowValidationSummaryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DataFlowValidationSummaryCollection.class);
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .DataFlowValidationSummaryCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                DataFlowValidationSummaryCollection>
+                                                com.oracle.bmc.dataintegration.model
+                                                        .DataFlowValidationSummaryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -33,7 +33,7 @@ public class GetPrivateAccessChannelResponse {
     /**
      * The returned PrivateAccessChannel instance.
      */
-    private PrivateAccessChannel privateAccessChannel;
+    private com.oracle.bmc.analytics.model.PrivateAccessChannel privateAccessChannel;
 
     public static class Builder {
         /**

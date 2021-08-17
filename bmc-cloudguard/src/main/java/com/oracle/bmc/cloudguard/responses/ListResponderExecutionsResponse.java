@@ -35,7 +35,8 @@ public class ListResponderExecutionsResponse {
     /**
      * The returned ResponderExecutionCollection instance.
      */
-    private ResponderExecutionCollection responderExecutionCollection;
+    private com.oracle.bmc.cloudguard.model.ResponderExecutionCollection
+            responderExecutionCollection;
 
     public static class Builder {
         /**

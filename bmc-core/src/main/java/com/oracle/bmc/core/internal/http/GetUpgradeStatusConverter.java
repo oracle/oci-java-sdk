@@ -72,13 +72,15 @@ public class GetUpgradeStatusConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        UpgradeStatus>>
+                                                        com.oracle.bmc.core.model.UpgradeStatus>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        UpgradeStatus.class);
+                                                        com.oracle.bmc.core.model.UpgradeStatus
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<UpgradeStatus> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.UpgradeStatus>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -41,18 +41,20 @@ public class ListManagementAgentsConverter {
 
         if (request.getPluginName() != null) {
             target =
-                    target.queryParam(
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
                             "pluginName",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getPluginName()));
+                            request.getPluginName(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
         }
 
         if (request.getVersion() != null) {
             target =
-                    target.queryParam(
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
                             "version",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getVersion()));
+                            request.getVersion(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
         }
 
         if (request.getDisplayName() != null) {
@@ -71,12 +73,37 @@ public class ListManagementAgentsConverter {
                                     request.getLifecycleState().getValue()));
         }
 
-        if (request.getPlatformType() != null) {
+        if (request.getAvailabilityStatus() != null) {
             target =
                     target.queryParam(
-                            "platformType",
+                            "availabilityStatus",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getPlatformType().getValue()));
+                                    request.getAvailabilityStatus().getValue()));
+        }
+
+        if (request.getHostId() != null) {
+            target =
+                    target.queryParam(
+                            "hostId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getHostId()));
+        }
+
+        if (request.getPlatformType() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "platformType",
+                            request.getPlatformType(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getIsCustomerDeployed() != null) {
+            target =
+                    target.queryParam(
+                            "isCustomerDeployed",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsCustomerDeployed()));
         }
 
         if (request.getLimit() != null) {
@@ -146,15 +173,22 @@ public class ListManagementAgentsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<ManagementAgentSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.managementagent.model
+                                                                        .ManagementAgentSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        ManagementAgentSummary>>() {});
+                                                                        com.oracle.bmc
+                                                                                .managementagent
+                                                                                .model
+                                                                                .ManagementAgentSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<ManagementAgentSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.managementagent.model
+                                                                .ManagementAgentSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

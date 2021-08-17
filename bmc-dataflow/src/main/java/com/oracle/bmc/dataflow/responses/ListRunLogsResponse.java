@@ -40,9 +40,9 @@ public class ListRunLogsResponse {
     private String opcNextPage;
 
     /**
-     * A list of RunLogSummary instances.
+     * A list of com.oracle.bmc.dataflow.model.RunLogSummary instances.
      */
-    private java.util.List<RunLogSummary> items;
+    private java.util.List<com.oracle.bmc.dataflow.model.RunLogSummary> items;
 
     public static class Builder {
         /**

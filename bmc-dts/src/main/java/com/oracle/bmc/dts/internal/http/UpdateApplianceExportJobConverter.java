@@ -78,12 +78,15 @@ public class UpdateApplianceExportJobConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ApplianceExportJob>>
+                                                        com.oracle.bmc.dts.model
+                                                                .ApplianceExportJob>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ApplianceExportJob.class);
+                                                        com.oracle.bmc.dts.model.ApplianceExportJob
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ApplianceExportJob>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dts.model.ApplianceExportJob>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

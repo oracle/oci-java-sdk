@@ -35,7 +35,7 @@ public class UpdateRuleResponse {
     /**
      * The returned Rule instance.
      */
-    private Rule rule;
+    private com.oracle.bmc.events.model.Rule rule;
 
     public static class Builder {
         /**

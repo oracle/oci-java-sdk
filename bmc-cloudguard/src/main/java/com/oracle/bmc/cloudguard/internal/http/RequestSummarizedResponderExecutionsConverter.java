@@ -142,14 +142,17 @@ public class RequestSummarizedResponderExecutionsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ResponderExecutionAggregationCollection>>
+                                                        com.oracle.bmc.cloudguard.model
+                                                                .ResponderExecutionAggregationCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ResponderExecutionAggregationCollection
+                                                        com.oracle.bmc.cloudguard.model
+                                                                        .ResponderExecutionAggregationCollection
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ResponderExecutionAggregationCollection>
+                                                com.oracle.bmc.cloudguard.model
+                                                        .ResponderExecutionAggregationCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -115,15 +115,20 @@ public class ListCrossConnectGroupsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<CrossConnectGroup>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.core.model
+                                                                        .CrossConnectGroup>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        CrossConnectGroup>>() {});
+                                                                        com.oracle.bmc.core.model
+                                                                                .CrossConnectGroup>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<CrossConnectGroup>>
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model
+                                                                .CrossConnectGroup>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

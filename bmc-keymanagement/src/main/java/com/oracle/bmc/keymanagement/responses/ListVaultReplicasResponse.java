@@ -39,9 +39,9 @@ public class ListVaultReplicasResponse {
     private String opcRequestId;
 
     /**
-     * A list of VaultReplicaSummary instances.
+     * A list of com.oracle.bmc.keymanagement.model.VaultReplicaSummary instances.
      */
-    private java.util.List<VaultReplicaSummary> items;
+    private java.util.List<com.oracle.bmc.keymanagement.model.VaultReplicaSummary> items;
 
     public static class Builder {
         /**

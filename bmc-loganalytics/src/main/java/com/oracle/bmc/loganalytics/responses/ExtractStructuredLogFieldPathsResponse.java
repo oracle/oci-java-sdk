@@ -26,7 +26,7 @@ public class ExtractStructuredLogFieldPathsResponse {
     /**
      * The returned ExtractLogFieldResults instance.
      */
-    private ExtractLogFieldResults extractLogFieldResults;
+    private com.oracle.bmc.loganalytics.model.ExtractLogFieldResults extractLogFieldResults;
 
     public static class Builder {
         /**

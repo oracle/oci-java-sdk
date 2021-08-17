@@ -131,15 +131,20 @@ public class ListExternalDatabaseConnectorsConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                ExternalDatabaseConnectorSummary>>>
+                                                                com.oracle.bmc.database.model
+                                                                        .ExternalDatabaseConnectorSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        ExternalDatabaseConnectorSummary>>() {});
+                                                                        com.oracle.bmc.database
+                                                                                .model
+                                                                                .ExternalDatabaseConnectorSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<ExternalDatabaseConnectorSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.database.model
+                                                                .ExternalDatabaseConnectorSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

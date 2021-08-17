@@ -84,12 +84,18 @@ public class UpdateScheduleConverter {
                                         "Transform function invoked for com.oracle.bmc.dataintegration.responses.UpdateScheduleResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Schedule>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .Schedule>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Schedule.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .Schedule
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Schedule> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dataintegration.model.Schedule>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

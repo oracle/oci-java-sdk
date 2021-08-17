@@ -34,7 +34,7 @@ public class GetTableResponse {
     /**
      * The returned Table instance.
      */
-    private Table table;
+    private com.oracle.bmc.nosql.model.Table table;
 
     public static class Builder {
         /**

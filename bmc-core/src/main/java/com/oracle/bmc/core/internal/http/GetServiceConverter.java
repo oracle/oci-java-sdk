@@ -63,12 +63,15 @@ public class GetServiceConverter {
                                         "Transform function invoked for com.oracle.bmc.core.responses.GetServiceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Service>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.core.model.Service>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Service.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.core.model.Service.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Service> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.Service>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

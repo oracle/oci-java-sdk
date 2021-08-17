@@ -33,7 +33,7 @@ public class GetPackageResponse {
     /**
      * The returned ListingPackage instance.
      */
-    private ListingPackage listingPackage;
+    private com.oracle.bmc.marketplace.model.ListingPackage listingPackage;
 
     public static class Builder {
         /**

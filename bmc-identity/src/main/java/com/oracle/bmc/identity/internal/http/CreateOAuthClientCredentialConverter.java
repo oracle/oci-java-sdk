@@ -77,12 +77,17 @@ public class CreateOAuthClientCredentialConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        OAuth2ClientCredential>>
+                                                        com.oracle.bmc.identity.model
+                                                                .OAuth2ClientCredential>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        OAuth2ClientCredential.class);
+                                                        com.oracle.bmc.identity.model
+                                                                        .OAuth2ClientCredential
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<OAuth2ClientCredential>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.identity.model
+                                                        .OAuth2ClientCredential>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

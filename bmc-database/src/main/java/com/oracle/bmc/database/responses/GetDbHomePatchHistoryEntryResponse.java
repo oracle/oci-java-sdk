@@ -32,7 +32,7 @@ public class GetDbHomePatchHistoryEntryResponse {
     /**
      * The returned PatchHistoryEntry instance.
      */
-    private PatchHistoryEntry patchHistoryEntry;
+    private com.oracle.bmc.database.model.PatchHistoryEntry patchHistoryEntry;
 
     public static class Builder {
         /**

@@ -33,7 +33,7 @@ public class UpdateContainerConfigurationResponse {
     /**
      * The returned ContainerConfiguration instance.
      */
-    private ContainerConfiguration containerConfiguration;
+    private com.oracle.bmc.artifacts.model.ContainerConfiguration containerConfiguration;
 
     public static class Builder {
         /**

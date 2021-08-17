@@ -38,7 +38,7 @@ public class CreateVmClusterNetworkResponse {
     /**
      * The returned VmClusterNetwork instance.
      */
-    private VmClusterNetwork vmClusterNetwork;
+    private com.oracle.bmc.database.model.VmClusterNetwork vmClusterNetwork;
 
     public static class Builder {
         /**

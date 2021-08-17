@@ -42,7 +42,7 @@ public class ListRecommendationsResponse {
     /**
      * The returned RecommendationCollection instance.
      */
-    private RecommendationCollection recommendationCollection;
+    private com.oracle.bmc.optimizer.model.RecommendationCollection recommendationCollection;
 
     public static class Builder {
         /**

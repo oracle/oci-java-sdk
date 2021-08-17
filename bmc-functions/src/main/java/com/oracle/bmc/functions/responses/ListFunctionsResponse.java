@@ -33,9 +33,9 @@ public class ListFunctionsResponse {
     private String opcRequestId;
 
     /**
-     * A list of FunctionSummary instances.
+     * A list of com.oracle.bmc.functions.model.FunctionSummary instances.
      */
-    private java.util.List<FunctionSummary> items;
+    private java.util.List<com.oracle.bmc.functions.model.FunctionSummary> items;
 
     public static class Builder {
         /**

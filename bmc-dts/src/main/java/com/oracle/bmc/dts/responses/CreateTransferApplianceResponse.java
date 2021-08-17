@@ -30,7 +30,7 @@ public class CreateTransferApplianceResponse {
     /**
      * The returned TransferAppliance instance.
      */
-    private TransferAppliance transferAppliance;
+    private com.oracle.bmc.dts.model.TransferAppliance transferAppliance;
 
     public static class Builder {
         /**

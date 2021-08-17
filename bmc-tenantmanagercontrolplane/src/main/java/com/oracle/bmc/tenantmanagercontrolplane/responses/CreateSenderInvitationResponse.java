@@ -39,7 +39,7 @@ public class CreateSenderInvitationResponse {
     /**
      * The returned SenderInvitation instance.
      */
-    private SenderInvitation senderInvitation;
+    private com.oracle.bmc.tenantmanagercontrolplane.model.SenderInvitation senderInvitation;
 
     public static class Builder {
         /**

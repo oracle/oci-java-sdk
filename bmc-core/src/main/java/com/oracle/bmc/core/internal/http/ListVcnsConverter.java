@@ -113,13 +113,17 @@ public class ListVcnsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<Vcn>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.core.model.Vcn>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<Vcn>>() {});
+                                                                java.util.List<
+                                                                        com.oracle.bmc.core.model
+                                                                                .Vcn>>() {});
 
-                                com.oracle.bmc.http.internal.WithHeaders<java.util.List<Vcn>>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                java.util.List<com.oracle.bmc.core.model.Vcn>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

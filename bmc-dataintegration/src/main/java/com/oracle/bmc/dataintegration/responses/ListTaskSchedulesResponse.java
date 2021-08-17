@@ -45,7 +45,8 @@ public class ListTaskSchedulesResponse {
     /**
      * The returned TaskScheduleSummaryCollection instance.
      */
-    private TaskScheduleSummaryCollection taskScheduleSummaryCollection;
+    private com.oracle.bmc.dataintegration.model.TaskScheduleSummaryCollection
+            taskScheduleSummaryCollection;
 
     public static class Builder {
         /**

@@ -38,7 +38,7 @@ public class StopPluggableDatabaseResponse {
     /**
      * The returned PluggableDatabase instance.
      */
-    private PluggableDatabase pluggableDatabase;
+    private com.oracle.bmc.database.model.PluggableDatabase pluggableDatabase;
 
     public static class Builder {
         /**

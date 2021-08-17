@@ -42,7 +42,7 @@ public class ListStorageWorkRequestErrorsResponse {
     /**
      * The returned WorkRequestErrorCollection instance.
      */
-    private WorkRequestErrorCollection workRequestErrorCollection;
+    private com.oracle.bmc.loganalytics.model.WorkRequestErrorCollection workRequestErrorCollection;
 
     public static class Builder {
         /**

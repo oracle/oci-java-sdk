@@ -69,12 +69,17 @@ public class GetClusterConverter {
                                         "Transform function invoked for com.oracle.bmc.containerengine.responses.GetClusterResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Cluster>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.containerengine.model
+                                                                .Cluster>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Cluster.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.containerengine.model.Cluster
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Cluster> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.containerengine.model.Cluster>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

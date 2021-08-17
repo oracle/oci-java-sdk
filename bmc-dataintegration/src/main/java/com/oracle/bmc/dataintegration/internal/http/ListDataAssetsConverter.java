@@ -128,12 +128,17 @@ public class ListDataAssetsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DataAssetSummaryCollection>>
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .DataAssetSummaryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DataAssetSummaryCollection.class);
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .DataAssetSummaryCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DataAssetSummaryCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dataintegration.model
+                                                        .DataAssetSummaryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

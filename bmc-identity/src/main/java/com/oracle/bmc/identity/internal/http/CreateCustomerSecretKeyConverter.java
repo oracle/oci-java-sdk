@@ -75,12 +75,16 @@ public class CreateCustomerSecretKeyConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        CustomerSecretKey>>
+                                                        com.oracle.bmc.identity.model
+                                                                .CustomerSecretKey>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        CustomerSecretKey.class);
+                                                        com.oracle.bmc.identity.model
+                                                                        .CustomerSecretKey
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<CustomerSecretKey>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.identity.model.CustomerSecretKey>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -33,9 +33,9 @@ public class ListGoodBotsResponse {
     private String opcNextPage;
 
     /**
-     * A list of GoodBot instances.
+     * A list of com.oracle.bmc.waas.model.GoodBot instances.
      */
-    private java.util.List<GoodBot> items;
+    private java.util.List<com.oracle.bmc.waas.model.GoodBot> items;
 
     public static class Builder {
         /**

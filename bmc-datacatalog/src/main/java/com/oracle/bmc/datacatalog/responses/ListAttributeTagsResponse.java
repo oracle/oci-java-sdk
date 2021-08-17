@@ -33,7 +33,7 @@ public class ListAttributeTagsResponse {
     /**
      * The returned AttributeTagCollection instance.
      */
-    private AttributeTagCollection attributeTagCollection;
+    private com.oracle.bmc.datacatalog.model.AttributeTagCollection attributeTagCollection;
 
     public static class Builder {
         /**

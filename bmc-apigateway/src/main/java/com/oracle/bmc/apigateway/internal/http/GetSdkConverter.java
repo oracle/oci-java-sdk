@@ -68,11 +68,15 @@ public class GetSdkConverter {
                                         "Transform function invoked for com.oracle.bmc.apigateway.responses.GetSdkResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Sdk>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create(Sdk.class);
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.apigateway.model.Sdk>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.apigateway.model.Sdk.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Sdk> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.apigateway.model.Sdk>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

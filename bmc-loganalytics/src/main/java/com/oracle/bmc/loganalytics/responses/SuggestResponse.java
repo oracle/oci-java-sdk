@@ -26,7 +26,7 @@ public class SuggestResponse {
     /**
      * The returned SuggestOutput instance.
      */
-    private SuggestOutput suggestOutput;
+    private com.oracle.bmc.loganalytics.model.SuggestOutput suggestOutput;
 
     public static class Builder {
         /**

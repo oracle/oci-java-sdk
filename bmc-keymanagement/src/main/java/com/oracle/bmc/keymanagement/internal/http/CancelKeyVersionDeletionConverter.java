@@ -89,13 +89,17 @@ public class CancelKeyVersionDeletionConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        KeyVersion>>
+                                                        com.oracle.bmc.keymanagement.model
+                                                                .KeyVersion>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        KeyVersion.class);
+                                                        com.oracle.bmc.keymanagement.model
+                                                                        .KeyVersion
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<KeyVersion> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.keymanagement.model.KeyVersion>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

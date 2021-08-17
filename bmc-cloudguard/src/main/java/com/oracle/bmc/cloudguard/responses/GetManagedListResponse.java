@@ -33,7 +33,7 @@ public class GetManagedListResponse {
     /**
      * The returned ManagedList instance.
      */
-    private ManagedList managedList;
+    private com.oracle.bmc.cloudguard.model.ManagedList managedList;
 
     public static class Builder {
         /**

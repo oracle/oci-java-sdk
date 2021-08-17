@@ -40,7 +40,7 @@ public class UpdateWorkspaceResponse {
     /**
      * The returned Workspace instance.
      */
-    private Workspace workspace;
+    private com.oracle.bmc.dataintegration.model.Workspace workspace;
 
     public static class Builder {
         /**

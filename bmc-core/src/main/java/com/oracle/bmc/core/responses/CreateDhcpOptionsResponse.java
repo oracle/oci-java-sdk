@@ -33,7 +33,7 @@ public class CreateDhcpOptionsResponse {
     /**
      * The returned DhcpOptions instance.
      */
-    private DhcpOptions dhcpOptions;
+    private com.oracle.bmc.core.model.DhcpOptions dhcpOptions;
 
     public static class Builder {
         /**

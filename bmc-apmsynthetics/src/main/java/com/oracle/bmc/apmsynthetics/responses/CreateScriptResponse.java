@@ -33,7 +33,7 @@ public class CreateScriptResponse {
     /**
      * The returned Script instance.
      */
-    private Script script;
+    private com.oracle.bmc.apmsynthetics.model.Script script;
 
     public static class Builder {
         /**

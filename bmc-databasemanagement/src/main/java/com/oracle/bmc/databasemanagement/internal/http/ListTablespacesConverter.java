@@ -114,12 +114,17 @@ public class ListTablespacesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        TablespaceCollection>>
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                .TablespaceCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        TablespaceCollection.class);
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                        .TablespaceCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<TablespaceCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.databasemanagement.model
+                                                        .TablespaceCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

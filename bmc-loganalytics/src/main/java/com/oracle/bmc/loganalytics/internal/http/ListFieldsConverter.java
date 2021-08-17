@@ -167,13 +167,17 @@ public class ListFieldsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogAnalyticsFieldCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogAnalyticsFieldCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogAnalyticsFieldCollection.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogAnalyticsFieldCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                LogAnalyticsFieldCollection>
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LogAnalyticsFieldCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

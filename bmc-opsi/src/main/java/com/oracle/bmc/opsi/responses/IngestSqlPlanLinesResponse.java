@@ -33,7 +33,8 @@ public class IngestSqlPlanLinesResponse {
     /**
      * The returned IngestSqlPlanLinesResponseDetails instance.
      */
-    private IngestSqlPlanLinesResponseDetails ingestSqlPlanLinesResponseDetails;
+    private com.oracle.bmc.opsi.model.IngestSqlPlanLinesResponseDetails
+            ingestSqlPlanLinesResponseDetails;
 
     public static class Builder {
         /**

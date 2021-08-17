@@ -135,12 +135,16 @@ public class ListTargetsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        TargetCollection>>
+                                                        com.oracle.bmc.cloudguard.model
+                                                                .TargetCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        TargetCollection.class);
+                                                        com.oracle.bmc.cloudguard.model
+                                                                        .TargetCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<TargetCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.cloudguard.model.TargetCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

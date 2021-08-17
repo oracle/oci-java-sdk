@@ -41,7 +41,7 @@ public class ListHostInsightsResponse {
     /**
      * The returned HostInsightSummaryCollection instance.
      */
-    private HostInsightSummaryCollection hostInsightSummaryCollection;
+    private com.oracle.bmc.opsi.model.HostInsightSummaryCollection hostInsightSummaryCollection;
 
     public static class Builder {
         /**

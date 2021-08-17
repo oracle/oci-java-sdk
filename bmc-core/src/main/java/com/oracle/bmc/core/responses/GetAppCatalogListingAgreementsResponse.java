@@ -33,7 +33,8 @@ public class GetAppCatalogListingAgreementsResponse {
     /**
      * The returned AppCatalogListingResourceVersionAgreements instance.
      */
-    private AppCatalogListingResourceVersionAgreements appCatalogListingResourceVersionAgreements;
+    private com.oracle.bmc.core.model.AppCatalogListingResourceVersionAgreements
+            appCatalogListingResourceVersionAgreements;
 
     public static class Builder {
         /**

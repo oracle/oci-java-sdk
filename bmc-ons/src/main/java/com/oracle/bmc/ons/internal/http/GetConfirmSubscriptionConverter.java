@@ -85,12 +85,15 @@ public class GetConfirmSubscriptionConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ConfirmationResult>>
+                                                        com.oracle.bmc.ons.model
+                                                                .ConfirmationResult>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ConfirmationResult.class);
+                                                        com.oracle.bmc.ons.model.ConfirmationResult
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ConfirmationResult>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.ons.model.ConfirmationResult>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

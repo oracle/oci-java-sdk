@@ -158,12 +158,17 @@ public class ListGenericArtifactsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        GenericArtifactCollection>>
+                                                        com.oracle.bmc.artifacts.model
+                                                                .GenericArtifactCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        GenericArtifactCollection.class);
+                                                        com.oracle.bmc.artifacts.model
+                                                                        .GenericArtifactCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<GenericArtifactCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.artifacts.model
+                                                        .GenericArtifactCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

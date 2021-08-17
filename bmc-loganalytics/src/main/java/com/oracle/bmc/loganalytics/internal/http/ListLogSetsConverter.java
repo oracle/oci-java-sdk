@@ -96,12 +96,16 @@ public class ListLogSetsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogSetCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogSetCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogSetCollection.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogSetCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<LogSetCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model.LogSetCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

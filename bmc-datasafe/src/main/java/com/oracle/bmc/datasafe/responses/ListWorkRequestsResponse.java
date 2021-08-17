@@ -30,9 +30,9 @@ public class ListWorkRequestsResponse {
     private String opcNextPage;
 
     /**
-     * A list of WorkRequestSummary instances.
+     * A list of com.oracle.bmc.datasafe.model.WorkRequestSummary instances.
      */
-    private java.util.List<WorkRequestSummary> items;
+    private java.util.List<com.oracle.bmc.datasafe.model.WorkRequestSummary> items;
 
     public static class Builder {
         /**

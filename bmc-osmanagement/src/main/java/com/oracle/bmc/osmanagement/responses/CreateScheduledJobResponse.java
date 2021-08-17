@@ -38,7 +38,7 @@ public class CreateScheduledJobResponse {
     /**
      * The returned ScheduledJob instance.
      */
-    private ScheduledJob scheduledJob;
+    private com.oracle.bmc.osmanagement.model.ScheduledJob scheduledJob;
 
     public static class Builder {
         /**

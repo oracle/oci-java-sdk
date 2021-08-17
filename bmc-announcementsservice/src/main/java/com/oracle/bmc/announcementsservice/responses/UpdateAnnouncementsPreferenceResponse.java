@@ -30,7 +30,8 @@ public class UpdateAnnouncementsPreferenceResponse {
     /**
      * The returned AnnouncementsPreferencesSummary instance.
      */
-    private AnnouncementsPreferencesSummary announcementsPreferencesSummary;
+    private com.oracle.bmc.announcementsservice.model.AnnouncementsPreferencesSummary
+            announcementsPreferencesSummary;
 
     public static class Builder {
         /**

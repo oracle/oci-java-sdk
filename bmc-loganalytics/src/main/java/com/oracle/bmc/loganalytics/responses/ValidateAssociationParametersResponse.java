@@ -32,7 +32,8 @@ public class ValidateAssociationParametersResponse {
     /**
      * The returned LogAnalyticsAssociationParameterCollection instance.
      */
-    private LogAnalyticsAssociationParameterCollection logAnalyticsAssociationParameterCollection;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsAssociationParameterCollection
+            logAnalyticsAssociationParameterCollection;
 
     public static class Builder {
         /**

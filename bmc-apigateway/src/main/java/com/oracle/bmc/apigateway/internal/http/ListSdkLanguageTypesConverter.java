@@ -112,12 +112,17 @@ public class ListSdkLanguageTypesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SdkLanguageTypeCollection>>
+                                                        com.oracle.bmc.apigateway.model
+                                                                .SdkLanguageTypeCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SdkLanguageTypeCollection.class);
+                                                        com.oracle.bmc.apigateway.model
+                                                                        .SdkLanguageTypeCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<SdkLanguageTypeCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.apigateway.model
+                                                        .SdkLanguageTypeCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -35,7 +35,7 @@ public class GetResolverEndpointResponse {
     /**
      * The returned ResolverEndpoint instance, or null if {@link #isNotModified()} is true.
      */
-    private ResolverEndpoint resolverEndpoint;
+    private com.oracle.bmc.dns.model.ResolverEndpoint resolverEndpoint;
 
     /**
      * Flag to indicate whether or not the object was modified.  If this is true,

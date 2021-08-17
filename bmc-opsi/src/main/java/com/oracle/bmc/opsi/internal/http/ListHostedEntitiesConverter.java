@@ -146,12 +146,16 @@ public class ListHostedEntitiesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        HostedEntityCollection>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .HostedEntityCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        HostedEntityCollection.class);
+                                                        com.oracle.bmc.opsi.model
+                                                                        .HostedEntityCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<HostedEntityCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.opsi.model.HostedEntityCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -104,15 +104,21 @@ public class ListKeyVersionsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<KeyVersionSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.keymanagement.model
+                                                                        .KeyVersionSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        KeyVersionSummary>>() {});
+                                                                        com.oracle.bmc.keymanagement
+                                                                                .model
+                                                                                .KeyVersionSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<KeyVersionSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.keymanagement.model
+                                                                .KeyVersionSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -35,7 +35,7 @@ public class ListSqlPlansResponse {
     /**
      * The returned SqlPlanCollection instance.
      */
-    private SqlPlanCollection sqlPlanCollection;
+    private com.oracle.bmc.opsi.model.SqlPlanCollection sqlPlanCollection;
 
     public static class Builder {
         /**

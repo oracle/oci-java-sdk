@@ -32,7 +32,7 @@ public class CreateIdpGroupMappingResponse {
     /**
      * The returned IdpGroupMapping instance.
      */
-    private IdpGroupMapping idpGroupMapping;
+    private com.oracle.bmc.identity.model.IdpGroupMapping idpGroupMapping;
 
     public static class Builder {
         /**

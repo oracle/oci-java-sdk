@@ -127,12 +127,16 @@ public class ListGatewaysConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        GatewayCollection>>
+                                                        com.oracle.bmc.apigateway.model
+                                                                .GatewayCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        GatewayCollection.class);
+                                                        com.oracle.bmc.apigateway.model
+                                                                        .GatewayCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<GatewayCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.apigateway.model.GatewayCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

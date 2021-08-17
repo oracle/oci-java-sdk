@@ -7,6 +7,7 @@ package com.oracle.bmc.http.internal;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map.Entry;
+import java.util.stream.Collectors;
 
 import javax.annotation.Priority;
 import javax.ws.rs.Priorities;
@@ -16,6 +17,7 @@ import javax.ws.rs.client.ClientResponseContext;
 import javax.ws.rs.client.ClientResponseFilter;
 import javax.ws.rs.core.MultivaluedMap;
 
+import com.google.common.annotations.VisibleForTesting;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -53,7 +55,18 @@ public class LogHeadersFilter implements ClientResponseFilter, ClientRequestFilt
                 requestContext.getUri());
         MultivaluedMap<String, String> headers = requestContext.getStringHeaders();
         for (Entry<String, List<String>> entry : headers.entrySet()) {
-            LOG.debug("Sending header '{}' with value '{}'", entry.getKey(), entry.getValue());
+            List<String> value = entry.getValue();
+            if (entry.getKey() != null && entry.getKey().equalsIgnoreCase("authorization")) {
+                value = maskValue(entry.getValue());
+            }
+            LOG.debug("Sending header '{}' with value '{}'", entry.getKey(), value);
         }
+    }
+
+    @VisibleForTesting
+    protected List<String> maskValue(List<String> values) {
+        return values.stream()
+                .map(e -> e.replaceAll("(?<=keyId=)\"(.*?)\"", "\"REDACTED\""))
+                .collect(Collectors.toList());
     }
 }

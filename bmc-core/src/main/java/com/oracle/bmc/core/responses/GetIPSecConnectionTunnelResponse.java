@@ -33,7 +33,7 @@ public class GetIPSecConnectionTunnelResponse {
     /**
      * The returned IPSecConnectionTunnel instance.
      */
-    private IPSecConnectionTunnel iPSecConnectionTunnel;
+    private com.oracle.bmc.core.model.IPSecConnectionTunnel iPSecConnectionTunnel;
 
     public static class Builder {
         /**

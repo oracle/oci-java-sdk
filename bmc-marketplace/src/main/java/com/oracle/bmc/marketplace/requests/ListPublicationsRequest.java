@@ -154,6 +154,44 @@ public class ListPublicationsRequest extends com.oracle.bmc.requests.BmcRequest<
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<String> name = null;
+
+        /**
+         * The name of the publication.
+         * @return this builder instance
+         */
+        public Builder name(java.util.List<String> name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
+         * Singular setter. The name of the publication.
+         * @return this builder instance
+         */
+        public Builder name(String singularValue) {
+            return this.name(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> operatingSystems = null;
+
+        /**
+         * The operating system of the listing.
+         * @return this builder instance
+         */
+        public Builder operatingSystems(java.util.List<String> operatingSystems) {
+            this.operatingSystems = operatingSystems;
+            return this;
+        }
+
+        /**
+         * Singular setter. The operating system of the listing.
+         * @return this builder instance
+         */
+        public Builder operatingSystems(String singularValue) {
+            return this.operatingSystems(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

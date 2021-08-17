@@ -33,7 +33,8 @@ public class GetTargetDetectorRecipeDetectorRuleResponse {
     /**
      * The returned TargetDetectorRecipeDetectorRule instance.
      */
-    private TargetDetectorRecipeDetectorRule targetDetectorRecipeDetectorRule;
+    private com.oracle.bmc.cloudguard.model.TargetDetectorRecipeDetectorRule
+            targetDetectorRecipeDetectorRule;
 
     public static class Builder {
         /**

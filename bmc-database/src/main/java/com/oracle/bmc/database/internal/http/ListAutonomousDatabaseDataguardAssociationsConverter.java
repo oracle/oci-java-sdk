@@ -94,16 +94,20 @@ public class ListAutonomousDatabaseDataguardAssociationsConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                AutonomousDatabaseDataguardAssociation>>>
+                                                                com.oracle.bmc.database.model
+                                                                        .AutonomousDatabaseDataguardAssociation>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        AutonomousDatabaseDataguardAssociation>>() {});
+                                                                        com.oracle.bmc.database
+                                                                                .model
+                                                                                .AutonomousDatabaseDataguardAssociation>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 java.util.List<
-                                                        AutonomousDatabaseDataguardAssociation>>
+                                                        com.oracle.bmc.database.model
+                                                                .AutonomousDatabaseDataguardAssociation>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

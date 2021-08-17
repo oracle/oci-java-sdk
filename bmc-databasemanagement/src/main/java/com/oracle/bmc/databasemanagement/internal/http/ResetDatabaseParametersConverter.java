@@ -83,13 +83,17 @@ public class ResetDatabaseParametersConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        UpdateDatabaseParametersResult>>
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                .UpdateDatabaseParametersResult>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        UpdateDatabaseParametersResult.class);
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                        .UpdateDatabaseParametersResult
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                UpdateDatabaseParametersResult>
+                                                com.oracle.bmc.databasemanagement.model
+                                                        .UpdateDatabaseParametersResult>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

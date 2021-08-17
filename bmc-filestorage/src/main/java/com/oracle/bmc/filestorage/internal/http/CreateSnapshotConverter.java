@@ -68,12 +68,16 @@ public class CreateSnapshotConverter {
                                         "Transform function invoked for com.oracle.bmc.filestorage.responses.CreateSnapshotResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Snapshot>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.filestorage.model.Snapshot>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Snapshot.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.filestorage.model.Snapshot
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Snapshot> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.filestorage.model.Snapshot>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

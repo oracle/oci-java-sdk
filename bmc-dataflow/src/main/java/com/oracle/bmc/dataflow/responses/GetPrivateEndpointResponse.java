@@ -34,7 +34,7 @@ public class GetPrivateEndpointResponse {
     /**
      * The returned PrivateEndpoint instance.
      */
-    private PrivateEndpoint privateEndpoint;
+    private com.oracle.bmc.dataflow.model.PrivateEndpoint privateEndpoint;
 
     public static class Builder {
         /**

@@ -73,13 +73,15 @@ public class UpdateIPSecConnectionConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        IPSecConnection>>
+                                                        com.oracle.bmc.core.model.IPSecConnection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        IPSecConnection.class);
+                                                        com.oracle.bmc.core.model.IPSecConnection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<IPSecConnection> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.IPSecConnection>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

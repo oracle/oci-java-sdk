@@ -33,9 +33,9 @@ public class ListCaptchasResponse {
     private String opcRequestId;
 
     /**
-     * A list of Captcha instances.
+     * A list of com.oracle.bmc.waas.model.Captcha instances.
      */
-    private java.util.List<Captcha> items;
+    private java.util.List<com.oracle.bmc.waas.model.Captcha> items;
 
     public static class Builder {
         /**

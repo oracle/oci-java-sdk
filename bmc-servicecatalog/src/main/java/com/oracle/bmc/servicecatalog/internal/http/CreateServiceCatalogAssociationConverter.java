@@ -76,12 +76,17 @@ public class CreateServiceCatalogAssociationConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ServiceCatalogAssociation>>
+                                                        com.oracle.bmc.servicecatalog.model
+                                                                .ServiceCatalogAssociation>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ServiceCatalogAssociation.class);
+                                                        com.oracle.bmc.servicecatalog.model
+                                                                        .ServiceCatalogAssociation
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ServiceCatalogAssociation>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.servicecatalog.model
+                                                        .ServiceCatalogAssociation>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

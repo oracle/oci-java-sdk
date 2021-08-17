@@ -33,9 +33,9 @@ public class ListVolumeBackupPoliciesResponse {
     private String opcRequestId;
 
     /**
-     * A list of VolumeBackupPolicy instances.
+     * A list of com.oracle.bmc.core.model.VolumeBackupPolicy instances.
      */
-    private java.util.List<VolumeBackupPolicy> items;
+    private java.util.List<com.oracle.bmc.core.model.VolumeBackupPolicy> items;
 
     public static class Builder {
         /**

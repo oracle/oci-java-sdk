@@ -74,12 +74,16 @@ public class GetRuleSetConverter {
                                         "Transform function invoked for com.oracle.bmc.loadbalancer.responses.GetRuleSetResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<RuleSet>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.loadbalancer.model.RuleSet>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(RuleSet.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.loadbalancer.model.RuleSet
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<RuleSet> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loadbalancer.model.RuleSet>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

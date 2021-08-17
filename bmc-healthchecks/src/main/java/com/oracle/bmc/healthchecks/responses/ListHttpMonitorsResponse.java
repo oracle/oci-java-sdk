@@ -35,9 +35,9 @@ public class ListHttpMonitorsResponse {
     private String opcNextPage;
 
     /**
-     * A list of HttpMonitorSummary instances.
+     * A list of com.oracle.bmc.healthchecks.model.HttpMonitorSummary instances.
      */
-    private java.util.List<HttpMonitorSummary> items;
+    private java.util.List<com.oracle.bmc.healthchecks.model.HttpMonitorSummary> items;
 
     public static class Builder {
         /**

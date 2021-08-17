@@ -119,15 +119,22 @@ public class ListNodePoolsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<NodePoolSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.containerengine.model
+                                                                        .NodePoolSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        NodePoolSummary>>() {});
+                                                                        com.oracle.bmc
+                                                                                .containerengine
+                                                                                .model
+                                                                                .NodePoolSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<NodePoolSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.containerengine.model
+                                                                .NodePoolSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

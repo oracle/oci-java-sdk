@@ -120,15 +120,19 @@ public class ListComputeImageCapabilitySchemasConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                ComputeImageCapabilitySchemaSummary>>>
+                                                                com.oracle.bmc.core.model
+                                                                        .ComputeImageCapabilitySchemaSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        ComputeImageCapabilitySchemaSummary>>() {});
+                                                                        com.oracle.bmc.core.model
+                                                                                .ComputeImageCapabilitySchemaSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<ComputeImageCapabilitySchemaSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model
+                                                                .ComputeImageCapabilitySchemaSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

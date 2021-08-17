@@ -35,7 +35,8 @@ public class ListNetworkLoadBalancerHealthsResponse {
     /**
      * The returned NetworkLoadBalancerHealthCollection instance.
      */
-    private NetworkLoadBalancerHealthCollection networkLoadBalancerHealthCollection;
+    private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerHealthCollection
+            networkLoadBalancerHealthCollection;
 
     public static class Builder {
         /**

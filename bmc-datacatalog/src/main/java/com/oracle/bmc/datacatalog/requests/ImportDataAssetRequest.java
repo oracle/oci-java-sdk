@@ -78,6 +78,28 @@ public class ImportDataAssetRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<com.oracle.bmc.datacatalog.model.DataAssetImportExportTypeFilter>
+                importType = null;
+
+        /**
+         * Type of import.
+         * @return this builder instance
+         */
+        public Builder importType(
+                java.util.List<com.oracle.bmc.datacatalog.model.DataAssetImportExportTypeFilter>
+                        importType) {
+            this.importType = importType;
+            return this;
+        }
+
+        /**
+         * Singular setter. Type of import.
+         * @return this builder instance
+         */
+        public Builder importType(DataAssetImportExportTypeFilter singularValue) {
+            return this.importType(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

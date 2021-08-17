@@ -64,12 +64,16 @@ public class CreateFunctionConverter {
                                         "Transform function invoked for com.oracle.bmc.functions.responses.CreateFunctionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Function>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.functions.model.Function>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Function.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.functions.model.Function
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Function> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.functions.model.Function>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

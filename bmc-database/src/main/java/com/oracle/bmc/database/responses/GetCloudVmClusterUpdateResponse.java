@@ -27,7 +27,7 @@ public class GetCloudVmClusterUpdateResponse {
     /**
      * The returned Update instance.
      */
-    private Update update;
+    private com.oracle.bmc.database.model.Update update;
 
     public static class Builder {
         /**

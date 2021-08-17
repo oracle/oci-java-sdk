@@ -35,7 +35,7 @@ public class ListServiceCatalogsResponse {
     /**
      * The returned ServiceCatalogCollection instance.
      */
-    private ServiceCatalogCollection serviceCatalogCollection;
+    private com.oracle.bmc.servicecatalog.model.ServiceCatalogCollection serviceCatalogCollection;
 
     public static class Builder {
         /**

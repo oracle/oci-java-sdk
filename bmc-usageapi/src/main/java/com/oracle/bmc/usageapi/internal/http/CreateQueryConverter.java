@@ -68,12 +68,15 @@ public class CreateQueryConverter {
                                         "Transform function invoked for com.oracle.bmc.usageapi.responses.CreateQueryResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Query>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.usageapi.model.Query>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Query.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.usageapi.model.Query.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Query> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.usageapi.model.Query>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

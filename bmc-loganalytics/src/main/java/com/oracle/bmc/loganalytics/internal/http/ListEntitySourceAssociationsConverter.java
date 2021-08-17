@@ -154,13 +154,17 @@ public class ListEntitySourceAssociationsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogAnalyticsAssociationCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogAnalyticsAssociationCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogAnalyticsAssociationCollection.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogAnalyticsAssociationCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                LogAnalyticsAssociationCollection>
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LogAnalyticsAssociationCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

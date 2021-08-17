@@ -74,13 +74,17 @@ public class GetHeatWaveClusterMemoryEstimateConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        HeatWaveClusterMemoryEstimate>>
+                                                        com.oracle.bmc.mysql.model
+                                                                .HeatWaveClusterMemoryEstimate>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        HeatWaveClusterMemoryEstimate.class);
+                                                        com.oracle.bmc.mysql.model
+                                                                        .HeatWaveClusterMemoryEstimate
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                HeatWaveClusterMemoryEstimate>
+                                                com.oracle.bmc.mysql.model
+                                                        .HeatWaveClusterMemoryEstimate>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

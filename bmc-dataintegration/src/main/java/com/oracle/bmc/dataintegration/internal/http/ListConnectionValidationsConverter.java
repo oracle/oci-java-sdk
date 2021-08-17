@@ -140,14 +140,17 @@ public class ListConnectionValidationsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ConnectionValidationSummaryCollection>>
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .ConnectionValidationSummaryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ConnectionValidationSummaryCollection
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .ConnectionValidationSummaryCollection
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ConnectionValidationSummaryCollection>
+                                                com.oracle.bmc.dataintegration.model
+                                                        .ConnectionValidationSummaryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

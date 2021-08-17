@@ -35,7 +35,7 @@ public class ListJobsResponse {
     /**
      * The returned JobCollection instance.
      */
-    private JobCollection jobCollection;
+    private com.oracle.bmc.databasemigration.model.JobCollection jobCollection;
 
     public static class Builder {
         /**

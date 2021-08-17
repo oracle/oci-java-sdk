@@ -170,12 +170,17 @@ public class ListEntityTagsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        EntityTagCollection>>
+                                                        com.oracle.bmc.datacatalog.model
+                                                                .EntityTagCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        EntityTagCollection.class);
+                                                        com.oracle.bmc.datacatalog.model
+                                                                        .EntityTagCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<EntityTagCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model
+                                                        .EntityTagCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

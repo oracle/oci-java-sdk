@@ -40,7 +40,7 @@ public class CreateDeployEnvironmentResponse {
     /**
      * The returned DeployEnvironment instance.
      */
-    private DeployEnvironment deployEnvironment;
+    private com.oracle.bmc.devops.model.DeployEnvironment deployEnvironment;
 
     public static class Builder {
         /**

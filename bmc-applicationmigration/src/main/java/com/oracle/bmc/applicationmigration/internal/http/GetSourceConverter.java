@@ -69,12 +69,18 @@ public class GetSourceConverter {
                                         "Transform function invoked for com.oracle.bmc.applicationmigration.responses.GetSourceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Source>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.applicationmigration.model
+                                                                .Source>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Source.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.applicationmigration.model
+                                                                        .Source
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Source> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.applicationmigration.model.Source>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

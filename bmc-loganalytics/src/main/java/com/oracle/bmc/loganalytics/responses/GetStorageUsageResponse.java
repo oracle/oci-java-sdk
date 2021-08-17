@@ -26,7 +26,7 @@ public class GetStorageUsageResponse {
     /**
      * The returned StorageUsage instance.
      */
-    private StorageUsage storageUsage;
+    private com.oracle.bmc.loganalytics.model.StorageUsage storageUsage;
 
     public static class Builder {
         /**

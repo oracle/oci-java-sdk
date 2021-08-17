@@ -33,9 +33,9 @@ public class ListBdsInstancesResponse {
     private String opcNextPage;
 
     /**
-     * A list of BdsInstanceSummary instances.
+     * A list of com.oracle.bmc.bds.model.BdsInstanceSummary instances.
      */
-    private java.util.List<BdsInstanceSummary> items;
+    private java.util.List<com.oracle.bmc.bds.model.BdsInstanceSummary> items;
 
     public static class Builder {
         /**

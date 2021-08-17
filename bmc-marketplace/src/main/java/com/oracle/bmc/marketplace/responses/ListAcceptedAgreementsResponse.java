@@ -33,9 +33,9 @@ public class ListAcceptedAgreementsResponse {
     private String opcNextPage;
 
     /**
-     * A list of AcceptedAgreementSummary instances.
+     * A list of com.oracle.bmc.marketplace.model.AcceptedAgreementSummary instances.
      */
-    private java.util.List<AcceptedAgreementSummary> items;
+    private java.util.List<com.oracle.bmc.marketplace.model.AcceptedAgreementSummary> items;
 
     public static class Builder {
         /**

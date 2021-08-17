@@ -33,7 +33,8 @@ public class UpdateResponderRecipeResponderRuleResponse {
     /**
      * The returned ResponderRecipeResponderRule instance.
      */
-    private ResponderRecipeResponderRule responderRecipeResponderRule;
+    private com.oracle.bmc.cloudguard.model.ResponderRecipeResponderRule
+            responderRecipeResponderRule;
 
     public static class Builder {
         /**

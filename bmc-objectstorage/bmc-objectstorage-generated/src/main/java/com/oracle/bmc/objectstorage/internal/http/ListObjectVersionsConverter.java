@@ -141,12 +141,17 @@ public class ListObjectVersionsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ObjectVersionCollection>>
+                                                        com.oracle.bmc.objectstorage.model
+                                                                .ObjectVersionCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ObjectVersionCollection.class);
+                                                        com.oracle.bmc.objectstorage.model
+                                                                        .ObjectVersionCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ObjectVersionCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.objectstorage.model
+                                                        .ObjectVersionCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

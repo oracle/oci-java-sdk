@@ -108,12 +108,17 @@ public class UpsertSourceConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogAnalyticsSource>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogAnalyticsSource>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogAnalyticsSource.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogAnalyticsSource
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<LogAnalyticsSource>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LogAnalyticsSource>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

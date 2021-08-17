@@ -33,7 +33,7 @@ public class ListJobLogsResponse {
     /**
      * The returned JobLogCollection instance.
      */
-    private JobLogCollection jobLogCollection;
+    private com.oracle.bmc.datacatalog.model.JobLogCollection jobLogCollection;
 
     public static class Builder {
         /**

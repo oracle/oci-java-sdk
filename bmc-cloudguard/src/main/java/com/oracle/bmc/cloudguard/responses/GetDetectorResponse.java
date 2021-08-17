@@ -35,7 +35,7 @@ public class GetDetectorResponse {
     /**
      * The returned Detector instance.
      */
-    private Detector detector;
+    private com.oracle.bmc.cloudguard.model.Detector detector;
 
     public static class Builder {
         /**

@@ -33,7 +33,7 @@ public class UpdatePipelineResponse {
     /**
      * The returned Pipeline instance.
      */
-    private Pipeline pipeline;
+    private com.oracle.bmc.dataintegration.model.Pipeline pipeline;
 
     public static class Builder {
         /**

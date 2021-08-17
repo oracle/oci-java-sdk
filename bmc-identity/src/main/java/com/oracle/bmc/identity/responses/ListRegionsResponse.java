@@ -25,9 +25,9 @@ public class ListRegionsResponse {
     private String opcRequestId;
 
     /**
-     * A list of Region instances.
+     * A list of com.oracle.bmc.identity.model.Region instances.
      */
-    private java.util.List<Region> items;
+    private java.util.List<com.oracle.bmc.identity.model.Region> items;
 
     public static class Builder {
         /**

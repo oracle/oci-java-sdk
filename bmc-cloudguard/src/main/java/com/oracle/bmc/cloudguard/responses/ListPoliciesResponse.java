@@ -35,7 +35,7 @@ public class ListPoliciesResponse {
     /**
      * The returned PolicyCollection instance.
      */
-    private PolicyCollection policyCollection;
+    private com.oracle.bmc.cloudguard.model.PolicyCollection policyCollection;
 
     public static class Builder {
         /**

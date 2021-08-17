@@ -34,7 +34,7 @@ public class GetApiValidationsResponse {
     /**
      * The returned ApiValidations instance.
      */
-    private ApiValidations apiValidations;
+    private com.oracle.bmc.apigateway.model.ApiValidations apiValidations;
 
     public static class Builder {
         /**

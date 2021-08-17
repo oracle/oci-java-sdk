@@ -41,7 +41,7 @@ public class GetDetectorRuleResponse {
     /**
      * The returned DetectorRule instance.
      */
-    private DetectorRule detectorRule;
+    private com.oracle.bmc.cloudguard.model.DetectorRule detectorRule;
 
     public static class Builder {
         /**

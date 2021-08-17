@@ -33,9 +33,9 @@ public class ListSessionsResponse {
     private String opcNextPage;
 
     /**
-     * A list of SessionSummary instances.
+     * A list of com.oracle.bmc.bastion.model.SessionSummary instances.
      */
-    private java.util.List<SessionSummary> items;
+    private java.util.List<com.oracle.bmc.bastion.model.SessionSummary> items;
 
     public static class Builder {
         /**

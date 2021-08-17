@@ -27,7 +27,7 @@ public class SuggestMatchesResponse {
     /**
      * The returned SuggestResults instance.
      */
-    private SuggestResults suggestResults;
+    private com.oracle.bmc.datacatalog.model.SuggestResults suggestResults;
 
     public static class Builder {
         /**

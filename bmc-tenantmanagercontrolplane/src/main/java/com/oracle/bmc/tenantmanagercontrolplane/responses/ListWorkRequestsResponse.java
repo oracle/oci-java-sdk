@@ -35,7 +35,8 @@ public class ListWorkRequestsResponse {
     /**
      * The returned WorkRequestCollection instance.
      */
-    private WorkRequestCollection workRequestCollection;
+    private com.oracle.bmc.tenantmanagercontrolplane.model.WorkRequestCollection
+            workRequestCollection;
 
     public static class Builder {
         /**

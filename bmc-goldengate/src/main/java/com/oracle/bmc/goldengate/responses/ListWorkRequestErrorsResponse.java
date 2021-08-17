@@ -30,9 +30,9 @@ public class ListWorkRequestErrorsResponse {
     private String opcRequestId;
 
     /**
-     * A list of WorkRequestError instances.
+     * A list of com.oracle.bmc.goldengate.model.WorkRequestError instances.
      */
-    private java.util.List<WorkRequestError> items;
+    private java.util.List<com.oracle.bmc.goldengate.model.WorkRequestError> items;
 
     public static class Builder {
         /**

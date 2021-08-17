@@ -81,13 +81,17 @@ public class CreateTaskValidationConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        TaskValidation>>
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .TaskValidation>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        TaskValidation.class);
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .TaskValidation
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<TaskValidation> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dataintegration.model.TaskValidation>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -132,13 +132,17 @@ public class ListManagedDatabaseGroupsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ManagedDatabaseGroupCollection>>
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                .ManagedDatabaseGroupCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ManagedDatabaseGroupCollection.class);
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                        .ManagedDatabaseGroupCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ManagedDatabaseGroupCollection>
+                                                com.oracle.bmc.databasemanagement.model
+                                                        .ManagedDatabaseGroupCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

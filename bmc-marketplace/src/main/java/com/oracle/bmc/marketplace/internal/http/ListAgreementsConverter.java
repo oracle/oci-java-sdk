@@ -100,15 +100,21 @@ public class ListAgreementsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<AgreementSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.marketplace.model
+                                                                        .AgreementSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        AgreementSummary>>() {});
+                                                                        com.oracle.bmc.marketplace
+                                                                                .model
+                                                                                .AgreementSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<AgreementSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.marketplace.model
+                                                                .AgreementSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

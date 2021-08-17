@@ -165,13 +165,17 @@ public class SummarizeAwrDbTopWaitEventsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AwrDbTopWaitEventCollection>>
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                .AwrDbTopWaitEventCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AwrDbTopWaitEventCollection.class);
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                        .AwrDbTopWaitEventCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                AwrDbTopWaitEventCollection>
+                                                com.oracle.bmc.databasemanagement.model
+                                                        .AwrDbTopWaitEventCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

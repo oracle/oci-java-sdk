@@ -33,7 +33,7 @@ public class GetApplicationResponse {
     /**
      * The returned Application instance.
      */
-    private Application application;
+    private com.oracle.bmc.dataintegration.model.Application application;
 
     public static class Builder {
         /**

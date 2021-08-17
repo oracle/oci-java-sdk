@@ -27,7 +27,7 @@ public class GetAccessRequestResponse {
     /**
      * The returned AccessRequest instance.
      */
-    private AccessRequest accessRequest;
+    private com.oracle.bmc.operatoraccesscontrol.model.AccessRequest accessRequest;
 
     public static class Builder {
         /**

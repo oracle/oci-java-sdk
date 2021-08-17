@@ -88,15 +88,19 @@ public class GetVolumeBackupPolicyAssetAssignmentConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                VolumeBackupPolicyAssignment>>>
+                                                                com.oracle.bmc.core.model
+                                                                        .VolumeBackupPolicyAssignment>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        VolumeBackupPolicyAssignment>>() {});
+                                                                        com.oracle.bmc.core.model
+                                                                                .VolumeBackupPolicyAssignment>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<VolumeBackupPolicyAssignment>>
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model
+                                                                .VolumeBackupPolicyAssignment>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

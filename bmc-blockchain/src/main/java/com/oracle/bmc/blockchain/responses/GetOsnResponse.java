@@ -33,7 +33,7 @@ public class GetOsnResponse {
     /**
      * The returned Osn instance.
      */
-    private Osn osn;
+    private com.oracle.bmc.blockchain.model.Osn osn;
 
     public static class Builder {
         /**

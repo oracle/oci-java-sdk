@@ -33,7 +33,7 @@ public class IngestSqlBucketResponse {
     /**
      * The returned IngestSqlBucketResponseDetails instance.
      */
-    private IngestSqlBucketResponseDetails ingestSqlBucketResponseDetails;
+    private com.oracle.bmc.opsi.model.IngestSqlBucketResponseDetails ingestSqlBucketResponseDetails;
 
     public static class Builder {
         /**

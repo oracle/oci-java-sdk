@@ -127,12 +127,15 @@ public class ListEsxiHostsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        EsxiHostCollection>>
+                                                        com.oracle.bmc.ocvp.model
+                                                                .EsxiHostCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        EsxiHostCollection.class);
+                                                        com.oracle.bmc.ocvp.model.EsxiHostCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<EsxiHostCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.ocvp.model.EsxiHostCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

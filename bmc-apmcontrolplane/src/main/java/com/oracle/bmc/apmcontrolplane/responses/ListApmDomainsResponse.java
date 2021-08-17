@@ -33,9 +33,9 @@ public class ListApmDomainsResponse {
     private String opcNextPage;
 
     /**
-     * A list of ApmDomainSummary instances.
+     * A list of com.oracle.bmc.apmcontrolplane.model.ApmDomainSummary instances.
      */
-    private java.util.List<ApmDomainSummary> items;
+    private java.util.List<com.oracle.bmc.apmcontrolplane.model.ApmDomainSummary> items;
 
     public static class Builder {
         /**

@@ -42,7 +42,7 @@ public class ListEnrollmentStatusesResponse {
     /**
      * The returned EnrollmentStatusCollection instance.
      */
-    private EnrollmentStatusCollection enrollmentStatusCollection;
+    private com.oracle.bmc.optimizer.model.EnrollmentStatusCollection enrollmentStatusCollection;
 
     public static class Builder {
         /**

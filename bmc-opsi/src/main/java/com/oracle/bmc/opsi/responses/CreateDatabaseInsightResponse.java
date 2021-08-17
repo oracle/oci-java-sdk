@@ -49,7 +49,7 @@ public class CreateDatabaseInsightResponse {
     /**
      * The returned DatabaseInsight instance.
      */
-    private DatabaseInsight databaseInsight;
+    private com.oracle.bmc.opsi.model.DatabaseInsight databaseInsight;
 
     public static class Builder {
         /**

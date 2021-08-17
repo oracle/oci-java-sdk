@@ -253,6 +253,53 @@ public class ListLogAnalyticsEntitiesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<String> entityTypeName = null;
+
+        /**
+         * A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of
+         * one of the entityTypeNames given in the list. The match is case-insensitive.
+         *
+         * @return this builder instance
+         */
+        public Builder entityTypeName(java.util.List<String> entityTypeName) {
+            this.entityTypeName = entityTypeName;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of
+         * one of the entityTypeNames given in the list. The match is case-insensitive.
+         *
+         * @return this builder instance
+         */
+        public Builder entityTypeName(String singularValue) {
+            return this.entityTypeName(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<com.oracle.bmc.loganalytics.model.CreationSourceType>
+                creationSourceType = null;
+
+        /**
+         * A filter to return only those log analytics entities with the specified auto-creation source.
+         *
+         * @return this builder instance
+         */
+        public Builder creationSourceType(
+                java.util.List<com.oracle.bmc.loganalytics.model.CreationSourceType>
+                        creationSourceType) {
+            this.creationSourceType = creationSourceType;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return only those log analytics entities with the specified auto-creation source.
+         *
+         * @return this builder instance
+         */
+        public Builder creationSourceType(CreationSourceType singularValue) {
+            return this.creationSourceType(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

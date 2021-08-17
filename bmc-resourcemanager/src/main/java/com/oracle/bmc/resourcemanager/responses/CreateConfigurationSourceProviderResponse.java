@@ -30,7 +30,8 @@ public class CreateConfigurationSourceProviderResponse {
     /**
      * The returned ConfigurationSourceProvider instance.
      */
-    private ConfigurationSourceProvider configurationSourceProvider;
+    private com.oracle.bmc.resourcemanager.model.ConfigurationSourceProvider
+            configurationSourceProvider;
 
     public static class Builder {
         /**

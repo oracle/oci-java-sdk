@@ -69,11 +69,15 @@ public class CreateUserConverter {
                                         "Transform function invoked for com.oracle.bmc.cims.responses.CreateUserResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<User>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create(User.class);
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.cims.model.User>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.cims.model.User.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<User> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.cims.model.User>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

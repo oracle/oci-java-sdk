@@ -45,7 +45,8 @@ public class ListDataFlowsResponse {
     /**
      * The returned DataFlowSummaryCollection instance.
      */
-    private DataFlowSummaryCollection dataFlowSummaryCollection;
+    private com.oracle.bmc.dataintegration.model.DataFlowSummaryCollection
+            dataFlowSummaryCollection;
 
     public static class Builder {
         /**

@@ -63,6 +63,25 @@ public class UpdateAccessRulesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<AccessRule> accessRules = null;
+
+        /**
+         *
+         * @return this builder instance
+         */
+        public Builder accessRules(java.util.List<AccessRule> accessRules) {
+            this.accessRules = accessRules;
+            return this;
+        }
+
+        /**
+         * Singular setter.
+         * @return this builder instance
+         */
+        public Builder accessRules(AccessRule singularValue) {
+            return this.accessRules(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

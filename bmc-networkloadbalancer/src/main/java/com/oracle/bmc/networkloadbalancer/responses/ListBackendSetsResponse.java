@@ -35,7 +35,7 @@ public class ListBackendSetsResponse {
     /**
      * The returned BackendSetCollection instance.
      */
-    private BackendSetCollection backendSetCollection;
+    private com.oracle.bmc.networkloadbalancer.model.BackendSetCollection backendSetCollection;
 
     public static class Builder {
         /**

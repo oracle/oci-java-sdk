@@ -139,13 +139,17 @@ public class ListTaskValidationsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        TaskValidationSummaryCollection>>
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .TaskValidationSummaryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        TaskValidationSummaryCollection.class);
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .TaskValidationSummaryCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                TaskValidationSummaryCollection>
+                                                com.oracle.bmc.dataintegration.model
+                                                        .TaskValidationSummaryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -96,12 +96,16 @@ public class UpdateTermRelationshipConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        TermRelationship>>
+                                                        com.oracle.bmc.datacatalog.model
+                                                                .TermRelationship>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        TermRelationship.class);
+                                                        com.oracle.bmc.datacatalog.model
+                                                                        .TermRelationship
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<TermRelationship>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model.TermRelationship>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

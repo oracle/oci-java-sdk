@@ -33,9 +33,9 @@ public class ListBootVolumeAttachmentsResponse {
     private String opcRequestId;
 
     /**
-     * A list of BootVolumeAttachment instances.
+     * A list of com.oracle.bmc.core.model.BootVolumeAttachment instances.
      */
-    private java.util.List<BootVolumeAttachment> items;
+    private java.util.List<com.oracle.bmc.core.model.BootVolumeAttachment> items;
 
     public static class Builder {
         /**

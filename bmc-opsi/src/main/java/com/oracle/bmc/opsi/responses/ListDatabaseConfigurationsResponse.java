@@ -41,7 +41,8 @@ public class ListDatabaseConfigurationsResponse {
     /**
      * The returned DatabaseConfigurationCollection instance.
      */
-    private DatabaseConfigurationCollection databaseConfigurationCollection;
+    private com.oracle.bmc.opsi.model.DatabaseConfigurationCollection
+            databaseConfigurationCollection;
 
     public static class Builder {
         /**

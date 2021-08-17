@@ -97,12 +97,17 @@ public class ValidateSourceMappingConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SourceMappingResponse>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .SourceMappingResponse>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SourceMappingResponse.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .SourceMappingResponse
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<SourceMappingResponse>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model
+                                                        .SourceMappingResponse>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

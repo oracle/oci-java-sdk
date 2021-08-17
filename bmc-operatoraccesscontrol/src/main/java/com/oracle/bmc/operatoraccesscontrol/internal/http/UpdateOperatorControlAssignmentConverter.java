@@ -88,12 +88,17 @@ public class UpdateOperatorControlAssignmentConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        OperatorControlAssignment>>
+                                                        com.oracle.bmc.operatoraccesscontrol.model
+                                                                .OperatorControlAssignment>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        OperatorControlAssignment.class);
+                                                        com.oracle.bmc.operatoraccesscontrol.model
+                                                                        .OperatorControlAssignment
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<OperatorControlAssignment>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.operatoraccesscontrol.model
+                                                        .OperatorControlAssignment>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

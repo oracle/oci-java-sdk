@@ -66,13 +66,17 @@ public class GetAutonomousPatchConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AutonomousPatch>>
+                                                        com.oracle.bmc.database.model
+                                                                .AutonomousPatch>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AutonomousPatch.class);
+                                                        com.oracle.bmc.database.model
+                                                                        .AutonomousPatch
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AutonomousPatch> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.database.model.AutonomousPatch>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

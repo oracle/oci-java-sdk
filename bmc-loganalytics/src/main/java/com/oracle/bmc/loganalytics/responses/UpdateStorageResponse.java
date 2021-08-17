@@ -32,7 +32,7 @@ public class UpdateStorageResponse {
     /**
      * The returned Storage instance.
      */
-    private Storage storage;
+    private com.oracle.bmc.loganalytics.model.Storage storage;
 
     public static class Builder {
         /**

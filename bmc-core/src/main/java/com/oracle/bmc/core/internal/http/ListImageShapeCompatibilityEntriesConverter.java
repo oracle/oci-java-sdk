@@ -92,15 +92,19 @@ public class ListImageShapeCompatibilityEntriesConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                ImageShapeCompatibilitySummary>>>
+                                                                com.oracle.bmc.core.model
+                                                                        .ImageShapeCompatibilitySummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        ImageShapeCompatibilitySummary>>() {});
+                                                                        com.oracle.bmc.core.model
+                                                                                .ImageShapeCompatibilitySummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<ImageShapeCompatibilitySummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model
+                                                                .ImageShapeCompatibilitySummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

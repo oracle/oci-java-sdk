@@ -27,7 +27,7 @@ public class CreateSuppressionResponse {
     /**
      * The returned Suppression instance.
      */
-    private Suppression suppression;
+    private com.oracle.bmc.email.model.Suppression suppression;
 
     public static class Builder {
         /**

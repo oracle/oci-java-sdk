@@ -27,7 +27,8 @@ public class ListCrossConnectMappingsResponse {
     /**
      * The returned CrossConnectMappingDetailsCollection instance.
      */
-    private CrossConnectMappingDetailsCollection crossConnectMappingDetailsCollection;
+    private com.oracle.bmc.core.model.CrossConnectMappingDetailsCollection
+            crossConnectMappingDetailsCollection;
 
     public static class Builder {
         /**

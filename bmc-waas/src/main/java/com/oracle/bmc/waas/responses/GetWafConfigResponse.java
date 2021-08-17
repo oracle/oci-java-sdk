@@ -30,7 +30,7 @@ public class GetWafConfigResponse {
     /**
      * The returned WafConfig instance.
      */
-    private WafConfig wafConfig;
+    private com.oracle.bmc.waas.model.WafConfig wafConfig;
 
     public static class Builder {
         /**

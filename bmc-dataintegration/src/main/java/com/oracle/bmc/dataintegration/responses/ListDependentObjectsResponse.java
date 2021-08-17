@@ -45,7 +45,8 @@ public class ListDependentObjectsResponse {
     /**
      * The returned DependentObjectSummaryCollection instance.
      */
-    private DependentObjectSummaryCollection dependentObjectSummaryCollection;
+    private com.oracle.bmc.dataintegration.model.DependentObjectSummaryCollection
+            dependentObjectSummaryCollection;
 
     public static class Builder {
         /**

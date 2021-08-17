@@ -25,9 +25,9 @@ public class ListHostnamesResponse {
     private String opcRequestId;
 
     /**
-     * A list of Hostname instances.
+     * A list of com.oracle.bmc.loadbalancer.model.Hostname instances.
      */
-    private java.util.List<Hostname> items;
+    private java.util.List<com.oracle.bmc.loadbalancer.model.Hostname> items;
 
     public static class Builder {
         /**

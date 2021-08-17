@@ -119,12 +119,16 @@ public class ListRoverNodesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        RoverNodeCollection>>
+                                                        com.oracle.bmc.rover.model
+                                                                .RoverNodeCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        RoverNodeCollection.class);
+                                                        com.oracle.bmc.rover.model
+                                                                        .RoverNodeCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<RoverNodeCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.rover.model.RoverNodeCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

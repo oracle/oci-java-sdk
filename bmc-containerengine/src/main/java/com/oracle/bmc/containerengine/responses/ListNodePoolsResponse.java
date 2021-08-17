@@ -32,9 +32,9 @@ public class ListNodePoolsResponse {
     private String opcRequestId;
 
     /**
-     * A list of NodePoolSummary instances.
+     * A list of com.oracle.bmc.containerengine.model.NodePoolSummary instances.
      */
-    private java.util.List<NodePoolSummary> items;
+    private java.util.List<com.oracle.bmc.containerengine.model.NodePoolSummary> items;
 
     public static class Builder {
         /**

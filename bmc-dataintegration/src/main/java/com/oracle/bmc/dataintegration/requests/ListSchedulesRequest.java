@@ -154,6 +154,63 @@ public class ListSchedulesRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<String> key = null;
+
+        /**
+         * Used to filter by the key of the object.
+         * @return this builder instance
+         */
+        public Builder key(java.util.List<String> key) {
+            this.key = key;
+            return this;
+        }
+
+        /**
+         * Singular setter. Used to filter by the key of the object.
+         * @return this builder instance
+         */
+        public Builder key(String singularValue) {
+            return this.key(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> identifier = null;
+
+        /**
+         * Used to filter by the identifier of the object.
+         * @return this builder instance
+         */
+        public Builder identifier(java.util.List<String> identifier) {
+            this.identifier = identifier;
+            return this;
+        }
+
+        /**
+         * Singular setter. Used to filter by the identifier of the object.
+         * @return this builder instance
+         */
+        public Builder identifier(String singularValue) {
+            return this.identifier(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> type = null;
+
+        /**
+         * Used to filter by the object type of the object. It can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
+         * @return this builder instance
+         */
+        public Builder type(java.util.List<String> type) {
+            this.type = type;
+            return this;
+        }
+
+        /**
+         * Singular setter. Used to filter by the object type of the object. It can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
+         * @return this builder instance
+         */
+        public Builder type(String singularValue) {
+            return this.type(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

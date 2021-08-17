@@ -65,13 +65,17 @@ public class DecryptConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DecryptedData>>
+                                                        com.oracle.bmc.keymanagement.model
+                                                                .DecryptedData>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DecryptedData.class);
+                                                        com.oracle.bmc.keymanagement.model
+                                                                        .DecryptedData
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DecryptedData> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.keymanagement.model.DecryptedData>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

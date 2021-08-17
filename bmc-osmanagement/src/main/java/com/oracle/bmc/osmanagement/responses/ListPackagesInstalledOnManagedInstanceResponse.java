@@ -34,9 +34,9 @@ public class ListPackagesInstalledOnManagedInstanceResponse {
     private String opcNextPage;
 
     /**
-     * A list of InstalledPackageSummary instances.
+     * A list of com.oracle.bmc.osmanagement.model.InstalledPackageSummary instances.
      */
-    private java.util.List<InstalledPackageSummary> items;
+    private java.util.List<com.oracle.bmc.osmanagement.model.InstalledPackageSummary> items;
 
     public static class Builder {
         /**

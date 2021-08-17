@@ -109,14 +109,17 @@ public class ListConfigWorkRequestsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogAnalyticsConfigWorkRequestCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogAnalyticsConfigWorkRequestCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogAnalyticsConfigWorkRequestCollection
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogAnalyticsConfigWorkRequestCollection
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                LogAnalyticsConfigWorkRequestCollection>
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LogAnalyticsConfigWorkRequestCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

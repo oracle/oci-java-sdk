@@ -34,9 +34,9 @@ public class ListDbSystemsResponse {
     private String opcNextPage;
 
     /**
-     * A list of DbSystemSummary instances.
+     * A list of com.oracle.bmc.database.model.DbSystemSummary instances.
      */
-    private java.util.List<DbSystemSummary> items;
+    private java.util.List<com.oracle.bmc.database.model.DbSystemSummary> items;
 
     public static class Builder {
         /**

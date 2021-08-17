@@ -119,15 +119,22 @@ public class ListWorkspacesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<WorkspaceSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.dataintegration.model
+                                                                        .WorkspaceSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        WorkspaceSummary>>() {});
+                                                                        com.oracle.bmc
+                                                                                .dataintegration
+                                                                                .model
+                                                                                .WorkspaceSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<WorkspaceSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .WorkspaceSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

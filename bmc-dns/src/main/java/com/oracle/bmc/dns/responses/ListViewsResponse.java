@@ -33,9 +33,9 @@ public class ListViewsResponse {
     private String opcNextPage;
 
     /**
-     * A list of ViewSummary instances.
+     * A list of com.oracle.bmc.dns.model.ViewSummary instances.
      */
-    private java.util.List<ViewSummary> items;
+    private java.util.List<com.oracle.bmc.dns.model.ViewSummary> items;
 
     public static class Builder {
         /**

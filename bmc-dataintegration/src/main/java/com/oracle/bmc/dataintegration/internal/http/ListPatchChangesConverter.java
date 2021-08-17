@@ -133,13 +133,17 @@ public class ListPatchChangesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        PatchChangeSummaryCollection>>
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .PatchChangeSummaryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        PatchChangeSummaryCollection.class);
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .PatchChangeSummaryCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                PatchChangeSummaryCollection>
+                                                com.oracle.bmc.dataintegration.model
+                                                        .PatchChangeSummaryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

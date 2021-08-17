@@ -119,15 +119,20 @@ public class ListLimitDefinitionsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<LimitDefinitionSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.limits.model
+                                                                        .LimitDefinitionSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        LimitDefinitionSummary>>() {});
+                                                                        com.oracle.bmc.limits.model
+                                                                                .LimitDefinitionSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<LimitDefinitionSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.limits.model
+                                                                .LimitDefinitionSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

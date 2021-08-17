@@ -32,7 +32,7 @@ public class CreatePolicyResponse {
     /**
      * The returned Policy instance.
      */
-    private Policy policy;
+    private com.oracle.bmc.identity.model.Policy policy;
 
     public static class Builder {
         /**

@@ -35,7 +35,7 @@ public class ListHostedEntitiesResponse {
     /**
      * The returned HostedEntityCollection instance.
      */
-    private HostedEntityCollection hostedEntityCollection;
+    private com.oracle.bmc.opsi.model.HostedEntityCollection hostedEntityCollection;
 
     public static class Builder {
         /**

@@ -34,7 +34,7 @@ public class GetIndexResponse {
     /**
      * The returned Index instance.
      */
-    private Index index;
+    private com.oracle.bmc.nosql.model.Index index;
 
     public static class Builder {
         /**

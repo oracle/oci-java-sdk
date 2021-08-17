@@ -74,11 +74,15 @@ public class UpdateTagConverter {
                                         "Transform function invoked for com.oracle.bmc.identity.responses.UpdateTagResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Tag>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create(Tag.class);
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.identity.model.Tag>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.identity.model.Tag.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Tag> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.identity.model.Tag>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

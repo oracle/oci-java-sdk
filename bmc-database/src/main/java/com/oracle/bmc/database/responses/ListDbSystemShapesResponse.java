@@ -34,9 +34,9 @@ public class ListDbSystemShapesResponse {
     private String opcNextPage;
 
     /**
-     * A list of DbSystemShapeSummary instances.
+     * A list of com.oracle.bmc.database.model.DbSystemShapeSummary instances.
      */
-    private java.util.List<DbSystemShapeSummary> items;
+    private java.util.List<com.oracle.bmc.database.model.DbSystemShapeSummary> items;
 
     public static class Builder {
         /**

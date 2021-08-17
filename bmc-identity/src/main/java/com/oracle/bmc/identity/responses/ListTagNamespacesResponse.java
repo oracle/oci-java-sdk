@@ -33,9 +33,9 @@ public class ListTagNamespacesResponse {
     private String opcNextPage;
 
     /**
-     * A list of TagNamespaceSummary instances.
+     * A list of com.oracle.bmc.identity.model.TagNamespaceSummary instances.
      */
-    private java.util.List<TagNamespaceSummary> items;
+    private java.util.List<com.oracle.bmc.identity.model.TagNamespaceSummary> items;
 
     public static class Builder {
         /**

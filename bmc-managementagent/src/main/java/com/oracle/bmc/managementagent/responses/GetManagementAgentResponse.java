@@ -33,7 +33,7 @@ public class GetManagementAgentResponse {
     /**
      * The returned ManagementAgent instance.
      */
-    private ManagementAgent managementAgent;
+    private com.oracle.bmc.managementagent.model.ManagementAgent managementAgent;
 
     public static class Builder {
         /**

@@ -69,12 +69,16 @@ public class CreateAppCatalogSubscriptionConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AppCatalogSubscription>>
+                                                        com.oracle.bmc.core.model
+                                                                .AppCatalogSubscription>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AppCatalogSubscription.class);
+                                                        com.oracle.bmc.core.model
+                                                                        .AppCatalogSubscription
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AppCatalogSubscription>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.AppCatalogSubscription>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

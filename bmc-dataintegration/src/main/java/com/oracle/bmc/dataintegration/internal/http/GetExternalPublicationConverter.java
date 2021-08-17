@@ -84,12 +84,17 @@ public class GetExternalPublicationConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ExternalPublication>>
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .ExternalPublication>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ExternalPublication.class);
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .ExternalPublication
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ExternalPublication>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dataintegration.model
+                                                        .ExternalPublication>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

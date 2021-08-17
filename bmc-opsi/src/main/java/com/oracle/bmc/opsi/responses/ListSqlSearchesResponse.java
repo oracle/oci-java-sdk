@@ -35,7 +35,7 @@ public class ListSqlSearchesResponse {
     /**
      * The returned SqlSearchCollection instance.
      */
-    private SqlSearchCollection sqlSearchCollection;
+    private com.oracle.bmc.opsi.model.SqlSearchCollection sqlSearchCollection;
 
     public static class Builder {
         /**

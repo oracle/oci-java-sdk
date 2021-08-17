@@ -71,12 +71,17 @@ public class GetSourceSummaryConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SourceSummaryReport>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .SourceSummaryReport>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SourceSummaryReport.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .SourceSummaryReport
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<SourceSummaryReport>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model
+                                                        .SourceSummaryReport>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

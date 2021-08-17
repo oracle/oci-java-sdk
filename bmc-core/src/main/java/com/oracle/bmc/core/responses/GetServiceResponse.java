@@ -33,7 +33,7 @@ public class GetServiceResponse {
     /**
      * The returned Service instance.
      */
-    private Service service;
+    private com.oracle.bmc.core.model.Service service;
 
     public static class Builder {
         /**

@@ -70,13 +70,16 @@ public class GetMountTargetConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        MountTarget>>
+                                                        com.oracle.bmc.filestorage.model
+                                                                .MountTarget>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        MountTarget.class);
+                                                        com.oracle.bmc.filestorage.model.MountTarget
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<MountTarget> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.filestorage.model.MountTarget>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -33,7 +33,7 @@ public class GetListingResponse {
     /**
      * The returned Listing instance.
      */
-    private Listing listing;
+    private com.oracle.bmc.marketplace.model.Listing listing;
 
     public static class Builder {
         /**

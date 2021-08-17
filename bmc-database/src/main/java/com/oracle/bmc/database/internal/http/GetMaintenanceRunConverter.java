@@ -66,13 +66,16 @@ public class GetMaintenanceRunConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        MaintenanceRun>>
+                                                        com.oracle.bmc.database.model
+                                                                .MaintenanceRun>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        MaintenanceRun.class);
+                                                        com.oracle.bmc.database.model.MaintenanceRun
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<MaintenanceRun> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.database.model.MaintenanceRun>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

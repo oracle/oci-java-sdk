@@ -35,7 +35,7 @@ public class ListContainerImagesResponse {
     /**
      * The returned ContainerImageCollection instance.
      */
-    private ContainerImageCollection containerImageCollection;
+    private com.oracle.bmc.artifacts.model.ContainerImageCollection containerImageCollection;
 
     public static class Builder {
         /**

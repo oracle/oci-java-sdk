@@ -33,9 +33,9 @@ public class ListInstanceConsoleConnectionsResponse {
     private String opcRequestId;
 
     /**
-     * A list of InstanceConsoleConnection instances.
+     * A list of com.oracle.bmc.core.model.InstanceConsoleConnection instances.
      */
-    private java.util.List<InstanceConsoleConnection> items;
+    private java.util.List<com.oracle.bmc.core.model.InstanceConsoleConnection> items;
 
     public static class Builder {
         /**

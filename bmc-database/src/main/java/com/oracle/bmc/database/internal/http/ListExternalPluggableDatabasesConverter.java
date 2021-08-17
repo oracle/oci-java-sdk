@@ -132,15 +132,20 @@ public class ListExternalPluggableDatabasesConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                ExternalPluggableDatabaseSummary>>>
+                                                                com.oracle.bmc.database.model
+                                                                        .ExternalPluggableDatabaseSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        ExternalPluggableDatabaseSummary>>() {});
+                                                                        com.oracle.bmc.database
+                                                                                .model
+                                                                                .ExternalPluggableDatabaseSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<ExternalPluggableDatabaseSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.database.model
+                                                                .ExternalPluggableDatabaseSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

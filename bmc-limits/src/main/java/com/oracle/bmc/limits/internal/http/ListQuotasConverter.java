@@ -118,14 +118,19 @@ public class ListQuotasConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<QuotaSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.limits.model
+                                                                        .QuotaSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<QuotaSummary>>() {});
+                                                                java.util.List<
+                                                                        com.oracle.bmc.limits.model
+                                                                                .QuotaSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<QuotaSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.limits.model.QuotaSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

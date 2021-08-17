@@ -74,12 +74,16 @@ public class CreateContainerRepositoryConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ContainerRepository>>
+                                                        com.oracle.bmc.artifacts.model
+                                                                .ContainerRepository>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ContainerRepository.class);
+                                                        com.oracle.bmc.artifacts.model
+                                                                        .ContainerRepository
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ContainerRepository>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.artifacts.model.ContainerRepository>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

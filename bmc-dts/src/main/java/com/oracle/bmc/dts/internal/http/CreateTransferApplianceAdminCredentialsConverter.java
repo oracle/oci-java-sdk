@@ -79,13 +79,17 @@ public class CreateTransferApplianceAdminCredentialsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        TransferApplianceCertificate>>
+                                                        com.oracle.bmc.dts.model
+                                                                .TransferApplianceCertificate>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        TransferApplianceCertificate.class);
+                                                        com.oracle.bmc.dts.model
+                                                                        .TransferApplianceCertificate
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                TransferApplianceCertificate>
+                                                com.oracle.bmc.dts.model
+                                                        .TransferApplianceCertificate>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -32,7 +32,7 @@ public class UpdateMaintenanceRunResponse {
     /**
      * The returned MaintenanceRun instance.
      */
-    private MaintenanceRun maintenanceRun;
+    private com.oracle.bmc.database.model.MaintenanceRun maintenanceRun;
 
     public static class Builder {
         /**

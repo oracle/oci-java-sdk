@@ -205,14 +205,17 @@ public class SummarizeDatabaseInsightResourceUsageConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SummarizeDatabaseInsightResourceUsageAggregation>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .SummarizeDatabaseInsightResourceUsageAggregation>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SummarizeDatabaseInsightResourceUsageAggregation
+                                                        com.oracle.bmc.opsi.model
+                                                                        .SummarizeDatabaseInsightResourceUsageAggregation
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                SummarizeDatabaseInsightResourceUsageAggregation>
+                                                com.oracle.bmc.opsi.model
+                                                        .SummarizeDatabaseInsightResourceUsageAggregation>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

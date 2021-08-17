@@ -33,7 +33,7 @@ public class GetHttpMonitorResponse {
     /**
      * The returned HttpMonitor instance, or null if {@link #isNotModified()} is true.
      */
-    private HttpMonitor httpMonitor;
+    private com.oracle.bmc.healthchecks.model.HttpMonitor httpMonitor;
 
     /**
      * Flag to indicate whether or not the object was modified.  If this is true,

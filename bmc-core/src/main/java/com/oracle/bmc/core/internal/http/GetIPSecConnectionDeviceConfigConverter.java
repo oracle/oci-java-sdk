@@ -70,13 +70,17 @@ public class GetIPSecConnectionDeviceConfigConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        IPSecConnectionDeviceConfig>>
+                                                        com.oracle.bmc.core.model
+                                                                .IPSecConnectionDeviceConfig>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        IPSecConnectionDeviceConfig.class);
+                                                        com.oracle.bmc.core.model
+                                                                        .IPSecConnectionDeviceConfig
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                IPSecConnectionDeviceConfig>
+                                                com.oracle.bmc.core.model
+                                                        .IPSecConnectionDeviceConfig>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

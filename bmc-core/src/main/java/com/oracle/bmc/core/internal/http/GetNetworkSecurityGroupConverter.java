@@ -67,12 +67,16 @@ public class GetNetworkSecurityGroupConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        NetworkSecurityGroup>>
+                                                        com.oracle.bmc.core.model
+                                                                .NetworkSecurityGroup>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        NetworkSecurityGroup.class);
+                                                        com.oracle.bmc.core.model
+                                                                        .NetworkSecurityGroup
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<NetworkSecurityGroup>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.NetworkSecurityGroup>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

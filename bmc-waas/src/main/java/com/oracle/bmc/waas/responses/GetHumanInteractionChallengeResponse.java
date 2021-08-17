@@ -30,7 +30,7 @@ public class GetHumanInteractionChallengeResponse {
     /**
      * The returned HumanInteractionChallenge instance.
      */
-    private HumanInteractionChallenge humanInteractionChallenge;
+    private com.oracle.bmc.waas.model.HumanInteractionChallenge humanInteractionChallenge;
 
     public static class Builder {
         /**

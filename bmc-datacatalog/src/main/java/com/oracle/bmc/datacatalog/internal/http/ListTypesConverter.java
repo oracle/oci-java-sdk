@@ -168,13 +168,17 @@ public class ListTypesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        TypeCollection>>
+                                                        com.oracle.bmc.datacatalog.model
+                                                                .TypeCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        TypeCollection.class);
+                                                        com.oracle.bmc.datacatalog.model
+                                                                        .TypeCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<TypeCollection> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model.TypeCollection>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -32,7 +32,7 @@ public class UpdateQueryResponse {
     /**
      * The returned Query instance.
      */
-    private Query query;
+    private com.oracle.bmc.usageapi.model.Query query;
 
     public static class Builder {
         /**

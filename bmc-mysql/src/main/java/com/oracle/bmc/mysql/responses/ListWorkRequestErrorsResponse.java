@@ -33,9 +33,9 @@ public class ListWorkRequestErrorsResponse {
     private String opcNextPage;
 
     /**
-     * A list of WorkRequestError instances.
+     * A list of com.oracle.bmc.mysql.model.WorkRequestError instances.
      */
-    private java.util.List<WorkRequestError> items;
+    private java.util.List<com.oracle.bmc.mysql.model.WorkRequestError> items;
 
     public static class Builder {
         /**

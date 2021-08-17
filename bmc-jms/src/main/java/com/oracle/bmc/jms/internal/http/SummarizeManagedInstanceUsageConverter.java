@@ -187,13 +187,17 @@ public class SummarizeManagedInstanceUsageConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ManagedInstanceUsageCollection>>
+                                                        com.oracle.bmc.jms.model
+                                                                .ManagedInstanceUsageCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ManagedInstanceUsageCollection.class);
+                                                        com.oracle.bmc.jms.model
+                                                                        .ManagedInstanceUsageCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ManagedInstanceUsageCollection>
+                                                com.oracle.bmc.jms.model
+                                                        .ManagedInstanceUsageCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

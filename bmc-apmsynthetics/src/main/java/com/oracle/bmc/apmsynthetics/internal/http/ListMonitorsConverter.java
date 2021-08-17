@@ -135,12 +135,17 @@ public class ListMonitorsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        MonitorCollection>>
+                                                        com.oracle.bmc.apmsynthetics.model
+                                                                .MonitorCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        MonitorCollection.class);
+                                                        com.oracle.bmc.apmsynthetics.model
+                                                                        .MonitorCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<MonitorCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.apmsynthetics.model
+                                                        .MonitorCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

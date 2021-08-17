@@ -32,7 +32,7 @@ public class GetDatabaseRegistrationResponse {
     /**
      * The returned DatabaseRegistration instance.
      */
-    private DatabaseRegistration databaseRegistration;
+    private com.oracle.bmc.goldengate.model.DatabaseRegistration databaseRegistration;
 
     public static class Builder {
         /**

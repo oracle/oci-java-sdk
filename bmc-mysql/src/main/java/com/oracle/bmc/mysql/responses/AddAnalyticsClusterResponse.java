@@ -39,7 +39,7 @@ public class AddAnalyticsClusterResponse {
     /**
      * The returned AnalyticsCluster instance.
      */
-    private AnalyticsCluster analyticsCluster;
+    private com.oracle.bmc.mysql.model.AnalyticsCluster analyticsCluster;
 
     public static class Builder {
         /**

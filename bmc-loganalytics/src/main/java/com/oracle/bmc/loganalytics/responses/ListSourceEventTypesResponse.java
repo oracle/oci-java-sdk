@@ -42,7 +42,7 @@ public class ListSourceEventTypesResponse {
     /**
      * The returned EventTypeCollection instance.
      */
-    private EventTypeCollection eventTypeCollection;
+    private com.oracle.bmc.loganalytics.model.EventTypeCollection eventTypeCollection;
 
     public static class Builder {
         /**

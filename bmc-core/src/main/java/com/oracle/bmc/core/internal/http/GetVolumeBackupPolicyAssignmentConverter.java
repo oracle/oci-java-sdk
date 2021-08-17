@@ -69,13 +69,17 @@ public class GetVolumeBackupPolicyAssignmentConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        VolumeBackupPolicyAssignment>>
+                                                        com.oracle.bmc.core.model
+                                                                .VolumeBackupPolicyAssignment>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        VolumeBackupPolicyAssignment.class);
+                                                        com.oracle.bmc.core.model
+                                                                        .VolumeBackupPolicyAssignment
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                VolumeBackupPolicyAssignment>
+                                                com.oracle.bmc.core.model
+                                                        .VolumeBackupPolicyAssignment>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

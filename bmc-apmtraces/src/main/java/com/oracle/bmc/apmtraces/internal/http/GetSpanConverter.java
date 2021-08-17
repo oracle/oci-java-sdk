@@ -79,11 +79,15 @@ public class GetSpanConverter {
                                         "Transform function invoked for com.oracle.bmc.apmtraces.responses.GetSpanResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Span>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create(Span.class);
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.apmtraces.model.Span>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.apmtraces.model.Span.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Span> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.apmtraces.model.Span>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

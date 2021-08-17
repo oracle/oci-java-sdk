@@ -51,7 +51,7 @@ public class CreateEmailDomainResponse {
     /**
      * The returned EmailDomain instance.
      */
-    private EmailDomain emailDomain;
+    private com.oracle.bmc.email.model.EmailDomain emailDomain;
 
     public static class Builder {
         /**

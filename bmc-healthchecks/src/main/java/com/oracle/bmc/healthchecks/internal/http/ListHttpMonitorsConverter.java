@@ -119,15 +119,21 @@ public class ListHttpMonitorsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<HttpMonitorSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.healthchecks.model
+                                                                        .HttpMonitorSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        HttpMonitorSummary>>() {});
+                                                                        com.oracle.bmc.healthchecks
+                                                                                .model
+                                                                                .HttpMonitorSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<HttpMonitorSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.healthchecks.model
+                                                                .HttpMonitorSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

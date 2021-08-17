@@ -144,15 +144,21 @@ public class ListNotebookSessionsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<NotebookSessionSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.datascience.model
+                                                                        .NotebookSessionSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        NotebookSessionSummary>>() {});
+                                                                        com.oracle.bmc.datascience
+                                                                                .model
+                                                                                .NotebookSessionSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<NotebookSessionSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.datascience.model
+                                                                .NotebookSessionSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

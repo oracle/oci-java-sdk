@@ -223,6 +223,27 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<Fields> fields = null;
+
+        /**
+         * Specifies the fields to return in an entity attribute tag summary response.
+         *
+         * @return this builder instance
+         */
+        public Builder fields(java.util.List<Fields> fields) {
+            this.fields = fields;
+            return this;
+        }
+
+        /**
+         * Singular setter. Specifies the fields to return in an entity attribute tag summary response.
+         *
+         * @return this builder instance
+         */
+        public Builder fields(Fields singularValue) {
+            return this.fields(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

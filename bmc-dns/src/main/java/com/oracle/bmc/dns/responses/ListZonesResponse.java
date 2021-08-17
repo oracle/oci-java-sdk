@@ -38,9 +38,9 @@ public class ListZonesResponse {
     private String opcRequestId;
 
     /**
-     * A list of ZoneSummary instances.
+     * A list of com.oracle.bmc.dns.model.ZoneSummary instances.
      */
-    private java.util.List<ZoneSummary> items;
+    private java.util.List<com.oracle.bmc.dns.model.ZoneSummary> items;
 
     public static class Builder {
         /**

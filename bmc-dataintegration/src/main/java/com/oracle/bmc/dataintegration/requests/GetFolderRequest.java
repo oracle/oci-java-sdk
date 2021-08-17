@@ -84,6 +84,25 @@ public class GetFolderRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<Projection> projection = null;
+
+        /**
+         * This parameter allows users to specify which view of the object to return. CHILD_COUNT_STATISTICS - This option is used to get statistics on immediate children of the object by their type.
+         * @return this builder instance
+         */
+        public Builder projection(java.util.List<Projection> projection) {
+            this.projection = projection;
+            return this;
+        }
+
+        /**
+         * Singular setter. This parameter allows users to specify which view of the object to return. CHILD_COUNT_STATISTICS - This option is used to get statistics on immediate children of the object by their type.
+         * @return this builder instance
+         */
+        public Builder projection(Projection singularValue) {
+            return this.projection(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

@@ -25,7 +25,7 @@ public class GetStatusResponse {
     /**
      * The returned Status instance.
      */
-    private Status status;
+    private com.oracle.bmc.cims.model.Status status;
 
     public static class Builder {
         /**

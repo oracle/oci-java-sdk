@@ -27,7 +27,7 @@ public class RequestSummarizedConfigurationsResponse {
     /**
      * The returned ConfigurationAggregation instance.
      */
-    private ConfigurationAggregation configurationAggregation;
+    private com.oracle.bmc.usageapi.model.ConfigurationAggregation configurationAggregation;
 
     public static class Builder {
         /**

@@ -33,7 +33,7 @@ public class CreateDrgRouteDistributionResponse {
     /**
      * The returned DrgRouteDistribution instance.
      */
-    private DrgRouteDistribution drgRouteDistribution;
+    private com.oracle.bmc.core.model.DrgRouteDistribution drgRouteDistribution;
 
     public static class Builder {
         /**

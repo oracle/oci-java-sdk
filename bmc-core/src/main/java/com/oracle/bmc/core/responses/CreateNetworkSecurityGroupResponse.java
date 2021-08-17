@@ -33,7 +33,7 @@ public class CreateNetworkSecurityGroupResponse {
     /**
      * The returned NetworkSecurityGroup instance.
      */
-    private NetworkSecurityGroup networkSecurityGroup;
+    private com.oracle.bmc.core.model.NetworkSecurityGroup networkSecurityGroup;
 
     public static class Builder {
         /**

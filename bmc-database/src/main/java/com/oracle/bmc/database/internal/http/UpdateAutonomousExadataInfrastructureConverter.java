@@ -80,13 +80,17 @@ public class UpdateAutonomousExadataInfrastructureConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AutonomousExadataInfrastructure>>
+                                                        com.oracle.bmc.database.model
+                                                                .AutonomousExadataInfrastructure>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AutonomousExadataInfrastructure.class);
+                                                        com.oracle.bmc.database.model
+                                                                        .AutonomousExadataInfrastructure
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                AutonomousExadataInfrastructure>
+                                                com.oracle.bmc.database.model
+                                                        .AutonomousExadataInfrastructure>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

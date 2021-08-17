@@ -36,9 +36,9 @@ public class ListSnapshotsResponse {
     private String opcRequestId;
 
     /**
-     * A list of SnapshotSummary instances.
+     * A list of com.oracle.bmc.filestorage.model.SnapshotSummary instances.
      */
-    private java.util.List<SnapshotSummary> items;
+    private java.util.List<com.oracle.bmc.filestorage.model.SnapshotSummary> items;
 
     public static class Builder {
         /**

@@ -33,9 +33,9 @@ public class ListDrgRouteDistributionsResponse {
     private String opcRequestId;
 
     /**
-     * A list of DrgRouteDistribution instances.
+     * A list of com.oracle.bmc.core.model.DrgRouteDistribution instances.
      */
-    private java.util.List<DrgRouteDistribution> items;
+    private java.util.List<com.oracle.bmc.core.model.DrgRouteDistribution> items;
 
     public static class Builder {
         /**

@@ -80,13 +80,17 @@ public class UpdateModelProvenanceConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ModelProvenance>>
+                                                        com.oracle.bmc.datascience.model
+                                                                .ModelProvenance>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ModelProvenance.class);
+                                                        com.oracle.bmc.datascience.model
+                                                                        .ModelProvenance
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ModelProvenance> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datascience.model.ModelProvenance>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

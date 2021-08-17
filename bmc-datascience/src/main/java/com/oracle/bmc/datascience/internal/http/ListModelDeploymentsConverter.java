@@ -144,15 +144,21 @@ public class ListModelDeploymentsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<ModelDeploymentSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.datascience.model
+                                                                        .ModelDeploymentSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        ModelDeploymentSummary>>() {});
+                                                                        com.oracle.bmc.datascience
+                                                                                .model
+                                                                                .ModelDeploymentSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<ModelDeploymentSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.datascience.model
+                                                                .ModelDeploymentSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -33,9 +33,9 @@ public class ListThreatFeedsResponse {
     private String opcNextPage;
 
     /**
-     * A list of ThreatFeed instances.
+     * A list of com.oracle.bmc.waas.model.ThreatFeed instances.
      */
-    private java.util.List<ThreatFeed> items;
+    private java.util.List<com.oracle.bmc.waas.model.ThreatFeed> items;
 
     public static class Builder {
         /**

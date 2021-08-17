@@ -33,7 +33,7 @@ public class UpdateAlertRuleResponse {
     /**
      * The returned AlertRule instance.
      */
-    private AlertRule alertRule;
+    private com.oracle.bmc.budget.model.AlertRule alertRule;
 
     public static class Builder {
         /**

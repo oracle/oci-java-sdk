@@ -69,12 +69,16 @@ public class GetErratumConverter {
                                         "Transform function invoked for com.oracle.bmc.osmanagement.responses.GetErratumResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Erratum>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.osmanagement.model.Erratum>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Erratum.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.osmanagement.model.Erratum
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Erratum> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.osmanagement.model.Erratum>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

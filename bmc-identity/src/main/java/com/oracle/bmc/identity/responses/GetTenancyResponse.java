@@ -27,7 +27,7 @@ public class GetTenancyResponse {
     /**
      * The returned Tenancy instance.
      */
-    private Tenancy tenancy;
+    private com.oracle.bmc.identity.model.Tenancy tenancy;
 
     public static class Builder {
         /**

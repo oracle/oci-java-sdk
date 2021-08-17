@@ -33,9 +33,9 @@ public class ListServiceGatewaysResponse {
     private String opcRequestId;
 
     /**
-     * A list of ServiceGateway instances.
+     * A list of com.oracle.bmc.core.model.ServiceGateway instances.
      */
-    private java.util.List<ServiceGateway> items;
+    private java.util.List<com.oracle.bmc.core.model.ServiceGateway> items;
 
     public static class Builder {
         /**

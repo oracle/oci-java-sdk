@@ -350,6 +350,22 @@ public interface OperationsInsights extends AutoCloseable {
     ListHostedEntitiesResponse listHostedEntities(ListHostedEntitiesRequest request);
 
     /**
+     * Gets a list of agent entities available to add a new hostInsight.  An agent entity is \"available\"
+     * and will be shown if all the following conditions are true:
+     *    1.  The agent OCID is not already being used for an existing hostInsight.
+     *    2.  The agent availabilityStatus = 'ACTIVE'
+     *    3.  The agent lifecycleState = 'ACTIVE'
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListImportableAgentEntitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListImportableAgentEntities API.
+     */
+    ListImportableAgentEntitiesResponse listImportableAgentEntities(
+            ListImportableAgentEntitiesRequest request);
+
+    /**
      * Gets a list of importable entities for an Operations Insights Enterprise Manager bridge that have not been imported before.
      *
      * @param request The request object containing the details to send

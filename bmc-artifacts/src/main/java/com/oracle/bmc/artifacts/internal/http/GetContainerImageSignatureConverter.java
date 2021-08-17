@@ -74,12 +74,17 @@ public class GetContainerImageSignatureConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ContainerImageSignature>>
+                                                        com.oracle.bmc.artifacts.model
+                                                                .ContainerImageSignature>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ContainerImageSignature.class);
+                                                        com.oracle.bmc.artifacts.model
+                                                                        .ContainerImageSignature
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ContainerImageSignature>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.artifacts.model
+                                                        .ContainerImageSignature>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

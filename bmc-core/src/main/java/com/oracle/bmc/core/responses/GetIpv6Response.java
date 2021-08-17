@@ -33,7 +33,7 @@ public class GetIpv6Response {
     /**
      * The returned Ipv6 instance.
      */
-    private Ipv6 ipv6;
+    private com.oracle.bmc.core.model.Ipv6 ipv6;
 
     public static class Builder {
         /**

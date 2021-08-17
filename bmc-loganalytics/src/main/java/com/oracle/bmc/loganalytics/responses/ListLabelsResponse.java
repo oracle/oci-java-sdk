@@ -42,7 +42,8 @@ public class ListLabelsResponse {
     /**
      * The returned LogAnalyticsLabelCollection instance.
      */
-    private LogAnalyticsLabelCollection logAnalyticsLabelCollection;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsLabelCollection
+            logAnalyticsLabelCollection;
 
     public static class Builder {
         /**

@@ -153,6 +153,64 @@ public class ListHttpRedirectsRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<String> id = null;
+
+        /**
+         * Filter redirects using a list of redirect OCIDs.
+         * @return this builder instance
+         */
+        public Builder id(java.util.List<String> id) {
+            this.id = id;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter redirects using a list of redirect OCIDs.
+         * @return this builder instance
+         */
+        public Builder id(String singularValue) {
+            return this.id(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> displayName = null;
+
+        /**
+         * Filter redirects using a display name.
+         * @return this builder instance
+         */
+        public Builder displayName(java.util.List<String> displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter redirects using a display name.
+         * @return this builder instance
+         */
+        public Builder displayName(String singularValue) {
+            return this.displayName(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<com.oracle.bmc.waas.model.LifecycleStates> lifecycleState = null;
+
+        /**
+         * Filter redirects using a list of lifecycle states.
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                java.util.List<com.oracle.bmc.waas.model.LifecycleStates> lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter redirects using a list of lifecycle states.
+         * @return this builder instance
+         */
+        public Builder lifecycleState(LifecycleStates singularValue) {
+            return this.lifecycleState(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

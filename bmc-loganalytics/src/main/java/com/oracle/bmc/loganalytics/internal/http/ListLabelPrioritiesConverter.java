@@ -88,12 +88,17 @@ public class ListLabelPrioritiesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LabelPriorityCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LabelPriorityCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LabelPriorityCollection.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LabelPriorityCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<LabelPriorityCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LabelPriorityCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

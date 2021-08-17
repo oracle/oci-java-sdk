@@ -34,9 +34,10 @@ public class ListAutonomousExadataInfrastructuresResponse {
     private String opcNextPage;
 
     /**
-     * A list of AutonomousExadataInfrastructureSummary instances.
+     * A list of com.oracle.bmc.database.model.AutonomousExadataInfrastructureSummary instances.
      */
-    private java.util.List<AutonomousExadataInfrastructureSummary> items;
+    private java.util.List<com.oracle.bmc.database.model.AutonomousExadataInfrastructureSummary>
+            items;
 
     public static class Builder {
         /**

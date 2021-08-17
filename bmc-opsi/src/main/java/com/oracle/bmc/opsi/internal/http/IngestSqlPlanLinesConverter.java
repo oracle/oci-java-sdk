@@ -102,13 +102,17 @@ public class IngestSqlPlanLinesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        IngestSqlPlanLinesResponseDetails>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .IngestSqlPlanLinesResponseDetails>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        IngestSqlPlanLinesResponseDetails.class);
+                                                        com.oracle.bmc.opsi.model
+                                                                        .IngestSqlPlanLinesResponseDetails
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                IngestSqlPlanLinesResponseDetails>
+                                                com.oracle.bmc.opsi.model
+                                                        .IngestSqlPlanLinesResponseDetails>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

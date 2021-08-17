@@ -76,12 +76,17 @@ public class GetInstanceAgentCommandConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        InstanceAgentCommand>>
+                                                        com.oracle.bmc.computeinstanceagent.model
+                                                                .InstanceAgentCommand>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        InstanceAgentCommand.class);
+                                                        com.oracle.bmc.computeinstanceagent.model
+                                                                        .InstanceAgentCommand
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<InstanceAgentCommand>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.computeinstanceagent.model
+                                                        .InstanceAgentCommand>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -39,9 +39,9 @@ public class ListTaggingWorkRequestErrorsResponse {
     private String opcNextPage;
 
     /**
-     * A list of TaggingWorkRequestErrorSummary instances.
+     * A list of com.oracle.bmc.identity.model.TaggingWorkRequestErrorSummary instances.
      */
-    private java.util.List<TaggingWorkRequestErrorSummary> items;
+    private java.util.List<com.oracle.bmc.identity.model.TaggingWorkRequestErrorSummary> items;
 
     public static class Builder {
         /**

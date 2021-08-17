@@ -75,12 +75,15 @@ public class GetTableConverter {
                                         "Transform function invoked for com.oracle.bmc.nosql.responses.GetTableResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Table>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.nosql.model.Table>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Table.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.nosql.model.Table.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Table> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.nosql.model.Table>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

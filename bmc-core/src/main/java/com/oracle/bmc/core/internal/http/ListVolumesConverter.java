@@ -130,13 +130,17 @@ public class ListVolumesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<Volume>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.core.model.Volume>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<Volume>>() {});
+                                                                java.util.List<
+                                                                        com.oracle.bmc.core.model
+                                                                                .Volume>>() {});
 
-                                com.oracle.bmc.http.internal.WithHeaders<java.util.List<Volume>>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                java.util.List<com.oracle.bmc.core.model.Volume>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

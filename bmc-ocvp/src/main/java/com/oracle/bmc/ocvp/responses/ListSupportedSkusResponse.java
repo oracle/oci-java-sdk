@@ -35,7 +35,7 @@ public class ListSupportedSkusResponse {
     /**
      * The returned SupportedSkuSummaryCollection instance.
      */
-    private SupportedSkuSummaryCollection supportedSkuSummaryCollection;
+    private com.oracle.bmc.ocvp.model.SupportedSkuSummaryCollection supportedSkuSummaryCollection;
 
     public static class Builder {
         /**

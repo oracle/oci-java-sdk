@@ -30,7 +30,8 @@ public class ListAnnouncementsResponse {
     /**
      * The returned AnnouncementsCollection instance.
      */
-    private AnnouncementsCollection announcementsCollection;
+    private com.oracle.bmc.announcementsservice.model.AnnouncementsCollection
+            announcementsCollection;
 
     public static class Builder {
         /**

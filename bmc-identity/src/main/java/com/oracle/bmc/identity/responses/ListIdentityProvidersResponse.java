@@ -33,9 +33,9 @@ public class ListIdentityProvidersResponse {
     private String opcNextPage;
 
     /**
-     * A list of IdentityProvider instances.
+     * A list of com.oracle.bmc.identity.model.IdentityProvider instances.
      */
-    private java.util.List<IdentityProvider> items;
+    private java.util.List<com.oracle.bmc.identity.model.IdentityProvider> items;
 
     public static class Builder {
         /**

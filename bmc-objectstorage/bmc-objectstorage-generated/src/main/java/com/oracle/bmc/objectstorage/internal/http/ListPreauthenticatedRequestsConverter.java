@@ -105,15 +105,20 @@ public class ListPreauthenticatedRequestsConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                PreauthenticatedRequestSummary>>>
+                                                                com.oracle.bmc.objectstorage.model
+                                                                        .PreauthenticatedRequestSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        PreauthenticatedRequestSummary>>() {});
+                                                                        com.oracle.bmc.objectstorage
+                                                                                .model
+                                                                                .PreauthenticatedRequestSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<PreauthenticatedRequestSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.objectstorage.model
+                                                                .PreauthenticatedRequestSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

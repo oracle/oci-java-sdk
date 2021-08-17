@@ -116,13 +116,17 @@ public class ListPeersConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        PeerCollection>>
+                                                        com.oracle.bmc.blockchain.model
+                                                                .PeerCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        PeerCollection.class);
+                                                        com.oracle.bmc.blockchain.model
+                                                                        .PeerCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<PeerCollection> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.blockchain.model.PeerCollection>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

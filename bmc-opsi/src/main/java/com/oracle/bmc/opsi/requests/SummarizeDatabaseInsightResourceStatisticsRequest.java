@@ -274,6 +274,202 @@ public class SummarizeDatabaseInsightResourceStatisticsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<DatabaseType> databaseType = null;
+
+        /**
+         * Filter by one or more database type.
+         * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
+         *
+         * @return this builder instance
+         */
+        public Builder databaseType(java.util.List<DatabaseType> databaseType) {
+            this.databaseType = databaseType;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter by one or more database type.
+         * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
+         *
+         * @return this builder instance
+         */
+        public Builder databaseType(DatabaseType singularValue) {
+            return this.databaseType(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> databaseId = null;
+
+        /**
+         * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
+         *
+         * @return this builder instance
+         */
+        public Builder databaseId(java.util.List<String> databaseId) {
+            this.databaseId = databaseId;
+            return this;
+        }
+
+        /**
+         * Singular setter. Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
+         *
+         * @return this builder instance
+         */
+        public Builder databaseId(String singularValue) {
+            return this.databaseId(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> id = null;
+
+        /**
+         * Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder id(java.util.List<String> id) {
+            this.id = id;
+            return this;
+        }
+
+        /**
+         * Singular setter. Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder id(String singularValue) {
+            return this.id(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> hostName = null;
+
+        /**
+         * Filter by one or more hostname.
+         *
+         * @return this builder instance
+         */
+        public Builder hostName(java.util.List<String> hostName) {
+            this.hostName = hostName;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter by one or more hostname.
+         *
+         * @return this builder instance
+         */
+        public Builder hostName(String singularValue) {
+            return this.hostName(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> definedTagEquals = null;
+
+        /**
+         * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
+         * @return this builder instance
+         */
+        public Builder definedTagEquals(java.util.List<String> definedTagEquals) {
+            this.definedTagEquals = definedTagEquals;
+            return this;
+        }
+
+        /**
+         * Singular setter. A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
+         * @return this builder instance
+         */
+        public Builder definedTagEquals(String singularValue) {
+            return this.definedTagEquals(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> freeformTagEquals = null;
+
+        /**
+         * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+         *
+         * @return this builder instance
+         */
+        public Builder freeformTagEquals(java.util.List<String> freeformTagEquals) {
+            this.freeformTagEquals = freeformTagEquals;
+            return this;
+        }
+
+        /**
+         * Singular setter. A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+         *
+         * @return this builder instance
+         */
+        public Builder freeformTagEquals(String singularValue) {
+            return this.freeformTagEquals(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> definedTagExists = null;
+
+        /**
+         * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+         * or "{namespace}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
+         * @return this builder instance
+         */
+        public Builder definedTagExists(java.util.List<String> definedTagExists) {
+            this.definedTagExists = definedTagExists;
+            return this;
+        }
+
+        /**
+         * Singular setter. A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+         * or "{namespace}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
+         * @return this builder instance
+         */
+        public Builder definedTagExists(String singularValue) {
+            return this.definedTagExists(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> freeformTagExists = null;
+
+        /**
+         * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for different tag names are interpreted as "AND".
+         *
+         * @return this builder instance
+         */
+        public Builder freeformTagExists(java.util.List<String> freeformTagExists) {
+            this.freeformTagExists = freeformTagExists;
+            return this;
+        }
+
+        /**
+         * Singular setter. A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for different tag names are interpreted as "AND".
+         *
+         * @return this builder instance
+         */
+        public Builder freeformTagExists(String singularValue) {
+            return this.freeformTagExists(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

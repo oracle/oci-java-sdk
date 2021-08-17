@@ -33,7 +33,7 @@ public class GetSecurityListResponse {
     /**
      * The returned SecurityList instance.
      */
-    private SecurityList securityList;
+    private com.oracle.bmc.core.model.SecurityList securityList;
 
     public static class Builder {
         /**

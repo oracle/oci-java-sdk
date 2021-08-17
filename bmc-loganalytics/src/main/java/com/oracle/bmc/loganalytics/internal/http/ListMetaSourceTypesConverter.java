@@ -104,13 +104,17 @@ public class ListMetaSourceTypesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogAnalyticsMetaSourceTypeCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogAnalyticsMetaSourceTypeCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogAnalyticsMetaSourceTypeCollection.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogAnalyticsMetaSourceTypeCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                LogAnalyticsMetaSourceTypeCollection>
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LogAnalyticsMetaSourceTypeCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

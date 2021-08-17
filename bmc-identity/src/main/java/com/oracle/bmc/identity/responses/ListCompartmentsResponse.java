@@ -33,9 +33,9 @@ public class ListCompartmentsResponse {
     private String opcNextPage;
 
     /**
-     * A list of Compartment instances.
+     * A list of com.oracle.bmc.identity.model.Compartment instances.
      */
-    private java.util.List<Compartment> items;
+    private java.util.List<com.oracle.bmc.identity.model.Compartment> items;
 
     public static class Builder {
         /**

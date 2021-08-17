@@ -127,15 +127,20 @@ public class ListSessionsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<SessionSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.bastion.model
+                                                                        .SessionSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        SessionSummary>>() {});
+                                                                        com.oracle.bmc.bastion.model
+                                                                                .SessionSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<SessionSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.bastion.model
+                                                                .SessionSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

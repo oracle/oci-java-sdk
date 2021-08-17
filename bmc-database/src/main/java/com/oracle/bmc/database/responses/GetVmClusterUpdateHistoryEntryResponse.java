@@ -32,7 +32,7 @@ public class GetVmClusterUpdateHistoryEntryResponse {
     /**
      * The returned VmClusterUpdateHistoryEntry instance.
      */
-    private VmClusterUpdateHistoryEntry vmClusterUpdateHistoryEntry;
+    private com.oracle.bmc.database.model.VmClusterUpdateHistoryEntry vmClusterUpdateHistoryEntry;
 
     public static class Builder {
         /**

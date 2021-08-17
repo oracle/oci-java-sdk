@@ -38,7 +38,7 @@ public class FailoverDataGuardAssociationResponse {
     /**
      * The returned DataGuardAssociation instance.
      */
-    private DataGuardAssociation dataGuardAssociation;
+    private com.oracle.bmc.database.model.DataGuardAssociation dataGuardAssociation;
 
     public static class Builder {
         /**

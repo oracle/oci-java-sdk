@@ -33,7 +33,7 @@ public class GetAutoScalingConfigurationResponse {
     /**
      * The returned AutoScalingConfiguration instance.
      */
-    private AutoScalingConfiguration autoScalingConfiguration;
+    private com.oracle.bmc.bds.model.AutoScalingConfiguration autoScalingConfiguration;
 
     public static class Builder {
         /**

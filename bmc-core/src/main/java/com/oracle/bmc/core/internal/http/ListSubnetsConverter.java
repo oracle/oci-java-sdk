@@ -122,13 +122,17 @@ public class ListSubnetsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<Subnet>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.core.model.Subnet>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<Subnet>>() {});
+                                                                java.util.List<
+                                                                        com.oracle.bmc.core.model
+                                                                                .Subnet>>() {});
 
-                                com.oracle.bmc.http.internal.WithHeaders<java.util.List<Subnet>>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                java.util.List<com.oracle.bmc.core.model.Subnet>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -32,7 +32,8 @@ public class EstimatePurgeDataSizeResponse {
     /**
      * The returned EstimatePurgeDataSizeResult instance.
      */
-    private EstimatePurgeDataSizeResult estimatePurgeDataSizeResult;
+    private com.oracle.bmc.loganalytics.model.EstimatePurgeDataSizeResult
+            estimatePurgeDataSizeResult;
 
     public static class Builder {
         /**

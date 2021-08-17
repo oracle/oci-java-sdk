@@ -119,12 +119,16 @@ public class ListProfilesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ProfileCollection>>
+                                                        com.oracle.bmc.optimizer.model
+                                                                .ProfileCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ProfileCollection.class);
+                                                        com.oracle.bmc.optimizer.model
+                                                                        .ProfileCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ProfileCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.optimizer.model.ProfileCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

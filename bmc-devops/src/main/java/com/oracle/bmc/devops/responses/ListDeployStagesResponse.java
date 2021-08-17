@@ -30,7 +30,7 @@ public class ListDeployStagesResponse {
     /**
      * The returned DeployStageCollection instance.
      */
-    private DeployStageCollection deployStageCollection;
+    private com.oracle.bmc.devops.model.DeployStageCollection deployStageCollection;
 
     public static class Builder {
         /**

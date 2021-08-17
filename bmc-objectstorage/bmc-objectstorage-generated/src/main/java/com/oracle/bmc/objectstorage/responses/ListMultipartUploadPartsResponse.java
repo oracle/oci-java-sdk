@@ -43,9 +43,9 @@ public class ListMultipartUploadPartsResponse {
     private String opcNextPage;
 
     /**
-     * A list of MultipartUploadPartSummary instances.
+     * A list of com.oracle.bmc.objectstorage.model.MultipartUploadPartSummary instances.
      */
-    private java.util.List<MultipartUploadPartSummary> items;
+    private java.util.List<com.oracle.bmc.objectstorage.model.MultipartUploadPartSummary> items;
 
     public static class Builder {
         /**

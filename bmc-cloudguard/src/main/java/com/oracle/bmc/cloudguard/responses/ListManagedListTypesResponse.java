@@ -35,7 +35,7 @@ public class ListManagedListTypesResponse {
     /**
      * The returned ManagedListTypeCollection instance.
      */
-    private ManagedListTypeCollection managedListTypeCollection;
+    private com.oracle.bmc.cloudguard.model.ManagedListTypeCollection managedListTypeCollection;
 
     public static class Builder {
         /**

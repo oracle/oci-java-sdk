@@ -34,9 +34,9 @@ public class ListDatabasesResponse {
     private String opcNextPage;
 
     /**
-     * A list of DatabaseSummary instances.
+     * A list of com.oracle.bmc.database.model.DatabaseSummary instances.
      */
-    private java.util.List<DatabaseSummary> items;
+    private java.util.List<com.oracle.bmc.database.model.DatabaseSummary> items;
 
     public static class Builder {
         /**

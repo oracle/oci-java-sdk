@@ -48,7 +48,7 @@ public class CreateTsigKeyResponse {
     /**
      * The returned TsigKey instance.
      */
-    private TsigKey tsigKey;
+    private com.oracle.bmc.dns.model.TsigKey tsigKey;
 
     public static class Builder {
         /**

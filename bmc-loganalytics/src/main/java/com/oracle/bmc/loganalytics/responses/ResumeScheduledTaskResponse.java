@@ -32,7 +32,7 @@ public class ResumeScheduledTaskResponse {
     /**
      * The returned ScheduledTask instance, or null if {@link #isNotModified()} is true.
      */
-    private ScheduledTask scheduledTask;
+    private com.oracle.bmc.loganalytics.model.ScheduledTask scheduledTask;
 
     /**
      * Flag to indicate whether or not the object was modified.  If this is true,

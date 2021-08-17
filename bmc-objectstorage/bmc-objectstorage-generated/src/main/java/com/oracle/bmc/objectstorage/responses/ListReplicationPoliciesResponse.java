@@ -42,9 +42,9 @@ public class ListReplicationPoliciesResponse {
     private String opcNextPage;
 
     /**
-     * A list of ReplicationPolicySummary instances.
+     * A list of com.oracle.bmc.objectstorage.model.ReplicationPolicySummary instances.
      */
-    private java.util.List<ReplicationPolicySummary> items;
+    private java.util.List<com.oracle.bmc.objectstorage.model.ReplicationPolicySummary> items;
 
     public static class Builder {
         /**

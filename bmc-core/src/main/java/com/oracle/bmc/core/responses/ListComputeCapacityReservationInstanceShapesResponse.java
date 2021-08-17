@@ -33,9 +33,10 @@ public class ListComputeCapacityReservationInstanceShapesResponse {
     private String opcRequestId;
 
     /**
-     * A list of ComputeCapacityReservationInstanceShapeSummary instances.
+     * A list of com.oracle.bmc.core.model.ComputeCapacityReservationInstanceShapeSummary instances.
      */
-    private java.util.List<ComputeCapacityReservationInstanceShapeSummary> items;
+    private java.util.List<com.oracle.bmc.core.model.ComputeCapacityReservationInstanceShapeSummary>
+            items;
 
     public static class Builder {
         /**

@@ -32,7 +32,7 @@ public class GetDataSafeConfigurationResponse {
     /**
      * The returned DataSafeConfiguration instance.
      */
-    private DataSafeConfiguration dataSafeConfiguration;
+    private com.oracle.bmc.datasafe.model.DataSafeConfiguration dataSafeConfiguration;
 
     public static class Builder {
         /**

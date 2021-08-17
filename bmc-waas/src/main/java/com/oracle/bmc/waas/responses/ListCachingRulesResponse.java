@@ -33,9 +33,9 @@ public class ListCachingRulesResponse {
     private String opcRequestId;
 
     /**
-     * A list of CachingRuleSummary instances.
+     * A list of com.oracle.bmc.waas.model.CachingRuleSummary instances.
      */
-    private java.util.List<CachingRuleSummary> items;
+    private java.util.List<com.oracle.bmc.waas.model.CachingRuleSummary> items;
 
     public static class Builder {
         /**

@@ -33,7 +33,7 @@ public class GetJobResponse {
     /**
      * The returned Job instance.
      */
-    private Job job;
+    private com.oracle.bmc.databasemigration.model.Job job;
 
     public static class Builder {
         /**

@@ -33,9 +33,9 @@ public class ListPoliciesResponse {
     private String opcNextPage;
 
     /**
-     * A list of Policy instances.
+     * A list of com.oracle.bmc.identity.model.Policy instances.
      */
-    private java.util.List<Policy> items;
+    private java.util.List<com.oracle.bmc.identity.model.Policy> items;
 
     public static class Builder {
         /**

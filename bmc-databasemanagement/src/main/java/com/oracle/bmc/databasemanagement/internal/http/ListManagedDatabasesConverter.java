@@ -123,12 +123,17 @@ public class ListManagedDatabasesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ManagedDatabaseCollection>>
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                .ManagedDatabaseCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ManagedDatabaseCollection.class);
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                        .ManagedDatabaseCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ManagedDatabaseCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.databasemanagement.model
+                                                        .ManagedDatabaseCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

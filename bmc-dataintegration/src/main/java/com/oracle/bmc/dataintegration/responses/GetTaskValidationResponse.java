@@ -33,7 +33,7 @@ public class GetTaskValidationResponse {
     /**
      * The returned TaskValidation instance.
      */
-    private TaskValidation taskValidation;
+    private com.oracle.bmc.dataintegration.model.TaskValidation taskValidation;
 
     public static class Builder {
         /**

@@ -32,7 +32,7 @@ public class GetVmClusterResponse {
     /**
      * The returned VmCluster instance.
      */
-    private VmCluster vmCluster;
+    private com.oracle.bmc.database.model.VmCluster vmCluster;
 
     public static class Builder {
         /**

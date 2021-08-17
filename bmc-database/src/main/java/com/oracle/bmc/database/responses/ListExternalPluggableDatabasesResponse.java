@@ -34,9 +34,9 @@ public class ListExternalPluggableDatabasesResponse {
     private String opcNextPage;
 
     /**
-     * A list of ExternalPluggableDatabaseSummary instances.
+     * A list of com.oracle.bmc.database.model.ExternalPluggableDatabaseSummary instances.
      */
-    private java.util.List<ExternalPluggableDatabaseSummary> items;
+    private java.util.List<com.oracle.bmc.database.model.ExternalPluggableDatabaseSummary> items;
 
     public static class Builder {
         /**

@@ -26,7 +26,7 @@ public class ValidateSourceResponse {
     /**
      * The returned SourceValidateResults instance.
      */
-    private SourceValidateResults sourceValidateResults;
+    private com.oracle.bmc.loganalytics.model.SourceValidateResults sourceValidateResults;
 
     public static class Builder {
         /**

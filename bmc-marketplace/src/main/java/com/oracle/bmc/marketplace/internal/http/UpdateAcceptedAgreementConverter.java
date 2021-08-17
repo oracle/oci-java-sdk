@@ -85,12 +85,16 @@ public class UpdateAcceptedAgreementConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AcceptedAgreement>>
+                                                        com.oracle.bmc.marketplace.model
+                                                                .AcceptedAgreement>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AcceptedAgreement.class);
+                                                        com.oracle.bmc.marketplace.model
+                                                                        .AcceptedAgreement
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AcceptedAgreement>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.marketplace.model.AcceptedAgreement>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

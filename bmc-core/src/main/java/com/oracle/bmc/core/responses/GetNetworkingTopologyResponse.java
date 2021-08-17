@@ -33,7 +33,7 @@ public class GetNetworkingTopologyResponse {
     /**
      * The returned NetworkingTopology instance.
      */
-    private NetworkingTopology networkingTopology;
+    private com.oracle.bmc.core.model.NetworkingTopology networkingTopology;
 
     public static class Builder {
         /**

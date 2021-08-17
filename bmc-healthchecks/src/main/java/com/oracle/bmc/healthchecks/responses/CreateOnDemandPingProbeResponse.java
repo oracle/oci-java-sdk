@@ -33,7 +33,7 @@ public class CreateOnDemandPingProbeResponse {
     /**
      * The returned PingProbe instance.
      */
-    private PingProbe pingProbe;
+    private com.oracle.bmc.healthchecks.model.PingProbe pingProbe;
 
     public static class Builder {
         /**

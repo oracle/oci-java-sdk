@@ -33,7 +33,7 @@ public class StartInstancePoolResponse {
     /**
      * The returned InstancePool instance.
      */
-    private InstancePool instancePool;
+    private com.oracle.bmc.core.model.InstancePool instancePool;
 
     public static class Builder {
         /**

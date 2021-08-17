@@ -73,11 +73,15 @@ public class UpdateRuleConverter {
                                         "Transform function invoked for com.oracle.bmc.events.responses.UpdateRuleResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Rule>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create(Rule.class);
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.events.model.Rule>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.events.model.Rule.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Rule> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.events.model.Rule>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

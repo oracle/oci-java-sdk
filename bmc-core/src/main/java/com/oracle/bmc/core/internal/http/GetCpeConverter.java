@@ -63,11 +63,15 @@ public class GetCpeConverter {
                                         "Transform function invoked for com.oracle.bmc.core.responses.GetCpeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Cpe>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create(Cpe.class);
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.core.model.Cpe>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.core.model.Cpe.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Cpe> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.Cpe>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

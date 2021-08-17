@@ -87,13 +87,17 @@ public class RequestRiskScoresConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        RiskScoreAggregationCollection>>
+                                                        com.oracle.bmc.cloudguard.model
+                                                                .RiskScoreAggregationCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        RiskScoreAggregationCollection.class);
+                                                        com.oracle.bmc.cloudguard.model
+                                                                        .RiskScoreAggregationCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                RiskScoreAggregationCollection>
+                                                com.oracle.bmc.cloudguard.model
+                                                        .RiskScoreAggregationCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

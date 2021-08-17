@@ -76,12 +76,16 @@ public class GetVmClusterNetworkConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        VmClusterNetwork>>
+                                                        com.oracle.bmc.database.model
+                                                                .VmClusterNetwork>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        VmClusterNetwork.class);
+                                                        com.oracle.bmc.database.model
+                                                                        .VmClusterNetwork
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<VmClusterNetwork>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.database.model.VmClusterNetwork>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

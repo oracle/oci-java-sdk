@@ -32,9 +32,9 @@ public class ListShapesResponse {
     private String opcRequestId;
 
     /**
-     * A list of LoadBalancerShape instances.
+     * A list of com.oracle.bmc.loadbalancer.model.LoadBalancerShape instances.
      */
-    private java.util.List<LoadBalancerShape> items;
+    private java.util.List<com.oracle.bmc.loadbalancer.model.LoadBalancerShape> items;
 
     public static class Builder {
         /**

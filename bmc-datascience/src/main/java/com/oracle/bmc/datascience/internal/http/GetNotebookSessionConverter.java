@@ -70,13 +70,17 @@ public class GetNotebookSessionConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        NotebookSession>>
+                                                        com.oracle.bmc.datascience.model
+                                                                .NotebookSession>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        NotebookSession.class);
+                                                        com.oracle.bmc.datascience.model
+                                                                        .NotebookSession
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<NotebookSession> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datascience.model.NotebookSession>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

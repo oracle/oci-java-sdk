@@ -30,7 +30,7 @@ public class GetWafAddressRateLimitingResponse {
     /**
      * The returned AddressRateLimiting instance.
      */
-    private AddressRateLimiting addressRateLimiting;
+    private com.oracle.bmc.waas.model.AddressRateLimiting addressRateLimiting;
 
     public static class Builder {
         /**

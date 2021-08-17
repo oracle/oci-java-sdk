@@ -75,13 +75,15 @@ public class UpdateConsoleHistoryConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ConsoleHistory>>
+                                                        com.oracle.bmc.core.model.ConsoleHistory>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ConsoleHistory.class);
+                                                        com.oracle.bmc.core.model.ConsoleHistory
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ConsoleHistory> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.ConsoleHistory>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

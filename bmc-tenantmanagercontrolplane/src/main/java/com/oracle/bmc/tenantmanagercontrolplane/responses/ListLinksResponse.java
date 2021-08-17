@@ -35,7 +35,7 @@ public class ListLinksResponse {
     /**
      * The returned LinkCollection instance.
      */
-    private LinkCollection linkCollection;
+    private com.oracle.bmc.tenantmanagercontrolplane.model.LinkCollection linkCollection;
 
     public static class Builder {
         /**

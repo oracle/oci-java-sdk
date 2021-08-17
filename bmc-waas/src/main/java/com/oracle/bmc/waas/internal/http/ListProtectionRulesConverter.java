@@ -106,15 +106,19 @@ public class ListProtectionRulesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<ProtectionRule>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.waas.model
+                                                                        .ProtectionRule>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        ProtectionRule>>() {});
+                                                                        com.oracle.bmc.waas.model
+                                                                                .ProtectionRule>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<ProtectionRule>>
+                                                java.util.List<
+                                                        com.oracle.bmc.waas.model.ProtectionRule>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -35,7 +35,7 @@ public class SummarizeAwrDbSysstatsResponse {
     /**
      * The returned AwrDbSysstatCollection instance.
      */
-    private AwrDbSysstatCollection awrDbSysstatCollection;
+    private com.oracle.bmc.databasemanagement.model.AwrDbSysstatCollection awrDbSysstatCollection;
 
     public static class Builder {
         /**

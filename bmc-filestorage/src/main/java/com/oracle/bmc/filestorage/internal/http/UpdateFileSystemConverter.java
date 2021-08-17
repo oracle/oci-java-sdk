@@ -76,13 +76,16 @@ public class UpdateFileSystemConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        FileSystem>>
+                                                        com.oracle.bmc.filestorage.model
+                                                                .FileSystem>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        FileSystem.class);
+                                                        com.oracle.bmc.filestorage.model.FileSystem
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<FileSystem> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.filestorage.model.FileSystem>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

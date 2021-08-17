@@ -153,6 +153,31 @@ public class ListPrivateApplicationPackagesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<com.oracle.bmc.servicecatalog.model.PackageTypeEnum> packageType =
+                null;
+
+        /**
+         * Name of the package type. If multiple package types are provided, then any resource with
+         * one or more matching package types will be returned.
+         *
+         * @return this builder instance
+         */
+        public Builder packageType(
+                java.util.List<com.oracle.bmc.servicecatalog.model.PackageTypeEnum> packageType) {
+            this.packageType = packageType;
+            return this;
+        }
+
+        /**
+         * Singular setter. Name of the package type. If multiple package types are provided, then any resource with
+         * one or more matching package types will be returned.
+         *
+         * @return this builder instance
+         */
+        public Builder packageType(PackageTypeEnum singularValue) {
+            return this.packageType(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

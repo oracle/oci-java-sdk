@@ -42,9 +42,9 @@ public class ListReplicationSourcesResponse {
     private String opcNextPage;
 
     /**
-     * A list of ReplicationSource instances.
+     * A list of com.oracle.bmc.objectstorage.model.ReplicationSource instances.
      */
-    private java.util.List<ReplicationSource> items;
+    private java.util.List<com.oracle.bmc.objectstorage.model.ReplicationSource> items;
 
     public static class Builder {
         /**

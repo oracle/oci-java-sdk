@@ -42,7 +42,8 @@ public class ListSourceMetaFunctionsResponse {
     /**
      * The returned LogAnalyticsMetaFunctionCollection instance.
      */
-    private LogAnalyticsMetaFunctionCollection logAnalyticsMetaFunctionCollection;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsMetaFunctionCollection
+            logAnalyticsMetaFunctionCollection;
 
     public static class Builder {
         /**

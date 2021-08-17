@@ -27,7 +27,7 @@ public class ConsumerHeartbeatResponse {
     /**
      * The returned Cursor instance.
      */
-    private Cursor cursor;
+    private com.oracle.bmc.streaming.model.Cursor cursor;
 
     public static class Builder {
         /**

@@ -112,13 +112,17 @@ public class ListParserFunctionsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogAnalyticsParserFunctionCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogAnalyticsParserFunctionCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogAnalyticsParserFunctionCollection.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogAnalyticsParserFunctionCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                LogAnalyticsParserFunctionCollection>
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LogAnalyticsParserFunctionCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

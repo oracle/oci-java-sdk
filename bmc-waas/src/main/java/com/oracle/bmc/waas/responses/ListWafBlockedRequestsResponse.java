@@ -28,9 +28,9 @@ public class ListWafBlockedRequestsResponse {
     private String opcNextPage;
 
     /**
-     * A list of WafBlockedRequest instances.
+     * A list of com.oracle.bmc.waas.model.WafBlockedRequest instances.
      */
-    private java.util.List<WafBlockedRequest> items;
+    private java.util.List<com.oracle.bmc.waas.model.WafBlockedRequest> items;
 
     public static class Builder {
         /**

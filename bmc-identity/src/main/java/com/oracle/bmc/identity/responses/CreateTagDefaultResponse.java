@@ -32,7 +32,7 @@ public class CreateTagDefaultResponse {
     /**
      * The returned TagDefault instance.
      */
-    private TagDefault tagDefault;
+    private com.oracle.bmc.identity.model.TagDefault tagDefault;
 
     public static class Builder {
         /**

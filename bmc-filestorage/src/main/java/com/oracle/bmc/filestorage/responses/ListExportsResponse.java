@@ -36,9 +36,9 @@ public class ListExportsResponse {
     private String opcRequestId;
 
     /**
-     * A list of ExportSummary instances.
+     * A list of com.oracle.bmc.filestorage.model.ExportSummary instances.
      */
-    private java.util.List<ExportSummary> items;
+    private java.util.List<com.oracle.bmc.filestorage.model.ExportSummary> items;
 
     public static class Builder {
         /**

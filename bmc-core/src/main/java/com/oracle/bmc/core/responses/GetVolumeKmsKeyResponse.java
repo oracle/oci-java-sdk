@@ -33,7 +33,7 @@ public class GetVolumeKmsKeyResponse {
     /**
      * The returned VolumeKmsKey instance.
      */
-    private VolumeKmsKey volumeKmsKey;
+    private com.oracle.bmc.core.model.VolumeKmsKey volumeKmsKey;
 
     public static class Builder {
         /**

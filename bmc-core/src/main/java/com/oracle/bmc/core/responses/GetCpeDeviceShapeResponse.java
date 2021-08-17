@@ -27,7 +27,7 @@ public class GetCpeDeviceShapeResponse {
     /**
      * The returned CpeDeviceShapeDetail instance.
      */
-    private CpeDeviceShapeDetail cpeDeviceShapeDetail;
+    private com.oracle.bmc.core.model.CpeDeviceShapeDetail cpeDeviceShapeDetail;
 
     public static class Builder {
         /**

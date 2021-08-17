@@ -27,7 +27,7 @@ public class GetSpanResponse {
     /**
      * The returned Span instance.
      */
-    private Span span;
+    private com.oracle.bmc.apmtraces.model.Span span;
 
     public static class Builder {
         /**

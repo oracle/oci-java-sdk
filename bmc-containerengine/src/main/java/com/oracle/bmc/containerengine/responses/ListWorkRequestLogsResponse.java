@@ -25,9 +25,9 @@ public class ListWorkRequestLogsResponse {
     private String opcRequestId;
 
     /**
-     * A list of WorkRequestLogEntry instances.
+     * A list of com.oracle.bmc.containerengine.model.WorkRequestLogEntry instances.
      */
-    private java.util.List<WorkRequestLogEntry> items;
+    private java.util.List<com.oracle.bmc.containerengine.model.WorkRequestLogEntry> items;
 
     public static class Builder {
         /**

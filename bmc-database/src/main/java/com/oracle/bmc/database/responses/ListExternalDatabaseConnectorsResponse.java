@@ -34,9 +34,9 @@ public class ListExternalDatabaseConnectorsResponse {
     private String opcNextPage;
 
     /**
-     * A list of ExternalDatabaseConnectorSummary instances.
+     * A list of com.oracle.bmc.database.model.ExternalDatabaseConnectorSummary instances.
      */
-    private java.util.List<ExternalDatabaseConnectorSummary> items;
+    private java.util.List<com.oracle.bmc.database.model.ExternalDatabaseConnectorSummary> items;
 
     public static class Builder {
         /**

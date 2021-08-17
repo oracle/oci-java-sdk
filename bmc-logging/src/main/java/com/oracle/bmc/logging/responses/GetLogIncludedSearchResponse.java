@@ -33,7 +33,7 @@ public class GetLogIncludedSearchResponse {
     /**
      * The returned LogIncludedSearch instance.
      */
-    private LogIncludedSearch logIncludedSearch;
+    private com.oracle.bmc.logging.model.LogIncludedSearch logIncludedSearch;
 
     public static class Builder {
         /**

@@ -33,7 +33,7 @@ public class GetAppCatalogListingResponse {
     /**
      * The returned AppCatalogListing instance.
      */
-    private AppCatalogListing appCatalogListing;
+    private com.oracle.bmc.core.model.AppCatalogListing appCatalogListing;
 
     public static class Builder {
         /**

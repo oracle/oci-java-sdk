@@ -30,9 +30,9 @@ public class ListOnPremConnectorsResponse {
     private String opcNextPage;
 
     /**
-     * A list of OnPremConnectorSummary instances.
+     * A list of com.oracle.bmc.datasafe.model.OnPremConnectorSummary instances.
      */
-    private java.util.List<OnPremConnectorSummary> items;
+    private java.util.List<com.oracle.bmc.datasafe.model.OnPremConnectorSummary> items;
 
     public static class Builder {
         /**

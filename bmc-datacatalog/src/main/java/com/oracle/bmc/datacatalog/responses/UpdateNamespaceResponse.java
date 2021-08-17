@@ -33,7 +33,7 @@ public class UpdateNamespaceResponse {
     /**
      * The returned Namespace instance.
      */
-    private Namespace namespace;
+    private com.oracle.bmc.datacatalog.model.Namespace namespace;
 
     public static class Builder {
         /**

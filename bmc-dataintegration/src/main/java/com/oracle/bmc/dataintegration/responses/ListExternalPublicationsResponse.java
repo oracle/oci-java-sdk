@@ -45,7 +45,8 @@ public class ListExternalPublicationsResponse {
     /**
      * The returned ExternalPublicationSummaryCollection instance.
      */
-    private ExternalPublicationSummaryCollection externalPublicationSummaryCollection;
+    private com.oracle.bmc.dataintegration.model.ExternalPublicationSummaryCollection
+            externalPublicationSummaryCollection;
 
     public static class Builder {
         /**

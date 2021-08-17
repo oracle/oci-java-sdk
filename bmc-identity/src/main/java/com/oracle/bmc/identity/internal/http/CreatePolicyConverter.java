@@ -64,12 +64,15 @@ public class CreatePolicyConverter {
                                         "Transform function invoked for com.oracle.bmc.identity.responses.CreatePolicyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Policy>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.identity.model.Policy>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Policy.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.identity.model.Policy.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Policy> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.identity.model.Policy>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

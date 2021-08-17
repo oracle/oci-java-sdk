@@ -33,7 +33,7 @@ public class UpdateHttpMonitorResponse {
     /**
      * The returned HttpMonitor instance.
      */
-    private HttpMonitor httpMonitor;
+    private com.oracle.bmc.healthchecks.model.HttpMonitor httpMonitor;
 
     public static class Builder {
         /**

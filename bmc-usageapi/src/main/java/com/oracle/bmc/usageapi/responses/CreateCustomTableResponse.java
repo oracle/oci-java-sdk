@@ -32,7 +32,7 @@ public class CreateCustomTableResponse {
     /**
      * The returned CustomTable instance.
      */
-    private CustomTable customTable;
+    private com.oracle.bmc.usageapi.model.CustomTable customTable;
 
     public static class Builder {
         /**

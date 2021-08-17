@@ -33,7 +33,7 @@ public class GetPatchResponse {
     /**
      * The returned Patch instance.
      */
-    private Patch patch;
+    private com.oracle.bmc.dataintegration.model.Patch patch;
 
     public static class Builder {
         /**

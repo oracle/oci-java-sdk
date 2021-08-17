@@ -38,7 +38,7 @@ public class ListTableUsageResponse {
     /**
      * The returned TableUsageCollection instance.
      */
-    private TableUsageCollection tableUsageCollection;
+    private com.oracle.bmc.nosql.model.TableUsageCollection tableUsageCollection;
 
     public static class Builder {
         /**

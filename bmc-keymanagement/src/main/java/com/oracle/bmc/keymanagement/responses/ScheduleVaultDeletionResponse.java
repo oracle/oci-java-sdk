@@ -32,7 +32,7 @@ public class ScheduleVaultDeletionResponse {
     /**
      * The returned Vault instance.
      */
-    private Vault vault;
+    private com.oracle.bmc.keymanagement.model.Vault vault;
 
     public static class Builder {
         /**

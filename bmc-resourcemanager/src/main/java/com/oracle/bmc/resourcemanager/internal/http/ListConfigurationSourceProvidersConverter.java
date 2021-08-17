@@ -135,14 +135,17 @@ public class ListConfigurationSourceProvidersConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ConfigurationSourceProviderCollection>>
+                                                        com.oracle.bmc.resourcemanager.model
+                                                                .ConfigurationSourceProviderCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ConfigurationSourceProviderCollection
+                                                        com.oracle.bmc.resourcemanager.model
+                                                                        .ConfigurationSourceProviderCollection
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ConfigurationSourceProviderCollection>
+                                                com.oracle.bmc.resourcemanager.model
+                                                        .ConfigurationSourceProviderCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

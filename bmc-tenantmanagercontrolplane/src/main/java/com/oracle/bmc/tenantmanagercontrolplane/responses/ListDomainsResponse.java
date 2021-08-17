@@ -35,7 +35,7 @@ public class ListDomainsResponse {
     /**
      * The returned DomainCollection instance.
      */
-    private DomainCollection domainCollection;
+    private com.oracle.bmc.tenantmanagercontrolplane.model.DomainCollection domainCollection;
 
     public static class Builder {
         /**

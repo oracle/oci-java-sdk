@@ -98,13 +98,19 @@ public class ListBootVolumesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<BootVolume>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.core.model
+                                                                        .BootVolume>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<BootVolume>>() {});
+                                                                java.util.List<
+                                                                        com.oracle.bmc.core.model
+                                                                                .BootVolume>>() {});
 
-                                com.oracle.bmc.http.internal.WithHeaders<java.util.List<BootVolume>>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model.BootVolume>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

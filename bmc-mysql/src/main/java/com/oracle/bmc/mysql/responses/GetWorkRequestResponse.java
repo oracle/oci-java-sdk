@@ -38,7 +38,7 @@ public class GetWorkRequestResponse {
     /**
      * The returned WorkRequest instance, or null if {@link #isNotModified()} is true.
      */
-    private WorkRequest workRequest;
+    private com.oracle.bmc.mysql.model.WorkRequest workRequest;
 
     /**
      * Flag to indicate whether or not the object was modified.  If this is true,

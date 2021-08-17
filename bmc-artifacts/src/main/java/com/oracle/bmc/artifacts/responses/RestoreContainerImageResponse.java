@@ -33,7 +33,7 @@ public class RestoreContainerImageResponse {
     /**
      * The returned ContainerImage instance.
      */
-    private ContainerImage containerImage;
+    private com.oracle.bmc.artifacts.model.ContainerImage containerImage;
 
     public static class Builder {
         /**

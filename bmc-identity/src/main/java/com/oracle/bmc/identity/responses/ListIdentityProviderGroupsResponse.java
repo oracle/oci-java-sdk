@@ -33,9 +33,9 @@ public class ListIdentityProviderGroupsResponse {
     private String opcNextPage;
 
     /**
-     * A list of IdentityProviderGroupSummary instances.
+     * A list of com.oracle.bmc.identity.model.IdentityProviderGroupSummary instances.
      */
-    private java.util.List<IdentityProviderGroupSummary> items;
+    private java.util.List<com.oracle.bmc.identity.model.IdentityProviderGroupSummary> items;
 
     public static class Builder {
         /**

@@ -115,15 +115,19 @@ public class ListVirtualCircuitsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<VirtualCircuit>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.core.model
+                                                                        .VirtualCircuit>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        VirtualCircuit>>() {});
+                                                                        com.oracle.bmc.core.model
+                                                                                .VirtualCircuit>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<VirtualCircuit>>
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model.VirtualCircuit>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

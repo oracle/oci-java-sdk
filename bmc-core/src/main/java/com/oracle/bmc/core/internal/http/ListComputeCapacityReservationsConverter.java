@@ -131,15 +131,19 @@ public class ListComputeCapacityReservationsConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                ComputeCapacityReservationSummary>>>
+                                                                com.oracle.bmc.core.model
+                                                                        .ComputeCapacityReservationSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        ComputeCapacityReservationSummary>>() {});
+                                                                        com.oracle.bmc.core.model
+                                                                                .ComputeCapacityReservationSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<ComputeCapacityReservationSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model
+                                                                .ComputeCapacityReservationSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -33,7 +33,7 @@ public class ListJobMetricsResponse {
     /**
      * The returned JobMetricCollection instance.
      */
-    private JobMetricCollection jobMetricCollection;
+    private com.oracle.bmc.datacatalog.model.JobMetricCollection jobMetricCollection;
 
     public static class Builder {
         /**

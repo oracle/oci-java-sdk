@@ -33,7 +33,7 @@ public class UpdateVirtualCircuitResponse {
     /**
      * The returned VirtualCircuit instance.
      */
-    private VirtualCircuit virtualCircuit;
+    private com.oracle.bmc.core.model.VirtualCircuit virtualCircuit;
 
     public static class Builder {
         /**

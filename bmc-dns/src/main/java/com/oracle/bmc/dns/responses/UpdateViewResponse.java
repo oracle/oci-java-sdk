@@ -42,7 +42,7 @@ public class UpdateViewResponse {
     /**
      * The returned View instance.
      */
-    private View view;
+    private com.oracle.bmc.dns.model.View view;
 
     public static class Builder {
         /**

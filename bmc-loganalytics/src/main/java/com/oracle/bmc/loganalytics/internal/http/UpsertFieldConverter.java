@@ -84,12 +84,16 @@ public class UpsertFieldConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogAnalyticsField>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogAnalyticsField>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogAnalyticsField.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogAnalyticsField
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<LogAnalyticsField>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model.LogAnalyticsField>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

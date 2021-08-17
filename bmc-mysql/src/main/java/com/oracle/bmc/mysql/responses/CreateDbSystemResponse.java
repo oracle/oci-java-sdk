@@ -44,7 +44,7 @@ public class CreateDbSystemResponse {
     /**
      * The returned DbSystem instance.
      */
-    private DbSystem dbSystem;
+    private com.oracle.bmc.mysql.model.DbSystem dbSystem;
 
     public static class Builder {
         /**

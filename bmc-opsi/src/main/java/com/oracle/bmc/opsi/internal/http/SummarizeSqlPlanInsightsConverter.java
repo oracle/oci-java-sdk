@@ -129,13 +129,17 @@ public class SummarizeSqlPlanInsightsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SqlPlanInsightAggregationCollection>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .SqlPlanInsightAggregationCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SqlPlanInsightAggregationCollection.class);
+                                                        com.oracle.bmc.opsi.model
+                                                                        .SqlPlanInsightAggregationCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                SqlPlanInsightAggregationCollection>
+                                                com.oracle.bmc.opsi.model
+                                                        .SqlPlanInsightAggregationCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

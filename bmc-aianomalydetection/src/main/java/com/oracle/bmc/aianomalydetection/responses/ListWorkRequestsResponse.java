@@ -35,7 +35,8 @@ public class ListWorkRequestsResponse {
     /**
      * The returned WorkRequestSummaryCollection instance.
      */
-    private WorkRequestSummaryCollection workRequestSummaryCollection;
+    private com.oracle.bmc.aianomalydetection.model.WorkRequestSummaryCollection
+            workRequestSummaryCollection;
 
     public static class Builder {
         /**

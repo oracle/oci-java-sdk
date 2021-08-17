@@ -85,13 +85,17 @@ public class RestoreContainerImageConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ContainerImage>>
+                                                        com.oracle.bmc.artifacts.model
+                                                                .ContainerImage>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ContainerImage.class);
+                                                        com.oracle.bmc.artifacts.model
+                                                                        .ContainerImage
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ContainerImage> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.artifacts.model.ContainerImage>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

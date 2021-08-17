@@ -73,12 +73,15 @@ public class UpdateBudgetConverter {
                                         "Transform function invoked for com.oracle.bmc.budget.responses.UpdateBudgetResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Budget>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.budget.model.Budget>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Budget.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.budget.model.Budget.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Budget> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.budget.model.Budget>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

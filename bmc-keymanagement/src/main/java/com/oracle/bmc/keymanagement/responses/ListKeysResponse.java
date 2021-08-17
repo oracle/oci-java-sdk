@@ -34,9 +34,9 @@ public class ListKeysResponse {
     private String opcRequestId;
 
     /**
-     * A list of KeySummary instances.
+     * A list of com.oracle.bmc.keymanagement.model.KeySummary instances.
      */
-    private java.util.List<KeySummary> items;
+    private java.util.List<com.oracle.bmc.keymanagement.model.KeySummary> items;
 
     public static class Builder {
         /**

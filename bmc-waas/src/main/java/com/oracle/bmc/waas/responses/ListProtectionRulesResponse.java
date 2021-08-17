@@ -33,9 +33,9 @@ public class ListProtectionRulesResponse {
     private String opcRequestId;
 
     /**
-     * A list of ProtectionRule instances.
+     * A list of com.oracle.bmc.waas.model.ProtectionRule instances.
      */
-    private java.util.List<ProtectionRule> items;
+    private java.util.List<com.oracle.bmc.waas.model.ProtectionRule> items;
 
     public static class Builder {
         /**

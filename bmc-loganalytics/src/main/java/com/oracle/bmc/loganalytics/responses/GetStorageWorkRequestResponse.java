@@ -37,7 +37,7 @@ public class GetStorageWorkRequestResponse {
     /**
      * The returned StorageWorkRequest instance.
      */
-    private StorageWorkRequest storageWorkRequest;
+    private com.oracle.bmc.loganalytics.model.StorageWorkRequest storageWorkRequest;
 
     public static class Builder {
         /**

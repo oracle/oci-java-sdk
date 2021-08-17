@@ -35,7 +35,7 @@ public class ListImpactedResourcesResponse {
     /**
      * The returned ImpactedResourceCollection instance.
      */
-    private ImpactedResourceCollection impactedResourceCollection;
+    private com.oracle.bmc.cloudguard.model.ImpactedResourceCollection impactedResourceCollection;
 
     public static class Builder {
         /**

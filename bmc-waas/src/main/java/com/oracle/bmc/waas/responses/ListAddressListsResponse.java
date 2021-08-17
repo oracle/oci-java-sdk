@@ -28,9 +28,9 @@ public class ListAddressListsResponse {
     private String opcRequestId;
 
     /**
-     * A list of AddressListSummary instances.
+     * A list of com.oracle.bmc.waas.model.AddressListSummary instances.
      */
-    private java.util.List<AddressListSummary> items;
+    private java.util.List<com.oracle.bmc.waas.model.AddressListSummary> items;
 
     public static class Builder {
         /**

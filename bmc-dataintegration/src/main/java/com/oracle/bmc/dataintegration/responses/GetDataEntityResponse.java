@@ -27,7 +27,7 @@ public class GetDataEntityResponse {
     /**
      * The returned DataEntity instance.
      */
-    private DataEntity dataEntity;
+    private com.oracle.bmc.dataintegration.model.DataEntity dataEntity;
 
     public static class Builder {
         /**

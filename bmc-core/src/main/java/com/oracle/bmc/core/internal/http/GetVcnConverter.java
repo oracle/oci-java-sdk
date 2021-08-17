@@ -63,11 +63,15 @@ public class GetVcnConverter {
                                         "Transform function invoked for com.oracle.bmc.core.responses.GetVcnResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Vcn>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create(Vcn.class);
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.core.model.Vcn>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.core.model.Vcn.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Vcn> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.Vcn>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

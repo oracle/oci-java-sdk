@@ -33,7 +33,7 @@ public class UpdateDomainGovernanceResponse {
     /**
      * The returned DomainGovernance instance.
      */
-    private DomainGovernance domainGovernance;
+    private com.oracle.bmc.tenantmanagercontrolplane.model.DomainGovernance domainGovernance;
 
     public static class Builder {
         /**

@@ -27,7 +27,7 @@ public class GetErratumResponse {
     /**
      * The returned Erratum instance.
      */
-    private Erratum erratum;
+    private com.oracle.bmc.osmanagement.model.Erratum erratum;
 
     public static class Builder {
         /**

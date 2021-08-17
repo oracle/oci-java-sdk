@@ -21,7 +21,7 @@ public class ListManagementAgentImagesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The ID of the compartment from which the Management Agents to be listed.
+     * The OCID of the compartment to which a request will be scoped.
      */
     private String compartmentId;
 

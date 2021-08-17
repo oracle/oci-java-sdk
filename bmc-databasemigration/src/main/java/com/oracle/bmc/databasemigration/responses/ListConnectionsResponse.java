@@ -35,7 +35,7 @@ public class ListConnectionsResponse {
     /**
      * The returned ConnectionCollection instance.
      */
-    private ConnectionCollection connectionCollection;
+    private com.oracle.bmc.databasemigration.model.ConnectionCollection connectionCollection;
 
     public static class Builder {
         /**

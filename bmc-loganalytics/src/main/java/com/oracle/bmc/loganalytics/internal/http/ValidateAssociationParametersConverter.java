@@ -116,14 +116,17 @@ public class ValidateAssociationParametersConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogAnalyticsAssociationParameterCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogAnalyticsAssociationParameterCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogAnalyticsAssociationParameterCollection
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogAnalyticsAssociationParameterCollection
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                LogAnalyticsAssociationParameterCollection>
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LogAnalyticsAssociationParameterCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

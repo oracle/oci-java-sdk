@@ -25,9 +25,9 @@ public class ListFaultDomainsResponse {
     private String opcRequestId;
 
     /**
-     * A list of FaultDomain instances.
+     * A list of com.oracle.bmc.identity.model.FaultDomain instances.
      */
-    private java.util.List<FaultDomain> items;
+    private java.util.List<com.oracle.bmc.identity.model.FaultDomain> items;
 
     public static class Builder {
         /**

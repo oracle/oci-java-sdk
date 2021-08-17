@@ -80,12 +80,15 @@ public class GetIndexConverter {
                                         "Transform function invoked for com.oracle.bmc.nosql.responses.GetIndexResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Index>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.nosql.model.Index>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Index.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.nosql.model.Index.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Index> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.nosql.model.Index>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

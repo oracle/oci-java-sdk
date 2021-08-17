@@ -33,7 +33,7 @@ public class ListTagsResponse {
     /**
      * The returned TermCollection instance.
      */
-    private TermCollection termCollection;
+    private com.oracle.bmc.datacatalog.model.TermCollection termCollection;
 
     public static class Builder {
         /**

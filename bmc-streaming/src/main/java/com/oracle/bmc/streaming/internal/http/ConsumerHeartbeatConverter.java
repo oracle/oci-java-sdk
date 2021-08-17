@@ -77,12 +77,16 @@ public class ConsumerHeartbeatConverter {
                                         "Transform function invoked for com.oracle.bmc.streaming.responses.ConsumerHeartbeatResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Cursor>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.streaming.model.Cursor>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Cursor.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.streaming.model.Cursor
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Cursor> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.streaming.model.Cursor>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

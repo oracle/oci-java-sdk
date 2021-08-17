@@ -33,7 +33,7 @@ public class GetIntegrationInstanceResponse {
     /**
      * The returned IntegrationInstance instance.
      */
-    private IntegrationInstance integrationInstance;
+    private com.oracle.bmc.integration.model.IntegrationInstance integrationInstance;
 
     public static class Builder {
         /**

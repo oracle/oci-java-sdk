@@ -72,11 +72,15 @@ public class UpdateIpv6Converter {
                                         "Transform function invoked for com.oracle.bmc.core.responses.UpdateIpv6Response");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Ipv6>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create(Ipv6.class);
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.core.model.Ipv6>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.core.model.Ipv6.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Ipv6> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.Ipv6>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

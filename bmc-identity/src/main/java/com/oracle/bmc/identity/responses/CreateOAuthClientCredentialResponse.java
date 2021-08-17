@@ -32,7 +32,7 @@ public class CreateOAuthClientCredentialResponse {
     /**
      * The returned OAuth2ClientCredential instance.
      */
-    private OAuth2ClientCredential oAuth2ClientCredential;
+    private com.oracle.bmc.identity.model.OAuth2ClientCredential oAuth2ClientCredential;
 
     public static class Builder {
         /**

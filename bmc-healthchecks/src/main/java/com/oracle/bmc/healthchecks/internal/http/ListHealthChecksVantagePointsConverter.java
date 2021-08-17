@@ -117,15 +117,20 @@ public class ListHealthChecksVantagePointsConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                HealthChecksVantagePointSummary>>>
+                                                                com.oracle.bmc.healthchecks.model
+                                                                        .HealthChecksVantagePointSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        HealthChecksVantagePointSummary>>() {});
+                                                                        com.oracle.bmc.healthchecks
+                                                                                .model
+                                                                                .HealthChecksVantagePointSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<HealthChecksVantagePointSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.healthchecks.model
+                                                                .HealthChecksVantagePointSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

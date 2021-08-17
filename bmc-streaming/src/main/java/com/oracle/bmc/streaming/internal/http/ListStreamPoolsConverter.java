@@ -127,15 +127,21 @@ public class ListStreamPoolsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<StreamPoolSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.streaming.model
+                                                                        .StreamPoolSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        StreamPoolSummary>>() {});
+                                                                        com.oracle.bmc.streaming
+                                                                                .model
+                                                                                .StreamPoolSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<StreamPoolSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.streaming.model
+                                                                .StreamPoolSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

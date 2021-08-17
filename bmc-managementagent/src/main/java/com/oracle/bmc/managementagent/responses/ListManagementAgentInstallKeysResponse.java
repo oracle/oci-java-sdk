@@ -33,9 +33,10 @@ public class ListManagementAgentInstallKeysResponse {
     private String opcRequestId;
 
     /**
-     * A list of ManagementAgentInstallKeySummary instances.
+     * A list of com.oracle.bmc.managementagent.model.ManagementAgentInstallKeySummary instances.
      */
-    private java.util.List<ManagementAgentInstallKeySummary> items;
+    private java.util.List<com.oracle.bmc.managementagent.model.ManagementAgentInstallKeySummary>
+            items;
 
     public static class Builder {
         /**

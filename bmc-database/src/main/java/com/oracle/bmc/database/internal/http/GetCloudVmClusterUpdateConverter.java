@@ -75,12 +75,15 @@ public class GetCloudVmClusterUpdateConverter {
                                         "Transform function invoked for com.oracle.bmc.database.responses.GetCloudVmClusterUpdateResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Update>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.database.model.Update>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Update.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.database.model.Update.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Update> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.database.model.Update>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

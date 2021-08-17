@@ -33,7 +33,7 @@ public class CreateConnectionResponse {
     /**
      * The returned Connection instance.
      */
-    private Connection connection;
+    private com.oracle.bmc.dataintegration.model.Connection connection;
 
     public static class Builder {
         /**

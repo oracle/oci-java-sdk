@@ -35,7 +35,7 @@ public class ListCustomTablesResponse {
     /**
      * The returned CustomTableCollection instance.
      */
-    private CustomTableCollection customTableCollection;
+    private com.oracle.bmc.usageapi.model.CustomTableCollection customTableCollection;
 
     public static class Builder {
         /**

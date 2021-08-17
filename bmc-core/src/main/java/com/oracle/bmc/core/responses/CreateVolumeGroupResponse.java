@@ -33,7 +33,7 @@ public class CreateVolumeGroupResponse {
     /**
      * The returned VolumeGroup instance.
      */
-    private VolumeGroup volumeGroup;
+    private com.oracle.bmc.core.model.VolumeGroup volumeGroup;
 
     public static class Builder {
         /**

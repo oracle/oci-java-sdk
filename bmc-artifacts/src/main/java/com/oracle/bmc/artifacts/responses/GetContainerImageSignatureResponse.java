@@ -33,7 +33,7 @@ public class GetContainerImageSignatureResponse {
     /**
      * The returned ContainerImageSignature instance.
      */
-    private ContainerImageSignature containerImageSignature;
+    private com.oracle.bmc.artifacts.model.ContainerImageSignature containerImageSignature;
 
     public static class Builder {
         /**

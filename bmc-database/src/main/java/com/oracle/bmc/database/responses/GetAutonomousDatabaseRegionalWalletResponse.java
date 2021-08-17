@@ -27,7 +27,7 @@ public class GetAutonomousDatabaseRegionalWalletResponse {
     /**
      * The returned AutonomousDatabaseWallet instance.
      */
-    private AutonomousDatabaseWallet autonomousDatabaseWallet;
+    private com.oracle.bmc.database.model.AutonomousDatabaseWallet autonomousDatabaseWallet;
 
     public static class Builder {
         /**

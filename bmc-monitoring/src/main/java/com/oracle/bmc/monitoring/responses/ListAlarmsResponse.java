@@ -32,9 +32,9 @@ public class ListAlarmsResponse {
     private String opcRequestId;
 
     /**
-     * A list of AlarmSummary instances.
+     * A list of com.oracle.bmc.monitoring.model.AlarmSummary instances.
      */
-    private java.util.List<AlarmSummary> items;
+    private java.util.List<com.oracle.bmc.monitoring.model.AlarmSummary> items;
 
     public static class Builder {
         /**

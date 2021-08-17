@@ -302,6 +302,69 @@ public class ListCustomPropertiesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<com.oracle.bmc.datacatalog.model.CustomPropertyDataType> dataTypes =
+                null;
+
+        /**
+         * Return the custom properties which has specified data types
+         *
+         * @return this builder instance
+         */
+        public Builder dataTypes(
+                java.util.List<com.oracle.bmc.datacatalog.model.CustomPropertyDataType> dataTypes) {
+            this.dataTypes = dataTypes;
+            return this;
+        }
+
+        /**
+         * Singular setter. Return the custom properties which has specified data types
+         *
+         * @return this builder instance
+         */
+        public Builder dataTypes(CustomPropertyDataType singularValue) {
+            return this.dataTypes(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<TypeName> typeName = null;
+
+        /**
+         * A filter to return only resources that match the entire type name given. The match is not case sensitive
+         * @return this builder instance
+         */
+        public Builder typeName(java.util.List<TypeName> typeName) {
+            this.typeName = typeName;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return only resources that match the entire type name given. The match is not case sensitive
+         * @return this builder instance
+         */
+        public Builder typeName(TypeName singularValue) {
+            return this.typeName(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<Fields> fields = null;
+
+        /**
+         * Specifies the fields to return in a custom property summary response.
+         *
+         * @return this builder instance
+         */
+        public Builder fields(java.util.List<Fields> fields) {
+            this.fields = fields;
+            return this;
+        }
+
+        /**
+         * Singular setter. Specifies the fields to return in a custom property summary response.
+         *
+         * @return this builder instance
+         */
+        public Builder fields(Fields singularValue) {
+            return this.fields(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

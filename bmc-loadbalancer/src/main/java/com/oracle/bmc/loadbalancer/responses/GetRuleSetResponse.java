@@ -27,7 +27,7 @@ public class GetRuleSetResponse {
     /**
      * The returned RuleSet instance.
      */
-    private RuleSet ruleSet;
+    private com.oracle.bmc.loadbalancer.model.RuleSet ruleSet;
 
     public static class Builder {
         /**

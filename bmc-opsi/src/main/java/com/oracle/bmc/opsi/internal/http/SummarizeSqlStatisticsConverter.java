@@ -228,13 +228,17 @@ public class SummarizeSqlStatisticsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SqlStatisticAggregationCollection>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .SqlStatisticAggregationCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SqlStatisticAggregationCollection.class);
+                                                        com.oracle.bmc.opsi.model
+                                                                        .SqlStatisticAggregationCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                SqlStatisticAggregationCollection>
+                                                com.oracle.bmc.opsi.model
+                                                        .SqlStatisticAggregationCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

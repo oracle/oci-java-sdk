@@ -33,7 +33,7 @@ public class GetVolumeAttachmentResponse {
     /**
      * The returned VolumeAttachment instance.
      */
-    private VolumeAttachment volumeAttachment;
+    private com.oracle.bmc.core.model.VolumeAttachment volumeAttachment;
 
     public static class Builder {
         /**

@@ -33,7 +33,7 @@ public class GetRoverNodeCertificateResponse {
     /**
      * The returned RoverNodeCertificate instance.
      */
-    private RoverNodeCertificate roverNodeCertificate;
+    private com.oracle.bmc.rover.model.RoverNodeCertificate roverNodeCertificate;
 
     public static class Builder {
         /**

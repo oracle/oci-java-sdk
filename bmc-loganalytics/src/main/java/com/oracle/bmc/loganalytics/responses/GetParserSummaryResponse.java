@@ -26,7 +26,7 @@ public class GetParserSummaryResponse {
     /**
      * The returned ParserSummaryReport instance.
      */
-    private ParserSummaryReport parserSummaryReport;
+    private com.oracle.bmc.loganalytics.model.ParserSummaryReport parserSummaryReport;
 
     public static class Builder {
         /**

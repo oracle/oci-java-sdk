@@ -26,7 +26,7 @@ public class ValidateSourceMappingResponse {
     /**
      * The returned SourceMappingResponse instance.
      */
-    private SourceMappingResponse sourceMappingResponse;
+    private com.oracle.bmc.loganalytics.model.SourceMappingResponse sourceMappingResponse;
 
     public static class Builder {
         /**

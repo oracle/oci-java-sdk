@@ -35,7 +35,8 @@ public class SummarizeAwrDbSnapshotRangesResponse {
     /**
      * The returned AwrDbSnapshotRangeCollection instance.
      */
-    private AwrDbSnapshotRangeCollection awrDbSnapshotRangeCollection;
+    private com.oracle.bmc.databasemanagement.model.AwrDbSnapshotRangeCollection
+            awrDbSnapshotRangeCollection;
 
     public static class Builder {
         /**

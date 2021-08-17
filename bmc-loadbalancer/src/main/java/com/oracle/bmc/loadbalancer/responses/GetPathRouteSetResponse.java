@@ -27,7 +27,7 @@ public class GetPathRouteSetResponse {
     /**
      * The returned PathRouteSet instance.
      */
-    private PathRouteSet pathRouteSet;
+    private com.oracle.bmc.loadbalancer.model.PathRouteSet pathRouteSet;
 
     public static class Builder {
         /**

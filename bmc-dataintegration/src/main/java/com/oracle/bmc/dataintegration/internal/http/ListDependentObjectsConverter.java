@@ -154,13 +154,17 @@ public class ListDependentObjectsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DependentObjectSummaryCollection>>
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .DependentObjectSummaryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DependentObjectSummaryCollection.class);
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .DependentObjectSummaryCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                DependentObjectSummaryCollection>
+                                                com.oracle.bmc.dataintegration.model
+                                                        .DependentObjectSummaryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

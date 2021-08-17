@@ -87,12 +87,17 @@ public class UpdateAutoScalingConfigurationConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AutoScalingConfiguration>>
+                                                        com.oracle.bmc.autoscaling.model
+                                                                .AutoScalingConfiguration>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AutoScalingConfiguration.class);
+                                                        com.oracle.bmc.autoscaling.model
+                                                                        .AutoScalingConfiguration
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AutoScalingConfiguration>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.autoscaling.model
+                                                        .AutoScalingConfiguration>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

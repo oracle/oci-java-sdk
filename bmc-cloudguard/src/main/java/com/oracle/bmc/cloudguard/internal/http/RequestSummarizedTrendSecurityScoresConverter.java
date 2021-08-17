@@ -114,14 +114,17 @@ public class RequestSummarizedTrendSecurityScoresConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SecurityScoreTrendAggregationCollection>>
+                                                        com.oracle.bmc.cloudguard.model
+                                                                .SecurityScoreTrendAggregationCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SecurityScoreTrendAggregationCollection
+                                                        com.oracle.bmc.cloudguard.model
+                                                                        .SecurityScoreTrendAggregationCollection
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                SecurityScoreTrendAggregationCollection>
+                                                com.oracle.bmc.cloudguard.model
+                                                        .SecurityScoreTrendAggregationCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

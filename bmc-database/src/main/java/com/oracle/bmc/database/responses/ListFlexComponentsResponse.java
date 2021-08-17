@@ -36,7 +36,7 @@ public class ListFlexComponentsResponse {
     /**
      * The returned FlexComponentCollection instance.
      */
-    private FlexComponentCollection flexComponentCollection;
+    private com.oracle.bmc.database.model.FlexComponentCollection flexComponentCollection;
 
     public static class Builder {
         /**

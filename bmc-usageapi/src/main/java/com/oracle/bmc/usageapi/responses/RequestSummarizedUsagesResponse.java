@@ -35,7 +35,7 @@ public class RequestSummarizedUsagesResponse {
     /**
      * The returned UsageAggregation instance.
      */
-    private UsageAggregation usageAggregation;
+    private com.oracle.bmc.usageapi.model.UsageAggregation usageAggregation;
 
     public static class Builder {
         /**

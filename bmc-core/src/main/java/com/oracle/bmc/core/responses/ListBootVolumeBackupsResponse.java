@@ -33,9 +33,9 @@ public class ListBootVolumeBackupsResponse {
     private String opcRequestId;
 
     /**
-     * A list of BootVolumeBackup instances.
+     * A list of com.oracle.bmc.core.model.BootVolumeBackup instances.
      */
-    private java.util.List<BootVolumeBackup> items;
+    private java.util.List<com.oracle.bmc.core.model.BootVolumeBackup> items;
 
     public static class Builder {
         /**

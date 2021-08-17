@@ -25,9 +25,9 @@ public class ListAllowedPeerRegionsForRemotePeeringResponse {
     private String opcRequestId;
 
     /**
-     * A list of PeerRegionForRemotePeering instances.
+     * A list of com.oracle.bmc.core.model.PeerRegionForRemotePeering instances.
      */
-    private java.util.List<PeerRegionForRemotePeering> items;
+    private java.util.List<com.oracle.bmc.core.model.PeerRegionForRemotePeering> items;
 
     public static class Builder {
         /**

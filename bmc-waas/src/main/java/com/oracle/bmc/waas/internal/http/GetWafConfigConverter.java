@@ -69,12 +69,15 @@ public class GetWafConfigConverter {
                                         "Transform function invoked for com.oracle.bmc.waas.responses.GetWafConfigResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<WafConfig>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.waas.model.WafConfig>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(WafConfig.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.waas.model.WafConfig.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<WafConfig> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.waas.model.WafConfig>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

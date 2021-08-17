@@ -27,7 +27,8 @@ public class DetectDominantLanguageResponse {
     /**
      * The returned DetectDominantLanguageResult instance.
      */
-    private DetectDominantLanguageResult detectDominantLanguageResult;
+    private com.oracle.bmc.ailanguage.model.DetectDominantLanguageResult
+            detectDominantLanguageResult;
 
     public static class Builder {
         /**

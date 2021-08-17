@@ -211,13 +211,17 @@ public class ListLogAnalyticsEntitiesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogAnalyticsEntityCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogAnalyticsEntityCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogAnalyticsEntityCollection.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogAnalyticsEntityCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                LogAnalyticsEntityCollection>
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LogAnalyticsEntityCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

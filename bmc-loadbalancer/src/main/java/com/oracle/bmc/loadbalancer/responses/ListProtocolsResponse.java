@@ -32,9 +32,9 @@ public class ListProtocolsResponse {
     private String opcRequestId;
 
     /**
-     * A list of LoadBalancerProtocol instances.
+     * A list of com.oracle.bmc.loadbalancer.model.LoadBalancerProtocol instances.
      */
-    private java.util.List<LoadBalancerProtocol> items;
+    private java.util.List<com.oracle.bmc.loadbalancer.model.LoadBalancerProtocol> items;
 
     public static class Builder {
         /**

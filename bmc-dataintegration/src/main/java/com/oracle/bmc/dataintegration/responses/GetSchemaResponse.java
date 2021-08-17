@@ -27,7 +27,7 @@ public class GetSchemaResponse {
     /**
      * The returned Schema instance.
      */
-    private Schema schema;
+    private com.oracle.bmc.dataintegration.model.Schema schema;
 
     public static class Builder {
         /**

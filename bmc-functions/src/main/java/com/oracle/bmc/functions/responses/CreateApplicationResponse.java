@@ -35,7 +35,7 @@ public class CreateApplicationResponse {
     /**
      * The returned Application instance.
      */
-    private Application application;
+    private com.oracle.bmc.functions.model.Application application;
 
     public static class Builder {
         /**

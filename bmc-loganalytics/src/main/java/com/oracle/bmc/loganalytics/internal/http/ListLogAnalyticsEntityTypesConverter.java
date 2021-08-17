@@ -139,13 +139,17 @@ public class ListLogAnalyticsEntityTypesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogAnalyticsEntityTypeCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogAnalyticsEntityTypeCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogAnalyticsEntityTypeCollection.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogAnalyticsEntityTypeCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                LogAnalyticsEntityTypeCollection>
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LogAnalyticsEntityTypeCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

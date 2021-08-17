@@ -33,7 +33,7 @@ public class GetScheduleResponse {
     /**
      * The returned Schedule instance.
      */
-    private Schedule schedule;
+    private com.oracle.bmc.dataintegration.model.Schedule schedule;
 
     public static class Builder {
         /**

@@ -33,9 +33,9 @@ public class ListSubnetsResponse {
     private String opcRequestId;
 
     /**
-     * A list of Subnet instances.
+     * A list of com.oracle.bmc.core.model.Subnet instances.
      */
-    private java.util.List<Subnet> items;
+    private java.util.List<com.oracle.bmc.core.model.Subnet> items;
 
     public static class Builder {
         /**

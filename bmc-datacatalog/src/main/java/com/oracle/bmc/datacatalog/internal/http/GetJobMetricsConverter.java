@@ -93,12 +93,16 @@ public class GetJobMetricsConverter {
                                         "Transform function invoked for com.oracle.bmc.datacatalog.responses.GetJobMetricsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<JobMetric>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.datacatalog.model.JobMetric>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(JobMetric.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.datacatalog.model.JobMetric
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<JobMetric> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model.JobMetric>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -79,12 +79,16 @@ public class GetLaunchEligibilityConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LaunchEligibility>>
+                                                        com.oracle.bmc.marketplace.model
+                                                                .LaunchEligibility>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LaunchEligibility.class);
+                                                        com.oracle.bmc.marketplace.model
+                                                                        .LaunchEligibility
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<LaunchEligibility>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.marketplace.model.LaunchEligibility>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

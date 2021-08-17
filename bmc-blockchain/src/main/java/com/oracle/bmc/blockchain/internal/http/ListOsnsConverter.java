@@ -115,13 +115,17 @@ public class ListOsnsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        OsnCollection>>
+                                                        com.oracle.bmc.blockchain.model
+                                                                .OsnCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        OsnCollection.class);
+                                                        com.oracle.bmc.blockchain.model
+                                                                        .OsnCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<OsnCollection> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.blockchain.model.OsnCollection>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -32,7 +32,8 @@ public class GetPreauthenticatedRequestResponse {
     /**
      * The returned PreauthenticatedRequestSummary instance.
      */
-    private PreauthenticatedRequestSummary preauthenticatedRequestSummary;
+    private com.oracle.bmc.objectstorage.model.PreauthenticatedRequestSummary
+            preauthenticatedRequestSummary;
 
     public static class Builder {
         /**

@@ -104,6 +104,25 @@ public class ListWafBlockedRequestsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<WafFeature> wafFeature = null;
+
+        /**
+         * Filter stats by the Web Application Firewall feature that triggered the block action. If unspecified, data for all WAF features will be returned.
+         * @return this builder instance
+         */
+        public Builder wafFeature(java.util.List<WafFeature> wafFeature) {
+            this.wafFeature = wafFeature;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter stats by the Web Application Firewall feature that triggered the block action. If unspecified, data for all WAF features will be returned.
+         * @return this builder instance
+         */
+        public Builder wafFeature(WafFeature singularValue) {
+            return this.wafFeature(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

@@ -30,9 +30,9 @@ public class ListResourceTypesResponse {
     private String opcRequestId;
 
     /**
-     * A list of ResourceType instances.
+     * A list of com.oracle.bmc.resourcesearch.model.ResourceType instances.
      */
-    private java.util.List<ResourceType> items;
+    private java.util.List<com.oracle.bmc.resourcesearch.model.ResourceType> items;
 
     public static class Builder {
         /**

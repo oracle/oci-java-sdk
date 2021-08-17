@@ -32,7 +32,7 @@ public class GetExternalBackupJobResponse {
     /**
      * The returned ExternalBackupJob instance.
      */
-    private ExternalBackupJob externalBackupJob;
+    private com.oracle.bmc.database.model.ExternalBackupJob externalBackupJob;
 
     public static class Builder {
         /**

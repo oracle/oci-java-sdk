@@ -35,7 +35,8 @@ public class RequestSummarizedTrendProblemsResponse {
     /**
      * The returned ProblemTrendAggregationCollection instance.
      */
-    private ProblemTrendAggregationCollection problemTrendAggregationCollection;
+    private com.oracle.bmc.cloudguard.model.ProblemTrendAggregationCollection
+            problemTrendAggregationCollection;
 
     public static class Builder {
         /**

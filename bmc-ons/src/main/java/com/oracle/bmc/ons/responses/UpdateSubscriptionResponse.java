@@ -33,7 +33,7 @@ public class UpdateSubscriptionResponse {
     /**
      * The returned UpdateSubscriptionDetails instance.
      */
-    private UpdateSubscriptionDetails updateSubscriptionDetails;
+    private com.oracle.bmc.ons.model.UpdateSubscriptionDetails updateSubscriptionDetails;
 
     public static class Builder {
         /**

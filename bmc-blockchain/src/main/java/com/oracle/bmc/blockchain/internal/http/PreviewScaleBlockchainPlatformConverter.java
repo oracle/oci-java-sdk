@@ -81,13 +81,17 @@ public class PreviewScaleBlockchainPlatformConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ScaledBlockchainPlatformPreview>>
+                                                        com.oracle.bmc.blockchain.model
+                                                                .ScaledBlockchainPlatformPreview>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ScaledBlockchainPlatformPreview.class);
+                                                        com.oracle.bmc.blockchain.model
+                                                                        .ScaledBlockchainPlatformPreview
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                ScaledBlockchainPlatformPreview>
+                                                com.oracle.bmc.blockchain.model
+                                                        .ScaledBlockchainPlatformPreview>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

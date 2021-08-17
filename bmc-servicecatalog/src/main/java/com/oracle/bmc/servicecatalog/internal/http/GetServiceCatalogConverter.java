@@ -71,13 +71,17 @@ public class GetServiceCatalogConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ServiceCatalog>>
+                                                        com.oracle.bmc.servicecatalog.model
+                                                                .ServiceCatalog>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ServiceCatalog.class);
+                                                        com.oracle.bmc.servicecatalog.model
+                                                                        .ServiceCatalog
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ServiceCatalog> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.servicecatalog.model.ServiceCatalog>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

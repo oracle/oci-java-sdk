@@ -39,7 +39,7 @@ public class CreateBackupResponse {
     /**
      * The returned Backup instance.
      */
-    private Backup backup;
+    private com.oracle.bmc.mysql.model.Backup backup;
 
     public static class Builder {
         /**

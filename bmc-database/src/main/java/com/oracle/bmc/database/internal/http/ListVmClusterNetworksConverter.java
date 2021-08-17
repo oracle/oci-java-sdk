@@ -127,15 +127,21 @@ public class ListVmClusterNetworksConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<VmClusterNetworkSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.database.model
+                                                                        .VmClusterNetworkSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        VmClusterNetworkSummary>>() {});
+                                                                        com.oracle.bmc.database
+                                                                                .model
+                                                                                .VmClusterNetworkSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<VmClusterNetworkSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.database.model
+                                                                .VmClusterNetworkSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

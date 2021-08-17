@@ -33,7 +33,7 @@ public class AttachVnicResponse {
     /**
      * The returned VnicAttachment instance.
      */
-    private VnicAttachment vnicAttachment;
+    private com.oracle.bmc.core.model.VnicAttachment vnicAttachment;
 
     public static class Builder {
         /**

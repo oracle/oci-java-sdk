@@ -34,9 +34,9 @@ public class ListAutonomousContainerDatabasesResponse {
     private String opcNextPage;
 
     /**
-     * A list of AutonomousContainerDatabaseSummary instances.
+     * A list of com.oracle.bmc.database.model.AutonomousContainerDatabaseSummary instances.
      */
-    private java.util.List<AutonomousContainerDatabaseSummary> items;
+    private java.util.List<com.oracle.bmc.database.model.AutonomousContainerDatabaseSummary> items;
 
     public static class Builder {
         /**

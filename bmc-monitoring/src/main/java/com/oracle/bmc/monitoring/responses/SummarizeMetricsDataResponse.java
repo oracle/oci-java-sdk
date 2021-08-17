@@ -25,9 +25,9 @@ public class SummarizeMetricsDataResponse {
     private String opcRequestId;
 
     /**
-     * A list of MetricData instances.
+     * A list of com.oracle.bmc.monitoring.model.MetricData instances.
      */
-    private java.util.List<MetricData> items;
+    private java.util.List<com.oracle.bmc.monitoring.model.MetricData> items;
 
     public static class Builder {
         /**

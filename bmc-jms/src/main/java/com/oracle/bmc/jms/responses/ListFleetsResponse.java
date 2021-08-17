@@ -35,7 +35,7 @@ public class ListFleetsResponse {
     /**
      * The returned FleetCollection instance.
      */
-    private FleetCollection fleetCollection;
+    private com.oracle.bmc.jms.model.FleetCollection fleetCollection;
 
     public static class Builder {
         /**

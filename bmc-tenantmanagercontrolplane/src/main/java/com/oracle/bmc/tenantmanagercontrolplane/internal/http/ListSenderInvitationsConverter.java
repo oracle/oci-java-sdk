@@ -142,12 +142,18 @@ public class ListSenderInvitationsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SenderInvitationCollection>>
+                                                        com.oracle.bmc.tenantmanagercontrolplane
+                                                                .model.SenderInvitationCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SenderInvitationCollection.class);
+                                                        com.oracle.bmc.tenantmanagercontrolplane
+                                                                        .model
+                                                                        .SenderInvitationCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<SenderInvitationCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.tenantmanagercontrolplane.model
+                                                        .SenderInvitationCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

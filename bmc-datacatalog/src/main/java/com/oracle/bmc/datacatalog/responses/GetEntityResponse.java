@@ -33,7 +33,7 @@ public class GetEntityResponse {
     /**
      * The returned Entity instance.
      */
-    private Entity entity;
+    private com.oracle.bmc.datacatalog.model.Entity entity;
 
     public static class Builder {
         /**

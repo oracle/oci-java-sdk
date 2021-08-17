@@ -86,14 +86,17 @@ public class IngestHostConfigurationConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        IngestHostConfigurationResponseDetails>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .IngestHostConfigurationResponseDetails>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        IngestHostConfigurationResponseDetails
+                                                        com.oracle.bmc.opsi.model
+                                                                        .IngestHostConfigurationResponseDetails
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                IngestHostConfigurationResponseDetails>
+                                                com.oracle.bmc.opsi.model
+                                                        .IngestHostConfigurationResponseDetails>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

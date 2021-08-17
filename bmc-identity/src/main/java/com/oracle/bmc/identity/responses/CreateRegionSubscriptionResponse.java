@@ -27,7 +27,7 @@ public class CreateRegionSubscriptionResponse {
     /**
      * The returned RegionSubscription instance.
      */
-    private RegionSubscription regionSubscription;
+    private com.oracle.bmc.identity.model.RegionSubscription regionSubscription;
 
     public static class Builder {
         /**

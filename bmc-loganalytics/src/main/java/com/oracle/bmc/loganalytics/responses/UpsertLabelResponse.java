@@ -32,7 +32,7 @@ public class UpsertLabelResponse {
     /**
      * The returned LogAnalyticsLabel instance.
      */
-    private LogAnalyticsLabel logAnalyticsLabel;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsLabel logAnalyticsLabel;
 
     public static class Builder {
         /**

@@ -33,7 +33,7 @@ public class GetOceInstanceResponse {
     /**
      * The returned OceInstance instance.
      */
-    private OceInstance oceInstance;
+    private com.oracle.bmc.oce.model.OceInstance oceInstance;
 
     public static class Builder {
         /**

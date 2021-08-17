@@ -40,7 +40,7 @@ public class CreateImageResponse {
     /**
      * The returned Image instance.
      */
-    private Image image;
+    private com.oracle.bmc.core.model.Image image;
 
     public static class Builder {
         /**

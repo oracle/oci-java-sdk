@@ -33,9 +33,9 @@ public class ListBootVolumesResponse {
     private String opcRequestId;
 
     /**
-     * A list of BootVolume instances.
+     * A list of com.oracle.bmc.core.model.BootVolume instances.
      */
-    private java.util.List<BootVolume> items;
+    private java.util.List<com.oracle.bmc.core.model.BootVolume> items;
 
     public static class Builder {
         /**

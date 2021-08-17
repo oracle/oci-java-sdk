@@ -69,12 +69,16 @@ public class GetDetectorConverter {
                                         "Transform function invoked for com.oracle.bmc.cloudguard.responses.GetDetectorResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Detector>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.cloudguard.model.Detector>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Detector.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.cloudguard.model.Detector
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Detector> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.cloudguard.model.Detector>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

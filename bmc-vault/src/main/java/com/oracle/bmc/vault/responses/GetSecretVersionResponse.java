@@ -32,7 +32,7 @@ public class GetSecretVersionResponse {
     /**
      * The returned SecretVersion instance.
      */
-    private SecretVersion secretVersion;
+    private com.oracle.bmc.vault.model.SecretVersion secretVersion;
 
     public static class Builder {
         /**

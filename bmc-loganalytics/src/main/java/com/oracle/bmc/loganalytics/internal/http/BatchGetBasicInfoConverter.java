@@ -113,13 +113,17 @@ public class BatchGetBasicInfoConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogAnalyticsLabelCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogAnalyticsLabelCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogAnalyticsLabelCollection.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogAnalyticsLabelCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                LogAnalyticsLabelCollection>
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LogAnalyticsLabelCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

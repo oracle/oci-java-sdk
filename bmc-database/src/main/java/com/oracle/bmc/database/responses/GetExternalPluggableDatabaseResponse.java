@@ -32,7 +32,7 @@ public class GetExternalPluggableDatabaseResponse {
     /**
      * The returned ExternalPluggableDatabase instance.
      */
-    private ExternalPluggableDatabase externalPluggableDatabase;
+    private com.oracle.bmc.database.model.ExternalPluggableDatabase externalPluggableDatabase;
 
     public static class Builder {
         /**

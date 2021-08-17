@@ -33,7 +33,7 @@ public class GetDbSystemResponse {
     /**
      * The returned DbSystem instance, or null if {@link #isNotModified()} is true.
      */
-    private DbSystem dbSystem;
+    private com.oracle.bmc.mysql.model.DbSystem dbSystem;
 
     /**
      * Flag to indicate whether or not the object was modified.  If this is true,

@@ -109,6 +109,33 @@ public class SummarizeInstallationUsageRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<com.oracle.bmc.jms.model.SummarizeInstallationUsageFields> fields =
+                null;
+
+        /**
+         * Additional fields to include into the returned model on top of the required ones.
+         * This parameter can also include 'approximateApplicationCount' and 'approximateManagedInstanceCount'.
+         * For example 'approximateApplicationCount,approximateManagedInstanceCount'.
+         *
+         * @return this builder instance
+         */
+        public Builder fields(
+                java.util.List<com.oracle.bmc.jms.model.SummarizeInstallationUsageFields> fields) {
+            this.fields = fields;
+            return this;
+        }
+
+        /**
+         * Singular setter. Additional fields to include into the returned model on top of the required ones.
+         * This parameter can also include 'approximateApplicationCount' and 'approximateManagedInstanceCount'.
+         * For example 'approximateApplicationCount,approximateManagedInstanceCount'.
+         *
+         * @return this builder instance
+         */
+        public Builder fields(SummarizeInstallationUsageFields singularValue) {
+            return this.fields(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

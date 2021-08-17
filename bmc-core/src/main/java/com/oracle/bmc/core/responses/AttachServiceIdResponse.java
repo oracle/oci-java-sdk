@@ -27,7 +27,7 @@ public class AttachServiceIdResponse {
     /**
      * The returned ServiceGateway instance.
      */
-    private ServiceGateway serviceGateway;
+    private com.oracle.bmc.core.model.ServiceGateway serviceGateway;
 
     public static class Builder {
         /**

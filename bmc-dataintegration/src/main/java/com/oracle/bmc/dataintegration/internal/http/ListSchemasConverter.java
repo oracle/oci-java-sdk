@@ -141,12 +141,17 @@ public class ListSchemasConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SchemaSummaryCollection>>
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .SchemaSummaryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SchemaSummaryCollection.class);
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .SchemaSummaryCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<SchemaSummaryCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dataintegration.model
+                                                        .SchemaSummaryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -75,12 +75,17 @@ public class GetReplicationStatusConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ReplicationStatusDetails>>
+                                                        com.oracle.bmc.keymanagement.model
+                                                                .ReplicationStatusDetails>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ReplicationStatusDetails.class);
+                                                        com.oracle.bmc.keymanagement.model
+                                                                        .ReplicationStatusDetails
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ReplicationStatusDetails>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.keymanagement.model
+                                                        .ReplicationStatusDetails>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

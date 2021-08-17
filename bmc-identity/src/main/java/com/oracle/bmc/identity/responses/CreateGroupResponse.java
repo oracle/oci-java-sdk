@@ -32,7 +32,7 @@ public class CreateGroupResponse {
     /**
      * The returned Group instance.
      */
-    private Group group;
+    private com.oracle.bmc.identity.model.Group group;
 
     public static class Builder {
         /**

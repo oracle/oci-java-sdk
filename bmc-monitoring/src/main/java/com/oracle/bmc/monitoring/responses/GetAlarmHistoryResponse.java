@@ -34,7 +34,7 @@ public class GetAlarmHistoryResponse {
     /**
      * The returned AlarmHistoryCollection instance.
      */
-    private AlarmHistoryCollection alarmHistoryCollection;
+    private com.oracle.bmc.monitoring.model.AlarmHistoryCollection alarmHistoryCollection;
 
     public static class Builder {
         /**

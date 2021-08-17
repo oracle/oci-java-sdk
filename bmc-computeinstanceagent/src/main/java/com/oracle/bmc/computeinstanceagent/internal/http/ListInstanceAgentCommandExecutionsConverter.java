@@ -128,16 +128,22 @@ public class ListInstanceAgentCommandExecutionsConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                InstanceAgentCommandExecutionSummary>>>
+                                                                com.oracle.bmc.computeinstanceagent
+                                                                        .model
+                                                                        .InstanceAgentCommandExecutionSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        InstanceAgentCommandExecutionSummary>>() {});
+                                                                        com.oracle.bmc
+                                                                                .computeinstanceagent
+                                                                                .model
+                                                                                .InstanceAgentCommandExecutionSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 java.util.List<
-                                                        InstanceAgentCommandExecutionSummary>>
+                                                        com.oracle.bmc.computeinstanceagent.model
+                                                                .InstanceAgentCommandExecutionSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

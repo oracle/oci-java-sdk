@@ -66,13 +66,15 @@ public class CreateVolumeGroupConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        VolumeGroup>>
+                                                        com.oracle.bmc.core.model.VolumeGroup>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        VolumeGroup.class);
+                                                        com.oracle.bmc.core.model.VolumeGroup
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<VolumeGroup> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.VolumeGroup>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -63,6 +63,25 @@ public class UpdateCachingRulesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<CachingRule> cachingRulesDetails = null;
+
+        /**
+         *
+         * @return this builder instance
+         */
+        public Builder cachingRulesDetails(java.util.List<CachingRule> cachingRulesDetails) {
+            this.cachingRulesDetails = cachingRulesDetails;
+            return this;
+        }
+
+        /**
+         * Singular setter.
+         * @return this builder instance
+         */
+        public Builder cachingRulesDetails(CachingRule singularValue) {
+            return this.cachingRulesDetails(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

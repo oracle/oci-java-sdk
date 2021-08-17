@@ -111,12 +111,17 @@ public class ListWorkRequestsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        WorkRequestCollection>>
+                                                        com.oracle.bmc.apigateway.model
+                                                                .WorkRequestCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        WorkRequestCollection.class);
+                                                        com.oracle.bmc.apigateway.model
+                                                                        .WorkRequestCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<WorkRequestCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.apigateway.model
+                                                        .WorkRequestCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

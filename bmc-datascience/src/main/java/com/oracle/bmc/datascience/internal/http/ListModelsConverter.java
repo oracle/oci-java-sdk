@@ -143,14 +143,21 @@ public class ListModelsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<ModelSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.datascience.model
+                                                                        .ModelSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<ModelSummary>>() {});
+                                                                java.util.List<
+                                                                        com.oracle.bmc.datascience
+                                                                                .model
+                                                                                .ModelSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<ModelSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.datascience.model
+                                                                .ModelSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

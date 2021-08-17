@@ -108,6 +108,33 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<Fields> fields = null;
+
+        /**
+         * Bucket summary includes the 'namespace', 'name', 'compartmentId', 'createdBy', 'timeCreated',
+         * and 'etag' fields. This parameter can also include 'approximateCount' (approximate number of objects), 'approximateSize'
+         * (total approximate size in bytes of all objects) and 'autoTiering' (state of auto tiering on the bucket).
+         * For example 'approximateCount,approximateSize,autoTiering'.
+         *
+         * @return this builder instance
+         */
+        public Builder fields(java.util.List<Fields> fields) {
+            this.fields = fields;
+            return this;
+        }
+
+        /**
+         * Singular setter. Bucket summary includes the 'namespace', 'name', 'compartmentId', 'createdBy', 'timeCreated',
+         * and 'etag' fields. This parameter can also include 'approximateCount' (approximate number of objects), 'approximateSize'
+         * (total approximate size in bytes of all objects) and 'autoTiering' (state of auto tiering on the bucket).
+         * For example 'approximateCount,approximateSize,autoTiering'.
+         *
+         * @return this builder instance
+         */
+        public Builder fields(Fields singularValue) {
+            return this.fields(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

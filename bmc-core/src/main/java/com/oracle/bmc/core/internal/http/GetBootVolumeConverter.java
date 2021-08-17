@@ -65,13 +65,14 @@ public class GetBootVolumeConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        BootVolume>>
+                                                        com.oracle.bmc.core.model.BootVolume>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        BootVolume.class);
+                                                        com.oracle.bmc.core.model.BootVolume.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<BootVolume> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.BootVolume>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

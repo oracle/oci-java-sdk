@@ -25,7 +25,8 @@ public class GetAnnouncementUserStatusResponse {
     /**
      * The returned AnnouncementUserStatusDetails instance.
      */
-    private AnnouncementUserStatusDetails announcementUserStatusDetails;
+    private com.oracle.bmc.announcementsservice.model.AnnouncementUserStatusDetails
+            announcementUserStatusDetails;
 
     public static class Builder {
         /**

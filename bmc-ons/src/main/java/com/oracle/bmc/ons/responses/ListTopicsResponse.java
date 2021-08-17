@@ -39,9 +39,9 @@ public class ListTopicsResponse {
     private String opcRequestId;
 
     /**
-     * A list of NotificationTopicSummary instances.
+     * A list of com.oracle.bmc.ons.model.NotificationTopicSummary instances.
      */
-    private java.util.List<NotificationTopicSummary> items;
+    private java.util.List<com.oracle.bmc.ons.model.NotificationTopicSummary> items;
 
     public static class Builder {
         /**

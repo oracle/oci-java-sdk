@@ -33,7 +33,7 @@ public class RoverNodeActionSetKeyResponse {
     /**
      * The returned RoverNodeSetKey instance.
      */
-    private RoverNodeSetKey roverNodeSetKey;
+    private com.oracle.bmc.rover.model.RoverNodeSetKey roverNodeSetKey;
 
     public static class Builder {
         /**

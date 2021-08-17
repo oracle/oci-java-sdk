@@ -27,7 +27,7 @@ public class GetHeatWaveClusterMemoryEstimateResponse {
     /**
      * The returned HeatWaveClusterMemoryEstimate instance.
      */
-    private HeatWaveClusterMemoryEstimate heatWaveClusterMemoryEstimate;
+    private com.oracle.bmc.mysql.model.HeatWaveClusterMemoryEstimate heatWaveClusterMemoryEstimate;
 
     public static class Builder {
         /**

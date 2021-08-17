@@ -32,7 +32,7 @@ public class PutQueryWorkRequestBackgroundResponse {
     /**
      * The returned QueryWorkRequest instance, or null if {@link #isNotModified()} is true.
      */
-    private QueryWorkRequest queryWorkRequest;
+    private com.oracle.bmc.loganalytics.model.QueryWorkRequest queryWorkRequest;
 
     /**
      * Flag to indicate whether or not the object was modified.  If this is true,

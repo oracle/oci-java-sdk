@@ -66,11 +66,15 @@ public class CreateVlanConverter {
                                         "Transform function invoked for com.oracle.bmc.core.responses.CreateVlanResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Vlan>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create(Vlan.class);
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.core.model.Vlan>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.core.model.Vlan.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Vlan> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.Vlan>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

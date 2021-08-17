@@ -123,15 +123,21 @@ public class ListSoftwareSourcePackagesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<SoftwarePackageSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.osmanagement.model
+                                                                        .SoftwarePackageSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        SoftwarePackageSummary>>() {});
+                                                                        com.oracle.bmc.osmanagement
+                                                                                .model
+                                                                                .SoftwarePackageSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<SoftwarePackageSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.osmanagement.model
+                                                                .SoftwarePackageSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

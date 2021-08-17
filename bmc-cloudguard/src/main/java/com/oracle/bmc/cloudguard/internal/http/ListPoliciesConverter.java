@@ -103,12 +103,16 @@ public class ListPoliciesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        PolicyCollection>>
+                                                        com.oracle.bmc.cloudguard.model
+                                                                .PolicyCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        PolicyCollection.class);
+                                                        com.oracle.bmc.cloudguard.model
+                                                                        .PolicyCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<PolicyCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.cloudguard.model.PolicyCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

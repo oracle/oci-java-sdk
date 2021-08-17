@@ -68,12 +68,15 @@ public class GetRoverNodeConverter {
                                         "Transform function invoked for com.oracle.bmc.rover.responses.GetRoverNodeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<RoverNode>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.rover.model.RoverNode>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(RoverNode.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.rover.model.RoverNode.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<RoverNode> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.rover.model.RoverNode>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

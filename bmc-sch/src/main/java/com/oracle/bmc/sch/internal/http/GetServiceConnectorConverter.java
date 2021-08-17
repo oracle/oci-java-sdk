@@ -70,12 +70,14 @@ public class GetServiceConnectorConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ServiceConnector>>
+                                                        com.oracle.bmc.sch.model.ServiceConnector>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ServiceConnector.class);
+                                                        com.oracle.bmc.sch.model.ServiceConnector
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ServiceConnector>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.sch.model.ServiceConnector>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

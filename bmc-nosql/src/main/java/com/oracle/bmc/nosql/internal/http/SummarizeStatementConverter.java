@@ -78,12 +78,15 @@ public class SummarizeStatementConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        StatementSummary>>
+                                                        com.oracle.bmc.nosql.model
+                                                                .StatementSummary>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        StatementSummary.class);
+                                                        com.oracle.bmc.nosql.model.StatementSummary
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<StatementSummary>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.nosql.model.StatementSummary>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

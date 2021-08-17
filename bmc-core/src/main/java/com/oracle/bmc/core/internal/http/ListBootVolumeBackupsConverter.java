@@ -131,15 +131,19 @@ public class ListBootVolumeBackupsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<BootVolumeBackup>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.core.model
+                                                                        .BootVolumeBackup>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        BootVolumeBackup>>() {});
+                                                                        com.oracle.bmc.core.model
+                                                                                .BootVolumeBackup>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<BootVolumeBackup>>
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model.BootVolumeBackup>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

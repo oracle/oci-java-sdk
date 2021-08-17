@@ -33,9 +33,9 @@ public class ListDynamicGroupsResponse {
     private String opcNextPage;
 
     /**
-     * A list of DynamicGroup instances.
+     * A list of com.oracle.bmc.identity.model.DynamicGroup instances.
      */
-    private java.util.List<DynamicGroup> items;
+    private java.util.List<com.oracle.bmc.identity.model.DynamicGroup> items;
 
     public static class Builder {
         /**

@@ -37,9 +37,9 @@ public class ListModelDeploymentsResponse {
     private String opcRequestId;
 
     /**
-     * A list of ModelDeploymentSummary instances.
+     * A list of com.oracle.bmc.datascience.model.ModelDeploymentSummary instances.
      */
-    private java.util.List<ModelDeploymentSummary> items;
+    private java.util.List<com.oracle.bmc.datascience.model.ModelDeploymentSummary> items;
 
     public static class Builder {
         /**

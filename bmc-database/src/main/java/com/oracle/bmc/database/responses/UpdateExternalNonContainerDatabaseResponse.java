@@ -38,7 +38,7 @@ public class UpdateExternalNonContainerDatabaseResponse {
     /**
      * The returned ExternalNonContainerDatabase instance.
      */
-    private ExternalNonContainerDatabase externalNonContainerDatabase;
+    private com.oracle.bmc.database.model.ExternalNonContainerDatabase externalNonContainerDatabase;
 
     public static class Builder {
         /**

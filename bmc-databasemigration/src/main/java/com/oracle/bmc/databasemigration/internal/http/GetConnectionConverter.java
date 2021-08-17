@@ -71,13 +71,17 @@ public class GetConnectionConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        Connection>>
+                                                        com.oracle.bmc.databasemigration.model
+                                                                .Connection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        Connection.class);
+                                                        com.oracle.bmc.databasemigration.model
+                                                                        .Connection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Connection> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.databasemigration.model.Connection>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

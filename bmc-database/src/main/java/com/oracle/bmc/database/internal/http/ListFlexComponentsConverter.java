@@ -110,12 +110,17 @@ public class ListFlexComponentsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        FlexComponentCollection>>
+                                                        com.oracle.bmc.database.model
+                                                                .FlexComponentCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        FlexComponentCollection.class);
+                                                        com.oracle.bmc.database.model
+                                                                        .FlexComponentCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<FlexComponentCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.database.model
+                                                        .FlexComponentCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

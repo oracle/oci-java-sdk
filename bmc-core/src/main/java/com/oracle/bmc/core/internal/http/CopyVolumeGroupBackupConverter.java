@@ -80,12 +80,15 @@ public class CopyVolumeGroupBackupConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        VolumeGroupBackup>>
+                                                        com.oracle.bmc.core.model
+                                                                .VolumeGroupBackup>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        VolumeGroupBackup.class);
+                                                        com.oracle.bmc.core.model.VolumeGroupBackup
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<VolumeGroupBackup>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.core.model.VolumeGroupBackup>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

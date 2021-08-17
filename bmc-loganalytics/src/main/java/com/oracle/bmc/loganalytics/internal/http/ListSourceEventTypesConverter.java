@@ -134,12 +134,17 @@ public class ListSourceEventTypesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        EventTypeCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .EventTypeCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        EventTypeCollection.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .EventTypeCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<EventTypeCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model
+                                                        .EventTypeCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

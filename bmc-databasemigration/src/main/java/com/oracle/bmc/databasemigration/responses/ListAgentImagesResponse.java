@@ -35,7 +35,7 @@ public class ListAgentImagesResponse {
     /**
      * The returned AgentImageCollection instance.
      */
-    private AgentImageCollection agentImageCollection;
+    private com.oracle.bmc.databasemigration.model.AgentImageCollection agentImageCollection;
 
     public static class Builder {
         /**

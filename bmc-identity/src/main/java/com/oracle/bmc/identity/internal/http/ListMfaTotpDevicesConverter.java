@@ -99,15 +99,21 @@ public class ListMfaTotpDevicesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<MfaTotpDeviceSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.identity.model
+                                                                        .MfaTotpDeviceSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        MfaTotpDeviceSummary>>() {});
+                                                                        com.oracle.bmc.identity
+                                                                                .model
+                                                                                .MfaTotpDeviceSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<MfaTotpDeviceSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.identity.model
+                                                                .MfaTotpDeviceSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

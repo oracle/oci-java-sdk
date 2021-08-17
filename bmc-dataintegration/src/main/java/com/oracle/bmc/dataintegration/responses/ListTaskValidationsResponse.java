@@ -45,7 +45,8 @@ public class ListTaskValidationsResponse {
     /**
      * The returned TaskValidationSummaryCollection instance.
      */
-    private TaskValidationSummaryCollection taskValidationSummaryCollection;
+    private com.oracle.bmc.dataintegration.model.TaskValidationSummaryCollection
+            taskValidationSummaryCollection;
 
     public static class Builder {
         /**

@@ -111,13 +111,19 @@ public class ListRecipientInvitationsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        RecipientInvitationCollection>>
+                                                        com.oracle.bmc.tenantmanagercontrolplane
+                                                                .model
+                                                                .RecipientInvitationCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        RecipientInvitationCollection.class);
+                                                        com.oracle.bmc.tenantmanagercontrolplane
+                                                                        .model
+                                                                        .RecipientInvitationCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                RecipientInvitationCollection>
+                                                com.oracle.bmc.tenantmanagercontrolplane.model
+                                                        .RecipientInvitationCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

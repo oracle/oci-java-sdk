@@ -45,7 +45,8 @@ public class ListDataFlowValidationsResponse {
     /**
      * The returned DataFlowValidationSummaryCollection instance.
      */
-    private DataFlowValidationSummaryCollection dataFlowValidationSummaryCollection;
+    private com.oracle.bmc.dataintegration.model.DataFlowValidationSummaryCollection
+            dataFlowValidationSummaryCollection;
 
     public static class Builder {
         /**

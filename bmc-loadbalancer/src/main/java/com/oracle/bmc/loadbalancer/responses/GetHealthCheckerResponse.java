@@ -27,7 +27,7 @@ public class GetHealthCheckerResponse {
     /**
      * The returned HealthChecker instance.
      */
-    private HealthChecker healthChecker;
+    private com.oracle.bmc.loadbalancer.model.HealthChecker healthChecker;
 
     public static class Builder {
         /**

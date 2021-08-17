@@ -45,7 +45,7 @@ public class ListObjectVersionsResponse {
     /**
      * The returned ObjectVersionCollection instance.
      */
-    private ObjectVersionCollection objectVersionCollection;
+    private com.oracle.bmc.objectstorage.model.ObjectVersionCollection objectVersionCollection;
 
     public static class Builder {
         /**

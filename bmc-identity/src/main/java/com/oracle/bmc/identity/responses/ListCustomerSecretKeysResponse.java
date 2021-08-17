@@ -33,9 +33,9 @@ public class ListCustomerSecretKeysResponse {
     private String opcNextPage;
 
     /**
-     * A list of CustomerSecretKeySummary instances.
+     * A list of com.oracle.bmc.identity.model.CustomerSecretKeySummary instances.
      */
-    private java.util.List<CustomerSecretKeySummary> items;
+    private java.util.List<com.oracle.bmc.identity.model.CustomerSecretKeySummary> items;
 
     public static class Builder {
         /**

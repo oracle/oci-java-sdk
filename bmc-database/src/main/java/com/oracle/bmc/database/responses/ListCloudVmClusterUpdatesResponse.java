@@ -34,9 +34,9 @@ public class ListCloudVmClusterUpdatesResponse {
     private String opcNextPage;
 
     /**
-     * A list of UpdateSummary instances.
+     * A list of com.oracle.bmc.database.model.UpdateSummary instances.
      */
-    private java.util.List<UpdateSummary> items;
+    private java.util.List<com.oracle.bmc.database.model.UpdateSummary> items;
 
     public static class Builder {
         /**

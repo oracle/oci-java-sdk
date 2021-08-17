@@ -119,13 +119,17 @@ public class ListLogSavedSearchesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogSavedSearchSummaryCollection>>
+                                                        com.oracle.bmc.logging.model
+                                                                .LogSavedSearchSummaryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogSavedSearchSummaryCollection.class);
+                                                        com.oracle.bmc.logging.model
+                                                                        .LogSavedSearchSummaryCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                LogSavedSearchSummaryCollection>
+                                                com.oracle.bmc.logging.model
+                                                        .LogSavedSearchSummaryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

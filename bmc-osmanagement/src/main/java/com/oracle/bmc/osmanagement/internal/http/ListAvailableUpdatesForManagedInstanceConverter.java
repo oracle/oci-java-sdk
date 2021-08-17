@@ -128,15 +128,21 @@ public class ListAvailableUpdatesForManagedInstanceConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<AvailableUpdateSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.osmanagement.model
+                                                                        .AvailableUpdateSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        AvailableUpdateSummary>>() {});
+                                                                        com.oracle.bmc.osmanagement
+                                                                                .model
+                                                                                .AvailableUpdateSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<AvailableUpdateSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.osmanagement.model
+                                                                .AvailableUpdateSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

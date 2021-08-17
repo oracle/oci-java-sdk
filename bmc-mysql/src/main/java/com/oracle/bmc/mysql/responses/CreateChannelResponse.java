@@ -39,7 +39,7 @@ public class CreateChannelResponse {
     /**
      * The returned Channel instance.
      */
-    private Channel channel;
+    private com.oracle.bmc.mysql.model.Channel channel;
 
     public static class Builder {
         /**

@@ -35,7 +35,8 @@ public class ListAccessRequestHistoriesResponse {
     /**
      * The returned AccessRequestHistoryCollection instance.
      */
-    private AccessRequestHistoryCollection accessRequestHistoryCollection;
+    private com.oracle.bmc.operatoraccesscontrol.model.AccessRequestHistoryCollection
+            accessRequestHistoryCollection;
 
     public static class Builder {
         /**

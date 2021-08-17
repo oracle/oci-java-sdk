@@ -138,13 +138,17 @@ public class SummarizeAwrDbSnapshotRangesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AwrDbSnapshotRangeCollection>>
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                .AwrDbSnapshotRangeCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AwrDbSnapshotRangeCollection.class);
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                        .AwrDbSnapshotRangeCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                AwrDbSnapshotRangeCollection>
+                                                com.oracle.bmc.databasemanagement.model
+                                                        .AwrDbSnapshotRangeCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

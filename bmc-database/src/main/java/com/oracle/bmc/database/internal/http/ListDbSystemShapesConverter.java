@@ -91,15 +91,21 @@ public class ListDbSystemShapesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<DbSystemShapeSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.database.model
+                                                                        .DbSystemShapeSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        DbSystemShapeSummary>>() {});
+                                                                        com.oracle.bmc.database
+                                                                                .model
+                                                                                .DbSystemShapeSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<DbSystemShapeSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.database.model
+                                                                .DbSystemShapeSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

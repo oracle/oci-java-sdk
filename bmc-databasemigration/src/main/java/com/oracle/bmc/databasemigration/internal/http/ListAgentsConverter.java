@@ -119,13 +119,18 @@ public class ListAgentsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AgentCollection>>
+                                                        com.oracle.bmc.databasemigration.model
+                                                                .AgentCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AgentCollection.class);
+                                                        com.oracle.bmc.databasemigration.model
+                                                                        .AgentCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AgentCollection> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.databasemigration.model
+                                                        .AgentCollection>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

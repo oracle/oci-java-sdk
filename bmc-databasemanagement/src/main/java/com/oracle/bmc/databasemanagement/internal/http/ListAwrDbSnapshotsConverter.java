@@ -163,12 +163,17 @@ public class ListAwrDbSnapshotsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AwrDbSnapshotCollection>>
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                .AwrDbSnapshotCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AwrDbSnapshotCollection.class);
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                        .AwrDbSnapshotCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AwrDbSnapshotCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.databasemanagement.model
+                                                        .AwrDbSnapshotCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -27,7 +27,7 @@ public class GetGroupResponse {
     /**
      * The returned Group instance.
      */
-    private Group group;
+    private com.oracle.bmc.streaming.model.Group group;
 
     public static class Builder {
         /**

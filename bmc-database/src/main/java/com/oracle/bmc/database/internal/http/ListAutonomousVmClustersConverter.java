@@ -129,15 +129,21 @@ public class ListAutonomousVmClustersConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<AutonomousVmClusterSummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.database.model
+                                                                        .AutonomousVmClusterSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        AutonomousVmClusterSummary>>() {});
+                                                                        com.oracle.bmc.database
+                                                                                .model
+                                                                                .AutonomousVmClusterSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<AutonomousVmClusterSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.database.model
+                                                                .AutonomousVmClusterSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

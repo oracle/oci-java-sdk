@@ -78,12 +78,16 @@ public class UpdateEnrollmentStatusConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        EnrollmentStatus>>
+                                                        com.oracle.bmc.optimizer.model
+                                                                .EnrollmentStatus>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        EnrollmentStatus.class);
+                                                        com.oracle.bmc.optimizer.model
+                                                                        .EnrollmentStatus
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<EnrollmentStatus>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.optimizer.model.EnrollmentStatus>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

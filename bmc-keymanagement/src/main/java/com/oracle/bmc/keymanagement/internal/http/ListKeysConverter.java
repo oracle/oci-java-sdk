@@ -135,13 +135,21 @@ public class ListKeysConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<KeySummary>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.keymanagement.model
+                                                                        .KeySummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<KeySummary>>() {});
+                                                                java.util.List<
+                                                                        com.oracle.bmc.keymanagement
+                                                                                .model
+                                                                                .KeySummary>>() {});
 
-                                com.oracle.bmc.http.internal.WithHeaders<java.util.List<KeySummary>>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                java.util.List<
+                                                        com.oracle.bmc.keymanagement.model
+                                                                .KeySummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

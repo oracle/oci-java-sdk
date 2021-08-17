@@ -27,7 +27,7 @@ public class GetOperatorActionResponse {
     /**
      * The returned OperatorAction instance.
      */
-    private OperatorAction operatorAction;
+    private com.oracle.bmc.operatoraccesscontrol.model.OperatorAction operatorAction;
 
     public static class Builder {
         /**

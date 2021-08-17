@@ -33,7 +33,7 @@ public class GetPrivateApplicationPackageResponse {
     /**
      * The returned PrivateApplicationPackage instance.
      */
-    private PrivateApplicationPackage privateApplicationPackage;
+    private com.oracle.bmc.servicecatalog.model.PrivateApplicationPackage privateApplicationPackage;
 
     public static class Builder {
         /**

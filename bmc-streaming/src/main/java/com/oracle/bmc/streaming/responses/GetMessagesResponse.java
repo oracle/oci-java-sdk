@@ -30,9 +30,9 @@ public class GetMessagesResponse {
     private String opcRequestId;
 
     /**
-     * A list of Message instances.
+     * A list of com.oracle.bmc.streaming.model.Message instances.
      */
-    private java.util.List<Message> items;
+    private java.util.List<com.oracle.bmc.streaming.model.Message> items;
 
     public static class Builder {
         /**

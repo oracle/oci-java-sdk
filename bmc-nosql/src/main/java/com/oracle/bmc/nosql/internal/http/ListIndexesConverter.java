@@ -126,13 +126,15 @@ public class ListIndexesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        IndexCollection>>
+                                                        com.oracle.bmc.nosql.model.IndexCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        IndexCollection.class);
+                                                        com.oracle.bmc.nosql.model.IndexCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<IndexCollection> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.nosql.model.IndexCollection>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

@@ -77,12 +77,16 @@ public class GetListingConverter {
                                         "Transform function invoked for com.oracle.bmc.marketplace.responses.GetListingResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Listing>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.marketplace.model.Listing>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Listing.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.marketplace.model.Listing
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Listing> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.marketplace.model.Listing>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

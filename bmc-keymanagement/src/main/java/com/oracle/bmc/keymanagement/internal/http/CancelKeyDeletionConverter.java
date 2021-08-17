@@ -81,11 +81,16 @@ public class CancelKeyDeletionConverter {
                                         "Transform function invoked for com.oracle.bmc.keymanagement.responses.CancelKeyDeletionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Key>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create(Key.class);
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.keymanagement.model.Key>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.keymanagement.model.Key
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Key> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.keymanagement.model.Key>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

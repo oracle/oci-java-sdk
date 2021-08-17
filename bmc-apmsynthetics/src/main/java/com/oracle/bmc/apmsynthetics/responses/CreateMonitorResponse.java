@@ -33,7 +33,7 @@ public class CreateMonitorResponse {
     /**
      * The returned Monitor instance.
      */
-    private Monitor monitor;
+    private com.oracle.bmc.apmsynthetics.model.Monitor monitor;
 
     public static class Builder {
         /**

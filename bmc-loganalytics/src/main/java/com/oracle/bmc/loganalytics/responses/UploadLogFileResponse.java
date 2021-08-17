@@ -36,7 +36,7 @@ public class UploadLogFileResponse {
     /**
      * The returned Upload instance.
      */
-    private Upload upload;
+    private com.oracle.bmc.loganalytics.model.Upload upload;
 
     public static class Builder {
         /**

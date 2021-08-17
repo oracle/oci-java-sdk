@@ -74,11 +74,16 @@ public class UpdateJobConverter {
                                         "Transform function invoked for com.oracle.bmc.resourcemanager.responses.UpdateJobResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Job>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create(Job.class);
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.resourcemanager.model.Job>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.resourcemanager.model.Job
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Job> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.resourcemanager.model.Job>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

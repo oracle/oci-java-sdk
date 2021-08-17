@@ -35,7 +35,8 @@ public class ListManagementDashboardsResponse {
     /**
      * The returned ManagementDashboardCollection instance.
      */
-    private ManagementDashboardCollection managementDashboardCollection;
+    private com.oracle.bmc.managementdashboard.model.ManagementDashboardCollection
+            managementDashboardCollection;
 
     public static class Builder {
         /**

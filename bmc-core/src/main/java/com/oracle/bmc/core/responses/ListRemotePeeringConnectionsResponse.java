@@ -33,9 +33,9 @@ public class ListRemotePeeringConnectionsResponse {
     private String opcRequestId;
 
     /**
-     * A list of RemotePeeringConnection instances.
+     * A list of com.oracle.bmc.core.model.RemotePeeringConnection instances.
      */
-    private java.util.List<RemotePeeringConnection> items;
+    private java.util.List<com.oracle.bmc.core.model.RemotePeeringConnection> items;
 
     public static class Builder {
         /**

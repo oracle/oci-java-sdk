@@ -70,12 +70,18 @@ public class CreateMigrationConverter {
                                         "Transform function invoked for com.oracle.bmc.databasemigration.responses.CreateMigrationResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Migration>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.databasemigration.model
+                                                                .Migration>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Migration.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.databasemigration.model
+                                                                        .Migration
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Migration> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.databasemigration.model.Migration>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

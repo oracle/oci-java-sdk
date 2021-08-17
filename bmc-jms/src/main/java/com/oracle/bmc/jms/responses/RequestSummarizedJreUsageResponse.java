@@ -35,7 +35,7 @@ public class RequestSummarizedJreUsageResponse {
     /**
      * The returned JreUsageCollection instance.
      */
-    private JreUsageCollection jreUsageCollection;
+    private com.oracle.bmc.jms.model.JreUsageCollection jreUsageCollection;
 
     public static class Builder {
         /**

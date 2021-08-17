@@ -69,13 +69,14 @@ public class GetWaasPolicyConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        WaasPolicy>>
+                                                        com.oracle.bmc.waas.model.WaasPolicy>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        WaasPolicy.class);
+                                                        com.oracle.bmc.waas.model.WaasPolicy.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<WaasPolicy> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.waas.model.WaasPolicy>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

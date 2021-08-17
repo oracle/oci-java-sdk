@@ -33,9 +33,9 @@ public class ListPublishersResponse {
     private String opcNextPage;
 
     /**
-     * A list of PublisherSummary instances.
+     * A list of com.oracle.bmc.marketplace.model.PublisherSummary instances.
      */
-    private java.util.List<PublisherSummary> items;
+    private java.util.List<com.oracle.bmc.marketplace.model.PublisherSummary> items;
 
     public static class Builder {
         /**

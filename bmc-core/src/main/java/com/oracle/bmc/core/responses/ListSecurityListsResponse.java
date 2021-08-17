@@ -33,9 +33,9 @@ public class ListSecurityListsResponse {
     private String opcRequestId;
 
     /**
-     * A list of SecurityList instances.
+     * A list of com.oracle.bmc.core.model.SecurityList instances.
      */
-    private java.util.List<SecurityList> items;
+    private java.util.List<com.oracle.bmc.core.model.SecurityList> items;
 
     public static class Builder {
         /**

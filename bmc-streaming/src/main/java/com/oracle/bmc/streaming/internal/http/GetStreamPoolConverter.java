@@ -70,13 +70,15 @@ public class GetStreamPoolConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        StreamPool>>
+                                                        com.oracle.bmc.streaming.model.StreamPool>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        StreamPool.class);
+                                                        com.oracle.bmc.streaming.model.StreamPool
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<StreamPool> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.streaming.model.StreamPool>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

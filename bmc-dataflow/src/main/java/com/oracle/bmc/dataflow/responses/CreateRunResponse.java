@@ -34,7 +34,7 @@ public class CreateRunResponse {
     /**
      * The returned Run instance.
      */
-    private Run run;
+    private com.oracle.bmc.dataflow.model.Run run;
 
     public static class Builder {
         /**

@@ -71,12 +71,17 @@ public class ListNamespacesConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        NamespaceCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .NamespaceCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        NamespaceCollection.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .NamespaceCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<NamespaceCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model
+                                                        .NamespaceCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

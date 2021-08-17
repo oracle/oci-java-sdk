@@ -69,12 +69,16 @@ public class GetCategoryConverter {
                                         "Transform function invoked for com.oracle.bmc.optimizer.responses.GetCategoryResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Category>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.optimizer.model.Category>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Category.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.optimizer.model.Category
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Category> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.optimizer.model.Category>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

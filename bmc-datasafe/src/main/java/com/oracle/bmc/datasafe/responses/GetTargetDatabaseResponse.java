@@ -32,7 +32,7 @@ public class GetTargetDatabaseResponse {
     /**
      * The returned TargetDatabase instance.
      */
-    private TargetDatabase targetDatabase;
+    private com.oracle.bmc.datasafe.model.TargetDatabase targetDatabase;
 
     public static class Builder {
         /**

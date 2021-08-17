@@ -45,7 +45,8 @@ public class ListDataEntitiesResponse {
     /**
      * The returned DataEntitySummaryCollection instance.
      */
-    private DataEntitySummaryCollection dataEntitySummaryCollection;
+    private com.oracle.bmc.dataintegration.model.DataEntitySummaryCollection
+            dataEntitySummaryCollection;
 
     public static class Builder {
         /**

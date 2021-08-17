@@ -154,13 +154,17 @@ public class ListPublishedObjectsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        PublishedObjectSummaryCollection>>
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .PublishedObjectSummaryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        PublishedObjectSummaryCollection.class);
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .PublishedObjectSummaryCollection
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                PublishedObjectSummaryCollection>
+                                                com.oracle.bmc.dataintegration.model
+                                                        .PublishedObjectSummaryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

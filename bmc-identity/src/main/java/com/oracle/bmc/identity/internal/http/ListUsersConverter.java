@@ -130,13 +130,18 @@ public class ListUsersConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<User>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.identity.model
+                                                                        .User>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<User>>() {});
+                                                                java.util.List<
+                                                                        com.oracle.bmc.identity
+                                                                                .model.User>>() {});
 
-                                com.oracle.bmc.http.internal.WithHeaders<java.util.List<User>>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                java.util.List<com.oracle.bmc.identity.model.User>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

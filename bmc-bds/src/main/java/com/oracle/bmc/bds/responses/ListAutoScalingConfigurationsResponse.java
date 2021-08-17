@@ -33,9 +33,9 @@ public class ListAutoScalingConfigurationsResponse {
     private String opcNextPage;
 
     /**
-     * A list of AutoScalingConfigurationSummary instances.
+     * A list of com.oracle.bmc.bds.model.AutoScalingConfigurationSummary instances.
      */
-    private java.util.List<AutoScalingConfigurationSummary> items;
+    private java.util.List<com.oracle.bmc.bds.model.AutoScalingConfigurationSummary> items;
 
     public static class Builder {
         /**

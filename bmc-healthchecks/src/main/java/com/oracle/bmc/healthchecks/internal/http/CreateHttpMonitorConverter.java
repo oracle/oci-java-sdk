@@ -70,13 +70,17 @@ public class CreateHttpMonitorConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        HttpMonitor>>
+                                                        com.oracle.bmc.healthchecks.model
+                                                                .HttpMonitor>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        HttpMonitor.class);
+                                                        com.oracle.bmc.healthchecks.model
+                                                                        .HttpMonitor
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<HttpMonitor> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.healthchecks.model.HttpMonitor>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

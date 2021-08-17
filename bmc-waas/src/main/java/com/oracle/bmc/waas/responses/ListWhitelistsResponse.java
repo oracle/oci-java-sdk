@@ -33,9 +33,9 @@ public class ListWhitelistsResponse {
     private String opcNextPage;
 
     /**
-     * A list of Whitelist instances.
+     * A list of com.oracle.bmc.waas.model.Whitelist instances.
      */
-    private java.util.List<Whitelist> items;
+    private java.util.List<com.oracle.bmc.waas.model.Whitelist> items;
 
     public static class Builder {
         /**

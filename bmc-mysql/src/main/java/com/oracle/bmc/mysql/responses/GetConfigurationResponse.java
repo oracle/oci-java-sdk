@@ -33,7 +33,7 @@ public class GetConfigurationResponse {
     /**
      * The returned Configuration instance, or null if {@link #isNotModified()} is true.
      */
-    private Configuration configuration;
+    private com.oracle.bmc.mysql.model.Configuration configuration;
 
     /**
      * Flag to indicate whether or not the object was modified.  If this is true,

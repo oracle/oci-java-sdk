@@ -76,13 +76,17 @@ public class GetAnnouncementUserStatusConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AnnouncementUserStatusDetails>>
+                                                        com.oracle.bmc.announcementsservice.model
+                                                                .AnnouncementUserStatusDetails>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AnnouncementUserStatusDetails.class);
+                                                        com.oracle.bmc.announcementsservice.model
+                                                                        .AnnouncementUserStatusDetails
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                AnnouncementUserStatusDetails>
+                                                com.oracle.bmc.announcementsservice.model
+                                                        .AnnouncementUserStatusDetails>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

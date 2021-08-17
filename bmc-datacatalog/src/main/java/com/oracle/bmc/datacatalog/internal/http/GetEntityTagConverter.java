@@ -93,12 +93,16 @@ public class GetEntityTagConverter {
                                         "Transform function invoked for com.oracle.bmc.datacatalog.responses.GetEntityTagResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<EntityTag>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.datacatalog.model.EntityTag>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(EntityTag.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.datacatalog.model.EntityTag
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<EntityTag> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.datacatalog.model.EntityTag>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

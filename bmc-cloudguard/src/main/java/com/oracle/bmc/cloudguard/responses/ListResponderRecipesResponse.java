@@ -35,7 +35,7 @@ public class ListResponderRecipesResponse {
     /**
      * The returned ResponderRecipeCollection instance.
      */
-    private ResponderRecipeCollection responderRecipeCollection;
+    private com.oracle.bmc.cloudguard.model.ResponderRecipeCollection responderRecipeCollection;
 
     public static class Builder {
         /**

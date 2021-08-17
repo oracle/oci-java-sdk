@@ -37,9 +37,9 @@ public class ListNotebookSessionsResponse {
     private String opcRequestId;
 
     /**
-     * A list of NotebookSessionSummary instances.
+     * A list of com.oracle.bmc.datascience.model.NotebookSessionSummary instances.
      */
-    private java.util.List<NotebookSessionSummary> items;
+    private java.util.List<com.oracle.bmc.datascience.model.NotebookSessionSummary> items;
 
     public static class Builder {
         /**

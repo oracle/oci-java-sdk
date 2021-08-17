@@ -35,7 +35,7 @@ public class ListGenericArtifactsResponse {
     /**
      * The returned GenericArtifactCollection instance.
      */
-    private GenericArtifactCollection genericArtifactCollection;
+    private com.oracle.bmc.artifacts.model.GenericArtifactCollection genericArtifactCollection;
 
     public static class Builder {
         /**

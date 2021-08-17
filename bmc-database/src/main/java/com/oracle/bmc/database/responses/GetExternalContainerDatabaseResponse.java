@@ -32,7 +32,7 @@ public class GetExternalContainerDatabaseResponse {
     /**
      * The returned ExternalContainerDatabase instance.
      */
-    private ExternalContainerDatabase externalContainerDatabase;
+    private com.oracle.bmc.database.model.ExternalContainerDatabase externalContainerDatabase;
 
     public static class Builder {
         /**

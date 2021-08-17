@@ -69,6 +69,40 @@ public class ListStackResourceDriftDetailsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<StackResourceDriftSummary.ResourceDriftStatus> resourceDriftStatus =
+                null;
+
+        /**
+         * A filter that returns only resources that match the given drift status. The value is case-insensitive.
+         * Allowable values -
+         *   - NOT_CHECKED
+         *   - MODIFIED
+         *   - IN_SYNC
+         *   - DELETED
+         *
+         * @return this builder instance
+         */
+        public Builder resourceDriftStatus(
+                java.util.List<StackResourceDriftSummary.ResourceDriftStatus> resourceDriftStatus) {
+            this.resourceDriftStatus = resourceDriftStatus;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter that returns only resources that match the given drift status. The value is case-insensitive.
+         * Allowable values -
+         *   - NOT_CHECKED
+         *   - MODIFIED
+         *   - IN_SYNC
+         *   - DELETED
+         *
+         * @return this builder instance
+         */
+        public Builder resourceDriftStatus(
+                StackResourceDriftSummary.ResourceDriftStatus singularValue) {
+            return this.resourceDriftStatus(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

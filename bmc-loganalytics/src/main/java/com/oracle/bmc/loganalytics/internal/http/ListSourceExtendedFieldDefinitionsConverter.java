@@ -115,14 +115,17 @@ public class ListSourceExtendedFieldDefinitionsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LogAnalyticsSourceExtendedFieldDefinitionCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LogAnalyticsSourceExtendedFieldDefinitionCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LogAnalyticsSourceExtendedFieldDefinitionCollection
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LogAnalyticsSourceExtendedFieldDefinitionCollection
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                LogAnalyticsSourceExtendedFieldDefinitionCollection>
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LogAnalyticsSourceExtendedFieldDefinitionCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

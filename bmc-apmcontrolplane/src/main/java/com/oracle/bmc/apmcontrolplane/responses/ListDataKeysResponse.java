@@ -25,9 +25,9 @@ public class ListDataKeysResponse {
     private String opcRequestId;
 
     /**
-     * A list of DataKeySummary instances.
+     * A list of com.oracle.bmc.apmcontrolplane.model.DataKeySummary instances.
      */
-    private java.util.List<DataKeySummary> items;
+    private java.util.List<com.oracle.bmc.apmcontrolplane.model.DataKeySummary> items;
 
     public static class Builder {
         /**

@@ -30,7 +30,7 @@ public class GetAddressListResponse {
     /**
      * The returned AddressList instance.
      */
-    private AddressList addressList;
+    private com.oracle.bmc.waas.model.AddressList addressList;
 
     public static class Builder {
         /**

@@ -75,12 +75,15 @@ public class GetTraceConverter {
                                         "Transform function invoked for com.oracle.bmc.apmtraces.responses.GetTraceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Trace>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.apmtraces.model.Trace>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Trace.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.apmtraces.model.Trace.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Trace> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.apmtraces.model.Trace>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

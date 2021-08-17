@@ -1619,6 +1619,50 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListImportableAgentEntitiesResponse>
+            listImportableAgentEntities(
+                    ListImportableAgentEntitiesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListImportableAgentEntitiesRequest,
+                                    ListImportableAgentEntitiesResponse>
+                            handler) {
+        LOG.trace("Called async listImportableAgentEntities");
+        final ListImportableAgentEntitiesRequest interceptedRequest =
+                ListImportableAgentEntitiesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListImportableAgentEntitiesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListImportableAgentEntitiesResponse>
+                transformer = ListImportableAgentEntitiesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListImportableAgentEntitiesRequest, ListImportableAgentEntitiesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListImportableAgentEntitiesRequest,
+                                ListImportableAgentEntitiesResponse>,
+                        java.util.concurrent.Future<ListImportableAgentEntitiesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListImportableAgentEntitiesRequest, ListImportableAgentEntitiesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListImportableEnterpriseManagerEntitiesResponse>
             listImportableEnterpriseManagerEntities(
                     ListImportableEnterpriseManagerEntitiesRequest request,

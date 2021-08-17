@@ -27,7 +27,7 @@ public class GetManagedInstanceResponse {
     /**
      * The returned ManagedInstance instance.
      */
-    private ManagedInstance managedInstance;
+    private com.oracle.bmc.osmanagement.model.ManagedInstance managedInstance;
 
     public static class Builder {
         /**

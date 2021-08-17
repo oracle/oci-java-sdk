@@ -33,7 +33,7 @@ public class GetCpeResponse {
     /**
      * The returned Cpe instance.
      */
-    private Cpe cpe;
+    private com.oracle.bmc.core.model.Cpe cpe;
 
     public static class Builder {
         /**

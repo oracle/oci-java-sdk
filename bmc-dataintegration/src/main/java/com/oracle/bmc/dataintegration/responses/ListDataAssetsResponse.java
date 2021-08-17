@@ -45,7 +45,8 @@ public class ListDataAssetsResponse {
     /**
      * The returned DataAssetSummaryCollection instance.
      */
-    private DataAssetSummaryCollection dataAssetSummaryCollection;
+    private com.oracle.bmc.dataintegration.model.DataAssetSummaryCollection
+            dataAssetSummaryCollection;
 
     public static class Builder {
         /**

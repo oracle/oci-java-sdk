@@ -90,12 +90,17 @@ public class PutObjectLifecyclePolicyConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ObjectLifecyclePolicy>>
+                                                        com.oracle.bmc.objectstorage.model
+                                                                .ObjectLifecyclePolicy>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ObjectLifecyclePolicy.class);
+                                                        com.oracle.bmc.objectstorage.model
+                                                                        .ObjectLifecyclePolicy
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ObjectLifecyclePolicy>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.objectstorage.model
+                                                        .ObjectLifecyclePolicy>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -124,15 +124,20 @@ public class ListCloudExadataInfrastructuresConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                CloudExadataInfrastructureSummary>>>
+                                                                com.oracle.bmc.database.model
+                                                                        .CloudExadataInfrastructureSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        CloudExadataInfrastructureSummary>>() {});
+                                                                        com.oracle.bmc.database
+                                                                                .model
+                                                                                .CloudExadataInfrastructureSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<CloudExadataInfrastructureSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.database.model
+                                                                .CloudExadataInfrastructureSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -33,7 +33,7 @@ public class UpdateJobResponse {
     /**
      * The returned Job instance.
      */
-    private Job job;
+    private com.oracle.bmc.datacatalog.model.Job job;
 
     public static class Builder {
         /**

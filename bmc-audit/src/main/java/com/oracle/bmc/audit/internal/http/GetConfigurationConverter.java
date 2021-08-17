@@ -67,13 +67,15 @@ public class GetConfigurationConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        Configuration>>
+                                                        com.oracle.bmc.audit.model.Configuration>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        Configuration.class);
+                                                        com.oracle.bmc.audit.model.Configuration
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Configuration> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.audit.model.Configuration>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

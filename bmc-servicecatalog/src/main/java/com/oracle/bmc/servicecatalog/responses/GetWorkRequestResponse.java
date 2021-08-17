@@ -38,7 +38,7 @@ public class GetWorkRequestResponse {
     /**
      * The returned WorkRequest instance.
      */
-    private WorkRequest workRequest;
+    private com.oracle.bmc.servicecatalog.model.WorkRequest workRequest;
 
     public static class Builder {
         /**

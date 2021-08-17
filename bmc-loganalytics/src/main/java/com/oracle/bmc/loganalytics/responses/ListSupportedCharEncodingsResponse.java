@@ -39,7 +39,7 @@ public class ListSupportedCharEncodingsResponse {
     /**
      * The returned CharEncodingCollection instance.
      */
-    private CharEncodingCollection charEncodingCollection;
+    private com.oracle.bmc.loganalytics.model.CharEncodingCollection charEncodingCollection;
 
     public static class Builder {
         /**

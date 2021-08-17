@@ -42,7 +42,8 @@ public class ListSourceLabelOperatorsResponse {
     /**
      * The returned LogAnalyticsLabelOperatorCollection instance.
      */
-    private LogAnalyticsLabelOperatorCollection logAnalyticsLabelOperatorCollection;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsLabelOperatorCollection
+            logAnalyticsLabelOperatorCollection;
 
     public static class Builder {
         /**

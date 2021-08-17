@@ -27,7 +27,7 @@ public class GetExadataIormConfigResponse {
     /**
      * The returned ExadataIormConfig instance.
      */
-    private ExadataIormConfig exadataIormConfig;
+    private com.oracle.bmc.database.model.ExadataIormConfig exadataIormConfig;
 
     public static class Builder {
         /**

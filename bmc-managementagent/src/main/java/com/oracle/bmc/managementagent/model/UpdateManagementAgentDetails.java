@@ -95,7 +95,7 @@ public class UpdateManagementAgentDetails {
     }
 
     /**
-     * true if the agent can be upgraded automatically; false if it must be upgraded manually. true is currently unsupported.
+     * Setting of this flag is no longer supported.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAgentAutoUpgradable")
     Boolean isAgentAutoUpgradable;

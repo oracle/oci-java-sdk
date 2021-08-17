@@ -71,13 +71,15 @@ public class CreateTransferPackageConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        TransferPackage>>
+                                                        com.oracle.bmc.dts.model.TransferPackage>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        TransferPackage.class);
+                                                        com.oracle.bmc.dts.model.TransferPackage
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<TransferPackage> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dts.model.TransferPackage>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

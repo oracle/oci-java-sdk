@@ -35,7 +35,8 @@ public class ListBulkEditTagsResourceTypesResponse {
     /**
      * The returned BulkEditTagsResourceTypeCollection instance.
      */
-    private BulkEditTagsResourceTypeCollection bulkEditTagsResourceTypeCollection;
+    private com.oracle.bmc.identity.model.BulkEditTagsResourceTypeCollection
+            bulkEditTagsResourceTypeCollection;
 
     public static class Builder {
         /**

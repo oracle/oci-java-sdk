@@ -74,13 +74,17 @@ public class CreateTransferApplianceEntitlementConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        TransferApplianceEntitlement>>
+                                                        com.oracle.bmc.dts.model
+                                                                .TransferApplianceEntitlement>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        TransferApplianceEntitlement.class);
+                                                        com.oracle.bmc.dts.model
+                                                                        .TransferApplianceEntitlement
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                TransferApplianceEntitlement>
+                                                com.oracle.bmc.dts.model
+                                                        .TransferApplianceEntitlement>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

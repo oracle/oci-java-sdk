@@ -33,7 +33,7 @@ public class ValidateConnectionResponse {
     /**
      * The returned ValidateConnectionResult instance.
      */
-    private ValidateConnectionResult validateConnectionResult;
+    private com.oracle.bmc.datacatalog.model.ValidateConnectionResult validateConnectionResult;
 
     public static class Builder {
         /**

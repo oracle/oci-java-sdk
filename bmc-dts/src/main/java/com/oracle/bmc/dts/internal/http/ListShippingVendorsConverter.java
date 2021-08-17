@@ -60,13 +60,15 @@ public class ListShippingVendorsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ShippingVendors>>
+                                                        com.oracle.bmc.dts.model.ShippingVendors>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ShippingVendors.class);
+                                                        com.oracle.bmc.dts.model.ShippingVendors
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ShippingVendors> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dts.model.ShippingVendors>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

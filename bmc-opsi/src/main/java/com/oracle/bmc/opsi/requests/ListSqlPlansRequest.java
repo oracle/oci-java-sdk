@@ -72,6 +72,29 @@ public class ListSqlPlansRequest extends com.oracle.bmc.requests.BmcRequest<java
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<Long> planHash = null;
+
+        /**
+         * Unique plan hash for a SQL Plan of a particular SQL Statement.
+         * Example: {@code 9820154385}
+         *
+         * @return this builder instance
+         */
+        public Builder planHash(java.util.List<Long> planHash) {
+            this.planHash = planHash;
+            return this;
+        }
+
+        /**
+         * Singular setter. Unique plan hash for a SQL Plan of a particular SQL Statement.
+         * Example: {@code 9820154385}
+         *
+         * @return this builder instance
+         */
+        public Builder planHash(Long singularValue) {
+            return this.planHash(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

@@ -33,7 +33,7 @@ public class GetRoverNodeEncryptionKeyResponse {
     /**
      * The returned RoverNodeEncryptionKey instance.
      */
-    private RoverNodeEncryptionKey roverNodeEncryptionKey;
+    private com.oracle.bmc.rover.model.RoverNodeEncryptionKey roverNodeEncryptionKey;
 
     public static class Builder {
         /**

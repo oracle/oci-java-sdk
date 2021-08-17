@@ -82,12 +82,18 @@ public class GetPipelineConverter {
                                         "Transform function invoked for com.oracle.bmc.dataintegration.responses.GetPipelineResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Pipeline>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .Pipeline>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Pipeline.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .Pipeline
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Pipeline> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dataintegration.model.Pipeline>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

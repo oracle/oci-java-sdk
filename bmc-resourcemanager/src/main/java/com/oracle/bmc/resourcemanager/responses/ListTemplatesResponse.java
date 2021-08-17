@@ -36,7 +36,8 @@ public class ListTemplatesResponse {
     /**
      * The returned TemplateSummaryCollection instance.
      */
-    private TemplateSummaryCollection templateSummaryCollection;
+    private com.oracle.bmc.resourcemanager.model.TemplateSummaryCollection
+            templateSummaryCollection;
 
     public static class Builder {
         /**

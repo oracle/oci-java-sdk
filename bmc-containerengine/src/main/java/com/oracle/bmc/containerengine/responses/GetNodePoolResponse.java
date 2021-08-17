@@ -32,7 +32,7 @@ public class GetNodePoolResponse {
     /**
      * The returned NodePool instance.
      */
-    private NodePool nodePool;
+    private com.oracle.bmc.containerengine.model.NodePool nodePool;
 
     public static class Builder {
         /**

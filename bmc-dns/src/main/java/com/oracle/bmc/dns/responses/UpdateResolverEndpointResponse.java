@@ -42,7 +42,7 @@ public class UpdateResolverEndpointResponse {
     /**
      * The returned ResolverEndpoint instance.
      */
-    private ResolverEndpoint resolverEndpoint;
+    private com.oracle.bmc.dns.model.ResolverEndpoint resolverEndpoint;
 
     public static class Builder {
         /**

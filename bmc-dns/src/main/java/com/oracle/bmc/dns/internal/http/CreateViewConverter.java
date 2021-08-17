@@ -74,11 +74,15 @@ public class CreateViewConverter {
                                         "Transform function invoked for com.oracle.bmc.dns.responses.CreateViewResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<View>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create(View.class);
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.dns.model.View>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.dns.model.View.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<View> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dns.model.View>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

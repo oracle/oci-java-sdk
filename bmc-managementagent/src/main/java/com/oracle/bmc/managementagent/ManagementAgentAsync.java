@@ -334,6 +334,46 @@ public interface ManagementAgentAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets count of the inventory of agents for a given compartment id, group by, and isPluginDeployed parameters.
+     * Supported groupBy parameters: availabilityStatus, platformType, version
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeManagementAgentCountsResponse>
+            summarizeManagementAgentCounts(
+                    SummarizeManagementAgentCountsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeManagementAgentCountsRequest,
+                                    SummarizeManagementAgentCountsResponse>
+                            handler);
+
+    /**
+     * Gets count of the inventory of management agent plugins for a given compartment id and group by parameter.
+     * Supported groupBy parameter: pluginName
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeManagementAgentPluginCountsResponse>
+            summarizeManagementAgentPluginCounts(
+                    SummarizeManagementAgentPluginCountsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeManagementAgentPluginCountsRequest,
+                                    SummarizeManagementAgentPluginCountsResponse>
+                            handler);
+
+    /**
      * API to update the console managed properties of the Management Agent.
      *
      *

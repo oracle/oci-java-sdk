@@ -33,9 +33,9 @@ public class ListDrgsResponse {
     private String opcRequestId;
 
     /**
-     * A list of Drg instances.
+     * A list of com.oracle.bmc.core.model.Drg instances.
      */
-    private java.util.List<Drg> items;
+    private java.util.List<com.oracle.bmc.core.model.Drg> items;
 
     public static class Builder {
         /**

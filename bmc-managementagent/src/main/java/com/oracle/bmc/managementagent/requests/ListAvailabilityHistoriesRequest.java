@@ -57,12 +57,12 @@ public class ListAvailabilityHistoriesRequest
     private String page;
 
     /**
-     * The sort order to use, either 'asc' or 'desc'.
+     * The sort order to use, either 'ASC' or 'DESC'.
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either 'asc' or 'desc'.
+     * The sort order to use, either 'ASC' or 'DESC'.
      **/
     public enum SortOrder {
         Asc("ASC"),

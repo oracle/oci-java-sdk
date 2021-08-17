@@ -164,12 +164,16 @@ public class UploadLogFileConverter {
                                         "Transform function invoked for com.oracle.bmc.loganalytics.responses.UploadLogFileResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Upload>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.loganalytics.model.Upload>>
                                         responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(Upload.class);
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.loganalytics.model.Upload
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Upload> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model.Upload>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

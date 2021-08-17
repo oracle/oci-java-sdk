@@ -33,7 +33,7 @@ public class UpdateAnalyticsInstanceResponse {
     /**
      * The returned AnalyticsInstance instance.
      */
-    private AnalyticsInstance analyticsInstance;
+    private com.oracle.bmc.analytics.model.AnalyticsInstance analyticsInstance;
 
     public static class Builder {
         /**

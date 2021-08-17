@@ -41,7 +41,7 @@ public class CreateSteeringPolicyResponse {
     /**
      * The returned SteeringPolicy instance.
      */
-    private SteeringPolicy steeringPolicy;
+    private com.oracle.bmc.dns.model.SteeringPolicy steeringPolicy;
 
     public static class Builder {
         /**

@@ -43,7 +43,8 @@ public class ListLogSavedSearchesResponse {
     /**
      * The returned LogSavedSearchSummaryCollection instance.
      */
-    private LogSavedSearchSummaryCollection logSavedSearchSummaryCollection;
+    private com.oracle.bmc.logging.model.LogSavedSearchSummaryCollection
+            logSavedSearchSummaryCollection;
 
     public static class Builder {
         /**

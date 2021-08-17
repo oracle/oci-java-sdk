@@ -114,12 +114,17 @@ public class ListLabelSourceDetailsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        LabelSourceCollection>>
+                                                        com.oracle.bmc.loganalytics.model
+                                                                .LabelSourceCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        LabelSourceCollection.class);
+                                                        com.oracle.bmc.loganalytics.model
+                                                                        .LabelSourceCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<LabelSourceCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loganalytics.model
+                                                        .LabelSourceCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

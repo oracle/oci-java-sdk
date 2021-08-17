@@ -33,9 +33,9 @@ public class ListQuotasResponse {
     private String opcRequestId;
 
     /**
-     * A list of QuotaSummary instances.
+     * A list of com.oracle.bmc.limits.model.QuotaSummary instances.
      */
-    private java.util.List<QuotaSummary> items;
+    private java.util.List<com.oracle.bmc.limits.model.QuotaSummary> items;
 
     public static class Builder {
         /**

@@ -33,7 +33,7 @@ public class GetPingMonitorResponse {
     /**
      * The returned PingMonitor instance, or null if {@link #isNotModified()} is true.
      */
-    private PingMonitor pingMonitor;
+    private com.oracle.bmc.healthchecks.model.PingMonitor pingMonitor;
 
     /**
      * Flag to indicate whether or not the object was modified.  If this is true,

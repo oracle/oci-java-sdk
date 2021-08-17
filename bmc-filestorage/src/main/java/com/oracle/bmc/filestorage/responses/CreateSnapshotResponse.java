@@ -33,7 +33,7 @@ public class CreateSnapshotResponse {
     /**
      * The returned Snapshot instance.
      */
-    private Snapshot snapshot;
+    private com.oracle.bmc.filestorage.model.Snapshot snapshot;
 
     public static class Builder {
         /**

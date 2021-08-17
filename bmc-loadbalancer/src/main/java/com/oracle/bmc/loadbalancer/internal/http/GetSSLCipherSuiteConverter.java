@@ -75,13 +75,17 @@ public class GetSSLCipherSuiteConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SSLCipherSuite>>
+                                                        com.oracle.bmc.loadbalancer.model
+                                                                .SSLCipherSuite>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SSLCipherSuite.class);
+                                                        com.oracle.bmc.loadbalancer.model
+                                                                        .SSLCipherSuite
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<SSLCipherSuite> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.loadbalancer.model.SSLCipherSuite>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

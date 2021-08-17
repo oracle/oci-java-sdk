@@ -128,12 +128,17 @@ public class ListDeploymentBackupsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DeploymentBackupCollection>>
+                                                        com.oracle.bmc.goldengate.model
+                                                                .DeploymentBackupCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DeploymentBackupCollection.class);
+                                                        com.oracle.bmc.goldengate.model
+                                                                        .DeploymentBackupCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<DeploymentBackupCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.goldengate.model
+                                                        .DeploymentBackupCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

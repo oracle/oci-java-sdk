@@ -72,13 +72,17 @@ public class DetectDominantLanguageConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        DetectDominantLanguageResult>>
+                                                        com.oracle.bmc.ailanguage.model
+                                                                .DetectDominantLanguageResult>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        DetectDominantLanguageResult.class);
+                                                        com.oracle.bmc.ailanguage.model
+                                                                        .DetectDominantLanguageResult
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                DetectDominantLanguageResult>
+                                                com.oracle.bmc.ailanguage.model
+                                                        .DetectDominantLanguageResult>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

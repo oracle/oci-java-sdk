@@ -27,7 +27,7 @@ public class GetAwrDbReportResponse {
     /**
      * The returned AwrDbReport instance.
      */
-    private AwrDbReport awrDbReport;
+    private com.oracle.bmc.databasemanagement.model.AwrDbReport awrDbReport;
 
     public static class Builder {
         /**

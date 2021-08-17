@@ -92,12 +92,14 @@ public class GetResolverEndpointConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ResolverEndpoint>>
+                                                        com.oracle.bmc.dns.model.ResolverEndpoint>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ResolverEndpoint.class);
+                                                        com.oracle.bmc.dns.model.ResolverEndpoint
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ResolverEndpoint>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dns.model.ResolverEndpoint>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

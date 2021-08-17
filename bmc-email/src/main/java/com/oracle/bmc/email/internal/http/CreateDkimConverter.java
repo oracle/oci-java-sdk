@@ -67,11 +67,15 @@ public class CreateDkimConverter {
                                         "Transform function invoked for com.oracle.bmc.email.responses.CreateDkimResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Dkim>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create(Dkim.class);
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.email.model.Dkim>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.email.model.Dkim.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Dkim> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.email.model.Dkim>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

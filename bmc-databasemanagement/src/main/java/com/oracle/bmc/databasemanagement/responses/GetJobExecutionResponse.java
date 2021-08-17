@@ -27,7 +27,7 @@ public class GetJobExecutionResponse {
     /**
      * The returned JobExecution instance.
      */
-    private JobExecution jobExecution;
+    private com.oracle.bmc.databasemanagement.model.JobExecution jobExecution;
 
     public static class Builder {
         /**

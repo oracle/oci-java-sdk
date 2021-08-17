@@ -35,7 +35,7 @@ public class ListPublicIpPoolsResponse {
     /**
      * The returned PublicIpPoolCollection instance.
      */
-    private PublicIpPoolCollection publicIpPoolCollection;
+    private com.oracle.bmc.core.model.PublicIpPoolCollection publicIpPoolCollection;
 
     public static class Builder {
         /**

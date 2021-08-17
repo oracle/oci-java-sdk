@@ -32,7 +32,7 @@ public class CreateOrResetUIPasswordResponse {
     /**
      * The returned UIPassword instance.
      */
-    private UIPassword uIPassword;
+    private com.oracle.bmc.identity.model.UIPassword uIPassword;
 
     public static class Builder {
         /**

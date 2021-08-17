@@ -33,7 +33,7 @@ public class CreateVlanResponse {
     /**
      * The returned Vlan instance.
      */
-    private Vlan vlan;
+    private com.oracle.bmc.core.model.Vlan vlan;
 
     public static class Builder {
         /**

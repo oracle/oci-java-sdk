@@ -87,15 +87,20 @@ public class ListTaggingWorkRequestErrorsConverter {
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
-                                                                TaggingWorkRequestErrorSummary>>>
+                                                                com.oracle.bmc.identity.model
+                                                                        .TaggingWorkRequestErrorSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        TaggingWorkRequestErrorSummary>>() {});
+                                                                        com.oracle.bmc.identity
+                                                                                .model
+                                                                                .TaggingWorkRequestErrorSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<TaggingWorkRequestErrorSummary>>
+                                                java.util.List<
+                                                        com.oracle.bmc.identity.model
+                                                                .TaggingWorkRequestErrorSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

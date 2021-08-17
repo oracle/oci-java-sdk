@@ -30,7 +30,7 @@ public class CreateTransferJobResponse {
     /**
      * The returned TransferJob instance.
      */
-    private TransferJob transferJob;
+    private com.oracle.bmc.dts.model.TransferJob transferJob;
 
     public static class Builder {
         /**

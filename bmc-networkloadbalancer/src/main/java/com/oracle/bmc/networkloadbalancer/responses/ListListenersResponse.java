@@ -35,7 +35,7 @@ public class ListListenersResponse {
     /**
      * The returned ListenerCollection instance.
      */
-    private ListenerCollection listenerCollection;
+    private com.oracle.bmc.networkloadbalancer.model.ListenerCollection listenerCollection;
 
     public static class Builder {
         /**

@@ -35,7 +35,7 @@ public class ListApplicationsResponse {
     /**
      * The returned ApplicationCollection instance.
      */
-    private ApplicationCollection applicationCollection;
+    private com.oracle.bmc.servicecatalog.model.ApplicationCollection applicationCollection;
 
     public static class Builder {
         /**

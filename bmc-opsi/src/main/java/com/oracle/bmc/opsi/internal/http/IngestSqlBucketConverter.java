@@ -101,13 +101,17 @@ public class IngestSqlBucketConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        IngestSqlBucketResponseDetails>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .IngestSqlBucketResponseDetails>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        IngestSqlBucketResponseDetails.class);
+                                                        com.oracle.bmc.opsi.model
+                                                                        .IngestSqlBucketResponseDetails
+                                                                .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                IngestSqlBucketResponseDetails>
+                                                com.oracle.bmc.opsi.model
+                                                        .IngestSqlBucketResponseDetails>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

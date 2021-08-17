@@ -140,12 +140,15 @@ public class ListSqlTextsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SqlTextCollection>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .SqlTextCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SqlTextCollection.class);
+                                                        com.oracle.bmc.opsi.model.SqlTextCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<SqlTextCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.opsi.model.SqlTextCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -131,13 +131,18 @@ public class ListAwrDbsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        AwrDbCollection>>
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                .AwrDbCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        AwrDbCollection.class);
+                                                        com.oracle.bmc.databasemanagement.model
+                                                                        .AwrDbCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<AwrDbCollection> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.databasemanagement.model
+                                                        .AwrDbCollection>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

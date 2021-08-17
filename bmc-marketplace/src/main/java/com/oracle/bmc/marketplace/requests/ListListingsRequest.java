@@ -185,6 +185,111 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        private java.util.List<String> name = null;
+
+        /**
+         * The name of the listing.
+         * @return this builder instance
+         */
+        public Builder name(java.util.List<String> name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
+         * Singular setter. The name of the listing.
+         * @return this builder instance
+         */
+        public Builder name(String singularValue) {
+            return this.name(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> category = null;
+
+        /**
+         * Name of the product category or categories. If you specify multiple categories, then Marketplace returns any listing with
+         * one or more matching categories.
+         *
+         * @return this builder instance
+         */
+        public Builder category(java.util.List<String> category) {
+            this.category = category;
+            return this;
+        }
+
+        /**
+         * Singular setter. Name of the product category or categories. If you specify multiple categories, then Marketplace returns any listing with
+         * one or more matching categories.
+         *
+         * @return this builder instance
+         */
+        public Builder category(String singularValue) {
+            return this.category(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<com.oracle.bmc.marketplace.model.PricingTypeEnum> pricing = null;
+
+        /**
+         * Name of the pricing type. If multiple pricing types are provided, then any listing with
+         * one or more matching pricing models will be returned.
+         *
+         * @return this builder instance
+         */
+        public Builder pricing(
+                java.util.List<com.oracle.bmc.marketplace.model.PricingTypeEnum> pricing) {
+            this.pricing = pricing;
+            return this;
+        }
+
+        /**
+         * Singular setter. Name of the pricing type. If multiple pricing types are provided, then any listing with
+         * one or more matching pricing models will be returned.
+         *
+         * @return this builder instance
+         */
+        public Builder pricing(PricingTypeEnum singularValue) {
+            return this.pricing(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<com.oracle.bmc.marketplace.model.ListingType> listingTypes = null;
+
+        /**
+         * The type of the listing.
+         * @return this builder instance
+         */
+        public Builder listingTypes(
+                java.util.List<com.oracle.bmc.marketplace.model.ListingType> listingTypes) {
+            this.listingTypes = listingTypes;
+            return this;
+        }
+
+        /**
+         * Singular setter. The type of the listing.
+         * @return this builder instance
+         */
+        public Builder listingTypes(ListingType singularValue) {
+            return this.listingTypes(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> operatingSystems = null;
+
+        /**
+         * The operating system of the listing.
+         * @return this builder instance
+         */
+        public Builder operatingSystems(java.util.List<String> operatingSystems) {
+            this.operatingSystems = operatingSystems;
+            return this;
+        }
+
+        /**
+         * Singular setter. The operating system of the listing.
+         * @return this builder instance
+         */
+        public Builder operatingSystems(String singularValue) {
+            return this.operatingSystems(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request

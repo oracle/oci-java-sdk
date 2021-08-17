@@ -129,12 +129,17 @@ public class ListProjectsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ProjectSummaryCollection>>
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .ProjectSummaryCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ProjectSummaryCollection.class);
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .ProjectSummaryCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ProjectSummaryCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dataintegration.model
+                                                        .ProjectSummaryCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

@@ -33,7 +33,7 @@ public class GetPublishedObjectResponse {
     /**
      * The returned PublishedObject instance.
      */
-    private PublishedObject publishedObject;
+    private com.oracle.bmc.dataintegration.model.PublishedObject publishedObject;
 
     public static class Builder {
         /**

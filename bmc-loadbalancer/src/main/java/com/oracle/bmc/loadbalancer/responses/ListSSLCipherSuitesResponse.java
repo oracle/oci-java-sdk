@@ -25,9 +25,9 @@ public class ListSSLCipherSuitesResponse {
     private String opcRequestId;
 
     /**
-     * A list of SSLCipherSuite instances.
+     * A list of com.oracle.bmc.loadbalancer.model.SSLCipherSuite instances.
      */
-    private java.util.List<SSLCipherSuite> items;
+    private java.util.List<com.oracle.bmc.loadbalancer.model.SSLCipherSuite> items;
 
     public static class Builder {
         /**

@@ -70,13 +70,16 @@ public class CreateManagedListConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        ManagedList>>
+                                                        com.oracle.bmc.cloudguard.model
+                                                                .ManagedList>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        ManagedList.class);
+                                                        com.oracle.bmc.cloudguard.model.ManagedList
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<ManagedList> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.cloudguard.model.ManagedList>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 

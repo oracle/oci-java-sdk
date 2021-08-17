@@ -137,14 +137,17 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection>>
+                                                        com.oracle.bmc.opsi.model
+                                                                .SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection
+                                                        com.oracle.bmc.opsi.model
+                                                                        .SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection>
+                                                com.oracle.bmc.opsi.model
+                                                        .SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

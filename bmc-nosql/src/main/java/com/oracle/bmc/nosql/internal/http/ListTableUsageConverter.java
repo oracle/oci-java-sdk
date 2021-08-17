@@ -111,12 +111,16 @@ public class ListTableUsageConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        TableUsageCollection>>
+                                                        com.oracle.bmc.nosql.model
+                                                                .TableUsageCollection>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        TableUsageCollection.class);
+                                                        com.oracle.bmc.nosql.model
+                                                                        .TableUsageCollection
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<TableUsageCollection>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.nosql.model.TableUsageCollection>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

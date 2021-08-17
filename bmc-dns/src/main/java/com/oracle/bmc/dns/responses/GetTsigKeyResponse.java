@@ -35,7 +35,7 @@ public class GetTsigKeyResponse {
     /**
      * The returned TsigKey instance, or null if {@link #isNotModified()} is true.
      */
-    private TsigKey tsigKey;
+    private com.oracle.bmc.dns.model.TsigKey tsigKey;
 
     /**
      * Flag to indicate whether or not the object was modified.  If this is true,

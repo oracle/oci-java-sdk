@@ -123,14 +123,19 @@ public class ListCrossConnectsConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<CrossConnect>>>
+                                                        java.util.List<
+                                                                com.oracle.bmc.core.model
+                                                                        .CrossConnect>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<CrossConnect>>() {});
+                                                                java.util.List<
+                                                                        com.oracle.bmc.core.model
+                                                                                .CrossConnect>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<CrossConnect>>
+                                                java.util.List<
+                                                        com.oracle.bmc.core.model.CrossConnect>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();

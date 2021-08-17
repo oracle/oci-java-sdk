@@ -85,13 +85,17 @@ public class UpdateTaskRunConverter {
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        TaskRunDetails>>
+                                                        com.oracle.bmc.dataintegration.model
+                                                                .TaskRunDetails>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
-                                                        TaskRunDetails.class);
+                                                        com.oracle.bmc.dataintegration.model
+                                                                        .TaskRunDetails
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<TaskRunDetails> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dataintegration.model.TaskRunDetails>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
