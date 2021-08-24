@@ -45,6 +45,24 @@ public class GenerateRecommendedNetworkDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcp")
+        private Integer scanListenerPortTcp;
+
+        public Builder scanListenerPortTcp(Integer scanListenerPortTcp) {
+            this.scanListenerPortTcp = scanListenerPortTcp;
+            this.__explicitlySet__.add("scanListenerPortTcp");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcpSsl")
+        private Integer scanListenerPortTcpSsl;
+
+        public Builder scanListenerPortTcpSsl(Integer scanListenerPortTcpSsl) {
+            this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
+            this.__explicitlySet__.add("scanListenerPortTcpSsl");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("networks")
         private java.util.List<InfoForNetworkGenDetails> networks;
 
@@ -99,6 +117,8 @@ public class GenerateRecommendedNetworkDetails {
                     new GenerateRecommendedNetworkDetails(
                             compartmentId,
                             displayName,
+                            scanListenerPortTcp,
+                            scanListenerPortTcpSsl,
                             networks,
                             dns,
                             ntp,
@@ -113,6 +133,8 @@ public class GenerateRecommendedNetworkDetails {
             Builder copiedBuilder =
                     compartmentId(o.getCompartmentId())
                             .displayName(o.getDisplayName())
+                            .scanListenerPortTcp(o.getScanListenerPortTcp())
+                            .scanListenerPortTcpSsl(o.getScanListenerPortTcpSsl())
                             .networks(o.getNetworks())
                             .dns(o.getDns())
                             .ntp(o.getNtp())
@@ -142,6 +164,18 @@ public class GenerateRecommendedNetworkDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * The SCAN TCPIP port. Default is 1521.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcp")
+    Integer scanListenerPortTcp;
+
+    /**
+     * The SCAN TCPIP SSL port. Default is 2484.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcpSsl")
+    Integer scanListenerPortTcpSsl;
 
     /**
      * List of parameters for generation of the client and backup networks.

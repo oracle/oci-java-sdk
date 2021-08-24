@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.4.1 - 2021-08-24
+### Added
+- Support for generating recommended VM cluster networks in the Database service
+- Support for creating VM cluster networks with a specified listener port in the Database service
+
 ## 2.4.0 - 2021-08-17
 ### Added
 - Support for getting management agent hosts which are eligible to create Operations Insights host resources on, in the Operations Insights service
