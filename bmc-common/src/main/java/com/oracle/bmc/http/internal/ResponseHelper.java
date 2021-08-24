@@ -249,7 +249,7 @@ public class ResponseHelper {
                                             Long.class);
                             if (SHOULD_AUTO_CLOSE_RESPONSE_INPUTSTREAM) {
                                 LOG.warn(
-                                        "Wrapping response stream into auto closeable stream, do disable this, please"
+                                        "Wrapping response stream into auto closeable stream, to disable this, please "
                                                 + "use ResponseHelper.shouldAutoCloseResponseInputStream(false)");
                                 inputStream =
                                         new AutoCloseableContentLengthVerifyingInputStream(

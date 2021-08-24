@@ -60,8 +60,8 @@ public class ObjectStorageSyncExample {
         } while (nextToken != null);
 
         // fetch the file from the object storage
-        String bucketName = "test-bucket";
-        String objectName = "movies.csv";
+        String bucketName = null;
+        String objectName = null;
         GetObjectResponse getResponse =
                 client.getObject(
                         GetObjectRequest.builder()

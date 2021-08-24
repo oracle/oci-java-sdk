@@ -43,6 +43,24 @@ public class ScanDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcp")
+        private Integer scanListenerPortTcp;
+
+        public Builder scanListenerPortTcp(Integer scanListenerPortTcp) {
+            this.scanListenerPortTcp = scanListenerPortTcp;
+            this.__explicitlySet__.add("scanListenerPortTcp");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcpSsl")
+        private Integer scanListenerPortTcpSsl;
+
+        public Builder scanListenerPortTcpSsl(Integer scanListenerPortTcpSsl) {
+            this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
+            this.__explicitlySet__.add("scanListenerPortTcpSsl");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("ips")
         private java.util.List<String> ips;
 
@@ -56,14 +74,21 @@ public class ScanDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ScanDetails build() {
-            ScanDetails __instance__ = new ScanDetails(hostname, port, ips);
+            ScanDetails __instance__ =
+                    new ScanDetails(
+                            hostname, port, scanListenerPortTcp, scanListenerPortTcpSsl, ips);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ScanDetails o) {
-            Builder copiedBuilder = hostname(o.getHostname()).port(o.getPort()).ips(o.getIps());
+            Builder copiedBuilder =
+                    hostname(o.getHostname())
+                            .port(o.getPort())
+                            .scanListenerPortTcp(o.getScanListenerPortTcp())
+                            .scanListenerPortTcpSsl(o.getScanListenerPortTcpSsl())
+                            .ips(o.getIps());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -88,6 +113,18 @@ public class ScanDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     Integer port;
+
+    /**
+     * The SCAN TCPIP port. Default is 1521.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcp")
+    Integer scanListenerPortTcp;
+
+    /**
+     * The SCAN TCPIP SSL port. Default is 2484.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcpSsl")
+    Integer scanListenerPortTcpSsl;
 
     /**
      * The list of SCAN IP addresses. Three addresses should be provided.
