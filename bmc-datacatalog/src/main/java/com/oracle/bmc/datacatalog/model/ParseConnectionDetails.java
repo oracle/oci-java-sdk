@@ -5,7 +5,9 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Parse connections from the connection metadata and oracle wallet file.
+ * Parse connections from the connection metadata and Oracle wallet file.
+ * An error will be returned if more than one of connectionPayload, walletSecretId or walletSecretName are present in the request.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -44,12 +46,31 @@ public class ParseConnectionDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("walletSecretId")
+        private String walletSecretId;
+
+        public Builder walletSecretId(String walletSecretId) {
+            this.walletSecretId = walletSecretId;
+            this.__explicitlySet__.add("walletSecretId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("walletSecretName")
+        private String walletSecretName;
+
+        public Builder walletSecretName(String walletSecretName) {
+            this.walletSecretName = walletSecretName;
+            this.__explicitlySet__.add("walletSecretName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ParseConnectionDetails build() {
             ParseConnectionDetails __instance__ =
-                    new ParseConnectionDetails(connectionDetail, connectionPayload);
+                    new ParseConnectionDetails(
+                            connectionDetail, connectionPayload, walletSecretId, walletSecretName);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -58,7 +79,9 @@ public class ParseConnectionDetails {
         public Builder copy(ParseConnectionDetails o) {
             Builder copiedBuilder =
                     connectionDetail(o.getConnectionDetail())
-                            .connectionPayload(o.getConnectionPayload());
+                            .connectionPayload(o.getConnectionPayload())
+                            .walletSecretId(o.getWalletSecretId())
+                            .walletSecretName(o.getWalletSecretName());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -80,6 +103,18 @@ public class ParseConnectionDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionPayload")
     byte[] connectionPayload;
+
+    /**
+     * OCID of the OCI Vault secret holding the Oracle wallet to parse.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("walletSecretId")
+    String walletSecretId;
+
+    /**
+     * Name of the OCI Vault secret holding the Oracle wallet to parse.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("walletSecretName")
+    String walletSecretName;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.4.2 - 2021-08-31
+### Added
+- Support for Oracle Analytics Cloud and OCI Vault integration on connections in the Data Catalog service
+- Support for critical event monitoring in the OS Management service
+
 ## 2.4.1 - 2021-08-24
 ### Added
 - Support for generating recommended VM cluster networks in the Database service

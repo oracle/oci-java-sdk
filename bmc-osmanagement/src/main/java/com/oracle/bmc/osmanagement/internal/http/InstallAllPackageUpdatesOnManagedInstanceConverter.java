@@ -45,6 +45,14 @@ public class InstallAllPackageUpdatesOnManagedInstanceConverter {
                         .path("packages")
                         .path("updateAll");
 
+        if (request.getUpdateType() != null) {
+            target =
+                    target.queryParam(
+                            "updateType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getUpdateType().getValue()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

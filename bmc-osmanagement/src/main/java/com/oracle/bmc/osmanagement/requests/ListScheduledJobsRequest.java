@@ -154,6 +154,11 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private com.oracle.bmc.osmanagement.model.OsFamilies osFamily;
 
+    /**
+     * If true, will only filter out restricted Autonomous Linux Scheduled Job
+     */
+    private Boolean isRestricted;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListScheduledJobsRequest, java.lang.Void> {
@@ -201,6 +206,7 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
             lifecycleState(o.getLifecycleState());
             opcRequestId(o.getOpcRequestId());
             osFamily(o.getOsFamily());
+            isRestricted(o.getIsRestricted());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

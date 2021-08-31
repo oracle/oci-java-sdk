@@ -26,6 +26,11 @@ public class InstallAllWindowsUpdatesOnManagedInstanceRequest
     private String managedInstanceId;
 
     /**
+     * The type of updates to be applied
+     */
+    private com.oracle.bmc.osmanagement.model.PackageUpdateTypes updateType;
+
+    /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
@@ -76,6 +81,7 @@ public class InstallAllWindowsUpdatesOnManagedInstanceRequest
          */
         public Builder copy(InstallAllWindowsUpdatesOnManagedInstanceRequest o) {
             managedInstanceId(o.getManagedInstanceId());
+            updateType(o.getUpdateType());
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
             invocationCallback(o.getInvocationCallback());

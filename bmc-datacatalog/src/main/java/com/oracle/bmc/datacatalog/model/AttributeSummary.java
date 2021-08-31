@@ -87,6 +87,15 @@ public class AttributeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("position")
+        private Integer position;
+
+        public Builder position(Integer position) {
+            this.position = position;
+            this.__explicitlySet__.add("position");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("precision")
         private Integer precision;
 
@@ -250,6 +259,15 @@ public class AttributeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("properties")
+        private java.util.Map<String, java.util.Map<String, String>> properties;
+
+        public Builder properties(java.util.Map<String, java.util.Map<String, String>> properties) {
+            this.properties = properties;
+            this.__explicitlySet__.add("properties");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -263,6 +281,7 @@ public class AttributeSummary {
                             entityKey,
                             externalKey,
                             length,
+                            position,
                             precision,
                             scale,
                             isNullable,
@@ -280,7 +299,8 @@ public class AttributeSummary {
                             customPropertyMembers,
                             associatedRuleTypes,
                             isDerivedAttribute,
-                            timeUpdated);
+                            timeUpdated,
+                            properties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -295,6 +315,7 @@ public class AttributeSummary {
                             .entityKey(o.getEntityKey())
                             .externalKey(o.getExternalKey())
                             .length(o.getLength())
+                            .position(o.getPosition())
                             .precision(o.getPrecision())
                             .scale(o.getScale())
                             .isNullable(o.getIsNullable())
@@ -312,7 +333,8 @@ public class AttributeSummary {
                             .customPropertyMembers(o.getCustomPropertyMembers())
                             .associatedRuleTypes(o.getAssociatedRuleTypes())
                             .isDerivedAttribute(o.getIsDerivedAttribute())
-                            .timeUpdated(o.getTimeUpdated());
+                            .timeUpdated(o.getTimeUpdated())
+                            .properties(o.getProperties());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -369,6 +391,12 @@ public class AttributeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("length")
     Long length;
+
+    /**
+     * Position of the attribute in the record definition.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("position")
+    Integer position;
 
     /**
      * Precision of the attribute value usually applies to float data type.
@@ -483,6 +511,17 @@ public class AttributeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
+
+    /**
+     * A map of maps that contains the properties which are specific to the attribute type. Each attribute type
+     * definition defines it's set of required and optional properties. The map keys are category names and the
+     * values are maps of property name to property value. Every property is contained inside of a category. Most
+     * attributes have required properties within the "default" category.
+     * Example: {@code {"properties": { "default": { "key1": "value1"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("properties")
+    java.util.Map<String, java.util.Map<String, String>> properties;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

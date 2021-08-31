@@ -18,6 +18,12 @@ public class GetManagedInstanceResponse {
     private final int __httpStatusCode__;
 
     /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
+    private String etag;
+
+    /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
      *
@@ -36,6 +42,7 @@ public class GetManagedInstanceResponse {
          */
         public Builder copy(GetManagedInstanceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             managedInstance(o.getManagedInstance());
 

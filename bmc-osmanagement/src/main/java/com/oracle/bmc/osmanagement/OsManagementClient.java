@@ -1272,6 +1272,39 @@ public class OsManagementClient implements OsManagement {
     }
 
     @Override
+    public InstallAllUpdatesOnManagedInstanceGroupResponse installAllUpdatesOnManagedInstanceGroup(
+            InstallAllUpdatesOnManagedInstanceGroupRequest request) {
+        LOG.trace("Called installAllUpdatesOnManagedInstanceGroup");
+        final InstallAllUpdatesOnManagedInstanceGroupRequest interceptedRequest =
+                InstallAllUpdatesOnManagedInstanceGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                InstallAllUpdatesOnManagedInstanceGroupConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, InstallAllUpdatesOnManagedInstanceGroupResponse>
+                transformer = InstallAllUpdatesOnManagedInstanceGroupConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public InstallAllWindowsUpdatesOnManagedInstanceResponse
             installAllWindowsUpdatesOnManagedInstance(
                     InstallAllWindowsUpdatesOnManagedInstanceRequest request) {
@@ -2094,6 +2127,39 @@ public class OsManagementClient implements OsManagement {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateManagedInstanceResponse updateManagedInstance(
+            UpdateManagedInstanceRequest request) {
+        LOG.trace("Called updateManagedInstance");
+        final UpdateManagedInstanceRequest interceptedRequest =
+                UpdateManagedInstanceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateManagedInstanceConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateManagedInstanceResponse>
+                transformer = UpdateManagedInstanceConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateManagedInstanceDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

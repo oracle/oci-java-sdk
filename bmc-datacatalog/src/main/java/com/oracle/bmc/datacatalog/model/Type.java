@@ -144,6 +144,24 @@ public class Type {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("parentTypeKey")
+        private String parentTypeKey;
+
+        public Builder parentTypeKey(String parentTypeKey) {
+            this.parentTypeKey = parentTypeKey;
+            this.__explicitlySet__.add("parentTypeKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("parentTypeName")
+        private String parentTypeName;
+
+        public Builder parentTypeName(String parentTypeName) {
+            this.parentTypeName = parentTypeName;
+            this.__explicitlySet__.add("parentTypeName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -162,7 +180,9 @@ public class Type {
                             typeCategory,
                             externalTypeName,
                             uri,
-                            customProperties);
+                            customProperties,
+                            parentTypeKey,
+                            parentTypeName);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -182,7 +202,9 @@ public class Type {
                             .typeCategory(o.getTypeCategory())
                             .externalTypeName(o.getExternalTypeName())
                             .uri(o.getUri())
-                            .customProperties(o.getCustomProperties());
+                            .customProperties(o.getCustomProperties())
+                            .parentTypeKey(o.getParentTypeKey())
+                            .parentTypeName(o.getParentTypeName());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -292,6 +314,18 @@ public class Type {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customProperties")
     java.util.List<CustomPropertySummary> customProperties;
+
+    /**
+     * Unique key of the parent type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parentTypeKey")
+    String parentTypeKey;
+
+    /**
+     * Name of the parent type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parentTypeName")
+    String parentTypeName;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

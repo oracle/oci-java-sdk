@@ -232,6 +232,15 @@ public class CustomProperty {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("events")
+        private java.util.List<EventConfig> events;
+
+        public Builder events(java.util.List<EventConfig> events) {
+            this.events = events;
+            this.__explicitlySet__.add("events");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
@@ -270,6 +279,7 @@ public class CustomProperty {
                             isEventEnabled,
                             scope,
                             allowedValues,
+                            events,
                             properties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -301,6 +311,7 @@ public class CustomProperty {
                             .isEventEnabled(o.getIsEventEnabled())
                             .scope(o.getScope())
                             .allowedValues(o.getAllowedValues())
+                            .events(o.getEvents())
                             .properties(o.getProperties());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -445,8 +456,7 @@ public class CustomProperty {
     Boolean isEventEnabled;
 
     /**
-     * Type or scope of the custom property belongs to. This will be an array of type id it will be belongs to
-     *
+     * The set of object types to which the custom property applies.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     java.util.List<CustomPropertyTypeUsage> scope;
@@ -456,6 +466,12 @@ public class CustomProperty {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
     java.util.List<String> allowedValues;
+
+    /**
+     * Event configuration for this custom property, against the desired subset of object types to which the property applies.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("events")
+    java.util.List<EventConfig> events;
 
     /**
      * A map of maps that contains the properties which are specific to the asset type. Each data asset type
