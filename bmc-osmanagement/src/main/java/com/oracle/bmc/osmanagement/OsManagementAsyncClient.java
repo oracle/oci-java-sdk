@@ -1534,6 +1534,55 @@ public class OsManagementAsyncClient implements OsManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<InstallAllUpdatesOnManagedInstanceGroupResponse>
+            installAllUpdatesOnManagedInstanceGroup(
+                    InstallAllUpdatesOnManagedInstanceGroupRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    InstallAllUpdatesOnManagedInstanceGroupRequest,
+                                    InstallAllUpdatesOnManagedInstanceGroupResponse>
+                            handler) {
+        LOG.trace("Called async installAllUpdatesOnManagedInstanceGroup");
+        final InstallAllUpdatesOnManagedInstanceGroupRequest interceptedRequest =
+                InstallAllUpdatesOnManagedInstanceGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                InstallAllUpdatesOnManagedInstanceGroupConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, InstallAllUpdatesOnManagedInstanceGroupResponse>
+                transformer = InstallAllUpdatesOnManagedInstanceGroupConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        InstallAllUpdatesOnManagedInstanceGroupRequest,
+                        InstallAllUpdatesOnManagedInstanceGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                InstallAllUpdatesOnManagedInstanceGroupRequest,
+                                InstallAllUpdatesOnManagedInstanceGroupResponse>,
+                        java.util.concurrent.Future<
+                                InstallAllUpdatesOnManagedInstanceGroupResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    InstallAllUpdatesOnManagedInstanceGroupRequest,
+                    InstallAllUpdatesOnManagedInstanceGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<InstallAllWindowsUpdatesOnManagedInstanceResponse>
             installAllWindowsUpdatesOnManagedInstance(
                     InstallAllWindowsUpdatesOnManagedInstanceRequest request,
@@ -2716,6 +2765,52 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     SkipNextScheduledJobExecutionRequest, SkipNextScheduledJobExecutionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateManagedInstanceResponse> updateManagedInstance(
+            UpdateManagedInstanceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateManagedInstanceRequest, UpdateManagedInstanceResponse>
+                    handler) {
+        LOG.trace("Called async updateManagedInstance");
+        final UpdateManagedInstanceRequest interceptedRequest =
+                UpdateManagedInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateManagedInstanceConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateManagedInstanceResponse>
+                transformer = UpdateManagedInstanceConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateManagedInstanceRequest, UpdateManagedInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateManagedInstanceRequest, UpdateManagedInstanceResponse>,
+                        java.util.concurrent.Future<UpdateManagedInstanceResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateManagedInstanceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateManagedInstanceRequest, UpdateManagedInstanceResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

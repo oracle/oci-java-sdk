@@ -118,6 +118,14 @@ public class ListScheduledJobsConverter {
                                     request.getOsFamily().getValue()));
         }
 
+        if (request.getIsRestricted() != null) {
+            target =
+                    target.queryParam(
+                            "isRestricted",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsRestricted()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

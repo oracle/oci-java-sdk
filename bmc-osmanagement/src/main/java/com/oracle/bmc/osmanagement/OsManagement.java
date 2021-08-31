@@ -358,6 +358,18 @@ public interface OsManagement extends AutoCloseable {
             InstallAllPackageUpdatesOnManagedInstanceRequest request);
 
     /**
+     * Install all of the available updates for the Managed Instance Group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/InstallAllUpdatesOnManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use InstallAllUpdatesOnManagedInstanceGroup API.
+     */
+    InstallAllUpdatesOnManagedInstanceGroupResponse installAllUpdatesOnManagedInstanceGroup(
+            InstallAllUpdatesOnManagedInstanceGroupRequest request);
+
+    /**
      * Install all of the available Windows updates for the managed instance.
      *
      * @param request The request object containing the details to send
@@ -674,6 +686,17 @@ public interface OsManagement extends AutoCloseable {
      */
     SkipNextScheduledJobExecutionResponse skipNextScheduledJobExecution(
             SkipNextScheduledJobExecutionRequest request);
+
+    /**
+     * Updates a specific Managed Instance.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/UpdateManagedInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateManagedInstance API.
+     */
+    UpdateManagedInstanceResponse updateManagedInstance(UpdateManagedInstanceRequest request);
 
     /**
      * Updates a specific Managed Instance Group.

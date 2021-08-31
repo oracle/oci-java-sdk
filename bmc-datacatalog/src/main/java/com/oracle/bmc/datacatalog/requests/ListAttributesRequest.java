@@ -161,6 +161,7 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         ExternalDatatypeEntityKey("externalDatatypeEntityKey"),
         ParentAttributeKey("parentAttributeKey"),
         ExternalParentAttributeKey("externalParentAttributeKey"),
+        Position("position"),
         ;
 
         private final String value;
@@ -191,18 +192,19 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
     };
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. Default order for POSITION is ascending. If no value is specified POSITION is default.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. Default order for POSITION is ascending. If no value is specified POSITION is default.
      *
      **/
     public enum SortBy {
         Timecreated("TIMECREATED"),
         Displayname("DISPLAYNAME"),
+        Position("POSITION"),
         ;
 
         private final String value;

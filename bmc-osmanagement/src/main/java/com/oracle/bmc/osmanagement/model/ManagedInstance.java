@@ -168,6 +168,42 @@ public class ManagedInstance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
+        private String notificationTopicId;
+
+        public Builder notificationTopicId(String notificationTopicId) {
+            this.notificationTopicId = notificationTopicId;
+            this.__explicitlySet__.add("notificationTopicId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("kspliceEffectiveKernelVersion")
+        private String kspliceEffectiveKernelVersion;
+
+        public Builder kspliceEffectiveKernelVersion(String kspliceEffectiveKernelVersion) {
+            this.kspliceEffectiveKernelVersion = kspliceEffectiveKernelVersion;
+            this.__explicitlySet__.add("kspliceEffectiveKernelVersion");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isDataCollectionAuthorized")
+        private Boolean isDataCollectionAuthorized;
+
+        public Builder isDataCollectionAuthorized(Boolean isDataCollectionAuthorized) {
+            this.isDataCollectionAuthorized = isDataCollectionAuthorized;
+            this.__explicitlySet__.add("isDataCollectionAuthorized");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomous")
+        private AutonomousSettings autonomous;
+
+        public Builder autonomous(AutonomousSettings autonomous) {
+            this.autonomous = autonomous;
+            this.__explicitlySet__.add("autonomous");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("securityUpdatesAvailable")
         private Integer securityUpdatesAvailable;
 
@@ -244,6 +280,10 @@ public class ManagedInstance {
                             managedInstanceGroups,
                             osFamily,
                             isRebootRequired,
+                            notificationTopicId,
+                            kspliceEffectiveKernelVersion,
+                            isDataCollectionAuthorized,
+                            autonomous,
                             securityUpdatesAvailable,
                             bugUpdatesAvailable,
                             enhancementUpdatesAvailable,
@@ -273,6 +313,10 @@ public class ManagedInstance {
                             .managedInstanceGroups(o.getManagedInstanceGroups())
                             .osFamily(o.getOsFamily())
                             .isRebootRequired(o.getIsRebootRequired())
+                            .notificationTopicId(o.getNotificationTopicId())
+                            .kspliceEffectiveKernelVersion(o.getKspliceEffectiveKernelVersion())
+                            .isDataCollectionAuthorized(o.getIsDataCollectionAuthorized())
+                            .autonomous(o.getAutonomous())
                             .securityUpdatesAvailable(o.getSecurityUpdatesAvailable())
                             .bugUpdatesAvailable(o.getBugUpdatesAvailable())
                             .enhancementUpdatesAvailable(o.getEnhancementUpdatesAvailable())
@@ -436,6 +480,30 @@ public class ManagedInstance {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRebootRequired")
     Boolean isRebootRequired;
+
+    /**
+     * OCID of the ONS topic used to send notification to users
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
+    String notificationTopicId;
+
+    /**
+     * The ksplice effective kernel version
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kspliceEffectiveKernelVersion")
+    String kspliceEffectiveKernelVersion;
+
+    /**
+     * True if user allow data collection for this instance
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDataCollectionAuthorized")
+    Boolean isDataCollectionAuthorized;
+
+    /**
+     * if present, indicates the Managed Instance is an autonomous instance. Holds all the Autonomous specific information
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomous")
+    AutonomousSettings autonomous;
 
     /**
      * Number of security type updates available to be installed

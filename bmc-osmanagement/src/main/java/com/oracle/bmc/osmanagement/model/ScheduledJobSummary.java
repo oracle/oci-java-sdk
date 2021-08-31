@@ -144,6 +144,15 @@ public class ScheduledJobSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isRestricted")
+        private Boolean isRestricted;
+
+        public Builder isRestricted(Boolean isRestricted) {
+            this.isRestricted = isRestricted;
+            this.__explicitlySet__.add("isRestricted");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -162,7 +171,8 @@ public class ScheduledJobSummary {
                             lifecycleState,
                             freeformTags,
                             definedTags,
-                            osFamily);
+                            osFamily,
+                            isRestricted);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -182,7 +192,8 @@ public class ScheduledJobSummary {
                             .lifecycleState(o.getLifecycleState())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
-                            .osFamily(o.getOsFamily());
+                            .osFamily(o.getOsFamily())
+                            .isRestricted(o.getIsRestricted());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -277,6 +288,12 @@ public class ScheduledJobSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
     OsFamilies osFamily;
+
+    /**
+     * true, if the schedule job has its update capabilities restricted. (Used to track Autonomous Scheduled Job)
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRestricted")
+    Boolean isRestricted;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

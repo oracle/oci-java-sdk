@@ -89,6 +89,33 @@ public class ObjectRelationship {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("path")
+        private String path;
+
+        public Builder path(String path) {
+            this.path = path;
+            this.__explicitlySet__.add("path");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("parentKey")
+        private String parentKey;
+
+        public Builder parentKey(String parentKey) {
+            this.parentKey = parentKey;
+            this.__explicitlySet__.add("parentKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("parentPath")
+        private String parentPath;
+
+        public Builder parentPath(String parentPath) {
+            this.parentPath = parentPath;
+            this.__explicitlySet__.add("parentPath");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -101,7 +128,10 @@ public class ObjectRelationship {
                             typeName,
                             typeKey,
                             timeCreated,
-                            timeUpdated);
+                            timeUpdated,
+                            path,
+                            parentKey,
+                            parentPath);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -115,7 +145,10 @@ public class ObjectRelationship {
                             .typeName(o.getTypeName())
                             .typeKey(o.getTypeKey())
                             .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated());
+                            .timeUpdated(o.getTimeUpdated())
+                            .path(o.getPath())
+                            .parentKey(o.getParentKey())
+                            .parentPath(o.getParentPath());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -173,6 +206,24 @@ public class ObjectRelationship {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
+
+    /**
+     * Full path of the object.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("path")
+    String path;
+
+    /**
+     * Key of the parent object for the resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parentKey")
+    String parentKey;
+
+    /**
+     * Full path of the parent object.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parentPath")
+    String parentPath;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

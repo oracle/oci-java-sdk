@@ -225,6 +225,15 @@ public class CustomPropertySummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("events")
+        private java.util.List<EventConfig> events;
+
+        public Builder events(java.util.List<EventConfig> events) {
+            this.events = events;
+            this.__explicitlySet__.add("events");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -252,7 +261,8 @@ public class CustomPropertySummary {
                             timeUpdated,
                             createdById,
                             updatedById,
-                            isEventEnabled);
+                            isEventEnabled,
+                            events);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -281,7 +291,8 @@ public class CustomPropertySummary {
                             .timeUpdated(o.getTimeUpdated())
                             .createdById(o.getCreatedById())
                             .updatedById(o.getUpdatedById())
-                            .isEventEnabled(o.getIsEventEnabled());
+                            .isEventEnabled(o.getIsEventEnabled())
+                            .events(o.getEvents());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -430,6 +441,12 @@ public class CustomPropertySummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
     Boolean isEventEnabled;
+
+    /**
+     * Event configuration for this custom property, against the desired subset of object types to which the property applies.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("events")
+    java.util.List<EventConfig> events;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
