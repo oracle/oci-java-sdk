@@ -11,12 +11,7 @@ import com.oracle.bmc.oda.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateOdaInstanceResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateOdaInstanceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
      */
@@ -34,7 +29,25 @@ public class UpdateOdaInstanceResponse {
      */
     private com.oracle.bmc.oda.model.OdaInstance odaInstance;
 
+    private UpdateOdaInstanceResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.oda.model.OdaInstance odaInstance) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.odaInstance = odaInstance;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -46,6 +59,11 @@ public class UpdateOdaInstanceResponse {
             odaInstance(o.getOdaInstance());
 
             return this;
+        }
+
+        public UpdateOdaInstanceResponse build() {
+            return new UpdateOdaInstanceResponse(
+                    __httpStatusCode__, etag, opcRequestId, odaInstance);
         }
     }
 }

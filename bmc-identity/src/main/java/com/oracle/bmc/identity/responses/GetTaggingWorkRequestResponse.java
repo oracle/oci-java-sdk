@@ -11,12 +11,7 @@ import com.oracle.bmc.identity.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetTaggingWorkRequestResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetTaggingWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -35,7 +30,25 @@ public class GetTaggingWorkRequestResponse {
      */
     private com.oracle.bmc.identity.model.TaggingWorkRequest taggingWorkRequest;
 
+    private GetTaggingWorkRequestResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            Float retryAfter,
+            com.oracle.bmc.identity.model.TaggingWorkRequest taggingWorkRequest) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.retryAfter = retryAfter;
+        this.taggingWorkRequest = taggingWorkRequest;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,11 @@ public class GetTaggingWorkRequestResponse {
             taggingWorkRequest(o.getTaggingWorkRequest());
 
             return this;
+        }
+
+        public GetTaggingWorkRequestResponse build() {
+            return new GetTaggingWorkRequestResponse(
+                    __httpStatusCode__, opcRequestId, retryAfter, taggingWorkRequest);
         }
     }
 }

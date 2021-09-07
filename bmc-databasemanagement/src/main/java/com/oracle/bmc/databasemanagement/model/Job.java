@@ -86,6 +86,7 @@ public class Job {
     @lombok.extern.slf4j.Slf4j
     public enum ScheduleType {
         Immediate("IMMEDIATE"),
+        Later("LATER"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -190,6 +191,9 @@ public class Job {
 
     @com.fasterxml.jackson.annotation.JsonProperty("resultLocation")
     JobExecutionResultLocation resultLocation;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("scheduleDetails")
+    JobScheduleDetails scheduleDetails;
 
     /**
      * The error message that is returned if the job submission fails. Null is returned in all other scenarios.

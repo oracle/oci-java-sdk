@@ -11,12 +11,7 @@ import com.oracle.bmc.resourcemanager.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateTemplateResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateTemplateResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique identifier for the request.
      */
@@ -32,7 +27,25 @@ public class CreateTemplateResponse {
      */
     private com.oracle.bmc.resourcemanager.model.Template template;
 
+    private CreateTemplateResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.resourcemanager.model.Template template) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.template = template;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -44,6 +57,10 @@ public class CreateTemplateResponse {
             template(o.getTemplate());
 
             return this;
+        }
+
+        public CreateTemplateResponse build() {
+            return new CreateTemplateResponse(__httpStatusCode__, opcRequestId, etag, template);
         }
     }
 }

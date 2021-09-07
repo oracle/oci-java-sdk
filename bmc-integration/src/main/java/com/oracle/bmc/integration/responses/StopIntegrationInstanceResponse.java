@@ -11,12 +11,7 @@ import com.oracle.bmc.integration.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class StopIntegrationInstanceResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class StopIntegrationInstanceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous request.
      * You can use this to query status of the asynchronous operation.
@@ -32,7 +27,21 @@ public class StopIntegrationInstanceResponse {
      */
     private String opcRequestId;
 
+    private StopIntegrationInstanceResponse(
+            int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
+        super(__httpStatusCode__);
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.opcRequestId = opcRequestId;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -43,6 +52,11 @@ public class StopIntegrationInstanceResponse {
             opcRequestId(o.getOpcRequestId());
 
             return this;
+        }
+
+        public StopIntegrationInstanceResponse build() {
+            return new StopIntegrationInstanceResponse(
+                    __httpStatusCode__, opcWorkRequestId, opcRequestId);
         }
     }
 }

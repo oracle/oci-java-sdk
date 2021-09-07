@@ -11,12 +11,7 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListLinksResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListLinksResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response,
      * then a partial list might have been returned. Include this value as the {@code page} parameter for the
@@ -37,7 +32,25 @@ public class ListLinksResponse {
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.LinkCollection linkCollection;
 
+    private ListLinksResponse(
+            int __httpStatusCode__,
+            String opcNextPage,
+            String opcRequestId,
+            com.oracle.bmc.tenantmanagercontrolplane.model.LinkCollection linkCollection) {
+        super(__httpStatusCode__);
+        this.opcNextPage = opcNextPage;
+        this.opcRequestId = opcRequestId;
+        this.linkCollection = linkCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -49,6 +62,11 @@ public class ListLinksResponse {
             linkCollection(o.getLinkCollection());
 
             return this;
+        }
+
+        public ListLinksResponse build() {
+            return new ListLinksResponse(
+                    __httpStatusCode__, opcNextPage, opcRequestId, linkCollection);
         }
     }
 }

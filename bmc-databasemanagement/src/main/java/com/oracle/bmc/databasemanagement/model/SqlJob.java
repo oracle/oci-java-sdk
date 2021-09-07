@@ -139,6 +139,15 @@ public class SqlJob extends Job {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("scheduleDetails")
+        private JobScheduleDetails scheduleDetails;
+
+        public Builder scheduleDetails(JobScheduleDetails scheduleDetails) {
+            this.scheduleDetails = scheduleDetails;
+            this.__explicitlySet__.add("scheduleDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("submissionErrorMessage")
         private String submissionErrorMessage;
 
@@ -229,6 +238,7 @@ public class SqlJob extends Job {
                             lifecycleState,
                             timeout,
                             resultLocation,
+                            scheduleDetails,
                             submissionErrorMessage,
                             timeCreated,
                             timeUpdated,
@@ -256,6 +266,7 @@ public class SqlJob extends Job {
                             .lifecycleState(o.getLifecycleState())
                             .timeout(o.getTimeout())
                             .resultLocation(o.getResultLocation())
+                            .scheduleDetails(o.getScheduleDetails())
                             .submissionErrorMessage(o.getSubmissionErrorMessage())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
@@ -291,6 +302,7 @@ public class SqlJob extends Job {
             LifecycleState lifecycleState,
             String timeout,
             JobExecutionResultLocation resultLocation,
+            JobScheduleDetails scheduleDetails,
             String submissionErrorMessage,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
@@ -312,6 +324,7 @@ public class SqlJob extends Job {
                 lifecycleState,
                 timeout,
                 resultLocation,
+                scheduleDetails,
                 submissionErrorMessage,
                 timeCreated,
                 timeUpdated);

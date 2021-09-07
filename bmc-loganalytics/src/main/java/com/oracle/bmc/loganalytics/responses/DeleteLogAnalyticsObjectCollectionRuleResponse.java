@@ -11,19 +11,28 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class DeleteLogAnalyticsObjectCollectionRuleResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class DeleteLogAnalyticsObjectCollectionRuleResponse
+        extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
      *
      */
     private String opcRequestId;
 
+    private DeleteLogAnalyticsObjectCollectionRuleResponse(
+            int __httpStatusCode__, String opcRequestId) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -33,6 +42,11 @@ public class DeleteLogAnalyticsObjectCollectionRuleResponse {
             opcRequestId(o.getOpcRequestId());
 
             return this;
+        }
+
+        public DeleteLogAnalyticsObjectCollectionRuleResponse build() {
+            return new DeleteLogAnalyticsObjectCollectionRuleResponse(
+                    __httpStatusCode__, opcRequestId);
         }
     }
 }

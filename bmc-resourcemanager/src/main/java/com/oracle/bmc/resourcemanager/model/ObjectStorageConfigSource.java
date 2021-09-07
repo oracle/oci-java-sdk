@@ -124,6 +124,8 @@ public class ObjectStorageConfigSource extends ConfigSource {
 
     /**
      * The name of the bucket that contains the Terraform configuration files.
+     * Maximum file size (applies to each file in the bucket): 100 MB. (In a bucket, a file is an object.)
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     String bucketName;

@@ -11,12 +11,7 @@ import com.oracle.bmc.managementagent.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListManagementAgentInstallKeysResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListManagementAgentInstallKeysResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response,
      * then a partial list might have been returned. Include this value as the {@code page} parameter for the
@@ -38,7 +33,26 @@ public class ListManagementAgentInstallKeysResponse {
     private java.util.List<com.oracle.bmc.managementagent.model.ManagementAgentInstallKeySummary>
             items;
 
+    private ListManagementAgentInstallKeysResponse(
+            int __httpStatusCode__,
+            String opcNextPage,
+            String opcRequestId,
+            java.util.List<com.oracle.bmc.managementagent.model.ManagementAgentInstallKeySummary>
+                    items) {
+        super(__httpStatusCode__);
+        this.opcNextPage = opcNextPage;
+        this.opcRequestId = opcRequestId;
+        this.items = items;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -50,6 +64,11 @@ public class ListManagementAgentInstallKeysResponse {
             items(o.getItems());
 
             return this;
+        }
+
+        public ListManagementAgentInstallKeysResponse build() {
+            return new ListManagementAgentInstallKeysResponse(
+                    __httpStatusCode__, opcNextPage, opcRequestId, items);
         }
     }
 }

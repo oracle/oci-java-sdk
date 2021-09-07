@@ -11,12 +11,7 @@ import com.oracle.bmc.resourcemanager.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListConfigurationSourceProvidersResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListConfigurationSourceProvidersResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique identifier for the request.
      */
@@ -39,7 +34,26 @@ public class ListConfigurationSourceProvidersResponse {
     private com.oracle.bmc.resourcemanager.model.ConfigurationSourceProviderCollection
             configurationSourceProviderCollection;
 
+    private ListConfigurationSourceProvidersResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String opcNextPage,
+            com.oracle.bmc.resourcemanager.model.ConfigurationSourceProviderCollection
+                    configurationSourceProviderCollection) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.configurationSourceProviderCollection = configurationSourceProviderCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -51,6 +65,14 @@ public class ListConfigurationSourceProvidersResponse {
             configurationSourceProviderCollection(o.getConfigurationSourceProviderCollection());
 
             return this;
+        }
+
+        public ListConfigurationSourceProvidersResponse build() {
+            return new ListConfigurationSourceProvidersResponse(
+                    __httpStatusCode__,
+                    opcRequestId,
+                    opcNextPage,
+                    configurationSourceProviderCollection);
         }
     }
 }

@@ -11,12 +11,8 @@ import com.oracle.bmc.osmanagement.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class InstallAllWindowsUpdatesOnManagedInstanceResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class InstallAllWindowsUpdatesOnManagedInstanceResponse
+        extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous request.
      * You can use this to query the status of the asynchronous operation.
@@ -31,7 +27,21 @@ public class InstallAllWindowsUpdatesOnManagedInstanceResponse {
      */
     private String opcRequestId;
 
+    private InstallAllWindowsUpdatesOnManagedInstanceResponse(
+            int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
+        super(__httpStatusCode__);
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.opcRequestId = opcRequestId;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -42,6 +52,11 @@ public class InstallAllWindowsUpdatesOnManagedInstanceResponse {
             opcRequestId(o.getOpcRequestId());
 
             return this;
+        }
+
+        public InstallAllWindowsUpdatesOnManagedInstanceResponse build() {
+            return new InstallAllWindowsUpdatesOnManagedInstanceResponse(
+                    __httpStatusCode__, opcWorkRequestId, opcRequestId);
         }
     }
 }

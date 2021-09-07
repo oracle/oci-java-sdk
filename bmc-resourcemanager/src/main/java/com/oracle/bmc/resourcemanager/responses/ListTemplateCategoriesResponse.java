@@ -11,12 +11,7 @@ import com.oracle.bmc.resourcemanager.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListTemplateCategoriesResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListTemplateCategoriesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique identifier for the request.
      */
@@ -28,7 +23,24 @@ public class ListTemplateCategoriesResponse {
     private com.oracle.bmc.resourcemanager.model.TemplateCategorySummaryCollection
             templateCategorySummaryCollection;
 
+    private ListTemplateCategoriesResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            com.oracle.bmc.resourcemanager.model.TemplateCategorySummaryCollection
+                    templateCategorySummaryCollection) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.templateCategorySummaryCollection = templateCategorySummaryCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -39,6 +51,11 @@ public class ListTemplateCategoriesResponse {
             templateCategorySummaryCollection(o.getTemplateCategorySummaryCollection());
 
             return this;
+        }
+
+        public ListTemplateCategoriesResponse build() {
+            return new ListTemplateCategoriesResponse(
+                    __httpStatusCode__, opcRequestId, templateCategorySummaryCollection);
         }
     }
 }

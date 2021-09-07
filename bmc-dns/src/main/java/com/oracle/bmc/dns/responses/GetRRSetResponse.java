@@ -11,12 +11,7 @@ import com.oracle.bmc.dns.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetRRSetResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetRRSetResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For list pagination. When this header appears in the response, additional pages
      * of results remain. For important details about how pagination works,
@@ -50,7 +45,29 @@ public class GetRRSetResponse {
      */
     private com.oracle.bmc.dns.model.RRSet rRSet;
 
+    private GetRRSetResponse(
+            int __httpStatusCode__,
+            String opcNextPage,
+            Integer opcTotalItems,
+            String opcRequestId,
+            String eTag,
+            com.oracle.bmc.dns.model.RRSet rRSet) {
+        super(__httpStatusCode__);
+        this.opcNextPage = opcNextPage;
+        this.opcTotalItems = opcTotalItems;
+        this.opcRequestId = opcRequestId;
+        this.eTag = eTag;
+        this.rRSet = rRSet;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -64,6 +81,11 @@ public class GetRRSetResponse {
             rRSet(o.getRRSet());
 
             return this;
+        }
+
+        public GetRRSetResponse build() {
+            return new GetRRSetResponse(
+                    __httpStatusCode__, opcNextPage, opcTotalItems, opcRequestId, eTag, rRSet);
         }
     }
 }

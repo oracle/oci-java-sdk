@@ -11,12 +11,7 @@ import com.oracle.bmc.nosql.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetRowResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetRowResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -36,7 +31,25 @@ public class GetRowResponse {
      */
     private com.oracle.bmc.nosql.model.Row row;
 
+    private GetRowResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.nosql.model.Row row) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.row = row;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -48,6 +61,10 @@ public class GetRowResponse {
             row(o.getRow());
 
             return this;
+        }
+
+        public GetRowResponse build() {
+            return new GetRowResponse(__httpStatusCode__, etag, opcRequestId, row);
         }
     }
 }

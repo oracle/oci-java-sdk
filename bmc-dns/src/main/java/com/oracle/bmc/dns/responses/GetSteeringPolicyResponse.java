@@ -11,12 +11,7 @@ import com.oracle.bmc.dns.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetSteeringPolicyResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetSteeringPolicyResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to
      * contact Oracle about a particular request, please provide the request ID.
@@ -45,7 +40,27 @@ public class GetSteeringPolicyResponse {
      */
     private boolean isNotModified;
 
+    private GetSteeringPolicyResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String eTag,
+            com.oracle.bmc.dns.model.SteeringPolicy steeringPolicy,
+            boolean isNotModified) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.eTag = eTag;
+        this.steeringPolicy = steeringPolicy;
+        this.isNotModified = isNotModified;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -57,6 +72,11 @@ public class GetSteeringPolicyResponse {
             steeringPolicy(o.getSteeringPolicy());
             isNotModified(o.isNotModified());
             return this;
+        }
+
+        public GetSteeringPolicyResponse build() {
+            return new GetSteeringPolicyResponse(
+                    __httpStatusCode__, opcRequestId, eTag, steeringPolicy, isNotModified);
         }
     }
 }

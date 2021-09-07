@@ -42,18 +42,62 @@ public class JobDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
+        private DatabaseType databaseType;
+
+        public Builder databaseType(DatabaseType databaseType) {
+            this.databaseType = databaseType;
+            this.__explicitlySet__.add("databaseType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
+        private DatabaseSubType databaseSubType;
+
+        public Builder databaseSubType(DatabaseSubType databaseSubType) {
+            this.databaseSubType = databaseSubType;
+            this.__explicitlySet__.add("databaseSubType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
+        private DeploymentType deploymentType;
+
+        public Builder deploymentType(DeploymentType deploymentType) {
+            this.deploymentType = deploymentType;
+            this.__explicitlySet__.add("deploymentType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
+        private Boolean isCluster;
+
+        public Builder isCluster(Boolean isCluster) {
+            this.isCluster = isCluster;
+            this.__explicitlySet__.add("isCluster");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public JobDatabase build() {
-            JobDatabase __instance__ = new JobDatabase(id, name);
+            JobDatabase __instance__ =
+                    new JobDatabase(
+                            id, name, databaseType, databaseSubType, deploymentType, isCluster);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(JobDatabase o) {
-            Builder copiedBuilder = id(o.getId()).name(o.getName());
+            Builder copiedBuilder =
+                    id(o.getId())
+                            .name(o.getName())
+                            .databaseType(o.getDatabaseType())
+                            .databaseSubType(o.getDatabaseSubType())
+                            .deploymentType(o.getDeploymentType())
+                            .isCluster(o.getIsCluster());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -78,6 +122,30 @@ public class JobDatabase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
+
+    /**
+     * The type of Oracle Database installation.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
+    DatabaseType databaseType;
+
+    /**
+     * The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
+    DatabaseSubType databaseSubType;
+
+    /**
+     * A list of the supported infrastructure that can be used to deploy the database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
+    DeploymentType deploymentType;
+
+    /**
+     * Indicates whether the Oracle Database is part of a cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
+    Boolean isCluster;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

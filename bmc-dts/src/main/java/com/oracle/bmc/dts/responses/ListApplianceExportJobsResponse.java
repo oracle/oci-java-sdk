@@ -11,12 +11,7 @@ import com.oracle.bmc.dts.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListApplianceExportJobsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListApplianceExportJobsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For list pagination. When this header appears in the response, additional pages
      * of results remain. For important details about how pagination works, see
@@ -37,7 +32,25 @@ public class ListApplianceExportJobsResponse {
      */
     private java.util.List<com.oracle.bmc.dts.model.ApplianceExportJobSummary> items;
 
+    private ListApplianceExportJobsResponse(
+            int __httpStatusCode__,
+            String opcNextPage,
+            String opcRequestId,
+            java.util.List<com.oracle.bmc.dts.model.ApplianceExportJobSummary> items) {
+        super(__httpStatusCode__);
+        this.opcNextPage = opcNextPage;
+        this.opcRequestId = opcRequestId;
+        this.items = items;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -49,6 +62,11 @@ public class ListApplianceExportJobsResponse {
             items(o.getItems());
 
             return this;
+        }
+
+        public ListApplianceExportJobsResponse build() {
+            return new ListApplianceExportJobsResponse(
+                    __httpStatusCode__, opcNextPage, opcRequestId, items);
         }
     }
 }

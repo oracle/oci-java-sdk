@@ -11,12 +11,7 @@ import com.oracle.bmc.identity.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateRegionSubscriptionResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateRegionSubscriptionResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -29,7 +24,23 @@ public class CreateRegionSubscriptionResponse {
      */
     private com.oracle.bmc.identity.model.RegionSubscription regionSubscription;
 
+    private CreateRegionSubscriptionResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            com.oracle.bmc.identity.model.RegionSubscription regionSubscription) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.regionSubscription = regionSubscription;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -40,6 +51,11 @@ public class CreateRegionSubscriptionResponse {
             regionSubscription(o.getRegionSubscription());
 
             return this;
+        }
+
+        public CreateRegionSubscriptionResponse build() {
+            return new CreateRegionSubscriptionResponse(
+                    __httpStatusCode__, opcRequestId, regionSubscription);
         }
     }
 }

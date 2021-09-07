@@ -11,12 +11,7 @@ import com.oracle.bmc.identity.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateUserCapabilitiesResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateUserCapabilitiesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -34,7 +29,25 @@ public class UpdateUserCapabilitiesResponse {
      */
     private com.oracle.bmc.identity.model.User user;
 
+    private UpdateUserCapabilitiesResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.identity.model.User user) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.user = user;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -46,6 +59,10 @@ public class UpdateUserCapabilitiesResponse {
             user(o.getUser());
 
             return this;
+        }
+
+        public UpdateUserCapabilitiesResponse build() {
+            return new UpdateUserCapabilitiesResponse(__httpStatusCode__, opcRequestId, etag, user);
         }
     }
 }

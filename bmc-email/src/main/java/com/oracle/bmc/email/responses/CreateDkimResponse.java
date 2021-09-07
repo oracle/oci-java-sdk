@@ -11,12 +11,7 @@ import com.oracle.bmc.email.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateDkimResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateDkimResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The full URI of the resource related to the request
      *
@@ -53,7 +48,31 @@ public class CreateDkimResponse {
      */
     private com.oracle.bmc.email.model.Dkim dkim;
 
+    private CreateDkimResponse(
+            int __httpStatusCode__,
+            String contentLocation,
+            String etag,
+            String location,
+            String opcRequestId,
+            String opcWorkRequestId,
+            com.oracle.bmc.email.model.Dkim dkim) {
+        super(__httpStatusCode__);
+        this.contentLocation = contentLocation;
+        this.etag = etag;
+        this.location = location;
+        this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.dkim = dkim;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -68,6 +87,17 @@ public class CreateDkimResponse {
             dkim(o.getDkim());
 
             return this;
+        }
+
+        public CreateDkimResponse build() {
+            return new CreateDkimResponse(
+                    __httpStatusCode__,
+                    contentLocation,
+                    etag,
+                    location,
+                    opcRequestId,
+                    opcWorkRequestId,
+                    dkim);
         }
     }
 }

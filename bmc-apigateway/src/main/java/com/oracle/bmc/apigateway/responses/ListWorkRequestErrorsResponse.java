@@ -11,12 +11,7 @@ import com.oracle.bmc.apigateway.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListWorkRequestErrorsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For list pagination. When this header appears in the response,
      * additional pages of results remain. For important details about how
@@ -48,7 +43,27 @@ public class ListWorkRequestErrorsResponse {
      */
     private com.oracle.bmc.apigateway.model.WorkRequestErrorCollection workRequestErrorCollection;
 
+    private ListWorkRequestErrorsResponse(
+            int __httpStatusCode__,
+            String opcNextPage,
+            String opcPrevPage,
+            String opcRequestId,
+            com.oracle.bmc.apigateway.model.WorkRequestErrorCollection workRequestErrorCollection) {
+        super(__httpStatusCode__);
+        this.opcNextPage = opcNextPage;
+        this.opcPrevPage = opcPrevPage;
+        this.opcRequestId = opcRequestId;
+        this.workRequestErrorCollection = workRequestErrorCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -61,6 +76,15 @@ public class ListWorkRequestErrorsResponse {
             workRequestErrorCollection(o.getWorkRequestErrorCollection());
 
             return this;
+        }
+
+        public ListWorkRequestErrorsResponse build() {
+            return new ListWorkRequestErrorsResponse(
+                    __httpStatusCode__,
+                    opcNextPage,
+                    opcPrevPage,
+                    opcRequestId,
+                    workRequestErrorCollection);
         }
     }
 }

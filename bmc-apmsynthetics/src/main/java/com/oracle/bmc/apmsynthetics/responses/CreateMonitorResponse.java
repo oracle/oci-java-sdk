@@ -11,12 +11,7 @@ import com.oracle.bmc.apmsynthetics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateMonitorResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateMonitorResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -35,7 +30,25 @@ public class CreateMonitorResponse {
      */
     private com.oracle.bmc.apmsynthetics.model.Monitor monitor;
 
+    private CreateMonitorResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.apmsynthetics.model.Monitor monitor) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.monitor = monitor;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,10 @@ public class CreateMonitorResponse {
             monitor(o.getMonitor());
 
             return this;
+        }
+
+        public CreateMonitorResponse build() {
+            return new CreateMonitorResponse(__httpStatusCode__, etag, opcRequestId, monitor);
         }
     }
 }

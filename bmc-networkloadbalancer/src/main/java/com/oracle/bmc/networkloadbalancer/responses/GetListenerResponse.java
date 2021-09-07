@@ -11,12 +11,7 @@ import com.oracle.bmc.networkloadbalancer.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetListenerResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetListenerResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you must contact
      * Oracle about a particular request, then provide the request identifier.
@@ -35,7 +30,25 @@ public class GetListenerResponse {
      */
     private com.oracle.bmc.networkloadbalancer.model.Listener listener;
 
+    private GetListenerResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.networkloadbalancer.model.Listener listener) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.listener = listener;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,10 @@ public class GetListenerResponse {
             listener(o.getListener());
 
             return this;
+        }
+
+        public GetListenerResponse build() {
+            return new GetListenerResponse(__httpStatusCode__, opcRequestId, etag, listener);
         }
     }
 }

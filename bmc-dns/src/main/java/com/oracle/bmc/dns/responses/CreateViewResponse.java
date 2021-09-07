@@ -11,12 +11,7 @@ import com.oracle.bmc.dns.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateViewResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateViewResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The current version of the resource, ending with a
      * representation-specific suffix. This value may be used in If-Match
@@ -50,7 +45,29 @@ public class CreateViewResponse {
      */
     private com.oracle.bmc.dns.model.View view;
 
+    private CreateViewResponse(
+            int __httpStatusCode__,
+            String etag,
+            String location,
+            String opcRequestId,
+            String opcWorkRequestId,
+            com.oracle.bmc.dns.model.View view) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.location = location;
+        this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.view = view;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -64,6 +81,11 @@ public class CreateViewResponse {
             view(o.getView());
 
             return this;
+        }
+
+        public CreateViewResponse build() {
+            return new CreateViewResponse(
+                    __httpStatusCode__, etag, location, opcRequestId, opcWorkRequestId, view);
         }
     }
 }

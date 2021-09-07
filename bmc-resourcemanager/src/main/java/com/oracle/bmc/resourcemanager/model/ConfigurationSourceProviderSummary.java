@@ -77,7 +77,7 @@ public class ConfigurationSourceProviderSummary {
     /**
      * Current state of the specified configuration source provider.
      * For more information about configuration source provider lifecycle states in Resource Manager, see
-     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#CSPStates).
+     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__CSPStates).
      * <p>
      * Allowable values:
      * - ACTIVE

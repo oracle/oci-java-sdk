@@ -11,12 +11,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GenerateRecommendedVmClusterNetworkResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GenerateRecommendedVmClusterNetworkResponse
+        extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
@@ -34,7 +30,25 @@ public class GenerateRecommendedVmClusterNetworkResponse {
      */
     private com.oracle.bmc.database.model.VmClusterNetworkDetails vmClusterNetworkDetails;
 
+    private GenerateRecommendedVmClusterNetworkResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.database.model.VmClusterNetworkDetails vmClusterNetworkDetails) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.vmClusterNetworkDetails = vmClusterNetworkDetails;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -46,6 +60,11 @@ public class GenerateRecommendedVmClusterNetworkResponse {
             vmClusterNetworkDetails(o.getVmClusterNetworkDetails());
 
             return this;
+        }
+
+        public GenerateRecommendedVmClusterNetworkResponse build() {
+            return new GenerateRecommendedVmClusterNetworkResponse(
+                    __httpStatusCode__, etag, opcRequestId, vmClusterNetworkDetails);
         }
     }
 }

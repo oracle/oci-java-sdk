@@ -11,12 +11,7 @@ import com.oracle.bmc.resourcemanager.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetJobLogsContentResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetJobLogsContentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique identifier for the request
      */
@@ -27,7 +22,20 @@ public class GetJobLogsContentResponse {
      */
     private String value;
 
+    private GetJobLogsContentResponse(int __httpStatusCode__, String opcRequestId, String value) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.value = value;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -38,6 +46,10 @@ public class GetJobLogsContentResponse {
             value(o.getValue());
 
             return this;
+        }
+
+        public GetJobLogsContentResponse build() {
+            return new GetJobLogsContentResponse(__httpStatusCode__, opcRequestId, value);
         }
     }
 }

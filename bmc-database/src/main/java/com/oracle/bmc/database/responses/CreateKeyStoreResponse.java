@@ -11,12 +11,7 @@ import com.oracle.bmc.database.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateKeyStoreResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateKeyStoreResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
@@ -34,7 +29,25 @@ public class CreateKeyStoreResponse {
      */
     private com.oracle.bmc.database.model.KeyStore keyStore;
 
+    private CreateKeyStoreResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.database.model.KeyStore keyStore) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.keyStore = keyStore;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -46,6 +59,10 @@ public class CreateKeyStoreResponse {
             keyStore(o.getKeyStore());
 
             return this;
+        }
+
+        public CreateKeyStoreResponse build() {
+            return new CreateKeyStoreResponse(__httpStatusCode__, etag, opcRequestId, keyStore);
         }
     }
 }

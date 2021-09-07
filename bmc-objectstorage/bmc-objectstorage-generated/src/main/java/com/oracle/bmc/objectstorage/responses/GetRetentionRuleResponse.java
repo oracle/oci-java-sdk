@@ -11,12 +11,7 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetRetentionRuleResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetRetentionRuleResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
      */
@@ -44,7 +39,29 @@ public class GetRetentionRuleResponse {
      */
     private com.oracle.bmc.objectstorage.model.RetentionRule retentionRule;
 
+    private GetRetentionRuleResponse(
+            int __httpStatusCode__,
+            String opcClientRequestId,
+            String opcRequestId,
+            String etag,
+            java.util.Date lastModified,
+            com.oracle.bmc.objectstorage.model.RetentionRule retentionRule) {
+        super(__httpStatusCode__);
+        this.opcClientRequestId = opcClientRequestId;
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.lastModified = lastModified;
+        this.retentionRule = retentionRule;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -58,6 +75,16 @@ public class GetRetentionRuleResponse {
             retentionRule(o.getRetentionRule());
 
             return this;
+        }
+
+        public GetRetentionRuleResponse build() {
+            return new GetRetentionRuleResponse(
+                    __httpStatusCode__,
+                    opcClientRequestId,
+                    opcRequestId,
+                    etag,
+                    lastModified,
+                    retentionRule);
         }
     }
 }

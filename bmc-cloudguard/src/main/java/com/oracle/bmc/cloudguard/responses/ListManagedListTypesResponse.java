@@ -11,12 +11,7 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListManagedListTypesResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListManagedListTypesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -37,7 +32,25 @@ public class ListManagedListTypesResponse {
      */
     private com.oracle.bmc.cloudguard.model.ManagedListTypeCollection managedListTypeCollection;
 
+    private ListManagedListTypesResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String opcNextPage,
+            com.oracle.bmc.cloudguard.model.ManagedListTypeCollection managedListTypeCollection) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.managedListTypeCollection = managedListTypeCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -49,6 +62,11 @@ public class ListManagedListTypesResponse {
             managedListTypeCollection(o.getManagedListTypeCollection());
 
             return this;
+        }
+
+        public ListManagedListTypesResponse build() {
+            return new ListManagedListTypesResponse(
+                    __httpStatusCode__, opcRequestId, opcNextPage, managedListTypeCollection);
         }
     }
 }

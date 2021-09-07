@@ -11,12 +11,7 @@ import com.oracle.bmc.devops.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateDeployArtifactResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateDeployArtifactResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Relative URL of the newly created resource.
      */
@@ -42,7 +37,29 @@ public class CreateDeployArtifactResponse {
      */
     private com.oracle.bmc.devops.model.DeployArtifact deployArtifact;
 
+    private CreateDeployArtifactResponse(
+            int __httpStatusCode__,
+            String location,
+            String etag,
+            String opcWorkRequestId,
+            String opcRequestId,
+            com.oracle.bmc.devops.model.DeployArtifact deployArtifact) {
+        super(__httpStatusCode__);
+        this.location = location;
+        this.etag = etag;
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.opcRequestId = opcRequestId;
+        this.deployArtifact = deployArtifact;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -56,6 +73,16 @@ public class CreateDeployArtifactResponse {
             deployArtifact(o.getDeployArtifact());
 
             return this;
+        }
+
+        public CreateDeployArtifactResponse build() {
+            return new CreateDeployArtifactResponse(
+                    __httpStatusCode__,
+                    location,
+                    etag,
+                    opcWorkRequestId,
+                    opcRequestId,
+                    deployArtifact);
         }
     }
 }

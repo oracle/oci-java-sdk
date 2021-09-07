@@ -11,12 +11,7 @@ import com.oracle.bmc.datasafe.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateTargetDatabaseResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateTargetDatabaseResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
      *
@@ -46,7 +41,29 @@ public class CreateTargetDatabaseResponse {
      */
     private com.oracle.bmc.datasafe.model.TargetDatabase targetDatabase;
 
+    private CreateTargetDatabaseResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcWorkRequestId,
+            String opcRequestId,
+            String location,
+            com.oracle.bmc.datasafe.model.TargetDatabase targetDatabase) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.opcRequestId = opcRequestId;
+        this.location = location;
+        this.targetDatabase = targetDatabase;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -60,6 +77,16 @@ public class CreateTargetDatabaseResponse {
             targetDatabase(o.getTargetDatabase());
 
             return this;
+        }
+
+        public CreateTargetDatabaseResponse build() {
+            return new CreateTargetDatabaseResponse(
+                    __httpStatusCode__,
+                    etag,
+                    opcWorkRequestId,
+                    opcRequestId,
+                    location,
+                    targetDatabase);
         }
     }
 }

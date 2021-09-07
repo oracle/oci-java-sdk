@@ -11,12 +11,7 @@ import com.oracle.bmc.apmtraces.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetTraceResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetTraceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -29,7 +24,23 @@ public class GetTraceResponse {
      */
     private com.oracle.bmc.apmtraces.model.Trace trace;
 
+    private GetTraceResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            com.oracle.bmc.apmtraces.model.Trace trace) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.trace = trace;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -40,6 +51,10 @@ public class GetTraceResponse {
             trace(o.getTrace());
 
             return this;
+        }
+
+        public GetTraceResponse build() {
+            return new GetTraceResponse(__httpStatusCode__, opcRequestId, trace);
         }
     }
 }

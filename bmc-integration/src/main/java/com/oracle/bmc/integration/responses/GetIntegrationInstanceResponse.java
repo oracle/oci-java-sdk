@@ -11,12 +11,7 @@ import com.oracle.bmc.integration.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetIntegrationInstanceResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetIntegrationInstanceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
@@ -35,7 +30,25 @@ public class GetIntegrationInstanceResponse {
      */
     private com.oracle.bmc.integration.model.IntegrationInstance integrationInstance;
 
+    private GetIntegrationInstanceResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.integration.model.IntegrationInstance integrationInstance) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.integrationInstance = integrationInstance;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,11 @@ public class GetIntegrationInstanceResponse {
             integrationInstance(o.getIntegrationInstance());
 
             return this;
+        }
+
+        public GetIntegrationInstanceResponse build() {
+            return new GetIntegrationInstanceResponse(
+                    __httpStatusCode__, etag, opcRequestId, integrationInstance);
         }
     }
 }

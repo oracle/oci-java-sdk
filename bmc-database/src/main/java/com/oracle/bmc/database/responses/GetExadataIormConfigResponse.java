@@ -11,12 +11,7 @@ import com.oracle.bmc.database.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetExadataIormConfigResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetExadataIormConfigResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
      * a particular request, please provide the request ID.
@@ -29,7 +24,23 @@ public class GetExadataIormConfigResponse {
      */
     private com.oracle.bmc.database.model.ExadataIormConfig exadataIormConfig;
 
+    private GetExadataIormConfigResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            com.oracle.bmc.database.model.ExadataIormConfig exadataIormConfig) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.exadataIormConfig = exadataIormConfig;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -40,6 +51,11 @@ public class GetExadataIormConfigResponse {
             exadataIormConfig(o.getExadataIormConfig());
 
             return this;
+        }
+
+        public GetExadataIormConfigResponse build() {
+            return new GetExadataIormConfigResponse(
+                    __httpStatusCode__, opcRequestId, exadataIormConfig);
         }
     }
 }

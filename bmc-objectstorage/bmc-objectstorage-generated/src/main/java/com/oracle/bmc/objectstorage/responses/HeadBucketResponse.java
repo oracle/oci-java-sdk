@@ -11,12 +11,7 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class HeadBucketResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class HeadBucketResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
      */
@@ -42,7 +37,27 @@ public class HeadBucketResponse {
      */
     private boolean isNotModified;
 
+    private HeadBucketResponse(
+            int __httpStatusCode__,
+            String opcClientRequestId,
+            String opcRequestId,
+            String eTag,
+            boolean isNotModified) {
+        super(__httpStatusCode__);
+        this.opcClientRequestId = opcClientRequestId;
+        this.opcRequestId = opcRequestId;
+        this.eTag = eTag;
+        this.isNotModified = isNotModified;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -55,6 +70,11 @@ public class HeadBucketResponse {
 
             isNotModified(o.isNotModified());
             return this;
+        }
+
+        public HeadBucketResponse build() {
+            return new HeadBucketResponse(
+                    __httpStatusCode__, opcClientRequestId, opcRequestId, eTag, isNotModified);
         }
     }
 }

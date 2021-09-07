@@ -995,6 +995,47 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetJobDetailedLogContentResponse> getJobDetailedLogContent(
+            GetJobDetailedLogContentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetJobDetailedLogContentRequest, GetJobDetailedLogContentResponse>
+                    handler) {
+        LOG.trace("Called async getJobDetailedLogContent");
+        final GetJobDetailedLogContentRequest interceptedRequest =
+                GetJobDetailedLogContentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetJobDetailedLogContentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetJobDetailedLogContentResponse>
+                transformer = GetJobDetailedLogContentConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetJobDetailedLogContentRequest, GetJobDetailedLogContentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetJobDetailedLogContentRequest, GetJobDetailedLogContentResponse>,
+                        java.util.concurrent.Future<GetJobDetailedLogContentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetJobDetailedLogContentRequest, GetJobDetailedLogContentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetJobLogsResponse> getJobLogs(
             GetJobLogsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetJobLogsRequest, GetJobLogsResponse>

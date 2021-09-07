@@ -11,12 +11,7 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class RenameObjectResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class RenameObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
      */
@@ -44,7 +39,29 @@ public class RenameObjectResponse {
      */
     private String versionId;
 
+    private RenameObjectResponse(
+            int __httpStatusCode__,
+            String opcClientRequestId,
+            String opcRequestId,
+            String eTag,
+            java.util.Date lastModified,
+            String versionId) {
+        super(__httpStatusCode__);
+        this.opcClientRequestId = opcClientRequestId;
+        this.opcRequestId = opcRequestId;
+        this.eTag = eTag;
+        this.lastModified = lastModified;
+        this.versionId = versionId;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -58,6 +75,16 @@ public class RenameObjectResponse {
             versionId(o.getVersionId());
 
             return this;
+        }
+
+        public RenameObjectResponse build() {
+            return new RenameObjectResponse(
+                    __httpStatusCode__,
+                    opcClientRequestId,
+                    opcRequestId,
+                    eTag,
+                    lastModified,
+                    versionId);
         }
     }
 }

@@ -11,12 +11,7 @@ import com.oracle.bmc.dts.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetTransferDeviceResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetTransferDeviceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      *
      */
@@ -32,7 +27,25 @@ public class GetTransferDeviceResponse {
      */
     private com.oracle.bmc.dts.model.TransferDevice transferDevice;
 
+    private GetTransferDeviceResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.dts.model.TransferDevice transferDevice) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.transferDevice = transferDevice;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -44,6 +57,11 @@ public class GetTransferDeviceResponse {
             transferDevice(o.getTransferDevice());
 
             return this;
+        }
+
+        public GetTransferDeviceResponse build() {
+            return new GetTransferDeviceResponse(
+                    __httpStatusCode__, opcRequestId, etag, transferDevice);
         }
     }
 }

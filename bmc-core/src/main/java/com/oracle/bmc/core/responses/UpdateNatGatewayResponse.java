@@ -11,12 +11,7 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateNatGatewayResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateNatGatewayResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -35,7 +30,25 @@ public class UpdateNatGatewayResponse {
      */
     private com.oracle.bmc.core.model.NatGateway natGateway;
 
+    private UpdateNatGatewayResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.core.model.NatGateway natGateway) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.natGateway = natGateway;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,10 @@ public class UpdateNatGatewayResponse {
             natGateway(o.getNatGateway());
 
             return this;
+        }
+
+        public UpdateNatGatewayResponse build() {
+            return new UpdateNatGatewayResponse(__httpStatusCode__, etag, opcRequestId, natGateway);
         }
     }
 }

@@ -93,7 +93,7 @@ public class SummarizeAwrDbSnapshotRangesRequest
         }
     };
     /**
-     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the the default order.
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
      */
     private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder;
 

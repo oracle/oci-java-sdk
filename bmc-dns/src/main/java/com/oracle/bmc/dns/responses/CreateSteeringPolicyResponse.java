@@ -11,12 +11,7 @@ import com.oracle.bmc.dns.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateSteeringPolicyResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The current version of the resource, ending with a
      * representation-specific suffix. This value may be used in If-Match
@@ -43,7 +38,27 @@ public class CreateSteeringPolicyResponse {
      */
     private com.oracle.bmc.dns.model.SteeringPolicy steeringPolicy;
 
+    private CreateSteeringPolicyResponse(
+            int __httpStatusCode__,
+            String eTag,
+            String location,
+            String opcRequestId,
+            com.oracle.bmc.dns.model.SteeringPolicy steeringPolicy) {
+        super(__httpStatusCode__);
+        this.eTag = eTag;
+        this.location = location;
+        this.opcRequestId = opcRequestId;
+        this.steeringPolicy = steeringPolicy;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -56,6 +71,11 @@ public class CreateSteeringPolicyResponse {
             steeringPolicy(o.getSteeringPolicy());
 
             return this;
+        }
+
+        public CreateSteeringPolicyResponse build() {
+            return new CreateSteeringPolicyResponse(
+                    __httpStatusCode__, eTag, location, opcRequestId, steeringPolicy);
         }
     }
 }

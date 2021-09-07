@@ -11,12 +11,7 @@ import com.oracle.bmc.osmanagement.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateManagedInstanceResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateManagedInstanceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -35,7 +30,25 @@ public class UpdateManagedInstanceResponse {
      */
     private com.oracle.bmc.osmanagement.model.ManagedInstance managedInstance;
 
+    private UpdateManagedInstanceResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.osmanagement.model.ManagedInstance managedInstance) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.managedInstance = managedInstance;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,11 @@ public class UpdateManagedInstanceResponse {
             managedInstance(o.getManagedInstance());
 
             return this;
+        }
+
+        public UpdateManagedInstanceResponse build() {
+            return new UpdateManagedInstanceResponse(
+                    __httpStatusCode__, etag, opcRequestId, managedInstance);
         }
     }
 }

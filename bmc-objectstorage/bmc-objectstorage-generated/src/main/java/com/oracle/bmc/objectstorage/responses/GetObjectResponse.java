@@ -11,12 +11,7 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetObjectResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
      */
@@ -136,7 +131,61 @@ public class GetObjectResponse {
      */
     private boolean isNotModified;
 
+    private GetObjectResponse(
+            int __httpStatusCode__,
+            String opcClientRequestId,
+            String opcRequestId,
+            String eTag,
+            java.util.Map<String, String> opcMeta,
+            Long contentLength,
+            com.oracle.bmc.model.Range contentRange,
+            String contentMd5,
+            String opcMultipartMd5,
+            String contentType,
+            String contentLanguage,
+            String contentEncoding,
+            String cacheControl,
+            String contentDisposition,
+            java.util.Date lastModified,
+            StorageTier storageTier,
+            ArchivalState archivalState,
+            java.util.Date timeOfArchival,
+            String versionId,
+            java.util.Date expires,
+            java.io.InputStream inputStream,
+            boolean isNotModified) {
+        super(__httpStatusCode__);
+        this.opcClientRequestId = opcClientRequestId;
+        this.opcRequestId = opcRequestId;
+        this.eTag = eTag;
+        this.opcMeta = opcMeta;
+        this.contentLength = contentLength;
+        this.contentRange = contentRange;
+        this.contentMd5 = contentMd5;
+        this.opcMultipartMd5 = opcMultipartMd5;
+        this.contentType = contentType;
+        this.contentLanguage = contentLanguage;
+        this.contentEncoding = contentEncoding;
+        this.cacheControl = cacheControl;
+        this.contentDisposition = contentDisposition;
+        this.lastModified = lastModified;
+        this.storageTier = storageTier;
+        this.archivalState = archivalState;
+        this.timeOfArchival = timeOfArchival;
+        this.versionId = versionId;
+        this.expires = expires;
+        this.inputStream = inputStream;
+        this.isNotModified = isNotModified;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -165,6 +214,32 @@ public class GetObjectResponse {
             inputStream(o.getInputStream());
             isNotModified(o.isNotModified());
             return this;
+        }
+
+        public GetObjectResponse build() {
+            return new GetObjectResponse(
+                    __httpStatusCode__,
+                    opcClientRequestId,
+                    opcRequestId,
+                    eTag,
+                    opcMeta,
+                    contentLength,
+                    contentRange,
+                    contentMd5,
+                    opcMultipartMd5,
+                    contentType,
+                    contentLanguage,
+                    contentEncoding,
+                    cacheControl,
+                    contentDisposition,
+                    lastModified,
+                    storageTier,
+                    archivalState,
+                    timeOfArchival,
+                    versionId,
+                    expires,
+                    inputStream,
+                    isNotModified);
         }
     }
 }

@@ -39,6 +39,14 @@ public class CancelJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String ifMatch;
 
+    /**
+     * Indicates whether a forced cancellation is requested for the job while it was running.
+     * A forced cancellation can result in an incorrect state file.
+     * For example, the state file might not reflect the exact state of the provisioned resources.
+     *
+     */
+    private Boolean isForced;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CancelJobRequest, java.lang.Void> {
@@ -77,6 +85,7 @@ public class CancelJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             jobId(o.getJobId());
             opcRequestId(o.getOpcRequestId());
             ifMatch(o.getIfMatch());
+            isForced(o.getIsForced());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

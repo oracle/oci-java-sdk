@@ -96,6 +96,22 @@ public class GetDatabaseFleetHealthMetricsConverter {
                                     request.getFilterByDatabaseSubType()));
         }
 
+        if (request.getFilterByDatabaseDeploymentType() != null) {
+            target =
+                    target.queryParam(
+                            "filterByDatabaseDeploymentType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getFilterByDatabaseDeploymentType()));
+        }
+
+        if (request.getFilterByDatabaseVersion() != null) {
+            target =
+                    target.queryParam(
+                            "filterByDatabaseVersion",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getFilterByDatabaseVersion()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

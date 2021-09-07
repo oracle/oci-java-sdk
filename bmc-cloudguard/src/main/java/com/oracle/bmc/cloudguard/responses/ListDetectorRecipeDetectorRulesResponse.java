@@ -11,12 +11,7 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListDetectorRecipeDetectorRulesResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListDetectorRecipeDetectorRulesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -38,7 +33,26 @@ public class ListDetectorRecipeDetectorRulesResponse {
     private com.oracle.bmc.cloudguard.model.DetectorRecipeDetectorRuleCollection
             detectorRecipeDetectorRuleCollection;
 
+    private ListDetectorRecipeDetectorRulesResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String opcNextPage,
+            com.oracle.bmc.cloudguard.model.DetectorRecipeDetectorRuleCollection
+                    detectorRecipeDetectorRuleCollection) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.detectorRecipeDetectorRuleCollection = detectorRecipeDetectorRuleCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -50,6 +64,14 @@ public class ListDetectorRecipeDetectorRulesResponse {
             detectorRecipeDetectorRuleCollection(o.getDetectorRecipeDetectorRuleCollection());
 
             return this;
+        }
+
+        public ListDetectorRecipeDetectorRulesResponse build() {
+            return new ListDetectorRecipeDetectorRulesResponse(
+                    __httpStatusCode__,
+                    opcRequestId,
+                    opcNextPage,
+                    detectorRecipeDetectorRuleCollection);
         }
     }
 }

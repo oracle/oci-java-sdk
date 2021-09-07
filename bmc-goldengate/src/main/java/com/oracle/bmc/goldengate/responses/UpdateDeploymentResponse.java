@@ -11,12 +11,7 @@ import com.oracle.bmc.goldengate.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateDeploymentResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateDeploymentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query status of the asynchronous operation.
      *
@@ -29,7 +24,21 @@ public class UpdateDeploymentResponse {
      */
     private String opcRequestId;
 
+    private UpdateDeploymentResponse(
+            int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
+        super(__httpStatusCode__);
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.opcRequestId = opcRequestId;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -40,6 +49,10 @@ public class UpdateDeploymentResponse {
             opcRequestId(o.getOpcRequestId());
 
             return this;
+        }
+
+        public UpdateDeploymentResponse build() {
+            return new UpdateDeploymentResponse(__httpStatusCode__, opcWorkRequestId, opcRequestId);
         }
     }
 }

@@ -11,12 +11,8 @@ import com.oracle.bmc.dts.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetTransferApplianceEncryptionPassphraseResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetTransferApplianceEncryptionPassphraseResponse
+        extends com.oracle.bmc.responses.BmcResponse {
     /**
      *
      */
@@ -33,7 +29,26 @@ public class GetTransferApplianceEncryptionPassphraseResponse {
     private com.oracle.bmc.dts.model.TransferApplianceEncryptionPassphrase
             transferApplianceEncryptionPassphrase;
 
+    private GetTransferApplianceEncryptionPassphraseResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.dts.model.TransferApplianceEncryptionPassphrase
+                    transferApplianceEncryptionPassphrase) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.transferApplianceEncryptionPassphrase = transferApplianceEncryptionPassphrase;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -45,6 +60,11 @@ public class GetTransferApplianceEncryptionPassphraseResponse {
             transferApplianceEncryptionPassphrase(o.getTransferApplianceEncryptionPassphrase());
 
             return this;
+        }
+
+        public GetTransferApplianceEncryptionPassphraseResponse build() {
+            return new GetTransferApplianceEncryptionPassphraseResponse(
+                    __httpStatusCode__, opcRequestId, etag, transferApplianceEncryptionPassphrase);
         }
     }
 }

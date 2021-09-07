@@ -11,12 +11,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class DownloadExadataInfrastructureConfigFileResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class DownloadExadataInfrastructureConfigFileResponse
+        extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
@@ -44,7 +40,29 @@ public class DownloadExadataInfrastructureConfigFileResponse {
      */
     private java.io.InputStream inputStream;
 
+    private DownloadExadataInfrastructureConfigFileResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            Long contentLength,
+            java.util.Date lastModified,
+            java.io.InputStream inputStream) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.contentLength = contentLength;
+        this.lastModified = lastModified;
+        this.inputStream = inputStream;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -58,6 +76,16 @@ public class DownloadExadataInfrastructureConfigFileResponse {
             inputStream(o.getInputStream());
 
             return this;
+        }
+
+        public DownloadExadataInfrastructureConfigFileResponse build() {
+            return new DownloadExadataInfrastructureConfigFileResponse(
+                    __httpStatusCode__,
+                    etag,
+                    opcRequestId,
+                    contentLength,
+                    lastModified,
+                    inputStream);
         }
     }
 }

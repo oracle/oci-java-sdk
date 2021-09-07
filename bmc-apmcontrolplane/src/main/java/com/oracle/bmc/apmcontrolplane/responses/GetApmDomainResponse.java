@@ -11,12 +11,7 @@ import com.oracle.bmc.apmcontrolplane.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetApmDomainResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetApmDomainResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -35,7 +30,25 @@ public class GetApmDomainResponse {
      */
     private com.oracle.bmc.apmcontrolplane.model.ApmDomain apmDomain;
 
+    private GetApmDomainResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.apmcontrolplane.model.ApmDomain apmDomain) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.apmDomain = apmDomain;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,10 @@ public class GetApmDomainResponse {
             apmDomain(o.getApmDomain());
 
             return this;
+        }
+
+        public GetApmDomainResponse build() {
+            return new GetApmDomainResponse(__httpStatusCode__, etag, opcRequestId, apmDomain);
         }
     }
 }

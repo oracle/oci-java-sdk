@@ -11,12 +11,7 @@ import com.oracle.bmc.jms.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class SummarizeManagedInstanceUsageResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class SummarizeManagedInstanceUsageResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -37,7 +32,26 @@ public class SummarizeManagedInstanceUsageResponse {
      */
     private com.oracle.bmc.jms.model.ManagedInstanceUsageCollection managedInstanceUsageCollection;
 
+    private SummarizeManagedInstanceUsageResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String opcNextPage,
+            com.oracle.bmc.jms.model.ManagedInstanceUsageCollection
+                    managedInstanceUsageCollection) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.managedInstanceUsageCollection = managedInstanceUsageCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -49,6 +63,11 @@ public class SummarizeManagedInstanceUsageResponse {
             managedInstanceUsageCollection(o.getManagedInstanceUsageCollection());
 
             return this;
+        }
+
+        public SummarizeManagedInstanceUsageResponse build() {
+            return new SummarizeManagedInstanceUsageResponse(
+                    __httpStatusCode__, opcRequestId, opcNextPage, managedInstanceUsageCollection);
         }
     }
 }

@@ -36,18 +36,27 @@ public class TerraformVersionSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
+        private Boolean isDefault;
+
+        public Builder isDefault(Boolean isDefault) {
+            this.isDefault = isDefault;
+            this.__explicitlySet__.add("isDefault");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TerraformVersionSummary build() {
-            TerraformVersionSummary __instance__ = new TerraformVersionSummary(name);
+            TerraformVersionSummary __instance__ = new TerraformVersionSummary(name, isDefault);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(TerraformVersionSummary o) {
-            Builder copiedBuilder = name(o.getName());
+            Builder copiedBuilder = name(o.getName()).isDefault(o.getIsDefault());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -67,6 +76,12 @@ public class TerraformVersionSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
+
+    /**
+     * Indicates whether this Terraform version is used by default in {@link #createStack(CreateStackRequest) createStack}.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
+    Boolean isDefault;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

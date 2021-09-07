@@ -11,12 +11,7 @@ import com.oracle.bmc.streaming.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetMessagesResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetMessagesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The cursor to use to get the next batch of messages.
      */
@@ -34,7 +29,25 @@ public class GetMessagesResponse {
      */
     private java.util.List<com.oracle.bmc.streaming.model.Message> items;
 
+    private GetMessagesResponse(
+            int __httpStatusCode__,
+            String opcNextCursor,
+            String opcRequestId,
+            java.util.List<com.oracle.bmc.streaming.model.Message> items) {
+        super(__httpStatusCode__);
+        this.opcNextCursor = opcNextCursor;
+        this.opcRequestId = opcRequestId;
+        this.items = items;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -46,6 +59,10 @@ public class GetMessagesResponse {
             items(o.getItems());
 
             return this;
+        }
+
+        public GetMessagesResponse build() {
+            return new GetMessagesResponse(__httpStatusCode__, opcNextCursor, opcRequestId, items);
         }
     }
 }

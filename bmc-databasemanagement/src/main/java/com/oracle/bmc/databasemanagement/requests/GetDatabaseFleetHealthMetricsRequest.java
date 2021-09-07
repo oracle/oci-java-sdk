@@ -65,6 +65,16 @@ public class GetDatabaseFleetHealthMetricsRequest
      */
     private String filterByDatabaseSubType;
 
+    /**
+     * The filter used to filter the databases in the fleet by a specific Oracle Database deployment type.
+     */
+    private String filterByDatabaseDeploymentType;
+
+    /**
+     * The filter used to filter the databases in the fleet by a specific Oracle Database version.
+     */
+    private String filterByDatabaseVersion;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetDatabaseFleetHealthMetricsRequest, java.lang.Void> {
@@ -109,6 +119,8 @@ public class GetDatabaseFleetHealthMetricsRequest
             filterByMetricNames(o.getFilterByMetricNames());
             filterByDatabaseType(o.getFilterByDatabaseType());
             filterByDatabaseSubType(o.getFilterByDatabaseSubType());
+            filterByDatabaseDeploymentType(o.getFilterByDatabaseDeploymentType());
+            filterByDatabaseVersion(o.getFilterByDatabaseVersion());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

@@ -11,12 +11,7 @@ import com.oracle.bmc.email.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListEmailDomainsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListEmailDomainsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For list pagination. When this header appears in the response, additional pages of results remain.
      * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -36,7 +31,25 @@ public class ListEmailDomainsResponse {
      */
     private com.oracle.bmc.email.model.EmailDomainCollection emailDomainCollection;
 
+    private ListEmailDomainsResponse(
+            int __httpStatusCode__,
+            String opcNextPage,
+            String opcRequestId,
+            com.oracle.bmc.email.model.EmailDomainCollection emailDomainCollection) {
+        super(__httpStatusCode__);
+        this.opcNextPage = opcNextPage;
+        this.opcRequestId = opcRequestId;
+        this.emailDomainCollection = emailDomainCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -48,6 +61,11 @@ public class ListEmailDomainsResponse {
             emailDomainCollection(o.getEmailDomainCollection());
 
             return this;
+        }
+
+        public ListEmailDomainsResponse build() {
+            return new ListEmailDomainsResponse(
+                    __httpStatusCode__, opcNextPage, opcRequestId, emailDomainCollection);
         }
     }
 }

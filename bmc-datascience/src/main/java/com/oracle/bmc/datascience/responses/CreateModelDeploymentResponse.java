@@ -11,12 +11,7 @@ import com.oracle.bmc.datascience.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateModelDeploymentResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateModelDeploymentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
      *
@@ -48,7 +43,29 @@ public class CreateModelDeploymentResponse {
      */
     private com.oracle.bmc.datascience.model.ModelDeployment modelDeployment;
 
+    private CreateModelDeploymentResponse(
+            int __httpStatusCode__,
+            String etag,
+            String location,
+            String opcRequestId,
+            String opcWorkRequestId,
+            com.oracle.bmc.datascience.model.ModelDeployment modelDeployment) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.location = location;
+        this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.modelDeployment = modelDeployment;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -62,6 +79,16 @@ public class CreateModelDeploymentResponse {
             modelDeployment(o.getModelDeployment());
 
             return this;
+        }
+
+        public CreateModelDeploymentResponse build() {
+            return new CreateModelDeploymentResponse(
+                    __httpStatusCode__,
+                    etag,
+                    location,
+                    opcRequestId,
+                    opcWorkRequestId,
+                    modelDeployment);
         }
     }
 }

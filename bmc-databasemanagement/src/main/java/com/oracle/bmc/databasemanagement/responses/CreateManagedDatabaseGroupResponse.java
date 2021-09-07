@@ -11,12 +11,7 @@ import com.oracle.bmc.databasemanagement.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateManagedDatabaseGroupResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * A link to the newly created Managed Database Group.
      */
@@ -40,7 +35,27 @@ public class CreateManagedDatabaseGroupResponse {
      */
     private com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroup managedDatabaseGroup;
 
+    private CreateManagedDatabaseGroupResponse(
+            int __httpStatusCode__,
+            String location,
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroup managedDatabaseGroup) {
+        super(__httpStatusCode__);
+        this.location = location;
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.managedDatabaseGroup = managedDatabaseGroup;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -53,6 +68,11 @@ public class CreateManagedDatabaseGroupResponse {
             managedDatabaseGroup(o.getManagedDatabaseGroup());
 
             return this;
+        }
+
+        public CreateManagedDatabaseGroupResponse build() {
+            return new CreateManagedDatabaseGroupResponse(
+                    __httpStatusCode__, location, opcRequestId, etag, managedDatabaseGroup);
         }
     }
 }

@@ -11,12 +11,7 @@ import com.oracle.bmc.monitoring.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetAlarmHistoryResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetAlarmHistoryResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
      * a particular request, please provide the request ID.
@@ -36,7 +31,25 @@ public class GetAlarmHistoryResponse {
      */
     private com.oracle.bmc.monitoring.model.AlarmHistoryCollection alarmHistoryCollection;
 
+    private GetAlarmHistoryResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String opcNextPage,
+            com.oracle.bmc.monitoring.model.AlarmHistoryCollection alarmHistoryCollection) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.alarmHistoryCollection = alarmHistoryCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -48,6 +61,11 @@ public class GetAlarmHistoryResponse {
             alarmHistoryCollection(o.getAlarmHistoryCollection());
 
             return this;
+        }
+
+        public GetAlarmHistoryResponse build() {
+            return new GetAlarmHistoryResponse(
+                    __httpStatusCode__, opcRequestId, opcNextPage, alarmHistoryCollection);
         }
     }
 }

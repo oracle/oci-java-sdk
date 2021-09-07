@@ -11,12 +11,7 @@ import com.oracle.bmc.opsi.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class IngestDatabaseConfigurationResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class IngestDatabaseConfigurationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -36,7 +31,27 @@ public class IngestDatabaseConfigurationResponse {
     private com.oracle.bmc.opsi.model.IngestDatabaseConfigurationResponseDetails
             ingestDatabaseConfigurationResponseDetails;
 
+    private IngestDatabaseConfigurationResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.opsi.model.IngestDatabaseConfigurationResponseDetails
+                    ingestDatabaseConfigurationResponseDetails) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.ingestDatabaseConfigurationResponseDetails =
+                ingestDatabaseConfigurationResponseDetails;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -49,6 +64,14 @@ public class IngestDatabaseConfigurationResponse {
                     o.getIngestDatabaseConfigurationResponseDetails());
 
             return this;
+        }
+
+        public IngestDatabaseConfigurationResponse build() {
+            return new IngestDatabaseConfigurationResponse(
+                    __httpStatusCode__,
+                    opcRequestId,
+                    etag,
+                    ingestDatabaseConfigurationResponseDetails);
         }
     }
 }

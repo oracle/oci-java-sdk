@@ -11,12 +11,7 @@ import com.oracle.bmc.jms.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class RequestSummarizedJreUsageResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class RequestSummarizedJreUsageResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -37,7 +32,25 @@ public class RequestSummarizedJreUsageResponse {
      */
     private com.oracle.bmc.jms.model.JreUsageCollection jreUsageCollection;
 
+    private RequestSummarizedJreUsageResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String opcNextPage,
+            com.oracle.bmc.jms.model.JreUsageCollection jreUsageCollection) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.jreUsageCollection = jreUsageCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -49,6 +62,11 @@ public class RequestSummarizedJreUsageResponse {
             jreUsageCollection(o.getJreUsageCollection());
 
             return this;
+        }
+
+        public RequestSummarizedJreUsageResponse build() {
+            return new RequestSummarizedJreUsageResponse(
+                    __httpStatusCode__, opcRequestId, opcNextPage, jreUsageCollection);
         }
     }
 }

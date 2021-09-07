@@ -11,12 +11,7 @@ import com.oracle.bmc.osmanagement.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateManagedInstanceGroupResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateManagedInstanceGroupResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * A link to the created Managed Instance Group
      */
@@ -40,7 +35,27 @@ public class CreateManagedInstanceGroupResponse {
      */
     private com.oracle.bmc.osmanagement.model.ManagedInstanceGroup managedInstanceGroup;
 
+    private CreateManagedInstanceGroupResponse(
+            int __httpStatusCode__,
+            String location,
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.osmanagement.model.ManagedInstanceGroup managedInstanceGroup) {
+        super(__httpStatusCode__);
+        this.location = location;
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.managedInstanceGroup = managedInstanceGroup;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -53,6 +68,11 @@ public class CreateManagedInstanceGroupResponse {
             managedInstanceGroup(o.getManagedInstanceGroup());
 
             return this;
+        }
+
+        public CreateManagedInstanceGroupResponse build() {
+            return new CreateManagedInstanceGroupResponse(
+                    __httpStatusCode__, location, opcRequestId, etag, managedInstanceGroup);
         }
     }
 }

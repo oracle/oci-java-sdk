@@ -11,12 +11,7 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateDataMaskRuleResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateDataMaskRuleResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -35,7 +30,25 @@ public class UpdateDataMaskRuleResponse {
      */
     private com.oracle.bmc.cloudguard.model.DataMaskRule dataMaskRule;
 
+    private UpdateDataMaskRuleResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.cloudguard.model.DataMaskRule dataMaskRule) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.dataMaskRule = dataMaskRule;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,11 @@ public class UpdateDataMaskRuleResponse {
             dataMaskRule(o.getDataMaskRule());
 
             return this;
+        }
+
+        public UpdateDataMaskRuleResponse build() {
+            return new UpdateDataMaskRuleResponse(
+                    __httpStatusCode__, etag, opcRequestId, dataMaskRule);
         }
     }
 }

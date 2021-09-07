@@ -11,12 +11,7 @@ import com.oracle.bmc.networkloadbalancer.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListNetworkLoadBalancersPoliciesResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListNetworkLoadBalancersPoliciesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response,
      * then a partial list might have been returned. Include this value as the {@code page} parameter for the
@@ -38,7 +33,26 @@ public class ListNetworkLoadBalancersPoliciesResponse {
     private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancersPolicyCollection
             networkLoadBalancersPolicyCollection;
 
+    private ListNetworkLoadBalancersPoliciesResponse(
+            int __httpStatusCode__,
+            String opcNextPage,
+            String opcRequestId,
+            com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancersPolicyCollection
+                    networkLoadBalancersPolicyCollection) {
+        super(__httpStatusCode__);
+        this.opcNextPage = opcNextPage;
+        this.opcRequestId = opcRequestId;
+        this.networkLoadBalancersPolicyCollection = networkLoadBalancersPolicyCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -50,6 +64,14 @@ public class ListNetworkLoadBalancersPoliciesResponse {
             networkLoadBalancersPolicyCollection(o.getNetworkLoadBalancersPolicyCollection());
 
             return this;
+        }
+
+        public ListNetworkLoadBalancersPoliciesResponse build() {
+            return new ListNetworkLoadBalancersPoliciesResponse(
+                    __httpStatusCode__,
+                    opcNextPage,
+                    opcRequestId,
+                    networkLoadBalancersPolicyCollection);
         }
     }
 }

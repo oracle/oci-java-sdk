@@ -11,12 +11,7 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetAllDrgAttachmentsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetAllDrgAttachmentsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For list pagination. When this header appears in the response, additional pages
      * of results remain. For important details about how pagination works, see
@@ -37,7 +32,25 @@ public class GetAllDrgAttachmentsResponse {
      */
     private java.util.List<com.oracle.bmc.core.model.DrgAttachmentInfo> items;
 
+    private GetAllDrgAttachmentsResponse(
+            int __httpStatusCode__,
+            String opcNextPage,
+            String opcRequestId,
+            java.util.List<com.oracle.bmc.core.model.DrgAttachmentInfo> items) {
+        super(__httpStatusCode__);
+        this.opcNextPage = opcNextPage;
+        this.opcRequestId = opcRequestId;
+        this.items = items;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -49,6 +62,11 @@ public class GetAllDrgAttachmentsResponse {
             items(o.getItems());
 
             return this;
+        }
+
+        public GetAllDrgAttachmentsResponse build() {
+            return new GetAllDrgAttachmentsResponse(
+                    __httpStatusCode__, opcNextPage, opcRequestId, items);
         }
     }
 }

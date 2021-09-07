@@ -11,12 +11,7 @@ import com.oracle.bmc.analytics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateAnalyticsInstanceResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateAnalyticsInstanceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -35,7 +30,25 @@ public class UpdateAnalyticsInstanceResponse {
      */
     private com.oracle.bmc.analytics.model.AnalyticsInstance analyticsInstance;
 
+    private UpdateAnalyticsInstanceResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.analytics.model.AnalyticsInstance analyticsInstance) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.analyticsInstance = analyticsInstance;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,11 @@ public class UpdateAnalyticsInstanceResponse {
             analyticsInstance(o.getAnalyticsInstance());
 
             return this;
+        }
+
+        public UpdateAnalyticsInstanceResponse build() {
+            return new UpdateAnalyticsInstanceResponse(
+                    __httpStatusCode__, etag, opcRequestId, analyticsInstance);
         }
     }
 }

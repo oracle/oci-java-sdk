@@ -11,12 +11,7 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetFolderTagResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetFolderTagResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
      *
@@ -35,7 +30,25 @@ public class GetFolderTagResponse {
      */
     private com.oracle.bmc.datacatalog.model.FolderTag folderTag;
 
+    private GetFolderTagResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.datacatalog.model.FolderTag folderTag) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.folderTag = folderTag;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,10 @@ public class GetFolderTagResponse {
             folderTag(o.getFolderTag());
 
             return this;
+        }
+
+        public GetFolderTagResponse build() {
+            return new GetFolderTagResponse(__httpStatusCode__, etag, opcRequestId, folderTag);
         }
     }
 }

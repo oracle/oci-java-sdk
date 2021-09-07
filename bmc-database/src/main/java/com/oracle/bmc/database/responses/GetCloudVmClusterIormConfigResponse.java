@@ -11,12 +11,7 @@ import com.oracle.bmc.database.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetCloudVmClusterIormConfigResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetCloudVmClusterIormConfigResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
      * a particular request, please provide the request ID.
@@ -34,7 +29,25 @@ public class GetCloudVmClusterIormConfigResponse {
      */
     private com.oracle.bmc.database.model.ExadataIormConfig exadataIormConfig;
 
+    private GetCloudVmClusterIormConfigResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.database.model.ExadataIormConfig exadataIormConfig) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.exadataIormConfig = exadataIormConfig;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -46,6 +59,11 @@ public class GetCloudVmClusterIormConfigResponse {
             exadataIormConfig(o.getExadataIormConfig());
 
             return this;
+        }
+
+        public GetCloudVmClusterIormConfigResponse build() {
+            return new GetCloudVmClusterIormConfigResponse(
+                    __httpStatusCode__, opcRequestId, etag, exadataIormConfig);
         }
     }
 }

@@ -11,12 +11,7 @@ import com.oracle.bmc.managementagent.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetManagementAgentInstallKeyResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetManagementAgentInstallKeyResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -36,7 +31,26 @@ public class GetManagementAgentInstallKeyResponse {
     private com.oracle.bmc.managementagent.model.ManagementAgentInstallKey
             managementAgentInstallKey;
 
+    private GetManagementAgentInstallKeyResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.managementagent.model.ManagementAgentInstallKey
+                    managementAgentInstallKey) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.managementAgentInstallKey = managementAgentInstallKey;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -48,6 +62,11 @@ public class GetManagementAgentInstallKeyResponse {
             managementAgentInstallKey(o.getManagementAgentInstallKey());
 
             return this;
+        }
+
+        public GetManagementAgentInstallKeyResponse build() {
+            return new GetManagementAgentInstallKeyResponse(
+                    __httpStatusCode__, etag, opcRequestId, managementAgentInstallKey);
         }
     }
 }

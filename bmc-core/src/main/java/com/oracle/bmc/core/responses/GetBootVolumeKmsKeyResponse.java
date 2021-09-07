@@ -11,12 +11,7 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetBootVolumeKmsKeyResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetBootVolumeKmsKeyResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -35,7 +30,25 @@ public class GetBootVolumeKmsKeyResponse {
      */
     private com.oracle.bmc.core.model.BootVolumeKmsKey bootVolumeKmsKey;
 
+    private GetBootVolumeKmsKeyResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.core.model.BootVolumeKmsKey bootVolumeKmsKey) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.bootVolumeKmsKey = bootVolumeKmsKey;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,11 @@ public class GetBootVolumeKmsKeyResponse {
             bootVolumeKmsKey(o.getBootVolumeKmsKey());
 
             return this;
+        }
+
+        public GetBootVolumeKmsKeyResponse build() {
+            return new GetBootVolumeKmsKeyResponse(
+                    __httpStatusCode__, etag, opcRequestId, bootVolumeKmsKey);
         }
     }
 }

@@ -87,6 +87,18 @@ public interface DbManagement extends AutoCloseable {
             ChangeDatabaseParametersRequest request);
 
     /**
+     * Moves the Database Management private endpoint and its dependent resources to the specified compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ChangeDbManagementPrivateEndpointCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDbManagementPrivateEndpointCompartment API.
+     */
+    ChangeDbManagementPrivateEndpointCompartmentResponse
+            changeDbManagementPrivateEndpointCompartment(
+                    ChangeDbManagementPrivateEndpointCompartmentRequest request);
+
+    /**
      * Moves a job.
      *
      * @param request The request object containing the details to send
@@ -110,6 +122,18 @@ public interface DbManagement extends AutoCloseable {
      */
     ChangeManagedDatabaseGroupCompartmentResponse changeManagedDatabaseGroupCompartment(
             ChangeManagedDatabaseGroupCompartmentRequest request);
+
+    /**
+     * Creates a new Database Management private endpoint.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/CreateDbManagementPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDbManagementPrivateEndpoint API.
+     */
+    CreateDbManagementPrivateEndpointResponse createDbManagementPrivateEndpoint(
+            CreateDbManagementPrivateEndpointRequest request);
 
     /**
      * Creates a job to be executed on a Managed Database or Managed Database Group. Only one
@@ -138,6 +162,17 @@ public interface DbManagement extends AutoCloseable {
             CreateManagedDatabaseGroupRequest request);
 
     /**
+     * Deletes the specified Database Management private endpoint.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DeleteDbManagementPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDbManagementPrivateEndpoint API.
+     */
+    DeleteDbManagementPrivateEndpointResponse deleteDbManagementPrivateEndpoint(
+            DeleteDbManagementPrivateEndpointRequest request);
+
+    /**
      * Deletes the job specified by jobId.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -161,7 +196,7 @@ public interface DbManagement extends AutoCloseable {
             DeleteManagedDatabaseGroupRequest request);
 
     /**
-     * Gets the AWR report for the specified Managed Database.
+     * Gets the AWR report for the specific database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -172,7 +207,7 @@ public interface DbManagement extends AutoCloseable {
     GetAwrDbReportResponse getAwrDbReport(GetAwrDbReportRequest request);
 
     /**
-     * Get a AWR SQL report for one SQL.
+     * Gets the SQL health check report for one SQL of the specific database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -217,6 +252,17 @@ public interface DbManagement extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetDatabaseHomeMetricsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDatabaseHomeMetrics API.
      */
     GetDatabaseHomeMetricsResponse getDatabaseHomeMetrics(GetDatabaseHomeMetricsRequest request);
+
+    /**
+     * Gets the details of the specified Database Management private endpoint.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetDbManagementPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbManagementPrivateEndpoint API.
+     */
+    GetDbManagementPrivateEndpointResponse getDbManagementPrivateEndpoint(
+            GetDbManagementPrivateEndpointRequest request);
 
     /**
      * Gets the details for the job specified by jobId.
@@ -274,6 +320,39 @@ public interface DbManagement extends AutoCloseable {
     GetManagedDatabaseGroupResponse getManagedDatabaseGroup(GetManagedDatabaseGroupRequest request);
 
     /**
+     * Gets a summary of the resource usage metrics like DB Time, CPU, User I/O, Wait, Storage, and Memory
+     * for each Pdb under specified Container database in same compartment as container database.
+     * If comparmentId is provided then for each Pdb under specified compartmentId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetPdbMetricsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPdbMetrics API.
+     */
+    GetPdbMetricsResponse getPdbMetrics(GetPdbMetricsRequest request);
+
+    /**
+     * Gets information of the work request with the given Work Request Id.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     */
+    GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
+
+    /**
+     * Gets the list of Databases using the specified Database Management private endpoint.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListAssociatedDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAssociatedDatabases API.
+     */
+    ListAssociatedDatabasesResponse listAssociatedDatabases(ListAssociatedDatabasesRequest request);
+
+    /**
      * Lists AWR snapshots for the specified database in the AWR.
      *
      * @param request The request object containing the details to send
@@ -307,8 +386,20 @@ public interface DbManagement extends AutoCloseable {
     ListDatabaseParametersResponse listDatabaseParameters(ListDatabaseParametersRequest request);
 
     /**
-     * Gets the job execution for a specific ID or the list of job executions for a job, Managed Database or Managed Database Group
-     * in a specific compartment. Only one of the parameters, ID, jobId, managedDatabaseId or managedDatabaseGroupId should be provided.
+     * Gets a list of Database Management private endpoints.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListDbManagementPrivateEndpointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbManagementPrivateEndpoints API.
+     */
+    ListDbManagementPrivateEndpointsResponse listDbManagementPrivateEndpoints(
+            ListDbManagementPrivateEndpointsRequest request);
+
+    /**
+     * Gets the job execution for a specific ID or the list of job executions for a job, job run, Managed Database or Managed Database Group
+     * in a specific compartment. Only one of the parameters, ID, jobId, jobRunId, managedDatabaseId or managedDatabaseGroupId should be provided.
      * If none of these parameters is provided, all the job executions in the compartment are listed. Job executions can also be filtered
      * based on the name and status parameters.
      *
@@ -365,8 +456,11 @@ public interface DbManagement extends AutoCloseable {
 
     /**
      * Gets the Managed Database for a specific ID or the list of Managed Databases in a specific compartment.
-     * Managed Databases can also be filtered based on the name parameter. Only one of the parameters, ID or name
-     * should be provided. If none of these parameters is provided, all the Managed Databases in the compartment are listed.
+     * Managed Databases can be filtered based on the name parameter. Only one of the parameters, ID or name
+     * should be provided. If neither of these parameters is provided, all the Managed Databases in the compartment
+     * are listed. Managed Databases can also be filtered based on the deployment type and management option.
+     * If the deployment type is not specified or if it is `ONPREMISE`, then the management option is not
+     * considered and Managed Databases with `ADVANCED` management option are listed.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -385,6 +479,39 @@ public interface DbManagement extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListTablespacesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTablespaces API.
      */
     ListTablespacesResponse listTablespaces(ListTablespacesRequest request);
+
+    /**
+     * Returns a (paginated) list of errors for a given work request.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     */
+    ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
+
+    /**
+     * Returns a (paginated) list of logs for a given work request.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     */
+    ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
+
+    /**
+     * Lists all the work requests in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     */
+    ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
      * Removes a Managed Database from a Managed Database Group. Any management
@@ -436,7 +563,7 @@ public interface DbManagement extends AutoCloseable {
     SummarizeAwrDbMetricsResponse summarizeAwrDbMetrics(SummarizeAwrDbMetricsRequest request);
 
     /**
-     * Summarizes the AWR database parameter change history for one database parameter of the specified Managed Database. One change history record contains
+     * Summarizes the database parameter change history for one database parameter of the specified database in AWR. One change history record contains
      * the previous value, the changed value, and the corresponding time range. If the database parameter value was changed multiple times within the time range, then multiple change history records are created for the same parameter.
      * Note that this API only returns information on change history details for one database parameter.
      * To get a list of all the database parameters whose values were changed during a specified time range, use the following API endpoint:
@@ -452,13 +579,15 @@ public interface DbManagement extends AutoCloseable {
             SummarizeAwrDbParameterChangesRequest request);
 
     /**
-     * Summarizes the AWR database parameter history for the specified Managed Database. This includes the list of database
+     * Summarizes the database parameter history for the specified database in AWR. This includes the list of database
      * parameters, with information on whether the parameter values were modified within the query time range. Note that
-     * each database parameter is only listed once. The returned summary gets all the database parameters, which include:
-     *  -Each parameter whose value was changed during the time range: AwrDbParameterValueOptionalQueryParam (valueChanged =\"Y\")
-     *  -Each parameter whose value was unchanged during the time range: AwrDbParameterValueOptionalQueryParam (valueChanged =\"N\")
-     *  -Each parameter whose value was changed at the system level during the time range: (valueChanged =\"Y\"  and valueModified = \"SYSTEM_MOD\").
-     *  -Each parameter whose value was unchanged during the time range, however, the value is not the default value: (valueChanged =\"N\" and  valueDefault = \"FALSE\")
+     * each database parameter is only listed once. Depending on the optional query parameters, the returned summary gets all the database parameters, which include:
+     * <p>
+     * - Each parameter whose value was changed during the time range:  (valueChanged =\"Y\")
+     * - Each parameter whose value was unchanged during the time range:  (valueChanged =\"N\")
+     * - Each parameter whose value was changed at the system level during the time range: (valueChanged =\"Y\"  and valueModified = \"SYSTEM_MOD\")
+     * - Each parameter whose value was unchanged during the time range, however, the value is not the default value: (valueChanged =\"N\" and  valueDefault = \"FALSE\")
+     * <p>
      * Note that this API does not return information on the number of times each database parameter has been changed within the time range. To get the database parameter value change history for a specific parameter, use the following API endpoint:
      * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbParameterChanges
      *
@@ -529,6 +658,39 @@ public interface DbManagement extends AutoCloseable {
      */
     SummarizeAwrDbWaitEventsResponse summarizeAwrDbWaitEvents(
             SummarizeAwrDbWaitEventsRequest request);
+
+    /**
+     * Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeJobExecutionsStatusesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeJobExecutionsStatuses API.
+     */
+    SummarizeJobExecutionsStatusesResponse summarizeJobExecutionsStatuses(
+            SummarizeJobExecutionsStatusesRequest request);
+
+    /**
+     * Updates one or more attributes of the specified Database Management private endpoint.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateDbManagementPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDbManagementPrivateEndpoint API.
+     */
+    UpdateDbManagementPrivateEndpointResponse updateDbManagementPrivateEndpoint(
+            UpdateDbManagementPrivateEndpointRequest request);
+
+    /**
+     * Updates the details for the recurring scheduled job specified by jobId. Note that non-recurring (one time) jobs cannot be updated.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateJob API.
+     */
+    UpdateJobResponse updateJob(UpdateJobRequest request);
 
     /**
      * Updates the Managed Database Group specified by managedDatabaseGroupId.

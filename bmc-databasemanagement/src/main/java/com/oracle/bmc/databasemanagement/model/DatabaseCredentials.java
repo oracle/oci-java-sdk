@@ -44,6 +44,15 @@ public class DatabaseCredentials {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private Role role;
 
@@ -57,7 +66,8 @@ public class DatabaseCredentials {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseCredentials build() {
-            DatabaseCredentials __instance__ = new DatabaseCredentials(userName, password, role);
+            DatabaseCredentials __instance__ =
+                    new DatabaseCredentials(userName, password, secretId, role);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -65,7 +75,10 @@ public class DatabaseCredentials {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DatabaseCredentials o) {
             Builder copiedBuilder =
-                    userName(o.getUserName()).password(o.getPassword()).role(o.getRole());
+                    userName(o.getUserName())
+                            .password(o.getPassword())
+                            .secretId(o.getSecretId())
+                            .role(o.getRole());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -92,6 +105,12 @@ public class DatabaseCredentials {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     String password;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+    String secretId;
     /**
      * The role of the database user. Indicates whether the database user is a normal user or sysdba.
      **/

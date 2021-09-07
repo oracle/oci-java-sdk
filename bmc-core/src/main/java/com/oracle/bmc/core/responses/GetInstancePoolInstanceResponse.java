@@ -11,12 +11,7 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetInstancePoolInstanceResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetInstancePoolInstanceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -35,7 +30,25 @@ public class GetInstancePoolInstanceResponse {
      */
     private com.oracle.bmc.core.model.InstancePoolInstance instancePoolInstance;
 
+    private GetInstancePoolInstanceResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.core.model.InstancePoolInstance instancePoolInstance) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.instancePoolInstance = instancePoolInstance;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,11 @@ public class GetInstancePoolInstanceResponse {
             instancePoolInstance(o.getInstancePoolInstance());
 
             return this;
+        }
+
+        public GetInstancePoolInstanceResponse build() {
+            return new GetInstancePoolInstanceResponse(
+                    __httpStatusCode__, etag, opcRequestId, instancePoolInstance);
         }
     }
 }

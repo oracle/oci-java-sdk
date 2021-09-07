@@ -11,12 +11,7 @@ import com.oracle.bmc.osmanagement.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateEventResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateEventResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -35,7 +30,25 @@ public class UpdateEventResponse {
      */
     private com.oracle.bmc.osmanagement.model.Event event;
 
+    private UpdateEventResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.osmanagement.model.Event event) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.event = event;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,10 @@ public class UpdateEventResponse {
             event(o.getEvent());
 
             return this;
+        }
+
+        public UpdateEventResponse build() {
+            return new UpdateEventResponse(__httpStatusCode__, etag, opcRequestId, event);
         }
     }
 }

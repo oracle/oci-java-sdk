@@ -11,12 +11,7 @@ import com.oracle.bmc.rover.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateRoverNodeResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateRoverNodeResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -35,7 +30,25 @@ public class CreateRoverNodeResponse {
      */
     private com.oracle.bmc.rover.model.RoverNode roverNode;
 
+    private CreateRoverNodeResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.rover.model.RoverNode roverNode) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.roverNode = roverNode;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,10 @@ public class CreateRoverNodeResponse {
             roverNode(o.getRoverNode());
 
             return this;
+        }
+
+        public CreateRoverNodeResponse build() {
+            return new CreateRoverNodeResponse(__httpStatusCode__, etag, opcRequestId, roverNode);
         }
     }
 }

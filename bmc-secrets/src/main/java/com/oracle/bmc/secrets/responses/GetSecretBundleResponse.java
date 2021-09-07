@@ -11,12 +11,7 @@ import com.oracle.bmc.secrets.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetSecretBundleResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetSecretBundleResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
@@ -32,7 +27,25 @@ public class GetSecretBundleResponse {
      */
     private com.oracle.bmc.secrets.model.SecretBundle secretBundle;
 
+    private GetSecretBundleResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.secrets.model.SecretBundle secretBundle) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.secretBundle = secretBundle;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -44,6 +57,11 @@ public class GetSecretBundleResponse {
             secretBundle(o.getSecretBundle());
 
             return this;
+        }
+
+        public GetSecretBundleResponse build() {
+            return new GetSecretBundleResponse(
+                    __httpStatusCode__, etag, opcRequestId, secretBundle);
         }
     }
 }

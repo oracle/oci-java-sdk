@@ -11,12 +11,7 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListImpactedResourcesResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListImpactedResourcesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -37,7 +32,25 @@ public class ListImpactedResourcesResponse {
      */
     private com.oracle.bmc.cloudguard.model.ImpactedResourceCollection impactedResourceCollection;
 
+    private ListImpactedResourcesResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String opcNextPage,
+            com.oracle.bmc.cloudguard.model.ImpactedResourceCollection impactedResourceCollection) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.impactedResourceCollection = impactedResourceCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -49,6 +62,11 @@ public class ListImpactedResourcesResponse {
             impactedResourceCollection(o.getImpactedResourceCollection());
 
             return this;
+        }
+
+        public ListImpactedResourcesResponse build() {
+            return new ListImpactedResourcesResponse(
+                    __httpStatusCode__, opcRequestId, opcNextPage, impactedResourceCollection);
         }
     }
 }

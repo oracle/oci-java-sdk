@@ -72,6 +72,8 @@ public class TemplateCategorySummary {
 
     /**
      * Unique identifier for the template category.
+     * Possible values are {@code 0} (Quick Starts), {@code 1} (Service), {@code 2} (Architecture), and {@code 3} (Private).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;

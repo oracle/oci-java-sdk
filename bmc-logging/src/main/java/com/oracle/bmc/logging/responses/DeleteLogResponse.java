@@ -11,12 +11,7 @@ import com.oracle.bmc.logging.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class DeleteLogResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class DeleteLogResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The OCID of the work request.
      *
@@ -30,7 +25,21 @@ public class DeleteLogResponse {
      */
     private String opcRequestId;
 
+    private DeleteLogResponse(
+            int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
+        super(__httpStatusCode__);
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.opcRequestId = opcRequestId;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -41,6 +50,10 @@ public class DeleteLogResponse {
             opcRequestId(o.getOpcRequestId());
 
             return this;
+        }
+
+        public DeleteLogResponse build() {
+            return new DeleteLogResponse(__httpStatusCode__, opcWorkRequestId, opcRequestId);
         }
     }
 }

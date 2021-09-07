@@ -141,6 +141,15 @@ public class Job {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cancellationDetails")
+        private CancellationDetails cancellationDetails;
+
+        public Builder cancellationDetails(CancellationDetails cancellationDetails) {
+            this.cancellationDetails = cancellationDetails;
+            this.__explicitlySet__.add("cancellationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("workingDirectory")
         private String workingDirectory;
 
@@ -205,6 +214,7 @@ public class Job {
                             timeFinished,
                             lifecycleState,
                             failureDetails,
+                            cancellationDetails,
                             workingDirectory,
                             variables,
                             configSource,
@@ -229,6 +239,7 @@ public class Job {
                             .timeFinished(o.getTimeFinished())
                             .lifecycleState(o.getLifecycleState())
                             .failureDetails(o.getFailureDetails())
+                            .cancellationDetails(o.getCancellationDetails())
                             .workingDirectory(o.getWorkingDirectory())
                             .variables(o.getVariables())
                             .configSource(o.getConfigSource())
@@ -358,7 +369,7 @@ public class Job {
     /**
      * Current state of the specified job.
      * For more information about job lifecycle states in Resource Manager, see
-     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#JobStates).
+     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -411,7 +422,7 @@ public class Job {
     /**
      * Current state of the specified job.
      * For more information about job lifecycle states in Resource Manager, see
-     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#JobStates).
+     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
@@ -419,6 +430,9 @@ public class Job {
 
     @com.fasterxml.jackson.annotation.JsonProperty("failureDetails")
     FailureDetails failureDetails;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("cancellationDetails")
+    CancellationDetails cancellationDetails;
 
     /**
      * File path to the directory from which Terraform runs.
@@ -432,7 +446,7 @@ public class Job {
     /**
      * Terraform variables associated with this resource.
      * Maximum number of variables supported is 250.
-     * The maximum size of each variable, including both name and value, is 4096 bytes.
+     * The maximum size of each variable, including both name and value, is 8192 bytes.
      * Example: {@code {"CompartmentId": "compartment-id-value"}}
      *
      **/

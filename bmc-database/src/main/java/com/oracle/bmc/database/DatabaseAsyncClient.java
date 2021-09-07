@@ -3527,6 +3527,49 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DisableDatabaseManagementResponse> disableDatabaseManagement(
+            DisableDatabaseManagementRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DisableDatabaseManagementRequest, DisableDatabaseManagementResponse>
+                    handler) {
+        LOG.trace("Called async disableDatabaseManagement");
+        final DisableDatabaseManagementRequest interceptedRequest =
+                DisableDatabaseManagementConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableDatabaseManagementConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DisableDatabaseManagementResponse>
+                transformer = DisableDatabaseManagementConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DisableDatabaseManagementRequest, DisableDatabaseManagementResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DisableDatabaseManagementRequest,
+                                DisableDatabaseManagementResponse>,
+                        java.util.concurrent.Future<DisableDatabaseManagementResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DisableDatabaseManagementRequest, DisableDatabaseManagementResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableExternalContainerDatabaseDatabaseManagementResponse>
             disableExternalContainerDatabaseDatabaseManagement(
                     DisableExternalContainerDatabaseDatabaseManagementRequest request,
@@ -3983,6 +4026,53 @@ public class DatabaseAsyncClient implements DatabaseAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     EnableAutonomousDatabaseOperationsInsightsRequest,
                     EnableAutonomousDatabaseOperationsInsightsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableDatabaseManagementResponse> enableDatabaseManagement(
+            EnableDatabaseManagementRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            EnableDatabaseManagementRequest, EnableDatabaseManagementResponse>
+                    handler) {
+        LOG.trace("Called async enableDatabaseManagement");
+        final EnableDatabaseManagementRequest interceptedRequest =
+                EnableDatabaseManagementConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableDatabaseManagementConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, EnableDatabaseManagementResponse>
+                transformer = EnableDatabaseManagementConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        EnableDatabaseManagementRequest, EnableDatabaseManagementResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                EnableDatabaseManagementRequest, EnableDatabaseManagementResponse>,
+                        java.util.concurrent.Future<EnableDatabaseManagementResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getEnableDatabaseManagementDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    EnableDatabaseManagementRequest, EnableDatabaseManagementResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -8754,6 +8844,53 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     MigrateVaultKeyRequest, MigrateVaultKeyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyDatabaseManagementResponse> modifyDatabaseManagement(
+            ModifyDatabaseManagementRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ModifyDatabaseManagementRequest, ModifyDatabaseManagementResponse>
+                    handler) {
+        LOG.trace("Called async modifyDatabaseManagement");
+        final ModifyDatabaseManagementRequest interceptedRequest =
+                ModifyDatabaseManagementConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ModifyDatabaseManagementConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ModifyDatabaseManagementResponse>
+                transformer = ModifyDatabaseManagementConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ModifyDatabaseManagementRequest, ModifyDatabaseManagementResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ModifyDatabaseManagementRequest, ModifyDatabaseManagementResponse>,
+                        java.util.concurrent.Future<ModifyDatabaseManagementResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getModifyDatabaseManagementDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ModifyDatabaseManagementRequest, ModifyDatabaseManagementResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

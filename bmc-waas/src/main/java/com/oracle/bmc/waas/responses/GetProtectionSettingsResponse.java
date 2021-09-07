@@ -11,12 +11,7 @@ import com.oracle.bmc.waas.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetProtectionSettingsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetProtectionSettingsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
@@ -32,7 +27,25 @@ public class GetProtectionSettingsResponse {
      */
     private com.oracle.bmc.waas.model.ProtectionSettings protectionSettings;
 
+    private GetProtectionSettingsResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.waas.model.ProtectionSettings protectionSettings) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.protectionSettings = protectionSettings;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -44,6 +57,11 @@ public class GetProtectionSettingsResponse {
             protectionSettings(o.getProtectionSettings());
 
             return this;
+        }
+
+        public GetProtectionSettingsResponse build() {
+            return new GetProtectionSettingsResponse(
+                    __httpStatusCode__, etag, opcRequestId, protectionSettings);
         }
     }
 }

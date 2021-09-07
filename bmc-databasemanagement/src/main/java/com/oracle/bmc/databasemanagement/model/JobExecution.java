@@ -78,6 +78,42 @@ public class JobExecution {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
+        private DatabaseType databaseType;
+
+        public Builder databaseType(DatabaseType databaseType) {
+            this.databaseType = databaseType;
+            this.__explicitlySet__.add("databaseType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
+        private DatabaseSubType databaseSubType;
+
+        public Builder databaseSubType(DatabaseSubType databaseSubType) {
+            this.databaseSubType = databaseSubType;
+            this.__explicitlySet__.add("databaseSubType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
+        private DeploymentType deploymentType;
+
+        public Builder deploymentType(DeploymentType deploymentType) {
+            this.deploymentType = deploymentType;
+            this.__explicitlySet__.add("deploymentType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
+        private Boolean isCluster;
+
+        public Builder isCluster(Boolean isCluster) {
+            this.isCluster = isCluster;
+            this.__explicitlySet__.add("isCluster");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("jobId")
         private String jobId;
 
@@ -150,6 +186,33 @@ public class JobExecution {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("userName")
+        private String userName;
+
+        public Builder userName(String userName) {
+            this.userName = userName;
+            this.__explicitlySet__.add("userName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
+        private String sqlText;
+
+        public Builder sqlText(String sqlText) {
+            this.sqlText = sqlText;
+            this.__explicitlySet__.add("sqlText");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("scheduleDetails")
+        private JobScheduleDetails scheduleDetails;
+
+        public Builder scheduleDetails(JobScheduleDetails scheduleDetails) {
+            this.scheduleDetails = scheduleDetails;
+            this.__explicitlySet__.add("scheduleDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -162,6 +225,10 @@ public class JobExecution {
                             managedDatabaseGroupId,
                             managedDatabaseId,
                             managedDatabaseName,
+                            databaseType,
+                            databaseSubType,
+                            deploymentType,
+                            isCluster,
                             jobId,
                             jobName,
                             jobRunId,
@@ -169,7 +236,10 @@ public class JobExecution {
                             errorMessage,
                             resultDetails,
                             timeCreated,
-                            timeCompleted);
+                            timeCompleted,
+                            userName,
+                            sqlText,
+                            scheduleDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -183,6 +253,10 @@ public class JobExecution {
                             .managedDatabaseGroupId(o.getManagedDatabaseGroupId())
                             .managedDatabaseId(o.getManagedDatabaseId())
                             .managedDatabaseName(o.getManagedDatabaseName())
+                            .databaseType(o.getDatabaseType())
+                            .databaseSubType(o.getDatabaseSubType())
+                            .deploymentType(o.getDeploymentType())
+                            .isCluster(o.getIsCluster())
                             .jobId(o.getJobId())
                             .jobName(o.getJobName())
                             .jobRunId(o.getJobRunId())
@@ -190,7 +264,10 @@ public class JobExecution {
                             .errorMessage(o.getErrorMessage())
                             .resultDetails(o.getResultDetails())
                             .timeCreated(o.getTimeCreated())
-                            .timeCompleted(o.getTimeCompleted());
+                            .timeCompleted(o.getTimeCompleted())
+                            .userName(o.getUserName())
+                            .sqlText(o.getSqlText())
+                            .scheduleDetails(o.getScheduleDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -239,6 +316,30 @@ public class JobExecution {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseName")
     String managedDatabaseName;
+
+    /**
+     * The type of Oracle Database installation.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
+    DatabaseType databaseType;
+
+    /**
+     * The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
+    DatabaseSubType databaseSubType;
+
+    /**
+     * A list of the supported infrastructure that can be used to deploy the database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
+    DeploymentType deploymentType;
+
+    /**
+     * Indicates whether the Oracle Database is part of a cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
+    Boolean isCluster;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the parent job.
@@ -332,6 +433,21 @@ public class JobExecution {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCompleted")
     java.util.Date timeCompleted;
+
+    /**
+     * The database user name used to execute the SQL job.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("userName")
+    String userName;
+
+    /**
+     * The SQL text executed as part of the job.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
+    String sqlText;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("scheduleDetails")
+    JobScheduleDetails scheduleDetails;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

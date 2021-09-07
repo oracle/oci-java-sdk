@@ -80,6 +80,42 @@ public class JobExecutionSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
+        private DatabaseType databaseType;
+
+        public Builder databaseType(DatabaseType databaseType) {
+            this.databaseType = databaseType;
+            this.__explicitlySet__.add("databaseType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
+        private DatabaseSubType databaseSubType;
+
+        public Builder databaseSubType(DatabaseSubType databaseSubType) {
+            this.databaseSubType = databaseSubType;
+            this.__explicitlySet__.add("databaseSubType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
+        private DeploymentType deploymentType;
+
+        public Builder deploymentType(DeploymentType deploymentType) {
+            this.deploymentType = deploymentType;
+            this.__explicitlySet__.add("deploymentType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
+        private Boolean isCluster;
+
+        public Builder isCluster(Boolean isCluster) {
+            this.isCluster = isCluster;
+            this.__explicitlySet__.add("isCluster");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("jobId")
         private String jobId;
 
@@ -137,6 +173,10 @@ public class JobExecutionSummary {
                             managedDatabaseGroupId,
                             managedDatabaseId,
                             managedDatabaseName,
+                            databaseType,
+                            databaseSubType,
+                            deploymentType,
+                            isCluster,
                             jobId,
                             jobName,
                             status,
@@ -155,6 +195,10 @@ public class JobExecutionSummary {
                             .managedDatabaseGroupId(o.getManagedDatabaseGroupId())
                             .managedDatabaseId(o.getManagedDatabaseId())
                             .managedDatabaseName(o.getManagedDatabaseName())
+                            .databaseType(o.getDatabaseType())
+                            .databaseSubType(o.getDatabaseSubType())
+                            .deploymentType(o.getDeploymentType())
+                            .isCluster(o.getIsCluster())
                             .jobId(o.getJobId())
                             .jobName(o.getJobName())
                             .status(o.getStatus())
@@ -208,6 +252,30 @@ public class JobExecutionSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseName")
     String managedDatabaseName;
+
+    /**
+     * The type of Oracle Database installation.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
+    DatabaseType databaseType;
+
+    /**
+     * The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
+    DatabaseSubType databaseSubType;
+
+    /**
+     * A list of the supported infrastructure that can be used to deploy the database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
+    DeploymentType deploymentType;
+
+    /**
+     * Indicates whether the Oracle Database is part of a cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
+    Boolean isCluster;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the parent job.

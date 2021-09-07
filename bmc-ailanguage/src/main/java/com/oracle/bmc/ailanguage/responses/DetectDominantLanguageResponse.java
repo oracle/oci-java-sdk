@@ -11,12 +11,7 @@ import com.oracle.bmc.ailanguage.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class DetectDominantLanguageResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class DetectDominantLanguageResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, provide the request ID.
@@ -30,7 +25,24 @@ public class DetectDominantLanguageResponse {
     private com.oracle.bmc.ailanguage.model.DetectDominantLanguageResult
             detectDominantLanguageResult;
 
+    private DetectDominantLanguageResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            com.oracle.bmc.ailanguage.model.DetectDominantLanguageResult
+                    detectDominantLanguageResult) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.detectDominantLanguageResult = detectDominantLanguageResult;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -41,6 +53,11 @@ public class DetectDominantLanguageResponse {
             detectDominantLanguageResult(o.getDetectDominantLanguageResult());
 
             return this;
+        }
+
+        public DetectDominantLanguageResponse build() {
+            return new DetectDominantLanguageResponse(
+                    __httpStatusCode__, opcRequestId, detectDominantLanguageResult);
         }
     }
 }

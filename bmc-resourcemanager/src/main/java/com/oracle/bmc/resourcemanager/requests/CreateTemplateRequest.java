@@ -43,12 +43,6 @@ public class CreateTemplateRequest
     private String opcRetryToken;
 
     /**
-     * This is to enable limit/quota support through splat
-     *
-     */
-    private String ociSplatGeneratedOcids;
-
-    /**
      * Alternative accessor for the body parameter.
      * @return body parameter
      */
@@ -96,7 +90,6 @@ public class CreateTemplateRequest
             createTemplateDetails(o.getCreateTemplateDetails());
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
-            ociSplatGeneratedOcids(o.getOciSplatGeneratedOcids());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

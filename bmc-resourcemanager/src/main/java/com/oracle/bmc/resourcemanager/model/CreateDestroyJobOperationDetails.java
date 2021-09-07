@@ -33,6 +33,15 @@ public class CreateDestroyJobOperationDetails extends CreateJobOperationDetails 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("terraformAdvancedOptions")
+        private TerraformAdvancedOptions terraformAdvancedOptions;
+
+        public Builder terraformAdvancedOptions(TerraformAdvancedOptions terraformAdvancedOptions) {
+            this.terraformAdvancedOptions = terraformAdvancedOptions;
+            this.__explicitlySet__.add("terraformAdvancedOptions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("executionPlanStrategy")
         private DestroyJobOperationDetails.ExecutionPlanStrategy executionPlanStrategy;
 
@@ -48,14 +57,17 @@ public class CreateDestroyJobOperationDetails extends CreateJobOperationDetails 
 
         public CreateDestroyJobOperationDetails build() {
             CreateDestroyJobOperationDetails __instance__ =
-                    new CreateDestroyJobOperationDetails(executionPlanStrategy);
+                    new CreateDestroyJobOperationDetails(
+                            terraformAdvancedOptions, executionPlanStrategy);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateDestroyJobOperationDetails o) {
-            Builder copiedBuilder = executionPlanStrategy(o.getExecutionPlanStrategy());
+            Builder copiedBuilder =
+                    terraformAdvancedOptions(o.getTerraformAdvancedOptions())
+                            .executionPlanStrategy(o.getExecutionPlanStrategy());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -71,10 +83,15 @@ public class CreateDestroyJobOperationDetails extends CreateJobOperationDetails 
 
     @Deprecated
     public CreateDestroyJobOperationDetails(
+            TerraformAdvancedOptions terraformAdvancedOptions,
             DestroyJobOperationDetails.ExecutionPlanStrategy executionPlanStrategy) {
         super();
+        this.terraformAdvancedOptions = terraformAdvancedOptions;
         this.executionPlanStrategy = executionPlanStrategy;
     }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("terraformAdvancedOptions")
+    TerraformAdvancedOptions terraformAdvancedOptions;
 
     /**
      * Specifies the source of the execution plan to apply.

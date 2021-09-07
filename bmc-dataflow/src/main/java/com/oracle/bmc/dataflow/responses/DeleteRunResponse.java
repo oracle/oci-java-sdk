@@ -11,12 +11,7 @@ import com.oracle.bmc.dataflow.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class DeleteRunResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class DeleteRunResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle assigned identifier for the request.
      * If you need to contact Oracle about a particular request, please provide the request ID.
@@ -24,7 +19,19 @@ public class DeleteRunResponse {
      */
     private String opcRequestId;
 
+    private DeleteRunResponse(int __httpStatusCode__, String opcRequestId) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -34,6 +41,10 @@ public class DeleteRunResponse {
             opcRequestId(o.getOpcRequestId());
 
             return this;
+        }
+
+        public DeleteRunResponse build() {
+            return new DeleteRunResponse(__httpStatusCode__, opcRequestId);
         }
     }
 }

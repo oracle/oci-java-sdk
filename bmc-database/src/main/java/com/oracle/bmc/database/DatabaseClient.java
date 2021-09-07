@@ -2693,6 +2693,38 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public DisableDatabaseManagementResponse disableDatabaseManagement(
+            DisableDatabaseManagementRequest request) {
+        LOG.trace("Called disableDatabaseManagement");
+        final DisableDatabaseManagementRequest interceptedRequest =
+                DisableDatabaseManagementConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableDatabaseManagementConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DisableDatabaseManagementResponse>
+                transformer = DisableDatabaseManagementConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DisableExternalContainerDatabaseDatabaseManagementResponse
             disableExternalContainerDatabaseDatabaseManagement(
                     DisableExternalContainerDatabaseDatabaseManagementRequest request) {
@@ -3028,6 +3060,40 @@ public class DatabaseClient implements Database {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public EnableDatabaseManagementResponse enableDatabaseManagement(
+            EnableDatabaseManagementRequest request) {
+        LOG.trace("Called enableDatabaseManagement");
+        final EnableDatabaseManagementRequest interceptedRequest =
+                EnableDatabaseManagementConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableDatabaseManagementConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, EnableDatabaseManagementResponse>
+                transformer = EnableDatabaseManagementConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getEnableDatabaseManagementDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -6345,6 +6411,40 @@ public class DatabaseClient implements Database {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getMigrateVaultKeyDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ModifyDatabaseManagementResponse modifyDatabaseManagement(
+            ModifyDatabaseManagementRequest request) {
+        LOG.trace("Called modifyDatabaseManagement");
+        final ModifyDatabaseManagementRequest interceptedRequest =
+                ModifyDatabaseManagementConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ModifyDatabaseManagementConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ModifyDatabaseManagementResponse>
+                transformer = ModifyDatabaseManagementConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getModifyDatabaseManagementDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

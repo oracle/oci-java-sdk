@@ -11,12 +11,7 @@ import com.oracle.bmc.database.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetAutonomousVmClusterResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetAutonomousVmClusterResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
@@ -34,7 +29,25 @@ public class GetAutonomousVmClusterResponse {
      */
     private com.oracle.bmc.database.model.AutonomousVmCluster autonomousVmCluster;
 
+    private GetAutonomousVmClusterResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.database.model.AutonomousVmCluster autonomousVmCluster) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.autonomousVmCluster = autonomousVmCluster;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -46,6 +59,11 @@ public class GetAutonomousVmClusterResponse {
             autonomousVmCluster(o.getAutonomousVmCluster());
 
             return this;
+        }
+
+        public GetAutonomousVmClusterResponse build() {
+            return new GetAutonomousVmClusterResponse(
+                    __httpStatusCode__, etag, opcRequestId, autonomousVmCluster);
         }
     }
 }

@@ -11,12 +11,7 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateVolumeBackupResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateVolumeBackupResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -28,7 +23,23 @@ public class UpdateVolumeBackupResponse {
      */
     private com.oracle.bmc.core.model.VolumeBackup volumeBackup;
 
+    private UpdateVolumeBackupResponse(
+            int __httpStatusCode__,
+            String etag,
+            com.oracle.bmc.core.model.VolumeBackup volumeBackup) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.volumeBackup = volumeBackup;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -39,6 +50,10 @@ public class UpdateVolumeBackupResponse {
             volumeBackup(o.getVolumeBackup());
 
             return this;
+        }
+
+        public UpdateVolumeBackupResponse build() {
+            return new UpdateVolumeBackupResponse(__httpStatusCode__, etag, volumeBackup);
         }
     }
 }

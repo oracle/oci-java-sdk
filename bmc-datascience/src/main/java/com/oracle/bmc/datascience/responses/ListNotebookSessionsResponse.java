@@ -11,12 +11,7 @@ import com.oracle.bmc.datascience.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListNotebookSessionsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListNotebookSessionsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
@@ -41,7 +36,27 @@ public class ListNotebookSessionsResponse {
      */
     private java.util.List<com.oracle.bmc.datascience.model.NotebookSessionSummary> items;
 
+    private ListNotebookSessionsResponse(
+            int __httpStatusCode__,
+            String opcNextPage,
+            String opcPrevPage,
+            String opcRequestId,
+            java.util.List<com.oracle.bmc.datascience.model.NotebookSessionSummary> items) {
+        super(__httpStatusCode__);
+        this.opcNextPage = opcNextPage;
+        this.opcPrevPage = opcPrevPage;
+        this.opcRequestId = opcRequestId;
+        this.items = items;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -54,6 +69,11 @@ public class ListNotebookSessionsResponse {
             items(o.getItems());
 
             return this;
+        }
+
+        public ListNotebookSessionsResponse build() {
+            return new ListNotebookSessionsResponse(
+                    __httpStatusCode__, opcNextPage, opcPrevPage, opcRequestId, items);
         }
     }
 }

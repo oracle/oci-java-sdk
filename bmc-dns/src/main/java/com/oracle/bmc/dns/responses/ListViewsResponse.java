@@ -11,12 +11,7 @@ import com.oracle.bmc.dns.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListViewsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListViewsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to
      * contact Oracle about a particular request, please provide the request ID.
@@ -37,7 +32,25 @@ public class ListViewsResponse {
      */
     private java.util.List<com.oracle.bmc.dns.model.ViewSummary> items;
 
+    private ListViewsResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String opcNextPage,
+            java.util.List<com.oracle.bmc.dns.model.ViewSummary> items) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.items = items;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -49,6 +62,10 @@ public class ListViewsResponse {
             items(o.getItems());
 
             return this;
+        }
+
+        public ListViewsResponse build() {
+            return new ListViewsResponse(__httpStatusCode__, opcRequestId, opcNextPage, items);
         }
     }
 }

@@ -11,12 +11,7 @@ import com.oracle.bmc.waas.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListCachingRulesResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListCachingRulesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
@@ -37,7 +32,27 @@ public class ListCachingRulesResponse {
      */
     private java.util.List<com.oracle.bmc.waas.model.CachingRuleSummary> items;
 
+    private ListCachingRulesResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcNextPage,
+            String opcRequestId,
+            java.util.List<com.oracle.bmc.waas.model.CachingRuleSummary> items) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcNextPage = opcNextPage;
+        this.opcRequestId = opcRequestId;
+        this.items = items;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -50,6 +65,11 @@ public class ListCachingRulesResponse {
             items(o.getItems());
 
             return this;
+        }
+
+        public ListCachingRulesResponse build() {
+            return new ListCachingRulesResponse(
+                    __httpStatusCode__, etag, opcNextPage, opcRequestId, items);
         }
     }
 }

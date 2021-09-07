@@ -11,12 +11,7 @@ import com.oracle.bmc.managementdashboard.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class DeleteManagementSavedSearchResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class DeleteManagementSavedSearchResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
      *
@@ -30,7 +25,21 @@ public class DeleteManagementSavedSearchResponse {
      */
     private String opcRequestId;
 
+    private DeleteManagementSavedSearchResponse(
+            int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
+        super(__httpStatusCode__);
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.opcRequestId = opcRequestId;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -41,6 +50,11 @@ public class DeleteManagementSavedSearchResponse {
             opcRequestId(o.getOpcRequestId());
 
             return this;
+        }
+
+        public DeleteManagementSavedSearchResponse build() {
+            return new DeleteManagementSavedSearchResponse(
+                    __httpStatusCode__, opcWorkRequestId, opcRequestId);
         }
     }
 }

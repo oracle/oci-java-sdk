@@ -11,12 +11,7 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListObjectsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListObjectsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
      */
@@ -34,7 +29,25 @@ public class ListObjectsResponse {
      */
     private com.oracle.bmc.objectstorage.model.ListObjects listObjects;
 
+    private ListObjectsResponse(
+            int __httpStatusCode__,
+            String opcClientRequestId,
+            String opcRequestId,
+            com.oracle.bmc.objectstorage.model.ListObjects listObjects) {
+        super(__httpStatusCode__);
+        this.opcClientRequestId = opcClientRequestId;
+        this.opcRequestId = opcRequestId;
+        this.listObjects = listObjects;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -46,6 +59,11 @@ public class ListObjectsResponse {
             listObjects(o.getListObjects());
 
             return this;
+        }
+
+        public ListObjectsResponse build() {
+            return new ListObjectsResponse(
+                    __httpStatusCode__, opcClientRequestId, opcRequestId, listObjects);
         }
     }
 }

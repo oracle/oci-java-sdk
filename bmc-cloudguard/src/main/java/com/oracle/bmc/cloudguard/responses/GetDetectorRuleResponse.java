@@ -11,12 +11,7 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetDetectorRuleResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetDetectorRuleResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -43,7 +38,27 @@ public class GetDetectorRuleResponse {
      */
     private com.oracle.bmc.cloudguard.model.DetectorRule detectorRule;
 
+    private GetDetectorRuleResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            String opcNextPage,
+            com.oracle.bmc.cloudguard.model.DetectorRule detectorRule) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.detectorRule = detectorRule;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -56,6 +71,11 @@ public class GetDetectorRuleResponse {
             detectorRule(o.getDetectorRule());
 
             return this;
+        }
+
+        public GetDetectorRuleResponse build() {
+            return new GetDetectorRuleResponse(
+                    __httpStatusCode__, etag, opcRequestId, opcNextPage, detectorRule);
         }
     }
 }

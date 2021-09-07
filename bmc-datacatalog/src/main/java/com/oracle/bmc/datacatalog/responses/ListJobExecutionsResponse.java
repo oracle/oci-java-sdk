@@ -11,12 +11,7 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListJobExecutionsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListJobExecutionsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -35,7 +30,25 @@ public class ListJobExecutionsResponse {
      */
     private com.oracle.bmc.datacatalog.model.JobExecutionCollection jobExecutionCollection;
 
+    private ListJobExecutionsResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String opcNextPage,
+            com.oracle.bmc.datacatalog.model.JobExecutionCollection jobExecutionCollection) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.jobExecutionCollection = jobExecutionCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,11 @@ public class ListJobExecutionsResponse {
             jobExecutionCollection(o.getJobExecutionCollection());
 
             return this;
+        }
+
+        public ListJobExecutionsResponse build() {
+            return new ListJobExecutionsResponse(
+                    __httpStatusCode__, opcRequestId, opcNextPage, jobExecutionCollection);
         }
     }
 }

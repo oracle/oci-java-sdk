@@ -62,6 +62,24 @@ public class DatabaseUsageMetrics {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
+        private DeploymentType deploymentType;
+
+        public Builder deploymentType(DeploymentType deploymentType) {
+            this.deploymentType = deploymentType;
+            this.__explicitlySet__.add("deploymentType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
+        private String databaseVersion;
+
+        public Builder databaseVersion(String databaseVersion) {
+            this.databaseVersion = databaseVersion;
+            this.__explicitlySet__.add("databaseVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
         private String databaseName;
 
@@ -99,6 +117,8 @@ public class DatabaseUsageMetrics {
                             compartmentId,
                             databaseType,
                             databaseSubType,
+                            deploymentType,
+                            databaseVersion,
                             databaseName,
                             databaseContainerId,
                             metrics);
@@ -113,6 +133,8 @@ public class DatabaseUsageMetrics {
                             .compartmentId(o.getCompartmentId())
                             .databaseType(o.getDatabaseType())
                             .databaseSubType(o.getDatabaseSubType())
+                            .deploymentType(o.getDeploymentType())
+                            .databaseVersion(o.getDatabaseVersion())
                             .databaseName(o.getDatabaseName())
                             .databaseContainerId(o.getDatabaseContainerId())
                             .metrics(o.getMetrics());
@@ -152,6 +174,18 @@ public class DatabaseUsageMetrics {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
     DatabaseSubType databaseSubType;
+
+    /**
+     * The infrastructure used to deploy the Oracle Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
+    DeploymentType deploymentType;
+
+    /**
+     * The Oracle Database version.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
+    String databaseVersion;
 
     /**
      * The display name of the Managed Database.

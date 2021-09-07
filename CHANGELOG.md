@@ -3,6 +3,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.5.0 - 2021-09-07
+### Added
+- Support for terraform advanced options (detailed log level, refresh, and parallelism) on jobs in the Resource Manager service
+- Support for forced cancellation when cancelling jobs in the Resource Manager service
+- Support for getting the detailed log content of a job in the Resource Manager service
+- Support for provider information in the responses of list operations in the Management Dashboard service
+- Support for scheduled jobs in Database Management service
+- Support for monitoring and management of OCI virtual machine, bare metal, and ExaCS databases in the Database Management service
+- Support for a unified way of managing both external and cloud databases in the Database Management service
+- Support for metrics and Performance Hub on virtual machine, bare metal, and ExaCS databases in the Database Management service
+
+### Breaking Changes
+- Method `public java.lang.String getOciSplatGeneratedOcids()` has been removed from `com.oracle.bmc.resourcemanager.requests.CreateTemplateRequest` in the Resource Manager service 
+
 ## 2.4.2 - 2021-08-31
 ### Added
 - Support for Oracle Analytics Cloud and OCI Vault integration on connections in the Data Catalog service

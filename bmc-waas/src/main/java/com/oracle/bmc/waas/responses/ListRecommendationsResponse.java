@@ -11,12 +11,7 @@ import com.oracle.bmc.waas.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListRecommendationsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListRecommendationsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
@@ -37,7 +32,27 @@ public class ListRecommendationsResponse {
      */
     private java.util.List<com.oracle.bmc.waas.model.Recommendation> items;
 
+    private ListRecommendationsResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcNextPage,
+            String opcRequestId,
+            java.util.List<com.oracle.bmc.waas.model.Recommendation> items) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcNextPage = opcNextPage;
+        this.opcRequestId = opcRequestId;
+        this.items = items;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -50,6 +65,11 @@ public class ListRecommendationsResponse {
             items(o.getItems());
 
             return this;
+        }
+
+        public ListRecommendationsResponse build() {
+            return new ListRecommendationsResponse(
+                    __httpStatusCode__, etag, opcNextPage, opcRequestId, items);
         }
     }
 }

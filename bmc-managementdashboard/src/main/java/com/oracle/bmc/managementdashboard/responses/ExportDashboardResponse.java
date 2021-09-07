@@ -11,12 +11,7 @@ import com.oracle.bmc.managementdashboard.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ExportDashboardResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ExportDashboardResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
      *
@@ -36,7 +31,26 @@ public class ExportDashboardResponse {
     private com.oracle.bmc.managementdashboard.model.ManagementDashboardExportDetails
             managementDashboardExportDetails;
 
+    private ExportDashboardResponse(
+            int __httpStatusCode__,
+            String opcWorkRequestId,
+            String opcRequestId,
+            com.oracle.bmc.managementdashboard.model.ManagementDashboardExportDetails
+                    managementDashboardExportDetails) {
+        super(__httpStatusCode__);
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.opcRequestId = opcRequestId;
+        this.managementDashboardExportDetails = managementDashboardExportDetails;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -48,6 +62,14 @@ public class ExportDashboardResponse {
             managementDashboardExportDetails(o.getManagementDashboardExportDetails());
 
             return this;
+        }
+
+        public ExportDashboardResponse build() {
+            return new ExportDashboardResponse(
+                    __httpStatusCode__,
+                    opcWorkRequestId,
+                    opcRequestId,
+                    managementDashboardExportDetails);
         }
     }
 }

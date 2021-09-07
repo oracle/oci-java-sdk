@@ -11,12 +11,7 @@ import com.oracle.bmc.integration.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class DeleteIntegrationInstanceResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class DeleteIntegrationInstanceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous request.
      * You can use this to query status of the asynchronous operation.
@@ -32,7 +27,21 @@ public class DeleteIntegrationInstanceResponse {
      */
     private String opcRequestId;
 
+    private DeleteIntegrationInstanceResponse(
+            int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
+        super(__httpStatusCode__);
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.opcRequestId = opcRequestId;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -43,6 +52,11 @@ public class DeleteIntegrationInstanceResponse {
             opcRequestId(o.getOpcRequestId());
 
             return this;
+        }
+
+        public DeleteIntegrationInstanceResponse build() {
+            return new DeleteIntegrationInstanceResponse(
+                    __httpStatusCode__, opcWorkRequestId, opcRequestId);
         }
     }
 }

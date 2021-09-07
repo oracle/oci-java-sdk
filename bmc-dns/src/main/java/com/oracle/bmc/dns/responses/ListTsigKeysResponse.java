@@ -11,12 +11,7 @@ import com.oracle.bmc.dns.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListTsigKeysResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListTsigKeysResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For list pagination. When this header appears in the response, additional pages
      * of results remain. For important details about how pagination works,
@@ -37,7 +32,25 @@ public class ListTsigKeysResponse {
      */
     private java.util.List<com.oracle.bmc.dns.model.TsigKeySummary> items;
 
+    private ListTsigKeysResponse(
+            int __httpStatusCode__,
+            String opcNextPage,
+            String opcRequestId,
+            java.util.List<com.oracle.bmc.dns.model.TsigKeySummary> items) {
+        super(__httpStatusCode__);
+        this.opcNextPage = opcNextPage;
+        this.opcRequestId = opcRequestId;
+        this.items = items;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -49,6 +62,10 @@ public class ListTsigKeysResponse {
             items(o.getItems());
 
             return this;
+        }
+
+        public ListTsigKeysResponse build() {
+            return new ListTsigKeysResponse(__httpStatusCode__, opcNextPage, opcRequestId, items);
         }
     }
 }

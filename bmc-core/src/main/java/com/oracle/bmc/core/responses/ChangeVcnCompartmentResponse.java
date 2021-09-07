@@ -11,12 +11,7 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ChangeVcnCompartmentResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ChangeVcnCompartmentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -37,7 +32,22 @@ public class ChangeVcnCompartmentResponse {
      */
     private String opcWorkRequestId;
 
+    private ChangeVcnCompartmentResponse(
+            int __httpStatusCode__, String etag, String opcRequestId, String opcWorkRequestId) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -49,6 +59,11 @@ public class ChangeVcnCompartmentResponse {
             opcWorkRequestId(o.getOpcWorkRequestId());
 
             return this;
+        }
+
+        public ChangeVcnCompartmentResponse build() {
+            return new ChangeVcnCompartmentResponse(
+                    __httpStatusCode__, etag, opcRequestId, opcWorkRequestId);
         }
     }
 }

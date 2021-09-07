@@ -11,12 +11,7 @@ import com.oracle.bmc.optimizer.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateProfileResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateProfileResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -35,7 +30,25 @@ public class CreateProfileResponse {
      */
     private com.oracle.bmc.optimizer.model.Profile profile;
 
+    private CreateProfileResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.optimizer.model.Profile profile) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.profile = profile;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,10 @@ public class CreateProfileResponse {
             profile(o.getProfile());
 
             return this;
+        }
+
+        public CreateProfileResponse build() {
+            return new CreateProfileResponse(__httpStatusCode__, etag, opcRequestId, profile);
         }
     }
 }

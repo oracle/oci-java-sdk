@@ -11,12 +11,7 @@ import com.oracle.bmc.networkloadbalancer.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListBackendSetsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListBackendSetsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you must contact
      * Oracle about a particular request, then provide the request identifier.
@@ -37,7 +32,25 @@ public class ListBackendSetsResponse {
      */
     private com.oracle.bmc.networkloadbalancer.model.BackendSetCollection backendSetCollection;
 
+    private ListBackendSetsResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String opcNextPage,
+            com.oracle.bmc.networkloadbalancer.model.BackendSetCollection backendSetCollection) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.backendSetCollection = backendSetCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -49,6 +62,11 @@ public class ListBackendSetsResponse {
             backendSetCollection(o.getBackendSetCollection());
 
             return this;
+        }
+
+        public ListBackendSetsResponse build() {
+            return new ListBackendSetsResponse(
+                    __httpStatusCode__, opcRequestId, opcNextPage, backendSetCollection);
         }
     }
 }

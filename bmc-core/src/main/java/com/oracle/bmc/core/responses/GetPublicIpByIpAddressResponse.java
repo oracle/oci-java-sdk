@@ -11,12 +11,7 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetPublicIpByIpAddressResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetPublicIpByIpAddressResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -35,7 +30,25 @@ public class GetPublicIpByIpAddressResponse {
      */
     private com.oracle.bmc.core.model.PublicIp publicIp;
 
+    private GetPublicIpByIpAddressResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.core.model.PublicIp publicIp) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.publicIp = publicIp;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,11 @@ public class GetPublicIpByIpAddressResponse {
             publicIp(o.getPublicIp());
 
             return this;
+        }
+
+        public GetPublicIpByIpAddressResponse build() {
+            return new GetPublicIpByIpAddressResponse(
+                    __httpStatusCode__, etag, opcRequestId, publicIp);
         }
     }
 }

@@ -11,12 +11,7 @@ import com.oracle.bmc.budget.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetAlertRuleResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetAlertRuleResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
@@ -35,7 +30,25 @@ public class GetAlertRuleResponse {
      */
     private com.oracle.bmc.budget.model.AlertRule alertRule;
 
+    private GetAlertRuleResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.budget.model.AlertRule alertRule) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.alertRule = alertRule;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,10 @@ public class GetAlertRuleResponse {
             alertRule(o.getAlertRule());
 
             return this;
+        }
+
+        public GetAlertRuleResponse build() {
+            return new GetAlertRuleResponse(__httpStatusCode__, etag, opcRequestId, alertRule);
         }
     }
 }

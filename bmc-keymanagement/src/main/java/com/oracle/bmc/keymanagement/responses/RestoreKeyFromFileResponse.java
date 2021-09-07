@@ -11,12 +11,7 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class RestoreKeyFromFileResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class RestoreKeyFromFileResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
@@ -48,7 +43,29 @@ public class RestoreKeyFromFileResponse {
      */
     private com.oracle.bmc.keymanagement.model.Key key;
 
+    private RestoreKeyFromFileResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcContentMd5,
+            String opcRequestId,
+            String opcWorkRequestId,
+            com.oracle.bmc.keymanagement.model.Key key) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcContentMd5 = opcContentMd5;
+        this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.key = key;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -62,6 +79,11 @@ public class RestoreKeyFromFileResponse {
             key(o.getKey());
 
             return this;
+        }
+
+        public RestoreKeyFromFileResponse build() {
+            return new RestoreKeyFromFileResponse(
+                    __httpStatusCode__, etag, opcContentMd5, opcRequestId, opcWorkRequestId, key);
         }
     }
 }

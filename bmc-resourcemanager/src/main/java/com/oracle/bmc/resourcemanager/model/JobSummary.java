@@ -259,7 +259,7 @@ public class JobSummary {
     /**
      * Current state of the specified job.
      * For more information about job lifecycle states in Resource Manager, see
-     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#JobStates).
+     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
      * <p>
      * Allowable values:
      * - ACCEPTED

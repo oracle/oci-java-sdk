@@ -11,12 +11,8 @@ import com.oracle.bmc.dts.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetTransferApplianceCertificateAuthorityCertificateResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetTransferApplianceCertificateAuthorityCertificateResponse
+        extends com.oracle.bmc.responses.BmcResponse {
     /**
      *
      */
@@ -32,7 +28,25 @@ public class GetTransferApplianceCertificateAuthorityCertificateResponse {
      */
     private com.oracle.bmc.dts.model.TransferApplianceCertificate transferApplianceCertificate;
 
+    private GetTransferApplianceCertificateAuthorityCertificateResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.dts.model.TransferApplianceCertificate transferApplianceCertificate) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.transferApplianceCertificate = transferApplianceCertificate;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -44,6 +58,11 @@ public class GetTransferApplianceCertificateAuthorityCertificateResponse {
             transferApplianceCertificate(o.getTransferApplianceCertificate());
 
             return this;
+        }
+
+        public GetTransferApplianceCertificateAuthorityCertificateResponse build() {
+            return new GetTransferApplianceCertificateAuthorityCertificateResponse(
+                    __httpStatusCode__, opcRequestId, etag, transferApplianceCertificate);
         }
     }
 }

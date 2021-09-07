@@ -11,12 +11,7 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListFoldersResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListFoldersResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -47,7 +42,29 @@ public class ListFoldersResponse {
      */
     private com.oracle.bmc.dataintegration.model.FolderSummaryCollection folderSummaryCollection;
 
+    private ListFoldersResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String opcNextPage,
+            String opcPrevPage,
+            Integer opcTotalItems,
+            com.oracle.bmc.dataintegration.model.FolderSummaryCollection folderSummaryCollection) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.opcPrevPage = opcPrevPage;
+        this.opcTotalItems = opcTotalItems;
+        this.folderSummaryCollection = folderSummaryCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -61,6 +78,16 @@ public class ListFoldersResponse {
             folderSummaryCollection(o.getFolderSummaryCollection());
 
             return this;
+        }
+
+        public ListFoldersResponse build() {
+            return new ListFoldersResponse(
+                    __httpStatusCode__,
+                    opcRequestId,
+                    opcNextPage,
+                    opcPrevPage,
+                    opcTotalItems,
+                    folderSummaryCollection);
         }
     }
 }

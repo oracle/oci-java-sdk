@@ -11,12 +11,7 @@ import com.oracle.bmc.artifacts.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateContainerConfigurationResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateContainerConfigurationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -35,7 +30,25 @@ public class UpdateContainerConfigurationResponse {
      */
     private com.oracle.bmc.artifacts.model.ContainerConfiguration containerConfiguration;
 
+    private UpdateContainerConfigurationResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.artifacts.model.ContainerConfiguration containerConfiguration) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.containerConfiguration = containerConfiguration;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,11 @@ public class UpdateContainerConfigurationResponse {
             containerConfiguration(o.getContainerConfiguration());
 
             return this;
+        }
+
+        public UpdateContainerConfigurationResponse build() {
+            return new UpdateContainerConfigurationResponse(
+                    __httpStatusCode__, etag, opcRequestId, containerConfiguration);
         }
     }
 }

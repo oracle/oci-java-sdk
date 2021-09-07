@@ -11,18 +11,26 @@ import com.oracle.bmc.audit.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetConfigurationResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetConfigurationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The returned Configuration instance.
      */
     private com.oracle.bmc.audit.model.Configuration configuration;
 
+    private GetConfigurationResponse(
+            int __httpStatusCode__, com.oracle.bmc.audit.model.Configuration configuration) {
+        super(__httpStatusCode__);
+        this.configuration = configuration;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -33,6 +41,10 @@ public class GetConfigurationResponse {
             configuration(o.getConfiguration());
 
             return this;
+        }
+
+        public GetConfigurationResponse build() {
+            return new GetConfigurationResponse(__httpStatusCode__, configuration);
         }
     }
 }

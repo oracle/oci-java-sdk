@@ -11,12 +11,7 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListAssociatedEntitiesResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListAssociatedEntitiesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response,
      * then additional items may be available on the previous page of the list. Include this value as the {@code page} parameter for the
@@ -45,7 +40,28 @@ public class ListAssociatedEntitiesResponse {
     private com.oracle.bmc.loganalytics.model.LogAnalyticsAssociatedEntityCollection
             logAnalyticsAssociatedEntityCollection;
 
+    private ListAssociatedEntitiesResponse(
+            int __httpStatusCode__,
+            String opcPrevPage,
+            String opcNextPage,
+            String opcRequestId,
+            com.oracle.bmc.loganalytics.model.LogAnalyticsAssociatedEntityCollection
+                    logAnalyticsAssociatedEntityCollection) {
+        super(__httpStatusCode__);
+        this.opcPrevPage = opcPrevPage;
+        this.opcNextPage = opcNextPage;
+        this.opcRequestId = opcRequestId;
+        this.logAnalyticsAssociatedEntityCollection = logAnalyticsAssociatedEntityCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -58,6 +74,15 @@ public class ListAssociatedEntitiesResponse {
             logAnalyticsAssociatedEntityCollection(o.getLogAnalyticsAssociatedEntityCollection());
 
             return this;
+        }
+
+        public ListAssociatedEntitiesResponse build() {
+            return new ListAssociatedEntitiesResponse(
+                    __httpStatusCode__,
+                    opcPrevPage,
+                    opcNextPage,
+                    opcRequestId,
+                    logAnalyticsAssociatedEntityCollection);
         }
     }
 }

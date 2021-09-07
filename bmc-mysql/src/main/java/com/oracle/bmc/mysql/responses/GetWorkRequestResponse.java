@@ -11,12 +11,7 @@ import com.oracle.bmc.mysql.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetWorkRequestResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -48,7 +43,29 @@ public class GetWorkRequestResponse {
      */
     private boolean isNotModified;
 
+    private GetWorkRequestResponse(
+            int __httpStatusCode__,
+            String etag,
+            Integer retryAfter,
+            String opcRequestId,
+            com.oracle.bmc.mysql.model.WorkRequest workRequest,
+            boolean isNotModified) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.retryAfter = retryAfter;
+        this.opcRequestId = opcRequestId;
+        this.workRequest = workRequest;
+        this.isNotModified = isNotModified;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -61,6 +78,11 @@ public class GetWorkRequestResponse {
             workRequest(o.getWorkRequest());
             isNotModified(o.isNotModified());
             return this;
+        }
+
+        public GetWorkRequestResponse build() {
+            return new GetWorkRequestResponse(
+                    __httpStatusCode__, etag, retryAfter, opcRequestId, workRequest, isNotModified);
         }
     }
 }

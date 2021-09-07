@@ -11,12 +11,7 @@ import com.oracle.bmc.logging.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListWorkRequestsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For list pagination. When this header appears in the response, additional pages
      * of results remain. For important details about how pagination works, see
@@ -45,7 +40,27 @@ public class ListWorkRequestsResponse {
      */
     private java.util.List<com.oracle.bmc.logging.model.WorkRequestSummary> items;
 
+    private ListWorkRequestsResponse(
+            int __httpStatusCode__,
+            String opcNextPage,
+            String opcPreviousPage,
+            String opcRequestId,
+            java.util.List<com.oracle.bmc.logging.model.WorkRequestSummary> items) {
+        super(__httpStatusCode__);
+        this.opcNextPage = opcNextPage;
+        this.opcPreviousPage = opcPreviousPage;
+        this.opcRequestId = opcRequestId;
+        this.items = items;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -58,6 +73,11 @@ public class ListWorkRequestsResponse {
             items(o.getItems());
 
             return this;
+        }
+
+        public ListWorkRequestsResponse build() {
+            return new ListWorkRequestsResponse(
+                    __httpStatusCode__, opcNextPage, opcPreviousPage, opcRequestId, items);
         }
     }
 }

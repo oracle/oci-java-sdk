@@ -11,12 +11,7 @@ import com.oracle.bmc.managementdashboard.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateManagementSavedSearchResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateManagementSavedSearchResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -41,7 +36,27 @@ public class CreateManagementSavedSearchResponse {
      */
     private com.oracle.bmc.managementdashboard.model.ManagementSavedSearch managementSavedSearch;
 
+    private CreateManagementSavedSearchResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcWorkRequestId,
+            String opcRequestId,
+            com.oracle.bmc.managementdashboard.model.ManagementSavedSearch managementSavedSearch) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.opcRequestId = opcRequestId;
+        this.managementSavedSearch = managementSavedSearch;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -54,6 +69,15 @@ public class CreateManagementSavedSearchResponse {
             managementSavedSearch(o.getManagementSavedSearch());
 
             return this;
+        }
+
+        public CreateManagementSavedSearchResponse build() {
+            return new CreateManagementSavedSearchResponse(
+                    __httpStatusCode__,
+                    etag,
+                    opcWorkRequestId,
+                    opcRequestId,
+                    managementSavedSearch);
         }
     }
 }

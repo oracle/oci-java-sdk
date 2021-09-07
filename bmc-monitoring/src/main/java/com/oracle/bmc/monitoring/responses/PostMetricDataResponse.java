@@ -11,12 +11,7 @@ import com.oracle.bmc.monitoring.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class PostMetricDataResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class PostMetricDataResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
      * a particular request, please provide the request ID.
@@ -30,7 +25,24 @@ public class PostMetricDataResponse {
     private com.oracle.bmc.monitoring.model.PostMetricDataResponseDetails
             postMetricDataResponseDetails;
 
+    private PostMetricDataResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            com.oracle.bmc.monitoring.model.PostMetricDataResponseDetails
+                    postMetricDataResponseDetails) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.postMetricDataResponseDetails = postMetricDataResponseDetails;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -41,6 +53,11 @@ public class PostMetricDataResponse {
             postMetricDataResponseDetails(o.getPostMetricDataResponseDetails());
 
             return this;
+        }
+
+        public PostMetricDataResponse build() {
+            return new PostMetricDataResponse(
+                    __httpStatusCode__, opcRequestId, postMetricDataResponseDetails);
         }
     }
 }

@@ -11,12 +11,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ChangeAutonomousVmClusterCompartmentResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ChangeAutonomousVmClusterCompartmentResponse
+        extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier of the work request.
      */
@@ -29,7 +25,21 @@ public class ChangeAutonomousVmClusterCompartmentResponse {
      */
     private String opcRequestId;
 
+    private ChangeAutonomousVmClusterCompartmentResponse(
+            int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
+        super(__httpStatusCode__);
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.opcRequestId = opcRequestId;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -40,6 +50,11 @@ public class ChangeAutonomousVmClusterCompartmentResponse {
             opcRequestId(o.getOpcRequestId());
 
             return this;
+        }
+
+        public ChangeAutonomousVmClusterCompartmentResponse build() {
+            return new ChangeAutonomousVmClusterCompartmentResponse(
+                    __httpStatusCode__, opcWorkRequestId, opcRequestId);
         }
     }
 }

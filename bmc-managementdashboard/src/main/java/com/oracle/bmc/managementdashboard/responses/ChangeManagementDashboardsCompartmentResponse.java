@@ -11,11 +11,13 @@ import com.oracle.bmc.managementdashboard.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ChangeManagementDashboardsCompartmentResponse {
+public class ChangeManagementDashboardsCompartmentResponse
+        extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * HTTP status code returned by the operation.
+     * For optimistic concurrency control. See {@code if-match}.
+     *
      */
-    private final int __httpStatusCode__;
+    private String etag;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -30,17 +32,49 @@ public class ChangeManagementDashboardsCompartmentResponse {
      */
     private String opcWorkRequestId;
 
+    /**
+     * The returned ManagementDashboard instance.
+     */
+    private com.oracle.bmc.managementdashboard.model.ManagementDashboard managementDashboard;
+
+    private ChangeManagementDashboardsCompartmentResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            String opcWorkRequestId,
+            com.oracle.bmc.managementdashboard.model.ManagementDashboard managementDashboard) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.managementDashboard = managementDashboard;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
          */
         public Builder copy(ChangeManagementDashboardsCompartmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());
+            managementDashboard(o.getManagementDashboard());
 
             return this;
+        }
+
+        public ChangeManagementDashboardsCompartmentResponse build() {
+            return new ChangeManagementDashboardsCompartmentResponse(
+                    __httpStatusCode__, etag, opcRequestId, opcWorkRequestId, managementDashboard);
         }
     }
 }

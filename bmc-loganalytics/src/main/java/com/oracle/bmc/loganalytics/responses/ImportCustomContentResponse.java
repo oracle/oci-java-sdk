@@ -11,12 +11,7 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ImportCustomContentResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ImportCustomContentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
      *
@@ -29,7 +24,24 @@ public class ImportCustomContentResponse {
     private com.oracle.bmc.loganalytics.model.LogAnalyticsImportCustomContent
             logAnalyticsImportCustomContent;
 
+    private ImportCustomContentResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            com.oracle.bmc.loganalytics.model.LogAnalyticsImportCustomContent
+                    logAnalyticsImportCustomContent) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.logAnalyticsImportCustomContent = logAnalyticsImportCustomContent;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -40,6 +52,11 @@ public class ImportCustomContentResponse {
             logAnalyticsImportCustomContent(o.getLogAnalyticsImportCustomContent());
 
             return this;
+        }
+
+        public ImportCustomContentResponse build() {
+            return new ImportCustomContentResponse(
+                    __httpStatusCode__, opcRequestId, logAnalyticsImportCustomContent);
         }
     }
 }

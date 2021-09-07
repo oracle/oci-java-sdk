@@ -11,12 +11,7 @@ import com.oracle.bmc.mysql.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateConfigurationResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateConfigurationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The URI for the entity being described in the response body.
      */
@@ -46,7 +41,29 @@ public class CreateConfigurationResponse {
      */
     private com.oracle.bmc.mysql.model.Configuration configuration;
 
+    private CreateConfigurationResponse(
+            int __httpStatusCode__,
+            String location,
+            String etag,
+            String opcRequestId,
+            String opcWorkRequestId,
+            com.oracle.bmc.mysql.model.Configuration configuration) {
+        super(__httpStatusCode__);
+        this.location = location;
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.configuration = configuration;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -60,6 +77,16 @@ public class CreateConfigurationResponse {
             configuration(o.getConfiguration());
 
             return this;
+        }
+
+        public CreateConfigurationResponse build() {
+            return new CreateConfigurationResponse(
+                    __httpStatusCode__,
+                    location,
+                    etag,
+                    opcRequestId,
+                    opcWorkRequestId,
+                    configuration);
         }
     }
 }

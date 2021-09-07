@@ -11,12 +11,7 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetConsoleHistoryContentResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetConsoleHistoryContentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The number of bytes remaining in the snapshot.
      */
@@ -34,7 +29,22 @@ public class GetConsoleHistoryContentResponse {
      */
     private String value;
 
+    private GetConsoleHistoryContentResponse(
+            int __httpStatusCode__, Integer opcBytesRemaining, String opcRequestId, String value) {
+        super(__httpStatusCode__);
+        this.opcBytesRemaining = opcBytesRemaining;
+        this.opcRequestId = opcRequestId;
+        this.value = value;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -46,6 +56,11 @@ public class GetConsoleHistoryContentResponse {
             value(o.getValue());
 
             return this;
+        }
+
+        public GetConsoleHistoryContentResponse build() {
+            return new GetConsoleHistoryContentResponse(
+                    __httpStatusCode__, opcBytesRemaining, opcRequestId, value);
         }
     }
 }

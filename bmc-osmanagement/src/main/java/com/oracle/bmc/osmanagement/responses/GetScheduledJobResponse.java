@@ -11,12 +11,7 @@ import com.oracle.bmc.osmanagement.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetScheduledJobResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetScheduledJobResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -42,7 +37,27 @@ public class GetScheduledJobResponse {
      */
     private com.oracle.bmc.osmanagement.model.ScheduledJob scheduledJob;
 
+    private GetScheduledJobResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            Float retryAfter,
+            com.oracle.bmc.osmanagement.model.ScheduledJob scheduledJob) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.retryAfter = retryAfter;
+        this.scheduledJob = scheduledJob;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -55,6 +70,11 @@ public class GetScheduledJobResponse {
             scheduledJob(o.getScheduledJob());
 
             return this;
+        }
+
+        public GetScheduledJobResponse build() {
+            return new GetScheduledJobResponse(
+                    __httpStatusCode__, etag, opcRequestId, retryAfter, scheduledJob);
         }
     }
 }

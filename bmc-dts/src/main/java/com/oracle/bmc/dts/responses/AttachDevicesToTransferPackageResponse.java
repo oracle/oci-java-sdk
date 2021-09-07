@@ -11,12 +11,7 @@ import com.oracle.bmc.dts.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class AttachDevicesToTransferPackageResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class AttachDevicesToTransferPackageResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      *
      */
@@ -27,7 +22,21 @@ public class AttachDevicesToTransferPackageResponse {
      */
     private String etag;
 
+    private AttachDevicesToTransferPackageResponse(
+            int __httpStatusCode__, String opcRequestId, String etag) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -38,6 +47,11 @@ public class AttachDevicesToTransferPackageResponse {
             etag(o.getEtag());
 
             return this;
+        }
+
+        public AttachDevicesToTransferPackageResponse build() {
+            return new AttachDevicesToTransferPackageResponse(
+                    __httpStatusCode__, opcRequestId, etag);
         }
     }
 }

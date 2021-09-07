@@ -11,12 +11,7 @@ import com.oracle.bmc.apigateway.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateSdkResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateSdkResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -51,7 +46,29 @@ public class CreateSdkResponse {
      */
     private com.oracle.bmc.apigateway.model.Sdk sdk;
 
+    private CreateSdkResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcWorkRequestId,
+            String opcRequestId,
+            String location,
+            com.oracle.bmc.apigateway.model.Sdk sdk) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.opcRequestId = opcRequestId;
+        this.location = location;
+        this.sdk = sdk;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -65,6 +82,11 @@ public class CreateSdkResponse {
             sdk(o.getSdk());
 
             return this;
+        }
+
+        public CreateSdkResponse build() {
+            return new CreateSdkResponse(
+                    __httpStatusCode__, etag, opcWorkRequestId, opcRequestId, location, sdk);
         }
     }
 }

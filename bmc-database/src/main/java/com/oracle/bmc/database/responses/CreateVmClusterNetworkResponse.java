@@ -11,12 +11,7 @@ import com.oracle.bmc.database.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateVmClusterNetworkResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateVmClusterNetworkResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
      *
@@ -40,7 +35,27 @@ public class CreateVmClusterNetworkResponse {
      */
     private com.oracle.bmc.database.model.VmClusterNetwork vmClusterNetwork;
 
+    private CreateVmClusterNetworkResponse(
+            int __httpStatusCode__,
+            String opcWorkRequestId,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.database.model.VmClusterNetwork vmClusterNetwork) {
+        super(__httpStatusCode__);
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.vmClusterNetwork = vmClusterNetwork;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -53,6 +68,11 @@ public class CreateVmClusterNetworkResponse {
             vmClusterNetwork(o.getVmClusterNetwork());
 
             return this;
+        }
+
+        public CreateVmClusterNetworkResponse build() {
+            return new CreateVmClusterNetworkResponse(
+                    __httpStatusCode__, opcWorkRequestId, etag, opcRequestId, vmClusterNetwork);
         }
     }
 }

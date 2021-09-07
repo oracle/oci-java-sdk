@@ -11,12 +11,7 @@ import com.oracle.bmc.waas.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateCertificateResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateCertificateResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
@@ -32,7 +27,25 @@ public class CreateCertificateResponse {
      */
     private com.oracle.bmc.waas.model.Certificate certificate;
 
+    private CreateCertificateResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.waas.model.Certificate certificate) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.certificate = certificate;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -44,6 +57,11 @@ public class CreateCertificateResponse {
             certificate(o.getCertificate());
 
             return this;
+        }
+
+        public CreateCertificateResponse build() {
+            return new CreateCertificateResponse(
+                    __httpStatusCode__, opcRequestId, etag, certificate);
         }
     }
 }

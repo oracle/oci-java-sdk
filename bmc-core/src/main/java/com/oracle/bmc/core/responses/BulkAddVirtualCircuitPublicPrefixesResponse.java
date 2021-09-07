@@ -11,13 +11,21 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class BulkAddVirtualCircuitPublicPrefixesResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
+public class BulkAddVirtualCircuitPublicPrefixesResponse
+        extends com.oracle.bmc.responses.BmcResponse {
+
+    private BulkAddVirtualCircuitPublicPrefixesResponse(int __httpStatusCode__) {
+        super(__httpStatusCode__);
+    }
 
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -26,6 +34,10 @@ public class BulkAddVirtualCircuitPublicPrefixesResponse {
             __httpStatusCode__(o.get__httpStatusCode__());
 
             return this;
+        }
+
+        public BulkAddVirtualCircuitPublicPrefixesResponse build() {
+            return new BulkAddVirtualCircuitPublicPrefixesResponse(__httpStatusCode__);
         }
     }
 }

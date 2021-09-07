@@ -53,6 +53,15 @@ public class ManagementSavedSearchSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("providerId")
         private String providerId;
 
@@ -62,12 +71,21 @@ public class ManagementSavedSearchSummary {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-        private String compartmentId;
+        @com.fasterxml.jackson.annotation.JsonProperty("providerVersion")
+        private String providerVersion;
 
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = compartmentId;
-            this.__explicitlySet__.add("compartmentId");
+        public Builder providerVersion(String providerVersion) {
+            this.providerVersion = providerVersion;
+            this.__explicitlySet__.add("providerVersion");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("providerName")
+        private String providerName;
+
+        public Builder providerName(String providerName) {
+            this.providerName = providerName;
+            this.__explicitlySet__.add("providerName");
             return this;
         }
 
@@ -234,8 +252,10 @@ public class ManagementSavedSearchSummary {
                             id,
                             displayName,
                             isOobSavedSearch,
-                            providerId,
                             compartmentId,
+                            providerId,
+                            providerVersion,
+                            providerName,
                             description,
                             nls,
                             type,
@@ -263,8 +283,10 @@ public class ManagementSavedSearchSummary {
                     id(o.getId())
                             .displayName(o.getDisplayName())
                             .isOobSavedSearch(o.getIsOobSavedSearch())
-                            .providerId(o.getProviderId())
                             .compartmentId(o.getCompartmentId())
+                            .providerId(o.getProviderId())
+                            .providerVersion(o.getProviderVersion())
+                            .providerName(o.getProviderName())
                             .description(o.getDescription())
                             .nls(o.getNls())
                             .type(o.getType())
@@ -314,16 +336,28 @@ public class ManagementSavedSearchSummary {
     Boolean isOobSavedSearch;
 
     /**
+     * OCID of the compartment in which the saved search resides.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    String compartmentId;
+
+    /**
      * ID of the service (for example log-analytics) that owns the saved search. Each service has a unique ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerId")
     String providerId;
 
     /**
-     * OCID of the compartment in which the saved search resides.
+     * Version of the service that owns this saved search.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    @com.fasterxml.jackson.annotation.JsonProperty("providerVersion")
+    String providerVersion;
+
+    /**
+     * Name of the service (for example, Logging Analytics) that owns the saved search.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("providerName")
+    String providerName;
 
     /**
      * Description of the saved search.

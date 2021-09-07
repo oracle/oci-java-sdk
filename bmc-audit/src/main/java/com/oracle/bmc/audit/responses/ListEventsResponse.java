@@ -11,12 +11,7 @@ import com.oracle.bmc.audit.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListEventsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListEventsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For pagination of a list of audit events. When this header appears in the response,
      * it means you received a partial list and there are more results. Include this value as the {@code page}
@@ -38,7 +33,25 @@ public class ListEventsResponse {
      */
     private java.util.List<com.oracle.bmc.audit.model.AuditEvent> items;
 
+    private ListEventsResponse(
+            int __httpStatusCode__,
+            String opcNextPage,
+            String opcRequestId,
+            java.util.List<com.oracle.bmc.audit.model.AuditEvent> items) {
+        super(__httpStatusCode__);
+        this.opcNextPage = opcNextPage;
+        this.opcRequestId = opcRequestId;
+        this.items = items;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -50,6 +63,10 @@ public class ListEventsResponse {
             items(o.getItems());
 
             return this;
+        }
+
+        public ListEventsResponse build() {
+            return new ListEventsResponse(__httpStatusCode__, opcNextPage, opcRequestId, items);
         }
     }
 }

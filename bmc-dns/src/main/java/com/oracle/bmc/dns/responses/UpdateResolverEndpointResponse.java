@@ -11,12 +11,7 @@ import com.oracle.bmc.dns.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateResolverEndpointResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateResolverEndpointResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The current version of the resource, ending with a
      * representation-specific suffix. This value may be used in If-Match
@@ -44,7 +39,27 @@ public class UpdateResolverEndpointResponse {
      */
     private com.oracle.bmc.dns.model.ResolverEndpoint resolverEndpoint;
 
+    private UpdateResolverEndpointResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            String opcWorkRequestId,
+            com.oracle.bmc.dns.model.ResolverEndpoint resolverEndpoint) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.resolverEndpoint = resolverEndpoint;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -57,6 +72,11 @@ public class UpdateResolverEndpointResponse {
             resolverEndpoint(o.getResolverEndpoint());
 
             return this;
+        }
+
+        public UpdateResolverEndpointResponse build() {
+            return new UpdateResolverEndpointResponse(
+                    __httpStatusCode__, etag, opcRequestId, opcWorkRequestId, resolverEndpoint);
         }
     }
 }

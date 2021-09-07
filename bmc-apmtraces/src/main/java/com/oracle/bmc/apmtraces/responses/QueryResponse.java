@@ -11,12 +11,7 @@ import com.oracle.bmc.apmtraces.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class QueryResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -43,7 +38,27 @@ public class QueryResponse {
      */
     private com.oracle.bmc.apmtraces.model.QueryResultResponse queryResultResponse;
 
+    private QueryResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            Integer opcTotalItems,
+            String opcNextPage,
+            com.oracle.bmc.apmtraces.model.QueryResultResponse queryResultResponse) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcTotalItems = opcTotalItems;
+        this.opcNextPage = opcNextPage;
+        this.queryResultResponse = queryResultResponse;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -56,6 +71,15 @@ public class QueryResponse {
             queryResultResponse(o.getQueryResultResponse());
 
             return this;
+        }
+
+        public QueryResponse build() {
+            return new QueryResponse(
+                    __httpStatusCode__,
+                    opcRequestId,
+                    opcTotalItems,
+                    opcNextPage,
+                    queryResultResponse);
         }
     }
 }

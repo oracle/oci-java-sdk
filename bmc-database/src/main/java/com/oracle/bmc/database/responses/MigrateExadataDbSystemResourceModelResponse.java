@@ -11,12 +11,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class MigrateExadataDbSystemResourceModelResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class MigrateExadataDbSystemResourceModelResponse
+        extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
      *
@@ -40,7 +36,27 @@ public class MigrateExadataDbSystemResourceModelResponse {
      */
     private com.oracle.bmc.database.model.ExadataDbSystemMigration exadataDbSystemMigration;
 
+    private MigrateExadataDbSystemResourceModelResponse(
+            int __httpStatusCode__,
+            String opcWorkRequestId,
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.database.model.ExadataDbSystemMigration exadataDbSystemMigration) {
+        super(__httpStatusCode__);
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.exadataDbSystemMigration = exadataDbSystemMigration;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -53,6 +69,15 @@ public class MigrateExadataDbSystemResourceModelResponse {
             exadataDbSystemMigration(o.getExadataDbSystemMigration());
 
             return this;
+        }
+
+        public MigrateExadataDbSystemResourceModelResponse build() {
+            return new MigrateExadataDbSystemResourceModelResponse(
+                    __httpStatusCode__,
+                    opcWorkRequestId,
+                    opcRequestId,
+                    etag,
+                    exadataDbSystemMigration);
         }
     }
 }

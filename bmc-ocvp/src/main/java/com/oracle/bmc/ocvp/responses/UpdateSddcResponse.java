@@ -11,12 +11,7 @@ import com.oracle.bmc.ocvp.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateSddcResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateSddcResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -35,7 +30,25 @@ public class UpdateSddcResponse {
      */
     private com.oracle.bmc.ocvp.model.Sddc sddc;
 
+    private UpdateSddcResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.ocvp.model.Sddc sddc) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.sddc = sddc;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,10 @@ public class UpdateSddcResponse {
             sddc(o.getSddc());
 
             return this;
+        }
+
+        public UpdateSddcResponse build() {
+            return new UpdateSddcResponse(__httpStatusCode__, etag, opcRequestId, sddc);
         }
     }
 }

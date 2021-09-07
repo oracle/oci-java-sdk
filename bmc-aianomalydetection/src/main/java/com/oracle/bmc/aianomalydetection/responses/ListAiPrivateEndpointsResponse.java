@@ -11,12 +11,7 @@ import com.oracle.bmc.aianomalydetection.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListAiPrivateEndpointsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListAiPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -38,7 +33,26 @@ public class ListAiPrivateEndpointsResponse {
     private com.oracle.bmc.aianomalydetection.model.AiPrivateEndpointCollection
             aiPrivateEndpointCollection;
 
+    private ListAiPrivateEndpointsResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String opcNextPage,
+            com.oracle.bmc.aianomalydetection.model.AiPrivateEndpointCollection
+                    aiPrivateEndpointCollection) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.aiPrivateEndpointCollection = aiPrivateEndpointCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -50,6 +64,11 @@ public class ListAiPrivateEndpointsResponse {
             aiPrivateEndpointCollection(o.getAiPrivateEndpointCollection());
 
             return this;
+        }
+
+        public ListAiPrivateEndpointsResponse build() {
+            return new ListAiPrivateEndpointsResponse(
+                    __httpStatusCode__, opcRequestId, opcNextPage, aiPrivateEndpointCollection);
         }
     }
 }

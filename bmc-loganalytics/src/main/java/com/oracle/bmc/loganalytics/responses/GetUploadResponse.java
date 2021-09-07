@@ -11,12 +11,7 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetUploadResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetUploadResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -34,7 +29,25 @@ public class GetUploadResponse {
      */
     private com.oracle.bmc.loganalytics.model.Upload upload;
 
+    private GetUploadResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.loganalytics.model.Upload upload) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.upload = upload;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -46,6 +59,10 @@ public class GetUploadResponse {
             upload(o.getUpload());
 
             return this;
+        }
+
+        public GetUploadResponse build() {
+            return new GetUploadResponse(__httpStatusCode__, etag, opcRequestId, upload);
         }
     }
 }

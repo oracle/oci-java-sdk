@@ -11,12 +11,7 @@ import com.oracle.bmc.dts.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateApplianceExportJobResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateApplianceExportJobResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      *
      */
@@ -32,7 +27,25 @@ public class UpdateApplianceExportJobResponse {
      */
     private com.oracle.bmc.dts.model.ApplianceExportJob applianceExportJob;
 
+    private UpdateApplianceExportJobResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.dts.model.ApplianceExportJob applianceExportJob) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.applianceExportJob = applianceExportJob;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -44,6 +57,11 @@ public class UpdateApplianceExportJobResponse {
             applianceExportJob(o.getApplianceExportJob());
 
             return this;
+        }
+
+        public UpdateApplianceExportJobResponse build() {
+            return new UpdateApplianceExportJobResponse(
+                    __httpStatusCode__, opcRequestId, etag, applianceExportJob);
         }
     }
 }

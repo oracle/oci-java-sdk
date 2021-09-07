@@ -11,12 +11,7 @@ import com.oracle.bmc.healthchecks.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateOnDemandPingProbeResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateOnDemandPingProbeResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to
      * contact Oracle about a particular request, please provide
@@ -35,7 +30,25 @@ public class CreateOnDemandPingProbeResponse {
      */
     private com.oracle.bmc.healthchecks.model.PingProbe pingProbe;
 
+    private CreateOnDemandPingProbeResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String location,
+            com.oracle.bmc.healthchecks.model.PingProbe pingProbe) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.location = location;
+        this.pingProbe = pingProbe;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,11 @@ public class CreateOnDemandPingProbeResponse {
             pingProbe(o.getPingProbe());
 
             return this;
+        }
+
+        public CreateOnDemandPingProbeResponse build() {
+            return new CreateOnDemandPingProbeResponse(
+                    __httpStatusCode__, opcRequestId, location, pingProbe);
         }
     }
 }

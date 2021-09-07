@@ -96,6 +96,15 @@ public class JobSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("scheduleDetails")
+        private JobScheduleDetails scheduleDetails;
+
+        public Builder scheduleDetails(JobScheduleDetails scheduleDetails) {
+            this.scheduleDetails = scheduleDetails;
+            this.__explicitlySet__.add("scheduleDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("jobType")
         private JobTypes jobType;
 
@@ -164,6 +173,7 @@ public class JobSummary {
                             managedDatabaseId,
                             databaseSubType,
                             scheduleType,
+                            scheduleDetails,
                             jobType,
                             lifecycleState,
                             timeout,
@@ -185,6 +195,7 @@ public class JobSummary {
                             .managedDatabaseId(o.getManagedDatabaseId())
                             .databaseSubType(o.getDatabaseSubType())
                             .scheduleType(o.getScheduleType())
+                            .scheduleDetails(o.getScheduleDetails())
                             .jobType(o.getJobType())
                             .lifecycleState(o.getLifecycleState())
                             .timeout(o.getTimeout())
@@ -251,6 +262,9 @@ public class JobSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
     Job.ScheduleType scheduleType;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("scheduleDetails")
+    JobScheduleDetails scheduleDetails;
 
     /**
      * The type of job.

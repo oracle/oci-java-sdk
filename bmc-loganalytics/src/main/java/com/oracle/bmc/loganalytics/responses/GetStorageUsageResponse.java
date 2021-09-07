@@ -11,12 +11,7 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetStorageUsageResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetStorageUsageResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
      *
@@ -28,7 +23,23 @@ public class GetStorageUsageResponse {
      */
     private com.oracle.bmc.loganalytics.model.StorageUsage storageUsage;
 
+    private GetStorageUsageResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            com.oracle.bmc.loganalytics.model.StorageUsage storageUsage) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.storageUsage = storageUsage;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -39,6 +50,10 @@ public class GetStorageUsageResponse {
             storageUsage(o.getStorageUsage());
 
             return this;
+        }
+
+        public GetStorageUsageResponse build() {
+            return new GetStorageUsageResponse(__httpStatusCode__, opcRequestId, storageUsage);
         }
     }
 }

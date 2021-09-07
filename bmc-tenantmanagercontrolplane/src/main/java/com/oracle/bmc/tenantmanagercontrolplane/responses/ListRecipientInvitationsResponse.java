@@ -11,12 +11,7 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListRecipientInvitationsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListRecipientInvitationsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response,
      * then a partial list might have been returned. Include this value as the {@code page} parameter for the
@@ -38,7 +33,26 @@ public class ListRecipientInvitationsResponse {
     private com.oracle.bmc.tenantmanagercontrolplane.model.RecipientInvitationCollection
             recipientInvitationCollection;
 
+    private ListRecipientInvitationsResponse(
+            int __httpStatusCode__,
+            String opcNextPage,
+            String opcRequestId,
+            com.oracle.bmc.tenantmanagercontrolplane.model.RecipientInvitationCollection
+                    recipientInvitationCollection) {
+        super(__httpStatusCode__);
+        this.opcNextPage = opcNextPage;
+        this.opcRequestId = opcRequestId;
+        this.recipientInvitationCollection = recipientInvitationCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -50,6 +64,11 @@ public class ListRecipientInvitationsResponse {
             recipientInvitationCollection(o.getRecipientInvitationCollection());
 
             return this;
+        }
+
+        public ListRecipientInvitationsResponse build() {
+            return new ListRecipientInvitationsResponse(
+                    __httpStatusCode__, opcNextPage, opcRequestId, recipientInvitationCollection);
         }
     }
 }

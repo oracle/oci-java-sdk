@@ -11,12 +11,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListAutonomousDatabaseDataguardAssociationsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListAutonomousDatabaseDataguardAssociationsResponse
+        extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you must contact Oracle about
      * a particular request, then provide the request ID.
@@ -39,7 +35,26 @@ public class ListAutonomousDatabaseDataguardAssociationsResponse {
     private java.util.List<com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation>
             items;
 
+    private ListAutonomousDatabaseDataguardAssociationsResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String opcNextPage,
+            java.util.List<com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation>
+                    items) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.items = items;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -51,6 +66,11 @@ public class ListAutonomousDatabaseDataguardAssociationsResponse {
             items(o.getItems());
 
             return this;
+        }
+
+        public ListAutonomousDatabaseDataguardAssociationsResponse build() {
+            return new ListAutonomousDatabaseDataguardAssociationsResponse(
+                    __httpStatusCode__, opcRequestId, opcNextPage, items);
         }
     }
 }

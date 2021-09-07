@@ -11,12 +11,7 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetGlossaryResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetGlossaryResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
      *
@@ -35,7 +30,25 @@ public class GetGlossaryResponse {
      */
     private com.oracle.bmc.datacatalog.model.Glossary glossary;
 
+    private GetGlossaryResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.datacatalog.model.Glossary glossary) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.glossary = glossary;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,10 @@ public class GetGlossaryResponse {
             glossary(o.getGlossary());
 
             return this;
+        }
+
+        public GetGlossaryResponse build() {
+            return new GetGlossaryResponse(__httpStatusCode__, etag, opcRequestId, glossary);
         }
     }
 }

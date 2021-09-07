@@ -11,12 +11,7 @@ import com.oracle.bmc.loadbalancer.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetBackendSetHealthResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetBackendSetHealthResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
      * a particular request, please provide the request ID.
@@ -29,7 +24,23 @@ public class GetBackendSetHealthResponse {
      */
     private com.oracle.bmc.loadbalancer.model.BackendSetHealth backendSetHealth;
 
+    private GetBackendSetHealthResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            com.oracle.bmc.loadbalancer.model.BackendSetHealth backendSetHealth) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.backendSetHealth = backendSetHealth;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -40,6 +51,11 @@ public class GetBackendSetHealthResponse {
             backendSetHealth(o.getBackendSetHealth());
 
             return this;
+        }
+
+        public GetBackendSetHealthResponse build() {
+            return new GetBackendSetHealthResponse(
+                    __httpStatusCode__, opcRequestId, backendSetHealth);
         }
     }
 }

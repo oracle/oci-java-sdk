@@ -31,6 +31,254 @@ public class DbManagementPaginators {
     private final DbManagement client;
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listAssociatedDatabases operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAssociatedDatabasesResponse> listAssociatedDatabasesResponseIterator(
+            final ListAssociatedDatabasesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAssociatedDatabasesRequest.Builder, ListAssociatedDatabasesRequest,
+                ListAssociatedDatabasesResponse>(
+                new com.google.common.base.Supplier<ListAssociatedDatabasesRequest.Builder>() {
+                    @Override
+                    public ListAssociatedDatabasesRequest.Builder get() {
+                        return ListAssociatedDatabasesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListAssociatedDatabasesResponse, String>() {
+                    @Override
+                    public String apply(ListAssociatedDatabasesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAssociatedDatabasesRequest.Builder>,
+                        ListAssociatedDatabasesRequest>() {
+                    @Override
+                    public ListAssociatedDatabasesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAssociatedDatabasesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAssociatedDatabasesRequest, ListAssociatedDatabasesResponse>() {
+                    @Override
+                    public ListAssociatedDatabasesResponse apply(
+                            ListAssociatedDatabasesRequest request) {
+                        return client.listAssociatedDatabases(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemanagement.model.AssociatedDatabaseSummary} objects
+     * contained in responses from the listAssociatedDatabases operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemanagement.model.AssociatedDatabaseSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.AssociatedDatabaseSummary>
+            listAssociatedDatabasesRecordIterator(final ListAssociatedDatabasesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAssociatedDatabasesRequest.Builder, ListAssociatedDatabasesRequest,
+                ListAssociatedDatabasesResponse,
+                com.oracle.bmc.databasemanagement.model.AssociatedDatabaseSummary>(
+                new com.google.common.base.Supplier<ListAssociatedDatabasesRequest.Builder>() {
+                    @Override
+                    public ListAssociatedDatabasesRequest.Builder get() {
+                        return ListAssociatedDatabasesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListAssociatedDatabasesResponse, String>() {
+                    @Override
+                    public String apply(ListAssociatedDatabasesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAssociatedDatabasesRequest.Builder>,
+                        ListAssociatedDatabasesRequest>() {
+                    @Override
+                    public ListAssociatedDatabasesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAssociatedDatabasesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAssociatedDatabasesRequest, ListAssociatedDatabasesResponse>() {
+                    @Override
+                    public ListAssociatedDatabasesResponse apply(
+                            ListAssociatedDatabasesRequest request) {
+                        return client.listAssociatedDatabases(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAssociatedDatabasesResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .AssociatedDatabaseSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .AssociatedDatabaseSummary>
+                            apply(ListAssociatedDatabasesResponse response) {
+                        return response.getAssociatedDatabaseCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listDbManagementPrivateEndpoints operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListDbManagementPrivateEndpointsResponse>
+            listDbManagementPrivateEndpointsResponseIterator(
+                    final ListDbManagementPrivateEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDbManagementPrivateEndpointsRequest.Builder,
+                ListDbManagementPrivateEndpointsRequest, ListDbManagementPrivateEndpointsResponse>(
+                new com.google.common.base.Supplier<
+                        ListDbManagementPrivateEndpointsRequest.Builder>() {
+                    @Override
+                    public ListDbManagementPrivateEndpointsRequest.Builder get() {
+                        return ListDbManagementPrivateEndpointsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDbManagementPrivateEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListDbManagementPrivateEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDbManagementPrivateEndpointsRequest.Builder>,
+                        ListDbManagementPrivateEndpointsRequest>() {
+                    @Override
+                    public ListDbManagementPrivateEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDbManagementPrivateEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDbManagementPrivateEndpointsRequest,
+                        ListDbManagementPrivateEndpointsResponse>() {
+                    @Override
+                    public ListDbManagementPrivateEndpointsResponse apply(
+                            ListDbManagementPrivateEndpointsRequest request) {
+                        return client.listDbManagementPrivateEndpoints(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemanagement.model.DbManagementPrivateEndpointSummary} objects
+     * contained in responses from the listDbManagementPrivateEndpoints operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemanagement.model.DbManagementPrivateEndpointSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.DbManagementPrivateEndpointSummary>
+            listDbManagementPrivateEndpointsRecordIterator(
+                    final ListDbManagementPrivateEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDbManagementPrivateEndpointsRequest.Builder,
+                ListDbManagementPrivateEndpointsRequest, ListDbManagementPrivateEndpointsResponse,
+                com.oracle.bmc.databasemanagement.model.DbManagementPrivateEndpointSummary>(
+                new com.google.common.base.Supplier<
+                        ListDbManagementPrivateEndpointsRequest.Builder>() {
+                    @Override
+                    public ListDbManagementPrivateEndpointsRequest.Builder get() {
+                        return ListDbManagementPrivateEndpointsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDbManagementPrivateEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListDbManagementPrivateEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDbManagementPrivateEndpointsRequest.Builder>,
+                        ListDbManagementPrivateEndpointsRequest>() {
+                    @Override
+                    public ListDbManagementPrivateEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDbManagementPrivateEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDbManagementPrivateEndpointsRequest,
+                        ListDbManagementPrivateEndpointsResponse>() {
+                    @Override
+                    public ListDbManagementPrivateEndpointsResponse apply(
+                            ListDbManagementPrivateEndpointsRequest request) {
+                        return client.listDbManagementPrivateEndpoints(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDbManagementPrivateEndpointsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .DbManagementPrivateEndpointSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .DbManagementPrivateEndpointSummary>
+                            apply(ListDbManagementPrivateEndpointsResponse response) {
+                        return response.getDbManagementPrivateEndpointCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listJobExecutions operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -711,6 +959,353 @@ public class DbManagementPaginators {
                     public java.util.List<com.oracle.bmc.databasemanagement.model.TablespaceSummary>
                             apply(ListTablespacesResponse response) {
                         return response.getTablespaceCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestErrors operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListWorkRequestErrorsResponse> listWorkRequestErrorsResponseIterator(
+            final ListWorkRequestErrorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsResponse>(
+                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                    @Override
+                    public ListWorkRequestErrorsRequest.Builder get() {
+                        return ListWorkRequestErrorsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                    @Override
+                    public String apply(ListWorkRequestErrorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWorkRequestErrorsRequest.Builder>,
+                        ListWorkRequestErrorsRequest>() {
+                    @Override
+                    public ListWorkRequestErrorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWorkRequestErrorsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
+                    @Override
+                    public ListWorkRequestErrorsResponse apply(
+                            ListWorkRequestErrorsRequest request) {
+                        return client.listWorkRequestErrors(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemanagement.model.WorkRequestError} objects
+     * contained in responses from the listWorkRequestErrors operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemanagement.model.WorkRequestError} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.WorkRequestError>
+            listWorkRequestErrorsRecordIterator(final ListWorkRequestErrorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsResponse,
+                com.oracle.bmc.databasemanagement.model.WorkRequestError>(
+                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                    @Override
+                    public ListWorkRequestErrorsRequest.Builder get() {
+                        return ListWorkRequestErrorsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                    @Override
+                    public String apply(ListWorkRequestErrorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWorkRequestErrorsRequest.Builder>,
+                        ListWorkRequestErrorsRequest>() {
+                    @Override
+                    public ListWorkRequestErrorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWorkRequestErrorsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
+                    @Override
+                    public ListWorkRequestErrorsResponse apply(
+                            ListWorkRequestErrorsRequest request) {
+                        return client.listWorkRequestErrors(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWorkRequestErrorsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model.WorkRequestError>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.databasemanagement.model.WorkRequestError>
+                            apply(ListWorkRequestErrorsResponse response) {
+                        return response.getWorkRequestErrorCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestLogs operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListWorkRequestLogsResponse> listWorkRequestLogsResponseIterator(
+            final ListWorkRequestLogsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
+                ListWorkRequestLogsResponse>(
+                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                    @Override
+                    public ListWorkRequestLogsRequest.Builder get() {
+                        return ListWorkRequestLogsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                    @Override
+                    public String apply(ListWorkRequestLogsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWorkRequestLogsRequest.Builder>,
+                        ListWorkRequestLogsRequest>() {
+                    @Override
+                    public ListWorkRequestLogsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWorkRequestLogsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
+                    @Override
+                    public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
+                        return client.listWorkRequestLogs(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemanagement.model.WorkRequestLogEntry} objects
+     * contained in responses from the listWorkRequestLogs operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemanagement.model.WorkRequestLogEntry} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.WorkRequestLogEntry>
+            listWorkRequestLogsRecordIterator(final ListWorkRequestLogsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
+                ListWorkRequestLogsResponse,
+                com.oracle.bmc.databasemanagement.model.WorkRequestLogEntry>(
+                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                    @Override
+                    public ListWorkRequestLogsRequest.Builder get() {
+                        return ListWorkRequestLogsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                    @Override
+                    public String apply(ListWorkRequestLogsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWorkRequestLogsRequest.Builder>,
+                        ListWorkRequestLogsRequest>() {
+                    @Override
+                    public ListWorkRequestLogsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWorkRequestLogsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
+                    @Override
+                    public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
+                        return client.listWorkRequestLogs(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWorkRequestLogsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model.WorkRequestLogEntry>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model.WorkRequestLogEntry>
+                            apply(ListWorkRequestLogsResponse response) {
+                        return response.getWorkRequestLogEntryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequests operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListWorkRequestsResponse> listWorkRequestsResponseIterator(
+            final ListWorkRequestsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse>(
+                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                    @Override
+                    public ListWorkRequestsRequest.Builder get() {
+                        return ListWorkRequestsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                    @Override
+                    public String apply(ListWorkRequestsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWorkRequestsRequest.Builder>,
+                        ListWorkRequestsRequest>() {
+                    @Override
+                    public ListWorkRequestsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWorkRequestsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWorkRequestsRequest, ListWorkRequestsResponse>() {
+                    @Override
+                    public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
+                        return client.listWorkRequests(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemanagement.model.WorkRequestSummary} objects
+     * contained in responses from the listWorkRequests operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemanagement.model.WorkRequestSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.WorkRequestSummary>
+            listWorkRequestsRecordIterator(final ListWorkRequestsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
+                com.oracle.bmc.databasemanagement.model.WorkRequestSummary>(
+                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                    @Override
+                    public ListWorkRequestsRequest.Builder get() {
+                        return ListWorkRequestsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                    @Override
+                    public String apply(ListWorkRequestsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWorkRequestsRequest.Builder>,
+                        ListWorkRequestsRequest>() {
+                    @Override
+                    public ListWorkRequestsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWorkRequestsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWorkRequestsRequest, ListWorkRequestsResponse>() {
+                    @Override
+                    public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
+                        return client.listWorkRequests(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWorkRequestsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model.WorkRequestSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model.WorkRequestSummary>
+                            apply(ListWorkRequestsResponse response) {
+                        return response.getWorkRequestCollection().getItems();
                     }
                 });
     }

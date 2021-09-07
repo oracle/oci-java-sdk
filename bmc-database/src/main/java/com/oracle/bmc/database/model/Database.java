@@ -225,6 +225,16 @@ public class Database {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseManagementConfig")
+        private CloudDatabaseManagementConfig databaseManagementConfig;
+
+        public Builder databaseManagementConfig(
+                CloudDatabaseManagementConfig databaseManagementConfig) {
+            this.databaseManagementConfig = databaseManagementConfig;
+            this.__explicitlySet__.add("databaseManagementConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -252,7 +262,8 @@ public class Database {
                             connectionStrings,
                             kmsKeyId,
                             sourceDatabasePointInTimeRecoveryTimestamp,
-                            databaseSoftwareImageId);
+                            databaseSoftwareImageId,
+                            databaseManagementConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -282,7 +293,8 @@ public class Database {
                             .kmsKeyId(o.getKmsKeyId())
                             .sourceDatabasePointInTimeRecoveryTimestamp(
                                     o.getSourceDatabasePointInTimeRecoveryTimestamp())
-                            .databaseSoftwareImageId(o.getDatabaseSoftwareImageId());
+                            .databaseSoftwareImageId(o.getDatabaseSoftwareImageId())
+                            .databaseManagementConfig(o.getDatabaseManagementConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -483,6 +495,9 @@ public class Database {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
     String databaseSoftwareImageId;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseManagementConfig")
+    CloudDatabaseManagementConfig databaseManagementConfig;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

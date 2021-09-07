@@ -11,12 +11,8 @@ import com.oracle.bmc.sch.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ChangeServiceConnectorCompartmentResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ChangeServiceConnectorCompartmentResponse
+        extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
      *
@@ -30,7 +26,21 @@ public class ChangeServiceConnectorCompartmentResponse {
      */
     private String opcRequestId;
 
+    private ChangeServiceConnectorCompartmentResponse(
+            int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
+        super(__httpStatusCode__);
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.opcRequestId = opcRequestId;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -41,6 +51,11 @@ public class ChangeServiceConnectorCompartmentResponse {
             opcRequestId(o.getOpcRequestId());
 
             return this;
+        }
+
+        public ChangeServiceConnectorCompartmentResponse build() {
+            return new ChangeServiceConnectorCompartmentResponse(
+                    __httpStatusCode__, opcWorkRequestId, opcRequestId);
         }
     }
 }

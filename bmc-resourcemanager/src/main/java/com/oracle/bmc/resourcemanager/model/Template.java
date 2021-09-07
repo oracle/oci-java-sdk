@@ -79,6 +79,15 @@ public class Template {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isFreeTier")
+        private Boolean isFreeTier;
+
+        public Builder isFreeTier(Boolean isFreeTier) {
+            this.isFreeTier = isFreeTier;
+            this.__explicitlySet__.add("isFreeTier");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -137,6 +146,7 @@ public class Template {
                             displayName,
                             description,
                             longDescription,
+                            isFreeTier,
                             timeCreated,
                             templateConfigSource,
                             lifecycleState,
@@ -155,6 +165,7 @@ public class Template {
                             .displayName(o.getDisplayName())
                             .description(o.getDescription())
                             .longDescription(o.getLongDescription())
+                            .isFreeTier(o.getIsFreeTier())
                             .timeCreated(o.getTimeCreated())
                             .templateConfigSource(o.getTemplateConfigSource())
                             .lifecycleState(o.getLifecycleState())
@@ -187,6 +198,8 @@ public class Template {
 
     /**
      * Unique identifier for the category where the template is located.
+     * Possible values are {@code 0} (Quick Starts), {@code 1} (Service), {@code 2} (Architecture), and {@code 3} (Private).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("categoryId")
     String categoryId;
@@ -208,6 +221,12 @@ public class Template {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("longDescription")
     String longDescription;
+
+    /**
+     * whether the template will work for free tier tenancy.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isFreeTier")
+    Boolean isFreeTier;
 
     /**
      * The date and time at which the template was created.

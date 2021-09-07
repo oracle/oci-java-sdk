@@ -11,18 +11,25 @@ import com.oracle.bmc.waas.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ChangeCertificateCompartmentResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ChangeCertificateCompartmentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
+    private ChangeCertificateCompartmentResponse(int __httpStatusCode__, String opcRequestId) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -32,6 +39,10 @@ public class ChangeCertificateCompartmentResponse {
             opcRequestId(o.getOpcRequestId());
 
             return this;
+        }
+
+        public ChangeCertificateCompartmentResponse build() {
+            return new ChangeCertificateCompartmentResponse(__httpStatusCode__, opcRequestId);
         }
     }
 }

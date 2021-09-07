@@ -11,12 +11,7 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateJobExecutionResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateJobExecutionResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
      *
@@ -35,7 +30,25 @@ public class CreateJobExecutionResponse {
      */
     private com.oracle.bmc.datacatalog.model.JobExecution jobExecution;
 
+    private CreateJobExecutionResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.datacatalog.model.JobExecution jobExecution) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.jobExecution = jobExecution;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,11 @@ public class CreateJobExecutionResponse {
             jobExecution(o.getJobExecution());
 
             return this;
+        }
+
+        public CreateJobExecutionResponse build() {
+            return new CreateJobExecutionResponse(
+                    __httpStatusCode__, etag, opcRequestId, jobExecution);
         }
     }
 }

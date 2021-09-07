@@ -902,6 +902,35 @@ public class ResourceManagerClient implements ResourceManager {
     }
 
     @Override
+    public GetJobDetailedLogContentResponse getJobDetailedLogContent(
+            GetJobDetailedLogContentRequest request) {
+        LOG.trace("Called getJobDetailedLogContent");
+        final GetJobDetailedLogContentRequest interceptedRequest =
+                GetJobDetailedLogContentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetJobDetailedLogContentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetJobDetailedLogContentResponse>
+                transformer = GetJobDetailedLogContentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetJobLogsResponse getJobLogs(GetJobLogsRequest request) {
         LOG.trace("Called getJobLogs");
         final GetJobLogsRequest interceptedRequest = GetJobLogsConverter.interceptRequest(request);

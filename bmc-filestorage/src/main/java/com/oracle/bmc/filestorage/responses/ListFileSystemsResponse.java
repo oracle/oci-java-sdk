@@ -11,12 +11,7 @@ import com.oracle.bmc.filestorage.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListFileSystemsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListFileSystemsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For list pagination. When this header appears in the response,
      * additional pages of results remain.
@@ -40,7 +35,25 @@ public class ListFileSystemsResponse {
      */
     private java.util.List<com.oracle.bmc.filestorage.model.FileSystemSummary> items;
 
+    private ListFileSystemsResponse(
+            int __httpStatusCode__,
+            String opcNextPage,
+            String opcRequestId,
+            java.util.List<com.oracle.bmc.filestorage.model.FileSystemSummary> items) {
+        super(__httpStatusCode__);
+        this.opcNextPage = opcNextPage;
+        this.opcRequestId = opcRequestId;
+        this.items = items;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -52,6 +65,11 @@ public class ListFileSystemsResponse {
             items(o.getItems());
 
             return this;
+        }
+
+        public ListFileSystemsResponse build() {
+            return new ListFileSystemsResponse(
+                    __httpStatusCode__, opcNextPage, opcRequestId, items);
         }
     }
 }

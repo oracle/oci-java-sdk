@@ -11,12 +11,7 @@ import com.oracle.bmc.database.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateExternalDatabaseConnectorResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateExternalDatabaseConnectorResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
      *
@@ -40,7 +35,27 @@ public class UpdateExternalDatabaseConnectorResponse {
      */
     private com.oracle.bmc.database.model.ExternalDatabaseConnector externalDatabaseConnector;
 
+    private UpdateExternalDatabaseConnectorResponse(
+            int __httpStatusCode__,
+            String opcWorkRequestId,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.database.model.ExternalDatabaseConnector externalDatabaseConnector) {
+        super(__httpStatusCode__);
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.externalDatabaseConnector = externalDatabaseConnector;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -53,6 +68,15 @@ public class UpdateExternalDatabaseConnectorResponse {
             externalDatabaseConnector(o.getExternalDatabaseConnector());
 
             return this;
+        }
+
+        public UpdateExternalDatabaseConnectorResponse build() {
+            return new UpdateExternalDatabaseConnectorResponse(
+                    __httpStatusCode__,
+                    opcWorkRequestId,
+                    etag,
+                    opcRequestId,
+                    externalDatabaseConnector);
         }
     }
 }
