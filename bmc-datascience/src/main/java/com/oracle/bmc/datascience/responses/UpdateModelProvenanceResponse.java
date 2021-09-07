@@ -11,12 +11,7 @@ import com.oracle.bmc.datascience.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateModelProvenanceResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateModelProvenanceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle assigned identifier for the request. If you need to contact
      * Oracle about a particular request, then provide the request ID.
@@ -35,7 +30,25 @@ public class UpdateModelProvenanceResponse {
      */
     private com.oracle.bmc.datascience.model.ModelProvenance modelProvenance;
 
+    private UpdateModelProvenanceResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.datascience.model.ModelProvenance modelProvenance) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.modelProvenance = modelProvenance;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,11 @@ public class UpdateModelProvenanceResponse {
             modelProvenance(o.getModelProvenance());
 
             return this;
+        }
+
+        public UpdateModelProvenanceResponse build() {
+            return new UpdateModelProvenanceResponse(
+                    __httpStatusCode__, opcRequestId, etag, modelProvenance);
         }
     }
 }

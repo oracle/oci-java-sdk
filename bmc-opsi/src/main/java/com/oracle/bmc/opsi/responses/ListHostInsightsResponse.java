@@ -11,12 +11,7 @@ import com.oracle.bmc.opsi.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListHostInsightsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListHostInsightsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -43,7 +38,27 @@ public class ListHostInsightsResponse {
      */
     private com.oracle.bmc.opsi.model.HostInsightSummaryCollection hostInsightSummaryCollection;
 
+    private ListHostInsightsResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            Integer opcTotalItems,
+            String opcNextPage,
+            com.oracle.bmc.opsi.model.HostInsightSummaryCollection hostInsightSummaryCollection) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcTotalItems = opcTotalItems;
+        this.opcNextPage = opcNextPage;
+        this.hostInsightSummaryCollection = hostInsightSummaryCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -56,6 +71,15 @@ public class ListHostInsightsResponse {
             hostInsightSummaryCollection(o.getHostInsightSummaryCollection());
 
             return this;
+        }
+
+        public ListHostInsightsResponse build() {
+            return new ListHostInsightsResponse(
+                    __httpStatusCode__,
+                    opcRequestId,
+                    opcTotalItems,
+                    opcNextPage,
+                    hostInsightSummaryCollection);
         }
     }
 }

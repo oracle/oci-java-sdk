@@ -80,6 +80,12 @@ public class FailureDetails {
         TerraformConfigVirusFound("TERRAFORM_CONFIG_VIRUS_FOUND"),
         TerraformGitCloneFailure("TERRAFORM_GIT_CLONE_FAILURE"),
         TerraformGitCheckoutFailure("TERRAFORM_GIT_CHECKOUT_FAILURE"),
+        TerraformObjectStorageConfigSourceEmptyBucket(
+                "TERRAFORM_OBJECT_STORAGE_CONFIG_SOURCE_EMPTY_BUCKET"),
+        TerraformObjectStorageConfigSourceNoTfFilePresent(
+                "TERRAFORM_OBJECT_STORAGE_CONFIG_SOURCE_NO_TF_FILE_PRESENT"),
+        TerraformObjectStorageConfigSourceUnsupportedObjectSize(
+                "TERRAFORM_OBJECT_STORAGE_CONFIG_SOURCE_UNSUPPORTED_OBJECT_SIZE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

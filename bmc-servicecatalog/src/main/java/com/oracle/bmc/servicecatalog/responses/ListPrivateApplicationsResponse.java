@@ -11,12 +11,7 @@ import com.oracle.bmc.servicecatalog.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListPrivateApplicationsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListPrivateApplicationsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -38,7 +33,26 @@ public class ListPrivateApplicationsResponse {
     private com.oracle.bmc.servicecatalog.model.PrivateApplicationCollection
             privateApplicationCollection;
 
+    private ListPrivateApplicationsResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String opcNextPage,
+            com.oracle.bmc.servicecatalog.model.PrivateApplicationCollection
+                    privateApplicationCollection) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.privateApplicationCollection = privateApplicationCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -50,6 +64,11 @@ public class ListPrivateApplicationsResponse {
             privateApplicationCollection(o.getPrivateApplicationCollection());
 
             return this;
+        }
+
+        public ListPrivateApplicationsResponse build() {
+            return new ListPrivateApplicationsResponse(
+                    __httpStatusCode__, opcRequestId, opcNextPage, privateApplicationCollection);
         }
     }
 }

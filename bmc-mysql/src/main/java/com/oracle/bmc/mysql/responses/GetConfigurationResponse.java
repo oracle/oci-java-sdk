@@ -11,12 +11,7 @@ import com.oracle.bmc.mysql.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetConfigurationResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetConfigurationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -43,7 +38,27 @@ public class GetConfigurationResponse {
      */
     private boolean isNotModified;
 
+    private GetConfigurationResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.mysql.model.Configuration configuration,
+            boolean isNotModified) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.configuration = configuration;
+        this.isNotModified = isNotModified;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -55,6 +70,11 @@ public class GetConfigurationResponse {
             configuration(o.getConfiguration());
             isNotModified(o.isNotModified());
             return this;
+        }
+
+        public GetConfigurationResponse build() {
+            return new GetConfigurationResponse(
+                    __httpStatusCode__, etag, opcRequestId, configuration, isNotModified);
         }
     }
 }

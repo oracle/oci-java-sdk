@@ -11,12 +11,7 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetResponderExecutionResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetResponderExecutionResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -35,7 +30,25 @@ public class GetResponderExecutionResponse {
      */
     private com.oracle.bmc.cloudguard.model.ResponderExecution responderExecution;
 
+    private GetResponderExecutionResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.cloudguard.model.ResponderExecution responderExecution) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.responderExecution = responderExecution;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,11 @@ public class GetResponderExecutionResponse {
             responderExecution(o.getResponderExecution());
 
             return this;
+        }
+
+        public GetResponderExecutionResponse build() {
+            return new GetResponderExecutionResponse(
+                    __httpStatusCode__, etag, opcRequestId, responderExecution);
         }
     }
 }

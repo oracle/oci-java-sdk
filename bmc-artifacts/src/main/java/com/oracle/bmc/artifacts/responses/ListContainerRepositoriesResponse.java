@@ -11,12 +11,7 @@ import com.oracle.bmc.artifacts.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListContainerRepositoriesResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListContainerRepositoriesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For list pagination. When this header appears in the response, additional pages
      * of results remain. For important details about how pagination works, see
@@ -38,7 +33,26 @@ public class ListContainerRepositoriesResponse {
     private com.oracle.bmc.artifacts.model.ContainerRepositoryCollection
             containerRepositoryCollection;
 
+    private ListContainerRepositoriesResponse(
+            int __httpStatusCode__,
+            String opcNextPage,
+            String opcRequestId,
+            com.oracle.bmc.artifacts.model.ContainerRepositoryCollection
+                    containerRepositoryCollection) {
+        super(__httpStatusCode__);
+        this.opcNextPage = opcNextPage;
+        this.opcRequestId = opcRequestId;
+        this.containerRepositoryCollection = containerRepositoryCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -50,6 +64,11 @@ public class ListContainerRepositoriesResponse {
             containerRepositoryCollection(o.getContainerRepositoryCollection());
 
             return this;
+        }
+
+        public ListContainerRepositoriesResponse build() {
+            return new ListContainerRepositoriesResponse(
+                    __httpStatusCode__, opcNextPage, opcRequestId, containerRepositoryCollection);
         }
     }
 }

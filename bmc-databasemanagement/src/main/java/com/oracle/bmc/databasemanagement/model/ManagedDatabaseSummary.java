@@ -71,6 +71,24 @@ public class ManagedDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
+        private DeploymentType deploymentType;
+
+        public Builder deploymentType(DeploymentType deploymentType) {
+            this.deploymentType = deploymentType;
+            this.__explicitlySet__.add("deploymentType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("managementOption")
+        private ManagementOption managementOption;
+
+        public Builder managementOption(ManagementOption managementOption) {
+            this.managementOption = managementOption;
+            this.__explicitlySet__.add("managementOption");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
         private Boolean isCluster;
 
@@ -109,6 +127,8 @@ public class ManagedDatabaseSummary {
                             name,
                             databaseType,
                             databaseSubType,
+                            deploymentType,
+                            managementOption,
                             isCluster,
                             parentContainerId,
                             timeCreated);
@@ -124,6 +144,8 @@ public class ManagedDatabaseSummary {
                             .name(o.getName())
                             .databaseType(o.getDatabaseType())
                             .databaseSubType(o.getDatabaseSubType())
+                            .deploymentType(o.getDeploymentType())
+                            .managementOption(o.getManagementOption())
                             .isCluster(o.getIsCluster())
                             .parentContainerId(o.getParentContainerId())
                             .timeCreated(o.getTimeCreated());
@@ -169,6 +191,18 @@ public class ManagedDatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
     DatabaseSubType databaseSubType;
+
+    /**
+     * The infrastructure used to deploy the Oracle Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
+    DeploymentType deploymentType;
+
+    /**
+     * The management option used when enabling Database Management.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("managementOption")
+    ManagementOption managementOption;
 
     /**
      * Indicates whether the Oracle Database is part of a cluster.

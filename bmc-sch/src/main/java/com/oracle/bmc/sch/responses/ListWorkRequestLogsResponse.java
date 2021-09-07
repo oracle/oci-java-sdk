@@ -11,12 +11,7 @@ import com.oracle.bmc.sch.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListWorkRequestLogsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For list pagination. When this header appears in the response,
      * additional pages of results remain. For important details about
@@ -47,7 +42,27 @@ public class ListWorkRequestLogsResponse {
      */
     private com.oracle.bmc.sch.model.WorkRequestLogEntryCollection workRequestLogEntryCollection;
 
+    private ListWorkRequestLogsResponse(
+            int __httpStatusCode__,
+            String opcNextPage,
+            String opcRequestId,
+            String opcPrevPage,
+            com.oracle.bmc.sch.model.WorkRequestLogEntryCollection workRequestLogEntryCollection) {
+        super(__httpStatusCode__);
+        this.opcNextPage = opcNextPage;
+        this.opcRequestId = opcRequestId;
+        this.opcPrevPage = opcPrevPage;
+        this.workRequestLogEntryCollection = workRequestLogEntryCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -60,6 +75,15 @@ public class ListWorkRequestLogsResponse {
             workRequestLogEntryCollection(o.getWorkRequestLogEntryCollection());
 
             return this;
+        }
+
+        public ListWorkRequestLogsResponse build() {
+            return new ListWorkRequestLogsResponse(
+                    __httpStatusCode__,
+                    opcNextPage,
+                    opcRequestId,
+                    opcPrevPage,
+                    workRequestLogEntryCollection);
         }
     }
 }

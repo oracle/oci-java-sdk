@@ -11,12 +11,7 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateBucketResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateBucketResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
      */
@@ -39,7 +34,27 @@ public class UpdateBucketResponse {
      */
     private com.oracle.bmc.objectstorage.model.Bucket bucket;
 
+    private UpdateBucketResponse(
+            int __httpStatusCode__,
+            String opcClientRequestId,
+            String opcRequestId,
+            String eTag,
+            com.oracle.bmc.objectstorage.model.Bucket bucket) {
+        super(__httpStatusCode__);
+        this.opcClientRequestId = opcClientRequestId;
+        this.opcRequestId = opcRequestId;
+        this.eTag = eTag;
+        this.bucket = bucket;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -52,6 +67,11 @@ public class UpdateBucketResponse {
             bucket(o.getBucket());
 
             return this;
+        }
+
+        public UpdateBucketResponse build() {
+            return new UpdateBucketResponse(
+                    __httpStatusCode__, opcClientRequestId, opcRequestId, eTag, bucket);
         }
     }
 }

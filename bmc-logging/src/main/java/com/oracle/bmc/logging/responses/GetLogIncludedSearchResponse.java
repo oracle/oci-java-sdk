@@ -11,12 +11,7 @@ import com.oracle.bmc.logging.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetLogIncludedSearchResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetLogIncludedSearchResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -35,7 +30,25 @@ public class GetLogIncludedSearchResponse {
      */
     private com.oracle.bmc.logging.model.LogIncludedSearch logIncludedSearch;
 
+    private GetLogIncludedSearchResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.logging.model.LogIncludedSearch logIncludedSearch) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.logIncludedSearch = logIncludedSearch;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,11 @@ public class GetLogIncludedSearchResponse {
             logIncludedSearch(o.getLogIncludedSearch());
 
             return this;
+        }
+
+        public GetLogIncludedSearchResponse build() {
+            return new GetLogIncludedSearchResponse(
+                    __httpStatusCode__, opcRequestId, etag, logIncludedSearch);
         }
     }
 }

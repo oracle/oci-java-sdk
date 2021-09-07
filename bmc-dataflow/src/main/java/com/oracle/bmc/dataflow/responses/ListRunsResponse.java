@@ -11,12 +11,7 @@ import com.oracle.bmc.dataflow.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListRunsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListRunsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Retrieves the previous page of results.
      * When this header appears in the response, previous pages of results exist.
@@ -44,7 +39,27 @@ public class ListRunsResponse {
      */
     private java.util.List<com.oracle.bmc.dataflow.model.RunSummary> items;
 
+    private ListRunsResponse(
+            int __httpStatusCode__,
+            String opcPrevPage,
+            String opcNextPage,
+            String opcRequestId,
+            java.util.List<com.oracle.bmc.dataflow.model.RunSummary> items) {
+        super(__httpStatusCode__);
+        this.opcPrevPage = opcPrevPage;
+        this.opcNextPage = opcNextPage;
+        this.opcRequestId = opcRequestId;
+        this.items = items;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -57,6 +72,11 @@ public class ListRunsResponse {
             items(o.getItems());
 
             return this;
+        }
+
+        public ListRunsResponse build() {
+            return new ListRunsResponse(
+                    __httpStatusCode__, opcPrevPage, opcNextPage, opcRequestId, items);
         }
     }
 }

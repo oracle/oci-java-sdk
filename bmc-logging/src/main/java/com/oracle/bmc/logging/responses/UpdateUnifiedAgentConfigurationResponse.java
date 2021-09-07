@@ -11,12 +11,7 @@ import com.oracle.bmc.logging.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateUnifiedAgentConfigurationResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateUnifiedAgentConfigurationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The OCID of the work request.
      *
@@ -30,7 +25,21 @@ public class UpdateUnifiedAgentConfigurationResponse {
      */
     private String opcRequestId;
 
+    private UpdateUnifiedAgentConfigurationResponse(
+            int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
+        super(__httpStatusCode__);
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.opcRequestId = opcRequestId;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -41,6 +50,11 @@ public class UpdateUnifiedAgentConfigurationResponse {
             opcRequestId(o.getOpcRequestId());
 
             return this;
+        }
+
+        public UpdateUnifiedAgentConfigurationResponse build() {
+            return new UpdateUnifiedAgentConfigurationResponse(
+                    __httpStatusCode__, opcWorkRequestId, opcRequestId);
         }
     }
 }

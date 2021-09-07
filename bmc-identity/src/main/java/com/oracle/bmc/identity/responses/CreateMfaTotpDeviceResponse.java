@@ -11,12 +11,7 @@ import com.oracle.bmc.identity.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateMfaTotpDeviceResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateMfaTotpDeviceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -34,7 +29,25 @@ public class CreateMfaTotpDeviceResponse {
      */
     private com.oracle.bmc.identity.model.MfaTotpDevice mfaTotpDevice;
 
+    private CreateMfaTotpDeviceResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.identity.model.MfaTotpDevice mfaTotpDevice) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.mfaTotpDevice = mfaTotpDevice;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -46,6 +59,11 @@ public class CreateMfaTotpDeviceResponse {
             mfaTotpDevice(o.getMfaTotpDevice());
 
             return this;
+        }
+
+        public CreateMfaTotpDeviceResponse build() {
+            return new CreateMfaTotpDeviceResponse(
+                    __httpStatusCode__, opcRequestId, etag, mfaTotpDevice);
         }
     }
 }

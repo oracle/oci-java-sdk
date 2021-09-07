@@ -11,12 +11,7 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ValidateSourceMappingResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ValidateSourceMappingResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
      *
@@ -28,7 +23,23 @@ public class ValidateSourceMappingResponse {
      */
     private com.oracle.bmc.loganalytics.model.SourceMappingResponse sourceMappingResponse;
 
+    private ValidateSourceMappingResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            com.oracle.bmc.loganalytics.model.SourceMappingResponse sourceMappingResponse) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.sourceMappingResponse = sourceMappingResponse;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -39,6 +50,11 @@ public class ValidateSourceMappingResponse {
             sourceMappingResponse(o.getSourceMappingResponse());
 
             return this;
+        }
+
+        public ValidateSourceMappingResponse build() {
+            return new ValidateSourceMappingResponse(
+                    __httpStatusCode__, opcRequestId, sourceMappingResponse);
         }
     }
 }

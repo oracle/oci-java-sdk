@@ -11,12 +11,8 @@ import com.oracle.bmc.resourcemanager.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateConfigurationSourceProviderResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateConfigurationSourceProviderResponse
+        extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique identifier for the request.
      */
@@ -33,7 +29,26 @@ public class UpdateConfigurationSourceProviderResponse {
     private com.oracle.bmc.resourcemanager.model.ConfigurationSourceProvider
             configurationSourceProvider;
 
+    private UpdateConfigurationSourceProviderResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.resourcemanager.model.ConfigurationSourceProvider
+                    configurationSourceProvider) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.configurationSourceProvider = configurationSourceProvider;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -45,6 +60,11 @@ public class UpdateConfigurationSourceProviderResponse {
             configurationSourceProvider(o.getConfigurationSourceProvider());
 
             return this;
+        }
+
+        public UpdateConfigurationSourceProviderResponse build() {
+            return new UpdateConfigurationSourceProviderResponse(
+                    __httpStatusCode__, opcRequestId, etag, configurationSourceProvider);
         }
     }
 }

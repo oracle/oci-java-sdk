@@ -11,12 +11,7 @@ import com.oracle.bmc.marketplace.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetPublicationPackageResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetPublicationPackageResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -35,7 +30,25 @@ public class GetPublicationPackageResponse {
      */
     private com.oracle.bmc.marketplace.model.PublicationPackage publicationPackage;
 
+    private GetPublicationPackageResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.marketplace.model.PublicationPackage publicationPackage) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.publicationPackage = publicationPackage;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,11 @@ public class GetPublicationPackageResponse {
             publicationPackage(o.getPublicationPackage());
 
             return this;
+        }
+
+        public GetPublicationPackageResponse build() {
+            return new GetPublicationPackageResponse(
+                    __httpStatusCode__, etag, opcRequestId, publicationPackage);
         }
     }
 }

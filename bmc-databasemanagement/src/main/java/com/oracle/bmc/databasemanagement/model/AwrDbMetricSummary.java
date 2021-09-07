@@ -127,7 +127,7 @@ public class AwrDbMetricSummary {
     Double minValue;
 
     /**
-     * The maximum value of the sampling period.v
+     * The maximum value of the sampling period.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxValue")
     Double maxValue;

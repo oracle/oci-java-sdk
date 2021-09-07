@@ -11,18 +11,25 @@ import com.oracle.bmc.rover.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ChangeRoverClusterCompartmentResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ChangeRoverClusterCompartmentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      *
      */
     private String opcRequestId;
 
+    private ChangeRoverClusterCompartmentResponse(int __httpStatusCode__, String opcRequestId) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -32,6 +39,10 @@ public class ChangeRoverClusterCompartmentResponse {
             opcRequestId(o.getOpcRequestId());
 
             return this;
+        }
+
+        public ChangeRoverClusterCompartmentResponse build() {
+            return new ChangeRoverClusterCompartmentResponse(__httpStatusCode__, opcRequestId);
         }
     }
 }

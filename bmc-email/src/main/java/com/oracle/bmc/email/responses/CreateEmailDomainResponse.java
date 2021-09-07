@@ -11,12 +11,7 @@ import com.oracle.bmc.email.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateEmailDomainResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateEmailDomainResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The full URI of the resource related to the request
      *
@@ -53,7 +48,31 @@ public class CreateEmailDomainResponse {
      */
     private com.oracle.bmc.email.model.EmailDomain emailDomain;
 
+    private CreateEmailDomainResponse(
+            int __httpStatusCode__,
+            String contentLocation,
+            String etag,
+            String location,
+            String opcRequestId,
+            String opcWorkRequestId,
+            com.oracle.bmc.email.model.EmailDomain emailDomain) {
+        super(__httpStatusCode__);
+        this.contentLocation = contentLocation;
+        this.etag = etag;
+        this.location = location;
+        this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.emailDomain = emailDomain;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -68,6 +87,17 @@ public class CreateEmailDomainResponse {
             emailDomain(o.getEmailDomain());
 
             return this;
+        }
+
+        public CreateEmailDomainResponse build() {
+            return new CreateEmailDomainResponse(
+                    __httpStatusCode__,
+                    contentLocation,
+                    etag,
+                    location,
+                    opcRequestId,
+                    opcWorkRequestId,
+                    emailDomain);
         }
     }
 }

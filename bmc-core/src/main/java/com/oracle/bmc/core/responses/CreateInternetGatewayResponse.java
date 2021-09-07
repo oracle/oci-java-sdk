@@ -11,12 +11,7 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateInternetGatewayResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateInternetGatewayResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -35,7 +30,25 @@ public class CreateInternetGatewayResponse {
      */
     private com.oracle.bmc.core.model.InternetGateway internetGateway;
 
+    private CreateInternetGatewayResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.core.model.InternetGateway internetGateway) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.internetGateway = internetGateway;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,11 @@ public class CreateInternetGatewayResponse {
             internetGateway(o.getInternetGateway());
 
             return this;
+        }
+
+        public CreateInternetGatewayResponse build() {
+            return new CreateInternetGatewayResponse(
+                    __httpStatusCode__, etag, opcRequestId, internetGateway);
         }
     }
 }

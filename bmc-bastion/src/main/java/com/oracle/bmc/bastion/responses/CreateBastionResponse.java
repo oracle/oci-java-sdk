@@ -11,12 +11,7 @@ import com.oracle.bmc.bastion.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateBastionResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateBastionResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
      *
@@ -47,7 +42,29 @@ public class CreateBastionResponse {
      */
     private com.oracle.bmc.bastion.model.Bastion bastion;
 
+    private CreateBastionResponse(
+            int __httpStatusCode__,
+            String opcWorkRequestId,
+            String opcRequestId,
+            String location,
+            String etag,
+            com.oracle.bmc.bastion.model.Bastion bastion) {
+        super(__httpStatusCode__);
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.opcRequestId = opcRequestId;
+        this.location = location;
+        this.etag = etag;
+        this.bastion = bastion;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -61,6 +78,11 @@ public class CreateBastionResponse {
             bastion(o.getBastion());
 
             return this;
+        }
+
+        public CreateBastionResponse build() {
+            return new CreateBastionResponse(
+                    __httpStatusCode__, opcWorkRequestId, opcRequestId, location, etag, bastion);
         }
     }
 }

@@ -11,12 +11,7 @@ import com.oracle.bmc.artifacts.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListContainerImageSignaturesResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListContainerImageSignaturesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For list pagination. When this header appears in the response, additional pages
      * of results remain. For important details about how pagination works, see
@@ -38,7 +33,26 @@ public class ListContainerImageSignaturesResponse {
     private com.oracle.bmc.artifacts.model.ContainerImageSignatureCollection
             containerImageSignatureCollection;
 
+    private ListContainerImageSignaturesResponse(
+            int __httpStatusCode__,
+            String opcNextPage,
+            String opcRequestId,
+            com.oracle.bmc.artifacts.model.ContainerImageSignatureCollection
+                    containerImageSignatureCollection) {
+        super(__httpStatusCode__);
+        this.opcNextPage = opcNextPage;
+        this.opcRequestId = opcRequestId;
+        this.containerImageSignatureCollection = containerImageSignatureCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -50,6 +64,14 @@ public class ListContainerImageSignaturesResponse {
             containerImageSignatureCollection(o.getContainerImageSignatureCollection());
 
             return this;
+        }
+
+        public ListContainerImageSignaturesResponse build() {
+            return new ListContainerImageSignaturesResponse(
+                    __httpStatusCode__,
+                    opcNextPage,
+                    opcRequestId,
+                    containerImageSignatureCollection);
         }
     }
 }

@@ -33,19 +33,28 @@ public class CreatePlanJobOperationDetails extends CreateJobOperationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("terraformAdvancedOptions")
+        private TerraformAdvancedOptions terraformAdvancedOptions;
+
+        public Builder terraformAdvancedOptions(TerraformAdvancedOptions terraformAdvancedOptions) {
+            this.terraformAdvancedOptions = terraformAdvancedOptions;
+            this.__explicitlySet__.add("terraformAdvancedOptions");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreatePlanJobOperationDetails build() {
-            CreatePlanJobOperationDetails __instance__ = new CreatePlanJobOperationDetails();
+            CreatePlanJobOperationDetails __instance__ =
+                    new CreatePlanJobOperationDetails(terraformAdvancedOptions);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreatePlanJobOperationDetails o) {
-            Builder copiedBuilder = this;
+            Builder copiedBuilder = terraformAdvancedOptions(o.getTerraformAdvancedOptions());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -60,9 +69,13 @@ public class CreatePlanJobOperationDetails extends CreateJobOperationDetails {
     }
 
     @Deprecated
-    public CreatePlanJobOperationDetails() {
+    public CreatePlanJobOperationDetails(TerraformAdvancedOptions terraformAdvancedOptions) {
         super();
+        this.terraformAdvancedOptions = terraformAdvancedOptions;
     }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("terraformAdvancedOptions")
+    TerraformAdvancedOptions terraformAdvancedOptions;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

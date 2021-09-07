@@ -880,6 +880,18 @@ public interface Database extends AutoCloseable {
             DisableAutonomousDatabaseOperationsInsightsRequest request);
 
     /**
+     * Disables the Database Management service for the database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableDatabaseManagement API.
+     */
+    DisableDatabaseManagementResponse disableDatabaseManagement(
+            DisableDatabaseManagementRequest request);
+
+    /**
      * Disable Database Management service for the external container database.
      *
      * @param request The request object containing the details to send
@@ -995,6 +1007,17 @@ public interface Database extends AutoCloseable {
      */
     EnableAutonomousDatabaseOperationsInsightsResponse enableAutonomousDatabaseOperationsInsights(
             EnableAutonomousDatabaseOperationsInsightsRequest request);
+
+    /**
+     * Enables the Database Management service for an Oracle Database located in Oracle Cloud Infrastructure. This service allows the database to access tools including Metrics and Performance hub. Database Management is enabled at the container database (CDB) level.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableDatabaseManagement API.
+     */
+    EnableDatabaseManagementResponse enableDatabaseManagement(
+            EnableDatabaseManagementRequest request);
 
     /**
      * Enables Database Management Service for the external container database.
@@ -2289,6 +2312,17 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/MigrateVaultKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use MigrateVaultKey API.
      */
     MigrateVaultKeyResponse migrateVaultKey(MigrateVaultKeyRequest request);
+
+    /**
+     * Updates one or more attributes of the Database Management service for the database.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ModifyDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ModifyDatabaseManagement API.
+     */
+    ModifyDatabaseManagementResponse modifyDatabaseManagement(
+            ModifyDatabaseManagementRequest request);
 
     /**
      * Asynchronously registers this Autonomous Database with Data Safe.

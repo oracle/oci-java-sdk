@@ -231,7 +231,7 @@ public class Stack {
     /**
      * The current lifecycle state of the stack.
      * For more information about stack lifecycle states in Resource Manager, see
-     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#StackStates).
+     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -283,7 +283,7 @@ public class Stack {
     /**
      * The current lifecycle state of the stack.
      * For more information about stack lifecycle states in Resource Manager, see
-     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#StackStates).
+     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
@@ -295,7 +295,7 @@ public class Stack {
     /**
      * Terraform variables associated with this resource.
      * Maximum number of variables supported is 250.
-     * The maximum size of each variable, including both name and value, is 4096 bytes.
+     * The maximum size of each variable, including both name and value, is 8192 bytes.
      * Example: {@code {"CompartmentId": "compartment-id-value"}}
      *
      **/

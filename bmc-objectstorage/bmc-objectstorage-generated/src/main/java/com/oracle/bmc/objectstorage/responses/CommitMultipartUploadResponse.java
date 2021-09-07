@@ -11,12 +11,7 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CommitMultipartUploadResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
      */
@@ -54,7 +49,31 @@ public class CommitMultipartUploadResponse {
      */
     private String versionId;
 
+    private CommitMultipartUploadResponse(
+            int __httpStatusCode__,
+            String opcClientRequestId,
+            String opcRequestId,
+            String opcMultipartMd5,
+            String eTag,
+            java.util.Date lastModified,
+            String versionId) {
+        super(__httpStatusCode__);
+        this.opcClientRequestId = opcClientRequestId;
+        this.opcRequestId = opcRequestId;
+        this.opcMultipartMd5 = opcMultipartMd5;
+        this.eTag = eTag;
+        this.lastModified = lastModified;
+        this.versionId = versionId;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -69,6 +88,17 @@ public class CommitMultipartUploadResponse {
             versionId(o.getVersionId());
 
             return this;
+        }
+
+        public CommitMultipartUploadResponse build() {
+            return new CommitMultipartUploadResponse(
+                    __httpStatusCode__,
+                    opcClientRequestId,
+                    opcRequestId,
+                    opcMultipartMd5,
+                    eTag,
+                    lastModified,
+                    versionId);
         }
     }
 }

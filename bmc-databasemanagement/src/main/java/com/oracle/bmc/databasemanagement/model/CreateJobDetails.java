@@ -89,4 +89,7 @@ public class CreateJobDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("resultLocation")
     JobExecutionResultLocation resultLocation;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("scheduleDetails")
+    JobScheduleDetails scheduleDetails;
 }

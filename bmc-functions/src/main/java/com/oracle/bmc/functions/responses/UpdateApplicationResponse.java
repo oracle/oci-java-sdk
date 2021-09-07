@@ -11,12 +11,7 @@ import com.oracle.bmc.functions.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateApplicationResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateApplicationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. Add this value to the {@code if-match} parameter
      * in a PUT or DELETE operation. The resource will be updated only if the value you
@@ -37,7 +32,25 @@ public class UpdateApplicationResponse {
      */
     private com.oracle.bmc.functions.model.Application application;
 
+    private UpdateApplicationResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.functions.model.Application application) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.application = application;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -49,6 +62,11 @@ public class UpdateApplicationResponse {
             application(o.getApplication());
 
             return this;
+        }
+
+        public UpdateApplicationResponse build() {
+            return new UpdateApplicationResponse(
+                    __httpStatusCode__, etag, opcRequestId, application);
         }
     }
 }

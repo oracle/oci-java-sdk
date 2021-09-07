@@ -11,12 +11,7 @@ import com.oracle.bmc.mysql.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class AddAnalyticsClusterResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class AddAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -41,7 +36,27 @@ public class AddAnalyticsClusterResponse {
      */
     private com.oracle.bmc.mysql.model.AnalyticsCluster analyticsCluster;
 
+    private AddAnalyticsClusterResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            String opcWorkRequestId,
+            com.oracle.bmc.mysql.model.AnalyticsCluster analyticsCluster) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.analyticsCluster = analyticsCluster;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -54,6 +69,11 @@ public class AddAnalyticsClusterResponse {
             analyticsCluster(o.getAnalyticsCluster());
 
             return this;
+        }
+
+        public AddAnalyticsClusterResponse build() {
+            return new AddAnalyticsClusterResponse(
+                    __httpStatusCode__, etag, opcRequestId, opcWorkRequestId, analyticsCluster);
         }
     }
 }

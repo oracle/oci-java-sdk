@@ -11,12 +11,7 @@ import com.oracle.bmc.nosql.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateTableResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateTableResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous
      * request. You can use this to query status of the asynchronous
@@ -33,7 +28,21 @@ public class CreateTableResponse {
      */
     private String opcRequestId;
 
+    private CreateTableResponse(
+            int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
+        super(__httpStatusCode__);
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.opcRequestId = opcRequestId;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -44,6 +53,10 @@ public class CreateTableResponse {
             opcRequestId(o.getOpcRequestId());
 
             return this;
+        }
+
+        public CreateTableResponse build() {
+            return new CreateTableResponse(__httpStatusCode__, opcWorkRequestId, opcRequestId);
         }
     }
 }

@@ -11,12 +11,7 @@ import com.oracle.bmc.rover.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListRoverEntitlementsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListRoverEntitlementsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      *
      */
@@ -43,7 +38,27 @@ public class ListRoverEntitlementsResponse {
      */
     private com.oracle.bmc.rover.model.RoverEntitlementCollection roverEntitlementCollection;
 
+    private ListRoverEntitlementsResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String opcNextPage,
+            String opcPrevPage,
+            com.oracle.bmc.rover.model.RoverEntitlementCollection roverEntitlementCollection) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.opcPrevPage = opcPrevPage;
+        this.roverEntitlementCollection = roverEntitlementCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -56,6 +71,15 @@ public class ListRoverEntitlementsResponse {
             roverEntitlementCollection(o.getRoverEntitlementCollection());
 
             return this;
+        }
+
+        public ListRoverEntitlementsResponse build() {
+            return new ListRoverEntitlementsResponse(
+                    __httpStatusCode__,
+                    opcRequestId,
+                    opcNextPage,
+                    opcPrevPage,
+                    roverEntitlementCollection);
         }
     }
 }

@@ -11,12 +11,7 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListPipelineValidationsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListPipelineValidationsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -48,7 +43,30 @@ public class ListPipelineValidationsResponse {
     private com.oracle.bmc.dataintegration.model.PipelineValidationSummaryCollection
             pipelineValidationSummaryCollection;
 
+    private ListPipelineValidationsResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String opcNextPage,
+            String opcPrevPage,
+            Integer opcTotalItems,
+            com.oracle.bmc.dataintegration.model.PipelineValidationSummaryCollection
+                    pipelineValidationSummaryCollection) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.opcPrevPage = opcPrevPage;
+        this.opcTotalItems = opcTotalItems;
+        this.pipelineValidationSummaryCollection = pipelineValidationSummaryCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -62,6 +80,16 @@ public class ListPipelineValidationsResponse {
             pipelineValidationSummaryCollection(o.getPipelineValidationSummaryCollection());
 
             return this;
+        }
+
+        public ListPipelineValidationsResponse build() {
+            return new ListPipelineValidationsResponse(
+                    __httpStatusCode__,
+                    opcRequestId,
+                    opcNextPage,
+                    opcPrevPage,
+                    opcTotalItems,
+                    pipelineValidationSummaryCollection);
         }
     }
 }

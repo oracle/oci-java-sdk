@@ -11,12 +11,7 @@ import com.oracle.bmc.opsi.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateDatabaseInsightResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateDatabaseInsightResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
      *
@@ -51,7 +46,31 @@ public class CreateDatabaseInsightResponse {
      */
     private com.oracle.bmc.opsi.model.DatabaseInsight databaseInsight;
 
+    private CreateDatabaseInsightResponse(
+            int __httpStatusCode__,
+            String opcWorkRequestId,
+            String opcRequestId,
+            String location,
+            String contentLocation,
+            String etag,
+            com.oracle.bmc.opsi.model.DatabaseInsight databaseInsight) {
+        super(__httpStatusCode__);
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.opcRequestId = opcRequestId;
+        this.location = location;
+        this.contentLocation = contentLocation;
+        this.etag = etag;
+        this.databaseInsight = databaseInsight;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -66,6 +85,17 @@ public class CreateDatabaseInsightResponse {
             databaseInsight(o.getDatabaseInsight());
 
             return this;
+        }
+
+        public CreateDatabaseInsightResponse build() {
+            return new CreateDatabaseInsightResponse(
+                    __httpStatusCode__,
+                    opcWorkRequestId,
+                    opcRequestId,
+                    location,
+                    contentLocation,
+                    etag,
+                    databaseInsight);
         }
     }
 }

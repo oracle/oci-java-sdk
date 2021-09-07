@@ -11,12 +11,7 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateClusterNetworkResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateClusterNetworkResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -42,7 +37,27 @@ public class CreateClusterNetworkResponse {
      */
     private com.oracle.bmc.core.model.ClusterNetwork clusterNetwork;
 
+    private CreateClusterNetworkResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            String opcWorkRequestId,
+            com.oracle.bmc.core.model.ClusterNetwork clusterNetwork) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.clusterNetwork = clusterNetwork;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -55,6 +70,11 @@ public class CreateClusterNetworkResponse {
             clusterNetwork(o.getClusterNetwork());
 
             return this;
+        }
+
+        public CreateClusterNetworkResponse build() {
+            return new CreateClusterNetworkResponse(
+                    __httpStatusCode__, etag, opcRequestId, opcWorkRequestId, clusterNetwork);
         }
     }
 }

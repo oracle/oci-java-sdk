@@ -11,12 +11,7 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ValidateAssociationParametersResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ValidateAssociationParametersResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -35,7 +30,27 @@ public class ValidateAssociationParametersResponse {
     private com.oracle.bmc.loganalytics.model.LogAnalyticsAssociationParameterCollection
             logAnalyticsAssociationParameterCollection;
 
+    private ValidateAssociationParametersResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.loganalytics.model.LogAnalyticsAssociationParameterCollection
+                    logAnalyticsAssociationParameterCollection) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.logAnalyticsAssociationParameterCollection =
+                logAnalyticsAssociationParameterCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -48,6 +63,14 @@ public class ValidateAssociationParametersResponse {
                     o.getLogAnalyticsAssociationParameterCollection());
 
             return this;
+        }
+
+        public ValidateAssociationParametersResponse build() {
+            return new ValidateAssociationParametersResponse(
+                    __httpStatusCode__,
+                    etag,
+                    opcRequestId,
+                    logAnalyticsAssociationParameterCollection);
         }
     }
 }

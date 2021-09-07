@@ -11,12 +11,7 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetQueryWorkRequestResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetQueryWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
      *
@@ -39,7 +34,27 @@ public class GetQueryWorkRequestResponse {
      */
     private com.oracle.bmc.loganalytics.model.QueryWorkRequest queryWorkRequest;
 
+    private GetQueryWorkRequestResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String etag,
+            Float retryAfter,
+            com.oracle.bmc.loganalytics.model.QueryWorkRequest queryWorkRequest) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.retryAfter = retryAfter;
+        this.queryWorkRequest = queryWorkRequest;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -52,6 +67,11 @@ public class GetQueryWorkRequestResponse {
             queryWorkRequest(o.getQueryWorkRequest());
 
             return this;
+        }
+
+        public GetQueryWorkRequestResponse build() {
+            return new GetQueryWorkRequestResponse(
+                    __httpStatusCode__, opcRequestId, etag, retryAfter, queryWorkRequest);
         }
     }
 }

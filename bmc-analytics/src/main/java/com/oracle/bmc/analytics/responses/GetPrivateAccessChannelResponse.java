@@ -11,12 +11,7 @@ import com.oracle.bmc.analytics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetPrivateAccessChannelResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetPrivateAccessChannelResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -35,7 +30,25 @@ public class GetPrivateAccessChannelResponse {
      */
     private com.oracle.bmc.analytics.model.PrivateAccessChannel privateAccessChannel;
 
+    private GetPrivateAccessChannelResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.analytics.model.PrivateAccessChannel privateAccessChannel) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.privateAccessChannel = privateAccessChannel;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,11 @@ public class GetPrivateAccessChannelResponse {
             privateAccessChannel(o.getPrivateAccessChannel());
 
             return this;
+        }
+
+        public GetPrivateAccessChannelResponse build() {
+            return new GetPrivateAccessChannelResponse(
+                    __httpStatusCode__, etag, opcRequestId, privateAccessChannel);
         }
     }
 }

@@ -11,12 +11,7 @@ import com.oracle.bmc.waas.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateCustomProtectionRuleResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateCustomProtectionRuleResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
@@ -32,7 +27,25 @@ public class UpdateCustomProtectionRuleResponse {
      */
     private com.oracle.bmc.waas.model.CustomProtectionRule customProtectionRule;
 
+    private UpdateCustomProtectionRuleResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.waas.model.CustomProtectionRule customProtectionRule) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.customProtectionRule = customProtectionRule;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -44,6 +57,11 @@ public class UpdateCustomProtectionRuleResponse {
             customProtectionRule(o.getCustomProtectionRule());
 
             return this;
+        }
+
+        public UpdateCustomProtectionRuleResponse build() {
+            return new UpdateCustomProtectionRuleResponse(
+                    __httpStatusCode__, opcRequestId, etag, customProtectionRule);
         }
     }
 }

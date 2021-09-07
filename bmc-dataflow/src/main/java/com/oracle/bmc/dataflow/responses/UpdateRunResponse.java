@@ -11,12 +11,7 @@ import com.oracle.bmc.dataflow.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateRunResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateRunResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control.
      * See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
@@ -36,7 +31,25 @@ public class UpdateRunResponse {
      */
     private com.oracle.bmc.dataflow.model.Run run;
 
+    private UpdateRunResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.dataflow.model.Run run) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.run = run;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -48,6 +61,10 @@ public class UpdateRunResponse {
             run(o.getRun());
 
             return this;
+        }
+
+        public UpdateRunResponse build() {
+            return new UpdateRunResponse(__httpStatusCode__, etag, opcRequestId, run);
         }
     }
 }

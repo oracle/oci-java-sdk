@@ -11,12 +11,7 @@ import com.oracle.bmc.servicecatalog.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListApplicationsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListApplicationsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -37,7 +32,25 @@ public class ListApplicationsResponse {
      */
     private com.oracle.bmc.servicecatalog.model.ApplicationCollection applicationCollection;
 
+    private ListApplicationsResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String opcNextPage,
+            com.oracle.bmc.servicecatalog.model.ApplicationCollection applicationCollection) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.applicationCollection = applicationCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -49,6 +62,11 @@ public class ListApplicationsResponse {
             applicationCollection(o.getApplicationCollection());
 
             return this;
+        }
+
+        public ListApplicationsResponse build() {
+            return new ListApplicationsResponse(
+                    __httpStatusCode__, opcRequestId, opcNextPage, applicationCollection);
         }
     }
 }

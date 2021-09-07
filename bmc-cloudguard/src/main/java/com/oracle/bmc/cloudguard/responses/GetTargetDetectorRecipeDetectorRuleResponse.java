@@ -11,12 +11,8 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetTargetDetectorRecipeDetectorRuleResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetTargetDetectorRecipeDetectorRuleResponse
+        extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -36,7 +32,26 @@ public class GetTargetDetectorRecipeDetectorRuleResponse {
     private com.oracle.bmc.cloudguard.model.TargetDetectorRecipeDetectorRule
             targetDetectorRecipeDetectorRule;
 
+    private GetTargetDetectorRecipeDetectorRuleResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.cloudguard.model.TargetDetectorRecipeDetectorRule
+                    targetDetectorRecipeDetectorRule) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.targetDetectorRecipeDetectorRule = targetDetectorRecipeDetectorRule;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -48,6 +63,11 @@ public class GetTargetDetectorRecipeDetectorRuleResponse {
             targetDetectorRecipeDetectorRule(o.getTargetDetectorRecipeDetectorRule());
 
             return this;
+        }
+
+        public GetTargetDetectorRecipeDetectorRuleResponse build() {
+            return new GetTargetDetectorRecipeDetectorRuleResponse(
+                    __httpStatusCode__, etag, opcRequestId, targetDetectorRecipeDetectorRule);
         }
     }
 }

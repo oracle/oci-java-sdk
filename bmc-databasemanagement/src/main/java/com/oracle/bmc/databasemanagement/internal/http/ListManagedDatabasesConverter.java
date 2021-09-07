@@ -56,6 +56,22 @@ public class ListManagedDatabasesConverter {
                                     request.getName()));
         }
 
+        if (request.getManagementOption() != null) {
+            target =
+                    target.queryParam(
+                            "managementOption",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getManagementOption().getValue()));
+        }
+
+        if (request.getDeploymentType() != null) {
+            target =
+                    target.queryParam(
+                            "deploymentType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDeploymentType().getValue()));
+        }
+
         if (request.getPage() != null) {
             target =
                     target.queryParam(

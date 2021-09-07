@@ -11,12 +11,7 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateMultipartUploadResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateMultipartUploadResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
      */
@@ -39,7 +34,27 @@ public class CreateMultipartUploadResponse {
      */
     private com.oracle.bmc.objectstorage.model.MultipartUpload multipartUpload;
 
+    private CreateMultipartUploadResponse(
+            int __httpStatusCode__,
+            String opcClientRequestId,
+            String opcRequestId,
+            String location,
+            com.oracle.bmc.objectstorage.model.MultipartUpload multipartUpload) {
+        super(__httpStatusCode__);
+        this.opcClientRequestId = opcClientRequestId;
+        this.opcRequestId = opcRequestId;
+        this.location = location;
+        this.multipartUpload = multipartUpload;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -52,6 +67,15 @@ public class CreateMultipartUploadResponse {
             multipartUpload(o.getMultipartUpload());
 
             return this;
+        }
+
+        public CreateMultipartUploadResponse build() {
+            return new CreateMultipartUploadResponse(
+                    __httpStatusCode__,
+                    opcClientRequestId,
+                    opcRequestId,
+                    location,
+                    multipartUpload);
         }
     }
 }

@@ -11,12 +11,7 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListByoipAllocatedRangesResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListByoipAllocatedRangesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For list pagination. When this header appears in the response, additional pages
      * of results remain. For important details about how pagination works, see
@@ -37,7 +32,25 @@ public class ListByoipAllocatedRangesResponse {
      */
     private com.oracle.bmc.core.model.ByoipAllocatedRangeCollection byoipAllocatedRangeCollection;
 
+    private ListByoipAllocatedRangesResponse(
+            int __httpStatusCode__,
+            String opcNextPage,
+            String opcRequestId,
+            com.oracle.bmc.core.model.ByoipAllocatedRangeCollection byoipAllocatedRangeCollection) {
+        super(__httpStatusCode__);
+        this.opcNextPage = opcNextPage;
+        this.opcRequestId = opcRequestId;
+        this.byoipAllocatedRangeCollection = byoipAllocatedRangeCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -49,6 +62,11 @@ public class ListByoipAllocatedRangesResponse {
             byoipAllocatedRangeCollection(o.getByoipAllocatedRangeCollection());
 
             return this;
+        }
+
+        public ListByoipAllocatedRangesResponse build() {
+            return new ListByoipAllocatedRangesResponse(
+                    __httpStatusCode__, opcNextPage, opcRequestId, byoipAllocatedRangeCollection);
         }
     }
 }

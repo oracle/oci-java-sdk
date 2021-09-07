@@ -11,18 +11,25 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetNamespaceResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetNamespaceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The returned String instance.
      */
     private String value;
 
+    private GetNamespaceResponse(int __httpStatusCode__, String value) {
+        super(__httpStatusCode__);
+        this.value = value;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -33,6 +40,10 @@ public class GetNamespaceResponse {
             value(o.getValue());
 
             return this;
+        }
+
+        public GetNamespaceResponse build() {
+            return new GetNamespaceResponse(__httpStatusCode__, value);
         }
     }
 }

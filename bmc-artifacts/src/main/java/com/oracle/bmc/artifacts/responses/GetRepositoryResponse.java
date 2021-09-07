@@ -11,12 +11,7 @@ import com.oracle.bmc.artifacts.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetRepositoryResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetRepositoryResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -35,7 +30,25 @@ public class GetRepositoryResponse {
      */
     private com.oracle.bmc.artifacts.model.Repository repository;
 
+    private GetRepositoryResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.artifacts.model.Repository repository) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.repository = repository;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,10 @@ public class GetRepositoryResponse {
             repository(o.getRepository());
 
             return this;
+        }
+
+        public GetRepositoryResponse build() {
+            return new GetRepositoryResponse(__httpStatusCode__, etag, opcRequestId, repository);
         }
     }
 }

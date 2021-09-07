@@ -11,12 +11,7 @@ import com.oracle.bmc.optimizer.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateRecommendationResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateRecommendationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -35,7 +30,25 @@ public class UpdateRecommendationResponse {
      */
     private com.oracle.bmc.optimizer.model.Recommendation recommendation;
 
+    private UpdateRecommendationResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.optimizer.model.Recommendation recommendation) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.recommendation = recommendation;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,11 @@ public class UpdateRecommendationResponse {
             recommendation(o.getRecommendation());
 
             return this;
+        }
+
+        public UpdateRecommendationResponse build() {
+            return new UpdateRecommendationResponse(
+                    __httpStatusCode__, etag, opcRequestId, recommendation);
         }
     }
 }

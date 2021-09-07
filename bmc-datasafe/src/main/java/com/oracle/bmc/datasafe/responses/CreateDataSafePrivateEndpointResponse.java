@@ -11,12 +11,7 @@ import com.oracle.bmc.datasafe.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateDataSafePrivateEndpointResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateDataSafePrivateEndpointResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
      *
@@ -46,7 +41,29 @@ public class CreateDataSafePrivateEndpointResponse {
      */
     private com.oracle.bmc.datasafe.model.DataSafePrivateEndpoint dataSafePrivateEndpoint;
 
+    private CreateDataSafePrivateEndpointResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcWorkRequestId,
+            String opcRequestId,
+            String location,
+            com.oracle.bmc.datasafe.model.DataSafePrivateEndpoint dataSafePrivateEndpoint) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.opcRequestId = opcRequestId;
+        this.location = location;
+        this.dataSafePrivateEndpoint = dataSafePrivateEndpoint;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -60,6 +77,16 @@ public class CreateDataSafePrivateEndpointResponse {
             dataSafePrivateEndpoint(o.getDataSafePrivateEndpoint());
 
             return this;
+        }
+
+        public CreateDataSafePrivateEndpointResponse build() {
+            return new CreateDataSafePrivateEndpointResponse(
+                    __httpStatusCode__,
+                    etag,
+                    opcWorkRequestId,
+                    opcRequestId,
+                    location,
+                    dataSafePrivateEndpoint);
         }
     }
 }

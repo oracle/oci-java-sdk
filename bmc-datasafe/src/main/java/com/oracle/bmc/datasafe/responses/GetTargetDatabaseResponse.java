@@ -11,12 +11,7 @@ import com.oracle.bmc.datasafe.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetTargetDatabaseResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetTargetDatabaseResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
      *
@@ -34,7 +29,25 @@ public class GetTargetDatabaseResponse {
      */
     private com.oracle.bmc.datasafe.model.TargetDatabase targetDatabase;
 
+    private GetTargetDatabaseResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.datasafe.model.TargetDatabase targetDatabase) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.targetDatabase = targetDatabase;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -46,6 +59,11 @@ public class GetTargetDatabaseResponse {
             targetDatabase(o.getTargetDatabase());
 
             return this;
+        }
+
+        public GetTargetDatabaseResponse build() {
+            return new GetTargetDatabaseResponse(
+                    __httpStatusCode__, etag, opcRequestId, targetDatabase);
         }
     }
 }

@@ -11,12 +11,7 @@ import com.oracle.bmc.networkloadbalancer.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListNetworkLoadBalancersResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListNetworkLoadBalancersResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you must contact
      * Oracle about a particular request, then provide the request identifier.
@@ -38,7 +33,26 @@ public class ListNetworkLoadBalancersResponse {
     private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerCollection
             networkLoadBalancerCollection;
 
+    private ListNetworkLoadBalancersResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String opcNextPage,
+            com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerCollection
+                    networkLoadBalancerCollection) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.networkLoadBalancerCollection = networkLoadBalancerCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -50,6 +64,11 @@ public class ListNetworkLoadBalancersResponse {
             networkLoadBalancerCollection(o.getNetworkLoadBalancerCollection());
 
             return this;
+        }
+
+        public ListNetworkLoadBalancersResponse build() {
+            return new ListNetworkLoadBalancersResponse(
+                    __httpStatusCode__, opcRequestId, opcNextPage, networkLoadBalancerCollection);
         }
     }
 }

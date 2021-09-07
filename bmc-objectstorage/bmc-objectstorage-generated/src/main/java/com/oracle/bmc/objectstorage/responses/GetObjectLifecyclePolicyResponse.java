@@ -11,12 +11,7 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetObjectLifecyclePolicyResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetObjectLifecyclePolicyResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
      * provide this request ID.
@@ -39,7 +34,27 @@ public class GetObjectLifecyclePolicyResponse {
      */
     private com.oracle.bmc.objectstorage.model.ObjectLifecyclePolicy objectLifecyclePolicy;
 
+    private GetObjectLifecyclePolicyResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String opcClientRequestId,
+            String eTag,
+            com.oracle.bmc.objectstorage.model.ObjectLifecyclePolicy objectLifecyclePolicy) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcClientRequestId = opcClientRequestId;
+        this.eTag = eTag;
+        this.objectLifecyclePolicy = objectLifecyclePolicy;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -52,6 +67,15 @@ public class GetObjectLifecyclePolicyResponse {
             objectLifecyclePolicy(o.getObjectLifecyclePolicy());
 
             return this;
+        }
+
+        public GetObjectLifecyclePolicyResponse build() {
+            return new GetObjectLifecyclePolicyResponse(
+                    __httpStatusCode__,
+                    opcRequestId,
+                    opcClientRequestId,
+                    eTag,
+                    objectLifecyclePolicy);
         }
     }
 }

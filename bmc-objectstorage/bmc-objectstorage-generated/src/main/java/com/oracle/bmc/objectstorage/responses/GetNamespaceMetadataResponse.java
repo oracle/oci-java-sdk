@@ -11,12 +11,7 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetNamespaceMetadataResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetNamespaceMetadataResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
      */
@@ -34,7 +29,25 @@ public class GetNamespaceMetadataResponse {
      */
     private com.oracle.bmc.objectstorage.model.NamespaceMetadata namespaceMetadata;
 
+    private GetNamespaceMetadataResponse(
+            int __httpStatusCode__,
+            String opcClientRequestId,
+            String opcRequestId,
+            com.oracle.bmc.objectstorage.model.NamespaceMetadata namespaceMetadata) {
+        super(__httpStatusCode__);
+        this.opcClientRequestId = opcClientRequestId;
+        this.opcRequestId = opcRequestId;
+        this.namespaceMetadata = namespaceMetadata;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -46,6 +59,11 @@ public class GetNamespaceMetadataResponse {
             namespaceMetadata(o.getNamespaceMetadata());
 
             return this;
+        }
+
+        public GetNamespaceMetadataResponse build() {
+            return new GetNamespaceMetadataResponse(
+                    __httpStatusCode__, opcClientRequestId, opcRequestId, namespaceMetadata);
         }
     }
 }

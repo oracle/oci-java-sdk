@@ -11,12 +11,8 @@ import com.oracle.bmc.networkloadbalancer.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListNetworkLoadBalancersProtocolsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListNetworkLoadBalancersProtocolsResponse
+        extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response,
      * then a partial list might have been returned. Include this value as the {@code page} parameter for the
@@ -38,7 +34,26 @@ public class ListNetworkLoadBalancersProtocolsResponse {
     private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancersProtocolCollection
             networkLoadBalancersProtocolCollection;
 
+    private ListNetworkLoadBalancersProtocolsResponse(
+            int __httpStatusCode__,
+            String opcNextPage,
+            String opcRequestId,
+            com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancersProtocolCollection
+                    networkLoadBalancersProtocolCollection) {
+        super(__httpStatusCode__);
+        this.opcNextPage = opcNextPage;
+        this.opcRequestId = opcRequestId;
+        this.networkLoadBalancersProtocolCollection = networkLoadBalancersProtocolCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -50,6 +65,14 @@ public class ListNetworkLoadBalancersProtocolsResponse {
             networkLoadBalancersProtocolCollection(o.getNetworkLoadBalancersProtocolCollection());
 
             return this;
+        }
+
+        public ListNetworkLoadBalancersProtocolsResponse build() {
+            return new ListNetworkLoadBalancersProtocolsResponse(
+                    __httpStatusCode__,
+                    opcNextPage,
+                    opcRequestId,
+                    networkLoadBalancersProtocolCollection);
         }
     }
 }

@@ -11,12 +11,7 @@ import com.oracle.bmc.waas.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListWhitelistsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListWhitelistsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
@@ -37,7 +32,27 @@ public class ListWhitelistsResponse {
      */
     private java.util.List<com.oracle.bmc.waas.model.Whitelist> items;
 
+    private ListWhitelistsResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            String opcNextPage,
+            java.util.List<com.oracle.bmc.waas.model.Whitelist> items) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.items = items;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -50,6 +65,11 @@ public class ListWhitelistsResponse {
             items(o.getItems());
 
             return this;
+        }
+
+        public ListWhitelistsResponse build() {
+            return new ListWhitelistsResponse(
+                    __httpStatusCode__, etag, opcRequestId, opcNextPage, items);
         }
     }
 }

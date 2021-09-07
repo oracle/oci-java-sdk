@@ -11,12 +11,7 @@ import com.oracle.bmc.streaming.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateConnectHarnessResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateConnectHarnessResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
      * a particular request, please provide the request ID.
@@ -34,7 +29,25 @@ public class CreateConnectHarnessResponse {
      */
     private com.oracle.bmc.streaming.model.ConnectHarness connectHarness;
 
+    private CreateConnectHarnessResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.streaming.model.ConnectHarness connectHarness) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.connectHarness = connectHarness;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -46,6 +59,11 @@ public class CreateConnectHarnessResponse {
             connectHarness(o.getConnectHarness());
 
             return this;
+        }
+
+        public CreateConnectHarnessResponse build() {
+            return new CreateConnectHarnessResponse(
+                    __httpStatusCode__, opcRequestId, etag, connectHarness);
         }
     }
 }

@@ -11,12 +11,7 @@ import com.oracle.bmc.resourcemanager.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetStackTfConfigResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetStackTfConfigResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique identifier for the request.
      */
@@ -27,7 +22,21 @@ public class GetStackTfConfigResponse {
      */
     private java.io.InputStream inputStream;
 
+    private GetStackTfConfigResponse(
+            int __httpStatusCode__, String opcRequestId, java.io.InputStream inputStream) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.inputStream = inputStream;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -38,6 +47,10 @@ public class GetStackTfConfigResponse {
             inputStream(o.getInputStream());
 
             return this;
+        }
+
+        public GetStackTfConfigResponse build() {
+            return new GetStackTfConfigResponse(__httpStatusCode__, opcRequestId, inputStream);
         }
     }
 }

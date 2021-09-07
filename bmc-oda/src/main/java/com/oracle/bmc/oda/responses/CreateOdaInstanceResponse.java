@@ -11,12 +11,7 @@ import com.oracle.bmc.oda.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateOdaInstanceResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateOdaInstanceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Fully qualified URL for the newly created instance.
      */
@@ -46,7 +41,29 @@ public class CreateOdaInstanceResponse {
      */
     private com.oracle.bmc.oda.model.OdaInstance odaInstance;
 
+    private CreateOdaInstanceResponse(
+            int __httpStatusCode__,
+            String location,
+            String etag,
+            String opcWorkRequestId,
+            String opcRequestId,
+            com.oracle.bmc.oda.model.OdaInstance odaInstance) {
+        super(__httpStatusCode__);
+        this.location = location;
+        this.etag = etag;
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.opcRequestId = opcRequestId;
+        this.odaInstance = odaInstance;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -60,6 +77,16 @@ public class CreateOdaInstanceResponse {
             odaInstance(o.getOdaInstance());
 
             return this;
+        }
+
+        public CreateOdaInstanceResponse build() {
+            return new CreateOdaInstanceResponse(
+                    __httpStatusCode__,
+                    location,
+                    etag,
+                    opcWorkRequestId,
+                    opcRequestId,
+                    odaInstance);
         }
     }
 }

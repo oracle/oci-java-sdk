@@ -11,12 +11,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateAutonomousExadataInfrastructureResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateAutonomousExadataInfrastructureResponse
+        extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
@@ -41,7 +37,28 @@ public class UpdateAutonomousExadataInfrastructureResponse {
     private com.oracle.bmc.database.model.AutonomousExadataInfrastructure
             autonomousExadataInfrastructure;
 
+    private UpdateAutonomousExadataInfrastructureResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            String opcWorkRequestId,
+            com.oracle.bmc.database.model.AutonomousExadataInfrastructure
+                    autonomousExadataInfrastructure) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.autonomousExadataInfrastructure = autonomousExadataInfrastructure;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -54,6 +71,15 @@ public class UpdateAutonomousExadataInfrastructureResponse {
             autonomousExadataInfrastructure(o.getAutonomousExadataInfrastructure());
 
             return this;
+        }
+
+        public UpdateAutonomousExadataInfrastructureResponse build() {
+            return new UpdateAutonomousExadataInfrastructureResponse(
+                    __httpStatusCode__,
+                    etag,
+                    opcRequestId,
+                    opcWorkRequestId,
+                    autonomousExadataInfrastructure);
         }
     }
 }

@@ -11,12 +11,7 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateRetentionRuleResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateRetentionRuleResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide this request ID.
      *
@@ -38,7 +33,27 @@ public class CreateRetentionRuleResponse {
      */
     private com.oracle.bmc.objectstorage.model.RetentionRule retentionRule;
 
+    private CreateRetentionRuleResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String opcClientRequestId,
+            String etag,
+            com.oracle.bmc.objectstorage.model.RetentionRule retentionRule) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcClientRequestId = opcClientRequestId;
+        this.etag = etag;
+        this.retentionRule = retentionRule;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -51,6 +66,11 @@ public class CreateRetentionRuleResponse {
             retentionRule(o.getRetentionRule());
 
             return this;
+        }
+
+        public CreateRetentionRuleResponse build() {
+            return new CreateRetentionRuleResponse(
+                    __httpStatusCode__, opcRequestId, opcClientRequestId, etag, retentionRule);
         }
     }
 }

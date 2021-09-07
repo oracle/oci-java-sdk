@@ -11,12 +11,7 @@ import com.oracle.bmc.loggingsearch.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class SearchLogsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class SearchLogsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Reserved for future use. Pagination is not supported in this API.
      *
@@ -35,7 +30,25 @@ public class SearchLogsResponse {
      */
     private com.oracle.bmc.loggingsearch.model.SearchResponse searchResponse;
 
+    private SearchLogsResponse(
+            int __httpStatusCode__,
+            String opcNextPage,
+            String opcRequestId,
+            com.oracle.bmc.loggingsearch.model.SearchResponse searchResponse) {
+        super(__httpStatusCode__);
+        this.opcNextPage = opcNextPage;
+        this.opcRequestId = opcRequestId;
+        this.searchResponse = searchResponse;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,11 @@ public class SearchLogsResponse {
             searchResponse(o.getSearchResponse());
 
             return this;
+        }
+
+        public SearchLogsResponse build() {
+            return new SearchLogsResponse(
+                    __httpStatusCode__, opcNextPage, opcRequestId, searchResponse);
         }
     }
 }

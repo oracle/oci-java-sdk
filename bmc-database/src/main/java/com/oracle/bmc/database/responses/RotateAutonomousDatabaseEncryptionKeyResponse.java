@@ -11,12 +11,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class RotateAutonomousDatabaseEncryptionKeyResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class RotateAutonomousDatabaseEncryptionKeyResponse
+        extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
@@ -40,7 +36,27 @@ public class RotateAutonomousDatabaseEncryptionKeyResponse {
      */
     private com.oracle.bmc.database.model.AutonomousDatabase autonomousDatabase;
 
+    private RotateAutonomousDatabaseEncryptionKeyResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcWorkRequestId,
+            String opcRequestId,
+            com.oracle.bmc.database.model.AutonomousDatabase autonomousDatabase) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.opcRequestId = opcRequestId;
+        this.autonomousDatabase = autonomousDatabase;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -53,6 +69,11 @@ public class RotateAutonomousDatabaseEncryptionKeyResponse {
             autonomousDatabase(o.getAutonomousDatabase());
 
             return this;
+        }
+
+        public RotateAutonomousDatabaseEncryptionKeyResponse build() {
+            return new RotateAutonomousDatabaseEncryptionKeyResponse(
+                    __httpStatusCode__, etag, opcWorkRequestId, opcRequestId, autonomousDatabase);
         }
     }
 }

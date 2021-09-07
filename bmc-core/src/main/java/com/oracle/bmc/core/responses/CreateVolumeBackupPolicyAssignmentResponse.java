@@ -11,12 +11,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateVolumeBackupPolicyAssignmentResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateVolumeBackupPolicyAssignmentResponse
+        extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -35,7 +31,25 @@ public class CreateVolumeBackupPolicyAssignmentResponse {
      */
     private com.oracle.bmc.core.model.VolumeBackupPolicyAssignment volumeBackupPolicyAssignment;
 
+    private CreateVolumeBackupPolicyAssignmentResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.core.model.VolumeBackupPolicyAssignment volumeBackupPolicyAssignment) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.volumeBackupPolicyAssignment = volumeBackupPolicyAssignment;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +61,11 @@ public class CreateVolumeBackupPolicyAssignmentResponse {
             volumeBackupPolicyAssignment(o.getVolumeBackupPolicyAssignment());
 
             return this;
+        }
+
+        public CreateVolumeBackupPolicyAssignmentResponse build() {
+            return new CreateVolumeBackupPolicyAssignmentResponse(
+                    __httpStatusCode__, etag, opcRequestId, volumeBackupPolicyAssignment);
         }
     }
 }

@@ -113,6 +113,15 @@ public class CreateSqlJobDetails extends CreateJobDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("scheduleDetails")
+        private JobScheduleDetails scheduleDetails;
+
+        public Builder scheduleDetails(JobScheduleDetails scheduleDetails) {
+            this.scheduleDetails = scheduleDetails;
+            this.__explicitlySet__.add("scheduleDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
         private String sqlText;
 
@@ -158,6 +167,15 @@ public class CreateSqlJobDetails extends CreateJobDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private SqlJob.Role role;
 
@@ -182,11 +200,13 @@ public class CreateSqlJobDetails extends CreateJobDetails {
                             scheduleType,
                             timeout,
                             resultLocation,
+                            scheduleDetails,
                             sqlText,
                             sqlType,
                             operationType,
                             userName,
                             password,
+                            secretId,
                             role);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -204,11 +224,13 @@ public class CreateSqlJobDetails extends CreateJobDetails {
                             .scheduleType(o.getScheduleType())
                             .timeout(o.getTimeout())
                             .resultLocation(o.getResultLocation())
+                            .scheduleDetails(o.getScheduleDetails())
                             .sqlText(o.getSqlText())
                             .sqlType(o.getSqlType())
                             .operationType(o.getOperationType())
                             .userName(o.getUserName())
                             .password(o.getPassword())
+                            .secretId(o.getSecretId())
                             .role(o.getRole());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -234,11 +256,13 @@ public class CreateSqlJobDetails extends CreateJobDetails {
             Job.ScheduleType scheduleType,
             String timeout,
             JobExecutionResultLocation resultLocation,
+            JobScheduleDetails scheduleDetails,
             String sqlText,
             SqlJob.SqlType sqlType,
             SqlJob.OperationType operationType,
             String userName,
             String password,
+            String secretId,
             SqlJob.Role role) {
         super(
                 name,
@@ -249,12 +273,14 @@ public class CreateSqlJobDetails extends CreateJobDetails {
                 databaseSubType,
                 scheduleType,
                 timeout,
-                resultLocation);
+                resultLocation,
+                scheduleDetails);
         this.sqlText = sqlText;
         this.sqlType = sqlType;
         this.operationType = operationType;
         this.userName = userName;
         this.password = password;
+        this.secretId = secretId;
         this.role = role;
     }
 
@@ -287,6 +313,12 @@ public class CreateSqlJobDetails extends CreateJobDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     String password;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+    String secretId;
 
     /**
      * The role of the database user. Indicates whether the database user is a normal user or sysdba.

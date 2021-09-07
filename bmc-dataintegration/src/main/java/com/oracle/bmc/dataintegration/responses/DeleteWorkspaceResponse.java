@@ -11,12 +11,7 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class DeleteWorkspaceResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class DeleteWorkspaceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -31,7 +26,21 @@ public class DeleteWorkspaceResponse {
      */
     private String opcWorkRequestId;
 
+    private DeleteWorkspaceResponse(
+            int __httpStatusCode__, String opcRequestId, String opcWorkRequestId) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -42,6 +51,10 @@ public class DeleteWorkspaceResponse {
             opcWorkRequestId(o.getOpcWorkRequestId());
 
             return this;
+        }
+
+        public DeleteWorkspaceResponse build() {
+            return new DeleteWorkspaceResponse(__httpStatusCode__, opcRequestId, opcWorkRequestId);
         }
     }
 }

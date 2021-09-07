@@ -44,10 +44,6 @@ public class CreateTemplateConverter {
             ib.header("opc-retry-token", request.getOpcRetryToken());
         }
 
-        if (request.getOciSplatGeneratedOcids() != null) {
-            ib.header("oci-splat-generated-ocids", request.getOciSplatGeneratedOcids());
-        }
-
         if (client.getClientConfigurator() != null) {
             client.getClientConfigurator().customizeRequest(request, ib);
         }

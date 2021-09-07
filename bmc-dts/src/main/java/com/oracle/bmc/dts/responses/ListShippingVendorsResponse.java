@@ -11,12 +11,7 @@ import com.oracle.bmc.dts.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListShippingVendorsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListShippingVendorsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      *
      */
@@ -27,7 +22,23 @@ public class ListShippingVendorsResponse {
      */
     private com.oracle.bmc.dts.model.ShippingVendors shippingVendors;
 
+    private ListShippingVendorsResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            com.oracle.bmc.dts.model.ShippingVendors shippingVendors) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.shippingVendors = shippingVendors;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -38,6 +49,11 @@ public class ListShippingVendorsResponse {
             shippingVendors(o.getShippingVendors());
 
             return this;
+        }
+
+        public ListShippingVendorsResponse build() {
+            return new ListShippingVendorsResponse(
+                    __httpStatusCode__, opcRequestId, shippingVendors);
         }
     }
 }

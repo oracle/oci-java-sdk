@@ -11,12 +11,7 @@ import com.oracle.bmc.budget.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateBudgetResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateBudgetResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If
      * you need to contact Oracle about a particular request,
@@ -35,7 +30,25 @@ public class UpdateBudgetResponse {
      */
     private com.oracle.bmc.budget.model.Budget budget;
 
+    private UpdateBudgetResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.budget.model.Budget budget) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.budget = budget;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,10 @@ public class UpdateBudgetResponse {
             budget(o.getBudget());
 
             return this;
+        }
+
+        public UpdateBudgetResponse build() {
+            return new UpdateBudgetResponse(__httpStatusCode__, opcRequestId, etag, budget);
         }
     }
 }

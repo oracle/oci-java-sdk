@@ -11,12 +11,7 @@ import com.oracle.bmc.databasemanagement.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class SummarizeAwrDbParametersResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class SummarizeAwrDbParametersResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -38,7 +33,26 @@ public class SummarizeAwrDbParametersResponse {
     private com.oracle.bmc.databasemanagement.model.AwrDbParameterCollection
             awrDbParameterCollection;
 
+    private SummarizeAwrDbParametersResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String opcNextPage,
+            com.oracle.bmc.databasemanagement.model.AwrDbParameterCollection
+                    awrDbParameterCollection) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.awrDbParameterCollection = awrDbParameterCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -50,6 +64,11 @@ public class SummarizeAwrDbParametersResponse {
             awrDbParameterCollection(o.getAwrDbParameterCollection());
 
             return this;
+        }
+
+        public SummarizeAwrDbParametersResponse build() {
+            return new SummarizeAwrDbParametersResponse(
+                    __httpStatusCode__, opcRequestId, opcNextPage, awrDbParameterCollection);
         }
     }
 }

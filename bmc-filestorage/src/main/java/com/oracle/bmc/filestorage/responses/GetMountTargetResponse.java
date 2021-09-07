@@ -11,12 +11,7 @@ import com.oracle.bmc.filestorage.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetMountTargetResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetMountTargetResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
@@ -35,7 +30,25 @@ public class GetMountTargetResponse {
      */
     private com.oracle.bmc.filestorage.model.MountTarget mountTarget;
 
+    private GetMountTargetResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.filestorage.model.MountTarget mountTarget) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.mountTarget = mountTarget;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,10 @@ public class GetMountTargetResponse {
             mountTarget(o.getMountTarget());
 
             return this;
+        }
+
+        public GetMountTargetResponse build() {
+            return new GetMountTargetResponse(__httpStatusCode__, etag, opcRequestId, mountTarget);
         }
     }
 }

@@ -11,12 +11,7 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateDataFlowValidationResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateDataFlowValidationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
      *
@@ -35,7 +30,25 @@ public class CreateDataFlowValidationResponse {
      */
     private com.oracle.bmc.dataintegration.model.DataFlowValidation dataFlowValidation;
 
+    private CreateDataFlowValidationResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.dataintegration.model.DataFlowValidation dataFlowValidation) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.dataFlowValidation = dataFlowValidation;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,11 @@ public class CreateDataFlowValidationResponse {
             dataFlowValidation(o.getDataFlowValidation());
 
             return this;
+        }
+
+        public CreateDataFlowValidationResponse build() {
+            return new CreateDataFlowValidationResponse(
+                    __httpStatusCode__, etag, opcRequestId, dataFlowValidation);
         }
     }
 }

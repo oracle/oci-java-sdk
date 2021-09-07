@@ -11,12 +11,7 @@ import com.oracle.bmc.apigateway.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetCertificateResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetCertificateResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -36,7 +31,25 @@ public class GetCertificateResponse {
      */
     private com.oracle.bmc.apigateway.model.Certificate certificate;
 
+    private GetCertificateResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.apigateway.model.Certificate certificate) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.certificate = certificate;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -48,6 +61,10 @@ public class GetCertificateResponse {
             certificate(o.getCertificate());
 
             return this;
+        }
+
+        public GetCertificateResponse build() {
+            return new GetCertificateResponse(__httpStatusCode__, etag, opcRequestId, certificate);
         }
     }
 }

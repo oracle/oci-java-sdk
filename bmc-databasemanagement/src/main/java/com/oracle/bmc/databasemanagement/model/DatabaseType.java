@@ -5,13 +5,21 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The type of Oracle Database installation.
+ * The type of Oracle Database installation:
+ * <p>
+ * - EXTERNAL_SIDB: Single instance external database.
+ * - EXTERNAL_RAC: Oracle Real Application Clusters (Oracle RAC) external database.
+ * - CLOUD_SIDB: Single instance database in Oracle Cloud.
+ * - CLOUD_RAC: Oracle RAC database in Oracle Cloud.
+ *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @lombok.extern.slf4j.Slf4j
 public enum DatabaseType {
     ExternalSidb("EXTERNAL_SIDB"),
     ExternalRac("EXTERNAL_RAC"),
+    CloudSidb("CLOUD_SIDB"),
+    CloudRac("CLOUD_RAC"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

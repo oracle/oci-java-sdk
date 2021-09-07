@@ -11,12 +11,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetAutonomousContainerDatabaseDataguardAssociationResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetAutonomousContainerDatabaseDataguardAssociationResponse
+        extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
@@ -35,7 +31,27 @@ public class GetAutonomousContainerDatabaseDataguardAssociationResponse {
     private com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation
             autonomousContainerDatabaseDataguardAssociation;
 
+    private GetAutonomousContainerDatabaseDataguardAssociationResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation
+                    autonomousContainerDatabaseDataguardAssociation) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.autonomousContainerDatabaseDataguardAssociation =
+                autonomousContainerDatabaseDataguardAssociation;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -48,6 +64,14 @@ public class GetAutonomousContainerDatabaseDataguardAssociationResponse {
                     o.getAutonomousContainerDatabaseDataguardAssociation());
 
             return this;
+        }
+
+        public GetAutonomousContainerDatabaseDataguardAssociationResponse build() {
+            return new GetAutonomousContainerDatabaseDataguardAssociationResponse(
+                    __httpStatusCode__,
+                    etag,
+                    opcRequestId,
+                    autonomousContainerDatabaseDataguardAssociation);
         }
     }
 }

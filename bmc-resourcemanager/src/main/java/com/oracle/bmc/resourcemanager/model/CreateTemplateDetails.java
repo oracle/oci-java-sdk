@@ -168,7 +168,9 @@ public class CreateTemplateDetails {
     String longDescription;
 
     /**
-     * Base64-encoded logo for the template.
+     * Base64-encoded logo to use as the template icon.
+     * Template icon file requirements: PNG format, 50 KB maximum, 110 x 110 pixels.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logoFileBase64Encoded")
     String logoFileBase64Encoded;

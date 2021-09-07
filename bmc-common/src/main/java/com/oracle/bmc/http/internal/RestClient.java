@@ -983,16 +983,33 @@ public class RestClient implements AutoCloseable {
         if (t instanceof InterruptedIOException) {
             return new BmcException(
                     true,
-                    "Timed out while communicating to: " + target.getUri().toString(),
+                    "Timed out while communicating to: " + getUriSafe(target),
                     e,
                     info.getRequestId());
         }
 
         return new BmcException(
                 false,
-                "Processing exception while communicating to: " + target.getUri().toString(),
+                "Processing exception while communicating to: " + getUriSafe(target),
                 e,
                 info.getRequestId());
+    }
+
+    /**
+     * Exception safe wrapper for WebTarget.getUri() which throws an exception if the client is closed.
+     * It breaks the convertToBmcException when the exception root cause is IllegalStateException
+     * and fails to invoke onError on the user's supplied InvocationCallback.
+     * @param target
+     *  The target being called
+     * @return Target URI String
+     */
+    private static String getUriSafe(WebTarget target) {
+        try {
+            return target.getUri().toString();
+        } catch (Exception ex) {
+            LOG.error("Error getting target URI string", ex);
+            return "<error getting target URI string>: " + ex.getMessage();
+        }
     }
 
     static <T extends BmcRequest> InvocationInformation preprocessRequest(

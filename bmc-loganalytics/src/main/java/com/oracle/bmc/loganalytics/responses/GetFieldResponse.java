@@ -11,12 +11,7 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetFieldResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetFieldResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -34,7 +29,25 @@ public class GetFieldResponse {
      */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsField logAnalyticsField;
 
+    private GetFieldResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.loganalytics.model.LogAnalyticsField logAnalyticsField) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.logAnalyticsField = logAnalyticsField;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -46,6 +59,10 @@ public class GetFieldResponse {
             logAnalyticsField(o.getLogAnalyticsField());
 
             return this;
+        }
+
+        public GetFieldResponse build() {
+            return new GetFieldResponse(__httpStatusCode__, etag, opcRequestId, logAnalyticsField);
         }
     }
 }

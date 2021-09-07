@@ -11,12 +11,7 @@ import com.oracle.bmc.mysql.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetHeatWaveClusterResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetHeatWaveClusterResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -43,7 +38,27 @@ public class GetHeatWaveClusterResponse {
      */
     private boolean isNotModified;
 
+    private GetHeatWaveClusterResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.mysql.model.HeatWaveCluster heatWaveCluster,
+            boolean isNotModified) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.heatWaveCluster = heatWaveCluster;
+        this.isNotModified = isNotModified;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -55,6 +70,11 @@ public class GetHeatWaveClusterResponse {
             heatWaveCluster(o.getHeatWaveCluster());
             isNotModified(o.isNotModified());
             return this;
+        }
+
+        public GetHeatWaveClusterResponse build() {
+            return new GetHeatWaveClusterResponse(
+                    __httpStatusCode__, etag, opcRequestId, heatWaveCluster, isNotModified);
         }
     }
 }

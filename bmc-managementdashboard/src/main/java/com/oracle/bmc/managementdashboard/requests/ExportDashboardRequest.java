@@ -20,7 +20,7 @@ import com.oracle.bmc.managementdashboard.model.*;
 public class ExportDashboardRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * List of dashboardIds in plain text. The syntaxt is '{"dashboardIds":["dashboardId1", "dashboardId2", ...]}'. Escaping is needed when using in OCI CLI. For example, "{\\"dashboardIds\\":[\\"ocid1.managementdashboard.oc1..dashboardId1\\"]}" .
+     * List of dashboardIds in plain text. The syntax is '{"dashboardIds":["dashboardId1", "dashboardId2", ...]}'. Escaping is needed when using in OCI CLI. For example, "{\\"dashboardIds\\":[\\"ocid1.managementdashboard.oc1..dashboardId1\\"]}" .
      */
     private String exportDashboardId;
 

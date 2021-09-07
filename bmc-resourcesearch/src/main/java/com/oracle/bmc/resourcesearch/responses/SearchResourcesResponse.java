@@ -11,12 +11,7 @@ import com.oracle.bmc.resourcesearch.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class SearchResourcesResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Pagination token
      */
@@ -34,7 +29,26 @@ public class SearchResourcesResponse {
      */
     private com.oracle.bmc.resourcesearch.model.ResourceSummaryCollection resourceSummaryCollection;
 
+    private SearchResourcesResponse(
+            int __httpStatusCode__,
+            String opcNextPage,
+            String opcRequestId,
+            com.oracle.bmc.resourcesearch.model.ResourceSummaryCollection
+                    resourceSummaryCollection) {
+        super(__httpStatusCode__);
+        this.opcNextPage = opcNextPage;
+        this.opcRequestId = opcRequestId;
+        this.resourceSummaryCollection = resourceSummaryCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -46,6 +60,11 @@ public class SearchResourcesResponse {
             resourceSummaryCollection(o.getResourceSummaryCollection());
 
             return this;
+        }
+
+        public SearchResourcesResponse build() {
+            return new SearchResourcesResponse(
+                    __httpStatusCode__, opcNextPage, opcRequestId, resourceSummaryCollection);
         }
     }
 }

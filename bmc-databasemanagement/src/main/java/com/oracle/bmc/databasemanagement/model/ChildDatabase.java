@@ -51,6 +51,15 @@ public class ChildDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
+        private DeploymentType deploymentType;
+
+        public Builder deploymentType(DeploymentType deploymentType) {
+            this.deploymentType = deploymentType;
+            this.__explicitlySet__.add("deploymentType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
         private DatabaseType databaseType;
 
@@ -84,7 +93,13 @@ public class ChildDatabase {
         public ChildDatabase build() {
             ChildDatabase __instance__ =
                     new ChildDatabase(
-                            id, name, compartmentId, databaseType, databaseSubType, timeAdded);
+                            id,
+                            name,
+                            compartmentId,
+                            deploymentType,
+                            databaseType,
+                            databaseSubType,
+                            timeAdded);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -95,6 +110,7 @@ public class ChildDatabase {
                     id(o.getId())
                             .name(o.getName())
                             .compartmentId(o.getCompartmentId())
+                            .deploymentType(o.getDeploymentType())
                             .databaseType(o.getDatabaseType())
                             .databaseSubType(o.getDatabaseSubType())
                             .timeAdded(o.getTimeAdded());
@@ -128,6 +144,12 @@ public class ChildDatabase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
+
+    /**
+     * The infrastructure used to deploy the Oracle Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
+    DeploymentType deploymentType;
 
     /**
      * The type of Oracle Database installation.

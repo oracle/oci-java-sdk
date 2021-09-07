@@ -11,12 +11,7 @@ import com.oracle.bmc.database.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetConsoleConnectionResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetConsoleConnectionResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
@@ -34,7 +29,25 @@ public class GetConsoleConnectionResponse {
      */
     private com.oracle.bmc.database.model.ConsoleConnection consoleConnection;
 
+    private GetConsoleConnectionResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.database.model.ConsoleConnection consoleConnection) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.consoleConnection = consoleConnection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -46,6 +59,11 @@ public class GetConsoleConnectionResponse {
             consoleConnection(o.getConsoleConnection());
 
             return this;
+        }
+
+        public GetConsoleConnectionResponse build() {
+            return new GetConsoleConnectionResponse(
+                    __httpStatusCode__, etag, opcRequestId, consoleConnection);
         }
     }
 }

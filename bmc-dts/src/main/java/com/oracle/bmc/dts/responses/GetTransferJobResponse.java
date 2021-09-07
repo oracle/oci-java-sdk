@@ -11,12 +11,7 @@ import com.oracle.bmc.dts.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetTransferJobResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetTransferJobResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      *
      */
@@ -32,7 +27,25 @@ public class GetTransferJobResponse {
      */
     private com.oracle.bmc.dts.model.TransferJob transferJob;
 
+    private GetTransferJobResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.dts.model.TransferJob transferJob) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.transferJob = transferJob;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -44,6 +57,10 @@ public class GetTransferJobResponse {
             transferJob(o.getTransferJob());
 
             return this;
+        }
+
+        public GetTransferJobResponse build() {
+            return new GetTransferJobResponse(__httpStatusCode__, opcRequestId, etag, transferJob);
         }
     }
 }

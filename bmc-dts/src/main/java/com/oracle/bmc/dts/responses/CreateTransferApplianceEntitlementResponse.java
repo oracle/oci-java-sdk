@@ -11,12 +11,8 @@ import com.oracle.bmc.dts.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateTransferApplianceEntitlementResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateTransferApplianceEntitlementResponse
+        extends com.oracle.bmc.responses.BmcResponse {
     /**
      *
      */
@@ -32,7 +28,25 @@ public class CreateTransferApplianceEntitlementResponse {
      */
     private com.oracle.bmc.dts.model.TransferApplianceEntitlement transferApplianceEntitlement;
 
+    private CreateTransferApplianceEntitlementResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.dts.model.TransferApplianceEntitlement transferApplianceEntitlement) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.transferApplianceEntitlement = transferApplianceEntitlement;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -44,6 +58,11 @@ public class CreateTransferApplianceEntitlementResponse {
             transferApplianceEntitlement(o.getTransferApplianceEntitlement());
 
             return this;
+        }
+
+        public CreateTransferApplianceEntitlementResponse build() {
+            return new CreateTransferApplianceEntitlementResponse(
+                    __httpStatusCode__, opcRequestId, etag, transferApplianceEntitlement);
         }
     }
 }

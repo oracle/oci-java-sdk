@@ -11,12 +11,7 @@ import com.oracle.bmc.dns.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetDomainRecordsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetDomainRecordsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For list pagination. When this header appears in the response, additional pages
      * of results remain. For important details about how pagination works,
@@ -50,7 +45,29 @@ public class GetDomainRecordsResponse {
      */
     private com.oracle.bmc.dns.model.RecordCollection recordCollection;
 
+    private GetDomainRecordsResponse(
+            int __httpStatusCode__,
+            String opcNextPage,
+            Integer opcTotalItems,
+            String opcRequestId,
+            String eTag,
+            com.oracle.bmc.dns.model.RecordCollection recordCollection) {
+        super(__httpStatusCode__);
+        this.opcNextPage = opcNextPage;
+        this.opcTotalItems = opcTotalItems;
+        this.opcRequestId = opcRequestId;
+        this.eTag = eTag;
+        this.recordCollection = recordCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -64,6 +81,16 @@ public class GetDomainRecordsResponse {
             recordCollection(o.getRecordCollection());
 
             return this;
+        }
+
+        public GetDomainRecordsResponse build() {
+            return new GetDomainRecordsResponse(
+                    __httpStatusCode__,
+                    opcNextPage,
+                    opcTotalItems,
+                    opcRequestId,
+                    eTag,
+                    recordCollection);
         }
     }
 }

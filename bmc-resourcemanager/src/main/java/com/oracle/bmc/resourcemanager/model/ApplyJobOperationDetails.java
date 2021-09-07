@@ -33,6 +33,15 @@ public class ApplyJobOperationDetails extends JobOperationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("terraformAdvancedOptions")
+        private TerraformAdvancedOptions terraformAdvancedOptions;
+
+        public Builder terraformAdvancedOptions(TerraformAdvancedOptions terraformAdvancedOptions) {
+            this.terraformAdvancedOptions = terraformAdvancedOptions;
+            this.__explicitlySet__.add("terraformAdvancedOptions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("executionPlanStrategy")
         private ExecutionPlanStrategy executionPlanStrategy;
 
@@ -56,7 +65,8 @@ public class ApplyJobOperationDetails extends JobOperationDetails {
 
         public ApplyJobOperationDetails build() {
             ApplyJobOperationDetails __instance__ =
-                    new ApplyJobOperationDetails(executionPlanStrategy, executionPlanJobId);
+                    new ApplyJobOperationDetails(
+                            terraformAdvancedOptions, executionPlanStrategy, executionPlanJobId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -64,7 +74,8 @@ public class ApplyJobOperationDetails extends JobOperationDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ApplyJobOperationDetails o) {
             Builder copiedBuilder =
-                    executionPlanStrategy(o.getExecutionPlanStrategy())
+                    terraformAdvancedOptions(o.getTerraformAdvancedOptions())
+                            .executionPlanStrategy(o.getExecutionPlanStrategy())
                             .executionPlanJobId(o.getExecutionPlanJobId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -81,12 +92,17 @@ public class ApplyJobOperationDetails extends JobOperationDetails {
 
     @Deprecated
     public ApplyJobOperationDetails(
-            ExecutionPlanStrategy executionPlanStrategy, String executionPlanJobId) {
+            TerraformAdvancedOptions terraformAdvancedOptions,
+            ExecutionPlanStrategy executionPlanStrategy,
+            String executionPlanJobId) {
         super();
+        this.terraformAdvancedOptions = terraformAdvancedOptions;
         this.executionPlanStrategy = executionPlanStrategy;
         this.executionPlanJobId = executionPlanJobId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("terraformAdvancedOptions")
+    TerraformAdvancedOptions terraformAdvancedOptions;
     /**
      * Specifies the source of the execution plan to apply.
      * Use {@code AUTO_APPROVED} to run the job without an execution plan.

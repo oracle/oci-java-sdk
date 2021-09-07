@@ -11,12 +11,7 @@ import com.oracle.bmc.limits.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetResourceAvailabilityResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetResourceAvailabilityResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -29,7 +24,23 @@ public class GetResourceAvailabilityResponse {
      */
     private com.oracle.bmc.limits.model.ResourceAvailability resourceAvailability;
 
+    private GetResourceAvailabilityResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            com.oracle.bmc.limits.model.ResourceAvailability resourceAvailability) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.resourceAvailability = resourceAvailability;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -40,6 +51,11 @@ public class GetResourceAvailabilityResponse {
             resourceAvailability(o.getResourceAvailability());
 
             return this;
+        }
+
+        public GetResourceAvailabilityResponse build() {
+            return new GetResourceAvailabilityResponse(
+                    __httpStatusCode__, opcRequestId, resourceAvailability);
         }
     }
 }

@@ -11,12 +11,7 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CopyObjectResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CopyObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. If you need to contact Oracle about a
      * particular request, provide this request ID.
@@ -36,7 +31,25 @@ public class CopyObjectResponse {
      */
     private String opcClientRequestId;
 
+    private CopyObjectResponse(
+            int __httpStatusCode__,
+            String opcWorkRequestId,
+            String opcRequestId,
+            String opcClientRequestId) {
+        super(__httpStatusCode__);
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.opcRequestId = opcRequestId;
+        this.opcClientRequestId = opcClientRequestId;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -48,6 +61,11 @@ public class CopyObjectResponse {
             opcClientRequestId(o.getOpcClientRequestId());
 
             return this;
+        }
+
+        public CopyObjectResponse build() {
+            return new CopyObjectResponse(
+                    __httpStatusCode__, opcWorkRequestId, opcRequestId, opcClientRequestId);
         }
     }
 }

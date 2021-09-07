@@ -71,6 +71,33 @@ public class ManagementDashboardSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("providerId")
+        private String providerId;
+
+        public Builder providerId(String providerId) {
+            this.providerId = providerId;
+            this.__explicitlySet__.add("providerId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("providerName")
+        private String providerName;
+
+        public Builder providerName(String providerName) {
+            this.providerName = providerName;
+            this.__explicitlySet__.add("providerName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("providerVersion")
+        private String providerVersion;
+
+        public Builder providerVersion(String providerVersion) {
+            this.providerVersion = providerVersion;
+            this.__explicitlySet__.add("providerVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isOobDashboard")
         private Boolean isOobDashboard;
 
@@ -191,6 +218,9 @@ public class ManagementDashboardSummary {
                             displayName,
                             description,
                             compartmentId,
+                            providerId,
+                            providerName,
+                            providerVersion,
                             isOobDashboard,
                             createdBy,
                             timeCreated,
@@ -215,6 +245,9 @@ public class ManagementDashboardSummary {
                             .displayName(o.getDisplayName())
                             .description(o.getDescription())
                             .compartmentId(o.getCompartmentId())
+                            .providerId(o.getProviderId())
+                            .providerName(o.getProviderName())
+                            .providerVersion(o.getProviderVersion())
                             .isOobDashboard(o.getIsOobDashboard())
                             .createdBy(o.getCreatedBy())
                             .timeCreated(o.getTimeCreated())
@@ -269,6 +302,24 @@ public class ManagementDashboardSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
+
+    /**
+     * ID of the service (for example, log-analytics) that owns the dashboard. Each service has a unique ID.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("providerId")
+    String providerId;
+
+    /**
+     * Name of the service (for example, Logging Analytics) that owns the dashboard.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("providerName")
+    String providerName;
+
+    /**
+     * Version of the service that owns the dashboard.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("providerVersion")
+    String providerVersion;
 
     /**
      * Determines whether the dashboard is an Out-of-the-Box (OOB) dashboard. Note that OOB dashboards are only provided by Oracle and cannot be modified.

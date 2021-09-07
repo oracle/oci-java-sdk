@@ -11,12 +11,7 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class QueryResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
      *
@@ -56,7 +51,31 @@ public class QueryResponse {
      */
     private com.oracle.bmc.loganalytics.model.QueryAggregation queryAggregation;
 
+    private QueryResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String opcNextPageId,
+            String opcPrevPageId,
+            String opcWorkRequestId,
+            String location,
+            com.oracle.bmc.loganalytics.model.QueryAggregation queryAggregation) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcNextPageId = opcNextPageId;
+        this.opcPrevPageId = opcPrevPageId;
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.location = location;
+        this.queryAggregation = queryAggregation;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -71,6 +90,17 @@ public class QueryResponse {
             queryAggregation(o.getQueryAggregation());
 
             return this;
+        }
+
+        public QueryResponse build() {
+            return new QueryResponse(
+                    __httpStatusCode__,
+                    opcRequestId,
+                    opcNextPageId,
+                    opcPrevPageId,
+                    opcWorkRequestId,
+                    location,
+                    queryAggregation);
         }
     }
 }

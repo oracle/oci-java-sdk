@@ -11,12 +11,7 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UploadLogFileResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UploadLogFileResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
      *
@@ -38,7 +33,27 @@ public class UploadLogFileResponse {
      */
     private com.oracle.bmc.loganalytics.model.Upload upload;
 
+    private UploadLogFileResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String opcContentMd5,
+            String opcObjectId,
+            com.oracle.bmc.loganalytics.model.Upload upload) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcContentMd5 = opcContentMd5;
+        this.opcObjectId = opcObjectId;
+        this.upload = upload;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -51,6 +66,11 @@ public class UploadLogFileResponse {
             upload(o.getUpload());
 
             return this;
+        }
+
+        public UploadLogFileResponse build() {
+            return new UploadLogFileResponse(
+                    __httpStatusCode__, opcRequestId, opcContentMd5, opcObjectId, upload);
         }
     }
 }

@@ -11,12 +11,7 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class AttachInstancePoolInstanceResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -48,7 +43,29 @@ public class AttachInstancePoolInstanceResponse {
      */
     private com.oracle.bmc.core.model.InstancePoolInstance instancePoolInstance;
 
+    private AttachInstancePoolInstanceResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String etag,
+            String opcWorkRequestId,
+            String location,
+            com.oracle.bmc.core.model.InstancePoolInstance instancePoolInstance) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.location = location;
+        this.instancePoolInstance = instancePoolInstance;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -62,6 +79,16 @@ public class AttachInstancePoolInstanceResponse {
             instancePoolInstance(o.getInstancePoolInstance());
 
             return this;
+        }
+
+        public AttachInstancePoolInstanceResponse build() {
+            return new AttachInstancePoolInstanceResponse(
+                    __httpStatusCode__,
+                    opcRequestId,
+                    etag,
+                    opcWorkRequestId,
+                    location,
+                    instancePoolInstance);
         }
     }
 }

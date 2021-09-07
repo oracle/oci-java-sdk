@@ -11,12 +11,7 @@ import com.oracle.bmc.database.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetVmClusterPatchHistoryEntryResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetVmClusterPatchHistoryEntryResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
@@ -34,7 +29,25 @@ public class GetVmClusterPatchHistoryEntryResponse {
      */
     private com.oracle.bmc.database.model.PatchHistoryEntry patchHistoryEntry;
 
+    private GetVmClusterPatchHistoryEntryResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.database.model.PatchHistoryEntry patchHistoryEntry) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.patchHistoryEntry = patchHistoryEntry;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -46,6 +59,11 @@ public class GetVmClusterPatchHistoryEntryResponse {
             patchHistoryEntry(o.getPatchHistoryEntry());
 
             return this;
+        }
+
+        public GetVmClusterPatchHistoryEntryResponse build() {
+            return new GetVmClusterPatchHistoryEntryResponse(
+                    __httpStatusCode__, etag, opcRequestId, patchHistoryEntry);
         }
     }
 }

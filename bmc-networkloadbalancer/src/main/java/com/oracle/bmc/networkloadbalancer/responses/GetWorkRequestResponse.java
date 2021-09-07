@@ -11,12 +11,7 @@ import com.oracle.bmc.networkloadbalancer.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetWorkRequestResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you must contact
      * Oracle about a particular request, then provide the request identifier.
@@ -34,7 +29,25 @@ public class GetWorkRequestResponse {
      */
     private com.oracle.bmc.networkloadbalancer.model.WorkRequest workRequest;
 
+    private GetWorkRequestResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            Float retryAfter,
+            com.oracle.bmc.networkloadbalancer.model.WorkRequest workRequest) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.retryAfter = retryAfter;
+        this.workRequest = workRequest;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -46,6 +59,11 @@ public class GetWorkRequestResponse {
             workRequest(o.getWorkRequest());
 
             return this;
+        }
+
+        public GetWorkRequestResponse build() {
+            return new GetWorkRequestResponse(
+                    __httpStatusCode__, opcRequestId, retryAfter, workRequest);
         }
     }
 }

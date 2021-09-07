@@ -11,12 +11,7 @@ import com.oracle.bmc.devops.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateDeployPipelineResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateDeployPipelineResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Relative URL of the newly created resource.
      */
@@ -42,7 +37,29 @@ public class CreateDeployPipelineResponse {
      */
     private com.oracle.bmc.devops.model.DeployPipeline deployPipeline;
 
+    private CreateDeployPipelineResponse(
+            int __httpStatusCode__,
+            String location,
+            String opcWorkRequestId,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.devops.model.DeployPipeline deployPipeline) {
+        super(__httpStatusCode__);
+        this.location = location;
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.deployPipeline = deployPipeline;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -56,6 +73,16 @@ public class CreateDeployPipelineResponse {
             deployPipeline(o.getDeployPipeline());
 
             return this;
+        }
+
+        public CreateDeployPipelineResponse build() {
+            return new CreateDeployPipelineResponse(
+                    __httpStatusCode__,
+                    location,
+                    opcWorkRequestId,
+                    etag,
+                    opcRequestId,
+                    deployPipeline);
         }
     }
 }

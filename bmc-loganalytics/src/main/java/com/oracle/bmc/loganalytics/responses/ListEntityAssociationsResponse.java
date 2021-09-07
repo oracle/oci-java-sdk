@@ -11,12 +11,7 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListEntityAssociationsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListEntityAssociationsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
      *
@@ -37,7 +32,26 @@ public class ListEntityAssociationsResponse {
     private com.oracle.bmc.loganalytics.model.LogAnalyticsEntityCollection
             logAnalyticsEntityCollection;
 
+    private ListEntityAssociationsResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String opcNextPage,
+            com.oracle.bmc.loganalytics.model.LogAnalyticsEntityCollection
+                    logAnalyticsEntityCollection) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.logAnalyticsEntityCollection = logAnalyticsEntityCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -49,6 +63,11 @@ public class ListEntityAssociationsResponse {
             logAnalyticsEntityCollection(o.getLogAnalyticsEntityCollection());
 
             return this;
+        }
+
+        public ListEntityAssociationsResponse build() {
+            return new ListEntityAssociationsResponse(
+                    __httpStatusCode__, opcRequestId, opcNextPage, logAnalyticsEntityCollection);
         }
     }
 }

@@ -11,12 +11,7 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class SignResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class SignResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
      * a particular request, please provide the request ID.
@@ -29,7 +24,23 @@ public class SignResponse {
      */
     private com.oracle.bmc.keymanagement.model.SignedData signedData;
 
+    private SignResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            com.oracle.bmc.keymanagement.model.SignedData signedData) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.signedData = signedData;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -40,6 +51,10 @@ public class SignResponse {
             signedData(o.getSignedData());
 
             return this;
+        }
+
+        public SignResponse build() {
+            return new SignResponse(__httpStatusCode__, opcRequestId, signedData);
         }
     }
 }

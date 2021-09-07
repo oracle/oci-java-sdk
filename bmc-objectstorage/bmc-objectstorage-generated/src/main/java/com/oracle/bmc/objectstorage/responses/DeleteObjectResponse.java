@@ -11,12 +11,7 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class DeleteObjectResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class DeleteObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
      */
@@ -47,7 +42,29 @@ public class DeleteObjectResponse {
      */
     private Boolean isDeleteMarker;
 
+    private DeleteObjectResponse(
+            int __httpStatusCode__,
+            String opcClientRequestId,
+            String opcRequestId,
+            java.util.Date lastModified,
+            String versionId,
+            Boolean isDeleteMarker) {
+        super(__httpStatusCode__);
+        this.opcClientRequestId = opcClientRequestId;
+        this.opcRequestId = opcRequestId;
+        this.lastModified = lastModified;
+        this.versionId = versionId;
+        this.isDeleteMarker = isDeleteMarker;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -61,6 +78,16 @@ public class DeleteObjectResponse {
             isDeleteMarker(o.getIsDeleteMarker());
 
             return this;
+        }
+
+        public DeleteObjectResponse build() {
+            return new DeleteObjectResponse(
+                    __httpStatusCode__,
+                    opcClientRequestId,
+                    opcRequestId,
+                    lastModified,
+                    versionId,
+                    isDeleteMarker);
         }
     }
 }

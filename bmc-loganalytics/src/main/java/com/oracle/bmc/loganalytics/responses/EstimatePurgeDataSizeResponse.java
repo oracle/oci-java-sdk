@@ -11,12 +11,7 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class EstimatePurgeDataSizeResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class EstimatePurgeDataSizeResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
      *
@@ -35,7 +30,26 @@ public class EstimatePurgeDataSizeResponse {
     private com.oracle.bmc.loganalytics.model.EstimatePurgeDataSizeResult
             estimatePurgeDataSizeResult;
 
+    private EstimatePurgeDataSizeResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.loganalytics.model.EstimatePurgeDataSizeResult
+                    estimatePurgeDataSizeResult) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.estimatePurgeDataSizeResult = estimatePurgeDataSizeResult;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +61,11 @@ public class EstimatePurgeDataSizeResponse {
             estimatePurgeDataSizeResult(o.getEstimatePurgeDataSizeResult());
 
             return this;
+        }
+
+        public EstimatePurgeDataSizeResponse build() {
+            return new EstimatePurgeDataSizeResponse(
+                    __httpStatusCode__, opcRequestId, etag, estimatePurgeDataSizeResult);
         }
     }
 }

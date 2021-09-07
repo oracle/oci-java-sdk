@@ -61,6 +61,15 @@ public class TemplateSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isFreeTier")
+        private Boolean isFreeTier;
+
+        public Builder isFreeTier(Boolean isFreeTier) {
+            this.isFreeTier = isFreeTier;
+            this.__explicitlySet__.add("isFreeTier");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -89,6 +98,7 @@ public class TemplateSummary {
                             compartmentId,
                             displayName,
                             description,
+                            isFreeTier,
                             timeCreated,
                             lifecycleState);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -102,6 +112,7 @@ public class TemplateSummary {
                             .compartmentId(o.getCompartmentId())
                             .displayName(o.getDisplayName())
                             .description(o.getDescription())
+                            .isFreeTier(o.getIsFreeTier())
                             .timeCreated(o.getTimeCreated())
                             .lifecycleState(o.getLifecycleState());
 
@@ -140,6 +151,12 @@ public class TemplateSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
+
+    /**
+     * whether the template will work for free tier tenancy.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isFreeTier")
+    Boolean isFreeTier;
 
     /**
      * The date and time at which the template was created.

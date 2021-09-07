@@ -11,12 +11,7 @@ import com.oracle.bmc.servicecatalog.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetPrivateApplicationResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetPrivateApplicationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -35,7 +30,25 @@ public class GetPrivateApplicationResponse {
      */
     private com.oracle.bmc.servicecatalog.model.PrivateApplication privateApplication;
 
+    private GetPrivateApplicationResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.servicecatalog.model.PrivateApplication privateApplication) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.privateApplication = privateApplication;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,11 @@ public class GetPrivateApplicationResponse {
             privateApplication(o.getPrivateApplication());
 
             return this;
+        }
+
+        public GetPrivateApplicationResponse build() {
+            return new GetPrivateApplicationResponse(
+                    __httpStatusCode__, etag, opcRequestId, privateApplication);
         }
     }
 }

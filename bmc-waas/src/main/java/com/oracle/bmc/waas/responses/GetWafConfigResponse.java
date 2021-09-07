@@ -11,12 +11,7 @@ import com.oracle.bmc.waas.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetWafConfigResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetWafConfigResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
@@ -32,7 +27,25 @@ public class GetWafConfigResponse {
      */
     private com.oracle.bmc.waas.model.WafConfig wafConfig;
 
+    private GetWafConfigResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.waas.model.WafConfig wafConfig) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.wafConfig = wafConfig;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -44,6 +57,10 @@ public class GetWafConfigResponse {
             wafConfig(o.getWafConfig());
 
             return this;
+        }
+
+        public GetWafConfigResponse build() {
+            return new GetWafConfigResponse(__httpStatusCode__, etag, opcRequestId, wafConfig);
         }
     }
 }

@@ -99,6 +99,24 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves the Database Management private endpoint and its dependent resources to the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeDbManagementPrivateEndpointCompartmentResponse>
+            changeDbManagementPrivateEndpointCompartment(
+                    ChangeDbManagementPrivateEndpointCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeDbManagementPrivateEndpointCompartmentRequest,
+                                    ChangeDbManagementPrivateEndpointCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a job.
      *
      *
@@ -137,6 +155,25 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Creates a new Database Management private endpoint.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateDbManagementPrivateEndpointResponse>
+            createDbManagementPrivateEndpoint(
+                    CreateDbManagementPrivateEndpointRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateDbManagementPrivateEndpointRequest,
+                                    CreateDbManagementPrivateEndpointResponse>
+                            handler);
+
+    /**
      * Creates a job to be executed on a Managed Database or Managed Database Group. Only one
      * of the parameters, managedDatabaseId or managedDatabaseGroupId should be provided as
      * input in CreateJobDetails resource in request body.
@@ -172,6 +209,24 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the specified Database Management private endpoint.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDbManagementPrivateEndpointResponse>
+            deleteDbManagementPrivateEndpoint(
+                    DeleteDbManagementPrivateEndpointRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteDbManagementPrivateEndpointRequest,
+                                    DeleteDbManagementPrivateEndpointResponse>
+                            handler);
+
+    /**
      * Deletes the job specified by jobId.
      *
      * @param request The request object containing the details to send
@@ -204,7 +259,7 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the AWR report for the specified Managed Database.
+     * Gets the AWR report for the specific database.
      *
      *
      * @param request The request object containing the details to send
@@ -220,7 +275,7 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get a AWR SQL report for one SQL.
+     * Gets the SQL health check report for one SQL of the specific database.
      *
      *
      * @param request The request object containing the details to send
@@ -290,6 +345,24 @@ public interface DbManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetDatabaseHomeMetricsRequest, GetDatabaseHomeMetricsResponse>
                     handler);
+
+    /**
+     * Gets the details of the specified Database Management private endpoint.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDbManagementPrivateEndpointResponse>
+            getDbManagementPrivateEndpoint(
+                    GetDbManagementPrivateEndpointRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetDbManagementPrivateEndpointRequest,
+                                    GetDbManagementPrivateEndpointResponse>
+                            handler);
 
     /**
      * Gets the details for the job specified by jobId.
@@ -372,6 +445,55 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a summary of the resource usage metrics like DB Time, CPU, User I/O, Wait, Storage, and Memory
+     * for each Pdb under specified Container database in same compartment as container database.
+     * If comparmentId is provided then for each Pdb under specified compartmentId.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPdbMetricsResponse> getPdbMetrics(
+            GetPdbMetricsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetPdbMetricsRequest, GetPdbMetricsResponse>
+                    handler);
+
+    /**
+     * Gets information of the work request with the given Work Request Id.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
+            GetWorkRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler);
+
+    /**
+     * Gets the list of Databases using the specified Database Management private endpoint.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAssociatedDatabasesResponse> listAssociatedDatabases(
+            ListAssociatedDatabasesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListAssociatedDatabasesRequest, ListAssociatedDatabasesResponse>
+                    handler);
+
+    /**
      * Lists AWR snapshots for the specified database in the AWR.
      *
      *
@@ -421,8 +543,27 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the job execution for a specific ID or the list of job executions for a job, Managed Database or Managed Database Group
-     * in a specific compartment. Only one of the parameters, ID, jobId, managedDatabaseId or managedDatabaseGroupId should be provided.
+     * Gets a list of Database Management private endpoints.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDbManagementPrivateEndpointsResponse>
+            listDbManagementPrivateEndpoints(
+                    ListDbManagementPrivateEndpointsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListDbManagementPrivateEndpointsRequest,
+                                    ListDbManagementPrivateEndpointsResponse>
+                            handler);
+
+    /**
+     * Gets the job execution for a specific ID or the list of job executions for a job, job run, Managed Database or Managed Database Group
+     * in a specific compartment. Only one of the parameters, ID, jobId, jobRunId, managedDatabaseId or managedDatabaseGroupId should be provided.
      * If none of these parameters is provided, all the job executions in the compartment are listed. Job executions can also be filtered
      * based on the name and status parameters.
      *
@@ -498,8 +639,11 @@ public interface DbManagementAsync extends AutoCloseable {
 
     /**
      * Gets the Managed Database for a specific ID or the list of Managed Databases in a specific compartment.
-     * Managed Databases can also be filtered based on the name parameter. Only one of the parameters, ID or name
-     * should be provided. If none of these parameters is provided, all the Managed Databases in the compartment are listed.
+     * Managed Databases can be filtered based on the name parameter. Only one of the parameters, ID or name
+     * should be provided. If neither of these parameters is provided, all the Managed Databases in the compartment
+     * are listed. Managed Databases can also be filtered based on the deployment type and management option.
+     * If the deployment type is not specified or if it is `ONPREMISE`, then the management option is not
+     * considered and Managed Databases with `ADVANCED` management option are listed.
      *
      *
      * @param request The request object containing the details to send
@@ -528,6 +672,56 @@ public interface DbManagementAsync extends AutoCloseable {
     java.util.concurrent.Future<ListTablespacesResponse> listTablespaces(
             ListTablespacesRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListTablespacesRequest, ListTablespacesResponse>
+                    handler);
+
+    /**
+     * Returns a (paginated) list of errors for a given work request.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
+            ListWorkRequestErrorsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
+                    handler);
+
+    /**
+     * Returns a (paginated) list of logs for a given work request.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
+            ListWorkRequestLogsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
+                    handler);
+
+    /**
+     * Lists all the work requests in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
+            ListWorkRequestsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                     handler);
 
     /**
@@ -604,7 +798,7 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Summarizes the AWR database parameter change history for one database parameter of the specified Managed Database. One change history record contains
+     * Summarizes the database parameter change history for one database parameter of the specified database in AWR. One change history record contains
      * the previous value, the changed value, and the corresponding time range. If the database parameter value was changed multiple times within the time range, then multiple change history records are created for the same parameter.
      * Note that this API only returns information on change history details for one database parameter.
      * To get a list of all the database parameters whose values were changed during a specified time range, use the following API endpoint:
@@ -627,13 +821,15 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Summarizes the AWR database parameter history for the specified Managed Database. This includes the list of database
+     * Summarizes the database parameter history for the specified database in AWR. This includes the list of database
      * parameters, with information on whether the parameter values were modified within the query time range. Note that
-     * each database parameter is only listed once. The returned summary gets all the database parameters, which include:
-     *  -Each parameter whose value was changed during the time range: AwrDbParameterValueOptionalQueryParam (valueChanged =\"Y\")
-     *  -Each parameter whose value was unchanged during the time range: AwrDbParameterValueOptionalQueryParam (valueChanged =\"N\")
-     *  -Each parameter whose value was changed at the system level during the time range: (valueChanged =\"Y\"  and valueModified = \"SYSTEM_MOD\").
-     *  -Each parameter whose value was unchanged during the time range, however, the value is not the default value: (valueChanged =\"N\" and  valueDefault = \"FALSE\")
+     * each database parameter is only listed once. Depending on the optional query parameters, the returned summary gets all the database parameters, which include:
+     * <p>
+     * - Each parameter whose value was changed during the time range:  (valueChanged =\"Y\")
+     * - Each parameter whose value was unchanged during the time range:  (valueChanged =\"N\")
+     * - Each parameter whose value was changed at the system level during the time range: (valueChanged =\"Y\"  and valueModified = \"SYSTEM_MOD\")
+     * - Each parameter whose value was unchanged during the time range, however, the value is not the default value: (valueChanged =\"N\" and  valueDefault = \"FALSE\")
+     * <p>
      * Note that this API does not return information on the number of times each database parameter has been changed within the time range. To get the database parameter value change history for a specific parameter, use the following API endpoint:
      * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbParameterChanges
      *
@@ -738,6 +934,57 @@ public interface DbManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             SummarizeAwrDbWaitEventsRequest, SummarizeAwrDbWaitEventsResponse>
                     handler);
+
+    /**
+     * Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeJobExecutionsStatusesResponse>
+            summarizeJobExecutionsStatuses(
+                    SummarizeJobExecutionsStatusesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeJobExecutionsStatusesRequest,
+                                    SummarizeJobExecutionsStatusesResponse>
+                            handler);
+
+    /**
+     * Updates one or more attributes of the specified Database Management private endpoint.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDbManagementPrivateEndpointResponse>
+            updateDbManagementPrivateEndpoint(
+                    UpdateDbManagementPrivateEndpointRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateDbManagementPrivateEndpointRequest,
+                                    UpdateDbManagementPrivateEndpointResponse>
+                            handler);
+
+    /**
+     * Updates the details for the recurring scheduled job specified by jobId. Note that non-recurring (one time) jobs cannot be updated.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateJobResponse> updateJob(
+            UpdateJobRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateJobRequest, UpdateJobResponse> handler);
 
     /**
      * Updates the Managed Database Group specified by managedDatabaseGroupId.

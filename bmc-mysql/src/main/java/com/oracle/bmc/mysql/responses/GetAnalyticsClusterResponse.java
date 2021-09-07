@@ -11,12 +11,7 @@ import com.oracle.bmc.mysql.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetAnalyticsClusterResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -43,7 +38,27 @@ public class GetAnalyticsClusterResponse {
      */
     private boolean isNotModified;
 
+    private GetAnalyticsClusterResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.mysql.model.AnalyticsCluster analyticsCluster,
+            boolean isNotModified) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.analyticsCluster = analyticsCluster;
+        this.isNotModified = isNotModified;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -55,6 +70,11 @@ public class GetAnalyticsClusterResponse {
             analyticsCluster(o.getAnalyticsCluster());
             isNotModified(o.isNotModified());
             return this;
+        }
+
+        public GetAnalyticsClusterResponse build() {
+            return new GetAnalyticsClusterResponse(
+                    __httpStatusCode__, etag, opcRequestId, analyticsCluster, isNotModified);
         }
     }
 }

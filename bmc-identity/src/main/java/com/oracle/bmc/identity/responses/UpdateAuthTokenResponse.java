@@ -11,12 +11,7 @@ import com.oracle.bmc.identity.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateAuthTokenResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateAuthTokenResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -34,7 +29,25 @@ public class UpdateAuthTokenResponse {
      */
     private com.oracle.bmc.identity.model.AuthToken authToken;
 
+    private UpdateAuthTokenResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.identity.model.AuthToken authToken) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.authToken = authToken;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -46,6 +59,10 @@ public class UpdateAuthTokenResponse {
             authToken(o.getAuthToken());
 
             return this;
+        }
+
+        public UpdateAuthTokenResponse build() {
+            return new UpdateAuthTokenResponse(__httpStatusCode__, opcRequestId, etag, authToken);
         }
     }
 }

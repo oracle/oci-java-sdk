@@ -11,12 +11,7 @@ import com.oracle.bmc.analytics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateAnalyticsInstanceResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateAnalyticsInstanceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -48,7 +43,29 @@ public class CreateAnalyticsInstanceResponse {
      */
     private com.oracle.bmc.analytics.model.AnalyticsInstance analyticsInstance;
 
+    private CreateAnalyticsInstanceResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            String opcWorkRequestId,
+            String location,
+            com.oracle.bmc.analytics.model.AnalyticsInstance analyticsInstance) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.location = location;
+        this.analyticsInstance = analyticsInstance;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -62,6 +79,16 @@ public class CreateAnalyticsInstanceResponse {
             analyticsInstance(o.getAnalyticsInstance());
 
             return this;
+        }
+
+        public CreateAnalyticsInstanceResponse build() {
+            return new CreateAnalyticsInstanceResponse(
+                    __httpStatusCode__,
+                    etag,
+                    opcRequestId,
+                    opcWorkRequestId,
+                    location,
+                    analyticsInstance);
         }
     }
 }

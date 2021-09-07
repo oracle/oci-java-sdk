@@ -11,12 +11,7 @@ import com.oracle.bmc.database.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateAutonomousDatabaseResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateAutonomousDatabaseResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
@@ -40,7 +35,27 @@ public class UpdateAutonomousDatabaseResponse {
      */
     private com.oracle.bmc.database.model.AutonomousDatabase autonomousDatabase;
 
+    private UpdateAutonomousDatabaseResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            String opcWorkRequestId,
+            com.oracle.bmc.database.model.AutonomousDatabase autonomousDatabase) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.autonomousDatabase = autonomousDatabase;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -53,6 +68,11 @@ public class UpdateAutonomousDatabaseResponse {
             autonomousDatabase(o.getAutonomousDatabase());
 
             return this;
+        }
+
+        public UpdateAutonomousDatabaseResponse build() {
+            return new UpdateAutonomousDatabaseResponse(
+                    __httpStatusCode__, etag, opcRequestId, opcWorkRequestId, autonomousDatabase);
         }
     }
 }

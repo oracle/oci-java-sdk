@@ -11,12 +11,7 @@ import com.oracle.bmc.dns.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateZoneResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateZoneResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The current version of the resource, ending with a
      * representation-specific suffix. This value may be used in If-Match
@@ -44,7 +39,27 @@ public class UpdateZoneResponse {
      */
     private com.oracle.bmc.dns.model.Zone zone;
 
+    private UpdateZoneResponse(
+            int __httpStatusCode__,
+            String eTag,
+            String opcRequestId,
+            String opcWorkRequestId,
+            com.oracle.bmc.dns.model.Zone zone) {
+        super(__httpStatusCode__);
+        this.eTag = eTag;
+        this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.zone = zone;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -57,6 +72,11 @@ public class UpdateZoneResponse {
             zone(o.getZone());
 
             return this;
+        }
+
+        public UpdateZoneResponse build() {
+            return new UpdateZoneResponse(
+                    __httpStatusCode__, eTag, opcRequestId, opcWorkRequestId, zone);
         }
     }
 }

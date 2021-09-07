@@ -11,12 +11,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetComputeGlobalImageCapabilitySchemaVersionResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetComputeGlobalImageCapabilitySchemaVersionResponse
+        extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -36,7 +32,26 @@ public class GetComputeGlobalImageCapabilitySchemaVersionResponse {
     private com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersion
             computeGlobalImageCapabilitySchemaVersion;
 
+    private GetComputeGlobalImageCapabilitySchemaVersionResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersion
+                    computeGlobalImageCapabilitySchemaVersion) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.computeGlobalImageCapabilitySchemaVersion = computeGlobalImageCapabilitySchemaVersion;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -49,6 +64,14 @@ public class GetComputeGlobalImageCapabilitySchemaVersionResponse {
                     o.getComputeGlobalImageCapabilitySchemaVersion());
 
             return this;
+        }
+
+        public GetComputeGlobalImageCapabilitySchemaVersionResponse build() {
+            return new GetComputeGlobalImageCapabilitySchemaVersionResponse(
+                    __httpStatusCode__,
+                    etag,
+                    opcRequestId,
+                    computeGlobalImageCapabilitySchemaVersion);
         }
     }
 }

@@ -8,10 +8,10 @@ import com.oracle.bmc.resourcemanager.requests.*;
 import com.oracle.bmc.resourcemanager.responses.*;
 
 /**
- * API for the Resource Manager service.
- * Use this API to install, configure, and manage resources via the "infrastructure-as-code" model.
+ * Use the Resource Manager API to automate deployment and operations for all Oracle Cloud Infrastructure resources.
+ * Using the infrastructure-as-code (IaC) model, the service is based on Terraform, an open source industry standard that lets DevOps engineers develop and deploy their infrastructure anywhere.
  * For more information, see
- * [Overview of Resource Manager](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm).
+ * [the Resource Manager documentation](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/home.htm).
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
@@ -53,6 +53,9 @@ public interface ResourceManagerAsync extends AutoCloseable {
      * Indicates the intention to cancel the specified job.
      * Cancellation of the job is not immediate, and may be delayed,
      * or may not happen at all.
+     * You can optionally choose forced cancellation by setting `isForced` to true.
+     * A forced cancellation can result in an incorrect state file.
+     * For example, the state file might not reflect the exact state of the provisioned resources.
      *
      *
      * @param request The request object containing the details to send
@@ -125,7 +128,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
     /**
      * Creates a configuration source provider in the specified compartment.
      * For more information, see
-     * [To create a configuration source provider](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#CreateConfigurationSourceProvider).
+     * [To create a configuration source provider](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingconfigurationsourceproviders.htm#CreateConfigurationSourceProvider).
      *
      *
      * @param request The request object containing the details to send
@@ -164,7 +167,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
      * You can also create a stack from an existing compartment.
      * You can also upload the Terraform configuration from an Object Storage bucket.
      * For more information, see
-     * [To create a stack](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#CreateStack).
+     * [To create a stack](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#createstack-all).
      *
      *
      * @param request The request object containing the details to send
@@ -179,7 +182,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateStackRequest, CreateStackResponse> handler);
 
     /**
-     * Creates a custom template in the specified compartment.
+     * Creates a private template in the specified compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -289,7 +292,24 @@ public interface ResourceManagerAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetJobRequest, GetJobResponse> handler);
 
     /**
-     * Returns log entries for the specified job in JSON format.
+     * Returns the Terraform detailed log content for the specified job in plain text. [Learn about Terraform detailed log.](https://www.terraform.io/docs/internals/debugging.html)
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetJobDetailedLogContentResponse> getJobDetailedLogContent(
+            GetJobDetailedLogContentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetJobDetailedLogContentRequest, GetJobDetailedLogContentResponse>
+                    handler);
+
+    /**
+     * Returns console log entries for the specified job in JSON format.
      *
      *
      * @param request The request object containing the details to send
@@ -304,8 +324,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetJobLogsRequest, GetJobLogsResponse> handler);
 
     /**
-     * Returns raw log file for the specified job in text format.
-     * Returns a maximum of 100,000 log entries.
+     * Returns a raw log file for the specified job. The raw log file contains console log entries in text format. The maximum number of entries in a file is 100,000.
      *
      *
      * @param request The request object containing the details to send
@@ -581,6 +600,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
 
     /**
      * Lists templates according to the specified filter.
+     * The attributes `compartmentId` and `templateCategoryId` are required unless `templateId` is specified.
      *
      *
      * @param request The request object containing the details to send
@@ -665,7 +685,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
     /**
      * Updates the properties of the specified configuration source provider.
      * For more information, see
-     * [To update a configuration source provider](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#UpdateConfigurationSourceProvider).
+     * [To edit a configuration source provider](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingconfigurationsourceproviders.htm#EditConfigurationSourceProvider).
      *
      *
      * @param request The request object containing the details to send

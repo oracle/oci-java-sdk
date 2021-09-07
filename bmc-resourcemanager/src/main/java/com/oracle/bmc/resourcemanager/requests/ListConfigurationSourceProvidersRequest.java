@@ -40,7 +40,10 @@ public class ListConfigurationSourceProvidersRequest
     private String configurationSourceProviderId;
 
     /**
-     * A filter to return only resources that match the specified display name.
+     * A filter to return only resources that match the given display name exactly.
+     * Use this filter to list a resource by name.
+     * Requires {@code sortBy} set to {@code DISPLAYNAME}.
+     * Alternatively, when you know the resource OCID, use the related Get operation.
      *
      */
     private String displayName;

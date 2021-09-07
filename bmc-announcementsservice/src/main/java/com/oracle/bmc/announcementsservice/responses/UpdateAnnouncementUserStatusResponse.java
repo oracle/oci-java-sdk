@@ -11,12 +11,7 @@ import com.oracle.bmc.announcementsservice.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateAnnouncementUserStatusResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateAnnouncementUserStatusResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the complete request ID.
      */
@@ -27,7 +22,21 @@ public class UpdateAnnouncementUserStatusResponse {
      */
     private String etag;
 
+    private UpdateAnnouncementUserStatusResponse(
+            int __httpStatusCode__, String opcRequestId, String etag) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -38,6 +47,10 @@ public class UpdateAnnouncementUserStatusResponse {
             etag(o.getEtag());
 
             return this;
+        }
+
+        public UpdateAnnouncementUserStatusResponse build() {
+            return new UpdateAnnouncementUserStatusResponse(__httpStatusCode__, opcRequestId, etag);
         }
     }
 }

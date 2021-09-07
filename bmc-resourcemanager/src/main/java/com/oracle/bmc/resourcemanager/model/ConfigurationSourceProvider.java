@@ -7,7 +7,7 @@ package com.oracle.bmc.resourcemanager.model;
 /**
  * The properties that define a configuration source provider.
  * For more information, see
- * [Managing Configuration Source Providers](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#ManagingConfigurationSourceProviders).
+ * [Managing Configuration Source Providers](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingconfigurationsourceproviders.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -78,7 +78,7 @@ public class ConfigurationSourceProvider {
     /**
      * The current lifecycle state of the configuration source provider.
      * For more information about configuration source provider lifecycle states in Resource Manager, see
-     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#CSPStates).
+     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__CSPStates).
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -126,7 +126,7 @@ public class ConfigurationSourceProvider {
     /**
      * The current lifecycle state of the configuration source provider.
      * For more information about configuration source provider lifecycle states in Resource Manager, see
-     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#CSPStates).
+     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__CSPStates).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")

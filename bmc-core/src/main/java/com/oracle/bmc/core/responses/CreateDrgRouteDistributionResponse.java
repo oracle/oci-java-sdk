@@ -11,12 +11,7 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateDrgRouteDistributionResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateDrgRouteDistributionResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -35,7 +30,25 @@ public class CreateDrgRouteDistributionResponse {
      */
     private com.oracle.bmc.core.model.DrgRouteDistribution drgRouteDistribution;
 
+    private CreateDrgRouteDistributionResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.core.model.DrgRouteDistribution drgRouteDistribution) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.drgRouteDistribution = drgRouteDistribution;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,11 @@ public class CreateDrgRouteDistributionResponse {
             drgRouteDistribution(o.getDrgRouteDistribution());
 
             return this;
+        }
+
+        public CreateDrgRouteDistributionResponse build() {
+            return new CreateDrgRouteDistributionResponse(
+                    __httpStatusCode__, etag, opcRequestId, drgRouteDistribution);
         }
     }
 }

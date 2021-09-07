@@ -11,12 +11,7 @@ import com.oracle.bmc.email.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListSendersResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListSendersResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -49,7 +44,29 @@ public class ListSendersResponse {
      */
     private java.util.List<com.oracle.bmc.email.model.SenderSummary> items;
 
+    private ListSendersResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String opcNextPage,
+            String opcPrevPage,
+            Integer opcTotalItems,
+            java.util.List<com.oracle.bmc.email.model.SenderSummary> items) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.opcPrevPage = opcPrevPage;
+        this.opcTotalItems = opcTotalItems;
+        this.items = items;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -63,6 +80,16 @@ public class ListSendersResponse {
             items(o.getItems());
 
             return this;
+        }
+
+        public ListSendersResponse build() {
+            return new ListSendersResponse(
+                    __httpStatusCode__,
+                    opcRequestId,
+                    opcNextPage,
+                    opcPrevPage,
+                    opcTotalItems,
+                    items);
         }
     }
 }

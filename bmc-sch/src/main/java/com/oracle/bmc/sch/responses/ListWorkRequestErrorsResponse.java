@@ -11,12 +11,7 @@ import com.oracle.bmc.sch.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListWorkRequestErrorsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For list pagination. When this header appears in the response,
      * additional pages of results remain. For important details about
@@ -47,7 +42,27 @@ public class ListWorkRequestErrorsResponse {
      */
     private com.oracle.bmc.sch.model.WorkRequestErrorCollection workRequestErrorCollection;
 
+    private ListWorkRequestErrorsResponse(
+            int __httpStatusCode__,
+            String opcNextPage,
+            String opcRequestId,
+            String opcPrevPage,
+            com.oracle.bmc.sch.model.WorkRequestErrorCollection workRequestErrorCollection) {
+        super(__httpStatusCode__);
+        this.opcNextPage = opcNextPage;
+        this.opcRequestId = opcRequestId;
+        this.opcPrevPage = opcPrevPage;
+        this.workRequestErrorCollection = workRequestErrorCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -60,6 +75,15 @@ public class ListWorkRequestErrorsResponse {
             workRequestErrorCollection(o.getWorkRequestErrorCollection());
 
             return this;
+        }
+
+        public ListWorkRequestErrorsResponse build() {
+            return new ListWorkRequestErrorsResponse(
+                    __httpStatusCode__,
+                    opcNextPage,
+                    opcRequestId,
+                    opcPrevPage,
+                    workRequestErrorCollection);
         }
     }
 }

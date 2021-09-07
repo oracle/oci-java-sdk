@@ -11,12 +11,7 @@ import com.oracle.bmc.opsi.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class CreateHostInsightResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class CreateHostInsightResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
      *
@@ -51,7 +46,31 @@ public class CreateHostInsightResponse {
      */
     private com.oracle.bmc.opsi.model.HostInsight hostInsight;
 
+    private CreateHostInsightResponse(
+            int __httpStatusCode__,
+            String opcWorkRequestId,
+            String opcRequestId,
+            String location,
+            String contentLocation,
+            String etag,
+            com.oracle.bmc.opsi.model.HostInsight hostInsight) {
+        super(__httpStatusCode__);
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.opcRequestId = opcRequestId;
+        this.location = location;
+        this.contentLocation = contentLocation;
+        this.etag = etag;
+        this.hostInsight = hostInsight;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -66,6 +85,17 @@ public class CreateHostInsightResponse {
             hostInsight(o.getHostInsight());
 
             return this;
+        }
+
+        public CreateHostInsightResponse build() {
+            return new CreateHostInsightResponse(
+                    __httpStatusCode__,
+                    opcWorkRequestId,
+                    opcRequestId,
+                    location,
+                    contentLocation,
+                    etag,
+                    hostInsight);
         }
     }
 }

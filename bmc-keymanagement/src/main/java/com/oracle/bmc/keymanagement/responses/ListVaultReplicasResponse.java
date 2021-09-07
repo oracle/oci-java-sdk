@@ -11,12 +11,7 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListVaultReplicasResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListVaultReplicasResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
@@ -43,7 +38,27 @@ public class ListVaultReplicasResponse {
      */
     private java.util.List<com.oracle.bmc.keymanagement.model.VaultReplicaSummary> items;
 
+    private ListVaultReplicasResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcNextPage,
+            String opcRequestId,
+            java.util.List<com.oracle.bmc.keymanagement.model.VaultReplicaSummary> items) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcNextPage = opcNextPage;
+        this.opcRequestId = opcRequestId;
+        this.items = items;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -56,6 +71,11 @@ public class ListVaultReplicasResponse {
             items(o.getItems());
 
             return this;
+        }
+
+        public ListVaultReplicasResponse build() {
+            return new ListVaultReplicasResponse(
+                    __httpStatusCode__, etag, opcNextPage, opcRequestId, items);
         }
     }
 }

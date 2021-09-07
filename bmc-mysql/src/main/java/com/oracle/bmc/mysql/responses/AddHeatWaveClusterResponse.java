@@ -11,12 +11,7 @@ import com.oracle.bmc.mysql.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class AddHeatWaveClusterResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class AddHeatWaveClusterResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -41,7 +36,27 @@ public class AddHeatWaveClusterResponse {
      */
     private com.oracle.bmc.mysql.model.HeatWaveCluster heatWaveCluster;
 
+    private AddHeatWaveClusterResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            String opcWorkRequestId,
+            com.oracle.bmc.mysql.model.HeatWaveCluster heatWaveCluster) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.heatWaveCluster = heatWaveCluster;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -54,6 +69,11 @@ public class AddHeatWaveClusterResponse {
             heatWaveCluster(o.getHeatWaveCluster());
 
             return this;
+        }
+
+        public AddHeatWaveClusterResponse build() {
+            return new AddHeatWaveClusterResponse(
+                    __httpStatusCode__, etag, opcRequestId, opcWorkRequestId, heatWaveCluster);
         }
     }
 }

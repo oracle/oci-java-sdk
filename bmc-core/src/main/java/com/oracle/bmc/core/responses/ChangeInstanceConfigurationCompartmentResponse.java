@@ -11,12 +11,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ChangeInstanceConfigurationCompartmentResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ChangeInstanceConfigurationCompartmentResponse
+        extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
@@ -30,7 +26,21 @@ public class ChangeInstanceConfigurationCompartmentResponse {
      */
     private String opcRequestId;
 
+    private ChangeInstanceConfigurationCompartmentResponse(
+            int __httpStatusCode__, String etag, String opcRequestId) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -41,6 +51,11 @@ public class ChangeInstanceConfigurationCompartmentResponse {
             opcRequestId(o.getOpcRequestId());
 
             return this;
+        }
+
+        public ChangeInstanceConfigurationCompartmentResponse build() {
+            return new ChangeInstanceConfigurationCompartmentResponse(
+                    __httpStatusCode__, etag, opcRequestId);
         }
     }
 }

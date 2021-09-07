@@ -11,12 +11,7 @@ import com.oracle.bmc.announcementsservice.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetAnnouncementsPreferenceResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetAnnouncementsPreferenceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      *
      */
@@ -28,7 +23,24 @@ public class GetAnnouncementsPreferenceResponse {
     private com.oracle.bmc.announcementsservice.model.AnnouncementsPreferences
             announcementsPreferences;
 
+    private GetAnnouncementsPreferenceResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            com.oracle.bmc.announcementsservice.model.AnnouncementsPreferences
+                    announcementsPreferences) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.announcementsPreferences = announcementsPreferences;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -39,6 +51,11 @@ public class GetAnnouncementsPreferenceResponse {
             announcementsPreferences(o.getAnnouncementsPreferences());
 
             return this;
+        }
+
+        public GetAnnouncementsPreferenceResponse build() {
+            return new GetAnnouncementsPreferenceResponse(
+                    __httpStatusCode__, opcRequestId, announcementsPreferences);
         }
     }
 }

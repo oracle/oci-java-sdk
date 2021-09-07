@@ -11,12 +11,7 @@ import com.oracle.bmc.nosql.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class QueryResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For pagination of a list of items. When paging through a list,
      * if this header appears in the response, then a partial list
@@ -40,7 +35,25 @@ public class QueryResponse {
      */
     private com.oracle.bmc.nosql.model.QueryResultCollection queryResultCollection;
 
+    private QueryResponse(
+            int __httpStatusCode__,
+            String opcNextPage,
+            String opcRequestId,
+            com.oracle.bmc.nosql.model.QueryResultCollection queryResultCollection) {
+        super(__httpStatusCode__);
+        this.opcNextPage = opcNextPage;
+        this.opcRequestId = opcRequestId;
+        this.queryResultCollection = queryResultCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -52,6 +65,11 @@ public class QueryResponse {
             queryResultCollection(o.getQueryResultCollection());
 
             return this;
+        }
+
+        public QueryResponse build() {
+            return new QueryResponse(
+                    __httpStatusCode__, opcNextPage, opcRequestId, queryResultCollection);
         }
     }
 }

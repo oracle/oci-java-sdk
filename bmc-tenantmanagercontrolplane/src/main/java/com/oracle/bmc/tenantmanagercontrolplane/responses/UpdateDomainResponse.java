@@ -11,12 +11,7 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class UpdateDomainResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class UpdateDomainResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -35,7 +30,25 @@ public class UpdateDomainResponse {
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.Domain domain;
 
+    private UpdateDomainResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.tenantmanagercontrolplane.model.Domain domain) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.domain = domain;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -47,6 +60,10 @@ public class UpdateDomainResponse {
             domain(o.getDomain());
 
             return this;
+        }
+
+        public UpdateDomainResponse build() {
+            return new UpdateDomainResponse(__httpStatusCode__, opcRequestId, etag, domain);
         }
     }
 }

@@ -11,12 +11,7 @@ import com.oracle.bmc.database.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetVmClusterNetworkResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetVmClusterNetworkResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
@@ -34,7 +29,25 @@ public class GetVmClusterNetworkResponse {
      */
     private com.oracle.bmc.database.model.VmClusterNetwork vmClusterNetwork;
 
+    private GetVmClusterNetworkResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.database.model.VmClusterNetwork vmClusterNetwork) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.vmClusterNetwork = vmClusterNetwork;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -46,6 +59,11 @@ public class GetVmClusterNetworkResponse {
             vmClusterNetwork(o.getVmClusterNetwork());
 
             return this;
+        }
+
+        public GetVmClusterNetworkResponse build() {
+            return new GetVmClusterNetworkResponse(
+                    __httpStatusCode__, etag, opcRequestId, vmClusterNetwork);
         }
     }
 }

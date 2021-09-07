@@ -11,12 +11,7 @@ import com.oracle.bmc.email.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListDkimsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListDkimsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For list pagination. When this header appears in the response, additional pages of results remain.
      * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -36,7 +31,25 @@ public class ListDkimsResponse {
      */
     private com.oracle.bmc.email.model.DkimCollection dkimCollection;
 
+    private ListDkimsResponse(
+            int __httpStatusCode__,
+            String opcNextPage,
+            String opcRequestId,
+            com.oracle.bmc.email.model.DkimCollection dkimCollection) {
+        super(__httpStatusCode__);
+        this.opcNextPage = opcNextPage;
+        this.opcRequestId = opcRequestId;
+        this.dkimCollection = dkimCollection;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -48,6 +61,11 @@ public class ListDkimsResponse {
             dkimCollection(o.getDkimCollection());
 
             return this;
+        }
+
+        public ListDkimsResponse build() {
+            return new ListDkimsResponse(
+                    __httpStatusCode__, opcNextPage, opcRequestId, dkimCollection);
         }
     }
 }

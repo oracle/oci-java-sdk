@@ -11,12 +11,7 @@ import com.oracle.bmc.waas.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class ListThreatFeedsResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class ListThreatFeedsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
@@ -37,7 +32,27 @@ public class ListThreatFeedsResponse {
      */
     private java.util.List<com.oracle.bmc.waas.model.ThreatFeed> items;
 
+    private ListThreatFeedsResponse(
+            int __httpStatusCode__,
+            String etag,
+            String opcRequestId,
+            String opcNextPage,
+            java.util.List<com.oracle.bmc.waas.model.ThreatFeed> items) {
+        super(__httpStatusCode__);
+        this.etag = etag;
+        this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.items = items;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -50,6 +65,11 @@ public class ListThreatFeedsResponse {
             items(o.getItems());
 
             return this;
+        }
+
+        public ListThreatFeedsResponse build() {
+            return new ListThreatFeedsResponse(
+                    __httpStatusCode__, etag, opcRequestId, opcNextPage, items);
         }
     }
 }

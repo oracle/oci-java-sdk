@@ -11,12 +11,7 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode
 @lombok.Getter
-public class GetQueryResultResponse {
-    /**
-     * HTTP status code returned by the operation.
-     */
-    private final int __httpStatusCode__;
-
+public class GetQueryResultResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
      *
@@ -49,7 +44,29 @@ public class GetQueryResultResponse {
      */
     private com.oracle.bmc.loganalytics.model.QueryAggregation queryAggregation;
 
+    private GetQueryResultResponse(
+            int __httpStatusCode__,
+            String opcRequestId,
+            String opcNextPage,
+            String opcPrevPage,
+            Float retryAfter,
+            com.oracle.bmc.loganalytics.model.QueryAggregation queryAggregation) {
+        super(__httpStatusCode__);
+        this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.opcPrevPage = opcPrevPage;
+        this.retryAfter = retryAfter;
+        this.queryAggregation = queryAggregation;
+    }
+
     public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -63,6 +80,16 @@ public class GetQueryResultResponse {
             queryAggregation(o.getQueryAggregation());
 
             return this;
+        }
+
+        public GetQueryResultResponse build() {
+            return new GetQueryResultResponse(
+                    __httpStatusCode__,
+                    opcRequestId,
+                    opcNextPage,
+                    opcPrevPage,
+                    retryAfter,
+                    queryAggregation);
         }
     }
 }
