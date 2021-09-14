@@ -157,7 +157,7 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
      * Example: {@code SUCCEEDED}
      *
      */
-    private LoadBalancer.LifecycleState lifecycleState;
+    private com.oracle.bmc.loadbalancer.model.LoadBalancer.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

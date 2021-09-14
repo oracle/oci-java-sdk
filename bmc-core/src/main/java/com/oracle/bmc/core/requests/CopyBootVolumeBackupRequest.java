@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CopyBootVolumeBackupRequest
-        extends com.oracle.bmc.requests.BmcRequest<CopyBootVolumeBackupDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CopyBootVolumeBackupDetails> {
 
     /**
      * The OCID of the boot volume backup.
@@ -28,7 +29,7 @@ public class CopyBootVolumeBackupRequest
     /**
      * Request to create a cross-region copy of given boot volume backup.
      */
-    private CopyBootVolumeBackupDetails copyBootVolumeBackupDetails;
+    private com.oracle.bmc.core.model.CopyBootVolumeBackupDetails copyBootVolumeBackupDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -53,13 +54,14 @@ public class CopyBootVolumeBackupRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CopyBootVolumeBackupDetails getBody$() {
+    public com.oracle.bmc.core.model.CopyBootVolumeBackupDetails getBody$() {
         return copyBootVolumeBackupDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CopyBootVolumeBackupRequest, CopyBootVolumeBackupDetails> {
+                    CopyBootVolumeBackupRequest,
+                    com.oracle.bmc.core.model.CopyBootVolumeBackupDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class CopyBootVolumeBackupRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CopyBootVolumeBackupDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CopyBootVolumeBackupDetails body) {
             copyBootVolumeBackupDetails(body);
             return this;
         }

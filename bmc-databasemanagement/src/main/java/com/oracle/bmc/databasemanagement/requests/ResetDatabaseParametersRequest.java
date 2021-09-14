@@ -18,7 +18,8 @@ import com.oracle.bmc.databasemanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ResetDatabaseParametersRequest
-        extends com.oracle.bmc.requests.BmcRequest<ResetDatabaseParametersDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.databasemanagement.model.ResetDatabaseParametersDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -28,7 +29,8 @@ public class ResetDatabaseParametersRequest
     /**
      * The details required to reset database parameters.
      */
-    private ResetDatabaseParametersDetails resetDatabaseParametersDetails;
+    private com.oracle.bmc.databasemanagement.model.ResetDatabaseParametersDetails
+            resetDatabaseParametersDetails;
 
     /**
      * The client request ID for tracing.
@@ -51,13 +53,14 @@ public class ResetDatabaseParametersRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ResetDatabaseParametersDetails getBody$() {
+    public com.oracle.bmc.databasemanagement.model.ResetDatabaseParametersDetails getBody$() {
         return resetDatabaseParametersDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ResetDatabaseParametersRequest, ResetDatabaseParametersDetails> {
+                    ResetDatabaseParametersRequest,
+                    com.oracle.bmc.databasemanagement.model.ResetDatabaseParametersDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,8 @@ public class ResetDatabaseParametersRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ResetDatabaseParametersDetails body) {
+        public Builder body$(
+                com.oracle.bmc.databasemanagement.model.ResetDatabaseParametersDetails body) {
             resetDatabaseParametersDetails(body);
             return this;
         }

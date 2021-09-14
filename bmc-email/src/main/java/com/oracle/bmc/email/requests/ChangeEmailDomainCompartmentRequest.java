@@ -18,7 +18,8 @@ import com.oracle.bmc.email.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeEmailDomainCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeEmailDomainCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.email.model.ChangeEmailDomainCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this email domain.
@@ -28,7 +29,8 @@ public class ChangeEmailDomainCompartmentRequest
     /**
      * The configuration details for the move operation.
      */
-    private ChangeEmailDomainCompartmentDetails changeEmailDomainCompartmentDetails;
+    private com.oracle.bmc.email.model.ChangeEmailDomainCompartmentDetails
+            changeEmailDomainCompartmentDetails;
 
     /**
      * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
@@ -59,13 +61,14 @@ public class ChangeEmailDomainCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeEmailDomainCompartmentDetails getBody$() {
+    public com.oracle.bmc.email.model.ChangeEmailDomainCompartmentDetails getBody$() {
         return changeEmailDomainCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeEmailDomainCompartmentRequest, ChangeEmailDomainCompartmentDetails> {
+                    ChangeEmailDomainCompartmentRequest,
+                    com.oracle.bmc.email.model.ChangeEmailDomainCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -131,7 +134,7 @@ public class ChangeEmailDomainCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeEmailDomainCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.email.model.ChangeEmailDomainCompartmentDetails body) {
             changeEmailDomainCompartmentDetails(body);
             return this;
         }

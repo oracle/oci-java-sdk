@@ -17,12 +17,13 @@ import com.oracle.bmc.email.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateSenderRequest extends com.oracle.bmc.requests.BmcRequest<CreateSenderDetails> {
+public class CreateSenderRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.email.model.CreateSenderDetails> {
 
     /**
      * Create a sender.
      */
-    private CreateSenderDetails createSenderDetails;
+    private com.oracle.bmc.email.model.CreateSenderDetails createSenderDetails;
 
     /**
      * The request ID for tracing from the system
@@ -35,13 +36,13 @@ public class CreateSenderRequest extends com.oracle.bmc.requests.BmcRequest<Crea
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateSenderDetails getBody$() {
+    public com.oracle.bmc.email.model.CreateSenderDetails getBody$() {
         return createSenderDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateSenderRequest, CreateSenderDetails> {
+                    CreateSenderRequest, com.oracle.bmc.email.model.CreateSenderDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -104,7 +105,7 @@ public class CreateSenderRequest extends com.oracle.bmc.requests.BmcRequest<Crea
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateSenderDetails body) {
+        public Builder body$(com.oracle.bmc.email.model.CreateSenderDetails body) {
             createSenderDetails(body);
             return this;
         }

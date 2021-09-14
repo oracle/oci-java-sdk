@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ConnectRemotePeeringConnectionsRequest
-        extends com.oracle.bmc.requests.BmcRequest<ConnectRemotePeeringConnectionsDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.ConnectRemotePeeringConnectionsDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the remote peering connection (RPC).
@@ -29,7 +30,8 @@ public class ConnectRemotePeeringConnectionsRequest
      * Details to connect peering connection with peering connection from remote region
      *
      */
-    private ConnectRemotePeeringConnectionsDetails connectRemotePeeringConnectionsDetails;
+    private com.oracle.bmc.core.model.ConnectRemotePeeringConnectionsDetails
+            connectRemotePeeringConnectionsDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -37,14 +39,14 @@ public class ConnectRemotePeeringConnectionsRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ConnectRemotePeeringConnectionsDetails getBody$() {
+    public com.oracle.bmc.core.model.ConnectRemotePeeringConnectionsDetails getBody$() {
         return connectRemotePeeringConnectionsDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ConnectRemotePeeringConnectionsRequest,
-                    ConnectRemotePeeringConnectionsDetails> {
+                    com.oracle.bmc.core.model.ConnectRemotePeeringConnectionsDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -107,7 +109,8 @@ public class ConnectRemotePeeringConnectionsRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ConnectRemotePeeringConnectionsDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.ConnectRemotePeeringConnectionsDetails body) {
             connectRemotePeeringConnectionsDetails(body);
             return this;
         }

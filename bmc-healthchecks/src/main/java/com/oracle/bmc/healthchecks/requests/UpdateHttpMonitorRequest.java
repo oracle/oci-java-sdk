@@ -18,7 +18,8 @@ import com.oracle.bmc.healthchecks.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateHttpMonitorRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateHttpMonitorDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.healthchecks.model.UpdateHttpMonitorDetails> {
 
     /**
      * The OCID of a monitor.
@@ -28,7 +29,7 @@ public class UpdateHttpMonitorRequest
     /**
      * The configuration details to update for the HTTP monitor.
      */
-    private UpdateHttpMonitorDetails updateHttpMonitorDetails;
+    private com.oracle.bmc.healthchecks.model.UpdateHttpMonitorDetails updateHttpMonitorDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -52,13 +53,14 @@ public class UpdateHttpMonitorRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateHttpMonitorDetails getBody$() {
+    public com.oracle.bmc.healthchecks.model.UpdateHttpMonitorDetails getBody$() {
         return updateHttpMonitorDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateHttpMonitorRequest, UpdateHttpMonitorDetails> {
+                    UpdateHttpMonitorRequest,
+                    com.oracle.bmc.healthchecks.model.UpdateHttpMonitorDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +125,7 @@ public class UpdateHttpMonitorRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateHttpMonitorDetails body) {
+        public Builder body$(com.oracle.bmc.healthchecks.model.UpdateHttpMonitorDetails body) {
             updateHttpMonitorDetails(body);
             return this;
         }

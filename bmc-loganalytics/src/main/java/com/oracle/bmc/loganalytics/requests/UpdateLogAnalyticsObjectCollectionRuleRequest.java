@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateLogAnalyticsObjectCollectionRuleRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateLogAnalyticsObjectCollectionRuleDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsObjectCollectionRuleDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -34,7 +35,7 @@ public class UpdateLogAnalyticsObjectCollectionRuleRequest
     /**
      * The rule config to be updated.
      */
-    private UpdateLogAnalyticsObjectCollectionRuleDetails
+    private com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsObjectCollectionRuleDetails
             updateLogAnalyticsObjectCollectionRuleDetails;
 
     /**
@@ -58,7 +59,8 @@ public class UpdateLogAnalyticsObjectCollectionRuleRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateLogAnalyticsObjectCollectionRuleDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsObjectCollectionRuleDetails
+            getBody$() {
         return updateLogAnalyticsObjectCollectionRuleDetails;
     }
 
@@ -70,7 +72,8 @@ public class UpdateLogAnalyticsObjectCollectionRuleRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateLogAnalyticsObjectCollectionRuleRequest,
-                    UpdateLogAnalyticsObjectCollectionRuleDetails> {
+                    com.oracle.bmc.loganalytics.model
+                            .UpdateLogAnalyticsObjectCollectionRuleDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -138,7 +141,9 @@ public class UpdateLogAnalyticsObjectCollectionRuleRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateLogAnalyticsObjectCollectionRuleDetails body) {
+        public Builder body$(
+                com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsObjectCollectionRuleDetails
+                        body) {
             updateLogAnalyticsObjectCollectionRuleDetails(body);
             return this;
         }

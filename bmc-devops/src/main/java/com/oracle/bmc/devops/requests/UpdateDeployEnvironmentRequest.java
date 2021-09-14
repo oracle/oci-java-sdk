@@ -18,7 +18,8 @@ import com.oracle.bmc.devops.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateDeployEnvironmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateDeployEnvironmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.devops.model.UpdateDeployEnvironmentDetails> {
 
     /**
      * Unique environment identifier.
@@ -28,7 +29,8 @@ public class UpdateDeployEnvironmentRequest
     /**
      * The information to be updated.
      */
-    private UpdateDeployEnvironmentDetails updateDeployEnvironmentDetails;
+    private com.oracle.bmc.devops.model.UpdateDeployEnvironmentDetails
+            updateDeployEnvironmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
@@ -46,13 +48,14 @@ public class UpdateDeployEnvironmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDeployEnvironmentDetails getBody$() {
+    public com.oracle.bmc.devops.model.UpdateDeployEnvironmentDetails getBody$() {
         return updateDeployEnvironmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateDeployEnvironmentRequest, UpdateDeployEnvironmentDetails> {
+                    UpdateDeployEnvironmentRequest,
+                    com.oracle.bmc.devops.model.UpdateDeployEnvironmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +120,7 @@ public class UpdateDeployEnvironmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDeployEnvironmentDetails body) {
+        public Builder body$(com.oracle.bmc.devops.model.UpdateDeployEnvironmentDetails body) {
             updateDeployEnvironmentDetails(body);
             return this;
         }

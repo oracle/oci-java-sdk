@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdatePluggableDatabaseRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdatePluggableDatabaseDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.UpdatePluggableDatabaseDetails> {
 
     /**
      * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,8 @@ public class UpdatePluggableDatabaseRequest
     /**
      * Request to perform pluggable database update.
      */
-    private UpdatePluggableDatabaseDetails updatePluggableDatabaseDetails;
+    private com.oracle.bmc.database.model.UpdatePluggableDatabaseDetails
+            updatePluggableDatabaseDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -44,13 +46,14 @@ public class UpdatePluggableDatabaseRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdatePluggableDatabaseDetails getBody$() {
+    public com.oracle.bmc.database.model.UpdatePluggableDatabaseDetails getBody$() {
         return updatePluggableDatabaseDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdatePluggableDatabaseRequest, UpdatePluggableDatabaseDetails> {
+                    UpdatePluggableDatabaseRequest,
+                    com.oracle.bmc.database.model.UpdatePluggableDatabaseDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +117,7 @@ public class UpdatePluggableDatabaseRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdatePluggableDatabaseDetails body) {
+        public Builder body$(com.oracle.bmc.database.model.UpdatePluggableDatabaseDetails body) {
             updatePluggableDatabaseDetails(body);
             return this;
         }

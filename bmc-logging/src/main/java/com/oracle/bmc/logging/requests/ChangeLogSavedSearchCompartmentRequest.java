@@ -18,7 +18,8 @@ import com.oracle.bmc.logging.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeLogSavedSearchCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeLogSavedSearchCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.logging.model.ChangeLogSavedSearchCompartmentDetails> {
 
     /**
      * OCID of the logSavedSearch
@@ -29,7 +30,8 @@ public class ChangeLogSavedSearchCompartmentRequest
     /**
      * Contains details indicating which compartment the resource should move to.
      */
-    private ChangeLogSavedSearchCompartmentDetails changeLogSavedSearchCompartmentDetails;
+    private com.oracle.bmc.logging.model.ChangeLogSavedSearchCompartmentDetails
+            changeLogSavedSearchCompartmentDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case
@@ -65,14 +67,14 @@ public class ChangeLogSavedSearchCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeLogSavedSearchCompartmentDetails getBody$() {
+    public com.oracle.bmc.logging.model.ChangeLogSavedSearchCompartmentDetails getBody$() {
         return changeLogSavedSearchCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeLogSavedSearchCompartmentRequest,
-                    ChangeLogSavedSearchCompartmentDetails> {
+                    com.oracle.bmc.logging.model.ChangeLogSavedSearchCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -138,7 +140,8 @@ public class ChangeLogSavedSearchCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeLogSavedSearchCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.logging.model.ChangeLogSavedSearchCompartmentDetails body) {
             changeLogSavedSearchCompartmentDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.monitoring.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeAlarmCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeAlarmCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.monitoring.model.ChangeAlarmCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
@@ -29,7 +30,8 @@ public class ChangeAlarmCompartmentRequest
     /**
      * The configuration details for moving an alarm.
      */
-    private ChangeAlarmCompartmentDetails changeAlarmCompartmentDetails;
+    private com.oracle.bmc.monitoring.model.ChangeAlarmCompartmentDetails
+            changeAlarmCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -62,13 +64,14 @@ public class ChangeAlarmCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeAlarmCompartmentDetails getBody$() {
+    public com.oracle.bmc.monitoring.model.ChangeAlarmCompartmentDetails getBody$() {
         return changeAlarmCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeAlarmCompartmentRequest, ChangeAlarmCompartmentDetails> {
+                    ChangeAlarmCompartmentRequest,
+                    com.oracle.bmc.monitoring.model.ChangeAlarmCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +137,7 @@ public class ChangeAlarmCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeAlarmCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.monitoring.model.ChangeAlarmCompartmentDetails body) {
             changeAlarmCompartmentDetails(body);
             return this;
         }

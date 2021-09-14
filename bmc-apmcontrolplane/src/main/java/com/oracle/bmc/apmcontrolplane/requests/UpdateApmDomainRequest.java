@@ -18,7 +18,8 @@ import com.oracle.bmc.apmcontrolplane.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateApmDomainRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateApmDomainDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.apmcontrolplane.model.UpdateApmDomainDetails> {
 
     /**
      * OCID of the APM Domain
@@ -28,7 +29,7 @@ public class UpdateApmDomainRequest
     /**
      * The information to be updated for the APM Domain.
      */
-    private UpdateApmDomainDetails updateApmDomainDetails;
+    private com.oracle.bmc.apmcontrolplane.model.UpdateApmDomainDetails updateApmDomainDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -51,13 +52,14 @@ public class UpdateApmDomainRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateApmDomainDetails getBody$() {
+    public com.oracle.bmc.apmcontrolplane.model.UpdateApmDomainDetails getBody$() {
         return updateApmDomainDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateApmDomainRequest, UpdateApmDomainDetails> {
+                    UpdateApmDomainRequest,
+                    com.oracle.bmc.apmcontrolplane.model.UpdateApmDomainDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +124,7 @@ public class UpdateApmDomainRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateApmDomainDetails body) {
+        public Builder body$(com.oracle.bmc.apmcontrolplane.model.UpdateApmDomainDetails body) {
             updateApmDomainDetails(body);
             return this;
         }

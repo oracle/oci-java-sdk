@@ -17,7 +17,8 @@ import com.oracle.bmc.nosql.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateIndexRequest extends com.oracle.bmc.requests.BmcRequest<CreateIndexDetails> {
+public class CreateIndexRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.nosql.model.CreateIndexDetails> {
 
     /**
      * A table name within the compartment, or a table OCID.
@@ -27,7 +28,7 @@ public class CreateIndexRequest extends com.oracle.bmc.requests.BmcRequest<Creat
     /**
      * Specifications for the new index.
      */
-    private CreateIndexDetails createIndexDetails;
+    private com.oracle.bmc.nosql.model.CreateIndexDetails createIndexDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried
@@ -52,13 +53,13 @@ public class CreateIndexRequest extends com.oracle.bmc.requests.BmcRequest<Creat
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateIndexDetails getBody$() {
+    public com.oracle.bmc.nosql.model.CreateIndexDetails getBody$() {
         return createIndexDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateIndexRequest, CreateIndexDetails> {
+                    CreateIndexRequest, com.oracle.bmc.nosql.model.CreateIndexDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +124,7 @@ public class CreateIndexRequest extends com.oracle.bmc.requests.BmcRequest<Creat
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateIndexDetails body) {
+        public Builder body$(com.oracle.bmc.nosql.model.CreateIndexDetails body) {
             createIndexDetails(body);
             return this;
         }

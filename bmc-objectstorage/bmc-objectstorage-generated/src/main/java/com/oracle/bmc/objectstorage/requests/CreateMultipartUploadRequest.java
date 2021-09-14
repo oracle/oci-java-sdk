@@ -18,7 +18,8 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateMultipartUploadRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateMultipartUploadDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.objectstorage.model.CreateMultipartUploadDetails> {
 
     /**
      * The Object Storage namespace used for the request.
@@ -35,7 +36,8 @@ public class CreateMultipartUploadRequest
     /**
      * Request object for creating a multipart upload.
      */
-    private CreateMultipartUploadDetails createMultipartUploadDetails;
+    private com.oracle.bmc.objectstorage.model.CreateMultipartUploadDetails
+            createMultipartUploadDetails;
 
     /**
      * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
@@ -86,13 +88,14 @@ public class CreateMultipartUploadRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateMultipartUploadDetails getBody$() {
+    public com.oracle.bmc.objectstorage.model.CreateMultipartUploadDetails getBody$() {
         return createMultipartUploadDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateMultipartUploadRequest, CreateMultipartUploadDetails> {
+                    CreateMultipartUploadRequest,
+                    com.oracle.bmc.objectstorage.model.CreateMultipartUploadDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -162,7 +165,7 @@ public class CreateMultipartUploadRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateMultipartUploadDetails body) {
+        public Builder body$(com.oracle.bmc.objectstorage.model.CreateMultipartUploadDetails body) {
             createMultipartUploadDetails(body);
             return this;
         }

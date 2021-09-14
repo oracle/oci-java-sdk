@@ -18,7 +18,8 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateTaskScheduleRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateTaskScheduleDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataintegration.model.CreateTaskScheduleDetails> {
 
     /**
      * The workspace ID.
@@ -33,7 +34,8 @@ public class CreateTaskScheduleRequest
     /**
      * Request body parameter for TaskSchedule details
      */
-    private CreateTaskScheduleDetails createTaskScheduleDetails;
+    private com.oracle.bmc.dataintegration.model.CreateTaskScheduleDetails
+            createTaskScheduleDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If
@@ -55,13 +57,14 @@ public class CreateTaskScheduleRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateTaskScheduleDetails getBody$() {
+    public com.oracle.bmc.dataintegration.model.CreateTaskScheduleDetails getBody$() {
         return createTaskScheduleDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateTaskScheduleRequest, CreateTaskScheduleDetails> {
+                    CreateTaskScheduleRequest,
+                    com.oracle.bmc.dataintegration.model.CreateTaskScheduleDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -127,7 +130,7 @@ public class CreateTaskScheduleRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateTaskScheduleDetails body) {
+        public Builder body$(com.oracle.bmc.dataintegration.model.CreateTaskScheduleDetails body) {
             createTaskScheduleDetails(body);
             return this;
         }

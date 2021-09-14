@@ -17,12 +17,14 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateCatalogRequest extends com.oracle.bmc.requests.BmcRequest<CreateCatalogDetails> {
+public class CreateCatalogRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.CreateCatalogDetails> {
 
     /**
      * Details for the new data catalog.
      */
-    private CreateCatalogDetails createCatalogDetails;
+    private com.oracle.bmc.datacatalog.model.CreateCatalogDetails createCatalogDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -45,13 +47,13 @@ public class CreateCatalogRequest extends com.oracle.bmc.requests.BmcRequest<Cre
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateCatalogDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.CreateCatalogDetails getBody$() {
         return createCatalogDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateCatalogRequest, CreateCatalogDetails> {
+                    CreateCatalogRequest, com.oracle.bmc.datacatalog.model.CreateCatalogDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -115,7 +117,7 @@ public class CreateCatalogRequest extends com.oracle.bmc.requests.BmcRequest<Cre
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateCatalogDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.CreateCatalogDetails body) {
             createCatalogDetails(body);
             return this;
         }

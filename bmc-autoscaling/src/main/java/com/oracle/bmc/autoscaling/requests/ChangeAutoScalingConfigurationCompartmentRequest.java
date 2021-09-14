@@ -18,7 +18,8 @@ import com.oracle.bmc.autoscaling.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeAutoScalingConfigurationCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeAutoScalingCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.autoscaling.model.ChangeAutoScalingCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
@@ -28,7 +29,8 @@ public class ChangeAutoScalingConfigurationCompartmentRequest
     /**
      * Request to change the compartment of given autoscaling configuration.
      */
-    private ChangeAutoScalingCompartmentDetails changeCompartmentDetails;
+    private com.oracle.bmc.autoscaling.model.ChangeAutoScalingCompartmentDetails
+            changeCompartmentDetails;
 
     /**
      *
@@ -59,14 +61,14 @@ public class ChangeAutoScalingConfigurationCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeAutoScalingCompartmentDetails getBody$() {
+    public com.oracle.bmc.autoscaling.model.ChangeAutoScalingCompartmentDetails getBody$() {
         return changeCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeAutoScalingConfigurationCompartmentRequest,
-                    ChangeAutoScalingCompartmentDetails> {
+                    com.oracle.bmc.autoscaling.model.ChangeAutoScalingCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +135,8 @@ public class ChangeAutoScalingConfigurationCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeAutoScalingCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.autoscaling.model.ChangeAutoScalingCompartmentDetails body) {
             changeCompartmentDetails(body);
             return this;
         }

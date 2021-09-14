@@ -18,7 +18,8 @@ import com.oracle.bmc.mysql.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateConfigurationRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateConfigurationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.mysql.model.UpdateConfigurationDetails> {
 
     /**
      * The OCID of the Configuration.
@@ -28,7 +29,7 @@ public class UpdateConfigurationRequest
     /**
      * Request to update a Configuration.
      */
-    private UpdateConfigurationDetails updateConfigurationDetails;
+    private com.oracle.bmc.mysql.model.UpdateConfigurationDetails updateConfigurationDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
@@ -54,13 +55,14 @@ public class UpdateConfigurationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateConfigurationDetails getBody$() {
+    public com.oracle.bmc.mysql.model.UpdateConfigurationDetails getBody$() {
         return updateConfigurationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateConfigurationRequest, UpdateConfigurationDetails> {
+                    UpdateConfigurationRequest,
+                    com.oracle.bmc.mysql.model.UpdateConfigurationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -125,7 +127,7 @@ public class UpdateConfigurationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateConfigurationDetails body) {
+        public Builder body$(com.oracle.bmc.mysql.model.UpdateConfigurationDetails body) {
             updateConfigurationDetails(body);
             return this;
         }

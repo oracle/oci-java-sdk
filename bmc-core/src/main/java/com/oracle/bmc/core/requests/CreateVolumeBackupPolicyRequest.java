@@ -18,12 +18,14 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateVolumeBackupPolicyRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateVolumeBackupPolicyDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CreateVolumeBackupPolicyDetails> {
 
     /**
      * Request to create a new scheduled backup policy.
      */
-    private CreateVolumeBackupPolicyDetails createVolumeBackupPolicyDetails;
+    private com.oracle.bmc.core.model.CreateVolumeBackupPolicyDetails
+            createVolumeBackupPolicyDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -48,13 +50,14 @@ public class CreateVolumeBackupPolicyRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateVolumeBackupPolicyDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateVolumeBackupPolicyDetails getBody$() {
         return createVolumeBackupPolicyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateVolumeBackupPolicyRequest, CreateVolumeBackupPolicyDetails> {
+                    CreateVolumeBackupPolicyRequest,
+                    com.oracle.bmc.core.model.CreateVolumeBackupPolicyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -118,7 +121,7 @@ public class CreateVolumeBackupPolicyRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateVolumeBackupPolicyDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateVolumeBackupPolicyDetails body) {
             createVolumeBackupPolicyDetails(body);
             return this;
         }

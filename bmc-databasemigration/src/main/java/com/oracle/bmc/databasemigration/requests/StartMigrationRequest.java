@@ -18,7 +18,8 @@ import com.oracle.bmc.databasemigration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class StartMigrationRequest
-        extends com.oracle.bmc.requests.BmcRequest<StartMigrationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.databasemigration.model.StartMigrationDetails> {
 
     /**
      * The OCID of the migration
@@ -57,7 +58,7 @@ public class StartMigrationRequest
      * Start Migration Job properties.
      *
      */
-    private StartMigrationDetails startMigrationDetails;
+    private com.oracle.bmc.databasemigration.model.StartMigrationDetails startMigrationDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -65,13 +66,14 @@ public class StartMigrationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public StartMigrationDetails getBody$() {
+    public com.oracle.bmc.databasemigration.model.StartMigrationDetails getBody$() {
         return startMigrationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    StartMigrationRequest, StartMigrationDetails> {
+                    StartMigrationRequest,
+                    com.oracle.bmc.databasemigration.model.StartMigrationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -137,7 +139,7 @@ public class StartMigrationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(StartMigrationDetails body) {
+        public Builder body$(com.oracle.bmc.databasemigration.model.StartMigrationDetails body) {
             startMigrationDetails(body);
             return this;
         }

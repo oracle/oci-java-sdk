@@ -18,7 +18,8 @@ import com.oracle.bmc.rover.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeRoverNodeCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeRoverNodeCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.rover.model.ChangeRoverNodeCompartmentDetails> {
 
     /**
      * Unique RoverNode identifier
@@ -28,7 +29,8 @@ public class ChangeRoverNodeCompartmentRequest
     /**
      * CompartmentId of the destination compartment
      */
-    private ChangeRoverNodeCompartmentDetails changeRoverNodeCompartmentDetails;
+    private com.oracle.bmc.rover.model.ChangeRoverNodeCompartmentDetails
+            changeRoverNodeCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -61,13 +63,14 @@ public class ChangeRoverNodeCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeRoverNodeCompartmentDetails getBody$() {
+    public com.oracle.bmc.rover.model.ChangeRoverNodeCompartmentDetails getBody$() {
         return changeRoverNodeCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeRoverNodeCompartmentRequest, ChangeRoverNodeCompartmentDetails> {
+                    ChangeRoverNodeCompartmentRequest,
+                    com.oracle.bmc.rover.model.ChangeRoverNodeCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +136,7 @@ public class ChangeRoverNodeCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeRoverNodeCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.rover.model.ChangeRoverNodeCompartmentDetails body) {
             changeRoverNodeCompartmentDetails(body);
             return this;
         }

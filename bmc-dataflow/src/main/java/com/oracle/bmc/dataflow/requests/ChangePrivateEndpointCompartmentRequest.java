@@ -18,7 +18,8 @@ import com.oracle.bmc.dataflow.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangePrivateEndpointCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangePrivateEndpointCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataflow.model.ChangePrivateEndpointCompartmentDetails> {
 
     /**
      * The unique ID for a private endpoint.
@@ -30,7 +31,8 @@ public class ChangePrivateEndpointCompartmentRequest
      * Details for changing a private endpoint's compartment.
      *
      */
-    private ChangePrivateEndpointCompartmentDetails changePrivateEndpointCompartmentDetails;
+    private com.oracle.bmc.dataflow.model.ChangePrivateEndpointCompartmentDetails
+            changePrivateEndpointCompartmentDetails;
 
     /**
      * Unique identifier for the request. If provided, the returned request ID will include this value.
@@ -53,14 +55,14 @@ public class ChangePrivateEndpointCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangePrivateEndpointCompartmentDetails getBody$() {
+    public com.oracle.bmc.dataflow.model.ChangePrivateEndpointCompartmentDetails getBody$() {
         return changePrivateEndpointCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangePrivateEndpointCompartmentRequest,
-                    ChangePrivateEndpointCompartmentDetails> {
+                    com.oracle.bmc.dataflow.model.ChangePrivateEndpointCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -125,7 +127,8 @@ public class ChangePrivateEndpointCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangePrivateEndpointCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.dataflow.model.ChangePrivateEndpointCompartmentDetails body) {
             changePrivateEndpointCompartmentDetails(body);
             return this;
         }

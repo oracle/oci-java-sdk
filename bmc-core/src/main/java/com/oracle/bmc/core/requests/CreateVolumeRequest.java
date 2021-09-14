@@ -17,12 +17,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateVolumeRequest extends com.oracle.bmc.requests.BmcRequest<CreateVolumeDetails> {
+public class CreateVolumeRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.CreateVolumeDetails> {
 
     /**
      * Request to create a new volume.
      */
-    private CreateVolumeDetails createVolumeDetails;
+    private com.oracle.bmc.core.model.CreateVolumeDetails createVolumeDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -40,13 +41,13 @@ public class CreateVolumeRequest extends com.oracle.bmc.requests.BmcRequest<Crea
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateVolumeDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateVolumeDetails getBody$() {
         return createVolumeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateVolumeRequest, CreateVolumeDetails> {
+                    CreateVolumeRequest, com.oracle.bmc.core.model.CreateVolumeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -109,7 +110,7 @@ public class CreateVolumeRequest extends com.oracle.bmc.requests.BmcRequest<Crea
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateVolumeDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateVolumeDetails body) {
             createVolumeDetails(body);
             return this;
         }

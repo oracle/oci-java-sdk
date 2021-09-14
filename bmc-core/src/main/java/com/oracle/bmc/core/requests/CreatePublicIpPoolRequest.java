@@ -18,12 +18,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreatePublicIpPoolRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreatePublicIpPoolDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CreatePublicIpPoolDetails> {
 
     /**
      * Create Public Ip Pool details
      */
-    private CreatePublicIpPoolDetails createPublicIpPoolDetails;
+    private com.oracle.bmc.core.model.CreatePublicIpPoolDetails createPublicIpPoolDetails;
 
     /**
      * Unique identifier for the request.
@@ -48,13 +49,14 @@ public class CreatePublicIpPoolRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreatePublicIpPoolDetails getBody$() {
+    public com.oracle.bmc.core.model.CreatePublicIpPoolDetails getBody$() {
         return createPublicIpPoolDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreatePublicIpPoolRequest, CreatePublicIpPoolDetails> {
+                    CreatePublicIpPoolRequest,
+                    com.oracle.bmc.core.model.CreatePublicIpPoolDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -118,7 +120,7 @@ public class CreatePublicIpPoolRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreatePublicIpPoolDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreatePublicIpPoolDetails body) {
             createPublicIpPoolDetails(body);
             return this;
         }

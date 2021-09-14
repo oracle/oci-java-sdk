@@ -18,7 +18,8 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateDetectorRecipeDetectorRuleRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateDetectorRecipeDetectorRuleDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.cloudguard.model.UpdateDetectorRecipeDetectorRuleDetails> {
 
     /**
      * DetectorRecipe OCID
@@ -33,7 +34,8 @@ public class UpdateDetectorRecipeDetectorRuleRequest
     /**
      * The details to be updated for DetectorRule.
      */
-    private UpdateDetectorRecipeDetectorRuleDetails updateDetectorRecipeDetectorRuleDetails;
+    private com.oracle.bmc.cloudguard.model.UpdateDetectorRecipeDetectorRuleDetails
+            updateDetectorRecipeDetectorRuleDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -56,14 +58,14 @@ public class UpdateDetectorRecipeDetectorRuleRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDetectorRecipeDetectorRuleDetails getBody$() {
+    public com.oracle.bmc.cloudguard.model.UpdateDetectorRecipeDetectorRuleDetails getBody$() {
         return updateDetectorRecipeDetectorRuleDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateDetectorRecipeDetectorRuleRequest,
-                    UpdateDetectorRecipeDetectorRuleDetails> {
+                    com.oracle.bmc.cloudguard.model.UpdateDetectorRecipeDetectorRuleDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -129,7 +131,8 @@ public class UpdateDetectorRecipeDetectorRuleRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDetectorRecipeDetectorRuleDetails body) {
+        public Builder body$(
+                com.oracle.bmc.cloudguard.model.UpdateDetectorRecipeDetectorRuleDetails body) {
             updateDetectorRecipeDetectorRuleDetails(body);
             return this;
         }

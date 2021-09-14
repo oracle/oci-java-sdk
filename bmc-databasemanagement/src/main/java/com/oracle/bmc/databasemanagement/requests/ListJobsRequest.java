@@ -52,7 +52,7 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     /**
      * The lifecycle state of the job.
      */
-    private Job.LifecycleState lifecycleState;
+    private com.oracle.bmc.databasemanagement.model.Job.LifecycleState lifecycleState;
 
     /**
      * The maximum number of records returned in paginated response.

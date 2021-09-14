@@ -18,7 +18,8 @@ import com.oracle.bmc.apigateway.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeGatewayCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeGatewayCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.apigateway.model.ChangeGatewayCompartmentDetails> {
 
     /**
      * The ocid of the gateway.
@@ -28,7 +29,8 @@ public class ChangeGatewayCompartmentRequest
     /**
      * Details of the target compartment.
      */
-    private ChangeGatewayCompartmentDetails changeGatewayCompartmentDetails;
+    private com.oracle.bmc.apigateway.model.ChangeGatewayCompartmentDetails
+            changeGatewayCompartmentDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -61,13 +63,14 @@ public class ChangeGatewayCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeGatewayCompartmentDetails getBody$() {
+    public com.oracle.bmc.apigateway.model.ChangeGatewayCompartmentDetails getBody$() {
         return changeGatewayCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeGatewayCompartmentRequest, ChangeGatewayCompartmentDetails> {
+                    ChangeGatewayCompartmentRequest,
+                    com.oracle.bmc.apigateway.model.ChangeGatewayCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +136,7 @@ public class ChangeGatewayCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeGatewayCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.apigateway.model.ChangeGatewayCompartmentDetails body) {
             changeGatewayCompartmentDetails(body);
             return this;
         }

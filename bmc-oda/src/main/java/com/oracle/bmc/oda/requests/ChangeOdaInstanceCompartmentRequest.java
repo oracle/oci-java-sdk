@@ -18,7 +18,8 @@ import com.oracle.bmc.oda.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeOdaInstanceCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeOdaInstanceCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.oda.model.ChangeOdaInstanceCompartmentDetails> {
 
     /**
      * Unique Digital Assistant instance identifier.
@@ -28,7 +29,8 @@ public class ChangeOdaInstanceCompartmentRequest
     /**
      * The compartment to which the Digital Assistant instance should be moved.
      */
-    private ChangeOdaInstanceCompartmentDetails changeOdaInstanceCompartmentDetails;
+    private com.oracle.bmc.oda.model.ChangeOdaInstanceCompartmentDetails
+            changeOdaInstanceCompartmentDetails;
 
     /**
      * For optimistic concurrency control in a PUT or DELETE call for
@@ -63,13 +65,14 @@ public class ChangeOdaInstanceCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeOdaInstanceCompartmentDetails getBody$() {
+    public com.oracle.bmc.oda.model.ChangeOdaInstanceCompartmentDetails getBody$() {
         return changeOdaInstanceCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeOdaInstanceCompartmentRequest, ChangeOdaInstanceCompartmentDetails> {
+                    ChangeOdaInstanceCompartmentRequest,
+                    com.oracle.bmc.oda.model.ChangeOdaInstanceCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -135,7 +138,7 @@ public class ChangeOdaInstanceCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeOdaInstanceCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.oda.model.ChangeOdaInstanceCompartmentDetails body) {
             changeOdaInstanceCompartmentDetails(body);
             return this;
         }

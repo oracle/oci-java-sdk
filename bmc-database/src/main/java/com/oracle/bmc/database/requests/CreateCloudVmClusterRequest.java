@@ -18,13 +18,14 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateCloudVmClusterRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateCloudVmClusterDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.CreateCloudVmClusterDetails> {
 
     /**
      * Request to create a cloud VM cluster. Applies to Exadata Cloud Service instances only. See [The New Exadata Cloud Service Resource Model](https://docs.cloud.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) for information on this resource type.
      *
      */
-    private CreateCloudVmClusterDetails createCloudVmClusterDetails;
+    private com.oracle.bmc.database.model.CreateCloudVmClusterDetails createCloudVmClusterDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -48,13 +49,14 @@ public class CreateCloudVmClusterRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateCloudVmClusterDetails getBody$() {
+    public com.oracle.bmc.database.model.CreateCloudVmClusterDetails getBody$() {
         return createCloudVmClusterDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateCloudVmClusterRequest, CreateCloudVmClusterDetails> {
+                    CreateCloudVmClusterRequest,
+                    com.oracle.bmc.database.model.CreateCloudVmClusterDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -118,7 +120,7 @@ public class CreateCloudVmClusterRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateCloudVmClusterDetails body) {
+        public Builder body$(com.oracle.bmc.database.model.CreateCloudVmClusterDetails body) {
             createCloudVmClusterDetails(body);
             return this;
         }

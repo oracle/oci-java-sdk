@@ -18,12 +18,13 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateWorkspaceRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateWorkspaceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataintegration.model.CreateWorkspaceDetails> {
 
     /**
      * The information needed to create a new Data Integration workspace.
      */
-    private CreateWorkspaceDetails createWorkspaceDetails;
+    private com.oracle.bmc.dataintegration.model.CreateWorkspaceDetails createWorkspaceDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
@@ -45,13 +46,14 @@ public class CreateWorkspaceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateWorkspaceDetails getBody$() {
+    public com.oracle.bmc.dataintegration.model.CreateWorkspaceDetails getBody$() {
         return createWorkspaceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateWorkspaceRequest, CreateWorkspaceDetails> {
+                    CreateWorkspaceRequest,
+                    com.oracle.bmc.dataintegration.model.CreateWorkspaceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -115,7 +117,7 @@ public class CreateWorkspaceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateWorkspaceDetails body) {
+        public Builder body$(com.oracle.bmc.dataintegration.model.CreateWorkspaceDetails body) {
             createWorkspaceDetails(body);
             return this;
         }

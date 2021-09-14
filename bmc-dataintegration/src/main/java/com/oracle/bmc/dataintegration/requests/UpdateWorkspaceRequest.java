@@ -18,7 +18,8 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateWorkspaceRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateWorkspaceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataintegration.model.UpdateWorkspaceDetails> {
 
     /**
      * The workspace ID.
@@ -28,7 +29,7 @@ public class UpdateWorkspaceRequest
     /**
      * The information needed to update the workspace.
      */
-    private UpdateWorkspaceDetails updateWorkspaceDetails;
+    private com.oracle.bmc.dataintegration.model.UpdateWorkspaceDetails updateWorkspaceDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
@@ -52,13 +53,14 @@ public class UpdateWorkspaceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateWorkspaceDetails getBody$() {
+    public com.oracle.bmc.dataintegration.model.UpdateWorkspaceDetails getBody$() {
         return updateWorkspaceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateWorkspaceRequest, UpdateWorkspaceDetails> {
+                    UpdateWorkspaceRequest,
+                    com.oracle.bmc.dataintegration.model.UpdateWorkspaceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +125,7 @@ public class UpdateWorkspaceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateWorkspaceDetails body) {
+        public Builder body$(com.oracle.bmc.dataintegration.model.UpdateWorkspaceDetails body) {
             updateWorkspaceDetails(body);
             return this;
         }

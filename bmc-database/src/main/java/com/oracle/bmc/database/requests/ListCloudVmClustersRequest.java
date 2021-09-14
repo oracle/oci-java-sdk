@@ -124,7 +124,7 @@ public class ListCloudVmClustersRequest extends com.oracle.bmc.requests.BmcReque
     /**
      * A filter to return only cloud VM clusters that match the given lifecycle state exactly.
      */
-    private CloudVmClusterSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.database.model.CloudVmClusterSummary.LifecycleState lifecycleState;
 
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.

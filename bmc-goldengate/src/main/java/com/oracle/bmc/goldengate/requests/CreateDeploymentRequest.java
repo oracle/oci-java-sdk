@@ -18,13 +18,14 @@ import com.oracle.bmc.goldengate.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateDeploymentRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateDeploymentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.goldengate.model.CreateDeploymentDetails> {
 
     /**
      * Specifications to create the Deployment.
      *
      */
-    private CreateDeploymentDetails createDeploymentDetails;
+    private com.oracle.bmc.goldengate.model.CreateDeploymentDetails createDeploymentDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error, without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request is rejected.
@@ -44,13 +45,14 @@ public class CreateDeploymentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateDeploymentDetails getBody$() {
+    public com.oracle.bmc.goldengate.model.CreateDeploymentDetails getBody$() {
         return createDeploymentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateDeploymentRequest, CreateDeploymentDetails> {
+                    CreateDeploymentRequest,
+                    com.oracle.bmc.goldengate.model.CreateDeploymentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +116,7 @@ public class CreateDeploymentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateDeploymentDetails body) {
+        public Builder body$(com.oracle.bmc.goldengate.model.CreateDeploymentDetails body) {
             createDeploymentDetails(body);
             return this;
         }

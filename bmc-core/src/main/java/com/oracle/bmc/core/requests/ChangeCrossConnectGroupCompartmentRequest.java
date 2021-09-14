@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeCrossConnectGroupCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeCrossConnectGroupCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.ChangeCrossConnectGroupCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cross-connect group.
@@ -28,7 +29,8 @@ public class ChangeCrossConnectGroupCompartmentRequest
     /**
      * Request to change the compartment of a Cross Connect Group.
      */
-    private ChangeCrossConnectGroupCompartmentDetails changeCrossConnectGroupCompartmentDetails;
+    private com.oracle.bmc.core.model.ChangeCrossConnectGroupCompartmentDetails
+            changeCrossConnectGroupCompartmentDetails;
 
     /**
      * Unique identifier for the request.
@@ -53,14 +55,14 @@ public class ChangeCrossConnectGroupCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeCrossConnectGroupCompartmentDetails getBody$() {
+    public com.oracle.bmc.core.model.ChangeCrossConnectGroupCompartmentDetails getBody$() {
         return changeCrossConnectGroupCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeCrossConnectGroupCompartmentRequest,
-                    ChangeCrossConnectGroupCompartmentDetails> {
+                    com.oracle.bmc.core.model.ChangeCrossConnectGroupCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -126,7 +128,8 @@ public class ChangeCrossConnectGroupCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeCrossConnectGroupCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.ChangeCrossConnectGroupCompartmentDetails body) {
             changeCrossConnectGroupCompartmentDetails(body);
             return this;
         }

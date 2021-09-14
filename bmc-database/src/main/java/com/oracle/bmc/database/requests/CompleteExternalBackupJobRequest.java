@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CompleteExternalBackupJobRequest
-        extends com.oracle.bmc.requests.BmcRequest<CompleteExternalBackupJobDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.CompleteExternalBackupJobDetails> {
 
     /**
      * The backup [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,8 @@ public class CompleteExternalBackupJobRequest
     /**
      * Updates the status of the backup resource.
      */
-    private CompleteExternalBackupJobDetails completeExternalBackupJobDetails;
+    private com.oracle.bmc.database.model.CompleteExternalBackupJobDetails
+            completeExternalBackupJobDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -54,13 +56,14 @@ public class CompleteExternalBackupJobRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CompleteExternalBackupJobDetails getBody$() {
+    public com.oracle.bmc.database.model.CompleteExternalBackupJobDetails getBody$() {
         return completeExternalBackupJobDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CompleteExternalBackupJobRequest, CompleteExternalBackupJobDetails> {
+                    CompleteExternalBackupJobRequest,
+                    com.oracle.bmc.database.model.CompleteExternalBackupJobDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -125,7 +128,7 @@ public class CompleteExternalBackupJobRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CompleteExternalBackupJobDetails body) {
+        public Builder body$(com.oracle.bmc.database.model.CompleteExternalBackupJobDetails body) {
             completeExternalBackupJobDetails(body);
             return this;
         }

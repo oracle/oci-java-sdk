@@ -18,12 +18,14 @@ import com.oracle.bmc.healthchecks.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateOnDemandHttpProbeRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateOnDemandHttpProbeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.healthchecks.model.CreateOnDemandHttpProbeDetails> {
 
     /**
      * The configuration of the HTTP probe.
      */
-    private CreateOnDemandHttpProbeDetails createOnDemandHttpProbeDetails;
+    private com.oracle.bmc.healthchecks.model.CreateOnDemandHttpProbeDetails
+            createOnDemandHttpProbeDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -38,13 +40,14 @@ public class CreateOnDemandHttpProbeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateOnDemandHttpProbeDetails getBody$() {
+    public com.oracle.bmc.healthchecks.model.CreateOnDemandHttpProbeDetails getBody$() {
         return createOnDemandHttpProbeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateOnDemandHttpProbeRequest, CreateOnDemandHttpProbeDetails> {
+                    CreateOnDemandHttpProbeRequest,
+                    com.oracle.bmc.healthchecks.model.CreateOnDemandHttpProbeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -107,7 +110,8 @@ public class CreateOnDemandHttpProbeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateOnDemandHttpProbeDetails body) {
+        public Builder body$(
+                com.oracle.bmc.healthchecks.model.CreateOnDemandHttpProbeDetails body) {
             createOnDemandHttpProbeDetails(body);
             return this;
         }

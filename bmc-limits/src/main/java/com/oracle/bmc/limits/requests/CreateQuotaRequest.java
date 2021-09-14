@@ -17,12 +17,13 @@ import com.oracle.bmc.limits.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateQuotaRequest extends com.oracle.bmc.requests.BmcRequest<CreateQuotaDetails> {
+public class CreateQuotaRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.limits.model.CreateQuotaDetails> {
 
     /**
      * Request object for creating a new quota.
      */
-    private CreateQuotaDetails createQuotaDetails;
+    private com.oracle.bmc.limits.model.CreateQuotaDetails createQuotaDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -47,13 +48,13 @@ public class CreateQuotaRequest extends com.oracle.bmc.requests.BmcRequest<Creat
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateQuotaDetails getBody$() {
+    public com.oracle.bmc.limits.model.CreateQuotaDetails getBody$() {
         return createQuotaDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateQuotaRequest, CreateQuotaDetails> {
+                    CreateQuotaRequest, com.oracle.bmc.limits.model.CreateQuotaDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +118,7 @@ public class CreateQuotaRequest extends com.oracle.bmc.requests.BmcRequest<Creat
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateQuotaDetails body) {
+        public Builder body$(com.oracle.bmc.limits.model.CreateQuotaDetails body) {
             createQuotaDetails(body);
             return this;
         }

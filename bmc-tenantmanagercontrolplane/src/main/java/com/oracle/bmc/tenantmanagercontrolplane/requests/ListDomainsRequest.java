@@ -37,7 +37,7 @@ public class ListDomainsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     /**
      * The status of the domain.
      */
-    private Domain.Status status;
+    private com.oracle.bmc.tenantmanagercontrolplane.model.Domain.Status status;
 
     /**
      * A filter to return only resources that exactly match the name given.

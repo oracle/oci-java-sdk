@@ -18,12 +18,13 @@ import com.oracle.bmc.functions.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateFunctionRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateFunctionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.functions.model.CreateFunctionDetails> {
 
     /**
      * Specification of the function to create
      */
-    private CreateFunctionDetails createFunctionDetails;
+    private com.oracle.bmc.functions.model.CreateFunctionDetails createFunctionDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -38,13 +39,13 @@ public class CreateFunctionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateFunctionDetails getBody$() {
+    public com.oracle.bmc.functions.model.CreateFunctionDetails getBody$() {
         return createFunctionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateFunctionRequest, CreateFunctionDetails> {
+                    CreateFunctionRequest, com.oracle.bmc.functions.model.CreateFunctionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -107,7 +108,7 @@ public class CreateFunctionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateFunctionDetails body) {
+        public Builder body$(com.oracle.bmc.functions.model.CreateFunctionDetails body) {
             createFunctionDetails(body);
             return this;
         }

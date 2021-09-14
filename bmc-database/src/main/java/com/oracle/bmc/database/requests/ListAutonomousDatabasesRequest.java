@@ -129,17 +129,18 @@ public class ListAutonomousDatabasesRequest
     /**
      * A filter to return only resources that match the given Infrastructure Type.
      */
-    private AutonomousDatabaseSummary.InfrastructureType infrastructureType;
+    private com.oracle.bmc.database.model.AutonomousDatabaseSummary.InfrastructureType
+            infrastructureType;
 
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    private AutonomousDatabaseSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.database.model.AutonomousDatabaseSummary.LifecycleState lifecycleState;
 
     /**
      * A filter to return only autonomous database resources that match the specified workload type.
      */
-    private AutonomousDatabaseSummary.DbWorkload dbWorkload;
+    private com.oracle.bmc.database.model.AutonomousDatabaseSummary.DbWorkload dbWorkload;
 
     /**
      * A filter to return only autonomous database resources that match the specified dbVersion.

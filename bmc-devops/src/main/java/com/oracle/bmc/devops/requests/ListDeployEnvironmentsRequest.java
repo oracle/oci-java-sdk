@@ -38,7 +38,7 @@ public class ListDeployEnvironmentsRequest
     /**
      * A filter to return only DeployEnvironments that matches the given lifecycleState.
      */
-    private DeployEnvironment.LifecycleState lifecycleState;
+    private com.oracle.bmc.devops.model.DeployEnvironment.LifecycleState lifecycleState;
 
     /**
      * A filter to return only resources that match the entire display name given.

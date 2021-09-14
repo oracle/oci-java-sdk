@@ -19,7 +19,8 @@ import com.oracle.bmc.osmanagement.model.*;
 @lombok.Getter
 public class DetachParentSoftwareSourceFromManagedInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<
-                DetachParentSoftwareSourceFromManagedInstanceDetails> {
+                com.oracle.bmc.osmanagement.model
+                        .DetachParentSoftwareSourceFromManagedInstanceDetails> {
 
     /**
      * OCID for the managed instance
@@ -29,7 +30,7 @@ public class DetachParentSoftwareSourceFromManagedInstanceRequest
     /**
      * Details for detaching a Software Source from a Managed Instance
      */
-    private DetachParentSoftwareSourceFromManagedInstanceDetails
+    private com.oracle.bmc.osmanagement.model.DetachParentSoftwareSourceFromManagedInstanceDetails
             detachParentSoftwareSourceFromManagedInstanceDetails;
 
     /**
@@ -53,14 +54,16 @@ public class DetachParentSoftwareSourceFromManagedInstanceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public DetachParentSoftwareSourceFromManagedInstanceDetails getBody$() {
+    public com.oracle.bmc.osmanagement.model.DetachParentSoftwareSourceFromManagedInstanceDetails
+            getBody$() {
         return detachParentSoftwareSourceFromManagedInstanceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DetachParentSoftwareSourceFromManagedInstanceRequest,
-                    DetachParentSoftwareSourceFromManagedInstanceDetails> {
+                    com.oracle.bmc.osmanagement.model
+                            .DetachParentSoftwareSourceFromManagedInstanceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -127,7 +130,10 @@ public class DetachParentSoftwareSourceFromManagedInstanceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(DetachParentSoftwareSourceFromManagedInstanceDetails body) {
+        public Builder body$(
+                com.oracle.bmc.osmanagement.model
+                                .DetachParentSoftwareSourceFromManagedInstanceDetails
+                        body) {
             detachParentSoftwareSourceFromManagedInstanceDetails(body);
             return this;
         }

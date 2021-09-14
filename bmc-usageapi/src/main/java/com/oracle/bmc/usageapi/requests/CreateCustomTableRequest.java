@@ -18,12 +18,13 @@ import com.oracle.bmc.usageapi.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateCustomTableRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateCustomTableDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.usageapi.model.CreateCustomTableDetails> {
 
     /**
      * New custom table details.
      */
-    private CreateCustomTableDetails createCustomTableDetails;
+    private com.oracle.bmc.usageapi.model.CreateCustomTableDetails createCustomTableDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -48,13 +49,14 @@ public class CreateCustomTableRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateCustomTableDetails getBody$() {
+    public com.oracle.bmc.usageapi.model.CreateCustomTableDetails getBody$() {
         return createCustomTableDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateCustomTableRequest, CreateCustomTableDetails> {
+                    CreateCustomTableRequest,
+                    com.oracle.bmc.usageapi.model.CreateCustomTableDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -118,7 +120,7 @@ public class CreateCustomTableRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateCustomTableDetails body) {
+        public Builder body$(com.oracle.bmc.usageapi.model.CreateCustomTableDetails body) {
             createCustomTableDetails(body);
             return this;
         }

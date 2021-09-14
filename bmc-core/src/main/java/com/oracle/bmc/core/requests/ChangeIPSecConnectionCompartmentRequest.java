@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeIPSecConnectionCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeIPSecConnectionCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.ChangeIPSecConnectionCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IPSec connection.
@@ -28,7 +29,8 @@ public class ChangeIPSecConnectionCompartmentRequest
     /**
      * Request to change the compartment of a IPSec connection.
      */
-    private ChangeIPSecConnectionCompartmentDetails changeIPSecConnectionCompartmentDetails;
+    private com.oracle.bmc.core.model.ChangeIPSecConnectionCompartmentDetails
+            changeIPSecConnectionCompartmentDetails;
 
     /**
      * Unique identifier for the request.
@@ -53,14 +55,14 @@ public class ChangeIPSecConnectionCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeIPSecConnectionCompartmentDetails getBody$() {
+    public com.oracle.bmc.core.model.ChangeIPSecConnectionCompartmentDetails getBody$() {
         return changeIPSecConnectionCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeIPSecConnectionCompartmentRequest,
-                    ChangeIPSecConnectionCompartmentDetails> {
+                    com.oracle.bmc.core.model.ChangeIPSecConnectionCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -125,7 +127,8 @@ public class ChangeIPSecConnectionCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeIPSecConnectionCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.ChangeIPSecConnectionCompartmentDetails body) {
             changeIPSecConnectionCompartmentDetails(body);
             return this;
         }

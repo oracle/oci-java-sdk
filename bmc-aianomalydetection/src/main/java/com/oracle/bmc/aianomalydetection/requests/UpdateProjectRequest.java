@@ -17,7 +17,9 @@ import com.oracle.bmc.aianomalydetection.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateProjectRequest extends com.oracle.bmc.requests.BmcRequest<UpdateProjectDetails> {
+public class UpdateProjectRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.aianomalydetection.model.UpdateProjectDetails> {
 
     /**
      * The OCID of the Project.
@@ -27,7 +29,7 @@ public class UpdateProjectRequest extends com.oracle.bmc.requests.BmcRequest<Upd
     /**
      * The information to be updated.
      */
-    private UpdateProjectDetails updateProjectDetails;
+    private com.oracle.bmc.aianomalydetection.model.UpdateProjectDetails updateProjectDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -50,13 +52,14 @@ public class UpdateProjectRequest extends com.oracle.bmc.requests.BmcRequest<Upd
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateProjectDetails getBody$() {
+    public com.oracle.bmc.aianomalydetection.model.UpdateProjectDetails getBody$() {
         return updateProjectDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateProjectRequest, UpdateProjectDetails> {
+                    UpdateProjectRequest,
+                    com.oracle.bmc.aianomalydetection.model.UpdateProjectDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +124,7 @@ public class UpdateProjectRequest extends com.oracle.bmc.requests.BmcRequest<Upd
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateProjectDetails body) {
+        public Builder body$(com.oracle.bmc.aianomalydetection.model.UpdateProjectDetails body) {
             updateProjectDetails(body);
             return this;
         }

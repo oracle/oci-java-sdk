@@ -120,7 +120,8 @@ public class ListDatabaseSoftwareImagesRequest
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    private DatabaseSoftwareImageSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.database.model.DatabaseSoftwareImageSummary.LifecycleState
+            lifecycleState;
 
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -130,12 +131,13 @@ public class ListDatabaseSoftwareImagesRequest
     /**
      * A filter to return only resources that match the given image type exactly.
      */
-    private DatabaseSoftwareImageSummary.ImageType imageType;
+    private com.oracle.bmc.database.model.DatabaseSoftwareImageSummary.ImageType imageType;
 
     /**
      * A filter to return only resources that match the given image shape family exactly.
      */
-    private DatabaseSoftwareImageSummary.ImageShapeFamily imageShapeFamily;
+    private com.oracle.bmc.database.model.DatabaseSoftwareImageSummary.ImageShapeFamily
+            imageShapeFamily;
 
     /**
      * If provided, filters the results to the set of database versions which are supported for Upgrade.

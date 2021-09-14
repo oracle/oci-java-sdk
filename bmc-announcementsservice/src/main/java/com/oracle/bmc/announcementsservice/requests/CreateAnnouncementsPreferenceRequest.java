@@ -18,12 +18,14 @@ import com.oracle.bmc.announcementsservice.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateAnnouncementsPreferenceRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateAnnouncementsPreferencesDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.announcementsservice.model.CreateAnnouncementsPreferencesDetails> {
 
     /**
      * The object that contains details about tenancy preferences for receiving announcements by email.
      */
-    private CreateAnnouncementsPreferencesDetails announcementsPreferenceDetails;
+    private com.oracle.bmc.announcementsservice.model.CreateAnnouncementsPreferencesDetails
+            announcementsPreferenceDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -43,13 +45,16 @@ public class CreateAnnouncementsPreferenceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateAnnouncementsPreferencesDetails getBody$() {
+    public com.oracle.bmc.announcementsservice.model.CreateAnnouncementsPreferencesDetails
+            getBody$() {
         return announcementsPreferenceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateAnnouncementsPreferenceRequest, CreateAnnouncementsPreferencesDetails> {
+                    CreateAnnouncementsPreferenceRequest,
+                    com.oracle.bmc.announcementsservice.model
+                            .CreateAnnouncementsPreferencesDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -113,7 +118,9 @@ public class CreateAnnouncementsPreferenceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateAnnouncementsPreferencesDetails body) {
+        public Builder body$(
+                com.oracle.bmc.announcementsservice.model.CreateAnnouncementsPreferencesDetails
+                        body) {
             announcementsPreferenceDetails(body);
             return this;
         }

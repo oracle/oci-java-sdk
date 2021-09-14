@@ -17,7 +17,9 @@ import com.oracle.bmc.optimizer.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateProfileRequest extends com.oracle.bmc.requests.BmcRequest<UpdateProfileDetails> {
+public class UpdateProfileRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.optimizer.model.UpdateProfileDetails> {
 
     /**
      * The unique OCID of the profile.
@@ -27,7 +29,7 @@ public class UpdateProfileRequest extends com.oracle.bmc.requests.BmcRequest<Upd
     /**
      * The profile information to use for the update.
      */
-    private UpdateProfileDetails updateProfileDetails;
+    private com.oracle.bmc.optimizer.model.UpdateProfileDetails updateProfileDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -52,13 +54,13 @@ public class UpdateProfileRequest extends com.oracle.bmc.requests.BmcRequest<Upd
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateProfileDetails getBody$() {
+    public com.oracle.bmc.optimizer.model.UpdateProfileDetails getBody$() {
         return updateProfileDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateProfileRequest, UpdateProfileDetails> {
+                    UpdateProfileRequest, com.oracle.bmc.optimizer.model.UpdateProfileDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +125,7 @@ public class UpdateProfileRequest extends com.oracle.bmc.requests.BmcRequest<Upd
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateProfileDetails body) {
+        public Builder body$(com.oracle.bmc.optimizer.model.UpdateProfileDetails body) {
             updateProfileDetails(body);
             return this;
         }

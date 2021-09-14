@@ -18,12 +18,13 @@ import com.oracle.bmc.identity.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateTagNamespaceRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateTagNamespaceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.CreateTagNamespaceDetails> {
 
     /**
      * Request object for creating a new tag namespace.
      */
-    private CreateTagNamespaceDetails createTagNamespaceDetails;
+    private com.oracle.bmc.identity.model.CreateTagNamespaceDetails createTagNamespaceDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +42,14 @@ public class CreateTagNamespaceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateTagNamespaceDetails getBody$() {
+    public com.oracle.bmc.identity.model.CreateTagNamespaceDetails getBody$() {
         return createTagNamespaceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateTagNamespaceRequest, CreateTagNamespaceDetails> {
+                    CreateTagNamespaceRequest,
+                    com.oracle.bmc.identity.model.CreateTagNamespaceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +112,7 @@ public class CreateTagNamespaceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateTagNamespaceDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.CreateTagNamespaceDetails body) {
             createTagNamespaceDetails(body);
             return this;
         }

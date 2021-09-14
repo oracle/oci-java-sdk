@@ -18,7 +18,8 @@ import com.oracle.bmc.analytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ScaleAnalyticsInstanceRequest
-        extends com.oracle.bmc.requests.BmcRequest<ScaleAnalyticsInstanceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.analytics.model.ScaleAnalyticsInstanceDetails> {
 
     /**
      * The OCID of the AnalyticsInstance.
@@ -30,7 +31,8 @@ public class ScaleAnalyticsInstanceRequest
      * Input payload for scaling an Analytics instance up or down.
      *
      */
-    private ScaleAnalyticsInstanceDetails scaleAnalyticsInstanceDetails;
+    private com.oracle.bmc.analytics.model.ScaleAnalyticsInstanceDetails
+            scaleAnalyticsInstanceDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -63,13 +65,14 @@ public class ScaleAnalyticsInstanceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ScaleAnalyticsInstanceDetails getBody$() {
+    public com.oracle.bmc.analytics.model.ScaleAnalyticsInstanceDetails getBody$() {
         return scaleAnalyticsInstanceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ScaleAnalyticsInstanceRequest, ScaleAnalyticsInstanceDetails> {
+                    ScaleAnalyticsInstanceRequest,
+                    com.oracle.bmc.analytics.model.ScaleAnalyticsInstanceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -135,7 +138,7 @@ public class ScaleAnalyticsInstanceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ScaleAnalyticsInstanceDetails body) {
+        public Builder body$(com.oracle.bmc.analytics.model.ScaleAnalyticsInstanceDetails body) {
             scaleAnalyticsInstanceDetails(body);
             return this;
         }

@@ -34,7 +34,7 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
 
     /**
      * Specifies whether to delete or preserve the boot volume when terminating an instance.
-     * The default value is false.
+     * When set to {@code true}, the boot volume is preserved. The default value is {@code false}.
      *
      */
     private Boolean preserveBootVolume;

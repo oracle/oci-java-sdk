@@ -17,7 +17,9 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class ExportQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ExportDetails> {
+public class ExportQueryResultRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.ExportDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -28,7 +30,7 @@ public class ExportQueryResultRequest extends com.oracle.bmc.requests.BmcRequest
     /**
      * Query to be exported
      */
-    private ExportDetails exportDetails;
+    private com.oracle.bmc.loganalytics.model.ExportDetails exportDetails;
 
     /**
      * The client request ID for tracing.
@@ -41,7 +43,7 @@ public class ExportQueryResultRequest extends com.oracle.bmc.requests.BmcRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ExportDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.ExportDetails getBody$() {
         return exportDetails;
     }
 
@@ -52,7 +54,7 @@ public class ExportQueryResultRequest extends com.oracle.bmc.requests.BmcRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ExportQueryResultRequest, ExportDetails> {
+                    ExportQueryResultRequest, com.oracle.bmc.loganalytics.model.ExportDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +118,7 @@ public class ExportQueryResultRequest extends com.oracle.bmc.requests.BmcRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ExportDetails body) {
+        public Builder body$(com.oracle.bmc.loganalytics.model.ExportDetails body) {
             exportDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateNamespaceMetadataRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateNamespaceMetadataDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.objectstorage.model.UpdateNamespaceMetadataDetails> {
 
     /**
      * The Object Storage namespace used for the request.
@@ -28,7 +29,8 @@ public class UpdateNamespaceMetadataRequest
     /**
      * Request object for update NamespaceMetadata.
      */
-    private UpdateNamespaceMetadataDetails updateNamespaceMetadataDetails;
+    private com.oracle.bmc.objectstorage.model.UpdateNamespaceMetadataDetails
+            updateNamespaceMetadataDetails;
 
     /**
      * The client request ID for tracing.
@@ -41,13 +43,14 @@ public class UpdateNamespaceMetadataRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateNamespaceMetadataDetails getBody$() {
+    public com.oracle.bmc.objectstorage.model.UpdateNamespaceMetadataDetails getBody$() {
         return updateNamespaceMetadataDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateNamespaceMetadataRequest, UpdateNamespaceMetadataDetails> {
+                    UpdateNamespaceMetadataRequest,
+                    com.oracle.bmc.objectstorage.model.UpdateNamespaceMetadataDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -111,7 +114,8 @@ public class UpdateNamespaceMetadataRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateNamespaceMetadataDetails body) {
+        public Builder body$(
+                com.oracle.bmc.objectstorage.model.UpdateNamespaceMetadataDetails body) {
             updateNamespaceMetadataDetails(body);
             return this;
         }

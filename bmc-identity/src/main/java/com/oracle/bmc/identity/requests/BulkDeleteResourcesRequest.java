@@ -18,7 +18,8 @@ import com.oracle.bmc.identity.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class BulkDeleteResourcesRequest
-        extends com.oracle.bmc.requests.BmcRequest<BulkDeleteResourcesDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.BulkDeleteResourcesDetails> {
 
     /**
      * The OCID of the compartment.
@@ -28,7 +29,7 @@ public class BulkDeleteResourcesRequest
     /**
      * Request object for bulk delete resources in a compartment.
      */
-    private BulkDeleteResourcesDetails bulkDeleteResourcesDetails;
+    private com.oracle.bmc.identity.model.BulkDeleteResourcesDetails bulkDeleteResourcesDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -53,13 +54,14 @@ public class BulkDeleteResourcesRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public BulkDeleteResourcesDetails getBody$() {
+    public com.oracle.bmc.identity.model.BulkDeleteResourcesDetails getBody$() {
         return bulkDeleteResourcesDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    BulkDeleteResourcesRequest, BulkDeleteResourcesDetails> {
+                    BulkDeleteResourcesRequest,
+                    com.oracle.bmc.identity.model.BulkDeleteResourcesDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class BulkDeleteResourcesRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(BulkDeleteResourcesDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.BulkDeleteResourcesDetails body) {
             bulkDeleteResourcesDetails(body);
             return this;
         }

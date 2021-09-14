@@ -17,7 +17,9 @@ import com.oracle.bmc.databasemigration.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateAgentRequest extends com.oracle.bmc.requests.BmcRequest<UpdateAgentDetails> {
+public class UpdateAgentRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.databasemigration.model.UpdateAgentDetails> {
 
     /**
      * The OCID of the agent
@@ -29,7 +31,7 @@ public class UpdateAgentRequest extends com.oracle.bmc.requests.BmcRequest<Updat
      * Update ODMS Agent properties.
      *
      */
-    private UpdateAgentDetails updateAgentDetails;
+    private com.oracle.bmc.databasemigration.model.UpdateAgentDetails updateAgentDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -64,13 +66,13 @@ public class UpdateAgentRequest extends com.oracle.bmc.requests.BmcRequest<Updat
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateAgentDetails getBody$() {
+    public com.oracle.bmc.databasemigration.model.UpdateAgentDetails getBody$() {
         return updateAgentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateAgentRequest, UpdateAgentDetails> {
+                    UpdateAgentRequest, com.oracle.bmc.databasemigration.model.UpdateAgentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -136,7 +138,7 @@ public class UpdateAgentRequest extends com.oracle.bmc.requests.BmcRequest<Updat
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateAgentDetails body) {
+        public Builder body$(com.oracle.bmc.databasemigration.model.UpdateAgentDetails body) {
             updateAgentDetails(body);
             return this;
         }

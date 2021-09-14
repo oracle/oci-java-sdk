@@ -18,7 +18,8 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateRecipientInvitationRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateRecipientInvitationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.tenantmanagercontrolplane.model.UpdateRecipientInvitationDetails> {
 
     /**
      * OCID of the recipient invitation to update.
@@ -28,7 +29,8 @@ public class UpdateRecipientInvitationRequest
     /**
      * The information to be updated.
      */
-    private UpdateRecipientInvitationDetails updateRecipientInvitationDetails;
+    private com.oracle.bmc.tenantmanagercontrolplane.model.UpdateRecipientInvitationDetails
+            updateRecipientInvitationDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -51,13 +53,16 @@ public class UpdateRecipientInvitationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateRecipientInvitationDetails getBody$() {
+    public com.oracle.bmc.tenantmanagercontrolplane.model.UpdateRecipientInvitationDetails
+            getBody$() {
         return updateRecipientInvitationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateRecipientInvitationRequest, UpdateRecipientInvitationDetails> {
+                    UpdateRecipientInvitationRequest,
+                    com.oracle.bmc.tenantmanagercontrolplane.model
+                            .UpdateRecipientInvitationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +127,9 @@ public class UpdateRecipientInvitationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateRecipientInvitationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.tenantmanagercontrolplane.model.UpdateRecipientInvitationDetails
+                        body) {
             updateRecipientInvitationDetails(body);
             return this;
         }

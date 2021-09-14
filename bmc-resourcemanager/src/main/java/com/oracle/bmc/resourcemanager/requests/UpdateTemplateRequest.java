@@ -18,7 +18,8 @@ import com.oracle.bmc.resourcemanager.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateTemplateRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateTemplateDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.resourcemanager.model.UpdateTemplateDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the template.
@@ -29,7 +30,7 @@ public class UpdateTemplateRequest
      * The details for updating a template.
      *
      */
-    private UpdateTemplateDetails updateTemplateDetails;
+    private com.oracle.bmc.resourcemanager.model.UpdateTemplateDetails updateTemplateDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -52,13 +53,14 @@ public class UpdateTemplateRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateTemplateDetails getBody$() {
+    public com.oracle.bmc.resourcemanager.model.UpdateTemplateDetails getBody$() {
         return updateTemplateDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateTemplateRequest, UpdateTemplateDetails> {
+                    UpdateTemplateRequest,
+                    com.oracle.bmc.resourcemanager.model.UpdateTemplateDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +125,7 @@ public class UpdateTemplateRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateTemplateDetails body) {
+        public Builder body$(com.oracle.bmc.resourcemanager.model.UpdateTemplateDetails body) {
             updateTemplateDetails(body);
             return this;
         }

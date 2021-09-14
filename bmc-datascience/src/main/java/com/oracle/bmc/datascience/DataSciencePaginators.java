@@ -31,6 +31,335 @@ public class DataSciencePaginators {
     private final DataScience client;
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listJobRuns operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListJobRunsResponse> listJobRunsResponseIterator(
+            final ListJobRunsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListJobRunsRequest.Builder, ListJobRunsRequest, ListJobRunsResponse>(
+                new com.google.common.base.Supplier<ListJobRunsRequest.Builder>() {
+                    @Override
+                    public ListJobRunsRequest.Builder get() {
+                        return ListJobRunsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListJobRunsResponse, String>() {
+                    @Override
+                    public String apply(ListJobRunsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListJobRunsRequest.Builder>,
+                        ListJobRunsRequest>() {
+                    @Override
+                    public ListJobRunsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListJobRunsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListJobRunsRequest, ListJobRunsResponse>() {
+                    @Override
+                    public ListJobRunsResponse apply(ListJobRunsRequest request) {
+                        return client.listJobRuns(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.JobRunSummary} objects
+     * contained in responses from the listJobRuns operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.JobRunSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datascience.model.JobRunSummary> listJobRunsRecordIterator(
+            final ListJobRunsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListJobRunsRequest.Builder, ListJobRunsRequest, ListJobRunsResponse,
+                com.oracle.bmc.datascience.model.JobRunSummary>(
+                new com.google.common.base.Supplier<ListJobRunsRequest.Builder>() {
+                    @Override
+                    public ListJobRunsRequest.Builder get() {
+                        return ListJobRunsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListJobRunsResponse, String>() {
+                    @Override
+                    public String apply(ListJobRunsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListJobRunsRequest.Builder>,
+                        ListJobRunsRequest>() {
+                    @Override
+                    public ListJobRunsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListJobRunsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListJobRunsRequest, ListJobRunsResponse>() {
+                    @Override
+                    public ListJobRunsResponse apply(ListJobRunsRequest request) {
+                        return client.listJobRuns(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListJobRunsResponse,
+                        java.util.List<com.oracle.bmc.datascience.model.JobRunSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datascience.model.JobRunSummary> apply(
+                            ListJobRunsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listJobShapes operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListJobShapesResponse> listJobShapesResponseIterator(
+            final ListJobShapesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListJobShapesRequest.Builder, ListJobShapesRequest, ListJobShapesResponse>(
+                new com.google.common.base.Supplier<ListJobShapesRequest.Builder>() {
+                    @Override
+                    public ListJobShapesRequest.Builder get() {
+                        return ListJobShapesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListJobShapesResponse, String>() {
+                    @Override
+                    public String apply(ListJobShapesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListJobShapesRequest.Builder>,
+                        ListJobShapesRequest>() {
+                    @Override
+                    public ListJobShapesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListJobShapesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListJobShapesRequest, ListJobShapesResponse>() {
+                    @Override
+                    public ListJobShapesResponse apply(ListJobShapesRequest request) {
+                        return client.listJobShapes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.JobShapeSummary} objects
+     * contained in responses from the listJobShapes operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.JobShapeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datascience.model.JobShapeSummary> listJobShapesRecordIterator(
+            final ListJobShapesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListJobShapesRequest.Builder, ListJobShapesRequest, ListJobShapesResponse,
+                com.oracle.bmc.datascience.model.JobShapeSummary>(
+                new com.google.common.base.Supplier<ListJobShapesRequest.Builder>() {
+                    @Override
+                    public ListJobShapesRequest.Builder get() {
+                        return ListJobShapesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListJobShapesResponse, String>() {
+                    @Override
+                    public String apply(ListJobShapesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListJobShapesRequest.Builder>,
+                        ListJobShapesRequest>() {
+                    @Override
+                    public ListJobShapesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListJobShapesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListJobShapesRequest, ListJobShapesResponse>() {
+                    @Override
+                    public ListJobShapesResponse apply(ListJobShapesRequest request) {
+                        return client.listJobShapes(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListJobShapesResponse,
+                        java.util.List<com.oracle.bmc.datascience.model.JobShapeSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datascience.model.JobShapeSummary> apply(
+                            ListJobShapesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listJobs operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListJobsResponse> listJobsResponseIterator(final ListJobsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListJobsRequest.Builder, ListJobsRequest, ListJobsResponse>(
+                new com.google.common.base.Supplier<ListJobsRequest.Builder>() {
+                    @Override
+                    public ListJobsRequest.Builder get() {
+                        return ListJobsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListJobsResponse, String>() {
+                    @Override
+                    public String apply(ListJobsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListJobsRequest.Builder>,
+                        ListJobsRequest>() {
+                    @Override
+                    public ListJobsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListJobsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListJobsRequest, ListJobsResponse>() {
+                    @Override
+                    public ListJobsResponse apply(ListJobsRequest request) {
+                        return client.listJobs(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.JobSummary} objects
+     * contained in responses from the listJobs operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.JobSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datascience.model.JobSummary> listJobsRecordIterator(
+            final ListJobsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListJobsRequest.Builder, ListJobsRequest, ListJobsResponse,
+                com.oracle.bmc.datascience.model.JobSummary>(
+                new com.google.common.base.Supplier<ListJobsRequest.Builder>() {
+                    @Override
+                    public ListJobsRequest.Builder get() {
+                        return ListJobsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListJobsResponse, String>() {
+                    @Override
+                    public String apply(ListJobsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListJobsRequest.Builder>,
+                        ListJobsRequest>() {
+                    @Override
+                    public ListJobsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListJobsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListJobsRequest, ListJobsResponse>() {
+                    @Override
+                    public ListJobsResponse apply(ListJobsRequest request) {
+                        return client.listJobs(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListJobsResponse,
+                        java.util.List<com.oracle.bmc.datascience.model.JobSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datascience.model.JobSummary> apply(
+                            ListJobsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listModelDeploymentShapes operation. This iterable
      * will fetch more data from the server as needed.
      *

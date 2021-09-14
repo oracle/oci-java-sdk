@@ -17,7 +17,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class ExportImageRequest extends com.oracle.bmc.requests.BmcRequest<ExportImageDetails> {
+public class ExportImageRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.ExportImageDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
@@ -27,7 +28,7 @@ public class ExportImageRequest extends com.oracle.bmc.requests.BmcRequest<Expor
     /**
      * Details for the image export.
      */
-    private ExportImageDetails exportImageDetails;
+    private com.oracle.bmc.core.model.ExportImageDetails exportImageDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -53,13 +54,13 @@ public class ExportImageRequest extends com.oracle.bmc.requests.BmcRequest<Expor
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ExportImageDetails getBody$() {
+    public com.oracle.bmc.core.model.ExportImageDetails getBody$() {
         return exportImageDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ExportImageRequest, ExportImageDetails> {
+                    ExportImageRequest, com.oracle.bmc.core.model.ExportImageDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +125,7 @@ public class ExportImageRequest extends com.oracle.bmc.requests.BmcRequest<Expor
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ExportImageDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.ExportImageDetails body) {
             exportImageDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.healthchecks.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangePingMonitorCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangePingMonitorCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.healthchecks.model.ChangePingMonitorCompartmentDetails> {
 
     /**
      * The OCID of a monitor.
@@ -28,7 +29,8 @@ public class ChangePingMonitorCompartmentRequest
     /**
      * The details needed to move the monitor.
      */
-    private ChangePingMonitorCompartmentDetails changePingMonitorCompartmentDetails;
+    private com.oracle.bmc.healthchecks.model.ChangePingMonitorCompartmentDetails
+            changePingMonitorCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource,
@@ -63,13 +65,14 @@ public class ChangePingMonitorCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangePingMonitorCompartmentDetails getBody$() {
+    public com.oracle.bmc.healthchecks.model.ChangePingMonitorCompartmentDetails getBody$() {
         return changePingMonitorCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangePingMonitorCompartmentRequest, ChangePingMonitorCompartmentDetails> {
+                    ChangePingMonitorCompartmentRequest,
+                    com.oracle.bmc.healthchecks.model.ChangePingMonitorCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -135,7 +138,8 @@ public class ChangePingMonitorCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangePingMonitorCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.healthchecks.model.ChangePingMonitorCompartmentDetails body) {
             changePingMonitorCompartmentDetails(body);
             return this;
         }

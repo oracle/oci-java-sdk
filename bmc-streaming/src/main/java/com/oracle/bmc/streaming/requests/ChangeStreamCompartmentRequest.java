@@ -18,7 +18,8 @@ import com.oracle.bmc.streaming.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeStreamCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeStreamCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.streaming.model.ChangeStreamCompartmentDetails> {
 
     /**
      * The OCID of the stream.
@@ -29,7 +30,8 @@ public class ChangeStreamCompartmentRequest
     /**
      * The stream will be moved into the compartment specified within this entity.
      */
-    private ChangeStreamCompartmentDetails changeStreamCompartmentDetails;
+    private com.oracle.bmc.streaming.model.ChangeStreamCompartmentDetails
+            changeStreamCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
@@ -49,13 +51,14 @@ public class ChangeStreamCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeStreamCompartmentDetails getBody$() {
+    public com.oracle.bmc.streaming.model.ChangeStreamCompartmentDetails getBody$() {
         return changeStreamCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeStreamCompartmentRequest, ChangeStreamCompartmentDetails> {
+                    ChangeStreamCompartmentRequest,
+                    com.oracle.bmc.streaming.model.ChangeStreamCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -120,7 +123,7 @@ public class ChangeStreamCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeStreamCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.streaming.model.ChangeStreamCompartmentDetails body) {
             changeStreamCompartmentDetails(body);
             return this;
         }

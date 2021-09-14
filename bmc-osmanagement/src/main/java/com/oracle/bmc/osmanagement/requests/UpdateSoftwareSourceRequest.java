@@ -18,7 +18,8 @@ import com.oracle.bmc.osmanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateSoftwareSourceRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateSoftwareSourceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.osmanagement.model.UpdateSoftwareSourceDetails> {
 
     /**
      * The OCID of the software source.
@@ -28,7 +29,8 @@ public class UpdateSoftwareSourceRequest
     /**
      * Details about a Sofware Source to update
      */
-    private UpdateSoftwareSourceDetails updateSoftwareSourceDetails;
+    private com.oracle.bmc.osmanagement.model.UpdateSoftwareSourceDetails
+            updateSoftwareSourceDetails;
 
     /**
      * The client request ID for tracing.
@@ -51,13 +53,14 @@ public class UpdateSoftwareSourceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateSoftwareSourceDetails getBody$() {
+    public com.oracle.bmc.osmanagement.model.UpdateSoftwareSourceDetails getBody$() {
         return updateSoftwareSourceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateSoftwareSourceRequest, UpdateSoftwareSourceDetails> {
+                    UpdateSoftwareSourceRequest,
+                    com.oracle.bmc.osmanagement.model.UpdateSoftwareSourceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,7 @@ public class UpdateSoftwareSourceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateSoftwareSourceDetails body) {
+        public Builder body$(com.oracle.bmc.osmanagement.model.UpdateSoftwareSourceDetails body) {
             updateSoftwareSourceDetails(body);
             return this;
         }

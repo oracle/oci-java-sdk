@@ -18,7 +18,8 @@ import com.oracle.bmc.ailanguage.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class DetectLanguageSentimentsRequest
-        extends com.oracle.bmc.requests.BmcRequest<DetectLanguageSentimentsDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.ailanguage.model.DetectLanguageSentimentsDetails> {
 
     /**
      * The details to make sentiment detect call.
@@ -26,7 +27,8 @@ public class DetectLanguageSentimentsRequest
      *             to use the extended transition period for complying"}}
      *
      */
-    private DetectLanguageSentimentsDetails detectLanguageSentimentsDetails;
+    private com.oracle.bmc.ailanguage.model.DetectLanguageSentimentsDetails
+            detectLanguageSentimentsDetails;
 
     /**
      * The client request ID for tracing.
@@ -39,13 +41,14 @@ public class DetectLanguageSentimentsRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public DetectLanguageSentimentsDetails getBody$() {
+    public com.oracle.bmc.ailanguage.model.DetectLanguageSentimentsDetails getBody$() {
         return detectLanguageSentimentsDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    DetectLanguageSentimentsRequest, DetectLanguageSentimentsDetails> {
+                    DetectLanguageSentimentsRequest,
+                    com.oracle.bmc.ailanguage.model.DetectLanguageSentimentsDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -108,7 +111,7 @@ public class DetectLanguageSentimentsRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(DetectLanguageSentimentsDetails body) {
+        public Builder body$(com.oracle.bmc.ailanguage.model.DetectLanguageSentimentsDetails body) {
             detectLanguageSentimentsDetails(body);
             return this;
         }

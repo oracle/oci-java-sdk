@@ -18,7 +18,8 @@ import com.oracle.bmc.opsi.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class IngestHostConfigurationRequest
-        extends com.oracle.bmc.requests.BmcRequest<IngestHostConfigurationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.opsi.model.IngestHostConfigurationDetails> {
 
     /**
      * Required [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
@@ -29,7 +30,7 @@ public class IngestHostConfigurationRequest
     /**
      * Payload for one or more host configuration metrics for a particular host.
      */
-    private IngestHostConfigurationDetails ingestHostConfigurationDetails;
+    private com.oracle.bmc.opsi.model.IngestHostConfigurationDetails ingestHostConfigurationDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -63,13 +64,14 @@ public class IngestHostConfigurationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public IngestHostConfigurationDetails getBody$() {
+    public com.oracle.bmc.opsi.model.IngestHostConfigurationDetails getBody$() {
         return ingestHostConfigurationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    IngestHostConfigurationRequest, IngestHostConfigurationDetails> {
+                    IngestHostConfigurationRequest,
+                    com.oracle.bmc.opsi.model.IngestHostConfigurationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -135,7 +137,7 @@ public class IngestHostConfigurationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(IngestHostConfigurationDetails body) {
+        public Builder body$(com.oracle.bmc.opsi.model.IngestHostConfigurationDetails body) {
             ingestHostConfigurationDetails(body);
             return this;
         }

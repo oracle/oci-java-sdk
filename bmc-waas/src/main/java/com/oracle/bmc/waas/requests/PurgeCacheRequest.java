@@ -17,7 +17,8 @@ import com.oracle.bmc.waas.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class PurgeCacheRequest extends com.oracle.bmc.requests.BmcRequest<PurgeCache> {
+public class PurgeCacheRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.waas.model.PurgeCache> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
@@ -37,7 +38,7 @@ public class PurgeCacheRequest extends com.oracle.bmc.requests.BmcRequest<PurgeC
     /**
      *
      */
-    private PurgeCache purgeCache;
+    private com.oracle.bmc.waas.model.PurgeCache purgeCache;
 
     /**
      * Alternative accessor for the body parameter.
@@ -45,12 +46,13 @@ public class PurgeCacheRequest extends com.oracle.bmc.requests.BmcRequest<PurgeC
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public PurgeCache getBody$() {
+    public com.oracle.bmc.waas.model.PurgeCache getBody$() {
         return purgeCache;
     }
 
     public static class Builder
-            implements com.oracle.bmc.requests.BmcRequest.Builder<PurgeCacheRequest, PurgeCache> {
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    PurgeCacheRequest, com.oracle.bmc.waas.model.PurgeCache> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -115,7 +117,7 @@ public class PurgeCacheRequest extends com.oracle.bmc.requests.BmcRequest<PurgeC
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(PurgeCache body) {
+        public Builder body$(com.oracle.bmc.waas.model.PurgeCache body) {
             purgeCache(body);
             return this;
         }

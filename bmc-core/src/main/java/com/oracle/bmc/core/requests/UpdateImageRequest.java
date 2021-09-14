@@ -17,7 +17,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateImageRequest extends com.oracle.bmc.requests.BmcRequest<UpdateImageDetails> {
+public class UpdateImageRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.UpdateImageDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
@@ -28,7 +29,7 @@ public class UpdateImageRequest extends com.oracle.bmc.requests.BmcRequest<Updat
      * Updates the image display name field. Avoid entering confidential information.
      *
      */
-    private UpdateImageDetails updateImageDetails;
+    private com.oracle.bmc.core.model.UpdateImageDetails updateImageDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -54,13 +55,13 @@ public class UpdateImageRequest extends com.oracle.bmc.requests.BmcRequest<Updat
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateImageDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateImageDetails getBody$() {
         return updateImageDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateImageRequest, UpdateImageDetails> {
+                    UpdateImageRequest, com.oracle.bmc.core.model.UpdateImageDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -125,7 +126,7 @@ public class UpdateImageRequest extends com.oracle.bmc.requests.BmcRequest<Updat
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateImageDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdateImageDetails body) {
             updateImageDetails(body);
             return this;
         }

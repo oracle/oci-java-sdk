@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateComputeCapacityReservationRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateComputeCapacityReservationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CreateComputeCapacityReservationDetails> {
 
     /**
      * Details for creating a new compute capacity reservation.
@@ -26,7 +27,8 @@ public class CreateComputeCapacityReservationRequest
      **Caution:** Avoid using any confidential information when you use the API to supply string values.
      *
      */
-    private CreateComputeCapacityReservationDetails createComputeCapacityReservationDetails;
+    private com.oracle.bmc.core.model.CreateComputeCapacityReservationDetails
+            createComputeCapacityReservationDetails;
 
     /**
      * Unique identifier for the request.
@@ -51,14 +53,14 @@ public class CreateComputeCapacityReservationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateComputeCapacityReservationDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateComputeCapacityReservationDetails getBody$() {
         return createComputeCapacityReservationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateComputeCapacityReservationRequest,
-                    CreateComputeCapacityReservationDetails> {
+                    com.oracle.bmc.core.model.CreateComputeCapacityReservationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +124,8 @@ public class CreateComputeCapacityReservationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateComputeCapacityReservationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.CreateComputeCapacityReservationDetails body) {
             createComputeCapacityReservationDetails(body);
             return this;
         }

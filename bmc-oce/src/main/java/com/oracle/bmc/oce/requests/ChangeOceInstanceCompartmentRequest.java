@@ -18,7 +18,8 @@ import com.oracle.bmc.oce.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeOceInstanceCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeOceInstanceCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.oce.model.ChangeOceInstanceCompartmentDetails> {
 
     /**
      * unique OceInstance identifier
@@ -28,7 +29,8 @@ public class ChangeOceInstanceCompartmentRequest
     /**
      * The information about compartment details to be moved.
      */
-    private ChangeOceInstanceCompartmentDetails changeOceInstanceCompartmentDetails;
+    private com.oracle.bmc.oce.model.ChangeOceInstanceCompartmentDetails
+            changeOceInstanceCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -61,13 +63,14 @@ public class ChangeOceInstanceCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeOceInstanceCompartmentDetails getBody$() {
+    public com.oracle.bmc.oce.model.ChangeOceInstanceCompartmentDetails getBody$() {
         return changeOceInstanceCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeOceInstanceCompartmentRequest, ChangeOceInstanceCompartmentDetails> {
+                    ChangeOceInstanceCompartmentRequest,
+                    com.oracle.bmc.oce.model.ChangeOceInstanceCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +136,7 @@ public class ChangeOceInstanceCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeOceInstanceCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.oce.model.ChangeOceInstanceCompartmentDetails body) {
             changeOceInstanceCompartmentDetails(body);
             return this;
         }

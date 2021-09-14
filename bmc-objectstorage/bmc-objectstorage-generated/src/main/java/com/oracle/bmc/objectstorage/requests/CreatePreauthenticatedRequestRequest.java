@@ -18,7 +18,8 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreatePreauthenticatedRequestRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreatePreauthenticatedRequestDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.objectstorage.model.CreatePreauthenticatedRequestDetails> {
 
     /**
      * The Object Storage namespace used for the request.
@@ -35,7 +36,8 @@ public class CreatePreauthenticatedRequestRequest
     /**
      * Information needed to create the pre-authenticated request.
      */
-    private CreatePreauthenticatedRequestDetails createPreauthenticatedRequestDetails;
+    private com.oracle.bmc.objectstorage.model.CreatePreauthenticatedRequestDetails
+            createPreauthenticatedRequestDetails;
 
     /**
      * The client request ID for tracing.
@@ -48,13 +50,14 @@ public class CreatePreauthenticatedRequestRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreatePreauthenticatedRequestDetails getBody$() {
+    public com.oracle.bmc.objectstorage.model.CreatePreauthenticatedRequestDetails getBody$() {
         return createPreauthenticatedRequestDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreatePreauthenticatedRequestRequest, CreatePreauthenticatedRequestDetails> {
+                    CreatePreauthenticatedRequestRequest,
+                    com.oracle.bmc.objectstorage.model.CreatePreauthenticatedRequestDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +122,8 @@ public class CreatePreauthenticatedRequestRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreatePreauthenticatedRequestDetails body) {
+        public Builder body$(
+                com.oracle.bmc.objectstorage.model.CreatePreauthenticatedRequestDetails body) {
             createPreauthenticatedRequestDetails(body);
             return this;
         }

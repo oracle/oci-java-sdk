@@ -18,7 +18,8 @@ import com.oracle.bmc.networkloadbalancer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateBackendSetRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateBackendSetDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.networkloadbalancer.model.UpdateBackendSetDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -28,7 +29,8 @@ public class UpdateBackendSetRequest
     /**
      * The details to update a backend set.
      */
-    private UpdateBackendSetDetails updateBackendSetDetails;
+    private com.oracle.bmc.networkloadbalancer.model.UpdateBackendSetDetails
+            updateBackendSetDetails;
 
     /**
      * The name of the backend set to update.
@@ -71,13 +73,14 @@ public class UpdateBackendSetRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateBackendSetDetails getBody$() {
+    public com.oracle.bmc.networkloadbalancer.model.UpdateBackendSetDetails getBody$() {
         return updateBackendSetDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateBackendSetRequest, UpdateBackendSetDetails> {
+                    UpdateBackendSetRequest,
+                    com.oracle.bmc.networkloadbalancer.model.UpdateBackendSetDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -144,7 +147,8 @@ public class UpdateBackendSetRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateBackendSetDetails body) {
+        public Builder body$(
+                com.oracle.bmc.networkloadbalancer.model.UpdateBackendSetDetails body) {
             updateBackendSetDetails(body);
             return this;
         }

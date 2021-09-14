@@ -18,7 +18,8 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateNamespaceRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateNamespaceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.UpdateNamespaceDetails> {
 
     /**
      * Unique catalog identifier.
@@ -33,7 +34,7 @@ public class UpdateNamespaceRequest
     /**
      * The information to be updated in the namespace.
      */
-    private UpdateNamespaceDetails updateNamespaceDetails;
+    private com.oracle.bmc.datacatalog.model.UpdateNamespaceDetails updateNamespaceDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -56,13 +57,14 @@ public class UpdateNamespaceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateNamespaceDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.UpdateNamespaceDetails getBody$() {
         return updateNamespaceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateNamespaceRequest, UpdateNamespaceDetails> {
+                    UpdateNamespaceRequest,
+                    com.oracle.bmc.datacatalog.model.UpdateNamespaceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -128,7 +130,7 @@ public class UpdateNamespaceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateNamespaceDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.UpdateNamespaceDetails body) {
             updateNamespaceDetails(body);
             return this;
         }

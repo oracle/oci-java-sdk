@@ -18,7 +18,8 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateAttributeRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateAttributeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.UpdateAttributeDetails> {
 
     /**
      * Unique catalog identifier.
@@ -43,7 +44,7 @@ public class UpdateAttributeRequest
     /**
      * The information to be updated in the attribute.
      */
-    private UpdateAttributeDetails updateAttributeDetails;
+    private com.oracle.bmc.datacatalog.model.UpdateAttributeDetails updateAttributeDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -66,13 +67,14 @@ public class UpdateAttributeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateAttributeDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.UpdateAttributeDetails getBody$() {
         return updateAttributeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateAttributeRequest, UpdateAttributeDetails> {
+                    UpdateAttributeRequest,
+                    com.oracle.bmc.datacatalog.model.UpdateAttributeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -140,7 +142,7 @@ public class UpdateAttributeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateAttributeDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.UpdateAttributeDetails body) {
             updateAttributeDetails(body);
             return this;
         }

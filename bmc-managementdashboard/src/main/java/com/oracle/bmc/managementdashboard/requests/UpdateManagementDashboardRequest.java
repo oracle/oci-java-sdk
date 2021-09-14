@@ -18,7 +18,8 @@ import com.oracle.bmc.managementdashboard.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateManagementDashboardRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateManagementDashboardDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.managementdashboard.model.UpdateManagementDashboardDetails> {
 
     /**
      * A unique dashboard identifier.
@@ -28,7 +29,8 @@ public class UpdateManagementDashboardRequest
     /**
      * JSON metadata for changed dashboard properties.
      */
-    private UpdateManagementDashboardDetails updateManagementDashboardDetails;
+    private com.oracle.bmc.managementdashboard.model.UpdateManagementDashboardDetails
+            updateManagementDashboardDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -61,13 +63,14 @@ public class UpdateManagementDashboardRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateManagementDashboardDetails getBody$() {
+    public com.oracle.bmc.managementdashboard.model.UpdateManagementDashboardDetails getBody$() {
         return updateManagementDashboardDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateManagementDashboardRequest, UpdateManagementDashboardDetails> {
+                    UpdateManagementDashboardRequest,
+                    com.oracle.bmc.managementdashboard.model.UpdateManagementDashboardDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +136,8 @@ public class UpdateManagementDashboardRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateManagementDashboardDetails body) {
+        public Builder body$(
+                com.oracle.bmc.managementdashboard.model.UpdateManagementDashboardDetails body) {
             updateManagementDashboardDetails(body);
             return this;
         }

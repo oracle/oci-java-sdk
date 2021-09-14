@@ -19,7 +19,7 @@ import com.oracle.bmc.integration.model.*;
 @lombok.Getter
 public class ChangeIntegrationInstanceNetworkEndpointRequest
         extends com.oracle.bmc.requests.BmcRequest<
-                ChangeIntegrationInstanceNetworkEndpointDetails> {
+                com.oracle.bmc.integration.model.ChangeIntegrationInstanceNetworkEndpointDetails> {
 
     /**
      * Unique Integration Instance identifier.
@@ -29,7 +29,7 @@ public class ChangeIntegrationInstanceNetworkEndpointRequest
     /**
      * Details for the updated Integration instance network endpoint
      */
-    private ChangeIntegrationInstanceNetworkEndpointDetails
+    private com.oracle.bmc.integration.model.ChangeIntegrationInstanceNetworkEndpointDetails
             changeIntegrationInstanceNetworkEndpointDetails;
 
     /**
@@ -64,14 +64,16 @@ public class ChangeIntegrationInstanceNetworkEndpointRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeIntegrationInstanceNetworkEndpointDetails getBody$() {
+    public com.oracle.bmc.integration.model.ChangeIntegrationInstanceNetworkEndpointDetails
+            getBody$() {
         return changeIntegrationInstanceNetworkEndpointDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeIntegrationInstanceNetworkEndpointRequest,
-                    ChangeIntegrationInstanceNetworkEndpointDetails> {
+                    com.oracle.bmc.integration.model
+                            .ChangeIntegrationInstanceNetworkEndpointDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -139,7 +141,9 @@ public class ChangeIntegrationInstanceNetworkEndpointRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeIntegrationInstanceNetworkEndpointDetails body) {
+        public Builder body$(
+                com.oracle.bmc.integration.model.ChangeIntegrationInstanceNetworkEndpointDetails
+                        body) {
             changeIntegrationInstanceNetworkEndpointDetails(body);
             return this;
         }

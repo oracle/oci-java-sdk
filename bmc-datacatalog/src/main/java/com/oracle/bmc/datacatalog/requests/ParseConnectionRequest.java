@@ -18,7 +18,8 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ParseConnectionRequest
-        extends com.oracle.bmc.requests.BmcRequest<ParseConnectionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.ParseConnectionDetails> {
 
     /**
      * Unique catalog identifier.
@@ -33,7 +34,7 @@ public class ParseConnectionRequest
     /**
      * The information used to parse the connections from payload or connection detail.
      */
-    private ParseConnectionDetails parseConnectionDetails;
+    private com.oracle.bmc.datacatalog.model.ParseConnectionDetails parseConnectionDetails;
 
     /**
      * Unique connection key.
@@ -61,13 +62,14 @@ public class ParseConnectionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ParseConnectionDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.ParseConnectionDetails getBody$() {
         return parseConnectionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ParseConnectionRequest, ParseConnectionDetails> {
+                    ParseConnectionRequest,
+                    com.oracle.bmc.datacatalog.model.ParseConnectionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +136,7 @@ public class ParseConnectionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ParseConnectionDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.ParseConnectionDetails body) {
             parseConnectionDetails(body);
             return this;
         }

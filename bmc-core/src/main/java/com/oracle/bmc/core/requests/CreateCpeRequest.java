@@ -17,12 +17,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateCpeRequest extends com.oracle.bmc.requests.BmcRequest<CreateCpeDetails> {
+public class CreateCpeRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.CreateCpeDetails> {
 
     /**
      * Details for creating a CPE.
      */
-    private CreateCpeDetails createCpeDetails;
+    private com.oracle.bmc.core.model.CreateCpeDetails createCpeDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -40,13 +41,13 @@ public class CreateCpeRequest extends com.oracle.bmc.requests.BmcRequest<CreateC
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateCpeDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateCpeDetails getBody$() {
         return createCpeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateCpeRequest, CreateCpeDetails> {
+                    CreateCpeRequest, com.oracle.bmc.core.model.CreateCpeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -109,7 +110,7 @@ public class CreateCpeRequest extends com.oracle.bmc.requests.BmcRequest<CreateC
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateCpeDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateCpeDetails body) {
             createCpeDetails(body);
             return this;
         }

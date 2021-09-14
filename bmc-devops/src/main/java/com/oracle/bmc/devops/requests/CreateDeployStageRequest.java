@@ -18,12 +18,13 @@ import com.oracle.bmc.devops.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateDeployStageRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateDeployStageDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.devops.model.CreateDeployStageDetails> {
 
     /**
      * Details for the new DeployStage.
      */
-    private CreateDeployStageDetails createDeployStageDetails;
+    private com.oracle.bmc.devops.model.CreateDeployStageDetails createDeployStageDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated earlier due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
@@ -41,13 +42,14 @@ public class CreateDeployStageRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateDeployStageDetails getBody$() {
+    public com.oracle.bmc.devops.model.CreateDeployStageDetails getBody$() {
         return createDeployStageDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateDeployStageRequest, CreateDeployStageDetails> {
+                    CreateDeployStageRequest,
+                    com.oracle.bmc.devops.model.CreateDeployStageDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -111,7 +113,7 @@ public class CreateDeployStageRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateDeployStageDetails body) {
+        public Builder body$(com.oracle.bmc.devops.model.CreateDeployStageDetails body) {
             createDeployStageDetails(body);
             return this;
         }

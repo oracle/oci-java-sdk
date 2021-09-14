@@ -17,12 +17,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateIpv6Request extends com.oracle.bmc.requests.BmcRequest<CreateIpv6Details> {
+public class CreateIpv6Request
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.CreateIpv6Details> {
 
     /**
      * Create IPv6 details.
      */
-    private CreateIpv6Details createIpv6Details;
+    private com.oracle.bmc.core.model.CreateIpv6Details createIpv6Details;
 
     /**
      * Unique identifier for the request.
@@ -47,13 +48,13 @@ public class CreateIpv6Request extends com.oracle.bmc.requests.BmcRequest<Create
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateIpv6Details getBody$() {
+    public com.oracle.bmc.core.model.CreateIpv6Details getBody$() {
         return createIpv6Details;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateIpv6Request, CreateIpv6Details> {
+                    CreateIpv6Request, com.oracle.bmc.core.model.CreateIpv6Details> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +118,7 @@ public class CreateIpv6Request extends com.oracle.bmc.requests.BmcRequest<Create
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateIpv6Details body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateIpv6Details body) {
             createIpv6Details(body);
             return this;
         }

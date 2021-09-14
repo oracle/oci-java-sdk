@@ -18,12 +18,14 @@ import com.oracle.bmc.managementagent.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateManagementAgentInstallKeyRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateManagementAgentInstallKeyDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.managementagent.model.CreateManagementAgentInstallKeyDetails> {
 
     /**
      * Details of the Agent install Key
      */
-    private CreateManagementAgentInstallKeyDetails createManagementAgentInstallKeyDetails;
+    private com.oracle.bmc.managementagent.model.CreateManagementAgentInstallKeyDetails
+            createManagementAgentInstallKeyDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -46,14 +48,14 @@ public class CreateManagementAgentInstallKeyRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateManagementAgentInstallKeyDetails getBody$() {
+    public com.oracle.bmc.managementagent.model.CreateManagementAgentInstallKeyDetails getBody$() {
         return createManagementAgentInstallKeyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateManagementAgentInstallKeyRequest,
-                    CreateManagementAgentInstallKeyDetails> {
+                    com.oracle.bmc.managementagent.model.CreateManagementAgentInstallKeyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +119,8 @@ public class CreateManagementAgentInstallKeyRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateManagementAgentInstallKeyDetails body) {
+        public Builder body$(
+                com.oracle.bmc.managementagent.model.CreateManagementAgentInstallKeyDetails body) {
             createManagementAgentInstallKeyDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class FailoverDataGuardAssociationRequest
-        extends com.oracle.bmc.requests.BmcRequest<FailoverDataGuardAssociationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.FailoverDataGuardAssociationDetails> {
 
     /**
      * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -33,7 +34,8 @@ public class FailoverDataGuardAssociationRequest
     /**
      * A request to perform a failover, transitioning a standby database into a primary database.
      */
-    private FailoverDataGuardAssociationDetails failoverDataGuardAssociationDetails;
+    private com.oracle.bmc.database.model.FailoverDataGuardAssociationDetails
+            failoverDataGuardAssociationDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -49,13 +51,14 @@ public class FailoverDataGuardAssociationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public FailoverDataGuardAssociationDetails getBody$() {
+    public com.oracle.bmc.database.model.FailoverDataGuardAssociationDetails getBody$() {
         return failoverDataGuardAssociationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    FailoverDataGuardAssociationRequest, FailoverDataGuardAssociationDetails> {
+                    FailoverDataGuardAssociationRequest,
+                    com.oracle.bmc.database.model.FailoverDataGuardAssociationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -120,7 +123,8 @@ public class FailoverDataGuardAssociationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(FailoverDataGuardAssociationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.FailoverDataGuardAssociationDetails body) {
             failoverDataGuardAssociationDetails(body);
             return this;
         }

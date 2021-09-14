@@ -18,7 +18,8 @@ import com.oracle.bmc.waas.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateHttpRedirectRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateHttpRedirectDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.waas.model.UpdateHttpRedirectDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the HTTP Redirect.
@@ -28,7 +29,7 @@ public class UpdateHttpRedirectRequest
     /**
      * The details of the HTTP Redirect to update.
      */
-    private UpdateHttpRedirectDetails updateHttpRedirectDetails;
+    private com.oracle.bmc.waas.model.UpdateHttpRedirectDetails updateHttpRedirectDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -52,13 +53,14 @@ public class UpdateHttpRedirectRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateHttpRedirectDetails getBody$() {
+    public com.oracle.bmc.waas.model.UpdateHttpRedirectDetails getBody$() {
         return updateHttpRedirectDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateHttpRedirectRequest, UpdateHttpRedirectDetails> {
+                    UpdateHttpRedirectRequest,
+                    com.oracle.bmc.waas.model.UpdateHttpRedirectDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class UpdateHttpRedirectRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateHttpRedirectDetails body) {
+        public Builder body$(com.oracle.bmc.waas.model.UpdateHttpRedirectDetails body) {
             updateHttpRedirectDetails(body);
             return this;
         }

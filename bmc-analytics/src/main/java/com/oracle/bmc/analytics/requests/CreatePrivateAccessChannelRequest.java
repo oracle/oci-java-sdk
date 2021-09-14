@@ -18,7 +18,8 @@ import com.oracle.bmc.analytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreatePrivateAccessChannelRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreatePrivateAccessChannelDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.analytics.model.CreatePrivateAccessChannelDetails> {
 
     /**
      * The OCID of the AnalyticsInstance.
@@ -30,7 +31,8 @@ public class CreatePrivateAccessChannelRequest
      * Input payload for creating a private access channel for an Analytics instance.
      *
      */
-    private CreatePrivateAccessChannelDetails createPrivateAccessChannelDetails;
+    private com.oracle.bmc.analytics.model.CreatePrivateAccessChannelDetails
+            createPrivateAccessChannelDetails;
 
     /**
      * Unique identifier for the request.
@@ -55,13 +57,14 @@ public class CreatePrivateAccessChannelRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreatePrivateAccessChannelDetails getBody$() {
+    public com.oracle.bmc.analytics.model.CreatePrivateAccessChannelDetails getBody$() {
         return createPrivateAccessChannelDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreatePrivateAccessChannelRequest, CreatePrivateAccessChannelDetails> {
+                    CreatePrivateAccessChannelRequest,
+                    com.oracle.bmc.analytics.model.CreatePrivateAccessChannelDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -126,7 +129,8 @@ public class CreatePrivateAccessChannelRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreatePrivateAccessChannelDetails body) {
+        public Builder body$(
+                com.oracle.bmc.analytics.model.CreatePrivateAccessChannelDetails body) {
             createPrivateAccessChannelDetails(body);
             return this;
         }

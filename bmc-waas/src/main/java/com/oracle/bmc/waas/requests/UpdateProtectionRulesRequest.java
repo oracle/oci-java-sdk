@@ -18,7 +18,8 @@ import com.oracle.bmc.waas.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateProtectionRulesRequest
-        extends com.oracle.bmc.requests.BmcRequest<java.util.List<ProtectionRuleAction>> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                java.util.List<com.oracle.bmc.waas.model.ProtectionRuleAction>> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
@@ -28,7 +29,7 @@ public class UpdateProtectionRulesRequest
     /**
      *
      */
-    private java.util.List<ProtectionRuleAction> protectionRules;
+    private java.util.List<com.oracle.bmc.waas.model.ProtectionRuleAction> protectionRules;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -46,24 +47,27 @@ public class UpdateProtectionRulesRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public java.util.List<ProtectionRuleAction> getBody$() {
+    public java.util.List<com.oracle.bmc.waas.model.ProtectionRuleAction> getBody$() {
         return protectionRules;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateProtectionRulesRequest, java.util.List<ProtectionRuleAction>> {
+                    UpdateProtectionRulesRequest,
+                    java.util.List<com.oracle.bmc.waas.model.ProtectionRuleAction>> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        private java.util.List<ProtectionRuleAction> protectionRules = null;
+        private java.util.List<com.oracle.bmc.waas.model.ProtectionRuleAction> protectionRules =
+                null;
 
         /**
          *
          * @return this builder instance
          */
-        public Builder protectionRules(java.util.List<ProtectionRuleAction> protectionRules) {
+        public Builder protectionRules(
+                java.util.List<com.oracle.bmc.waas.model.ProtectionRuleAction> protectionRules) {
             this.protectionRules = protectionRules;
             return this;
         }
@@ -72,7 +76,8 @@ public class UpdateProtectionRulesRequest
          * Singular setter.
          * @return this builder instance
          */
-        public Builder protectionRules(ProtectionRuleAction singularValue) {
+        public Builder protectionRules(
+                com.oracle.bmc.waas.model.ProtectionRuleAction singularValue) {
             return this.protectionRules(java.util.Arrays.asList(singularValue));
         }
 
@@ -136,7 +141,7 @@ public class UpdateProtectionRulesRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(java.util.List<ProtectionRuleAction> body) {
+        public Builder body$(java.util.List<com.oracle.bmc.waas.model.ProtectionRuleAction> body) {
             protectionRules(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.goldengate.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class StartDeploymentRequest
-        extends com.oracle.bmc.requests.BmcRequest<StartDeploymentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.goldengate.model.StartDeploymentDetails> {
 
     /**
      * A unique Deployment identifier.
@@ -30,7 +31,7 @@ public class StartDeploymentRequest
      * A placeholder for any additional metadata to describe the deployment start.
      *
      */
-    private StartDeploymentDetails startDeploymentDetails;
+    private com.oracle.bmc.goldengate.model.StartDeploymentDetails startDeploymentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.  The resource is updated or deleted only if the etag you provide matches the resource's current etag value.
@@ -56,13 +57,14 @@ public class StartDeploymentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public StartDeploymentDetails getBody$() {
+    public com.oracle.bmc.goldengate.model.StartDeploymentDetails getBody$() {
         return startDeploymentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    StartDeploymentRequest, StartDeploymentDetails> {
+                    StartDeploymentRequest,
+                    com.oracle.bmc.goldengate.model.StartDeploymentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -128,7 +130,7 @@ public class StartDeploymentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(StartDeploymentDetails body) {
+        public Builder body$(com.oracle.bmc.goldengate.model.StartDeploymentDetails body) {
             startDeploymentDetails(body);
             return this;
         }

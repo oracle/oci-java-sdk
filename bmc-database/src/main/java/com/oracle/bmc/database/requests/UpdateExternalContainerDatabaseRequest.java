@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateExternalContainerDatabaseRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateExternalContainerDatabaseDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.UpdateExternalContainerDatabaseDetails> {
 
     /**
      * The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -30,7 +31,8 @@ public class UpdateExternalContainerDatabaseRequest
      * {@link #createExternalContainerDatabaseDetails(CreateExternalContainerDatabaseDetailsRequest) createExternalContainerDatabaseDetails} resource.
      *
      */
-    private UpdateExternalContainerDatabaseDetails updateExternalContainerDatabaseDetails;
+    private com.oracle.bmc.database.model.UpdateExternalContainerDatabaseDetails
+            updateExternalContainerDatabaseDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -52,14 +54,14 @@ public class UpdateExternalContainerDatabaseRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateExternalContainerDatabaseDetails getBody$() {
+    public com.oracle.bmc.database.model.UpdateExternalContainerDatabaseDetails getBody$() {
         return updateExternalContainerDatabaseDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateExternalContainerDatabaseRequest,
-                    UpdateExternalContainerDatabaseDetails> {
+                    com.oracle.bmc.database.model.UpdateExternalContainerDatabaseDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,8 @@ public class UpdateExternalContainerDatabaseRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateExternalContainerDatabaseDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.UpdateExternalContainerDatabaseDetails body) {
             updateExternalContainerDatabaseDetails(body);
             return this;
         }

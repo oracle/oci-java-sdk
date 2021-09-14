@@ -18,7 +18,8 @@ import com.oracle.bmc.filestorage.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateFileSystemRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateFileSystemDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.filestorage.model.UpdateFileSystemDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system.
@@ -28,7 +29,7 @@ public class UpdateFileSystemRequest
     /**
      * Details object for updating a file system.
      */
-    private UpdateFileSystemDetails updateFileSystemDetails;
+    private com.oracle.bmc.filestorage.model.UpdateFileSystemDetails updateFileSystemDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -53,13 +54,14 @@ public class UpdateFileSystemRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateFileSystemDetails getBody$() {
+    public com.oracle.bmc.filestorage.model.UpdateFileSystemDetails getBody$() {
         return updateFileSystemDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateFileSystemRequest, UpdateFileSystemDetails> {
+                    UpdateFileSystemRequest,
+                    com.oracle.bmc.filestorage.model.UpdateFileSystemDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class UpdateFileSystemRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateFileSystemDetails body) {
+        public Builder body$(com.oracle.bmc.filestorage.model.UpdateFileSystemDetails body) {
             updateFileSystemDetails(body);
             return this;
         }

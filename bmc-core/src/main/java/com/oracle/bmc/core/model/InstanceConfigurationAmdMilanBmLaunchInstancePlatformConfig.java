@@ -35,6 +35,33 @@ public class InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("isSecureBootEnabled")
+        private Boolean isSecureBootEnabled;
+
+        public Builder isSecureBootEnabled(Boolean isSecureBootEnabled) {
+            this.isSecureBootEnabled = isSecureBootEnabled;
+            this.__explicitlySet__.add("isSecureBootEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isTrustedPlatformModuleEnabled")
+        private Boolean isTrustedPlatformModuleEnabled;
+
+        public Builder isTrustedPlatformModuleEnabled(Boolean isTrustedPlatformModuleEnabled) {
+            this.isTrustedPlatformModuleEnabled = isTrustedPlatformModuleEnabled;
+            this.__explicitlySet__.add("isTrustedPlatformModuleEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isMeasuredBootEnabled")
+        private Boolean isMeasuredBootEnabled;
+
+        public Builder isMeasuredBootEnabled(Boolean isMeasuredBootEnabled) {
+            this.isMeasuredBootEnabled = isMeasuredBootEnabled;
+            this.__explicitlySet__.add("isMeasuredBootEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("numaNodesPerSocket")
         private NumaNodesPerSocket numaNodesPerSocket;
 
@@ -50,6 +77,9 @@ public class InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig
         public InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig build() {
             InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig __instance__ =
                     new InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig(
+                            isSecureBootEnabled,
+                            isTrustedPlatformModuleEnabled,
+                            isMeasuredBootEnabled,
                             numaNodesPerSocket);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -57,7 +87,11 @@ public class InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig o) {
-            Builder copiedBuilder = numaNodesPerSocket(o.getNumaNodesPerSocket());
+            Builder copiedBuilder =
+                    isSecureBootEnabled(o.getIsSecureBootEnabled())
+                            .isTrustedPlatformModuleEnabled(o.getIsTrustedPlatformModuleEnabled())
+                            .isMeasuredBootEnabled(o.getIsMeasuredBootEnabled())
+                            .numaNodesPerSocket(o.getNumaNodesPerSocket());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -73,8 +107,11 @@ public class InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig
 
     @Deprecated
     public InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig(
+            Boolean isSecureBootEnabled,
+            Boolean isTrustedPlatformModuleEnabled,
+            Boolean isMeasuredBootEnabled,
             NumaNodesPerSocket numaNodesPerSocket) {
-        super();
+        super(isSecureBootEnabled, isTrustedPlatformModuleEnabled, isMeasuredBootEnabled);
         this.numaNodesPerSocket = numaNodesPerSocket;
     }
 

@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class TestParserRequest
-        extends com.oracle.bmc.requests.BmcRequest<TestParserPayloadDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.TestParserPayloadDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -29,7 +30,7 @@ public class TestParserRequest
     /**
      * Details for test payload
      */
-    private TestParserPayloadDetails testParserPayloadDetails;
+    private com.oracle.bmc.loganalytics.model.TestParserPayloadDetails testParserPayloadDetails;
 
     /**
      * The scope used when testing a parser.
@@ -100,7 +101,7 @@ public class TestParserRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public TestParserPayloadDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.TestParserPayloadDetails getBody$() {
         return testParserPayloadDetails;
     }
 
@@ -111,7 +112,7 @@ public class TestParserRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    TestParserRequest, TestParserPayloadDetails> {
+                    TestParserRequest, com.oracle.bmc.loganalytics.model.TestParserPayloadDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -178,7 +179,7 @@ public class TestParserRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(TestParserPayloadDetails body) {
+        public Builder body$(com.oracle.bmc.loganalytics.model.TestParserPayloadDetails body) {
             testParserPayloadDetails(body);
             return this;
         }

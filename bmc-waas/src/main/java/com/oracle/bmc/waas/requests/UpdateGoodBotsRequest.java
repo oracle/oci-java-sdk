@@ -18,7 +18,8 @@ import com.oracle.bmc.waas.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateGoodBotsRequest
-        extends com.oracle.bmc.requests.BmcRequest<java.util.List<GoodBot>> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                java.util.List<com.oracle.bmc.waas.model.GoodBot>> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
@@ -28,7 +29,7 @@ public class UpdateGoodBotsRequest
     /**
      *
      */
-    private java.util.List<GoodBot> goodBots;
+    private java.util.List<com.oracle.bmc.waas.model.GoodBot> goodBots;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -52,24 +53,24 @@ public class UpdateGoodBotsRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public java.util.List<GoodBot> getBody$() {
+    public java.util.List<com.oracle.bmc.waas.model.GoodBot> getBody$() {
         return goodBots;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateGoodBotsRequest, java.util.List<GoodBot>> {
+                    UpdateGoodBotsRequest, java.util.List<com.oracle.bmc.waas.model.GoodBot>> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        private java.util.List<GoodBot> goodBots = null;
+        private java.util.List<com.oracle.bmc.waas.model.GoodBot> goodBots = null;
 
         /**
          *
          * @return this builder instance
          */
-        public Builder goodBots(java.util.List<GoodBot> goodBots) {
+        public Builder goodBots(java.util.List<com.oracle.bmc.waas.model.GoodBot> goodBots) {
             this.goodBots = goodBots;
             return this;
         }
@@ -78,7 +79,7 @@ public class UpdateGoodBotsRequest
          * Singular setter.
          * @return this builder instance
          */
-        public Builder goodBots(GoodBot singularValue) {
+        public Builder goodBots(com.oracle.bmc.waas.model.GoodBot singularValue) {
             return this.goodBots(java.util.Arrays.asList(singularValue));
         }
 
@@ -143,7 +144,7 @@ public class UpdateGoodBotsRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(java.util.List<GoodBot> body) {
+        public Builder body$(java.util.List<com.oracle.bmc.waas.model.GoodBot> body) {
             goodBots(body);
             return this;
         }

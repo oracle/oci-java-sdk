@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class AddEntityAssociationRequest
-        extends com.oracle.bmc.requests.BmcRequest<AddEntityAssociationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.AddEntityAssociationDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -35,7 +36,8 @@ public class AddEntityAssociationRequest
     /**
      * This parameter specifies the destination entity OCIDs with which associations are to be created.
      */
-    private AddEntityAssociationDetails addEntityAssociationDetails;
+    private com.oracle.bmc.loganalytics.model.AddEntityAssociationDetails
+            addEntityAssociationDetails;
 
     /**
      * The client request ID for tracing.
@@ -68,7 +70,7 @@ public class AddEntityAssociationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public AddEntityAssociationDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.AddEntityAssociationDetails getBody$() {
         return addEntityAssociationDetails;
     }
 
@@ -79,7 +81,8 @@ public class AddEntityAssociationRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    AddEntityAssociationRequest, AddEntityAssociationDetails> {
+                    AddEntityAssociationRequest,
+                    com.oracle.bmc.loganalytics.model.AddEntityAssociationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -146,7 +149,7 @@ public class AddEntityAssociationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(AddEntityAssociationDetails body) {
+        public Builder body$(com.oracle.bmc.loganalytics.model.AddEntityAssociationDetails body) {
             addEntityAssociationDetails(body);
             return this;
         }

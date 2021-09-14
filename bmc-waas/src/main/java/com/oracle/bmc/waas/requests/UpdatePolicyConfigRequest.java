@@ -17,7 +17,8 @@ import com.oracle.bmc.waas.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdatePolicyConfigRequest extends com.oracle.bmc.requests.BmcRequest<PolicyConfig> {
+public class UpdatePolicyConfigRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.waas.model.PolicyConfig> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
@@ -27,7 +28,7 @@ public class UpdatePolicyConfigRequest extends com.oracle.bmc.requests.BmcReques
     /**
      * The new configuration to apply to a WAAS policy.
      */
-    private PolicyConfig updatePolicyConfigDetails;
+    private com.oracle.bmc.waas.model.PolicyConfig updatePolicyConfigDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -51,13 +52,13 @@ public class UpdatePolicyConfigRequest extends com.oracle.bmc.requests.BmcReques
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public PolicyConfig getBody$() {
+    public com.oracle.bmc.waas.model.PolicyConfig getBody$() {
         return updatePolicyConfigDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdatePolicyConfigRequest, PolicyConfig> {
+                    UpdatePolicyConfigRequest, com.oracle.bmc.waas.model.PolicyConfig> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +124,7 @@ public class UpdatePolicyConfigRequest extends com.oracle.bmc.requests.BmcReques
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(PolicyConfig body) {
+        public Builder body$(com.oracle.bmc.waas.model.PolicyConfig body) {
             updatePolicyConfigDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.servicecatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeServiceCatalogCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeServiceCatalogCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.servicecatalog.model.ChangeServiceCatalogCompartmentDetails> {
 
     /**
      * The unique identifier for the service catalog.
@@ -28,7 +29,8 @@ public class ChangeServiceCatalogCompartmentRequest
     /**
      * The details of the request to change the compartment of a given service catalog.
      */
-    private ChangeServiceCatalogCompartmentDetails changeServiceCatalogCompartmentDetails;
+    private com.oracle.bmc.servicecatalog.model.ChangeServiceCatalogCompartmentDetails
+            changeServiceCatalogCompartmentDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
@@ -51,14 +53,14 @@ public class ChangeServiceCatalogCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeServiceCatalogCompartmentDetails getBody$() {
+    public com.oracle.bmc.servicecatalog.model.ChangeServiceCatalogCompartmentDetails getBody$() {
         return changeServiceCatalogCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeServiceCatalogCompartmentRequest,
-                    ChangeServiceCatalogCompartmentDetails> {
+                    com.oracle.bmc.servicecatalog.model.ChangeServiceCatalogCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +125,8 @@ public class ChangeServiceCatalogCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeServiceCatalogCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.servicecatalog.model.ChangeServiceCatalogCompartmentDetails body) {
             changeServiceCatalogCompartmentDetails(body);
             return this;
         }

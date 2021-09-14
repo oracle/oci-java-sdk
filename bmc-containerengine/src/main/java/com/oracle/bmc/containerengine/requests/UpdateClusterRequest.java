@@ -17,7 +17,9 @@ import com.oracle.bmc.containerengine.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateClusterRequest extends com.oracle.bmc.requests.BmcRequest<UpdateClusterDetails> {
+public class UpdateClusterRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.containerengine.model.UpdateClusterDetails> {
 
     /**
      * The OCID of the cluster.
@@ -27,7 +29,7 @@ public class UpdateClusterRequest extends com.oracle.bmc.requests.BmcRequest<Upd
     /**
      * The details of the cluster to update.
      */
-    private UpdateClusterDetails updateClusterDetails;
+    private com.oracle.bmc.containerengine.model.UpdateClusterDetails updateClusterDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -50,13 +52,14 @@ public class UpdateClusterRequest extends com.oracle.bmc.requests.BmcRequest<Upd
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateClusterDetails getBody$() {
+    public com.oracle.bmc.containerengine.model.UpdateClusterDetails getBody$() {
         return updateClusterDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateClusterRequest, UpdateClusterDetails> {
+                    UpdateClusterRequest,
+                    com.oracle.bmc.containerengine.model.UpdateClusterDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +124,7 @@ public class UpdateClusterRequest extends com.oracle.bmc.requests.BmcRequest<Upd
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateClusterDetails body) {
+        public Builder body$(com.oracle.bmc.containerengine.model.UpdateClusterDetails body) {
             updateClusterDetails(body);
             return this;
         }

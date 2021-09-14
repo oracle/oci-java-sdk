@@ -18,12 +18,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateDrgAttachmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateDrgAttachmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CreateDrgAttachmentDetails> {
 
     /**
      * Details for creating a {@code DrgAttachment}.
      */
-    private CreateDrgAttachmentDetails createDrgAttachmentDetails;
+    private com.oracle.bmc.core.model.CreateDrgAttachmentDetails createDrgAttachmentDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +42,14 @@ public class CreateDrgAttachmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateDrgAttachmentDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateDrgAttachmentDetails getBody$() {
         return createDrgAttachmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateDrgAttachmentRequest, CreateDrgAttachmentDetails> {
+                    CreateDrgAttachmentRequest,
+                    com.oracle.bmc.core.model.CreateDrgAttachmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +112,7 @@ public class CreateDrgAttachmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateDrgAttachmentDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateDrgAttachmentDetails body) {
             createDrgAttachmentDetails(body);
             return this;
         }

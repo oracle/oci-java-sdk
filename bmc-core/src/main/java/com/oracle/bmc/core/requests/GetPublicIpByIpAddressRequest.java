@@ -18,12 +18,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class GetPublicIpByIpAddressRequest
-        extends com.oracle.bmc.requests.BmcRequest<GetPublicIpByIpAddressDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.GetPublicIpByIpAddressDetails> {
 
     /**
      * IP address details for fetching the public IP.
      */
-    private GetPublicIpByIpAddressDetails getPublicIpByIpAddressDetails;
+    private com.oracle.bmc.core.model.GetPublicIpByIpAddressDetails getPublicIpByIpAddressDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -31,13 +32,14 @@ public class GetPublicIpByIpAddressRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public GetPublicIpByIpAddressDetails getBody$() {
+    public com.oracle.bmc.core.model.GetPublicIpByIpAddressDetails getBody$() {
         return getPublicIpByIpAddressDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    GetPublicIpByIpAddressRequest, GetPublicIpByIpAddressDetails> {
+                    GetPublicIpByIpAddressRequest,
+                    com.oracle.bmc.core.model.GetPublicIpByIpAddressDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -99,7 +101,7 @@ public class GetPublicIpByIpAddressRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(GetPublicIpByIpAddressDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.GetPublicIpByIpAddressDetails body) {
             getPublicIpByIpAddressDetails(body);
             return this;
         }

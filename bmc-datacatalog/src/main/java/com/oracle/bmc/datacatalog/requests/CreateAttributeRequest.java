@@ -18,7 +18,8 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateAttributeRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateAttributeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.CreateAttributeDetails> {
 
     /**
      * Unique catalog identifier.
@@ -38,7 +39,7 @@ public class CreateAttributeRequest
     /**
      * The information used to create an entity attribute.
      */
-    private CreateAttributeDetails createAttributeDetails;
+    private com.oracle.bmc.datacatalog.model.CreateAttributeDetails createAttributeDetails;
 
     /**
      * The client request ID for tracing.
@@ -61,13 +62,14 @@ public class CreateAttributeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateAttributeDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.CreateAttributeDetails getBody$() {
         return createAttributeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateAttributeRequest, CreateAttributeDetails> {
+                    CreateAttributeRequest,
+                    com.oracle.bmc.datacatalog.model.CreateAttributeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +136,7 @@ public class CreateAttributeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateAttributeDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.CreateAttributeDetails body) {
             createAttributeDetails(body);
             return this;
         }

@@ -18,12 +18,13 @@ import com.oracle.bmc.containerengine.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateNodePoolRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateNodePoolDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.containerengine.model.CreateNodePoolDetails> {
 
     /**
      * The details of the node pool to create.
      */
-    private CreateNodePoolDetails createNodePoolDetails;
+    private com.oracle.bmc.containerengine.model.CreateNodePoolDetails createNodePoolDetails;
 
     /**
      * A token you supply to uniquely identify the request and provide idempotency if
@@ -45,13 +46,14 @@ public class CreateNodePoolRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateNodePoolDetails getBody$() {
+    public com.oracle.bmc.containerengine.model.CreateNodePoolDetails getBody$() {
         return createNodePoolDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateNodePoolRequest, CreateNodePoolDetails> {
+                    CreateNodePoolRequest,
+                    com.oracle.bmc.containerengine.model.CreateNodePoolDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -115,7 +117,7 @@ public class CreateNodePoolRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateNodePoolDetails body) {
+        public Builder body$(com.oracle.bmc.containerengine.model.CreateNodePoolDetails body) {
             createNodePoolDetails(body);
             return this;
         }

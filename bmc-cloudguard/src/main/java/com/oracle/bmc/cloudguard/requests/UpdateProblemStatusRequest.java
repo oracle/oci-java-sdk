@@ -18,7 +18,8 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateProblemStatusRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateProblemStatusDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.cloudguard.model.UpdateProblemStatusDetails> {
 
     /**
      * OCId of the problem.
@@ -28,7 +29,7 @@ public class UpdateProblemStatusRequest
     /**
      * The additional details for the problem.
      */
-    private UpdateProblemStatusDetails updateProblemStatusDetails;
+    private com.oracle.bmc.cloudguard.model.UpdateProblemStatusDetails updateProblemStatusDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -61,13 +62,14 @@ public class UpdateProblemStatusRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateProblemStatusDetails getBody$() {
+    public com.oracle.bmc.cloudguard.model.UpdateProblemStatusDetails getBody$() {
         return updateProblemStatusDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateProblemStatusRequest, UpdateProblemStatusDetails> {
+                    UpdateProblemStatusRequest,
+                    com.oracle.bmc.cloudguard.model.UpdateProblemStatusDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +135,7 @@ public class UpdateProblemStatusRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateProblemStatusDetails body) {
+        public Builder body$(com.oracle.bmc.cloudguard.model.UpdateProblemStatusDetails body) {
             updateProblemStatusDetails(body);
             return this;
         }

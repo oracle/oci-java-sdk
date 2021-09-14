@@ -19,7 +19,8 @@ import com.oracle.bmc.databasemanagement.model.*;
 @lombok.Getter
 public class ChangeDbManagementPrivateEndpointCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
-                ChangeDbManagementPrivateEndpointCompartmentDetails> {
+                com.oracle.bmc.databasemanagement.model
+                        .ChangeDbManagementPrivateEndpointCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
@@ -29,7 +30,8 @@ public class ChangeDbManagementPrivateEndpointCompartmentRequest
     /**
      * The details used to change the compartment of a Database Management private endpoint.
      */
-    private ChangeDbManagementPrivateEndpointCompartmentDetails
+    private com.oracle.bmc.databasemanagement.model
+                    .ChangeDbManagementPrivateEndpointCompartmentDetails
             changeDbManagementPrivateEndpointCompartmentDetails;
 
     /**
@@ -63,14 +65,17 @@ public class ChangeDbManagementPrivateEndpointCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeDbManagementPrivateEndpointCompartmentDetails getBody$() {
+    public com.oracle.bmc.databasemanagement.model
+                    .ChangeDbManagementPrivateEndpointCompartmentDetails
+            getBody$() {
         return changeDbManagementPrivateEndpointCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeDbManagementPrivateEndpointCompartmentRequest,
-                    ChangeDbManagementPrivateEndpointCompartmentDetails> {
+                    com.oracle.bmc.databasemanagement.model
+                            .ChangeDbManagementPrivateEndpointCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -138,7 +143,10 @@ public class ChangeDbManagementPrivateEndpointCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeDbManagementPrivateEndpointCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.databasemanagement.model
+                                .ChangeDbManagementPrivateEndpointCompartmentDetails
+                        body) {
             changeDbManagementPrivateEndpointCompartmentDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateObjectStorageTierRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateObjectStorageTierDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.objectstorage.model.UpdateObjectStorageTierDetails> {
 
     /**
      * The Object Storage namespace used for the request.
@@ -35,7 +36,8 @@ public class UpdateObjectStorageTierRequest
     /**
      * The object name and the desired storage tier.
      */
-    private UpdateObjectStorageTierDetails updateObjectStorageTierDetails;
+    private com.oracle.bmc.objectstorage.model.UpdateObjectStorageTierDetails
+            updateObjectStorageTierDetails;
 
     /**
      * The client request ID for tracing.
@@ -48,13 +50,14 @@ public class UpdateObjectStorageTierRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateObjectStorageTierDetails getBody$() {
+    public com.oracle.bmc.objectstorage.model.UpdateObjectStorageTierDetails getBody$() {
         return updateObjectStorageTierDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateObjectStorageTierRequest, UpdateObjectStorageTierDetails> {
+                    UpdateObjectStorageTierRequest,
+                    com.oracle.bmc.objectstorage.model.UpdateObjectStorageTierDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +122,8 @@ public class UpdateObjectStorageTierRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateObjectStorageTierDetails body) {
+        public Builder body$(
+                com.oracle.bmc.objectstorage.model.UpdateObjectStorageTierDetails body) {
             updateObjectStorageTierDetails(body);
             return this;
         }

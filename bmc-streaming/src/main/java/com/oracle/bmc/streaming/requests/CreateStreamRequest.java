@@ -17,12 +17,14 @@ import com.oracle.bmc.streaming.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateStreamRequest extends com.oracle.bmc.requests.BmcRequest<CreateStreamDetails> {
+public class CreateStreamRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.streaming.model.CreateStreamDetails> {
 
     /**
      * The stream to create.
      */
-    private CreateStreamDetails createStreamDetails;
+    private com.oracle.bmc.streaming.model.CreateStreamDetails createStreamDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -37,13 +39,13 @@ public class CreateStreamRequest extends com.oracle.bmc.requests.BmcRequest<Crea
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateStreamDetails getBody$() {
+    public com.oracle.bmc.streaming.model.CreateStreamDetails getBody$() {
         return createStreamDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateStreamRequest, CreateStreamDetails> {
+                    CreateStreamRequest, com.oracle.bmc.streaming.model.CreateStreamDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -106,7 +108,7 @@ public class CreateStreamRequest extends com.oracle.bmc.requests.BmcRequest<Crea
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateStreamDetails body) {
+        public Builder body$(com.oracle.bmc.streaming.model.CreateStreamDetails body) {
             createStreamDetails(body);
             return this;
         }

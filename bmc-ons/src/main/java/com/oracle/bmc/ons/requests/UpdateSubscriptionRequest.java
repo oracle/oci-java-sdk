@@ -18,7 +18,8 @@ import com.oracle.bmc.ons.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateSubscriptionRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateSubscriptionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.ons.model.UpdateSubscriptionDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to update.
@@ -30,7 +31,7 @@ public class UpdateSubscriptionRequest
      * The configuration details for updating the subscription.
      *
      */
-    private UpdateSubscriptionDetails updateSubscriptionDetails;
+    private com.oracle.bmc.ons.model.UpdateSubscriptionDetails updateSubscriptionDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -53,13 +54,13 @@ public class UpdateSubscriptionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateSubscriptionDetails getBody$() {
+    public com.oracle.bmc.ons.model.UpdateSubscriptionDetails getBody$() {
         return updateSubscriptionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateSubscriptionRequest, UpdateSubscriptionDetails> {
+                    UpdateSubscriptionRequest, com.oracle.bmc.ons.model.UpdateSubscriptionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +125,7 @@ public class UpdateSubscriptionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateSubscriptionDetails body) {
+        public Builder body$(com.oracle.bmc.ons.model.UpdateSubscriptionDetails body) {
             updateSubscriptionDetails(body);
             return this;
         }

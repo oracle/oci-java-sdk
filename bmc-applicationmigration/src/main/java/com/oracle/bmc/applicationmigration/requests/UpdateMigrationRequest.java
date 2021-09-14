@@ -18,7 +18,8 @@ import com.oracle.bmc.applicationmigration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateMigrationRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateMigrationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.applicationmigration.model.UpdateMigrationDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the migration.
@@ -29,7 +30,7 @@ public class UpdateMigrationRequest
      * Updated configuration for the migration.
      *
      */
-    private UpdateMigrationDetails updateMigrationDetails;
+    private com.oracle.bmc.applicationmigration.model.UpdateMigrationDetails updateMigrationDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -62,13 +63,14 @@ public class UpdateMigrationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateMigrationDetails getBody$() {
+    public com.oracle.bmc.applicationmigration.model.UpdateMigrationDetails getBody$() {
         return updateMigrationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateMigrationRequest, UpdateMigrationDetails> {
+                    UpdateMigrationRequest,
+                    com.oracle.bmc.applicationmigration.model.UpdateMigrationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +136,8 @@ public class UpdateMigrationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateMigrationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.applicationmigration.model.UpdateMigrationDetails body) {
             updateMigrationDetails(body);
             return this;
         }

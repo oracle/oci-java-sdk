@@ -18,12 +18,14 @@ import com.oracle.bmc.servicecatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreatePrivateApplicationRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreatePrivateApplicationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.servicecatalog.model.CreatePrivateApplicationDetails> {
 
     /**
      * Private application creation details.
      */
-    private CreatePrivateApplicationDetails createPrivateApplicationDetails;
+    private com.oracle.bmc.servicecatalog.model.CreatePrivateApplicationDetails
+            createPrivateApplicationDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without
@@ -47,13 +49,14 @@ public class CreatePrivateApplicationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreatePrivateApplicationDetails getBody$() {
+    public com.oracle.bmc.servicecatalog.model.CreatePrivateApplicationDetails getBody$() {
         return createPrivateApplicationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreatePrivateApplicationRequest, CreatePrivateApplicationDetails> {
+                    CreatePrivateApplicationRequest,
+                    com.oracle.bmc.servicecatalog.model.CreatePrivateApplicationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +120,8 @@ public class CreatePrivateApplicationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreatePrivateApplicationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.servicecatalog.model.CreatePrivateApplicationDetails body) {
             createPrivateApplicationDetails(body);
             return this;
         }

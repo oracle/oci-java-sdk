@@ -18,12 +18,13 @@ import com.oracle.bmc.opsi.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class IngestSqlPlanLinesRequest
-        extends com.oracle.bmc.requests.BmcRequest<IngestSqlPlanLinesDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.opsi.model.IngestSqlPlanLinesDetails> {
 
     /**
      * Collection of SQL plan line objects for a particular database.
      */
-    private IngestSqlPlanLinesDetails ingestSqlPlanLinesDetails;
+    private com.oracle.bmc.opsi.model.IngestSqlPlanLinesDetails ingestSqlPlanLinesDetails;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -74,13 +75,14 @@ public class IngestSqlPlanLinesRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public IngestSqlPlanLinesDetails getBody$() {
+    public com.oracle.bmc.opsi.model.IngestSqlPlanLinesDetails getBody$() {
         return ingestSqlPlanLinesDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    IngestSqlPlanLinesRequest, IngestSqlPlanLinesDetails> {
+                    IngestSqlPlanLinesRequest,
+                    com.oracle.bmc.opsi.model.IngestSqlPlanLinesDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -148,7 +150,7 @@ public class IngestSqlPlanLinesRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(IngestSqlPlanLinesDetails body) {
+        public Builder body$(com.oracle.bmc.opsi.model.IngestSqlPlanLinesDetails body) {
             ingestSqlPlanLinesDetails(body);
             return this;
         }

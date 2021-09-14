@@ -18,12 +18,13 @@ import com.oracle.bmc.identity.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateTagDefaultRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateTagDefaultDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.CreateTagDefaultDetails> {
 
     /**
      * Request object for creating a new tag default.
      */
-    private CreateTagDefaultDetails createTagDefaultDetails;
+    private com.oracle.bmc.identity.model.CreateTagDefaultDetails createTagDefaultDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -48,13 +49,14 @@ public class CreateTagDefaultRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateTagDefaultDetails getBody$() {
+    public com.oracle.bmc.identity.model.CreateTagDefaultDetails getBody$() {
         return createTagDefaultDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateTagDefaultRequest, CreateTagDefaultDetails> {
+                    CreateTagDefaultRequest,
+                    com.oracle.bmc.identity.model.CreateTagDefaultDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -118,7 +120,7 @@ public class CreateTagDefaultRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateTagDefaultDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.CreateTagDefaultDetails body) {
             createTagDefaultDetails(body);
             return this;
         }

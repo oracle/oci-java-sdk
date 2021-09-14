@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateAutonomousVmClusterRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateAutonomousVmClusterDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.UpdateAutonomousVmClusterDetails> {
 
     /**
      * The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,8 @@ public class UpdateAutonomousVmClusterRequest
     /**
      * Request to update the attributes of an Autonomous VM cluster.
      */
-    private UpdateAutonomousVmClusterDetails updateAutonomousVmClusterDetails;
+    private com.oracle.bmc.database.model.UpdateAutonomousVmClusterDetails
+            updateAutonomousVmClusterDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -50,13 +52,14 @@ public class UpdateAutonomousVmClusterRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateAutonomousVmClusterDetails getBody$() {
+    public com.oracle.bmc.database.model.UpdateAutonomousVmClusterDetails getBody$() {
         return updateAutonomousVmClusterDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateAutonomousVmClusterRequest, UpdateAutonomousVmClusterDetails> {
+                    UpdateAutonomousVmClusterRequest,
+                    com.oracle.bmc.database.model.UpdateAutonomousVmClusterDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +124,7 @@ public class UpdateAutonomousVmClusterRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateAutonomousVmClusterDetails body) {
+        public Builder body$(com.oracle.bmc.database.model.UpdateAutonomousVmClusterDetails body) {
             updateAutonomousVmClusterDetails(body);
             return this;
         }

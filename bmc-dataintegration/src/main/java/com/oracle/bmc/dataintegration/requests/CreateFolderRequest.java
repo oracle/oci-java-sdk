@@ -17,7 +17,9 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateFolderRequest extends com.oracle.bmc.requests.BmcRequest<CreateFolderDetails> {
+public class CreateFolderRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataintegration.model.CreateFolderDetails> {
 
     /**
      * The workspace ID.
@@ -27,7 +29,7 @@ public class CreateFolderRequest extends com.oracle.bmc.requests.BmcRequest<Crea
     /**
      * The details needed to create a folder.
      */
-    private CreateFolderDetails createFolderDetails;
+    private com.oracle.bmc.dataintegration.model.CreateFolderDetails createFolderDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
@@ -49,13 +51,13 @@ public class CreateFolderRequest extends com.oracle.bmc.requests.BmcRequest<Crea
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateFolderDetails getBody$() {
+    public com.oracle.bmc.dataintegration.model.CreateFolderDetails getBody$() {
         return createFolderDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateFolderRequest, CreateFolderDetails> {
+                    CreateFolderRequest, com.oracle.bmc.dataintegration.model.CreateFolderDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -120,7 +122,7 @@ public class CreateFolderRequest extends com.oracle.bmc.requests.BmcRequest<Crea
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateFolderDetails body) {
+        public Builder body$(com.oracle.bmc.dataintegration.model.CreateFolderDetails body) {
             createFolderDetails(body);
             return this;
         }

@@ -18,12 +18,14 @@ import com.oracle.bmc.identity.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateCustomerSecretKeyRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateCustomerSecretKeyDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.CreateCustomerSecretKeyDetails> {
 
     /**
      * Request object for creating a new secret key.
      */
-    private CreateCustomerSecretKeyDetails createCustomerSecretKeyDetails;
+    private com.oracle.bmc.identity.model.CreateCustomerSecretKeyDetails
+            createCustomerSecretKeyDetails;
 
     /**
      * The OCID of the user.
@@ -46,13 +48,14 @@ public class CreateCustomerSecretKeyRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateCustomerSecretKeyDetails getBody$() {
+    public com.oracle.bmc.identity.model.CreateCustomerSecretKeyDetails getBody$() {
         return createCustomerSecretKeyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateCustomerSecretKeyRequest, CreateCustomerSecretKeyDetails> {
+                    CreateCustomerSecretKeyRequest,
+                    com.oracle.bmc.identity.model.CreateCustomerSecretKeyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +119,7 @@ public class CreateCustomerSecretKeyRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateCustomerSecretKeyDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.CreateCustomerSecretKeyDetails body) {
             createCustomerSecretKeyDetails(body);
             return this;
         }

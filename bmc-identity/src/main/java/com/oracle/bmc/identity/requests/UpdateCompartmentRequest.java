@@ -18,7 +18,8 @@ import com.oracle.bmc.identity.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.UpdateCompartmentDetails> {
 
     /**
      * The OCID of the compartment.
@@ -28,7 +29,7 @@ public class UpdateCompartmentRequest
     /**
      * Request object for updating a compartment.
      */
-    private UpdateCompartmentDetails updateCompartmentDetails;
+    private com.oracle.bmc.identity.model.UpdateCompartmentDetails updateCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -44,13 +45,14 @@ public class UpdateCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateCompartmentDetails getBody$() {
+    public com.oracle.bmc.identity.model.UpdateCompartmentDetails getBody$() {
         return updateCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateCompartmentRequest, UpdateCompartmentDetails> {
+                    UpdateCompartmentRequest,
+                    com.oracle.bmc.identity.model.UpdateCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +116,7 @@ public class UpdateCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.UpdateCompartmentDetails body) {
             updateCompartmentDetails(body);
             return this;
         }

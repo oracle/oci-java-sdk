@@ -18,12 +18,14 @@ import com.oracle.bmc.osmanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateSoftwareSourceRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateSoftwareSourceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.osmanagement.model.CreateSoftwareSourceDetails> {
 
     /**
      * Details about a Sofware Source to create
      */
-    private CreateSoftwareSourceDetails createSoftwareSourceDetails;
+    private com.oracle.bmc.osmanagement.model.CreateSoftwareSourceDetails
+            createSoftwareSourceDetails;
 
     /**
      * The client request ID for tracing.
@@ -46,13 +48,14 @@ public class CreateSoftwareSourceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateSoftwareSourceDetails getBody$() {
+    public com.oracle.bmc.osmanagement.model.CreateSoftwareSourceDetails getBody$() {
         return createSoftwareSourceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateSoftwareSourceRequest, CreateSoftwareSourceDetails> {
+                    CreateSoftwareSourceRequest,
+                    com.oracle.bmc.osmanagement.model.CreateSoftwareSourceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +119,7 @@ public class CreateSoftwareSourceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateSoftwareSourceDetails body) {
+        public Builder body$(com.oracle.bmc.osmanagement.model.CreateSoftwareSourceDetails body) {
             createSoftwareSourceDetails(body);
             return this;
         }

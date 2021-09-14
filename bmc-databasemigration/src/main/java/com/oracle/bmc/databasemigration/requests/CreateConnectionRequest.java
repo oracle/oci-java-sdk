@@ -18,13 +18,14 @@ import com.oracle.bmc.databasemigration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateConnectionRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateConnectionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.databasemigration.model.CreateConnectionDetails> {
 
     /**
      * Database Connection properties.
      *
      */
-    private CreateConnectionDetails createConnectionDetails;
+    private com.oracle.bmc.databasemigration.model.CreateConnectionDetails createConnectionDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -49,13 +50,14 @@ public class CreateConnectionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateConnectionDetails getBody$() {
+    public com.oracle.bmc.databasemigration.model.CreateConnectionDetails getBody$() {
         return createConnectionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateConnectionRequest, CreateConnectionDetails> {
+                    CreateConnectionRequest,
+                    com.oracle.bmc.databasemigration.model.CreateConnectionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +121,7 @@ public class CreateConnectionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateConnectionDetails body) {
+        public Builder body$(com.oracle.bmc.databasemigration.model.CreateConnectionDetails body) {
             createConnectionDetails(body);
             return this;
         }

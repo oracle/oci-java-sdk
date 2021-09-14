@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateVolumeGroupBackupRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateVolumeGroupBackupDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdateVolumeGroupBackupDetails> {
 
     /**
      * The Oracle Cloud ID (OCID) that uniquely identifies the volume group backup.
@@ -29,7 +30,7 @@ public class UpdateVolumeGroupBackupRequest
     /**
      * Update volume group backup fields
      */
-    private UpdateVolumeGroupBackupDetails updateVolumeGroupBackupDetails;
+    private com.oracle.bmc.core.model.UpdateVolumeGroupBackupDetails updateVolumeGroupBackupDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -45,13 +46,14 @@ public class UpdateVolumeGroupBackupRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateVolumeGroupBackupDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateVolumeGroupBackupDetails getBody$() {
         return updateVolumeGroupBackupDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateVolumeGroupBackupRequest, UpdateVolumeGroupBackupDetails> {
+                    UpdateVolumeGroupBackupRequest,
+                    com.oracle.bmc.core.model.UpdateVolumeGroupBackupDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -115,7 +117,7 @@ public class UpdateVolumeGroupBackupRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateVolumeGroupBackupDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdateVolumeGroupBackupDetails body) {
             updateVolumeGroupBackupDetails(body);
             return this;
         }

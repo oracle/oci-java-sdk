@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateByoipRangeRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateByoipRangeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdateByoipRangeDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code ByoipRange} resource containing the BYOIP CIDR block.
@@ -28,7 +29,7 @@ public class UpdateByoipRangeRequest
     /**
      * Byoip Range details.
      */
-    private UpdateByoipRangeDetails updateByoipRangeDetails;
+    private com.oracle.bmc.core.model.UpdateByoipRangeDetails updateByoipRangeDetails;
 
     /**
      * Unique identifier for the request.
@@ -51,13 +52,13 @@ public class UpdateByoipRangeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateByoipRangeDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateByoipRangeDetails getBody$() {
         return updateByoipRangeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateByoipRangeRequest, UpdateByoipRangeDetails> {
+                    UpdateByoipRangeRequest, com.oracle.bmc.core.model.UpdateByoipRangeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +123,7 @@ public class UpdateByoipRangeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateByoipRangeDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdateByoipRangeDetails body) {
             updateByoipRangeDetails(body);
             return this;
         }

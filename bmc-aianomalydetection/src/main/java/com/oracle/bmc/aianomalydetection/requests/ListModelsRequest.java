@@ -34,7 +34,7 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      * state for the resource type.
      *
      */
-    private Model.LifecycleState lifecycleState;
+    private com.oracle.bmc.aianomalydetection.model.Model.LifecycleState lifecycleState;
 
     /**
      * A filter to return only resources that match the entire display name given.

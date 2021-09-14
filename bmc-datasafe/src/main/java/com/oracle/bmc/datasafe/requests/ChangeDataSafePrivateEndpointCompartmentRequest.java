@@ -19,7 +19,7 @@ import com.oracle.bmc.datasafe.model.*;
 @lombok.Getter
 public class ChangeDataSafePrivateEndpointCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
-                ChangeDataSafePrivateEndpointCompartmentDetails> {
+                com.oracle.bmc.datasafe.model.ChangeDataSafePrivateEndpointCompartmentDetails> {
 
     /**
      * The OCID of the private endpoint.
@@ -29,7 +29,7 @@ public class ChangeDataSafePrivateEndpointCompartmentRequest
     /**
      * The details used to change the compartment of a Data Safe private endpoint.
      */
-    private ChangeDataSafePrivateEndpointCompartmentDetails
+    private com.oracle.bmc.datasafe.model.ChangeDataSafePrivateEndpointCompartmentDetails
             changeDataSafePrivateEndpointCompartmentDetails;
 
     /**
@@ -53,14 +53,15 @@ public class ChangeDataSafePrivateEndpointCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeDataSafePrivateEndpointCompartmentDetails getBody$() {
+    public com.oracle.bmc.datasafe.model.ChangeDataSafePrivateEndpointCompartmentDetails
+            getBody$() {
         return changeDataSafePrivateEndpointCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeDataSafePrivateEndpointCompartmentRequest,
-                    ChangeDataSafePrivateEndpointCompartmentDetails> {
+                    com.oracle.bmc.datasafe.model.ChangeDataSafePrivateEndpointCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -127,7 +128,9 @@ public class ChangeDataSafePrivateEndpointCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeDataSafePrivateEndpointCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.datasafe.model.ChangeDataSafePrivateEndpointCompartmentDetails
+                        body) {
             changeDataSafePrivateEndpointCompartmentDetails(body);
             return this;
         }

@@ -57,7 +57,7 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
     /**
      * The state of a resource.
      */
-    private TsigKeySummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.dns.model.TsigKeySummary.LifecycleState lifecycleState;
 
     /**
      * The field by which to sort TSIG keys. If unspecified, defaults to {@code timeCreated}.

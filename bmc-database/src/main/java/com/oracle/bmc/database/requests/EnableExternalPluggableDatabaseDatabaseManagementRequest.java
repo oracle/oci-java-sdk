@@ -19,7 +19,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.Getter
 public class EnableExternalPluggableDatabaseDatabaseManagementRequest
         extends com.oracle.bmc.requests.BmcRequest<
-                EnableExternalPluggableDatabaseDatabaseManagementDetails> {
+                com.oracle.bmc.database.model
+                        .EnableExternalPluggableDatabaseDatabaseManagementDetails> {
 
     /**
      * The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -29,7 +30,7 @@ public class EnableExternalPluggableDatabaseDatabaseManagementRequest
     /**
      * Request to enable the Database Management Service for an external database.
      */
-    private EnableExternalPluggableDatabaseDatabaseManagementDetails
+    private com.oracle.bmc.database.model.EnableExternalPluggableDatabaseDatabaseManagementDetails
             enableExternalPluggableDatabaseDatabaseManagementDetails;
 
     /**
@@ -62,14 +63,16 @@ public class EnableExternalPluggableDatabaseDatabaseManagementRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public EnableExternalPluggableDatabaseDatabaseManagementDetails getBody$() {
+    public com.oracle.bmc.database.model.EnableExternalPluggableDatabaseDatabaseManagementDetails
+            getBody$() {
         return enableExternalPluggableDatabaseDatabaseManagementDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     EnableExternalPluggableDatabaseDatabaseManagementRequest,
-                    EnableExternalPluggableDatabaseDatabaseManagementDetails> {
+                    com.oracle.bmc.database.model
+                            .EnableExternalPluggableDatabaseDatabaseManagementDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -137,7 +140,10 @@ public class EnableExternalPluggableDatabaseDatabaseManagementRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(EnableExternalPluggableDatabaseDatabaseManagementDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model
+                                .EnableExternalPluggableDatabaseDatabaseManagementDetails
+                        body) {
             enableExternalPluggableDatabaseDatabaseManagementDetails(body);
             return this;
         }

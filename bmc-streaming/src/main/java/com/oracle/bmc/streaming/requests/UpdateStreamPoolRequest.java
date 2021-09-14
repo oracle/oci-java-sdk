@@ -18,7 +18,8 @@ import com.oracle.bmc.streaming.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateStreamPoolRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateStreamPoolDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.streaming.model.UpdateStreamPoolDetails> {
 
     /**
      * The OCID of the stream pool.
@@ -29,7 +30,7 @@ public class UpdateStreamPoolRequest
     /**
      * The pool is updated with the provided fields.
      */
-    private UpdateStreamPoolDetails updateStreamPoolDetails;
+    private com.oracle.bmc.streaming.model.UpdateStreamPoolDetails updateStreamPoolDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -49,13 +50,14 @@ public class UpdateStreamPoolRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateStreamPoolDetails getBody$() {
+    public com.oracle.bmc.streaming.model.UpdateStreamPoolDetails getBody$() {
         return updateStreamPoolDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateStreamPoolRequest, UpdateStreamPoolDetails> {
+                    UpdateStreamPoolRequest,
+                    com.oracle.bmc.streaming.model.UpdateStreamPoolDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -120,7 +122,7 @@ public class UpdateStreamPoolRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateStreamPoolDetails body) {
+        public Builder body$(com.oracle.bmc.streaming.model.UpdateStreamPoolDetails body) {
             updateStreamPoolDetails(body);
             return this;
         }

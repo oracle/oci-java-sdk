@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateLogAnalyticsObjectCollectionRuleRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateLogAnalyticsObjectCollectionRuleDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.CreateLogAnalyticsObjectCollectionRuleDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -29,7 +30,7 @@ public class CreateLogAnalyticsObjectCollectionRuleRequest
     /**
      * Details of the rule to be created.
      */
-    private CreateLogAnalyticsObjectCollectionRuleDetails
+    private com.oracle.bmc.loganalytics.model.CreateLogAnalyticsObjectCollectionRuleDetails
             createLogAnalyticsObjectCollectionRuleDetails;
 
     /**
@@ -43,7 +44,8 @@ public class CreateLogAnalyticsObjectCollectionRuleRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateLogAnalyticsObjectCollectionRuleDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.CreateLogAnalyticsObjectCollectionRuleDetails
+            getBody$() {
         return createLogAnalyticsObjectCollectionRuleDetails;
     }
 
@@ -55,7 +57,8 @@ public class CreateLogAnalyticsObjectCollectionRuleRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateLogAnalyticsObjectCollectionRuleRequest,
-                    CreateLogAnalyticsObjectCollectionRuleDetails> {
+                    com.oracle.bmc.loganalytics.model
+                            .CreateLogAnalyticsObjectCollectionRuleDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +124,9 @@ public class CreateLogAnalyticsObjectCollectionRuleRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateLogAnalyticsObjectCollectionRuleDetails body) {
+        public Builder body$(
+                com.oracle.bmc.loganalytics.model.CreateLogAnalyticsObjectCollectionRuleDetails
+                        body) {
             createLogAnalyticsObjectCollectionRuleDetails(body);
             return this;
         }

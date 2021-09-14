@@ -18,7 +18,8 @@ import com.oracle.bmc.datascience.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateModelProvenanceRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateModelProvenanceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datascience.model.UpdateModelProvenanceDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
@@ -28,7 +29,8 @@ public class UpdateModelProvenanceRequest
     /**
      * Provenance information for the specified model.
      */
-    private UpdateModelProvenanceDetails updateModelProvenanceDetails;
+    private com.oracle.bmc.datascience.model.UpdateModelProvenanceDetails
+            updateModelProvenanceDetails;
 
     /**
      * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -52,13 +54,14 @@ public class UpdateModelProvenanceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateModelProvenanceDetails getBody$() {
+    public com.oracle.bmc.datascience.model.UpdateModelProvenanceDetails getBody$() {
         return updateModelProvenanceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateModelProvenanceRequest, UpdateModelProvenanceDetails> {
+                    UpdateModelProvenanceRequest,
+                    com.oracle.bmc.datascience.model.UpdateModelProvenanceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +126,7 @@ public class UpdateModelProvenanceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateModelProvenanceDetails body) {
+        public Builder body$(com.oracle.bmc.datascience.model.UpdateModelProvenanceDetails body) {
             updateModelProvenanceDetails(body);
             return this;
         }

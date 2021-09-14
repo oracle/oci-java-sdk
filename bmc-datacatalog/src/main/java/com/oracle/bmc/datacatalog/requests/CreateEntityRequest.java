@@ -17,7 +17,9 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateEntityRequest extends com.oracle.bmc.requests.BmcRequest<CreateEntityDetails> {
+public class CreateEntityRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.CreateEntityDetails> {
 
     /**
      * Unique catalog identifier.
@@ -32,7 +34,7 @@ public class CreateEntityRequest extends com.oracle.bmc.requests.BmcRequest<Crea
     /**
      * The information used to create the data entity.
      */
-    private CreateEntityDetails createEntityDetails;
+    private com.oracle.bmc.datacatalog.model.CreateEntityDetails createEntityDetails;
 
     /**
      * The client request ID for tracing.
@@ -55,13 +57,13 @@ public class CreateEntityRequest extends com.oracle.bmc.requests.BmcRequest<Crea
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateEntityDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.CreateEntityDetails getBody$() {
         return createEntityDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateEntityRequest, CreateEntityDetails> {
+                    CreateEntityRequest, com.oracle.bmc.datacatalog.model.CreateEntityDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -127,7 +129,7 @@ public class CreateEntityRequest extends com.oracle.bmc.requests.BmcRequest<Crea
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateEntityDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.CreateEntityDetails body) {
             createEntityDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class AddNetworkSecurityGroupSecurityRulesRequest
-        extends com.oracle.bmc.requests.BmcRequest<AddNetworkSecurityGroupSecurityRulesDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.AddNetworkSecurityGroupSecurityRulesDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
@@ -28,7 +29,8 @@ public class AddNetworkSecurityGroupSecurityRulesRequest
     /**
      * Request with one or more security rules to be associated with the network security group.
      */
-    private AddNetworkSecurityGroupSecurityRulesDetails addNetworkSecurityGroupSecurityRulesDetails;
+    private com.oracle.bmc.core.model.AddNetworkSecurityGroupSecurityRulesDetails
+            addNetworkSecurityGroupSecurityRulesDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -36,14 +38,14 @@ public class AddNetworkSecurityGroupSecurityRulesRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public AddNetworkSecurityGroupSecurityRulesDetails getBody$() {
+    public com.oracle.bmc.core.model.AddNetworkSecurityGroupSecurityRulesDetails getBody$() {
         return addNetworkSecurityGroupSecurityRulesDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     AddNetworkSecurityGroupSecurityRulesRequest,
-                    AddNetworkSecurityGroupSecurityRulesDetails> {
+                    com.oracle.bmc.core.model.AddNetworkSecurityGroupSecurityRulesDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -107,7 +109,8 @@ public class AddNetworkSecurityGroupSecurityRulesRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(AddNetworkSecurityGroupSecurityRulesDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.AddNetworkSecurityGroupSecurityRulesDetails body) {
             addNetworkSecurityGroupSecurityRulesDetails(body);
             return this;
         }

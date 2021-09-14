@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RemoveDrgRouteDistributionStatementsRequest
-        extends com.oracle.bmc.requests.BmcRequest<RemoveDrgRouteDistributionStatementsDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.RemoveDrgRouteDistributionStatementsDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
@@ -29,7 +30,8 @@ public class RemoveDrgRouteDistributionStatementsRequest
      * Request with one or more route distribution statements to remove from the route distribution.
      *
      */
-    private RemoveDrgRouteDistributionStatementsDetails removeDrgRouteDistributionStatementsDetails;
+    private com.oracle.bmc.core.model.RemoveDrgRouteDistributionStatementsDetails
+            removeDrgRouteDistributionStatementsDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -37,14 +39,14 @@ public class RemoveDrgRouteDistributionStatementsRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RemoveDrgRouteDistributionStatementsDetails getBody$() {
+    public com.oracle.bmc.core.model.RemoveDrgRouteDistributionStatementsDetails getBody$() {
         return removeDrgRouteDistributionStatementsDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     RemoveDrgRouteDistributionStatementsRequest,
-                    RemoveDrgRouteDistributionStatementsDetails> {
+                    com.oracle.bmc.core.model.RemoveDrgRouteDistributionStatementsDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -108,7 +110,8 @@ public class RemoveDrgRouteDistributionStatementsRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RemoveDrgRouteDistributionStatementsDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.RemoveDrgRouteDistributionStatementsDetails body) {
             removeDrgRouteDistributionStatementsDetails(body);
             return this;
         }

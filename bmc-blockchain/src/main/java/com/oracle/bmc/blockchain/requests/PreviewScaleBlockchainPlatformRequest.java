@@ -18,7 +18,8 @@ import com.oracle.bmc.blockchain.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class PreviewScaleBlockchainPlatformRequest
-        extends com.oracle.bmc.requests.BmcRequest<ScaleBlockchainPlatformDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.blockchain.model.ScaleBlockchainPlatformDetails> {
 
     /**
      * Unique service identifier.
@@ -29,7 +30,8 @@ public class PreviewScaleBlockchainPlatformRequest
      * Input payload to scaleout blockchain platform. The payload cannot be empty.
      *
      */
-    private ScaleBlockchainPlatformDetails scaleBlockchainPlatformDetails;
+    private com.oracle.bmc.blockchain.model.ScaleBlockchainPlatformDetails
+            scaleBlockchainPlatformDetails;
 
     /**
      * The client request ID for tracing.
@@ -42,13 +44,14 @@ public class PreviewScaleBlockchainPlatformRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ScaleBlockchainPlatformDetails getBody$() {
+    public com.oracle.bmc.blockchain.model.ScaleBlockchainPlatformDetails getBody$() {
         return scaleBlockchainPlatformDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    PreviewScaleBlockchainPlatformRequest, ScaleBlockchainPlatformDetails> {
+                    PreviewScaleBlockchainPlatformRequest,
+                    com.oracle.bmc.blockchain.model.ScaleBlockchainPlatformDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -112,7 +115,7 @@ public class PreviewScaleBlockchainPlatformRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ScaleBlockchainPlatformDetails body) {
+        public Builder body$(com.oracle.bmc.blockchain.model.ScaleBlockchainPlatformDetails body) {
             scaleBlockchainPlatformDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateMetastoreRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateMetastoreDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.UpdateMetastoreDetails> {
 
     /**
      * The metastore's OCID.
@@ -28,7 +29,7 @@ public class UpdateMetastoreRequest
     /**
      * The metastore information to be updated.
      */
-    private UpdateMetastoreDetails updateMetastoreDetails;
+    private com.oracle.bmc.datacatalog.model.UpdateMetastoreDetails updateMetastoreDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -51,13 +52,14 @@ public class UpdateMetastoreRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateMetastoreDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.UpdateMetastoreDetails getBody$() {
         return updateMetastoreDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateMetastoreRequest, UpdateMetastoreDetails> {
+                    UpdateMetastoreRequest,
+                    com.oracle.bmc.datacatalog.model.UpdateMetastoreDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +124,7 @@ public class UpdateMetastoreRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateMetastoreDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.UpdateMetastoreDetails body) {
             updateMetastoreDetails(body);
             return this;
         }

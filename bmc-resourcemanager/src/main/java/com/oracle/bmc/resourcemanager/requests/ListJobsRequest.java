@@ -57,7 +57,7 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      * - CANCELED
      *
      */
-    private Job.LifecycleState lifecycleState;
+    private com.oracle.bmc.resourcemanager.model.Job.LifecycleState lifecycleState;
 
     /**
      * A filter to return only resources that match the given display name exactly.

@@ -17,7 +17,9 @@ import com.oracle.bmc.identity.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateUserStateRequest extends com.oracle.bmc.requests.BmcRequest<UpdateStateDetails> {
+public class UpdateUserStateRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.UpdateStateDetails> {
 
     /**
      * The OCID of the user.
@@ -27,7 +29,7 @@ public class UpdateUserStateRequest extends com.oracle.bmc.requests.BmcRequest<U
     /**
      * Request object for updating a user state.
      */
-    private UpdateStateDetails updateStateDetails;
+    private com.oracle.bmc.identity.model.UpdateStateDetails updateStateDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -43,13 +45,13 @@ public class UpdateUserStateRequest extends com.oracle.bmc.requests.BmcRequest<U
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateStateDetails getBody$() {
+    public com.oracle.bmc.identity.model.UpdateStateDetails getBody$() {
         return updateStateDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateUserStateRequest, UpdateStateDetails> {
+                    UpdateUserStateRequest, com.oracle.bmc.identity.model.UpdateStateDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -113,7 +115,7 @@ public class UpdateUserStateRequest extends com.oracle.bmc.requests.BmcRequest<U
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateStateDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.UpdateStateDetails body) {
             updateStateDetails(body);
             return this;
         }

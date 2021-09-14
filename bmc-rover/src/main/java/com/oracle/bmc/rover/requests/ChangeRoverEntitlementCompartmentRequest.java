@@ -18,7 +18,8 @@ import com.oracle.bmc.rover.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeRoverEntitlementCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeRoverEntitlementCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.rover.model.ChangeRoverEntitlementCompartmentDetails> {
 
     /**
      * ID of the rover node or cluster entitlement
@@ -28,7 +29,8 @@ public class ChangeRoverEntitlementCompartmentRequest
     /**
      * CompartmentId of the destination compartment
      */
-    private ChangeRoverEntitlementCompartmentDetails changeRoverEntitlementCompartmentDetails;
+    private com.oracle.bmc.rover.model.ChangeRoverEntitlementCompartmentDetails
+            changeRoverEntitlementCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -61,14 +63,14 @@ public class ChangeRoverEntitlementCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeRoverEntitlementCompartmentDetails getBody$() {
+    public com.oracle.bmc.rover.model.ChangeRoverEntitlementCompartmentDetails getBody$() {
         return changeRoverEntitlementCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeRoverEntitlementCompartmentRequest,
-                    ChangeRoverEntitlementCompartmentDetails> {
+                    com.oracle.bmc.rover.model.ChangeRoverEntitlementCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -135,7 +137,8 @@ public class ChangeRoverEntitlementCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeRoverEntitlementCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.rover.model.ChangeRoverEntitlementCompartmentDetails body) {
             changeRoverEntitlementCompartmentDetails(body);
             return this;
         }

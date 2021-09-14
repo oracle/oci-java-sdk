@@ -43,7 +43,7 @@ public class ListGatewaysRequest extends com.oracle.bmc.requests.BmcRequest<java
      * Example: {@code SUCCEEDED}
      *
      */
-    private Gateway.LifecycleState lifecycleState;
+    private com.oracle.bmc.apigateway.model.Gateway.LifecycleState lifecycleState;
 
     /**
      * The maximum number of items to return.

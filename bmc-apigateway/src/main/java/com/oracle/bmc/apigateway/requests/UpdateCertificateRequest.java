@@ -18,7 +18,8 @@ import com.oracle.bmc.apigateway.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateCertificateRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateCertificateDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.apigateway.model.UpdateCertificateDetails> {
 
     /**
      * The ocid of the certificate.
@@ -28,7 +29,7 @@ public class UpdateCertificateRequest
     /**
      * The information to be updated.
      */
-    private UpdateCertificateDetails updateCertificateDetails;
+    private com.oracle.bmc.apigateway.model.UpdateCertificateDetails updateCertificateDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -51,13 +52,14 @@ public class UpdateCertificateRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateCertificateDetails getBody$() {
+    public com.oracle.bmc.apigateway.model.UpdateCertificateDetails getBody$() {
         return updateCertificateDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateCertificateRequest, UpdateCertificateDetails> {
+                    UpdateCertificateRequest,
+                    com.oracle.bmc.apigateway.model.UpdateCertificateDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +124,7 @@ public class UpdateCertificateRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateCertificateDetails body) {
+        public Builder body$(com.oracle.bmc.apigateway.model.UpdateCertificateDetails body) {
             updateCertificateDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.waas.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateCertificateRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateCertificateDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.waas.model.UpdateCertificateDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SSL certificate used in the WAAS policy. This number is generated when the certificate is added to the policy.
@@ -38,7 +39,7 @@ public class UpdateCertificateRequest
     /**
      * The new display name, freeform tags, and defined tags to apply to a certificate.
      */
-    private UpdateCertificateDetails updateCertificateDetails;
+    private com.oracle.bmc.waas.model.UpdateCertificateDetails updateCertificateDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -46,13 +47,13 @@ public class UpdateCertificateRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateCertificateDetails getBody$() {
+    public com.oracle.bmc.waas.model.UpdateCertificateDetails getBody$() {
         return updateCertificateDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateCertificateRequest, UpdateCertificateDetails> {
+                    UpdateCertificateRequest, com.oracle.bmc.waas.model.UpdateCertificateDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +118,7 @@ public class UpdateCertificateRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateCertificateDetails body) {
+        public Builder body$(com.oracle.bmc.waas.model.UpdateCertificateDetails body) {
             updateCertificateDetails(body);
             return this;
         }

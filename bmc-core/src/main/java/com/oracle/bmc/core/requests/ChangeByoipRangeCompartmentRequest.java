@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeByoipRangeCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeByoipRangeCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.ChangeByoipRangeCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code ByoipRange} resource containing the BYOIP CIDR block.
@@ -28,7 +29,8 @@ public class ChangeByoipRangeCompartmentRequest
     /**
      * Request to change the compartment of a BYOIP CIDR block.
      */
-    private ChangeByoipRangeCompartmentDetails changeByoipRangeCompartmentDetails;
+    private com.oracle.bmc.core.model.ChangeByoipRangeCompartmentDetails
+            changeByoipRangeCompartmentDetails;
 
     /**
      * Unique identifier for the request.
@@ -53,13 +55,14 @@ public class ChangeByoipRangeCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeByoipRangeCompartmentDetails getBody$() {
+    public com.oracle.bmc.core.model.ChangeByoipRangeCompartmentDetails getBody$() {
         return changeByoipRangeCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeByoipRangeCompartmentRequest, ChangeByoipRangeCompartmentDetails> {
+                    ChangeByoipRangeCompartmentRequest,
+                    com.oracle.bmc.core.model.ChangeByoipRangeCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +127,7 @@ public class ChangeByoipRangeCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeByoipRangeCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.ChangeByoipRangeCompartmentDetails body) {
             changeByoipRangeCompartmentDetails(body);
             return this;
         }

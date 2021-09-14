@@ -18,7 +18,8 @@ import com.oracle.bmc.sch.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeServiceConnectorCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeServiceConnectorCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.sch.model.ChangeServiceConnectorCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
@@ -30,7 +31,8 @@ public class ChangeServiceConnectorCompartmentRequest
      * The configuration details for moving a service connector to a different compartment.
      *
      */
-    private ChangeServiceConnectorCompartmentDetails changeServiceConnectorCompartmentDetails;
+    private com.oracle.bmc.sch.model.ChangeServiceConnectorCompartmentDetails
+            changeServiceConnectorCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -55,14 +57,14 @@ public class ChangeServiceConnectorCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeServiceConnectorCompartmentDetails getBody$() {
+    public com.oracle.bmc.sch.model.ChangeServiceConnectorCompartmentDetails getBody$() {
         return changeServiceConnectorCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeServiceConnectorCompartmentRequest,
-                    ChangeServiceConnectorCompartmentDetails> {
+                    com.oracle.bmc.sch.model.ChangeServiceConnectorCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -128,7 +130,8 @@ public class ChangeServiceConnectorCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeServiceConnectorCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.sch.model.ChangeServiceConnectorCompartmentDetails body) {
             changeServiceConnectorCompartmentDetails(body);
             return this;
         }

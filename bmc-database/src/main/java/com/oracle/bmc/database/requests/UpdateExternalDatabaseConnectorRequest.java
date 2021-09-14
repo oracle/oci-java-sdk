@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateExternalDatabaseConnectorRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateExternalDatabaseConnectorDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.UpdateExternalDatabaseConnectorDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
@@ -30,7 +31,8 @@ public class UpdateExternalDatabaseConnectorRequest
     /**
      * Request to update the properties of an external database connector.
      */
-    private UpdateExternalDatabaseConnectorDetails updateExternalDatabaseConnectorDetails;
+    private com.oracle.bmc.database.model.UpdateExternalDatabaseConnectorDetails
+            updateExternalDatabaseConnectorDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -52,14 +54,14 @@ public class UpdateExternalDatabaseConnectorRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateExternalDatabaseConnectorDetails getBody$() {
+    public com.oracle.bmc.database.model.UpdateExternalDatabaseConnectorDetails getBody$() {
         return updateExternalDatabaseConnectorDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateExternalDatabaseConnectorRequest,
-                    UpdateExternalDatabaseConnectorDetails> {
+                    com.oracle.bmc.database.model.UpdateExternalDatabaseConnectorDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,8 @@ public class UpdateExternalDatabaseConnectorRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateExternalDatabaseConnectorDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.UpdateExternalDatabaseConnectorDetails body) {
             updateExternalDatabaseConnectorDetails(body);
             return this;
         }

@@ -17,7 +17,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateVlanRequest extends com.oracle.bmc.requests.BmcRequest<UpdateVlanDetails> {
+public class UpdateVlanRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.UpdateVlanDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
@@ -27,7 +28,7 @@ public class UpdateVlanRequest extends com.oracle.bmc.requests.BmcRequest<Update
     /**
      * Details object for updating a subnet.
      */
-    private UpdateVlanDetails updateVlanDetails;
+    private com.oracle.bmc.core.model.UpdateVlanDetails updateVlanDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -50,13 +51,13 @@ public class UpdateVlanRequest extends com.oracle.bmc.requests.BmcRequest<Update
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateVlanDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateVlanDetails getBody$() {
         return updateVlanDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateVlanRequest, UpdateVlanDetails> {
+                    UpdateVlanRequest, com.oracle.bmc.core.model.UpdateVlanDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +122,7 @@ public class UpdateVlanRequest extends com.oracle.bmc.requests.BmcRequest<Update
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateVlanDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdateVlanDetails body) {
             updateVlanDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.filestorage.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeFileSystemCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeFileSystemCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.filestorage.model.ChangeFileSystemCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system.
@@ -28,7 +29,8 @@ public class ChangeFileSystemCompartmentRequest
     /**
      * Details for changing the compartment.
      */
-    private ChangeFileSystemCompartmentDetails changeFileSystemCompartmentDetails;
+    private com.oracle.bmc.filestorage.model.ChangeFileSystemCompartmentDetails
+            changeFileSystemCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -53,13 +55,14 @@ public class ChangeFileSystemCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeFileSystemCompartmentDetails getBody$() {
+    public com.oracle.bmc.filestorage.model.ChangeFileSystemCompartmentDetails getBody$() {
         return changeFileSystemCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeFileSystemCompartmentRequest, ChangeFileSystemCompartmentDetails> {
+                    ChangeFileSystemCompartmentRequest,
+                    com.oracle.bmc.filestorage.model.ChangeFileSystemCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +127,8 @@ public class ChangeFileSystemCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeFileSystemCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.filestorage.model.ChangeFileSystemCompartmentDetails body) {
             changeFileSystemCompartmentDetails(body);
             return this;
         }

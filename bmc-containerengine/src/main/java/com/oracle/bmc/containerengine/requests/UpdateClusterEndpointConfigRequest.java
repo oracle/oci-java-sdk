@@ -18,7 +18,8 @@ import com.oracle.bmc.containerengine.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateClusterEndpointConfigRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateClusterEndpointConfigDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.containerengine.model.UpdateClusterEndpointConfigDetails> {
 
     /**
      * The OCID of the cluster.
@@ -28,7 +29,8 @@ public class UpdateClusterEndpointConfigRequest
     /**
      * The details of the cluster's endpoint to update.
      */
-    private UpdateClusterEndpointConfigDetails updateClusterEndpointConfigDetails;
+    private com.oracle.bmc.containerengine.model.UpdateClusterEndpointConfigDetails
+            updateClusterEndpointConfigDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -51,13 +53,14 @@ public class UpdateClusterEndpointConfigRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateClusterEndpointConfigDetails getBody$() {
+    public com.oracle.bmc.containerengine.model.UpdateClusterEndpointConfigDetails getBody$() {
         return updateClusterEndpointConfigDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateClusterEndpointConfigRequest, UpdateClusterEndpointConfigDetails> {
+                    UpdateClusterEndpointConfigRequest,
+                    com.oracle.bmc.containerengine.model.UpdateClusterEndpointConfigDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,8 @@ public class UpdateClusterEndpointConfigRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateClusterEndpointConfigDetails body) {
+        public Builder body$(
+                com.oracle.bmc.containerengine.model.UpdateClusterEndpointConfigDetails body) {
             updateClusterEndpointConfigDetails(body);
             return this;
         }

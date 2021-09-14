@@ -17,7 +17,9 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateStorageRequest extends com.oracle.bmc.requests.BmcRequest<UpdateStorageDetails> {
+public class UpdateStorageRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.UpdateStorageDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -28,7 +30,7 @@ public class UpdateStorageRequest extends com.oracle.bmc.requests.BmcRequest<Upd
     /**
      * This is the archiving configuration
      */
-    private UpdateStorageDetails updateStorageDetails;
+    private com.oracle.bmc.loganalytics.model.UpdateStorageDetails updateStorageDetails;
 
     /**
      * The client request ID for tracing.
@@ -51,7 +53,7 @@ public class UpdateStorageRequest extends com.oracle.bmc.requests.BmcRequest<Upd
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateStorageDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.UpdateStorageDetails getBody$() {
         return updateStorageDetails;
     }
 
@@ -62,7 +64,7 @@ public class UpdateStorageRequest extends com.oracle.bmc.requests.BmcRequest<Upd
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateStorageRequest, UpdateStorageDetails> {
+                    UpdateStorageRequest, com.oracle.bmc.loganalytics.model.UpdateStorageDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -127,7 +129,7 @@ public class UpdateStorageRequest extends com.oracle.bmc.requests.BmcRequest<Upd
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateStorageDetails body) {
+        public Builder body$(com.oracle.bmc.loganalytics.model.UpdateStorageDetails body) {
             updateStorageDetails(body);
             return this;
         }

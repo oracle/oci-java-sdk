@@ -18,7 +18,8 @@ import com.oracle.bmc.databasemanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateDbManagementPrivateEndpointRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateDbManagementPrivateEndpointDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.databasemanagement.model.UpdateDbManagementPrivateEndpointDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
@@ -28,7 +29,8 @@ public class UpdateDbManagementPrivateEndpointRequest
     /**
      * The details used to update a Database Management private endpoint.
      */
-    private UpdateDbManagementPrivateEndpointDetails updateDbManagementPrivateEndpointDetails;
+    private com.oracle.bmc.databasemanagement.model.UpdateDbManagementPrivateEndpointDetails
+            updateDbManagementPrivateEndpointDetails;
 
     /**
      * The client request ID for tracing.
@@ -51,14 +53,16 @@ public class UpdateDbManagementPrivateEndpointRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDbManagementPrivateEndpointDetails getBody$() {
+    public com.oracle.bmc.databasemanagement.model.UpdateDbManagementPrivateEndpointDetails
+            getBody$() {
         return updateDbManagementPrivateEndpointDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateDbManagementPrivateEndpointRequest,
-                    UpdateDbManagementPrivateEndpointDetails> {
+                    com.oracle.bmc.databasemanagement.model
+                            .UpdateDbManagementPrivateEndpointDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +128,9 @@ public class UpdateDbManagementPrivateEndpointRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDbManagementPrivateEndpointDetails body) {
+        public Builder body$(
+                com.oracle.bmc.databasemanagement.model.UpdateDbManagementPrivateEndpointDetails
+                        body) {
             updateDbManagementPrivateEndpointDetails(body);
             return this;
         }

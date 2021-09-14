@@ -18,7 +18,8 @@ import com.oracle.bmc.dns.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeSteeringPolicyCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeSteeringPolicyCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dns.model.ChangeSteeringPolicyCompartmentDetails> {
 
     /**
      * The OCID of the target steering policy.
@@ -28,7 +29,8 @@ public class ChangeSteeringPolicyCompartmentRequest
     /**
      * Details for moving a steering policy into a different compartment.
      */
-    private ChangeSteeringPolicyCompartmentDetails changeSteeringPolicyCompartmentDetails;
+    private com.oracle.bmc.dns.model.ChangeSteeringPolicyCompartmentDetails
+            changeSteeringPolicyCompartmentDetails;
 
     /**
      * The {@code If-Match} header field makes the request method conditional on the
@@ -71,14 +73,14 @@ public class ChangeSteeringPolicyCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeSteeringPolicyCompartmentDetails getBody$() {
+    public com.oracle.bmc.dns.model.ChangeSteeringPolicyCompartmentDetails getBody$() {
         return changeSteeringPolicyCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeSteeringPolicyCompartmentRequest,
-                    ChangeSteeringPolicyCompartmentDetails> {
+                    com.oracle.bmc.dns.model.ChangeSteeringPolicyCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -145,7 +147,7 @@ public class ChangeSteeringPolicyCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeSteeringPolicyCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.dns.model.ChangeSteeringPolicyCompartmentDetails body) {
             changeSteeringPolicyCompartmentDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ValidateConnectionRequest
-        extends com.oracle.bmc.requests.BmcRequest<ValidateConnectionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.ValidateConnectionDetails> {
 
     /**
      * Unique catalog identifier.
@@ -33,7 +34,7 @@ public class ValidateConnectionRequest
     /**
      * The information used to validate the connections.
      */
-    private ValidateConnectionDetails validateConnectionDetails;
+    private com.oracle.bmc.datacatalog.model.ValidateConnectionDetails validateConnectionDetails;
 
     /**
      * The client request ID for tracing.
@@ -56,13 +57,14 @@ public class ValidateConnectionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ValidateConnectionDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.ValidateConnectionDetails getBody$() {
         return validateConnectionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ValidateConnectionRequest, ValidateConnectionDetails> {
+                    ValidateConnectionRequest,
+                    com.oracle.bmc.datacatalog.model.ValidateConnectionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -128,7 +130,7 @@ public class ValidateConnectionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ValidateConnectionDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.ValidateConnectionDetails body) {
             validateConnectionDetails(body);
             return this;
         }

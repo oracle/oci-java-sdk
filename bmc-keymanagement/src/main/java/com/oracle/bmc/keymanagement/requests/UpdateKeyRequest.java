@@ -17,7 +17,9 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateKeyRequest extends com.oracle.bmc.requests.BmcRequest<UpdateKeyDetails> {
+public class UpdateKeyRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.keymanagement.model.UpdateKeyDetails> {
 
     /**
      * The OCID of the key.
@@ -27,7 +29,7 @@ public class UpdateKeyRequest extends com.oracle.bmc.requests.BmcRequest<UpdateK
     /**
      * UpdateKeyDetails
      */
-    private UpdateKeyDetails updateKeyDetails;
+    private com.oracle.bmc.keymanagement.model.UpdateKeyDetails updateKeyDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
@@ -53,13 +55,13 @@ public class UpdateKeyRequest extends com.oracle.bmc.requests.BmcRequest<UpdateK
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateKeyDetails getBody$() {
+    public com.oracle.bmc.keymanagement.model.UpdateKeyDetails getBody$() {
         return updateKeyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateKeyRequest, UpdateKeyDetails> {
+                    UpdateKeyRequest, com.oracle.bmc.keymanagement.model.UpdateKeyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class UpdateKeyRequest extends com.oracle.bmc.requests.BmcRequest<UpdateK
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateKeyDetails body) {
+        public Builder body$(com.oracle.bmc.keymanagement.model.UpdateKeyDetails body) {
             updateKeyDetails(body);
             return this;
         }

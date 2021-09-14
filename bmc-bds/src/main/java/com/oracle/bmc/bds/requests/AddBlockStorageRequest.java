@@ -18,7 +18,8 @@ import com.oracle.bmc.bds.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class AddBlockStorageRequest
-        extends com.oracle.bmc.requests.BmcRequest<AddBlockStorageDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.bds.model.AddBlockStorageDetails> {
 
     /**
      * The OCID of the cluster.
@@ -28,7 +29,7 @@ public class AddBlockStorageRequest
     /**
      * Details for the added block storage.
      */
-    private AddBlockStorageDetails addBlockStorageDetails;
+    private com.oracle.bmc.bds.model.AddBlockStorageDetails addBlockStorageDetails;
 
     /**
      * The client request ID for tracing.
@@ -61,13 +62,13 @@ public class AddBlockStorageRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public AddBlockStorageDetails getBody$() {
+    public com.oracle.bmc.bds.model.AddBlockStorageDetails getBody$() {
         return addBlockStorageDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    AddBlockStorageRequest, AddBlockStorageDetails> {
+                    AddBlockStorageRequest, com.oracle.bmc.bds.model.AddBlockStorageDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +134,7 @@ public class AddBlockStorageRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(AddBlockStorageDetails body) {
+        public Builder body$(com.oracle.bmc.bds.model.AddBlockStorageDetails body) {
             addBlockStorageDetails(body);
             return this;
         }

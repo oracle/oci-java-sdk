@@ -17,7 +17,8 @@ import com.oracle.bmc.mysql.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateBackupRequest extends com.oracle.bmc.requests.BmcRequest<UpdateBackupDetails> {
+public class UpdateBackupRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.mysql.model.UpdateBackupDetails> {
 
     /**
      * The OCID of the Backup
@@ -27,7 +28,7 @@ public class UpdateBackupRequest extends com.oracle.bmc.requests.BmcRequest<Upda
     /**
      * Request to update a Backup's metadata.
      */
-    private UpdateBackupDetails updateBackupDetails;
+    private com.oracle.bmc.mysql.model.UpdateBackupDetails updateBackupDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
@@ -53,13 +54,13 @@ public class UpdateBackupRequest extends com.oracle.bmc.requests.BmcRequest<Upda
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateBackupDetails getBody$() {
+    public com.oracle.bmc.mysql.model.UpdateBackupDetails getBody$() {
         return updateBackupDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateBackupRequest, UpdateBackupDetails> {
+                    UpdateBackupRequest, com.oracle.bmc.mysql.model.UpdateBackupDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +125,7 @@ public class UpdateBackupRequest extends com.oracle.bmc.requests.BmcRequest<Upda
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateBackupDetails body) {
+        public Builder body$(com.oracle.bmc.mysql.model.UpdateBackupDetails body) {
             updateBackupDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.ons.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeSubscriptionCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.ons.model.ChangeCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to move.
@@ -29,7 +30,7 @@ public class ChangeSubscriptionCompartmentRequest
     /**
      * The configuration details for the move operation.
      */
-    private ChangeCompartmentDetails changeSubscriptionCompartmentDetails;
+    private com.oracle.bmc.ons.model.ChangeCompartmentDetails changeSubscriptionCompartmentDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -62,13 +63,14 @@ public class ChangeSubscriptionCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeCompartmentDetails getBody$() {
+    public com.oracle.bmc.ons.model.ChangeCompartmentDetails getBody$() {
         return changeSubscriptionCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeSubscriptionCompartmentRequest, ChangeCompartmentDetails> {
+                    ChangeSubscriptionCompartmentRequest,
+                    com.oracle.bmc.ons.model.ChangeCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +136,7 @@ public class ChangeSubscriptionCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.ons.model.ChangeCompartmentDetails body) {
             changeSubscriptionCompartmentDetails(body);
             return this;
         }

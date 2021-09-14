@@ -18,7 +18,8 @@ import com.oracle.bmc.datascience.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateModelDeploymentRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateModelDeploymentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datascience.model.UpdateModelDeploymentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment.
@@ -32,7 +33,8 @@ public class UpdateModelDeploymentRequest
      * time the model deployment is activated.
      *
      */
-    private UpdateModelDeploymentDetails updateModelDeploymentDetails;
+    private com.oracle.bmc.datascience.model.UpdateModelDeploymentDetails
+            updateModelDeploymentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -56,13 +58,14 @@ public class UpdateModelDeploymentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateModelDeploymentDetails getBody$() {
+    public com.oracle.bmc.datascience.model.UpdateModelDeploymentDetails getBody$() {
         return updateModelDeploymentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateModelDeploymentRequest, UpdateModelDeploymentDetails> {
+                    UpdateModelDeploymentRequest,
+                    com.oracle.bmc.datascience.model.UpdateModelDeploymentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -127,7 +130,7 @@ public class UpdateModelDeploymentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateModelDeploymentDetails body) {
+        public Builder body$(com.oracle.bmc.datascience.model.UpdateModelDeploymentDetails body) {
             updateModelDeploymentDetails(body);
             return this;
         }

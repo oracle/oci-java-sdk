@@ -17,7 +17,9 @@ import com.oracle.bmc.blockchain.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateOsnRequest extends com.oracle.bmc.requests.BmcRequest<CreateOsnDetails> {
+public class CreateOsnRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.blockchain.model.CreateOsnDetails> {
 
     /**
      * Unique service identifier.
@@ -28,7 +30,7 @@ public class CreateOsnRequest extends com.oracle.bmc.requests.BmcRequest<CreateO
      * Input payload to create blockchain platform OSN. The payload cannot be empty.
      *
      */
-    private CreateOsnDetails createOsnDetails;
+    private com.oracle.bmc.blockchain.model.CreateOsnDetails createOsnDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -61,13 +63,13 @@ public class CreateOsnRequest extends com.oracle.bmc.requests.BmcRequest<CreateO
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateOsnDetails getBody$() {
+    public com.oracle.bmc.blockchain.model.CreateOsnDetails getBody$() {
         return createOsnDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateOsnRequest, CreateOsnDetails> {
+                    CreateOsnRequest, com.oracle.bmc.blockchain.model.CreateOsnDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +135,7 @@ public class CreateOsnRequest extends com.oracle.bmc.requests.BmcRequest<CreateO
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateOsnDetails body) {
+        public Builder body$(com.oracle.bmc.blockchain.model.CreateOsnDetails body) {
             createOsnDetails(body);
             return this;
         }

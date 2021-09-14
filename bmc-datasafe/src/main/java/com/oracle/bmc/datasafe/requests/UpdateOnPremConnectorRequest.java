@@ -18,7 +18,8 @@ import com.oracle.bmc.datasafe.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateOnPremConnectorRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateOnPremConnectorDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datasafe.model.UpdateOnPremConnectorDetails> {
 
     /**
      * The OCID of the on-premises connector.
@@ -28,7 +29,7 @@ public class UpdateOnPremConnectorRequest
     /**
      * The details used to update a on-premises connector.
      */
-    private UpdateOnPremConnectorDetails updateOnPremConnectorDetails;
+    private com.oracle.bmc.datasafe.model.UpdateOnPremConnectorDetails updateOnPremConnectorDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -51,13 +52,14 @@ public class UpdateOnPremConnectorRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateOnPremConnectorDetails getBody$() {
+    public com.oracle.bmc.datasafe.model.UpdateOnPremConnectorDetails getBody$() {
         return updateOnPremConnectorDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateOnPremConnectorRequest, UpdateOnPremConnectorDetails> {
+                    UpdateOnPremConnectorRequest,
+                    com.oracle.bmc.datasafe.model.UpdateOnPremConnectorDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +124,7 @@ public class UpdateOnPremConnectorRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateOnPremConnectorDetails body) {
+        public Builder body$(com.oracle.bmc.datasafe.model.UpdateOnPremConnectorDetails body) {
             updateOnPremConnectorDetails(body);
             return this;
         }

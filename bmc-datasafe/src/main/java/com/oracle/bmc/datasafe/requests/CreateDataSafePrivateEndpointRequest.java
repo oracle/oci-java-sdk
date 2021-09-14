@@ -18,12 +18,14 @@ import com.oracle.bmc.datasafe.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateDataSafePrivateEndpointRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateDataSafePrivateEndpointDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datasafe.model.CreateDataSafePrivateEndpointDetails> {
 
     /**
      * Details to create a new private endpoint.
      */
-    private CreateDataSafePrivateEndpointDetails createDataSafePrivateEndpointDetails;
+    private com.oracle.bmc.datasafe.model.CreateDataSafePrivateEndpointDetails
+            createDataSafePrivateEndpointDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -45,13 +47,14 @@ public class CreateDataSafePrivateEndpointRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateDataSafePrivateEndpointDetails getBody$() {
+    public com.oracle.bmc.datasafe.model.CreateDataSafePrivateEndpointDetails getBody$() {
         return createDataSafePrivateEndpointDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateDataSafePrivateEndpointRequest, CreateDataSafePrivateEndpointDetails> {
+                    CreateDataSafePrivateEndpointRequest,
+                    com.oracle.bmc.datasafe.model.CreateDataSafePrivateEndpointDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -115,7 +118,8 @@ public class CreateDataSafePrivateEndpointRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateDataSafePrivateEndpointDetails body) {
+        public Builder body$(
+                com.oracle.bmc.datasafe.model.CreateDataSafePrivateEndpointDetails body) {
             createDataSafePrivateEndpointDetails(body);
             return this;
         }

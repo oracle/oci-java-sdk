@@ -17,7 +17,9 @@ import com.oracle.bmc.mysql.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateChannelRequest extends com.oracle.bmc.requests.BmcRequest<UpdateChannelDetails> {
+public class UpdateChannelRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.mysql.model.UpdateChannelDetails> {
 
     /**
      * The Channel [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -27,7 +29,7 @@ public class UpdateChannelRequest extends com.oracle.bmc.requests.BmcRequest<Upd
     /**
      * The parameters of the request to update the Channel.
      */
-    private UpdateChannelDetails updateChannelDetails;
+    private com.oracle.bmc.mysql.model.UpdateChannelDetails updateChannelDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
@@ -64,13 +66,13 @@ public class UpdateChannelRequest extends com.oracle.bmc.requests.BmcRequest<Upd
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateChannelDetails getBody$() {
+    public com.oracle.bmc.mysql.model.UpdateChannelDetails getBody$() {
         return updateChannelDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateChannelRequest, UpdateChannelDetails> {
+                    UpdateChannelRequest, com.oracle.bmc.mysql.model.UpdateChannelDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -136,7 +138,7 @@ public class UpdateChannelRequest extends com.oracle.bmc.requests.BmcRequest<Upd
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateChannelDetails body) {
+        public Builder body$(com.oracle.bmc.mysql.model.UpdateChannelDetails body) {
             updateChannelDetails(body);
             return this;
         }

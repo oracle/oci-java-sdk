@@ -18,7 +18,8 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateDataAssetRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateDataAssetDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.UpdateDataAssetDetails> {
 
     /**
      * Unique catalog identifier.
@@ -33,7 +34,7 @@ public class UpdateDataAssetRequest
     /**
      * The information to be updated in the data asset.
      */
-    private UpdateDataAssetDetails updateDataAssetDetails;
+    private com.oracle.bmc.datacatalog.model.UpdateDataAssetDetails updateDataAssetDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -56,13 +57,14 @@ public class UpdateDataAssetRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDataAssetDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.UpdateDataAssetDetails getBody$() {
         return updateDataAssetDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateDataAssetRequest, UpdateDataAssetDetails> {
+                    UpdateDataAssetRequest,
+                    com.oracle.bmc.datacatalog.model.UpdateDataAssetDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -128,7 +130,7 @@ public class UpdateDataAssetRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDataAssetDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.UpdateDataAssetDetails body) {
             updateDataAssetDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateTargetResponderRecipeRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateTargetResponderRecipeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.cloudguard.model.UpdateTargetResponderRecipeDetails> {
 
     /**
      * OCID of target
@@ -33,7 +34,8 @@ public class UpdateTargetResponderRecipeRequest
     /**
      * The details to be updated.
      */
-    private UpdateTargetResponderRecipeDetails updateTargetResponderRecipeDetails;
+    private com.oracle.bmc.cloudguard.model.UpdateTargetResponderRecipeDetails
+            updateTargetResponderRecipeDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -56,13 +58,14 @@ public class UpdateTargetResponderRecipeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateTargetResponderRecipeDetails getBody$() {
+    public com.oracle.bmc.cloudguard.model.UpdateTargetResponderRecipeDetails getBody$() {
         return updateTargetResponderRecipeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateTargetResponderRecipeRequest, UpdateTargetResponderRecipeDetails> {
+                    UpdateTargetResponderRecipeRequest,
+                    com.oracle.bmc.cloudguard.model.UpdateTargetResponderRecipeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -128,7 +131,8 @@ public class UpdateTargetResponderRecipeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateTargetResponderRecipeDetails body) {
+        public Builder body$(
+                com.oracle.bmc.cloudguard.model.UpdateTargetResponderRecipeDetails body) {
             updateTargetResponderRecipeDetails(body);
             return this;
         }

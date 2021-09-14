@@ -18,12 +18,14 @@ import com.oracle.bmc.blockchain.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateBlockchainPlatformRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateBlockchainPlatformDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.blockchain.model.UpdateBlockchainPlatformDetails> {
 
     /**
      * The Blockchain Platform fields to update. Fields that are not provided will not be updated.
      */
-    private UpdateBlockchainPlatformDetails updateBlockchainPlatformDetails;
+    private com.oracle.bmc.blockchain.model.UpdateBlockchainPlatformDetails
+            updateBlockchainPlatformDetails;
 
     /**
      * Unique service identifier.
@@ -61,13 +63,14 @@ public class UpdateBlockchainPlatformRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateBlockchainPlatformDetails getBody$() {
+    public com.oracle.bmc.blockchain.model.UpdateBlockchainPlatformDetails getBody$() {
         return updateBlockchainPlatformDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateBlockchainPlatformRequest, UpdateBlockchainPlatformDetails> {
+                    UpdateBlockchainPlatformRequest,
+                    com.oracle.bmc.blockchain.model.UpdateBlockchainPlatformDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +136,7 @@ public class UpdateBlockchainPlatformRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateBlockchainPlatformDetails body) {
+        public Builder body$(com.oracle.bmc.blockchain.model.UpdateBlockchainPlatformDetails body) {
             updateBlockchainPlatformDetails(body);
             return this;
         }

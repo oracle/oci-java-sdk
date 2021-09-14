@@ -18,13 +18,14 @@ import com.oracle.bmc.sch.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateServiceConnectorRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateServiceConnectorDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.sch.model.CreateServiceConnectorDetails> {
 
     /**
      * Configuration details for the new service connector.
      *
      */
-    private CreateServiceConnectorDetails createServiceConnectorDetails;
+    private com.oracle.bmc.sch.model.CreateServiceConnectorDetails createServiceConnectorDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -49,13 +50,14 @@ public class CreateServiceConnectorRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateServiceConnectorDetails getBody$() {
+    public com.oracle.bmc.sch.model.CreateServiceConnectorDetails getBody$() {
         return createServiceConnectorDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateServiceConnectorRequest, CreateServiceConnectorDetails> {
+                    CreateServiceConnectorRequest,
+                    com.oracle.bmc.sch.model.CreateServiceConnectorDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +121,7 @@ public class CreateServiceConnectorRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateServiceConnectorDetails body) {
+        public Builder body$(com.oracle.bmc.sch.model.CreateServiceConnectorDetails body) {
             createServiceConnectorDetails(body);
             return this;
         }

@@ -18,12 +18,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateRouteTableRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateRouteTableDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CreateRouteTableDetails> {
 
     /**
      * Details for creating a new route table.
      */
-    private CreateRouteTableDetails createRouteTableDetails;
+    private com.oracle.bmc.core.model.CreateRouteTableDetails createRouteTableDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +42,13 @@ public class CreateRouteTableRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateRouteTableDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateRouteTableDetails getBody$() {
         return createRouteTableDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateRouteTableRequest, CreateRouteTableDetails> {
+                    CreateRouteTableRequest, com.oracle.bmc.core.model.CreateRouteTableDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +111,7 @@ public class CreateRouteTableRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateRouteTableDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateRouteTableDetails body) {
             createRouteTableDetails(body);
             return this;
         }

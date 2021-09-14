@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeVolumeBackupCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeVolumeBackupCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.ChangeVolumeBackupCompartmentDetails> {
 
     /**
      * The OCID of the volume backup.
@@ -28,7 +29,8 @@ public class ChangeVolumeBackupCompartmentRequest
     /**
      * Request to change the compartment of given volume backup.
      */
-    private ChangeVolumeBackupCompartmentDetails changeVolumeBackupCompartmentDetails;
+    private com.oracle.bmc.core.model.ChangeVolumeBackupCompartmentDetails
+            changeVolumeBackupCompartmentDetails;
 
     /**
      * Unique identifier for the request.
@@ -43,13 +45,14 @@ public class ChangeVolumeBackupCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeVolumeBackupCompartmentDetails getBody$() {
+    public com.oracle.bmc.core.model.ChangeVolumeBackupCompartmentDetails getBody$() {
         return changeVolumeBackupCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeVolumeBackupCompartmentRequest, ChangeVolumeBackupCompartmentDetails> {
+                    ChangeVolumeBackupCompartmentRequest,
+                    com.oracle.bmc.core.model.ChangeVolumeBackupCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -113,7 +116,7 @@ public class ChangeVolumeBackupCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeVolumeBackupCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.ChangeVolumeBackupCompartmentDetails body) {
             changeVolumeBackupCompartmentDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ImportDataAssetRequest
-        extends com.oracle.bmc.requests.BmcRequest<ImportDataAssetDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.ImportDataAssetDetails> {
 
     /**
      * Unique catalog identifier.
@@ -33,7 +34,7 @@ public class ImportDataAssetRequest
     /**
      * The file contents to be imported.
      */
-    private ImportDataAssetDetails importDataAssetDetails;
+    private com.oracle.bmc.datacatalog.model.ImportDataAssetDetails importDataAssetDetails;
 
     /**
      * Type of import.
@@ -67,13 +68,14 @@ public class ImportDataAssetRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ImportDataAssetDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.ImportDataAssetDetails getBody$() {
         return importDataAssetDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ImportDataAssetRequest, ImportDataAssetDetails> {
+                    ImportDataAssetRequest,
+                    com.oracle.bmc.datacatalog.model.ImportDataAssetDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -163,7 +165,7 @@ public class ImportDataAssetRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ImportDataAssetDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.ImportDataAssetDetails body) {
             importDataAssetDetails(body);
             return this;
         }

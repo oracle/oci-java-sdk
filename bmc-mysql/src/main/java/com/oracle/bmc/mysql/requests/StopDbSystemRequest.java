@@ -17,7 +17,8 @@ import com.oracle.bmc.mysql.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class StopDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<StopDbSystemDetails> {
+public class StopDbSystemRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.mysql.model.StopDbSystemDetails> {
 
     /**
      * The DB System [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -27,7 +28,7 @@ public class StopDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<Stop
     /**
      * Optional parameters for the stop action.
      */
-    private StopDbSystemDetails stopDbSystemDetails;
+    private com.oracle.bmc.mysql.model.StopDbSystemDetails stopDbSystemDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
@@ -64,13 +65,13 @@ public class StopDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<Stop
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public StopDbSystemDetails getBody$() {
+    public com.oracle.bmc.mysql.model.StopDbSystemDetails getBody$() {
         return stopDbSystemDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    StopDbSystemRequest, StopDbSystemDetails> {
+                    StopDbSystemRequest, com.oracle.bmc.mysql.model.StopDbSystemDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -136,7 +137,7 @@ public class StopDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<Stop
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(StopDbSystemDetails body) {
+        public Builder body$(com.oracle.bmc.mysql.model.StopDbSystemDetails body) {
             stopDbSystemDetails(body);
             return this;
         }

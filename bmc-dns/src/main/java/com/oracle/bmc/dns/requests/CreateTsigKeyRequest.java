@@ -17,12 +17,13 @@ import com.oracle.bmc.dns.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateTsigKeyRequest extends com.oracle.bmc.requests.BmcRequest<CreateTsigKeyDetails> {
+public class CreateTsigKeyRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.dns.model.CreateTsigKeyDetails> {
 
     /**
      * Details for creating a new TSIG key.
      */
-    private CreateTsigKeyDetails createTsigKeyDetails;
+    private com.oracle.bmc.dns.model.CreateTsigKeyDetails createTsigKeyDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need
@@ -44,13 +45,13 @@ public class CreateTsigKeyRequest extends com.oracle.bmc.requests.BmcRequest<Cre
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateTsigKeyDetails getBody$() {
+    public com.oracle.bmc.dns.model.CreateTsigKeyDetails getBody$() {
         return createTsigKeyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateTsigKeyRequest, CreateTsigKeyDetails> {
+                    CreateTsigKeyRequest, com.oracle.bmc.dns.model.CreateTsigKeyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +115,7 @@ public class CreateTsigKeyRequest extends com.oracle.bmc.requests.BmcRequest<Cre
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateTsigKeyDetails body) {
+        public Builder body$(com.oracle.bmc.dns.model.CreateTsigKeyDetails body) {
             createTsigKeyDetails(body);
             return this;
         }

@@ -67,7 +67,7 @@ public class ListEmailDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
      * Filter returned list by specified lifecycle state. This parameter is case-insensitive.
      *
      */
-    private EmailDomain.LifecycleState lifecycleState;
+    private com.oracle.bmc.email.model.EmailDomain.LifecycleState lifecycleState;
 
     /**
      * Specifies the attribute with which to sort the email domains.

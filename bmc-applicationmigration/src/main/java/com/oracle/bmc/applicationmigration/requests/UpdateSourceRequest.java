@@ -17,7 +17,9 @@ import com.oracle.bmc.applicationmigration.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateSourceRequest extends com.oracle.bmc.requests.BmcRequest<UpdateSourceDetails> {
+public class UpdateSourceRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.applicationmigration.model.UpdateSourceDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source.
@@ -28,7 +30,7 @@ public class UpdateSourceRequest extends com.oracle.bmc.requests.BmcRequest<Upda
      * Updated configuration for the source.
      *
      */
-    private UpdateSourceDetails updateSourceDetails;
+    private com.oracle.bmc.applicationmigration.model.UpdateSourceDetails updateSourceDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -51,13 +53,14 @@ public class UpdateSourceRequest extends com.oracle.bmc.requests.BmcRequest<Upda
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateSourceDetails getBody$() {
+    public com.oracle.bmc.applicationmigration.model.UpdateSourceDetails getBody$() {
         return updateSourceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateSourceRequest, UpdateSourceDetails> {
+                    UpdateSourceRequest,
+                    com.oracle.bmc.applicationmigration.model.UpdateSourceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,7 @@ public class UpdateSourceRequest extends com.oracle.bmc.requests.BmcRequest<Upda
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateSourceDetails body) {
+        public Builder body$(com.oracle.bmc.applicationmigration.model.UpdateSourceDetails body) {
             updateSourceDetails(body);
             return this;
         }

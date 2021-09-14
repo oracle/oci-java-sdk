@@ -127,7 +127,7 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    private DatabaseSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.database.model.DatabaseSummary.LifecycleState lifecycleState;
 
     /**
      * A filter to return only resources that match the entire database name given. The match is not case sensitive.

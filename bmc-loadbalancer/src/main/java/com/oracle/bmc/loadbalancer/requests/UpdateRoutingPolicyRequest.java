@@ -18,12 +18,13 @@ import com.oracle.bmc.loadbalancer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateRoutingPolicyRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateRoutingPolicyDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loadbalancer.model.UpdateRoutingPolicyDetails> {
 
     /**
      * The configuration details needed to update a routing policy.
      */
-    private UpdateRoutingPolicyDetails updateRoutingPolicyDetails;
+    private com.oracle.bmc.loadbalancer.model.UpdateRoutingPolicyDetails updateRoutingPolicyDetails;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the routing policy to update.
@@ -61,13 +62,14 @@ public class UpdateRoutingPolicyRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateRoutingPolicyDetails getBody$() {
+    public com.oracle.bmc.loadbalancer.model.UpdateRoutingPolicyDetails getBody$() {
         return updateRoutingPolicyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateRoutingPolicyRequest, UpdateRoutingPolicyDetails> {
+                    UpdateRoutingPolicyRequest,
+                    com.oracle.bmc.loadbalancer.model.UpdateRoutingPolicyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +135,7 @@ public class UpdateRoutingPolicyRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateRoutingPolicyDetails body) {
+        public Builder body$(com.oracle.bmc.loadbalancer.model.UpdateRoutingPolicyDetails body) {
             updateRoutingPolicyDetails(body);
             return this;
         }

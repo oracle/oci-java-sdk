@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class PurgeStorageDataRequest
-        extends com.oracle.bmc.requests.BmcRequest<PurgeStorageDataDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.PurgeStorageDataDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -29,7 +30,7 @@ public class PurgeStorageDataRequest
     /**
      * This is the input to purge old data.
      */
-    private PurgeStorageDataDetails purgeStorageDataDetails;
+    private com.oracle.bmc.loganalytics.model.PurgeStorageDataDetails purgeStorageDataDetails;
 
     /**
      * The client request ID for tracing.
@@ -62,7 +63,7 @@ public class PurgeStorageDataRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public PurgeStorageDataDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.PurgeStorageDataDetails getBody$() {
         return purgeStorageDataDetails;
     }
 
@@ -73,7 +74,8 @@ public class PurgeStorageDataRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    PurgeStorageDataRequest, PurgeStorageDataDetails> {
+                    PurgeStorageDataRequest,
+                    com.oracle.bmc.loganalytics.model.PurgeStorageDataDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -139,7 +141,7 @@ public class PurgeStorageDataRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(PurgeStorageDataDetails body) {
+        public Builder body$(com.oracle.bmc.loganalytics.model.PurgeStorageDataDetails body) {
             purgeStorageDataDetails(body);
             return this;
         }

@@ -19,7 +19,8 @@ import com.oracle.bmc.databasemanagement.model.*;
 @lombok.Getter
 public class RemoveManagedDatabaseFromManagedDatabaseGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<
-                RemoveManagedDatabaseFromManagedDatabaseGroupDetails> {
+                com.oracle.bmc.databasemanagement.model
+                        .RemoveManagedDatabaseFromManagedDatabaseGroupDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
@@ -29,7 +30,8 @@ public class RemoveManagedDatabaseFromManagedDatabaseGroupRequest
     /**
      * The Managed Database details required to remove the Managed Database from a Managed Database Group.
      */
-    private RemoveManagedDatabaseFromManagedDatabaseGroupDetails
+    private com.oracle.bmc.databasemanagement.model
+                    .RemoveManagedDatabaseFromManagedDatabaseGroupDetails
             removeManagedDatabaseFromManagedDatabaseGroupDetails;
 
     /**
@@ -53,14 +55,17 @@ public class RemoveManagedDatabaseFromManagedDatabaseGroupRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RemoveManagedDatabaseFromManagedDatabaseGroupDetails getBody$() {
+    public com.oracle.bmc.databasemanagement.model
+                    .RemoveManagedDatabaseFromManagedDatabaseGroupDetails
+            getBody$() {
         return removeManagedDatabaseFromManagedDatabaseGroupDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     RemoveManagedDatabaseFromManagedDatabaseGroupRequest,
-                    RemoveManagedDatabaseFromManagedDatabaseGroupDetails> {
+                    com.oracle.bmc.databasemanagement.model
+                            .RemoveManagedDatabaseFromManagedDatabaseGroupDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -127,7 +132,10 @@ public class RemoveManagedDatabaseFromManagedDatabaseGroupRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RemoveManagedDatabaseFromManagedDatabaseGroupDetails body) {
+        public Builder body$(
+                com.oracle.bmc.databasemanagement.model
+                                .RemoveManagedDatabaseFromManagedDatabaseGroupDetails
+                        body) {
             removeManagedDatabaseFromManagedDatabaseGroupDetails(body);
             return this;
         }

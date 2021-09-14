@@ -17,12 +17,13 @@ import com.oracle.bmc.dns.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateZoneRequest extends com.oracle.bmc.requests.BmcRequest<CreateZoneBaseDetails> {
+public class CreateZoneRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.dns.model.CreateZoneBaseDetails> {
 
     /**
      * Details for creating a new zone.
      */
-    private CreateZoneBaseDetails createZoneDetails;
+    private com.oracle.bmc.dns.model.CreateZoneBaseDetails createZoneDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need
@@ -54,13 +55,13 @@ public class CreateZoneRequest extends com.oracle.bmc.requests.BmcRequest<Create
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateZoneBaseDetails getBody$() {
+    public com.oracle.bmc.dns.model.CreateZoneBaseDetails getBody$() {
         return createZoneDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateZoneRequest, CreateZoneBaseDetails> {
+                    CreateZoneRequest, com.oracle.bmc.dns.model.CreateZoneBaseDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -126,7 +127,7 @@ public class CreateZoneRequest extends com.oracle.bmc.requests.BmcRequest<Create
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateZoneBaseDetails body) {
+        public Builder body$(com.oracle.bmc.dns.model.CreateZoneBaseDetails body) {
             createZoneDetails(body);
             return this;
         }

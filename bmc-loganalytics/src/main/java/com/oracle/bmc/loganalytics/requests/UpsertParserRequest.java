@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpsertParserRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpsertLogAnalyticsParserDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsParserDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -29,7 +30,8 @@ public class UpsertParserRequest
     /**
      * Details for the new LoganParserDetails.
      */
-    private UpsertLogAnalyticsParserDetails upsertLogAnalyticsParserDetails;
+    private com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsParserDetails
+            upsertLogAnalyticsParserDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -62,7 +64,7 @@ public class UpsertParserRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpsertLogAnalyticsParserDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsParserDetails getBody$() {
         return upsertLogAnalyticsParserDetails;
     }
 
@@ -73,7 +75,8 @@ public class UpsertParserRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpsertParserRequest, UpsertLogAnalyticsParserDetails> {
+                    UpsertParserRequest,
+                    com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsParserDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -139,7 +142,8 @@ public class UpsertParserRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpsertLogAnalyticsParserDetails body) {
+        public Builder body$(
+                com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsParserDetails body) {
             upsertLogAnalyticsParserDetails(body);
             return this;
         }

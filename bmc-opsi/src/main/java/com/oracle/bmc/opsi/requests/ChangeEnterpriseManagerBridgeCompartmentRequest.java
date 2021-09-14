@@ -19,7 +19,7 @@ import com.oracle.bmc.opsi.model.*;
 @lombok.Getter
 public class ChangeEnterpriseManagerBridgeCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
-                ChangeEnterpriseManagerBridgeCompartmentDetails> {
+                com.oracle.bmc.opsi.model.ChangeEnterpriseManagerBridgeCompartmentDetails> {
 
     /**
      * Unique Enterprise Manager bridge identifier
@@ -29,7 +29,7 @@ public class ChangeEnterpriseManagerBridgeCompartmentRequest
     /**
      * The information to be updated.
      */
-    private ChangeEnterpriseManagerBridgeCompartmentDetails
+    private com.oracle.bmc.opsi.model.ChangeEnterpriseManagerBridgeCompartmentDetails
             changeEnterpriseManagerBridgeCompartmentDetails;
 
     /**
@@ -53,14 +53,14 @@ public class ChangeEnterpriseManagerBridgeCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeEnterpriseManagerBridgeCompartmentDetails getBody$() {
+    public com.oracle.bmc.opsi.model.ChangeEnterpriseManagerBridgeCompartmentDetails getBody$() {
         return changeEnterpriseManagerBridgeCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeEnterpriseManagerBridgeCompartmentRequest,
-                    ChangeEnterpriseManagerBridgeCompartmentDetails> {
+                    com.oracle.bmc.opsi.model.ChangeEnterpriseManagerBridgeCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -127,7 +127,8 @@ public class ChangeEnterpriseManagerBridgeCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeEnterpriseManagerBridgeCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.opsi.model.ChangeEnterpriseManagerBridgeCompartmentDetails body) {
             changeEnterpriseManagerBridgeCompartmentDetails(body);
             return this;
         }

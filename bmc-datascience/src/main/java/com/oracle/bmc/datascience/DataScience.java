@@ -8,7 +8,7 @@ import com.oracle.bmc.datascience.requests.*;
 import com.oracle.bmc.datascience.responses.*;
 
 /**
- * Use the Data Science APIs to organize your data science work, access data and computing resources, and build, train, deploy, and manage models on Oracle Cloud.
+ * Use the Data Science API to organize your data science work, access data and computing resources, and build, train, deploy and manage models and model deployments. For more information, see [Data Science](https://docs.oracle.com/iaas/data-science/using/data-science.htm).
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
@@ -77,6 +77,16 @@ public interface DataScience extends AutoCloseable {
     ActivateNotebookSessionResponse activateNotebookSession(ActivateNotebookSessionRequest request);
 
     /**
+     * Cancels an IN_PROGRESS job run.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/CancelJobRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelJobRun API.
+     */
+    CancelJobRunResponse cancelJobRun(CancelJobRunRequest request);
+
+    /**
      * Cancels a work request that has not started.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -85,6 +95,26 @@ public interface DataScience extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/CancelWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelWorkRequest API.
      */
     CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request);
+
+    /**
+     * Changes a job's compartment
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ChangeJobCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeJobCompartment API.
+     */
+    ChangeJobCompartmentResponse changeJobCompartment(ChangeJobCompartmentRequest request);
+
+    /**
+     * Changes a job run's compartment
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ChangeJobRunCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeJobRunCompartment API.
+     */
+    ChangeJobRunCompartmentResponse changeJobRunCompartment(ChangeJobRunCompartmentRequest request);
 
     /**
      * Moves a model resource into a different compartment.
@@ -128,6 +158,63 @@ public interface DataScience extends AutoCloseable {
      */
     ChangeProjectCompartmentResponse changeProjectCompartment(
             ChangeProjectCompartmentRequest request);
+
+    /**
+     * Creates a job.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/CreateJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateJob API.
+     */
+    CreateJobResponse createJob(CreateJobRequest request);
+
+    /**
+     * Uploads a job artifact.
+     *
+     * Note: This operation consumes a stream.
+     *
+     * If the stream supports {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}, when a retry is
+     * necessary, the stream is reset so it starts at the beginning (or whatever the stream's position was at the time this
+     * operation is called}.
+     *
+     * Note this means that if the caller has used {@link java.io.InputStream#mark(int)} before, then the mark
+     * will not be the same anymore after this operation, and a subsequent call to {@link java.io.InputStream#reset()} by
+     * the caller will reset the stream not to the caller's mark, but to the position the stream was in when this operation
+     * was called.
+     *
+     * If the stream is a {@link java.io.FileInputStream}, and the stream's {@link java.nio.channels.FileChannel} position
+     * can be changed (like for a regular file), the stream will be wrapped in such a way that it does provide
+     * support for {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}. Then the same procedure as
+     * above is followed. If the stream's {@link java.nio.channels.FileChannel} position cannot be changed (like for a
+     * named pipe), then the stream's contents will be buffered in memory, as described below.
+     *
+     * If the stream does not support {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}, then
+     * the stream is wrapped in a {@link java.io.BufferedInputStream}, which means the entire contents may
+     * be buffered in memory. Then the same procedure as above is followed.
+     *
+     * The contents of the stream, except when the stream is a {@link java.io.FileInputStream} whose
+     * {@link java.nio.channels.FileChannel} position can be changed, should be less than 2 GiB in size if retries are used.
+     * This is because streams 2 GiB in size or larger do no guarantee that mark-and-reset can be performed. If the stream
+     * is larger, do not use built-in retries and manage retries yourself.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/CreateJobArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateJobArtifact API.
+     */
+    CreateJobArtifactResponse createJobArtifact(CreateJobArtifactRequest request);
+
+    /**
+     * Creates a job run.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/CreateJobRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateJobRun API.
+     */
+    CreateJobRunResponse createJobRun(CreateJobRunRequest request);
 
     /**
      * Creates a new model.
@@ -249,6 +336,26 @@ public interface DataScience extends AutoCloseable {
             DeactivateNotebookSessionRequest request);
 
     /**
+     * Deletes a job.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/DeleteJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteJob API.
+     */
+    DeleteJobResponse deleteJob(DeleteJobRequest request);
+
+    /**
+     * Deletes a job run.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/DeleteJobRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteJobRun API.
+     */
+    DeleteJobRunResponse deleteJobRun(DeleteJobRunRequest request);
+
+    /**
      * Deletes the specified model.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -287,6 +394,36 @@ public interface DataScience extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/DeleteProjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProject API.
      */
     DeleteProjectResponse deleteProject(DeleteProjectRequest request);
+
+    /**
+     * Gets a job.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/GetJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJob API.
+     */
+    GetJobResponse getJob(GetJobRequest request);
+
+    /**
+     * Downloads job artifact content for specified job.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/GetJobArtifactContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJobArtifactContent API.
+     */
+    GetJobArtifactContentResponse getJobArtifactContent(GetJobArtifactContentRequest request);
+
+    /**
+     * Gets a job run.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/GetJobRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJobRun API.
+     */
+    GetJobRunResponse getJobRun(GetJobRunRequest request);
 
     /**
      * Gets the specified model's information.
@@ -359,6 +496,16 @@ public interface DataScience extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
+     * Gets job artifact metadata.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/HeadJobArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use HeadJobArtifact API.
+     */
+    HeadJobArtifactResponse headJobArtifact(HeadJobArtifactRequest request);
+
+    /**
      * Gets model artifact metadata for specified model.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -367,6 +514,36 @@ public interface DataScience extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/HeadModelArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use HeadModelArtifact API.
      */
     HeadModelArtifactResponse headModelArtifact(HeadModelArtifactRequest request);
+
+    /**
+     * List out job runs.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListJobRunsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJobRuns API.
+     */
+    ListJobRunsResponse listJobRuns(ListJobRunsRequest request);
+
+    /**
+     * List job shapes available in the specified compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListJobShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJobShapes API.
+     */
+    ListJobShapesResponse listJobShapes(ListJobShapesRequest request);
+
+    /**
+     * List jobs in the specified compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListJobsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJobs API.
+     */
+    ListJobsResponse listJobs(ListJobsRequest request);
 
     /**
      * Lists the valid model deployment shapes.
@@ -460,6 +637,26 @@ public interface DataScience extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
+
+    /**
+     * Updates a job.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/UpdateJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateJob API.
+     */
+    UpdateJobResponse updateJob(UpdateJobRequest request);
+
+    /**
+     * Updates a job run.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/UpdateJobRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateJobRun API.
+     */
+    UpdateJobRunResponse updateJobRun(UpdateJobRunRequest request);
 
     /**
      * Updates the properties of a model. You can update the `displayName`, `description`, `freeformTags`, and `definedTags` properties.

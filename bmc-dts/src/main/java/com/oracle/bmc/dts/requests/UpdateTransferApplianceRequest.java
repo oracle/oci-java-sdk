@@ -18,7 +18,8 @@ import com.oracle.bmc.dts.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateTransferApplianceRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateTransferApplianceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dts.model.UpdateTransferApplianceDetails> {
 
     /**
      * ID of the Transfer Job
@@ -33,7 +34,7 @@ public class UpdateTransferApplianceRequest
     /**
      * fields to update
      */
-    private UpdateTransferApplianceDetails updateTransferApplianceDetails;
+    private com.oracle.bmc.dts.model.UpdateTransferApplianceDetails updateTransferApplianceDetails;
 
     /**
      * The entity tag to match. Optional, if set, the update will be successful only if the
@@ -48,13 +49,14 @@ public class UpdateTransferApplianceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateTransferApplianceDetails getBody$() {
+    public com.oracle.bmc.dts.model.UpdateTransferApplianceDetails getBody$() {
         return updateTransferApplianceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateTransferApplianceRequest, UpdateTransferApplianceDetails> {
+                    UpdateTransferApplianceRequest,
+                    com.oracle.bmc.dts.model.UpdateTransferApplianceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +121,7 @@ public class UpdateTransferApplianceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateTransferApplianceDetails body) {
+        public Builder body$(com.oracle.bmc.dts.model.UpdateTransferApplianceDetails body) {
             updateTransferApplianceDetails(body);
             return this;
         }

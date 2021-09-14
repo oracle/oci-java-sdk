@@ -18,12 +18,14 @@ import com.oracle.bmc.opsi.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class IngestDatabaseConfigurationRequest
-        extends com.oracle.bmc.requests.BmcRequest<IngestDatabaseConfigurationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.opsi.model.IngestDatabaseConfigurationDetails> {
 
     /**
      * Payload for one or more database configuration metrics for a particular database.
      */
-    private IngestDatabaseConfigurationDetails ingestDatabaseConfigurationDetails;
+    private com.oracle.bmc.opsi.model.IngestDatabaseConfigurationDetails
+            ingestDatabaseConfigurationDetails;
 
     /**
      * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
@@ -69,13 +71,14 @@ public class IngestDatabaseConfigurationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public IngestDatabaseConfigurationDetails getBody$() {
+    public com.oracle.bmc.opsi.model.IngestDatabaseConfigurationDetails getBody$() {
         return ingestDatabaseConfigurationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    IngestDatabaseConfigurationRequest, IngestDatabaseConfigurationDetails> {
+                    IngestDatabaseConfigurationRequest,
+                    com.oracle.bmc.opsi.model.IngestDatabaseConfigurationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -142,7 +145,7 @@ public class IngestDatabaseConfigurationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(IngestDatabaseConfigurationDetails body) {
+        public Builder body$(com.oracle.bmc.opsi.model.IngestDatabaseConfigurationDetails body) {
             ingestDatabaseConfigurationDetails(body);
             return this;
         }

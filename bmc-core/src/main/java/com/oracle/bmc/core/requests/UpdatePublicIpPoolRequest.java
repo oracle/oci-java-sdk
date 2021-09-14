@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdatePublicIpPoolRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdatePublicIpPoolDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdatePublicIpPoolDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
@@ -28,7 +29,7 @@ public class UpdatePublicIpPoolRequest
     /**
      * Public IP pool details.
      */
-    private UpdatePublicIpPoolDetails updatePublicIpPoolDetails;
+    private com.oracle.bmc.core.model.UpdatePublicIpPoolDetails updatePublicIpPoolDetails;
 
     /**
      * Unique identifier for the request.
@@ -51,13 +52,14 @@ public class UpdatePublicIpPoolRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdatePublicIpPoolDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdatePublicIpPoolDetails getBody$() {
         return updatePublicIpPoolDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdatePublicIpPoolRequest, UpdatePublicIpPoolDetails> {
+                    UpdatePublicIpPoolRequest,
+                    com.oracle.bmc.core.model.UpdatePublicIpPoolDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +124,7 @@ public class UpdatePublicIpPoolRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdatePublicIpPoolDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdatePublicIpPoolDetails body) {
             updatePublicIpPoolDetails(body);
             return this;
         }

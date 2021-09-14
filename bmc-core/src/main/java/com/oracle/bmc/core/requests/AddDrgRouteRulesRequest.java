@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class AddDrgRouteRulesRequest
-        extends com.oracle.bmc.requests.BmcRequest<AddDrgRouteRulesDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.AddDrgRouteRulesDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
@@ -28,7 +29,7 @@ public class AddDrgRouteRulesRequest
     /**
      * Request for one or more route rules to be inserted into the DRG route table.
      */
-    private AddDrgRouteRulesDetails addDrgRouteRulesDetails;
+    private com.oracle.bmc.core.model.AddDrgRouteRulesDetails addDrgRouteRulesDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -46,13 +47,13 @@ public class AddDrgRouteRulesRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public AddDrgRouteRulesDetails getBody$() {
+    public com.oracle.bmc.core.model.AddDrgRouteRulesDetails getBody$() {
         return addDrgRouteRulesDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    AddDrgRouteRulesRequest, AddDrgRouteRulesDetails> {
+                    AddDrgRouteRulesRequest, com.oracle.bmc.core.model.AddDrgRouteRulesDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +117,7 @@ public class AddDrgRouteRulesRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(AddDrgRouteRulesDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.AddDrgRouteRulesDetails body) {
             addDrgRouteRulesDetails(body);
             return this;
         }

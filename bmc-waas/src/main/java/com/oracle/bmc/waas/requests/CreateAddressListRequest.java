@@ -18,12 +18,13 @@ import com.oracle.bmc.waas.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateAddressListRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateAddressListDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.waas.model.CreateAddressListDetails> {
 
     /**
      * The details of the address list resource to create.
      */
-    private CreateAddressListDetails createAddressListDetails;
+    private com.oracle.bmc.waas.model.CreateAddressListDetails createAddressListDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -42,13 +43,13 @@ public class CreateAddressListRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateAddressListDetails getBody$() {
+    public com.oracle.bmc.waas.model.CreateAddressListDetails getBody$() {
         return createAddressListDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateAddressListRequest, CreateAddressListDetails> {
+                    CreateAddressListRequest, com.oracle.bmc.waas.model.CreateAddressListDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -112,7 +113,7 @@ public class CreateAddressListRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateAddressListDetails body) {
+        public Builder body$(com.oracle.bmc.waas.model.CreateAddressListDetails body) {
             createAddressListDetails(body);
             return this;
         }

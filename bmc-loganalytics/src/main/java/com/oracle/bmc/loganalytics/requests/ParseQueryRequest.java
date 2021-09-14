@@ -17,7 +17,9 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class ParseQueryRequest extends com.oracle.bmc.requests.BmcRequest<ParseQueryDetails> {
+public class ParseQueryRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.ParseQueryDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -28,7 +30,7 @@ public class ParseQueryRequest extends com.oracle.bmc.requests.BmcRequest<ParseQ
     /**
      * Query string to be parsed
      */
-    private ParseQueryDetails parseQueryDetails;
+    private com.oracle.bmc.loganalytics.model.ParseQueryDetails parseQueryDetails;
 
     /**
      * The client request ID for tracing.
@@ -41,7 +43,7 @@ public class ParseQueryRequest extends com.oracle.bmc.requests.BmcRequest<ParseQ
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ParseQueryDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.ParseQueryDetails getBody$() {
         return parseQueryDetails;
     }
 
@@ -52,7 +54,7 @@ public class ParseQueryRequest extends com.oracle.bmc.requests.BmcRequest<ParseQ
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ParseQueryRequest, ParseQueryDetails> {
+                    ParseQueryRequest, com.oracle.bmc.loganalytics.model.ParseQueryDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +118,7 @@ public class ParseQueryRequest extends com.oracle.bmc.requests.BmcRequest<ParseQ
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ParseQueryDetails body) {
+        public Builder body$(com.oracle.bmc.loganalytics.model.ParseQueryDetails body) {
             parseQueryDetails(body);
             return this;
         }

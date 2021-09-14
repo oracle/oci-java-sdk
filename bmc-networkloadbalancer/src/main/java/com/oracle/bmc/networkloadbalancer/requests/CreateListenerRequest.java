@@ -18,7 +18,8 @@ import com.oracle.bmc.networkloadbalancer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateListenerRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateListenerDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.networkloadbalancer.model.CreateListenerDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -28,7 +29,7 @@ public class CreateListenerRequest
     /**
      * Details to add a listener.
      */
-    private CreateListenerDetails createListenerDetails;
+    private com.oracle.bmc.networkloadbalancer.model.CreateListenerDetails createListenerDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
@@ -63,13 +64,14 @@ public class CreateListenerRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateListenerDetails getBody$() {
+    public com.oracle.bmc.networkloadbalancer.model.CreateListenerDetails getBody$() {
         return createListenerDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateListenerRequest, CreateListenerDetails> {
+                    CreateListenerRequest,
+                    com.oracle.bmc.networkloadbalancer.model.CreateListenerDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -135,7 +137,7 @@ public class CreateListenerRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateListenerDetails body) {
+        public Builder body$(com.oracle.bmc.networkloadbalancer.model.CreateListenerDetails body) {
             createListenerDetails(body);
             return this;
         }

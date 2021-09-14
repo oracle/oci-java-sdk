@@ -17,12 +17,14 @@ import com.oracle.bmc.aianomalydetection.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateModelRequest extends com.oracle.bmc.requests.BmcRequest<CreateModelDetails> {
+public class CreateModelRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.aianomalydetection.model.CreateModelDetails> {
 
     /**
      * Details for the new Model.
      */
-    private CreateModelDetails createModelDetails;
+    private com.oracle.bmc.aianomalydetection.model.CreateModelDetails createModelDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -45,13 +47,14 @@ public class CreateModelRequest extends com.oracle.bmc.requests.BmcRequest<Creat
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateModelDetails getBody$() {
+    public com.oracle.bmc.aianomalydetection.model.CreateModelDetails getBody$() {
         return createModelDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateModelRequest, CreateModelDetails> {
+                    CreateModelRequest,
+                    com.oracle.bmc.aianomalydetection.model.CreateModelDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -115,7 +118,7 @@ public class CreateModelRequest extends com.oracle.bmc.requests.BmcRequest<Creat
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateModelDetails body) {
+        public Builder body$(com.oracle.bmc.aianomalydetection.model.CreateModelDetails body) {
             createModelDetails(body);
             return this;
         }

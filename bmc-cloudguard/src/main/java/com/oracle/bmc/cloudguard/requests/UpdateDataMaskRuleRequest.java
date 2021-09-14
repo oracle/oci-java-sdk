@@ -18,7 +18,8 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateDataMaskRuleRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateDataMaskRuleDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.cloudguard.model.UpdateDataMaskRuleDetails> {
 
     /**
      * OCID of dataMaskRule
@@ -28,7 +29,7 @@ public class UpdateDataMaskRuleRequest
     /**
      * The information to be updated.
      */
-    private UpdateDataMaskRuleDetails updateDataMaskRuleDetails;
+    private com.oracle.bmc.cloudguard.model.UpdateDataMaskRuleDetails updateDataMaskRuleDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -51,13 +52,14 @@ public class UpdateDataMaskRuleRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDataMaskRuleDetails getBody$() {
+    public com.oracle.bmc.cloudguard.model.UpdateDataMaskRuleDetails getBody$() {
         return updateDataMaskRuleDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateDataMaskRuleRequest, UpdateDataMaskRuleDetails> {
+                    UpdateDataMaskRuleRequest,
+                    com.oracle.bmc.cloudguard.model.UpdateDataMaskRuleDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +124,7 @@ public class UpdateDataMaskRuleRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDataMaskRuleDetails body) {
+        public Builder body$(com.oracle.bmc.cloudguard.model.UpdateDataMaskRuleDetails body) {
             updateDataMaskRuleDetails(body);
             return this;
         }

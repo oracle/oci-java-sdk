@@ -18,7 +18,8 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RestoreVaultFromObjectStoreRequest
-        extends com.oracle.bmc.requests.BmcRequest<RestoreVaultFromObjectStoreDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.keymanagement.model.RestoreVaultFromObjectStoreDetails> {
 
     /**
      * The OCID of the compartment.
@@ -57,7 +58,8 @@ public class RestoreVaultFromObjectStoreRequest
     /**
      * RestoreVaultFromObjectStoreDetails
      */
-    private RestoreVaultFromObjectStoreDetails restoreVaultFromObjectStoreDetails;
+    private com.oracle.bmc.keymanagement.model.RestoreVaultFromObjectStoreDetails
+            restoreVaultFromObjectStoreDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -65,13 +67,14 @@ public class RestoreVaultFromObjectStoreRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RestoreVaultFromObjectStoreDetails getBody$() {
+    public com.oracle.bmc.keymanagement.model.RestoreVaultFromObjectStoreDetails getBody$() {
         return restoreVaultFromObjectStoreDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RestoreVaultFromObjectStoreRequest, RestoreVaultFromObjectStoreDetails> {
+                    RestoreVaultFromObjectStoreRequest,
+                    com.oracle.bmc.keymanagement.model.RestoreVaultFromObjectStoreDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -137,7 +140,8 @@ public class RestoreVaultFromObjectStoreRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RestoreVaultFromObjectStoreDetails body) {
+        public Builder body$(
+                com.oracle.bmc.keymanagement.model.RestoreVaultFromObjectStoreDetails body) {
             restoreVaultFromObjectStoreDetails(body);
             return this;
         }

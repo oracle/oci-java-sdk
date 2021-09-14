@@ -18,12 +18,14 @@ import com.oracle.bmc.artifacts.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateContainerRepositoryRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateContainerRepositoryDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.artifacts.model.CreateContainerRepositoryDetails> {
 
     /**
      * Create container repository details.
      */
-    private CreateContainerRepositoryDetails createContainerRepositoryDetails;
+    private com.oracle.bmc.artifacts.model.CreateContainerRepositoryDetails
+            createContainerRepositoryDetails;
 
     /**
      * Unique identifier for the request.
@@ -48,13 +50,14 @@ public class CreateContainerRepositoryRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateContainerRepositoryDetails getBody$() {
+    public com.oracle.bmc.artifacts.model.CreateContainerRepositoryDetails getBody$() {
         return createContainerRepositoryDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateContainerRepositoryRequest, CreateContainerRepositoryDetails> {
+                    CreateContainerRepositoryRequest,
+                    com.oracle.bmc.artifacts.model.CreateContainerRepositoryDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -118,7 +121,7 @@ public class CreateContainerRepositoryRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateContainerRepositoryDetails body) {
+        public Builder body$(com.oracle.bmc.artifacts.model.CreateContainerRepositoryDetails body) {
             createContainerRepositoryDetails(body);
             return this;
         }

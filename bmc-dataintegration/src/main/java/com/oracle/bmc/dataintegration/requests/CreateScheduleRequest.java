@@ -18,7 +18,8 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateScheduleRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateScheduleDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataintegration.model.CreateScheduleDetails> {
 
     /**
      * The workspace ID.
@@ -33,7 +34,7 @@ public class CreateScheduleRequest
     /**
      * Request body parameter for Schedule details
      */
-    private CreateScheduleDetails createScheduleDetails;
+    private com.oracle.bmc.dataintegration.model.CreateScheduleDetails createScheduleDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If
@@ -55,13 +56,14 @@ public class CreateScheduleRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateScheduleDetails getBody$() {
+    public com.oracle.bmc.dataintegration.model.CreateScheduleDetails getBody$() {
         return createScheduleDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateScheduleRequest, CreateScheduleDetails> {
+                    CreateScheduleRequest,
+                    com.oracle.bmc.dataintegration.model.CreateScheduleDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -127,7 +129,7 @@ public class CreateScheduleRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateScheduleDetails body) {
+        public Builder body$(com.oracle.bmc.dataintegration.model.CreateScheduleDetails body) {
             createScheduleDetails(body);
             return this;
         }

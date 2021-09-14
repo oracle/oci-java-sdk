@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RemoveEntityAssociationsRequest
-        extends com.oracle.bmc.requests.BmcRequest<RemoveEntityAssociationsDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.RemoveEntityAssociationsDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -35,7 +36,8 @@ public class RemoveEntityAssociationsRequest
     /**
      * This parameter specifies the entity OCIDs with which associations are to be deleted.
      */
-    private RemoveEntityAssociationsDetails removeEntityAssociationsDetails;
+    private com.oracle.bmc.loganalytics.model.RemoveEntityAssociationsDetails
+            removeEntityAssociationsDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -68,7 +70,7 @@ public class RemoveEntityAssociationsRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RemoveEntityAssociationsDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.RemoveEntityAssociationsDetails getBody$() {
         return removeEntityAssociationsDetails;
     }
 
@@ -79,7 +81,8 @@ public class RemoveEntityAssociationsRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RemoveEntityAssociationsRequest, RemoveEntityAssociationsDetails> {
+                    RemoveEntityAssociationsRequest,
+                    com.oracle.bmc.loganalytics.model.RemoveEntityAssociationsDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -146,7 +149,8 @@ public class RemoveEntityAssociationsRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RemoveEntityAssociationsDetails body) {
+        public Builder body$(
+                com.oracle.bmc.loganalytics.model.RemoveEntityAssociationsDetails body) {
             removeEntityAssociationsDetails(body);
             return this;
         }

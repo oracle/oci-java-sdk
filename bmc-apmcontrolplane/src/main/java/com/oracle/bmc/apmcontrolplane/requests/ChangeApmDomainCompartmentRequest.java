@@ -18,7 +18,8 @@ import com.oracle.bmc.apmcontrolplane.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeApmDomainCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeApmDomainCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.apmcontrolplane.model.ChangeApmDomainCompartmentDetails> {
 
     /**
      * OCID of the APM Domain
@@ -28,7 +29,8 @@ public class ChangeApmDomainCompartmentRequest
     /**
      * The information to be used in changing compartment.
      */
-    private ChangeApmDomainCompartmentDetails changeApmDomainCompartmentDetails;
+    private com.oracle.bmc.apmcontrolplane.model.ChangeApmDomainCompartmentDetails
+            changeApmDomainCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -61,13 +63,14 @@ public class ChangeApmDomainCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeApmDomainCompartmentDetails getBody$() {
+    public com.oracle.bmc.apmcontrolplane.model.ChangeApmDomainCompartmentDetails getBody$() {
         return changeApmDomainCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeApmDomainCompartmentRequest, ChangeApmDomainCompartmentDetails> {
+                    ChangeApmDomainCompartmentRequest,
+                    com.oracle.bmc.apmcontrolplane.model.ChangeApmDomainCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +136,8 @@ public class ChangeApmDomainCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeApmDomainCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.apmcontrolplane.model.ChangeApmDomainCompartmentDetails body) {
             changeApmDomainCompartmentDetails(body);
             return this;
         }

@@ -27,7 +27,7 @@ public class ListBdsInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * The state of the cluster.
      */
-    private BdsInstance.LifecycleState lifecycleState;
+    private com.oracle.bmc.bds.model.BdsInstance.LifecycleState lifecycleState;
 
     /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.

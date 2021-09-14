@@ -37,7 +37,7 @@ public class ListDeployPipelinesRequest extends com.oracle.bmc.requests.BmcReque
     /**
      * A filter to return only DeployPipelines that matches the given lifecycleState.
      */
-    private DeployPipeline.LifecycleState lifecycleState;
+    private com.oracle.bmc.devops.model.DeployPipeline.LifecycleState lifecycleState;
 
     /**
      * A filter to return only resources that match the entire display name given.

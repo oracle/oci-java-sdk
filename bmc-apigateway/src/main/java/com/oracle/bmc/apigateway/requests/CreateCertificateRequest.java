@@ -18,12 +18,13 @@ import com.oracle.bmc.apigateway.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateCertificateRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateCertificateDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.apigateway.model.CreateCertificateDetails> {
 
     /**
      * Details for the new certificate
      */
-    private CreateCertificateDetails createCertificateDetails;
+    private com.oracle.bmc.apigateway.model.CreateCertificateDetails createCertificateDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -46,13 +47,14 @@ public class CreateCertificateRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateCertificateDetails getBody$() {
+    public com.oracle.bmc.apigateway.model.CreateCertificateDetails getBody$() {
         return createCertificateDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateCertificateRequest, CreateCertificateDetails> {
+                    CreateCertificateRequest,
+                    com.oracle.bmc.apigateway.model.CreateCertificateDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +118,7 @@ public class CreateCertificateRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateCertificateDetails body) {
+        public Builder body$(com.oracle.bmc.apigateway.model.CreateCertificateDetails body) {
             createCertificateDetails(body);
             return this;
         }

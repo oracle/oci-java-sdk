@@ -18,12 +18,13 @@ import com.oracle.bmc.ons.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateSubscriptionRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateSubscriptionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.ons.model.CreateSubscriptionDetails> {
 
     /**
      * The subscription to create.
      */
-    private CreateSubscriptionDetails createSubscriptionDetails;
+    private com.oracle.bmc.ons.model.CreateSubscriptionDetails createSubscriptionDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -48,13 +49,13 @@ public class CreateSubscriptionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateSubscriptionDetails getBody$() {
+    public com.oracle.bmc.ons.model.CreateSubscriptionDetails getBody$() {
         return createSubscriptionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateSubscriptionRequest, CreateSubscriptionDetails> {
+                    CreateSubscriptionRequest, com.oracle.bmc.ons.model.CreateSubscriptionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -118,7 +119,7 @@ public class CreateSubscriptionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateSubscriptionDetails body) {
+        public Builder body$(com.oracle.bmc.ons.model.CreateSubscriptionDetails body) {
             createSubscriptionDetails(body);
             return this;
         }

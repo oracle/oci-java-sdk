@@ -165,7 +165,7 @@ public class ListBootVolumeBackupsRequest
      * case-insensitive.
      *
      */
-    private BootVolumeBackup.LifecycleState lifecycleState;
+    private com.oracle.bmc.core.model.BootVolumeBackup.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

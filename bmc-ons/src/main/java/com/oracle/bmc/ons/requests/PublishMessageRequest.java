@@ -17,7 +17,8 @@ import com.oracle.bmc.ons.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class PublishMessageRequest extends com.oracle.bmc.requests.BmcRequest<MessageDetails> {
+public class PublishMessageRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.ons.model.MessageDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
@@ -28,7 +29,7 @@ public class PublishMessageRequest extends com.oracle.bmc.requests.BmcRequest<Me
     /**
      * The message to publish.
      */
-    private MessageDetails messageDetails;
+    private com.oracle.bmc.ons.model.MessageDetails messageDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -98,13 +99,13 @@ public class PublishMessageRequest extends com.oracle.bmc.requests.BmcRequest<Me
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public MessageDetails getBody$() {
+    public com.oracle.bmc.ons.model.MessageDetails getBody$() {
         return messageDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    PublishMessageRequest, MessageDetails> {
+                    PublishMessageRequest, com.oracle.bmc.ons.model.MessageDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -169,7 +170,7 @@ public class PublishMessageRequest extends com.oracle.bmc.requests.BmcRequest<Me
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(MessageDetails body) {
+        public Builder body$(com.oracle.bmc.ons.model.MessageDetails body) {
             messageDetails(body);
             return this;
         }

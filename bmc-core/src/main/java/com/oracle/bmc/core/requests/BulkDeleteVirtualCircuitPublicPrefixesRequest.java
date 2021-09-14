@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class BulkDeleteVirtualCircuitPublicPrefixesRequest
-        extends com.oracle.bmc.requests.BmcRequest<BulkDeleteVirtualCircuitPublicPrefixesDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.BulkDeleteVirtualCircuitPublicPrefixesDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the virtual circuit.
@@ -28,7 +29,7 @@ public class BulkDeleteVirtualCircuitPublicPrefixesRequest
     /**
      * Request with public prefixes to be deleted from the virtual circuit.
      */
-    private BulkDeleteVirtualCircuitPublicPrefixesDetails
+    private com.oracle.bmc.core.model.BulkDeleteVirtualCircuitPublicPrefixesDetails
             bulkDeleteVirtualCircuitPublicPrefixesDetails;
 
     /**
@@ -37,14 +38,14 @@ public class BulkDeleteVirtualCircuitPublicPrefixesRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public BulkDeleteVirtualCircuitPublicPrefixesDetails getBody$() {
+    public com.oracle.bmc.core.model.BulkDeleteVirtualCircuitPublicPrefixesDetails getBody$() {
         return bulkDeleteVirtualCircuitPublicPrefixesDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     BulkDeleteVirtualCircuitPublicPrefixesRequest,
-                    BulkDeleteVirtualCircuitPublicPrefixesDetails> {
+                    com.oracle.bmc.core.model.BulkDeleteVirtualCircuitPublicPrefixesDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -109,7 +110,8 @@ public class BulkDeleteVirtualCircuitPublicPrefixesRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(BulkDeleteVirtualCircuitPublicPrefixesDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.BulkDeleteVirtualCircuitPublicPrefixesDetails body) {
             bulkDeleteVirtualCircuitPublicPrefixesDetails(body);
             return this;
         }

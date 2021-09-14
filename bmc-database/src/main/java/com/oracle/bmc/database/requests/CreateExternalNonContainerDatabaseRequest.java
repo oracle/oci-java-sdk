@@ -18,12 +18,14 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateExternalNonContainerDatabaseRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateExternalNonContainerDatabaseDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.CreateExternalNonContainerDatabaseDetails> {
 
     /**
      * Request to create a new external non-container database.
      */
-    private CreateExternalNonContainerDatabaseDetails createExternalNonContainerDatabaseDetails;
+    private com.oracle.bmc.database.model.CreateExternalNonContainerDatabaseDetails
+            createExternalNonContainerDatabaseDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -47,14 +49,14 @@ public class CreateExternalNonContainerDatabaseRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateExternalNonContainerDatabaseDetails getBody$() {
+    public com.oracle.bmc.database.model.CreateExternalNonContainerDatabaseDetails getBody$() {
         return createExternalNonContainerDatabaseDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateExternalNonContainerDatabaseRequest,
-                    CreateExternalNonContainerDatabaseDetails> {
+                    com.oracle.bmc.database.model.CreateExternalNonContainerDatabaseDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +121,8 @@ public class CreateExternalNonContainerDatabaseRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateExternalNonContainerDatabaseDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.CreateExternalNonContainerDatabaseDetails body) {
             createExternalNonContainerDatabaseDetails(body);
             return this;
         }

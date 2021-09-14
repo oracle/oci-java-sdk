@@ -17,12 +17,14 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class EncryptRequest extends com.oracle.bmc.requests.BmcRequest<EncryptDataDetails> {
+public class EncryptRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.keymanagement.model.EncryptDataDetails> {
 
     /**
      * EncryptDataDetails
      */
-    private EncryptDataDetails encryptDataDetails;
+    private com.oracle.bmc.keymanagement.model.EncryptDataDetails encryptDataDetails;
 
     /**
      * Unique identifier for the request. If provided, the returned request ID
@@ -38,13 +40,13 @@ public class EncryptRequest extends com.oracle.bmc.requests.BmcRequest<EncryptDa
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public EncryptDataDetails getBody$() {
+    public com.oracle.bmc.keymanagement.model.EncryptDataDetails getBody$() {
         return encryptDataDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    EncryptRequest, EncryptDataDetails> {
+                    EncryptRequest, com.oracle.bmc.keymanagement.model.EncryptDataDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -107,7 +109,7 @@ public class EncryptRequest extends com.oracle.bmc.requests.BmcRequest<EncryptDa
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(EncryptDataDetails body) {
+        public Builder body$(com.oracle.bmc.keymanagement.model.EncryptDataDetails body) {
             encryptDataDetails(body);
             return this;
         }

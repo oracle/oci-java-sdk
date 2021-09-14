@@ -18,12 +18,14 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeVmClusterCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeVmClusterCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.ChangeVmClusterCompartmentDetails> {
 
     /**
      * Request to move the Exadata Cloud@Customer VM cluster to a different compartment.
      */
-    private ChangeVmClusterCompartmentDetails changeVmClusterCompartmentDetails;
+    private com.oracle.bmc.database.model.ChangeVmClusterCompartmentDetails
+            changeVmClusterCompartmentDetails;
 
     /**
      * The VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -60,13 +62,14 @@ public class ChangeVmClusterCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeVmClusterCompartmentDetails getBody$() {
+    public com.oracle.bmc.database.model.ChangeVmClusterCompartmentDetails getBody$() {
         return changeVmClusterCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeVmClusterCompartmentRequest, ChangeVmClusterCompartmentDetails> {
+                    ChangeVmClusterCompartmentRequest,
+                    com.oracle.bmc.database.model.ChangeVmClusterCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -132,7 +135,7 @@ public class ChangeVmClusterCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeVmClusterCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.database.model.ChangeVmClusterCompartmentDetails body) {
             changeVmClusterCompartmentDetails(body);
             return this;
         }

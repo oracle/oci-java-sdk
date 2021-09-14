@@ -18,7 +18,8 @@ import com.oracle.bmc.goldengate.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeDeploymentCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeDeploymentCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.goldengate.model.ChangeDeploymentCompartmentDetails> {
 
     /**
      * A unique Deployment identifier.
@@ -30,7 +31,8 @@ public class ChangeDeploymentCompartmentRequest
      * Properties to change the compartment of a Deployment.
      *
      */
-    private ChangeDeploymentCompartmentDetails changeDeploymentCompartmentDetails;
+    private com.oracle.bmc.goldengate.model.ChangeDeploymentCompartmentDetails
+            changeDeploymentCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.  The resource is updated or deleted only if the etag you provide matches the resource's current etag value.
@@ -56,13 +58,14 @@ public class ChangeDeploymentCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeDeploymentCompartmentDetails getBody$() {
+    public com.oracle.bmc.goldengate.model.ChangeDeploymentCompartmentDetails getBody$() {
         return changeDeploymentCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeDeploymentCompartmentRequest, ChangeDeploymentCompartmentDetails> {
+                    ChangeDeploymentCompartmentRequest,
+                    com.oracle.bmc.goldengate.model.ChangeDeploymentCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -128,7 +131,8 @@ public class ChangeDeploymentCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeDeploymentCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.goldengate.model.ChangeDeploymentCompartmentDetails body) {
             changeDeploymentCompartmentDetails(body);
             return this;
         }

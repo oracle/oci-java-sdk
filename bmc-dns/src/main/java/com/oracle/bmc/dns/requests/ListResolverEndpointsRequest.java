@@ -99,7 +99,7 @@ public class ListResolverEndpointsRequest
     /**
      * The state of a resource.
      */
-    private ResolverEndpointSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.dns.model.ResolverEndpointSummary.LifecycleState lifecycleState;
 
     /**
      * Specifies to operate only on resources that have a matching DNS scope.

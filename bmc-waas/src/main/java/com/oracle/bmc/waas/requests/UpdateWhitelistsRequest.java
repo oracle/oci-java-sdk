@@ -18,7 +18,8 @@ import com.oracle.bmc.waas.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateWhitelistsRequest
-        extends com.oracle.bmc.requests.BmcRequest<java.util.List<Whitelist>> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                java.util.List<com.oracle.bmc.waas.model.Whitelist>> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
@@ -28,7 +29,7 @@ public class UpdateWhitelistsRequest
     /**
      *
      */
-    private java.util.List<Whitelist> whitelists;
+    private java.util.List<com.oracle.bmc.waas.model.Whitelist> whitelists;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -52,24 +53,24 @@ public class UpdateWhitelistsRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public java.util.List<Whitelist> getBody$() {
+    public java.util.List<com.oracle.bmc.waas.model.Whitelist> getBody$() {
         return whitelists;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateWhitelistsRequest, java.util.List<Whitelist>> {
+                    UpdateWhitelistsRequest, java.util.List<com.oracle.bmc.waas.model.Whitelist>> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        private java.util.List<Whitelist> whitelists = null;
+        private java.util.List<com.oracle.bmc.waas.model.Whitelist> whitelists = null;
 
         /**
          *
          * @return this builder instance
          */
-        public Builder whitelists(java.util.List<Whitelist> whitelists) {
+        public Builder whitelists(java.util.List<com.oracle.bmc.waas.model.Whitelist> whitelists) {
             this.whitelists = whitelists;
             return this;
         }
@@ -78,7 +79,7 @@ public class UpdateWhitelistsRequest
          * Singular setter.
          * @return this builder instance
          */
-        public Builder whitelists(Whitelist singularValue) {
+        public Builder whitelists(com.oracle.bmc.waas.model.Whitelist singularValue) {
             return this.whitelists(java.util.Arrays.asList(singularValue));
         }
 
@@ -143,7 +144,7 @@ public class UpdateWhitelistsRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(java.util.List<Whitelist> body) {
+        public Builder body$(java.util.List<com.oracle.bmc.waas.model.Whitelist> body) {
             whitelists(body);
             return this;
         }

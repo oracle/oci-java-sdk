@@ -18,7 +18,8 @@ import com.oracle.bmc.goldengate.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeDatabaseRegistrationCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeDatabaseRegistrationCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.goldengate.model.ChangeDatabaseRegistrationCompartmentDetails> {
 
     /**
      * A unique DatabaseRegistration identifier.
@@ -30,7 +31,7 @@ public class ChangeDatabaseRegistrationCompartmentRequest
      * Properties to change the compartment of a DatabaseRegistration.
      *
      */
-    private ChangeDatabaseRegistrationCompartmentDetails
+    private com.oracle.bmc.goldengate.model.ChangeDatabaseRegistrationCompartmentDetails
             changeDatabaseRegistrationCompartmentDetails;
 
     /**
@@ -57,14 +58,14 @@ public class ChangeDatabaseRegistrationCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeDatabaseRegistrationCompartmentDetails getBody$() {
+    public com.oracle.bmc.goldengate.model.ChangeDatabaseRegistrationCompartmentDetails getBody$() {
         return changeDatabaseRegistrationCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeDatabaseRegistrationCompartmentRequest,
-                    ChangeDatabaseRegistrationCompartmentDetails> {
+                    com.oracle.bmc.goldengate.model.ChangeDatabaseRegistrationCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -131,7 +132,8 @@ public class ChangeDatabaseRegistrationCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeDatabaseRegistrationCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.goldengate.model.ChangeDatabaseRegistrationCompartmentDetails body) {
             changeDatabaseRegistrationCompartmentDetails(body);
             return this;
         }

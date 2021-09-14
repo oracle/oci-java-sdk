@@ -18,7 +18,8 @@ import com.oracle.bmc.osmanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeManagedInstanceGroupCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeManagedInstanceGroupCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.osmanagement.model.ChangeManagedInstanceGroupCompartmentDetails> {
 
     /**
      * OCID for the managed instance group
@@ -28,7 +29,7 @@ public class ChangeManagedInstanceGroupCompartmentRequest
     /**
      * OCID for the compartment to which the resource will be moved.
      */
-    private ChangeManagedInstanceGroupCompartmentDetails
+    private com.oracle.bmc.osmanagement.model.ChangeManagedInstanceGroupCompartmentDetails
             changeManagedInstanceGroupCompartmentDetails;
 
     /**
@@ -62,14 +63,16 @@ public class ChangeManagedInstanceGroupCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeManagedInstanceGroupCompartmentDetails getBody$() {
+    public com.oracle.bmc.osmanagement.model.ChangeManagedInstanceGroupCompartmentDetails
+            getBody$() {
         return changeManagedInstanceGroupCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeManagedInstanceGroupCompartmentRequest,
-                    ChangeManagedInstanceGroupCompartmentDetails> {
+                    com.oracle.bmc.osmanagement.model
+                            .ChangeManagedInstanceGroupCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -136,7 +139,9 @@ public class ChangeManagedInstanceGroupCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeManagedInstanceGroupCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.osmanagement.model.ChangeManagedInstanceGroupCompartmentDetails
+                        body) {
             changeManagedInstanceGroupCompartmentDetails(body);
             return this;
         }

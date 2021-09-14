@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class BulkAddVirtualCircuitPublicPrefixesRequest
-        extends com.oracle.bmc.requests.BmcRequest<BulkAddVirtualCircuitPublicPrefixesDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.BulkAddVirtualCircuitPublicPrefixesDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the virtual circuit.
@@ -28,7 +29,8 @@ public class BulkAddVirtualCircuitPublicPrefixesRequest
     /**
      * Request with publix prefixes to be added to the virtual circuit
      */
-    private BulkAddVirtualCircuitPublicPrefixesDetails bulkAddVirtualCircuitPublicPrefixesDetails;
+    private com.oracle.bmc.core.model.BulkAddVirtualCircuitPublicPrefixesDetails
+            bulkAddVirtualCircuitPublicPrefixesDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -36,14 +38,14 @@ public class BulkAddVirtualCircuitPublicPrefixesRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public BulkAddVirtualCircuitPublicPrefixesDetails getBody$() {
+    public com.oracle.bmc.core.model.BulkAddVirtualCircuitPublicPrefixesDetails getBody$() {
         return bulkAddVirtualCircuitPublicPrefixesDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     BulkAddVirtualCircuitPublicPrefixesRequest,
-                    BulkAddVirtualCircuitPublicPrefixesDetails> {
+                    com.oracle.bmc.core.model.BulkAddVirtualCircuitPublicPrefixesDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -107,7 +109,8 @@ public class BulkAddVirtualCircuitPublicPrefixesRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(BulkAddVirtualCircuitPublicPrefixesDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.BulkAddVirtualCircuitPublicPrefixesDetails body) {
             bulkAddVirtualCircuitPublicPrefixesDetails(body);
             return this;
         }

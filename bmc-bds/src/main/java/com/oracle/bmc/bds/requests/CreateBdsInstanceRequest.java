@@ -18,12 +18,13 @@ import com.oracle.bmc.bds.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateBdsInstanceRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateBdsInstanceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.bds.model.CreateBdsInstanceDetails> {
 
     /**
      * Details for the new cluster.
      */
-    private CreateBdsInstanceDetails createBdsInstanceDetails;
+    private com.oracle.bmc.bds.model.CreateBdsInstanceDetails createBdsInstanceDetails;
 
     /**
      * The client request ID for tracing.
@@ -46,13 +47,13 @@ public class CreateBdsInstanceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateBdsInstanceDetails getBody$() {
+    public com.oracle.bmc.bds.model.CreateBdsInstanceDetails getBody$() {
         return createBdsInstanceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateBdsInstanceRequest, CreateBdsInstanceDetails> {
+                    CreateBdsInstanceRequest, com.oracle.bmc.bds.model.CreateBdsInstanceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +117,7 @@ public class CreateBdsInstanceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateBdsInstanceDetails body) {
+        public Builder body$(com.oracle.bmc.bds.model.CreateBdsInstanceDetails body) {
             createBdsInstanceDetails(body);
             return this;
         }

@@ -17,7 +17,9 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateTaskRequest extends com.oracle.bmc.requests.BmcRequest<CreateTaskDetails> {
+public class CreateTaskRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataintegration.model.CreateTaskDetails> {
 
     /**
      * The workspace ID.
@@ -27,7 +29,7 @@ public class CreateTaskRequest extends com.oracle.bmc.requests.BmcRequest<Create
     /**
      * The details needed to create a new task.
      */
-    private CreateTaskDetails createTaskDetails;
+    private com.oracle.bmc.dataintegration.model.CreateTaskDetails createTaskDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
@@ -49,13 +51,13 @@ public class CreateTaskRequest extends com.oracle.bmc.requests.BmcRequest<Create
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateTaskDetails getBody$() {
+    public com.oracle.bmc.dataintegration.model.CreateTaskDetails getBody$() {
         return createTaskDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateTaskRequest, CreateTaskDetails> {
+                    CreateTaskRequest, com.oracle.bmc.dataintegration.model.CreateTaskDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -120,7 +122,7 @@ public class CreateTaskRequest extends com.oracle.bmc.requests.BmcRequest<Create
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateTaskDetails body) {
+        public Builder body$(com.oracle.bmc.dataintegration.model.CreateTaskDetails body) {
             createTaskDetails(body);
             return this;
         }

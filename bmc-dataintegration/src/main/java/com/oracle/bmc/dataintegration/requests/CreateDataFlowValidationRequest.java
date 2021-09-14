@@ -18,7 +18,8 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateDataFlowValidationRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateDataFlowValidationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataintegration.model.CreateDataFlowValidationDetails> {
 
     /**
      * The workspace ID.
@@ -28,7 +29,8 @@ public class CreateDataFlowValidationRequest
     /**
      * The information needed to create the data flow validation for the data flow object.
      */
-    private CreateDataFlowValidationDetails createDataFlowValidationDetails;
+    private com.oracle.bmc.dataintegration.model.CreateDataFlowValidationDetails
+            createDataFlowValidationDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If
@@ -50,13 +52,14 @@ public class CreateDataFlowValidationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateDataFlowValidationDetails getBody$() {
+    public com.oracle.bmc.dataintegration.model.CreateDataFlowValidationDetails getBody$() {
         return createDataFlowValidationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateDataFlowValidationRequest, CreateDataFlowValidationDetails> {
+                    CreateDataFlowValidationRequest,
+                    com.oracle.bmc.dataintegration.model.CreateDataFlowValidationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +124,8 @@ public class CreateDataFlowValidationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateDataFlowValidationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.dataintegration.model.CreateDataFlowValidationDetails body) {
             createDataFlowValidationDetails(body);
             return this;
         }

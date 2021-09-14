@@ -18,7 +18,8 @@ import com.oracle.bmc.osmanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateManagedInstanceGroupRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateManagedInstanceGroupDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.osmanagement.model.UpdateManagedInstanceGroupDetails> {
 
     /**
      * OCID for the managed instance group
@@ -28,7 +29,8 @@ public class UpdateManagedInstanceGroupRequest
     /**
      * Details about a Managed Instance Group to update
      */
-    private UpdateManagedInstanceGroupDetails updateManagedInstanceGroupDetails;
+    private com.oracle.bmc.osmanagement.model.UpdateManagedInstanceGroupDetails
+            updateManagedInstanceGroupDetails;
 
     /**
      * The client request ID for tracing.
@@ -51,13 +53,14 @@ public class UpdateManagedInstanceGroupRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateManagedInstanceGroupDetails getBody$() {
+    public com.oracle.bmc.osmanagement.model.UpdateManagedInstanceGroupDetails getBody$() {
         return updateManagedInstanceGroupDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateManagedInstanceGroupRequest, UpdateManagedInstanceGroupDetails> {
+                    UpdateManagedInstanceGroupRequest,
+                    com.oracle.bmc.osmanagement.model.UpdateManagedInstanceGroupDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,8 @@ public class UpdateManagedInstanceGroupRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateManagedInstanceGroupDetails body) {
+        public Builder body$(
+                com.oracle.bmc.osmanagement.model.UpdateManagedInstanceGroupDetails body) {
             updateManagedInstanceGroupDetails(body);
             return this;
         }

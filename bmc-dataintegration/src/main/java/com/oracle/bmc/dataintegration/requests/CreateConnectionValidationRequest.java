@@ -18,7 +18,8 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateConnectionValidationRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateConnectionValidationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataintegration.model.CreateConnectionValidationDetails> {
 
     /**
      * The workspace ID.
@@ -28,7 +29,8 @@ public class CreateConnectionValidationRequest
     /**
      * The information needed to validate a connection.
      */
-    private CreateConnectionValidationDetails createConnectionValidationDetails;
+    private com.oracle.bmc.dataintegration.model.CreateConnectionValidationDetails
+            createConnectionValidationDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If
@@ -50,13 +52,14 @@ public class CreateConnectionValidationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateConnectionValidationDetails getBody$() {
+    public com.oracle.bmc.dataintegration.model.CreateConnectionValidationDetails getBody$() {
         return createConnectionValidationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateConnectionValidationRequest, CreateConnectionValidationDetails> {
+                    CreateConnectionValidationRequest,
+                    com.oracle.bmc.dataintegration.model.CreateConnectionValidationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +124,8 @@ public class CreateConnectionValidationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateConnectionValidationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.dataintegration.model.CreateConnectionValidationDetails body) {
             createConnectionValidationDetails(body);
             return this;
         }

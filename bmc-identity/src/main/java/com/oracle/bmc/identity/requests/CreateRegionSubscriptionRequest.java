@@ -18,12 +18,14 @@ import com.oracle.bmc.identity.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateRegionSubscriptionRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateRegionSubscriptionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.CreateRegionSubscriptionDetails> {
 
     /**
      * Request object for activate a new region.
      */
-    private CreateRegionSubscriptionDetails createRegionSubscriptionDetails;
+    private com.oracle.bmc.identity.model.CreateRegionSubscriptionDetails
+            createRegionSubscriptionDetails;
 
     /**
      * The OCID of the tenancy.
@@ -46,13 +48,14 @@ public class CreateRegionSubscriptionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateRegionSubscriptionDetails getBody$() {
+    public com.oracle.bmc.identity.model.CreateRegionSubscriptionDetails getBody$() {
         return createRegionSubscriptionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateRegionSubscriptionRequest, CreateRegionSubscriptionDetails> {
+                    CreateRegionSubscriptionRequest,
+                    com.oracle.bmc.identity.model.CreateRegionSubscriptionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +119,7 @@ public class CreateRegionSubscriptionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateRegionSubscriptionDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.CreateRegionSubscriptionDetails body) {
             createRegionSubscriptionDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.ocvp.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeSddcCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeSddcCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.ocvp.model.ChangeSddcCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC.
@@ -29,7 +30,7 @@ public class ChangeSddcCompartmentRequest
     /**
      * Request to change the compartment of the specified SDDC
      */
-    private ChangeSddcCompartmentDetails changeSddcCompartmentDetails;
+    private com.oracle.bmc.ocvp.model.ChangeSddcCompartmentDetails changeSddcCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -64,13 +65,14 @@ public class ChangeSddcCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeSddcCompartmentDetails getBody$() {
+    public com.oracle.bmc.ocvp.model.ChangeSddcCompartmentDetails getBody$() {
         return changeSddcCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeSddcCompartmentRequest, ChangeSddcCompartmentDetails> {
+                    ChangeSddcCompartmentRequest,
+                    com.oracle.bmc.ocvp.model.ChangeSddcCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -136,7 +138,7 @@ public class ChangeSddcCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeSddcCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.ocvp.model.ChangeSddcCompartmentDetails body) {
             changeSddcCompartmentDetails(body);
             return this;
         }

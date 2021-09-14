@@ -17,12 +17,14 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class DecryptRequest extends com.oracle.bmc.requests.BmcRequest<DecryptDataDetails> {
+public class DecryptRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.keymanagement.model.DecryptDataDetails> {
 
     /**
      * DecryptDataDetails
      */
-    private DecryptDataDetails decryptDataDetails;
+    private com.oracle.bmc.keymanagement.model.DecryptDataDetails decryptDataDetails;
 
     /**
      * Unique identifier for the request. If provided, the returned request ID
@@ -38,13 +40,13 @@ public class DecryptRequest extends com.oracle.bmc.requests.BmcRequest<DecryptDa
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public DecryptDataDetails getBody$() {
+    public com.oracle.bmc.keymanagement.model.DecryptDataDetails getBody$() {
         return decryptDataDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    DecryptRequest, DecryptDataDetails> {
+                    DecryptRequest, com.oracle.bmc.keymanagement.model.DecryptDataDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -107,7 +109,7 @@ public class DecryptRequest extends com.oracle.bmc.requests.BmcRequest<DecryptDa
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(DecryptDataDetails body) {
+        public Builder body$(com.oracle.bmc.keymanagement.model.DecryptDataDetails body) {
             decryptDataDetails(body);
             return this;
         }

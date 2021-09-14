@@ -18,12 +18,14 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateExadataInfrastructureRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateExadataInfrastructureDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.CreateExadataInfrastructureDetails> {
 
     /**
      * Request to create Exadata Cloud@Customer infrastructure.
      */
-    private CreateExadataInfrastructureDetails createExadataInfrastructureDetails;
+    private com.oracle.bmc.database.model.CreateExadataInfrastructureDetails
+            createExadataInfrastructureDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -47,13 +49,14 @@ public class CreateExadataInfrastructureRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateExadataInfrastructureDetails getBody$() {
+    public com.oracle.bmc.database.model.CreateExadataInfrastructureDetails getBody$() {
         return createExadataInfrastructureDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateExadataInfrastructureRequest, CreateExadataInfrastructureDetails> {
+                    CreateExadataInfrastructureRequest,
+                    com.oracle.bmc.database.model.CreateExadataInfrastructureDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +120,8 @@ public class CreateExadataInfrastructureRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateExadataInfrastructureDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.CreateExadataInfrastructureDetails body) {
             createExadataInfrastructureDetails(body);
             return this;
         }

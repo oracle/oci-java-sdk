@@ -17,7 +17,9 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class SearchCriteriaRequest extends com.oracle.bmc.requests.BmcRequest<SearchCriteria> {
+public class SearchCriteriaRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.SearchCriteria> {
 
     /**
      * Unique catalog identifier.
@@ -27,7 +29,7 @@ public class SearchCriteriaRequest extends com.oracle.bmc.requests.BmcRequest<Se
     /**
      * The information used to create an extended search results.
      */
-    private SearchCriteria searchCriteriaDetails;
+    private com.oracle.bmc.datacatalog.model.SearchCriteria searchCriteriaDetails;
 
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -155,13 +157,13 @@ public class SearchCriteriaRequest extends com.oracle.bmc.requests.BmcRequest<Se
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public SearchCriteria getBody$() {
+    public com.oracle.bmc.datacatalog.model.SearchCriteria getBody$() {
         return searchCriteriaDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    SearchCriteriaRequest, SearchCriteria> {
+                    SearchCriteriaRequest, com.oracle.bmc.datacatalog.model.SearchCriteria> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -233,7 +235,7 @@ public class SearchCriteriaRequest extends com.oracle.bmc.requests.BmcRequest<Se
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(SearchCriteria body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.SearchCriteria body) {
             searchCriteriaDetails(body);
             return this;
         }

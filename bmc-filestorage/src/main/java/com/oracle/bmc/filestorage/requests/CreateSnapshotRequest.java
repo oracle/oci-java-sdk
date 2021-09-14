@@ -18,12 +18,13 @@ import com.oracle.bmc.filestorage.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateSnapshotRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateSnapshotDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.filestorage.model.CreateSnapshotDetails> {
 
     /**
      * Details for creating a new snapshot.
      */
-    private CreateSnapshotDetails createSnapshotDetails;
+    private com.oracle.bmc.filestorage.model.CreateSnapshotDetails createSnapshotDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -48,13 +49,13 @@ public class CreateSnapshotRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateSnapshotDetails getBody$() {
+    public com.oracle.bmc.filestorage.model.CreateSnapshotDetails getBody$() {
         return createSnapshotDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateSnapshotRequest, CreateSnapshotDetails> {
+                    CreateSnapshotRequest, com.oracle.bmc.filestorage.model.CreateSnapshotDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -118,7 +119,7 @@ public class CreateSnapshotRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateSnapshotDetails body) {
+        public Builder body$(com.oracle.bmc.filestorage.model.CreateSnapshotDetails body) {
             createSnapshotDetails(body);
             return this;
         }

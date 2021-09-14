@@ -18,7 +18,8 @@ import com.oracle.bmc.databasemigration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeConnectionCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeConnectionCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.databasemigration.model.ChangeConnectionCompartmentDetails> {
 
     /**
      * The OCID of the database connection
@@ -30,7 +31,8 @@ public class ChangeConnectionCompartmentRequest
      * Details to change the compartment.
      *
      */
-    private ChangeConnectionCompartmentDetails changeConnectionCompartmentDetails;
+    private com.oracle.bmc.databasemigration.model.ChangeConnectionCompartmentDetails
+            changeConnectionCompartmentDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -65,13 +67,14 @@ public class ChangeConnectionCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeConnectionCompartmentDetails getBody$() {
+    public com.oracle.bmc.databasemigration.model.ChangeConnectionCompartmentDetails getBody$() {
         return changeConnectionCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeConnectionCompartmentRequest, ChangeConnectionCompartmentDetails> {
+                    ChangeConnectionCompartmentRequest,
+                    com.oracle.bmc.databasemigration.model.ChangeConnectionCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -137,7 +140,8 @@ public class ChangeConnectionCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeConnectionCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.databasemigration.model.ChangeConnectionCompartmentDetails body) {
             changeConnectionCompartmentDetails(body);
             return this;
         }

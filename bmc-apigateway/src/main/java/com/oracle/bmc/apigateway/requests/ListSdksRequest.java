@@ -38,7 +38,7 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      * Example: {@code ACTIVE} or {@code DELETED}
      *
      */
-    private Sdk.LifecycleState lifecycleState;
+    private com.oracle.bmc.apigateway.model.Sdk.LifecycleState lifecycleState;
 
     /**
      * The maximum number of items to return.

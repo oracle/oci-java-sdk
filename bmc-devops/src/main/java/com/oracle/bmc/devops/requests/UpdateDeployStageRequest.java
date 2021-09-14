@@ -18,7 +18,8 @@ import com.oracle.bmc.devops.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateDeployStageRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateDeployStageDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.devops.model.UpdateDeployStageDetails> {
 
     /**
      * Unique stage identifier.
@@ -28,7 +29,7 @@ public class UpdateDeployStageRequest
     /**
      * The information to be updated.
      */
-    private UpdateDeployStageDetails updateDeployStageDetails;
+    private com.oracle.bmc.devops.model.UpdateDeployStageDetails updateDeployStageDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
@@ -46,13 +47,14 @@ public class UpdateDeployStageRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDeployStageDetails getBody$() {
+    public com.oracle.bmc.devops.model.UpdateDeployStageDetails getBody$() {
         return updateDeployStageDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateDeployStageRequest, UpdateDeployStageDetails> {
+                    UpdateDeployStageRequest,
+                    com.oracle.bmc.devops.model.UpdateDeployStageDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +119,7 @@ public class UpdateDeployStageRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDeployStageDetails body) {
+        public Builder body$(com.oracle.bmc.devops.model.UpdateDeployStageDetails body) {
             updateDeployStageDetails(body);
             return this;
         }

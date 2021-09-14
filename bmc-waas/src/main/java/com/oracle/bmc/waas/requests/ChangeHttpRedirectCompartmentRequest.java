@@ -18,7 +18,8 @@ import com.oracle.bmc.waas.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeHttpRedirectCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeHttpRedirectCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.waas.model.ChangeHttpRedirectCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the HTTP Redirect.
@@ -28,7 +29,8 @@ public class ChangeHttpRedirectCompartmentRequest
     /**
      *
      */
-    private ChangeHttpRedirectCompartmentDetails changeHttpRedirectCompartmentDetails;
+    private com.oracle.bmc.waas.model.ChangeHttpRedirectCompartmentDetails
+            changeHttpRedirectCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match} parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource. The resource will be updated or deleted only if the etag provided matches the resource's current etag value.
@@ -52,13 +54,14 @@ public class ChangeHttpRedirectCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeHttpRedirectCompartmentDetails getBody$() {
+    public com.oracle.bmc.waas.model.ChangeHttpRedirectCompartmentDetails getBody$() {
         return changeHttpRedirectCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeHttpRedirectCompartmentRequest, ChangeHttpRedirectCompartmentDetails> {
+                    ChangeHttpRedirectCompartmentRequest,
+                    com.oracle.bmc.waas.model.ChangeHttpRedirectCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +127,7 @@ public class ChangeHttpRedirectCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeHttpRedirectCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.waas.model.ChangeHttpRedirectCompartmentDetails body) {
             changeHttpRedirectCompartmentDetails(body);
             return this;
         }

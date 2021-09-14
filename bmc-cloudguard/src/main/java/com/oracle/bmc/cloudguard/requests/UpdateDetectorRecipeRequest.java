@@ -18,7 +18,8 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateDetectorRecipeRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateDetectorRecipeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.cloudguard.model.UpdateDetectorRecipeDetails> {
 
     /**
      * DetectorRecipe OCID
@@ -28,7 +29,7 @@ public class UpdateDetectorRecipeRequest
     /**
      * Details for the DetectorRecipe to be updated
      */
-    private UpdateDetectorRecipeDetails updateDetectorRecipeDetails;
+    private com.oracle.bmc.cloudguard.model.UpdateDetectorRecipeDetails updateDetectorRecipeDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -61,13 +62,14 @@ public class UpdateDetectorRecipeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDetectorRecipeDetails getBody$() {
+    public com.oracle.bmc.cloudguard.model.UpdateDetectorRecipeDetails getBody$() {
         return updateDetectorRecipeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateDetectorRecipeRequest, UpdateDetectorRecipeDetails> {
+                    UpdateDetectorRecipeRequest,
+                    com.oracle.bmc.cloudguard.model.UpdateDetectorRecipeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +135,7 @@ public class UpdateDetectorRecipeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDetectorRecipeDetails body) {
+        public Builder body$(com.oracle.bmc.cloudguard.model.UpdateDetectorRecipeDetails body) {
             updateDetectorRecipeDetails(body);
             return this;
         }

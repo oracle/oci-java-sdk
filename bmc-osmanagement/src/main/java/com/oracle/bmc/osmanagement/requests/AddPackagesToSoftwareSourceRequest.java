@@ -18,7 +18,8 @@ import com.oracle.bmc.osmanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class AddPackagesToSoftwareSourceRequest
-        extends com.oracle.bmc.requests.BmcRequest<AddPackagesToSoftwareSourceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.osmanagement.model.AddPackagesToSoftwareSourceDetails> {
 
     /**
      * The OCID of the software source.
@@ -28,7 +29,8 @@ public class AddPackagesToSoftwareSourceRequest
     /**
      * A list of package identifiers
      */
-    private AddPackagesToSoftwareSourceDetails addPackagesToSoftwareSourceDetails;
+    private com.oracle.bmc.osmanagement.model.AddPackagesToSoftwareSourceDetails
+            addPackagesToSoftwareSourceDetails;
 
     /**
      * The client request ID for tracing.
@@ -41,13 +43,14 @@ public class AddPackagesToSoftwareSourceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public AddPackagesToSoftwareSourceDetails getBody$() {
+    public com.oracle.bmc.osmanagement.model.AddPackagesToSoftwareSourceDetails getBody$() {
         return addPackagesToSoftwareSourceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    AddPackagesToSoftwareSourceRequest, AddPackagesToSoftwareSourceDetails> {
+                    AddPackagesToSoftwareSourceRequest,
+                    com.oracle.bmc.osmanagement.model.AddPackagesToSoftwareSourceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -111,7 +114,8 @@ public class AddPackagesToSoftwareSourceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(AddPackagesToSoftwareSourceDetails body) {
+        public Builder body$(
+                com.oracle.bmc.osmanagement.model.AddPackagesToSoftwareSourceDetails body) {
             addPackagesToSoftwareSourceDetails(body);
             return this;
         }

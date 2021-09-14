@@ -129,7 +129,8 @@ public class ListAutonomousDatabaseBackupsRequest
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    private AutonomousDatabaseBackupSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.database.model.AutonomousDatabaseBackupSummary.LifecycleState
+            lifecycleState;
 
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.

@@ -18,7 +18,9 @@ import com.oracle.bmc.networkloadbalancer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeNetworkLoadBalancerCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeNetworkLoadBalancerCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.networkloadbalancer.model
+                        .ChangeNetworkLoadBalancerCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -28,7 +30,8 @@ public class ChangeNetworkLoadBalancerCompartmentRequest
     /**
      * The configuration details for moving a network load balancer to a different compartment.
      */
-    private ChangeNetworkLoadBalancerCompartmentDetails changeNetworkLoadBalancerCompartmentDetails;
+    private com.oracle.bmc.networkloadbalancer.model.ChangeNetworkLoadBalancerCompartmentDetails
+            changeNetworkLoadBalancerCompartmentDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
@@ -63,14 +66,16 @@ public class ChangeNetworkLoadBalancerCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeNetworkLoadBalancerCompartmentDetails getBody$() {
+    public com.oracle.bmc.networkloadbalancer.model.ChangeNetworkLoadBalancerCompartmentDetails
+            getBody$() {
         return changeNetworkLoadBalancerCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeNetworkLoadBalancerCompartmentRequest,
-                    ChangeNetworkLoadBalancerCompartmentDetails> {
+                    com.oracle.bmc.networkloadbalancer.model
+                            .ChangeNetworkLoadBalancerCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -137,7 +142,9 @@ public class ChangeNetworkLoadBalancerCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeNetworkLoadBalancerCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.networkloadbalancer.model.ChangeNetworkLoadBalancerCompartmentDetails
+                        body) {
             changeNetworkLoadBalancerCompartmentDetails(body);
             return this;
         }

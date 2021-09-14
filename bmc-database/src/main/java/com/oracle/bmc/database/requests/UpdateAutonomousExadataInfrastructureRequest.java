@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateAutonomousExadataInfrastructureRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateAutonomousExadataInfrastructureDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.UpdateAutonomousExadataInfrastructureDetails> {
 
     /**
      * The Autonomous Exadata Infrastructure  [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,7 @@ public class UpdateAutonomousExadataInfrastructureRequest
     /**
      * Request to update the properties of a Autonomous Exadata Infrastructure.
      */
-    private UpdateAutonomousExadataInfrastructureDetails
+    private com.oracle.bmc.database.model.UpdateAutonomousExadataInfrastructureDetails
             updateAutonomousExadataInfrastructuresDetails;
 
     /**
@@ -45,14 +46,14 @@ public class UpdateAutonomousExadataInfrastructureRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateAutonomousExadataInfrastructureDetails getBody$() {
+    public com.oracle.bmc.database.model.UpdateAutonomousExadataInfrastructureDetails getBody$() {
         return updateAutonomousExadataInfrastructuresDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateAutonomousExadataInfrastructureRequest,
-                    UpdateAutonomousExadataInfrastructureDetails> {
+                    com.oracle.bmc.database.model.UpdateAutonomousExadataInfrastructureDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +118,8 @@ public class UpdateAutonomousExadataInfrastructureRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateAutonomousExadataInfrastructureDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.UpdateAutonomousExadataInfrastructureDetails body) {
             updateAutonomousExadataInfrastructuresDetails(body);
             return this;
         }

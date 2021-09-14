@@ -17,7 +17,9 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateEntityTagRequest extends com.oracle.bmc.requests.BmcRequest<CreateTagDetails> {
+public class CreateEntityTagRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.CreateTagDetails> {
 
     /**
      * Unique catalog identifier.
@@ -37,7 +39,7 @@ public class CreateEntityTagRequest extends com.oracle.bmc.requests.BmcRequest<C
     /**
      * The information used to create the entity tag.
      */
-    private CreateTagDetails createEntityTagDetails;
+    private com.oracle.bmc.datacatalog.model.CreateTagDetails createEntityTagDetails;
 
     /**
      * The client request ID for tracing.
@@ -60,13 +62,13 @@ public class CreateEntityTagRequest extends com.oracle.bmc.requests.BmcRequest<C
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateTagDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.CreateTagDetails getBody$() {
         return createEntityTagDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateEntityTagRequest, CreateTagDetails> {
+                    CreateEntityTagRequest, com.oracle.bmc.datacatalog.model.CreateTagDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +135,7 @@ public class CreateEntityTagRequest extends com.oracle.bmc.requests.BmcRequest<C
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateTagDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.CreateTagDetails body) {
             createEntityTagDetails(body);
             return this;
         }

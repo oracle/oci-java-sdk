@@ -17,7 +17,8 @@ import com.oracle.bmc.cims.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateIncidentRequest extends com.oracle.bmc.requests.BmcRequest<UpdateIncident> {
+public class UpdateIncidentRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.cims.model.UpdateIncident> {
 
     /**
      * Unique identifier for the support ticket.
@@ -32,7 +33,7 @@ public class UpdateIncidentRequest extends com.oracle.bmc.requests.BmcRequest<Up
     /**
      * Details about the support ticket being updated.
      */
-    private UpdateIncident updateIncidentDetails;
+    private com.oracle.bmc.cims.model.UpdateIncident updateIncidentDetails;
 
     /**
      * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
@@ -60,13 +61,13 @@ public class UpdateIncidentRequest extends com.oracle.bmc.requests.BmcRequest<Up
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateIncident getBody$() {
+    public com.oracle.bmc.cims.model.UpdateIncident getBody$() {
         return updateIncidentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateIncidentRequest, UpdateIncident> {
+                    UpdateIncidentRequest, com.oracle.bmc.cims.model.UpdateIncident> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +135,7 @@ public class UpdateIncidentRequest extends com.oracle.bmc.requests.BmcRequest<Up
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateIncident body) {
+        public Builder body$(com.oracle.bmc.cims.model.UpdateIncident body) {
             updateIncidentDetails(body);
             return this;
         }

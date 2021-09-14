@@ -17,7 +17,8 @@ import com.oracle.bmc.email.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateSenderRequest extends com.oracle.bmc.requests.BmcRequest<UpdateSenderDetails> {
+public class UpdateSenderRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.email.model.UpdateSenderDetails> {
 
     /**
      * The unique OCID of the sender.
@@ -27,7 +28,7 @@ public class UpdateSenderRequest extends com.oracle.bmc.requests.BmcRequest<Upda
     /**
      * update details for sender.
      */
-    private UpdateSenderDetails updateSenderDetails;
+    private com.oracle.bmc.email.model.UpdateSenderDetails updateSenderDetails;
 
     /**
      * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
@@ -48,13 +49,13 @@ public class UpdateSenderRequest extends com.oracle.bmc.requests.BmcRequest<Upda
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateSenderDetails getBody$() {
+    public com.oracle.bmc.email.model.UpdateSenderDetails getBody$() {
         return updateSenderDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateSenderRequest, UpdateSenderDetails> {
+                    UpdateSenderRequest, com.oracle.bmc.email.model.UpdateSenderDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +120,7 @@ public class UpdateSenderRequest extends com.oracle.bmc.requests.BmcRequest<Upda
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateSenderDetails body) {
+        public Builder body$(com.oracle.bmc.email.model.UpdateSenderDetails body) {
             updateSenderDetails(body);
             return this;
         }

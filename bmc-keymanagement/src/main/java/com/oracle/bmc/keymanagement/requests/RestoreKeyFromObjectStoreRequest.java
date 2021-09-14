@@ -18,7 +18,8 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RestoreKeyFromObjectStoreRequest
-        extends com.oracle.bmc.requests.BmcRequest<RestoreKeyFromObjectStoreDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.keymanagement.model.RestoreKeyFromObjectStoreDetails> {
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
@@ -52,7 +53,8 @@ public class RestoreKeyFromObjectStoreRequest
     /**
      * Location to restore the backup from
      */
-    private RestoreKeyFromObjectStoreDetails restoreKeyFromObjectStoreDetails;
+    private com.oracle.bmc.keymanagement.model.RestoreKeyFromObjectStoreDetails
+            restoreKeyFromObjectStoreDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -60,13 +62,14 @@ public class RestoreKeyFromObjectStoreRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RestoreKeyFromObjectStoreDetails getBody$() {
+    public com.oracle.bmc.keymanagement.model.RestoreKeyFromObjectStoreDetails getBody$() {
         return restoreKeyFromObjectStoreDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RestoreKeyFromObjectStoreRequest, RestoreKeyFromObjectStoreDetails> {
+                    RestoreKeyFromObjectStoreRequest,
+                    com.oracle.bmc.keymanagement.model.RestoreKeyFromObjectStoreDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -131,7 +134,8 @@ public class RestoreKeyFromObjectStoreRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RestoreKeyFromObjectStoreDetails body) {
+        public Builder body$(
+                com.oracle.bmc.keymanagement.model.RestoreKeyFromObjectStoreDetails body) {
             restoreKeyFromObjectStoreDetails(body);
             return this;
         }

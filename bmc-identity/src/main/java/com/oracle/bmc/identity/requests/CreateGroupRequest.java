@@ -17,12 +17,14 @@ import com.oracle.bmc.identity.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateGroupRequest extends com.oracle.bmc.requests.BmcRequest<CreateGroupDetails> {
+public class CreateGroupRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.CreateGroupDetails> {
 
     /**
      * Request object for creating a new group.
      */
-    private CreateGroupDetails createGroupDetails;
+    private com.oracle.bmc.identity.model.CreateGroupDetails createGroupDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -40,13 +42,13 @@ public class CreateGroupRequest extends com.oracle.bmc.requests.BmcRequest<Creat
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateGroupDetails getBody$() {
+    public com.oracle.bmc.identity.model.CreateGroupDetails getBody$() {
         return createGroupDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateGroupRequest, CreateGroupDetails> {
+                    CreateGroupRequest, com.oracle.bmc.identity.model.CreateGroupDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -109,7 +111,7 @@ public class CreateGroupRequest extends com.oracle.bmc.requests.BmcRequest<Creat
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateGroupDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.CreateGroupDetails body) {
             createGroupDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.bds.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateAutoScalingConfigurationRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateAutoScalingConfigurationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.bds.model.UpdateAutoScalingConfigurationDetails> {
 
     /**
      * The OCID of the cluster.
@@ -33,7 +34,8 @@ public class UpdateAutoScalingConfigurationRequest
     /**
      * Details for update an autoscaling configuration.
      */
-    private UpdateAutoScalingConfigurationDetails updateAutoScalingConfigurationDetails;
+    private com.oracle.bmc.bds.model.UpdateAutoScalingConfigurationDetails
+            updateAutoScalingConfigurationDetails;
 
     /**
      * The client request ID for tracing.
@@ -66,13 +68,14 @@ public class UpdateAutoScalingConfigurationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateAutoScalingConfigurationDetails getBody$() {
+    public com.oracle.bmc.bds.model.UpdateAutoScalingConfigurationDetails getBody$() {
         return updateAutoScalingConfigurationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateAutoScalingConfigurationRequest, UpdateAutoScalingConfigurationDetails> {
+                    UpdateAutoScalingConfigurationRequest,
+                    com.oracle.bmc.bds.model.UpdateAutoScalingConfigurationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -139,7 +142,7 @@ public class UpdateAutoScalingConfigurationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateAutoScalingConfigurationDetails body) {
+        public Builder body$(com.oracle.bmc.bds.model.UpdateAutoScalingConfigurationDetails body) {
             updateAutoScalingConfigurationDetails(body);
             return this;
         }

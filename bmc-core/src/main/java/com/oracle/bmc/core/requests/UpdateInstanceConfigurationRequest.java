@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateInstanceConfigurationRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateInstanceConfigurationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdateInstanceConfigurationDetails> {
 
     /**
      * The OCID of the instance configuration.
@@ -28,7 +29,8 @@ public class UpdateInstanceConfigurationRequest
     /**
      * Updates the freeFormTags, definedTags, and display name of an instance configuration.
      */
-    private UpdateInstanceConfigurationDetails updateInstanceConfigurationDetails;
+    private com.oracle.bmc.core.model.UpdateInstanceConfigurationDetails
+            updateInstanceConfigurationDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -54,13 +56,14 @@ public class UpdateInstanceConfigurationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateInstanceConfigurationDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateInstanceConfigurationDetails getBody$() {
         return updateInstanceConfigurationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationDetails> {
+                    UpdateInstanceConfigurationRequest,
+                    com.oracle.bmc.core.model.UpdateInstanceConfigurationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -125,7 +128,7 @@ public class UpdateInstanceConfigurationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateInstanceConfigurationDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdateInstanceConfigurationDetails body) {
             updateInstanceConfigurationDetails(body);
             return this;
         }

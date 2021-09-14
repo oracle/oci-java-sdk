@@ -51,7 +51,7 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
      * Example: {@code Creating}
      *
      */
-    private Application.LifecycleState lifecycleState;
+    private com.oracle.bmc.functions.model.Application.LifecycleState lifecycleState;
 
     /**
      * A filter to return only applications with display names that match the display name string. Matching is exact.

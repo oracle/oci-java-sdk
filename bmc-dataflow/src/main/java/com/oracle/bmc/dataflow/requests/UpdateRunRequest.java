@@ -17,13 +17,14 @@ import com.oracle.bmc.dataflow.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateRunRequest extends com.oracle.bmc.requests.BmcRequest<UpdateRunDetails> {
+public class UpdateRunRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.dataflow.model.UpdateRunDetails> {
 
     /**
      * Details for updating a run.
      *
      */
-    private UpdateRunDetails updateRunDetails;
+    private com.oracle.bmc.dataflow.model.UpdateRunDetails updateRunDetails;
 
     /**
      * The unique ID for the run
@@ -52,13 +53,13 @@ public class UpdateRunRequest extends com.oracle.bmc.requests.BmcRequest<UpdateR
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateRunDetails getBody$() {
+    public com.oracle.bmc.dataflow.model.UpdateRunDetails getBody$() {
         return updateRunDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateRunRequest, UpdateRunDetails> {
+                    UpdateRunRequest, com.oracle.bmc.dataflow.model.UpdateRunDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +124,7 @@ public class UpdateRunRequest extends com.oracle.bmc.requests.BmcRequest<UpdateR
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateRunDetails body) {
+        public Builder body$(com.oracle.bmc.dataflow.model.UpdateRunDetails body) {
             updateRunDetails(body);
             return this;
         }

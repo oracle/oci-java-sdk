@@ -19,7 +19,8 @@ import com.oracle.bmc.operatoraccesscontrol.model.*;
 @lombok.Getter
 public class ChangeOperatorControlAssignmentCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
-                ChangeOperatorControlAssignmentCompartmentDetails> {
+                com.oracle.bmc.operatoraccesscontrol.model
+                        .ChangeOperatorControlAssignmentCompartmentDetails> {
 
     /**
      * unique OperatorControl identifier
@@ -29,7 +30,8 @@ public class ChangeOperatorControlAssignmentCompartmentRequest
     /**
      * Changes the compartment for the given operator control assignment.
      */
-    private ChangeOperatorControlAssignmentCompartmentDetails
+    private com.oracle.bmc.operatoraccesscontrol.model
+                    .ChangeOperatorControlAssignmentCompartmentDetails
             changeOperatorControlAssignmentCompartmentDetails;
 
     /**
@@ -63,14 +65,17 @@ public class ChangeOperatorControlAssignmentCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeOperatorControlAssignmentCompartmentDetails getBody$() {
+    public com.oracle.bmc.operatoraccesscontrol.model
+                    .ChangeOperatorControlAssignmentCompartmentDetails
+            getBody$() {
         return changeOperatorControlAssignmentCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeOperatorControlAssignmentCompartmentRequest,
-                    ChangeOperatorControlAssignmentCompartmentDetails> {
+                    com.oracle.bmc.operatoraccesscontrol.model
+                            .ChangeOperatorControlAssignmentCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -138,7 +143,10 @@ public class ChangeOperatorControlAssignmentCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeOperatorControlAssignmentCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.operatoraccesscontrol.model
+                                .ChangeOperatorControlAssignmentCompartmentDetails
+                        body) {
             changeOperatorControlAssignmentCompartmentDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeInternetGatewayCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeInternetGatewayCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.ChangeInternetGatewayCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the internet gateway.
@@ -28,7 +29,8 @@ public class ChangeInternetGatewayCompartmentRequest
     /**
      * Request to change the compartment of an internet gateway.
      */
-    private ChangeInternetGatewayCompartmentDetails changeInternetGatewayCompartmentDetails;
+    private com.oracle.bmc.core.model.ChangeInternetGatewayCompartmentDetails
+            changeInternetGatewayCompartmentDetails;
 
     /**
      * Unique identifier for the request.
@@ -53,14 +55,14 @@ public class ChangeInternetGatewayCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeInternetGatewayCompartmentDetails getBody$() {
+    public com.oracle.bmc.core.model.ChangeInternetGatewayCompartmentDetails getBody$() {
         return changeInternetGatewayCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeInternetGatewayCompartmentRequest,
-                    ChangeInternetGatewayCompartmentDetails> {
+                    com.oracle.bmc.core.model.ChangeInternetGatewayCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -125,7 +127,8 @@ public class ChangeInternetGatewayCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeInternetGatewayCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.ChangeInternetGatewayCompartmentDetails body) {
             changeInternetGatewayCompartmentDetails(body);
             return this;
         }

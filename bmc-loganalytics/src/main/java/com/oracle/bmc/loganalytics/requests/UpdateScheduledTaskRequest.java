@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateScheduledTaskRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateScheduledTaskDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.UpdateScheduledTaskDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -38,7 +39,7 @@ public class UpdateScheduledTaskRequest
      * Schedules may be updated only for taskType SAVED_SEARCH and PURGE.
      *
      */
-    private UpdateScheduledTaskDetails updateScheduledTaskDetails;
+    private com.oracle.bmc.loganalytics.model.UpdateScheduledTaskDetails updateScheduledTaskDetails;
 
     /**
      * The client request ID for tracing.
@@ -61,7 +62,7 @@ public class UpdateScheduledTaskRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateScheduledTaskDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.UpdateScheduledTaskDetails getBody$() {
         return updateScheduledTaskDetails;
     }
 
@@ -72,7 +73,8 @@ public class UpdateScheduledTaskRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateScheduledTaskRequest, UpdateScheduledTaskDetails> {
+                    UpdateScheduledTaskRequest,
+                    com.oracle.bmc.loganalytics.model.UpdateScheduledTaskDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -138,7 +140,7 @@ public class UpdateScheduledTaskRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateScheduledTaskDetails body) {
+        public Builder body$(com.oracle.bmc.loganalytics.model.UpdateScheduledTaskDetails body) {
             updateScheduledTaskDetails(body);
             return this;
         }

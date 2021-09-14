@@ -17,12 +17,14 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateVaultRequest extends com.oracle.bmc.requests.BmcRequest<CreateVaultDetails> {
+public class CreateVaultRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.keymanagement.model.CreateVaultDetails> {
 
     /**
      * CreateVaultDetails
      */
-    private CreateVaultDetails createVaultDetails;
+    private com.oracle.bmc.keymanagement.model.CreateVaultDetails createVaultDetails;
 
     /**
      * Unique identifier for the request. If provided, the returned request ID
@@ -49,13 +51,13 @@ public class CreateVaultRequest extends com.oracle.bmc.requests.BmcRequest<Creat
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateVaultDetails getBody$() {
+    public com.oracle.bmc.keymanagement.model.CreateVaultDetails getBody$() {
         return createVaultDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateVaultRequest, CreateVaultDetails> {
+                    CreateVaultRequest, com.oracle.bmc.keymanagement.model.CreateVaultDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +121,7 @@ public class CreateVaultRequest extends com.oracle.bmc.requests.BmcRequest<Creat
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateVaultDetails body) {
+        public Builder body$(com.oracle.bmc.keymanagement.model.CreateVaultDetails body) {
             createVaultDetails(body);
             return this;
         }

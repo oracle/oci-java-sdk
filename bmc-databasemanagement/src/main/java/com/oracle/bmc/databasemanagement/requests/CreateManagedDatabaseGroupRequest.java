@@ -18,12 +18,14 @@ import com.oracle.bmc.databasemanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateManagedDatabaseGroupRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateManagedDatabaseGroupDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.databasemanagement.model.CreateManagedDatabaseGroupDetails> {
 
     /**
      * The details required to create a Managed Database Group.
      */
-    private CreateManagedDatabaseGroupDetails createManagedDatabaseGroupDetails;
+    private com.oracle.bmc.databasemanagement.model.CreateManagedDatabaseGroupDetails
+            createManagedDatabaseGroupDetails;
 
     /**
      * The client request ID for tracing.
@@ -46,13 +48,14 @@ public class CreateManagedDatabaseGroupRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateManagedDatabaseGroupDetails getBody$() {
+    public com.oracle.bmc.databasemanagement.model.CreateManagedDatabaseGroupDetails getBody$() {
         return createManagedDatabaseGroupDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateManagedDatabaseGroupRequest, CreateManagedDatabaseGroupDetails> {
+                    CreateManagedDatabaseGroupRequest,
+                    com.oracle.bmc.databasemanagement.model.CreateManagedDatabaseGroupDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +119,8 @@ public class CreateManagedDatabaseGroupRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateManagedDatabaseGroupDetails body) {
+        public Builder body$(
+                com.oracle.bmc.databasemanagement.model.CreateManagedDatabaseGroupDetails body) {
             createManagedDatabaseGroupDetails(body);
             return this;
         }

@@ -51,6 +51,24 @@ public interface ComputeAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Accept the changes to the PCR values in the Measured Boot Report.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AcceptShieldedIntegrityPolicyResponse>
+            acceptShieldedIntegrityPolicy(
+                    AcceptShieldedIntegrityPolicyRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AcceptShieldedIntegrityPolicyRequest,
+                                    AcceptShieldedIntegrityPolicyResponse>
+                            handler);
+
+    /**
      * Adds a shape to the compatible shapes list for the image.
      *
      * @param request The request object containing the details to send
@@ -856,6 +874,22 @@ public interface ComputeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetInstanceConsoleConnectionRequest,
                             GetInstanceConsoleConnectionResponse>
+                    handler);
+
+    /**
+     * Gets the measured boot report for this Shielded Instance.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetMeasuredBootReportResponse> getMeasuredBootReport(
+            GetMeasuredBootReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetMeasuredBootReportRequest, GetMeasuredBootReportResponse>
                     handler);
 
     /**

@@ -53,7 +53,7 @@ public class ListTagDefaultsRequest extends com.oracle.bmc.requests.BmcRequest<j
      * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      *
      */
-    private TagDefaultSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.identity.model.TagDefaultSummary.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

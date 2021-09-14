@@ -18,12 +18,14 @@ import com.oracle.bmc.datasafe.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class EnableDataSafeConfigurationRequest
-        extends com.oracle.bmc.requests.BmcRequest<EnableDataSafeConfigurationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datasafe.model.EnableDataSafeConfigurationDetails> {
 
     /**
      * The details used to enable Data Safe.
      */
-    private EnableDataSafeConfigurationDetails enableDataSafeConfigurationDetails;
+    private com.oracle.bmc.datasafe.model.EnableDataSafeConfigurationDetails
+            enableDataSafeConfigurationDetails;
 
     /**
      * A filter to return only resources that match the specified compartment OCID.
@@ -51,13 +53,14 @@ public class EnableDataSafeConfigurationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public EnableDataSafeConfigurationDetails getBody$() {
+    public com.oracle.bmc.datasafe.model.EnableDataSafeConfigurationDetails getBody$() {
         return enableDataSafeConfigurationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    EnableDataSafeConfigurationRequest, EnableDataSafeConfigurationDetails> {
+                    EnableDataSafeConfigurationRequest,
+                    com.oracle.bmc.datasafe.model.EnableDataSafeConfigurationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,8 @@ public class EnableDataSafeConfigurationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(EnableDataSafeConfigurationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.datasafe.model.EnableDataSafeConfigurationDetails body) {
             enableDataSafeConfigurationDetails(body);
             return this;
         }

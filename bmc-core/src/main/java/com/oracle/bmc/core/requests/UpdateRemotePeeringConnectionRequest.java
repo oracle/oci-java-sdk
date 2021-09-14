@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateRemotePeeringConnectionRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateRemotePeeringConnectionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdateRemotePeeringConnectionDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the remote peering connection (RPC).
@@ -28,7 +29,8 @@ public class UpdateRemotePeeringConnectionRequest
     /**
      * Request to the update the peering connection to remote region
      */
-    private UpdateRemotePeeringConnectionDetails updateRemotePeeringConnectionDetails;
+    private com.oracle.bmc.core.model.UpdateRemotePeeringConnectionDetails
+            updateRemotePeeringConnectionDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -44,13 +46,14 @@ public class UpdateRemotePeeringConnectionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateRemotePeeringConnectionDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateRemotePeeringConnectionDetails getBody$() {
         return updateRemotePeeringConnectionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateRemotePeeringConnectionRequest, UpdateRemotePeeringConnectionDetails> {
+                    UpdateRemotePeeringConnectionRequest,
+                    com.oracle.bmc.core.model.UpdateRemotePeeringConnectionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +117,7 @@ public class UpdateRemotePeeringConnectionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateRemotePeeringConnectionDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdateRemotePeeringConnectionDetails body) {
             updateRemotePeeringConnectionDetails(body);
             return this;
         }

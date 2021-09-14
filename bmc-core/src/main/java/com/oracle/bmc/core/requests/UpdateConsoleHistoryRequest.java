@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateConsoleHistoryRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateConsoleHistoryDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdateConsoleHistoryDetails> {
 
     /**
      * The OCID of the console history.
@@ -28,7 +29,7 @@ public class UpdateConsoleHistoryRequest
     /**
      * Update instance fields
      */
-    private UpdateConsoleHistoryDetails updateConsoleHistoryDetails;
+    private com.oracle.bmc.core.model.UpdateConsoleHistoryDetails updateConsoleHistoryDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -44,13 +45,14 @@ public class UpdateConsoleHistoryRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateConsoleHistoryDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateConsoleHistoryDetails getBody$() {
         return updateConsoleHistoryDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateConsoleHistoryRequest, UpdateConsoleHistoryDetails> {
+                    UpdateConsoleHistoryRequest,
+                    com.oracle.bmc.core.model.UpdateConsoleHistoryDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +116,7 @@ public class UpdateConsoleHistoryRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateConsoleHistoryDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdateConsoleHistoryDetails body) {
             updateConsoleHistoryDetails(body);
             return this;
         }

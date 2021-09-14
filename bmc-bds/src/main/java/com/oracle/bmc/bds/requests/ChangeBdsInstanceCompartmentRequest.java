@@ -18,7 +18,8 @@ import com.oracle.bmc.bds.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeBdsInstanceCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeBdsInstanceCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.bds.model.ChangeBdsInstanceCompartmentDetails> {
 
     /**
      * The OCID of the cluster.
@@ -28,7 +29,8 @@ public class ChangeBdsInstanceCompartmentRequest
     /**
      * Details for the comparment change.
      */
-    private ChangeBdsInstanceCompartmentDetails changeBdsInstanceCompartmentDetails;
+    private com.oracle.bmc.bds.model.ChangeBdsInstanceCompartmentDetails
+            changeBdsInstanceCompartmentDetails;
 
     /**
      * The client request ID for tracing.
@@ -61,13 +63,14 @@ public class ChangeBdsInstanceCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeBdsInstanceCompartmentDetails getBody$() {
+    public com.oracle.bmc.bds.model.ChangeBdsInstanceCompartmentDetails getBody$() {
         return changeBdsInstanceCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeBdsInstanceCompartmentRequest, ChangeBdsInstanceCompartmentDetails> {
+                    ChangeBdsInstanceCompartmentRequest,
+                    com.oracle.bmc.bds.model.ChangeBdsInstanceCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +136,7 @@ public class ChangeBdsInstanceCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeBdsInstanceCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.bds.model.ChangeBdsInstanceCompartmentDetails body) {
             changeBdsInstanceCompartmentDetails(body);
             return this;
         }

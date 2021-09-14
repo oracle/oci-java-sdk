@@ -19,7 +19,7 @@ import com.oracle.bmc.core.model.*;
 @lombok.Getter
 public class ChangeComputeImageCapabilitySchemaCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
-                ChangeComputeImageCapabilitySchemaCompartmentDetails> {
+                com.oracle.bmc.core.model.ChangeComputeImageCapabilitySchemaCompartmentDetails> {
 
     /**
      * The id of the compute image capability schema or the image ocid
@@ -29,7 +29,7 @@ public class ChangeComputeImageCapabilitySchemaCompartmentRequest
     /**
      * Compute Image Capability Schema change compartment details
      */
-    private ChangeComputeImageCapabilitySchemaCompartmentDetails
+    private com.oracle.bmc.core.model.ChangeComputeImageCapabilitySchemaCompartmentDetails
             changeComputeImageCapabilitySchemaCompartmentDetails;
 
     /**
@@ -63,14 +63,16 @@ public class ChangeComputeImageCapabilitySchemaCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeComputeImageCapabilitySchemaCompartmentDetails getBody$() {
+    public com.oracle.bmc.core.model.ChangeComputeImageCapabilitySchemaCompartmentDetails
+            getBody$() {
         return changeComputeImageCapabilitySchemaCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeComputeImageCapabilitySchemaCompartmentRequest,
-                    ChangeComputeImageCapabilitySchemaCompartmentDetails> {
+                    com.oracle.bmc.core.model
+                            .ChangeComputeImageCapabilitySchemaCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -138,7 +140,9 @@ public class ChangeComputeImageCapabilitySchemaCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeComputeImageCapabilitySchemaCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.ChangeComputeImageCapabilitySchemaCompartmentDetails
+                        body) {
             changeComputeImageCapabilitySchemaCompartmentDetails(body);
             return this;
         }

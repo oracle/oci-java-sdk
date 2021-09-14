@@ -18,12 +18,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class LaunchInstanceRequest
-        extends com.oracle.bmc.requests.BmcRequest<LaunchInstanceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.LaunchInstanceDetails> {
 
     /**
      * Instance details
      */
-    private LaunchInstanceDetails launchInstanceDetails;
+    private com.oracle.bmc.core.model.LaunchInstanceDetails launchInstanceDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +42,13 @@ public class LaunchInstanceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public LaunchInstanceDetails getBody$() {
+    public com.oracle.bmc.core.model.LaunchInstanceDetails getBody$() {
         return launchInstanceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    LaunchInstanceRequest, LaunchInstanceDetails> {
+                    LaunchInstanceRequest, com.oracle.bmc.core.model.LaunchInstanceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +111,7 @@ public class LaunchInstanceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(LaunchInstanceDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.LaunchInstanceDetails body) {
             launchInstanceDetails(body);
             return this;
         }

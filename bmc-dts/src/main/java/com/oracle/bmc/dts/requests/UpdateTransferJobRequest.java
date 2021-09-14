@@ -18,7 +18,8 @@ import com.oracle.bmc.dts.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateTransferJobRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateTransferJobDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dts.model.UpdateTransferJobDetails> {
 
     /**
      * ID of the Transfer Job
@@ -28,7 +29,7 @@ public class UpdateTransferJobRequest
     /**
      * fields to update
      */
-    private UpdateTransferJobDetails updateTransferJobDetails;
+    private com.oracle.bmc.dts.model.UpdateTransferJobDetails updateTransferJobDetails;
 
     /**
      * The entity tag to match. Optional, if set, the update will be successful only if the
@@ -50,13 +51,13 @@ public class UpdateTransferJobRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateTransferJobDetails getBody$() {
+    public com.oracle.bmc.dts.model.UpdateTransferJobDetails getBody$() {
         return updateTransferJobDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateTransferJobRequest, UpdateTransferJobDetails> {
+                    UpdateTransferJobRequest, com.oracle.bmc.dts.model.UpdateTransferJobDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +122,7 @@ public class UpdateTransferJobRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateTransferJobDetails body) {
+        public Builder body$(com.oracle.bmc.dts.model.UpdateTransferJobDetails body) {
             updateTransferJobDetails(body);
             return this;
         }

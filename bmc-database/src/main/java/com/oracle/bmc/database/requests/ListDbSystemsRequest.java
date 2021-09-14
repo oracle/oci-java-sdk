@@ -128,7 +128,7 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    private DbSystemSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.database.model.DbSystemSummary.LifecycleState lifecycleState;
 
     /**
      * A filter to return only resources that match the given availability domain exactly.

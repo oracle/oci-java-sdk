@@ -18,12 +18,14 @@ import com.oracle.bmc.loadbalancer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateSSLCipherSuiteRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateSSLCipherSuiteDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loadbalancer.model.CreateSSLCipherSuiteDetails> {
 
     /**
      * The details of the SSL cipher suite to add.
      */
-    private CreateSSLCipherSuiteDetails createSSLCipherSuiteDetails;
+    private com.oracle.bmc.loadbalancer.model.CreateSSLCipherSuiteDetails
+            createSSLCipherSuiteDetails;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated load balancer.
@@ -54,13 +56,14 @@ public class CreateSSLCipherSuiteRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateSSLCipherSuiteDetails getBody$() {
+    public com.oracle.bmc.loadbalancer.model.CreateSSLCipherSuiteDetails getBody$() {
         return createSSLCipherSuiteDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateSSLCipherSuiteRequest, CreateSSLCipherSuiteDetails> {
+                    CreateSSLCipherSuiteRequest,
+                    com.oracle.bmc.loadbalancer.model.CreateSSLCipherSuiteDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -125,7 +128,7 @@ public class CreateSSLCipherSuiteRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateSSLCipherSuiteDetails body) {
+        public Builder body$(com.oracle.bmc.loadbalancer.model.CreateSSLCipherSuiteDetails body) {
             createSSLCipherSuiteDetails(body);
             return this;
         }

@@ -74,6 +74,16 @@ public class ComputeImageCapabilitySchemaSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("schemaData")
+        private java.util.Map<String, ImageCapabilitySchemaDescriptor> schemaData;
+
+        public Builder schemaData(
+                java.util.Map<String, ImageCapabilitySchemaDescriptor> schemaData) {
+            this.schemaData = schemaData;
+            this.__explicitlySet__.add("schemaData");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -113,6 +123,7 @@ public class ComputeImageCapabilitySchemaSummary {
                             computeGlobalImageCapabilitySchemaVersionName,
                             imageId,
                             displayName,
+                            schemaData,
                             timeCreated,
                             definedTags,
                             freeformTags);
@@ -129,6 +140,7 @@ public class ComputeImageCapabilitySchemaSummary {
                                     o.getComputeGlobalImageCapabilitySchemaVersionName())
                             .imageId(o.getImageId())
                             .displayName(o.getDisplayName())
+                            .schemaData(o.getSchemaData())
                             .timeCreated(o.getTimeCreated())
                             .definedTags(o.getDefinedTags())
                             .freeformTags(o.getFreeformTags());
@@ -178,6 +190,12 @@ public class ComputeImageCapabilitySchemaSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * A mapping of each capability name to its ImageCapabilityDescriptor.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("schemaData")
+    java.util.Map<String, ImageCapabilitySchemaDescriptor> schemaData;
 
     /**
      * The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

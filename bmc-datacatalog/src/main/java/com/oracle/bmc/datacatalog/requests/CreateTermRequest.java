@@ -17,7 +17,9 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateTermRequest extends com.oracle.bmc.requests.BmcRequest<CreateTermDetails> {
+public class CreateTermRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.CreateTermDetails> {
 
     /**
      * Unique catalog identifier.
@@ -32,7 +34,7 @@ public class CreateTermRequest extends com.oracle.bmc.requests.BmcRequest<Create
     /**
      * The information used to create the term.
      */
-    private CreateTermDetails createTermDetails;
+    private com.oracle.bmc.datacatalog.model.CreateTermDetails createTermDetails;
 
     /**
      * The client request ID for tracing.
@@ -55,13 +57,13 @@ public class CreateTermRequest extends com.oracle.bmc.requests.BmcRequest<Create
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateTermDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.CreateTermDetails getBody$() {
         return createTermDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateTermRequest, CreateTermDetails> {
+                    CreateTermRequest, com.oracle.bmc.datacatalog.model.CreateTermDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -127,7 +129,7 @@ public class CreateTermRequest extends com.oracle.bmc.requests.BmcRequest<Create
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateTermDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.CreateTermDetails body) {
             createTermDetails(body);
             return this;
         }

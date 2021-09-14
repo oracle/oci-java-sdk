@@ -17,13 +17,15 @@ import com.oracle.bmc.resourcesearch.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class SearchResourcesRequest extends com.oracle.bmc.requests.BmcRequest<SearchDetails> {
+public class SearchResourcesRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.resourcesearch.model.SearchDetails> {
 
     /**
      * Request parameters that describe query criteria. For more information, see {@link #searchDetails(SearchDetailsRequest) searchDetails}.
      *
      */
-    private SearchDetails searchDetails;
+    private com.oracle.bmc.resourcesearch.model.SearchDetails searchDetails;
 
     /**
      * The maximum number of items to return. The value must be between 1 and 1000.
@@ -54,13 +56,13 @@ public class SearchResourcesRequest extends com.oracle.bmc.requests.BmcRequest<S
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public SearchDetails getBody$() {
+    public com.oracle.bmc.resourcesearch.model.SearchDetails getBody$() {
         return searchDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    SearchResourcesRequest, SearchDetails> {
+                    SearchResourcesRequest, com.oracle.bmc.resourcesearch.model.SearchDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -126,7 +128,7 @@ public class SearchResourcesRequest extends com.oracle.bmc.requests.BmcRequest<S
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(SearchDetails body) {
+        public Builder body$(com.oracle.bmc.resourcesearch.model.SearchDetails body) {
             searchDetails(body);
             return this;
         }

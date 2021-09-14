@@ -17,7 +17,9 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateFolderRequest extends com.oracle.bmc.requests.BmcRequest<CreateFolderDetails> {
+public class CreateFolderRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.CreateFolderDetails> {
 
     /**
      * Unique catalog identifier.
@@ -32,7 +34,7 @@ public class CreateFolderRequest extends com.oracle.bmc.requests.BmcRequest<Crea
     /**
      * The information used to create the folder.
      */
-    private CreateFolderDetails createFolderDetails;
+    private com.oracle.bmc.datacatalog.model.CreateFolderDetails createFolderDetails;
 
     /**
      * The client request ID for tracing.
@@ -55,13 +57,13 @@ public class CreateFolderRequest extends com.oracle.bmc.requests.BmcRequest<Crea
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateFolderDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.CreateFolderDetails getBody$() {
         return createFolderDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateFolderRequest, CreateFolderDetails> {
+                    CreateFolderRequest, com.oracle.bmc.datacatalog.model.CreateFolderDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -127,7 +129,7 @@ public class CreateFolderRequest extends com.oracle.bmc.requests.BmcRequest<Crea
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateFolderDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.CreateFolderDetails body) {
             createFolderDetails(body);
             return this;
         }

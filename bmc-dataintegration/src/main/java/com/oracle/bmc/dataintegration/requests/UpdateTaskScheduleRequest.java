@@ -18,7 +18,8 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateTaskScheduleRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateTaskScheduleDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataintegration.model.UpdateTaskScheduleDetails> {
 
     /**
      * The workspace ID.
@@ -38,7 +39,8 @@ public class UpdateTaskScheduleRequest
     /**
      * Request body parameter for TaskSchedule details
      */
-    private UpdateTaskScheduleDetails updateTaskScheduleDetails;
+    private com.oracle.bmc.dataintegration.model.UpdateTaskScheduleDetails
+            updateTaskScheduleDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
@@ -62,13 +64,14 @@ public class UpdateTaskScheduleRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateTaskScheduleDetails getBody$() {
+    public com.oracle.bmc.dataintegration.model.UpdateTaskScheduleDetails getBody$() {
         return updateTaskScheduleDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateTaskScheduleRequest, UpdateTaskScheduleDetails> {
+                    UpdateTaskScheduleRequest,
+                    com.oracle.bmc.dataintegration.model.UpdateTaskScheduleDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -135,7 +138,7 @@ public class UpdateTaskScheduleRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateTaskScheduleDetails body) {
+        public Builder body$(com.oracle.bmc.dataintegration.model.UpdateTaskScheduleDetails body) {
             updateTaskScheduleDetails(body);
             return this;
         }

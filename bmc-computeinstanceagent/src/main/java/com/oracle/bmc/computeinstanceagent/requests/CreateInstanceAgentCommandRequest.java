@@ -18,12 +18,14 @@ import com.oracle.bmc.computeinstanceagent.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateInstanceAgentCommandRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateInstanceAgentCommandDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.computeinstanceagent.model.CreateInstanceAgentCommandDetails> {
 
     /**
      * Create Instance agent command details
      */
-    private CreateInstanceAgentCommandDetails createInstanceAgentCommandDetails;
+    private com.oracle.bmc.computeinstanceagent.model.CreateInstanceAgentCommandDetails
+            createInstanceAgentCommandDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
@@ -48,13 +50,14 @@ public class CreateInstanceAgentCommandRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateInstanceAgentCommandDetails getBody$() {
+    public com.oracle.bmc.computeinstanceagent.model.CreateInstanceAgentCommandDetails getBody$() {
         return createInstanceAgentCommandDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateInstanceAgentCommandRequest, CreateInstanceAgentCommandDetails> {
+                    CreateInstanceAgentCommandRequest,
+                    com.oracle.bmc.computeinstanceagent.model.CreateInstanceAgentCommandDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -118,7 +121,8 @@ public class CreateInstanceAgentCommandRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateInstanceAgentCommandDetails body) {
+        public Builder body$(
+                com.oracle.bmc.computeinstanceagent.model.CreateInstanceAgentCommandDetails body) {
             createInstanceAgentCommandDetails(body);
             return this;
         }

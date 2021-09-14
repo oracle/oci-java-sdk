@@ -18,12 +18,14 @@ import com.oracle.bmc.loadbalancer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateSSLCipherSuiteRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateSSLCipherSuiteDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loadbalancer.model.UpdateSSLCipherSuiteDetails> {
 
     /**
      * The configuration details to update an SSL cipher suite.
      */
-    private UpdateSSLCipherSuiteDetails updateSSLCipherSuiteDetails;
+    private com.oracle.bmc.loadbalancer.model.UpdateSSLCipherSuiteDetails
+            updateSSLCipherSuiteDetails;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated load balancer.
@@ -62,13 +64,14 @@ public class UpdateSSLCipherSuiteRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateSSLCipherSuiteDetails getBody$() {
+    public com.oracle.bmc.loadbalancer.model.UpdateSSLCipherSuiteDetails getBody$() {
         return updateSSLCipherSuiteDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateSSLCipherSuiteRequest, UpdateSSLCipherSuiteDetails> {
+                    UpdateSSLCipherSuiteRequest,
+                    com.oracle.bmc.loadbalancer.model.UpdateSSLCipherSuiteDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +137,7 @@ public class UpdateSSLCipherSuiteRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateSSLCipherSuiteDetails body) {
+        public Builder body$(com.oracle.bmc.loadbalancer.model.UpdateSSLCipherSuiteDetails body) {
             updateSSLCipherSuiteDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.vault.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ScheduleSecretDeletionRequest
-        extends com.oracle.bmc.requests.BmcRequest<ScheduleSecretDeletionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.vault.model.ScheduleSecretDeletionDetails> {
 
     /**
      * The OCID of the secret.
@@ -28,7 +29,7 @@ public class ScheduleSecretDeletionRequest
     /**
      * Request to schedule the deletion of a secret.
      */
-    private ScheduleSecretDeletionDetails scheduleSecretDeletionDetails;
+    private com.oracle.bmc.vault.model.ScheduleSecretDeletionDetails scheduleSecretDeletionDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
@@ -54,13 +55,14 @@ public class ScheduleSecretDeletionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ScheduleSecretDeletionDetails getBody$() {
+    public com.oracle.bmc.vault.model.ScheduleSecretDeletionDetails getBody$() {
         return scheduleSecretDeletionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ScheduleSecretDeletionRequest, ScheduleSecretDeletionDetails> {
+                    ScheduleSecretDeletionRequest,
+                    com.oracle.bmc.vault.model.ScheduleSecretDeletionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -125,7 +127,7 @@ public class ScheduleSecretDeletionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ScheduleSecretDeletionDetails body) {
+        public Builder body$(com.oracle.bmc.vault.model.ScheduleSecretDeletionDetails body) {
             scheduleSecretDeletionDetails(body);
             return this;
         }

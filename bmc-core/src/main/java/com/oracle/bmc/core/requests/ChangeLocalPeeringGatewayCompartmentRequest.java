@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeLocalPeeringGatewayCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeLocalPeeringGatewayCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.ChangeLocalPeeringGatewayCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the local peering gateway.
@@ -28,7 +29,8 @@ public class ChangeLocalPeeringGatewayCompartmentRequest
     /**
      * Request to change the compartment of a given local peering gateway.
      */
-    private ChangeLocalPeeringGatewayCompartmentDetails changeLocalPeeringGatewayCompartmentDetails;
+    private com.oracle.bmc.core.model.ChangeLocalPeeringGatewayCompartmentDetails
+            changeLocalPeeringGatewayCompartmentDetails;
 
     /**
      * Unique identifier for the request.
@@ -53,14 +55,14 @@ public class ChangeLocalPeeringGatewayCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeLocalPeeringGatewayCompartmentDetails getBody$() {
+    public com.oracle.bmc.core.model.ChangeLocalPeeringGatewayCompartmentDetails getBody$() {
         return changeLocalPeeringGatewayCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeLocalPeeringGatewayCompartmentRequest,
-                    ChangeLocalPeeringGatewayCompartmentDetails> {
+                    com.oracle.bmc.core.model.ChangeLocalPeeringGatewayCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -126,7 +128,8 @@ public class ChangeLocalPeeringGatewayCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeLocalPeeringGatewayCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.ChangeLocalPeeringGatewayCompartmentDetails body) {
             changeLocalPeeringGatewayCompartmentDetails(body);
             return this;
         }

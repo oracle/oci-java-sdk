@@ -18,7 +18,7 @@ import com.oracle.bmc.dns.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateResolverRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateResolverDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.dns.model.UpdateResolverDetails> {
 
     /**
      * The OCID of the target resolver.
@@ -28,7 +28,7 @@ public class UpdateResolverRequest
     /**
      * New data for the resolver.
      */
-    private UpdateResolverDetails updateResolverDetails;
+    private com.oracle.bmc.dns.model.UpdateResolverDetails updateResolverDetails;
 
     /**
      * The {@code If-Match} header field makes the request method conditional on the
@@ -70,13 +70,13 @@ public class UpdateResolverRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateResolverDetails getBody$() {
+    public com.oracle.bmc.dns.model.UpdateResolverDetails getBody$() {
         return updateResolverDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateResolverRequest, UpdateResolverDetails> {
+                    UpdateResolverRequest, com.oracle.bmc.dns.model.UpdateResolverDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -143,7 +143,7 @@ public class UpdateResolverRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateResolverDetails body) {
+        public Builder body$(com.oracle.bmc.dns.model.UpdateResolverDetails body) {
             updateResolverDetails(body);
             return this;
         }

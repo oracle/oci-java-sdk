@@ -18,7 +18,8 @@ import com.oracle.bmc.apigateway.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateDeploymentRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateDeploymentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.apigateway.model.UpdateDeploymentDetails> {
 
     /**
      * The ocid of the deployment.
@@ -28,7 +29,7 @@ public class UpdateDeploymentRequest
     /**
      * The information to be updated.
      */
-    private UpdateDeploymentDetails updateDeploymentDetails;
+    private com.oracle.bmc.apigateway.model.UpdateDeploymentDetails updateDeploymentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -51,13 +52,14 @@ public class UpdateDeploymentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDeploymentDetails getBody$() {
+    public com.oracle.bmc.apigateway.model.UpdateDeploymentDetails getBody$() {
         return updateDeploymentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateDeploymentRequest, UpdateDeploymentDetails> {
+                    UpdateDeploymentRequest,
+                    com.oracle.bmc.apigateway.model.UpdateDeploymentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +124,7 @@ public class UpdateDeploymentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDeploymentDetails body) {
+        public Builder body$(com.oracle.bmc.apigateway.model.UpdateDeploymentDetails body) {
             updateDeploymentDetails(body);
             return this;
         }

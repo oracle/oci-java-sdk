@@ -18,12 +18,14 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateLocalPeeringGatewayRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateLocalPeeringGatewayDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CreateLocalPeeringGatewayDetails> {
 
     /**
      * Details for creating a new local peering gateway.
      */
-    private CreateLocalPeeringGatewayDetails createLocalPeeringGatewayDetails;
+    private com.oracle.bmc.core.model.CreateLocalPeeringGatewayDetails
+            createLocalPeeringGatewayDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +43,14 @@ public class CreateLocalPeeringGatewayRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateLocalPeeringGatewayDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateLocalPeeringGatewayDetails getBody$() {
         return createLocalPeeringGatewayDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateLocalPeeringGatewayRequest, CreateLocalPeeringGatewayDetails> {
+                    CreateLocalPeeringGatewayRequest,
+                    com.oracle.bmc.core.model.CreateLocalPeeringGatewayDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +113,7 @@ public class CreateLocalPeeringGatewayRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateLocalPeeringGatewayDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateLocalPeeringGatewayDetails body) {
             createLocalPeeringGatewayDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.aianomalydetection.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateDataAssetRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateDataAssetDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.aianomalydetection.model.UpdateDataAssetDetails> {
 
     /**
      * The OCID of the Data Asset.
@@ -28,7 +29,7 @@ public class UpdateDataAssetRequest
     /**
      * The information to be updated.
      */
-    private UpdateDataAssetDetails updateDataAssetDetails;
+    private com.oracle.bmc.aianomalydetection.model.UpdateDataAssetDetails updateDataAssetDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -51,13 +52,14 @@ public class UpdateDataAssetRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDataAssetDetails getBody$() {
+    public com.oracle.bmc.aianomalydetection.model.UpdateDataAssetDetails getBody$() {
         return updateDataAssetDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateDataAssetRequest, UpdateDataAssetDetails> {
+                    UpdateDataAssetRequest,
+                    com.oracle.bmc.aianomalydetection.model.UpdateDataAssetDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +124,7 @@ public class UpdateDataAssetRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDataAssetDetails body) {
+        public Builder body$(com.oracle.bmc.aianomalydetection.model.UpdateDataAssetDetails body) {
             updateDataAssetDetails(body);
             return this;
         }

@@ -69,7 +69,8 @@ public class ListVmClusterUpdateHistoryEntriesRequest
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    private VmClusterUpdateHistoryEntrySummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.database.model.VmClusterUpdateHistoryEntrySummary.LifecycleState
+            lifecycleState;
 
     /**
      * The maximum number of items to return per page.

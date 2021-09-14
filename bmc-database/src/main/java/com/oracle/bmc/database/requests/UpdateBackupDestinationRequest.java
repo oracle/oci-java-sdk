@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateBackupDestinationRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateBackupDestinationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.UpdateBackupDestinationDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup destination.
@@ -30,7 +31,8 @@ public class UpdateBackupDestinationRequest
      * For an NFS backup destination, request to update the NFS location.
      *
      */
-    private UpdateBackupDestinationDetails updateBackupDestinationDetails;
+    private com.oracle.bmc.database.model.UpdateBackupDestinationDetails
+            updateBackupDestinationDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -52,13 +54,14 @@ public class UpdateBackupDestinationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateBackupDestinationDetails getBody$() {
+    public com.oracle.bmc.database.model.UpdateBackupDestinationDetails getBody$() {
         return updateBackupDestinationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateBackupDestinationRequest, UpdateBackupDestinationDetails> {
+                    UpdateBackupDestinationRequest,
+                    com.oracle.bmc.database.model.UpdateBackupDestinationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +126,7 @@ public class UpdateBackupDestinationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateBackupDestinationDetails body) {
+        public Builder body$(com.oracle.bmc.database.model.UpdateBackupDestinationDetails body) {
             updateBackupDestinationDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.optimizer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateResourceActionRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateResourceActionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.optimizer.model.UpdateResourceActionDetails> {
 
     /**
      * The unique OCID associated with the resource action.
@@ -28,7 +29,7 @@ public class UpdateResourceActionRequest
     /**
      * The resource action information to be updated.
      */
-    private UpdateResourceActionDetails updateResourceActionDetails;
+    private com.oracle.bmc.optimizer.model.UpdateResourceActionDetails updateResourceActionDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request.
@@ -53,13 +54,14 @@ public class UpdateResourceActionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateResourceActionDetails getBody$() {
+    public com.oracle.bmc.optimizer.model.UpdateResourceActionDetails getBody$() {
         return updateResourceActionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateResourceActionRequest, UpdateResourceActionDetails> {
+                    UpdateResourceActionRequest,
+                    com.oracle.bmc.optimizer.model.UpdateResourceActionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class UpdateResourceActionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateResourceActionDetails body) {
+        public Builder body$(com.oracle.bmc.optimizer.model.UpdateResourceActionDetails body) {
             updateResourceActionDetails(body);
             return this;
         }

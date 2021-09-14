@@ -18,7 +18,8 @@ import com.oracle.bmc.announcementsservice.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateAnnouncementUserStatusRequest
-        extends com.oracle.bmc.requests.BmcRequest<AnnouncementUserStatusDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.announcementsservice.model.AnnouncementUserStatusDetails> {
 
     /**
      * The OCID of the announcement.
@@ -28,7 +29,7 @@ public class UpdateAnnouncementUserStatusRequest
     /**
      * The information to use to update the announcement's read status.
      */
-    private AnnouncementUserStatusDetails statusDetails;
+    private com.oracle.bmc.announcementsservice.model.AnnouncementUserStatusDetails statusDetails;
 
     /**
      * The locking version, used for optimistic concurrency control.
@@ -48,13 +49,14 @@ public class UpdateAnnouncementUserStatusRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public AnnouncementUserStatusDetails getBody$() {
+    public com.oracle.bmc.announcementsservice.model.AnnouncementUserStatusDetails getBody$() {
         return statusDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateAnnouncementUserStatusRequest, AnnouncementUserStatusDetails> {
+                    UpdateAnnouncementUserStatusRequest,
+                    com.oracle.bmc.announcementsservice.model.AnnouncementUserStatusDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +121,8 @@ public class UpdateAnnouncementUserStatusRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(AnnouncementUserStatusDetails body) {
+        public Builder body$(
+                com.oracle.bmc.announcementsservice.model.AnnouncementUserStatusDetails body) {
             statusDetails(body);
             return this;
         }

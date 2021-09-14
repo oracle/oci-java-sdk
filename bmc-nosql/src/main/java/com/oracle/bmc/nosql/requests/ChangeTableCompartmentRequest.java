@@ -18,7 +18,8 @@ import com.oracle.bmc.nosql.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeTableCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeTableCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.nosql.model.ChangeTableCompartmentDetails> {
 
     /**
      * A table name within the compartment, or a table OCID.
@@ -28,7 +29,7 @@ public class ChangeTableCompartmentRequest
     /**
      * Specifications of the source and target compartments.
      */
-    private ChangeTableCompartmentDetails changeTableCompartmentDetails;
+    private com.oracle.bmc.nosql.model.ChangeTableCompartmentDetails changeTableCompartmentDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried
@@ -63,13 +64,14 @@ public class ChangeTableCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeTableCompartmentDetails getBody$() {
+    public com.oracle.bmc.nosql.model.ChangeTableCompartmentDetails getBody$() {
         return changeTableCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeTableCompartmentRequest, ChangeTableCompartmentDetails> {
+                    ChangeTableCompartmentRequest,
+                    com.oracle.bmc.nosql.model.ChangeTableCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -135,7 +137,7 @@ public class ChangeTableCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeTableCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.nosql.model.ChangeTableCompartmentDetails body) {
             changeTableCompartmentDetails(body);
             return this;
         }

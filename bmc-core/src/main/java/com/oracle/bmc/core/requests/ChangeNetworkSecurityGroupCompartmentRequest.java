@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeNetworkSecurityGroupCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeNetworkSecurityGroupCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.ChangeNetworkSecurityGroupCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
@@ -28,7 +29,7 @@ public class ChangeNetworkSecurityGroupCompartmentRequest
     /**
      * Request to change the compartment of a network security group.
      */
-    private ChangeNetworkSecurityGroupCompartmentDetails
+    private com.oracle.bmc.core.model.ChangeNetworkSecurityGroupCompartmentDetails
             changeNetworkSecurityGroupCompartmentDetails;
 
     /**
@@ -54,14 +55,14 @@ public class ChangeNetworkSecurityGroupCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeNetworkSecurityGroupCompartmentDetails getBody$() {
+    public com.oracle.bmc.core.model.ChangeNetworkSecurityGroupCompartmentDetails getBody$() {
         return changeNetworkSecurityGroupCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeNetworkSecurityGroupCompartmentRequest,
-                    ChangeNetworkSecurityGroupCompartmentDetails> {
+                    com.oracle.bmc.core.model.ChangeNetworkSecurityGroupCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -127,7 +128,8 @@ public class ChangeNetworkSecurityGroupCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeNetworkSecurityGroupCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.ChangeNetworkSecurityGroupCompartmentDetails body) {
             changeNetworkSecurityGroupCompartmentDetails(body);
             return this;
         }

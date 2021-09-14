@@ -18,7 +18,8 @@ import com.oracle.bmc.datascience.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeProjectCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeProjectCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datascience.model.ChangeProjectCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
@@ -28,7 +29,8 @@ public class ChangeProjectCompartmentRequest
     /**
      * Details for changing the compartment of a project.
      */
-    private ChangeProjectCompartmentDetails changeProjectCompartmentDetails;
+    private com.oracle.bmc.datascience.model.ChangeProjectCompartmentDetails
+            changeProjectCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -58,13 +60,14 @@ public class ChangeProjectCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeProjectCompartmentDetails getBody$() {
+    public com.oracle.bmc.datascience.model.ChangeProjectCompartmentDetails getBody$() {
         return changeProjectCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeProjectCompartmentRequest, ChangeProjectCompartmentDetails> {
+                    ChangeProjectCompartmentRequest,
+                    com.oracle.bmc.datascience.model.ChangeProjectCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -130,7 +133,8 @@ public class ChangeProjectCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeProjectCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.datascience.model.ChangeProjectCompartmentDetails body) {
             changeProjectCompartmentDetails(body);
             return this;
         }

@@ -17,7 +17,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class QueryRequest extends com.oracle.bmc.requests.BmcRequest<QueryDetails> {
+public class QueryRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.loganalytics.model.QueryDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -28,7 +29,7 @@ public class QueryRequest extends com.oracle.bmc.requests.BmcRequest<QueryDetail
     /**
      * Query to be executed.
      */
-    private QueryDetails queryDetails;
+    private com.oracle.bmc.loganalytics.model.QueryDetails queryDetails;
 
     /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
@@ -51,7 +52,7 @@ public class QueryRequest extends com.oracle.bmc.requests.BmcRequest<QueryDetail
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public QueryDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.QueryDetails getBody$() {
         return queryDetails;
     }
 
@@ -61,7 +62,8 @@ public class QueryRequest extends com.oracle.bmc.requests.BmcRequest<QueryDetail
     }
 
     public static class Builder
-            implements com.oracle.bmc.requests.BmcRequest.Builder<QueryRequest, QueryDetails> {
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    QueryRequest, com.oracle.bmc.loganalytics.model.QueryDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -127,7 +129,7 @@ public class QueryRequest extends com.oracle.bmc.requests.BmcRequest<QueryDetail
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(QueryDetails body) {
+        public Builder body$(com.oracle.bmc.loganalytics.model.QueryDetails body) {
             queryDetails(body);
             return this;
         }

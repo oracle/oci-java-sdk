@@ -18,7 +18,8 @@ import com.oracle.bmc.containerengine.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ClusterMigrateToNativeVcnRequest
-        extends com.oracle.bmc.requests.BmcRequest<ClusterMigrateToNativeVcnDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.containerengine.model.ClusterMigrateToNativeVcnDetails> {
 
     /**
      * The OCID of the cluster.
@@ -28,7 +29,8 @@ public class ClusterMigrateToNativeVcnRequest
     /**
      * The details for the cluster's migration to native VCN.
      */
-    private ClusterMigrateToNativeVcnDetails clusterMigrateToNativeVcnDetails;
+    private com.oracle.bmc.containerengine.model.ClusterMigrateToNativeVcnDetails
+            clusterMigrateToNativeVcnDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -51,13 +53,14 @@ public class ClusterMigrateToNativeVcnRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ClusterMigrateToNativeVcnDetails getBody$() {
+    public com.oracle.bmc.containerengine.model.ClusterMigrateToNativeVcnDetails getBody$() {
         return clusterMigrateToNativeVcnDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ClusterMigrateToNativeVcnRequest, ClusterMigrateToNativeVcnDetails> {
+                    ClusterMigrateToNativeVcnRequest,
+                    com.oracle.bmc.containerengine.model.ClusterMigrateToNativeVcnDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,8 @@ public class ClusterMigrateToNativeVcnRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ClusterMigrateToNativeVcnDetails body) {
+        public Builder body$(
+                com.oracle.bmc.containerengine.model.ClusterMigrateToNativeVcnDetails body) {
             clusterMigrateToNativeVcnDetails(body);
             return this;
         }

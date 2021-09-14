@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateLogAnalyticsEntityRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateLogAnalyticsEntityDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.CreateLogAnalyticsEntityDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -29,7 +30,8 @@ public class CreateLogAnalyticsEntityRequest
     /**
      * Details for the new log analytics entity.
      */
-    private CreateLogAnalyticsEntityDetails createLogAnalyticsEntityDetails;
+    private com.oracle.bmc.loganalytics.model.CreateLogAnalyticsEntityDetails
+            createLogAnalyticsEntityDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -52,7 +54,7 @@ public class CreateLogAnalyticsEntityRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateLogAnalyticsEntityDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.CreateLogAnalyticsEntityDetails getBody$() {
         return createLogAnalyticsEntityDetails;
     }
 
@@ -63,7 +65,8 @@ public class CreateLogAnalyticsEntityRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateLogAnalyticsEntityRequest, CreateLogAnalyticsEntityDetails> {
+                    CreateLogAnalyticsEntityRequest,
+                    com.oracle.bmc.loganalytics.model.CreateLogAnalyticsEntityDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -128,7 +131,8 @@ public class CreateLogAnalyticsEntityRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateLogAnalyticsEntityDetails body) {
+        public Builder body$(
+                com.oracle.bmc.loganalytics.model.CreateLogAnalyticsEntityDetails body) {
             createLogAnalyticsEntityDetails(body);
             return this;
         }

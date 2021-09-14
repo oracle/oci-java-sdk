@@ -18,7 +18,8 @@ import com.oracle.bmc.operatoraccesscontrol.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RejectAccessRequestRequest
-        extends com.oracle.bmc.requests.BmcRequest<RejectAccessRequestDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.operatoraccesscontrol.model.RejectAccessRequestDetails> {
 
     /**
      * unique AccessRequest identifier
@@ -28,7 +29,8 @@ public class RejectAccessRequestRequest
     /**
      * Details regarding the rejection of an access request created by the operator.
      */
-    private RejectAccessRequestDetails rejectAccessRequestDetails;
+    private com.oracle.bmc.operatoraccesscontrol.model.RejectAccessRequestDetails
+            rejectAccessRequestDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -61,13 +63,14 @@ public class RejectAccessRequestRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RejectAccessRequestDetails getBody$() {
+    public com.oracle.bmc.operatoraccesscontrol.model.RejectAccessRequestDetails getBody$() {
         return rejectAccessRequestDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RejectAccessRequestRequest, RejectAccessRequestDetails> {
+                    RejectAccessRequestRequest,
+                    com.oracle.bmc.operatoraccesscontrol.model.RejectAccessRequestDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +136,8 @@ public class RejectAccessRequestRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RejectAccessRequestDetails body) {
+        public Builder body$(
+                com.oracle.bmc.operatoraccesscontrol.model.RejectAccessRequestDetails body) {
             rejectAccessRequestDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RecallArchivedDataRequest
-        extends com.oracle.bmc.requests.BmcRequest<RecallArchivedDataDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.RecallArchivedDataDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -29,7 +30,7 @@ public class RecallArchivedDataRequest
     /**
      * This is the input to recall archived data.
      */
-    private RecallArchivedDataDetails recallArchivedDataDetails;
+    private com.oracle.bmc.loganalytics.model.RecallArchivedDataDetails recallArchivedDataDetails;
 
     /**
      * The client request ID for tracing.
@@ -62,7 +63,7 @@ public class RecallArchivedDataRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RecallArchivedDataDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.RecallArchivedDataDetails getBody$() {
         return recallArchivedDataDetails;
     }
 
@@ -73,7 +74,8 @@ public class RecallArchivedDataRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RecallArchivedDataRequest, RecallArchivedDataDetails> {
+                    RecallArchivedDataRequest,
+                    com.oracle.bmc.loganalytics.model.RecallArchivedDataDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -139,7 +141,7 @@ public class RecallArchivedDataRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RecallArchivedDataDetails body) {
+        public Builder body$(com.oracle.bmc.loganalytics.model.RecallArchivedDataDetails body) {
             recallArchivedDataDetails(body);
             return this;
         }

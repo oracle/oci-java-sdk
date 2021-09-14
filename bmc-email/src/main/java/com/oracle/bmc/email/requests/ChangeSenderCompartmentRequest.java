@@ -18,7 +18,8 @@ import com.oracle.bmc.email.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeSenderCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeSenderCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.email.model.ChangeSenderCompartmentDetails> {
 
     /**
      * The unique OCID of the sender.
@@ -28,7 +29,8 @@ public class ChangeSenderCompartmentRequest
     /**
      * Details for moving a sender into a different compartment.
      */
-    private ChangeSenderCompartmentDetails changeSenderCompartmentDetails;
+    private com.oracle.bmc.email.model.ChangeSenderCompartmentDetails
+            changeSenderCompartmentDetails;
 
     /**
      * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
@@ -49,13 +51,14 @@ public class ChangeSenderCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeSenderCompartmentDetails getBody$() {
+    public com.oracle.bmc.email.model.ChangeSenderCompartmentDetails getBody$() {
         return changeSenderCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeSenderCompartmentRequest, ChangeSenderCompartmentDetails> {
+                    ChangeSenderCompartmentRequest,
+                    com.oracle.bmc.email.model.ChangeSenderCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -120,7 +123,7 @@ public class ChangeSenderCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeSenderCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.email.model.ChangeSenderCompartmentDetails body) {
             changeSenderCompartmentDetails(body);
             return this;
         }

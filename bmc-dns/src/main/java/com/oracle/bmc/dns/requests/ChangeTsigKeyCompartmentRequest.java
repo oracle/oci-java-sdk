@@ -18,7 +18,8 @@ import com.oracle.bmc.dns.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeTsigKeyCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeTsigKeyCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dns.model.ChangeTsigKeyCompartmentDetails> {
 
     /**
      * The OCID of the target TSIG key.
@@ -28,7 +29,8 @@ public class ChangeTsigKeyCompartmentRequest
     /**
      * Details for moving a TSIG key into a different compartment.
      */
-    private ChangeTsigKeyCompartmentDetails changeTsigKeyCompartmentDetails;
+    private com.oracle.bmc.dns.model.ChangeTsigKeyCompartmentDetails
+            changeTsigKeyCompartmentDetails;
 
     /**
      * The {@code If-Match} header field makes the request method conditional on the
@@ -71,13 +73,14 @@ public class ChangeTsigKeyCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeTsigKeyCompartmentDetails getBody$() {
+    public com.oracle.bmc.dns.model.ChangeTsigKeyCompartmentDetails getBody$() {
         return changeTsigKeyCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeTsigKeyCompartmentRequest, ChangeTsigKeyCompartmentDetails> {
+                    ChangeTsigKeyCompartmentRequest,
+                    com.oracle.bmc.dns.model.ChangeTsigKeyCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -144,7 +147,7 @@ public class ChangeTsigKeyCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeTsigKeyCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.dns.model.ChangeTsigKeyCompartmentDetails body) {
             changeTsigKeyCompartmentDetails(body);
             return this;
         }

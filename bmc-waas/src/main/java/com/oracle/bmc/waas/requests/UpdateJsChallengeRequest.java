@@ -17,7 +17,8 @@ import com.oracle.bmc.waas.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateJsChallengeRequest extends com.oracle.bmc.requests.BmcRequest<JsChallenge> {
+public class UpdateJsChallengeRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.waas.model.JsChallenge> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
@@ -27,7 +28,7 @@ public class UpdateJsChallengeRequest extends com.oracle.bmc.requests.BmcRequest
     /**
      * The JavaScript challenge settings to be updated.
      */
-    private JsChallenge updateJsChallengeDetails;
+    private com.oracle.bmc.waas.model.JsChallenge updateJsChallengeDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -51,13 +52,13 @@ public class UpdateJsChallengeRequest extends com.oracle.bmc.requests.BmcRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public JsChallenge getBody$() {
+    public com.oracle.bmc.waas.model.JsChallenge getBody$() {
         return updateJsChallengeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateJsChallengeRequest, JsChallenge> {
+                    UpdateJsChallengeRequest, com.oracle.bmc.waas.model.JsChallenge> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +124,7 @@ public class UpdateJsChallengeRequest extends com.oracle.bmc.requests.BmcRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(JsChallenge body) {
+        public Builder body$(com.oracle.bmc.waas.model.JsChallenge body) {
             updateJsChallengeDetails(body);
             return this;
         }

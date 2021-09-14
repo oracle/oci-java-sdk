@@ -18,12 +18,13 @@ import com.oracle.bmc.loadbalancer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateListenerRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateListenerDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loadbalancer.model.UpdateListenerDetails> {
 
     /**
      * Details to update a listener.
      */
-    private UpdateListenerDetails updateListenerDetails;
+    private com.oracle.bmc.loadbalancer.model.UpdateListenerDetails updateListenerDetails;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the listener to update.
@@ -61,13 +62,14 @@ public class UpdateListenerRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateListenerDetails getBody$() {
+    public com.oracle.bmc.loadbalancer.model.UpdateListenerDetails getBody$() {
         return updateListenerDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateListenerRequest, UpdateListenerDetails> {
+                    UpdateListenerRequest,
+                    com.oracle.bmc.loadbalancer.model.UpdateListenerDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +135,7 @@ public class UpdateListenerRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateListenerDetails body) {
+        public Builder body$(com.oracle.bmc.loadbalancer.model.UpdateListenerDetails body) {
             updateListenerDetails(body);
             return this;
         }

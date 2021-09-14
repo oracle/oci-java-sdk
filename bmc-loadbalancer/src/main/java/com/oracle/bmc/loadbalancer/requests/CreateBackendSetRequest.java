@@ -18,12 +18,13 @@ import com.oracle.bmc.loadbalancer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateBackendSetRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateBackendSetDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loadbalancer.model.CreateBackendSetDetails> {
 
     /**
      * The details for adding a backend set.
      */
-    private CreateBackendSetDetails createBackendSetDetails;
+    private com.oracle.bmc.loadbalancer.model.CreateBackendSetDetails createBackendSetDetails;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a backend set.
@@ -53,13 +54,14 @@ public class CreateBackendSetRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateBackendSetDetails getBody$() {
+    public com.oracle.bmc.loadbalancer.model.CreateBackendSetDetails getBody$() {
         return createBackendSetDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateBackendSetRequest, CreateBackendSetDetails> {
+                    CreateBackendSetRequest,
+                    com.oracle.bmc.loadbalancer.model.CreateBackendSetDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class CreateBackendSetRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateBackendSetDetails body) {
+        public Builder body$(com.oracle.bmc.loadbalancer.model.CreateBackendSetDetails body) {
             createBackendSetDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class DeregisterAutonomousDatabaseDataSafeRequest
-        extends com.oracle.bmc.requests.BmcRequest<DeregisterAutonomousDatabaseDataSafeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.DeregisterAutonomousDatabaseDataSafeDetails> {
 
     /**
      * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -34,7 +35,8 @@ public class DeregisterAutonomousDatabaseDataSafeRequest
     /**
      * Details for deregistering an Autonomous Database with Data Safe.
      */
-    private DeregisterAutonomousDatabaseDataSafeDetails deregisterAutonomousDatabaseDataSafeDetails;
+    private com.oracle.bmc.database.model.DeregisterAutonomousDatabaseDataSafeDetails
+            deregisterAutonomousDatabaseDataSafeDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -42,14 +44,14 @@ public class DeregisterAutonomousDatabaseDataSafeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public DeregisterAutonomousDatabaseDataSafeDetails getBody$() {
+    public com.oracle.bmc.database.model.DeregisterAutonomousDatabaseDataSafeDetails getBody$() {
         return deregisterAutonomousDatabaseDataSafeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DeregisterAutonomousDatabaseDataSafeRequest,
-                    DeregisterAutonomousDatabaseDataSafeDetails> {
+                    com.oracle.bmc.database.model.DeregisterAutonomousDatabaseDataSafeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +116,8 @@ public class DeregisterAutonomousDatabaseDataSafeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(DeregisterAutonomousDatabaseDataSafeDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.DeregisterAutonomousDatabaseDataSafeDetails body) {
             deregisterAutonomousDatabaseDataSafeDetails(body);
             return this;
         }

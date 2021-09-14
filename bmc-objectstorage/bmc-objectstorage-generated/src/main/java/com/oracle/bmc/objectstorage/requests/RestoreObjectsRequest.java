@@ -18,7 +18,8 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RestoreObjectsRequest
-        extends com.oracle.bmc.requests.BmcRequest<RestoreObjectsDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.objectstorage.model.RestoreObjectsDetails> {
 
     /**
      * The Object Storage namespace used for the request.
@@ -35,7 +36,7 @@ public class RestoreObjectsRequest
     /**
      * Request to restore objects.
      */
-    private RestoreObjectsDetails restoreObjectsDetails;
+    private com.oracle.bmc.objectstorage.model.RestoreObjectsDetails restoreObjectsDetails;
 
     /**
      * The client request ID for tracing.
@@ -48,13 +49,14 @@ public class RestoreObjectsRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RestoreObjectsDetails getBody$() {
+    public com.oracle.bmc.objectstorage.model.RestoreObjectsDetails getBody$() {
         return restoreObjectsDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RestoreObjectsRequest, RestoreObjectsDetails> {
+                    RestoreObjectsRequest,
+                    com.oracle.bmc.objectstorage.model.RestoreObjectsDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +121,7 @@ public class RestoreObjectsRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RestoreObjectsDetails body) {
+        public Builder body$(com.oracle.bmc.objectstorage.model.RestoreObjectsDetails body) {
             restoreObjectsDetails(body);
             return this;
         }

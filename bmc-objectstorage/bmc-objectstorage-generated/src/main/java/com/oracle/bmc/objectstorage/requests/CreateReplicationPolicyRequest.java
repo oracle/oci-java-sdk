@@ -18,7 +18,8 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateReplicationPolicyRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateReplicationPolicyDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.objectstorage.model.CreateReplicationPolicyDetails> {
 
     /**
      * The Object Storage namespace used for the request.
@@ -35,7 +36,8 @@ public class CreateReplicationPolicyRequest
     /**
      * The replication policy.
      */
-    private CreateReplicationPolicyDetails createReplicationPolicyDetails;
+    private com.oracle.bmc.objectstorage.model.CreateReplicationPolicyDetails
+            createReplicationPolicyDetails;
 
     /**
      * The client request ID for tracing.
@@ -48,13 +50,14 @@ public class CreateReplicationPolicyRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateReplicationPolicyDetails getBody$() {
+    public com.oracle.bmc.objectstorage.model.CreateReplicationPolicyDetails getBody$() {
         return createReplicationPolicyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateReplicationPolicyRequest, CreateReplicationPolicyDetails> {
+                    CreateReplicationPolicyRequest,
+                    com.oracle.bmc.objectstorage.model.CreateReplicationPolicyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +122,8 @@ public class CreateReplicationPolicyRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateReplicationPolicyDetails body) {
+        public Builder body$(
+                com.oracle.bmc.objectstorage.model.CreateReplicationPolicyDetails body) {
             createReplicationPolicyDetails(body);
             return this;
         }

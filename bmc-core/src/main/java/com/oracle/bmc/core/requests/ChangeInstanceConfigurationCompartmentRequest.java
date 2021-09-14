@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeInstanceConfigurationCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeInstanceConfigurationCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.ChangeInstanceConfigurationCompartmentDetails> {
 
     /**
      * The OCID of the instance configuration.
@@ -28,7 +29,7 @@ public class ChangeInstanceConfigurationCompartmentRequest
     /**
      * Request to change the compartment of given instance configuration.
      */
-    private ChangeInstanceConfigurationCompartmentDetails
+    private com.oracle.bmc.core.model.ChangeInstanceConfigurationCompartmentDetails
             changeInstanceConfigurationCompartmentDetails;
 
     /**
@@ -62,14 +63,14 @@ public class ChangeInstanceConfigurationCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeInstanceConfigurationCompartmentDetails getBody$() {
+    public com.oracle.bmc.core.model.ChangeInstanceConfigurationCompartmentDetails getBody$() {
         return changeInstanceConfigurationCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeInstanceConfigurationCompartmentRequest,
-                    ChangeInstanceConfigurationCompartmentDetails> {
+                    com.oracle.bmc.core.model.ChangeInstanceConfigurationCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -137,7 +138,8 @@ public class ChangeInstanceConfigurationCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeInstanceConfigurationCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.ChangeInstanceConfigurationCompartmentDetails body) {
             changeInstanceConfigurationCompartmentDetails(body);
             return this;
         }

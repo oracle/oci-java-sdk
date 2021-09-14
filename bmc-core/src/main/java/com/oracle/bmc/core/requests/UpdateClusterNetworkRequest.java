@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateClusterNetworkRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateClusterNetworkDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdateClusterNetworkDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster network.
@@ -28,7 +29,7 @@ public class UpdateClusterNetworkRequest
     /**
      * Update cluster network
      */
-    private UpdateClusterNetworkDetails updateClusterNetworkDetails;
+    private com.oracle.bmc.core.model.UpdateClusterNetworkDetails updateClusterNetworkDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -54,13 +55,14 @@ public class UpdateClusterNetworkRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateClusterNetworkDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateClusterNetworkDetails getBody$() {
         return updateClusterNetworkDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateClusterNetworkRequest, UpdateClusterNetworkDetails> {
+                    UpdateClusterNetworkRequest,
+                    com.oracle.bmc.core.model.UpdateClusterNetworkDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -125,7 +127,7 @@ public class UpdateClusterNetworkRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateClusterNetworkDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdateClusterNetworkDetails body) {
             updateClusterNetworkDetails(body);
             return this;
         }

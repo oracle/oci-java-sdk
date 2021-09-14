@@ -18,7 +18,8 @@ import com.oracle.bmc.jms.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RequestSummarizedInstallationUsageRequest
-        extends com.oracle.bmc.requests.BmcRequest<RequestSummarizedInstallationUsageDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.jms.model.RequestSummarizedInstallationUsageDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
@@ -28,7 +29,8 @@ public class RequestSummarizedInstallationUsageRequest
     /**
      * Parameters for filtering Java installation usage.
      */
-    private RequestSummarizedInstallationUsageDetails requestSummarizedInstallationUsageDetails;
+    private com.oracle.bmc.jms.model.RequestSummarizedInstallationUsageDetails
+            requestSummarizedInstallationUsageDetails;
 
     /**
      * The maximum number of items to return.
@@ -51,14 +53,14 @@ public class RequestSummarizedInstallationUsageRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RequestSummarizedInstallationUsageDetails getBody$() {
+    public com.oracle.bmc.jms.model.RequestSummarizedInstallationUsageDetails getBody$() {
         return requestSummarizedInstallationUsageDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     RequestSummarizedInstallationUsageRequest,
-                    RequestSummarizedInstallationUsageDetails> {
+                    com.oracle.bmc.jms.model.RequestSummarizedInstallationUsageDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -125,7 +127,8 @@ public class RequestSummarizedInstallationUsageRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RequestSummarizedInstallationUsageDetails body) {
+        public Builder body$(
+                com.oracle.bmc.jms.model.RequestSummarizedInstallationUsageDetails body) {
             requestSummarizedInstallationUsageDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.identity.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateOAuthClientCredentialRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateOAuth2ClientCredentialDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.CreateOAuth2ClientCredentialDetails> {
 
     /**
      * The OCID of the user.
@@ -28,7 +29,8 @@ public class CreateOAuthClientCredentialRequest
     /**
      * Request object containing the information required to generate an Oauth token.
      */
-    private CreateOAuth2ClientCredentialDetails createOAuth2ClientCredentialDetails;
+    private com.oracle.bmc.identity.model.CreateOAuth2ClientCredentialDetails
+            createOAuth2ClientCredentialDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -46,13 +48,14 @@ public class CreateOAuthClientCredentialRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateOAuth2ClientCredentialDetails getBody$() {
+    public com.oracle.bmc.identity.model.CreateOAuth2ClientCredentialDetails getBody$() {
         return createOAuth2ClientCredentialDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateOAuthClientCredentialRequest, CreateOAuth2ClientCredentialDetails> {
+                    CreateOAuthClientCredentialRequest,
+                    com.oracle.bmc.identity.model.CreateOAuth2ClientCredentialDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +119,8 @@ public class CreateOAuthClientCredentialRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateOAuth2ClientCredentialDetails body) {
+        public Builder body$(
+                com.oracle.bmc.identity.model.CreateOAuth2ClientCredentialDetails body) {
             createOAuth2ClientCredentialDetails(body);
             return this;
         }

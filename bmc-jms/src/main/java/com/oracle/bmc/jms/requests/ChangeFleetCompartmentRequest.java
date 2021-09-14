@@ -18,7 +18,8 @@ import com.oracle.bmc.jms.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeFleetCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeFleetCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.jms.model.ChangeFleetCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
@@ -28,7 +29,7 @@ public class ChangeFleetCompartmentRequest
     /**
      * Compartment identifier.
      */
-    private ChangeFleetCompartmentDetails changeFleetCompartmentDetails;
+    private com.oracle.bmc.jms.model.ChangeFleetCompartmentDetails changeFleetCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -61,13 +62,14 @@ public class ChangeFleetCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeFleetCompartmentDetails getBody$() {
+    public com.oracle.bmc.jms.model.ChangeFleetCompartmentDetails getBody$() {
         return changeFleetCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeFleetCompartmentRequest, ChangeFleetCompartmentDetails> {
+                    ChangeFleetCompartmentRequest,
+                    com.oracle.bmc.jms.model.ChangeFleetCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +135,7 @@ public class ChangeFleetCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeFleetCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.jms.model.ChangeFleetCompartmentDetails body) {
             changeFleetCompartmentDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.vault.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ScheduleSecretVersionDeletionRequest
-        extends com.oracle.bmc.requests.BmcRequest<ScheduleSecretVersionDeletionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.vault.model.ScheduleSecretVersionDeletionDetails> {
 
     /**
      * The OCID of the secret.
@@ -34,7 +35,8 @@ public class ScheduleSecretVersionDeletionRequest
      * Request to delete a secret version.
      *
      */
-    private ScheduleSecretVersionDeletionDetails scheduleSecretVersionDeletionDetails;
+    private com.oracle.bmc.vault.model.ScheduleSecretVersionDeletionDetails
+            scheduleSecretVersionDeletionDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
@@ -60,13 +62,14 @@ public class ScheduleSecretVersionDeletionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ScheduleSecretVersionDeletionDetails getBody$() {
+    public com.oracle.bmc.vault.model.ScheduleSecretVersionDeletionDetails getBody$() {
         return scheduleSecretVersionDeletionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ScheduleSecretVersionDeletionRequest, ScheduleSecretVersionDeletionDetails> {
+                    ScheduleSecretVersionDeletionRequest,
+                    com.oracle.bmc.vault.model.ScheduleSecretVersionDeletionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -132,7 +135,7 @@ public class ScheduleSecretVersionDeletionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ScheduleSecretVersionDeletionDetails body) {
+        public Builder body$(com.oracle.bmc.vault.model.ScheduleSecretVersionDeletionDetails body) {
             scheduleSecretVersionDeletionDetails(body);
             return this;
         }

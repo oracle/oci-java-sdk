@@ -18,7 +18,8 @@ import com.oracle.bmc.dns.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateSteeringPolicyRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateSteeringPolicyDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dns.model.UpdateSteeringPolicyDetails> {
 
     /**
      * The OCID of the target steering policy.
@@ -28,7 +29,7 @@ public class UpdateSteeringPolicyRequest
     /**
      * New data for the steering policy.
      */
-    private UpdateSteeringPolicyDetails updateSteeringPolicyDetails;
+    private com.oracle.bmc.dns.model.UpdateSteeringPolicyDetails updateSteeringPolicyDetails;
 
     /**
      * The {@code If-Match} header field makes the request method conditional on the
@@ -70,13 +71,14 @@ public class UpdateSteeringPolicyRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateSteeringPolicyDetails getBody$() {
+    public com.oracle.bmc.dns.model.UpdateSteeringPolicyDetails getBody$() {
         return updateSteeringPolicyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateSteeringPolicyRequest, UpdateSteeringPolicyDetails> {
+                    UpdateSteeringPolicyRequest,
+                    com.oracle.bmc.dns.model.UpdateSteeringPolicyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -143,7 +145,7 @@ public class UpdateSteeringPolicyRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateSteeringPolicyDetails body) {
+        public Builder body$(com.oracle.bmc.dns.model.UpdateSteeringPolicyDetails body) {
             updateSteeringPolicyDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.aianomalydetection.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class DetectAnomaliesRequest
-        extends com.oracle.bmc.requests.BmcRequest<DetectAnomaliesDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.aianomalydetection.model.DetectAnomaliesDetails> {
 
     /**
      * The input is either:
@@ -32,7 +33,7 @@ public class DetectAnomaliesRequest
      *     in same format as inline request JSON
      *
      */
-    private DetectAnomaliesDetails detectAnomaliesDetails;
+    private com.oracle.bmc.aianomalydetection.model.DetectAnomaliesDetails detectAnomaliesDetails;
 
     /**
      * The client request ID for tracing.
@@ -65,13 +66,14 @@ public class DetectAnomaliesRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public DetectAnomaliesDetails getBody$() {
+    public com.oracle.bmc.aianomalydetection.model.DetectAnomaliesDetails getBody$() {
         return detectAnomaliesDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    DetectAnomaliesRequest, DetectAnomaliesDetails> {
+                    DetectAnomaliesRequest,
+                    com.oracle.bmc.aianomalydetection.model.DetectAnomaliesDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -136,7 +138,7 @@ public class DetectAnomaliesRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(DetectAnomaliesDetails body) {
+        public Builder body$(com.oracle.bmc.aianomalydetection.model.DetectAnomaliesDetails body) {
             detectAnomaliesDetails(body);
             return this;
         }

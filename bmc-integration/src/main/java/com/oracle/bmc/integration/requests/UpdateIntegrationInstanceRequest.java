@@ -18,7 +18,8 @@ import com.oracle.bmc.integration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateIntegrationInstanceRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateIntegrationInstanceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.integration.model.UpdateIntegrationInstanceDetails> {
 
     /**
      * Unique Integration Instance identifier.
@@ -28,7 +29,8 @@ public class UpdateIntegrationInstanceRequest
     /**
      * The information to be updated.
      */
-    private UpdateIntegrationInstanceDetails updateIntegrationInstanceDetails;
+    private com.oracle.bmc.integration.model.UpdateIntegrationInstanceDetails
+            updateIntegrationInstanceDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -51,13 +53,14 @@ public class UpdateIntegrationInstanceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateIntegrationInstanceDetails getBody$() {
+    public com.oracle.bmc.integration.model.UpdateIntegrationInstanceDetails getBody$() {
         return updateIntegrationInstanceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateIntegrationInstanceRequest, UpdateIntegrationInstanceDetails> {
+                    UpdateIntegrationInstanceRequest,
+                    com.oracle.bmc.integration.model.UpdateIntegrationInstanceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,8 @@ public class UpdateIntegrationInstanceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateIntegrationInstanceDetails body) {
+        public Builder body$(
+                com.oracle.bmc.integration.model.UpdateIntegrationInstanceDetails body) {
             updateIntegrationInstanceDetails(body);
             return this;
         }

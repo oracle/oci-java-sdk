@@ -18,12 +18,14 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateExternalContainerDatabaseRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateExternalContainerDatabaseDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.CreateExternalContainerDatabaseDetails> {
 
     /**
      * Request to create a new external container database resource.
      */
-    private CreateExternalContainerDatabaseDetails createExternalContainerDatabaseDetails;
+    private com.oracle.bmc.database.model.CreateExternalContainerDatabaseDetails
+            createExternalContainerDatabaseDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -47,14 +49,14 @@ public class CreateExternalContainerDatabaseRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateExternalContainerDatabaseDetails getBody$() {
+    public com.oracle.bmc.database.model.CreateExternalContainerDatabaseDetails getBody$() {
         return createExternalContainerDatabaseDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateExternalContainerDatabaseRequest,
-                    CreateExternalContainerDatabaseDetails> {
+                    com.oracle.bmc.database.model.CreateExternalContainerDatabaseDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -118,7 +120,8 @@ public class CreateExternalContainerDatabaseRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateExternalContainerDatabaseDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.CreateExternalContainerDatabaseDetails body) {
             createExternalContainerDatabaseDetails(body);
             return this;
         }

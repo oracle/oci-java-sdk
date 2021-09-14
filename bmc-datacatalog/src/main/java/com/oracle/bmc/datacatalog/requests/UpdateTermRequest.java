@@ -17,7 +17,9 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateTermRequest extends com.oracle.bmc.requests.BmcRequest<UpdateTermDetails> {
+public class UpdateTermRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.UpdateTermDetails> {
 
     /**
      * Unique catalog identifier.
@@ -37,7 +39,7 @@ public class UpdateTermRequest extends com.oracle.bmc.requests.BmcRequest<Update
     /**
      * The information to be updated in the term.
      */
-    private UpdateTermDetails updateTermDetails;
+    private com.oracle.bmc.datacatalog.model.UpdateTermDetails updateTermDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -60,13 +62,13 @@ public class UpdateTermRequest extends com.oracle.bmc.requests.BmcRequest<Update
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateTermDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.UpdateTermDetails getBody$() {
         return updateTermDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateTermRequest, UpdateTermDetails> {
+                    UpdateTermRequest, com.oracle.bmc.datacatalog.model.UpdateTermDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +135,7 @@ public class UpdateTermRequest extends com.oracle.bmc.requests.BmcRequest<Update
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateTermDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.UpdateTermDetails body) {
             updateTermDetails(body);
             return this;
         }

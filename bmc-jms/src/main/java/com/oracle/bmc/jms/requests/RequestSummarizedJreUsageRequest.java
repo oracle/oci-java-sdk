@@ -18,7 +18,8 @@ import com.oracle.bmc.jms.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RequestSummarizedJreUsageRequest
-        extends com.oracle.bmc.requests.BmcRequest<RequestSummarizedJreUsageDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.jms.model.RequestSummarizedJreUsageDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
@@ -28,7 +29,8 @@ public class RequestSummarizedJreUsageRequest
     /**
      * Parameters for filtering Java Runtime usage.
      */
-    private RequestSummarizedJreUsageDetails requestSummarizedJreUsageDetails;
+    private com.oracle.bmc.jms.model.RequestSummarizedJreUsageDetails
+            requestSummarizedJreUsageDetails;
 
     /**
      * The maximum number of items to return.
@@ -51,13 +53,14 @@ public class RequestSummarizedJreUsageRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RequestSummarizedJreUsageDetails getBody$() {
+    public com.oracle.bmc.jms.model.RequestSummarizedJreUsageDetails getBody$() {
         return requestSummarizedJreUsageDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RequestSummarizedJreUsageRequest, RequestSummarizedJreUsageDetails> {
+                    RequestSummarizedJreUsageRequest,
+                    com.oracle.bmc.jms.model.RequestSummarizedJreUsageDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +126,7 @@ public class RequestSummarizedJreUsageRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RequestSummarizedJreUsageDetails body) {
+        public Builder body$(com.oracle.bmc.jms.model.RequestSummarizedJreUsageDetails body) {
             requestSummarizedJreUsageDetails(body);
             return this;
         }

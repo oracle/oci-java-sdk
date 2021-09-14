@@ -52,7 +52,7 @@ public class ListStacksRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      * - FAILED
      *
      */
-    private Stack.LifecycleState lifecycleState;
+    private com.oracle.bmc.resourcemanager.model.Stack.LifecycleState lifecycleState;
 
     /**
      * A filter to return only resources that match the given display name exactly.

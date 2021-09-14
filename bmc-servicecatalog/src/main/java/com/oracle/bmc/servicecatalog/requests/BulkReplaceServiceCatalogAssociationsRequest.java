@@ -18,7 +18,8 @@ import com.oracle.bmc.servicecatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class BulkReplaceServiceCatalogAssociationsRequest
-        extends com.oracle.bmc.requests.BmcRequest<BulkReplaceServiceCatalogAssociationsDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.servicecatalog.model.BulkReplaceServiceCatalogAssociationsDetails> {
 
     /**
      * The unique identifier for the service catalog.
@@ -28,7 +29,7 @@ public class BulkReplaceServiceCatalogAssociationsRequest
     /**
      * Details of the service catalog update operation.
      */
-    private BulkReplaceServiceCatalogAssociationsDetails
+    private com.oracle.bmc.servicecatalog.model.BulkReplaceServiceCatalogAssociationsDetails
             bulkReplaceServiceCatalogAssociationsDetails;
 
     /**
@@ -52,14 +53,16 @@ public class BulkReplaceServiceCatalogAssociationsRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public BulkReplaceServiceCatalogAssociationsDetails getBody$() {
+    public com.oracle.bmc.servicecatalog.model.BulkReplaceServiceCatalogAssociationsDetails
+            getBody$() {
         return bulkReplaceServiceCatalogAssociationsDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     BulkReplaceServiceCatalogAssociationsRequest,
-                    BulkReplaceServiceCatalogAssociationsDetails> {
+                    com.oracle.bmc.servicecatalog.model
+                            .BulkReplaceServiceCatalogAssociationsDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -125,7 +128,9 @@ public class BulkReplaceServiceCatalogAssociationsRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(BulkReplaceServiceCatalogAssociationsDetails body) {
+        public Builder body$(
+                com.oracle.bmc.servicecatalog.model.BulkReplaceServiceCatalogAssociationsDetails
+                        body) {
             bulkReplaceServiceCatalogAssociationsDetails(body);
             return this;
         }

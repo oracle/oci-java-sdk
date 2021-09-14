@@ -17,12 +17,13 @@ import com.oracle.bmc.ons.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateTopicRequest extends com.oracle.bmc.requests.BmcRequest<CreateTopicDetails> {
+public class CreateTopicRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.ons.model.CreateTopicDetails> {
 
     /**
      * The topic to create.
      */
-    private CreateTopicDetails createTopicDetails;
+    private com.oracle.bmc.ons.model.CreateTopicDetails createTopicDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -47,13 +48,13 @@ public class CreateTopicRequest extends com.oracle.bmc.requests.BmcRequest<Creat
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateTopicDetails getBody$() {
+    public com.oracle.bmc.ons.model.CreateTopicDetails getBody$() {
         return createTopicDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateTopicRequest, CreateTopicDetails> {
+                    CreateTopicRequest, com.oracle.bmc.ons.model.CreateTopicDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +118,7 @@ public class CreateTopicRequest extends com.oracle.bmc.requests.BmcRequest<Creat
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateTopicDetails body) {
+        public Builder body$(com.oracle.bmc.ons.model.CreateTopicDetails body) {
             createTopicDetails(body);
             return this;
         }

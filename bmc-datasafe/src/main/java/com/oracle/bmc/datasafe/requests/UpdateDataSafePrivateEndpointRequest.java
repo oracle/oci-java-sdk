@@ -18,7 +18,8 @@ import com.oracle.bmc.datasafe.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateDataSafePrivateEndpointRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateDataSafePrivateEndpointDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datasafe.model.UpdateDataSafePrivateEndpointDetails> {
 
     /**
      * The OCID of the private endpoint.
@@ -28,7 +29,8 @@ public class UpdateDataSafePrivateEndpointRequest
     /**
      * The details used to update a Data Safe private endpoint.
      */
-    private UpdateDataSafePrivateEndpointDetails updateDataSafePrivateEndpointDetails;
+    private com.oracle.bmc.datasafe.model.UpdateDataSafePrivateEndpointDetails
+            updateDataSafePrivateEndpointDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -51,13 +53,14 @@ public class UpdateDataSafePrivateEndpointRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDataSafePrivateEndpointDetails getBody$() {
+    public com.oracle.bmc.datasafe.model.UpdateDataSafePrivateEndpointDetails getBody$() {
         return updateDataSafePrivateEndpointDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateDataSafePrivateEndpointRequest, UpdateDataSafePrivateEndpointDetails> {
+                    UpdateDataSafePrivateEndpointRequest,
+                    com.oracle.bmc.datasafe.model.UpdateDataSafePrivateEndpointDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,8 @@ public class UpdateDataSafePrivateEndpointRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDataSafePrivateEndpointDetails body) {
+        public Builder body$(
+                com.oracle.bmc.datasafe.model.UpdateDataSafePrivateEndpointDetails body) {
             updateDataSafePrivateEndpointDetails(body);
             return this;
         }

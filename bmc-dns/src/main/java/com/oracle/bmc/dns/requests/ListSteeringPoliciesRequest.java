@@ -93,7 +93,7 @@ public class ListSteeringPoliciesRequest
     /**
      * The state of a resource.
      */
-    private SteeringPolicySummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.dns.model.SteeringPolicySummary.LifecycleState lifecycleState;
 
     /**
      * The field by which to sort steering policies. If unspecified, defaults to {@code timeCreated}.

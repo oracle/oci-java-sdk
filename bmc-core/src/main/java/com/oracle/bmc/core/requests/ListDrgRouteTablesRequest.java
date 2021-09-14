@@ -159,7 +159,7 @@ public class ListDrgRouteTablesRequest extends com.oracle.bmc.requests.BmcReques
      * state. The value is case insensitive.
      *
      */
-    private DrgRouteTable.LifecycleState lifecycleState;
+    private com.oracle.bmc.core.model.DrgRouteTable.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

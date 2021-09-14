@@ -18,7 +18,8 @@ import com.oracle.bmc.mysql.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class AddAnalyticsClusterRequest
-        extends com.oracle.bmc.requests.BmcRequest<AddAnalyticsClusterDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.mysql.model.AddAnalyticsClusterDetails> {
 
     /**
      * The DB System [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,7 @@ public class AddAnalyticsClusterRequest
     /**
      * Request to add an Analytics Cluster.
      */
-    private AddAnalyticsClusterDetails addAnalyticsClusterDetails;
+    private com.oracle.bmc.mysql.model.AddAnalyticsClusterDetails addAnalyticsClusterDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
@@ -65,13 +66,14 @@ public class AddAnalyticsClusterRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public AddAnalyticsClusterDetails getBody$() {
+    public com.oracle.bmc.mysql.model.AddAnalyticsClusterDetails getBody$() {
         return addAnalyticsClusterDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    AddAnalyticsClusterRequest, AddAnalyticsClusterDetails> {
+                    AddAnalyticsClusterRequest,
+                    com.oracle.bmc.mysql.model.AddAnalyticsClusterDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -137,7 +139,7 @@ public class AddAnalyticsClusterRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(AddAnalyticsClusterDetails body) {
+        public Builder body$(com.oracle.bmc.mysql.model.AddAnalyticsClusterDetails body) {
             addAnalyticsClusterDetails(body);
             return this;
         }

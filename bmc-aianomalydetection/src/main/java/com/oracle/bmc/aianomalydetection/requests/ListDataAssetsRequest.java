@@ -49,7 +49,7 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      * state for the resource type.
      *
      */
-    private DataAsset.LifecycleState lifecycleState;
+    private com.oracle.bmc.aianomalydetection.model.DataAsset.LifecycleState lifecycleState;
 
     /**
      * The sort order to use, either 'asc' or 'desc'.

@@ -18,12 +18,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateIPSecConnectionRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateIPSecConnectionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CreateIPSecConnectionDetails> {
 
     /**
      * Details for creating an {@code IPSecConnection}.
      */
-    private CreateIPSecConnectionDetails createIPSecConnectionDetails;
+    private com.oracle.bmc.core.model.CreateIPSecConnectionDetails createIPSecConnectionDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +42,14 @@ public class CreateIPSecConnectionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateIPSecConnectionDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateIPSecConnectionDetails getBody$() {
         return createIPSecConnectionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateIPSecConnectionRequest, CreateIPSecConnectionDetails> {
+                    CreateIPSecConnectionRequest,
+                    com.oracle.bmc.core.model.CreateIPSecConnectionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +112,7 @@ public class CreateIPSecConnectionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateIPSecConnectionDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateIPSecConnectionDetails body) {
             createIPSecConnectionDetails(body);
             return this;
         }

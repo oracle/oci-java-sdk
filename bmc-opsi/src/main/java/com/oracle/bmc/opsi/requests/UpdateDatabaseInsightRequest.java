@@ -18,7 +18,8 @@ import com.oracle.bmc.opsi.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateDatabaseInsightRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateDatabaseInsightDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.opsi.model.UpdateDatabaseInsightDetails> {
 
     /**
      * Unique database insight identifier
@@ -28,7 +29,7 @@ public class UpdateDatabaseInsightRequest
     /**
      * The configuration to be updated.
      */
-    private UpdateDatabaseInsightDetails updateDatabaseInsightDetails;
+    private com.oracle.bmc.opsi.model.UpdateDatabaseInsightDetails updateDatabaseInsightDetails;
 
     /**
      * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
@@ -51,13 +52,14 @@ public class UpdateDatabaseInsightRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDatabaseInsightDetails getBody$() {
+    public com.oracle.bmc.opsi.model.UpdateDatabaseInsightDetails getBody$() {
         return updateDatabaseInsightDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateDatabaseInsightRequest, UpdateDatabaseInsightDetails> {
+                    UpdateDatabaseInsightRequest,
+                    com.oracle.bmc.opsi.model.UpdateDatabaseInsightDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +124,7 @@ public class UpdateDatabaseInsightRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDatabaseInsightDetails body) {
+        public Builder body$(com.oracle.bmc.opsi.model.UpdateDatabaseInsightDetails body) {
             updateDatabaseInsightDetails(body);
             return this;
         }

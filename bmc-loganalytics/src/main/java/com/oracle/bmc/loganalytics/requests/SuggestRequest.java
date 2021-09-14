@@ -17,7 +17,9 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class SuggestRequest extends com.oracle.bmc.requests.BmcRequest<SuggestDetails> {
+public class SuggestRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.SuggestDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -28,7 +30,7 @@ public class SuggestRequest extends com.oracle.bmc.requests.BmcRequest<SuggestDe
     /**
      * Query string seeking suggestions for.
      */
-    private SuggestDetails suggestDetails;
+    private com.oracle.bmc.loganalytics.model.SuggestDetails suggestDetails;
 
     /**
      * The client request ID for tracing.
@@ -41,7 +43,7 @@ public class SuggestRequest extends com.oracle.bmc.requests.BmcRequest<SuggestDe
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public SuggestDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.SuggestDetails getBody$() {
         return suggestDetails;
     }
 
@@ -51,7 +53,8 @@ public class SuggestRequest extends com.oracle.bmc.requests.BmcRequest<SuggestDe
     }
 
     public static class Builder
-            implements com.oracle.bmc.requests.BmcRequest.Builder<SuggestRequest, SuggestDetails> {
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    SuggestRequest, com.oracle.bmc.loganalytics.model.SuggestDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -115,7 +118,7 @@ public class SuggestRequest extends com.oracle.bmc.requests.BmcRequest<SuggestDe
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(SuggestDetails body) {
+        public Builder body$(com.oracle.bmc.loganalytics.model.SuggestDetails body) {
             suggestDetails(body);
             return this;
         }

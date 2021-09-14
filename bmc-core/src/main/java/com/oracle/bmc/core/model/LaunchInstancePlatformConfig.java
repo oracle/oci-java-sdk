@@ -37,6 +37,22 @@ package com.oracle.bmc.core.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = AmdRomeBmLaunchInstancePlatformConfig.class,
+        name = "AMD_ROME_BM"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = AmdVmLaunchInstancePlatformConfig.class,
+        name = "AMD_VM"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = IntelVmLaunchInstancePlatformConfig.class,
+        name = "INTEL_VM"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = IntelSkylakeBmLaunchInstancePlatformConfig.class,
+        name = "INTEL_SKYLAKE_BM"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = AmdMilanBmLaunchInstancePlatformConfig.class,
         name = "AMD_MILAN_BM"
     )
@@ -45,12 +61,36 @@ package com.oracle.bmc.core.model;
 public class LaunchInstancePlatformConfig {
 
     /**
-     * The type of platform being configured. The only supported
-     * {@code type} is {@code AMD_MILAN_BM}
+     * Whether Secure Boot is enabled on the instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSecureBootEnabled")
+    Boolean isSecureBootEnabled;
+
+    /**
+     * Whether the Trusted Platform Module (TPM) is enabled on the instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isTrustedPlatformModuleEnabled")
+    Boolean isTrustedPlatformModuleEnabled;
+
+    /**
+     * Whether the Measured Boot feature is enabled on the instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isMeasuredBootEnabled")
+    Boolean isMeasuredBootEnabled;
+
+    /**
+     * The type of platform being configured.
      *
      **/
     public enum Type {
         AmdMilanBm("AMD_MILAN_BM"),
+        AmdRomeBm("AMD_ROME_BM"),
+        IntelSkylakeBm("INTEL_SKYLAKE_BM"),
+        AmdVm("AMD_VM"),
+        IntelVm("INTEL_VM"),
         ;
 
         private final String value;

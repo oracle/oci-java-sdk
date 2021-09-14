@@ -17,7 +17,9 @@ import com.oracle.bmc.apmsynthetics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateScriptRequest extends com.oracle.bmc.requests.BmcRequest<CreateScriptDetails> {
+public class CreateScriptRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.apmsynthetics.model.CreateScriptDetails> {
 
     /**
      * The APM domain ID the request is intended for.
@@ -28,7 +30,7 @@ public class CreateScriptRequest extends com.oracle.bmc.requests.BmcRequest<Crea
     /**
      * The configuration details for creating a script.
      */
-    private CreateScriptDetails createScriptDetails;
+    private com.oracle.bmc.apmsynthetics.model.CreateScriptDetails createScriptDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -53,13 +55,13 @@ public class CreateScriptRequest extends com.oracle.bmc.requests.BmcRequest<Crea
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateScriptDetails getBody$() {
+    public com.oracle.bmc.apmsynthetics.model.CreateScriptDetails getBody$() {
         return createScriptDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateScriptRequest, CreateScriptDetails> {
+                    CreateScriptRequest, com.oracle.bmc.apmsynthetics.model.CreateScriptDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class CreateScriptRequest extends com.oracle.bmc.requests.BmcRequest<Crea
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateScriptDetails body) {
+        public Builder body$(com.oracle.bmc.apmsynthetics.model.CreateScriptDetails body) {
             createScriptDetails(body);
             return this;
         }

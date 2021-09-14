@@ -18,7 +18,8 @@ import com.oracle.bmc.analytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateVanityUrlRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateVanityUrlDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.analytics.model.UpdateVanityUrlDetails> {
 
     /**
      * The OCID of the AnalyticsInstance.
@@ -36,7 +37,7 @@ public class UpdateVanityUrlRequest
      * Vanity url details to update (certificate).
      *
      */
-    private UpdateVanityUrlDetails updateVanityUrlDetails;
+    private com.oracle.bmc.analytics.model.UpdateVanityUrlDetails updateVanityUrlDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -69,13 +70,13 @@ public class UpdateVanityUrlRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateVanityUrlDetails getBody$() {
+    public com.oracle.bmc.analytics.model.UpdateVanityUrlDetails getBody$() {
         return updateVanityUrlDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateVanityUrlRequest, UpdateVanityUrlDetails> {
+                    UpdateVanityUrlRequest, com.oracle.bmc.analytics.model.UpdateVanityUrlDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -142,7 +143,7 @@ public class UpdateVanityUrlRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateVanityUrlDetails body) {
+        public Builder body$(com.oracle.bmc.analytics.model.UpdateVanityUrlDetails body) {
             updateVanityUrlDetails(body);
             return this;
         }

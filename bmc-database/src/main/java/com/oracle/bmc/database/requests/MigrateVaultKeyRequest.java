@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class MigrateVaultKeyRequest
-        extends com.oracle.bmc.requests.BmcRequest<MigrateVaultKeyDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.MigrateVaultKeyDetails> {
 
     /**
      * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,7 @@ public class MigrateVaultKeyRequest
     /**
      * Request to change the source of the encryption key for the database.
      */
-    private MigrateVaultKeyDetails migrateVaultKeyDetails;
+    private com.oracle.bmc.database.model.MigrateVaultKeyDetails migrateVaultKeyDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -60,13 +61,13 @@ public class MigrateVaultKeyRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public MigrateVaultKeyDetails getBody$() {
+    public com.oracle.bmc.database.model.MigrateVaultKeyDetails getBody$() {
         return migrateVaultKeyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    MigrateVaultKeyRequest, MigrateVaultKeyDetails> {
+                    MigrateVaultKeyRequest, com.oracle.bmc.database.model.MigrateVaultKeyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -132,7 +133,7 @@ public class MigrateVaultKeyRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(MigrateVaultKeyDetails body) {
+        public Builder body$(com.oracle.bmc.database.model.MigrateVaultKeyDetails body) {
             migrateVaultKeyDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateResponderRecipeResponderRuleRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateResponderRecipeResponderRuleDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.cloudguard.model.UpdateResponderRecipeResponderRuleDetails> {
 
     /**
      * OCID of ResponderRecipe
@@ -33,7 +34,8 @@ public class UpdateResponderRecipeResponderRuleRequest
     /**
      * The details to be updated for ResponderRule.
      */
-    private UpdateResponderRecipeResponderRuleDetails updateResponderRecipeResponderRuleDetails;
+    private com.oracle.bmc.cloudguard.model.UpdateResponderRecipeResponderRuleDetails
+            updateResponderRecipeResponderRuleDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -56,14 +58,14 @@ public class UpdateResponderRecipeResponderRuleRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateResponderRecipeResponderRuleDetails getBody$() {
+    public com.oracle.bmc.cloudguard.model.UpdateResponderRecipeResponderRuleDetails getBody$() {
         return updateResponderRecipeResponderRuleDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateResponderRecipeResponderRuleRequest,
-                    UpdateResponderRecipeResponderRuleDetails> {
+                    com.oracle.bmc.cloudguard.model.UpdateResponderRecipeResponderRuleDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -130,7 +132,8 @@ public class UpdateResponderRecipeResponderRuleRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateResponderRecipeResponderRuleDetails body) {
+        public Builder body$(
+                com.oracle.bmc.cloudguard.model.UpdateResponderRecipeResponderRuleDetails body) {
             updateResponderRecipeResponderRuleDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.resourcemanager.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class DetectStackDriftRequest
-        extends com.oracle.bmc.requests.BmcRequest<DetectStackDriftDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.resourcemanager.model.DetectStackDriftDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
@@ -53,7 +54,7 @@ public class DetectStackDriftRequest
     /**
      * The details for detecting drift in a stack
      */
-    private DetectStackDriftDetails detectStackDriftDetails;
+    private com.oracle.bmc.resourcemanager.model.DetectStackDriftDetails detectStackDriftDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -61,13 +62,14 @@ public class DetectStackDriftRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public DetectStackDriftDetails getBody$() {
+    public com.oracle.bmc.resourcemanager.model.DetectStackDriftDetails getBody$() {
         return detectStackDriftDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    DetectStackDriftRequest, DetectStackDriftDetails> {
+                    DetectStackDriftRequest,
+                    com.oracle.bmc.resourcemanager.model.DetectStackDriftDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +135,7 @@ public class DetectStackDriftRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(DetectStackDriftDetails body) {
+        public Builder body$(com.oracle.bmc.resourcemanager.model.DetectStackDriftDetails body) {
             detectStackDriftDetails(body);
             return this;
         }

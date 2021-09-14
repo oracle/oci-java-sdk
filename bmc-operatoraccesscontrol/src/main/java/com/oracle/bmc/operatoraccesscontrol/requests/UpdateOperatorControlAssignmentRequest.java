@@ -18,7 +18,8 @@ import com.oracle.bmc.operatoraccesscontrol.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateOperatorControlAssignmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateOperatorControlAssignmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.operatoraccesscontrol.model.UpdateOperatorControlAssignmentDetails> {
 
     /**
      * unique OperatorControl identifier
@@ -28,7 +29,8 @@ public class UpdateOperatorControlAssignmentRequest
     /**
      * Details for the new operator control assignment.
      */
-    private UpdateOperatorControlAssignmentDetails updateOperatorControlAssignmentDetails;
+    private com.oracle.bmc.operatoraccesscontrol.model.UpdateOperatorControlAssignmentDetails
+            updateOperatorControlAssignmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -51,14 +53,16 @@ public class UpdateOperatorControlAssignmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateOperatorControlAssignmentDetails getBody$() {
+    public com.oracle.bmc.operatoraccesscontrol.model.UpdateOperatorControlAssignmentDetails
+            getBody$() {
         return updateOperatorControlAssignmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateOperatorControlAssignmentRequest,
-                    UpdateOperatorControlAssignmentDetails> {
+                    com.oracle.bmc.operatoraccesscontrol.model
+                            .UpdateOperatorControlAssignmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +127,9 @@ public class UpdateOperatorControlAssignmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateOperatorControlAssignmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.operatoraccesscontrol.model.UpdateOperatorControlAssignmentDetails
+                        body) {
             updateOperatorControlAssignmentDetails(body);
             return this;
         }

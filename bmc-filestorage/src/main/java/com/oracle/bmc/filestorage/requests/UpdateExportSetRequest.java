@@ -18,7 +18,8 @@ import com.oracle.bmc.filestorage.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateExportSetRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateExportSetDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.filestorage.model.UpdateExportSetDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the export set.
@@ -28,7 +29,7 @@ public class UpdateExportSetRequest
     /**
      * Details object for updating an export set.
      */
-    private UpdateExportSetDetails updateExportSetDetails;
+    private com.oracle.bmc.filestorage.model.UpdateExportSetDetails updateExportSetDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -53,13 +54,14 @@ public class UpdateExportSetRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateExportSetDetails getBody$() {
+    public com.oracle.bmc.filestorage.model.UpdateExportSetDetails getBody$() {
         return updateExportSetDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateExportSetRequest, UpdateExportSetDetails> {
+                    UpdateExportSetRequest,
+                    com.oracle.bmc.filestorage.model.UpdateExportSetDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class UpdateExportSetRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateExportSetDetails body) {
+        public Builder body$(com.oracle.bmc.filestorage.model.UpdateExportSetDetails body) {
             updateExportSetDetails(body);
             return this;
         }

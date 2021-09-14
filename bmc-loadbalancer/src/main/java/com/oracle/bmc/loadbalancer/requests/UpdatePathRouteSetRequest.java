@@ -18,12 +18,13 @@ import com.oracle.bmc.loadbalancer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdatePathRouteSetRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdatePathRouteSetDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loadbalancer.model.UpdatePathRouteSetDetails> {
 
     /**
      * The configuration details to update a path route set.
      */
-    private UpdatePathRouteSetDetails updatePathRouteSetDetails;
+    private com.oracle.bmc.loadbalancer.model.UpdatePathRouteSetDetails updatePathRouteSetDetails;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the path route set to update.
@@ -61,13 +62,14 @@ public class UpdatePathRouteSetRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdatePathRouteSetDetails getBody$() {
+    public com.oracle.bmc.loadbalancer.model.UpdatePathRouteSetDetails getBody$() {
         return updatePathRouteSetDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdatePathRouteSetRequest, UpdatePathRouteSetDetails> {
+                    UpdatePathRouteSetRequest,
+                    com.oracle.bmc.loadbalancer.model.UpdatePathRouteSetDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +135,7 @@ public class UpdatePathRouteSetRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdatePathRouteSetDetails body) {
+        public Builder body$(com.oracle.bmc.loadbalancer.model.UpdatePathRouteSetDetails body) {
             updatePathRouteSetDetails(body);
             return this;
         }

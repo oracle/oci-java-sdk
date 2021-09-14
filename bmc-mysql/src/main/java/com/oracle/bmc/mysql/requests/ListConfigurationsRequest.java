@@ -40,7 +40,7 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
     /**
      * Configuration Lifecycle State
      */
-    private Configuration.LifecycleState lifecycleState;
+    private com.oracle.bmc.mysql.model.Configuration.LifecycleState lifecycleState;
 
     /**
      * The requested Configuration types.

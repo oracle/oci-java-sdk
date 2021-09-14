@@ -18,12 +18,13 @@ import com.oracle.bmc.marketplace.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreatePublicationRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreatePublicationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.marketplace.model.CreatePublicationDetails> {
 
     /**
      * The details for creating the publication.
      */
-    private CreatePublicationDetails createPublicationDetails;
+    private com.oracle.bmc.marketplace.model.CreatePublicationDetails createPublicationDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without
@@ -47,13 +48,14 @@ public class CreatePublicationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreatePublicationDetails getBody$() {
+    public com.oracle.bmc.marketplace.model.CreatePublicationDetails getBody$() {
         return createPublicationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreatePublicationRequest, CreatePublicationDetails> {
+                    CreatePublicationRequest,
+                    com.oracle.bmc.marketplace.model.CreatePublicationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +119,7 @@ public class CreatePublicationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreatePublicationDetails body) {
+        public Builder body$(com.oracle.bmc.marketplace.model.CreatePublicationDetails body) {
             createPublicationDetails(body);
             return this;
         }

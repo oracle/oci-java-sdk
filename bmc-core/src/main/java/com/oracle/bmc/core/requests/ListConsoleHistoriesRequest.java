@@ -161,7 +161,7 @@ public class ListConsoleHistoriesRequest
      * value is case-insensitive.
      *
      */
-    private ConsoleHistory.LifecycleState lifecycleState;
+    private com.oracle.bmc.core.model.ConsoleHistory.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

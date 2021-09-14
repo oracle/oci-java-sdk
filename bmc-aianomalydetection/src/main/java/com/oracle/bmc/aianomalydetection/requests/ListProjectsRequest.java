@@ -29,7 +29,7 @@ public class ListProjectsRequest extends com.oracle.bmc.requests.BmcRequest<java
      * state for the resource type.
      *
      */
-    private Project.LifecycleState lifecycleState;
+    private com.oracle.bmc.aianomalydetection.model.Project.LifecycleState lifecycleState;
 
     /**
      * A filter to return only resources that match the entire display name given.

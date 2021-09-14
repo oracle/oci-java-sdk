@@ -18,7 +18,8 @@ import com.oracle.bmc.osmanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RemovePackagesFromSoftwareSourceRequest
-        extends com.oracle.bmc.requests.BmcRequest<RemovePackagesFromSoftwareSourceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.osmanagement.model.RemovePackagesFromSoftwareSourceDetails> {
 
     /**
      * The OCID of the software source.
@@ -28,7 +29,8 @@ public class RemovePackagesFromSoftwareSourceRequest
     /**
      * A list of package identifiers
      */
-    private RemovePackagesFromSoftwareSourceDetails removePackagesFromSoftwareSourceDetails;
+    private com.oracle.bmc.osmanagement.model.RemovePackagesFromSoftwareSourceDetails
+            removePackagesFromSoftwareSourceDetails;
 
     /**
      * The client request ID for tracing.
@@ -41,14 +43,14 @@ public class RemovePackagesFromSoftwareSourceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RemovePackagesFromSoftwareSourceDetails getBody$() {
+    public com.oracle.bmc.osmanagement.model.RemovePackagesFromSoftwareSourceDetails getBody$() {
         return removePackagesFromSoftwareSourceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     RemovePackagesFromSoftwareSourceRequest,
-                    RemovePackagesFromSoftwareSourceDetails> {
+                    com.oracle.bmc.osmanagement.model.RemovePackagesFromSoftwareSourceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -112,7 +114,8 @@ public class RemovePackagesFromSoftwareSourceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RemovePackagesFromSoftwareSourceDetails body) {
+        public Builder body$(
+                com.oracle.bmc.osmanagement.model.RemovePackagesFromSoftwareSourceDetails body) {
             removePackagesFromSoftwareSourceDetails(body);
             return this;
         }

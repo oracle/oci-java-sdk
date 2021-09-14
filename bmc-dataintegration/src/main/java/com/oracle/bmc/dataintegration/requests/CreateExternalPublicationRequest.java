@@ -18,7 +18,8 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateExternalPublicationRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateExternalPublicationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataintegration.model.CreateExternalPublicationDetails> {
 
     /**
      * The workspace ID.
@@ -33,7 +34,8 @@ public class CreateExternalPublicationRequest
     /**
      * Details needed to publish a task to OCI DataFlow application.
      */
-    private CreateExternalPublicationDetails createExternalPublicationDetails;
+    private com.oracle.bmc.dataintegration.model.CreateExternalPublicationDetails
+            createExternalPublicationDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If
@@ -55,13 +57,14 @@ public class CreateExternalPublicationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateExternalPublicationDetails getBody$() {
+    public com.oracle.bmc.dataintegration.model.CreateExternalPublicationDetails getBody$() {
         return createExternalPublicationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateExternalPublicationRequest, CreateExternalPublicationDetails> {
+                    CreateExternalPublicationRequest,
+                    com.oracle.bmc.dataintegration.model.CreateExternalPublicationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -127,7 +130,8 @@ public class CreateExternalPublicationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateExternalPublicationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.dataintegration.model.CreateExternalPublicationDetails body) {
             createExternalPublicationDetails(body);
             return this;
         }

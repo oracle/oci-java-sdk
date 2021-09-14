@@ -18,12 +18,13 @@ import com.oracle.bmc.identity.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateSwiftPasswordRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateSwiftPasswordDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.CreateSwiftPasswordDetails> {
 
     /**
      * Request object for creating a new swift password.
      */
-    private CreateSwiftPasswordDetails createSwiftPasswordDetails;
+    private com.oracle.bmc.identity.model.CreateSwiftPasswordDetails createSwiftPasswordDetails;
 
     /**
      * The OCID of the user.
@@ -46,13 +47,14 @@ public class CreateSwiftPasswordRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateSwiftPasswordDetails getBody$() {
+    public com.oracle.bmc.identity.model.CreateSwiftPasswordDetails getBody$() {
         return createSwiftPasswordDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateSwiftPasswordRequest, CreateSwiftPasswordDetails> {
+                    CreateSwiftPasswordRequest,
+                    com.oracle.bmc.identity.model.CreateSwiftPasswordDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +118,7 @@ public class CreateSwiftPasswordRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateSwiftPasswordDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.CreateSwiftPasswordDetails body) {
             createSwiftPasswordDetails(body);
             return this;
         }

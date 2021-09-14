@@ -46,7 +46,7 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      * Example: {@code Creating}
      *
      */
-    private Rule.LifecycleState lifecycleState;
+    private com.oracle.bmc.events.model.Rule.LifecycleState lifecycleState;
 
     /**
      * A filter to return only rules with descriptions that match the displayName string

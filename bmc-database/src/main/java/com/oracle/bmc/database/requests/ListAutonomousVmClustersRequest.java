@@ -125,7 +125,7 @@ public class ListAutonomousVmClustersRequest
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    private AutonomousVmClusterSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.database.model.AutonomousVmClusterSummary.LifecycleState lifecycleState;
 
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.

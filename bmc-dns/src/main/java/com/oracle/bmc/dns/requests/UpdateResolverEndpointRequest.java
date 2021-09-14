@@ -18,7 +18,8 @@ import com.oracle.bmc.dns.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateResolverEndpointRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateResolverEndpointDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dns.model.UpdateResolverEndpointDetails> {
 
     /**
      * The OCID of the target resolver.
@@ -33,7 +34,7 @@ public class UpdateResolverEndpointRequest
     /**
      * New data for the resolver endpoint.
      */
-    private UpdateResolverEndpointDetails updateResolverEndpointDetails;
+    private com.oracle.bmc.dns.model.UpdateResolverEndpointDetails updateResolverEndpointDetails;
 
     /**
      * The {@code If-Match} header field makes the request method conditional on the
@@ -75,13 +76,14 @@ public class UpdateResolverEndpointRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateResolverEndpointDetails getBody$() {
+    public com.oracle.bmc.dns.model.UpdateResolverEndpointDetails getBody$() {
         return updateResolverEndpointDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateResolverEndpointRequest, UpdateResolverEndpointDetails> {
+                    UpdateResolverEndpointRequest,
+                    com.oracle.bmc.dns.model.UpdateResolverEndpointDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -149,7 +151,7 @@ public class UpdateResolverEndpointRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateResolverEndpointDetails body) {
+        public Builder body$(com.oracle.bmc.dns.model.UpdateResolverEndpointDetails body) {
             updateResolverEndpointDetails(body);
             return this;
         }

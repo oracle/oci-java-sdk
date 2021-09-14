@@ -17,12 +17,13 @@ import com.oracle.bmc.nosql.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateTableRequest extends com.oracle.bmc.requests.BmcRequest<CreateTableDetails> {
+public class CreateTableRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.nosql.model.CreateTableDetails> {
 
     /**
      * Specifications for the new table.
      */
-    private CreateTableDetails createTableDetails;
+    private com.oracle.bmc.nosql.model.CreateTableDetails createTableDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried
@@ -47,13 +48,13 @@ public class CreateTableRequest extends com.oracle.bmc.requests.BmcRequest<Creat
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateTableDetails getBody$() {
+    public com.oracle.bmc.nosql.model.CreateTableDetails getBody$() {
         return createTableDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateTableRequest, CreateTableDetails> {
+                    CreateTableRequest, com.oracle.bmc.nosql.model.CreateTableDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +118,7 @@ public class CreateTableRequest extends com.oracle.bmc.requests.BmcRequest<Creat
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateTableDetails body) {
+        public Builder body$(com.oracle.bmc.nosql.model.CreateTableDetails body) {
             createTableDetails(body);
             return this;
         }

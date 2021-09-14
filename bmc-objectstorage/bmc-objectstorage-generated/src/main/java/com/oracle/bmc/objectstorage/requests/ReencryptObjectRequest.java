@@ -18,7 +18,8 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ReencryptObjectRequest
-        extends com.oracle.bmc.requests.BmcRequest<ReencryptObjectDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.objectstorage.model.ReencryptObjectDetails> {
 
     /**
      * The Object Storage namespace used for the request.
@@ -42,7 +43,7 @@ public class ReencryptObjectRequest
     /**
      * Request object for re-encrypting the data encryption key associated with an object.
      */
-    private ReencryptObjectDetails reencryptObjectDetails;
+    private com.oracle.bmc.objectstorage.model.ReencryptObjectDetails reencryptObjectDetails;
 
     /**
      * VersionId used to identify a particular version of the object
@@ -60,13 +61,14 @@ public class ReencryptObjectRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ReencryptObjectDetails getBody$() {
+    public com.oracle.bmc.objectstorage.model.ReencryptObjectDetails getBody$() {
         return reencryptObjectDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ReencryptObjectRequest, ReencryptObjectDetails> {
+                    ReencryptObjectRequest,
+                    com.oracle.bmc.objectstorage.model.ReencryptObjectDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +135,7 @@ public class ReencryptObjectRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ReencryptObjectDetails body) {
+        public Builder body$(com.oracle.bmc.objectstorage.model.ReencryptObjectDetails body) {
             reencryptObjectDetails(body);
             return this;
         }

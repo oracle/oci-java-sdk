@@ -18,7 +18,8 @@ import com.oracle.bmc.mysql.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateHeatWaveClusterRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateHeatWaveClusterDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.mysql.model.UpdateHeatWaveClusterDetails> {
 
     /**
      * The DB System [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,7 @@ public class UpdateHeatWaveClusterRequest
     /**
      * Request to update a HeatWave cluster.
      */
-    private UpdateHeatWaveClusterDetails updateHeatWaveClusterDetails;
+    private com.oracle.bmc.mysql.model.UpdateHeatWaveClusterDetails updateHeatWaveClusterDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
@@ -54,13 +55,14 @@ public class UpdateHeatWaveClusterRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateHeatWaveClusterDetails getBody$() {
+    public com.oracle.bmc.mysql.model.UpdateHeatWaveClusterDetails getBody$() {
         return updateHeatWaveClusterDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateHeatWaveClusterRequest, UpdateHeatWaveClusterDetails> {
+                    UpdateHeatWaveClusterRequest,
+                    com.oracle.bmc.mysql.model.UpdateHeatWaveClusterDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -125,7 +127,7 @@ public class UpdateHeatWaveClusterRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateHeatWaveClusterDetails body) {
+        public Builder body$(com.oracle.bmc.mysql.model.UpdateHeatWaveClusterDetails body) {
             updateHeatWaveClusterDetails(body);
             return this;
         }

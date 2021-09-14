@@ -18,7 +18,8 @@ import com.oracle.bmc.identity.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateDynamicGroupRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateDynamicGroupDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.UpdateDynamicGroupDetails> {
 
     /**
      * The OCID of the dynamic group.
@@ -28,7 +29,7 @@ public class UpdateDynamicGroupRequest
     /**
      * Request object for updating an dynamic group.
      */
-    private UpdateDynamicGroupDetails updateDynamicGroupDetails;
+    private com.oracle.bmc.identity.model.UpdateDynamicGroupDetails updateDynamicGroupDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -44,13 +45,14 @@ public class UpdateDynamicGroupRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDynamicGroupDetails getBody$() {
+    public com.oracle.bmc.identity.model.UpdateDynamicGroupDetails getBody$() {
         return updateDynamicGroupDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateDynamicGroupRequest, UpdateDynamicGroupDetails> {
+                    UpdateDynamicGroupRequest,
+                    com.oracle.bmc.identity.model.UpdateDynamicGroupDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +116,7 @@ public class UpdateDynamicGroupRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDynamicGroupDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.UpdateDynamicGroupDetails body) {
             updateDynamicGroupDetails(body);
             return this;
         }

@@ -17,7 +17,9 @@ import com.oracle.bmc.networkloadbalancer.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateBackendRequest extends com.oracle.bmc.requests.BmcRequest<CreateBackendDetails> {
+public class CreateBackendRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.networkloadbalancer.model.CreateBackendDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -27,7 +29,7 @@ public class CreateBackendRequest extends com.oracle.bmc.requests.BmcRequest<Cre
     /**
      * The details to add a backend server to a backend set.
      */
-    private CreateBackendDetails createBackendDetails;
+    private com.oracle.bmc.networkloadbalancer.model.CreateBackendDetails createBackendDetails;
 
     /**
      * The name of the backend set to which to add the backend server.
@@ -70,13 +72,14 @@ public class CreateBackendRequest extends com.oracle.bmc.requests.BmcRequest<Cre
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateBackendDetails getBody$() {
+    public com.oracle.bmc.networkloadbalancer.model.CreateBackendDetails getBody$() {
         return createBackendDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateBackendRequest, CreateBackendDetails> {
+                    CreateBackendRequest,
+                    com.oracle.bmc.networkloadbalancer.model.CreateBackendDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -143,7 +146,7 @@ public class CreateBackendRequest extends com.oracle.bmc.requests.BmcRequest<Cre
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateBackendDetails body) {
+        public Builder body$(com.oracle.bmc.networkloadbalancer.model.CreateBackendDetails body) {
             createBackendDetails(body);
             return this;
         }

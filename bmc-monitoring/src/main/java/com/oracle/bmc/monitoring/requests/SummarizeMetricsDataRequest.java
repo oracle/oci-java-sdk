@@ -18,7 +18,8 @@ import com.oracle.bmc.monitoring.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class SummarizeMetricsDataRequest
-        extends com.oracle.bmc.requests.BmcRequest<SummarizeMetricsDataDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.monitoring.model.SummarizeMetricsDataDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
@@ -33,7 +34,7 @@ public class SummarizeMetricsDataRequest
     /**
      * The dimensions used to filter for metrics.
      */
-    private SummarizeMetricsDataDetails summarizeMetricsDataDetails;
+    private com.oracle.bmc.monitoring.model.SummarizeMetricsDataDetails summarizeMetricsDataDetails;
 
     /**
      * Customer part of the request identifier token. If you need to contact Oracle about a particular
@@ -58,13 +59,14 @@ public class SummarizeMetricsDataRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public SummarizeMetricsDataDetails getBody$() {
+    public com.oracle.bmc.monitoring.model.SummarizeMetricsDataDetails getBody$() {
         return summarizeMetricsDataDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    SummarizeMetricsDataRequest, SummarizeMetricsDataDetails> {
+                    SummarizeMetricsDataRequest,
+                    com.oracle.bmc.monitoring.model.SummarizeMetricsDataDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -129,7 +131,7 @@ public class SummarizeMetricsDataRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(SummarizeMetricsDataDetails body) {
+        public Builder body$(com.oracle.bmc.monitoring.model.SummarizeMetricsDataDetails body) {
             summarizeMetricsDataDetails(body);
             return this;
         }

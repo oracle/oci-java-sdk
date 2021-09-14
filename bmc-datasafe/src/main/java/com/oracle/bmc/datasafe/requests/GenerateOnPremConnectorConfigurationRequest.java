@@ -18,12 +18,14 @@ import com.oracle.bmc.datasafe.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class GenerateOnPremConnectorConfigurationRequest
-        extends com.oracle.bmc.requests.BmcRequest<GenerateOnPremConnectorConfigurationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datasafe.model.GenerateOnPremConnectorConfigurationDetails> {
 
     /**
      * The details used to create and download on-premises connector's configuration.
      */
-    private GenerateOnPremConnectorConfigurationDetails generateOnPremConnectorConfigurationDetails;
+    private com.oracle.bmc.datasafe.model.GenerateOnPremConnectorConfigurationDetails
+            generateOnPremConnectorConfigurationDetails;
 
     /**
      * The OCID of the on-premises connector.
@@ -60,14 +62,14 @@ public class GenerateOnPremConnectorConfigurationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public GenerateOnPremConnectorConfigurationDetails getBody$() {
+    public com.oracle.bmc.datasafe.model.GenerateOnPremConnectorConfigurationDetails getBody$() {
         return generateOnPremConnectorConfigurationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GenerateOnPremConnectorConfigurationRequest,
-                    GenerateOnPremConnectorConfigurationDetails> {
+                    com.oracle.bmc.datasafe.model.GenerateOnPremConnectorConfigurationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +136,8 @@ public class GenerateOnPremConnectorConfigurationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(GenerateOnPremConnectorConfigurationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.datasafe.model.GenerateOnPremConnectorConfigurationDetails body) {
             generateOnPremConnectorConfigurationDetails(body);
             return this;
         }

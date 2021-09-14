@@ -17,12 +17,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateImageRequest extends com.oracle.bmc.requests.BmcRequest<CreateImageDetails> {
+public class CreateImageRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.CreateImageDetails> {
 
     /**
      * Image creation details
      */
-    private CreateImageDetails createImageDetails;
+    private com.oracle.bmc.core.model.CreateImageDetails createImageDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -40,13 +41,13 @@ public class CreateImageRequest extends com.oracle.bmc.requests.BmcRequest<Creat
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateImageDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateImageDetails getBody$() {
         return createImageDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateImageRequest, CreateImageDetails> {
+                    CreateImageRequest, com.oracle.bmc.core.model.CreateImageDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -109,7 +110,7 @@ public class CreateImageRequest extends com.oracle.bmc.requests.BmcRequest<Creat
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateImageDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateImageDetails body) {
             createImageDetails(body);
             return this;
         }

@@ -18,12 +18,13 @@ import com.oracle.bmc.identity.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateSmtpCredentialRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateSmtpCredentialDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.CreateSmtpCredentialDetails> {
 
     /**
      * Request object for creating a new SMTP credential with the user.
      */
-    private CreateSmtpCredentialDetails createSmtpCredentialDetails;
+    private com.oracle.bmc.identity.model.CreateSmtpCredentialDetails createSmtpCredentialDetails;
 
     /**
      * The OCID of the user.
@@ -46,13 +47,14 @@ public class CreateSmtpCredentialRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateSmtpCredentialDetails getBody$() {
+    public com.oracle.bmc.identity.model.CreateSmtpCredentialDetails getBody$() {
         return createSmtpCredentialDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateSmtpCredentialRequest, CreateSmtpCredentialDetails> {
+                    CreateSmtpCredentialRequest,
+                    com.oracle.bmc.identity.model.CreateSmtpCredentialDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +118,7 @@ public class CreateSmtpCredentialRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateSmtpCredentialDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.CreateSmtpCredentialDetails body) {
             createSmtpCredentialDetails(body);
             return this;
         }

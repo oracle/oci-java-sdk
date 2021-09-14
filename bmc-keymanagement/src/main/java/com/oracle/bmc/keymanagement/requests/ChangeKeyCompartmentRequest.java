@@ -18,7 +18,8 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeKeyCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeKeyCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.keymanagement.model.ChangeKeyCompartmentDetails> {
 
     /**
      * The OCID of the key.
@@ -28,7 +29,8 @@ public class ChangeKeyCompartmentRequest
     /**
      *
      */
-    private ChangeKeyCompartmentDetails changeKeyCompartmentDetails;
+    private com.oracle.bmc.keymanagement.model.ChangeKeyCompartmentDetails
+            changeKeyCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
@@ -65,13 +67,14 @@ public class ChangeKeyCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeKeyCompartmentDetails getBody$() {
+    public com.oracle.bmc.keymanagement.model.ChangeKeyCompartmentDetails getBody$() {
         return changeKeyCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeKeyCompartmentRequest, ChangeKeyCompartmentDetails> {
+                    ChangeKeyCompartmentRequest,
+                    com.oracle.bmc.keymanagement.model.ChangeKeyCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -137,7 +140,7 @@ public class ChangeKeyCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeKeyCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.keymanagement.model.ChangeKeyCompartmentDetails body) {
             changeKeyCompartmentDetails(body);
             return this;
         }

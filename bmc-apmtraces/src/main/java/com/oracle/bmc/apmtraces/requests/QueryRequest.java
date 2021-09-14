@@ -17,7 +17,8 @@ import com.oracle.bmc.apmtraces.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class QueryRequest extends com.oracle.bmc.requests.BmcRequest<QueryDetails> {
+public class QueryRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.apmtraces.model.QueryDetails> {
 
     /**
      * The APM Domain Id the request is intended for.
@@ -41,7 +42,7 @@ public class QueryRequest extends com.oracle.bmc.requests.BmcRequest<QueryDetail
      * Request body containing the query to be run against our repository.
      *
      */
-    private QueryDetails queryDetails;
+    private com.oracle.bmc.apmtraces.model.QueryDetails queryDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a
@@ -69,12 +70,13 @@ public class QueryRequest extends com.oracle.bmc.requests.BmcRequest<QueryDetail
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public QueryDetails getBody$() {
+    public com.oracle.bmc.apmtraces.model.QueryDetails getBody$() {
         return queryDetails;
     }
 
     public static class Builder
-            implements com.oracle.bmc.requests.BmcRequest.Builder<QueryRequest, QueryDetails> {
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    QueryRequest, com.oracle.bmc.apmtraces.model.QueryDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -142,7 +144,7 @@ public class QueryRequest extends com.oracle.bmc.requests.BmcRequest<QueryDetail
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(QueryDetails body) {
+        public Builder body$(com.oracle.bmc.apmtraces.model.QueryDetails body) {
             queryDetails(body);
             return this;
         }

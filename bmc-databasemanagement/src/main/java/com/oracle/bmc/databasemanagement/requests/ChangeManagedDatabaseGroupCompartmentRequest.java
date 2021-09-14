@@ -18,7 +18,9 @@ import com.oracle.bmc.databasemanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeManagedDatabaseGroupCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeManagedDatabaseGroupCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.databasemanagement.model
+                        .ChangeManagedDatabaseGroupCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
@@ -28,7 +30,7 @@ public class ChangeManagedDatabaseGroupCompartmentRequest
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment to move the Managed Database Group to.
      */
-    private ChangeManagedDatabaseGroupCompartmentDetails
+    private com.oracle.bmc.databasemanagement.model.ChangeManagedDatabaseGroupCompartmentDetails
             changeManagedDatabaseGroupCompartmentDetails;
 
     /**
@@ -62,14 +64,16 @@ public class ChangeManagedDatabaseGroupCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeManagedDatabaseGroupCompartmentDetails getBody$() {
+    public com.oracle.bmc.databasemanagement.model.ChangeManagedDatabaseGroupCompartmentDetails
+            getBody$() {
         return changeManagedDatabaseGroupCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeManagedDatabaseGroupCompartmentRequest,
-                    ChangeManagedDatabaseGroupCompartmentDetails> {
+                    com.oracle.bmc.databasemanagement.model
+                            .ChangeManagedDatabaseGroupCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -136,7 +140,9 @@ public class ChangeManagedDatabaseGroupCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeManagedDatabaseGroupCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.databasemanagement.model.ChangeManagedDatabaseGroupCompartmentDetails
+                        body) {
             changeManagedDatabaseGroupCompartmentDetails(body);
             return this;
         }

@@ -18,12 +18,14 @@ import com.oracle.bmc.identity.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateIdentityProviderRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateIdentityProviderDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.CreateIdentityProviderDetails> {
 
     /**
      * Request object for creating a new SAML2 identity provider.
      */
-    private CreateIdentityProviderDetails createIdentityProviderDetails;
+    private com.oracle.bmc.identity.model.CreateIdentityProviderDetails
+            createIdentityProviderDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +43,14 @@ public class CreateIdentityProviderRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateIdentityProviderDetails getBody$() {
+    public com.oracle.bmc.identity.model.CreateIdentityProviderDetails getBody$() {
         return createIdentityProviderDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateIdentityProviderRequest, CreateIdentityProviderDetails> {
+                    CreateIdentityProviderRequest,
+                    com.oracle.bmc.identity.model.CreateIdentityProviderDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +113,7 @@ public class CreateIdentityProviderRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateIdentityProviderDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.CreateIdentityProviderDetails body) {
             createIdentityProviderDetails(body);
             return this;
         }

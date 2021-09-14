@@ -18,12 +18,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateInstanceConfigurationRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateInstanceConfigurationBase> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CreateInstanceConfigurationBase> {
 
     /**
      * Instance configuration creation details
      */
-    private CreateInstanceConfigurationBase createInstanceConfiguration;
+    private com.oracle.bmc.core.model.CreateInstanceConfigurationBase createInstanceConfiguration;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +42,14 @@ public class CreateInstanceConfigurationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateInstanceConfigurationBase getBody$() {
+    public com.oracle.bmc.core.model.CreateInstanceConfigurationBase getBody$() {
         return createInstanceConfiguration;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateInstanceConfigurationRequest, CreateInstanceConfigurationBase> {
+                    CreateInstanceConfigurationRequest,
+                    com.oracle.bmc.core.model.CreateInstanceConfigurationBase> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +112,7 @@ public class CreateInstanceConfigurationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateInstanceConfigurationBase body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateInstanceConfigurationBase body) {
             createInstanceConfiguration(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.identity.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateTagNamespaceRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateTagNamespaceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.UpdateTagNamespaceDetails> {
 
     /**
      * The OCID of the tag namespace.
@@ -29,7 +30,7 @@ public class UpdateTagNamespaceRequest
     /**
      * Request object for updating a namespace.
      */
-    private UpdateTagNamespaceDetails updateTagNamespaceDetails;
+    private com.oracle.bmc.identity.model.UpdateTagNamespaceDetails updateTagNamespaceDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -37,13 +38,14 @@ public class UpdateTagNamespaceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateTagNamespaceDetails getBody$() {
+    public com.oracle.bmc.identity.model.UpdateTagNamespaceDetails getBody$() {
         return updateTagNamespaceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateTagNamespaceRequest, UpdateTagNamespaceDetails> {
+                    UpdateTagNamespaceRequest,
+                    com.oracle.bmc.identity.model.UpdateTagNamespaceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -106,7 +108,7 @@ public class UpdateTagNamespaceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateTagNamespaceDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.UpdateTagNamespaceDetails body) {
             updateTagNamespaceDetails(body);
             return this;
         }

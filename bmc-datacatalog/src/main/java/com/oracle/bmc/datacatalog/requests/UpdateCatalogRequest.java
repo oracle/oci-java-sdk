@@ -17,7 +17,9 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateCatalogRequest extends com.oracle.bmc.requests.BmcRequest<UpdateCatalogDetails> {
+public class UpdateCatalogRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.UpdateCatalogDetails> {
 
     /**
      * Unique catalog identifier.
@@ -27,7 +29,7 @@ public class UpdateCatalogRequest extends com.oracle.bmc.requests.BmcRequest<Upd
     /**
      * The data catalog information to be updated.
      */
-    private UpdateCatalogDetails updateCatalogDetails;
+    private com.oracle.bmc.datacatalog.model.UpdateCatalogDetails updateCatalogDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -50,13 +52,13 @@ public class UpdateCatalogRequest extends com.oracle.bmc.requests.BmcRequest<Upd
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateCatalogDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.UpdateCatalogDetails getBody$() {
         return updateCatalogDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateCatalogRequest, UpdateCatalogDetails> {
+                    UpdateCatalogRequest, com.oracle.bmc.datacatalog.model.UpdateCatalogDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +123,7 @@ public class UpdateCatalogRequest extends com.oracle.bmc.requests.BmcRequest<Upd
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateCatalogDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.UpdateCatalogDetails body) {
             updateCatalogDetails(body);
             return this;
         }

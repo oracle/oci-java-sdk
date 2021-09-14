@@ -18,7 +18,8 @@ import com.oracle.bmc.autoscaling.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateAutoScalingPolicyRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateAutoScalingPolicyDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.autoscaling.model.CreateAutoScalingPolicyDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
@@ -28,7 +29,8 @@ public class CreateAutoScalingPolicyRequest
     /**
      * Creation details for an autoscaling policy.
      */
-    private CreateAutoScalingPolicyDetails createAutoScalingPolicyDetails;
+    private com.oracle.bmc.autoscaling.model.CreateAutoScalingPolicyDetails
+            createAutoScalingPolicyDetails;
 
     /**
      *
@@ -51,13 +53,14 @@ public class CreateAutoScalingPolicyRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateAutoScalingPolicyDetails getBody$() {
+    public com.oracle.bmc.autoscaling.model.CreateAutoScalingPolicyDetails getBody$() {
         return createAutoScalingPolicyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateAutoScalingPolicyRequest, CreateAutoScalingPolicyDetails> {
+                    CreateAutoScalingPolicyRequest,
+                    com.oracle.bmc.autoscaling.model.CreateAutoScalingPolicyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,7 @@ public class CreateAutoScalingPolicyRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateAutoScalingPolicyDetails body) {
+        public Builder body$(com.oracle.bmc.autoscaling.model.CreateAutoScalingPolicyDetails body) {
             createAutoScalingPolicyDetails(body);
             return this;
         }

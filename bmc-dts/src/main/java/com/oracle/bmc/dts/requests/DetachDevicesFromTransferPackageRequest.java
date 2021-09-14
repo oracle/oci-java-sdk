@@ -18,7 +18,7 @@ import com.oracle.bmc.dts.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class DetachDevicesFromTransferPackageRequest
-        extends com.oracle.bmc.requests.BmcRequest<DetachDevicesDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.dts.model.DetachDevicesDetails> {
 
     /**
      * ID of the Transfer Job
@@ -33,7 +33,7 @@ public class DetachDevicesFromTransferPackageRequest
     /**
      * Labels of Transfer Devices to detach
      */
-    private DetachDevicesDetails detachDevicesDetails;
+    private com.oracle.bmc.dts.model.DetachDevicesDetails detachDevicesDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -41,13 +41,14 @@ public class DetachDevicesFromTransferPackageRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public DetachDevicesDetails getBody$() {
+    public com.oracle.bmc.dts.model.DetachDevicesDetails getBody$() {
         return detachDevicesDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    DetachDevicesFromTransferPackageRequest, DetachDevicesDetails> {
+                    DetachDevicesFromTransferPackageRequest,
+                    com.oracle.bmc.dts.model.DetachDevicesDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -111,7 +112,7 @@ public class DetachDevicesFromTransferPackageRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(DetachDevicesDetails body) {
+        public Builder body$(com.oracle.bmc.dts.model.DetachDevicesDetails body) {
             detachDevicesDetails(body);
             return this;
         }

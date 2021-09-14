@@ -139,7 +139,7 @@ public class ListTopicsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      * Filter returned list by specified lifecycle state. This parameter is case-insensitive.
      *
      */
-    private NotificationTopicSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.ons.model.NotificationTopicSummary.LifecycleState lifecycleState;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a

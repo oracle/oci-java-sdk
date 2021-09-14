@@ -18,13 +18,15 @@ import com.oracle.bmc.usageapi.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RequestSummarizedUsagesRequest
-        extends com.oracle.bmc.requests.BmcRequest<RequestSummarizedUsagesDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.usageapi.model.RequestSummarizedUsagesDetails> {
 
     /**
      * getUsageRequest contains query inforamtion.
      *
      */
-    private RequestSummarizedUsagesDetails requestSummarizedUsagesDetails;
+    private com.oracle.bmc.usageapi.model.RequestSummarizedUsagesDetails
+            requestSummarizedUsagesDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -51,13 +53,14 @@ public class RequestSummarizedUsagesRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RequestSummarizedUsagesDetails getBody$() {
+    public com.oracle.bmc.usageapi.model.RequestSummarizedUsagesDetails getBody$() {
         return requestSummarizedUsagesDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RequestSummarizedUsagesRequest, RequestSummarizedUsagesDetails> {
+                    RequestSummarizedUsagesRequest,
+                    com.oracle.bmc.usageapi.model.RequestSummarizedUsagesDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,7 @@ public class RequestSummarizedUsagesRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RequestSummarizedUsagesDetails body) {
+        public Builder body$(com.oracle.bmc.usageapi.model.RequestSummarizedUsagesDetails body) {
             requestSummarizedUsagesDetails(body);
             return this;
         }

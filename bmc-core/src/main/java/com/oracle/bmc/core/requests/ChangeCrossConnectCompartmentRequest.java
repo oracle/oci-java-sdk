@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeCrossConnectCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeCrossConnectCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.ChangeCrossConnectCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cross-connect.
@@ -28,7 +29,8 @@ public class ChangeCrossConnectCompartmentRequest
     /**
      * Request to change the compartment of a Cross Connect.
      */
-    private ChangeCrossConnectCompartmentDetails changeCrossConnectCompartmentDetails;
+    private com.oracle.bmc.core.model.ChangeCrossConnectCompartmentDetails
+            changeCrossConnectCompartmentDetails;
 
     /**
      * Unique identifier for the request.
@@ -53,13 +55,14 @@ public class ChangeCrossConnectCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeCrossConnectCompartmentDetails getBody$() {
+    public com.oracle.bmc.core.model.ChangeCrossConnectCompartmentDetails getBody$() {
         return changeCrossConnectCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeCrossConnectCompartmentRequest, ChangeCrossConnectCompartmentDetails> {
+                    ChangeCrossConnectCompartmentRequest,
+                    com.oracle.bmc.core.model.ChangeCrossConnectCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +127,7 @@ public class ChangeCrossConnectCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeCrossConnectCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.ChangeCrossConnectCompartmentDetails body) {
             changeCrossConnectCompartmentDetails(body);
             return this;
         }

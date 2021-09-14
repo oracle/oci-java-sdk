@@ -18,7 +18,8 @@ import com.oracle.bmc.operatoraccesscontrol.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateOperatorControlRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateOperatorControlDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.operatoraccesscontrol.model.UpdateOperatorControlDetails> {
 
     /**
      * unique OperatorControl identifier
@@ -28,7 +29,8 @@ public class UpdateOperatorControlRequest
     /**
      * Details for the new OperatorControl.
      */
-    private UpdateOperatorControlDetails updateOperatorControlDetails;
+    private com.oracle.bmc.operatoraccesscontrol.model.UpdateOperatorControlDetails
+            updateOperatorControlDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -51,13 +53,14 @@ public class UpdateOperatorControlRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateOperatorControlDetails getBody$() {
+    public com.oracle.bmc.operatoraccesscontrol.model.UpdateOperatorControlDetails getBody$() {
         return updateOperatorControlDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateOperatorControlRequest, UpdateOperatorControlDetails> {
+                    UpdateOperatorControlRequest,
+                    com.oracle.bmc.operatoraccesscontrol.model.UpdateOperatorControlDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,8 @@ public class UpdateOperatorControlRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateOperatorControlDetails body) {
+        public Builder body$(
+                com.oracle.bmc.operatoraccesscontrol.model.UpdateOperatorControlDetails body) {
             updateOperatorControlDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateDbSystemRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateDbSystemDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.UpdateDbSystemDetails> {
 
     /**
      * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,7 @@ public class UpdateDbSystemRequest
     /**
      * Request to update the properties of a DB system.
      */
-    private UpdateDbSystemDetails updateDbSystemDetails;
+    private com.oracle.bmc.database.model.UpdateDbSystemDetails updateDbSystemDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -44,13 +45,13 @@ public class UpdateDbSystemRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDbSystemDetails getBody$() {
+    public com.oracle.bmc.database.model.UpdateDbSystemDetails getBody$() {
         return updateDbSystemDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateDbSystemRequest, UpdateDbSystemDetails> {
+                    UpdateDbSystemRequest, com.oracle.bmc.database.model.UpdateDbSystemDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +115,7 @@ public class UpdateDbSystemRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDbSystemDetails body) {
+        public Builder body$(com.oracle.bmc.database.model.UpdateDbSystemDetails body) {
             updateDbSystemDetails(body);
             return this;
         }

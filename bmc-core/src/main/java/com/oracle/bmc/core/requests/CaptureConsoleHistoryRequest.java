@@ -18,12 +18,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CaptureConsoleHistoryRequest
-        extends com.oracle.bmc.requests.BmcRequest<CaptureConsoleHistoryDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CaptureConsoleHistoryDetails> {
 
     /**
      * Console history details
      */
-    private CaptureConsoleHistoryDetails captureConsoleHistoryDetails;
+    private com.oracle.bmc.core.model.CaptureConsoleHistoryDetails captureConsoleHistoryDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +42,14 @@ public class CaptureConsoleHistoryRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CaptureConsoleHistoryDetails getBody$() {
+    public com.oracle.bmc.core.model.CaptureConsoleHistoryDetails getBody$() {
         return captureConsoleHistoryDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CaptureConsoleHistoryRequest, CaptureConsoleHistoryDetails> {
+                    CaptureConsoleHistoryRequest,
+                    com.oracle.bmc.core.model.CaptureConsoleHistoryDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +112,7 @@ public class CaptureConsoleHistoryRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CaptureConsoleHistoryDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CaptureConsoleHistoryDetails body) {
             captureConsoleHistoryDetails(body);
             return this;
         }

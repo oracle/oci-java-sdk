@@ -18,12 +18,14 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class DetachCatalogPrivateEndpointRequest
-        extends com.oracle.bmc.requests.BmcRequest<DetachCatalogPrivateEndpointDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.DetachCatalogPrivateEndpointDetails> {
 
     /**
      * Details for private reverse connection endpoint to be used for attachment
      */
-    private DetachCatalogPrivateEndpointDetails detachCatalogPrivateEndpointDetails;
+    private com.oracle.bmc.datacatalog.model.DetachCatalogPrivateEndpointDetails
+            detachCatalogPrivateEndpointDetails;
 
     /**
      * Unique catalog identifier.
@@ -51,13 +53,14 @@ public class DetachCatalogPrivateEndpointRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public DetachCatalogPrivateEndpointDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.DetachCatalogPrivateEndpointDetails getBody$() {
         return detachCatalogPrivateEndpointDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    DetachCatalogPrivateEndpointRequest, DetachCatalogPrivateEndpointDetails> {
+                    DetachCatalogPrivateEndpointRequest,
+                    com.oracle.bmc.datacatalog.model.DetachCatalogPrivateEndpointDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,8 @@ public class DetachCatalogPrivateEndpointRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(DetachCatalogPrivateEndpointDetails body) {
+        public Builder body$(
+                com.oracle.bmc.datacatalog.model.DetachCatalogPrivateEndpointDetails body) {
             detachCatalogPrivateEndpointDetails(body);
             return this;
         }

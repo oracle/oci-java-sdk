@@ -18,7 +18,8 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeDetectorRecipeCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeDetectorRecipeCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.cloudguard.model.ChangeDetectorRecipeCompartmentDetails> {
 
     /**
      * DetectorRecipe OCID
@@ -28,7 +29,8 @@ public class ChangeDetectorRecipeCompartmentRequest
     /**
      * The target compartment id.
      */
-    private ChangeDetectorRecipeCompartmentDetails changeDetectorRecipeCompartmentDetails;
+    private com.oracle.bmc.cloudguard.model.ChangeDetectorRecipeCompartmentDetails
+            changeDetectorRecipeCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -61,14 +63,14 @@ public class ChangeDetectorRecipeCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeDetectorRecipeCompartmentDetails getBody$() {
+    public com.oracle.bmc.cloudguard.model.ChangeDetectorRecipeCompartmentDetails getBody$() {
         return changeDetectorRecipeCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeDetectorRecipeCompartmentRequest,
-                    ChangeDetectorRecipeCompartmentDetails> {
+                    com.oracle.bmc.cloudguard.model.ChangeDetectorRecipeCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +136,8 @@ public class ChangeDetectorRecipeCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeDetectorRecipeCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.cloudguard.model.ChangeDetectorRecipeCompartmentDetails body) {
             changeDetectorRecipeCompartmentDetails(body);
             return this;
         }

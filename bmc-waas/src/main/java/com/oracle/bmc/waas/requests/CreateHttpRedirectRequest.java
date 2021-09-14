@@ -18,12 +18,13 @@ import com.oracle.bmc.waas.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateHttpRedirectRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateHttpRedirectDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.waas.model.CreateHttpRedirectDetails> {
 
     /**
      * The details of the HTTP Redirect.
      */
-    private CreateHttpRedirectDetails createHttpRedirectDetails;
+    private com.oracle.bmc.waas.model.CreateHttpRedirectDetails createHttpRedirectDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -42,13 +43,14 @@ public class CreateHttpRedirectRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateHttpRedirectDetails getBody$() {
+    public com.oracle.bmc.waas.model.CreateHttpRedirectDetails getBody$() {
         return createHttpRedirectDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateHttpRedirectRequest, CreateHttpRedirectDetails> {
+                    CreateHttpRedirectRequest,
+                    com.oracle.bmc.waas.model.CreateHttpRedirectDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -112,7 +114,7 @@ public class CreateHttpRedirectRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateHttpRedirectDetails body) {
+        public Builder body$(com.oracle.bmc.waas.model.CreateHttpRedirectDetails body) {
             createHttpRedirectDetails(body);
             return this;
         }

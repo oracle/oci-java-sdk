@@ -134,7 +134,7 @@ public class ListStreamPoolsRequest extends com.oracle.bmc.requests.BmcRequest<j
      * A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
      *
      */
-    private StreamPoolSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.streaming.model.StreamPoolSummary.LifecycleState lifecycleState;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a

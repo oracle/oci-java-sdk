@@ -18,7 +18,8 @@ import com.oracle.bmc.dts.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateTransferApplianceAdminCredentialsRequest
-        extends com.oracle.bmc.requests.BmcRequest<TransferAppliancePublicKey> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dts.model.TransferAppliancePublicKey> {
 
     /**
      * ID of the Transfer Job
@@ -33,7 +34,7 @@ public class CreateTransferApplianceAdminCredentialsRequest
     /**
      *
      */
-    private TransferAppliancePublicKey adminPublicKey;
+    private com.oracle.bmc.dts.model.TransferAppliancePublicKey adminPublicKey;
 
     /**
      * Alternative accessor for the body parameter.
@@ -41,13 +42,14 @@ public class CreateTransferApplianceAdminCredentialsRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public TransferAppliancePublicKey getBody$() {
+    public com.oracle.bmc.dts.model.TransferAppliancePublicKey getBody$() {
         return adminPublicKey;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateTransferApplianceAdminCredentialsRequest, TransferAppliancePublicKey> {
+                    CreateTransferApplianceAdminCredentialsRequest,
+                    com.oracle.bmc.dts.model.TransferAppliancePublicKey> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -112,7 +114,7 @@ public class CreateTransferApplianceAdminCredentialsRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(TransferAppliancePublicKey body) {
+        public Builder body$(com.oracle.bmc.dts.model.TransferAppliancePublicKey body) {
             adminPublicKey(body);
             return this;
         }

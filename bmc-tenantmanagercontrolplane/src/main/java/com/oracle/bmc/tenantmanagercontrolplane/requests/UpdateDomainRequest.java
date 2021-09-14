@@ -17,7 +17,9 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateDomainRequest extends com.oracle.bmc.requests.BmcRequest<UpdateDomainDetails> {
+public class UpdateDomainRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.tenantmanagercontrolplane.model.UpdateDomainDetails> {
 
     /**
      * The domain OCID.
@@ -27,7 +29,7 @@ public class UpdateDomainRequest extends com.oracle.bmc.requests.BmcRequest<Upda
     /**
      * The information to be updated.
      */
-    private UpdateDomainDetails updateDomainDetails;
+    private com.oracle.bmc.tenantmanagercontrolplane.model.UpdateDomainDetails updateDomainDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -50,13 +52,14 @@ public class UpdateDomainRequest extends com.oracle.bmc.requests.BmcRequest<Upda
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDomainDetails getBody$() {
+    public com.oracle.bmc.tenantmanagercontrolplane.model.UpdateDomainDetails getBody$() {
         return updateDomainDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateDomainRequest, UpdateDomainDetails> {
+                    UpdateDomainRequest,
+                    com.oracle.bmc.tenantmanagercontrolplane.model.UpdateDomainDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +124,8 @@ public class UpdateDomainRequest extends com.oracle.bmc.requests.BmcRequest<Upda
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDomainDetails body) {
+        public Builder body$(
+                com.oracle.bmc.tenantmanagercontrolplane.model.UpdateDomainDetails body) {
             updateDomainDetails(body);
             return this;
         }

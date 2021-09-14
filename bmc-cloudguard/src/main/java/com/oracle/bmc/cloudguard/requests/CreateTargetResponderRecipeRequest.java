@@ -18,7 +18,8 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateTargetResponderRecipeRequest
-        extends com.oracle.bmc.requests.BmcRequest<AttachTargetResponderRecipeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.cloudguard.model.AttachTargetResponderRecipeDetails> {
 
     /**
      * OCID of target
@@ -28,7 +29,8 @@ public class CreateTargetResponderRecipeRequest
     /**
      * Details for associating ResponderRecipe to Target
      */
-    private AttachTargetResponderRecipeDetails attachTargetResponderRecipeDetails;
+    private com.oracle.bmc.cloudguard.model.AttachTargetResponderRecipeDetails
+            attachTargetResponderRecipeDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -51,13 +53,14 @@ public class CreateTargetResponderRecipeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public AttachTargetResponderRecipeDetails getBody$() {
+    public com.oracle.bmc.cloudguard.model.AttachTargetResponderRecipeDetails getBody$() {
         return attachTargetResponderRecipeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateTargetResponderRecipeRequest, AttachTargetResponderRecipeDetails> {
+                    CreateTargetResponderRecipeRequest,
+                    com.oracle.bmc.cloudguard.model.AttachTargetResponderRecipeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,8 @@ public class CreateTargetResponderRecipeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(AttachTargetResponderRecipeDetails body) {
+        public Builder body$(
+                com.oracle.bmc.cloudguard.model.AttachTargetResponderRecipeDetails body) {
             attachTargetResponderRecipeDetails(body);
             return this;
         }

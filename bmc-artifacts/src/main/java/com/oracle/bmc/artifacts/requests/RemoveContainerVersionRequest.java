@@ -18,7 +18,8 @@ import com.oracle.bmc.artifacts.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RemoveContainerVersionRequest
-        extends com.oracle.bmc.requests.BmcRequest<RemoveContainerVersionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.artifacts.model.RemoveContainerVersionDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.
@@ -31,7 +32,8 @@ public class RemoveContainerVersionRequest
     /**
      * Remove version details.
      */
-    private RemoveContainerVersionDetails removeContainerVersionDetails;
+    private com.oracle.bmc.artifacts.model.RemoveContainerVersionDetails
+            removeContainerVersionDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -64,13 +66,14 @@ public class RemoveContainerVersionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RemoveContainerVersionDetails getBody$() {
+    public com.oracle.bmc.artifacts.model.RemoveContainerVersionDetails getBody$() {
         return removeContainerVersionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RemoveContainerVersionRequest, RemoveContainerVersionDetails> {
+                    RemoveContainerVersionRequest,
+                    com.oracle.bmc.artifacts.model.RemoveContainerVersionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -136,7 +139,7 @@ public class RemoveContainerVersionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RemoveContainerVersionDetails body) {
+        public Builder body$(com.oracle.bmc.artifacts.model.RemoveContainerVersionDetails body) {
             removeContainerVersionDetails(body);
             return this;
         }

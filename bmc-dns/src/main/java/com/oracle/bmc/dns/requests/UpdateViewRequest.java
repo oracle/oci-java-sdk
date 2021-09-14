@@ -17,7 +17,8 @@ import com.oracle.bmc.dns.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateViewRequest extends com.oracle.bmc.requests.BmcRequest<UpdateViewDetails> {
+public class UpdateViewRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.dns.model.UpdateViewDetails> {
 
     /**
      * The OCID of the target view.
@@ -27,7 +28,7 @@ public class UpdateViewRequest extends com.oracle.bmc.requests.BmcRequest<Update
     /**
      * New data for the view.
      */
-    private UpdateViewDetails updateViewDetails;
+    private com.oracle.bmc.dns.model.UpdateViewDetails updateViewDetails;
 
     /**
      * The {@code If-Match} header field makes the request method conditional on the
@@ -69,13 +70,13 @@ public class UpdateViewRequest extends com.oracle.bmc.requests.BmcRequest<Update
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateViewDetails getBody$() {
+    public com.oracle.bmc.dns.model.UpdateViewDetails getBody$() {
         return updateViewDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateViewRequest, UpdateViewDetails> {
+                    UpdateViewRequest, com.oracle.bmc.dns.model.UpdateViewDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -142,7 +143,7 @@ public class UpdateViewRequest extends com.oracle.bmc.requests.BmcRequest<Update
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateViewDetails body) {
+        public Builder body$(com.oracle.bmc.dns.model.UpdateViewDetails body) {
             updateViewDetails(body);
             return this;
         }

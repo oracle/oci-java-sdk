@@ -17,12 +17,13 @@ import com.oracle.bmc.opsi.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class IngestSqlTextRequest extends com.oracle.bmc.requests.BmcRequest<IngestSqlTextDetails> {
+public class IngestSqlTextRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.opsi.model.IngestSqlTextDetails> {
 
     /**
      * Collection of SQL text objects for a particular database.
      */
-    private IngestSqlTextDetails ingestSqlTextDetails;
+    private com.oracle.bmc.opsi.model.IngestSqlTextDetails ingestSqlTextDetails;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -73,13 +74,13 @@ public class IngestSqlTextRequest extends com.oracle.bmc.requests.BmcRequest<Ing
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public IngestSqlTextDetails getBody$() {
+    public com.oracle.bmc.opsi.model.IngestSqlTextDetails getBody$() {
         return ingestSqlTextDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    IngestSqlTextRequest, IngestSqlTextDetails> {
+                    IngestSqlTextRequest, com.oracle.bmc.opsi.model.IngestSqlTextDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -147,7 +148,7 @@ public class IngestSqlTextRequest extends com.oracle.bmc.requests.BmcRequest<Ing
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(IngestSqlTextDetails body) {
+        public Builder body$(com.oracle.bmc.opsi.model.IngestSqlTextDetails body) {
             ingestSqlTextDetails(body);
             return this;
         }

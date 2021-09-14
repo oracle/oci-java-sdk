@@ -18,7 +18,8 @@ import com.oracle.bmc.opsi.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class IngestHostMetricsRequest
-        extends com.oracle.bmc.requests.BmcRequest<IngestHostMetricsDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.opsi.model.IngestHostMetricsDetails> {
 
     /**
      * Required [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
@@ -29,7 +30,7 @@ public class IngestHostMetricsRequest
     /**
      * Payload for one or more host performance metrics for a particular host.
      */
-    private IngestHostMetricsDetails ingestHostMetricsDetails;
+    private com.oracle.bmc.opsi.model.IngestHostMetricsDetails ingestHostMetricsDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -63,13 +64,13 @@ public class IngestHostMetricsRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public IngestHostMetricsDetails getBody$() {
+    public com.oracle.bmc.opsi.model.IngestHostMetricsDetails getBody$() {
         return ingestHostMetricsDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    IngestHostMetricsRequest, IngestHostMetricsDetails> {
+                    IngestHostMetricsRequest, com.oracle.bmc.opsi.model.IngestHostMetricsDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -135,7 +136,7 @@ public class IngestHostMetricsRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(IngestHostMetricsDetails body) {
+        public Builder body$(com.oracle.bmc.opsi.model.IngestHostMetricsDetails body) {
             ingestHostMetricsDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.opsi.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeDatabaseInsightCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeDatabaseInsightCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.opsi.model.ChangeDatabaseInsightCompartmentDetails> {
 
     /**
      * Unique database insight identifier
@@ -28,7 +29,8 @@ public class ChangeDatabaseInsightCompartmentRequest
     /**
      * The information to be updated.
      */
-    private ChangeDatabaseInsightCompartmentDetails changeDatabaseInsightCompartmentDetails;
+    private com.oracle.bmc.opsi.model.ChangeDatabaseInsightCompartmentDetails
+            changeDatabaseInsightCompartmentDetails;
 
     /**
      * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
@@ -62,14 +64,14 @@ public class ChangeDatabaseInsightCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeDatabaseInsightCompartmentDetails getBody$() {
+    public com.oracle.bmc.opsi.model.ChangeDatabaseInsightCompartmentDetails getBody$() {
         return changeDatabaseInsightCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeDatabaseInsightCompartmentRequest,
-                    ChangeDatabaseInsightCompartmentDetails> {
+                    com.oracle.bmc.opsi.model.ChangeDatabaseInsightCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -135,7 +137,8 @@ public class ChangeDatabaseInsightCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeDatabaseInsightCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.opsi.model.ChangeDatabaseInsightCompartmentDetails body) {
             changeDatabaseInsightCompartmentDetails(body);
             return this;
         }

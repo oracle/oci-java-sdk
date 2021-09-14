@@ -17,7 +17,9 @@ import com.oracle.bmc.loadbalancer.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateRuleSetRequest extends com.oracle.bmc.requests.BmcRequest<CreateRuleSetDetails> {
+public class CreateRuleSetRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loadbalancer.model.CreateRuleSetDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the specified load balancer.
@@ -27,7 +29,7 @@ public class CreateRuleSetRequest extends com.oracle.bmc.requests.BmcRequest<Cre
     /**
      * The configuration details for the rule set to create.
      */
-    private CreateRuleSetDetails createRuleSetDetails;
+    private com.oracle.bmc.loadbalancer.model.CreateRuleSetDetails createRuleSetDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -42,13 +44,13 @@ public class CreateRuleSetRequest extends com.oracle.bmc.requests.BmcRequest<Cre
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateRuleSetDetails getBody$() {
+    public com.oracle.bmc.loadbalancer.model.CreateRuleSetDetails getBody$() {
         return createRuleSetDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateRuleSetRequest, CreateRuleSetDetails> {
+                    CreateRuleSetRequest, com.oracle.bmc.loadbalancer.model.CreateRuleSetDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -112,7 +114,7 @@ public class CreateRuleSetRequest extends com.oracle.bmc.requests.BmcRequest<Cre
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateRuleSetDetails body) {
+        public Builder body$(com.oracle.bmc.loadbalancer.model.CreateRuleSetDetails body) {
             createRuleSetDetails(body);
             return this;
         }

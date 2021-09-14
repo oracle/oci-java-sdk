@@ -18,7 +18,8 @@ import com.oracle.bmc.devops.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateDeploymentRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateDeploymentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.devops.model.UpdateDeploymentDetails> {
 
     /**
      * Unique deployment identifier.
@@ -28,7 +29,7 @@ public class UpdateDeploymentRequest
     /**
      * The information to be updated.
      */
-    private UpdateDeploymentDetails updateDeploymentDetails;
+    private com.oracle.bmc.devops.model.UpdateDeploymentDetails updateDeploymentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
@@ -46,13 +47,13 @@ public class UpdateDeploymentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDeploymentDetails getBody$() {
+    public com.oracle.bmc.devops.model.UpdateDeploymentDetails getBody$() {
         return updateDeploymentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateDeploymentRequest, UpdateDeploymentDetails> {
+                    UpdateDeploymentRequest, com.oracle.bmc.devops.model.UpdateDeploymentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +118,7 @@ public class UpdateDeploymentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDeploymentDetails body) {
+        public Builder body$(com.oracle.bmc.devops.model.UpdateDeploymentDetails body) {
             updateDeploymentDetails(body);
             return this;
         }

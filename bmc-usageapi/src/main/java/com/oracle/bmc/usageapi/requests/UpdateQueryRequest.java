@@ -17,12 +17,14 @@ import com.oracle.bmc.usageapi.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateQueryRequest extends com.oracle.bmc.requests.BmcRequest<UpdateQueryDetails> {
+public class UpdateQueryRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.usageapi.model.UpdateQueryDetails> {
 
     /**
      * The information to be updated.
      */
-    private UpdateQueryDetails updateQueryDetails;
+    private com.oracle.bmc.usageapi.model.UpdateQueryDetails updateQueryDetails;
 
     /**
      * The query unique OCID.
@@ -52,13 +54,13 @@ public class UpdateQueryRequest extends com.oracle.bmc.requests.BmcRequest<Updat
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateQueryDetails getBody$() {
+    public com.oracle.bmc.usageapi.model.UpdateQueryDetails getBody$() {
         return updateQueryDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateQueryRequest, UpdateQueryDetails> {
+                    UpdateQueryRequest, com.oracle.bmc.usageapi.model.UpdateQueryDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +125,7 @@ public class UpdateQueryRequest extends com.oracle.bmc.requests.BmcRequest<Updat
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateQueryDetails body) {
+        public Builder body$(com.oracle.bmc.usageapi.model.UpdateQueryDetails body) {
             updateQueryDetails(body);
             return this;
         }

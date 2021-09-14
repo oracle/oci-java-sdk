@@ -17,12 +17,14 @@ import com.oracle.bmc.applicationmigration.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateSourceRequest extends com.oracle.bmc.requests.BmcRequest<CreateSourceDetails> {
+public class CreateSourceRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.applicationmigration.model.CreateSourceDetails> {
 
     /**
      * The properties for creating a source.
      */
-    private CreateSourceDetails createSourceDetails;
+    private com.oracle.bmc.applicationmigration.model.CreateSourceDetails createSourceDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -47,13 +49,14 @@ public class CreateSourceRequest extends com.oracle.bmc.requests.BmcRequest<Crea
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateSourceDetails getBody$() {
+    public com.oracle.bmc.applicationmigration.model.CreateSourceDetails getBody$() {
         return createSourceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateSourceRequest, CreateSourceDetails> {
+                    CreateSourceRequest,
+                    com.oracle.bmc.applicationmigration.model.CreateSourceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +120,7 @@ public class CreateSourceRequest extends com.oracle.bmc.requests.BmcRequest<Crea
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateSourceDetails body) {
+        public Builder body$(com.oracle.bmc.applicationmigration.model.CreateSourceDetails body) {
             createSourceDetails(body);
             return this;
         }

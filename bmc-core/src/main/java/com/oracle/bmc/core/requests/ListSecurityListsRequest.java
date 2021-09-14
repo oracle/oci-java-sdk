@@ -158,7 +158,7 @@ public class ListSecurityListsRequest extends com.oracle.bmc.requests.BmcRequest
      * state. The state value is case-insensitive.
      *
      */
-    private SecurityList.LifecycleState lifecycleState;
+    private com.oracle.bmc.core.model.SecurityList.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

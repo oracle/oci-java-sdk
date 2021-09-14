@@ -17,12 +17,14 @@ import com.oracle.bmc.identity.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreatePolicyRequest extends com.oracle.bmc.requests.BmcRequest<CreatePolicyDetails> {
+public class CreatePolicyRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.CreatePolicyDetails> {
 
     /**
      * Request object for creating a new policy.
      */
-    private CreatePolicyDetails createPolicyDetails;
+    private com.oracle.bmc.identity.model.CreatePolicyDetails createPolicyDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -40,13 +42,13 @@ public class CreatePolicyRequest extends com.oracle.bmc.requests.BmcRequest<Crea
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreatePolicyDetails getBody$() {
+    public com.oracle.bmc.identity.model.CreatePolicyDetails getBody$() {
         return createPolicyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreatePolicyRequest, CreatePolicyDetails> {
+                    CreatePolicyRequest, com.oracle.bmc.identity.model.CreatePolicyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -109,7 +111,7 @@ public class CreatePolicyRequest extends com.oracle.bmc.requests.BmcRequest<Crea
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreatePolicyDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.CreatePolicyDetails body) {
             createPolicyDetails(body);
             return this;
         }

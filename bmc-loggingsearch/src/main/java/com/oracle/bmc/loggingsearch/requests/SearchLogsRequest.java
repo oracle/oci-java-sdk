@@ -17,13 +17,15 @@ import com.oracle.bmc.loggingsearch.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class SearchLogsRequest extends com.oracle.bmc.requests.BmcRequest<SearchLogsDetails> {
+public class SearchLogsRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loggingsearch.model.SearchLogsDetails> {
 
     /**
      * Search request.
      *
      */
-    private SearchLogsDetails searchLogsDetails;
+    private com.oracle.bmc.loggingsearch.model.SearchLogsDetails searchLogsDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -50,13 +52,13 @@ public class SearchLogsRequest extends com.oracle.bmc.requests.BmcRequest<Search
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public SearchLogsDetails getBody$() {
+    public com.oracle.bmc.loggingsearch.model.SearchLogsDetails getBody$() {
         return searchLogsDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    SearchLogsRequest, SearchLogsDetails> {
+                    SearchLogsRequest, com.oracle.bmc.loggingsearch.model.SearchLogsDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +123,7 @@ public class SearchLogsRequest extends com.oracle.bmc.requests.BmcRequest<Search
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(SearchLogsDetails body) {
+        public Builder body$(com.oracle.bmc.loggingsearch.model.SearchLogsDetails body) {
             searchLogsDetails(body);
             return this;
         }

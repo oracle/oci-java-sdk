@@ -38,7 +38,7 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<
      * Example: {@code ACTIVE} or {@code DELETED}
      *
      */
-    private Certificate.LifecycleState lifecycleState;
+    private com.oracle.bmc.apigateway.model.Certificate.LifecycleState lifecycleState;
 
     /**
      * The maximum number of items to return.

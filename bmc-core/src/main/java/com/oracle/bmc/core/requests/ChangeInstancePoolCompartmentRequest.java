@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeInstancePoolCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeInstancePoolCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.ChangeInstancePoolCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
@@ -28,7 +29,8 @@ public class ChangeInstancePoolCompartmentRequest
     /**
      * Request to change the compartment of given instance pool.
      */
-    private ChangeInstancePoolCompartmentDetails changeInstancePoolCompartmentDetails;
+    private com.oracle.bmc.core.model.ChangeInstancePoolCompartmentDetails
+            changeInstancePoolCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -61,13 +63,14 @@ public class ChangeInstancePoolCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeInstancePoolCompartmentDetails getBody$() {
+    public com.oracle.bmc.core.model.ChangeInstancePoolCompartmentDetails getBody$() {
         return changeInstancePoolCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeInstancePoolCompartmentRequest, ChangeInstancePoolCompartmentDetails> {
+                    ChangeInstancePoolCompartmentRequest,
+                    com.oracle.bmc.core.model.ChangeInstancePoolCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +136,7 @@ public class ChangeInstancePoolCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeInstancePoolCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.ChangeInstancePoolCompartmentDetails body) {
             changeInstancePoolCompartmentDetails(body);
             return this;
         }

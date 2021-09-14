@@ -18,7 +18,8 @@ import com.oracle.bmc.identity.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateOAuthClientCredentialRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateOAuth2ClientCredentialDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.UpdateOAuth2ClientCredentialDetails> {
 
     /**
      * The OCID of the user.
@@ -33,7 +34,8 @@ public class UpdateOAuthClientCredentialRequest
     /**
      * Request object containing the information required to generate an Oauth token.
      */
-    private UpdateOAuth2ClientCredentialDetails updateOAuth2ClientCredentialDetails;
+    private com.oracle.bmc.identity.model.UpdateOAuth2ClientCredentialDetails
+            updateOAuth2ClientCredentialDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -49,13 +51,14 @@ public class UpdateOAuthClientCredentialRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateOAuth2ClientCredentialDetails getBody$() {
+    public com.oracle.bmc.identity.model.UpdateOAuth2ClientCredentialDetails getBody$() {
         return updateOAuth2ClientCredentialDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateOAuthClientCredentialRequest, UpdateOAuth2ClientCredentialDetails> {
+                    UpdateOAuthClientCredentialRequest,
+                    com.oracle.bmc.identity.model.UpdateOAuth2ClientCredentialDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -120,7 +123,8 @@ public class UpdateOAuthClientCredentialRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateOAuth2ClientCredentialDetails body) {
+        public Builder body$(
+                com.oracle.bmc.identity.model.UpdateOAuth2ClientCredentialDetails body) {
             updateOAuth2ClientCredentialDetails(body);
             return this;
         }

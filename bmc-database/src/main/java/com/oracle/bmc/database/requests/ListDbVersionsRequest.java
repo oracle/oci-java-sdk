@@ -50,7 +50,7 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      * * LVM - Logical volume management
      *
      */
-    private DbSystemOptions.StorageManagement storageManagement;
+    private com.oracle.bmc.database.model.DbSystemOptions.StorageManagement storageManagement;
 
     /**
      * If provided, filters the results to the set of database versions which are supported for Upgrade.

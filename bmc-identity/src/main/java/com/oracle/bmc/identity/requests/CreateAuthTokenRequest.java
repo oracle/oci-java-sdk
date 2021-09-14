@@ -18,12 +18,13 @@ import com.oracle.bmc.identity.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateAuthTokenRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateAuthTokenDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.CreateAuthTokenDetails> {
 
     /**
      * Request object for creating a new auth token.
      */
-    private CreateAuthTokenDetails createAuthTokenDetails;
+    private com.oracle.bmc.identity.model.CreateAuthTokenDetails createAuthTokenDetails;
 
     /**
      * The OCID of the user.
@@ -46,13 +47,13 @@ public class CreateAuthTokenRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateAuthTokenDetails getBody$() {
+    public com.oracle.bmc.identity.model.CreateAuthTokenDetails getBody$() {
         return createAuthTokenDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateAuthTokenRequest, CreateAuthTokenDetails> {
+                    CreateAuthTokenRequest, com.oracle.bmc.identity.model.CreateAuthTokenDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +117,7 @@ public class CreateAuthTokenRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateAuthTokenDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.CreateAuthTokenDetails body) {
             createAuthTokenDetails(body);
             return this;
         }

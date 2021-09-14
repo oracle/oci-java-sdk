@@ -18,7 +18,8 @@ import com.oracle.bmc.artifacts.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateRepositoryRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateRepositoryDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.artifacts.model.UpdateRepositoryDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
@@ -31,7 +32,7 @@ public class UpdateRepositoryRequest
     /**
      * Updates the properties of a repository.
      */
-    private UpdateRepositoryDetails updateRepositoryDetails;
+    private com.oracle.bmc.artifacts.model.UpdateRepositoryDetails updateRepositoryDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -54,13 +55,14 @@ public class UpdateRepositoryRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateRepositoryDetails getBody$() {
+    public com.oracle.bmc.artifacts.model.UpdateRepositoryDetails getBody$() {
         return updateRepositoryDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateRepositoryRequest, UpdateRepositoryDetails> {
+                    UpdateRepositoryRequest,
+                    com.oracle.bmc.artifacts.model.UpdateRepositoryDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -125,7 +127,7 @@ public class UpdateRepositoryRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateRepositoryDetails body) {
+        public Builder body$(com.oracle.bmc.artifacts.model.UpdateRepositoryDetails body) {
             updateRepositoryDetails(body);
             return this;
         }

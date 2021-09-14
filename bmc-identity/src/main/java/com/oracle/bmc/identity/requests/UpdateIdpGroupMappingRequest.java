@@ -18,7 +18,8 @@ import com.oracle.bmc.identity.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateIdpGroupMappingRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateIdpGroupMappingDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.UpdateIdpGroupMappingDetails> {
 
     /**
      * The OCID of the identity provider.
@@ -33,7 +34,7 @@ public class UpdateIdpGroupMappingRequest
     /**
      * Request object for updating an identity provider group mapping
      */
-    private UpdateIdpGroupMappingDetails updateIdpGroupMappingDetails;
+    private com.oracle.bmc.identity.model.UpdateIdpGroupMappingDetails updateIdpGroupMappingDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -49,13 +50,14 @@ public class UpdateIdpGroupMappingRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateIdpGroupMappingDetails getBody$() {
+    public com.oracle.bmc.identity.model.UpdateIdpGroupMappingDetails getBody$() {
         return updateIdpGroupMappingDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateIdpGroupMappingRequest, UpdateIdpGroupMappingDetails> {
+                    UpdateIdpGroupMappingRequest,
+                    com.oracle.bmc.identity.model.UpdateIdpGroupMappingDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -120,7 +122,7 @@ public class UpdateIdpGroupMappingRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateIdpGroupMappingDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.UpdateIdpGroupMappingDetails body) {
             updateIdpGroupMappingDetails(body);
             return this;
         }

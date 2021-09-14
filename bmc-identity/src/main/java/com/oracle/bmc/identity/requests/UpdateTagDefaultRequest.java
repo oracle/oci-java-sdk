@@ -18,7 +18,8 @@ import com.oracle.bmc.identity.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateTagDefaultRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateTagDefaultDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.UpdateTagDefaultDetails> {
 
     /**
      * The OCID of the tag default.
@@ -28,7 +29,7 @@ public class UpdateTagDefaultRequest
     /**
      * Request object for updating a tag default.
      */
-    private UpdateTagDefaultDetails updateTagDefaultDetails;
+    private com.oracle.bmc.identity.model.UpdateTagDefaultDetails updateTagDefaultDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -51,13 +52,14 @@ public class UpdateTagDefaultRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateTagDefaultDetails getBody$() {
+    public com.oracle.bmc.identity.model.UpdateTagDefaultDetails getBody$() {
         return updateTagDefaultDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateTagDefaultRequest, UpdateTagDefaultDetails> {
+                    UpdateTagDefaultRequest,
+                    com.oracle.bmc.identity.model.UpdateTagDefaultDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +124,7 @@ public class UpdateTagDefaultRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateTagDefaultDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.UpdateTagDefaultDetails body) {
             updateTagDefaultDetails(body);
             return this;
         }

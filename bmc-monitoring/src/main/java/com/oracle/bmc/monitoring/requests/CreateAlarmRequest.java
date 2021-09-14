@@ -17,12 +17,14 @@ import com.oracle.bmc.monitoring.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateAlarmRequest extends com.oracle.bmc.requests.BmcRequest<CreateAlarmDetails> {
+public class CreateAlarmRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.monitoring.model.CreateAlarmDetails> {
 
     /**
      * Document for creating an alarm.
      */
-    private CreateAlarmDetails createAlarmDetails;
+    private com.oracle.bmc.monitoring.model.CreateAlarmDetails createAlarmDetails;
 
     /**
      * Customer part of the request identifier token. If you need to contact Oracle about a particular
@@ -47,13 +49,13 @@ public class CreateAlarmRequest extends com.oracle.bmc.requests.BmcRequest<Creat
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateAlarmDetails getBody$() {
+    public com.oracle.bmc.monitoring.model.CreateAlarmDetails getBody$() {
         return createAlarmDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateAlarmRequest, CreateAlarmDetails> {
+                    CreateAlarmRequest, com.oracle.bmc.monitoring.model.CreateAlarmDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +119,7 @@ public class CreateAlarmRequest extends com.oracle.bmc.requests.BmcRequest<Creat
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateAlarmDetails body) {
+        public Builder body$(com.oracle.bmc.monitoring.model.CreateAlarmDetails body) {
             createAlarmDetails(body);
             return this;
         }

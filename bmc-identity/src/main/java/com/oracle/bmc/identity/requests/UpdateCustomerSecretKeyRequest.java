@@ -18,7 +18,8 @@ import com.oracle.bmc.identity.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateCustomerSecretKeyRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateCustomerSecretKeyDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.UpdateCustomerSecretKeyDetails> {
 
     /**
      * The OCID of the user.
@@ -33,7 +34,8 @@ public class UpdateCustomerSecretKeyRequest
     /**
      * Request object for updating a secret key.
      */
-    private UpdateCustomerSecretKeyDetails updateCustomerSecretKeyDetails;
+    private com.oracle.bmc.identity.model.UpdateCustomerSecretKeyDetails
+            updateCustomerSecretKeyDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -49,13 +51,14 @@ public class UpdateCustomerSecretKeyRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateCustomerSecretKeyDetails getBody$() {
+    public com.oracle.bmc.identity.model.UpdateCustomerSecretKeyDetails getBody$() {
         return updateCustomerSecretKeyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateCustomerSecretKeyRequest, UpdateCustomerSecretKeyDetails> {
+                    UpdateCustomerSecretKeyRequest,
+                    com.oracle.bmc.identity.model.UpdateCustomerSecretKeyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -120,7 +123,7 @@ public class UpdateCustomerSecretKeyRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateCustomerSecretKeyDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.UpdateCustomerSecretKeyDetails body) {
             updateCustomerSecretKeyDetails(body);
             return this;
         }

@@ -17,12 +17,13 @@ import com.oracle.bmc.database.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateDbHomeRequest extends com.oracle.bmc.requests.BmcRequest<CreateDbHomeBase> {
+public class CreateDbHomeRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.database.model.CreateDbHomeBase> {
 
     /**
      * Request to create a new Database Home.
      */
-    private CreateDbHomeBase createDbHomeWithDbSystemIdDetails;
+    private com.oracle.bmc.database.model.CreateDbHomeBase createDbHomeWithDbSystemIdDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -40,13 +41,13 @@ public class CreateDbHomeRequest extends com.oracle.bmc.requests.BmcRequest<Crea
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateDbHomeBase getBody$() {
+    public com.oracle.bmc.database.model.CreateDbHomeBase getBody$() {
         return createDbHomeWithDbSystemIdDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateDbHomeRequest, CreateDbHomeBase> {
+                    CreateDbHomeRequest, com.oracle.bmc.database.model.CreateDbHomeBase> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -109,7 +110,7 @@ public class CreateDbHomeRequest extends com.oracle.bmc.requests.BmcRequest<Crea
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateDbHomeBase body) {
+        public Builder body$(com.oracle.bmc.database.model.CreateDbHomeBase body) {
             createDbHomeWithDbSystemIdDetails(body);
             return this;
         }

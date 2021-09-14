@@ -18,7 +18,8 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UploadCredentialsRequest
-        extends com.oracle.bmc.requests.BmcRequest<UploadCredentialsDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.UploadCredentialsDetails> {
 
     /**
      * Unique catalog identifier.
@@ -38,7 +39,7 @@ public class UploadCredentialsRequest
     /**
      * The information used to upload the credentials file and metadata for updating this connection.
      */
-    private UploadCredentialsDetails uploadCredentialsDetails;
+    private com.oracle.bmc.datacatalog.model.UploadCredentialsDetails uploadCredentialsDetails;
 
     /**
      * The client request ID for tracing.
@@ -71,13 +72,14 @@ public class UploadCredentialsRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UploadCredentialsDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.UploadCredentialsDetails getBody$() {
         return uploadCredentialsDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UploadCredentialsRequest, UploadCredentialsDetails> {
+                    UploadCredentialsRequest,
+                    com.oracle.bmc.datacatalog.model.UploadCredentialsDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -145,7 +147,7 @@ public class UploadCredentialsRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UploadCredentialsDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.UploadCredentialsDetails body) {
             uploadCredentialsDetails(body);
             return this;
         }

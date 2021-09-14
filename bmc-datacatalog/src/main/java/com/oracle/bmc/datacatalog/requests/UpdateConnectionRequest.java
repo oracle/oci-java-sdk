@@ -18,7 +18,8 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateConnectionRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateConnectionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.UpdateConnectionDetails> {
 
     /**
      * Unique catalog identifier.
@@ -38,7 +39,7 @@ public class UpdateConnectionRequest
     /**
      * The information to be updated in the connection.
      */
-    private UpdateConnectionDetails updateConnectionDetails;
+    private com.oracle.bmc.datacatalog.model.UpdateConnectionDetails updateConnectionDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -61,13 +62,14 @@ public class UpdateConnectionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateConnectionDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.UpdateConnectionDetails getBody$() {
         return updateConnectionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateConnectionRequest, UpdateConnectionDetails> {
+                    UpdateConnectionRequest,
+                    com.oracle.bmc.datacatalog.model.UpdateConnectionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +136,7 @@ public class UpdateConnectionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateConnectionDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.UpdateConnectionDetails body) {
             updateConnectionDetails(body);
             return this;
         }

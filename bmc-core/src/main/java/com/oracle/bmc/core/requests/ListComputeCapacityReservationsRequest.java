@@ -36,7 +36,7 @@ public class ListComputeCapacityReservationsRequest
     /**
      * A filter to only return resources that match the given lifecycle state.
      */
-    private ComputeCapacityReservation.LifecycleState lifecycleState;
+    private com.oracle.bmc.core.model.ComputeCapacityReservation.LifecycleState lifecycleState;
 
     /**
      * A filter to return only resources that match the given display name exactly.

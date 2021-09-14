@@ -18,7 +18,8 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ScheduleVaultDeletionRequest
-        extends com.oracle.bmc.requests.BmcRequest<ScheduleVaultDeletionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.keymanagement.model.ScheduleVaultDeletionDetails> {
 
     /**
      * The OCID of the vault.
@@ -28,7 +29,8 @@ public class ScheduleVaultDeletionRequest
     /**
      * ScheduleVaultDeletionDetails
      */
-    private ScheduleVaultDeletionDetails scheduleVaultDeletionDetails;
+    private com.oracle.bmc.keymanagement.model.ScheduleVaultDeletionDetails
+            scheduleVaultDeletionDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
@@ -65,13 +67,14 @@ public class ScheduleVaultDeletionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ScheduleVaultDeletionDetails getBody$() {
+    public com.oracle.bmc.keymanagement.model.ScheduleVaultDeletionDetails getBody$() {
         return scheduleVaultDeletionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ScheduleVaultDeletionRequest, ScheduleVaultDeletionDetails> {
+                    ScheduleVaultDeletionRequest,
+                    com.oracle.bmc.keymanagement.model.ScheduleVaultDeletionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -137,7 +140,7 @@ public class ScheduleVaultDeletionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ScheduleVaultDeletionDetails body) {
+        public Builder body$(com.oracle.bmc.keymanagement.model.ScheduleVaultDeletionDetails body) {
             scheduleVaultDeletionDetails(body);
             return this;
         }

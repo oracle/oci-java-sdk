@@ -18,7 +18,8 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateDataAssetTagRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateTagDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.CreateTagDetails> {
 
     /**
      * Unique catalog identifier.
@@ -33,7 +34,7 @@ public class CreateDataAssetTagRequest
     /**
      * The information used to create the data asset tag.
      */
-    private CreateTagDetails createDataAssetTagDetails;
+    private com.oracle.bmc.datacatalog.model.CreateTagDetails createDataAssetTagDetails;
 
     /**
      * The client request ID for tracing.
@@ -56,13 +57,13 @@ public class CreateDataAssetTagRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateTagDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.CreateTagDetails getBody$() {
         return createDataAssetTagDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateDataAssetTagRequest, CreateTagDetails> {
+                    CreateDataAssetTagRequest, com.oracle.bmc.datacatalog.model.CreateTagDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -128,7 +129,7 @@ public class CreateDataAssetTagRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateTagDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.CreateTagDetails body) {
             createDataAssetTagDetails(body);
             return this;
         }

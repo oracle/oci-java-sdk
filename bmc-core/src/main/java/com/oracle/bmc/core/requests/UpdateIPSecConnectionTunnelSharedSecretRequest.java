@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateIPSecConnectionTunnelSharedSecretRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateIPSecConnectionTunnelSharedSecretDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdateIPSecConnectionTunnelSharedSecretDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IPSec connection.
@@ -33,7 +34,7 @@ public class UpdateIPSecConnectionTunnelSharedSecretRequest
     /**
      * Details object for updating a IPSec connection tunnel's sharedSecret.
      */
-    private UpdateIPSecConnectionTunnelSharedSecretDetails
+    private com.oracle.bmc.core.model.UpdateIPSecConnectionTunnelSharedSecretDetails
             updateIPSecConnectionTunnelSharedSecretDetails;
 
     /**
@@ -50,14 +51,14 @@ public class UpdateIPSecConnectionTunnelSharedSecretRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateIPSecConnectionTunnelSharedSecretDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateIPSecConnectionTunnelSharedSecretDetails getBody$() {
         return updateIPSecConnectionTunnelSharedSecretDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateIPSecConnectionTunnelSharedSecretRequest,
-                    UpdateIPSecConnectionTunnelSharedSecretDetails> {
+                    com.oracle.bmc.core.model.UpdateIPSecConnectionTunnelSharedSecretDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +125,8 @@ public class UpdateIPSecConnectionTunnelSharedSecretRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateIPSecConnectionTunnelSharedSecretDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.UpdateIPSecConnectionTunnelSharedSecretDetails body) {
             updateIPSecConnectionTunnelSharedSecretDetails(body);
             return this;
         }

@@ -18,12 +18,14 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateDatabaseSoftwareImageRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateDatabaseSoftwareImageDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.CreateDatabaseSoftwareImageDetails> {
 
     /**
      * Request to create database software image.
      */
-    private CreateDatabaseSoftwareImageDetails createDatabaseSoftwareImageDetails;
+    private com.oracle.bmc.database.model.CreateDatabaseSoftwareImageDetails
+            createDatabaseSoftwareImageDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +43,14 @@ public class CreateDatabaseSoftwareImageRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateDatabaseSoftwareImageDetails getBody$() {
+    public com.oracle.bmc.database.model.CreateDatabaseSoftwareImageDetails getBody$() {
         return createDatabaseSoftwareImageDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateDatabaseSoftwareImageRequest, CreateDatabaseSoftwareImageDetails> {
+                    CreateDatabaseSoftwareImageRequest,
+                    com.oracle.bmc.database.model.CreateDatabaseSoftwareImageDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +113,8 @@ public class CreateDatabaseSoftwareImageRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateDatabaseSoftwareImageDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.CreateDatabaseSoftwareImageDetails body) {
             createDatabaseSoftwareImageDetails(body);
             return this;
         }

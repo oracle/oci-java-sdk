@@ -18,12 +18,14 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateAppCatalogSubscriptionRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateAppCatalogSubscriptionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CreateAppCatalogSubscriptionDetails> {
 
     /**
      * Request for the creation of a subscription for listing resource version for a compartment.
      */
-    private CreateAppCatalogSubscriptionDetails createAppCatalogSubscriptionDetails;
+    private com.oracle.bmc.core.model.CreateAppCatalogSubscriptionDetails
+            createAppCatalogSubscriptionDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +43,14 @@ public class CreateAppCatalogSubscriptionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateAppCatalogSubscriptionDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateAppCatalogSubscriptionDetails getBody$() {
         return createAppCatalogSubscriptionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateAppCatalogSubscriptionRequest, CreateAppCatalogSubscriptionDetails> {
+                    CreateAppCatalogSubscriptionRequest,
+                    com.oracle.bmc.core.model.CreateAppCatalogSubscriptionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +113,7 @@ public class CreateAppCatalogSubscriptionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateAppCatalogSubscriptionDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateAppCatalogSubscriptionDetails body) {
             createAppCatalogSubscriptionDetails(body);
             return this;
         }

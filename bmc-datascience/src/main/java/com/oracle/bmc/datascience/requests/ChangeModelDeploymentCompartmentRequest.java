@@ -18,7 +18,8 @@ import com.oracle.bmc.datascience.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeModelDeploymentCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeModelDeploymentCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datascience.model.ChangeModelDeploymentCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment.
@@ -28,7 +29,8 @@ public class ChangeModelDeploymentCompartmentRequest
     /**
      * Details for changing the compartment of a model deployment.
      */
-    private ChangeModelDeploymentCompartmentDetails changeModelDeploymentCompartmentDetails;
+    private com.oracle.bmc.datascience.model.ChangeModelDeploymentCompartmentDetails
+            changeModelDeploymentCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -58,14 +60,14 @@ public class ChangeModelDeploymentCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeModelDeploymentCompartmentDetails getBody$() {
+    public com.oracle.bmc.datascience.model.ChangeModelDeploymentCompartmentDetails getBody$() {
         return changeModelDeploymentCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeModelDeploymentCompartmentRequest,
-                    ChangeModelDeploymentCompartmentDetails> {
+                    com.oracle.bmc.datascience.model.ChangeModelDeploymentCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -131,7 +133,8 @@ public class ChangeModelDeploymentCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeModelDeploymentCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.datascience.model.ChangeModelDeploymentCompartmentDetails body) {
             changeModelDeploymentCompartmentDetails(body);
             return this;
         }

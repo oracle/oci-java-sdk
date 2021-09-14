@@ -137,7 +137,7 @@ public class ListDbHomesRequest extends com.oracle.bmc.requests.BmcRequest<java.
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    private DbHomeSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.database.model.DbHomeSummary.LifecycleState lifecycleState;
 
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.

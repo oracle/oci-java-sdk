@@ -17,12 +17,14 @@ import com.oracle.bmc.loadbalancer.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateBackendRequest extends com.oracle.bmc.requests.BmcRequest<CreateBackendDetails> {
+public class CreateBackendRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loadbalancer.model.CreateBackendDetails> {
 
     /**
      * The details to add a backend server to a backend set.
      */
-    private CreateBackendDetails createBackendDetails;
+    private com.oracle.bmc.loadbalancer.model.CreateBackendDetails createBackendDetails;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
@@ -60,13 +62,13 @@ public class CreateBackendRequest extends com.oracle.bmc.requests.BmcRequest<Cre
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateBackendDetails getBody$() {
+    public com.oracle.bmc.loadbalancer.model.CreateBackendDetails getBody$() {
         return createBackendDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateBackendRequest, CreateBackendDetails> {
+                    CreateBackendRequest, com.oracle.bmc.loadbalancer.model.CreateBackendDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -132,7 +134,7 @@ public class CreateBackendRequest extends com.oracle.bmc.requests.BmcRequest<Cre
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateBackendDetails body) {
+        public Builder body$(com.oracle.bmc.loadbalancer.model.CreateBackendDetails body) {
             createBackendDetails(body);
             return this;
         }

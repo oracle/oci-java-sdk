@@ -18,7 +18,8 @@ import com.oracle.bmc.healthchecks.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeHttpMonitorCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeHttpMonitorCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.healthchecks.model.ChangeHttpMonitorCompartmentDetails> {
 
     /**
      * The OCID of a monitor.
@@ -28,7 +29,8 @@ public class ChangeHttpMonitorCompartmentRequest
     /**
      * The details needed to move the monitor.
      */
-    private ChangeHttpMonitorCompartmentDetails changeHttpMonitorCompartmentDetails;
+    private com.oracle.bmc.healthchecks.model.ChangeHttpMonitorCompartmentDetails
+            changeHttpMonitorCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource,
@@ -63,13 +65,14 @@ public class ChangeHttpMonitorCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeHttpMonitorCompartmentDetails getBody$() {
+    public com.oracle.bmc.healthchecks.model.ChangeHttpMonitorCompartmentDetails getBody$() {
         return changeHttpMonitorCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeHttpMonitorCompartmentRequest, ChangeHttpMonitorCompartmentDetails> {
+                    ChangeHttpMonitorCompartmentRequest,
+                    com.oracle.bmc.healthchecks.model.ChangeHttpMonitorCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -135,7 +138,8 @@ public class ChangeHttpMonitorCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeHttpMonitorCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.healthchecks.model.ChangeHttpMonitorCompartmentDetails body) {
             changeHttpMonitorCompartmentDetails(body);
             return this;
         }

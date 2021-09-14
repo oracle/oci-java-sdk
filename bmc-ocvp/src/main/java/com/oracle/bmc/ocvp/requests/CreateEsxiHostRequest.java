@@ -18,12 +18,13 @@ import com.oracle.bmc.ocvp.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateEsxiHostRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateEsxiHostDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.ocvp.model.CreateEsxiHostDetails> {
 
     /**
      * Details for the ESXi host.
      */
-    private CreateEsxiHostDetails createEsxiHostDetails;
+    private com.oracle.bmc.ocvp.model.CreateEsxiHostDetails createEsxiHostDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -48,13 +49,13 @@ public class CreateEsxiHostRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateEsxiHostDetails getBody$() {
+    public com.oracle.bmc.ocvp.model.CreateEsxiHostDetails getBody$() {
         return createEsxiHostDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateEsxiHostRequest, CreateEsxiHostDetails> {
+                    CreateEsxiHostRequest, com.oracle.bmc.ocvp.model.CreateEsxiHostDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -118,7 +119,7 @@ public class CreateEsxiHostRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateEsxiHostDetails body) {
+        public Builder body$(com.oracle.bmc.ocvp.model.CreateEsxiHostDetails body) {
             createEsxiHostDetails(body);
             return this;
         }

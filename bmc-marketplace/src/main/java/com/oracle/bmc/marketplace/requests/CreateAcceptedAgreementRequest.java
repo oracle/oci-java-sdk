@@ -18,12 +18,14 @@ import com.oracle.bmc.marketplace.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateAcceptedAgreementRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateAcceptedAgreementDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.marketplace.model.CreateAcceptedAgreementDetails> {
 
     /**
      * Details necessary to accept an agreement.
      */
-    private CreateAcceptedAgreementDetails createAcceptedAgreementDetails;
+    private com.oracle.bmc.marketplace.model.CreateAcceptedAgreementDetails
+            createAcceptedAgreementDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
@@ -47,13 +49,14 @@ public class CreateAcceptedAgreementRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateAcceptedAgreementDetails getBody$() {
+    public com.oracle.bmc.marketplace.model.CreateAcceptedAgreementDetails getBody$() {
         return createAcceptedAgreementDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateAcceptedAgreementRequest, CreateAcceptedAgreementDetails> {
+                    CreateAcceptedAgreementRequest,
+                    com.oracle.bmc.marketplace.model.CreateAcceptedAgreementDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +120,7 @@ public class CreateAcceptedAgreementRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateAcceptedAgreementDetails body) {
+        public Builder body$(com.oracle.bmc.marketplace.model.CreateAcceptedAgreementDetails body) {
             createAcceptedAgreementDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateComputeCapacityReservationRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateComputeCapacityReservationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdateComputeCapacityReservationDetails> {
 
     /**
      * The OCID of the compute capacity reservation.
@@ -28,7 +29,8 @@ public class UpdateComputeCapacityReservationRequest
     /**
      * Update compute capacity reservation details.
      */
-    private UpdateComputeCapacityReservationDetails updateComputeCapacityReservationDetails;
+    private com.oracle.bmc.core.model.UpdateComputeCapacityReservationDetails
+            updateComputeCapacityReservationDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -51,14 +53,14 @@ public class UpdateComputeCapacityReservationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateComputeCapacityReservationDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateComputeCapacityReservationDetails getBody$() {
         return updateComputeCapacityReservationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateComputeCapacityReservationRequest,
-                    UpdateComputeCapacityReservationDetails> {
+                    com.oracle.bmc.core.model.UpdateComputeCapacityReservationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +125,8 @@ public class UpdateComputeCapacityReservationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateComputeCapacityReservationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.UpdateComputeCapacityReservationDetails body) {
             updateComputeCapacityReservationDetails(body);
             return this;
         }

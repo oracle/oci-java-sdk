@@ -17,7 +17,9 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateFolderRequest extends com.oracle.bmc.requests.BmcRequest<UpdateFolderDetails> {
+public class UpdateFolderRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataintegration.model.UpdateFolderDetails> {
 
     /**
      * The workspace ID.
@@ -32,7 +34,7 @@ public class UpdateFolderRequest extends com.oracle.bmc.requests.BmcRequest<Upda
     /**
      * The details needed to update a folder.
      */
-    private UpdateFolderDetails updateFolderDetails;
+    private com.oracle.bmc.dataintegration.model.UpdateFolderDetails updateFolderDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If
@@ -56,13 +58,13 @@ public class UpdateFolderRequest extends com.oracle.bmc.requests.BmcRequest<Upda
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateFolderDetails getBody$() {
+    public com.oracle.bmc.dataintegration.model.UpdateFolderDetails getBody$() {
         return updateFolderDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateFolderRequest, UpdateFolderDetails> {
+                    UpdateFolderRequest, com.oracle.bmc.dataintegration.model.UpdateFolderDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -128,7 +130,7 @@ public class UpdateFolderRequest extends com.oracle.bmc.requests.BmcRequest<Upda
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateFolderDetails body) {
+        public Builder body$(com.oracle.bmc.dataintegration.model.UpdateFolderDetails body) {
             updateFolderDetails(body);
             return this;
         }

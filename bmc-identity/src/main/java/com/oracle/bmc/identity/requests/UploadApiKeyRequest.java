@@ -17,7 +17,9 @@ import com.oracle.bmc.identity.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UploadApiKeyRequest extends com.oracle.bmc.requests.BmcRequest<CreateApiKeyDetails> {
+public class UploadApiKeyRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.CreateApiKeyDetails> {
 
     /**
      * The OCID of the user.
@@ -27,7 +29,7 @@ public class UploadApiKeyRequest extends com.oracle.bmc.requests.BmcRequest<Crea
     /**
      * Request object for uploading an API key for a user.
      */
-    private CreateApiKeyDetails createApiKeyDetails;
+    private com.oracle.bmc.identity.model.CreateApiKeyDetails createApiKeyDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -45,13 +47,13 @@ public class UploadApiKeyRequest extends com.oracle.bmc.requests.BmcRequest<Crea
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateApiKeyDetails getBody$() {
+    public com.oracle.bmc.identity.model.CreateApiKeyDetails getBody$() {
         return createApiKeyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UploadApiKeyRequest, CreateApiKeyDetails> {
+                    UploadApiKeyRequest, com.oracle.bmc.identity.model.CreateApiKeyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -115,7 +117,7 @@ public class UploadApiKeyRequest extends com.oracle.bmc.requests.BmcRequest<Crea
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateApiKeyDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.CreateApiKeyDetails body) {
             createApiKeyDetails(body);
             return this;
         }

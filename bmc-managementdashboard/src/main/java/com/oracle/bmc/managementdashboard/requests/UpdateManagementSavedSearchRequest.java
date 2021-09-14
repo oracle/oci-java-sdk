@@ -18,7 +18,8 @@ import com.oracle.bmc.managementdashboard.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateManagementSavedSearchRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateManagementSavedSearchDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.managementdashboard.model.UpdateManagementSavedSearchDetails> {
 
     /**
      * A unique saved search identifier.
@@ -28,7 +29,8 @@ public class UpdateManagementSavedSearchRequest
     /**
      * JSON metadata for changed saved search properties.
      */
-    private UpdateManagementSavedSearchDetails updateManagementSavedSearchDetails;
+    private com.oracle.bmc.managementdashboard.model.UpdateManagementSavedSearchDetails
+            updateManagementSavedSearchDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -61,13 +63,14 @@ public class UpdateManagementSavedSearchRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateManagementSavedSearchDetails getBody$() {
+    public com.oracle.bmc.managementdashboard.model.UpdateManagementSavedSearchDetails getBody$() {
         return updateManagementSavedSearchDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateManagementSavedSearchRequest, UpdateManagementSavedSearchDetails> {
+                    UpdateManagementSavedSearchRequest,
+                    com.oracle.bmc.managementdashboard.model.UpdateManagementSavedSearchDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +136,8 @@ public class UpdateManagementSavedSearchRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateManagementSavedSearchDetails body) {
+        public Builder body$(
+                com.oracle.bmc.managementdashboard.model.UpdateManagementSavedSearchDetails body) {
             updateManagementSavedSearchDetails(body);
             return this;
         }

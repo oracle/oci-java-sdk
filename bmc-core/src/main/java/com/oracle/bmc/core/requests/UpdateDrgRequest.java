@@ -17,7 +17,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateDrgRequest extends com.oracle.bmc.requests.BmcRequest<UpdateDrgDetails> {
+public class UpdateDrgRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.UpdateDrgDetails> {
 
     /**
      * The [[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)](/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
@@ -27,7 +28,7 @@ public class UpdateDrgRequest extends com.oracle.bmc.requests.BmcRequest<UpdateD
     /**
      * Details object for updating a DRG.
      */
-    private UpdateDrgDetails updateDrgDetails;
+    private com.oracle.bmc.core.model.UpdateDrgDetails updateDrgDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -43,13 +44,13 @@ public class UpdateDrgRequest extends com.oracle.bmc.requests.BmcRequest<UpdateD
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDrgDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateDrgDetails getBody$() {
         return updateDrgDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateDrgRequest, UpdateDrgDetails> {
+                    UpdateDrgRequest, com.oracle.bmc.core.model.UpdateDrgDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -113,7 +114,7 @@ public class UpdateDrgRequest extends com.oracle.bmc.requests.BmcRequest<UpdateD
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDrgDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdateDrgDetails body) {
             updateDrgDetails(body);
             return this;
         }

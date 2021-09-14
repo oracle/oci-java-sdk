@@ -17,12 +17,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateVlanRequest extends com.oracle.bmc.requests.BmcRequest<CreateVlanDetails> {
+public class CreateVlanRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.CreateVlanDetails> {
 
     /**
      * Details for creating a VLAN
      */
-    private CreateVlanDetails createVlanDetails;
+    private com.oracle.bmc.core.model.CreateVlanDetails createVlanDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -47,13 +48,13 @@ public class CreateVlanRequest extends com.oracle.bmc.requests.BmcRequest<Create
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateVlanDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateVlanDetails getBody$() {
         return createVlanDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateVlanRequest, CreateVlanDetails> {
+                    CreateVlanRequest, com.oracle.bmc.core.model.CreateVlanDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +118,7 @@ public class CreateVlanRequest extends com.oracle.bmc.requests.BmcRequest<Create
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateVlanDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateVlanDetails body) {
             createVlanDetails(body);
             return this;
         }

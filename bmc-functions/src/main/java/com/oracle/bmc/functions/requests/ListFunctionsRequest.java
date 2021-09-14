@@ -51,7 +51,7 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      * Example: {@code Creating}
      *
      */
-    private Function.LifecycleState lifecycleState;
+    private com.oracle.bmc.functions.model.Function.LifecycleState lifecycleState;
 
     /**
      * A filter to return only functions with display names that match the display name string. Matching is exact.

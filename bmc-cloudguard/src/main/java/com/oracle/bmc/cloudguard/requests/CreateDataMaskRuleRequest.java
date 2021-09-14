@@ -18,12 +18,13 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateDataMaskRuleRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateDataMaskRuleDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.cloudguard.model.CreateDataMaskRuleDetails> {
 
     /**
      * Definition for the new Data Mask Rule.
      */
-    private CreateDataMaskRuleDetails createDataMaskRuleDetails;
+    private com.oracle.bmc.cloudguard.model.CreateDataMaskRuleDetails createDataMaskRuleDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -46,13 +47,14 @@ public class CreateDataMaskRuleRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateDataMaskRuleDetails getBody$() {
+    public com.oracle.bmc.cloudguard.model.CreateDataMaskRuleDetails getBody$() {
         return createDataMaskRuleDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateDataMaskRuleRequest, CreateDataMaskRuleDetails> {
+                    CreateDataMaskRuleRequest,
+                    com.oracle.bmc.cloudguard.model.CreateDataMaskRuleDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +118,7 @@ public class CreateDataMaskRuleRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateDataMaskRuleDetails body) {
+        public Builder body$(com.oracle.bmc.cloudguard.model.CreateDataMaskRuleDetails body) {
             createDataMaskRuleDetails(body);
             return this;
         }

@@ -17,7 +17,9 @@ import com.oracle.bmc.streaming.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateCursorRequest extends com.oracle.bmc.requests.BmcRequest<CreateCursorDetails> {
+public class CreateCursorRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.streaming.model.CreateCursorDetails> {
 
     /**
      * The OCID of the stream.
@@ -28,7 +30,7 @@ public class CreateCursorRequest extends com.oracle.bmc.requests.BmcRequest<Crea
     /**
      * The information used to create the cursor.
      */
-    private CreateCursorDetails createCursorDetails;
+    private com.oracle.bmc.streaming.model.CreateCursorDetails createCursorDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -43,13 +45,13 @@ public class CreateCursorRequest extends com.oracle.bmc.requests.BmcRequest<Crea
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateCursorDetails getBody$() {
+    public com.oracle.bmc.streaming.model.CreateCursorDetails getBody$() {
         return createCursorDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateCursorRequest, CreateCursorDetails> {
+                    CreateCursorRequest, com.oracle.bmc.streaming.model.CreateCursorDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -113,7 +115,7 @@ public class CreateCursorRequest extends com.oracle.bmc.requests.BmcRequest<Crea
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateCursorDetails body) {
+        public Builder body$(com.oracle.bmc.streaming.model.CreateCursorDetails body) {
             createCursorDetails(body);
             return this;
         }

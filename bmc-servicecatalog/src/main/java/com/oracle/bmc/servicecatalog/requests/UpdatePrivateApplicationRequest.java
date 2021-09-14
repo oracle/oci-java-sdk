@@ -18,7 +18,8 @@ import com.oracle.bmc.servicecatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdatePrivateApplicationRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdatePrivateApplicationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.servicecatalog.model.UpdatePrivateApplicationDetails> {
 
     /**
      * The unique identifier for the private application.
@@ -28,7 +29,8 @@ public class UpdatePrivateApplicationRequest
     /**
      * The details for updating the private application.
      */
-    private UpdatePrivateApplicationDetails updatePrivateApplicationDetails;
+    private com.oracle.bmc.servicecatalog.model.UpdatePrivateApplicationDetails
+            updatePrivateApplicationDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
@@ -51,13 +53,14 @@ public class UpdatePrivateApplicationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdatePrivateApplicationDetails getBody$() {
+    public com.oracle.bmc.servicecatalog.model.UpdatePrivateApplicationDetails getBody$() {
         return updatePrivateApplicationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdatePrivateApplicationRequest, UpdatePrivateApplicationDetails> {
+                    UpdatePrivateApplicationRequest,
+                    com.oracle.bmc.servicecatalog.model.UpdatePrivateApplicationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,8 @@ public class UpdatePrivateApplicationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdatePrivateApplicationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.servicecatalog.model.UpdatePrivateApplicationDetails body) {
             updatePrivateApplicationDetails(body);
             return this;
         }

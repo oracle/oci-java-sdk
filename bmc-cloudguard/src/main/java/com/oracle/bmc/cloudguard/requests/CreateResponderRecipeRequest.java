@@ -18,12 +18,14 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateResponderRecipeRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateResponderRecipeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.cloudguard.model.CreateResponderRecipeDetails> {
 
     /**
      * Details for ResponderRecipe.
      */
-    private CreateResponderRecipeDetails createResponderRecipeDetails;
+    private com.oracle.bmc.cloudguard.model.CreateResponderRecipeDetails
+            createResponderRecipeDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -46,13 +48,14 @@ public class CreateResponderRecipeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateResponderRecipeDetails getBody$() {
+    public com.oracle.bmc.cloudguard.model.CreateResponderRecipeDetails getBody$() {
         return createResponderRecipeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateResponderRecipeRequest, CreateResponderRecipeDetails> {
+                    CreateResponderRecipeRequest,
+                    com.oracle.bmc.cloudguard.model.CreateResponderRecipeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +119,7 @@ public class CreateResponderRecipeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateResponderRecipeDetails body) {
+        public Builder body$(com.oracle.bmc.cloudguard.model.CreateResponderRecipeDetails body) {
             createResponderRecipeDetails(body);
             return this;
         }

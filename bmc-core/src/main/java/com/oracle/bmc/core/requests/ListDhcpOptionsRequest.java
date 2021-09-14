@@ -158,7 +158,7 @@ public class ListDhcpOptionsRequest extends com.oracle.bmc.requests.BmcRequest<j
      * state. The state value is case-insensitive.
      *
      */
-    private DhcpOptions.LifecycleState lifecycleState;
+    private com.oracle.bmc.core.model.DhcpOptions.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

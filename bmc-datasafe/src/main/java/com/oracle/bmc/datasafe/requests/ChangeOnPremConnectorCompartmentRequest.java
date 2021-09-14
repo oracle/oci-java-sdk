@@ -18,7 +18,8 @@ import com.oracle.bmc.datasafe.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeOnPremConnectorCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeOnPremConnectorCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datasafe.model.ChangeOnPremConnectorCompartmentDetails> {
 
     /**
      * The OCID of the on-premises connector.
@@ -28,7 +29,8 @@ public class ChangeOnPremConnectorCompartmentRequest
     /**
      * The details used to change the compartment of an on-premises connector.
      */
-    private ChangeOnPremConnectorCompartmentDetails changeOnPremConnectorCompartmentDetails;
+    private com.oracle.bmc.datasafe.model.ChangeOnPremConnectorCompartmentDetails
+            changeOnPremConnectorCompartmentDetails;
 
     /**
      * Unique identifier for the request.
@@ -60,14 +62,14 @@ public class ChangeOnPremConnectorCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeOnPremConnectorCompartmentDetails getBody$() {
+    public com.oracle.bmc.datasafe.model.ChangeOnPremConnectorCompartmentDetails getBody$() {
         return changeOnPremConnectorCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeOnPremConnectorCompartmentRequest,
-                    ChangeOnPremConnectorCompartmentDetails> {
+                    com.oracle.bmc.datasafe.model.ChangeOnPremConnectorCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +135,8 @@ public class ChangeOnPremConnectorCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeOnPremConnectorCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.datasafe.model.ChangeOnPremConnectorCompartmentDetails body) {
             changeOnPremConnectorCompartmentDetails(body);
             return this;
         }

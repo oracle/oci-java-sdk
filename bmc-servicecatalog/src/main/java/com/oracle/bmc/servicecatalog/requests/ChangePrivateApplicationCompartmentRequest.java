@@ -18,7 +18,8 @@ import com.oracle.bmc.servicecatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangePrivateApplicationCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangePrivateApplicationCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.servicecatalog.model.ChangePrivateApplicationCompartmentDetails> {
 
     /**
      * The unique identifier for the private application.
@@ -28,7 +29,8 @@ public class ChangePrivateApplicationCompartmentRequest
     /**
      * The details of the request to change the compartment of a given private application.
      */
-    private ChangePrivateApplicationCompartmentDetails changePrivateApplicationCompartmentDetails;
+    private com.oracle.bmc.servicecatalog.model.ChangePrivateApplicationCompartmentDetails
+            changePrivateApplicationCompartmentDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
@@ -51,14 +53,16 @@ public class ChangePrivateApplicationCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangePrivateApplicationCompartmentDetails getBody$() {
+    public com.oracle.bmc.servicecatalog.model.ChangePrivateApplicationCompartmentDetails
+            getBody$() {
         return changePrivateApplicationCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangePrivateApplicationCompartmentRequest,
-                    ChangePrivateApplicationCompartmentDetails> {
+                    com.oracle.bmc.servicecatalog.model
+                            .ChangePrivateApplicationCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +128,9 @@ public class ChangePrivateApplicationCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangePrivateApplicationCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.servicecatalog.model.ChangePrivateApplicationCompartmentDetails
+                        body) {
             changePrivateApplicationCompartmentDetails(body);
             return this;
         }

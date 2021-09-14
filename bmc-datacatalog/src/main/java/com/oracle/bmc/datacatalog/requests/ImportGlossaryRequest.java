@@ -18,7 +18,8 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ImportGlossaryRequest
-        extends com.oracle.bmc.requests.BmcRequest<ImportGlossaryDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.ImportGlossaryDetails> {
 
     /**
      * Unique catalog identifier.
@@ -33,7 +34,7 @@ public class ImportGlossaryRequest
     /**
      * The file contents to import the glossary.
      */
-    private ImportGlossaryDetails importGlossaryDetails;
+    private com.oracle.bmc.datacatalog.model.ImportGlossaryDetails importGlossaryDetails;
 
     /**
      * Specify if the relationship metadata is imported for the glossary.
@@ -61,13 +62,13 @@ public class ImportGlossaryRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ImportGlossaryDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.ImportGlossaryDetails getBody$() {
         return importGlossaryDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ImportGlossaryRequest, ImportGlossaryDetails> {
+                    ImportGlossaryRequest, com.oracle.bmc.datacatalog.model.ImportGlossaryDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +135,7 @@ public class ImportGlossaryRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ImportGlossaryDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.ImportGlossaryDetails body) {
             importGlossaryDetails(body);
             return this;
         }

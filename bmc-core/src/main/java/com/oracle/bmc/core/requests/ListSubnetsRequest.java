@@ -158,7 +158,7 @@ public class ListSubnetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      * state. The state value is case-insensitive.
      *
      */
-    private Subnet.LifecycleState lifecycleState;
+    private com.oracle.bmc.core.model.Subnet.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

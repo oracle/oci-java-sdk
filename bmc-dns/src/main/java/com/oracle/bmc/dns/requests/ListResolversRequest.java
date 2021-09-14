@@ -103,7 +103,7 @@ public class ListResolversRequest extends com.oracle.bmc.requests.BmcRequest<jav
     /**
      * The state of a resource.
      */
-    private ResolverSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.dns.model.ResolverSummary.LifecycleState lifecycleState;
 
     /**
      * Specifies to operate only on resources that have a matching DNS scope.

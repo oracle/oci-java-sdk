@@ -41,7 +41,7 @@ public class ListTagsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      *
      */
-    private Tag.LifecycleState lifecycleState;
+    private com.oracle.bmc.identity.model.Tag.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<ListTagsRequest, java.lang.Void> {

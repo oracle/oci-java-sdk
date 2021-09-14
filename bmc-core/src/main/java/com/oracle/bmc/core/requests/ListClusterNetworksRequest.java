@@ -153,7 +153,7 @@ public class ListClusterNetworksRequest extends com.oracle.bmc.requests.BmcReque
      * state. The state value is case-insensitive.
      *
      */
-    private ClusterNetworkSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.core.model.ClusterNetworkSummary.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

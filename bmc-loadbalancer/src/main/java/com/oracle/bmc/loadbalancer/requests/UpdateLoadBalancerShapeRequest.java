@@ -18,7 +18,8 @@ import com.oracle.bmc.loadbalancer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateLoadBalancerShapeRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateLoadBalancerShapeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loadbalancer.model.UpdateLoadBalancerShapeDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer whose shape will be updated.
@@ -28,7 +29,8 @@ public class UpdateLoadBalancerShapeRequest
     /**
      * The details for updating a load balancer's shape. This contains the new, desired shape.
      */
-    private UpdateLoadBalancerShapeDetails updateLoadBalancerShapeDetails;
+    private com.oracle.bmc.loadbalancer.model.UpdateLoadBalancerShapeDetails
+            updateLoadBalancerShapeDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -53,13 +55,14 @@ public class UpdateLoadBalancerShapeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateLoadBalancerShapeDetails getBody$() {
+    public com.oracle.bmc.loadbalancer.model.UpdateLoadBalancerShapeDetails getBody$() {
         return updateLoadBalancerShapeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateLoadBalancerShapeRequest, UpdateLoadBalancerShapeDetails> {
+                    UpdateLoadBalancerShapeRequest,
+                    com.oracle.bmc.loadbalancer.model.UpdateLoadBalancerShapeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +127,8 @@ public class UpdateLoadBalancerShapeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateLoadBalancerShapeDetails body) {
+        public Builder body$(
+                com.oracle.bmc.loadbalancer.model.UpdateLoadBalancerShapeDetails body) {
             updateLoadBalancerShapeDetails(body);
             return this;
         }

@@ -19,7 +19,7 @@ import com.oracle.bmc.core.model.*;
 @lombok.Getter
 public class ChangeRemotePeeringConnectionCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
-                ChangeRemotePeeringConnectionCompartmentDetails> {
+                com.oracle.bmc.core.model.ChangeRemotePeeringConnectionCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the remote peering connection (RPC).
@@ -29,7 +29,7 @@ public class ChangeRemotePeeringConnectionCompartmentRequest
     /**
      * Request to change the compartment of a remote peering connection.
      */
-    private ChangeRemotePeeringConnectionCompartmentDetails
+    private com.oracle.bmc.core.model.ChangeRemotePeeringConnectionCompartmentDetails
             changeRemotePeeringConnectionCompartmentDetails;
 
     /**
@@ -55,14 +55,14 @@ public class ChangeRemotePeeringConnectionCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeRemotePeeringConnectionCompartmentDetails getBody$() {
+    public com.oracle.bmc.core.model.ChangeRemotePeeringConnectionCompartmentDetails getBody$() {
         return changeRemotePeeringConnectionCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeRemotePeeringConnectionCompartmentRequest,
-                    ChangeRemotePeeringConnectionCompartmentDetails> {
+                    com.oracle.bmc.core.model.ChangeRemotePeeringConnectionCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -129,7 +129,8 @@ public class ChangeRemotePeeringConnectionCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeRemotePeeringConnectionCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.ChangeRemotePeeringConnectionCompartmentDetails body) {
             changeRemotePeeringConnectionCompartmentDetails(body);
             return this;
         }

@@ -17,12 +17,14 @@ import com.oracle.bmc.resourcemanager.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateJobRequest extends com.oracle.bmc.requests.BmcRequest<CreateJobDetails> {
+public class CreateJobRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.resourcemanager.model.CreateJobDetails> {
 
     /**
      * The properties for a request to create a job.
      */
-    private CreateJobDetails createJobDetails;
+    private com.oracle.bmc.resourcemanager.model.CreateJobDetails createJobDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -47,13 +49,13 @@ public class CreateJobRequest extends com.oracle.bmc.requests.BmcRequest<CreateJ
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateJobDetails getBody$() {
+    public com.oracle.bmc.resourcemanager.model.CreateJobDetails getBody$() {
         return createJobDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateJobRequest, CreateJobDetails> {
+                    CreateJobRequest, com.oracle.bmc.resourcemanager.model.CreateJobDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +119,7 @@ public class CreateJobRequest extends com.oracle.bmc.requests.BmcRequest<CreateJ
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateJobDetails body) {
+        public Builder body$(com.oracle.bmc.resourcemanager.model.CreateJobDetails body) {
             createJobDetails(body);
             return this;
         }

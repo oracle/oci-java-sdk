@@ -17,12 +17,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateVcnRequest extends com.oracle.bmc.requests.BmcRequest<CreateVcnDetails> {
+public class CreateVcnRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.CreateVcnDetails> {
 
     /**
      * Details for creating a new VCN.
      */
-    private CreateVcnDetails createVcnDetails;
+    private com.oracle.bmc.core.model.CreateVcnDetails createVcnDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -40,13 +41,13 @@ public class CreateVcnRequest extends com.oracle.bmc.requests.BmcRequest<CreateV
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateVcnDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateVcnDetails getBody$() {
         return createVcnDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateVcnRequest, CreateVcnDetails> {
+                    CreateVcnRequest, com.oracle.bmc.core.model.CreateVcnDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -109,7 +110,7 @@ public class CreateVcnRequest extends com.oracle.bmc.requests.BmcRequest<CreateV
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateVcnDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateVcnDetails body) {
             createVcnDetails(body);
             return this;
         }

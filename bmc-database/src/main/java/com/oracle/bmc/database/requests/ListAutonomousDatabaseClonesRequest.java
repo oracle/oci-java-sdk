@@ -94,7 +94,7 @@ public class ListAutonomousDatabaseClonesRequest
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    private AutonomousDatabaseSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.database.model.AutonomousDatabaseSummary.LifecycleState lifecycleState;
 
     /**
      * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.

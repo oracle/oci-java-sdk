@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateLocalPeeringGatewayRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateLocalPeeringGatewayDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdateLocalPeeringGatewayDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the local peering gateway.
@@ -28,7 +29,8 @@ public class UpdateLocalPeeringGatewayRequest
     /**
      * Details object for updating a local peering gateway.
      */
-    private UpdateLocalPeeringGatewayDetails updateLocalPeeringGatewayDetails;
+    private com.oracle.bmc.core.model.UpdateLocalPeeringGatewayDetails
+            updateLocalPeeringGatewayDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -44,13 +46,14 @@ public class UpdateLocalPeeringGatewayRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateLocalPeeringGatewayDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateLocalPeeringGatewayDetails getBody$() {
         return updateLocalPeeringGatewayDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateLocalPeeringGatewayRequest, UpdateLocalPeeringGatewayDetails> {
+                    UpdateLocalPeeringGatewayRequest,
+                    com.oracle.bmc.core.model.UpdateLocalPeeringGatewayDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +117,7 @@ public class UpdateLocalPeeringGatewayRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateLocalPeeringGatewayDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdateLocalPeeringGatewayDetails body) {
             updateLocalPeeringGatewayDetails(body);
             return this;
         }

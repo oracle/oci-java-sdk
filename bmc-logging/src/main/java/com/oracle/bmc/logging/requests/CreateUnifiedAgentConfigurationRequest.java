@@ -18,12 +18,14 @@ import com.oracle.bmc.logging.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateUnifiedAgentConfigurationRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateUnifiedAgentConfigurationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.logging.model.CreateUnifiedAgentConfigurationDetails> {
 
     /**
      * Unified agent configuration creation object.
      */
-    private CreateUnifiedAgentConfigurationDetails createUnifiedAgentConfigurationDetails;
+    private com.oracle.bmc.logging.model.CreateUnifiedAgentConfigurationDetails
+            createUnifiedAgentConfigurationDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -49,14 +51,14 @@ public class CreateUnifiedAgentConfigurationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateUnifiedAgentConfigurationDetails getBody$() {
+    public com.oracle.bmc.logging.model.CreateUnifiedAgentConfigurationDetails getBody$() {
         return createUnifiedAgentConfigurationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateUnifiedAgentConfigurationRequest,
-                    CreateUnifiedAgentConfigurationDetails> {
+                    com.oracle.bmc.logging.model.CreateUnifiedAgentConfigurationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -120,7 +122,8 @@ public class CreateUnifiedAgentConfigurationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateUnifiedAgentConfigurationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.logging.model.CreateUnifiedAgentConfigurationDetails body) {
             createUnifiedAgentConfigurationDetails(body);
             return this;
         }

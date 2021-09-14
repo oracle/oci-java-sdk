@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeLogAnalyticsLogGroupCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeLogAnalyticsLogGroupCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.ChangeLogAnalyticsLogGroupCompartmentDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -34,7 +35,7 @@ public class ChangeLogAnalyticsLogGroupCompartmentRequest
     /**
      * The information to be updated.
      */
-    private ChangeLogAnalyticsLogGroupCompartmentDetails
+    private com.oracle.bmc.loganalytics.model.ChangeLogAnalyticsLogGroupCompartmentDetails
             changeLogAnalyticsLogGroupCompartmentDetails;
 
     /**
@@ -68,7 +69,8 @@ public class ChangeLogAnalyticsLogGroupCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeLogAnalyticsLogGroupCompartmentDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.ChangeLogAnalyticsLogGroupCompartmentDetails
+            getBody$() {
         return changeLogAnalyticsLogGroupCompartmentDetails;
     }
 
@@ -80,7 +82,8 @@ public class ChangeLogAnalyticsLogGroupCompartmentRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeLogAnalyticsLogGroupCompartmentRequest,
-                    ChangeLogAnalyticsLogGroupCompartmentDetails> {
+                    com.oracle.bmc.loganalytics.model
+                            .ChangeLogAnalyticsLogGroupCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -148,7 +151,9 @@ public class ChangeLogAnalyticsLogGroupCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeLogAnalyticsLogGroupCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.loganalytics.model.ChangeLogAnalyticsLogGroupCompartmentDetails
+                        body) {
             changeLogAnalyticsLogGroupCompartmentDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.analytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateVanityUrlRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateVanityUrlDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.analytics.model.CreateVanityUrlDetails> {
 
     /**
      * The OCID of the AnalyticsInstance.
@@ -30,7 +31,7 @@ public class CreateVanityUrlRequest
      * Vanity url details.
      *
      */
-    private CreateVanityUrlDetails createVanityUrlDetails;
+    private com.oracle.bmc.analytics.model.CreateVanityUrlDetails createVanityUrlDetails;
 
     /**
      * Unique identifier for the request.
@@ -55,13 +56,13 @@ public class CreateVanityUrlRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateVanityUrlDetails getBody$() {
+    public com.oracle.bmc.analytics.model.CreateVanityUrlDetails getBody$() {
         return createVanityUrlDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateVanityUrlRequest, CreateVanityUrlDetails> {
+                    CreateVanityUrlRequest, com.oracle.bmc.analytics.model.CreateVanityUrlDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -126,7 +127,7 @@ public class CreateVanityUrlRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateVanityUrlDetails body) {
+        public Builder body$(com.oracle.bmc.analytics.model.CreateVanityUrlDetails body) {
             createVanityUrlDetails(body);
             return this;
         }

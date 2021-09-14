@@ -18,7 +18,8 @@ import com.oracle.bmc.vault.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeSecretCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeSecretCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.vault.model.ChangeSecretCompartmentDetails> {
 
     /**
      * The OCID of the secret.
@@ -28,7 +29,8 @@ public class ChangeSecretCompartmentRequest
     /**
      * The updated compartment details.
      */
-    private ChangeSecretCompartmentDetails changeSecretCompartmentDetails;
+    private com.oracle.bmc.vault.model.ChangeSecretCompartmentDetails
+            changeSecretCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
@@ -65,13 +67,14 @@ public class ChangeSecretCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeSecretCompartmentDetails getBody$() {
+    public com.oracle.bmc.vault.model.ChangeSecretCompartmentDetails getBody$() {
         return changeSecretCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeSecretCompartmentRequest, ChangeSecretCompartmentDetails> {
+                    ChangeSecretCompartmentRequest,
+                    com.oracle.bmc.vault.model.ChangeSecretCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -137,7 +140,7 @@ public class ChangeSecretCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeSecretCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.vault.model.ChangeSecretCompartmentDetails body) {
             changeSecretCompartmentDetails(body);
             return this;
         }

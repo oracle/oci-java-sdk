@@ -18,7 +18,8 @@ import com.oracle.bmc.bds.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RemoveAutoScalingConfigurationRequest
-        extends com.oracle.bmc.requests.BmcRequest<RemoveAutoScalingConfigurationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.bds.model.RemoveAutoScalingConfigurationDetails> {
 
     /**
      * The OCID of the cluster.
@@ -33,7 +34,8 @@ public class RemoveAutoScalingConfigurationRequest
     /**
      * Details for the autoscale configuration
      */
-    private RemoveAutoScalingConfigurationDetails removeAutoScalingConfigurationDetails;
+    private com.oracle.bmc.bds.model.RemoveAutoScalingConfigurationDetails
+            removeAutoScalingConfigurationDetails;
 
     /**
      * The client request ID for tracing.
@@ -66,13 +68,14 @@ public class RemoveAutoScalingConfigurationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RemoveAutoScalingConfigurationDetails getBody$() {
+    public com.oracle.bmc.bds.model.RemoveAutoScalingConfigurationDetails getBody$() {
         return removeAutoScalingConfigurationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RemoveAutoScalingConfigurationRequest, RemoveAutoScalingConfigurationDetails> {
+                    RemoveAutoScalingConfigurationRequest,
+                    com.oracle.bmc.bds.model.RemoveAutoScalingConfigurationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -139,7 +142,7 @@ public class RemoveAutoScalingConfigurationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RemoveAutoScalingConfigurationDetails body) {
+        public Builder body$(com.oracle.bmc.bds.model.RemoveAutoScalingConfigurationDetails body) {
             removeAutoScalingConfigurationDetails(body);
             return this;
         }

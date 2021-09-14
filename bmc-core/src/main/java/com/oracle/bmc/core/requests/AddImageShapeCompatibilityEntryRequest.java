@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class AddImageShapeCompatibilityEntryRequest
-        extends com.oracle.bmc.requests.BmcRequest<AddImageShapeCompatibilityEntryDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.AddImageShapeCompatibilityEntryDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
@@ -33,7 +34,8 @@ public class AddImageShapeCompatibilityEntryRequest
     /**
      * Image shape compatibility details
      */
-    private AddImageShapeCompatibilityEntryDetails addImageShapeCompatibilityEntryDetails;
+    private com.oracle.bmc.core.model.AddImageShapeCompatibilityEntryDetails
+            addImageShapeCompatibilityEntryDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -41,14 +43,14 @@ public class AddImageShapeCompatibilityEntryRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public AddImageShapeCompatibilityEntryDetails getBody$() {
+    public com.oracle.bmc.core.model.AddImageShapeCompatibilityEntryDetails getBody$() {
         return addImageShapeCompatibilityEntryDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     AddImageShapeCompatibilityEntryRequest,
-                    AddImageShapeCompatibilityEntryDetails> {
+                    com.oracle.bmc.core.model.AddImageShapeCompatibilityEntryDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -112,7 +114,8 @@ public class AddImageShapeCompatibilityEntryRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(AddImageShapeCompatibilityEntryDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.AddImageShapeCompatibilityEntryDetails body) {
             addImageShapeCompatibilityEntryDetails(body);
             return this;
         }

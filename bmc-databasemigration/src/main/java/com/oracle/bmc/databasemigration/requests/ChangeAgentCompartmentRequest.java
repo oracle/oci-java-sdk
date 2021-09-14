@@ -18,7 +18,8 @@ import com.oracle.bmc.databasemigration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeAgentCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeAgentCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.databasemigration.model.ChangeAgentCompartmentDetails> {
 
     /**
      * The OCID of the agent
@@ -30,7 +31,8 @@ public class ChangeAgentCompartmentRequest
      * Details to change the compartment.
      *
      */
-    private ChangeAgentCompartmentDetails changeAgentCompartmentDetails;
+    private com.oracle.bmc.databasemigration.model.ChangeAgentCompartmentDetails
+            changeAgentCompartmentDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -65,13 +67,14 @@ public class ChangeAgentCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeAgentCompartmentDetails getBody$() {
+    public com.oracle.bmc.databasemigration.model.ChangeAgentCompartmentDetails getBody$() {
         return changeAgentCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeAgentCompartmentRequest, ChangeAgentCompartmentDetails> {
+                    ChangeAgentCompartmentRequest,
+                    com.oracle.bmc.databasemigration.model.ChangeAgentCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -137,7 +140,8 @@ public class ChangeAgentCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeAgentCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.databasemigration.model.ChangeAgentCompartmentDetails body) {
             changeAgentCompartmentDetails(body);
             return this;
         }

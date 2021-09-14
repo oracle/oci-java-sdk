@@ -18,12 +18,13 @@ import com.oracle.bmc.loadbalancer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateListenerRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateListenerDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loadbalancer.model.CreateListenerDetails> {
 
     /**
      * Details to add a listener.
      */
-    private CreateListenerDetails createListenerDetails;
+    private com.oracle.bmc.loadbalancer.model.CreateListenerDetails createListenerDetails;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a listener.
@@ -53,13 +54,14 @@ public class CreateListenerRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateListenerDetails getBody$() {
+    public com.oracle.bmc.loadbalancer.model.CreateListenerDetails getBody$() {
         return createListenerDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateListenerRequest, CreateListenerDetails> {
+                    CreateListenerRequest,
+                    com.oracle.bmc.loadbalancer.model.CreateListenerDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class CreateListenerRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateListenerDetails body) {
+        public Builder body$(com.oracle.bmc.loadbalancer.model.CreateListenerDetails body) {
             createListenerDetails(body);
             return this;
         }

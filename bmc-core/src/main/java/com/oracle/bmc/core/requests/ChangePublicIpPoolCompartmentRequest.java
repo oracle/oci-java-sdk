@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangePublicIpPoolCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangePublicIpPoolCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.ChangePublicIpPoolCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
@@ -28,7 +29,8 @@ public class ChangePublicIpPoolCompartmentRequest
     /**
      * Request to change the compartment of a public IP pool.
      */
-    private ChangePublicIpPoolCompartmentDetails changePublicIpPoolCompartmentDetails;
+    private com.oracle.bmc.core.model.ChangePublicIpPoolCompartmentDetails
+            changePublicIpPoolCompartmentDetails;
 
     /**
      * Unique identifier for the request.
@@ -53,13 +55,14 @@ public class ChangePublicIpPoolCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangePublicIpPoolCompartmentDetails getBody$() {
+    public com.oracle.bmc.core.model.ChangePublicIpPoolCompartmentDetails getBody$() {
         return changePublicIpPoolCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangePublicIpPoolCompartmentRequest, ChangePublicIpPoolCompartmentDetails> {
+                    ChangePublicIpPoolCompartmentRequest,
+                    com.oracle.bmc.core.model.ChangePublicIpPoolCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +127,7 @@ public class ChangePublicIpPoolCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangePublicIpPoolCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.ChangePublicIpPoolCompartmentDetails body) {
             changePublicIpPoolCompartmentDetails(body);
             return this;
         }

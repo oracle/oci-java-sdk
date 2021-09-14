@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateScheduledTaskRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateScheduledTaskDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.CreateScheduledTaskDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -29,7 +30,7 @@ public class CreateScheduledTaskRequest
     /**
      * Scheduled task to be created.
      */
-    private CreateScheduledTaskDetails createScheduledTaskDetails;
+    private com.oracle.bmc.loganalytics.model.CreateScheduledTaskDetails createScheduledTaskDetails;
 
     /**
      * The client request ID for tracing.
@@ -52,7 +53,7 @@ public class CreateScheduledTaskRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateScheduledTaskDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.CreateScheduledTaskDetails getBody$() {
         return createScheduledTaskDetails;
     }
 
@@ -63,7 +64,8 @@ public class CreateScheduledTaskRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateScheduledTaskRequest, CreateScheduledTaskDetails> {
+                    CreateScheduledTaskRequest,
+                    com.oracle.bmc.loganalytics.model.CreateScheduledTaskDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -128,7 +130,7 @@ public class CreateScheduledTaskRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateScheduledTaskDetails body) {
+        public Builder body$(com.oracle.bmc.loganalytics.model.CreateScheduledTaskDetails body) {
             createScheduledTaskDetails(body);
             return this;
         }

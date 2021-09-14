@@ -18,7 +18,8 @@ import com.oracle.bmc.marketplace.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateAcceptedAgreementRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateAcceptedAgreementDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.marketplace.model.UpdateAcceptedAgreementDetails> {
 
     /**
      * The unique identifier for the accepted terms of use agreement.
@@ -28,7 +29,8 @@ public class UpdateAcceptedAgreementRequest
     /**
      * Details to update for an accepted agreement.
      */
-    private UpdateAcceptedAgreementDetails updateAcceptedAgreementDetails;
+    private com.oracle.bmc.marketplace.model.UpdateAcceptedAgreementDetails
+            updateAcceptedAgreementDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
@@ -60,13 +62,14 @@ public class UpdateAcceptedAgreementRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateAcceptedAgreementDetails getBody$() {
+    public com.oracle.bmc.marketplace.model.UpdateAcceptedAgreementDetails getBody$() {
         return updateAcceptedAgreementDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateAcceptedAgreementRequest, UpdateAcceptedAgreementDetails> {
+                    UpdateAcceptedAgreementRequest,
+                    com.oracle.bmc.marketplace.model.UpdateAcceptedAgreementDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -132,7 +135,7 @@ public class UpdateAcceptedAgreementRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateAcceptedAgreementDetails body) {
+        public Builder body$(com.oracle.bmc.marketplace.model.UpdateAcceptedAgreementDetails body) {
             updateAcceptedAgreementDetails(body);
             return this;
         }

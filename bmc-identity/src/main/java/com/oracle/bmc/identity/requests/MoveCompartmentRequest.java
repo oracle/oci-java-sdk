@@ -18,7 +18,8 @@ import com.oracle.bmc.identity.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class MoveCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<MoveCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.MoveCompartmentDetails> {
 
     /**
      * The OCID of the compartment.
@@ -28,7 +29,7 @@ public class MoveCompartmentRequest
     /**
      * Request object for moving a compartment.
      */
-    private MoveCompartmentDetails moveCompartmentDetails;
+    private com.oracle.bmc.identity.model.MoveCompartmentDetails moveCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -61,13 +62,13 @@ public class MoveCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public MoveCompartmentDetails getBody$() {
+    public com.oracle.bmc.identity.model.MoveCompartmentDetails getBody$() {
         return moveCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    MoveCompartmentRequest, MoveCompartmentDetails> {
+                    MoveCompartmentRequest, com.oracle.bmc.identity.model.MoveCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +134,7 @@ public class MoveCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(MoveCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.MoveCompartmentDetails body) {
             moveCompartmentDetails(body);
             return this;
         }

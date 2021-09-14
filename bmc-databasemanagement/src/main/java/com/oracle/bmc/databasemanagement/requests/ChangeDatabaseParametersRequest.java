@@ -18,7 +18,8 @@ import com.oracle.bmc.databasemanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeDatabaseParametersRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeDatabaseParametersDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.databasemanagement.model.ChangeDatabaseParametersDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -28,7 +29,8 @@ public class ChangeDatabaseParametersRequest
     /**
      * The details required to change database parameter values.
      */
-    private ChangeDatabaseParametersDetails changeDatabaseParametersDetails;
+    private com.oracle.bmc.databasemanagement.model.ChangeDatabaseParametersDetails
+            changeDatabaseParametersDetails;
 
     /**
      * The client request ID for tracing.
@@ -51,13 +53,14 @@ public class ChangeDatabaseParametersRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeDatabaseParametersDetails getBody$() {
+    public com.oracle.bmc.databasemanagement.model.ChangeDatabaseParametersDetails getBody$() {
         return changeDatabaseParametersDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeDatabaseParametersRequest, ChangeDatabaseParametersDetails> {
+                    ChangeDatabaseParametersRequest,
+                    com.oracle.bmc.databasemanagement.model.ChangeDatabaseParametersDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,8 @@ public class ChangeDatabaseParametersRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeDatabaseParametersDetails body) {
+        public Builder body$(
+                com.oracle.bmc.databasemanagement.model.ChangeDatabaseParametersDetails body) {
             changeDatabaseParametersDetails(body);
             return this;
         }

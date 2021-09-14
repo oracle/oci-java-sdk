@@ -17,12 +17,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateDrgRequest extends com.oracle.bmc.requests.BmcRequest<CreateDrgDetails> {
+public class CreateDrgRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.CreateDrgDetails> {
 
     /**
      * Details for creating a DRG.
      */
-    private CreateDrgDetails createDrgDetails;
+    private com.oracle.bmc.core.model.CreateDrgDetails createDrgDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -40,13 +41,13 @@ public class CreateDrgRequest extends com.oracle.bmc.requests.BmcRequest<CreateD
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateDrgDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateDrgDetails getBody$() {
         return createDrgDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateDrgRequest, CreateDrgDetails> {
+                    CreateDrgRequest, com.oracle.bmc.core.model.CreateDrgDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -109,7 +110,7 @@ public class CreateDrgRequest extends com.oracle.bmc.requests.BmcRequest<CreateD
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateDrgDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateDrgDetails body) {
             createDrgDetails(body);
             return this;
         }

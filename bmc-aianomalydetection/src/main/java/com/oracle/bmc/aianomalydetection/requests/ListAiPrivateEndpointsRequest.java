@@ -30,7 +30,7 @@ public class ListAiPrivateEndpointsRequest
      * state for the resource type.
      *
      */
-    private AiPrivateEndpoint.LifecycleState lifecycleState;
+    private com.oracle.bmc.aianomalydetection.model.AiPrivateEndpoint.LifecycleState lifecycleState;
 
     /**
      * A filter to return only resources that match the entire display name given.

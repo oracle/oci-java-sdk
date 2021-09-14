@@ -18,7 +18,8 @@ import com.oracle.bmc.devops.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeProjectCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeProjectCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.devops.model.ChangeProjectCompartmentDetails> {
 
     /**
      * Unique project identifier.
@@ -28,7 +29,8 @@ public class ChangeProjectCompartmentRequest
     /**
      * The information to be updated.
      */
-    private ChangeProjectCompartmentDetails changeProjectCompartmentDetails;
+    private com.oracle.bmc.devops.model.ChangeProjectCompartmentDetails
+            changeProjectCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
@@ -51,13 +53,14 @@ public class ChangeProjectCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeProjectCompartmentDetails getBody$() {
+    public com.oracle.bmc.devops.model.ChangeProjectCompartmentDetails getBody$() {
         return changeProjectCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeProjectCompartmentRequest, ChangeProjectCompartmentDetails> {
+                    ChangeProjectCompartmentRequest,
+                    com.oracle.bmc.devops.model.ChangeProjectCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +126,7 @@ public class ChangeProjectCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeProjectCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.devops.model.ChangeProjectCompartmentDetails body) {
             changeProjectCompartmentDetails(body);
             return this;
         }

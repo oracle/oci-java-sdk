@@ -18,7 +18,8 @@ import com.oracle.bmc.datascience.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateNotebookSessionRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateNotebookSessionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datascience.model.UpdateNotebookSessionDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session.
@@ -30,7 +31,8 @@ public class UpdateNotebookSessionRequest
      * Changes to the {@code notebookSessionConfigurationDetails} take effect the next time the {@code ActivateNotebookSession} action is invoked on the notebook session resource.
      *
      */
-    private UpdateNotebookSessionDetails updateNotebookSessionDetails;
+    private com.oracle.bmc.datascience.model.UpdateNotebookSessionDetails
+            updateNotebookSessionDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -54,13 +56,14 @@ public class UpdateNotebookSessionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateNotebookSessionDetails getBody$() {
+    public com.oracle.bmc.datascience.model.UpdateNotebookSessionDetails getBody$() {
         return updateNotebookSessionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateNotebookSessionRequest, UpdateNotebookSessionDetails> {
+                    UpdateNotebookSessionRequest,
+                    com.oracle.bmc.datascience.model.UpdateNotebookSessionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -125,7 +128,7 @@ public class UpdateNotebookSessionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateNotebookSessionDetails body) {
+        public Builder body$(com.oracle.bmc.datascience.model.UpdateNotebookSessionDetails body) {
             updateNotebookSessionDetails(body);
             return this;
         }

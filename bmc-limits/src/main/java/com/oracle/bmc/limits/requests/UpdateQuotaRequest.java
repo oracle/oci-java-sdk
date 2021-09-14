@@ -17,7 +17,8 @@ import com.oracle.bmc.limits.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateQuotaRequest extends com.oracle.bmc.requests.BmcRequest<UpdateQuotaDetails> {
+public class UpdateQuotaRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.limits.model.UpdateQuotaDetails> {
 
     /**
      * The OCID of the quota.
@@ -27,7 +28,7 @@ public class UpdateQuotaRequest extends com.oracle.bmc.requests.BmcRequest<Updat
     /**
      * Request object for updating a quota.
      */
-    private UpdateQuotaDetails updateQuotaDetails;
+    private com.oracle.bmc.limits.model.UpdateQuotaDetails updateQuotaDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -50,13 +51,13 @@ public class UpdateQuotaRequest extends com.oracle.bmc.requests.BmcRequest<Updat
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateQuotaDetails getBody$() {
+    public com.oracle.bmc.limits.model.UpdateQuotaDetails getBody$() {
         return updateQuotaDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateQuotaRequest, UpdateQuotaDetails> {
+                    UpdateQuotaRequest, com.oracle.bmc.limits.model.UpdateQuotaDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +122,7 @@ public class UpdateQuotaRequest extends com.oracle.bmc.requests.BmcRequest<Updat
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateQuotaDetails body) {
+        public Builder body$(com.oracle.bmc.limits.model.UpdateQuotaDetails body) {
             updateQuotaDetails(body);
             return this;
         }

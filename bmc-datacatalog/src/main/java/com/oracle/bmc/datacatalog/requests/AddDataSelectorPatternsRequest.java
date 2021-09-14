@@ -18,7 +18,8 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class AddDataSelectorPatternsRequest
-        extends com.oracle.bmc.requests.BmcRequest<DataSelectorPatternDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.DataSelectorPatternDetails> {
 
     /**
      * Unique catalog identifier.
@@ -33,7 +34,7 @@ public class AddDataSelectorPatternsRequest
     /**
      * The information used to add the patterns for deriving logical entities.
      */
-    private DataSelectorPatternDetails dataSelectorPatternDetails;
+    private com.oracle.bmc.datacatalog.model.DataSelectorPatternDetails dataSelectorPatternDetails;
 
     /**
      * The client request ID for tracing.
@@ -66,13 +67,14 @@ public class AddDataSelectorPatternsRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public DataSelectorPatternDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.DataSelectorPatternDetails getBody$() {
         return dataSelectorPatternDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    AddDataSelectorPatternsRequest, DataSelectorPatternDetails> {
+                    AddDataSelectorPatternsRequest,
+                    com.oracle.bmc.datacatalog.model.DataSelectorPatternDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -139,7 +141,7 @@ public class AddDataSelectorPatternsRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(DataSelectorPatternDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.DataSelectorPatternDetails body) {
             dataSelectorPatternDetails(body);
             return this;
         }

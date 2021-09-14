@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeRouteTableCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeRouteTableCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.ChangeRouteTableCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the route table.
@@ -28,7 +29,8 @@ public class ChangeRouteTableCompartmentRequest
     /**
      * Request to change the compartment of a given route table.
      */
-    private ChangeRouteTableCompartmentDetails changeRouteTableCompartmentDetails;
+    private com.oracle.bmc.core.model.ChangeRouteTableCompartmentDetails
+            changeRouteTableCompartmentDetails;
 
     /**
      * Unique identifier for the request.
@@ -53,13 +55,14 @@ public class ChangeRouteTableCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeRouteTableCompartmentDetails getBody$() {
+    public com.oracle.bmc.core.model.ChangeRouteTableCompartmentDetails getBody$() {
         return changeRouteTableCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeRouteTableCompartmentRequest, ChangeRouteTableCompartmentDetails> {
+                    ChangeRouteTableCompartmentRequest,
+                    com.oracle.bmc.core.model.ChangeRouteTableCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +127,7 @@ public class ChangeRouteTableCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeRouteTableCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.ChangeRouteTableCompartmentDetails body) {
             changeRouteTableCompartmentDetails(body);
             return this;
         }

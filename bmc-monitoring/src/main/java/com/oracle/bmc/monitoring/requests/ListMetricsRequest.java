@@ -17,7 +17,9 @@ import com.oracle.bmc.monitoring.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class ListMetricsRequest extends com.oracle.bmc.requests.BmcRequest<ListMetricsDetails> {
+public class ListMetricsRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.monitoring.model.ListMetricsDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
@@ -32,7 +34,7 @@ public class ListMetricsRequest extends com.oracle.bmc.requests.BmcRequest<ListM
     /**
      * The dimensions used to filter metrics.
      */
-    private ListMetricsDetails listMetricsDetails;
+    private com.oracle.bmc.monitoring.model.ListMetricsDetails listMetricsDetails;
 
     /**
      * Customer part of the request identifier token. If you need to contact Oracle about a particular
@@ -75,13 +77,13 @@ public class ListMetricsRequest extends com.oracle.bmc.requests.BmcRequest<ListM
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ListMetricsDetails getBody$() {
+    public com.oracle.bmc.monitoring.model.ListMetricsDetails getBody$() {
         return listMetricsDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ListMetricsRequest, ListMetricsDetails> {
+                    ListMetricsRequest, com.oracle.bmc.monitoring.model.ListMetricsDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -148,7 +150,7 @@ public class ListMetricsRequest extends com.oracle.bmc.requests.BmcRequest<ListM
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ListMetricsDetails body) {
+        public Builder body$(com.oracle.bmc.monitoring.model.ListMetricsDetails body) {
             listMetricsDetails(body);
             return this;
         }

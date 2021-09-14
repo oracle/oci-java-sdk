@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeLogAnalyticsEmBridgeCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeLogAnalyticsEmBridgeCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.ChangeLogAnalyticsEmBridgeCompartmentDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -35,7 +36,7 @@ public class ChangeLogAnalyticsEmBridgeCompartmentRequest
     /**
      * Log analytics enterprise manager bridge compartment Id to be updated.
      */
-    private ChangeLogAnalyticsEmBridgeCompartmentDetails
+    private com.oracle.bmc.loganalytics.model.ChangeLogAnalyticsEmBridgeCompartmentDetails
             changeLogAnalyticsEmBridgeCompartmentDetails;
 
     /**
@@ -69,7 +70,8 @@ public class ChangeLogAnalyticsEmBridgeCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeLogAnalyticsEmBridgeCompartmentDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.ChangeLogAnalyticsEmBridgeCompartmentDetails
+            getBody$() {
         return changeLogAnalyticsEmBridgeCompartmentDetails;
     }
 
@@ -81,7 +83,8 @@ public class ChangeLogAnalyticsEmBridgeCompartmentRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeLogAnalyticsEmBridgeCompartmentRequest,
-                    ChangeLogAnalyticsEmBridgeCompartmentDetails> {
+                    com.oracle.bmc.loganalytics.model
+                            .ChangeLogAnalyticsEmBridgeCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -149,7 +152,9 @@ public class ChangeLogAnalyticsEmBridgeCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeLogAnalyticsEmBridgeCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.loganalytics.model.ChangeLogAnalyticsEmBridgeCompartmentDetails
+                        body) {
             changeLogAnalyticsEmBridgeCompartmentDetails(body);
             return this;
         }

@@ -17,7 +17,9 @@ import com.oracle.bmc.streaming.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateStreamRequest extends com.oracle.bmc.requests.BmcRequest<UpdateStreamDetails> {
+public class UpdateStreamRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.streaming.model.UpdateStreamDetails> {
 
     /**
      * The OCID of the stream.
@@ -28,7 +30,7 @@ public class UpdateStreamRequest extends com.oracle.bmc.requests.BmcRequest<Upda
     /**
      * The stream is updated with the values provided.
      */
-    private UpdateStreamDetails updateStreamDetails;
+    private com.oracle.bmc.streaming.model.UpdateStreamDetails updateStreamDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -48,13 +50,13 @@ public class UpdateStreamRequest extends com.oracle.bmc.requests.BmcRequest<Upda
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateStreamDetails getBody$() {
+    public com.oracle.bmc.streaming.model.UpdateStreamDetails getBody$() {
         return updateStreamDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateStreamRequest, UpdateStreamDetails> {
+                    UpdateStreamRequest, com.oracle.bmc.streaming.model.UpdateStreamDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +121,7 @@ public class UpdateStreamRequest extends com.oracle.bmc.requests.BmcRequest<Upda
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateStreamDetails body) {
+        public Builder body$(com.oracle.bmc.streaming.model.UpdateStreamDetails body) {
             updateStreamDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.mysql.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class AddHeatWaveClusterRequest
-        extends com.oracle.bmc.requests.BmcRequest<AddHeatWaveClusterDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.mysql.model.AddHeatWaveClusterDetails> {
 
     /**
      * The DB System [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,7 @@ public class AddHeatWaveClusterRequest
     /**
      * Request to add a HeatWave cluster.
      */
-    private AddHeatWaveClusterDetails addHeatWaveClusterDetails;
+    private com.oracle.bmc.mysql.model.AddHeatWaveClusterDetails addHeatWaveClusterDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
@@ -65,13 +66,14 @@ public class AddHeatWaveClusterRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public AddHeatWaveClusterDetails getBody$() {
+    public com.oracle.bmc.mysql.model.AddHeatWaveClusterDetails getBody$() {
         return addHeatWaveClusterDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    AddHeatWaveClusterRequest, AddHeatWaveClusterDetails> {
+                    AddHeatWaveClusterRequest,
+                    com.oracle.bmc.mysql.model.AddHeatWaveClusterDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -137,7 +139,7 @@ public class AddHeatWaveClusterRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(AddHeatWaveClusterDetails body) {
+        public Builder body$(com.oracle.bmc.mysql.model.AddHeatWaveClusterDetails body) {
             addHeatWaveClusterDetails(body);
             return this;
         }

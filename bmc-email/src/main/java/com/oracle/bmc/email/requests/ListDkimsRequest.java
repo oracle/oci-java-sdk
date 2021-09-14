@@ -68,7 +68,7 @@ public class ListDkimsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      * Filter returned list by specified lifecycle state. This parameter is case-insensitive.
      *
      */
-    private Dkim.LifecycleState lifecycleState;
+    private com.oracle.bmc.email.model.Dkim.LifecycleState lifecycleState;
 
     /**
      * Specifies the attribute with which to sort the DKIMs.

@@ -18,12 +18,13 @@ import com.oracle.bmc.dts.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateTransferJobRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateTransferJobDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dts.model.CreateTransferJobDetails> {
 
     /**
      * Creates a New Transfer Job
      */
-    private CreateTransferJobDetails createTransferJobDetails;
+    private com.oracle.bmc.dts.model.CreateTransferJobDetails createTransferJobDetails;
 
     /**
      *
@@ -43,13 +44,13 @@ public class CreateTransferJobRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateTransferJobDetails getBody$() {
+    public com.oracle.bmc.dts.model.CreateTransferJobDetails getBody$() {
         return createTransferJobDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateTransferJobRequest, CreateTransferJobDetails> {
+                    CreateTransferJobRequest, com.oracle.bmc.dts.model.CreateTransferJobDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -113,7 +114,7 @@ public class CreateTransferJobRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateTransferJobDetails body) {
+        public Builder body$(com.oracle.bmc.dts.model.CreateTransferJobDetails body) {
             createTransferJobDetails(body);
             return this;
         }

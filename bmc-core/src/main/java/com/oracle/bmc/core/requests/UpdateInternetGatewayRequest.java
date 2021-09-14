@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateInternetGatewayRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateInternetGatewayDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdateInternetGatewayDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the internet gateway.
@@ -28,7 +29,7 @@ public class UpdateInternetGatewayRequest
     /**
      * Details for updating the internet gateway.
      */
-    private UpdateInternetGatewayDetails updateInternetGatewayDetails;
+    private com.oracle.bmc.core.model.UpdateInternetGatewayDetails updateInternetGatewayDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -44,13 +45,14 @@ public class UpdateInternetGatewayRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateInternetGatewayDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateInternetGatewayDetails getBody$() {
         return updateInternetGatewayDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateInternetGatewayRequest, UpdateInternetGatewayDetails> {
+                    UpdateInternetGatewayRequest,
+                    com.oracle.bmc.core.model.UpdateInternetGatewayDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +116,7 @@ public class UpdateInternetGatewayRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateInternetGatewayDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdateInternetGatewayDetails body) {
             updateInternetGatewayDetails(body);
             return this;
         }

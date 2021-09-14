@@ -164,7 +164,7 @@ public class ListNetworkSecurityGroupsRequest
      * state. The value is case insensitive.
      *
      */
-    private NetworkSecurityGroup.LifecycleState lifecycleState;
+    private com.oracle.bmc.core.model.NetworkSecurityGroup.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

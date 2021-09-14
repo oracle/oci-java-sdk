@@ -18,12 +18,13 @@ import com.oracle.bmc.rover.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateRoverNodeRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateRoverNodeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.rover.model.CreateRoverNodeDetails> {
 
     /**
      * Details for the new RoverNode.
      */
-    private CreateRoverNodeDetails createRoverNodeDetails;
+    private com.oracle.bmc.rover.model.CreateRoverNodeDetails createRoverNodeDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -46,13 +47,13 @@ public class CreateRoverNodeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateRoverNodeDetails getBody$() {
+    public com.oracle.bmc.rover.model.CreateRoverNodeDetails getBody$() {
         return createRoverNodeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateRoverNodeRequest, CreateRoverNodeDetails> {
+                    CreateRoverNodeRequest, com.oracle.bmc.rover.model.CreateRoverNodeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +117,7 @@ public class CreateRoverNodeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateRoverNodeDetails body) {
+        public Builder body$(com.oracle.bmc.rover.model.CreateRoverNodeDetails body) {
             createRoverNodeDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateApplicationRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateApplicationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataintegration.model.UpdateApplicationDetails> {
 
     /**
      * The workspace ID.
@@ -33,7 +34,7 @@ public class UpdateApplicationRequest
     /**
      * The details needed to update an application.
      */
-    private UpdateApplicationDetails updateApplicationDetails;
+    private com.oracle.bmc.dataintegration.model.UpdateApplicationDetails updateApplicationDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
@@ -57,13 +58,14 @@ public class UpdateApplicationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateApplicationDetails getBody$() {
+    public com.oracle.bmc.dataintegration.model.UpdateApplicationDetails getBody$() {
         return updateApplicationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateApplicationRequest, UpdateApplicationDetails> {
+                    UpdateApplicationRequest,
+                    com.oracle.bmc.dataintegration.model.UpdateApplicationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -129,7 +131,7 @@ public class UpdateApplicationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateApplicationDetails body) {
+        public Builder body$(com.oracle.bmc.dataintegration.model.UpdateApplicationDetails body) {
             updateApplicationDetails(body);
             return this;
         }

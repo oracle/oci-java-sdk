@@ -18,12 +18,14 @@ import com.oracle.bmc.waas.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateCustomProtectionRuleRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateCustomProtectionRuleDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.waas.model.CreateCustomProtectionRuleDetails> {
 
     /**
      * The details of the custom protection rule.
      */
-    private CreateCustomProtectionRuleDetails createCustomProtectionRuleDetails;
+    private com.oracle.bmc.waas.model.CreateCustomProtectionRuleDetails
+            createCustomProtectionRuleDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -42,13 +44,14 @@ public class CreateCustomProtectionRuleRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateCustomProtectionRuleDetails getBody$() {
+    public com.oracle.bmc.waas.model.CreateCustomProtectionRuleDetails getBody$() {
         return createCustomProtectionRuleDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateCustomProtectionRuleRequest, CreateCustomProtectionRuleDetails> {
+                    CreateCustomProtectionRuleRequest,
+                    com.oracle.bmc.waas.model.CreateCustomProtectionRuleDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -112,7 +115,7 @@ public class CreateCustomProtectionRuleRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateCustomProtectionRuleDetails body) {
+        public Builder body$(com.oracle.bmc.waas.model.CreateCustomProtectionRuleDetails body) {
             createCustomProtectionRuleDetails(body);
             return this;
         }

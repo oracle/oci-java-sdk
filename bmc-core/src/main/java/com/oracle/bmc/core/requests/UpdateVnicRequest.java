@@ -17,7 +17,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateVnicRequest extends com.oracle.bmc.requests.BmcRequest<UpdateVnicDetails> {
+public class UpdateVnicRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.UpdateVnicDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VNIC.
@@ -27,7 +28,7 @@ public class UpdateVnicRequest extends com.oracle.bmc.requests.BmcRequest<Update
     /**
      * Details object for updating a VNIC.
      */
-    private UpdateVnicDetails updateVnicDetails;
+    private com.oracle.bmc.core.model.UpdateVnicDetails updateVnicDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -43,13 +44,13 @@ public class UpdateVnicRequest extends com.oracle.bmc.requests.BmcRequest<Update
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateVnicDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateVnicDetails getBody$() {
         return updateVnicDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateVnicRequest, UpdateVnicDetails> {
+                    UpdateVnicRequest, com.oracle.bmc.core.model.UpdateVnicDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -113,7 +114,7 @@ public class UpdateVnicRequest extends com.oracle.bmc.requests.BmcRequest<Update
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateVnicDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdateVnicDetails body) {
             updateVnicDetails(body);
             return this;
         }

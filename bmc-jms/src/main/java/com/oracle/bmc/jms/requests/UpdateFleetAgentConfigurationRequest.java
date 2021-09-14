@@ -18,7 +18,8 @@ import com.oracle.bmc.jms.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateFleetAgentConfigurationRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateFleetAgentConfigurationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.jms.model.UpdateFleetAgentConfigurationDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
@@ -28,7 +29,8 @@ public class UpdateFleetAgentConfigurationRequest
     /**
      * The new details for the Fleet Agent Configuration.
      */
-    private UpdateFleetAgentConfigurationDetails updateFleetAgentConfigurationDetails;
+    private com.oracle.bmc.jms.model.UpdateFleetAgentConfigurationDetails
+            updateFleetAgentConfigurationDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -51,13 +53,14 @@ public class UpdateFleetAgentConfigurationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateFleetAgentConfigurationDetails getBody$() {
+    public com.oracle.bmc.jms.model.UpdateFleetAgentConfigurationDetails getBody$() {
         return updateFleetAgentConfigurationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateFleetAgentConfigurationRequest, UpdateFleetAgentConfigurationDetails> {
+                    UpdateFleetAgentConfigurationRequest,
+                    com.oracle.bmc.jms.model.UpdateFleetAgentConfigurationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,7 @@ public class UpdateFleetAgentConfigurationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateFleetAgentConfigurationDetails body) {
+        public Builder body$(com.oracle.bmc.jms.model.UpdateFleetAgentConfigurationDetails body) {
             updateFleetAgentConfigurationDetails(body);
             return this;
         }

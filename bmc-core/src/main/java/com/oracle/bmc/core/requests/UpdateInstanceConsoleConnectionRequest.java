@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateInstanceConsoleConnectionRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateInstanceConsoleConnectionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdateInstanceConsoleConnectionDetails> {
 
     /**
      * The OCID of the instance console connection.
@@ -28,7 +29,8 @@ public class UpdateInstanceConsoleConnectionRequest
     /**
      * Update instanceConsoleConnection tags
      */
-    private UpdateInstanceConsoleConnectionDetails updateInstanceConsoleConnectionDetails;
+    private com.oracle.bmc.core.model.UpdateInstanceConsoleConnectionDetails
+            updateInstanceConsoleConnectionDetails;
 
     /**
      * Unique identifier for the request.
@@ -51,14 +53,14 @@ public class UpdateInstanceConsoleConnectionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateInstanceConsoleConnectionDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateInstanceConsoleConnectionDetails getBody$() {
         return updateInstanceConsoleConnectionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateInstanceConsoleConnectionRequest,
-                    UpdateInstanceConsoleConnectionDetails> {
+                    com.oracle.bmc.core.model.UpdateInstanceConsoleConnectionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +125,8 @@ public class UpdateInstanceConsoleConnectionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateInstanceConsoleConnectionDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.UpdateInstanceConsoleConnectionDetails body) {
             updateInstanceConsoleConnectionDetails(body);
             return this;
         }

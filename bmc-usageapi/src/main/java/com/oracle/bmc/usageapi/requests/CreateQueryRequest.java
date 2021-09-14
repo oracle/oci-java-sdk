@@ -17,12 +17,14 @@ import com.oracle.bmc.usageapi.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateQueryRequest extends com.oracle.bmc.requests.BmcRequest<CreateQueryDetails> {
+public class CreateQueryRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.usageapi.model.CreateQueryDetails> {
 
     /**
      * New query details. Up to ten saved queries.
      */
-    private CreateQueryDetails createQueryDetails;
+    private com.oracle.bmc.usageapi.model.CreateQueryDetails createQueryDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -47,13 +49,13 @@ public class CreateQueryRequest extends com.oracle.bmc.requests.BmcRequest<Creat
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateQueryDetails getBody$() {
+    public com.oracle.bmc.usageapi.model.CreateQueryDetails getBody$() {
         return createQueryDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateQueryRequest, CreateQueryDetails> {
+                    CreateQueryRequest, com.oracle.bmc.usageapi.model.CreateQueryDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +119,7 @@ public class CreateQueryRequest extends com.oracle.bmc.requests.BmcRequest<Creat
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateQueryDetails body) {
+        public Builder body$(com.oracle.bmc.usageapi.model.CreateQueryDetails body) {
             createQueryDetails(body);
             return this;
         }

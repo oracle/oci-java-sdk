@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateBootVolumeBackupRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateBootVolumeBackupDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdateBootVolumeBackupDetails> {
 
     /**
      * The OCID of the boot volume backup.
@@ -28,7 +29,7 @@ public class UpdateBootVolumeBackupRequest
     /**
      * Update boot volume backup fields
      */
-    private UpdateBootVolumeBackupDetails updateBootVolumeBackupDetails;
+    private com.oracle.bmc.core.model.UpdateBootVolumeBackupDetails updateBootVolumeBackupDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -44,13 +45,14 @@ public class UpdateBootVolumeBackupRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateBootVolumeBackupDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateBootVolumeBackupDetails getBody$() {
         return updateBootVolumeBackupDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateBootVolumeBackupRequest, UpdateBootVolumeBackupDetails> {
+                    UpdateBootVolumeBackupRequest,
+                    com.oracle.bmc.core.model.UpdateBootVolumeBackupDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +116,7 @@ public class UpdateBootVolumeBackupRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateBootVolumeBackupDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdateBootVolumeBackupDetails body) {
             updateBootVolumeBackupDetails(body);
             return this;
         }

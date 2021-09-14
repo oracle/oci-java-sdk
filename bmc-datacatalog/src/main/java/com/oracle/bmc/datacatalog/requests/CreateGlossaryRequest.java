@@ -18,7 +18,8 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateGlossaryRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateGlossaryDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.CreateGlossaryDetails> {
 
     /**
      * Unique catalog identifier.
@@ -28,7 +29,7 @@ public class CreateGlossaryRequest
     /**
      * The information used to create the glossary.
      */
-    private CreateGlossaryDetails createGlossaryDetails;
+    private com.oracle.bmc.datacatalog.model.CreateGlossaryDetails createGlossaryDetails;
 
     /**
      * The client request ID for tracing.
@@ -51,13 +52,13 @@ public class CreateGlossaryRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateGlossaryDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.CreateGlossaryDetails getBody$() {
         return createGlossaryDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateGlossaryRequest, CreateGlossaryDetails> {
+                    CreateGlossaryRequest, com.oracle.bmc.datacatalog.model.CreateGlossaryDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +123,7 @@ public class CreateGlossaryRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateGlossaryDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.CreateGlossaryDetails body) {
             createGlossaryDetails(body);
             return this;
         }

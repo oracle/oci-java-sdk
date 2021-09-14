@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeSecurityListCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeSecurityListCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.ChangeSecurityListCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the security list.
@@ -28,7 +29,8 @@ public class ChangeSecurityListCompartmentRequest
     /**
      * Request to change the compartment of a given security list.
      */
-    private ChangeSecurityListCompartmentDetails changeSecurityListCompartmentDetails;
+    private com.oracle.bmc.core.model.ChangeSecurityListCompartmentDetails
+            changeSecurityListCompartmentDetails;
 
     /**
      * Unique identifier for the request.
@@ -53,13 +55,14 @@ public class ChangeSecurityListCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeSecurityListCompartmentDetails getBody$() {
+    public com.oracle.bmc.core.model.ChangeSecurityListCompartmentDetails getBody$() {
         return changeSecurityListCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeSecurityListCompartmentRequest, ChangeSecurityListCompartmentDetails> {
+                    ChangeSecurityListCompartmentRequest,
+                    com.oracle.bmc.core.model.ChangeSecurityListCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +127,7 @@ public class ChangeSecurityListCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeSecurityListCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.ChangeSecurityListCompartmentDetails body) {
             changeSecurityListCompartmentDetails(body);
             return this;
         }

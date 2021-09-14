@@ -17,7 +17,9 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateFolderRequest extends com.oracle.bmc.requests.BmcRequest<UpdateFolderDetails> {
+public class UpdateFolderRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.UpdateFolderDetails> {
 
     /**
      * Unique catalog identifier.
@@ -37,7 +39,7 @@ public class UpdateFolderRequest extends com.oracle.bmc.requests.BmcRequest<Upda
     /**
      * The information to be updated in the folder.
      */
-    private UpdateFolderDetails updateFolderDetails;
+    private com.oracle.bmc.datacatalog.model.UpdateFolderDetails updateFolderDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -60,13 +62,13 @@ public class UpdateFolderRequest extends com.oracle.bmc.requests.BmcRequest<Upda
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateFolderDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.UpdateFolderDetails getBody$() {
         return updateFolderDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateFolderRequest, UpdateFolderDetails> {
+                    UpdateFolderRequest, com.oracle.bmc.datacatalog.model.UpdateFolderDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +135,7 @@ public class UpdateFolderRequest extends com.oracle.bmc.requests.BmcRequest<Upda
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateFolderDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.UpdateFolderDetails body) {
             updateFolderDetails(body);
             return this;
         }

@@ -18,12 +18,14 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateVolumeBackupPolicyAssignmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateVolumeBackupPolicyAssignmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CreateVolumeBackupPolicyAssignmentDetails> {
 
     /**
      * Request to assign a specified policy to a particular volume.
      */
-    private CreateVolumeBackupPolicyAssignmentDetails createVolumeBackupPolicyAssignmentDetails;
+    private com.oracle.bmc.core.model.CreateVolumeBackupPolicyAssignmentDetails
+            createVolumeBackupPolicyAssignmentDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -31,14 +33,14 @@ public class CreateVolumeBackupPolicyAssignmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateVolumeBackupPolicyAssignmentDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateVolumeBackupPolicyAssignmentDetails getBody$() {
         return createVolumeBackupPolicyAssignmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateVolumeBackupPolicyAssignmentRequest,
-                    CreateVolumeBackupPolicyAssignmentDetails> {
+                    com.oracle.bmc.core.model.CreateVolumeBackupPolicyAssignmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -101,7 +103,8 @@ public class CreateVolumeBackupPolicyAssignmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateVolumeBackupPolicyAssignmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.CreateVolumeBackupPolicyAssignmentDetails body) {
             createVolumeBackupPolicyAssignmentDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.opsi.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateHostInsightRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateHostInsightDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.opsi.model.UpdateHostInsightDetails> {
 
     /**
      * Unique host insight identifier
@@ -28,7 +29,7 @@ public class UpdateHostInsightRequest
     /**
      * The configuration to be updated.
      */
-    private UpdateHostInsightDetails updateHostInsightDetails;
+    private com.oracle.bmc.opsi.model.UpdateHostInsightDetails updateHostInsightDetails;
 
     /**
      * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
@@ -51,13 +52,13 @@ public class UpdateHostInsightRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateHostInsightDetails getBody$() {
+    public com.oracle.bmc.opsi.model.UpdateHostInsightDetails getBody$() {
         return updateHostInsightDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateHostInsightRequest, UpdateHostInsightDetails> {
+                    UpdateHostInsightRequest, com.oracle.bmc.opsi.model.UpdateHostInsightDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +123,7 @@ public class UpdateHostInsightRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateHostInsightDetails body) {
+        public Builder body$(com.oracle.bmc.opsi.model.UpdateHostInsightDetails body) {
             updateHostInsightDetails(body);
             return this;
         }

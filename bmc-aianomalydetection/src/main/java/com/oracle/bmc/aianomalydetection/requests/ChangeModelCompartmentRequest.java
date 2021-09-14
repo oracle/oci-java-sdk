@@ -18,7 +18,8 @@ import com.oracle.bmc.aianomalydetection.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeModelCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeModelCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.aianomalydetection.model.ChangeModelCompartmentDetails> {
 
     /**
      * The OCID of the Model.
@@ -28,7 +29,8 @@ public class ChangeModelCompartmentRequest
     /**
      * The information to be updated.
      */
-    private ChangeModelCompartmentDetails changeModelCompartmentDetails;
+    private com.oracle.bmc.aianomalydetection.model.ChangeModelCompartmentDetails
+            changeModelCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -61,13 +63,14 @@ public class ChangeModelCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeModelCompartmentDetails getBody$() {
+    public com.oracle.bmc.aianomalydetection.model.ChangeModelCompartmentDetails getBody$() {
         return changeModelCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeModelCompartmentRequest, ChangeModelCompartmentDetails> {
+                    ChangeModelCompartmentRequest,
+                    com.oracle.bmc.aianomalydetection.model.ChangeModelCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +136,8 @@ public class ChangeModelCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeModelCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.aianomalydetection.model.ChangeModelCompartmentDetails body) {
             changeModelCompartmentDetails(body);
             return this;
         }

@@ -17,12 +17,13 @@ import com.oracle.bmc.dns.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateViewRequest extends com.oracle.bmc.requests.BmcRequest<CreateViewDetails> {
+public class CreateViewRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.dns.model.CreateViewDetails> {
 
     /**
      * Details for creating a new view.
      */
-    private CreateViewDetails createViewDetails;
+    private com.oracle.bmc.dns.model.CreateViewDetails createViewDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case
@@ -55,13 +56,13 @@ public class CreateViewRequest extends com.oracle.bmc.requests.BmcRequest<Create
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateViewDetails getBody$() {
+    public com.oracle.bmc.dns.model.CreateViewDetails getBody$() {
         return createViewDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateViewRequest, CreateViewDetails> {
+                    CreateViewRequest, com.oracle.bmc.dns.model.CreateViewDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -126,7 +127,7 @@ public class CreateViewRequest extends com.oracle.bmc.requests.BmcRequest<Create
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateViewDetails body) {
+        public Builder body$(com.oracle.bmc.dns.model.CreateViewDetails body) {
             createViewDetails(body);
             return this;
         }

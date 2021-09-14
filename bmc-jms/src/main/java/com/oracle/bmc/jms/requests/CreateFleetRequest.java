@@ -17,12 +17,13 @@ import com.oracle.bmc.jms.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateFleetRequest extends com.oracle.bmc.requests.BmcRequest<CreateFleetDetails> {
+public class CreateFleetRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.jms.model.CreateFleetDetails> {
 
     /**
      * Details for the new Fleet.
      */
-    private CreateFleetDetails createFleetDetails;
+    private com.oracle.bmc.jms.model.CreateFleetDetails createFleetDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -45,13 +46,13 @@ public class CreateFleetRequest extends com.oracle.bmc.requests.BmcRequest<Creat
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateFleetDetails getBody$() {
+    public com.oracle.bmc.jms.model.CreateFleetDetails getBody$() {
         return createFleetDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateFleetRequest, CreateFleetDetails> {
+                    CreateFleetRequest, com.oracle.bmc.jms.model.CreateFleetDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -115,7 +116,7 @@ public class CreateFleetRequest extends com.oracle.bmc.requests.BmcRequest<Creat
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateFleetDetails body) {
+        public Builder body$(com.oracle.bmc.jms.model.CreateFleetDetails body) {
             createFleetDetails(body);
             return this;
         }

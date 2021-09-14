@@ -18,7 +18,8 @@ import com.oracle.bmc.waas.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateWaasPolicyRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateWaasPolicyDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.waas.model.UpdateWaasPolicyDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
@@ -28,7 +29,7 @@ public class UpdateWaasPolicyRequest
     /**
      * The details of the WAAS policy to update.
      */
-    private UpdateWaasPolicyDetails updateWaasPolicyDetails;
+    private com.oracle.bmc.waas.model.UpdateWaasPolicyDetails updateWaasPolicyDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -52,13 +53,13 @@ public class UpdateWaasPolicyRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateWaasPolicyDetails getBody$() {
+    public com.oracle.bmc.waas.model.UpdateWaasPolicyDetails getBody$() {
         return updateWaasPolicyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateWaasPolicyRequest, UpdateWaasPolicyDetails> {
+                    UpdateWaasPolicyRequest, com.oracle.bmc.waas.model.UpdateWaasPolicyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +125,7 @@ public class UpdateWaasPolicyRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateWaasPolicyDetails body) {
+        public Builder body$(com.oracle.bmc.waas.model.UpdateWaasPolicyDetails body) {
             updateWaasPolicyDetails(body);
             return this;
         }

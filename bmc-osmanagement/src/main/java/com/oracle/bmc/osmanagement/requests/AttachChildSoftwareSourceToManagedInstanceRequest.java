@@ -19,7 +19,8 @@ import com.oracle.bmc.osmanagement.model.*;
 @lombok.Getter
 public class AttachChildSoftwareSourceToManagedInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<
-                AttachChildSoftwareSourceToManagedInstanceDetails> {
+                com.oracle.bmc.osmanagement.model
+                        .AttachChildSoftwareSourceToManagedInstanceDetails> {
 
     /**
      * OCID for the managed instance
@@ -29,7 +30,7 @@ public class AttachChildSoftwareSourceToManagedInstanceRequest
     /**
      * Details for attaching a Software Source to a Managed Instance
      */
-    private AttachChildSoftwareSourceToManagedInstanceDetails
+    private com.oracle.bmc.osmanagement.model.AttachChildSoftwareSourceToManagedInstanceDetails
             attachChildSoftwareSourceToManagedInstanceDetails;
 
     /**
@@ -53,14 +54,16 @@ public class AttachChildSoftwareSourceToManagedInstanceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public AttachChildSoftwareSourceToManagedInstanceDetails getBody$() {
+    public com.oracle.bmc.osmanagement.model.AttachChildSoftwareSourceToManagedInstanceDetails
+            getBody$() {
         return attachChildSoftwareSourceToManagedInstanceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     AttachChildSoftwareSourceToManagedInstanceRequest,
-                    AttachChildSoftwareSourceToManagedInstanceDetails> {
+                    com.oracle.bmc.osmanagement.model
+                            .AttachChildSoftwareSourceToManagedInstanceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -127,7 +130,9 @@ public class AttachChildSoftwareSourceToManagedInstanceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(AttachChildSoftwareSourceToManagedInstanceDetails body) {
+        public Builder body$(
+                com.oracle.bmc.osmanagement.model.AttachChildSoftwareSourceToManagedInstanceDetails
+                        body) {
             attachChildSoftwareSourceToManagedInstanceDetails(body);
             return this;
         }

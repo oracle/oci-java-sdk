@@ -18,7 +18,8 @@ import com.oracle.bmc.goldengate.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeDeploymentBackupCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeDeploymentBackupCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.goldengate.model.ChangeDeploymentBackupCompartmentDetails> {
 
     /**
      * A unique DeploymentBackup identifier.
@@ -30,7 +31,8 @@ public class ChangeDeploymentBackupCompartmentRequest
      * Properties to change the compartment of a DeploymentBackup.
      *
      */
-    private ChangeDeploymentBackupCompartmentDetails changeDeploymentBackupCompartmentDetails;
+    private com.oracle.bmc.goldengate.model.ChangeDeploymentBackupCompartmentDetails
+            changeDeploymentBackupCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.  The resource is updated or deleted only if the etag you provide matches the resource's current etag value.
@@ -56,14 +58,14 @@ public class ChangeDeploymentBackupCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeDeploymentBackupCompartmentDetails getBody$() {
+    public com.oracle.bmc.goldengate.model.ChangeDeploymentBackupCompartmentDetails getBody$() {
         return changeDeploymentBackupCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeDeploymentBackupCompartmentRequest,
-                    ChangeDeploymentBackupCompartmentDetails> {
+                    com.oracle.bmc.goldengate.model.ChangeDeploymentBackupCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -130,7 +132,8 @@ public class ChangeDeploymentBackupCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeDeploymentBackupCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.goldengate.model.ChangeDeploymentBackupCompartmentDetails body) {
             changeDeploymentBackupCompartmentDetails(body);
             return this;
         }

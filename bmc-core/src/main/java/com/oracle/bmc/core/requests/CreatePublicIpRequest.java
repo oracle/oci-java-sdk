@@ -18,12 +18,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreatePublicIpRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreatePublicIpDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CreatePublicIpDetails> {
 
     /**
      * Create public IP details.
      */
-    private CreatePublicIpDetails createPublicIpDetails;
+    private com.oracle.bmc.core.model.CreatePublicIpDetails createPublicIpDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +42,13 @@ public class CreatePublicIpRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreatePublicIpDetails getBody$() {
+    public com.oracle.bmc.core.model.CreatePublicIpDetails getBody$() {
         return createPublicIpDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreatePublicIpRequest, CreatePublicIpDetails> {
+                    CreatePublicIpRequest, com.oracle.bmc.core.model.CreatePublicIpDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +111,7 @@ public class CreatePublicIpRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreatePublicIpDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreatePublicIpDetails body) {
             createPublicIpDetails(body);
             return this;
         }

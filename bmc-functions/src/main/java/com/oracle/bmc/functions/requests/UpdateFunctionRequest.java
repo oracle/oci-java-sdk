@@ -18,7 +18,8 @@ import com.oracle.bmc.functions.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateFunctionRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateFunctionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.functions.model.UpdateFunctionDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
@@ -29,7 +30,7 @@ public class UpdateFunctionRequest
     /**
      * The new function spec to apply
      */
-    private UpdateFunctionDetails updateFunctionDetails;
+    private com.oracle.bmc.functions.model.UpdateFunctionDetails updateFunctionDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -52,13 +53,13 @@ public class UpdateFunctionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateFunctionDetails getBody$() {
+    public com.oracle.bmc.functions.model.UpdateFunctionDetails getBody$() {
         return updateFunctionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateFunctionRequest, UpdateFunctionDetails> {
+                    UpdateFunctionRequest, com.oracle.bmc.functions.model.UpdateFunctionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +124,7 @@ public class UpdateFunctionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateFunctionDetails body) {
+        public Builder body$(com.oracle.bmc.functions.model.UpdateFunctionDetails body) {
             updateFunctionDetails(body);
             return this;
         }

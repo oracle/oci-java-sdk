@@ -18,12 +18,14 @@ import com.oracle.bmc.datascience.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateModelDeploymentRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateModelDeploymentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datascience.model.CreateModelDeploymentDetails> {
 
     /**
      * Details for creating a new model deployment.
      */
-    private CreateModelDeploymentDetails createModelDeploymentDetails;
+    private com.oracle.bmc.datascience.model.CreateModelDeploymentDetails
+            createModelDeploymentDetails;
 
     /**
      * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -43,13 +45,14 @@ public class CreateModelDeploymentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateModelDeploymentDetails getBody$() {
+    public com.oracle.bmc.datascience.model.CreateModelDeploymentDetails getBody$() {
         return createModelDeploymentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateModelDeploymentRequest, CreateModelDeploymentDetails> {
+                    CreateModelDeploymentRequest,
+                    com.oracle.bmc.datascience.model.CreateModelDeploymentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -113,7 +116,7 @@ public class CreateModelDeploymentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateModelDeploymentDetails body) {
+        public Builder body$(com.oracle.bmc.datascience.model.CreateModelDeploymentDetails body) {
             createModelDeploymentDetails(body);
             return this;
         }

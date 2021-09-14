@@ -17,12 +17,13 @@ import com.oracle.bmc.vault.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateSecretRequest extends com.oracle.bmc.requests.BmcRequest<CreateSecretDetails> {
+public class CreateSecretRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.vault.model.CreateSecretDetails> {
 
     /**
      * Request to create a new secret.
      */
-    private CreateSecretDetails createSecretDetails;
+    private com.oracle.bmc.vault.model.CreateSecretDetails createSecretDetails;
 
     /**
      * Unique identifier for the request. If provided, the returned request ID
@@ -49,13 +50,13 @@ public class CreateSecretRequest extends com.oracle.bmc.requests.BmcRequest<Crea
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateSecretDetails getBody$() {
+    public com.oracle.bmc.vault.model.CreateSecretDetails getBody$() {
         return createSecretDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateSecretRequest, CreateSecretDetails> {
+                    CreateSecretRequest, com.oracle.bmc.vault.model.CreateSecretDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +120,7 @@ public class CreateSecretRequest extends com.oracle.bmc.requests.BmcRequest<Crea
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateSecretDetails body) {
+        public Builder body$(com.oracle.bmc.vault.model.CreateSecretDetails body) {
             createSecretDetails(body);
             return this;
         }

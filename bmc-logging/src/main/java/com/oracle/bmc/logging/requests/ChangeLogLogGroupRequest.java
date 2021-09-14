@@ -18,7 +18,8 @@ import com.oracle.bmc.logging.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeLogLogGroupRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeLogLogGroupDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.logging.model.ChangeLogLogGroupDetails> {
 
     /**
      * OCID of a log group to work with.
@@ -33,7 +34,7 @@ public class ChangeLogLogGroupRequest
     /**
      * Request to change the log group of a given log.
      */
-    private ChangeLogLogGroupDetails changeLogLogGroupDetails;
+    private com.oracle.bmc.logging.model.ChangeLogLogGroupDetails changeLogLogGroupDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
@@ -58,13 +59,14 @@ public class ChangeLogLogGroupRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeLogLogGroupDetails getBody$() {
+    public com.oracle.bmc.logging.model.ChangeLogLogGroupDetails getBody$() {
         return changeLogLogGroupDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeLogLogGroupRequest, ChangeLogLogGroupDetails> {
+                    ChangeLogLogGroupRequest,
+                    com.oracle.bmc.logging.model.ChangeLogLogGroupDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -130,7 +132,7 @@ public class ChangeLogLogGroupRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeLogLogGroupDetails body) {
+        public Builder body$(com.oracle.bmc.logging.model.ChangeLogLogGroupDetails body) {
             changeLogLogGroupDetails(body);
             return this;
         }

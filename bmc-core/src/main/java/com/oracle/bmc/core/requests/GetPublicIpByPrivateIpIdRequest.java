@@ -18,12 +18,14 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class GetPublicIpByPrivateIpIdRequest
-        extends com.oracle.bmc.requests.BmcRequest<GetPublicIpByPrivateIpIdDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.GetPublicIpByPrivateIpIdDetails> {
 
     /**
      * Private IP details for fetching the public IP.
      */
-    private GetPublicIpByPrivateIpIdDetails getPublicIpByPrivateIpIdDetails;
+    private com.oracle.bmc.core.model.GetPublicIpByPrivateIpIdDetails
+            getPublicIpByPrivateIpIdDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -31,13 +33,14 @@ public class GetPublicIpByPrivateIpIdRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public GetPublicIpByPrivateIpIdDetails getBody$() {
+    public com.oracle.bmc.core.model.GetPublicIpByPrivateIpIdDetails getBody$() {
         return getPublicIpByPrivateIpIdDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    GetPublicIpByPrivateIpIdRequest, GetPublicIpByPrivateIpIdDetails> {
+                    GetPublicIpByPrivateIpIdRequest,
+                    com.oracle.bmc.core.model.GetPublicIpByPrivateIpIdDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -99,7 +102,7 @@ public class GetPublicIpByPrivateIpIdRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(GetPublicIpByPrivateIpIdDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.GetPublicIpByPrivateIpIdDetails body) {
             getPublicIpByPrivateIpIdDetails(body);
             return this;
         }

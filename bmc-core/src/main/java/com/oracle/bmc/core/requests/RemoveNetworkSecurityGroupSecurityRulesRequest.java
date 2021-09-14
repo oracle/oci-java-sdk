@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RemoveNetworkSecurityGroupSecurityRulesRequest
-        extends com.oracle.bmc.requests.BmcRequest<RemoveNetworkSecurityGroupSecurityRulesDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.RemoveNetworkSecurityGroupSecurityRulesDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
@@ -30,7 +31,7 @@ public class RemoveNetworkSecurityGroupSecurityRulesRequest
      * will be removed.
      *
      */
-    private RemoveNetworkSecurityGroupSecurityRulesDetails
+    private com.oracle.bmc.core.model.RemoveNetworkSecurityGroupSecurityRulesDetails
             removeNetworkSecurityGroupSecurityRulesDetails;
 
     /**
@@ -39,14 +40,14 @@ public class RemoveNetworkSecurityGroupSecurityRulesRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RemoveNetworkSecurityGroupSecurityRulesDetails getBody$() {
+    public com.oracle.bmc.core.model.RemoveNetworkSecurityGroupSecurityRulesDetails getBody$() {
         return removeNetworkSecurityGroupSecurityRulesDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     RemoveNetworkSecurityGroupSecurityRulesRequest,
-                    RemoveNetworkSecurityGroupSecurityRulesDetails> {
+                    com.oracle.bmc.core.model.RemoveNetworkSecurityGroupSecurityRulesDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -111,7 +112,8 @@ public class RemoveNetworkSecurityGroupSecurityRulesRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RemoveNetworkSecurityGroupSecurityRulesDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.RemoveNetworkSecurityGroupSecurityRulesDetails body) {
             removeNetworkSecurityGroupSecurityRulesDetails(body);
             return this;
         }

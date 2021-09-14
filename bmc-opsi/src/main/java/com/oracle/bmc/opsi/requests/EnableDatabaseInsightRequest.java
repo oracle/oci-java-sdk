@@ -18,12 +18,13 @@ import com.oracle.bmc.opsi.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class EnableDatabaseInsightRequest
-        extends com.oracle.bmc.requests.BmcRequest<EnableDatabaseInsightDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.opsi.model.EnableDatabaseInsightDetails> {
 
     /**
      * Details for the database to be enabled in Operations Insights.
      */
-    private EnableDatabaseInsightDetails enableDatabaseInsightDetails;
+    private com.oracle.bmc.opsi.model.EnableDatabaseInsightDetails enableDatabaseInsightDetails;
 
     /**
      * Unique database insight identifier
@@ -62,13 +63,14 @@ public class EnableDatabaseInsightRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public EnableDatabaseInsightDetails getBody$() {
+    public com.oracle.bmc.opsi.model.EnableDatabaseInsightDetails getBody$() {
         return enableDatabaseInsightDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    EnableDatabaseInsightRequest, EnableDatabaseInsightDetails> {
+                    EnableDatabaseInsightRequest,
+                    com.oracle.bmc.opsi.model.EnableDatabaseInsightDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +136,7 @@ public class EnableDatabaseInsightRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(EnableDatabaseInsightDetails body) {
+        public Builder body$(com.oracle.bmc.opsi.model.EnableDatabaseInsightDetails body) {
             enableDatabaseInsightDetails(body);
             return this;
         }

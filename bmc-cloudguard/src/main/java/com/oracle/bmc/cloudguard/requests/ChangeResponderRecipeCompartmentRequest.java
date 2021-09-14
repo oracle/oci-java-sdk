@@ -18,7 +18,8 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeResponderRecipeCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeResponderRecipeCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.cloudguard.model.ChangeResponderRecipeCompartmentDetails> {
 
     /**
      * OCID of ResponderRecipe
@@ -28,7 +29,8 @@ public class ChangeResponderRecipeCompartmentRequest
     /**
      * The target compartment id.
      */
-    private ChangeResponderRecipeCompartmentDetails changeResponderRecipeCompartmentDetails;
+    private com.oracle.bmc.cloudguard.model.ChangeResponderRecipeCompartmentDetails
+            changeResponderRecipeCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -61,14 +63,14 @@ public class ChangeResponderRecipeCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeResponderRecipeCompartmentDetails getBody$() {
+    public com.oracle.bmc.cloudguard.model.ChangeResponderRecipeCompartmentDetails getBody$() {
         return changeResponderRecipeCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeResponderRecipeCompartmentRequest,
-                    ChangeResponderRecipeCompartmentDetails> {
+                    com.oracle.bmc.cloudguard.model.ChangeResponderRecipeCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +136,8 @@ public class ChangeResponderRecipeCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeResponderRecipeCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.cloudguard.model.ChangeResponderRecipeCompartmentDetails body) {
             changeResponderRecipeCompartmentDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class DisableAutoAssociationRequest
-        extends com.oracle.bmc.requests.BmcRequest<DisableAutoAssociationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.DisableAutoAssociationDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -34,7 +35,8 @@ public class DisableAutoAssociationRequest
     /**
      * Details required to disable auto association for the log source.
      */
-    private DisableAutoAssociationDetails disableAutoAssociationDetails;
+    private com.oracle.bmc.loganalytics.model.DisableAutoAssociationDetails
+            disableAutoAssociationDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -57,7 +59,7 @@ public class DisableAutoAssociationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public DisableAutoAssociationDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.DisableAutoAssociationDetails getBody$() {
         return disableAutoAssociationDetails;
     }
 
@@ -68,7 +70,8 @@ public class DisableAutoAssociationRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    DisableAutoAssociationRequest, DisableAutoAssociationDetails> {
+                    DisableAutoAssociationRequest,
+                    com.oracle.bmc.loganalytics.model.DisableAutoAssociationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +137,7 @@ public class DisableAutoAssociationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(DisableAutoAssociationDetails body) {
+        public Builder body$(com.oracle.bmc.loganalytics.model.DisableAutoAssociationDetails body) {
             disableAutoAssociationDetails(body);
             return this;
         }

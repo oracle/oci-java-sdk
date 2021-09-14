@@ -17,7 +17,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class RemoveVcnCidrRequest extends com.oracle.bmc.requests.BmcRequest<RemoveVcnCidrDetails> {
+public class RemoveVcnCidrRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.RemoveVcnCidrDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
@@ -27,7 +28,7 @@ public class RemoveVcnCidrRequest extends com.oracle.bmc.requests.BmcRequest<Rem
     /**
      * Details object for removing a VCN CIDR.
      */
-    private RemoveVcnCidrDetails removeVcnCidrDetails;
+    private com.oracle.bmc.core.model.RemoveVcnCidrDetails removeVcnCidrDetails;
 
     /**
      * Unique identifier for the request.
@@ -60,13 +61,13 @@ public class RemoveVcnCidrRequest extends com.oracle.bmc.requests.BmcRequest<Rem
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RemoveVcnCidrDetails getBody$() {
+    public com.oracle.bmc.core.model.RemoveVcnCidrDetails getBody$() {
         return removeVcnCidrDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RemoveVcnCidrRequest, RemoveVcnCidrDetails> {
+                    RemoveVcnCidrRequest, com.oracle.bmc.core.model.RemoveVcnCidrDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -132,7 +133,7 @@ public class RemoveVcnCidrRequest extends com.oracle.bmc.requests.BmcRequest<Rem
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RemoveVcnCidrDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.RemoveVcnCidrDetails body) {
             removeVcnCidrDetails(body);
             return this;
         }

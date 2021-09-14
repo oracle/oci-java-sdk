@@ -18,7 +18,8 @@ import com.oracle.bmc.waas.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateHumanInteractionChallengeRequest
-        extends com.oracle.bmc.requests.BmcRequest<HumanInteractionChallenge> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.waas.model.HumanInteractionChallenge> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
@@ -28,7 +29,8 @@ public class UpdateHumanInteractionChallengeRequest
     /**
      * The human interaction challenge settings.
      */
-    private HumanInteractionChallenge updateHumanInteractionChallengeDetails;
+    private com.oracle.bmc.waas.model.HumanInteractionChallenge
+            updateHumanInteractionChallengeDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -52,13 +54,14 @@ public class UpdateHumanInteractionChallengeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public HumanInteractionChallenge getBody$() {
+    public com.oracle.bmc.waas.model.HumanInteractionChallenge getBody$() {
         return updateHumanInteractionChallengeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateHumanInteractionChallengeRequest, HumanInteractionChallenge> {
+                    UpdateHumanInteractionChallengeRequest,
+                    com.oracle.bmc.waas.model.HumanInteractionChallenge> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +127,7 @@ public class UpdateHumanInteractionChallengeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(HumanInteractionChallenge body) {
+        public Builder body$(com.oracle.bmc.waas.model.HumanInteractionChallenge body) {
             updateHumanInteractionChallengeDetails(body);
             return this;
         }

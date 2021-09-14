@@ -18,7 +18,9 @@ import com.oracle.bmc.managementdashboard.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeManagementDashboardsCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeManagementDashboardsCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.managementdashboard.model
+                        .ChangeManagementDashboardsCompartmentDetails> {
 
     /**
      * A unique dashboard identifier.
@@ -28,7 +30,7 @@ public class ChangeManagementDashboardsCompartmentRequest
     /**
      * ID of the dashboard that is being moved.
      */
-    private ChangeManagementDashboardsCompartmentDetails
+    private com.oracle.bmc.managementdashboard.model.ChangeManagementDashboardsCompartmentDetails
             changeManagementDashboardsCompartmentDetails;
 
     /**
@@ -62,14 +64,16 @@ public class ChangeManagementDashboardsCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeManagementDashboardsCompartmentDetails getBody$() {
+    public com.oracle.bmc.managementdashboard.model.ChangeManagementDashboardsCompartmentDetails
+            getBody$() {
         return changeManagementDashboardsCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeManagementDashboardsCompartmentRequest,
-                    ChangeManagementDashboardsCompartmentDetails> {
+                    com.oracle.bmc.managementdashboard.model
+                            .ChangeManagementDashboardsCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -136,7 +140,10 @@ public class ChangeManagementDashboardsCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeManagementDashboardsCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.managementdashboard.model
+                                .ChangeManagementDashboardsCompartmentDetails
+                        body) {
             changeManagementDashboardsCompartmentDetails(body);
             return this;
         }

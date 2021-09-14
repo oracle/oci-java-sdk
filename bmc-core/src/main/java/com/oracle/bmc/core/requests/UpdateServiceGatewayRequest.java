@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateServiceGatewayRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateServiceGatewayDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdateServiceGatewayDetails> {
 
     /**
      * The service gateway's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,7 @@ public class UpdateServiceGatewayRequest
     /**
      * Details object for updating a service gateway.
      */
-    private UpdateServiceGatewayDetails updateServiceGatewayDetails;
+    private com.oracle.bmc.core.model.UpdateServiceGatewayDetails updateServiceGatewayDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -44,13 +45,14 @@ public class UpdateServiceGatewayRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateServiceGatewayDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateServiceGatewayDetails getBody$() {
         return updateServiceGatewayDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateServiceGatewayRequest, UpdateServiceGatewayDetails> {
+                    UpdateServiceGatewayRequest,
+                    com.oracle.bmc.core.model.UpdateServiceGatewayDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +116,7 @@ public class UpdateServiceGatewayRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateServiceGatewayDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdateServiceGatewayDetails body) {
             updateServiceGatewayDetails(body);
             return this;
         }

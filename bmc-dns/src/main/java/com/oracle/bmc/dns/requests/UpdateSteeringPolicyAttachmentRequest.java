@@ -18,7 +18,8 @@ import com.oracle.bmc.dns.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateSteeringPolicyAttachmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateSteeringPolicyAttachmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dns.model.UpdateSteeringPolicyAttachmentDetails> {
 
     /**
      * The OCID of the target steering policy attachment.
@@ -28,7 +29,8 @@ public class UpdateSteeringPolicyAttachmentRequest
     /**
      * New data for the steering policy attachment.
      */
-    private UpdateSteeringPolicyAttachmentDetails updateSteeringPolicyAttachmentDetails;
+    private com.oracle.bmc.dns.model.UpdateSteeringPolicyAttachmentDetails
+            updateSteeringPolicyAttachmentDetails;
 
     /**
      * The {@code If-Match} header field makes the request method conditional on the
@@ -70,13 +72,14 @@ public class UpdateSteeringPolicyAttachmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateSteeringPolicyAttachmentDetails getBody$() {
+    public com.oracle.bmc.dns.model.UpdateSteeringPolicyAttachmentDetails getBody$() {
         return updateSteeringPolicyAttachmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateSteeringPolicyAttachmentRequest, UpdateSteeringPolicyAttachmentDetails> {
+                    UpdateSteeringPolicyAttachmentRequest,
+                    com.oracle.bmc.dns.model.UpdateSteeringPolicyAttachmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -143,7 +146,7 @@ public class UpdateSteeringPolicyAttachmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateSteeringPolicyAttachmentDetails body) {
+        public Builder body$(com.oracle.bmc.dns.model.UpdateSteeringPolicyAttachmentDetails body) {
             updateSteeringPolicyAttachmentDetails(body);
             return this;
         }

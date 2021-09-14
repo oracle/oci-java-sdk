@@ -18,7 +18,8 @@ import com.oracle.bmc.artifacts.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeContainerRepositoryCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeContainerRepositoryCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.artifacts.model.ChangeContainerRepositoryCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
@@ -31,7 +32,8 @@ public class ChangeContainerRepositoryCompartmentRequest
     /**
      * Change container repository compartment details.
      */
-    private ChangeContainerRepositoryCompartmentDetails changeContainerRepositoryCompartmentDetails;
+    private com.oracle.bmc.artifacts.model.ChangeContainerRepositoryCompartmentDetails
+            changeContainerRepositoryCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -64,14 +66,14 @@ public class ChangeContainerRepositoryCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeContainerRepositoryCompartmentDetails getBody$() {
+    public com.oracle.bmc.artifacts.model.ChangeContainerRepositoryCompartmentDetails getBody$() {
         return changeContainerRepositoryCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeContainerRepositoryCompartmentRequest,
-                    ChangeContainerRepositoryCompartmentDetails> {
+                    com.oracle.bmc.artifacts.model.ChangeContainerRepositoryCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -138,7 +140,8 @@ public class ChangeContainerRepositoryCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeContainerRepositoryCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.artifacts.model.ChangeContainerRepositoryCompartmentDetails body) {
             changeContainerRepositoryCompartmentDetails(body);
             return this;
         }

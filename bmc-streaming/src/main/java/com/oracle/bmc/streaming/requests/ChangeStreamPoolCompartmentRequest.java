@@ -18,7 +18,8 @@ import com.oracle.bmc.streaming.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeStreamPoolCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeStreamPoolCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.streaming.model.ChangeStreamPoolCompartmentDetails> {
 
     /**
      * The OCID of the stream pool.
@@ -29,7 +30,8 @@ public class ChangeStreamPoolCompartmentRequest
     /**
      * The stream pool will be moved into the compartment specified within this entity.
      */
-    private ChangeStreamPoolCompartmentDetails changeStreamPoolCompartmentDetails;
+    private com.oracle.bmc.streaming.model.ChangeStreamPoolCompartmentDetails
+            changeStreamPoolCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
@@ -49,13 +51,14 @@ public class ChangeStreamPoolCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeStreamPoolCompartmentDetails getBody$() {
+    public com.oracle.bmc.streaming.model.ChangeStreamPoolCompartmentDetails getBody$() {
         return changeStreamPoolCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeStreamPoolCompartmentRequest, ChangeStreamPoolCompartmentDetails> {
+                    ChangeStreamPoolCompartmentRequest,
+                    com.oracle.bmc.streaming.model.ChangeStreamPoolCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -120,7 +123,8 @@ public class ChangeStreamPoolCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeStreamPoolCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.streaming.model.ChangeStreamPoolCompartmentDetails body) {
             changeStreamPoolCompartmentDetails(body);
             return this;
         }
